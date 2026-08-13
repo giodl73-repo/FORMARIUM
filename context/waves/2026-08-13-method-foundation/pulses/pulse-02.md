@@ -16,8 +16,26 @@ meanings, and representation aliases.
 ## Validation
 
 - `git diff --check`
-- Any schema validator and fixture tests introduced by this pulse.
+- Manual conformance review of both canonical fixtures against
+  `specs/SEMANTIC-FACTOR-SCHEMA.md`.
 
 ## Status
 
-Pending.
+Complete.
+
+## Outcome
+
+Specification-complete only. Executable parser and interoperability evidence
+remain assigned to Pulse 04.
+
+Added Semantic Factor Schema v1 with:
+
+- stable lower-kebab identifiers and revision rules;
+- canonical factor and value ordinals;
+- complete single-valued assignments;
+- explicit missing and unknown semantics;
+- declared role slots for repeated participants;
+- dependency-free canonical text interchange;
+- minimum-width LSB-first packed encoding;
+- exact named-product versus ordinary-packed alias gates;
+- navigation and event fixtures.

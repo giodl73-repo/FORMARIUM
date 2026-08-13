@@ -1,21 +1,23 @@
-# Pulse 04: Alias and Strong-Control Bakeoff
+# Pulse 04: Schema Parser and Conformance
 
 ## Goal
 
-Measure factor preservation against equally expressive conventional controls.
+Turn Semantic Factor Schema v1 into an independently testable contract.
 
 ## Planned changes
 
-- Compare packed features and named product states as exact aliases.
-- Retain feature-structure, factored one-hot, and learned factored controls.
-- Report reconstruction, systematic holdout accuracy, edit locality, storage,
-  parameters, and temporary memory separately.
-- Reject any representation-specific claim when aliases tie.
+- Implement a dependency-light fail-closed parser and canonical writer.
+- Validate identifiers, uniqueness, ordering, completeness, ordinals, packed
+  widths/offsets, invalid patterns, and SHA-256 identities.
+- Add canonical valid fixtures and structured invalid fixtures.
+- Round-trip exact canonical bytes.
+- Expose a focused validation command for independent implementations.
 
 ## Validation
 
 - `git diff --check`
-- Focused benchmark correctness and alias tests introduced by this pulse.
+- Parser unit and integration tests introduced by this pulse.
+- Canonical round-trip and invalid-fixture smoke commands.
 
 ## Status
 

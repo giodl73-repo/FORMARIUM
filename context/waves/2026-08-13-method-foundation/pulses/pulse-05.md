@@ -1,21 +1,23 @@
-# Pulse 05: Portable Result Packet
+# Pulse 05: Compositional Split Fixtures
 
 ## Goal
 
-Publish a versioned benchmark result and provenance packet that an independent
-implementation can reproduce.
+Freeze deterministic splits that distinguish interpolation, recombination, and
+role transfer without leaking through surface rendering.
 
 ## Planned changes
 
-- Freeze corpus, schema, split, model, and result identities.
-- Define canonical result serialization and validation.
-- Add reproduction instructions and an onboarding guide.
-- Record one independent consumer or implementation target.
+- Add IID, lexical, cross-feature, and role/template transfer fixtures.
+- Use at least two materially different schema families.
+- Compute membership from semantic assignments before rendering.
+- Verify atom and declared pairwise coverage.
+- Group paraphrases and duplicate meanings before splitting.
+- Record schema, corpus, surface, and split identities separately.
 
 ## Validation
 
 - `git diff --check`
-- Packet round-trip and reproduction checks introduced by this pulse.
+- Deterministic corpus, grouping, coverage, and split tests.
 
 ## Status
 

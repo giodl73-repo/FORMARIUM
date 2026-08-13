@@ -1,21 +1,26 @@
-# Pulse 03: Compositional Split Fixtures
+# Pulse 03: Prior Art and Benchmark Custody
 
 ## Goal
 
-Freeze deterministic splits that distinguish interpolation, recombination, and
-role transfer without leaking through surface rendering.
+Review established semantic-representation and compositional-generalization
+methods before FACTOR standardizes a benchmark or claims a distinct method.
 
 ## Planned changes
 
-- Add IID, lexical, cross-feature, and role/template transfer fixtures.
-- Compute membership from semantic assignments before rendering.
-- Verify atom and pairwise coverage.
-- Record corpus, schema, and split digests.
+- Record feature structures, attribute-value matrices, typed records,
+  compositional semantic parsing, SCAN/COGS-style generalization, role/filler
+  binding, disentangled representations, and vector-symbolic controls.
+- Separate established prior art from FACTOR's packaging and evidence protocol.
+- Freeze source identity, license, redistribution, generation, and revision
+  custody for the first benchmark families.
+- Define which claims are adopt-now, prototype-only, or rejected.
+- Run the repo `.roles` panel over the research decision.
 
 ## Validation
 
 - `git diff --check`
-- Deterministic corpus and split tests introduced by this pulse.
+- `python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .`
+- Citation and source-identity review recorded in the pulse.
 
 ## Status
 

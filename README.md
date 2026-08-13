@@ -63,6 +63,10 @@ understanding.
 Read `CONTEXT.md`, `PRODUCT_PLAN.md`, and `context/waves/PHASES.md`. Work is
 organized into small waves and pulses with explicit validation.
 
+## Specifications
+
+- [Semantic Factor Schema v1](specs/SEMANTIC-FACTOR-SCHEMA.md)
+
 ## Validation
 
 ```powershell

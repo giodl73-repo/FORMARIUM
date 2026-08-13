@@ -52,9 +52,11 @@ FACTOR internals.
 
 1. Workspace foundation.
 2. Semantic-factor schema contract.
-3. Compositional split fixtures.
-4. Alias and strong-control bakeoff.
-5. Portable result packet and onboarding guide.
+3. Prior art and benchmark custody.
+4. Schema parser and conformance.
+5. Compositional split fixtures.
+6. Alias and strong-control bakeoff.
+7. Portable result packet and onboarding guide.
 
 ## Non-goals
 

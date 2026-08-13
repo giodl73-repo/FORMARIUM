@@ -17,5 +17,6 @@ Use this skill to create or update FACTOR waves.
 - Define the semantic or benchmark capability being tested.
 - Name the strongest packed and structured controls.
 - Separate semantic, storage, model, and runtime claims.
+- Review the plan through `.roles/ROLE.md`.
 - Break the wave into small pulses with validation.
 - Record synthetic-language and hardware non-goals.

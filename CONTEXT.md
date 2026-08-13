@@ -18,6 +18,17 @@ features.
 
 `context/waves/2026-08-13-method-foundation/WAVE.md`
 
+Current pulse: **03 - Prior art and benchmark custody**
+
+Pulse 02 froze `specs/SEMANTIC-FACTOR-SCHEMA.md`, including stable identifiers,
+complete assignments, explicit missing/unknown values, role slots, canonical
+text interchange, and exact packed/product alias rules.
+
+The method-foundation role review is recorded at
+`context/waves/2026-08-13-method-foundation/ROLE-REVIEW.md`. The review repaired
+the execution order so research and source custody precede parser, fixture, and
+benchmark implementation.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

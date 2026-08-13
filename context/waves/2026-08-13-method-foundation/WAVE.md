@@ -17,10 +17,12 @@ packed fields and strong conventional factored representations.
 | Pulse | Title | Status | Outcome |
 |------:|-------|--------|---------|
 | 01 | Workspace foundation | complete | Created the repository identity, product plan, wave protocol, skills, and validation contract. |
-| 02 | Semantic-factor schema contract | pending | Define typed factors, values, schemas, aliases, and canonical interchange. |
-| 03 | Compositional split fixtures | pending | Freeze leakage-resistant IID, lexical, cross-feature, and role-transfer fixtures. |
-| 04 | Alias and strong-control bakeoff | pending | Compare packed/product aliases, feature structures, one-hot factors, and learned factored controls. |
-| 05 | Portable result packet | pending | Export a versioned result/provenance packet and onboarding guide. |
+| 02 | Semantic-factor schema contract | complete | Specification-complete: froze identifiers, ordinals, assignments, role slots, interchange, and packed/product aliases. |
+| 03 | Prior art and benchmark custody | pending | Review established methods, record source/license custody, and freeze what FACTOR may standardize or claim. |
+| 04 | Schema parser and conformance | pending | Implement a fail-closed reference parser/writer with valid and invalid fixture gates. |
+| 05 | Compositional split fixtures | pending | Freeze leakage-resistant IID, lexical, cross-feature, and role-transfer fixtures across materially different families. |
+| 06 | Alias and strong-control bakeoff | pending | Compare packed/product aliases, feature structures, one-hot factors, and learned factored controls under a frozen decision rule. |
+| 07 | Portable result packet | pending | Export versioned evidence and prove one independent onboarding path. |
 
 ## Success criteria
 
@@ -31,3 +33,6 @@ packed fields and strong conventional factored representations.
 - Every pulse names validation commands.
 - The first benchmark contract preserves packed aliases and strong factored
   controls.
+- Canonical navigation and event schema fixtures instantiate the v1 contract.
+- The repo-local `.roles` panel has no unresolved critical or major plan
+  finding.
