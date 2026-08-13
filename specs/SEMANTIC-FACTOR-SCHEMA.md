@@ -169,9 +169,16 @@ Canonical schema and meaning files use:
 Blank lines and comments are not permitted in canonical files. Human-facing
 documentation may contain annotated examples, but canonical fixtures may not.
 
+Parsers MAY admit CRLF as a transport form, but MUST normalize it to LF before
+validation, canonical serialization, or hashing. A bare carriage return is
+invalid, and mixed LF/CRLF transport MUST fail closed. Transport bytes and
+canonical bytes are therefore distinct when CRLF is admitted.
+
 The canonical schema identity is lowercase hexadecimal SHA-256 over the exact
-canonical file bytes. Implementations MUST report the digest algorithm and
-digest together; a digest without `sha256` identity is incomplete.
+canonical declaration bytes from `factor-schema-v1` through the final
+`end-factor\n`. A document identity hashes the complete canonical file,
+including meanings. Implementations MUST report the digest kind
+(`schema_sha256` or `document_sha256`) with its value.
 
 ### Grammar
 

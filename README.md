@@ -67,6 +67,21 @@ organized into small waves and pulses with explicit validation.
 
 - [Semantic Factor Schema v1](specs/SEMANTIC-FACTOR-SCHEMA.md)
 
+## Schema conformance
+
+The Rust reference validates canonical schema documents, computes schema and
+document identities, and checks exact packed aliases:
+
+```powershell
+cargo run --quiet -- check fixtures\schemas\navigation.factor
+```
+
+Canonicalize an admitted CRLF transport or verify exact canonical output:
+
+```powershell
+cargo run --quiet -- canonicalize fixtures\schemas\navigation.factor
+```
+
 ## Research
 
 - [Prior art and benchmark custody](docs/research/2026-08-13-prior-art-and-benchmark-custody.md)
@@ -74,5 +89,10 @@ organized into small waves and pulses with explicit validation.
 ## Validation
 
 ```powershell
+cargo fmt --check
+cargo clippy --all-targets --all-features -- -D warnings
+cargo test --all-targets
+cargo run --quiet -- check fixtures\schemas\navigation.factor
+python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

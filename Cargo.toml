@@ -1,0 +1,18 @@
+[package]
+name = "factor"
+version = "0.1.0"
+edition = "2021"
+description = "Reference tooling for Factor-Preserving Semantic Encoding"
+license = "MIT"
+repository = "https://github.com/giodl73-repo/FACTOR"
+publish = false
+
+[dependencies]
+sha2 = "=0.10.9"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "deny"
+pedantic = "deny"

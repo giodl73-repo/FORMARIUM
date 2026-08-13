@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-method-foundation/WAVE.md`
 
-Current pulse: **04 - Schema parser and conformance**
+Current pulse: **05 - Compositional split fixtures**
 
 Pulse 02 froze `specs/SEMANTIC-FACTOR-SCHEMA.md`, including stable identifiers,
 complete assignments, explicit missing/unknown values, role slots, canonical
@@ -36,6 +36,13 @@ evidence protocol. Feature structures, compositional splits, role/filler
 binding, distributed representations, and formal axes remain established prior
 art.
 
+Pulse 04 implements the fail-closed Rust conformance owner in `src/lib.rs` and
+the `factor` CLI in `src/main.rs`. The implementation normalizes admitted CRLF
+transport to canonical LF, separates schema and document SHA-256 identities,
+round-trips canonical bytes, computes exact packed aliases, and rejects unused
+ordinal patterns. Its role review is
+`context/waves/2026-08-13-method-foundation/PULSE-04-ROLE-REVIEW.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -44,5 +51,10 @@ initial synthetic result. FACTOR studies semantic structure first.
 ## Validation
 
 ```powershell
+cargo fmt --check
+cargo clippy --all-targets --all-features -- -D warnings
+cargo test --all-targets
+cargo run --quiet -- check fixtures\schemas\navigation.factor
+python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

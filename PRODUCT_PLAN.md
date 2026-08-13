@@ -68,11 +68,14 @@ FACTOR internals.
 
 ## Validation
 
-The foundation is documentation-first:
-
 ```powershell
+cargo fmt --check
+cargo clippy --all-targets --all-features -- -D warnings
+cargo test --all-targets
+cargo run --quiet -- check fixtures\schemas\navigation.factor
+python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```
 
-Implementation waves must add their own formatting, testing, and focused smoke
-commands before code is admitted.
+Each implementation pulse must add focused correctness and smoke commands
+before code is admitted.
