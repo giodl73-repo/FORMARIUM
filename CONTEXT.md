@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-method-foundation/WAVE.md`
 
-Current pulse: **03 - Prior art and benchmark custody**
+Current pulse: **04 - Schema parser and conformance**
 
 Pulse 02 froze `specs/SEMANTIC-FACTOR-SCHEMA.md`, including stable identifiers,
 complete assignments, explicit missing/unknown values, role slots, canonical
@@ -28,6 +28,13 @@ The method-foundation role review is recorded at
 `context/waves/2026-08-13-method-foundation/ROLE-REVIEW.md`. The review repaired
 the execution order so research and source custody precede parser, fixture, and
 benchmark implementation.
+
+Pulse 03 is recorded at
+`docs/research/2026-08-13-prior-art-and-benchmark-custody.md`. FACTOR's
+foundation contribution is a portable custody, conformance, control, and
+evidence protocol. Feature structures, compositional splits, role/filler
+binding, distributed representations, and formal axes remain established prior
+art.
 
 ## Boundary
 

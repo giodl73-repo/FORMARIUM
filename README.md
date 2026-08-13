@@ -67,6 +67,10 @@ organized into small waves and pulses with explicit validation.
 
 - [Semantic Factor Schema v1](specs/SEMANTIC-FACTOR-SCHEMA.md)
 
+## Research
+
+- [Prior art and benchmark custody](docs/research/2026-08-13-prior-art-and-benchmark-custody.md)
+
 ## Validation
 
 ```powershell
