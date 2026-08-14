@@ -40,7 +40,7 @@ Factorium already has:
   constants, and evidence;
 - Formula Tables covering every V0 relation kind at pilot depth;
 - thirty-one specialized views across all eleven reference table families;
-- a canonical 22-entry, 140-sense, 215-factor, 34-view interchange corpus;
+- a canonical 23-entry, 150-sense, 226-factor, 35-view interchange corpus;
 - deterministic generated catalogs and unresolved-candidate reporting;
 - a six-paradigm, 66-row role-to-mechanism Mapping view;
 - two independently reviewed Factor Guides in software security and

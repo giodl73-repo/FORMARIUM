@@ -67,6 +67,14 @@ confidence, limitation, and provenance now resolve through the general
 `docs/research/2026-08-14-observation-measurement-inference.md` and
 `OBSERVATION-INFERENCE-ROLE-REVIEW.md`.
 
+The F4 control-and-response slice at
+`tables/entries/control-monitoring-response.md` separates monitoring from
+control, feedback loops from governance safeguards, alerts from
+interventions, and outputs from outcomes. Failure isolation is owned by
+`tables/diagnostics/control-response-failures.md`; research and review are
+`docs/research/2026-08-14-control-monitoring-response.md` and
+`CONTROL-RESPONSE-ROLE-REVIEW.md`.
+
 ## Success criteria
 
 - a practitioner can find a relevant sense and alternatives within minutes;

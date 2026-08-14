@@ -114,6 +114,16 @@ fixed-point review are
 `docs/research/2026-08-14-observation-measurement-inference.md` and
 `context/waves/2026-08-13-factorium-vision/OBSERVATION-INFERENCE-ROLE-REVIEW.md`.
 
+Factor Forge F4 adds
+`tables/entries/control-monitoring-response.md`, separating objectives,
+monitoring, indicators, thresholds, alerts, feedback control, governance
+controls, feedback, interventions, and outcomes. The linked
+`tables/diagnostics/control-response-failures.md` isolates failures across
+sensing, decision, routing, authority, action, feedback, and outcome stages.
+Research and fixed-point review are
+`docs/research/2026-08-14-control-monitoring-response.md` and
+`context/waves/2026-08-13-factorium-vision/CONTROL-RESPONSE-ROLE-REVIEW.md`.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.

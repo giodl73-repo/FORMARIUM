@@ -8,6 +8,10 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/amount-concentration-composition.md` | 131 | mixture - `unresolved-candidate` |
 | `tables/entries/amount-concentration-composition.md` | 132 | activity - `unresolved-candidate` |
 | `tables/entries/comparative-quantity.md` | 118 | fraction - `unresolved-candidate` |
+| `tables/entries/control-monitoring-response.md` | 159 | causal model - `unresolved-candidate` |
+| `tables/entries/control-monitoring-response.md` | 160 | set point - `unresolved-candidate` |
+| `tables/entries/control-monitoring-response.md` | 161 | actuator - `unresolved-candidate` |
+| `tables/entries/control-monitoring-response.md` | 162 | service-level objective - `unresolved-candidate` |
 | `tables/entries/cost-price-value-return.md` | 140 | accounting basis - `unresolved-candidate` |
 | `tables/entries/cost-price-value-return.md` | 141 | cash flow - `unresolved-candidate` |
 | `tables/entries/cost-price-value-return.md` | 142 | inflation - `unresolved-candidate` |

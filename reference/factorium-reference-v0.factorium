@@ -60,6 +60,29 @@ factor sign-and-direction-convention | sign and direction convention
 factor zero-denominator-policy | zero-denominator policy
 factor display-scale | display scale
 end-entry
+entry control-monitoring-response | Objective, Control, Monitoring, and Response | systems | candidate | tables/entries/control-monitoring-response.md | Objectives state desired results; monitoring observes; indicators summarize; thresholds classify; alerts route significant conditions; feedback controls influence future state; governance controls modify risk or support requirements; interventions act; outcomes record effects. Monitoring is not control, and control is not one universal sense.
+sense objective | objective
+sense monitoring | monitoring
+sense indicator | indicator
+sense threshold | threshold
+sense alert | alert
+sense feedback-control | feedback control
+sense governance-control | governance control
+sense feedback | feedback
+sense intervention | intervention
+sense outcome | outcome
+factor subject-system-and-boundary | subject, system, and boundary
+factor objective-and-desired-state | objective and desired state
+factor indicator-definition-and-measurement | indicator definition and measurement
+factor monitoring-method-window-and-frequency | monitoring method, window, and frequency
+factor threshold-basis-hysteresis-and-persistence | threshold basis, hysteresis, and persistence
+factor alert-recipient-priority-and-routing | alert recipient, priority, and routing
+factor control-sense-loop-or-governance-mechanism | control sense, loop, or governance mechanism
+factor feedback-path-delay-and-sign | feedback path, delay, and sign
+factor intervention-authority-action-and-side-effects | intervention authority, action, and side effects
+factor outcome-measures-and-time-horizon | outcome measures and time horizon
+factor review-learning-and-revision | review, learning, and revision
+end-entry
 entry cost-price-value-return | Cost, Price, Value, Utility, and Return | economics | candidate | tables/entries/cost-price-value-return.md | Cost, price, value, utility, and return can all be expressed with numbers, and several can share the same currency unit, but they answer different questions. Cost records included sacrifice from a perspective; price is an exchange term; value is an assessment for a purpose and date; utility represents preference or satisfaction; return compares an investment outcome with its baseline; discounting maps amounts across time under a model.
 sense explicit-cost | explicit cost
 sense opportunity-cost | opportunity cost
@@ -404,6 +427,8 @@ end-view
 view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,capability,boundary,environment,interface,dependency | constraint | System Composition Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves viewpoint, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and whole-level behavior as distinct system-composition obligations.
 end-view
 view decision-policy-decision | policy-rule-constraint-decision-exception | decision | decision | Policy Decision Table | tables/decisions/policy-decision.md | Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate.
+end-view
+view diagnostic-control-response-failures | control-monitoring-response | objective,monitoring,indicator,threshold,alert,feedback-control,governance-control,feedback,intervention,outcome | diagnostic | Control and Response Failure Diagnostic | tables/diagnostics/control-response-failures.md | Maps monitoring, alerting, intervention, control, and outcome symptoms to candidate causes and discriminating tests without treating one symptom as proof of one diagnosis.
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
 end-view

@@ -2,13 +2,14 @@
 
 Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Corpus identity: `45a1bc2038ab76429a3afaa94f3da51ec4280f00d932d0dbd64717d4ea2654e9`
+Corpus identity: `77b62a9693ab0f7d4e41d15e1bfa56b7e770ae67e6d234a6f9048558af9fe78e`
 
 ## Canonical Factor Table entries
 
 - [Amount, Concentration, and Composition](entries/amount-concentration-composition.md) — Count, amount of substance, concentration, and composition all answer "how much" questions, but they use different quantity kinds and denominator roles. A count enumerates specified entities; amount of substance scales that count in moles; concentration normalizes a named component by mixture volume; a composition fraction compares a component with a like-kind total. (`science`, `candidate`)
 - [Claim and Evidence](entries/claim-evidence.md) — A claim states what is asserted; evidence records observations, artifacts, or arguments relevant to it; a result reports an evaluated outcome; a limitation bounds interpretation; confidence summarizes support without replacing the evidence. Provenance is mandatory metadata, while an Evidence Table is a specialized view whose lookup task is comparing support and contradiction. (`reference`, `candidate`)
 - [Comparative Quantity](entries/comparative-quantity.md) — Ratios, rates, proportions, and percentages all compare quantities, but they do not ask the same question. The decisive factors are what occupies the numerator and denominator, whether units cancel or remain, whether equality is being asserted, and which baseline owns a change. (`quantities`, `candidate`)
+- [Objective, Control, Monitoring, and Response](entries/control-monitoring-response.md) — Objectives state desired results; monitoring observes; indicators summarize; thresholds classify; alerts route significant conditions; feedback controls influence future state; governance controls modify risk or support requirements; interventions act; outcomes record effects. Monitoring is not control, and control is not one universal sense. (`systems`, `candidate`)
 - [Cost, Price, Value, Utility, and Return](entries/cost-price-value-return.md) — Cost, price, value, utility, and return can all be expressed with numbers, and several can share the same currency unit, but they answer different questions. Cost records included sacrifice from a perspective; price is an exchange term; value is an assessment for a purpose and date; utility represents preference or satisfaction; return compares an investment outcome with its baseline; discounting maps amounts across time under a model. (`economics`, `candidate`)
 - [Electrical Quantity](entries/electrical-quantity.md) — Electric charge, current, potential difference, resistance, power, and energy form a connected circuit vocabulary but answer different questions. Charge is a quantity; current is charge flow rate; potential difference is energy change per charge between points; resistance describes a scoped voltage-current relation; power is energy-transfer rate; electrical energy accumulates that transfer through time. (`science`, `candidate`)
 - [Factorium Entry Publication](entries/factorium-entry-publication.md) — Factorium publication is the governed progression from a research question to a reviewable canonical entry and specialized views. Publication status, editorial maturity, source authority, and external domain authority are related but separate. A document is not published merely because Markdown exists or automated checks pass. (`reference`, `candidate`)
@@ -82,6 +83,7 @@ Corpus identity: `45a1bc2038ab76429a3afaa94f3da51ec4280f00d932d0dbd64717d4ea2654
 
 ## Diagnostic Table views
 
+- [Control and Response Failure Diagnostic](diagnostics/control-response-failures.md) — Maps monitoring, alerting, intervention, control, and outcome symptoms to candidate causes and discriminating tests without treating one symptom as proof of one diagnosis. (owner: `control-monitoring-response`, senses: `objective`, `monitoring`, `indicator`, `threshold`, `alert`, `feedback-control`, `governance-control`, `feedback`, `intervention`, `outcome`)
 - [Factorization Failure Diagnostic](diagnostics/factorization-failures.md) — Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses. (owner: `factorization-quality`, senses: `sense-quality`, `factor-independence`, `pivot-quality`, `constraint-quality`, `mechanism-assignment`, `change-quality`)
 
 ## Scale Table views

@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 22 anchor entries, 140 senses, 215
-ordered factors, and 34 specialized views. It is strong in foundational
+The canonical corpus currently contains 23 anchor entries, 150 senses, 226
+ordered factors, and 35 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -62,6 +62,10 @@ preserves the full source-to-claim chain.
 Separate objective, control, feedback, indicator, threshold, alert,
 intervention, and outcome. Link decisions, constraints, diagnostics, and
 transitions without collapsing monitoring into control.
+
+Status: first slice implemented. The anchor separates monitoring from action,
+feedback control from governance controls, alerts from interventions, and
+outputs from outcomes. A Diagnostic view owns control-chain failure isolation.
 
 ### F5 - Software mechanism bridge
 
