@@ -24,6 +24,10 @@ Use de-identified codes only.
 | Participant | Relevant background | Device/context voluntarily shared | Tasks |
 |---|---|---|---|
 | `P01` | pending participant response | pending | A, D, F, G |
+| `P02` | pending participant response | pending | B, C, E, G |
+| `P03` | pending participant response | pending | A, C, E, F |
+| `P04` | pending participant response | pending | B, D, F, G |
+| `P05` | pending participant response | pending | A, B, D, E |
 
 ## Task observations
 
