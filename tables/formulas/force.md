@@ -1,6 +1,10 @@
-# Force
+# Force - Newtonian Net-Force Formula View
 
 Status: candidate Formula Table
+
+Canonical headword: [Force](../entries/force.md)
+
+Sense: `physical-interaction`
 
 ## Orientation
 
@@ -119,3 +123,9 @@ Source review: established educational treatment plus authoritative SI
 references; specialist physics review remains a promotion gate for the
 Factorium entry.
 
+## Reference Delta
+
+The canonical [Force entry](../entries/force.md) owns the cross-reference-form
+comparison and non-physical senses. This Formula Table contributes the
+mathematical relation, symbol contract, units, assumptions, equivalent forms,
+dimensional audit, and failure signs for one physical sense.

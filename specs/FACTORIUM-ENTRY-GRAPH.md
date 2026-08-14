@@ -86,6 +86,7 @@ and contextual principal identity.
 | `CONTRASTS-WITH` | Difference is important for correct use |
 | `CONFUSED-WITH` | Readers commonly collapse distinct concepts |
 | `EXAMPLE-OF` | Concrete case illustrates a canonical entry or view |
+| `COMPARED-WITH` | Entry or view records a scoped delta against a named external reference or generic reference-form baseline |
 
 Textual relationship names are canonical. Symbols are display and search
 aliases only.
@@ -164,6 +165,7 @@ The graph supports independently generated indices:
 - failure pattern;
 - maturity;
 - source and contributor;
+- external comparator and reference form;
 - unresolved candidates.
 
 Example queries:

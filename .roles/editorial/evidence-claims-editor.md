@@ -18,3 +18,6 @@ applies_to: [claims, documentation, results, release]
 - Synthetic-language results remain synthetic.
 - Prior art and conventional equivalents are named.
 - Nulls and alias ties appear in summaries, not only appendices.
+- Differentiation from dictionaries, thesauri, encyclopedias, handbooks, or
+  standards is scoped and sourced; `unique`, `first`, and `only` require
+  separate competitive evidence.

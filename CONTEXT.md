@@ -83,6 +83,15 @@ kind per view, resolves Formula/Constraint/Procedure and Value/Scale overlap,
 keeps provenance separate from Evidence Tables, and applies practitioner
 review through family-specific contracts.
 
+Substantial entries now carry a compact Reference Delta comparing dictionary,
+lexical-network, thesaurus, encyclopedia, handbook, and standard ownership
+with Factorium's structured contribution. `tables/entries/force.md` is the
+first polysemous anchor: five separated senses share one canonical headword,
+while the existing Newtonian relation becomes a linked Formula Table view.
+The schema, research, and review are `specs/REFERENCE-DELTA.md`,
+`docs/research/2026-08-14-reference-delta-and-force-polysemy.md`, and
+`context/waves/2026-08-13-factorium-vision/REFERENCE-DELTA-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

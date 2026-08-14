@@ -22,3 +22,5 @@ consistent reference work?*
 - Symbols are introduced only after their textual meanings stabilize.
 - Volume organization supports multiple reading paths without duplicating
   authority.
+- Reference Deltas remain compact, source-aware, and inherited where repetition
+  would create copy drift.

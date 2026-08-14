@@ -95,6 +95,15 @@ Every candidate receives one status:
 Sources, examples, reviewers, revisions, and unresolved findings remain
 visible.
 
+### Reference Delta
+
+Standard and anchor entries include the compact comparison defined by
+`specs/REFERENCE-DELTA.md`. It states what neighboring reference forms own,
+what Factorium avoids duplicating, and which structured contribution this
+entry adds.
+
+Brief and prime entries may inherit the delta of a broader canonical entry.
+
 ## Editorial limits
 
 - Lead with tables.
@@ -142,3 +151,4 @@ An entry review asks:
 8. Are counterexamples and failure signs visible?
 9. Are platform-specific mechanisms confused with general factor roles?
 10. Can a practitioner use the entry quickly without reading an essay?
+11. Is the Reference Delta sourced and free of unsupported uniqueness claims?

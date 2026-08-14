@@ -83,6 +83,8 @@ Every specialized table view MUST retain:
   separate Procedure Tables.
 - A proof outline may appear in Evidence, but a Formula Table does not become
   established merely because it has algebraic support.
+- A Reference Delta is required comparative metadata for substantial entries,
+  not an Evidence Table family view.
 
 ## Overlap rules
 

@@ -121,6 +121,13 @@ Record separately:
 - reviewer disciplines;
 - unresolved notation or scope questions.
 
+### Reference Delta
+
+Family-defining pilots and standard or anchor Formula Tables include the
+comparison defined by `specs/REFERENCE-DELTA.md`. The delta distinguishes
+dictionary senses, encyclopedic explanation, handbook authority, and
+Factorium's structured formula-use contract without duplicating those sources.
+
 ## Quality questions
 
 1. Is the relation kind accurate?
@@ -133,4 +140,5 @@ Record separately:
 8. Are singularities and excluded regimes visible?
 9. Is the relation sourced at the claimed authority level?
 10. Can a reader tell what the formula does not establish?
-
+11. Does the Reference Delta state a supportable contribution rather than
+    unsupported uniqueness?

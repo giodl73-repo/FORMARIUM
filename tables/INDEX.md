@@ -16,6 +16,12 @@ until generated from a stable interchange format.
 - [Factor Role Table](foundations/FACTOR-ROLES.md) - eleven structural jobs
   factors can perform within a decomposition view
 
+## Canonical anchor entries
+
+- [Force](entries/force.md) - physical interaction, coercive compulsion,
+  organized body, effective influence, and operative validity, with a
+  dictionary/thesaurus/encyclopedia/handbook Reference Delta
+
 ## Examples
 
 | Entry | Principal sense | Width | Derived output or decision | Primary lesson |

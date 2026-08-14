@@ -119,3 +119,10 @@ is `REFERENCE-TABLE-FAMILIES-ROLE-REVIEW.md`.
 The full-panel rereview made primary table-family kind a required graph facet,
 clarified overlapping-family selection, separated Evidence Tables from
 mandatory provenance, and generalized practitioner review across all families.
+
+The Reference Delta comparison layer is specified at
+`specs/REFERENCE-DELTA.md`. The first full anchor is
+`tables/entries/force.md`, which separates five senses and links the Newtonian
+Formula Table as one physical view. Research is
+`docs/research/2026-08-14-reference-delta-and-force-polysemy.md`; review is
+`REFERENCE-DELTA-ROLE-REVIEW.md`.
