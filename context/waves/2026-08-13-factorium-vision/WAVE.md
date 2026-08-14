@@ -232,3 +232,13 @@ boundary, time, compounding, nominal/real basis, and purpose. Relations are in
 `tables/formulas/cost-value-return.md`; research and review are
 `docs/research/2026-08-14-cost-price-value-return.md` and
 `COST-VALUE-RETURN-ROLE-REVIEW.md`.
+
+The first non-scientific roadmap breadth checkpoint adds three anchors:
+`tables/entries/identity-naming-classification-versioning.md`,
+`tables/entries/state-event-transition-process-lifecycle.md`, and
+`tables/entries/policy-rule-constraint-decision-exception.md`. They exercise
+one version Mapping, one lifecycle Transition, one policy Decision, and one
+policy Constraint view without letting those mechanisms replace canonical
+entry meaning. Research and fixed-point review are
+`docs/research/2026-08-14-structural-anchor-breadth.md` and
+`STRUCTURAL-ANCHORS-ROLE-REVIEW.md`.

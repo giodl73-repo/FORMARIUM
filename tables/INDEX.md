@@ -62,6 +62,18 @@ until generated from a stable interchange format.
   - explicit and opportunity cost, exchange price, assessed value, utility,
   holding-period return, and present value organized by owner, perspective,
   baseline, cash flow, time, and model
+- [Identity, naming, classification, and versioning](entries/identity-naming-classification-versioning.md)
+  - entity continuity, namespace identifiers, names, aliases, classifications,
+  versions, and compatibility organized by authority, purpose, time, and
+  change scheme
+- [State, event, transition, process, and lifecycle](entries/state-event-transition-process-lifecycle.md)
+  - condition, occurrence, guarded state change, activity flow, lifecycle
+  stage, and status organized by subject, trigger, guard, effect, ordering,
+  and failure semantics
+- [Policy, rule, constraint, decision, and exception](entries/policy-rule-constraint-decision-exception.md)
+  - governing intent, operational logic, validity, derived output,
+  enforcement, and bounded deviation organized by authority, version, facts,
+  priority, controls, and review
 
 ## Examples
 
@@ -108,6 +120,25 @@ coverage and selection rules.
 | Entry | Mapping kind | Principal lesson |
 |---|---|---|
 | [Temperature scale conversion](mappings/temperature-scales.md) | exact affine conversion | Point temperatures and intervals require different transformations |
+| [Version scheme semantics](mappings/version-scheme-semantics.md) | semantic crosswalk | Generic version roles map to SemVer only for packages with a declared public API |
+
+## Transition Tables
+
+| Entry | Transition kind | Principal lesson |
+|---|---|---|
+| [Generic lifecycle](transitions/generic-lifecycle.md) | event/guard state transition | Source, event, guard, effect, target, and failure behavior are all required |
+
+## Decision Tables
+
+| Entry | Decision kind | Principal lesson |
+|---|---|---|
+| [Policy decision](decisions/policy-decision.md) | prioritized policy evaluation | Missing facts, blocking constraints, exceptions, derived outputs, and enforcement stay separate |
+
+## Constraint Tables
+
+| Entry | Constraint kind | Principal lesson |
+|---|---|---|
+| [Policy constraints](constraints/policy-constraints.md) | policy-evaluation integrity | Version, evidence, authority, bounded exceptions, output separation, enforcement, and audit are invariants |
 
 ## Composite entries
 

@@ -201,6 +201,14 @@ nominal/real basis, and purpose. Its Formula Table is
 `docs/research/2026-08-14-cost-price-value-return.md` and
 `context/waves/2026-08-13-factorium-vision/COST-VALUE-RETURN-ROLE-REVIEW.md`.
 
+R1 structural breadth now includes identity/naming/classification/versioning,
+state/event/transition/process/lifecycle, and
+policy/rule/constraint/decision/exception anchors. Their specialized views
+exercise Mapping, Transition, Decision, and Constraint families while
+preserving one canonical entry authority. Research and review are
+`docs/research/2026-08-14-structural-anchor-breadth.md` and
+`context/waves/2026-08-13-factorium-vision/STRUCTURAL-ANCHORS-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,
