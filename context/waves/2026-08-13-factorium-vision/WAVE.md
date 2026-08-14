@@ -116,3 +116,6 @@ from interval scaling. Architecture research is
 `docs/research/2026-08-14-reference-table-families.md`; specifications are
 `specs/REFERENCE-TABLE-FAMILIES.md` and `specs/MAPPING-TABLE-ENTRY.md`; review
 is `REFERENCE-TABLE-FAMILIES-ROLE-REVIEW.md`.
+The full-panel rereview made primary table-family kind a required graph facet,
+clarified overlapping-family selection, separated Evidence Tables from
+mandatory provenance, and generalized practitioner review across all families.

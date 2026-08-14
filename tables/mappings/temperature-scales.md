@@ -17,7 +17,8 @@ the point offset.
 | Source systems | Celsius, kelvin, Fahrenheit |
 | Target systems | Celsius, kelvin, Fahrenheit |
 | Mapping kind | exact affine conversion |
-| Mapping authority | NIST SI temperature guidance |
+| Cardinality | one-to-one over each physical point-temperature domain |
+| Mapping authority/version | NIST SI temperature guidance, accessed 2026-08-14 |
 | Factorium maturity | `candidate` |
 
 ## Point-temperature mappings
@@ -113,4 +114,3 @@ temperature-conversion
 
 Mapping authority: exact NIST conversion rules. Factorium presentation remains
 a candidate pending metrology and practitioner review.
-

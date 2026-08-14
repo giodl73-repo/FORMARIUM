@@ -19,6 +19,7 @@ Declare:
 - target system;
 - direction;
 - mapping kind;
+- cardinality;
 - authority and version.
 
 ### Mapping kind
@@ -84,4 +85,3 @@ Factorium presentation remains a candidate.
 8. Are normalization and rounding policies visible?
 9. Are point values distinguished from intervals or differences?
 10. Does the source authority actually own the correspondence?
-

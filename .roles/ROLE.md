@@ -46,7 +46,8 @@ artifact, and a closure condition.
 
 1. Parliament reviews factorization, semantics, controls, splits, and design.
 2. Editorial reviews entries, claims, navigation, and numeracy.
-3. Assurance reviews mappings, source custody, prior art, and reproduction.
+3. Assurance reviews equations, mappings, domain sources, source custody,
+   prior art, and reproduction.
 4. Stakeholders review practical lookup, implementability, and consumption.
 
 A fixed point requires no unresolved critical or major actionable finding.

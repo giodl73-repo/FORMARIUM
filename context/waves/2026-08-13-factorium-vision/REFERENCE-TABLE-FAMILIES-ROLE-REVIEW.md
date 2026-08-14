@@ -32,7 +32,7 @@ Status: fixed point for candidate publication
 | Mapping Integrity Auditor | pass after findings | Direction, affine form, inverse, round trip, loss, rounding, and domains are visible. |
 | Schema Implementer | defer | Executable decision, transition, and mapping semantics await dedicated interchange contracts. |
 | Benchmark Consumer | defer | Existing evidence packets are unchanged. |
-| Reference Practitioner | pass | Governing questions make family selection scannable; temperature conversion is immediately usable. |
+| Reference Practitioner | pass after findings | Governing questions make family selection scannable, and the role now supports family-specific contracts without forcing pivots or alternatives. |
 
 ## Findings and closure
 
@@ -46,6 +46,12 @@ Status: fixed point for candidate publication
 | RTF-006 | major | Exact mapping could be confused with exact displayed round trips after rounding. | Closed: mathematical exactness and finite-decimal rounding are separate. |
 | RTF-007 | major | Formula and mapping views could duplicate one another. | Closed: formulas relate quantities within a model; mappings translate between systems with preservation and loss. |
 | RTF-008 | major | A convenient conversion could accept physically invalid temperatures. | Closed: scale-specific absolute-zero domains remain visible. |
+| RTF-009 | critical | `HAS-VIEW` still described only factorization views, leaving specialized family identity outside the canonical graph. | Closed: every view now declares exactly one primary table-family kind and the graph indexes that facet. |
+| RTF-010 | major | Formula constraints and recurrences overlapped Constraint and Procedure Tables without a selection rule. | Closed: the principal reader question selects the primary family; substantial secondary questions become linked sibling views. |
+| RTF-011 | critical | Evidence Tables could duplicate the provenance metadata required on every view and become a competing source authority. | Closed: provenance remains mandatory metadata; Evidence Tables exist only when evidence comparison is itself the lookup task. |
+| RTF-012 | major | Reference Value and Scale Tables could both claim threshold and anchor values. | Closed: Value Tables own sourced data; Scale Tables own interpretation and link to those values. |
+| RTF-013 | major | The Reference Practitioner role required pivots and multiple alternatives even for exact mappings and authoritative values. | Closed: the role now requires the family-appropriate contract and alternatives only when the problem admits them. |
+| RTF-014 | major | The Mapping Table contract asked about cardinality but did not require it as identity metadata. | Closed: cardinality is mandatory and the temperature pilot declares a one-to-one physical-domain mapping. |
+| RTF-015 | minor | The foundation called a draft Formula Table a current stable form. | Closed: wording now identifies Factor and Formula Tables as the most developed drafts. |
 
 No critical or major finding remains open for candidate publication.
-

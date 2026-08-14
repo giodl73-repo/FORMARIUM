@@ -37,6 +37,11 @@ review process.
 | Reference value vs. formula | Value tables curate sourced data; formulas compute or relate |
 | Evidence vs. every other family | Evidence supports a view but does not replace the view's domain semantics |
 
+Each view chooses one primary family according to the reader's immediate
+question. Supporting equations, constraints, evidence, or procedures do not
+make it a multi-family view; substantial secondary questions become linked
+sibling views.
+
 ## Family composition
 
 Families can link without merging:
@@ -58,8 +63,7 @@ Reference Value Table
 ## Maturity and provenance
 
 - Taxonomy maturity: `candidate`
-- Current stable forms: general Factor Table and draft Formula Table
+- Most developed forms: draft Factor Table and draft Formula Table
 - First new prototype: Mapping Table
 - Promotion gate: three diverse examples per family, overlap review,
   practitioner lookup testing, and complete role review
-

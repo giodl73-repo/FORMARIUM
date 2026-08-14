@@ -9,6 +9,10 @@ table views. A table family answers a recurring kind of lookup question. It
 does not create a separate headword identity or override the entry's senses,
 sources, maturity, and typed relationships.
 
+Every view declares exactly one primary family. Supporting material may use
+other forms, but separate reader questions become linked sibling views rather
+than one ambiguously multi-family table.
+
 ## Initial families
 
 | Family | Governing question | Typical subtypes |
@@ -56,7 +60,7 @@ One entry may own several view kinds. For example, temperature may have:
 Every specialized table view MUST retain:
 
 - canonical entry and sense identity;
-- view kind and one-line purpose;
+- exactly one primary view kind and one-line purpose;
 - source and target reader question;
 - domain and applicability;
 - explicit inputs, outputs, conditions, and exclusions;
@@ -80,6 +84,24 @@ Every specialized table view MUST retain:
 - A proof outline may appear in Evidence, but a Formula Table does not become
   established merely because it has algebraic support.
 
+## Overlap rules
+
+- Use a Formula Table for a constraint when the compact symbolic relation is
+  the principal lookup target. Use a Constraint Table when allowed, forbidden,
+  required, or invariant cases are the principal lookup target.
+- Use a Formula Table for an algorithmic recurrence when the mathematical
+  state-update relation is primary. Use a Procedure Table when ordered work,
+  checks, side effects, recovery, or operator responsibility is primary.
+- Every view carries provenance metadata. Use an Evidence Table only when
+  comparing claims, sources, methods, results, limitations, or confidence is
+  itself the reader's lookup task.
+- Use a Reference Value Table to curate sourced values and properties. Use a
+  Scale Table to interpret ordering, bands, anchors, or thresholds. A Scale
+  Table may reference values without owning their source definitions.
+- Use a Diagnostic Table to discriminate among possible causes. Link a
+  Decision Table when a response must be selected and a Procedure Table when
+  the selected response must be executed.
+
 ## Avoiding duplicate authority
 
 Specialized tables are projections or views. The canonical entry owns:
@@ -101,4 +123,3 @@ Before stabilizing a family:
 3. test practitioner lookup;
 4. identify any executable or machine-validation boundary;
 5. close all critical and major role findings.
-

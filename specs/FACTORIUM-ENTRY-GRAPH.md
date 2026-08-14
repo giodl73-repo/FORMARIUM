@@ -24,21 +24,27 @@ A canonical **entry** owns a stable headword identity.
 An entry may contain several **senses**. Each sense represents a materially
 different meaning or problem.
 
-A sense may contain several **factorization views**. Each view declares one
-candidate decomposition, its pivot, constraints, use conditions, and failure
-signs.
+A sense may contain several specialized **views**. Every view declares one
+primary table-family kind, such as Factor, Formula, Mapping, Decision, or
+Transition. Family-specific contracts then define its factors, symbols,
+mappings, rules, states, conditions, or other content.
 
 These levels MUST remain separate:
 
 ```text
 entry
   HAS-SENSE sense
-    HAS-VIEW factorization
-      FACTORS-INTO factor-entry
+    HAS-VIEW view [primary-view-kind]
+      view-specific relationships
 ```
 
-A factorization with eight factors is not an eight-level hierarchy. Factor
+A Factor Table view with eight factors is not an eight-level hierarchy. Factor
 count describes width; recursive decomposition depth describes depth.
+
+A view has exactly one primary table-family kind for navigation and
+validation. It MAY link supporting views of other kinds; it MUST NOT claim
+several primary kinds merely because one display contains helper equations,
+constraints, evidence, or procedures.
 
 ## Relative primes and composites
 
@@ -66,7 +72,7 @@ and contextual principal identity.
 | Relationship | Meaning |
 |---|---|
 | `HAS-SENSE` | Entry has a materially distinct meaning or problem sense |
-| `HAS-VIEW` | Sense has a candidate factorization |
+| `HAS-VIEW` | Sense has a typed candidate view with one primary table-family kind |
 | `FACTORS-INTO` | Composite view references a constituent factor entry |
 | `PIVOTS-ON` | View privileges one factor as its organizing identity |
 | `CONSTRAINED-BY` | Valid combinations are restricted by another entry or declared rule |
@@ -146,6 +152,7 @@ The graph supports independently generated indices:
 
 - headword and phrase;
 - sense and tagline;
+- primary table-family view kind;
 - domain;
 - factor entry;
 - prime or composite role within a view;
@@ -166,6 +173,7 @@ factor:authorization-policy role:prime domain:security
 pivot:protected-object mechanism:rust-trait
 relation:FACTORS-INTO contains:request-context
 failure:hidden-dependency maturity:supported
+view-kind:mapping domain:measurement
 ```
 
 Indexes are projections of canonical entries and edges. They do not own

@@ -78,6 +78,10 @@ one canonical entry graph. Mapping Tables are the first new prototype:
 conversion from interval scaling. Research and review are
 `docs/research/2026-08-14-reference-table-families.md` and
 `context/waves/2026-08-13-factorium-vision/REFERENCE-TABLE-FAMILIES-ROLE-REVIEW.md`.
+The full-panel fixed-point rereview requires exactly one primary table-family
+kind per view, resolves Formula/Constraint/Procedure and Value/Scale overlap,
+keeps provenance separate from Evidence Tables, and applies practitioner
+review through family-specific contracts.
 
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
