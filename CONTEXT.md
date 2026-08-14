@@ -131,6 +131,17 @@ external-usability and domain-promotion gates. It also triggers typed-relation
 and review-coverage compatibility work before 50 canonical anchors and adds
 unresolved-candidate and table-family scaling rules.
 
+Factor Forge F5 adds three connected software mechanism anchors:
+`tables/entries/software-type-value-function.md`,
+`tables/entries/software-module-service-resource.md`, and
+`tables/entries/software-transaction-message-contract.md`. Their three
+Mapping views preserve target-system scope across Rust, Haskell, PostgreSQL,
+OASIS SOA, HTTP, Kubernetes, OpenAPI, and Design by Contract mechanisms.
+Research and fixed-point review are
+`docs/research/2026-08-14-software-mechanism-bridge.md` and
+`context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md`.
+The corpus now contains 26 entries, 159 senses, 256 factors, and 38 views.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.

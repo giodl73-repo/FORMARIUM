@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 23 anchor entries, 150 senses, 226
-ordered factors, and 35 specialized views. It is strong in foundational
+The canonical corpus currently contains 26 anchor entries, 159 senses, 256
+ordered factors, and 38 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -76,6 +76,10 @@ Add canonical concept entries needed by the existing cross-paradigm mapping:
 type, value, function, module, service, resource, transaction, message, and
 contract. Mechanism assignments remain contextual Mapping views.
 
+Status: first slice implemented as three connected canonical anchors and three
+Mapping views. It resolves the recurrent `message`, `service`, and `contract`
+candidates without adding adjacent vocabulary merely for growth.
+
 ## Batch gate
 
 Each batch must:
@@ -116,6 +120,26 @@ Research concluded that V0 can preserve this slice through ordered senses,
 factors, and a linked specialized view. Richer machine-queryable relation
 payloads remain deferred behind a future versioned compatibility boundary.
 
-Next: complete F1 with narrower entries only where review shows that subsystem,
-service, contract, or architecture cannot remain visible unresolved
-candidates.
+Narrower F1 terms remain deferred until recurrence, reader demand, or a later
+batch need justifies admission. F5 now provides canonical service and contract
+custody without promoting subsystem or architecture automatically.
+
+## F5 first slice
+
+The software mechanism bridge now groups the nine admitted concepts into:
+
+- `tables/entries/software-type-value-function.md`;
+- `tables/entries/software-module-service-resource.md`;
+- `tables/entries/software-transaction-message-contract.md`.
+
+Each anchor owns one contextual Mapping view. The bridge separates types from
+classes, modules from files, services from capabilities, resources from
+representations, transactions from requests, messages from events, and
+contracts from schemas. Research and fixed-point review are
+`docs/research/2026-08-14-software-mechanism-bridge.md` and
+`SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md`.
+
+The F5 relation payloads add concrete requirements to the typed-relation
+compatibility study but do not change V0. Next: select the next R5 coverage
+batch from repeated unresolved candidates and volume balance rather than
+expanding the software vocabulary automatically.

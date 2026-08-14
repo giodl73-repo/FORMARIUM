@@ -152,10 +152,10 @@ capability, interaction, and reliance valid.
 - [Identity, Naming, Classification, and Versioning](identity-naming-classification-versioning.md)
 - [State, Event, Transition, Process, and Lifecycle](state-event-transition-process-lifecycle.md)
 - [Factor Role to Mechanism Crosswalk](../mappings/factor-role-mechanisms.md)
+- [Software Module, Service, and Resource](software-module-service-resource.md)
+- [Software Transaction, Message, and Contract](software-transaction-message-contract.md)
 - architecture - `unresolved-candidate`
 - subsystem - `unresolved-candidate`
-- service - `unresolved-candidate`
-- contract - `unresolved-candidate`
 
 ## Sources and provenance
 

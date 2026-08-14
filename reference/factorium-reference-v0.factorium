@@ -348,6 +348,51 @@ factor uncertainty-representation | uncertainty representation
 factor aggregation-or-decision-policy | aggregation or decision policy
 factor reporting-scale-and-provenance | reporting scale and provenance
 end-entry
+entry software-module-service-resource | Software Module, Service, and Resource | software | candidate | tables/entries/software-module-service-resource.md | A module groups and scopes software declarations; a service provides access to capabilities through an interface under descriptions, constraints, and policies; a resource is an identified subject exposed or managed under target-system interaction and lifecycle semantics. Files, endpoints, representations, manifests, and deployments remain mechanisms rather than definitions.
+sense module | module
+sense service | service
+sense resource | resource
+factor system-platform-and-version | system, platform, and version
+factor selected-module-service-or-resource-sense | selected module, service, or resource sense
+factor identity-namespace-and-addressing | identity, namespace, and addressing
+factor owned-declarations-capability-or-subject | owned declarations, capability, or subject
+factor public-interface-and-visibility | public interface and visibility
+factor representation-and-information-model | representation and information model
+factor dependency-discovery-and-reachability | dependency, discovery, and reachability
+factor state-lifecycle-and-ownership | state, lifecycle, and ownership
+factor policy-authorization-and-operational-conditions | policy, authorization, and operational conditions
+factor compatibility-observation-and-provenance | compatibility, observation, and provenance
+end-entry
+entry software-transaction-message-contract | Software Transaction, Message, and Contract | software | candidate | tables/entries/software-transaction-message-contract.md | A transaction groups work under declared completion, rollback, visibility, and concurrency semantics; a message is a bounded communication unit under a protocol; a contract states obligations, assumptions, guarantees, constraints, and compatibility at a boundary. Requests, events, schemas, acknowledgments, commits, and business completion remain distinct.
+sense transaction | transaction
+sense message | message
+sense contract | contract
+factor participants-system-boundary-and-authority | participants, system boundary, and authority
+factor selected-transaction-message-or-contract-sense | selected transaction, message, or contract sense
+factor identity-correlation-and-version | identity, correlation, and version
+factor inputs-payload-and-representations | inputs, payload, and representations
+factor operations-obligations-and-expected-effects | operations, obligations, and expected effects
+factor ordering-concurrency-and-visibility | ordering, concurrency, and visibility
+factor completion-acknowledgment-commit-or-rollback | completion, acknowledgment, commit, or rollback
+factor failure-timeout-retry-idempotency-and-compensation | failure, timeout, retry, idempotency, and compensation
+factor security-privacy-and-resource-limits | security, privacy, and resource limits
+factor evidence-compatibility-and-supersession | evidence, compatibility, and supersession
+end-entry
+entry software-type-value-function | Software Type, Value, and Function | software | candidate | tables/entries/software-type-value-function.md | A type governs value interpretation and valid operations; a value is particular computational content under a language or runtime model; a function is a callable abstraction with inputs, results, evaluation behavior, and possibly effects. Classes, structs, schemas, methods, closures, queries, and callable objects remain contextual mechanisms.
+sense type | type
+sense value | value
+sense function | function
+factor language-runtime-and-version | language, runtime, and version
+factor selected-type-value-or-function-sense | selected type, value, or function sense
+factor identity-name-and-namespace | identity, name, and namespace
+factor representation-and-interpretation | representation and interpretation
+factor inputs-outputs-and-parameter-binding | inputs, outputs, and parameter binding
+factor operations-capabilities-and-constraints | operations, capabilities, and constraints
+factor evaluation-strategy-and-control-behavior | evaluation strategy and control behavior
+factor effects-mutation-errors-and-exceptions | effects, mutation, errors, and exceptions
+factor ownership-lifetime-and-concurrency | ownership, lifetime, and concurrency
+factor compatibility-provenance-and-change-policy | compatibility, provenance, and change policy
+end-entry
 entry state-event-transition-process-lifecycle | State, Event, Transition, Process, and Lifecycle | systems | candidate | tables/entries/state-event-transition-process-lifecycle.md | A state is a condition or active configuration; an event is an occurrence; a transition changes state when triggers and guards permit; a process organizes activities and flow; a lifecycle selects meaningful stages across an entity's existence. Status lists often mix all five and therefore hide causes, validity, and progression.
 sense state | state
 sense event | event
@@ -479,6 +524,12 @@ end-view
 view mapping-factor-role-mechanisms | factorization-quality | mechanism-assignment | mapping | Factor Role to Mechanism Crosswalk | tables/mappings/factor-role-mechanisms.md | Maps eleven general factor roles into six bounded target-system mechanism vocabularies while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
 end-view
 view mapping-organizational-assignment-semantics | organization-role-authority | organization,organizational-role,responsibility,authority,accountability-answerability,action-accountability,delegation,ownership-stewardship | mapping | Organizational Assignment Semantics | tables/mappings/organizational-assignment-semantics.md | Maps canonical organization, role, responsibility, authority, accountability, delegation, and stewardship concepts to common organizational records while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
+end-view
+view mapping-software-architecture-mechanisms | software-module-service-resource | module,service,resource | mapping | Software Architecture Mechanisms | tables/mappings/software-architecture-mechanisms.md | Maps module, service, and resource concepts into bounded language, SOA, HTTP, and Kubernetes mechanisms while preserving namespace, capability-access, resource, representation, state, lifecycle, and non-equivalence distinctions.
+end-view
+view mapping-software-interaction-mechanisms | software-transaction-message-contract | transaction,message,contract | mapping | Software Interaction Mechanisms | tables/mappings/software-interaction-mechanisms.md | Maps transaction, message, and contract concepts into bounded database, HTTP, SOA, API-description, and assertion mechanisms while separating acknowledgment, commit, business completion, event, representation, schema, and behavioral obligations.
+end-view
+view mapping-software-program-constructs | software-type-value-function | type,value,function | mapping | Software Program Construct Mechanisms | tables/mappings/software-program-constructs.md | Maps type, value, and function concepts into bounded Rust, Haskell, and PostgreSQL mechanisms without treating classes, variables, representations, signatures, purity, or target syntax as universal definitions.
 end-view
 view mapping-temperature-scales | thermal-quantity | temperature | mapping | Temperature Scale Conversion | tables/mappings/temperature-scales.md | Celsius, kelvin, and Fahrenheit assign different numerical values to the same point temperature. Point-temperature conversion is affine because scale and zero point may differ. Temperature intervals use scale only and MUST NOT reuse the point offset.
 end-view

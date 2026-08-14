@@ -48,6 +48,18 @@ retained.
 | `constraint` | Which combinations or transitions are invalid? |
 | `derived-view` | Which output is computed or projected from other factors? |
 
+## Canonical software vocabulary
+
+The mechanism terms used below resolve through three connected F5 anchors:
+
+- [Software Type, Value, and Function](../entries/software-type-value-function.md);
+- [Software Module, Service, and Resource](../entries/software-module-service-resource.md);
+- [Software Transaction, Message, and Contract](../entries/software-transaction-message-contract.md).
+
+These anchors do not replace target-language definitions. They preserve the
+general lookup questions and explicit non-equivalences needed before assigning
+mechanisms in a selected paradigm.
+
 ## Object-oriented assignment
 
 | Role | Candidate mechanisms | Condition | Not equivalent to |

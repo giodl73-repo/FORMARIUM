@@ -136,7 +136,7 @@ relations.
 - [Measure](../roots/measure.md)
 - [Context](../roots/context.md)
 - [Relation](../roots/relation.md)
-- message - `unresolved-candidate`
+- [Software Transaction, Message, and Contract](software-transaction-message-contract.md)
 - encoding - `unresolved-candidate`
 - channel - `unresolved-candidate`
 - mutual information - `unresolved-candidate`
@@ -158,4 +158,3 @@ relations.
 
 Comparator access date: 2026-08-14. Source definitions remain
 domain-scoped; Factorium organization remains `candidate`.
-

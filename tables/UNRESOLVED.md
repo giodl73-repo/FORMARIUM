@@ -29,7 +29,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/identity-naming-classification-versioning.md` | 128 | namespace - `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 129 | authority - `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 130 | compatibility - `unresolved-candidate` |
-| `tables/entries/information-data-signal-noise.md` | 139 | message - `unresolved-candidate` |
 | `tables/entries/information-data-signal-noise.md` | 140 | encoding - `unresolved-candidate` |
 | `tables/entries/information-data-signal-noise.md` | 141 | channel - `unresolved-candidate` |
 | `tables/entries/information-data-signal-noise.md` | 142 | mutual information - `unresolved-candidate` |
@@ -55,10 +54,8 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/state-event-transition-process-lifecycle.md` | 124 | workflow - `unresolved-candidate` |
 | `tables/entries/state-event-transition-process-lifecycle.md` | 125 | compensation - `unresolved-candidate` |
 | `tables/entries/state-event-transition-process-lifecycle.md` | 126 | concurrency - `unresolved-candidate` |
-| `tables/entries/system-composition-dependency.md` | 155 | architecture - `unresolved-candidate` |
-| `tables/entries/system-composition-dependency.md` | 156 | subsystem - `unresolved-candidate` |
-| `tables/entries/system-composition-dependency.md` | 157 | service - `unresolved-candidate` |
-| `tables/entries/system-composition-dependency.md` | 158 | contract - `unresolved-candidate` |
+| `tables/entries/system-composition-dependency.md` | 157 | architecture - `unresolved-candidate` |
+| `tables/entries/system-composition-dependency.md` | 158 | subsystem - `unresolved-candidate` |
 | `tables/entries/thermal-quantity.md` | 128 | phase - `unresolved-candidate` |
 | `tables/entries/thermal-quantity.md` | 129 | thermodynamic system - `unresolved-candidate` |
 | `tables/entries/work-energy-power.md` | 130 | torque - `unresolved-candidate` |
