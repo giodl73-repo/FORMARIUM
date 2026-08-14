@@ -46,6 +46,10 @@ until generated from a stable interchange format.
   - entity count, amount of substance, amount and mass concentration, and
   composition fractions organized by entity, component, quantity basis,
   mixture boundary, and state
+- [Periodic and wave quantity](entries/periodic-wave-quantity.md) - period,
+  frequency, angular frequency, wavelength, wave number, phase, and wave speed
+  organized by cycle, temporal and spatial reference, propagation, medium,
+  and regime
 
 ## Examples
 
@@ -82,6 +86,7 @@ coverage and selection rules.
 | [Probability, risk, and uncertainty relations](formulas/probability-risk-uncertainty.md) | identity, mapping, expectation, model schema, and measurement relation | conditional probability, odds, expected loss, risk, and expanded uncertainty | Separate event models, representations, consequences, and coverage |
 | [Thermal quantities](formulas/thermal-quantities.md) | equilibrium, response, balance, and constraint | temperature, heat, internal energy, heat capacity, and entropy | Separate state, transfer, response, sign, phase, and reversible path |
 | [Amount, concentration, and composition](formulas/amount-concentration-composition.md) | definition and closure constraint | entity count, amount of substance, concentrations, and composition fractions | Separate entity, component, mixture volume, quantity basis, and state |
+| [Periodic and wave quantities](formulas/periodic-wave-quantities.md) | definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, and speed | Separate cycles, radians, temporal/spatial repetition, pattern propagation, and regime |
 
 ## Mapping Tables
 

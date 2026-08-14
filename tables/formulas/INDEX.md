@@ -25,6 +25,7 @@ or fame.
 | [Probability, risk, and uncertainty relations](probability-risk-uncertainty.md) | Identity, mapping, expectation, model schema, and measurement relation | conditional probability, odds, expected loss, risk, expanded uncertainty | Model, consequence, horizon, and coverage remain explicit |
 | [Thermal quantities](thermal-quantities.md) | Equilibrium, response, balance, and constraint | temperature, heat, internal energy, heat capacity, entropy | State, transfer, sign, phase, constraint, and path remain explicit |
 | [Amount, concentration, and composition](amount-concentration-composition.md) | Definition and closure constraint | entity count, amount of substance, concentrations, composition fractions | Entity, component, mixture, quantity basis, state, and closure remain explicit |
+| [Periodic and wave quantities](periodic-wave-quantities.md) | Definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, speed | Cycle, reference, propagation, medium, mode, and regime remain explicit |
 
 ## Relation-kind coverage
 

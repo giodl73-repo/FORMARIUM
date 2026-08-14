@@ -85,6 +85,7 @@ contains average, instantaneous, and constant-acceleration relations.
 - [Matter and Load Measure](matter-load-measure.md)
 - [Work, Energy, and Power](work-energy-power.md)
 - [Comparative Quantity](comparative-quantity.md)
+- [Periodic and Wave Quantity](periodic-wave-quantity.md)
 - [Time](../roots/time.md)
 - [Transformation](../roots/transformation.md)
 - path — `unresolved-candidate`

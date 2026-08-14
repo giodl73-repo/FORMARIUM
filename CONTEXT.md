@@ -166,6 +166,14 @@ preparation state, and closure. Its Formula Table is
 `docs/research/2026-08-14-amount-concentration-composition.md` and
 `context/waves/2026-08-13-factorium-vision/AMOUNT-COMPOSITION-ROLE-REVIEW.md`.
 
+The periodic-wave-quantity pilot at
+`tables/entries/periodic-wave-quantity.md` separates period, frequency,
+angular frequency, wavelength, wave number, phase, and wave speed by cycle,
+reference, propagation, medium, mode, and periodic/pulse/spectral regime. Its
+Formula Table is `tables/formulas/periodic-wave-quantities.md`; research and
+review are `docs/research/2026-08-14-periodic-wave-quantity.md` and
+`context/waves/2026-08-13-factorium-vision/PERIODIC-WAVE-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

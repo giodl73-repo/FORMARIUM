@@ -195,3 +195,12 @@ and closure conditions. Relations are in
 `tables/formulas/amount-concentration-composition.md`; research and review are
 `docs/research/2026-08-14-amount-concentration-composition.md` and
 `AMOUNT-COMPOSITION-ROLE-REVIEW.md`.
+
+The periodic-wave-quantity cluster at
+`tables/entries/periodic-wave-quantity.md` separates period, frequency,
+angular frequency, wavelength, wave number, phase, and wave speed through
+cycle definition, temporal and spatial reference, propagation direction,
+medium, mode, and regime. Relations are in
+`tables/formulas/periodic-wave-quantities.md`; research and review are
+`docs/research/2026-08-14-periodic-wave-quantity.md` and
+`PERIODIC-WAVE-ROLE-REVIEW.md`.
