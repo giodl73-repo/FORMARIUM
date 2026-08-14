@@ -70,6 +70,7 @@ organized into small waves and pulses with explicit validation.
 - [Strong-Control Bakeoff v1](specs/STRONG-CONTROL-BAKEOFF.md)
 - [Portable Evidence Packet v1](specs/PORTABLE-PACKET.md)
 - [Role Frames and Analysis Sets v1](specs/ROLE-ANALYSIS-SETS.md)
+- [Role and Ambiguity Fixtures v1](specs/ROLE-AMBIGUITY-FIXTURES.md)
 
 ## Schema conformance
 
@@ -90,6 +91,12 @@ Inspect the frozen generated corpus and split identities:
 
 ```powershell
 cargo run --quiet -- fixtures
+```
+
+Inspect the ordered-role and ambiguity fixture identities:
+
+```powershell
+cargo run --quiet -- role-fixtures
 ```
 
 Run the deterministic strong-control comparison:
@@ -127,6 +134,7 @@ cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
+cargo run --quiet -- role-fixtures
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1

@@ -3,6 +3,7 @@
 pub mod bakeoff;
 pub mod corpus;
 pub mod packet;
+pub mod role_fixtures;
 
 use sha2::{Digest, Sha256};
 use std::collections::HashSet;

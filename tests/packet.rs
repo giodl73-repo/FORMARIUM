@@ -15,11 +15,15 @@ fn packet_round_trips_through_the_filesystem() {
 }
 
 #[test]
-fn packet_manifest_identity_is_frozen() {
+fn committed_release_identity_is_frozen_while_new_producers_get_new_identities() {
     let packet = build_packet().unwrap();
     assert_eq!(packet.files().len(), 15);
+    assert_eq!(packet.sha256().len(), 64);
+    let release = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("artifacts")
+        .join("factor-v1");
     assert_eq!(
-        packet.sha256(),
+        validate_packet(&release).unwrap(),
         "70190b6e53e8482b37a036f0945b095ac92235bb78333c27f42455c2b27010a9"
     );
 }

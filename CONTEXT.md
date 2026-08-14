@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-role-and-ambiguity/WAVE.md`
 
-Current pulse: **03 - Role and ambiguity fixtures**
+Current pulse: **04 - Binding controls**
 
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.
@@ -82,6 +82,14 @@ reference duplicate-free candidate meaning sets grouped into leakage-resistant
 analysis families. Its review is
 `context/waves/2026-08-13-role-and-ambiguity/PULSE-02-ROLE-REVIEW.md`.
 
+Pulse 03 implements both generated families in `src/role_fixtures.rs`.
+Transfer retains ordered recipient slots and equal fillers; attachment retains
+two valid candidates for ambiguous surfaces plus reading-specific paraphrases.
+Six manifests enforce ordinary family/candidate disjointness and explicit
+disambiguation overlap. Frozen identities are in
+`specs/ROLE-AMBIGUITY-FIXTURES.md`, with review at
+`context/waves/2026-08-13-role-and-ambiguity/PULSE-03-ROLE-REVIEW.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -95,6 +103,7 @@ cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
+cargo run --quiet -- role-fixtures
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1

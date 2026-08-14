@@ -53,4 +53,6 @@ python verify_packet.py .
 ```
 
 The export command rejects nonempty targets so stale or unlisted files cannot
-silently survive regeneration.
+silently survive regeneration. A later producer revision receives a new packet
+identity because the manifest binds producer source. The committed
+`artifacts/factor-v1` release and its identity remain immutable.

@@ -76,3 +76,28 @@ fn packet_commands_export_and_validate_closed_world_artifacts() {
     assert!(check.status.success());
     std::fs::remove_dir_all(root).unwrap();
 }
+
+#[test]
+fn role_fixtures_command_reports_both_families_and_all_splits() {
+    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .arg("role-fixtures")
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.starts_with("factor-role-fixture-summary-v1\n"));
+    assert_eq!(
+        stdout
+            .lines()
+            .filter(|line| line.starts_with("corpus "))
+            .count(),
+        2
+    );
+    assert_eq!(
+        stdout
+            .lines()
+            .filter(|line| line.starts_with("split "))
+            .count(),
+        6
+    );
+}
