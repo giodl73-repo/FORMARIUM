@@ -75,6 +75,8 @@ cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- bakeoff
+cargo run --quiet -- packet-check artifacts\factor-v1
+python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

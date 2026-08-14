@@ -68,6 +68,7 @@ organized into small waves and pulses with explicit validation.
 - [Semantic Factor Schema v1](specs/SEMANTIC-FACTOR-SCHEMA.md)
 - [Compositional Split Fixtures v1](specs/COMPOSITIONAL-SPLITS.md)
 - [Strong-Control Bakeoff v1](specs/STRONG-CONTROL-BAKEOFF.md)
+- [Portable Evidence Packet v1](specs/PORTABLE-PACKET.md)
 
 ## Schema conformance
 
@@ -102,6 +103,16 @@ preservation beats whole-meaning lookup on the systematic synthetic holdouts,
 while packed aliases, feature structures, one-hot factors, and dense factored
 controls tie.
 
+Validate the committed self-contained evidence packet without importing the
+Rust crate:
+
+```powershell
+cd artifacts\factor-v1
+python verify_packet.py .
+```
+
+See [independent packet onboarding](docs/ONBOARDING.md).
+
 ## Research
 
 - [Prior art and benchmark custody](docs/research/2026-08-13-prior-art-and-benchmark-custody.md)
@@ -115,6 +126,8 @@ cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- bakeoff
+cargo run --quiet -- packet-check artifacts\factor-v1
+python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

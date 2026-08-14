@@ -1,0 +1,1031 @@
+factor-corpus-v1
+family event
+generator exhaustive-cartesian-v1
+seed none
+schema_sha256 e08e855f6b1ed694fae03869b9c6677183d35af22b04952a797ba684b8190f67
+meanings 256
+surfaces 512
+meaning robot-sees-robot-present-affirmative ordinals 0 0 0 0 0
+surface robot-sees-robot-present-affirmative-active template active text_sha256 0060531fb6eba694f8231e58da6d8f77b9efc11c614c7727ac01fd4437461993
+surface robot-sees-robot-present-affirmative-passive template passive text_sha256 c1723381aa30613bf9bedee20ba28b3cdfe179bd517137d86ac968c60baab4b2
+end-meaning
+meaning robot-sees-robot-present-negated ordinals 0 0 0 0 1
+surface robot-sees-robot-present-negated-active template active text_sha256 0512f6345f53fc2b80964fffd16fb856a7e4b29c999eccb7f5810a93706dfde5
+surface robot-sees-robot-present-negated-passive template passive text_sha256 fb498b7f710338af105863f69abd9c4db50cd8ccacf25d75dac7cf3474f7248b
+end-meaning
+meaning robot-sees-robot-past-affirmative ordinals 0 0 0 1 0
+surface robot-sees-robot-past-affirmative-active template active text_sha256 6f0557ee448b0f015e802049073a0aab5101ba8e5d111517f68b74f91b510c0b
+surface robot-sees-robot-past-affirmative-passive template passive text_sha256 4d6ed5360acbf770b0bb62b870e76c356548f39e871157fe9022185ba8587935
+end-meaning
+meaning robot-sees-robot-past-negated ordinals 0 0 0 1 1
+surface robot-sees-robot-past-negated-active template active text_sha256 1059978b96e9d4db5d9285645ef74332672aa1c3d7a3e4ab8f1493c70182d9a7
+surface robot-sees-robot-past-negated-passive template passive text_sha256 b6a0726f8b92f319d5e8925181f4965fdac4216a1243edc41833a447b77566f2
+end-meaning
+meaning robot-sees-child-present-affirmative ordinals 0 0 1 0 0
+surface robot-sees-child-present-affirmative-active template active text_sha256 33bc1e8baf4f8ef0f8c36403526ef79a4be08cc81c03656b05f76cd2572845fb
+surface robot-sees-child-present-affirmative-passive template passive text_sha256 39f9e143461c87f6302ac509f7d078008bf8261e02c7c697a0a7ef2ebb6cea73
+end-meaning
+meaning robot-sees-child-present-negated ordinals 0 0 1 0 1
+surface robot-sees-child-present-negated-active template active text_sha256 7af0001b4f50c8f48930ba4fa0a58760fd0b816018dca194549aedfb82271fb5
+surface robot-sees-child-present-negated-passive template passive text_sha256 f9d7aef7c6953a8f28dbfec724ebdc3e61e1f5d709a195a8ab07fc36f970439b
+end-meaning
+meaning robot-sees-child-past-affirmative ordinals 0 0 1 1 0
+surface robot-sees-child-past-affirmative-active template active text_sha256 d74ab2edbadc5d7fa32973014792b3ff2a27eb78ceff892fdd01571117fd1a33
+surface robot-sees-child-past-affirmative-passive template passive text_sha256 297dd0745c3ff926ec816ee8e79eee1d6170292a95abaafb845a5ef31bef9420
+end-meaning
+meaning robot-sees-child-past-negated ordinals 0 0 1 1 1
+surface robot-sees-child-past-negated-active template active text_sha256 c31e1d2b3527d27f82faa35983071f17ad5902b9d29f077ff27a024ac93993e1
+surface robot-sees-child-past-negated-passive template passive text_sha256 44b303af39c0fb6203b6e4cab9803464e32397dc8899725f106e812c4c5230ec
+end-meaning
+meaning robot-sees-artist-present-affirmative ordinals 0 0 2 0 0
+surface robot-sees-artist-present-affirmative-active template active text_sha256 d9080adc4a0cd5ef059531ee0371b30202e3bbd758a4afbc9863fe374a1adb6e
+surface robot-sees-artist-present-affirmative-passive template passive text_sha256 ca904c0cd5cbf3e43da1241a8af3dcd9bf89849fe6da02cbb1b5cf74b14e02f5
+end-meaning
+meaning robot-sees-artist-present-negated ordinals 0 0 2 0 1
+surface robot-sees-artist-present-negated-active template active text_sha256 9a17ef2271b72c2996cc825ea451a93f2227db85bda3c0785250783908c9d030
+surface robot-sees-artist-present-negated-passive template passive text_sha256 5a9961edec8642bc2aa6f794b0ff1a500f48fcd8bc3acd5efde6d80652771b24
+end-meaning
+meaning robot-sees-artist-past-affirmative ordinals 0 0 2 1 0
+surface robot-sees-artist-past-affirmative-active template active text_sha256 52f22651f117f7c227e35e0fdbfc8662ef1415fa7dcc713446de3b1da77e422b
+surface robot-sees-artist-past-affirmative-passive template passive text_sha256 7f950d6e6a4ce62c3ffce9880b76ec8aa5d730f49c49dd7441afe705a5ebee42
+end-meaning
+meaning robot-sees-artist-past-negated ordinals 0 0 2 1 1
+surface robot-sees-artist-past-negated-active template active text_sha256 7c616e035df18f6d722716b8714af380f2f4ede546195b2cdbdcd6bb52975150
+surface robot-sees-artist-past-negated-passive template passive text_sha256 a3e6f01175ff4fd89850858c58aea19679b9ae668762a9dedf5d1941083484bc
+end-meaning
+meaning robot-sees-scientist-present-affirmative ordinals 0 0 3 0 0
+surface robot-sees-scientist-present-affirmative-active template active text_sha256 3c0e523f9e885d5925354498ea8e8be7da20473c54f34a47e2826f36ea302e52
+surface robot-sees-scientist-present-affirmative-passive template passive text_sha256 56ca10ef01e127841b9203ca6f08099f420c3905387010caa2f2559d26f8417f
+end-meaning
+meaning robot-sees-scientist-present-negated ordinals 0 0 3 0 1
+surface robot-sees-scientist-present-negated-active template active text_sha256 699d310fee995220a88ccd3824c18c2abdf83861c889c9c5c14c0b781e0b3297
+surface robot-sees-scientist-present-negated-passive template passive text_sha256 35d8d6793bf322415871e850e42db5743c3e5d19d76e5913ea6657ec923235be
+end-meaning
+meaning robot-sees-scientist-past-affirmative ordinals 0 0 3 1 0
+surface robot-sees-scientist-past-affirmative-active template active text_sha256 5ed15e99c3221557395e0a6e6ac3dd1af1f179d2383521c45d1fcf08a520cf88
+surface robot-sees-scientist-past-affirmative-passive template passive text_sha256 ee7e250a602c8d6ecad3e9ebc4a9003cb5bd5309ce9fc71f9850ea27fd6c081e
+end-meaning
+meaning robot-sees-scientist-past-negated ordinals 0 0 3 1 1
+surface robot-sees-scientist-past-negated-active template active text_sha256 f60dcaa245bf5ccc3ed6fa5901c984291a570e7b113a680832f78c741b24f826
+surface robot-sees-scientist-past-negated-passive template passive text_sha256 01cce6aec263699cb024c71427bfd5539ea95d0a90844986755dcd68754a9f9a
+end-meaning
+meaning robot-helps-robot-present-affirmative ordinals 0 1 0 0 0
+surface robot-helps-robot-present-affirmative-active template active text_sha256 f8e5133fc5392a7e3b13661f5e2c90474f78240e7f85ec624904314d7c479e51
+surface robot-helps-robot-present-affirmative-passive template passive text_sha256 4dcfa576d72ac318aa9c912a4b04a9f1f76b4442d6ca89996a966a676729036a
+end-meaning
+meaning robot-helps-robot-present-negated ordinals 0 1 0 0 1
+surface robot-helps-robot-present-negated-active template active text_sha256 0651b9a679bc4dccb897c35161d2a0c69eca76e3abab093b36e0f2ea3194fa82
+surface robot-helps-robot-present-negated-passive template passive text_sha256 74114caa2982a713fb177534be455614905026d959c9b19de33095d7527231ba
+end-meaning
+meaning robot-helps-robot-past-affirmative ordinals 0 1 0 1 0
+surface robot-helps-robot-past-affirmative-active template active text_sha256 531731ed48b3e504b64027220947b67d5ffe89c92c82068e598bd200b236603f
+surface robot-helps-robot-past-affirmative-passive template passive text_sha256 5042f0f0fe6392ac6c55a47c55c6c1496c25b3e3c4e9169fe4a10b7d9dfee93b
+end-meaning
+meaning robot-helps-robot-past-negated ordinals 0 1 0 1 1
+surface robot-helps-robot-past-negated-active template active text_sha256 4278ab41e34cbd953b6a788eb695761a720e36c7495074ee3e5a17a05de8914c
+surface robot-helps-robot-past-negated-passive template passive text_sha256 f80977523b3aa079ce37e30955f6a97c8d058ae014513fcf9b36cb13815371fc
+end-meaning
+meaning robot-helps-child-present-affirmative ordinals 0 1 1 0 0
+surface robot-helps-child-present-affirmative-active template active text_sha256 50426680713ed06abae86689da933502ea9b66555bc16ebb9a87e4165e39f0e7
+surface robot-helps-child-present-affirmative-passive template passive text_sha256 3caa39d497dd0e23040ee548c0f670fa466aba94fd4df212b990dc1dd300aee2
+end-meaning
+meaning robot-helps-child-present-negated ordinals 0 1 1 0 1
+surface robot-helps-child-present-negated-active template active text_sha256 867017bb88ab13e7fd7072b90a4cb281c2118b5e68cc3317bf95af87eb46ad58
+surface robot-helps-child-present-negated-passive template passive text_sha256 803875f9ae24481a48bda93b093475675010611b07abd0da8a233d9be07093d5
+end-meaning
+meaning robot-helps-child-past-affirmative ordinals 0 1 1 1 0
+surface robot-helps-child-past-affirmative-active template active text_sha256 0d6e9177ff56354e3bc0d4723aa89f318979bf2c14989cd319989b8278fb19cd
+surface robot-helps-child-past-affirmative-passive template passive text_sha256 97ebe48605a4d214a9cc0f8f17193d104397db6aeaf5a6294399b23741b86edb
+end-meaning
+meaning robot-helps-child-past-negated ordinals 0 1 1 1 1
+surface robot-helps-child-past-negated-active template active text_sha256 6454ae757d529d8d3885e4e7e3432c1f4f79566ca8680c86e8ffdec9a7a105e0
+surface robot-helps-child-past-negated-passive template passive text_sha256 75851f611212d6e5b761c8d668ef3b25ed421437769e1d0fa4eff3cf6c326da1
+end-meaning
+meaning robot-helps-artist-present-affirmative ordinals 0 1 2 0 0
+surface robot-helps-artist-present-affirmative-active template active text_sha256 ca2efb15f59a056e8327aa721adf543b1b5f8ae7472ef2dcca08169038ffe5b0
+surface robot-helps-artist-present-affirmative-passive template passive text_sha256 26a6b7ca247176c3f726a899b0d1b11454b661dfdc46ddcd8c6f91f0e164f13a
+end-meaning
+meaning robot-helps-artist-present-negated ordinals 0 1 2 0 1
+surface robot-helps-artist-present-negated-active template active text_sha256 c8e7b2e244c72640e6a25527b04c4e3451583e5e2b7d69ed76aa760bcab5a134
+surface robot-helps-artist-present-negated-passive template passive text_sha256 993f882c58bb863a0ee91ab8619f80a14bb68c89d87fdcfc55c19806460404c1
+end-meaning
+meaning robot-helps-artist-past-affirmative ordinals 0 1 2 1 0
+surface robot-helps-artist-past-affirmative-active template active text_sha256 4edef0292c4d3bb7d19f1f4ba5a2ced9bca09725f6bcf747a2445e950f33eddc
+surface robot-helps-artist-past-affirmative-passive template passive text_sha256 3758dec464e29d44dfd86284cdffbdca8871666a95097c1ba857386b11926aad
+end-meaning
+meaning robot-helps-artist-past-negated ordinals 0 1 2 1 1
+surface robot-helps-artist-past-negated-active template active text_sha256 4b6dfeae0affadeb2055796df544384106a9d929483eb7b0504134bbde9e3fbb
+surface robot-helps-artist-past-negated-passive template passive text_sha256 0a8912ec042aa31c5e9b92e125dd4df913771ca55390fc4ba44abe5a5e4d676b
+end-meaning
+meaning robot-helps-scientist-present-affirmative ordinals 0 1 3 0 0
+surface robot-helps-scientist-present-affirmative-active template active text_sha256 83de1f348f43aa4b4a8c1460120e9b30c39c8df4478c9754e6942e45eba31baf
+surface robot-helps-scientist-present-affirmative-passive template passive text_sha256 f0a43e8305ac54ba2de513580029aebe7b9024131a2b51797689cc1e8d94731e
+end-meaning
+meaning robot-helps-scientist-present-negated ordinals 0 1 3 0 1
+surface robot-helps-scientist-present-negated-active template active text_sha256 969fe03d4cf1b971f6a2134f8120f48c6654174e5d70a1b754089370f8724583
+surface robot-helps-scientist-present-negated-passive template passive text_sha256 b8ffbe00cddce53ed7f59c9695d8f150a34828992237b990f83df17efa250369
+end-meaning
+meaning robot-helps-scientist-past-affirmative ordinals 0 1 3 1 0
+surface robot-helps-scientist-past-affirmative-active template active text_sha256 8cfb709932ece7f4544f860a0f0ef6b9895b04838fa579cab8fb80bcfb83c927
+surface robot-helps-scientist-past-affirmative-passive template passive text_sha256 4ffbeae92a92ba154edf25184bbd5d99e483d26967cbe8a841f3927e67d615e7
+end-meaning
+meaning robot-helps-scientist-past-negated ordinals 0 1 3 1 1
+surface robot-helps-scientist-past-negated-active template active text_sha256 d57796dd8074e593281e9d23316cdc90337d9ebc0f2dbeb8beecc23c18ef91b8
+surface robot-helps-scientist-past-negated-passive template passive text_sha256 4f51cb3af62216d5b4f4c13370808f846908288cf9690c1988233616a06b234e
+end-meaning
+meaning robot-follows-robot-present-affirmative ordinals 0 2 0 0 0
+surface robot-follows-robot-present-affirmative-active template active text_sha256 28fef65df2eda0fa1273104cd09694d82793345ab2293945200f87d582a91367
+surface robot-follows-robot-present-affirmative-passive template passive text_sha256 46cf04d970d4a21d9bd040e6cbfe83574b6e897e335cbf2e76e18247639ede98
+end-meaning
+meaning robot-follows-robot-present-negated ordinals 0 2 0 0 1
+surface robot-follows-robot-present-negated-active template active text_sha256 00361d74bd4d3e66fb542d64c804660ee4709bdb0de2d2dc1ca1f2a7256bd257
+surface robot-follows-robot-present-negated-passive template passive text_sha256 893d58a45a1c3998773c37635cd824c8ec2e1dbebf1d25b8ea6ccc370b0b5bf3
+end-meaning
+meaning robot-follows-robot-past-affirmative ordinals 0 2 0 1 0
+surface robot-follows-robot-past-affirmative-active template active text_sha256 65bc2b728d7cb223a9de3f812d86c3b70d73f14a64c927f36a401e0912313d8f
+surface robot-follows-robot-past-affirmative-passive template passive text_sha256 acf9333976b4239d7d5b02639c919d79bdf42613a08a00a598c61ade8bc8f80d
+end-meaning
+meaning robot-follows-robot-past-negated ordinals 0 2 0 1 1
+surface robot-follows-robot-past-negated-active template active text_sha256 3e62dffa158f27ad66cd6a33e767f2019bbe8d5da3a86f0f699810d31d48ae07
+surface robot-follows-robot-past-negated-passive template passive text_sha256 21b675ed5f94239693ecf0b09c0a7f43f90a1369d42e413187ea4d6b71ef2686
+end-meaning
+meaning robot-follows-child-present-affirmative ordinals 0 2 1 0 0
+surface robot-follows-child-present-affirmative-active template active text_sha256 4fad02afa250a0a5da126336557a2cda102e6eedc4a93fd93849ccdd1a700799
+surface robot-follows-child-present-affirmative-passive template passive text_sha256 b8a63d570076c515a59c018a793d4b290eccd152b5ca578da1d40d6d0a2d0f0d
+end-meaning
+meaning robot-follows-child-present-negated ordinals 0 2 1 0 1
+surface robot-follows-child-present-negated-active template active text_sha256 f1138859feb5ff084c008e0d28ef58f2915ca52626812921da27f29b61f6fabc
+surface robot-follows-child-present-negated-passive template passive text_sha256 f816be3e3c9a046c46461370463939979e78222b4cd852a38de0986e96f9d60d
+end-meaning
+meaning robot-follows-child-past-affirmative ordinals 0 2 1 1 0
+surface robot-follows-child-past-affirmative-active template active text_sha256 89ba18ec4ef73ba0b51f128ecd7caa67c6e336cd10b9fc150ca00596e4df3d21
+surface robot-follows-child-past-affirmative-passive template passive text_sha256 92a6bd130f392c70c54cc801f5e43b8aa5d931713a956e1107b31af0faec3623
+end-meaning
+meaning robot-follows-child-past-negated ordinals 0 2 1 1 1
+surface robot-follows-child-past-negated-active template active text_sha256 1600359adf0af507868627d6f8cf5b3e8cfbb00da553d3d75f9e417fc8f21f61
+surface robot-follows-child-past-negated-passive template passive text_sha256 844156c35ca9862d5a942f9b7ea1941fa228098c6eff666e9e4cb134089bac6b
+end-meaning
+meaning robot-follows-artist-present-affirmative ordinals 0 2 2 0 0
+surface robot-follows-artist-present-affirmative-active template active text_sha256 6fbf08a026800c8228db712d6aba415d364bacbdce57246f89dd78a7d49277a3
+surface robot-follows-artist-present-affirmative-passive template passive text_sha256 f3f48d15ae781a8a08d0a91af5a2bf8eb17591ed5611f9d91e45201fca5c81d0
+end-meaning
+meaning robot-follows-artist-present-negated ordinals 0 2 2 0 1
+surface robot-follows-artist-present-negated-active template active text_sha256 fcd5259f835543dfa1e28e02b43323183290d022d22477c7ad4e22e328b07714
+surface robot-follows-artist-present-negated-passive template passive text_sha256 fce3c7d4cfca3a70281c4798e2b190a84e61400190c98bb526d1dd71da9d182d
+end-meaning
+meaning robot-follows-artist-past-affirmative ordinals 0 2 2 1 0
+surface robot-follows-artist-past-affirmative-active template active text_sha256 19de888f40bbce1f7e6ccdd670f76bba05eec02acdf3dbfb4cef572480835af2
+surface robot-follows-artist-past-affirmative-passive template passive text_sha256 4b28a39637c9409accf0cd30a6fef1ccb51fd66a3e3e699af74ae979c6cfcdc9
+end-meaning
+meaning robot-follows-artist-past-negated ordinals 0 2 2 1 1
+surface robot-follows-artist-past-negated-active template active text_sha256 1c573c7fddaaa0e8bee068edf8687e2c584ce037eacea8feb71061be2f5c511c
+surface robot-follows-artist-past-negated-passive template passive text_sha256 4fc9a5b7d7191d8708e2b9319a922030a2beb24effc7208647c46a29d9b4902d
+end-meaning
+meaning robot-follows-scientist-present-affirmative ordinals 0 2 3 0 0
+surface robot-follows-scientist-present-affirmative-active template active text_sha256 590a5d5105c25bd62dcb66755ccdbea3c4c761d44c3536bc5fd25e60e3dc443d
+surface robot-follows-scientist-present-affirmative-passive template passive text_sha256 72ec33eab670d47d51af1e1b02dd731080427a126041c61fe6d582ed17450c4a
+end-meaning
+meaning robot-follows-scientist-present-negated ordinals 0 2 3 0 1
+surface robot-follows-scientist-present-negated-active template active text_sha256 820f99b2c92397a3427250f029ccfc4761af387d40529dd7278bba1f1f792ae0
+surface robot-follows-scientist-present-negated-passive template passive text_sha256 8f34384b3a8b7f364cf51cf247fb50f5f32e3e875870e06b49dc429ccfc39147
+end-meaning
+meaning robot-follows-scientist-past-affirmative ordinals 0 2 3 1 0
+surface robot-follows-scientist-past-affirmative-active template active text_sha256 962f001fd79a9e9ce80857625fafd4cf79e45b034e35a31b5b168be1725693e6
+surface robot-follows-scientist-past-affirmative-passive template passive text_sha256 6f1cad9ca09b059d65f049caf673812bae2d71e749913711cf2e410861155e33
+end-meaning
+meaning robot-follows-scientist-past-negated ordinals 0 2 3 1 1
+surface robot-follows-scientist-past-negated-active template active text_sha256 49dd535f027a57b80932eb1776ca065ca4496bd576872d97dbc9bf8df47cb124
+surface robot-follows-scientist-past-negated-passive template passive text_sha256 a4d06d4437a2c2938174db0c8435872ed16a915f29775735b35ca07e482d3b11
+end-meaning
+meaning robot-avoids-robot-present-affirmative ordinals 0 3 0 0 0
+surface robot-avoids-robot-present-affirmative-active template active text_sha256 e60d27253a5b777b24ce7075a05c79db3b7e080d6757e09ef0463aca9a3f29f5
+surface robot-avoids-robot-present-affirmative-passive template passive text_sha256 93fa049c2a7dc563d3a34a1603f2d936d649b8d36166bdda0a28d0c8f52ce3e9
+end-meaning
+meaning robot-avoids-robot-present-negated ordinals 0 3 0 0 1
+surface robot-avoids-robot-present-negated-active template active text_sha256 617ac232a5604f97fe1f921bfd7be7763f1bc34f2a7bccf81bd1c66604d45c27
+surface robot-avoids-robot-present-negated-passive template passive text_sha256 e494c353ca451ffe2786213c8e448d0dec640a7296b45f35bdd5c83438f808af
+end-meaning
+meaning robot-avoids-robot-past-affirmative ordinals 0 3 0 1 0
+surface robot-avoids-robot-past-affirmative-active template active text_sha256 6165d83fc7d0ac1432c9436413c78c0d7d533c2b2832e3dab5fc856c4c59d323
+surface robot-avoids-robot-past-affirmative-passive template passive text_sha256 a21553b85fdafe579decc30d4268be15eb798c5aedd8b78b87cb539cd11b0de6
+end-meaning
+meaning robot-avoids-robot-past-negated ordinals 0 3 0 1 1
+surface robot-avoids-robot-past-negated-active template active text_sha256 47a9e71039eefb7e335f06ae16a1b80f17630927e8b263ee62681b80177c3123
+surface robot-avoids-robot-past-negated-passive template passive text_sha256 236c157fb53ccc2be1f49510c2fffed922dbc923923b512b9a6db43a6f15d837
+end-meaning
+meaning robot-avoids-child-present-affirmative ordinals 0 3 1 0 0
+surface robot-avoids-child-present-affirmative-active template active text_sha256 58db57a64aad9fe30af22c2a74755848de3c3b1dcc9a40bb24a4e0a18847f0b4
+surface robot-avoids-child-present-affirmative-passive template passive text_sha256 06a431b42a1b8e5777ae1458a59fc3f5ae805c15ded0390856e14e49c40de153
+end-meaning
+meaning robot-avoids-child-present-negated ordinals 0 3 1 0 1
+surface robot-avoids-child-present-negated-active template active text_sha256 840fd1a2865d13872c5a6c10f22ac2078ea59e2fbf0d761b6d45337775c7497c
+surface robot-avoids-child-present-negated-passive template passive text_sha256 93ca3136835348abd177b4e780e2b5c437ef804e30c983c77306f8e1bf7e7862
+end-meaning
+meaning robot-avoids-child-past-affirmative ordinals 0 3 1 1 0
+surface robot-avoids-child-past-affirmative-active template active text_sha256 ad324dc2c1b9aca323b3d097f62e29e15cf01c29086fc81f04893fefd6a80f33
+surface robot-avoids-child-past-affirmative-passive template passive text_sha256 fa889aaee8053596de4f0c4605c871cb4f2ce5857c78414a436afd3305dd3b32
+end-meaning
+meaning robot-avoids-child-past-negated ordinals 0 3 1 1 1
+surface robot-avoids-child-past-negated-active template active text_sha256 ea7ec8c131ab299568c34b66580e3fa5e82cf225864d381ebbd34b5d3cdf1a13
+surface robot-avoids-child-past-negated-passive template passive text_sha256 5cd7a372c590ed43405bf78d2edc31faa7c11e5dd351818512740ea8f9f95cdd
+end-meaning
+meaning robot-avoids-artist-present-affirmative ordinals 0 3 2 0 0
+surface robot-avoids-artist-present-affirmative-active template active text_sha256 0290a0148e8ee75a289ea75d8981c45b9c9e2675520303ffec95e8f3ce09cda4
+surface robot-avoids-artist-present-affirmative-passive template passive text_sha256 62f2767fd1b48f11712aee1a963640ca5eab7d882730c0e55bbcddabfa331077
+end-meaning
+meaning robot-avoids-artist-present-negated ordinals 0 3 2 0 1
+surface robot-avoids-artist-present-negated-active template active text_sha256 da118e2493c20c531d64112c9539d3a950123ca492f1bd4a4a690b2c17711982
+surface robot-avoids-artist-present-negated-passive template passive text_sha256 5e33e1b8f1dd631861e1cf1fb7e4a7a7d50af007618f61d1354205a4688de3e9
+end-meaning
+meaning robot-avoids-artist-past-affirmative ordinals 0 3 2 1 0
+surface robot-avoids-artist-past-affirmative-active template active text_sha256 8331e572053639680a2c80e651ae61a9bf4b4ce6ad6bf326c11e66103fa48d65
+surface robot-avoids-artist-past-affirmative-passive template passive text_sha256 a321d137cb19b35e9b097b442f96a0f133a0ea68bb650849e28452dcfa91cb2b
+end-meaning
+meaning robot-avoids-artist-past-negated ordinals 0 3 2 1 1
+surface robot-avoids-artist-past-negated-active template active text_sha256 6a5bd22a9333c46b7ee4ed9f5adef260a934935b41f1a2016ff7adbfa74c7133
+surface robot-avoids-artist-past-negated-passive template passive text_sha256 23a5e4136ec69acd44ae15b5773ddd35845bb6ec33934a22ab05410cd890df7c
+end-meaning
+meaning robot-avoids-scientist-present-affirmative ordinals 0 3 3 0 0
+surface robot-avoids-scientist-present-affirmative-active template active text_sha256 c71b365bef49a32fe55df377c71a7ecb8e6fba2857c351765113e1072bbf53e4
+surface robot-avoids-scientist-present-affirmative-passive template passive text_sha256 9daa3748b1fa21188837943acb50a43ad339f6c11f97aaca53e204ae26724d78
+end-meaning
+meaning robot-avoids-scientist-present-negated ordinals 0 3 3 0 1
+surface robot-avoids-scientist-present-negated-active template active text_sha256 7c392898e46d703d18187f804d33cb562f82073a860f51fd766179b4435526f8
+surface robot-avoids-scientist-present-negated-passive template passive text_sha256 16d173eaf1b64fb7d2d598ac880a2cd6182d5feceaad60ca04e2da03cfc3f07c
+end-meaning
+meaning robot-avoids-scientist-past-affirmative ordinals 0 3 3 1 0
+surface robot-avoids-scientist-past-affirmative-active template active text_sha256 959d9c23e65575c20b98ddc431f004c961f5fae4b3a75ffcfb2be719fcdbb00c
+surface robot-avoids-scientist-past-affirmative-passive template passive text_sha256 5a4e15689b385c106f4c19f6bd04ad3252a62240f12d81a50f18c22ad0a283bb
+end-meaning
+meaning robot-avoids-scientist-past-negated ordinals 0 3 3 1 1
+surface robot-avoids-scientist-past-negated-active template active text_sha256 1106fd6194a4017b937875c06ac7b261ed56b48604745462424dac27fb79b4ff
+surface robot-avoids-scientist-past-negated-passive template passive text_sha256 cebc01a16bca755f7067fa59e4a1f1aadb462b1a55c5766f0ff4b2f55bbd7d4d
+end-meaning
+meaning child-sees-robot-present-affirmative ordinals 1 0 0 0 0
+surface child-sees-robot-present-affirmative-active template active text_sha256 7186070b5e2ab213d9ae7ab24e2ad9835e29f02420e592f641cc103cc96e58c4
+surface child-sees-robot-present-affirmative-passive template passive text_sha256 ecfb603fd08508b2d526fe8a9ad2699d70781c33527b61c3a00df7febcf76593
+end-meaning
+meaning child-sees-robot-present-negated ordinals 1 0 0 0 1
+surface child-sees-robot-present-negated-active template active text_sha256 9f5af342feeaaabeb03021a49317eddbdaa40d00bed33bc91bedc0f49a2fe8ec
+surface child-sees-robot-present-negated-passive template passive text_sha256 1df03ad094112c8a68df0f7e2857f72950d0ac658305f914647ec93232c5edca
+end-meaning
+meaning child-sees-robot-past-affirmative ordinals 1 0 0 1 0
+surface child-sees-robot-past-affirmative-active template active text_sha256 df79ae677202986db2861baa4a963097c52b3426ed804d1250a79167f966424b
+surface child-sees-robot-past-affirmative-passive template passive text_sha256 f8a6233ef10ad65aef5faecc659af302eed3de9389bcb30a8e49811a86d9471f
+end-meaning
+meaning child-sees-robot-past-negated ordinals 1 0 0 1 1
+surface child-sees-robot-past-negated-active template active text_sha256 adf908de61a910956423f3690cfac51e5bfee9149138863f19a46cd2841796ae
+surface child-sees-robot-past-negated-passive template passive text_sha256 8dec1df86d2c2fee82839c6a0a9d0a06fe06d6bad08f4b669cb11dd2affd9cc8
+end-meaning
+meaning child-sees-child-present-affirmative ordinals 1 0 1 0 0
+surface child-sees-child-present-affirmative-active template active text_sha256 262abc5bdee95d10c2cb23fec77fde8328f38e4cdbb7bb0ac39030d92afb6503
+surface child-sees-child-present-affirmative-passive template passive text_sha256 281d1543d069a0e050d64ade736cfc635ae404691f1b31d304864f023213de05
+end-meaning
+meaning child-sees-child-present-negated ordinals 1 0 1 0 1
+surface child-sees-child-present-negated-active template active text_sha256 cd42d2b70486f64a63435330a85a23e728c794c041f33f6e4666323774ebc820
+surface child-sees-child-present-negated-passive template passive text_sha256 b2edcf128076428ce26451fef534385511fa8016532375a6b405cc07cb467b20
+end-meaning
+meaning child-sees-child-past-affirmative ordinals 1 0 1 1 0
+surface child-sees-child-past-affirmative-active template active text_sha256 50b59883f66c64d45d46c4b501f211b8b356ff3b398a6dc92fbeb57aed1b1f7e
+surface child-sees-child-past-affirmative-passive template passive text_sha256 01953727fef32b90ef530584d57a9688d8467fb80961e7f41f455900d7e7bf5f
+end-meaning
+meaning child-sees-child-past-negated ordinals 1 0 1 1 1
+surface child-sees-child-past-negated-active template active text_sha256 b9e02bbcf8c39f2601645ae0ee82a1a80724cb0fbe7cb034061b9492c4612ead
+surface child-sees-child-past-negated-passive template passive text_sha256 28ec0020f3ddfbf096fa4320bfefe722d5fa817341e2da6a6fd939f0196c75ff
+end-meaning
+meaning child-sees-artist-present-affirmative ordinals 1 0 2 0 0
+surface child-sees-artist-present-affirmative-active template active text_sha256 45e4fe1c42368c4c7cf5fd089cdc3f915d6b16a7643a162afdbe26599d7c88b7
+surface child-sees-artist-present-affirmative-passive template passive text_sha256 879dcd8bfeb7e637e5ad1ab4209a9c525225c99751b27234fa65fd680c4432bb
+end-meaning
+meaning child-sees-artist-present-negated ordinals 1 0 2 0 1
+surface child-sees-artist-present-negated-active template active text_sha256 f3a5a5d333d0762c7ad264a9a506dc4abfd587952e9c03f162b6b5ad3896ca20
+surface child-sees-artist-present-negated-passive template passive text_sha256 020d7942ac2cfd292111213d1c61079adfa7a1627e066f75785804c08d1eab15
+end-meaning
+meaning child-sees-artist-past-affirmative ordinals 1 0 2 1 0
+surface child-sees-artist-past-affirmative-active template active text_sha256 e9fce078ce44b59c7be3aa8957cb84e124105f1be8fa4b3e0ec1bc6efe3d9e41
+surface child-sees-artist-past-affirmative-passive template passive text_sha256 10d10c81379bc2ccbd7547b7b0a654be80794f03b649c5986603837d0c83702b
+end-meaning
+meaning child-sees-artist-past-negated ordinals 1 0 2 1 1
+surface child-sees-artist-past-negated-active template active text_sha256 c37ed6e450f3b90a47c8fc67d73b38c66598bf0cda567a09b7739b0b7444634d
+surface child-sees-artist-past-negated-passive template passive text_sha256 ce485eb1c1ddc41e4a88a2bfe3042a47a9872cafda4d8500d7227e6541457dda
+end-meaning
+meaning child-sees-scientist-present-affirmative ordinals 1 0 3 0 0
+surface child-sees-scientist-present-affirmative-active template active text_sha256 dda8463e33cb2d52c85661bc1c95fddde80cd980476e6ed842bf927793cd3654
+surface child-sees-scientist-present-affirmative-passive template passive text_sha256 8eefb77a522d88f300708a024bf4d9232c9bc38bdc903c9d5aceee1a33e62921
+end-meaning
+meaning child-sees-scientist-present-negated ordinals 1 0 3 0 1
+surface child-sees-scientist-present-negated-active template active text_sha256 44b6f91e2559d16253b66152868d8682fde7ec94faa92b52c1e10e331e556de3
+surface child-sees-scientist-present-negated-passive template passive text_sha256 994ffac24cbfccc958e227620c5ccc8b31faf7b4e2c0c8c91350b8f52ffffa5f
+end-meaning
+meaning child-sees-scientist-past-affirmative ordinals 1 0 3 1 0
+surface child-sees-scientist-past-affirmative-active template active text_sha256 716739ab3a85b045085c4df1c723c5f17d4d1bd670c961196948f6a75cc0737a
+surface child-sees-scientist-past-affirmative-passive template passive text_sha256 ccf48f1f68231bd3d9334b6526211217fcd082a744aa6628e122a939eb4a40a5
+end-meaning
+meaning child-sees-scientist-past-negated ordinals 1 0 3 1 1
+surface child-sees-scientist-past-negated-active template active text_sha256 4974deea3df8ee28b96c4c4c58343fb1c8aadf12d54ae73db04b6957b5f9bc42
+surface child-sees-scientist-past-negated-passive template passive text_sha256 55ce4c7bd27eb34783ffbf31a3915e29685bc869423a01ab0d8c96ac76917197
+end-meaning
+meaning child-helps-robot-present-affirmative ordinals 1 1 0 0 0
+surface child-helps-robot-present-affirmative-active template active text_sha256 2fc7dec59274b35547fe9f73613981d5f0e3e40da1f03b297b0549123b3724a4
+surface child-helps-robot-present-affirmative-passive template passive text_sha256 53e517cced628ecc6fd47b44b41d33ddf17210ef31c2bb36db0a60c2cb4729d7
+end-meaning
+meaning child-helps-robot-present-negated ordinals 1 1 0 0 1
+surface child-helps-robot-present-negated-active template active text_sha256 b05123ec4b403f0b852bb023948b7769597dbe31ac8cdf913bd467be98e9b281
+surface child-helps-robot-present-negated-passive template passive text_sha256 7afeae46c25f538144e5cc989d6a504b80024295ae2db7aa7f216e4bee02e4f2
+end-meaning
+meaning child-helps-robot-past-affirmative ordinals 1 1 0 1 0
+surface child-helps-robot-past-affirmative-active template active text_sha256 6d71f28a2a2e13531616e729f2c8e60a714c03276c1216b8dd33fe4eb7f8a4f0
+surface child-helps-robot-past-affirmative-passive template passive text_sha256 a62093ecbfdb19f1a1366e632a3a74cccb0dcc30d2c66e2670e5922fd1dd729e
+end-meaning
+meaning child-helps-robot-past-negated ordinals 1 1 0 1 1
+surface child-helps-robot-past-negated-active template active text_sha256 70b5d7600508fc259159febed3938c795608932477d53951337d687179f6f013
+surface child-helps-robot-past-negated-passive template passive text_sha256 41bdee32bf6a20d903548b6f9a60a7093e2ec69d6c11629a90e274a110005d5c
+end-meaning
+meaning child-helps-child-present-affirmative ordinals 1 1 1 0 0
+surface child-helps-child-present-affirmative-active template active text_sha256 22fb596f5c0ae0c7a6375e63df4c325e1e7062b64b5bd7270339c4c3a8cf1345
+surface child-helps-child-present-affirmative-passive template passive text_sha256 f4b979b5a7a3a8074d92b1cbf5dbd404ec4a4dae0d1efce53a12aad2e500df14
+end-meaning
+meaning child-helps-child-present-negated ordinals 1 1 1 0 1
+surface child-helps-child-present-negated-active template active text_sha256 58d70739e3b50988b1b20efbe80dc66e59fe156c9c5b98bbdb5ac5b4a79f1b9b
+surface child-helps-child-present-negated-passive template passive text_sha256 8dd3fb3be2d21ca60ba00c5aeaf184b8d174d8e5235aa4f84eb3fe04539967dc
+end-meaning
+meaning child-helps-child-past-affirmative ordinals 1 1 1 1 0
+surface child-helps-child-past-affirmative-active template active text_sha256 b84b837f708ee47bc7ab77f36b0d2a78304b34adeecb1e47a34ba37510627c58
+surface child-helps-child-past-affirmative-passive template passive text_sha256 8f2e9a31bb81b7be63830537616a16f6ab4d4db09d6eeb78c5e51c39013b0766
+end-meaning
+meaning child-helps-child-past-negated ordinals 1 1 1 1 1
+surface child-helps-child-past-negated-active template active text_sha256 07b066a85990de487ab3065272c3a3e7a378a5621a1ef1a3dcdcf963080c0de7
+surface child-helps-child-past-negated-passive template passive text_sha256 6caf27b8c7956e595306a1981a55593a9c00f08af35b3a8f0d506eef6415c7c1
+end-meaning
+meaning child-helps-artist-present-affirmative ordinals 1 1 2 0 0
+surface child-helps-artist-present-affirmative-active template active text_sha256 df970ac553ef43b4018fd58e0570462f84b8a9b0c889a7560fff880c9936c951
+surface child-helps-artist-present-affirmative-passive template passive text_sha256 1df4b21f6c05c395f32c37c52ed253838a1edce34fe4e71ff4810d366e68b156
+end-meaning
+meaning child-helps-artist-present-negated ordinals 1 1 2 0 1
+surface child-helps-artist-present-negated-active template active text_sha256 6d6d60e7f4da1ba9cf29acf10aae5d0c8a95bf3bdfefb64132e13ae4cc69eef0
+surface child-helps-artist-present-negated-passive template passive text_sha256 597fd289eaa729c6c0e011aeab2b5ddeb760639f201e08af1f08e85264e09e90
+end-meaning
+meaning child-helps-artist-past-affirmative ordinals 1 1 2 1 0
+surface child-helps-artist-past-affirmative-active template active text_sha256 aa9ff7e284b8272352040a95b24c42ee1101e7751c5e630a70e162432c3d4569
+surface child-helps-artist-past-affirmative-passive template passive text_sha256 2dd8d054685d2243c99c69d569f6d6a67445faf1998b2e1d8feb7598a334df7b
+end-meaning
+meaning child-helps-artist-past-negated ordinals 1 1 2 1 1
+surface child-helps-artist-past-negated-active template active text_sha256 fb57415c9b45e27143935489407a4c1919e49dafc91173e740c62eb31cf86576
+surface child-helps-artist-past-negated-passive template passive text_sha256 30153a06e8fa9db1087d16a8491c82c339a9f35c2805d2c013c06533ccf7d594
+end-meaning
+meaning child-helps-scientist-present-affirmative ordinals 1 1 3 0 0
+surface child-helps-scientist-present-affirmative-active template active text_sha256 fa96c1b099f0718a5aeb286cfa5f2bf2e373ec9edc9953bc676f9f68873304c9
+surface child-helps-scientist-present-affirmative-passive template passive text_sha256 820d61beafe6ca74adb12776e465a0b44179a0ae66d9bc60a127b358cfc7c8e9
+end-meaning
+meaning child-helps-scientist-present-negated ordinals 1 1 3 0 1
+surface child-helps-scientist-present-negated-active template active text_sha256 4878d0062deee74356ba822be8c70645430a1d78c5ef6838164bb8f6e8ddb370
+surface child-helps-scientist-present-negated-passive template passive text_sha256 78d8fd941a3555a108b998fd50df52d9f7b81f52bc24f020307e27593d58a788
+end-meaning
+meaning child-helps-scientist-past-affirmative ordinals 1 1 3 1 0
+surface child-helps-scientist-past-affirmative-active template active text_sha256 73cfc2230d6067231a8ae427a8335a17ef2f97478f35b80b128081b077ef615c
+surface child-helps-scientist-past-affirmative-passive template passive text_sha256 d7eb3668fd7694328a9513058343068b3e269b8d3ef62f79f9f6d610a92a55c2
+end-meaning
+meaning child-helps-scientist-past-negated ordinals 1 1 3 1 1
+surface child-helps-scientist-past-negated-active template active text_sha256 7f846c5c05342e9a2716ad1dde086c15de39d03a4e8ef2f4b533dca362bcc8fb
+surface child-helps-scientist-past-negated-passive template passive text_sha256 fbccd764fc95cfa65be462e328f8fc05e139ed3c2bdc45f30e78e5bd53342a1f
+end-meaning
+meaning child-follows-robot-present-affirmative ordinals 1 2 0 0 0
+surface child-follows-robot-present-affirmative-active template active text_sha256 410eb2549954ccab7ab1ac76128c23971c68f4200bdaa3ba11da7fa4879c1896
+surface child-follows-robot-present-affirmative-passive template passive text_sha256 08828ba273cfe462d74d6aea47f2602d1bd19fe16b451f0165f41efe646f32b4
+end-meaning
+meaning child-follows-robot-present-negated ordinals 1 2 0 0 1
+surface child-follows-robot-present-negated-active template active text_sha256 7cfe08b397f06cd9c51c952d9829b5444a44155890a458d914aa445dc3711db5
+surface child-follows-robot-present-negated-passive template passive text_sha256 f7e3d7ae6a919764b0161b9ff64a00ec2c201480dbea99ee9c03c3c6839f1633
+end-meaning
+meaning child-follows-robot-past-affirmative ordinals 1 2 0 1 0
+surface child-follows-robot-past-affirmative-active template active text_sha256 15151f84079e6ac8eef9064b193ec06bf56956380522b86a24e8d9f97cd4cfaf
+surface child-follows-robot-past-affirmative-passive template passive text_sha256 89e55430f1399b03b8d1fdc80beb5609afafdbb44788eb8c3a715880cd31394e
+end-meaning
+meaning child-follows-robot-past-negated ordinals 1 2 0 1 1
+surface child-follows-robot-past-negated-active template active text_sha256 f36ac95c677d86d43bda525caf9ac4bb880c11cadd193dc0fb7c80f1ed3e843b
+surface child-follows-robot-past-negated-passive template passive text_sha256 8a38dcd76109330899e5a35ae363413270e6317809e1b0baade0601b90853fd3
+end-meaning
+meaning child-follows-child-present-affirmative ordinals 1 2 1 0 0
+surface child-follows-child-present-affirmative-active template active text_sha256 3105ac8eb1bfe19c4b39463839b3c1a453cfa27b75abba4fa73fff1fb0b9b063
+surface child-follows-child-present-affirmative-passive template passive text_sha256 0fc935a0ddc28d7ee03c135dd922a72a800619683812643fcd23f8357547194c
+end-meaning
+meaning child-follows-child-present-negated ordinals 1 2 1 0 1
+surface child-follows-child-present-negated-active template active text_sha256 8ca8eacb30ec520435b1d46c990e5a254f7fa9c97231d326fb17ac883b8e2741
+surface child-follows-child-present-negated-passive template passive text_sha256 09d787380dab93bbe55a3f6242250d324b6d316473fb94cda03aaf95503970bb
+end-meaning
+meaning child-follows-child-past-affirmative ordinals 1 2 1 1 0
+surface child-follows-child-past-affirmative-active template active text_sha256 17bba44b07d0c62b31334331a28e4258dfb17cea9685d4fc7e8b0f709dc8dfe1
+surface child-follows-child-past-affirmative-passive template passive text_sha256 1416a97bd7f3c6759cac940df620a6287ce7be852904d0ae2c29647141eb70c6
+end-meaning
+meaning child-follows-child-past-negated ordinals 1 2 1 1 1
+surface child-follows-child-past-negated-active template active text_sha256 9b381ba15e116dc8fd15e13ecce9ff61278457509346ecc7b21a9d315e306fd6
+surface child-follows-child-past-negated-passive template passive text_sha256 a8dd773c62a0141b7ac4eee6a334dba92fb4f58f3921bd2391b64ced23f229ce
+end-meaning
+meaning child-follows-artist-present-affirmative ordinals 1 2 2 0 0
+surface child-follows-artist-present-affirmative-active template active text_sha256 6b1ea2f1a7e1d79330e80a346c679beab36496b41581e0fd95fcc51a64419bb2
+surface child-follows-artist-present-affirmative-passive template passive text_sha256 98e4a176b15e3961cbddf0acebe5daaff7586ed5b24d131311872e9c6037e847
+end-meaning
+meaning child-follows-artist-present-negated ordinals 1 2 2 0 1
+surface child-follows-artist-present-negated-active template active text_sha256 6e5993796098126abd094bf7f3a34a5e890ad9b9c994a21f7e81ed2f0406d272
+surface child-follows-artist-present-negated-passive template passive text_sha256 adddc6f34084991cf4c620bf1d2c99d09b72dad7b96daf1bde504f4f412a6997
+end-meaning
+meaning child-follows-artist-past-affirmative ordinals 1 2 2 1 0
+surface child-follows-artist-past-affirmative-active template active text_sha256 2971038c3873ecd2f4b165723631e54e68f9659ffe1bb9828d0f040ad7a2bf4b
+surface child-follows-artist-past-affirmative-passive template passive text_sha256 d2f4633f5f18e9d23e6de6d1d4284c0d12901efbcf4a13291660aa77dbe4c4e7
+end-meaning
+meaning child-follows-artist-past-negated ordinals 1 2 2 1 1
+surface child-follows-artist-past-negated-active template active text_sha256 cb2604b138a85dcab06927c8bb7eb8e8a7d18de96a0fbc9a1c15290b59d51cc7
+surface child-follows-artist-past-negated-passive template passive text_sha256 3c4dd61293416f9f05abe9bccde33ba38a04e2de91d272fd7d161b97fcb44ac9
+end-meaning
+meaning child-follows-scientist-present-affirmative ordinals 1 2 3 0 0
+surface child-follows-scientist-present-affirmative-active template active text_sha256 e36db41b9195aa8c4d56da42b6fa9050b9cce534cf59e8ce2e537a06179fbed7
+surface child-follows-scientist-present-affirmative-passive template passive text_sha256 6d200a121b73a78662f5570ce925c07466c55893bb9d9b82a5a5965ab00647e7
+end-meaning
+meaning child-follows-scientist-present-negated ordinals 1 2 3 0 1
+surface child-follows-scientist-present-negated-active template active text_sha256 98b31e030b84d9d56152bcb9a6c3d20d36a883039fb3e58267b4605504801185
+surface child-follows-scientist-present-negated-passive template passive text_sha256 242f823907bc45bf0ff59f596d0ab6979df073f9facae6e4a66f57b45d2bb61b
+end-meaning
+meaning child-follows-scientist-past-affirmative ordinals 1 2 3 1 0
+surface child-follows-scientist-past-affirmative-active template active text_sha256 ee28b79322a462e494060835cc166d471a83fccc8b25e9a1dbfda057b4fd7582
+surface child-follows-scientist-past-affirmative-passive template passive text_sha256 1cb16bff4090fa783fcf1f918bdb32a80813693027ac3cba3fe7d268a9e414ee
+end-meaning
+meaning child-follows-scientist-past-negated ordinals 1 2 3 1 1
+surface child-follows-scientist-past-negated-active template active text_sha256 a676b3fed833953746de64317289492cb2963a1e9ca6180c8eb522dd97a03579
+surface child-follows-scientist-past-negated-passive template passive text_sha256 8bc16c7a22e369880fae869754090b5fc301d8cd4f3c044980a47ab54a459e04
+end-meaning
+meaning child-avoids-robot-present-affirmative ordinals 1 3 0 0 0
+surface child-avoids-robot-present-affirmative-active template active text_sha256 2aa802520614b05834d65035d94c9e8ceb40602050395e7f65f383df9f973a16
+surface child-avoids-robot-present-affirmative-passive template passive text_sha256 2f6212d8bac3cdc7373ddd27b8f4bb5bbb02e7731a1a7a6b23c9df060b3e34ee
+end-meaning
+meaning child-avoids-robot-present-negated ordinals 1 3 0 0 1
+surface child-avoids-robot-present-negated-active template active text_sha256 df77d8ecb604c2e07bd1c34dbe34db6f6887961c62de70a73e704e87e536d65c
+surface child-avoids-robot-present-negated-passive template passive text_sha256 fa6dcfcbf9d5db62f5eb3707038b610723dc10b18a661ede2711c28d20334282
+end-meaning
+meaning child-avoids-robot-past-affirmative ordinals 1 3 0 1 0
+surface child-avoids-robot-past-affirmative-active template active text_sha256 c5c04818579be2a351f38c49d694cf41aeed7fd3c93bb6ac3c581ab0f57ac3ad
+surface child-avoids-robot-past-affirmative-passive template passive text_sha256 2209119c115566e2c236532138996fbd77c073200f7dc46bf961bd085b4a3827
+end-meaning
+meaning child-avoids-robot-past-negated ordinals 1 3 0 1 1
+surface child-avoids-robot-past-negated-active template active text_sha256 c89b9ca57e1e7b6f662db537646746c60318a6f5924b2ae5c1dc885e4bf82b8c
+surface child-avoids-robot-past-negated-passive template passive text_sha256 30dabf32c470c7b19db62b51f19e75e996f79cc83c6d2ef3666bc2931565edaf
+end-meaning
+meaning child-avoids-child-present-affirmative ordinals 1 3 1 0 0
+surface child-avoids-child-present-affirmative-active template active text_sha256 2f7b7791f849c95b323879cca2fbc9ad6166605652b8f08474fd59842de23f25
+surface child-avoids-child-present-affirmative-passive template passive text_sha256 c0f5bfef3e0714edc8fb1a4927a25fd38ae5e1f48420984849fa55618586ca10
+end-meaning
+meaning child-avoids-child-present-negated ordinals 1 3 1 0 1
+surface child-avoids-child-present-negated-active template active text_sha256 6ee78a2dcea22f5536eb52e3d778d4e62414c038c69a75a78bb9fb91322480f3
+surface child-avoids-child-present-negated-passive template passive text_sha256 8ea45f2c7aaa8199e5b7dc21e600ceeb5391721534361037a5b209dbafd37c55
+end-meaning
+meaning child-avoids-child-past-affirmative ordinals 1 3 1 1 0
+surface child-avoids-child-past-affirmative-active template active text_sha256 bea1b381838f4a081c5c32b1ab7016814186ebf32e57149922529fcb32eb8439
+surface child-avoids-child-past-affirmative-passive template passive text_sha256 0d8fe8d9dde84ef49287395de616ac4d6cd08e7b2849ec26dd01b2c1bc567dc9
+end-meaning
+meaning child-avoids-child-past-negated ordinals 1 3 1 1 1
+surface child-avoids-child-past-negated-active template active text_sha256 fb7a7fc2ddf626980e1fe846c944a49767351cc074ba5ee90f9ec1d98eabeac2
+surface child-avoids-child-past-negated-passive template passive text_sha256 61dab3aac6f491f2cb6d7bba6c635cf713410b9019ac08fe77e3996d6eb30f78
+end-meaning
+meaning child-avoids-artist-present-affirmative ordinals 1 3 2 0 0
+surface child-avoids-artist-present-affirmative-active template active text_sha256 19babbd6bc1ef29878fa6484c00295a92d6dd1e95eb18f02e65609685b4ce2f3
+surface child-avoids-artist-present-affirmative-passive template passive text_sha256 825572fc425d5587c33f139d7659099cfece586bee5e3c9cd668cba748e35895
+end-meaning
+meaning child-avoids-artist-present-negated ordinals 1 3 2 0 1
+surface child-avoids-artist-present-negated-active template active text_sha256 7c270f3fc2af099e4a950a47ca6f4c17b94b3ab1829740d64fb1eef2db5e1143
+surface child-avoids-artist-present-negated-passive template passive text_sha256 4bc09ce5551ed5fa556ece1fc84b70022ad9a6b6035738039786f7c7ddd553ad
+end-meaning
+meaning child-avoids-artist-past-affirmative ordinals 1 3 2 1 0
+surface child-avoids-artist-past-affirmative-active template active text_sha256 f70fb77a37f1216a86e0316f86eae02e158843666c24ac899e141ca390cb2d23
+surface child-avoids-artist-past-affirmative-passive template passive text_sha256 c05902fd99acdbd5c4d8685b0cead0dd6740ebd47f1c88f23f42ba6030591673
+end-meaning
+meaning child-avoids-artist-past-negated ordinals 1 3 2 1 1
+surface child-avoids-artist-past-negated-active template active text_sha256 7682b29e509884af5ca187e14d57ee9a921fa4e7c5b0631e81feaafea49a92a7
+surface child-avoids-artist-past-negated-passive template passive text_sha256 cba748854b772f02455384be28b502cc319aafb273d541953cdb3d6080446230
+end-meaning
+meaning child-avoids-scientist-present-affirmative ordinals 1 3 3 0 0
+surface child-avoids-scientist-present-affirmative-active template active text_sha256 b9af441f09ba9252ff5d5e547ba4c359f6eda72b268b5210468386c315fa4c69
+surface child-avoids-scientist-present-affirmative-passive template passive text_sha256 17d4b23b68b81f3288c0902ec279a82fbdb2d67bc1b39450bd9b5be38e76dc04
+end-meaning
+meaning child-avoids-scientist-present-negated ordinals 1 3 3 0 1
+surface child-avoids-scientist-present-negated-active template active text_sha256 7f4196864aeba401fd40b406f15dfbf76940266d8e2ea89229924d41118ddfe3
+surface child-avoids-scientist-present-negated-passive template passive text_sha256 6c47e1c3700cb0bfef3e68af367c85825380909b71d2414fae337ea0edbdc664
+end-meaning
+meaning child-avoids-scientist-past-affirmative ordinals 1 3 3 1 0
+surface child-avoids-scientist-past-affirmative-active template active text_sha256 988d5c80d850ba9b5c4c777a431766506673294d3e311df284e13f5043336317
+surface child-avoids-scientist-past-affirmative-passive template passive text_sha256 905565b38dc12dee8eb74a17b9d4a14618fa4c5fcc766129ffdd004f037aa62b
+end-meaning
+meaning child-avoids-scientist-past-negated ordinals 1 3 3 1 1
+surface child-avoids-scientist-past-negated-active template active text_sha256 504f9285f3077121c8b34246522e39c6ab715a2f8ee4b1edf1e627e2bfcf0306
+surface child-avoids-scientist-past-negated-passive template passive text_sha256 f0420b087c9de753d3394486dbbcfd6b0d8bdfa94d887c23a2e373d42ec0e82d
+end-meaning
+meaning artist-sees-robot-present-affirmative ordinals 2 0 0 0 0
+surface artist-sees-robot-present-affirmative-active template active text_sha256 ec348cb11076a79b1ffe900450dc5036c10cc732eba27be0f8752e387790f521
+surface artist-sees-robot-present-affirmative-passive template passive text_sha256 dabe988f9e79fe6cda77b6598e2cacbe3f55ac5e83e97aad63862143939dad38
+end-meaning
+meaning artist-sees-robot-present-negated ordinals 2 0 0 0 1
+surface artist-sees-robot-present-negated-active template active text_sha256 78f437ee1ab5837dd70b5e9fd988c44851b6f69eb34b01d9dbc5cf1666510b0b
+surface artist-sees-robot-present-negated-passive template passive text_sha256 e717184d7e032fee7b101e017dc47a9f6a3ec72cbcebf99cadcfce32f17c6cd2
+end-meaning
+meaning artist-sees-robot-past-affirmative ordinals 2 0 0 1 0
+surface artist-sees-robot-past-affirmative-active template active text_sha256 39bb1556be2db305a94ac83daad0f6e6f4520bd0a8a2109737c22c17e134c24f
+surface artist-sees-robot-past-affirmative-passive template passive text_sha256 da3ca4501a990328e3374007496b2e2d8adfb8ac7de8b30d1ef5e5ac176c742c
+end-meaning
+meaning artist-sees-robot-past-negated ordinals 2 0 0 1 1
+surface artist-sees-robot-past-negated-active template active text_sha256 87148863603f28e6b981b10395fdbd19231a48ad5f93ae31327972cef7a37d07
+surface artist-sees-robot-past-negated-passive template passive text_sha256 233b8643651fd62f7ae92e3f06acb88e008ffffc87c77ddfa7b691e2ccd0dd06
+end-meaning
+meaning artist-sees-child-present-affirmative ordinals 2 0 1 0 0
+surface artist-sees-child-present-affirmative-active template active text_sha256 54e3fc1442c893f44a0b855342642d1290d3ad5eebed028d9f382b9eceba1bcd
+surface artist-sees-child-present-affirmative-passive template passive text_sha256 3d264456a362606d3f5c26fc6fcafcf9cf8bf49f670e63178f734ccf917549e1
+end-meaning
+meaning artist-sees-child-present-negated ordinals 2 0 1 0 1
+surface artist-sees-child-present-negated-active template active text_sha256 851f95cb75098c395e04dce7b3a6b23331c8d70e6cb085b7c30c0c3ed4c3fbb0
+surface artist-sees-child-present-negated-passive template passive text_sha256 894201b357d559453ff9785bc12c5ee2072b61fd40186aab75d5abc8353917c0
+end-meaning
+meaning artist-sees-child-past-affirmative ordinals 2 0 1 1 0
+surface artist-sees-child-past-affirmative-active template active text_sha256 cf8c40dba6a17236f426ed1bc4a9100375df1ca744a28b5fd86a606c4cb8d35f
+surface artist-sees-child-past-affirmative-passive template passive text_sha256 a759d23da12352f0f247e06e751d6bcf29aa18e7e157ee5a7c180932a870f446
+end-meaning
+meaning artist-sees-child-past-negated ordinals 2 0 1 1 1
+surface artist-sees-child-past-negated-active template active text_sha256 f29405c97cc84138d13ec47d9cb36da7872bd112ceb65370e335e5870a717cff
+surface artist-sees-child-past-negated-passive template passive text_sha256 60588cbf6657d12589be21c6fbb9205658418c3eddcb2dafef19e38c30676b2d
+end-meaning
+meaning artist-sees-artist-present-affirmative ordinals 2 0 2 0 0
+surface artist-sees-artist-present-affirmative-active template active text_sha256 80355b79f669ea503776eaa39b9d646c335766162b3ae8a1e313ca8a01182e2e
+surface artist-sees-artist-present-affirmative-passive template passive text_sha256 4383c3e38a393d86046c7fe4f2e26f56d15b611362a767ceae317fc0353437d7
+end-meaning
+meaning artist-sees-artist-present-negated ordinals 2 0 2 0 1
+surface artist-sees-artist-present-negated-active template active text_sha256 d71a8ce3a924ba9b1bd676ca8cfb17240d450edd35d7220df09854a0cca00974
+surface artist-sees-artist-present-negated-passive template passive text_sha256 4c70588eba16b7b335595861314bddc7ba3af13368138574bd5c96bc39789140
+end-meaning
+meaning artist-sees-artist-past-affirmative ordinals 2 0 2 1 0
+surface artist-sees-artist-past-affirmative-active template active text_sha256 63d4cb69d09056f9e244c4fbb08c7fb3e44cafbdc16b111a6ce6046e49c63bc4
+surface artist-sees-artist-past-affirmative-passive template passive text_sha256 5c691c57a64ec18546e9af2c68d3eff0d133a2b003eadf4e40fdfa6e3ac5c015
+end-meaning
+meaning artist-sees-artist-past-negated ordinals 2 0 2 1 1
+surface artist-sees-artist-past-negated-active template active text_sha256 91376b888e4b34409c4561e08637bf9cf2024e7398454936688860fea7784eb2
+surface artist-sees-artist-past-negated-passive template passive text_sha256 6de4ffcf5d6dd9c2e49bc21bf0a608569750062556c0092c2d9040e9cf5576d7
+end-meaning
+meaning artist-sees-scientist-present-affirmative ordinals 2 0 3 0 0
+surface artist-sees-scientist-present-affirmative-active template active text_sha256 f7368e2f14baf8fb94e0ef821247b421a425bad2ce90fec3c0867a75d5cbce68
+surface artist-sees-scientist-present-affirmative-passive template passive text_sha256 3509e72d3ab3dbb86d702cdf99a4684033e53eec329a08f0405443a6b203c078
+end-meaning
+meaning artist-sees-scientist-present-negated ordinals 2 0 3 0 1
+surface artist-sees-scientist-present-negated-active template active text_sha256 ed8fcb8f746020c277567c2b29fb9c3bd834121e603a1adc78bd9440eb924692
+surface artist-sees-scientist-present-negated-passive template passive text_sha256 cbf69cfbec78d64a5ae05b0f5381240c1420be9f6196353a4b7255c66fc2b55f
+end-meaning
+meaning artist-sees-scientist-past-affirmative ordinals 2 0 3 1 0
+surface artist-sees-scientist-past-affirmative-active template active text_sha256 01623a6861c7960c27f97146387ddfbfa3e728510db1d253da3bc42a72c9312f
+surface artist-sees-scientist-past-affirmative-passive template passive text_sha256 236db56578615f1702e47178a750ee6f0e57f81b538bb805d1de7b2900dfc8c7
+end-meaning
+meaning artist-sees-scientist-past-negated ordinals 2 0 3 1 1
+surface artist-sees-scientist-past-negated-active template active text_sha256 190b3ea08188c6e7fadf8f9f0166126f5f23b998e109624e0d75b6da5ad34f07
+surface artist-sees-scientist-past-negated-passive template passive text_sha256 0090dfeef9dbc517099e4cc65d34601fecae4a1cf4ff5dd4f365d59ed30546a2
+end-meaning
+meaning artist-helps-robot-present-affirmative ordinals 2 1 0 0 0
+surface artist-helps-robot-present-affirmative-active template active text_sha256 ea0d4098ce60258383d91b731730a5149c00b52697e320db79021afbf835c129
+surface artist-helps-robot-present-affirmative-passive template passive text_sha256 89413c84265571e5e41fc40650f8d73fdef4c0f0ddb2e20a3317540d6dd822a0
+end-meaning
+meaning artist-helps-robot-present-negated ordinals 2 1 0 0 1
+surface artist-helps-robot-present-negated-active template active text_sha256 0c618b4b132225f378bc7bc28e05d226d936ed6c6cf5c43c868c62de85508fc8
+surface artist-helps-robot-present-negated-passive template passive text_sha256 d7003774bf6f9f1da6f960e92d4e2e88554326993fd4610ee20c4fef0ceed862
+end-meaning
+meaning artist-helps-robot-past-affirmative ordinals 2 1 0 1 0
+surface artist-helps-robot-past-affirmative-active template active text_sha256 96893f023bda5492f14e02ab3c2c42e8313aa98eec05c10683d77584c6e94237
+surface artist-helps-robot-past-affirmative-passive template passive text_sha256 b596416ec67d576074725fab383147e5f2f890a9e93a925fc2868d95003ae1f6
+end-meaning
+meaning artist-helps-robot-past-negated ordinals 2 1 0 1 1
+surface artist-helps-robot-past-negated-active template active text_sha256 de79521adb93216536ca9f517b0ec126bebaf25ebcb79681188883855002872b
+surface artist-helps-robot-past-negated-passive template passive text_sha256 ea1c8174622d08002b11066df73d78967af428bf93490dd49030c3f0f116f677
+end-meaning
+meaning artist-helps-child-present-affirmative ordinals 2 1 1 0 0
+surface artist-helps-child-present-affirmative-active template active text_sha256 f07db99443567e0bdf3836e900f7f0846ca5336c391c5a7bfcd1443051437f73
+surface artist-helps-child-present-affirmative-passive template passive text_sha256 7b191c50fae73f360c9262db39861caa1928fa9479153585c000e6b11f4646bd
+end-meaning
+meaning artist-helps-child-present-negated ordinals 2 1 1 0 1
+surface artist-helps-child-present-negated-active template active text_sha256 7ddb3d843a07720310bb4cc5c32855decceef7f1e1671604ed105675e7dcb592
+surface artist-helps-child-present-negated-passive template passive text_sha256 9d81a3a947ead7b4d44d81c7b9c838e4af24a66822bb065b9f91c2dd4c37ef35
+end-meaning
+meaning artist-helps-child-past-affirmative ordinals 2 1 1 1 0
+surface artist-helps-child-past-affirmative-active template active text_sha256 6e66df64bf3a53fcf1e036654c73e98c75acd60ca62617fdaa09d771708a07f1
+surface artist-helps-child-past-affirmative-passive template passive text_sha256 4e7f2dbdc6b922e7be92382dd57d8ebe1fae85ffcd7dc5549a75beff41639c4f
+end-meaning
+meaning artist-helps-child-past-negated ordinals 2 1 1 1 1
+surface artist-helps-child-past-negated-active template active text_sha256 f6fe4d823a73211f5054fe937b4012449703cdbd6d51ed0e26bf9ca5e1767298
+surface artist-helps-child-past-negated-passive template passive text_sha256 81cd470286420c136b3033aab9d725144bfccd506f9b1b8e5bad8327ad49c097
+end-meaning
+meaning artist-helps-artist-present-affirmative ordinals 2 1 2 0 0
+surface artist-helps-artist-present-affirmative-active template active text_sha256 04cc4b5c1ea39c9254bd744ba3054fa7cd7bce7d71feb04e945ce70235e58700
+surface artist-helps-artist-present-affirmative-passive template passive text_sha256 5b7105f49aebd0eec1d28d585f090a34f867b1cec4aaf7a9f8fa16fe903f2957
+end-meaning
+meaning artist-helps-artist-present-negated ordinals 2 1 2 0 1
+surface artist-helps-artist-present-negated-active template active text_sha256 86d25149b6c9f92fe6ac1af719e1913807623768b1b1a030a9e371e45038544d
+surface artist-helps-artist-present-negated-passive template passive text_sha256 1438d70acc5bf1ac4dc4de4d2b2e35b856ab9cf7cbc2d245e6d1f48e3e9f13b0
+end-meaning
+meaning artist-helps-artist-past-affirmative ordinals 2 1 2 1 0
+surface artist-helps-artist-past-affirmative-active template active text_sha256 f7486d56eddc1f99150bc5dddbb6c2eca63a575199c32cfefec8ef83c3321927
+surface artist-helps-artist-past-affirmative-passive template passive text_sha256 aee035c3785661816b0de33ac667f0f320e5f28f3c785924974ce60e3efbe71a
+end-meaning
+meaning artist-helps-artist-past-negated ordinals 2 1 2 1 1
+surface artist-helps-artist-past-negated-active template active text_sha256 7ad7d6c6a68fc12b4615f0f026d5462fb1d5cf2ae5d06d414360995c92d990a4
+surface artist-helps-artist-past-negated-passive template passive text_sha256 e4efc74963ce5b77fb4de089bd03df43bf6e8fef098bcb009683a993c741b2b7
+end-meaning
+meaning artist-helps-scientist-present-affirmative ordinals 2 1 3 0 0
+surface artist-helps-scientist-present-affirmative-active template active text_sha256 0cf35efd3bba3fd310f6f0ac48bbf211ac335e4a923ce2b910560b5a25b0c8ca
+surface artist-helps-scientist-present-affirmative-passive template passive text_sha256 60efb4c979e74180b155d3835350c36ae06bdeb681bd0fe7b365a060508fd7b4
+end-meaning
+meaning artist-helps-scientist-present-negated ordinals 2 1 3 0 1
+surface artist-helps-scientist-present-negated-active template active text_sha256 3afc133eba4936a9a59e90e08d9f54be9ef8332f22f7ec9276a249c1aecc1e82
+surface artist-helps-scientist-present-negated-passive template passive text_sha256 210fa733a7ae66d9878aa0aa0ab272e95cc75ed7305dd378d5e6bf226648c091
+end-meaning
+meaning artist-helps-scientist-past-affirmative ordinals 2 1 3 1 0
+surface artist-helps-scientist-past-affirmative-active template active text_sha256 b2e8c0f9b763a1655c94227dc019d7752ad270a30fa47dc9b2a666ffef4293f2
+surface artist-helps-scientist-past-affirmative-passive template passive text_sha256 2cfce947eacaf340007884240ec7cfdc1e15a330b98ca2adb992839ee4355ca7
+end-meaning
+meaning artist-helps-scientist-past-negated ordinals 2 1 3 1 1
+surface artist-helps-scientist-past-negated-active template active text_sha256 420e8adf01ef1461fe86ee61673e8b8ffdedc113910a26e82530dbabccc743db
+surface artist-helps-scientist-past-negated-passive template passive text_sha256 4489ef1dbc6e963bc6243b951ce19083e4de5b7bf7492b09f83bf70ad5e9d9bf
+end-meaning
+meaning artist-follows-robot-present-affirmative ordinals 2 2 0 0 0
+surface artist-follows-robot-present-affirmative-active template active text_sha256 5497118fe75d378ea7b1b0bfc0309446304b451f2d9e04d514203a281e686ce4
+surface artist-follows-robot-present-affirmative-passive template passive text_sha256 8e4b74baf738a3c34c26bec3e0c68cba357adabdb54791855a22741f58b61616
+end-meaning
+meaning artist-follows-robot-present-negated ordinals 2 2 0 0 1
+surface artist-follows-robot-present-negated-active template active text_sha256 9dcebbfb205e964e5b4989833ba0c43ee97397396ba5238dc6aaccad4042b82c
+surface artist-follows-robot-present-negated-passive template passive text_sha256 28ed6fb08b6e8ade83db805c9d72ea345bd0fd504dadab4f980c39021a0ece99
+end-meaning
+meaning artist-follows-robot-past-affirmative ordinals 2 2 0 1 0
+surface artist-follows-robot-past-affirmative-active template active text_sha256 9146be8109a8915c72d839ecf90da838d52719daeec872391b07b51099a1185a
+surface artist-follows-robot-past-affirmative-passive template passive text_sha256 775c6a7118879941b6454403b09bfad96cfa54bd8180ee8ff87f7bc00e67d22c
+end-meaning
+meaning artist-follows-robot-past-negated ordinals 2 2 0 1 1
+surface artist-follows-robot-past-negated-active template active text_sha256 39a18d59e48307cf08ab66574ff5c00f487761da94ace4a43f89e18bb65e6ef1
+surface artist-follows-robot-past-negated-passive template passive text_sha256 aa15499f0d93bf5a729549922b8ec89a6e57ba4737d60a32ea8d6094eba96254
+end-meaning
+meaning artist-follows-child-present-affirmative ordinals 2 2 1 0 0
+surface artist-follows-child-present-affirmative-active template active text_sha256 deed6fd7428dcaafe3854e9086a32670464d344595ae78ed2d7ca9d0825a12ee
+surface artist-follows-child-present-affirmative-passive template passive text_sha256 ddbe7dab016ef2f9d58259b4f388428c475d0ad85f34b7117a7c16d4fbb433a9
+end-meaning
+meaning artist-follows-child-present-negated ordinals 2 2 1 0 1
+surface artist-follows-child-present-negated-active template active text_sha256 5666ab6fd4f9317da4d1fe966069d279ab459840b0858768b803b8a3fd50903e
+surface artist-follows-child-present-negated-passive template passive text_sha256 57e4e8568cbef043756812919fc24ba5c2f1e8683cfbf127d7dbf46b262cb202
+end-meaning
+meaning artist-follows-child-past-affirmative ordinals 2 2 1 1 0
+surface artist-follows-child-past-affirmative-active template active text_sha256 496d037d0fa1bd43921ecd2df70de940666abc1d31cc7e3f2b487a38214e3cd5
+surface artist-follows-child-past-affirmative-passive template passive text_sha256 6108fc01166671849ecb79dc98c4417956a39fe4b8b8f625d66ee9349451b595
+end-meaning
+meaning artist-follows-child-past-negated ordinals 2 2 1 1 1
+surface artist-follows-child-past-negated-active template active text_sha256 38f9e3b73ca2c86ce8a1048f90e3cf68c667df11f37b4e9b6414b2edcb7a728f
+surface artist-follows-child-past-negated-passive template passive text_sha256 9eff1cf5c8cdffd69f5df9e1c270f7e62aa4f063e282877697337aff9aa2a578
+end-meaning
+meaning artist-follows-artist-present-affirmative ordinals 2 2 2 0 0
+surface artist-follows-artist-present-affirmative-active template active text_sha256 a0ae2733155936e165d10bc5802dc0f49ff27a0f981f56acf7b462a875321654
+surface artist-follows-artist-present-affirmative-passive template passive text_sha256 fcae7cf9fa502706b9d53fd43026260a3f58cf5440860228e0bba38168eb90ba
+end-meaning
+meaning artist-follows-artist-present-negated ordinals 2 2 2 0 1
+surface artist-follows-artist-present-negated-active template active text_sha256 057a4bdda2b4de3b3ac6c6eeb1b4bd8cf761152142bd717614197460e0484188
+surface artist-follows-artist-present-negated-passive template passive text_sha256 a1c2911e670834f14d2c58fa9dca789544606f410d22a58dbb9fa7ed90905fd0
+end-meaning
+meaning artist-follows-artist-past-affirmative ordinals 2 2 2 1 0
+surface artist-follows-artist-past-affirmative-active template active text_sha256 5274710d36b65b3e2b48242c86d77c748fea93e6b19a2d5f75035ec8e027d66a
+surface artist-follows-artist-past-affirmative-passive template passive text_sha256 7b1fe76414627d40f24500ecd4b986fecb149c9185d7728b741437d45e97e1f1
+end-meaning
+meaning artist-follows-artist-past-negated ordinals 2 2 2 1 1
+surface artist-follows-artist-past-negated-active template active text_sha256 e35284d3859cc8f74017036ce22f7d4a09f812239495fa439f7979969fedc251
+surface artist-follows-artist-past-negated-passive template passive text_sha256 da049ba9748ee74a808155995a18447b14d174941f231f6eb4652e75cb7e42f7
+end-meaning
+meaning artist-follows-scientist-present-affirmative ordinals 2 2 3 0 0
+surface artist-follows-scientist-present-affirmative-active template active text_sha256 5c18734fa50e51807e6c0a51a0f7aded3b4d42021d62bc1f51dbbb7332714951
+surface artist-follows-scientist-present-affirmative-passive template passive text_sha256 b11b155dbbb1a04d4c2509bfdad36fef8a0286c33670058eacb1e40ec17610e8
+end-meaning
+meaning artist-follows-scientist-present-negated ordinals 2 2 3 0 1
+surface artist-follows-scientist-present-negated-active template active text_sha256 b392cf960d56814e6978933bfa5db02a3500c3287cd549a78c740cf41b26f0a4
+surface artist-follows-scientist-present-negated-passive template passive text_sha256 0de93566c391112c08b8769a3717629f8785290c4046c9edbe42d9f5c2d2ca76
+end-meaning
+meaning artist-follows-scientist-past-affirmative ordinals 2 2 3 1 0
+surface artist-follows-scientist-past-affirmative-active template active text_sha256 d1d3ef02a15cd644e29b4a2c3f0848f30c716fbcbd01fc2865dd9f22d2e7d859
+surface artist-follows-scientist-past-affirmative-passive template passive text_sha256 6f24d909da5817efbf314fa2e3fda90996e5a7df2209cce8fbd2848b65d57394
+end-meaning
+meaning artist-follows-scientist-past-negated ordinals 2 2 3 1 1
+surface artist-follows-scientist-past-negated-active template active text_sha256 48f5ef2937c15d6b42a2c9c88709784db057257f4060f63a824aef7aaf69d3d1
+surface artist-follows-scientist-past-negated-passive template passive text_sha256 928a85c6d439fadd63c7ed91e8471386086742e66171387b7d2e7c824d04c77b
+end-meaning
+meaning artist-avoids-robot-present-affirmative ordinals 2 3 0 0 0
+surface artist-avoids-robot-present-affirmative-active template active text_sha256 b1c6d257942cbe558c9e6bf30aaa3e69d421982578147f580de30a97395f3ef8
+surface artist-avoids-robot-present-affirmative-passive template passive text_sha256 554ba84329139681f53be04aa4ace236a13e8888eb8debc74e1212a4e8083d48
+end-meaning
+meaning artist-avoids-robot-present-negated ordinals 2 3 0 0 1
+surface artist-avoids-robot-present-negated-active template active text_sha256 a76028a3f56f4cc95d2a2e44859a3671499731a6c92890ea982b9103ac6846af
+surface artist-avoids-robot-present-negated-passive template passive text_sha256 7f008091938edb3bb81c21410135c40329dd8f10953a4ea95ef5f4aab60ed1cc
+end-meaning
+meaning artist-avoids-robot-past-affirmative ordinals 2 3 0 1 0
+surface artist-avoids-robot-past-affirmative-active template active text_sha256 f2c323527504ffe09ed057fbeb4146a36b2c52a3f52dac3f4d1885b29506b462
+surface artist-avoids-robot-past-affirmative-passive template passive text_sha256 3957d84aa81775eea559404bcd5fe724ba3bceb23fe238ba40caec6187218324
+end-meaning
+meaning artist-avoids-robot-past-negated ordinals 2 3 0 1 1
+surface artist-avoids-robot-past-negated-active template active text_sha256 ad37cd40cd58421a748ff02a1ad11c307e57c36fab6c0308b1b840bd1bf9af64
+surface artist-avoids-robot-past-negated-passive template passive text_sha256 f0a6a10aff3b2aebf800ad31c54a515ef6872f9192acd3e54389dc014b7af3a2
+end-meaning
+meaning artist-avoids-child-present-affirmative ordinals 2 3 1 0 0
+surface artist-avoids-child-present-affirmative-active template active text_sha256 a1cf0a25c4f9ed42730381b2becf3e9eda2e7c622c11f43bd0db95a5a86de1fe
+surface artist-avoids-child-present-affirmative-passive template passive text_sha256 4d5206a2eb189829d49be2367debaf700e2990eb7616e149c1d39cf57ec047c0
+end-meaning
+meaning artist-avoids-child-present-negated ordinals 2 3 1 0 1
+surface artist-avoids-child-present-negated-active template active text_sha256 ac7795981a2c32183d6150a63dcd6b85b768181b08879a7fd8e776eab027d886
+surface artist-avoids-child-present-negated-passive template passive text_sha256 2a80643cba5d4b2dac55f46073d9d39c98acd3e10205bd3f6cc809422b9d74ba
+end-meaning
+meaning artist-avoids-child-past-affirmative ordinals 2 3 1 1 0
+surface artist-avoids-child-past-affirmative-active template active text_sha256 bcc4a554f84285bd9d18f037ea6af905dcb41bf3650f5d6726ff2d396eab6426
+surface artist-avoids-child-past-affirmative-passive template passive text_sha256 4b19630a89ebf4e006265932d558aa39f72750830b70898061e235354fbe0c2f
+end-meaning
+meaning artist-avoids-child-past-negated ordinals 2 3 1 1 1
+surface artist-avoids-child-past-negated-active template active text_sha256 e7812c8e7be88687f14ef2cb8971f4c3f856c40e939747c6b1f3ce86267585e9
+surface artist-avoids-child-past-negated-passive template passive text_sha256 4cd20093396256cb608c2930d765c99db57e295233ec646bf66b08d0be77c798
+end-meaning
+meaning artist-avoids-artist-present-affirmative ordinals 2 3 2 0 0
+surface artist-avoids-artist-present-affirmative-active template active text_sha256 dd4098e792c48813368c341c0966aaa4dd722e063e6150419d76f44d13beb7bb
+surface artist-avoids-artist-present-affirmative-passive template passive text_sha256 5eb52beed98dc340832b231799b38e658e2ca1f13394bf11f3073066fc83cdf8
+end-meaning
+meaning artist-avoids-artist-present-negated ordinals 2 3 2 0 1
+surface artist-avoids-artist-present-negated-active template active text_sha256 c0076f8ad794459629a202ff4bef7814764bf9b04dedb02a57b628924869e93f
+surface artist-avoids-artist-present-negated-passive template passive text_sha256 ba9f961a2eb14f00a3478b23f4141780cb08ca1bd7dad7cd3df9453d0831515e
+end-meaning
+meaning artist-avoids-artist-past-affirmative ordinals 2 3 2 1 0
+surface artist-avoids-artist-past-affirmative-active template active text_sha256 919d8603023ac377ffaea150bc5dc2dfef1d043cae2117985d9d8e5b8b7418af
+surface artist-avoids-artist-past-affirmative-passive template passive text_sha256 a7b4a776879a1ac2ca38a92add1cb293bad135eaeb86a13036ec61c1805d1f78
+end-meaning
+meaning artist-avoids-artist-past-negated ordinals 2 3 2 1 1
+surface artist-avoids-artist-past-negated-active template active text_sha256 d0583821af0d6951f1f9dcc3f5d42f69cdf76cf5e0825bf9312eac2f19ffbe68
+surface artist-avoids-artist-past-negated-passive template passive text_sha256 c1af3e26c08f93120a46d069701b05461319982a80e93a5a58eda0752738596e
+end-meaning
+meaning artist-avoids-scientist-present-affirmative ordinals 2 3 3 0 0
+surface artist-avoids-scientist-present-affirmative-active template active text_sha256 b473369ed09192eb3c139c9536fb241cba1fb9d64082b6d0b46dbf55d7ca53eb
+surface artist-avoids-scientist-present-affirmative-passive template passive text_sha256 8eeaffbef9e5ba3457ca383b548bbcf4fd2575c290b23eb52f875942e4d775ea
+end-meaning
+meaning artist-avoids-scientist-present-negated ordinals 2 3 3 0 1
+surface artist-avoids-scientist-present-negated-active template active text_sha256 155ff43dcd27e95d9396b92ee0258cc08732edbe797d1d0a42ca66c72329a9a4
+surface artist-avoids-scientist-present-negated-passive template passive text_sha256 bd779e3d85536fce50ad12965b11191c30e201cdef0cb4d72144e2e5fbb99327
+end-meaning
+meaning artist-avoids-scientist-past-affirmative ordinals 2 3 3 1 0
+surface artist-avoids-scientist-past-affirmative-active template active text_sha256 303b8ec8b015df86c3a3bdab7780b0acb4e4072fe4c48a13a5742ea852bb8902
+surface artist-avoids-scientist-past-affirmative-passive template passive text_sha256 c8ac9d0f6d8127be6a227f8ebe5d270d8898fb6d8eca8d094681da4e66467cd4
+end-meaning
+meaning artist-avoids-scientist-past-negated ordinals 2 3 3 1 1
+surface artist-avoids-scientist-past-negated-active template active text_sha256 deead3b2ecfe6e9ac8cfe6417e8dfc694dbdd45b0d2bcd0e3a7415e6643a211b
+surface artist-avoids-scientist-past-negated-passive template passive text_sha256 86a6cb0c7b15b9c09061b38e62a454dcf6abf0495ea6dc17ed06181460829099
+end-meaning
+meaning scientist-sees-robot-present-affirmative ordinals 3 0 0 0 0
+surface scientist-sees-robot-present-affirmative-active template active text_sha256 e9ec2d3534b88f086313897dc4f9a88918ab282265b6d09b50d05b152a96d852
+surface scientist-sees-robot-present-affirmative-passive template passive text_sha256 28b812bcca3053f30b6f1640800945788143b9b1f505be69a3c7a60822ca41b0
+end-meaning
+meaning scientist-sees-robot-present-negated ordinals 3 0 0 0 1
+surface scientist-sees-robot-present-negated-active template active text_sha256 e4fa52faa7be36bae7436288d41ed938c1c6cc6e5c15cc4e1f56901bbf4cf945
+surface scientist-sees-robot-present-negated-passive template passive text_sha256 6844542ee186ed6d6cb31ee4a0dce1a72227c92d8e0e3f3a5c8fea924d903e65
+end-meaning
+meaning scientist-sees-robot-past-affirmative ordinals 3 0 0 1 0
+surface scientist-sees-robot-past-affirmative-active template active text_sha256 a68991a5fa656c26e02e382dcfc6f384d2d304dcfb8f6165be8c2397487af66a
+surface scientist-sees-robot-past-affirmative-passive template passive text_sha256 fceaa2fe1471ce1175931f67cc84bce4c3681f06a0e5c6cee527612fb5ebb526
+end-meaning
+meaning scientist-sees-robot-past-negated ordinals 3 0 0 1 1
+surface scientist-sees-robot-past-negated-active template active text_sha256 d29c42d17b35d932efb19b0c3ce3d8fab7567f957b1fd38f13562ee8d593102f
+surface scientist-sees-robot-past-negated-passive template passive text_sha256 46864290bd3dab06336cfb1ec8dc1d8eed70278cfb6fbbd09ae38a5e66aafa8e
+end-meaning
+meaning scientist-sees-child-present-affirmative ordinals 3 0 1 0 0
+surface scientist-sees-child-present-affirmative-active template active text_sha256 a60c5a5dcfa62842746a85e259499b792ece851e6ac60b46f689fbdf28fb853d
+surface scientist-sees-child-present-affirmative-passive template passive text_sha256 1e8b3c47ff335383aa0e296a3047bcb2ff0c7f57a1604723cc52cd8469cce916
+end-meaning
+meaning scientist-sees-child-present-negated ordinals 3 0 1 0 1
+surface scientist-sees-child-present-negated-active template active text_sha256 5c000776c9aca41ca6a303acb4c0d9fc44e060780f2b6d2ddb4e876fd598e0c8
+surface scientist-sees-child-present-negated-passive template passive text_sha256 3807ff92835a4c357f25ee11a8eb73987f7fd48ae57f459682f91eb177776cb6
+end-meaning
+meaning scientist-sees-child-past-affirmative ordinals 3 0 1 1 0
+surface scientist-sees-child-past-affirmative-active template active text_sha256 5d0ebf9824e15fac29d74aa63879b0b024349c2e0a13a05ac55dcd3ccd5a8708
+surface scientist-sees-child-past-affirmative-passive template passive text_sha256 2bef94b15071ddd2aedda7ff883bb59bc5bb2df5eb67d40f094c20ad29356538
+end-meaning
+meaning scientist-sees-child-past-negated ordinals 3 0 1 1 1
+surface scientist-sees-child-past-negated-active template active text_sha256 26e1652bae8bb4043eb2aabda0fb8c5b1f309988fea4e8f7e8c3f9bf7b588777
+surface scientist-sees-child-past-negated-passive template passive text_sha256 c3da93c0b198b4740d00e4d293147bd6e8bf19c0121ce7537c9bc524ef9ef199
+end-meaning
+meaning scientist-sees-artist-present-affirmative ordinals 3 0 2 0 0
+surface scientist-sees-artist-present-affirmative-active template active text_sha256 042e4042077e2a11dc2f69bc140cd5bd2cd8a2e68668869ebf3a2390b4253162
+surface scientist-sees-artist-present-affirmative-passive template passive text_sha256 b19fd91e3f95a29b3f55a43a75a4582f832a04c4d898adb4507f4408f5fb41fa
+end-meaning
+meaning scientist-sees-artist-present-negated ordinals 3 0 2 0 1
+surface scientist-sees-artist-present-negated-active template active text_sha256 328e4fba66bfa85a65680114fdf0be134ac174272fc3913927c92e05f328256a
+surface scientist-sees-artist-present-negated-passive template passive text_sha256 44900fb1d441c0dbee074b85c7b1802b9cb6ffb0648221d87b5616f29cb3bd65
+end-meaning
+meaning scientist-sees-artist-past-affirmative ordinals 3 0 2 1 0
+surface scientist-sees-artist-past-affirmative-active template active text_sha256 db59cceef4a9dfd7a47f36db9db7c35f03b308a0ea197507ceeaca01ee4223dd
+surface scientist-sees-artist-past-affirmative-passive template passive text_sha256 f0a557fd6dd136eb98fcba82857d439cf3844a7a3418a5feae6dddc0a838ca98
+end-meaning
+meaning scientist-sees-artist-past-negated ordinals 3 0 2 1 1
+surface scientist-sees-artist-past-negated-active template active text_sha256 08fb08e16d8040a5723189509d134a2314f3b2de22587df23feee976bf58c214
+surface scientist-sees-artist-past-negated-passive template passive text_sha256 60cf685b824a3ea7fc06c9cbe4b57b498fab372506ccd3bdebd353c277768190
+end-meaning
+meaning scientist-sees-scientist-present-affirmative ordinals 3 0 3 0 0
+surface scientist-sees-scientist-present-affirmative-active template active text_sha256 9cdacf7b8ee97a70623c795896e3909f53923da2025026ee4d7545f4b294ec2b
+surface scientist-sees-scientist-present-affirmative-passive template passive text_sha256 48d80f846ea5cb8191cca8bce6b34e05dbacd6751fa8e45d7ac96462085f3812
+end-meaning
+meaning scientist-sees-scientist-present-negated ordinals 3 0 3 0 1
+surface scientist-sees-scientist-present-negated-active template active text_sha256 3fdbabe250c1ac897e4c53bf034efdc12f2aa267883f7d200827cd81cbdf9254
+surface scientist-sees-scientist-present-negated-passive template passive text_sha256 50fea076d1e95ab4152b5140d99780594ad86dc4dd7a71dc90b2a5990f979965
+end-meaning
+meaning scientist-sees-scientist-past-affirmative ordinals 3 0 3 1 0
+surface scientist-sees-scientist-past-affirmative-active template active text_sha256 b7e10551d1388a9d2733d3bd860484a20f2d2037515a589c644cf78118062b5b
+surface scientist-sees-scientist-past-affirmative-passive template passive text_sha256 db9d181a8fcf2cac04b791af2d1fcf1a596e7100ef7937508d31fb82b118ed7e
+end-meaning
+meaning scientist-sees-scientist-past-negated ordinals 3 0 3 1 1
+surface scientist-sees-scientist-past-negated-active template active text_sha256 af60bbe217aceaa17cd416c400447a6baf30feea3e988b33e4925f7ce3c3f355
+surface scientist-sees-scientist-past-negated-passive template passive text_sha256 8c7a6d3818e2bf9e3e612f342f5d04fca950bbe40084261a8bfbe353c407163e
+end-meaning
+meaning scientist-helps-robot-present-affirmative ordinals 3 1 0 0 0
+surface scientist-helps-robot-present-affirmative-active template active text_sha256 410f54763ba1c9e6d140252669e21ede515618c7f63a8d5ae3ff361561c66fbb
+surface scientist-helps-robot-present-affirmative-passive template passive text_sha256 884a7487a1c45a1147e5d60dc0b52b052eefb8182b03d7999bf45d2e5f097bd8
+end-meaning
+meaning scientist-helps-robot-present-negated ordinals 3 1 0 0 1
+surface scientist-helps-robot-present-negated-active template active text_sha256 1ae3601cfb96630e2414bbe5be09af217b23be774dd29eef83a83d35066e4b1e
+surface scientist-helps-robot-present-negated-passive template passive text_sha256 92555ee3918d5b61f2fe80d61235028f6450baa6ec1c222204154b50109be4eb
+end-meaning
+meaning scientist-helps-robot-past-affirmative ordinals 3 1 0 1 0
+surface scientist-helps-robot-past-affirmative-active template active text_sha256 7a287a6f570677d3a2f38977f480d5f1d6e4e21ac35d3a2e9a4fd33f887a05c2
+surface scientist-helps-robot-past-affirmative-passive template passive text_sha256 133f053605018fe7024f6392584764a97d9dd212eed83fabd698b9fe9ee276d8
+end-meaning
+meaning scientist-helps-robot-past-negated ordinals 3 1 0 1 1
+surface scientist-helps-robot-past-negated-active template active text_sha256 27e984a321a31bf38246bc93be31f8f6b10f9d1809b9e6f2859f7e97148e3ca1
+surface scientist-helps-robot-past-negated-passive template passive text_sha256 4cc45a2476bfd80c2ae884d024ea98fa2a0084186bd4e913cc781d9faa68b610
+end-meaning
+meaning scientist-helps-child-present-affirmative ordinals 3 1 1 0 0
+surface scientist-helps-child-present-affirmative-active template active text_sha256 3d928c1453fc1c33da2b994ad9e4b2579bce39ddc8015dab319f2b47dc8fb384
+surface scientist-helps-child-present-affirmative-passive template passive text_sha256 f8c7f0e08b282c9d0ac81756e592296f0acc236bbbcb68db05b5d1c893a87032
+end-meaning
+meaning scientist-helps-child-present-negated ordinals 3 1 1 0 1
+surface scientist-helps-child-present-negated-active template active text_sha256 c18d01ae841aed9beb3586488273189a0027068b42fc0ae39c4d89dc944dee9b
+surface scientist-helps-child-present-negated-passive template passive text_sha256 32b546d4aa3b69460bf9ce064467094a23a3afdd9d48c7ca0ee32f8fe7c993bb
+end-meaning
+meaning scientist-helps-child-past-affirmative ordinals 3 1 1 1 0
+surface scientist-helps-child-past-affirmative-active template active text_sha256 50b9ade1399fbfbe308e41d9448e6982366410abe13a9cae1cf09bc95101039a
+surface scientist-helps-child-past-affirmative-passive template passive text_sha256 852d71cd31843ec43885ef686c57bbd1aebc482a44b64f4f73a4e817d72a8f12
+end-meaning
+meaning scientist-helps-child-past-negated ordinals 3 1 1 1 1
+surface scientist-helps-child-past-negated-active template active text_sha256 19b3e71d2b6fab5f06f01a29e98dfda620b03cbdcb163edcf6f007081b811d9b
+surface scientist-helps-child-past-negated-passive template passive text_sha256 e65ed7f613c6362df6237cc3726c46c87420cc7c0b6044184f517d45604c3321
+end-meaning
+meaning scientist-helps-artist-present-affirmative ordinals 3 1 2 0 0
+surface scientist-helps-artist-present-affirmative-active template active text_sha256 d17d123de1cfc10e920a45240dda44c15b454becd2f4c4e1dae52c39a80409f7
+surface scientist-helps-artist-present-affirmative-passive template passive text_sha256 a50992273eb9f3409cc229660f52b6f0f3327fd36f3f961a96c28ad38a114811
+end-meaning
+meaning scientist-helps-artist-present-negated ordinals 3 1 2 0 1
+surface scientist-helps-artist-present-negated-active template active text_sha256 150744d2c9197af38565ae2f52fcff3ac0762cd8a4cdcb55ec3580be455d7edc
+surface scientist-helps-artist-present-negated-passive template passive text_sha256 9ea981ca3b6759d02fc6db0f111dc67284ee2c6ebbe5a39b817af18faabb52cb
+end-meaning
+meaning scientist-helps-artist-past-affirmative ordinals 3 1 2 1 0
+surface scientist-helps-artist-past-affirmative-active template active text_sha256 8d11a5929f3fbc61598aa4866327feeaed1d21a44ba11d4cde858339fda2d227
+surface scientist-helps-artist-past-affirmative-passive template passive text_sha256 c8552c82dcb42408a89d114aee7daa4052e6ff36a7dd946a179ac732415f1d65
+end-meaning
+meaning scientist-helps-artist-past-negated ordinals 3 1 2 1 1
+surface scientist-helps-artist-past-negated-active template active text_sha256 96dfbe6802b0d708cfb4ce41918b6c17378ef58f583346a993681cca7bcc03cf
+surface scientist-helps-artist-past-negated-passive template passive text_sha256 348edf82f2cb56f039e50682177c70d08043c60fcb67063cec1a1ea687ee33b5
+end-meaning
+meaning scientist-helps-scientist-present-affirmative ordinals 3 1 3 0 0
+surface scientist-helps-scientist-present-affirmative-active template active text_sha256 472735f7157e9fead04f0e0f3aa7cd978c0306b9647f9a6363b5cf218e43d17e
+surface scientist-helps-scientist-present-affirmative-passive template passive text_sha256 703a7b204ac94641374d62f00e1716db673fb5305b6dfd6506c7162ba96aef78
+end-meaning
+meaning scientist-helps-scientist-present-negated ordinals 3 1 3 0 1
+surface scientist-helps-scientist-present-negated-active template active text_sha256 326c80828699a6cefefa0622484f9a44dcdd66ab497575dd61f931646c91ef34
+surface scientist-helps-scientist-present-negated-passive template passive text_sha256 24f3aa4c9574eaee959f9123e7f1f1d38e7ae9e1f656cfad228275344a66456b
+end-meaning
+meaning scientist-helps-scientist-past-affirmative ordinals 3 1 3 1 0
+surface scientist-helps-scientist-past-affirmative-active template active text_sha256 abaabc6a85657e130158a948c5ed7e0f3c856d66897c2979f47fe28df6ad9c38
+surface scientist-helps-scientist-past-affirmative-passive template passive text_sha256 6a5a4f558f04d25f83165d34d4eff4fe14ae96e1ab30f6b9196d5785804aa63d
+end-meaning
+meaning scientist-helps-scientist-past-negated ordinals 3 1 3 1 1
+surface scientist-helps-scientist-past-negated-active template active text_sha256 4d0993cffb5d1d1ae1bd77ed7a2d9766b10b9bcbaa810e531b5873d920087c46
+surface scientist-helps-scientist-past-negated-passive template passive text_sha256 a73a916a55b61376c7d8309df43e5da73a21c287e4ea0c348a2e6f2582ea027f
+end-meaning
+meaning scientist-follows-robot-present-affirmative ordinals 3 2 0 0 0
+surface scientist-follows-robot-present-affirmative-active template active text_sha256 6bbd9e86a05b6685740e471d1b28a968c367962fccf34b5dc03f9820518d1ea5
+surface scientist-follows-robot-present-affirmative-passive template passive text_sha256 de5ee23694ee5e8b4c5bdd5e878eec5e19af38334d0f8d0b7a3b04089192fdfb
+end-meaning
+meaning scientist-follows-robot-present-negated ordinals 3 2 0 0 1
+surface scientist-follows-robot-present-negated-active template active text_sha256 8c373f595d102504db266a1c21283b2b4ea55eaacfbe8bcc3d776d445b5cc864
+surface scientist-follows-robot-present-negated-passive template passive text_sha256 a163d932e820b4d4f6687257fc70c7dcf70e7342cf137bfe11a0debea0fbddd4
+end-meaning
+meaning scientist-follows-robot-past-affirmative ordinals 3 2 0 1 0
+surface scientist-follows-robot-past-affirmative-active template active text_sha256 b630b99fae51c989d2c48fd30283e234906fb38f7d2070fc666dcbeb2f3bd08e
+surface scientist-follows-robot-past-affirmative-passive template passive text_sha256 b35ccd2af838cc3aacc2a91fc595120ba9c9b594059d7898bbb2b110df37f2f4
+end-meaning
+meaning scientist-follows-robot-past-negated ordinals 3 2 0 1 1
+surface scientist-follows-robot-past-negated-active template active text_sha256 e93df5f0b5985e7d4c5ae657c675e405b76a5e110bde2bb2c39487dba771e68a
+surface scientist-follows-robot-past-negated-passive template passive text_sha256 ead5c129725d93c639ec354630c67a27972ef881d1da3198207da1cfdc33f9e8
+end-meaning
+meaning scientist-follows-child-present-affirmative ordinals 3 2 1 0 0
+surface scientist-follows-child-present-affirmative-active template active text_sha256 f8e2d476a254dc9aac459a3e599739eb23696bfc6b18dd7458dbae6c057cc0e1
+surface scientist-follows-child-present-affirmative-passive template passive text_sha256 2f289b6fc2f9cb19040e282454394cf63cdacf819f8a51192b39c6032882e9b2
+end-meaning
+meaning scientist-follows-child-present-negated ordinals 3 2 1 0 1
+surface scientist-follows-child-present-negated-active template active text_sha256 3f12a5a229cff52b38f0ec66d8466e50294f3d66574dd49df43d3d49914228d1
+surface scientist-follows-child-present-negated-passive template passive text_sha256 5ff7451c409243650da6f3693ae53b1648dcc114605a803a56941d74aa7ef892
+end-meaning
+meaning scientist-follows-child-past-affirmative ordinals 3 2 1 1 0
+surface scientist-follows-child-past-affirmative-active template active text_sha256 904fdac9ccb09766800b579736244095627b2c43cd049d6fae5e69515d4b65c5
+surface scientist-follows-child-past-affirmative-passive template passive text_sha256 f693ec57271201c4e6359503e6c642948daa237729285c0f255b19d52ea250c2
+end-meaning
+meaning scientist-follows-child-past-negated ordinals 3 2 1 1 1
+surface scientist-follows-child-past-negated-active template active text_sha256 34ebb0dcee31699bd6c3e2e1e89357c9fc5b69c7d063963ec0ac01a63642f93c
+surface scientist-follows-child-past-negated-passive template passive text_sha256 eda697135fb6e2ff4dbf311c535b478ef52679ae92be6677e59f09313277b5cc
+end-meaning
+meaning scientist-follows-artist-present-affirmative ordinals 3 2 2 0 0
+surface scientist-follows-artist-present-affirmative-active template active text_sha256 7c32fb92df79ba8873bf2be017b363ab527ddae840b33c0dc458fddbdb8124ff
+surface scientist-follows-artist-present-affirmative-passive template passive text_sha256 5ca15b36af866cf4099db59a8e9b3b950612246900881f74608eaa23f26b2430
+end-meaning
+meaning scientist-follows-artist-present-negated ordinals 3 2 2 0 1
+surface scientist-follows-artist-present-negated-active template active text_sha256 daec6cb9c1cec97bb1f9f1cb1855ffd78bc16776e5e59bd5785c0c9132bb3eb2
+surface scientist-follows-artist-present-negated-passive template passive text_sha256 ceca6bfa94d2664abaffad062d9bd9ad4d30f0f1aef468b878866956179f0de1
+end-meaning
+meaning scientist-follows-artist-past-affirmative ordinals 3 2 2 1 0
+surface scientist-follows-artist-past-affirmative-active template active text_sha256 9d434709f19056c254656b733f4beb492ea04e80de5af35c8227fb78223a58fa
+surface scientist-follows-artist-past-affirmative-passive template passive text_sha256 211d3e6850d1f1e4fc09bbbcc926cff1c5c51a0f791f46d817bc5c3aecd8cd8f
+end-meaning
+meaning scientist-follows-artist-past-negated ordinals 3 2 2 1 1
+surface scientist-follows-artist-past-negated-active template active text_sha256 5ddfc4af2aa9f5bb8309b7a0605199e345f2a5fb009c96b6d35f7d2860afdfaf
+surface scientist-follows-artist-past-negated-passive template passive text_sha256 ed31adc7310986aa59b6989682e89a9c0fce1f78564b0a4b896a2dc2d3444f91
+end-meaning
+meaning scientist-follows-scientist-present-affirmative ordinals 3 2 3 0 0
+surface scientist-follows-scientist-present-affirmative-active template active text_sha256 b7910d2b4d1287c1347ce20c644369524b09011f4d9131c58c2fe04bbe475255
+surface scientist-follows-scientist-present-affirmative-passive template passive text_sha256 ed1f7e0fba8d74e04cf02886041f7a7d3d642e0829b91a9b9cca3c1ccbcd98e2
+end-meaning
+meaning scientist-follows-scientist-present-negated ordinals 3 2 3 0 1
+surface scientist-follows-scientist-present-negated-active template active text_sha256 3e7d87917e62ca4a5f19982dfa7fa8209d1c2547317946e76d9c4f4e8746d84b
+surface scientist-follows-scientist-present-negated-passive template passive text_sha256 837a4a42692e0bc953eb7ab70806feae72d98295d769fc9b4e4260e72da1fc61
+end-meaning
+meaning scientist-follows-scientist-past-affirmative ordinals 3 2 3 1 0
+surface scientist-follows-scientist-past-affirmative-active template active text_sha256 2db2a4be9ca73320db7c6f00f72ea680582a8270d682f9e6e5b7b41b80c68250
+surface scientist-follows-scientist-past-affirmative-passive template passive text_sha256 4719c671ccacb3b7595a130685412b4a20ae1311b35401443eb6a75b23bfed43
+end-meaning
+meaning scientist-follows-scientist-past-negated ordinals 3 2 3 1 1
+surface scientist-follows-scientist-past-negated-active template active text_sha256 da35d0ecfaa009f0f9acb946f220a6b79fc00b72dcd2b27ce7f83babc55019da
+surface scientist-follows-scientist-past-negated-passive template passive text_sha256 02d203fa7209af436336a0ec968f05a2cab5592a1963e416ae228453b18ba948
+end-meaning
+meaning scientist-avoids-robot-present-affirmative ordinals 3 3 0 0 0
+surface scientist-avoids-robot-present-affirmative-active template active text_sha256 9d225afe52eb58e6c08cbfa4dafecfd220d10c596cf84763a3cce4b1ab3e7fdf
+surface scientist-avoids-robot-present-affirmative-passive template passive text_sha256 7ccbb8b27a430804a6553cda90c399ec4e91d17b38b9cbd5e19df6b9e2122368
+end-meaning
+meaning scientist-avoids-robot-present-negated ordinals 3 3 0 0 1
+surface scientist-avoids-robot-present-negated-active template active text_sha256 f0c35b46946606e1ad7f8d729fccf839a531bc34102870d02ac0f62ddfd08210
+surface scientist-avoids-robot-present-negated-passive template passive text_sha256 efd580fb7fa97db788cd0f23d50102d32b5fe116307af7efa107c521e0ba160d
+end-meaning
+meaning scientist-avoids-robot-past-affirmative ordinals 3 3 0 1 0
+surface scientist-avoids-robot-past-affirmative-active template active text_sha256 69c86c2f5277cfc00eb368bff01610fe8c1fda297c565b453ed1acca903ef7d1
+surface scientist-avoids-robot-past-affirmative-passive template passive text_sha256 57aac63b2d067848e27e08bcc2bf855e34f521818b5b5168179f65f278045115
+end-meaning
+meaning scientist-avoids-robot-past-negated ordinals 3 3 0 1 1
+surface scientist-avoids-robot-past-negated-active template active text_sha256 57f916277b8e4684b9cb14073105efa0e5213e89413a2812008608c314b4f81f
+surface scientist-avoids-robot-past-negated-passive template passive text_sha256 a1dbf61e712bf79876e4f39488d5c9cf467922eb6e136033a0b36c7b475d4105
+end-meaning
+meaning scientist-avoids-child-present-affirmative ordinals 3 3 1 0 0
+surface scientist-avoids-child-present-affirmative-active template active text_sha256 c78257953df4972d2f03f7d7456d81a3d24a835c67be17532bca5b314f350546
+surface scientist-avoids-child-present-affirmative-passive template passive text_sha256 2a24ac5c22526a86eb5c16523595472c52b332b3419858cdac208989a3937fd7
+end-meaning
+meaning scientist-avoids-child-present-negated ordinals 3 3 1 0 1
+surface scientist-avoids-child-present-negated-active template active text_sha256 9ec9445dc645185a456fb65fd898eb2a56f4f43058cd0f88904c999f93cd8884
+surface scientist-avoids-child-present-negated-passive template passive text_sha256 2ba7f027238971c62af05fd25c010b142751224437dd44be4aa5b31f15ea7e5a
+end-meaning
+meaning scientist-avoids-child-past-affirmative ordinals 3 3 1 1 0
+surface scientist-avoids-child-past-affirmative-active template active text_sha256 0c4908262de092a74fed688d5c76ca41853595ea1a9e7ac35fd313e1f5ecc48e
+surface scientist-avoids-child-past-affirmative-passive template passive text_sha256 730e72506c5644268635b47b1a70b7fc06e6a33bb3b1a940d5d04904d3ef6d97
+end-meaning
+meaning scientist-avoids-child-past-negated ordinals 3 3 1 1 1
+surface scientist-avoids-child-past-negated-active template active text_sha256 4ed1f71b48f5f2bb5fed5ebed23f9414a255510bd622b8f20bf0feda34056ec6
+surface scientist-avoids-child-past-negated-passive template passive text_sha256 b4be2605671e346d5f4e40fc508464f4f95061636ecd8125b174575b17669fd5
+end-meaning
+meaning scientist-avoids-artist-present-affirmative ordinals 3 3 2 0 0
+surface scientist-avoids-artist-present-affirmative-active template active text_sha256 6b99a6c70b6fdc5831e79cd3984b984c61874bdab39e14064f33a44c8705456c
+surface scientist-avoids-artist-present-affirmative-passive template passive text_sha256 642f0e764891823bca387726aa42308daae2ef49abb0fb33f34bd16a9e8ce321
+end-meaning
+meaning scientist-avoids-artist-present-negated ordinals 3 3 2 0 1
+surface scientist-avoids-artist-present-negated-active template active text_sha256 0cb8df056cb562f59e2ea54822daecc91514c88daa1eb85416d43b81f70656eb
+surface scientist-avoids-artist-present-negated-passive template passive text_sha256 72a4b194e313fa1f5ad2933a1dd494e3b9becf78c9e0b3b28c5cf69946770823
+end-meaning
+meaning scientist-avoids-artist-past-affirmative ordinals 3 3 2 1 0
+surface scientist-avoids-artist-past-affirmative-active template active text_sha256 2cfea8ba9c394cc19cd778f9db644b6fd19bba1ea3829b3a5b5f219d5c820a4c
+surface scientist-avoids-artist-past-affirmative-passive template passive text_sha256 d1ddffd2ff271ee89e531d37630dc54f5d690e8852555f138413923542fb14e3
+end-meaning
+meaning scientist-avoids-artist-past-negated ordinals 3 3 2 1 1
+surface scientist-avoids-artist-past-negated-active template active text_sha256 5d54f0f7cb2de60f5a0266c2dd7c400d990fbe501b18d6533cf610626b3c10a4
+surface scientist-avoids-artist-past-negated-passive template passive text_sha256 5ac6590cf5f095ab80685b573b5752792606d9c4b2f19b0297842ef7f4fb422a
+end-meaning
+meaning scientist-avoids-scientist-present-affirmative ordinals 3 3 3 0 0
+surface scientist-avoids-scientist-present-affirmative-active template active text_sha256 2289a6a8e502fae58a0940a837ae33c0afc3c579a535b23c89b418042a934f59
+surface scientist-avoids-scientist-present-affirmative-passive template passive text_sha256 05814f61243752bc8c43e6ebb4820ef3c43c37573d41b03b29785ab2944dbf5c
+end-meaning
+meaning scientist-avoids-scientist-present-negated ordinals 3 3 3 0 1
+surface scientist-avoids-scientist-present-negated-active template active text_sha256 0ec3413296cbd7a9047be81bbfe339df64719910cdc67bd5ea5e24fe11bb83ea
+surface scientist-avoids-scientist-present-negated-passive template passive text_sha256 136f08d10eb3819faf4c9330811f270ad4d99f73b62032ca3176f52236ba6da1
+end-meaning
+meaning scientist-avoids-scientist-past-affirmative ordinals 3 3 3 1 0
+surface scientist-avoids-scientist-past-affirmative-active template active text_sha256 0018437834bdf289de849e39b98d0ed40e6b99a85179e5964dcc26fab8944a57
+surface scientist-avoids-scientist-past-affirmative-passive template passive text_sha256 3ca56677b99fe43b01b9d92951b33fd0fdfab917e782088f108ce1e50e2f62b0
+end-meaning
+meaning scientist-avoids-scientist-past-negated ordinals 3 3 3 1 1
+surface scientist-avoids-scientist-past-negated-active template active text_sha256 75d8432c16dd203a602584b7a3ddfcf90f755176a1d047489843f7a089277992
+surface scientist-avoids-scientist-past-negated-passive template passive text_sha256 10c4dfde916a1b4503aefaa552640fa3776e2cfd0237353063d396f10893108b
+end-meaning

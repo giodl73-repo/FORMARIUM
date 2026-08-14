@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-method-foundation/WAVE.md`
 
-Current pulse: **07 - Portable result packet**
+Current pulse: **Method foundation complete**
 
 Pulse 02 froze `specs/SEMANTIC-FACTOR-SCHEMA.md`, including stable identifiers,
 complete assignments, explicit missing/unknown values, role slots, canonical
@@ -58,6 +58,13 @@ classification is `semantic-only`, with canonical evidence and boundaries in
 `docs/STRONG-CONTROL-BAKEOFF-RESULT.md` and review at
 `context/waves/2026-08-13-method-foundation/PULSE-06-ROLE-REVIEW.md`.
 
+Pulse 07 exports the self-contained packet at `artifacts/factor-v1`. The
+manifest chains producer, model, schema, corpus, split, result, file, and packet
+identities. Its embedded Python standard-library verifier independently checks
+closed-world contents, custody, aliases, controls, and classification without
+importing FACTOR. The onboarding guide is `docs/ONBOARDING.md`; the role review
+is `context/waves/2026-08-13-method-foundation/PULSE-07-ROLE-REVIEW.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -72,6 +79,8 @@ cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- bakeoff
+cargo run --quiet -- packet-check artifacts\factor-v1
+python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

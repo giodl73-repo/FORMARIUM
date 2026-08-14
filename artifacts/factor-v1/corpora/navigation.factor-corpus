@@ -1,0 +1,199 @@
+factor-corpus-v1
+family navigation
+generator exhaustive-cartesian-v1
+seed none
+schema_sha256 232366d68e94058537406887b36a913240a1cd0be2d0e385b2ab0d3a0da242ad
+meanings 64
+surfaces 64
+meaning walk-left-slowly-once-affirmative ordinals 0 0 0 0 0
+surface walk-left-slowly-once-affirmative-canonical template canonical text_sha256 bc12ca65e70114c35166a8cade79e0a58910c848f533ca4447f2672f7f4f6f58
+end-meaning
+meaning walk-left-slowly-once-negated ordinals 0 0 0 0 1
+surface walk-left-slowly-once-negated-canonical template canonical text_sha256 e3899cf1970568f8c7c20e54ea7739fbf55e80f42386537be606e2081152d122
+end-meaning
+meaning walk-left-slowly-twice-affirmative ordinals 0 0 0 1 0
+surface walk-left-slowly-twice-affirmative-canonical template canonical text_sha256 bc404d6a461775fcdf376f4e1a89910bae4c787c7df202a16ea160da943d5a2a
+end-meaning
+meaning walk-left-slowly-twice-negated ordinals 0 0 0 1 1
+surface walk-left-slowly-twice-negated-canonical template canonical text_sha256 03aefa635301d7bf8d32e11a93faae64ab20b6ac08f38f78dbbcc124903267ec
+end-meaning
+meaning walk-left-quickly-once-affirmative ordinals 0 0 1 0 0
+surface walk-left-quickly-once-affirmative-canonical template canonical text_sha256 66a70f403533c02644b2475355c25c0bb635e7573508abbfa7bf4e03ceef3548
+end-meaning
+meaning walk-left-quickly-once-negated ordinals 0 0 1 0 1
+surface walk-left-quickly-once-negated-canonical template canonical text_sha256 e503b6d4d2c493178b8cfa842639253377ac176068490e424b2bba4d055b6db2
+end-meaning
+meaning walk-left-quickly-twice-affirmative ordinals 0 0 1 1 0
+surface walk-left-quickly-twice-affirmative-canonical template canonical text_sha256 d3a641983f426b8b21c88f49dcfd77b8c9d4fb764bc0c4c5159286c24fc2f24c
+end-meaning
+meaning walk-left-quickly-twice-negated ordinals 0 0 1 1 1
+surface walk-left-quickly-twice-negated-canonical template canonical text_sha256 4be8d6abca6f0dffe6df31fa8d9caf132e25dba705661269daa62c70377a75dd
+end-meaning
+meaning walk-right-slowly-once-affirmative ordinals 0 1 0 0 0
+surface walk-right-slowly-once-affirmative-canonical template canonical text_sha256 a1733b0755fe82e8b5b1dd7d23bd2829223c1ca912bba70908b10013f79db744
+end-meaning
+meaning walk-right-slowly-once-negated ordinals 0 1 0 0 1
+surface walk-right-slowly-once-negated-canonical template canonical text_sha256 293505ee6189e65d4723af81e78dfc9c7d8e64bc26b8b952f309b189ca15ca00
+end-meaning
+meaning walk-right-slowly-twice-affirmative ordinals 0 1 0 1 0
+surface walk-right-slowly-twice-affirmative-canonical template canonical text_sha256 2bb1398c6a7fdefd984475c10603e17dc860522931f91118336359c3fa3c8efe
+end-meaning
+meaning walk-right-slowly-twice-negated ordinals 0 1 0 1 1
+surface walk-right-slowly-twice-negated-canonical template canonical text_sha256 fd7f637f22fc24c603f51b69b58498d32356986e4a336bc72e757c202a124bb7
+end-meaning
+meaning walk-right-quickly-once-affirmative ordinals 0 1 1 0 0
+surface walk-right-quickly-once-affirmative-canonical template canonical text_sha256 8277185bc192c107c2c8db87e3d10f406bc2f7bd16497c142d07080b4b3018b6
+end-meaning
+meaning walk-right-quickly-once-negated ordinals 0 1 1 0 1
+surface walk-right-quickly-once-negated-canonical template canonical text_sha256 3482f6b20f381bc6efe7ea0554934faf5b554a5dd27b92552002aa031245e660
+end-meaning
+meaning walk-right-quickly-twice-affirmative ordinals 0 1 1 1 0
+surface walk-right-quickly-twice-affirmative-canonical template canonical text_sha256 350d6fb5756ad468263d84efbab9e496274f2c0e7124175b0092ef862c6e6695
+end-meaning
+meaning walk-right-quickly-twice-negated ordinals 0 1 1 1 1
+surface walk-right-quickly-twice-negated-canonical template canonical text_sha256 427842ef2d2e752a4d5bffb702de596e3c542ffce00d565e9ca49fd250be5a40
+end-meaning
+meaning jump-left-slowly-once-affirmative ordinals 1 0 0 0 0
+surface jump-left-slowly-once-affirmative-canonical template canonical text_sha256 f7a7b1803fc0210621c6eb746e67f43fb90f699530de01e81a7d4afe3bf57162
+end-meaning
+meaning jump-left-slowly-once-negated ordinals 1 0 0 0 1
+surface jump-left-slowly-once-negated-canonical template canonical text_sha256 739f639fbed6b4b5bb7a60c77adae4d9908d12b18ee58db2ed86d5cef43a8381
+end-meaning
+meaning jump-left-slowly-twice-affirmative ordinals 1 0 0 1 0
+surface jump-left-slowly-twice-affirmative-canonical template canonical text_sha256 c2dd78a445a82dea7e995c06989b4ab27fcbc72ee887cc1ade591faa8ebc6863
+end-meaning
+meaning jump-left-slowly-twice-negated ordinals 1 0 0 1 1
+surface jump-left-slowly-twice-negated-canonical template canonical text_sha256 26316bad6de2c1f0039f54d8c7bf50ebbe2867e262a84d6cf0b84d479c58ce21
+end-meaning
+meaning jump-left-quickly-once-affirmative ordinals 1 0 1 0 0
+surface jump-left-quickly-once-affirmative-canonical template canonical text_sha256 d79c8020800b1a5a201d5c2801c2170909ebb1669b79c29348807494e5120dde
+end-meaning
+meaning jump-left-quickly-once-negated ordinals 1 0 1 0 1
+surface jump-left-quickly-once-negated-canonical template canonical text_sha256 af40d8b6526b64d27984d3f6275d8a448dcc17fb65ff93677234261ea7238462
+end-meaning
+meaning jump-left-quickly-twice-affirmative ordinals 1 0 1 1 0
+surface jump-left-quickly-twice-affirmative-canonical template canonical text_sha256 b17e78aa49123c0010be57f2c4cc5a6f0d3637d0759ab5fccd3dd9eae10a416d
+end-meaning
+meaning jump-left-quickly-twice-negated ordinals 1 0 1 1 1
+surface jump-left-quickly-twice-negated-canonical template canonical text_sha256 67e6bebddba6fd250da1a90d056dbf51a6c69e1dc618a1fcc9dca7046b9d30bd
+end-meaning
+meaning jump-right-slowly-once-affirmative ordinals 1 1 0 0 0
+surface jump-right-slowly-once-affirmative-canonical template canonical text_sha256 99b5fc0ffc1ad17df70db3605c8e15c0c1bba7ae8c8f1d54e3b9119b73489083
+end-meaning
+meaning jump-right-slowly-once-negated ordinals 1 1 0 0 1
+surface jump-right-slowly-once-negated-canonical template canonical text_sha256 f7f768897b753a10b7b29ce60dc31e23d384dffaf85d5168f1e7688d456c8127
+end-meaning
+meaning jump-right-slowly-twice-affirmative ordinals 1 1 0 1 0
+surface jump-right-slowly-twice-affirmative-canonical template canonical text_sha256 e073ea7dc56dae200d09beb44b9c5cdd4bffaa75ef59e7e8d241eca362c9c031
+end-meaning
+meaning jump-right-slowly-twice-negated ordinals 1 1 0 1 1
+surface jump-right-slowly-twice-negated-canonical template canonical text_sha256 cfb27397255d8d5a18ba809ad413cb6e5ed7995471465d88b277b236a84e81b0
+end-meaning
+meaning jump-right-quickly-once-affirmative ordinals 1 1 1 0 0
+surface jump-right-quickly-once-affirmative-canonical template canonical text_sha256 bff9bd03d7d53e4f35b92d2a8f7bf98bc18bea7724166708c4e4bf82b8e3c03a
+end-meaning
+meaning jump-right-quickly-once-negated ordinals 1 1 1 0 1
+surface jump-right-quickly-once-negated-canonical template canonical text_sha256 98a3c041497b16730f331596cbb9be64c619b4c00b419d1d7821a04e1087fc72
+end-meaning
+meaning jump-right-quickly-twice-affirmative ordinals 1 1 1 1 0
+surface jump-right-quickly-twice-affirmative-canonical template canonical text_sha256 a3c6595744c22c6098daa7b59687edceb8839f9783fba39933f3dc4c40b4677d
+end-meaning
+meaning jump-right-quickly-twice-negated ordinals 1 1 1 1 1
+surface jump-right-quickly-twice-negated-canonical template canonical text_sha256 e717e0891e1f3c21b3d861a4e2d5a56586b50e5fb71cc52f4fa74463bdb331a8
+end-meaning
+meaning push-left-slowly-once-affirmative ordinals 2 0 0 0 0
+surface push-left-slowly-once-affirmative-canonical template canonical text_sha256 4b4d8a9d04abd9b372e310cf50b8085398f0ed90a271a1a7489c46988facd760
+end-meaning
+meaning push-left-slowly-once-negated ordinals 2 0 0 0 1
+surface push-left-slowly-once-negated-canonical template canonical text_sha256 5adb89eb6ae08a7d8e28d7d8298326306ac1142669122877e06228d0f8f79585
+end-meaning
+meaning push-left-slowly-twice-affirmative ordinals 2 0 0 1 0
+surface push-left-slowly-twice-affirmative-canonical template canonical text_sha256 05467273c908578b9c859999e6df156cf2f1a3c3458668df78dcae7985c513ad
+end-meaning
+meaning push-left-slowly-twice-negated ordinals 2 0 0 1 1
+surface push-left-slowly-twice-negated-canonical template canonical text_sha256 ae0a331e6e1012982f904a67b119cf6d040faed1634cb2070b70297ecfa96ee6
+end-meaning
+meaning push-left-quickly-once-affirmative ordinals 2 0 1 0 0
+surface push-left-quickly-once-affirmative-canonical template canonical text_sha256 4517b64acb91c60e30a70234a7db96e5b5834e526ff0b61d128deba797f5a61f
+end-meaning
+meaning push-left-quickly-once-negated ordinals 2 0 1 0 1
+surface push-left-quickly-once-negated-canonical template canonical text_sha256 cc700e79686d33edb7e99312c7d82e0516c96539da12c69a35b98e73d31ba2b2
+end-meaning
+meaning push-left-quickly-twice-affirmative ordinals 2 0 1 1 0
+surface push-left-quickly-twice-affirmative-canonical template canonical text_sha256 fb73973eadbbf624f93a6f1878aa062bf1fe975576773fb34cf23e7febe348f6
+end-meaning
+meaning push-left-quickly-twice-negated ordinals 2 0 1 1 1
+surface push-left-quickly-twice-negated-canonical template canonical text_sha256 4b895cc32c78f0fbbebfd3bd115188007e8a259dbc5305ce9d52760a407faeb7
+end-meaning
+meaning push-right-slowly-once-affirmative ordinals 2 1 0 0 0
+surface push-right-slowly-once-affirmative-canonical template canonical text_sha256 60d0231412aa69bfcaa40766515ae73dea04c75ffdb4b5d986c6a758342b5619
+end-meaning
+meaning push-right-slowly-once-negated ordinals 2 1 0 0 1
+surface push-right-slowly-once-negated-canonical template canonical text_sha256 04d969210ba157d119ff58a85913cd2d76aaeaf3a0ca136c19efde7896008227
+end-meaning
+meaning push-right-slowly-twice-affirmative ordinals 2 1 0 1 0
+surface push-right-slowly-twice-affirmative-canonical template canonical text_sha256 024117344cb1422d14c69b5500c2e1b876cbe76d890c8902adc8f1992dad2295
+end-meaning
+meaning push-right-slowly-twice-negated ordinals 2 1 0 1 1
+surface push-right-slowly-twice-negated-canonical template canonical text_sha256 0edb6bdb21eb2ffde457d47ead347548088a0756fa84f6b48aca11c40bdf4da9
+end-meaning
+meaning push-right-quickly-once-affirmative ordinals 2 1 1 0 0
+surface push-right-quickly-once-affirmative-canonical template canonical text_sha256 1a4cc39fa4b2a0e2c7ec2681ec4e63612a3efb15b82628cafbe69db40cd62898
+end-meaning
+meaning push-right-quickly-once-negated ordinals 2 1 1 0 1
+surface push-right-quickly-once-negated-canonical template canonical text_sha256 6fb4bcc75120f17f689330dd3bf448f5e81b92f2a5329ca450b16b2d92d7cd2b
+end-meaning
+meaning push-right-quickly-twice-affirmative ordinals 2 1 1 1 0
+surface push-right-quickly-twice-affirmative-canonical template canonical text_sha256 29a3473a40da39272547640f28763bdbb1ab2956e1960bd0ff22fd5f13323bf8
+end-meaning
+meaning push-right-quickly-twice-negated ordinals 2 1 1 1 1
+surface push-right-quickly-twice-negated-canonical template canonical text_sha256 b2432c719dbb1bdb2629efd0efc7b5d07669e3f049d8598d48e519cb5c3a654b
+end-meaning
+meaning pull-left-slowly-once-affirmative ordinals 3 0 0 0 0
+surface pull-left-slowly-once-affirmative-canonical template canonical text_sha256 f3ff512885c55e3074474bd46e28e784f062484fd4042b3c081e6155a641b8a8
+end-meaning
+meaning pull-left-slowly-once-negated ordinals 3 0 0 0 1
+surface pull-left-slowly-once-negated-canonical template canonical text_sha256 ec369b94657fa875f37d371432508dc622d0e8ceb369f4de76c9d161a8fe8aac
+end-meaning
+meaning pull-left-slowly-twice-affirmative ordinals 3 0 0 1 0
+surface pull-left-slowly-twice-affirmative-canonical template canonical text_sha256 1b5db9d1111eed870d4d892c7d233a52b327449c863976cff21d2fe6cbf00f44
+end-meaning
+meaning pull-left-slowly-twice-negated ordinals 3 0 0 1 1
+surface pull-left-slowly-twice-negated-canonical template canonical text_sha256 e3684b93456c569faa7416cb75a1482d32a890275cf0da4d8763799e30ff08a8
+end-meaning
+meaning pull-left-quickly-once-affirmative ordinals 3 0 1 0 0
+surface pull-left-quickly-once-affirmative-canonical template canonical text_sha256 71bd9d2d5e4088b575d38ac2a08ad62c5beb7ee4224ba8d2bf463ef358285700
+end-meaning
+meaning pull-left-quickly-once-negated ordinals 3 0 1 0 1
+surface pull-left-quickly-once-negated-canonical template canonical text_sha256 7f3ec228b4cc09016ef06f2ad82480aafc81fec9a2e8d7b7bd6506ac54f107dc
+end-meaning
+meaning pull-left-quickly-twice-affirmative ordinals 3 0 1 1 0
+surface pull-left-quickly-twice-affirmative-canonical template canonical text_sha256 547c2cba7908fd4b2edf710756718767f152ff4f418884d2ba9c2d402b3a4601
+end-meaning
+meaning pull-left-quickly-twice-negated ordinals 3 0 1 1 1
+surface pull-left-quickly-twice-negated-canonical template canonical text_sha256 23bfd8cb26ae3acceda9bee51bc641a2737fd3cfa4e6284067810446264452f5
+end-meaning
+meaning pull-right-slowly-once-affirmative ordinals 3 1 0 0 0
+surface pull-right-slowly-once-affirmative-canonical template canonical text_sha256 e83e811c5918e038c5e1278b029946f089c1896ae5a6ffab19a31b47f61858cd
+end-meaning
+meaning pull-right-slowly-once-negated ordinals 3 1 0 0 1
+surface pull-right-slowly-once-negated-canonical template canonical text_sha256 6099287626918b16b909daff0e6540bb01cc750b74e57469a83e733b3ae8f6fd
+end-meaning
+meaning pull-right-slowly-twice-affirmative ordinals 3 1 0 1 0
+surface pull-right-slowly-twice-affirmative-canonical template canonical text_sha256 f581a57ea3e113994286b342e052621dcfb899b6810d868cb5cdeec171090c40
+end-meaning
+meaning pull-right-slowly-twice-negated ordinals 3 1 0 1 1
+surface pull-right-slowly-twice-negated-canonical template canonical text_sha256 b7abdbd4a3210a59533c6759f06d5ec83a11bdd545d157827ca0ef73fb9572e4
+end-meaning
+meaning pull-right-quickly-once-affirmative ordinals 3 1 1 0 0
+surface pull-right-quickly-once-affirmative-canonical template canonical text_sha256 48af83723bc1b3e0bee06594c4f5efe7597709f7fad0f453f3747d0f43b13a1a
+end-meaning
+meaning pull-right-quickly-once-negated ordinals 3 1 1 0 1
+surface pull-right-quickly-once-negated-canonical template canonical text_sha256 19f68a9401f2878257d4cf946cb5813465a65dd2d15735565a4e164201448d6c
+end-meaning
+meaning pull-right-quickly-twice-affirmative ordinals 3 1 1 1 0
+surface pull-right-quickly-twice-affirmative-canonical template canonical text_sha256 88c8773059443fa68a3d3d4a016d32574ee5e2c0e65a961ee7cd2ea283f86d25
+end-meaning
+meaning pull-right-quickly-twice-negated ordinals 3 1 1 1 1
+surface pull-right-quickly-twice-negated-canonical template canonical text_sha256 53d369b58e2be90f53a57b76565cffe81c5944dc22aa0c49272cd16db2c09bd9
+end-meaning

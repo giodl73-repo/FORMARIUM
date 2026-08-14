@@ -1,4 +1,9 @@
-use factor::{bakeoff::bakeoff_summary, corpus::fixture_summary, SchemaDocument};
+use factor::{
+    bakeoff::bakeoff_summary,
+    corpus::fixture_summary,
+    packet::{validate_packet, write_packet},
+    SchemaDocument,
+};
 use std::env;
 use std::fs;
 use std::process::ExitCode;
@@ -30,6 +35,21 @@ fn run() -> Result<(), String> {
                 return Err(usage("fixtures accepts no path"));
             }
             print!("{}", fixture_summary().map_err(|error| error.to_string())?);
+            Ok(())
+        }
+        "packet" => {
+            let path = read_path(&mut arguments)?;
+            let packet = write_packet(path.as_ref()).map_err(|error| error.to_string())?;
+            println!("packet={path}");
+            println!("files={}", packet.files().len() + 1);
+            println!("packet_sha256={}", packet.sha256());
+            Ok(())
+        }
+        "packet-check" => {
+            let path = read_path(&mut arguments)?;
+            let identity = validate_packet(path.as_ref()).map_err(|error| error.to_string())?;
+            println!("packet={path}");
+            println!("packet_sha256={identity}");
             Ok(())
         }
         "check" => {
@@ -64,8 +84,16 @@ fn read_document(
     Ok((path, document))
 }
 
+fn read_path(arguments: &mut impl Iterator<Item = String>) -> Result<String, String> {
+    let path = arguments.next().ok_or_else(|| usage("missing path"))?;
+    if arguments.next().is_some() {
+        return Err(usage("unexpected extra argument"));
+    }
+    Ok(path)
+}
+
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor bakeoff"
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>"
     )
 }

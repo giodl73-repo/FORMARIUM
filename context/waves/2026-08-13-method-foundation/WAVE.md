@@ -22,7 +22,7 @@ packed fields and strong conventional factored representations.
 | 04 | Schema parser and conformance | complete | Added the Rust parser/writer, CLI, canonical identities, packed aliases, structured invalid fixtures, tests, and role review. |
 | 05 | Compositional split fixtures | complete | Added two generated families, seven manifests, semantic-first grouping, atom/pair coverage, frozen identities, CLI custody, tests, and role review. |
 | 06 | Alias and strong-control bakeoff | complete | Exact aliases and three strong factored controls tie; whole-meaning codebooks fail unseen combinations; result is semantic-only. |
-| 07 | Portable result packet | active | Export versioned evidence and prove one independent onboarding path. |
+| 07 | Portable result packet | complete | Exported a self-contained closed-world packet with chained identities and an embedded independent Python verifier. |
 
 ## Success criteria
 
@@ -36,3 +36,10 @@ packed fields and strong conventional factored representations.
 - Canonical navigation and event schema fixtures instantiate the v1 contract.
 - The repo-local `.roles` panel has no unresolved critical or major plan
   finding.
+
+## Outcome
+
+The method-foundation wave is complete. FACTOR now owns a canonical schema,
+generated corpora and leakage-checked splits, an exact-alias strong-control
+bakeoff, a narrow `semantic-only` result, and portable independently verifiable
+evidence.

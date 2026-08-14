@@ -2,6 +2,7 @@
 
 pub mod bakeoff;
 pub mod corpus;
+pub mod packet;
 
 use sha2::{Digest, Sha256};
 use std::collections::HashSet;

@@ -1,0 +1,77 @@
+factor-split-v1
+family navigation
+kind cross-feature
+selection quickly-twice-negated
+seed none
+schema_sha256 232366d68e94058537406887b36a913240a1cd0be2d0e385b2ab0d3a0da242ad
+corpus_sha256 696791b9f97813a2aaaa82f13110b2f1f84f112eeab0ad81459aef6c40ac434d
+meaning_overlap false
+surface_grouping true
+atom_coverage true
+pair_coverage true
+train 56
+test 8
+train walk-left-slowly-once-affirmative walk-left-slowly-once-affirmative-canonical
+train walk-left-slowly-once-negated walk-left-slowly-once-negated-canonical
+train walk-left-slowly-twice-affirmative walk-left-slowly-twice-affirmative-canonical
+train walk-left-slowly-twice-negated walk-left-slowly-twice-negated-canonical
+train walk-left-quickly-once-affirmative walk-left-quickly-once-affirmative-canonical
+train walk-left-quickly-once-negated walk-left-quickly-once-negated-canonical
+train walk-left-quickly-twice-affirmative walk-left-quickly-twice-affirmative-canonical
+train walk-right-slowly-once-affirmative walk-right-slowly-once-affirmative-canonical
+train walk-right-slowly-once-negated walk-right-slowly-once-negated-canonical
+train walk-right-slowly-twice-affirmative walk-right-slowly-twice-affirmative-canonical
+train walk-right-slowly-twice-negated walk-right-slowly-twice-negated-canonical
+train walk-right-quickly-once-affirmative walk-right-quickly-once-affirmative-canonical
+train walk-right-quickly-once-negated walk-right-quickly-once-negated-canonical
+train walk-right-quickly-twice-affirmative walk-right-quickly-twice-affirmative-canonical
+train jump-left-slowly-once-affirmative jump-left-slowly-once-affirmative-canonical
+train jump-left-slowly-once-negated jump-left-slowly-once-negated-canonical
+train jump-left-slowly-twice-affirmative jump-left-slowly-twice-affirmative-canonical
+train jump-left-slowly-twice-negated jump-left-slowly-twice-negated-canonical
+train jump-left-quickly-once-affirmative jump-left-quickly-once-affirmative-canonical
+train jump-left-quickly-once-negated jump-left-quickly-once-negated-canonical
+train jump-left-quickly-twice-affirmative jump-left-quickly-twice-affirmative-canonical
+train jump-right-slowly-once-affirmative jump-right-slowly-once-affirmative-canonical
+train jump-right-slowly-once-negated jump-right-slowly-once-negated-canonical
+train jump-right-slowly-twice-affirmative jump-right-slowly-twice-affirmative-canonical
+train jump-right-slowly-twice-negated jump-right-slowly-twice-negated-canonical
+train jump-right-quickly-once-affirmative jump-right-quickly-once-affirmative-canonical
+train jump-right-quickly-once-negated jump-right-quickly-once-negated-canonical
+train jump-right-quickly-twice-affirmative jump-right-quickly-twice-affirmative-canonical
+train push-left-slowly-once-affirmative push-left-slowly-once-affirmative-canonical
+train push-left-slowly-once-negated push-left-slowly-once-negated-canonical
+train push-left-slowly-twice-affirmative push-left-slowly-twice-affirmative-canonical
+train push-left-slowly-twice-negated push-left-slowly-twice-negated-canonical
+train push-left-quickly-once-affirmative push-left-quickly-once-affirmative-canonical
+train push-left-quickly-once-negated push-left-quickly-once-negated-canonical
+train push-left-quickly-twice-affirmative push-left-quickly-twice-affirmative-canonical
+train push-right-slowly-once-affirmative push-right-slowly-once-affirmative-canonical
+train push-right-slowly-once-negated push-right-slowly-once-negated-canonical
+train push-right-slowly-twice-affirmative push-right-slowly-twice-affirmative-canonical
+train push-right-slowly-twice-negated push-right-slowly-twice-negated-canonical
+train push-right-quickly-once-affirmative push-right-quickly-once-affirmative-canonical
+train push-right-quickly-once-negated push-right-quickly-once-negated-canonical
+train push-right-quickly-twice-affirmative push-right-quickly-twice-affirmative-canonical
+train pull-left-slowly-once-affirmative pull-left-slowly-once-affirmative-canonical
+train pull-left-slowly-once-negated pull-left-slowly-once-negated-canonical
+train pull-left-slowly-twice-affirmative pull-left-slowly-twice-affirmative-canonical
+train pull-left-slowly-twice-negated pull-left-slowly-twice-negated-canonical
+train pull-left-quickly-once-affirmative pull-left-quickly-once-affirmative-canonical
+train pull-left-quickly-once-negated pull-left-quickly-once-negated-canonical
+train pull-left-quickly-twice-affirmative pull-left-quickly-twice-affirmative-canonical
+train pull-right-slowly-once-affirmative pull-right-slowly-once-affirmative-canonical
+train pull-right-slowly-once-negated pull-right-slowly-once-negated-canonical
+train pull-right-slowly-twice-affirmative pull-right-slowly-twice-affirmative-canonical
+train pull-right-slowly-twice-negated pull-right-slowly-twice-negated-canonical
+train pull-right-quickly-once-affirmative pull-right-quickly-once-affirmative-canonical
+train pull-right-quickly-once-negated pull-right-quickly-once-negated-canonical
+train pull-right-quickly-twice-affirmative pull-right-quickly-twice-affirmative-canonical
+test walk-left-quickly-twice-negated walk-left-quickly-twice-negated-canonical
+test walk-right-quickly-twice-negated walk-right-quickly-twice-negated-canonical
+test jump-left-quickly-twice-negated jump-left-quickly-twice-negated-canonical
+test jump-right-quickly-twice-negated jump-right-quickly-twice-negated-canonical
+test push-left-quickly-twice-negated push-left-quickly-twice-negated-canonical
+test push-right-quickly-twice-negated push-right-quickly-twice-negated-canonical
+test pull-left-quickly-twice-negated pull-left-quickly-twice-negated-canonical
+test pull-right-quickly-twice-negated pull-right-quickly-twice-negated-canonical
