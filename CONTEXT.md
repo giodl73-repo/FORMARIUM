@@ -52,6 +52,15 @@ the first pilot at `tables/formulas/force.md`. Research and review are recorded
 at `docs/research/2026-08-14-formula-table-architecture.md` and
 `context/waves/2026-08-13-factorium-vision/FORMULA-TABLE-ROLE-REVIEW.md`.
 
+The Formula Table pilot now includes force, average mass density, Ohm's law,
+and the sample arithmetic mean. These intentionally test different relation
+kinds: physical law, definition, empirical constitutive relation, and
+statistic. `tables/formulas/INDEX.md` tracks coverage and prioritizes identity,
+conservation/balance, algorithm/recurrence, and constraint entries next.
+Selection research and review are
+`docs/research/2026-08-14-formula-pilot-selection.md` and
+`context/waves/2026-08-13-factorium-vision/FORMULA-PILOTS-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

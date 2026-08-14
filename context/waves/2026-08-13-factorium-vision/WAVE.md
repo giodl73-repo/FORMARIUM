@@ -94,3 +94,10 @@ Factorium's conceptual navigation. The format is
 relation at `tables/formulas/force.md`. Design research is
 `docs/research/2026-08-14-formula-table-architecture.md`, and fixed-point review
 is `FORMULA-TABLE-ROLE-REVIEW.md`.
+
+The diverse pilot suite now adds average mass density, Ohm's law, and the
+sample arithmetic mean. Together the four entries exercise a physical law,
+definition, empirical constitutive relation, and statistic. The catalog is
+`tables/formulas/INDEX.md`, selection research is
+`docs/research/2026-08-14-formula-pilot-selection.md`, and review is
+`FORMULA-PILOTS-ROLE-REVIEW.md`.

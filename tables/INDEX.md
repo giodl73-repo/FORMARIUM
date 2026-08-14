@@ -27,9 +27,15 @@ until generated from a stable interchange format.
 
 ## Formula Tables
 
+See the [Formula Table pilot catalog](formulas/INDEX.md) for relation-kind
+coverage and selection rules.
+
 | Entry | Relation kind | Canonical expression | Principal lesson |
 |---|---|---|---|
 | [Force](formulas/force.md) | physical law | `sum(F_external) = m a` | Equations require scope, symbols, units, dimensions, and sources in addition to conceptual factors |
+| [Mass density](formulas/density.md) | definition | `rho_avg = m / V` | A definition can still depend on boundary and averaging scope |
+| [Ohm's law](formulas/ohms-law.md) | empirical constitutive relation | `V = I R` | A famous law may describe only a bounded regime |
+| [Sample arithmetic mean](formulas/arithmetic-mean.md) | estimator or statistic | `x_bar = sum(x_i) / n` | A simple statistic requires inclusion and interpretation rules |
 
 ## Composite entries
 
