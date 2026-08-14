@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-role-and-ambiguity/WAVE.md`
 
-Current pulse: **05 - Role/ambiguity bakeoff**
+Current pulse: **06 - Portable Wave 2 packet**
 
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.
@@ -97,6 +97,14 @@ every binding. HRR retains its frozen 64-dimensional failures and perfect
 costs, counts, and identity are in `specs/BINDING-CONTROLS.md`, with review at
 `context/waves/2026-08-13-role-and-ambiguity/PULSE-04-ROLE-REVIEW.md`.
 
+Pulse 05 implements split scoring in `src/role_bakeoff.rs`. Role reuse and
+explicit candidate-set composition are useful, while exact records, sparse
+TPR, and factored controls tie HRR-256. The result is `semantic-only`; it
+preserves supplied candidate analyses and does not infer ambiguity from text.
+The contract is `specs/ROLE-AMBIGUITY-BAKEOFF.md`, the result is
+`docs/ROLE-AMBIGUITY-RESULT.md`, and the review is
+`context/waves/2026-08-13-role-and-ambiguity/PULSE-05-ROLE-REVIEW.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -112,6 +120,7 @@ cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
 cargo run --quiet -- binding-controls
+cargo run --quiet -- role-bakeoff
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1

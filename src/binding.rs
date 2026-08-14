@@ -12,7 +12,7 @@ const DENSE_DIMENSIONS: usize = 16;
 const HRR_DIMENSIONS: [usize; 3] = [64, 128, 256];
 
 /// One binding representation owner.
-#[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Clone, Copy, Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
 pub enum BindingRepresentation {
     /// Ordered role/slot to filler records.
     TypedRecord,
@@ -114,6 +114,23 @@ impl BindingControlRecord {
 pub struct BindingControlReport {
     /// Records in family and representation order.
     pub records: Vec<BindingControlRecord>,
+}
+
+/// One meaning-level prediction used by the split bakeoff.
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct BindingPrediction {
+    /// Fixture family.
+    pub family: RoleFixtureFamily,
+    /// Representation owner.
+    pub representation: BindingRepresentation,
+    /// Source meaning identifier.
+    pub meaning_id: String,
+    /// Predicted admitted meaning identifier, when role decoding stays valid.
+    pub predicted_meaning_id: Option<String>,
+    /// Correct role fillers.
+    pub role_correct: usize,
+    /// Role fillers scored.
+    pub role_total: usize,
 }
 
 impl BindingControlReport {
@@ -286,6 +303,45 @@ pub fn run_binding_controls() -> BindingControlReport {
     BindingControlReport { records }
 }
 
+/// Returns meaning-level predictions for every family and representation.
+#[must_use]
+pub fn binding_predictions() -> Vec<BindingPrediction> {
+    let mut predictions = Vec::new();
+    for corpus in generate_role_corpora() {
+        let frame = BindingFrame::for_corpus(&corpus);
+        let hrr = HrrOwner::new(&frame);
+        let meaning_ids = corpus
+            .meanings()
+            .iter()
+            .map(|meaning| (meaning.ordinals().to_vec(), meaning.id().to_owned()))
+            .collect::<BTreeMap<_, _>>();
+        for representation in REPRESENTATIONS {
+            for meaning in corpus.meanings() {
+                let expected = frame.role_fillers(meaning);
+                let decoded = decode_binding(&frame, &hrr, representation, &expected);
+                let role_correct = expected
+                    .iter()
+                    .zip(&decoded)
+                    .filter(|(left, right)| left == right)
+                    .count();
+                let mut predicted_ordinals = meaning.ordinals().to_vec();
+                for (role, filler) in frame.roles.iter().zip(&decoded) {
+                    predicted_ordinals[role.factor_index] = *filler;
+                }
+                predictions.push(BindingPrediction {
+                    family: corpus.family(),
+                    representation,
+                    meaning_id: meaning.id().to_owned(),
+                    predicted_meaning_id: meaning_ids.get(&predicted_ordinals).cloned(),
+                    role_correct,
+                    role_total: frame.roles.len(),
+                });
+            }
+        }
+    }
+    predictions
+}
+
 /// Returns a compact deterministic control summary.
 #[must_use]
 pub fn binding_control_summary() -> String {
@@ -304,17 +360,7 @@ fn evaluate_exact(
     let mut role_correct = 0;
     for meaning in corpus.meanings() {
         let expected = frame.role_fillers(meaning);
-        let decoded = match representation {
-            BindingRepresentation::TypedRecord => decode_typed(&encode_typed(&expected)),
-            BindingRepresentation::SparseTpr => decode_tpr(frame, &encode_tpr(frame, &expected)),
-            BindingRepresentation::FactoredOneHot => {
-                decode_one_hot(frame, &encode_one_hot(frame, &expected))
-            }
-            BindingRepresentation::FactoredDense => {
-                decode_dense(frame, &encode_dense(frame, &expected))
-            }
-            _ => unreachable!(),
-        };
+        let decoded = decode_exact(frame, representation, &expected);
         role_correct += expected
             .iter()
             .zip(&decoded)
@@ -323,6 +369,40 @@ fn evaluate_exact(
         exact += usize::from(expected == decoded);
     }
     (exact, role_correct)
+}
+
+fn decode_binding(
+    frame: &BindingFrame,
+    hrr: &HrrOwner,
+    representation: BindingRepresentation,
+    expected: &[usize],
+) -> Vec<usize> {
+    if let Some(dimensions) = representation.hrr_dimensions() {
+        let encoded = hrr.encode(frame, expected, dimensions);
+        frame
+            .roles
+            .iter()
+            .map(|role| hrr.decode_role(&encoded, role, dimensions))
+            .collect()
+    } else {
+        decode_exact(frame, representation, expected)
+    }
+}
+
+fn decode_exact(
+    frame: &BindingFrame,
+    representation: BindingRepresentation,
+    expected: &[usize],
+) -> Vec<usize> {
+    match representation {
+        BindingRepresentation::TypedRecord => decode_typed(&encode_typed(expected)),
+        BindingRepresentation::SparseTpr => decode_tpr(frame, &encode_tpr(frame, expected)),
+        BindingRepresentation::FactoredOneHot => {
+            decode_one_hot(frame, &encode_one_hot(frame, expected))
+        }
+        BindingRepresentation::FactoredDense => decode_dense(frame, &encode_dense(frame, expected)),
+        _ => unreachable!(),
+    }
 }
 
 fn encode_typed(fillers: &[usize]) -> Vec<u16> {

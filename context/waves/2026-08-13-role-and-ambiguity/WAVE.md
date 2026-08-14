@@ -35,8 +35,8 @@ unambiguous paraphrases identify each reading.
 | 02 | Analysis-set and role-frame contract | complete | Froze filler domains, ordered role slots, constraints, exact surfaces, candidate sets, analysis families, grammar, and hashing. |
 | 03 | Role and ambiguity fixtures | complete | Added exhaustive transfer and constrained attachment families, exact candidate sets, six leakage-checked splits, frozen identities, tests, and review. |
 | 04 | Binding controls | complete | Added one compiler for typed records, exact sparse TPR, factored controls, and frozen HRR 64/128/256 with retained diagnostics. |
-| 05 | Role/ambiguity bakeoff | active | Score candidate sets, role accuracy, unbinding, locality, and separate cost dimensions under a frozen decision. |
-| 06 | Portable Wave 2 packet | pending | Export independently verifiable role/ambiguity evidence without replacing the V1 foundation packet. |
+| 05 | Role/ambiguity bakeoff | complete | Accepted semantic-only: role reuse and candidate-set composition help, exact controls tie, HRR is not representation-specific. |
+| 06 | Portable Wave 2 packet | active | Export independently verifiable role/ambiguity evidence without replacing the V1 foundation packet. |
 
 ## Success criteria
 

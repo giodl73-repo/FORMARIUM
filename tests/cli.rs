@@ -121,3 +121,18 @@ fn binding_controls_command_reports_all_owners() {
     assert!(stdout.contains("record transfer sparse-tpr "));
     assert!(stdout.contains("record attachment hrr-256 "));
 }
+
+#[test]
+fn role_bakeoff_command_reports_separate_decisions() {
+    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .arg("role-bakeoff")
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.starts_with("factor-role-bakeoff-v1\n"));
+    assert!(stdout.contains("role_factorization_useful true"));
+    assert!(stdout.contains("ambiguity_composition_useful true"));
+    assert!(stdout.contains("representation_specific false"));
+    assert!(stdout.contains("classification semantic-only"));
+}

@@ -3,6 +3,7 @@ use factor::{
     binding::binding_control_summary,
     corpus::fixture_summary,
     packet::{validate_packet, write_packet},
+    role_bakeoff::role_bakeoff_summary,
     role_fixtures::role_fixture_summary,
     SchemaDocument,
 };
@@ -71,6 +72,13 @@ fn run() -> Result<(), String> {
             );
             Ok(())
         }
+        "role-bakeoff" => {
+            if arguments.next().is_some() {
+                return Err(usage("role-bakeoff accepts no path"));
+            }
+            print!("{}", role_bakeoff_summary());
+            Ok(())
+        }
         "check" => {
             let (_, document) = read_document(&mut arguments)?;
             println!("schema={}", document.schema().id());
@@ -113,6 +121,6 @@ fn read_path(arguments: &mut impl Iterator<Item = String>) -> Result<String, Str
 
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>"
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>"
     )
 }

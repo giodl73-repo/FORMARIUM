@@ -17,4 +17,22 @@ decision rule.
 
 ## Status
 
-Pending.
+Complete.
+
+## Outcome
+
+- Scored all six splits across seven binding owners and two whole lookup
+  deletion targets.
+- Reported train/test exact candidate sets, candidate counts, meaning
+  reconstruction, and role accuracy.
+- Distinguished familiar complete meanings from unseen complete candidate
+  sets on disambiguation transfer.
+- Preserved HRR-64 failures and HRR-128 diagnostics while keeping HRR-256 as
+  decision owner.
+- Added separate role addressability, edit locality, storage, metadata,
+  parameters, and temporary-memory fields.
+- Classified role factorization and ambiguity composition as useful.
+- Classified representation specificity as false because exact conventional
+  controls tie.
+- Froze canonical evidence, result interpretation, tests, CLI output, and role
+  review.

@@ -4,6 +4,7 @@ pub mod bakeoff;
 pub mod binding;
 pub mod corpus;
 pub mod packet;
+pub mod role_bakeoff;
 pub mod role_fixtures;
 
 use sha2::{Digest, Sha256};

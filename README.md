@@ -72,6 +72,7 @@ organized into small waves and pulses with explicit validation.
 - [Role Frames and Analysis Sets v1](specs/ROLE-ANALYSIS-SETS.md)
 - [Role and Ambiguity Fixtures v1](specs/ROLE-AMBIGUITY-FIXTURES.md)
 - [Role/Filler Binding Controls v1](specs/BINDING-CONTROLS.md)
+- [Role and Ambiguity Bakeoff v1](specs/ROLE-AMBIGUITY-BAKEOFF.md)
 
 ## Schema conformance
 
@@ -105,6 +106,16 @@ Inspect exact TPR, structured, factored, and bounded HRR control evidence:
 ```powershell
 cargo run --quiet -- binding-controls
 ```
+
+Run the role/ambiguity split bakeoff:
+
+```powershell
+cargo run --quiet -- role-bakeoff
+```
+
+The [accepted Wave 2 result](docs/ROLE-AMBIGUITY-RESULT.md) is
+`semantic-only`: role sharing and explicit candidate-set composition help, but
+exact conventional controls tie HRR.
 
 Run the deterministic strong-control comparison:
 
@@ -143,6 +154,7 @@ cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
 cargo run --quiet -- binding-controls
+cargo run --quiet -- role-bakeoff
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
