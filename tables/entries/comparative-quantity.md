@@ -112,9 +112,9 @@ contains ratio, rate, proportion, percentage, and change relations.
 - [Measure](../roots/measure.md)
 - [Relation](../roots/relation.md)
 - [Time](../roots/time.md)
+- [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
 - fraction - `unresolved-candidate`
 - concentration - `unresolved-candidate`
-- odds - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -131,4 +131,3 @@ contains ratio, rate, proportion, percentage, and change relations.
 Comparator access date: 2026-08-14. Arithmetic relations and reporting
 distinctions are established within source scope; Factorium organization
 remains `candidate`.
-

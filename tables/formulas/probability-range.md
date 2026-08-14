@@ -2,6 +2,11 @@
 
 Status: candidate Formula Table
 
+Canonical headword:
+[Probability, Risk, and Uncertainty](../entries/probability-risk-uncertainty.md)
+
+Sense: `event-probability`
+
 ## Orientation
 
 Within a probability model, every event receives a probability between zero
@@ -27,8 +32,8 @@ probability.
 | `P` | probability measure | normalized measure | none | events to real numbers | governing function |
 | `P(A)` | probability assigned to event `A` | real scalar | dimensionless | `[0, 1]` | constrained output |
 
-Event, sample space, and probability measure remain `unresolved-candidate`
-Factorium headwords.
+Event, sample space, and probability measure resolve through the canonical
+probability-risk-uncertainty anchor at candidate depth.
 
 ## Scope and assumptions
 
@@ -81,6 +86,7 @@ probability-bound-use
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
 - [Comparative Quantity](../entries/comparative-quantity.md)
+- [Probability, Risk, and Uncertainty](../entries/probability-risk-uncertainty.md)
 - event — `unresolved-candidate`
 - calibration — `unresolved-candidate`
 

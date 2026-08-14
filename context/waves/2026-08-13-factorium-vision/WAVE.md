@@ -164,3 +164,12 @@ baseline, and denominator domain. Relations are in
 `tables/formulas/comparative-quantities.md`; research and review are
 `docs/research/2026-08-14-comparative-quantity-cluster.md` and
 `COMPARATIVE-QUANTITY-ROLE-REVIEW.md`.
+
+The probability-risk-uncertainty cluster at
+`tables/entries/probability-risk-uncertainty.md` separates event probability,
+conditional probability, odds, risk, expected loss, general uncertainty, and
+measurement uncertainty through model, event, condition, consequence, horizon,
+control state, measurand, and coverage basis. Relations are in
+`tables/formulas/probability-risk-uncertainty.md`; research and review are
+`docs/research/2026-08-14-probability-risk-uncertainty-cluster.md` and
+`PROBABILITY-RISK-UNCERTAINTY-ROLE-REVIEW.md`.

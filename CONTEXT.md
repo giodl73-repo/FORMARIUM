@@ -132,6 +132,15 @@ baseline, and denominator domain. The linked Formula Table is
 `docs/research/2026-08-14-comparative-quantity-cluster.md` and
 `context/waves/2026-08-13-factorium-vision/COMPARATIVE-QUANTITY-ROLE-REVIEW.md`.
 
+The probability-risk-uncertainty pilot at
+`tables/entries/probability-risk-uncertainty.md` separates event probability,
+conditional probability, odds, risk, expected loss, general uncertainty, and
+measurement uncertainty by model, event, condition, consequence, horizon,
+control state, measurand, and coverage basis. The linked Formula Table is
+`tables/formulas/probability-risk-uncertainty.md`; research and review are
+`docs/research/2026-08-14-probability-risk-uncertainty-cluster.md` and
+`context/waves/2026-08-13-factorium-vision/PROBABILITY-RISK-UNCERTAINTY-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

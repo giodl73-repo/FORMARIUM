@@ -36,6 +36,9 @@ until generated from a stable interchange format.
 - [Comparative quantity](entries/comparative-quantity.md) - ratio, rate, unit
   rate, proportion, percentage, relative change, and percentage points
   organized by ordered roles, units, and baseline
+- [Probability, risk, and uncertainty](entries/probability-risk-uncertainty.md)
+  - event probability, conditional probability, odds, risk, expected loss,
+  and measurement uncertainty organized by model, consequence, and coverage
 
 ## Examples
 
@@ -69,6 +72,7 @@ coverage and selection rules.
 | [Matter and load measures](formulas/matter-load-measures.md) | base quantity, definition, and scoped physical model | mass, weight, density, and pressure | Select quantity kind, boundary, gravity, and normalization basis |
 | [Mechanical work, energy, and power](formulas/mechanical-work-energy-power.md) | definition, theorem, and scoped balance | work, kinetic and potential energy, mechanical energy, and power | Separate transfer, state, system, path, frame, and rate |
 | [Comparative quantities](formulas/comparative-quantities.md) | definition, equality, normalization, and change | ratio, rate, proportion, percentage, relative change, and percentage points | Preserve order, quantity kinds, units, baseline, and denominator domains |
+| [Probability, risk, and uncertainty relations](formulas/probability-risk-uncertainty.md) | identity, mapping, expectation, model schema, and measurement relation | conditional probability, odds, expected loss, risk, and expanded uncertainty | Separate event models, representations, consequences, and coverage |
 
 ## Mapping Tables
 

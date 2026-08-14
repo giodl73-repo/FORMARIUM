@@ -42,7 +42,7 @@ action.
 - `boundary` — unresolved-candidate
 - `identity` — unresolved-candidate
 - `policy` — unresolved-candidate
-- `risk` — unresolved-candidate
+- [Probability, Risk, and Uncertainty](../entries/probability-risk-uncertainty.md)
 - `trust` — unresolved-candidate
 
 ### Maturity
