@@ -5,7 +5,9 @@
 Factorium will be a lasting reference collection of decomposition patterns.
 Its books and Factor Tables help people discover dimensions, distinguish
 senses, compare pivots, assign factor roles to available mechanisms, and avoid
-invalid or unstable structures.
+invalid or unstable structures. Formula Tables extend the same reference form
+to major sourced mathematical relations without losing units, dimensions,
+scope, or assumptions.
 
 Software, experiments, and evidence exist to construct and improve the
 reference. They are not the top-level product.
@@ -14,6 +16,7 @@ reference. They are not the top-level product.
 
 - Name: **Factorium**
 - Reference unit: **Factor Table**
+- Specialized mathematical unit: **Formula Table**
 - Narrowed output: **Factor Guide**
 - Supporting software: **Factorium Workbench**
 - Founding research method: **Factor-Preserving Semantic Encoding**
@@ -30,6 +33,7 @@ reference. They are not the top-level product.
 7. Preserve provenance, maturity, counterexamples, and disputed analyses.
 8. Keep software auxiliary and make AI suggestions reviewable.
 9. Preserve null results and the founding research evidence.
+10. Keep mathematical equality distinct from semantic decomposition.
 
 ## Waves
 

@@ -30,7 +30,7 @@ about credible alternatives, and disciplined about evidence and uncertainty.
 |------:|-------|--------|---------|
 | 01 | Vision, entry form, and role parliament | complete | Established the encyclopedia-first vision, hybrid Factor Table entry, first environment example, and broadened review panel. |
 | 02 | General factor-role vocabulary | complete | Established the Root and Factor Role Tables, separating twelve subject coordinates from eleven view-relative structural jobs and domain mechanisms. |
-| 03 | Pilot Factor Tables | active | Promote and extend a deliberately varied initial set across software, cloud, organizations, data, naming, and conceptual analysis. |
+| 03 | Pilot Factor Tables | active | Promote and extend varied semantic and Formula Tables across software, science, cloud, organizations, data, naming, and conceptual analysis. |
 | 04 | Cross-paradigm assignment tables | pending | Map general factor roles into OO, Rust, functional, database, cloud, and organizational mechanisms without forcing equivalence. |
 | 05 | Factor Guide method | pending | Define how examples and constraints narrow general tables into a reviewed problem-specific guide. |
 | 06 | First volume prototype | pending | Assemble and usability-test a coherent table-first reference volume. |
@@ -85,3 +85,12 @@ job it performs in a view. It defines pivot, component, capability, variant,
 state, policy, relationship, boundary, context, constraint, and derived-view
 roles, then shows non-equivalent OO, Rust, and relational assignments. Review
 is recorded at `FACTOR-ROLES-ROLE-REVIEW.md`. This closes Pulse 02.
+
+## Formula Table extension
+
+Formula Tables preserve mathematical operator semantics while adding
+Factorium's conceptual navigation. The format is
+`specs/FORMULA-TABLE-ENTRY.md`; the first pilot is Newton's second-law force
+relation at `tables/formulas/force.md`. Design research is
+`docs/research/2026-08-14-formula-table-architecture.md`, and fixed-point review
+is `FORMULA-TABLE-ROLE-REVIEW.md`.

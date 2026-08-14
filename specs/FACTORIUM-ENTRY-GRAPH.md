@@ -101,6 +101,11 @@ The multiplication mark `x` or `×` means “considered as jointly varying
 factors in this view.” It does not assert mathematical independence or admit
 every Cartesian combination. Constraints remain explicit.
 
+Formula Tables preserve mathematical operators inside their canonical
+expressions. In that context, `=`, `x`, `*`, summation, differentiation, and
+other marks retain their mathematical meaning and are not graph aliases. See
+`specs/FORMULA-TABLE-ENTRY.md`.
+
 ## Progressive abstraction
 
 Factorium supports progressive disclosure, but tiers are navigational views,

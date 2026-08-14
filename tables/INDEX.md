@@ -25,6 +25,12 @@ until generated from a stable interchange format.
 | [Deployment identity](examples/deployment-identity.md) | operated deployment | 9 | deployment identity/name | Names project factors but should not own them |
 | [Work prioritization](examples/work-prioritization.md) | portfolio ordering | 9 | priority/rank | Scores should not hide inputs or veto constraints |
 
+## Formula Tables
+
+| Entry | Relation kind | Canonical expression | Principal lesson |
+|---|---|---|---|
+| [Force](formulas/force.md) | physical law | `sum(F_external) = m a` | Equations require scope, symbols, units, dimensions, and sources in addition to conceptual factors |
+
 ## Composite entries
 
 | Entry | Factors | Notes |

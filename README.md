@@ -6,7 +6,8 @@ Factorium is an encyclopedia of decomposition patterns. Its primary
 deliverables are books and **Factor Tables** that help a reader look up a
 problem, distinguish its senses, compare several credible factorizations,
 choose a pivot, and assign supporting factors to suitable structural
-mechanisms.
+mechanisms. Specialized **Formula Tables** preserve major sourced equations
+with their symbols, units, dimensions, assumptions, and conceptual structure.
 
 Factorium combines the lookup form of a dictionary, the alternatives of a
 thesaurus, and the compact utility of an engineering handbook. It does not
@@ -14,7 +15,8 @@ promise one universal decomposition; it makes the available choices,
 constraints, tradeoffs, counterexamples, and maturity visible.
 
 Read the [grand vision](VISION.md), the draft
-[Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), and the first
+[Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), the specialized
+[Formula Table format](specs/FORMULA-TABLE-ENTRY.md), and the first
 [environment example](tables/examples/environment.md).
 
 The [entry graph](specs/FACTORIUM-ENTRY-GRAPH.md) defines progressive
@@ -25,12 +27,13 @@ whose factors each have their own entries.
 
 Browse the [pilot Factor Table index](tables/INDEX.md) for examples covering
 type design, incident severity, retention, deployments, prioritization,
-security, and environment structure.
+security, environment structure, and sourced formulas.
 
 ## Primary deliverables
 
 - **Factorium books** — the enduring reference;
 - **Factor Tables** — canonical entries and competing decompositions;
+- **Formula Tables** — sourced mathematical relations with scope and units;
 - **Factor Guides** — narrowed recommendations for a particular problem;
 - **evidence and reviews** — provenance, maturity, and limitations;
 - **software and experiments** — auxiliary construction and validation tools.

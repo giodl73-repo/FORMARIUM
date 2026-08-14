@@ -43,6 +43,14 @@ Review is recorded at
 `context/waves/2026-08-13-factorium-vision/FACTOR-ROLES-ROLE-REVIEW.md`.
 
 Pulse 03 now promotes and extends the deliberately varied pilot Factor Tables.
+It also introduces Formula Tables for major sourced equations. Formula Tables
+separate exact mathematical operators from Factorium decomposition marks and
+require relation kind, symbol contracts, units, dimensions, scope,
+assumptions, equivalent forms, conceptual factors, and provenance. The draft
+format is `specs/FORMULA-TABLE-ENTRY.md`; Newton's second-law force relation is
+the first pilot at `tables/formulas/force.md`. Research and review are recorded
+at `docs/research/2026-08-14-formula-table-architecture.md` and
+`context/waves/2026-08-13-factorium-vision/FORMULA-TABLE-ROLE-REVIEW.md`.
 
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded

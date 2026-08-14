@@ -38,10 +38,19 @@ Factorium collects reusable decomposition knowledge:
   inheritance, Rust traits and enums, database keys and relations, cloud
   boundaries, or organizational structures;
 - characteristic dependencies, invalid combinations, and failure patterns;
+- major sourced formulas, identities, laws, balances, models, estimators, and
+  algorithms with symbols, units, dimensions, assumptions, and validity
+  boundaries;
 - examples, counterexamples, cross-references, provenance, and maturity.
 
 The reference does not promise one universal factorization. It makes the
 choice space legible.
+
+Formula Tables are specialized Factor Tables. They preserve mathematical
+operator semantics and distinguish definitions, identities, laws, empirical
+relations, estimators, and algorithms. Factorium adds conceptual navigation
+around an equation; it does not derive or supersede the equation's domain
+authority.
 
 ## Editorial form
 
