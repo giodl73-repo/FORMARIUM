@@ -71,6 +71,7 @@ organized into small waves and pulses with explicit validation.
 - [Portable Evidence Packet v1](specs/PORTABLE-PACKET.md)
 - [Role Frames and Analysis Sets v1](specs/ROLE-ANALYSIS-SETS.md)
 - [Role and Ambiguity Fixtures v1](specs/ROLE-AMBIGUITY-FIXTURES.md)
+- [Role/Filler Binding Controls v1](specs/BINDING-CONTROLS.md)
 
 ## Schema conformance
 
@@ -97,6 +98,12 @@ Inspect the ordered-role and ambiguity fixture identities:
 
 ```powershell
 cargo run --quiet -- role-fixtures
+```
+
+Inspect exact TPR, structured, factored, and bounded HRR control evidence:
+
+```powershell
+cargo run --quiet -- binding-controls
 ```
 
 Run the deterministic strong-control comparison:
@@ -135,6 +142,7 @@ cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
+cargo run --quiet -- binding-controls
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1

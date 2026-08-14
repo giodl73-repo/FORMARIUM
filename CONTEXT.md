@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-role-and-ambiguity/WAVE.md`
 
-Current pulse: **04 - Binding controls**
+Current pulse: **05 - Role/ambiguity bakeoff**
 
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.
@@ -90,6 +90,13 @@ disambiguation overlap. Frozen identities are in
 `specs/ROLE-AMBIGUITY-FIXTURES.md`, with review at
 `context/waves/2026-08-13-role-and-ambiguity/PULSE-03-ROLE-REVIEW.md`.
 
+Pulse 04 implements the shared binding compiler in `src/binding.rs`. Typed
+records, sparse exact TPR, factored one-hot, and factored dense reconstruct
+every binding. HRR retains its frozen 64-dimensional failures and perfect
+128/256 diagnostics with 256 still owning the later decision. Configuration,
+costs, counts, and identity are in `specs/BINDING-CONTROLS.md`, with review at
+`context/waves/2026-08-13-role-and-ambiguity/PULSE-04-ROLE-REVIEW.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -104,6 +111,7 @@ cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
+cargo run --quiet -- binding-controls
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1

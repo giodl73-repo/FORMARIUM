@@ -1,5 +1,6 @@
 use factor::{
     bakeoff::bakeoff_summary,
+    binding::binding_control_summary,
     corpus::fixture_summary,
     packet::{validate_packet, write_packet},
     role_fixtures::role_fixture_summary,
@@ -29,6 +30,13 @@ fn run() -> Result<(), String> {
                 return Err(usage("bakeoff accepts no path"));
             }
             print!("{}", bakeoff_summary().map_err(|error| error.to_string())?);
+            Ok(())
+        }
+        "binding-controls" => {
+            if arguments.next().is_some() {
+                return Err(usage("binding-controls accepts no path"));
+            }
+            print!("{}", binding_control_summary());
             Ok(())
         }
         "fixtures" => {
@@ -105,6 +113,6 @@ fn read_path(arguments: &mut impl Iterator<Item = String>) -> Result<String, Str
 
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>"
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>"
     )
 }

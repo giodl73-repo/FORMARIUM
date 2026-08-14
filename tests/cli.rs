@@ -101,3 +101,23 @@ fn role_fixtures_command_reports_both_families_and_all_splits() {
         6
     );
 }
+
+#[test]
+fn binding_controls_command_reports_all_owners() {
+    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .arg("binding-controls")
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.starts_with("factor-binding-controls-v1\n"));
+    assert_eq!(
+        stdout
+            .lines()
+            .filter(|line| line.starts_with("record "))
+            .count(),
+        14
+    );
+    assert!(stdout.contains("record transfer sparse-tpr "));
+    assert!(stdout.contains("record attachment hrr-256 "));
+}

@@ -34,8 +34,8 @@ unambiguous paraphrases identify each reading.
 | 01 | Research and role-reviewed plan | complete | Froze analysis-set scope, two fixture families, exact TPR and typed controls, bounded HRR, metrics, and claim boundaries. |
 | 02 | Analysis-set and role-frame contract | complete | Froze filler domains, ordered role slots, constraints, exact surfaces, candidate sets, analysis families, grammar, and hashing. |
 | 03 | Role and ambiguity fixtures | complete | Added exhaustive transfer and constrained attachment families, exact candidate sets, six leakage-checked splits, frozen identities, tests, and review. |
-| 04 | Binding controls | active | Implement typed records, exact sparse TPR, factored controls, and bounded HRR with frozen dimensions and seed. |
-| 05 | Role/ambiguity bakeoff | pending | Score candidate sets, role accuracy, unbinding, locality, and separate cost dimensions under a frozen decision. |
+| 04 | Binding controls | complete | Added one compiler for typed records, exact sparse TPR, factored controls, and frozen HRR 64/128/256 with retained diagnostics. |
+| 05 | Role/ambiguity bakeoff | active | Score candidate sets, role accuracy, unbinding, locality, and separate cost dimensions under a frozen decision. |
 | 06 | Portable Wave 2 packet | pending | Export independently verifiable role/ambiguity evidence without replacing the V1 foundation packet. |
 
 ## Success criteria

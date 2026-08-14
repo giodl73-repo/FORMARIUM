@@ -1,6 +1,7 @@
 //! Reference parser and canonical writer for Semantic Factor Schema v1.
 
 pub mod bakeoff;
+pub mod binding;
 pub mod corpus;
 pub mod packet;
 pub mod role_fixtures;
