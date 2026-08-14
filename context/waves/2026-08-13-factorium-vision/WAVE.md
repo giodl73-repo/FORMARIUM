@@ -242,3 +242,11 @@ policy Constraint view without letting those mechanisms replace canonical
 entry meaning. Research and fixed-point review are
 `docs/research/2026-08-14-structural-anchor-breadth.md` and
 `STRUCTURAL-ANCHORS-ROLE-REVIEW.md`.
+
+All eleven reference families now have at least one pilot view. The final R1
+family checkpoint adds Factorium entry publication as a Procedure plus
+editorial-maturity Scale, factorization failures as a Diagnostic, the seven
+SI defining constants as a Reference Value view, and the founding FACTOR
+claim matrix as an Evidence view. Research and fixed-point review are
+`docs/research/2026-08-14-remaining-table-family-pilots.md` and
+`REMAINING-FAMILIES-ROLE-REVIEW.md`.

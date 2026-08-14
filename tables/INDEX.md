@@ -74,6 +74,18 @@ until generated from a stable interchange format.
   - governing intent, operational logic, validity, derived output,
   enforcement, and bounded deviation organized by authority, version, facts,
   priority, controls, and review
+- [Factorium entry publication](entries/factorium-entry-publication.md) -
+  editorial workflow, maturity, publication state, source authority, and
+  domain acceptance organized by evidence, review, validation, and revision
+- [Factorization quality](entries/factorization-quality.md) - sense, factor,
+  pivot, constraint, mechanism-assignment, and change quality organized by
+  observed symptom, test, cause, and repair
+- [Physical constant](entries/physical-constant.md) - defining, measured,
+  recommended, and nominal constant values organized by quantity, unit,
+  status, authority, uncertainty, and use
+- [Claim and evidence](entries/claim-evidence.md) - claim, evidence item,
+  result, limitation, confidence, and provenance organized by scope, method,
+  artifact, implication, and reproduction
 
 ## Examples
 
@@ -139,6 +151,36 @@ coverage and selection rules.
 | Entry | Constraint kind | Principal lesson |
 |---|---|---|
 | [Policy constraints](constraints/policy-constraints.md) | policy-evaluation integrity | Version, evidence, authority, bounded exceptions, output separation, enforcement, and audit are invariants |
+
+## Procedure Tables
+
+| Entry | Procedure kind | Principal lesson |
+|---|---|---|
+| [Entry publication](procedures/entry-publication.md) | gated editorial workflow | Research, canonicalization, views, review, validation, integration, and immutable publication have explicit recovery |
+
+## Diagnostic Tables
+
+| Entry | Diagnostic kind | Principal lesson |
+|---|---|---|
+| [Factorization failures](diagnostics/factorization-failures.md) | structural fault isolation | Symptoms suggest candidate causes and discriminating tests rather than certain diagnoses |
+
+## Scale Tables
+
+| Entry | Scale kind | Principal lesson |
+|---|---|---|
+| [Editorial maturity](scales/editorial-maturity.md) | evidence-backed categorical maturity | Candidate, supported, established, disputed, and deprecated are interpretations, not automatic scores |
+
+## Reference Value Tables
+
+| Entry | Value kind | Principal lesson |
+|---|---|---|
+| [SI defining constants](values/si-defining-constants.md) | exact defining quantities | Values retain symbols, units, defining status, authority, and scope |
+
+## Evidence Tables
+
+| Entry | Evidence kind | Principal lesson |
+|---|---|---|
+| [Founding FACTOR evidence](evidence/founding-factor-evidence.md) | claim-evidence comparison | Supported, contradicted, excluded, and untested claims remain tied to immutable artifacts and limitations |
 
 ## Composite entries
 

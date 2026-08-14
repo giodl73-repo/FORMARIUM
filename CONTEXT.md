@@ -209,6 +209,15 @@ preserving one canonical entry authority. Research and review are
 `docs/research/2026-08-14-structural-anchor-breadth.md` and
 `context/waves/2026-08-13-factorium-vision/STRUCTURAL-ANCHORS-ROLE-REVIEW.md`.
 
+The eleven-family architecture now has pilot coverage. Procedure and Scale
+views cover Factorium entry publication and maturity; Diagnostic covers
+factorization failures; Reference Value covers the seven SI defining
+constants; Evidence maps founding FACTOR claims to accepted results,
+contradictions, exclusions, identities, and reproduction commands. Research
+and review are
+`docs/research/2026-08-14-remaining-table-family-pilots.md` and
+`context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,
