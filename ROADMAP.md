@@ -54,7 +54,7 @@ first volume.
 | R1 - Editorial pilot | 47 reviewed canonical records and all eleven table families at pilot depth | Complete; see `R1-EDITORIAL-PILOT-AUDIT.md` |
 | R2 - Reproducible reference | Stable interchange format and generated navigation projections | Complete; see `R2-REPRODUCIBLE-REFERENCE-AUDIT.md` |
 | R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | Complete; see `R3-GUIDES-MAPPINGS-AUDIT.md` |
-| R4 - Volume prototype | Coherent, usability-tested table-first book prototype | Active; readers must find, select, compare, and apply entries without author help |
+| R4 - Volume prototype | Coherent, usability-tested table-first book prototype | External testing; 78-record prototype and protocol are ready, but reader observations are required |
 | R5 - First substantial volume | Approximately 250 reviewed entries with balanced coverage | Editorial, domain, graph, citation, and publication gates pass |
 | R6 - Factorium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |
 | R7 - Core reference | Approximately 1,000 canonical headwords across multiple reviewed volumes | Contributor governance and revision custody scale without identity drift |

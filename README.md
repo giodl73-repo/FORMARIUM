@@ -37,6 +37,11 @@ copying the generated catalog. The [Factor Guide pilots](guides/INDEX.md)
 demonstrate traceable narrowing in software security and laboratory
 measurement.
 
+The first [78-record volume prototype](volumes/01-structure-quantity-choice/VOLUME.md)
+is ready for external reader testing with a separate
+[usability protocol](volumes/01-structure-quantity-choice/USABILITY-PROTOCOL.md),
+reader packet, evaluator rubric, and de-identified observation record.
+
 ## Primary deliverables
 
 - **Factorium books** — the enduring reference;

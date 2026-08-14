@@ -65,6 +65,14 @@ R4 now owns a curated table-first volume prototype and reader-usability
 protocol. Completion requires observed reader evidence; author-only review
 cannot satisfy that gate.
 
+The R4 prototype is ready at
+`volumes/01-structure-quantity-choice/VOLUME.md`. It curates all 78 current
+records into five parts and includes neutral reader tasks, a separate
+evaluator rubric, a privacy-bounded observation template, research, and
+fixed-point readiness review. The current hard gate is external:
+`context/waves/2026-08-13-factorium-vision/R4-PROTOTYPE-READINESS-AUDIT.md`
+must remain incomplete until real target-reader observations are recorded.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.
