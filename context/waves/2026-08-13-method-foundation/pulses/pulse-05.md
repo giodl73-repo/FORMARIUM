@@ -21,4 +21,16 @@ role transfer without leaking through surface rendering.
 
 ## Status
 
-Pending.
+Complete.
+
+## Outcome
+
+- Added exhaustive 64-meaning navigation and 256-meaning event families.
+- Grouped active/passive event surfaces under stable meanings.
+- Added semantic-hash IID, lexical, cross-feature, and template-transfer
+  manifests.
+- Enforced non-transfer meaning disjointness and surface grouping.
+- Enforced atom and pairwise test coverage in training.
+- Preserved the rejected ordinal-modulo IID rule as a coverage failure.
+- Added schema, corpus, surface, and split SHA-256 custody.
+- Added `factor fixtures`, tests, a normative specification, and role review.

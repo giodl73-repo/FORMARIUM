@@ -66,6 +66,7 @@ organized into small waves and pulses with explicit validation.
 ## Specifications
 
 - [Semantic Factor Schema v1](specs/SEMANTIC-FACTOR-SCHEMA.md)
+- [Compositional Split Fixtures v1](specs/COMPOSITIONAL-SPLITS.md)
 
 ## Schema conformance
 
@@ -82,6 +83,12 @@ Canonicalize an admitted CRLF transport or verify exact canonical output:
 cargo run --quiet -- canonicalize fixtures\schemas\navigation.factor
 ```
 
+Inspect the frozen generated corpus and split identities:
+
+```powershell
+cargo run --quiet -- fixtures
+```
+
 ## Research
 
 - [Prior art and benchmark custody](docs/research/2026-08-13-prior-art-and-benchmark-custody.md)
@@ -93,6 +100,7 @@ cargo fmt --check
 cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
+cargo run --quiet -- fixtures
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

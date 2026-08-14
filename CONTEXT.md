@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-method-foundation/WAVE.md`
 
-Current pulse: **05 - Compositional split fixtures**
+Current pulse: **06 - Alias and strong-control bakeoff**
 
 Pulse 02 froze `specs/SEMANTIC-FACTOR-SCHEMA.md`, including stable identifiers,
 complete assignments, explicit missing/unknown values, role slots, canonical
@@ -43,6 +43,13 @@ round-trips canonical bytes, computes exact packed aliases, and rejects unused
 ordinal patterns. Its role review is
 `context/waves/2026-08-13-method-foundation/PULSE-04-ROLE-REVIEW.md`.
 
+Pulse 05 implements two deterministic generated corpus families and seven
+validated manifests in `src/corpus.rs`. Non-transfer splits group all surfaces
+by meaning and require atom plus pairwise coverage; event template transfer
+declares complete semantic overlap. Frozen identities and boundaries are in
+`specs/COMPOSITIONAL-SPLITS.md`, with review at
+`context/waves/2026-08-13-method-foundation/PULSE-05-ROLE-REVIEW.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -55,6 +62,7 @@ cargo fmt --check
 cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
+cargo run --quiet -- fixtures
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

@@ -20,7 +20,7 @@ packed fields and strong conventional factored representations.
 | 02 | Semantic-factor schema contract | complete | Specification-complete: froze identifiers, ordinals, assignments, role slots, interchange, and packed/product aliases. |
 | 03 | Prior art and benchmark custody | complete | Established feature, split, role-binding, VSA/TPR, disentanglement, and formal-axis prior art; froze generated V1 custody and claim boundaries. |
 | 04 | Schema parser and conformance | complete | Added the Rust parser/writer, CLI, canonical identities, packed aliases, structured invalid fixtures, tests, and role review. |
-| 05 | Compositional split fixtures | pending | Freeze leakage-resistant IID, lexical, cross-feature, and role-transfer fixtures across materially different families. |
+| 05 | Compositional split fixtures | complete | Added two generated families, seven manifests, semantic-first grouping, atom/pair coverage, frozen identities, CLI custody, tests, and role review. |
 | 06 | Alias and strong-control bakeoff | pending | Compare packed/product aliases, feature structures, one-hot factors, and learned factored controls under a frozen decision rule. |
 | 07 | Portable result packet | pending | Export versioned evidence and prove one independent onboarding path. |
 

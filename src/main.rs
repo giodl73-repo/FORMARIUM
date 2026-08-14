@@ -1,4 +1,4 @@
-use factor::SchemaDocument;
+use factor::{corpus::fixture_summary, SchemaDocument};
 use std::env;
 use std::fs;
 use std::process::ExitCode;
@@ -16,16 +16,17 @@ fn main() -> ExitCode {
 fn run() -> Result<(), String> {
     let mut arguments = env::args().skip(1);
     let command = arguments.next().ok_or_else(|| usage("missing command"))?;
-    let path = arguments.next().ok_or_else(|| usage("missing path"))?;
-    if arguments.next().is_some() {
-        return Err(usage("unexpected extra argument"));
-    }
-
-    let input = fs::read_to_string(&path).map_err(|error| format!("{path}: {error}"))?;
-    let document = SchemaDocument::parse(&input).map_err(|error| format!("{path}: {error}"))?;
 
     match command.as_str() {
+        "fixtures" => {
+            if arguments.next().is_some() {
+                return Err(usage("fixtures accepts no path"));
+            }
+            print!("{}", fixture_summary().map_err(|error| error.to_string())?);
+            Ok(())
+        }
         "check" => {
+            let (_, document) = read_document(&mut arguments)?;
             println!("schema={}", document.schema().id());
             println!("version={}", document.schema().version());
             println!("factors={}", document.schema().factors().len());
@@ -36,6 +37,7 @@ fn run() -> Result<(), String> {
             Ok(())
         }
         "canonicalize" => {
+            let (_, document) = read_document(&mut arguments)?;
             print!("{}", document.canonical_text());
             Ok(())
         }
@@ -43,6 +45,20 @@ fn run() -> Result<(), String> {
     }
 }
 
+fn read_document(
+    arguments: &mut impl Iterator<Item = String>,
+) -> Result<(String, SchemaDocument), String> {
+    let path = arguments.next().ok_or_else(|| usage("missing path"))?;
+    if arguments.next().is_some() {
+        return Err(usage("unexpected extra argument"));
+    }
+    let input = fs::read_to_string(&path).map_err(|error| format!("{path}: {error}"))?;
+    let document = SchemaDocument::parse(&input).map_err(|error| format!("{path}: {error}"))?;
+    Ok((path, document))
+}
+
 fn usage(message: &str) -> String {
-    format!("{message}\nusage: factor <check|canonicalize> <schema.factor>")
+    format!(
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures"
+    )
 }

@@ -1,5 +1,7 @@
 //! Reference parser and canonical writer for Semantic Factor Schema v1.
 
+pub mod corpus;
+
 use sha2::{Digest, Sha256};
 use std::collections::HashSet;
 use std::error::Error;
@@ -755,7 +757,7 @@ fn validate_identifier(identifier: &str, line_number: usize) -> Result<(), Parse
     Ok(())
 }
 
-fn sha256_hex(bytes: &[u8]) -> String {
+pub(crate) fn sha256_hex(bytes: &[u8]) -> String {
     let digest = Sha256::digest(bytes);
     let mut output = String::with_capacity(digest.len() * 2);
     for byte in digest {

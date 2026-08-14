@@ -25,3 +25,22 @@ fn check_command_rejects_invalid_fixture() {
         .unwrap()
         .contains("has no value"));
 }
+
+#[test]
+fn fixtures_command_reports_both_corpora_and_all_splits() {
+    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .arg("fixtures")
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.contains("corpus navigation meanings 64 surfaces 64"));
+    assert!(stdout.contains("corpus event meanings 256 surfaces 512"));
+    assert_eq!(
+        stdout
+            .lines()
+            .filter(|line| line.starts_with("split "))
+            .count(),
+        7
+    );
+}
