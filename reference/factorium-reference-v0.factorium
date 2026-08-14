@@ -402,6 +402,8 @@ view formula-pythagorean-trigonometric-identity | unresolved-pythagorean-trigono
 end-view
 view formula-thermal-quantities | thermal-quantity | temperature,thermal-equilibrium,heat-transfer,internal-energy,heat-capacity,specific-heat-capacity,entropy | formula | Thermal Quantities | tables/formulas/thermal-quantities.md | These relations separate thermal state variables from path-dependent heat and work transfers. They require a system boundary, process conditions, sign convention, phase scope, and absolute temperature where entropy is involved.
 end-view
+view mapping-factor-role-mechanisms | factorization-quality | mechanism-assignment | mapping | Factor Role to Mechanism Crosswalk | tables/mappings/factor-role-mechanisms.md | Maps eleven general factor roles into six bounded target-system mechanism vocabularies while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
+end-view
 view mapping-temperature-scales | thermal-quantity | temperature | mapping | Temperature Scale Conversion | tables/mappings/temperature-scales.md | Celsius, kelvin, and Fahrenheit assign different numerical values to the same point temperature. Point-temperature conversion is affine because scale and zero point may differ. Temperature intervals use scale only and MUST NOT reuse the point offset.
 end-view
 view mapping-version-scheme-semantics | identity-naming-classification-versioning | version,compatibility-level | mapping | Version Scheme Semantics | tables/mappings/version-scheme-semantics.md | Generic version roles map to Semantic Versioning only when a package declares a public API.

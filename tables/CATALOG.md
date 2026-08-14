@@ -2,7 +2,7 @@
 
 Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Corpus identity: `7a23cf2bd81f77078e52390795ff97bf1446167b89da909702735c14ff26caa3`
+Corpus identity: `f11fb8ee8ec9a786df0aec828af3c01b6384f8d6e8527921857ae50d71c1023d`
 
 ## Canonical Factor Table entries
 
@@ -56,6 +56,7 @@ Corpus identity: `7a23cf2bd81f77078e52390795ff97bf1446167b89da909702735c14ff26ca
 
 ## Mapping Table views
 
+- [Factor Role to Mechanism Crosswalk](mappings/factor-role-mechanisms.md) — Maps eleven general factor roles into six bounded target-system mechanism vocabularies while preserving contextual, partial, many-to-many semantics and explicit non-equivalence. (owner: `factorization-quality`, senses: `mechanism-assignment`)
 - [Temperature Scale Conversion](mappings/temperature-scales.md) — Celsius, kelvin, and Fahrenheit assign different numerical values to the same point temperature. Point-temperature conversion is affine because scale and zero point may differ. Temperature intervals use scale only and MUST NOT reuse the point offset. (owner: `thermal-quantity`, senses: `temperature`)
 - [Version Scheme Semantics](mappings/version-scheme-semantics.md) — Generic version roles map to Semantic Versioning only when a package declares a public API. (owner: `identity-naming-classification-versioning`, senses: `version`, `compatibility-level`)
 
