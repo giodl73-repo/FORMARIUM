@@ -108,6 +108,14 @@ view, reference frame, and derivative order. The linked Formula Table is
 `docs/research/2026-08-14-motion-measure-cluster.md` and
 `context/waves/2026-08-13-factorium-vision/MOTION-MEASURE-ROLE-REVIEW.md`.
 
+The matter-and-load pilot at `tables/entries/matter-load-measure.md` separates
+mass, weight, mass density, and pressure by quantity kind, gravitational
+context, volume or area normalization, boundary, and averaging level. The
+linked Formula Table is `tables/formulas/matter-load-measures.md`; research
+and review are
+`docs/research/2026-08-14-matter-load-measure-cluster.md` and
+`context/waves/2026-08-13-factorium-vision/MATTER-LOAD-MEASURE-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

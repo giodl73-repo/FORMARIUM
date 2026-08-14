@@ -19,6 +19,7 @@ or fame.
 | [Event probability range](probability-range.md) | Constraint | `0 <= P(A) <= 1` | A bounded score is not automatically a probability |
 | [Common geometric measures](common-geometric-measures.md) | Definition and derived shape formulas | `P`, `A`, `SA`, and `V` by shape | Select boundary/interior and dimension before formula |
 | [Kinematics motion measures](kinematics-motion-measures.md) | Definition, derivative, and conditional equations | distance, displacement, speed, velocity, acceleration | Path, direction, frame, and rate order remain distinct |
+| [Matter and load measures](matter-load-measures.md) | Base quantity, definition, and scoped physical model | mass, weight, density, pressure | Quantity kind, gravity, volume, and area normalization remain distinct |
 
 ## Relation-kind coverage
 

@@ -31,8 +31,9 @@ the system and model assumptions are fixed.
 | `m` | mass | scalar | kilogram, `kg` | `M` | system parameter |
 | `a` | acceleration | vector | metre per second squared, `m s^-2` | `L T^-2` | motion response |
 
-Mass and acceleration remain `unresolved-candidate` Factorium headwords pending
-their own entries.
+Mass resolves through the
+[Matter and Load Measure entry](../entries/matter-load-measure.md), and
+acceleration resolves through the [Motion Measure entry](../entries/motion-measure.md).
 
 ## Scope and assumptions
 
@@ -105,8 +106,8 @@ The mathematical multiplication `m a` is not Factorium's semantic `x`.
 - [Measure](../roots/measure.md)
 - [State](../roots/state.md)
 - [Transformation](../roots/transformation.md)
-- mass — `unresolved-candidate`
-- acceleration — `unresolved-candidate`
+- [Matter and Load Measure](../entries/matter-load-measure.md)
+- [Motion Measure](../entries/motion-measure.md)
 - momentum — `unresolved-candidate`
 
 ## Sources and provenance

@@ -27,6 +27,9 @@ until generated from a stable interchange format.
 - [Motion measure](entries/motion-measure.md) - position, distance,
   displacement, speed, velocity, and acceleration organized by path, direction,
   frame, and derivative order
+- [Matter and load measure](entries/matter-load-measure.md) - mass, weight,
+  density, and pressure organized by quantity kind, environment, volume, and
+  area normalization
 
 ## Examples
 
@@ -57,6 +60,7 @@ coverage and selection rules.
 | [Event probability range](formulas/probability-range.md) | constraint | `0 <= P(A) <= 1` | A probability requires a probability model |
 | [Common geometric measures](formulas/common-geometric-measures.md) | definition and derived shape formulas | perimeter, area, surface area, and volume by shape | Select measured subset and dimension before formula |
 | [Kinematics motion measures](formulas/kinematics-motion-measures.md) | definition, derivative, and conditional equations | distance, displacement, speed, velocity, and acceleration | Select path/endpoints, scalar/vector, frame, and rate order |
+| [Matter and load measures](formulas/matter-load-measures.md) | base quantity, definition, and scoped physical model | mass, weight, density, and pressure | Select quantity kind, boundary, gravity, and normalization basis |
 
 ## Mapping Tables
 

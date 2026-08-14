@@ -140,3 +140,11 @@ path/endpoints, scalar/vector kind, reference frame, and derivative order.
 Relations are in `tables/formulas/kinematics-motion-measures.md`; research and
 review are `docs/research/2026-08-14-motion-measure-cluster.md` and
 `MOTION-MEASURE-ROLE-REVIEW.md`.
+
+The matter-and-load-measure cluster at
+`tables/entries/matter-load-measure.md` separates mass, weight, mass density,
+and pressure through quantity kind, gravitational context, occupied volume,
+loaded area, and averaging level. Relations are in
+`tables/formulas/matter-load-measures.md`; research and review are
+`docs/research/2026-08-14-matter-load-measure-cluster.md` and
+`MATTER-LOAD-MEASURE-ROLE-REVIEW.md`.

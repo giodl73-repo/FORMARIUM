@@ -2,6 +2,11 @@
 
 Status: candidate Formula Table
 
+Canonical headword:
+[Matter and Load Measure](../entries/matter-load-measure.md)
+
+Sense: `mass-density`
+
 ## Orientation
 
 Average mass density relates the total mass of a chosen object or substance
@@ -26,8 +31,8 @@ that density is uniform at every point.
 | `m` | total mass | scalar | `kg` | `M` | measured input |
 | `V` | occupied volume | scalar | `m^3` | `L^3` | measured input |
 
-Mass and volume remain `unresolved-candidate` Factorium headwords pending their
-own entries.
+Mass resolves to the canonical matter-and-load anchor. Volume resolves through
+the [Geometric Measure entry](../entries/geometric-measure.md).
 
 ## Scope and assumptions
 
@@ -81,8 +86,8 @@ lists jointly required concepts.
 - [Boundary](../roots/boundary.md)
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
-- mass — `unresolved-candidate`
-- volume — `unresolved-candidate`
+- [Matter and Load Measure](../entries/matter-load-measure.md)
+- [Geometric Measure](../entries/geometric-measure.md)
 - local mass density — `unresolved-candidate`
 
 ## Sources and provenance
@@ -94,4 +99,3 @@ lists jointly required concepts.
 
 Formula authority: established definition. Factorium representation remains a
 candidate pending specialist and practitioner review.
-

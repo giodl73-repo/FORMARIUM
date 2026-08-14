@@ -82,6 +82,7 @@ contains average, instantaneous, and constant-acceleration relations.
 ## Cross-references
 
 - [Force](force.md)
+- [Matter and Load Measure](matter-load-measure.md)
 - [Time](../roots/time.md)
 - [Transformation](../roots/transformation.md)
 - path — `unresolved-candidate`
@@ -99,4 +100,3 @@ contains average, instantaneous, and constant-acceleration relations.
 
 Comparator access date: 2026-08-14. Physics distinctions are established
 within source scope; Factorium organization remains `candidate`.
-
