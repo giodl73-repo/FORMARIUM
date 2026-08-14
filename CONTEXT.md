@@ -157,6 +157,15 @@ linked Formula Table is `tables/formulas/thermal-quantities.md`; research and
 review are `docs/research/2026-08-14-thermal-quantity-cluster.md` and
 `context/waves/2026-08-13-factorium-vision/THERMAL-QUANTITY-ROLE-REVIEW.md`.
 
+The amount-concentration-composition pilot at
+`tables/entries/amount-concentration-composition.md` separates entity count,
+amount of substance, concentrations, and composition fractions by specified
+entity, component, numerator and denominator basis, mixture boundary,
+preparation state, and closure. Its Formula Table is
+`tables/formulas/amount-concentration-composition.md`; research and review are
+`docs/research/2026-08-14-amount-concentration-composition.md` and
+`context/waves/2026-08-13-factorium-vision/AMOUNT-COMPOSITION-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

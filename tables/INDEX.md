@@ -42,6 +42,10 @@ until generated from a stable interchange format.
 - [Thermal quantity](entries/thermal-quantity.md) - temperature, thermal
   equilibrium, heat, internal energy, heat capacity, specific heat, and
   entropy organized by state, transfer, response, phase, and path
+- [Amount, concentration, and composition](entries/amount-concentration-composition.md)
+  - entity count, amount of substance, amount and mass concentration, and
+  composition fractions organized by entity, component, quantity basis,
+  mixture boundary, and state
 
 ## Examples
 
@@ -77,6 +81,7 @@ coverage and selection rules.
 | [Comparative quantities](formulas/comparative-quantities.md) | definition, equality, normalization, and change | ratio, rate, proportion, percentage, relative change, and percentage points | Preserve order, quantity kinds, units, baseline, and denominator domains |
 | [Probability, risk, and uncertainty relations](formulas/probability-risk-uncertainty.md) | identity, mapping, expectation, model schema, and measurement relation | conditional probability, odds, expected loss, risk, and expanded uncertainty | Separate event models, representations, consequences, and coverage |
 | [Thermal quantities](formulas/thermal-quantities.md) | equilibrium, response, balance, and constraint | temperature, heat, internal energy, heat capacity, and entropy | Separate state, transfer, response, sign, phase, and reversible path |
+| [Amount, concentration, and composition](formulas/amount-concentration-composition.md) | definition and closure constraint | entity count, amount of substance, concentrations, and composition fractions | Separate entity, component, mixture volume, quantity basis, and state |
 
 ## Mapping Tables
 

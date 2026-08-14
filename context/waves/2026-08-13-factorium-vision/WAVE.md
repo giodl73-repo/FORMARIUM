@@ -186,3 +186,12 @@ system boundary, path, phase, process constraint, sign convention, and
 reversible evaluation. Relations are in `tables/formulas/thermal-quantities.md`;
 research and review are `docs/research/2026-08-14-thermal-quantity-cluster.md`
 and `THERMAL-QUANTITY-ROLE-REVIEW.md`.
+
+The amount-concentration-composition cluster at
+`tables/entries/amount-concentration-composition.md` separates entity count,
+amount of substance, amount and mass concentration, and composition fractions
+through entity, component, quantity basis, mixture volume, preparation state,
+and closure conditions. Relations are in
+`tables/formulas/amount-concentration-composition.md`; research and review are
+`docs/research/2026-08-14-amount-concentration-composition.md` and
+`AMOUNT-COMPOSITION-ROLE-REVIEW.md`.
