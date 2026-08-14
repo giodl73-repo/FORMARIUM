@@ -39,7 +39,7 @@ recorded in `ROADMAP-ROLE-REVIEW.md`.
 | 04 | Reproducible reference | complete | Froze a 20-entry, 121-sense, 193-factor, 30-view canonical corpus with deterministic validation and generated catalogs. |
 | 05 | Cross-paradigm assignment tables | complete | Published 66 contextual many-to-many assignments across OO, Rust, functional, relational, cloud-native, and organizational slices. |
 | 06 | Factor Guide method | complete | Published the guide contract plus separately reviewed Rust authorization and laboratory concentration pilots. |
-| 07 | First volume prototype | external testing | The 78-record volume, reader packet, evaluator rubric, and observation schema are ready; completion awaits real reader sessions. |
+| 07E | The Sieve - external reader validation | ready to recruit | Run 3-5 observed reader sessions, factor failures by owner, repair repeated blockers, and rerun affected tasks. |
 
 ## Success criteria
 

@@ -25,7 +25,7 @@ evidence and one tested Factorium domain.
 
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Current pulse: **07 - First volume prototype**
+Current pulse: **07E - The Sieve**
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
@@ -72,6 +72,12 @@ evaluator rubric, a privacy-bounded observation template, research, and
 fixed-point readiness review. The current hard gate is external:
 `context/waves/2026-08-13-factorium-vision/R4-PROTOTYPE-READINESS-AUDIT.md`
 must remain incomplete until real target-reader observations are recorded.
+
+The next execution milestone is **R4E - The Sieve**, recorded at
+`context/waves/2026-08-13-factorium-vision/R4E-THE-SIEVE.md`. It recruits and
+runs the first 3-5 external reader sessions, factors observed failures by
+their true owner, repairs critical/major issues, and reruns affected tasks.
+After The Sieve closes R4, R5 begins under the codename **Factor Forge**.
 
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five

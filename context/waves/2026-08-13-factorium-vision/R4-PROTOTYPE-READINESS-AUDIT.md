@@ -88,3 +88,7 @@ R4 remains active until:
 - the gate is rerun against observed evidence.
 
 No autonomous or AI-generated substitute is valid for these observations.
+
+The external execution milestone is
+[`R4E - The Sieve`](R4E-THE-SIEVE.md). R5 follows under the codename
+**Factor Forge** only after The Sieve closes this gate.

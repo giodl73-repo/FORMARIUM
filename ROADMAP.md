@@ -4,6 +4,8 @@ Status: active
 
 Current milestone: **R4 - Volume prototype**
 
+Current execution milestone: **R4E - The Sieve**
+
 Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**,
 **R2 - Reproducible reference**, **R3 - Guides and mappings**
 
@@ -59,6 +61,26 @@ first volume.
 | R6 - Factorium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |
 | R7 - Core reference | Approximately 1,000 canonical headwords across multiple reviewed volumes | Contributor governance and revision custody scale without identity drift |
 | R8 - Mature collection | 3,000-5,000 entries only where justified by repeated use and review | Growth preserves quality, graph integrity, and navigability |
+
+## Codename track
+
+These are memorable internal phase names, not replacements for the measurable
+milestone gates.
+
+| Milestone | Codename | Factoring connection |
+|---|---|---|
+| R0 | **Common Ground** | Establish the shared domain on which later decompositions operate |
+| R1 | **First Factors** | Admit the first balanced set of canonical factors, senses, and views |
+| R2 | **Normal Form** | Give the reference one deterministic canonical representation |
+| R3 | **Cross Product** | Test how general roles combine with several mechanism vocabularies |
+| R4 | **The Sieve** | Put the prototype through reader tasks that retain useful structure and expose weak distinctions |
+| R5 | **Factor Forge** | Build the first substantial 250-entry volume through repeated reviewed batches |
+| R6 | **Workbench** | Provide tools for searching, comparing, constructing, and publishing factorizations |
+| R7 | **Prime Atlas** | Organize the reusable core headwords and their recursive routes across volumes |
+| R8 | **Grand Factorization** | Grow the mature collection without losing identity, evidence, or navigability |
+
+The active codename is **The Sieve**. Its execution record is
+`context/waves/2026-08-13-factorium-vision/R4E-THE-SIEVE.md`.
 
 ## R1 - Complete the editorial pilot
 
@@ -158,6 +180,21 @@ Test whether readers can:
 
 Revise selection procedures, entry lengths, visual conventions, index paths,
 and unresolved-candidate handling from observed failures.
+
+### R4E - The Sieve
+
+The 78-record prototype is already assembled. The next execution milestone is
+the external reader round:
+
+1. recruit 3-5 readers across at least two practitioner backgrounds;
+2. run the neutral task packet without showing the evaluator rubric;
+3. record de-identified task paths, time, assistance, errors, and quotes;
+4. close repeated critical blockers and disposition failed or assisted tasks;
+5. rerun affected tasks after critical or major revisions;
+6. publish the observed R4 gate decision.
+
+The Sieve is complete only from observed use. Author or AI simulation cannot
+substitute for reader evidence.
 
 ## R5 - First substantial volume
 
