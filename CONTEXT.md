@@ -16,9 +16,12 @@ features.
 
 ## Current wave
 
-`context/waves/2026-08-13-method-foundation/WAVE.md`
+`context/waves/2026-08-13-role-and-ambiguity/WAVE.md`
 
-Current pulse: **Method foundation complete**
+Current pulse: **02 - Analysis-set and role-frame contract**
+
+The completed method-foundation wave remains at
+`context/waves/2026-08-13-method-foundation/WAVE.md`.
 
 Pulse 02 froze `specs/SEMANTIC-FACTOR-SCHEMA.md`, including stable identifiers,
 complete assignments, explicit missing/unknown values, role slots, canonical
@@ -64,6 +67,13 @@ identities. Its embedded Python standard-library verifier independently checks
 closed-world contents, custody, aliases, controls, and classification without
 importing FACTOR. The onboarding guide is `docs/ONBOARDING.md`; the role review
 is `context/waves/2026-08-13-method-foundation/PULSE-07-ROLE-REVIEW.md`.
+
+Wave 2 begins with
+`docs/research/2026-08-13-role-binding-and-ambiguity.md`. It keeps complete V1
+meanings unchanged, adds corpus-level candidate analysis sets, separates role,
+ordered slot, and filler identity, and requires typed records plus exact sparse
+TPR before bounded HRR. The reviewed plan is
+`context/waves/2026-08-13-role-and-ambiguity/ROLE-REVIEW.md`.
 
 ## Boundary
 

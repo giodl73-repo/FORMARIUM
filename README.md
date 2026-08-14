@@ -116,6 +116,7 @@ See [independent packet onboarding](docs/ONBOARDING.md).
 ## Research
 
 - [Prior art and benchmark custody](docs/research/2026-08-13-prior-art-and-benchmark-custody.md)
+- [Role binding and ambiguity research](docs/research/2026-08-13-role-binding-and-ambiguity.md)
 
 ## Validation
 

@@ -38,6 +38,15 @@ first reproducible reference corpus.
 Test role/filler binding, repeated factor values, ambiguity, and alternative
 surface forms against feature structures and vector-symbolic controls.
 
+Sequence:
+
+1. research and role-reviewed plan;
+2. analysis-set and role-frame contract;
+3. generated role and ambiguity fixtures;
+4. exact TPR, structured, factored, and bounded HRR controls;
+5. role/ambiguity bakeoff;
+6. portable Wave 2 packet.
+
 ### Wave 3: Portable benchmark packets
 
 Define versioned corpus, split, schema, result, and provenance artifacts that
