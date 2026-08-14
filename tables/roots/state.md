@@ -16,3 +16,10 @@ properties affect behavior.
 Related: [Identity](identity.md), [Time](time.md),
 [Transformation](transformation.md).
 
+## Sense: structural role
+
+As a factor role, state carries changeable condition while the view preserves
+the subject's identity. It should not become a variant or subtype merely
+because different states produce different behavior.
+
+`subject := identity x state`

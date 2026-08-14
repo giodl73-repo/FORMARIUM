@@ -10,6 +10,8 @@ until generated from a stable interchange format.
 
 - [Root Table](foundations/ROOT-TABLE.md) - twelve recurring coordinates, five
   overlapping entry families, and ten reusable decomposition grammars
+- [Factor Role Table](foundations/FACTOR-ROLES.md) - eleven structural jobs
+  factors can perform within a decomposition view
 
 ## Examples
 
@@ -54,6 +56,18 @@ until generated from a stable interchange format.
 - [State](roots/state.md)
 - [Time](roots/time.md)
 - [Transformation](roots/transformation.md)
+
+## Factor role entries
+
+- [Capability](roles/capability.md)
+- [Component](roles/component.md)
+- [Derived view](roles/derived-view.md)
+- [Pivot](roles/pivot.md)
+- [Policy](roles/policy.md)
+- [Variant](roles/variant.md)
+
+State, relationship, boundary, context, and constraint use structural-role
+senses within their canonical root entries rather than duplicate headwords.
 
 ## Pilot observations
 

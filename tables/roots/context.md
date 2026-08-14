@@ -16,3 +16,9 @@ changes validity or meaning.
 Related: [Boundary](boundary.md), [State](state.md),
 [Request context](../primes/request-context.md).
 
+## Sense: structural role
+
+As a factor role, context qualifies another factor's applicability or
+interpretation without necessarily becoming part of its identity.
+
+`factor @ context`

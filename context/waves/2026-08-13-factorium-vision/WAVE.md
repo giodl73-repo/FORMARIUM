@@ -29,8 +29,8 @@ about credible alternatives, and disciplined about evidence and uncertainty.
 | Pulse | Title | Status | Outcome |
 |------:|-------|--------|---------|
 | 01 | Vision, entry form, and role parliament | complete | Established the encyclopedia-first vision, hybrid Factor Table entry, first environment example, and broadened review panel. |
-| 02 | General factor-role vocabulary | active | Established the candidate Root Table with twelve recurring coordinates, five overlapping navigation families, and ten reusable decomposition grammars; continue refining factor roles and alternatives. |
-| 03 | Pilot Factor Tables | pending | Produce a deliberately varied initial set across software, cloud, organizations, data, naming, and conceptual analysis. |
+| 02 | General factor-role vocabulary | complete | Established the Root and Factor Role Tables, separating twelve subject coordinates from eleven view-relative structural jobs and domain mechanisms. |
+| 03 | Pilot Factor Tables | active | Promote and extend a deliberately varied initial set across software, cloud, organizations, data, naming, and conceptual analysis. |
 | 04 | Cross-paradigm assignment tables | pending | Map general factor roles into OO, Rust, functional, database, cloud, and organizational mechanisms without forcing equivalence. |
 | 05 | Factor Guide method | pending | Define how examples and constraints narrow general tables into a reviewed problem-specific guide. |
 | 06 | First volume prototype | pending | Assemble and usability-test a coherent table-first reference volume. |
@@ -77,3 +77,11 @@ Factorium. It defines twelve view-relative root coordinates, five overlapping
 families, and reusable grammars for things, events, systems, changes,
 decisions, controls, claims, value, organizations, and designs. Its fixed-point
 candidate review is `ROOT-TABLE-ROLE-REVIEW.md`.
+
+## Factor role vocabulary
+
+`tables/foundations/FACTOR-ROLES.md` separates what a factor concerns from the
+job it performs in a view. It defines pivot, component, capability, variant,
+state, policy, relationship, boundary, context, constraint, and derived-view
+roles, then shows non-equivalent OO, Rust, and relational assignments. Review
+is recorded at `FACTOR-ROLES-ROLE-REVIEW.md`. This closes Pulse 02.

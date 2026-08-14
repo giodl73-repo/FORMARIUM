@@ -16,3 +16,12 @@ what is permitted.
 Related: [Possibility](possibility.md), [Purpose](purpose.md),
 [Authorization policy](../primes/authorization-policy.md).
 
+## Sense: structural role
+
+As a factor role, constraint removes invalid values, combinations, or
+transitions from an otherwise broader view.
+
+`factorization ! constraint`
+
+Constraints differ from policies that rank or select among otherwise valid
+possibilities.

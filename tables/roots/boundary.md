@@ -15,3 +15,10 @@ inside/outside judgments.
 Related: [Identity](identity.md), [Relation](relation.md),
 [Context](context.md).
 
+## Sense: structural role
+
+As a factor role, boundary declares the scope or interface within which a view
+is valid. Moving the boundary can change which factors, actors, constraints,
+and interactions belong in the decomposition.
+
+`view ! boundary`

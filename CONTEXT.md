@@ -24,7 +24,7 @@ evidence and one tested Factorium domain.
 
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Current pulse: **02 - General factor-role vocabulary**
+Current pulse: **03 - Pilot Factor Tables**
 
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
@@ -33,6 +33,16 @@ Every root coordinate resolves to a scoped candidate entry under
 `tables/roots/`. The roots are view-relative starting points rather than a
 universal ontology. Review is recorded at
 `context/waves/2026-08-13-factorium-vision/ROOT-TABLE-ROLE-REVIEW.md`.
+
+Pulse 02 is complete with the Factor Role Table at
+`tables/foundations/FACTOR-ROLES.md`. It separates root coordinates from
+view-relative structural jobs: pivot, component, capability, variant, state,
+policy, relationship, boundary, context, constraint, and derived view.
+Mechanism mappings remain many-to-many assignments rather than definitions.
+Review is recorded at
+`context/waves/2026-08-13-factorium-vision/FACTOR-ROLES-ROLE-REVIEW.md`.
+
+Pulse 03 now promotes and extends the deliberately varied pilot Factor Tables.
 
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
