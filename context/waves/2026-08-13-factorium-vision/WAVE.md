@@ -29,7 +29,7 @@ about credible alternatives, and disciplined about evidence and uncertainty.
 | Pulse | Title | Status | Outcome |
 |------:|-------|--------|---------|
 | 01 | Vision, entry form, and role parliament | complete | Established the encyclopedia-first vision, hybrid Factor Table entry, first environment example, and broadened review panel. |
-| 02 | General factor-role vocabulary | active | Define pivots, capabilities, components, variants, states, policies, relationships, boundaries, contexts, constraints, and derived views. |
+| 02 | General factor-role vocabulary | active | Established the candidate Root Table with twelve recurring coordinates, five overlapping navigation families, and ten reusable decomposition grammars; continue refining factor roles and alternatives. |
 | 03 | Pilot Factor Tables | pending | Produce a deliberately varied initial set across software, cloud, organizations, data, naming, and conceptual analysis. |
 | 04 | Cross-paradigm assignment tables | pending | Map general factor roles into OO, Rust, functional, database, cloud, and organizational mechanisms without forcing equivalence. |
 | 05 | Factor Guide method | pending | Define how examples and constraints narrow general tables into a reviewed problem-specific guide. |
@@ -69,3 +69,11 @@ OO type design, incident severity, data retention, deployment identity, and
 work prioritization. They test pivots, constraints, derived decisions,
 multiword headwords, graph links, and table-first scanability. See
 `tables/INDEX.md`.
+
+## Root foundation
+
+`tables/foundations/ROOT-TABLE.md` is the first high-level starting surface for
+Factorium. It defines twelve view-relative root coordinates, five overlapping
+families, and reusable grammars for things, events, systems, changes,
+decisions, controls, claims, value, organizations, and designs. Its fixed-point
+candidate review is `ROOT-TABLE-ROLE-REVIEW.md`.

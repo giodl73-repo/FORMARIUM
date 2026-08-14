@@ -6,6 +6,11 @@ This is a manually reviewed navigation projection. Canonical entries own their
 senses and factorizations; copied widths and summaries here are non-normative
 until generated from a stable interchange format.
 
+## Foundation
+
+- [Root Table](foundations/ROOT-TABLE.md) - twelve recurring coordinates, five
+  overlapping entry families, and ten reusable decomposition grammars
+
 ## Examples
 
 | Entry | Principal sense | Width | Derived output or decision | Primary lesson |
@@ -34,6 +39,21 @@ until generated from a stable interchange format.
 - [Requested action](primes/requested-action.md)
 - [Subject identity](primes/subject-identity.md)
 - [Subject-object relationship](primes/subject-object-relationship.md)
+
+## Root coordinate entries
+
+- [Agency](roots/agency.md)
+- [Boundary](roots/boundary.md)
+- [Constraint](roots/constraint.md)
+- [Context](roots/context.md)
+- [Identity](roots/identity.md)
+- [Measure](roots/measure.md)
+- [Possibility](roots/possibility.md)
+- [Purpose](roots/purpose.md)
+- [Relation](roots/relation.md)
+- [State](roots/state.md)
+- [Time](roots/time.md)
+- [Transformation](roots/transformation.md)
 
 ## Pilot observations
 

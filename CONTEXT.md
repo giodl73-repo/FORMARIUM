@@ -26,6 +26,14 @@ evidence and one tested Factorium domain.
 
 Current pulse: **02 - General factor-role vocabulary**
 
+Pulse 02 now begins with the candidate Root Table at
+`tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
+overlapping navigation families, and ten reusable decomposition grammars.
+Every root coordinate resolves to a scoped candidate entry under
+`tables/roots/`. The roots are view-relative starting points rather than a
+universal ontology. Review is recorded at
+`context/waves/2026-08-13-factorium-vision/ROOT-TABLE-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,
