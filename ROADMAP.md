@@ -2,9 +2,10 @@
 
 Status: active
 
-Current milestone: **R2 - Reproducible reference**
+Current milestone: **R3 - Guides and mappings**
 
-Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**
+Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**,
+**R2 - Reproducible reference**
 
 Factorium grows in reviewed layers: first prove the editorial form, then make
 the reference reproducible, then publish a coherent volume, and only then
@@ -35,6 +36,8 @@ Factorium already has:
   constants, and evidence;
 - Formula Tables covering every V0 relation kind at pilot depth;
 - thirty specialized views across all eleven reference table families;
+- a canonical 20-entry, 121-sense, 193-factor, 30-view interchange corpus;
+- deterministic generated catalogs and unresolved-candidate reporting;
 - fixed-point `.roles` review, cited research, and immutable founding evidence.
 
 This is a balanced architectural and editorial pilot, not yet a publishable
@@ -46,8 +49,8 @@ first volume.
 |---|---|---|
 | R0 - Reference foundation | Stable vision, roots, roles, entry graph, table families, and varied pilots | Complete |
 | R1 - Editorial pilot | 47 reviewed canonical records and all eleven table families at pilot depth | Complete; see `R1-EDITORIAL-PILOT-AUDIT.md` |
-| R2 - Reproducible reference | Stable interchange format and generated navigation projections | Active; canonical entries must round-trip and hand-maintained indexes become replaceable |
-| R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | General roles remain distinct from mechanisms; narrowing is traceable |
+| R2 - Reproducible reference | Stable interchange format and generated navigation projections | Complete; see `R2-REPRODUCIBLE-REFERENCE-AUDIT.md` |
+| R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | Active; general roles remain distinct from mechanisms and narrowing is traceable |
 | R4 - Volume prototype | Coherent, usability-tested table-first book prototype | Readers can find, select, compare, and apply entries without author help |
 | R5 - First substantial volume | Approximately 250 reviewed entries with balanced coverage | Editorial, domain, graph, citation, and publication gates pass |
 | R6 - Factorium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |

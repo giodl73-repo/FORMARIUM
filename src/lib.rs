@@ -4,6 +4,7 @@ pub mod bakeoff;
 pub mod binding;
 pub mod corpus;
 pub mod packet;
+pub mod reference;
 pub mod role_bakeoff;
 pub mod role_fixtures;
 pub mod role_packet;

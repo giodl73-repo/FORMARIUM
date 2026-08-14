@@ -25,7 +25,7 @@ evidence and one tested Factorium domain.
 
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Current pulse: **04 - Reproducible Reference**
+Current pulse: **05 - Cross-paradigm assignment tables**
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
@@ -38,8 +38,20 @@ Roadmap R1 is complete. The gate audit at
 `context/waves/2026-08-13-factorium-vision/R1-EDITORIAL-PILOT-AUDIT.md`
 records 47 canonical records, 20 anchors, 30 specialized views, all eleven
 families, explicit family ownership, cross-domain structural breadth, and
-closed critical/major review findings. R2 now owns stable interchange,
-validation, generated indexes, and unresolved-candidate reporting.
+closed critical/major review findings.
+
+Roadmap R2 is complete. The canonical corpus at
+`reference/factorium-reference-v0.factorium` owns 20 entries, 121 senses, 193
+ordered factors, and 30 specialized views. Rust validation checks linked
+Markdown and exact generated catalogs at `tables/CATALOG.md`,
+`tables/formulas/INDEX.md`, and `tables/UNRESOLVED.md`. Research,
+specification, fixed-point review, and the gate record are
+`docs/research/2026-08-15-factorium-reference-interchange.md`,
+`specs/FACTORIUM-REFERENCE-INTERCHANGE.md`,
+`context/waves/2026-08-13-factorium-vision/REFERENCE-INTERCHANGE-ROLE-REVIEW.md`,
+and
+`context/waves/2026-08-13-factorium-vision/R2-REPRODUCIBLE-REFERENCE-AUDIT.md`.
+R3 now owns cross-paradigm Mapping views and two traceable Factor Guides.
 
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five

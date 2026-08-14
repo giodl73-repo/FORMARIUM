@@ -30,9 +30,10 @@ faceted search. The [security example](tables/examples/security.md) leads to an
 [eight-factor access-control request](tables/composites/access-control-request.md)
 whose factors each have their own entries.
 
-Browse the [pilot Factor Table index](tables/INDEX.md) for examples covering
-type design, incident severity, retention, deployments, prioritization,
-security, environment structure, and sourced formulas.
+Browse the [generated reference catalog](tables/CATALOG.md) for canonical
+anchors and specialized views. The [curated table index](tables/INDEX.md)
+retains examples, foundations, roots, roles, primes, and composites without
+copying the generated catalog.
 
 ## Primary deliverables
 
@@ -119,6 +120,22 @@ Canonicalize an admitted CRLF transport or verify exact canonical output:
 cargo run --quiet -- canonicalize fixtures\schemas\navigation.factor
 ```
 
+Validate the canonical Factorium reference metadata, linked Markdown, and
+generated projections:
+
+```powershell
+cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
+```
+
+After an intentional metadata or source change, regenerate the catalog and
+unresolved-candidate report:
+
+```powershell
+cargo run --quiet -- reference-sync reference\factorium-reference-v0.factorium .
+```
+
+See [Factorium Reference Interchange V0](specs/FACTORIUM-REFERENCE-INTERCHANGE.md).
+
 Inspect the frozen generated corpus and split identities:
 
 ```powershell
@@ -198,6 +215,7 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
+cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

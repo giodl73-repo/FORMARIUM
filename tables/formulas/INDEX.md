@@ -1,57 +1,28 @@
-# Formula Table Pilot Catalog
+# Generated Formula Table Catalog
 
-Status: pilot
+Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Formula Tables are indexed by the kind of claim they make, not only by subject
-or fame.
+Corpus identity: `7a23cf2bd81f77078e52390795ff97bf1446167b89da909702735c14ff26caa3`
 
-## Current pilots
-
-| Entry | Relation kind | Canonical expression | Scope lesson |
+| Formula view | Canonical owner | Sense coverage | Purpose |
 |---|---|---|---|
-| [Force](force.md) | Physical law | `sum(F_external) = m a` | Boundary and net-vector aggregation are part of use |
-| [Mass density](density.md) | Definition | `rho_avg = m / V` | Bulk averaging depends on one mass-volume boundary |
-| [Ohm's law](ohms-law.md) | Empirical constitutive relation | `V = I R` | Famous laws may apply only in a bounded regime |
-| [Sample arithmetic mean](arithmetic-mean.md) | Estimator or statistic | `x_bar = sum(x_i) / n` | Inclusion and distribution determine interpretation |
-| [Pythagorean trigonometric identity](pythagorean-trigonometric-identity.md) | Identity | `sin(theta)^2 + cos(theta)^2 = 1` | Identities require definitions, domains, and restricted consequences |
-| [General accounting balance](general-accounting-balance.md) | Conservation or balance | `accumulation = input - output + generation - consumption` | Boundary and source terms distinguish accounting from conservation |
-| [Newton's method](newtons-method.md) | Algorithm or recurrence | `x_(k+1) = x_k - f(x_k)/f'(x_k)` | Fast convergence is local and conditional |
-| [Event probability range](probability-range.md) | Constraint | `0 <= P(A) <= 1` | A bounded score is not automatically a probability |
-| [Common geometric measures](common-geometric-measures.md) | Definition and derived shape formulas | `P`, `A`, `SA`, and `V` by shape | Select boundary/interior and dimension before formula |
-| [Kinematics motion measures](kinematics-motion-measures.md) | Definition, derivative, and conditional equations | distance, displacement, speed, velocity, acceleration | Path, direction, frame, and rate order remain distinct |
-| [Matter and load measures](matter-load-measures.md) | Base quantity, definition, and scoped physical model | mass, weight, density, pressure | Quantity kind, gravity, volume, and area normalization remain distinct |
-| [Mechanical work, energy, and power](mechanical-work-energy-power.md) | Definition, theorem, and scoped balance | work, kinetic and potential energy, mechanical energy, power | Transfer, state, path, frame, system, and rate remain distinct |
-| [Comparative quantities](comparative-quantities.md) | Definition, equality, normalization, and change | ratio, rate, proportion, percentage, relative change, percentage points | Order, units, baseline, and denominator domains remain explicit |
-| [Probability, risk, and uncertainty relations](probability-risk-uncertainty.md) | Identity, mapping, expectation, model schema, and measurement relation | conditional probability, odds, expected loss, risk, expanded uncertainty | Model, consequence, horizon, and coverage remain explicit |
-| [Thermal quantities](thermal-quantities.md) | Equilibrium, response, balance, and constraint | temperature, heat, internal energy, heat capacity, entropy | State, transfer, sign, phase, constraint, and path remain explicit |
-| [Amount, concentration, and composition](amount-concentration-composition.md) | Definition and closure constraint | entity count, amount of substance, concentrations, composition fractions | Entity, component, mixture, quantity basis, state, and closure remain explicit |
-| [Periodic and wave quantities](periodic-wave-quantities.md) | Definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, speed | Cycle, reference, propagation, medium, mode, and regime remain explicit |
-| [Electrical quantities](electrical-quantities.md) | Definition, rate, and accumulated transfer | charge, current, potential difference, power, energy transfer | Surface, terminal, polarity, direction, sign, state, and time remain explicit |
-| [Information and signal measures](information-signal-measures.md) | Definition, expectation, ordered ratio, and logarithmic mapping | self-information, entropy, power SNR, decibels, sample SNR | Semantics, model, task, estimator, bandwidth, base, and scale remain explicit |
-| [Cost, value, and return relations](cost-value-return.md) | Accounting definition, normalized return, and time-value mapping | dollar return, holding-period return, present value, future value, annualization | Owner, cash flows, baseline, dates, periods, nominal/real basis, and model remain explicit |
-
-## Relation-kind coverage
-
-| Relation kind | Pilot status |
-|---|---|
-| Definition | covered by mass density |
-| Identity | covered by Pythagorean trigonometric identity |
-| Law or principle | covered by force |
-| Conservation or balance | covered by general accounting balance |
-| Constitutive model | covered empirically by Ohm's law |
-| Empirical relation | covered by Ohm's law |
-| Estimator or statistic | covered by sample arithmetic mean |
-| Algorithm or recurrence | covered by Newton's method |
-| Constraint | covered by event probability range |
-
-All V0 relation kinds are represented at pilot depth. This does not imply broad
-subject coverage. The next selection should test cross-domain lookup,
-cross-references, notation variants, and practitioner usefulness.
-
-## Catalog rules
-
-- One canonical scoped relation owns its algebraic rearrangements.
-- Formula authority and Factorium entry maturity remain separate.
-- Symbols are local unless explicitly joined to canonical quantity entries.
-- Units, dimensions, domains, and failure signs remain visible.
-- Formula Tables complement rather than replace domain instruction.
+| [Amount, Concentration, and Composition Relations](amount-concentration-composition.md) | [amount-concentration-composition](../entries/amount-concentration-composition.md) | `entity-count`, `amount-of-substance`, `amount-concentration`, `mass-concentration`, `amount-fraction`, `mass-fraction`, `volume-fraction` | These relations connect a specified entity count to amount of substance and separate component-per-volume concentrations from like-kind composition fractions. Every use requires an entity or component, a system boundary, and an explicit numerator and denominator basis. |
+| [Sample Arithmetic Mean](arithmetic-mean.md) | `unresolved-arithmetic-mean` candidate | unresolved | The sample arithmetic mean summarizes equally weighted numerical observations by dividing their sum by their count. It is a statistic computed from the selected sample; whether it usefully represents location or estimates a population quantity depends on sampling and distribution conditions. |
+| [Common Geometric Measures](common-geometric-measures.md) | [geometric-measure](../entries/geometric-measure.md) | `perimeter`, `circumference`, `area`, `surface-area`, `volume` | This Formula Table selects formulas by measure kind and shape. Exact symbolic forms are preserved; decimal evaluation and measurement uncertainty belong to the application context. |
+| [Comparative Quantities](comparative-quantities.md) | [comparative-quantity](../entries/comparative-quantity.md) | `ratio`, `rate`, `unit-rate`, `proportion`, `percentage`, `relative-change`, `percentage-point-difference` | These relations all use comparison, division, scaling, or difference. Their meaning depends on ordered roles, quantity kinds, units, baseline, and domain restrictions. |
+| [Cost, Value, and Return Relations](cost-value-return.md) | [cost-price-value-return](../entries/cost-price-value-return.md) | `dollar-return`, `rate-of-return`, `present-value` | These relations calculate one holding-period return and single-cash-flow present/future value. They do not define all cost, price, value, utility, or investment decisions. Cash-flow boundary, dates, rate basis, periods, compounding, currency basis, and risk assumptions remain mandatory. |
+| [Mass Density](density.md) | [matter-load-measure](../entries/matter-load-measure.md) | `mass-density` | Average mass density relates the total mass of a chosen object or substance sample to the volume it occupies. The bulk relation does not by itself assert that density is uniform at every point. |
+| [Electrical Quantities](electrical-quantities.md) | [electrical-quantity](../entries/electrical-quantity.md) | `electric-charge`, `electric-current`, `potential-difference`, `electrical-power`, `electrical-energy-transfer` | These relations separate charge, current, potential difference, electrical power, and transferred energy. They require a system or component, terminal pair or oriented surface, time basis, and consistent voltage-current sign convention. |
+| [Force - Newtonian Net-Force Formula View](force.md) | [force](../entries/force.md) | `physical-interaction` | In Newtonian mechanics, Newton's second law relates the net external force on a chosen system to its mass and acceleration. The familiar `F = ma` shorthand is useful only when `F` is understood as the vector sum of external forces and the system and model assumptions are fixed. |
+| [General Accounting Balance](general-accounting-balance.md) | [work-energy-power](../entries/work-energy-power.md) | `energy` | An accounting balance tracks a countable property inside a chosen system over time. Input and generation add to the system; output and consumption remove from it. When the property is strictly conserved, generation and consumption are zero. |
+| [Information and Signal Measures](information-signal-measures.md) | [information-data-signal-noise](../entries/information-data-signal-noise.md) | `self-information`, `shannon-entropy`, `signal-to-noise-ratio` | These relations quantify modeled surprise, average discrete uncertainty, and selected signal-to-noise comparisons. They do not measure semantic meaning, truth, usefulness, or universal signal quality. |
+| [Kinematics Motion Measures](kinematics-motion-measures.md) | [motion-measure](../entries/motion-measure.md) | `position`, `distance-traveled`, `displacement`, `speed`, `velocity`, `acceleration` | These relations separate path-based scalars from endpoint- or derivative-based vectors. Average relations use finite intervals; instantaneous relations use derivatives. Constant-acceleration equations form a narrower conditional view. |
+| [Matter and Load Measures](matter-load-measures.md) | [matter-load-measure](../entries/matter-load-measure.md) | `mass`, `weight`, `mass-density`, `pressure` | These relations distinguish a base quantity from gravitational force and from volume- or area-normalized quantities. Their short algebra is useful only when the subject boundary, environment, averaging scope, and loaded geometry are known. |
+| [Mechanical Work, Energy, and Power](mechanical-work-energy-power.md) | [work-energy-power](../entries/work-energy-power.md) | `mechanical-work`, `energy`, `kinetic-energy`, `potential-energy`, `power` | These relations connect force-displacement transfer, mechanical-energy state terms, and transfer rate. They require an explicit system, path, frame, potential reference, and model scope. |
+| [Newton's Method](newtons-method.md) | `unresolved-newtons-method` candidate | unresolved | Newton's method iteratively approximates a root of a differentiable function by intersecting the tangent at the current estimate with the horizontal axis. Its familiar fast convergence is local and conditional, not guaranteed from every starting value. |
+| [Ohm's Law](ohms-law.md) | [electrical-quantity](../entries/electrical-quantity.md) | `electric-current`, `potential-difference`, `resistance` | Ohm's law describes a linear voltage-current relation for an ohmic material or component under the physical conditions for which its resistance remains applicable. Despite its familiar name, it is an empirical relation rather than a universal law of nature. |
+| [Periodic and Wave Quantities](periodic-wave-quantities.md) | [periodic-wave-quantity](../entries/periodic-wave-quantity.md) | `period`, `frequency`, `angular-frequency`, `wavelength`, `wave-number`, `phase`, `wave-speed` | These relations connect temporal recurrence, spatial repetition, phase, and pattern propagation for periodic phenomena and simple traveling waves. Cycle, reference, propagation sign, medium, mode, and regime remain part of the formula contract. |
+| [Event Probability Range](probability-range.md) | [probability-risk-uncertainty](../entries/probability-risk-uncertainty.md) | `event-probability` | Within a probability model, every event receives a probability between zero and one inclusive. The bound is a mathematical constraint on a probability measure; it does not make every arbitrary score in that interval a calibrated probability. |
+| [Probability, Risk, and Uncertainty Relations](probability-risk-uncertainty.md) | [probability-risk-uncertainty](../entries/probability-risk-uncertainty.md) | `event-probability`, `conditional-probability`, `odds-in-favor`, `risk`, `expected-loss`, `uncertainty`, `measurement-uncertainty` | These relations connect event probability, odds, consequence-valued expectation, and measurement uncertainty. Risk itself remains a declared model family rather than one universal multiplication rule. |
+| [Pythagorean Trigonometric Identity](pythagorean-trigonometric-identity.md) | `unresolved-pythagorean-trigonometric-identity` candidate | unresolved | The Pythagorean trigonometric identity states a relation that holds for every real angle under the standard sine and cosine definitions. It is an identity, not an empirical law and not an equation that selects particular solutions. |
+| [Thermal Quantities](thermal-quantities.md) | [thermal-quantity](../entries/thermal-quantity.md) | `temperature`, `thermal-equilibrium`, `heat-transfer`, `internal-energy`, `heat-capacity`, `specific-heat-capacity`, `entropy` | These relations separate thermal state variables from path-dependent heat and work transfers. They require a system boundary, process conditions, sign convention, phase scope, and absolute temperature where entropy is involved. |

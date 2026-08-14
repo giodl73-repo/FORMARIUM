@@ -152,3 +152,20 @@ fn role_packet_commands_export_and_validate_closed_world_artifacts() {
     assert!(check.status.success());
     std::fs::remove_dir_all(root).unwrap();
 }
+
+#[test]
+fn reference_check_validates_canonical_corpus_and_projections() {
+    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .args([
+            "reference-check",
+            "reference/factorium-reference-v0.factorium",
+            ".",
+        ])
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.contains("entries=20\n"));
+    assert!(stdout.contains("views=30\n"));
+    assert!(stdout.contains("reference_sha256="));
+}

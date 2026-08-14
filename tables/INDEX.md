@@ -1,10 +1,15 @@
-# Factorium Pilot Table Index
+# Factorium Table Index
 
-Status: pilot
+Status: generated-core navigation
 
-This is a manually reviewed navigation projection. Canonical entries own their
-senses and factorizations; copied widths and summaries here are non-normative
-until generated from a stable interchange format.
+Canonical anchor and specialized-view metadata is owned by
+`reference/factorium-reference-v0.factorium` and published through the
+[generated catalog](CATALOG.md). The
+[generated unresolved-candidate report](UNRESOLVED.md) exposes graph debt.
+Neither generated file should be edited by hand.
+
+This curated index owns only supporting navigation that is not duplicated in
+the canonical catalog.
 
 ## Foundation
 
@@ -16,171 +21,17 @@ until generated from a stable interchange format.
 - [Factor Role Table](foundations/FACTOR-ROLES.md) - eleven structural jobs
   factors can perform within a decomposition view
 
-## Canonical anchor entries
-
-- [Force](entries/force.md) - physical interaction, coercive compulsion,
-  organized body, effective influence, and operative validity, with a
-  dictionary/thesaurus/encyclopedia/handbook Reference Delta
-- [Geometric measure](entries/geometric-measure.md) - perimeter,
-  circumference, area, surface area, and volume organized by measured subset
-  and dimension
-- [Motion measure](entries/motion-measure.md) - position, distance,
-  displacement, speed, velocity, and acceleration organized by path, direction,
-  frame, and derivative order
-- [Matter and load measure](entries/matter-load-measure.md) - mass, weight,
-  density, and pressure organized by quantity kind, environment, volume, and
-  area normalization
-- [Work, energy, and power](entries/work-energy-power.md) - mechanical
-  transfer, system energy, kinetic and potential terms, and transfer rate
-  organized by role, system, path, frame, and time
-- [Comparative quantity](entries/comparative-quantity.md) - ratio, rate, unit
-  rate, proportion, percentage, relative change, and percentage points
-  organized by ordered roles, units, and baseline
-- [Probability, risk, and uncertainty](entries/probability-risk-uncertainty.md)
-  - event probability, conditional probability, odds, risk, expected loss,
-  and measurement uncertainty organized by model, consequence, and coverage
-- [Thermal quantity](entries/thermal-quantity.md) - temperature, thermal
-  equilibrium, heat, internal energy, heat capacity, specific heat, and
-  entropy organized by state, transfer, response, phase, and path
-- [Amount, concentration, and composition](entries/amount-concentration-composition.md)
-  - entity count, amount of substance, amount and mass concentration, and
-  composition fractions organized by entity, component, quantity basis,
-  mixture boundary, and state
-- [Periodic and wave quantity](entries/periodic-wave-quantity.md) - period,
-  frequency, angular frequency, wavelength, wave number, phase, and wave speed
-  organized by cycle, temporal and spatial reference, propagation, medium,
-  and regime
-- [Electrical quantity](entries/electrical-quantity.md) - charge, current,
-  potential difference, resistance, electrical power, and transferred energy
-  organized by crossing surface, terminal pair, direction, state, sign, and
-  time basis
-- [Information, data, signal, and noise](entries/information-data-signal-noise.md)
-  - semantic information, represented data, carrier signal, task-relative
-  noise, Shannon measures, and SNR organized by context, representation,
-  channel, model, estimator, and display scale
-- [Cost, price, value, utility, and return](entries/cost-price-value-return.md)
-  - explicit and opportunity cost, exchange price, assessed value, utility,
-  holding-period return, and present value organized by owner, perspective,
-  baseline, cash flow, time, and model
-- [Identity, naming, classification, and versioning](entries/identity-naming-classification-versioning.md)
-  - entity continuity, namespace identifiers, names, aliases, classifications,
-  versions, and compatibility organized by authority, purpose, time, and
-  change scheme
-- [State, event, transition, process, and lifecycle](entries/state-event-transition-process-lifecycle.md)
-  - condition, occurrence, guarded state change, activity flow, lifecycle
-  stage, and status organized by subject, trigger, guard, effect, ordering,
-  and failure semantics
-- [Policy, rule, constraint, decision, and exception](entries/policy-rule-constraint-decision-exception.md)
-  - governing intent, operational logic, validity, derived output,
-  enforcement, and bounded deviation organized by authority, version, facts,
-  priority, controls, and review
-- [Factorium entry publication](entries/factorium-entry-publication.md) -
-  editorial workflow, maturity, publication state, source authority, and
-  domain acceptance organized by evidence, review, validation, and revision
-- [Factorization quality](entries/factorization-quality.md) - sense, factor,
-  pivot, constraint, mechanism-assignment, and change quality organized by
-  observed symptom, test, cause, and repair
-- [Physical constant](entries/physical-constant.md) - defining, measured,
-  recommended, and nominal constant values organized by quantity, unit,
-  status, authority, uncertainty, and use
-- [Claim and evidence](entries/claim-evidence.md) - claim, evidence item,
-  result, limitation, confidence, and provenance organized by scope, method,
-  artifact, implication, and reproduction
-
 ## Examples
 
 | Entry | Principal sense | Width | Derived output or decision | Primary lesson |
 |---|---|---:|---|---|
-| [Environment](examples/environment.md) | governed deployment and organizational naming | 4–5 | environment identity/name | One headword may have materially different senses |
+| [Environment](examples/environment.md) | governed deployment and organizational naming | 4-5 | environment identity/name | One headword may have materially different senses |
 | [Security](examples/security.md) | access control, system protection, risk management | varies | security view | Broad concerns must separate senses before decomposition |
 | [Object-oriented type design](examples/object-oriented-type-design.md) | hierarchy pivot and mechanism assignment | 8 | type structure | One pivot receives inheritance; other factors need other mechanisms |
 | [Incident severity](examples/incident-severity.md) | service incident assessment | 8 | severity | Classification is derived from impact and response facts |
 | [Data retention](examples/data-retention.md) | retention policy decision | 8 | retention obligation/date | Policy and lifecycle triggers derive the outcome |
 | [Deployment identity](examples/deployment-identity.md) | operated deployment | 9 | deployment identity/name | Names project factors but should not own them |
 | [Work prioritization](examples/work-prioritization.md) | portfolio ordering | 9 | priority/rank | Scores should not hide inputs or veto constraints |
-
-## Formula Tables
-
-See the [Formula Table pilot catalog](formulas/INDEX.md) for relation-kind
-coverage and selection rules.
-
-| Entry | Relation kind | Canonical expression | Principal lesson |
-|---|---|---|---|
-| [Force](formulas/force.md) | physical law | `sum(F_external) = m a` | Equations require scope, symbols, units, dimensions, and sources in addition to conceptual factors |
-| [Mass density](formulas/density.md) | definition | `rho_avg = m / V` | A definition can still depend on boundary and averaging scope |
-| [Ohm's law](formulas/ohms-law.md) | empirical constitutive relation | `V = I R` | A famous law may describe only a bounded regime |
-| [Sample arithmetic mean](formulas/arithmetic-mean.md) | estimator or statistic | `x_bar = sum(x_i) / n` | A simple statistic requires inclusion and interpretation rules |
-| [Pythagorean trigonometric identity](formulas/pythagorean-trigonometric-identity.md) | identity | `sin(theta)^2 + cos(theta)^2 = 1` | Identity domains and restricted consequences remain visible |
-| [General accounting balance](formulas/general-accounting-balance.md) | conservation or balance | `accumulation = input - output + generation - consumption` | System boundaries distinguish balances from slogans |
-| [Newton's method](formulas/newtons-method.md) | algorithm or recurrence | `x_(k+1) = x_k - f(x_k)/f'(x_k)` | Convergence claims require local conditions |
-| [Event probability range](formulas/probability-range.md) | constraint | `0 <= P(A) <= 1` | A probability requires a probability model |
-| [Common geometric measures](formulas/common-geometric-measures.md) | definition and derived shape formulas | perimeter, area, surface area, and volume by shape | Select measured subset and dimension before formula |
-| [Kinematics motion measures](formulas/kinematics-motion-measures.md) | definition, derivative, and conditional equations | distance, displacement, speed, velocity, and acceleration | Select path/endpoints, scalar/vector, frame, and rate order |
-| [Matter and load measures](formulas/matter-load-measures.md) | base quantity, definition, and scoped physical model | mass, weight, density, and pressure | Select quantity kind, boundary, gravity, and normalization basis |
-| [Mechanical work, energy, and power](formulas/mechanical-work-energy-power.md) | definition, theorem, and scoped balance | work, kinetic and potential energy, mechanical energy, and power | Separate transfer, state, system, path, frame, and rate |
-| [Comparative quantities](formulas/comparative-quantities.md) | definition, equality, normalization, and change | ratio, rate, proportion, percentage, relative change, and percentage points | Preserve order, quantity kinds, units, baseline, and denominator domains |
-| [Probability, risk, and uncertainty relations](formulas/probability-risk-uncertainty.md) | identity, mapping, expectation, model schema, and measurement relation | conditional probability, odds, expected loss, risk, and expanded uncertainty | Separate event models, representations, consequences, and coverage |
-| [Thermal quantities](formulas/thermal-quantities.md) | equilibrium, response, balance, and constraint | temperature, heat, internal energy, heat capacity, and entropy | Separate state, transfer, response, sign, phase, and reversible path |
-| [Amount, concentration, and composition](formulas/amount-concentration-composition.md) | definition and closure constraint | entity count, amount of substance, concentrations, and composition fractions | Separate entity, component, mixture volume, quantity basis, and state |
-| [Periodic and wave quantities](formulas/periodic-wave-quantities.md) | definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, and speed | Separate cycles, radians, temporal/spatial repetition, pattern propagation, and regime |
-| [Electrical quantities](formulas/electrical-quantities.md) | definition, rate, and accumulated transfer | charge, current, potential difference, power, and energy transfer | Separate surfaces, terminals, polarity, direction, rate, and accumulation |
-| [Information and signal measures](formulas/information-signal-measures.md) | definition, expectation, ordered ratio, and logarithmic mapping | self-information, entropy, power SNR, decibels, and sample SNR | Separate semantics, probability models, task-relative components, estimators, and scales |
-| [Cost, value, and return relations](formulas/cost-value-return.md) | accounting definition, normalized return, and time-value mapping | dollar return, holding-period return, present value, future value, and annualization | Separate owner, cash flows, baseline, dates, periods, nominal/real basis, and model |
-
-## Mapping Tables
-
-| Entry | Mapping kind | Principal lesson |
-|---|---|---|
-| [Temperature scale conversion](mappings/temperature-scales.md) | exact affine conversion | Point temperatures and intervals require different transformations |
-| [Version scheme semantics](mappings/version-scheme-semantics.md) | semantic crosswalk | Generic version roles map to SemVer only for packages with a declared public API |
-
-## Transition Tables
-
-| Entry | Transition kind | Principal lesson |
-|---|---|---|
-| [Generic lifecycle](transitions/generic-lifecycle.md) | event/guard state transition | Source, event, guard, effect, target, and failure behavior are all required |
-
-## Decision Tables
-
-| Entry | Decision kind | Principal lesson |
-|---|---|---|
-| [Policy decision](decisions/policy-decision.md) | prioritized policy evaluation | Missing facts, blocking constraints, exceptions, derived outputs, and enforcement stay separate |
-
-## Constraint Tables
-
-| Entry | Constraint kind | Principal lesson |
-|---|---|---|
-| [Policy constraints](constraints/policy-constraints.md) | policy-evaluation integrity | Version, evidence, authority, bounded exceptions, output separation, enforcement, and audit are invariants |
-
-## Procedure Tables
-
-| Entry | Procedure kind | Principal lesson |
-|---|---|---|
-| [Entry publication](procedures/entry-publication.md) | gated editorial workflow | Research, canonicalization, views, review, validation, integration, and immutable publication have explicit recovery |
-
-## Diagnostic Tables
-
-| Entry | Diagnostic kind | Principal lesson |
-|---|---|---|
-| [Factorization failures](diagnostics/factorization-failures.md) | structural fault isolation | Symptoms suggest candidate causes and discriminating tests rather than certain diagnoses |
-
-## Scale Tables
-
-| Entry | Scale kind | Principal lesson |
-|---|---|---|
-| [Editorial maturity](scales/editorial-maturity.md) | evidence-backed categorical maturity | Candidate, supported, established, disputed, and deprecated are interpretations, not automatic scores |
-
-## Reference Value Tables
-
-| Entry | Value kind | Principal lesson |
-|---|---|---|
-| [SI defining constants](values/si-defining-constants.md) | exact defining quantities | Values retain symbols, units, defining status, authority, and scope |
-
-## Evidence Tables
-
-| Entry | Evidence kind | Principal lesson |
-|---|---|---|
-| [Founding FACTOR evidence](evidence/founding-factor-evidence.md) | claim-evidence comparison | Supported, contradicted, excluded, and untested claims remain tied to immutable artifacts and limitations |
 
 ## Composite entries
 
@@ -235,5 +86,5 @@ senses within their canonical root entries rather than duplicate headwords.
 - Broad words such as `security` and `environment` require sense separation.
 - Many useful headwords are multiword design situations rather than isolated
   common nouns.
-- Unresolved candidate terms remain visible until canonical entries or external
-  references are reviewed.
+- Unresolved candidate terms remain visible until canonical entries or
+  external references are reviewed.

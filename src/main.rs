@@ -3,6 +3,7 @@ use factor::{
     binding::binding_control_summary,
     corpus::fixture_summary,
     packet::{validate_packet, write_packet},
+    reference::ReferenceCorpus,
     role_bakeoff::role_bakeoff_summary,
     role_fixtures::role_fixture_summary,
     role_packet::{validate_role_packet, write_role_packet},
@@ -96,6 +97,9 @@ fn run() -> Result<(), String> {
             println!("packet_sha256={identity}");
             Ok(())
         }
+        "reference-check" | "reference-catalog" | "reference-unresolved" | "reference-sync" => {
+            run_reference_command(command.as_str(), &mut arguments)
+        }
         "check" => {
             let (_, document) = read_document(&mut arguments)?;
             println!("schema={}", document.schema().id());
@@ -114,6 +118,86 @@ fn run() -> Result<(), String> {
         }
         _ => Err(usage("unknown command")),
     }
+}
+
+fn run_reference_command(
+    command: &str,
+    arguments: &mut impl Iterator<Item = String>,
+) -> Result<(), String> {
+    let (manifest, root) = read_two_paths(arguments)?;
+    let corpus = read_reference(&manifest)?;
+    match command {
+        "reference-check" => {
+            corpus
+                .validate_projections(root.as_ref())
+                .map_err(|error| format!("{manifest}: {error}"))?;
+            println!("reference={manifest}");
+            println!("entries={}", corpus.entries().len());
+            println!(
+                "aliases={}",
+                corpus
+                    .entries()
+                    .iter()
+                    .map(|entry| entry.aliases().len())
+                    .sum::<usize>()
+            );
+            println!(
+                "senses={}",
+                corpus
+                    .entries()
+                    .iter()
+                    .map(|entry| entry.senses().len())
+                    .sum::<usize>()
+            );
+            println!(
+                "factors={}",
+                corpus
+                    .entries()
+                    .iter()
+                    .map(|entry| entry.factors().len())
+                    .sum::<usize>()
+            );
+            println!("views={}", corpus.views().len());
+            println!(
+                "unresolved_view_owners={}",
+                corpus
+                    .views()
+                    .iter()
+                    .filter(|view| view.entry_id().starts_with("unresolved-"))
+                    .count()
+            );
+            println!("reference_sha256={}", corpus.sha256());
+        }
+        "reference-catalog" => {
+            corpus
+                .validate_workspace(root.as_ref())
+                .map_err(|error| format!("{manifest}: {error}"))?;
+            print!("{}", corpus.catalog_markdown());
+        }
+        "reference-unresolved" => {
+            corpus
+                .validate_workspace(root.as_ref())
+                .map_err(|error| format!("{manifest}: {error}"))?;
+            print!(
+                "{}",
+                corpus
+                    .unresolved_markdown(root.as_ref())
+                    .map_err(|error| format!("{manifest}: {error}"))?
+            );
+        }
+        "reference-sync" => {
+            corpus
+                .sync_projections(root.as_ref())
+                .map_err(|error| format!("{manifest}: {error}"))?;
+            println!("reference={manifest}");
+            println!("catalog={root}\\tables\\CATALOG.md");
+            println!("formula_catalog={root}\\tables\\formulas\\INDEX.md");
+            println!("unresolved={root}\\tables\\UNRESOLVED.md");
+            println!("reference_sha256={}", corpus.sha256());
+        }
+        _ => return Err(usage("unknown reference command")),
+    }
+    Ok(())
 }
 
 fn read_document(
@@ -136,8 +220,28 @@ fn read_path(arguments: &mut impl Iterator<Item = String>) -> Result<String, Str
     Ok(path)
 }
 
+fn read_two_paths(
+    arguments: &mut impl Iterator<Item = String>,
+) -> Result<(String, String), String> {
+    let first = arguments
+        .next()
+        .ok_or_else(|| usage("missing manifest path"))?;
+    let second = arguments
+        .next()
+        .ok_or_else(|| usage("missing workspace root"))?;
+    if arguments.next().is_some() {
+        return Err(usage("unexpected extra argument"));
+    }
+    Ok((first, second))
+}
+
+fn read_reference(path: &str) -> Result<ReferenceCorpus, String> {
+    let input = fs::read_to_string(path).map_err(|error| format!("{path}: {error}"))?;
+    ReferenceCorpus::parse(&input).map_err(|error| format!("{path}: {error}"))
+}
+
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor role-packet <output-dir>\n  factor role-packet-check <packet-dir>\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>"
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor role-packet <output-dir>\n  factor role-packet-check <packet-dir>\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>\n  factor reference-check <manifest> <workspace-root>\n  factor reference-catalog <manifest> <workspace-root>\n  factor reference-unresolved <manifest> <workspace-root>\n  factor reference-sync <manifest> <workspace-root>"
     )
 }
