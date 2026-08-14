@@ -13,6 +13,10 @@ schema.
 
 ## Required structure
 
+Every published factor or cross-reference resolves according to
+`specs/FACTORIUM-ENTRY-GRAPH.md`. A table cell is not exempt from canonical
+entry and relationship rules.
+
 ### Headword
 
 A stable lookup term representing a concept, problem, artifact, decision, or
@@ -76,6 +80,7 @@ Mechanism mappings are assignments, not definitions of the factors.
 ### Cross-references
 
 Link broader, narrower, related, contrasting, and commonly confused entries.
+Cross-references use typed relationships and stable entry identifiers.
 
 ### Maturity and provenance
 
@@ -107,12 +112,14 @@ These budgets remain provisional until a 25-entry pilot is measured:
 
 | Class | Words | Senses | Candidate rows |
 |---|---:|---:|---:|
+| Prime | 50–150 | 1 | 1–3 |
 | Brief | 120–250 | 1 | 3–6 |
 | Standard | 250–600 | 1–3 | 6–15 total |
 | Anchor | 600–1,500 | 2–6 | 12–30 total |
 
 Additional defaults:
 
+- prime entries resolve graph terms without padding; they may later expand;
 - orientation: 40–120 words;
 - constraints: 3–7 bullets;
 - cross-references: 3–10;

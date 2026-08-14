@@ -1,5 +1,8 @@
 # Environment
 
+**Resolution status:** Unlinked factor terms are `unresolved-candidate` pending
+pilot graph review.
+
 An environment is a bounded setting in which work, software, data, or policy
 operates. The correct factorization depends on whether the reader is
 identifying deployments, governing isolation, organizing ownership, or naming

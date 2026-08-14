@@ -17,6 +17,12 @@ Read the [grand vision](VISION.md), the draft
 [Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), and the first
 [environment example](tables/examples/environment.md).
 
+The [entry graph](specs/FACTORIUM-ENTRY-GRAPH.md) defines progressive
+decomposition, typed joins, relative primes and composites, notation, and
+faceted search. The [security example](tables/examples/security.md) leads to an
+[eight-factor access-control request](tables/composites/access-control-request.md)
+whose factors each have their own entries.
+
 ## Primary deliverables
 
 - **Factorium books** — the enduring reference;
@@ -69,6 +75,7 @@ organized into small waves and pulses with explicit validation.
 ## Reference specifications
 
 - [Factor Table Entry Format V0](specs/FACTOR-TABLE-ENTRY.md)
+- [Factorium Entry Graph V0](specs/FACTORIUM-ENTRY-GRAPH.md)
 
 ## Founding research specifications
 

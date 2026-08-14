@@ -107,6 +107,12 @@ The exact volume structure will evolve, but likely families include:
 Entries may appear in more than one reading path through cross-references, but
 each canonical entry has one stable identity and revision history.
 
+Every word or phrase used as a factor in a published table resolves to another
+entry, an external versioned reference, or a visible unresolved candidate.
+Books show convenient hierarchies, while the maintained reference is a typed
+graph: shared factors can participate in many composites, and readers can move
+from broad fields to senses, decompositions, mechanisms, or instances.
+
 The provisional scale is:
 
 - 25–50 entries for the editorial pilot;

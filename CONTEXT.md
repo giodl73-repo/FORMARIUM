@@ -39,6 +39,16 @@ targets are 25–50 pilot entries, about 250 entries for the first volume, about
 1,000 core headwords, and 3,000–5,000 only as a mature reviewed collection.
 Brief, standard, and anchor entry classes preserve table-first lookup.
 
+The entry graph contract at `specs/FACTORIUM-ENTRY-GRAPH.md` separates
+headwords, senses, views, factor count, and recursive depth. Prime/composite
+status is relative to a view; every published factor resolves to an entry or
+visible unresolved candidate; textual typed edges own joins and symbols are
+aliases. The security example demonstrates one eight-factor access-control
+composite with eight linked factor entries. Review is recorded at
+`context/waves/2026-08-13-factorium-vision/ENTRY-GRAPH-ROLE-REVIEW.md`.
+The graph pilot also adds a 50–150-word prime entry class so base terms resolve
+without artificial exposition.
+
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.
 
