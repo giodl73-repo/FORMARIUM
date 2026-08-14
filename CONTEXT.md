@@ -100,6 +100,14 @@ area `L^2`, and volume `L^3`. Common formulas and shape constraints are in
 `docs/research/2026-08-14-geometric-measure-cluster.md` and
 `context/waves/2026-08-13-factorium-vision/GEOMETRIC-MEASURE-ROLE-REVIEW.md`.
 
+The motion pilot at `tables/entries/motion-measure.md` separates position,
+distance, displacement, speed, velocity, and acceleration by path versus
+endpoint evidence, scalar versus vector kind, average versus instantaneous
+view, reference frame, and derivative order. The linked Formula Table is
+`tables/formulas/kinematics-motion-measures.md`; research and review are
+`docs/research/2026-08-14-motion-measure-cluster.md` and
+`context/waves/2026-08-13-factorium-vision/MOTION-MEASURE-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

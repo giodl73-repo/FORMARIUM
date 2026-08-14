@@ -24,6 +24,9 @@ until generated from a stable interchange format.
 - [Geometric measure](entries/geometric-measure.md) - perimeter,
   circumference, area, surface area, and volume organized by measured subset
   and dimension
+- [Motion measure](entries/motion-measure.md) - position, distance,
+  displacement, speed, velocity, and acceleration organized by path, direction,
+  frame, and derivative order
 
 ## Examples
 
@@ -53,6 +56,7 @@ coverage and selection rules.
 | [Newton's method](formulas/newtons-method.md) | algorithm or recurrence | `x_(k+1) = x_k - f(x_k)/f'(x_k)` | Convergence claims require local conditions |
 | [Event probability range](formulas/probability-range.md) | constraint | `0 <= P(A) <= 1` | A probability requires a probability model |
 | [Common geometric measures](formulas/common-geometric-measures.md) | definition and derived shape formulas | perimeter, area, surface area, and volume by shape | Select measured subset and dimension before formula |
+| [Kinematics motion measures](formulas/kinematics-motion-measures.md) | definition, derivative, and conditional equations | distance, displacement, speed, velocity, and acceleration | Select path/endpoints, scalar/vector, frame, and rate order |
 
 ## Mapping Tables
 

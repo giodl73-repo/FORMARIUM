@@ -18,6 +18,7 @@ or fame.
 | [Newton's method](newtons-method.md) | Algorithm or recurrence | `x_(k+1) = x_k - f(x_k)/f'(x_k)` | Fast convergence is local and conditional |
 | [Event probability range](probability-range.md) | Constraint | `0 <= P(A) <= 1` | A bounded score is not automatically a probability |
 | [Common geometric measures](common-geometric-measures.md) | Definition and derived shape formulas | `P`, `A`, `SA`, and `V` by shape | Select boundary/interior and dimension before formula |
+| [Kinematics motion measures](kinematics-motion-measures.md) | Definition, derivative, and conditional equations | distance, displacement, speed, velocity, acceleration | Path, direction, frame, and rate order remain distinct |
 
 ## Relation-kind coverage
 

@@ -133,3 +133,10 @@ measured subset and dimension. Common shape formulas are linked at
 `tables/formulas/common-geometric-measures.md`. Research and review are
 `docs/research/2026-08-14-geometric-measure-cluster.md` and
 `GEOMETRIC-MEASURE-ROLE-REVIEW.md`.
+
+The motion-measure cluster at `tables/entries/motion-measure.md` separates
+position, distance, displacement, speed, velocity, and acceleration through
+path/endpoints, scalar/vector kind, reference frame, and derivative order.
+Relations are in `tables/formulas/kinematics-motion-measures.md`; research and
+review are `docs/research/2026-08-14-motion-measure-cluster.md` and
+`MOTION-MEASURE-ROLE-REVIEW.md`.
