@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 22 anchor entries, 137 senses, 213
-ordered factors, and 33 specialized views. It is strong in foundational
+The canonical corpus currently contains 22 anchor entries, 140 senses, 215
+ordered factors, and 34 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -52,6 +52,10 @@ many-to-many organizational assignment Mapping view.
 Separate observation, measurement, result, claim, evidence, inference,
 confidence, and limitation. Extend the current Claim and Evidence anchor with
 traceable scientific and operational views.
+
+Status: first slice implemented. The stable Claim and Evidence anchor now owns
+observation, measurement, and inference senses, plus an Evidence Table that
+preserves the full source-to-claim chain.
 
 ### F4 - Control and response
 

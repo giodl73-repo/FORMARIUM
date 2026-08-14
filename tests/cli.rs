@@ -166,6 +166,6 @@ fn reference_check_validates_canonical_corpus_and_projections() {
     assert!(output.status.success());
     let stdout = String::from_utf8(output.stdout).unwrap();
     assert!(stdout.contains("entries=22\n"));
-    assert!(stdout.contains("views=33\n"));
+    assert!(stdout.contains("views=34\n"));
     assert!(stdout.contains("reference_sha256="));
 }

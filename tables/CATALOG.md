@@ -2,7 +2,7 @@
 
 Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Corpus identity: `328b360f8ef53035e463498a08c1865ee15ccff01fb511be49bc179beb0386e3`
+Corpus identity: `45a1bc2038ab76429a3afaa94f3da51ec4280f00d932d0dbd64717d4ea2654e9`
 
 ## Canonical Factor Table entries
 
@@ -91,3 +91,4 @@ Corpus identity: `328b360f8ef53035e463498a08c1865ee15ccff01fb511be49bc179beb0386
 ## Evidence Table views
 
 - [Founding FACTOR Evidence](evidence/founding-factor-evidence.md) — Supported, contradicted, excluded, and untested claims remain tied to immutable artifacts and explicit limitations. (owner: `claim-evidence`, senses: `claim`, `evidence-item`, `result`, `limitation`, `confidence`, `provenance`)
+- [Observation-to-Inference Evidence Chain](evidence/observation-inference-chain.md) — Preserves source, activity, observation or measurement, result, inference, claim implication, limitation, confidence, and provenance as separate stages in a traceable evidence chain. (owner: `claim-evidence`, senses: `claim`, `evidence-item`, `result`, `limitation`, `confidence`, `provenance`, `observation`, `measurement`, `inference`)

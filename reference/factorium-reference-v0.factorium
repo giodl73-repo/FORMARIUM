@@ -25,6 +25,9 @@ sense result | result
 sense limitation | limitation
 sense confidence | confidence
 sense provenance | provenance
+sense observation | observation
+sense measurement | measurement
+sense inference | inference
 factor exact-claim | exact claim
 factor subject-population-and-scope | subject, population, and scope
 factor method-and-comparison | method and comparison
@@ -35,6 +38,8 @@ factor limitations-and-excluded-claims | limitations and excluded claims
 factor confidence-criteria | confidence criteria
 factor provenance-and-reproduction | provenance and reproduction
 factor reviewer-and-revision | reviewer and revision
+factor measurement-model-procedure-and-system | measurement model, procedure, and system
+factor inference-rule-and-assumptions | inference rule and assumptions
 end-entry
 entry comparative-quantity | Comparative Quantity | quantities | candidate | tables/entries/comparative-quantity.md | Ratios, rates, proportions, and percentages all compare quantities, but they do not ask the same question. The decisive factors are what occupies the numerator and denominator, whether units cancel or remain, whether equality is being asserted, and which baseline owns a change.
 sense ratio | ratio
@@ -403,6 +408,8 @@ end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
 end-view
 view evidence-founding-factor-evidence | claim-evidence | claim,evidence-item,result,limitation,confidence,provenance | evidence | Founding FACTOR Evidence | tables/evidence/founding-factor-evidence.md | Supported, contradicted, excluded, and untested claims remain tied to immutable artifacts and explicit limitations.
+end-view
+view evidence-observation-inference-chain | claim-evidence | claim,evidence-item,result,limitation,confidence,provenance,observation,measurement,inference | evidence | Observation-to-Inference Evidence Chain | tables/evidence/observation-inference-chain.md | Preserves source, activity, observation or measurement, result, inference, claim implication, limitation, confidence, and provenance as separate stages in a traceable evidence chain.
 end-view
 view formula-amount-concentration-composition | amount-concentration-composition | entity-count,amount-of-substance,amount-concentration,mass-concentration,amount-fraction,mass-fraction,volume-fraction | formula | Amount, Concentration, and Composition Relations | tables/formulas/amount-concentration-composition.md | These relations connect a specified entity count to amount of substance and separate component-per-volume concentrations from like-kind composition fractions. Every use requires an entity or component, a system boundary, and an explicit numerator and denominator basis.
 end-view

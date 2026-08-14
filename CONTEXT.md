@@ -104,6 +104,16 @@ many-to-many mechanisms. Research and fixed-point review are
 `docs/research/2026-08-14-organization-role-authority.md` and
 `context/waves/2026-08-13-factorium-vision/ORGANIZATION-AUTHORITY-ROLE-REVIEW.md`.
 
+Factor Forge F3 extends the stable `tables/entries/claim-evidence.md` anchor
+with observation, measurement, and inference while preserving the existing
+claim, evidence, result, limitation, confidence, and provenance identities.
+`tables/evidence/observation-inference-chain.md` makes source, method,
+observation, measurement result, inference, implication, uncertainty,
+limitation, confidence, and provenance separately traceable. Research and
+fixed-point review are
+`docs/research/2026-08-14-observation-measurement-inference.md` and
+`context/waves/2026-08-13-factorium-vision/OBSERVATION-INFERENCE-ROLE-REVIEW.md`.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.

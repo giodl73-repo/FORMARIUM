@@ -59,6 +59,14 @@ is `tables/mappings/organizational-assignment-semantics.md`; research and
 review are `docs/research/2026-08-14-organization-role-authority.md` and
 `ORGANIZATION-AUTHORITY-ROLE-REVIEW.md`.
 
+The F3 observation-and-inference slice extends
+`tables/entries/claim-evidence.md` without changing its stable identity.
+Observation, measurement, result, inference, evidence implication,
+confidence, limitation, and provenance now resolve through the general
+`tables/evidence/observation-inference-chain.md` view. Research and review are
+`docs/research/2026-08-14-observation-measurement-inference.md` and
+`OBSERVATION-INFERENCE-ROLE-REVIEW.md`.
+
 ## Success criteria
 
 - a practitioner can find a relevant sense and alternatives within minutes;

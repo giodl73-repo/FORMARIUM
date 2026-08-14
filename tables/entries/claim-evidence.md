@@ -4,11 +4,13 @@ Status: candidate anchor entry
 
 ## Orientation
 
-A claim states what is asserted; evidence records observations, artifacts, or
-arguments relevant to it; a result reports an evaluated outcome; a limitation
-bounds interpretation; confidence summarizes support without replacing the
-evidence. Provenance is mandatory metadata, while an Evidence Table is a
-specialized view whose lookup task is comparing support and contradiction.
+A claim states what is asserted. An observation records what was encountered
+or detected under a method and context; measurement is the narrower process
+of obtaining quantity values; a result records a method's output; inference
+connects premises and results to a conclusion. Evidence is claim-relative:
+an observation, result, artifact, or argument supports or contradicts only
+through an explicit implication. Limitations, confidence, and provenance
+remain separate.
 
 ## Sense table
 
@@ -20,6 +22,32 @@ specialized view whose lookup task is comparing support and contradiction.
 | `limitation` | What interpretation is excluded or remains unresolved? | scope boundary |
 | `confidence` | How strong is current support under declared criteria? | evidence summary |
 | `provenance` | Where did the evidence come from and how can it be reproduced? | custody metadata |
+| `observation` | What was encountered or detected, by which observer or system, under what method and context? | recorded empirical or documentary encounter |
+| `measurement` | Which quantity was measured through which procedure and system, producing which attributed values and uncertainty? | quantity-obtaining process |
+| `inference` | Which premises, method or model, and assumptions connect evidence or results to a conclusion? | reasoning step |
+
+Existing sense order is preserved in the canonical interchange; the three F3
+senses are appended identities rather than replacements.
+
+## Role ladder
+
+```text
+entity, event, or source
+  -- encountered and recorded as --> observation
+
+quantity, procedure, and measuring system
+  -- produce --> measurement result
+
+observation, result, or artifact
+  + method/model and assumptions
+  -- support inference --> conclusion
+
+conclusion
+  -- stated with subject and scope as --> claim
+
+evidence item
+  -- bears on claim through --> supporting or contradicting implication
+```
 
 ## Root factorization
 
@@ -35,13 +63,39 @@ claim-evidence-use
    x confidence criteria
    x provenance and reproduction
    x reviewer and revision
+   x measurement model, procedure, and system
+   x inference rule and assumptions
 ```
 
-## Specialized view
+## Specialized views
 
 The linked [Founding FACTOR Evidence](../evidence/founding-factor-evidence.md)
 compares the narrow claims supported and excluded by the two accepted
 synthetic bakeoffs.
+
+The linked
+[Observation-to-Inference Evidence Chain](../evidence/observation-inference-chain.md)
+preserves the stages from source and method through observation, result,
+inference, claim implication, confidence, and limitation.
+
+## Selection procedure
+
+1. State the exact claim, subject, population, scope, and time.
+2. Identify source entities, activities, agents, versions, and custody.
+3. Record observations with observer or system, method, context, time, and
+   raw record identity.
+4. Use `measurement` only for quantity-valued processes; state measurand,
+   model, procedure, measuring system, conditions, values, units/references,
+   and uncertainty.
+5. Separate raw observation, corrected or transformed result, and derived
+   summary.
+6. Record inference premises, rule/model, assumptions, alternatives, and
+   conclusion.
+7. State exactly how each item supports, contradicts, or fails to bear on the
+   claim.
+8. Retain nulls, ties, exclusions, missingness, and competing explanations.
+9. State limitations and excluded claims before assigning confidence.
+10. Record review, revision, supersession, and reproduction paths.
 
 ## Reference Delta
 
@@ -57,6 +111,12 @@ synthetic bakeoffs.
 
 - Claims are specific enough to be contradicted.
 - Evidence identity and method are reproducible.
+- Observations retain observer/system, context, time, and raw record identity.
+- Measurements retain measurand, procedure, system, conditions, values,
+  reference/unit, and uncertainty.
+- Results are not relabeled as conclusions.
+- Inferences retain premises, model/rule, assumptions, alternatives, and
+  conclusion.
 - Support and contradiction are both retained.
 - Null and tied results are not omitted.
 - Limitations state what the result does not establish.
@@ -77,6 +137,12 @@ synthetic bakeoffs.
 1. `docs/STRONG-CONTROL-BAKEOFF-RESULT.md`
 2. `docs/ROLE-AMBIGUITY-RESULT.md`
 3. `specs/REFERENCE-DELTA.md`
+4. JCGM VIM, "measurement" and "measurement result":
+   https://jcgm.bipm.org/vim/en/2.1.html
+   https://jcgm.bipm.org/vim/en/2.9.html
+5. W3C, PROV-O:
+   https://www.w3.org/TR/prov-o/
+6. NIST, "Measurement Uncertainty":
+   https://www.nist.gov/itl/sed/topic-areas/measurement-uncertainty
 
 Factorium evidence organization remains `candidate`.
-
