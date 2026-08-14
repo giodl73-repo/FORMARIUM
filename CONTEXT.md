@@ -124,6 +124,14 @@ The linked Formula Table is
 `docs/research/2026-08-14-work-energy-power-cluster.md` and
 `context/waves/2026-08-13-factorium-vision/WORK-ENERGY-POWER-ROLE-REVIEW.md`.
 
+The comparative-quantity pilot at `tables/entries/comparative-quantity.md`
+separates ratio, rate, unit rate, proportion, percentage, relative change, and
+percentage-point difference by ordered roles, quantity kinds, unit behavior,
+baseline, and denominator domain. The linked Formula Table is
+`tables/formulas/comparative-quantities.md`; research and review are
+`docs/research/2026-08-14-comparative-quantity-cluster.md` and
+`context/waves/2026-08-13-factorium-vision/COMPARATIVE-QUANTITY-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

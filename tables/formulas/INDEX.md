@@ -21,6 +21,7 @@ or fame.
 | [Kinematics motion measures](kinematics-motion-measures.md) | Definition, derivative, and conditional equations | distance, displacement, speed, velocity, acceleration | Path, direction, frame, and rate order remain distinct |
 | [Matter and load measures](matter-load-measures.md) | Base quantity, definition, and scoped physical model | mass, weight, density, pressure | Quantity kind, gravity, volume, and area normalization remain distinct |
 | [Mechanical work, energy, and power](mechanical-work-energy-power.md) | Definition, theorem, and scoped balance | work, kinetic and potential energy, mechanical energy, power | Transfer, state, path, frame, system, and rate remain distinct |
+| [Comparative quantities](comparative-quantities.md) | Definition, equality, normalization, and change | ratio, rate, proportion, percentage, relative change, percentage points | Order, units, baseline, and denominator domains remain explicit |
 
 ## Relation-kind coverage
 

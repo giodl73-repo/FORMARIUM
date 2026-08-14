@@ -156,3 +156,11 @@ forms, and time basis. Relations are in
 `tables/formulas/mechanical-work-energy-power.md`; research and review are
 `docs/research/2026-08-14-work-energy-power-cluster.md` and
 `WORK-ENERGY-POWER-ROLE-REVIEW.md`.
+
+The comparative-quantity cluster at `tables/entries/comparative-quantity.md`
+separates ratio, rate, unit rate, proportion, percentage, relative change, and
+percentage-point difference through ordered roles, quantity kinds, units,
+baseline, and denominator domain. Relations are in
+`tables/formulas/comparative-quantities.md`; research and review are
+`docs/research/2026-08-14-comparative-quantity-cluster.md` and
+`COMPARATIVE-QUANTITY-ROLE-REVIEW.md`.

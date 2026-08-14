@@ -33,6 +33,9 @@ until generated from a stable interchange format.
 - [Work, energy, and power](entries/work-energy-power.md) - mechanical
   transfer, system energy, kinetic and potential terms, and transfer rate
   organized by role, system, path, frame, and time
+- [Comparative quantity](entries/comparative-quantity.md) - ratio, rate, unit
+  rate, proportion, percentage, relative change, and percentage points
+  organized by ordered roles, units, and baseline
 
 ## Examples
 
@@ -65,6 +68,7 @@ coverage and selection rules.
 | [Kinematics motion measures](formulas/kinematics-motion-measures.md) | definition, derivative, and conditional equations | distance, displacement, speed, velocity, and acceleration | Select path/endpoints, scalar/vector, frame, and rate order |
 | [Matter and load measures](formulas/matter-load-measures.md) | base quantity, definition, and scoped physical model | mass, weight, density, and pressure | Select quantity kind, boundary, gravity, and normalization basis |
 | [Mechanical work, energy, and power](formulas/mechanical-work-energy-power.md) | definition, theorem, and scoped balance | work, kinetic and potential energy, mechanical energy, and power | Separate transfer, state, system, path, frame, and rate |
+| [Comparative quantities](formulas/comparative-quantities.md) | definition, equality, normalization, and change | ratio, rate, proportion, percentage, relative change, and percentage points | Preserve order, quantity kinds, units, baseline, and denominator domains |
 
 ## Mapping Tables
 

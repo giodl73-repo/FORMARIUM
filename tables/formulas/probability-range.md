@@ -80,6 +80,7 @@ probability-bound-use
 - [Constraint](../roots/constraint.md)
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
+- [Comparative Quantity](../entries/comparative-quantity.md)
 - event — `unresolved-candidate`
 - calibration — `unresolved-candidate`
 
@@ -91,4 +92,3 @@ probability-bound-use
 Formula authority: established probability constraint. Factorium
 representation remains a candidate pending probability and practitioner
 review.
-
