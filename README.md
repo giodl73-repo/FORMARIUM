@@ -17,7 +17,7 @@ thesaurus, and the compact utility of an engineering handbook. It does not
 promise one universal decomposition; it makes the available choices,
 constraints, tradeoffs, counterexamples, and maturity visible.
 
-Read the [grand vision](VISION.md), the draft
+Read the [grand vision](VISION.md), the active [roadmap](ROADMAP.md), the draft
 [Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), the specialized
 [Formula Table format](specs/FORMULA-TABLE-ENTRY.md), and the first
 [environment example](tables/examples/environment.md).
@@ -83,8 +83,9 @@ the encyclopedia or any universal factorization.
 
 ## Project workflow
 
-Read `CONTEXT.md`, `PRODUCT_PLAN.md`, and `context/waves/PHASES.md`. Work is
-organized into small waves and pulses with explicit validation.
+Read `CONTEXT.md`, `PRODUCT_PLAN.md`, `ROADMAP.md`, and
+`context/waves/PHASES.md`. Work is organized into small waves and pulses with
+explicit validation.
 
 ## Reference specifications
 

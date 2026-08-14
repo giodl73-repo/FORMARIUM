@@ -41,6 +41,9 @@ reference. They are not the top-level product.
 
 ## Waves
 
+The milestone sequence, exit gates, content priorities, publication path, and
+software boundary are maintained in [ROADMAP.md](ROADMAP.md).
+
 ### Wave 1: Method foundation
 
 Define the terminology, schema contract, benchmark protocol, controls, and
@@ -83,6 +86,11 @@ after the editorial method is stable.
 
 Grow reviewed volumes, contributors, provenance, and cross-references without
 losing canonical entry identity.
+
+The roadmap refines these waves into R0-R8 milestones. It places the
+25-50-entry editorial pilot before interchange freeze, a 75-125-entry
+usability prototype before the approximately 250-entry first substantial
+volume, and the Workbench after the editorial contract is proven.
 
 ## Founding research pulses
 

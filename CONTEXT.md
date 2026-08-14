@@ -14,6 +14,7 @@ evidence and one tested Factorium domain.
 - `VISION.md` is the canonical grand vision.
 - `README.md` explains the project.
 - `PRODUCT_PLAN.md` records the thesis, waves, and non-goals.
+- `ROADMAP.md` records milestone order, exit gates, and content priorities.
 - `context/waves/` records execution history.
 - `tables/` holds Factor Tables and examples.
 - `docs/research/` holds cited design and benchmark research.
@@ -25,6 +26,13 @@ evidence and one tested Factorium domain.
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
 Current pulse: **03 - Pilot Factor Tables**
+
+The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
+editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
+Guides, a 75-125-entry usability prototype, the approximately 250-entry first
+substantial volume, and only then the Factorium Workbench. Its fixed-point
+review is
+`context/waves/2026-08-13-factorium-vision/ROADMAP-ROLE-REVIEW.md`.
 
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five

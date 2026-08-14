@@ -24,6 +24,11 @@ about credible alternatives, and disciplined about evidence and uncertainty.
 4. search and construction software;
 5. experiments and executable demonstrations.
 
+The milestone sequence and exit gates are maintained in the repository
+[roadmap](../../../ROADMAP.md). It keeps this wave's editorial pilots ahead of
+interchange freeze, volume publication, and Workbench scope. Review is
+recorded in `ROADMAP-ROLE-REVIEW.md`.
+
 ## Pulse table
 
 | Pulse | Title | Status | Outcome |
