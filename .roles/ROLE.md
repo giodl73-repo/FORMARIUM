@@ -30,6 +30,7 @@ artifact, and a closure condition.
 |---|---|---|
 | `assurance/research-integrity-provenance.md` | Research Integrity & Provenance | Inputs, prior art, revisions, nulls, and results are reconstructable |
 | `assurance/cross-paradigm-mapping-auditor.md` | Cross-Paradigm Mapping Auditor | General factor roles vs. one paradigm's mechanisms |
+| `assurance/domain-source-reviewer.md` | Domain Source Reviewer | Useful synthesis vs. unsupported specialized guidance |
 
 ## Stakeholders
 

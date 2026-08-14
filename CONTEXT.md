@@ -54,6 +54,9 @@ derived incident severity, policy-derived retention, deployment identity, and
 work prioritization alongside environment and security. Its review is
 `context/waves/2026-08-13-factorium-vision/PILOT-EXAMPLES-ROLE-REVIEW.md`;
 all entries remain candidates pending cited domain review.
+The full panel review added a Domain Source Reviewer and makes clear that the
+pilot index is a non-normative projection until generated from a stable entry
+interchange format.
 
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.

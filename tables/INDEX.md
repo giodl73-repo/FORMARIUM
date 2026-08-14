@@ -2,6 +2,10 @@
 
 Status: pilot
 
+This is a manually reviewed navigation projection. Canonical entries own their
+senses and factorizations; copied widths and summaries here are non-normative
+until generated from a stable interchange format.
+
 ## Examples
 
 | Entry | Principal sense | Width | Derived output or decision | Primary lesson |
