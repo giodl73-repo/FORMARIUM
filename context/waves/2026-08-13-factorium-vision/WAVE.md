@@ -51,6 +51,14 @@ future interchange boundary. Research and review are
 `docs/research/2026-08-14-system-composition-dependency.md` and
 `SYSTEM-COMPOSITION-ROLE-REVIEW.md`.
 
+The F2 organization-and-authority slice at
+`tables/entries/organization-role-authority.md` separates roles, duties,
+legitimate decision rights, organizational answerability, technical action
+traceability, delegation, and stewardship. Its contextual representation map
+is `tables/mappings/organizational-assignment-semantics.md`; research and
+review are `docs/research/2026-08-14-organization-role-authority.md` and
+`ORGANIZATION-AUTHORITY-ROLE-REVIEW.md`.
+
 ## Success criteria
 
 - a practitioner can find a relevant sense and alternatives within minutes;

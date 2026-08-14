@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 21 anchor entries, 129 senses, 203
-ordered factors, and 32 specialized views. It is strong in foundational
+The canonical corpus currently contains 22 anchor entries, 137 senses, 213
+ordered factors, and 33 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -42,6 +42,10 @@ Separate organization, role, responsibility, authority, accountability,
 delegation, and ownership. Connect governing assignments to the existing
 policy and decision anchor without treating organizational mechanisms as
 universal definitions.
+
+Status: first slice implemented. The anchor separates organizational
+answerability from technical action traceability and links a contextual,
+many-to-many organizational assignment Mapping view.
 
 ### F3 - Observation and inference
 

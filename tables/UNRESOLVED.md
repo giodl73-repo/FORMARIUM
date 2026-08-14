@@ -34,6 +34,10 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/matter-load-measure.md` | 120 | gravitational field - `unresolved-candidate` |
 | `tables/entries/motion-measure.md` | 91 | path — `unresolved-candidate` |
 | `tables/entries/motion-measure.md` | 92 | frame of reference — `unresolved-candidate` |
+| `tables/entries/organization-role-authority.md` | 157 | position - `unresolved-candidate` |
+| `tables/entries/organization-role-authority.md` | 158 | competency - `unresolved-candidate` |
+| `tables/entries/organization-role-authority.md` | 159 | governance - `unresolved-candidate` |
+| `tables/entries/organization-role-authority.md` | 160 | legal ownership - `unresolved-candidate` |
 | `tables/entries/periodic-wave-quantity.md` | 130 | oscillation - `unresolved-candidate` |
 | `tables/entries/periodic-wave-quantity.md` | 131 | amplitude - `unresolved-candidate` |
 | `tables/entries/periodic-wave-quantity.md` | 132 | spectrum - `unresolved-candidate` |

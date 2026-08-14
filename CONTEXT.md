@@ -94,6 +94,16 @@ part-whole, interaction, and reliance invariants. Research and fixed-point
 review are `docs/research/2026-08-14-system-composition-dependency.md` and
 `context/waves/2026-08-13-factorium-vision/SYSTEM-COMPOSITION-ROLE-REVIEW.md`.
 
+Factor Forge F2 now adds
+`tables/entries/organization-role-authority.md`, separating organization,
+role, responsibility, authority, organizational answerability, action
+traceability, delegation, and stewardship ownership. The linked
+`tables/mappings/organizational-assignment-semantics.md` keeps titles,
+positions, matrices, permissions, logs, and owner records as contextual
+many-to-many mechanisms. Research and fixed-point review are
+`docs/research/2026-08-14-organization-role-authority.md` and
+`context/waves/2026-08-13-factorium-vision/ORGANIZATION-AUTHORITY-ROLE-REVIEW.md`.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.

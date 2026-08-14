@@ -228,6 +228,26 @@ factor average-or-instantaneous-view | average-or-instantaneous view
 factor time-interval-or-instant | time interval or instant
 factor unit-system | unit system
 end-entry
+entry organization-role-authority | Organization, Role, Responsibility, Authority, and Accountability | organizations | candidate | tables/entries/organization-role-authority.md | An organization coordinates actors and resources toward purposes within a boundary. Role, responsibility, authority, accountability, delegation, and ownership separate expected functions, duties, legitimate rights, answerability, bounded transfer, and governed custody. Technical action traceability is a second accountability sense rather than a substitute for organizational answerability.
+sense organization | organization
+sense organizational-role | organizational role
+sense responsibility | responsibility
+sense authority | authority
+sense accountability-answerability | accountability as answerability
+sense action-accountability | accountability as action traceability
+sense delegation | delegation
+sense ownership-stewardship | ownership or stewardship
+factor purpose-and-organizational-boundary | purpose and organizational boundary
+factor actors-positions-and-membership | actors, positions, and membership
+factor roles-and-assignment-context | roles and assignment context
+factor duties-obligations-and-expected-results | duties, obligations, and expected results
+factor decision-rights-and-resource-authority | decision rights and resource authority
+factor accountable-subject-and-review-forum | accountable subject and review forum
+factor delegation-source-scope-and-limits | delegation source, scope, and limits
+factor owned-subject-and-stewardship-contract | owned subject and stewardship contract
+factor controls-separation-and-escalation | controls, separation, and escalation
+factor effective-time-evidence-and-supersession | effective time, evidence, and supersession
+end-entry
 entry periodic-wave-quantity | Periodic and Wave Quantity | science | candidate | tables/entries/periodic-wave-quantity.md | Frequency and period describe temporal repetition; wavelength and wave number describe spatial repetition; phase identifies position within a cycle; wave speed describes propagation of a pattern. These quantities are connected for periodic traveling waves but are not interchangeable with one another or with the velocity of material points.
 sense period | period
 sense frequency | frequency
@@ -425,6 +445,8 @@ end-view
 view formula-thermal-quantities | thermal-quantity | temperature,thermal-equilibrium,heat-transfer,internal-energy,heat-capacity,specific-heat-capacity,entropy | formula | Thermal Quantities | tables/formulas/thermal-quantities.md | These relations separate thermal state variables from path-dependent heat and work transfers. They require a system boundary, process conditions, sign convention, phase scope, and absolute temperature where entropy is involved.
 end-view
 view mapping-factor-role-mechanisms | factorization-quality | mechanism-assignment | mapping | Factor Role to Mechanism Crosswalk | tables/mappings/factor-role-mechanisms.md | Maps eleven general factor roles into six bounded target-system mechanism vocabularies while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
+end-view
+view mapping-organizational-assignment-semantics | organization-role-authority | organization,organizational-role,responsibility,authority,accountability-answerability,action-accountability,delegation,ownership-stewardship | mapping | Organizational Assignment Semantics | tables/mappings/organizational-assignment-semantics.md | Maps canonical organization, role, responsibility, authority, accountability, delegation, and stewardship concepts to common organizational records while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
 end-view
 view mapping-temperature-scales | thermal-quantity | temperature | mapping | Temperature Scale Conversion | tables/mappings/temperature-scales.md | Celsius, kelvin, and Fahrenheit assign different numerical values to the same point temperature. Point-temperature conversion is affine because scale and zero point may differ. Temperature intervals use scale only and MUST NOT reuse the point offset.
 end-view
