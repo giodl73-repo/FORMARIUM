@@ -86,8 +86,10 @@ cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
 cargo run --quiet -- binding-controls
 cargo run --quiet -- role-bakeoff
+cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
+python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check

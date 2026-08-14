@@ -136,3 +136,19 @@ fn role_bakeoff_command_reports_separate_decisions() {
     assert!(stdout.contains("representation_specific false"));
     assert!(stdout.contains("classification semantic-only"));
 }
+
+#[test]
+fn role_packet_commands_export_and_validate_closed_world_artifacts() {
+    let root = std::env::temp_dir().join(format!("factor-cli-role-packet-{}", std::process::id()));
+    let export = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .args(["role-packet", root.to_str().unwrap()])
+        .output()
+        .unwrap();
+    assert!(export.status.success());
+    let check = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .args(["role-packet-check", root.to_str().unwrap()])
+        .output()
+        .unwrap();
+    assert!(check.status.success());
+    std::fs::remove_dir_all(root).unwrap();
+}

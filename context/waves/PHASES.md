@@ -4,11 +4,12 @@ Work is organized into small waves and pulses.
 
 ## Active wave
 
-- `2026-08-13-role-and-ambiguity`
+- none
 
 ## Completed waves
 
 - `2026-08-13-method-foundation`
+- `2026-08-13-role-and-ambiguity`
 
 ## Protocol
 

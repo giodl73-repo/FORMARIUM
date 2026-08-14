@@ -1,0 +1,1348 @@
+factor-analysis-sets-v1
+analysis attachment version 1
+frame_sha256 9f6c4d824e29ec6b4dd172cfdde19e6e6e3ceaf2c24c5324a0339fbc00a7d6a8
+corpus_sha256 ab39a250c0b2ede1194366a8cb789cad3f9917914941b386fbf9e35284d18f91
+family family-o0-v0-p0-x1
+surface family-o0-v0-p0-x1-ambiguous
+template attachment-ambiguous
+text robot sees robot with camera
+candidates 2
+candidate o0-v0-p0-x1-instrument
+candidate o0-v0-p0-x1-patient-object
+end-surface
+surface family-o0-v0-p0-x1-instrument
+template instrument-explicit
+text robot uses camera to see robot
+candidates 1
+candidate o0-v0-p0-x1-instrument
+end-surface
+surface family-o0-v0-p0-x1-patient-object
+template patient-object-explicit
+text robot sees robot carrying camera
+candidates 1
+candidate o0-v0-p0-x1-patient-object
+end-surface
+end-family
+family family-o0-v0-p0-x2
+surface family-o0-v0-p0-x2-ambiguous
+template attachment-ambiguous
+text robot sees robot with telescope
+candidates 2
+candidate o0-v0-p0-x2-instrument
+candidate o0-v0-p0-x2-patient-object
+end-surface
+surface family-o0-v0-p0-x2-instrument
+template instrument-explicit
+text robot uses telescope to see robot
+candidates 1
+candidate o0-v0-p0-x2-instrument
+end-surface
+surface family-o0-v0-p0-x2-patient-object
+template patient-object-explicit
+text robot sees robot carrying telescope
+candidates 1
+candidate o0-v0-p0-x2-patient-object
+end-surface
+end-family
+family family-o0-v0-p1-x1
+surface family-o0-v0-p1-x1-ambiguous
+template attachment-ambiguous
+text robot sees child with camera
+candidates 2
+candidate o0-v0-p1-x1-instrument
+candidate o0-v0-p1-x1-patient-object
+end-surface
+surface family-o0-v0-p1-x1-instrument
+template instrument-explicit
+text robot uses camera to see child
+candidates 1
+candidate o0-v0-p1-x1-instrument
+end-surface
+surface family-o0-v0-p1-x1-patient-object
+template patient-object-explicit
+text robot sees child carrying camera
+candidates 1
+candidate o0-v0-p1-x1-patient-object
+end-surface
+end-family
+family family-o0-v0-p1-x2
+surface family-o0-v0-p1-x2-ambiguous
+template attachment-ambiguous
+text robot sees child with telescope
+candidates 2
+candidate o0-v0-p1-x2-instrument
+candidate o0-v0-p1-x2-patient-object
+end-surface
+surface family-o0-v0-p1-x2-instrument
+template instrument-explicit
+text robot uses telescope to see child
+candidates 1
+candidate o0-v0-p1-x2-instrument
+end-surface
+surface family-o0-v0-p1-x2-patient-object
+template patient-object-explicit
+text robot sees child carrying telescope
+candidates 1
+candidate o0-v0-p1-x2-patient-object
+end-surface
+end-family
+family family-o0-v0-p2-x1
+surface family-o0-v0-p2-x1-ambiguous
+template attachment-ambiguous
+text robot sees artist with camera
+candidates 2
+candidate o0-v0-p2-x1-instrument
+candidate o0-v0-p2-x1-patient-object
+end-surface
+surface family-o0-v0-p2-x1-instrument
+template instrument-explicit
+text robot uses camera to see artist
+candidates 1
+candidate o0-v0-p2-x1-instrument
+end-surface
+surface family-o0-v0-p2-x1-patient-object
+template patient-object-explicit
+text robot sees artist carrying camera
+candidates 1
+candidate o0-v0-p2-x1-patient-object
+end-surface
+end-family
+family family-o0-v0-p2-x2
+surface family-o0-v0-p2-x2-ambiguous
+template attachment-ambiguous
+text robot sees artist with telescope
+candidates 2
+candidate o0-v0-p2-x2-instrument
+candidate o0-v0-p2-x2-patient-object
+end-surface
+surface family-o0-v0-p2-x2-instrument
+template instrument-explicit
+text robot uses telescope to see artist
+candidates 1
+candidate o0-v0-p2-x2-instrument
+end-surface
+surface family-o0-v0-p2-x2-patient-object
+template patient-object-explicit
+text robot sees artist carrying telescope
+candidates 1
+candidate o0-v0-p2-x2-patient-object
+end-surface
+end-family
+family family-o0-v0-p3-x1
+surface family-o0-v0-p3-x1-ambiguous
+template attachment-ambiguous
+text robot sees scientist with camera
+candidates 2
+candidate o0-v0-p3-x1-instrument
+candidate o0-v0-p3-x1-patient-object
+end-surface
+surface family-o0-v0-p3-x1-instrument
+template instrument-explicit
+text robot uses camera to see scientist
+candidates 1
+candidate o0-v0-p3-x1-instrument
+end-surface
+surface family-o0-v0-p3-x1-patient-object
+template patient-object-explicit
+text robot sees scientist carrying camera
+candidates 1
+candidate o0-v0-p3-x1-patient-object
+end-surface
+end-family
+family family-o0-v0-p3-x2
+surface family-o0-v0-p3-x2-ambiguous
+template attachment-ambiguous
+text robot sees scientist with telescope
+candidates 2
+candidate o0-v0-p3-x2-instrument
+candidate o0-v0-p3-x2-patient-object
+end-surface
+surface family-o0-v0-p3-x2-instrument
+template instrument-explicit
+text robot uses telescope to see scientist
+candidates 1
+candidate o0-v0-p3-x2-instrument
+end-surface
+surface family-o0-v0-p3-x2-patient-object
+template patient-object-explicit
+text robot sees scientist carrying telescope
+candidates 1
+candidate o0-v0-p3-x2-patient-object
+end-surface
+end-family
+family family-o0-v1-p0-x1
+surface family-o0-v1-p0-x1-ambiguous
+template attachment-ambiguous
+text robot photographs robot with camera
+candidates 2
+candidate o0-v1-p0-x1-instrument
+candidate o0-v1-p0-x1-patient-object
+end-surface
+surface family-o0-v1-p0-x1-instrument
+template instrument-explicit
+text robot uses camera to photograph robot
+candidates 1
+candidate o0-v1-p0-x1-instrument
+end-surface
+surface family-o0-v1-p0-x1-patient-object
+template patient-object-explicit
+text robot photographs robot carrying camera
+candidates 1
+candidate o0-v1-p0-x1-patient-object
+end-surface
+end-family
+family family-o0-v1-p0-x2
+surface family-o0-v1-p0-x2-ambiguous
+template attachment-ambiguous
+text robot photographs robot with telescope
+candidates 2
+candidate o0-v1-p0-x2-instrument
+candidate o0-v1-p0-x2-patient-object
+end-surface
+surface family-o0-v1-p0-x2-instrument
+template instrument-explicit
+text robot uses telescope to photograph robot
+candidates 1
+candidate o0-v1-p0-x2-instrument
+end-surface
+surface family-o0-v1-p0-x2-patient-object
+template patient-object-explicit
+text robot photographs robot carrying telescope
+candidates 1
+candidate o0-v1-p0-x2-patient-object
+end-surface
+end-family
+family family-o0-v1-p1-x1
+surface family-o0-v1-p1-x1-ambiguous
+template attachment-ambiguous
+text robot photographs child with camera
+candidates 2
+candidate o0-v1-p1-x1-instrument
+candidate o0-v1-p1-x1-patient-object
+end-surface
+surface family-o0-v1-p1-x1-instrument
+template instrument-explicit
+text robot uses camera to photograph child
+candidates 1
+candidate o0-v1-p1-x1-instrument
+end-surface
+surface family-o0-v1-p1-x1-patient-object
+template patient-object-explicit
+text robot photographs child carrying camera
+candidates 1
+candidate o0-v1-p1-x1-patient-object
+end-surface
+end-family
+family family-o0-v1-p1-x2
+surface family-o0-v1-p1-x2-ambiguous
+template attachment-ambiguous
+text robot photographs child with telescope
+candidates 2
+candidate o0-v1-p1-x2-instrument
+candidate o0-v1-p1-x2-patient-object
+end-surface
+surface family-o0-v1-p1-x2-instrument
+template instrument-explicit
+text robot uses telescope to photograph child
+candidates 1
+candidate o0-v1-p1-x2-instrument
+end-surface
+surface family-o0-v1-p1-x2-patient-object
+template patient-object-explicit
+text robot photographs child carrying telescope
+candidates 1
+candidate o0-v1-p1-x2-patient-object
+end-surface
+end-family
+family family-o0-v1-p2-x1
+surface family-o0-v1-p2-x1-ambiguous
+template attachment-ambiguous
+text robot photographs artist with camera
+candidates 2
+candidate o0-v1-p2-x1-instrument
+candidate o0-v1-p2-x1-patient-object
+end-surface
+surface family-o0-v1-p2-x1-instrument
+template instrument-explicit
+text robot uses camera to photograph artist
+candidates 1
+candidate o0-v1-p2-x1-instrument
+end-surface
+surface family-o0-v1-p2-x1-patient-object
+template patient-object-explicit
+text robot photographs artist carrying camera
+candidates 1
+candidate o0-v1-p2-x1-patient-object
+end-surface
+end-family
+family family-o0-v1-p2-x2
+surface family-o0-v1-p2-x2-ambiguous
+template attachment-ambiguous
+text robot photographs artist with telescope
+candidates 2
+candidate o0-v1-p2-x2-instrument
+candidate o0-v1-p2-x2-patient-object
+end-surface
+surface family-o0-v1-p2-x2-instrument
+template instrument-explicit
+text robot uses telescope to photograph artist
+candidates 1
+candidate o0-v1-p2-x2-instrument
+end-surface
+surface family-o0-v1-p2-x2-patient-object
+template patient-object-explicit
+text robot photographs artist carrying telescope
+candidates 1
+candidate o0-v1-p2-x2-patient-object
+end-surface
+end-family
+family family-o0-v1-p3-x1
+surface family-o0-v1-p3-x1-ambiguous
+template attachment-ambiguous
+text robot photographs scientist with camera
+candidates 2
+candidate o0-v1-p3-x1-instrument
+candidate o0-v1-p3-x1-patient-object
+end-surface
+surface family-o0-v1-p3-x1-instrument
+template instrument-explicit
+text robot uses camera to photograph scientist
+candidates 1
+candidate o0-v1-p3-x1-instrument
+end-surface
+surface family-o0-v1-p3-x1-patient-object
+template patient-object-explicit
+text robot photographs scientist carrying camera
+candidates 1
+candidate o0-v1-p3-x1-patient-object
+end-surface
+end-family
+family family-o0-v1-p3-x2
+surface family-o0-v1-p3-x2-ambiguous
+template attachment-ambiguous
+text robot photographs scientist with telescope
+candidates 2
+candidate o0-v1-p3-x2-instrument
+candidate o0-v1-p3-x2-patient-object
+end-surface
+surface family-o0-v1-p3-x2-instrument
+template instrument-explicit
+text robot uses telescope to photograph scientist
+candidates 1
+candidate o0-v1-p3-x2-instrument
+end-surface
+surface family-o0-v1-p3-x2-patient-object
+template patient-object-explicit
+text robot photographs scientist carrying telescope
+candidates 1
+candidate o0-v1-p3-x2-patient-object
+end-surface
+end-family
+family family-o1-v0-p0-x1
+surface family-o1-v0-p0-x1-ambiguous
+template attachment-ambiguous
+text child sees robot with camera
+candidates 2
+candidate o1-v0-p0-x1-instrument
+candidate o1-v0-p0-x1-patient-object
+end-surface
+surface family-o1-v0-p0-x1-instrument
+template instrument-explicit
+text child uses camera to see robot
+candidates 1
+candidate o1-v0-p0-x1-instrument
+end-surface
+surface family-o1-v0-p0-x1-patient-object
+template patient-object-explicit
+text child sees robot carrying camera
+candidates 1
+candidate o1-v0-p0-x1-patient-object
+end-surface
+end-family
+family family-o1-v0-p0-x2
+surface family-o1-v0-p0-x2-ambiguous
+template attachment-ambiguous
+text child sees robot with telescope
+candidates 2
+candidate o1-v0-p0-x2-instrument
+candidate o1-v0-p0-x2-patient-object
+end-surface
+surface family-o1-v0-p0-x2-instrument
+template instrument-explicit
+text child uses telescope to see robot
+candidates 1
+candidate o1-v0-p0-x2-instrument
+end-surface
+surface family-o1-v0-p0-x2-patient-object
+template patient-object-explicit
+text child sees robot carrying telescope
+candidates 1
+candidate o1-v0-p0-x2-patient-object
+end-surface
+end-family
+family family-o1-v0-p1-x1
+surface family-o1-v0-p1-x1-ambiguous
+template attachment-ambiguous
+text child sees child with camera
+candidates 2
+candidate o1-v0-p1-x1-instrument
+candidate o1-v0-p1-x1-patient-object
+end-surface
+surface family-o1-v0-p1-x1-instrument
+template instrument-explicit
+text child uses camera to see child
+candidates 1
+candidate o1-v0-p1-x1-instrument
+end-surface
+surface family-o1-v0-p1-x1-patient-object
+template patient-object-explicit
+text child sees child carrying camera
+candidates 1
+candidate o1-v0-p1-x1-patient-object
+end-surface
+end-family
+family family-o1-v0-p1-x2
+surface family-o1-v0-p1-x2-ambiguous
+template attachment-ambiguous
+text child sees child with telescope
+candidates 2
+candidate o1-v0-p1-x2-instrument
+candidate o1-v0-p1-x2-patient-object
+end-surface
+surface family-o1-v0-p1-x2-instrument
+template instrument-explicit
+text child uses telescope to see child
+candidates 1
+candidate o1-v0-p1-x2-instrument
+end-surface
+surface family-o1-v0-p1-x2-patient-object
+template patient-object-explicit
+text child sees child carrying telescope
+candidates 1
+candidate o1-v0-p1-x2-patient-object
+end-surface
+end-family
+family family-o1-v0-p2-x1
+surface family-o1-v0-p2-x1-ambiguous
+template attachment-ambiguous
+text child sees artist with camera
+candidates 2
+candidate o1-v0-p2-x1-instrument
+candidate o1-v0-p2-x1-patient-object
+end-surface
+surface family-o1-v0-p2-x1-instrument
+template instrument-explicit
+text child uses camera to see artist
+candidates 1
+candidate o1-v0-p2-x1-instrument
+end-surface
+surface family-o1-v0-p2-x1-patient-object
+template patient-object-explicit
+text child sees artist carrying camera
+candidates 1
+candidate o1-v0-p2-x1-patient-object
+end-surface
+end-family
+family family-o1-v0-p2-x2
+surface family-o1-v0-p2-x2-ambiguous
+template attachment-ambiguous
+text child sees artist with telescope
+candidates 2
+candidate o1-v0-p2-x2-instrument
+candidate o1-v0-p2-x2-patient-object
+end-surface
+surface family-o1-v0-p2-x2-instrument
+template instrument-explicit
+text child uses telescope to see artist
+candidates 1
+candidate o1-v0-p2-x2-instrument
+end-surface
+surface family-o1-v0-p2-x2-patient-object
+template patient-object-explicit
+text child sees artist carrying telescope
+candidates 1
+candidate o1-v0-p2-x2-patient-object
+end-surface
+end-family
+family family-o1-v0-p3-x1
+surface family-o1-v0-p3-x1-ambiguous
+template attachment-ambiguous
+text child sees scientist with camera
+candidates 2
+candidate o1-v0-p3-x1-instrument
+candidate o1-v0-p3-x1-patient-object
+end-surface
+surface family-o1-v0-p3-x1-instrument
+template instrument-explicit
+text child uses camera to see scientist
+candidates 1
+candidate o1-v0-p3-x1-instrument
+end-surface
+surface family-o1-v0-p3-x1-patient-object
+template patient-object-explicit
+text child sees scientist carrying camera
+candidates 1
+candidate o1-v0-p3-x1-patient-object
+end-surface
+end-family
+family family-o1-v0-p3-x2
+surface family-o1-v0-p3-x2-ambiguous
+template attachment-ambiguous
+text child sees scientist with telescope
+candidates 2
+candidate o1-v0-p3-x2-instrument
+candidate o1-v0-p3-x2-patient-object
+end-surface
+surface family-o1-v0-p3-x2-instrument
+template instrument-explicit
+text child uses telescope to see scientist
+candidates 1
+candidate o1-v0-p3-x2-instrument
+end-surface
+surface family-o1-v0-p3-x2-patient-object
+template patient-object-explicit
+text child sees scientist carrying telescope
+candidates 1
+candidate o1-v0-p3-x2-patient-object
+end-surface
+end-family
+family family-o1-v1-p0-x1
+surface family-o1-v1-p0-x1-ambiguous
+template attachment-ambiguous
+text child photographs robot with camera
+candidates 2
+candidate o1-v1-p0-x1-instrument
+candidate o1-v1-p0-x1-patient-object
+end-surface
+surface family-o1-v1-p0-x1-instrument
+template instrument-explicit
+text child uses camera to photograph robot
+candidates 1
+candidate o1-v1-p0-x1-instrument
+end-surface
+surface family-o1-v1-p0-x1-patient-object
+template patient-object-explicit
+text child photographs robot carrying camera
+candidates 1
+candidate o1-v1-p0-x1-patient-object
+end-surface
+end-family
+family family-o1-v1-p0-x2
+surface family-o1-v1-p0-x2-ambiguous
+template attachment-ambiguous
+text child photographs robot with telescope
+candidates 2
+candidate o1-v1-p0-x2-instrument
+candidate o1-v1-p0-x2-patient-object
+end-surface
+surface family-o1-v1-p0-x2-instrument
+template instrument-explicit
+text child uses telescope to photograph robot
+candidates 1
+candidate o1-v1-p0-x2-instrument
+end-surface
+surface family-o1-v1-p0-x2-patient-object
+template patient-object-explicit
+text child photographs robot carrying telescope
+candidates 1
+candidate o1-v1-p0-x2-patient-object
+end-surface
+end-family
+family family-o1-v1-p1-x1
+surface family-o1-v1-p1-x1-ambiguous
+template attachment-ambiguous
+text child photographs child with camera
+candidates 2
+candidate o1-v1-p1-x1-instrument
+candidate o1-v1-p1-x1-patient-object
+end-surface
+surface family-o1-v1-p1-x1-instrument
+template instrument-explicit
+text child uses camera to photograph child
+candidates 1
+candidate o1-v1-p1-x1-instrument
+end-surface
+surface family-o1-v1-p1-x1-patient-object
+template patient-object-explicit
+text child photographs child carrying camera
+candidates 1
+candidate o1-v1-p1-x1-patient-object
+end-surface
+end-family
+family family-o1-v1-p1-x2
+surface family-o1-v1-p1-x2-ambiguous
+template attachment-ambiguous
+text child photographs child with telescope
+candidates 2
+candidate o1-v1-p1-x2-instrument
+candidate o1-v1-p1-x2-patient-object
+end-surface
+surface family-o1-v1-p1-x2-instrument
+template instrument-explicit
+text child uses telescope to photograph child
+candidates 1
+candidate o1-v1-p1-x2-instrument
+end-surface
+surface family-o1-v1-p1-x2-patient-object
+template patient-object-explicit
+text child photographs child carrying telescope
+candidates 1
+candidate o1-v1-p1-x2-patient-object
+end-surface
+end-family
+family family-o1-v1-p2-x1
+surface family-o1-v1-p2-x1-ambiguous
+template attachment-ambiguous
+text child photographs artist with camera
+candidates 2
+candidate o1-v1-p2-x1-instrument
+candidate o1-v1-p2-x1-patient-object
+end-surface
+surface family-o1-v1-p2-x1-instrument
+template instrument-explicit
+text child uses camera to photograph artist
+candidates 1
+candidate o1-v1-p2-x1-instrument
+end-surface
+surface family-o1-v1-p2-x1-patient-object
+template patient-object-explicit
+text child photographs artist carrying camera
+candidates 1
+candidate o1-v1-p2-x1-patient-object
+end-surface
+end-family
+family family-o1-v1-p2-x2
+surface family-o1-v1-p2-x2-ambiguous
+template attachment-ambiguous
+text child photographs artist with telescope
+candidates 2
+candidate o1-v1-p2-x2-instrument
+candidate o1-v1-p2-x2-patient-object
+end-surface
+surface family-o1-v1-p2-x2-instrument
+template instrument-explicit
+text child uses telescope to photograph artist
+candidates 1
+candidate o1-v1-p2-x2-instrument
+end-surface
+surface family-o1-v1-p2-x2-patient-object
+template patient-object-explicit
+text child photographs artist carrying telescope
+candidates 1
+candidate o1-v1-p2-x2-patient-object
+end-surface
+end-family
+family family-o1-v1-p3-x1
+surface family-o1-v1-p3-x1-ambiguous
+template attachment-ambiguous
+text child photographs scientist with camera
+candidates 2
+candidate o1-v1-p3-x1-instrument
+candidate o1-v1-p3-x1-patient-object
+end-surface
+surface family-o1-v1-p3-x1-instrument
+template instrument-explicit
+text child uses camera to photograph scientist
+candidates 1
+candidate o1-v1-p3-x1-instrument
+end-surface
+surface family-o1-v1-p3-x1-patient-object
+template patient-object-explicit
+text child photographs scientist carrying camera
+candidates 1
+candidate o1-v1-p3-x1-patient-object
+end-surface
+end-family
+family family-o1-v1-p3-x2
+surface family-o1-v1-p3-x2-ambiguous
+template attachment-ambiguous
+text child photographs scientist with telescope
+candidates 2
+candidate o1-v1-p3-x2-instrument
+candidate o1-v1-p3-x2-patient-object
+end-surface
+surface family-o1-v1-p3-x2-instrument
+template instrument-explicit
+text child uses telescope to photograph scientist
+candidates 1
+candidate o1-v1-p3-x2-instrument
+end-surface
+surface family-o1-v1-p3-x2-patient-object
+template patient-object-explicit
+text child photographs scientist carrying telescope
+candidates 1
+candidate o1-v1-p3-x2-patient-object
+end-surface
+end-family
+family family-o2-v0-p0-x1
+surface family-o2-v0-p0-x1-ambiguous
+template attachment-ambiguous
+text artist sees robot with camera
+candidates 2
+candidate o2-v0-p0-x1-instrument
+candidate o2-v0-p0-x1-patient-object
+end-surface
+surface family-o2-v0-p0-x1-instrument
+template instrument-explicit
+text artist uses camera to see robot
+candidates 1
+candidate o2-v0-p0-x1-instrument
+end-surface
+surface family-o2-v0-p0-x1-patient-object
+template patient-object-explicit
+text artist sees robot carrying camera
+candidates 1
+candidate o2-v0-p0-x1-patient-object
+end-surface
+end-family
+family family-o2-v0-p0-x2
+surface family-o2-v0-p0-x2-ambiguous
+template attachment-ambiguous
+text artist sees robot with telescope
+candidates 2
+candidate o2-v0-p0-x2-instrument
+candidate o2-v0-p0-x2-patient-object
+end-surface
+surface family-o2-v0-p0-x2-instrument
+template instrument-explicit
+text artist uses telescope to see robot
+candidates 1
+candidate o2-v0-p0-x2-instrument
+end-surface
+surface family-o2-v0-p0-x2-patient-object
+template patient-object-explicit
+text artist sees robot carrying telescope
+candidates 1
+candidate o2-v0-p0-x2-patient-object
+end-surface
+end-family
+family family-o2-v0-p1-x1
+surface family-o2-v0-p1-x1-ambiguous
+template attachment-ambiguous
+text artist sees child with camera
+candidates 2
+candidate o2-v0-p1-x1-instrument
+candidate o2-v0-p1-x1-patient-object
+end-surface
+surface family-o2-v0-p1-x1-instrument
+template instrument-explicit
+text artist uses camera to see child
+candidates 1
+candidate o2-v0-p1-x1-instrument
+end-surface
+surface family-o2-v0-p1-x1-patient-object
+template patient-object-explicit
+text artist sees child carrying camera
+candidates 1
+candidate o2-v0-p1-x1-patient-object
+end-surface
+end-family
+family family-o2-v0-p1-x2
+surface family-o2-v0-p1-x2-ambiguous
+template attachment-ambiguous
+text artist sees child with telescope
+candidates 2
+candidate o2-v0-p1-x2-instrument
+candidate o2-v0-p1-x2-patient-object
+end-surface
+surface family-o2-v0-p1-x2-instrument
+template instrument-explicit
+text artist uses telescope to see child
+candidates 1
+candidate o2-v0-p1-x2-instrument
+end-surface
+surface family-o2-v0-p1-x2-patient-object
+template patient-object-explicit
+text artist sees child carrying telescope
+candidates 1
+candidate o2-v0-p1-x2-patient-object
+end-surface
+end-family
+family family-o2-v0-p2-x1
+surface family-o2-v0-p2-x1-ambiguous
+template attachment-ambiguous
+text artist sees artist with camera
+candidates 2
+candidate o2-v0-p2-x1-instrument
+candidate o2-v0-p2-x1-patient-object
+end-surface
+surface family-o2-v0-p2-x1-instrument
+template instrument-explicit
+text artist uses camera to see artist
+candidates 1
+candidate o2-v0-p2-x1-instrument
+end-surface
+surface family-o2-v0-p2-x1-patient-object
+template patient-object-explicit
+text artist sees artist carrying camera
+candidates 1
+candidate o2-v0-p2-x1-patient-object
+end-surface
+end-family
+family family-o2-v0-p2-x2
+surface family-o2-v0-p2-x2-ambiguous
+template attachment-ambiguous
+text artist sees artist with telescope
+candidates 2
+candidate o2-v0-p2-x2-instrument
+candidate o2-v0-p2-x2-patient-object
+end-surface
+surface family-o2-v0-p2-x2-instrument
+template instrument-explicit
+text artist uses telescope to see artist
+candidates 1
+candidate o2-v0-p2-x2-instrument
+end-surface
+surface family-o2-v0-p2-x2-patient-object
+template patient-object-explicit
+text artist sees artist carrying telescope
+candidates 1
+candidate o2-v0-p2-x2-patient-object
+end-surface
+end-family
+family family-o2-v0-p3-x1
+surface family-o2-v0-p3-x1-ambiguous
+template attachment-ambiguous
+text artist sees scientist with camera
+candidates 2
+candidate o2-v0-p3-x1-instrument
+candidate o2-v0-p3-x1-patient-object
+end-surface
+surface family-o2-v0-p3-x1-instrument
+template instrument-explicit
+text artist uses camera to see scientist
+candidates 1
+candidate o2-v0-p3-x1-instrument
+end-surface
+surface family-o2-v0-p3-x1-patient-object
+template patient-object-explicit
+text artist sees scientist carrying camera
+candidates 1
+candidate o2-v0-p3-x1-patient-object
+end-surface
+end-family
+family family-o2-v0-p3-x2
+surface family-o2-v0-p3-x2-ambiguous
+template attachment-ambiguous
+text artist sees scientist with telescope
+candidates 2
+candidate o2-v0-p3-x2-instrument
+candidate o2-v0-p3-x2-patient-object
+end-surface
+surface family-o2-v0-p3-x2-instrument
+template instrument-explicit
+text artist uses telescope to see scientist
+candidates 1
+candidate o2-v0-p3-x2-instrument
+end-surface
+surface family-o2-v0-p3-x2-patient-object
+template patient-object-explicit
+text artist sees scientist carrying telescope
+candidates 1
+candidate o2-v0-p3-x2-patient-object
+end-surface
+end-family
+family family-o2-v1-p0-x1
+surface family-o2-v1-p0-x1-ambiguous
+template attachment-ambiguous
+text artist photographs robot with camera
+candidates 2
+candidate o2-v1-p0-x1-instrument
+candidate o2-v1-p0-x1-patient-object
+end-surface
+surface family-o2-v1-p0-x1-instrument
+template instrument-explicit
+text artist uses camera to photograph robot
+candidates 1
+candidate o2-v1-p0-x1-instrument
+end-surface
+surface family-o2-v1-p0-x1-patient-object
+template patient-object-explicit
+text artist photographs robot carrying camera
+candidates 1
+candidate o2-v1-p0-x1-patient-object
+end-surface
+end-family
+family family-o2-v1-p0-x2
+surface family-o2-v1-p0-x2-ambiguous
+template attachment-ambiguous
+text artist photographs robot with telescope
+candidates 2
+candidate o2-v1-p0-x2-instrument
+candidate o2-v1-p0-x2-patient-object
+end-surface
+surface family-o2-v1-p0-x2-instrument
+template instrument-explicit
+text artist uses telescope to photograph robot
+candidates 1
+candidate o2-v1-p0-x2-instrument
+end-surface
+surface family-o2-v1-p0-x2-patient-object
+template patient-object-explicit
+text artist photographs robot carrying telescope
+candidates 1
+candidate o2-v1-p0-x2-patient-object
+end-surface
+end-family
+family family-o2-v1-p1-x1
+surface family-o2-v1-p1-x1-ambiguous
+template attachment-ambiguous
+text artist photographs child with camera
+candidates 2
+candidate o2-v1-p1-x1-instrument
+candidate o2-v1-p1-x1-patient-object
+end-surface
+surface family-o2-v1-p1-x1-instrument
+template instrument-explicit
+text artist uses camera to photograph child
+candidates 1
+candidate o2-v1-p1-x1-instrument
+end-surface
+surface family-o2-v1-p1-x1-patient-object
+template patient-object-explicit
+text artist photographs child carrying camera
+candidates 1
+candidate o2-v1-p1-x1-patient-object
+end-surface
+end-family
+family family-o2-v1-p1-x2
+surface family-o2-v1-p1-x2-ambiguous
+template attachment-ambiguous
+text artist photographs child with telescope
+candidates 2
+candidate o2-v1-p1-x2-instrument
+candidate o2-v1-p1-x2-patient-object
+end-surface
+surface family-o2-v1-p1-x2-instrument
+template instrument-explicit
+text artist uses telescope to photograph child
+candidates 1
+candidate o2-v1-p1-x2-instrument
+end-surface
+surface family-o2-v1-p1-x2-patient-object
+template patient-object-explicit
+text artist photographs child carrying telescope
+candidates 1
+candidate o2-v1-p1-x2-patient-object
+end-surface
+end-family
+family family-o2-v1-p2-x1
+surface family-o2-v1-p2-x1-ambiguous
+template attachment-ambiguous
+text artist photographs artist with camera
+candidates 2
+candidate o2-v1-p2-x1-instrument
+candidate o2-v1-p2-x1-patient-object
+end-surface
+surface family-o2-v1-p2-x1-instrument
+template instrument-explicit
+text artist uses camera to photograph artist
+candidates 1
+candidate o2-v1-p2-x1-instrument
+end-surface
+surface family-o2-v1-p2-x1-patient-object
+template patient-object-explicit
+text artist photographs artist carrying camera
+candidates 1
+candidate o2-v1-p2-x1-patient-object
+end-surface
+end-family
+family family-o2-v1-p2-x2
+surface family-o2-v1-p2-x2-ambiguous
+template attachment-ambiguous
+text artist photographs artist with telescope
+candidates 2
+candidate o2-v1-p2-x2-instrument
+candidate o2-v1-p2-x2-patient-object
+end-surface
+surface family-o2-v1-p2-x2-instrument
+template instrument-explicit
+text artist uses telescope to photograph artist
+candidates 1
+candidate o2-v1-p2-x2-instrument
+end-surface
+surface family-o2-v1-p2-x2-patient-object
+template patient-object-explicit
+text artist photographs artist carrying telescope
+candidates 1
+candidate o2-v1-p2-x2-patient-object
+end-surface
+end-family
+family family-o2-v1-p3-x1
+surface family-o2-v1-p3-x1-ambiguous
+template attachment-ambiguous
+text artist photographs scientist with camera
+candidates 2
+candidate o2-v1-p3-x1-instrument
+candidate o2-v1-p3-x1-patient-object
+end-surface
+surface family-o2-v1-p3-x1-instrument
+template instrument-explicit
+text artist uses camera to photograph scientist
+candidates 1
+candidate o2-v1-p3-x1-instrument
+end-surface
+surface family-o2-v1-p3-x1-patient-object
+template patient-object-explicit
+text artist photographs scientist carrying camera
+candidates 1
+candidate o2-v1-p3-x1-patient-object
+end-surface
+end-family
+family family-o2-v1-p3-x2
+surface family-o2-v1-p3-x2-ambiguous
+template attachment-ambiguous
+text artist photographs scientist with telescope
+candidates 2
+candidate o2-v1-p3-x2-instrument
+candidate o2-v1-p3-x2-patient-object
+end-surface
+surface family-o2-v1-p3-x2-instrument
+template instrument-explicit
+text artist uses telescope to photograph scientist
+candidates 1
+candidate o2-v1-p3-x2-instrument
+end-surface
+surface family-o2-v1-p3-x2-patient-object
+template patient-object-explicit
+text artist photographs scientist carrying telescope
+candidates 1
+candidate o2-v1-p3-x2-patient-object
+end-surface
+end-family
+family family-o3-v0-p0-x1
+surface family-o3-v0-p0-x1-ambiguous
+template attachment-ambiguous
+text scientist sees robot with camera
+candidates 2
+candidate o3-v0-p0-x1-instrument
+candidate o3-v0-p0-x1-patient-object
+end-surface
+surface family-o3-v0-p0-x1-instrument
+template instrument-explicit
+text scientist uses camera to see robot
+candidates 1
+candidate o3-v0-p0-x1-instrument
+end-surface
+surface family-o3-v0-p0-x1-patient-object
+template patient-object-explicit
+text scientist sees robot carrying camera
+candidates 1
+candidate o3-v0-p0-x1-patient-object
+end-surface
+end-family
+family family-o3-v0-p0-x2
+surface family-o3-v0-p0-x2-ambiguous
+template attachment-ambiguous
+text scientist sees robot with telescope
+candidates 2
+candidate o3-v0-p0-x2-instrument
+candidate o3-v0-p0-x2-patient-object
+end-surface
+surface family-o3-v0-p0-x2-instrument
+template instrument-explicit
+text scientist uses telescope to see robot
+candidates 1
+candidate o3-v0-p0-x2-instrument
+end-surface
+surface family-o3-v0-p0-x2-patient-object
+template patient-object-explicit
+text scientist sees robot carrying telescope
+candidates 1
+candidate o3-v0-p0-x2-patient-object
+end-surface
+end-family
+family family-o3-v0-p1-x1
+surface family-o3-v0-p1-x1-ambiguous
+template attachment-ambiguous
+text scientist sees child with camera
+candidates 2
+candidate o3-v0-p1-x1-instrument
+candidate o3-v0-p1-x1-patient-object
+end-surface
+surface family-o3-v0-p1-x1-instrument
+template instrument-explicit
+text scientist uses camera to see child
+candidates 1
+candidate o3-v0-p1-x1-instrument
+end-surface
+surface family-o3-v0-p1-x1-patient-object
+template patient-object-explicit
+text scientist sees child carrying camera
+candidates 1
+candidate o3-v0-p1-x1-patient-object
+end-surface
+end-family
+family family-o3-v0-p1-x2
+surface family-o3-v0-p1-x2-ambiguous
+template attachment-ambiguous
+text scientist sees child with telescope
+candidates 2
+candidate o3-v0-p1-x2-instrument
+candidate o3-v0-p1-x2-patient-object
+end-surface
+surface family-o3-v0-p1-x2-instrument
+template instrument-explicit
+text scientist uses telescope to see child
+candidates 1
+candidate o3-v0-p1-x2-instrument
+end-surface
+surface family-o3-v0-p1-x2-patient-object
+template patient-object-explicit
+text scientist sees child carrying telescope
+candidates 1
+candidate o3-v0-p1-x2-patient-object
+end-surface
+end-family
+family family-o3-v0-p2-x1
+surface family-o3-v0-p2-x1-ambiguous
+template attachment-ambiguous
+text scientist sees artist with camera
+candidates 2
+candidate o3-v0-p2-x1-instrument
+candidate o3-v0-p2-x1-patient-object
+end-surface
+surface family-o3-v0-p2-x1-instrument
+template instrument-explicit
+text scientist uses camera to see artist
+candidates 1
+candidate o3-v0-p2-x1-instrument
+end-surface
+surface family-o3-v0-p2-x1-patient-object
+template patient-object-explicit
+text scientist sees artist carrying camera
+candidates 1
+candidate o3-v0-p2-x1-patient-object
+end-surface
+end-family
+family family-o3-v0-p2-x2
+surface family-o3-v0-p2-x2-ambiguous
+template attachment-ambiguous
+text scientist sees artist with telescope
+candidates 2
+candidate o3-v0-p2-x2-instrument
+candidate o3-v0-p2-x2-patient-object
+end-surface
+surface family-o3-v0-p2-x2-instrument
+template instrument-explicit
+text scientist uses telescope to see artist
+candidates 1
+candidate o3-v0-p2-x2-instrument
+end-surface
+surface family-o3-v0-p2-x2-patient-object
+template patient-object-explicit
+text scientist sees artist carrying telescope
+candidates 1
+candidate o3-v0-p2-x2-patient-object
+end-surface
+end-family
+family family-o3-v0-p3-x1
+surface family-o3-v0-p3-x1-ambiguous
+template attachment-ambiguous
+text scientist sees scientist with camera
+candidates 2
+candidate o3-v0-p3-x1-instrument
+candidate o3-v0-p3-x1-patient-object
+end-surface
+surface family-o3-v0-p3-x1-instrument
+template instrument-explicit
+text scientist uses camera to see scientist
+candidates 1
+candidate o3-v0-p3-x1-instrument
+end-surface
+surface family-o3-v0-p3-x1-patient-object
+template patient-object-explicit
+text scientist sees scientist carrying camera
+candidates 1
+candidate o3-v0-p3-x1-patient-object
+end-surface
+end-family
+family family-o3-v0-p3-x2
+surface family-o3-v0-p3-x2-ambiguous
+template attachment-ambiguous
+text scientist sees scientist with telescope
+candidates 2
+candidate o3-v0-p3-x2-instrument
+candidate o3-v0-p3-x2-patient-object
+end-surface
+surface family-o3-v0-p3-x2-instrument
+template instrument-explicit
+text scientist uses telescope to see scientist
+candidates 1
+candidate o3-v0-p3-x2-instrument
+end-surface
+surface family-o3-v0-p3-x2-patient-object
+template patient-object-explicit
+text scientist sees scientist carrying telescope
+candidates 1
+candidate o3-v0-p3-x2-patient-object
+end-surface
+end-family
+family family-o3-v1-p0-x1
+surface family-o3-v1-p0-x1-ambiguous
+template attachment-ambiguous
+text scientist photographs robot with camera
+candidates 2
+candidate o3-v1-p0-x1-instrument
+candidate o3-v1-p0-x1-patient-object
+end-surface
+surface family-o3-v1-p0-x1-instrument
+template instrument-explicit
+text scientist uses camera to photograph robot
+candidates 1
+candidate o3-v1-p0-x1-instrument
+end-surface
+surface family-o3-v1-p0-x1-patient-object
+template patient-object-explicit
+text scientist photographs robot carrying camera
+candidates 1
+candidate o3-v1-p0-x1-patient-object
+end-surface
+end-family
+family family-o3-v1-p0-x2
+surface family-o3-v1-p0-x2-ambiguous
+template attachment-ambiguous
+text scientist photographs robot with telescope
+candidates 2
+candidate o3-v1-p0-x2-instrument
+candidate o3-v1-p0-x2-patient-object
+end-surface
+surface family-o3-v1-p0-x2-instrument
+template instrument-explicit
+text scientist uses telescope to photograph robot
+candidates 1
+candidate o3-v1-p0-x2-instrument
+end-surface
+surface family-o3-v1-p0-x2-patient-object
+template patient-object-explicit
+text scientist photographs robot carrying telescope
+candidates 1
+candidate o3-v1-p0-x2-patient-object
+end-surface
+end-family
+family family-o3-v1-p1-x1
+surface family-o3-v1-p1-x1-ambiguous
+template attachment-ambiguous
+text scientist photographs child with camera
+candidates 2
+candidate o3-v1-p1-x1-instrument
+candidate o3-v1-p1-x1-patient-object
+end-surface
+surface family-o3-v1-p1-x1-instrument
+template instrument-explicit
+text scientist uses camera to photograph child
+candidates 1
+candidate o3-v1-p1-x1-instrument
+end-surface
+surface family-o3-v1-p1-x1-patient-object
+template patient-object-explicit
+text scientist photographs child carrying camera
+candidates 1
+candidate o3-v1-p1-x1-patient-object
+end-surface
+end-family
+family family-o3-v1-p1-x2
+surface family-o3-v1-p1-x2-ambiguous
+template attachment-ambiguous
+text scientist photographs child with telescope
+candidates 2
+candidate o3-v1-p1-x2-instrument
+candidate o3-v1-p1-x2-patient-object
+end-surface
+surface family-o3-v1-p1-x2-instrument
+template instrument-explicit
+text scientist uses telescope to photograph child
+candidates 1
+candidate o3-v1-p1-x2-instrument
+end-surface
+surface family-o3-v1-p1-x2-patient-object
+template patient-object-explicit
+text scientist photographs child carrying telescope
+candidates 1
+candidate o3-v1-p1-x2-patient-object
+end-surface
+end-family
+family family-o3-v1-p2-x1
+surface family-o3-v1-p2-x1-ambiguous
+template attachment-ambiguous
+text scientist photographs artist with camera
+candidates 2
+candidate o3-v1-p2-x1-instrument
+candidate o3-v1-p2-x1-patient-object
+end-surface
+surface family-o3-v1-p2-x1-instrument
+template instrument-explicit
+text scientist uses camera to photograph artist
+candidates 1
+candidate o3-v1-p2-x1-instrument
+end-surface
+surface family-o3-v1-p2-x1-patient-object
+template patient-object-explicit
+text scientist photographs artist carrying camera
+candidates 1
+candidate o3-v1-p2-x1-patient-object
+end-surface
+end-family
+family family-o3-v1-p2-x2
+surface family-o3-v1-p2-x2-ambiguous
+template attachment-ambiguous
+text scientist photographs artist with telescope
+candidates 2
+candidate o3-v1-p2-x2-instrument
+candidate o3-v1-p2-x2-patient-object
+end-surface
+surface family-o3-v1-p2-x2-instrument
+template instrument-explicit
+text scientist uses telescope to photograph artist
+candidates 1
+candidate o3-v1-p2-x2-instrument
+end-surface
+surface family-o3-v1-p2-x2-patient-object
+template patient-object-explicit
+text scientist photographs artist carrying telescope
+candidates 1
+candidate o3-v1-p2-x2-patient-object
+end-surface
+end-family
+family family-o3-v1-p3-x1
+surface family-o3-v1-p3-x1-ambiguous
+template attachment-ambiguous
+text scientist photographs scientist with camera
+candidates 2
+candidate o3-v1-p3-x1-instrument
+candidate o3-v1-p3-x1-patient-object
+end-surface
+surface family-o3-v1-p3-x1-instrument
+template instrument-explicit
+text scientist uses camera to photograph scientist
+candidates 1
+candidate o3-v1-p3-x1-instrument
+end-surface
+surface family-o3-v1-p3-x1-patient-object
+template patient-object-explicit
+text scientist photographs scientist carrying camera
+candidates 1
+candidate o3-v1-p3-x1-patient-object
+end-surface
+end-family
+family family-o3-v1-p3-x2
+surface family-o3-v1-p3-x2-ambiguous
+template attachment-ambiguous
+text scientist photographs scientist with telescope
+candidates 2
+candidate o3-v1-p3-x2-instrument
+candidate o3-v1-p3-x2-patient-object
+end-surface
+surface family-o3-v1-p3-x2-instrument
+template instrument-explicit
+text scientist uses telescope to photograph scientist
+candidates 1
+candidate o3-v1-p3-x2-instrument
+end-surface
+surface family-o3-v1-p3-x2-patient-object
+template patient-object-explicit
+text scientist photographs scientist carrying telescope
+candidates 1
+candidate o3-v1-p3-x2-patient-object
+end-surface
+end-family

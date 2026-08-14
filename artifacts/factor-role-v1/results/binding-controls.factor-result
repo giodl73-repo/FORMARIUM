@@ -1,0 +1,22 @@
+factor-binding-controls-v1
+hrr_seed 464143544f522d32
+hrr_dimensions 64 128 256
+hrr_decision_owner 256
+hrr_binding circular-convolution
+hrr_unbinding involution
+hrr_cleanup nearest-cosine-domain
+runtime descriptive-excluded
+record transfer typed-record exact 512/512 roles 2048/2048 logical_bits 9 dimensions 4 container_bytes 8 metadata_bytes 497 parameter_bits 0 temporary_bytes 8
+record transfer sparse-tpr exact 512/512 roles 2048/2048 logical_bits 9 dimensions 24 container_bytes 16 metadata_bytes 497 parameter_bits 0 temporary_bytes 16
+record transfer factored-one-hot exact 512/512 roles 2048/2048 logical_bits 9 dimensions 14 container_bytes 2 metadata_bytes 505 parameter_bits 0 temporary_bytes 2
+record transfer factored-dense exact 512/512 roles 2048/2048 logical_bits 9 dimensions 16 container_bytes 16 metadata_bytes 505 parameter_bits 448 temporary_bytes 16
+record transfer hrr-64 exact 452/512 roles 1988/2048 logical_bits 9 dimensions 64 container_bytes 512 metadata_bytes 497 parameter_bits 40960 temporary_bytes 3072
+record transfer hrr-128 exact 512/512 roles 2048/2048 logical_bits 9 dimensions 128 container_bytes 1024 metadata_bytes 497 parameter_bits 81920 temporary_bytes 6144
+record transfer hrr-256 exact 512/512 roles 2048/2048 logical_bits 9 dimensions 256 container_bytes 2048 metadata_bytes 497 parameter_bits 163840 temporary_bytes 12288
+record attachment typed-record exact 128/128 roles 512/512 logical_bits 9 dimensions 4 container_bytes 8 metadata_bytes 627 parameter_bits 0 temporary_bytes 8
+record attachment sparse-tpr exact 128/128 roles 512/512 logical_bits 9 dimensions 28 container_bytes 16 metadata_bytes 627 parameter_bits 0 temporary_bytes 16
+record attachment factored-one-hot exact 128/128 roles 512/512 logical_bits 9 dimensions 14 container_bytes 2 metadata_bytes 635 parameter_bits 0 temporary_bytes 2
+record attachment factored-dense exact 128/128 roles 512/512 logical_bits 9 dimensions 16 container_bytes 16 metadata_bytes 635 parameter_bits 448 temporary_bytes 16
+record attachment hrr-64 exact 120/128 roles 504/512 logical_bits 9 dimensions 64 container_bytes 512 metadata_bytes 627 parameter_bits 45056 temporary_bytes 3072
+record attachment hrr-128 exact 128/128 roles 512/512 logical_bits 9 dimensions 128 container_bytes 1024 metadata_bytes 627 parameter_bits 90112 temporary_bytes 6144
+record attachment hrr-256 exact 128/128 roles 512/512 logical_bits 9 dimensions 256 container_bytes 2048 metadata_bytes 627 parameter_bits 180224 temporary_bytes 12288

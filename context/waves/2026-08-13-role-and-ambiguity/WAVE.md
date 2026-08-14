@@ -36,7 +36,7 @@ unambiguous paraphrases identify each reading.
 | 03 | Role and ambiguity fixtures | complete | Added exhaustive transfer and constrained attachment families, exact candidate sets, six leakage-checked splits, frozen identities, tests, and review. |
 | 04 | Binding controls | complete | Added one compiler for typed records, exact sparse TPR, factored controls, and frozen HRR 64/128/256 with retained diagnostics. |
 | 05 | Role/ambiguity bakeoff | complete | Accepted semantic-only: role reuse and candidate-set composition help, exact controls tie, HRR is not representation-specific. |
-| 06 | Portable Wave 2 packet | active | Export independently verifiable role/ambiguity evidence without replacing the V1 foundation packet. |
+| 06 | Portable Wave 2 packet | complete | Published independently verifiable `factor-role-v1` evidence while preserving the V1 foundation packet unchanged. |
 
 ## Success criteria
 
@@ -48,3 +48,16 @@ unambiguous paraphrases identify each reading.
 - all metrics retain explicit denominators and separate cost fields;
 - no broad semantic-role-labeling, ambiguity-resolution, or NLP claim appears;
 - `.roles` has no unresolved critical or major finding.
+
+## Outcome
+
+Wave 2 is complete with a portable `semantic-only` result. Explicit
+role/filler structure and candidate-set composition are useful on the bounded
+fixtures, exact controls tie HRR-256, HRR-64 failures remain visible, and no
+surface parsing or representation-specific claim is made.
+
+Packet identity:
+
+```text
+99deb8e8276df63a368dac85e1cbc90095f20936eeb8126eb9100f8a825e441d
+```

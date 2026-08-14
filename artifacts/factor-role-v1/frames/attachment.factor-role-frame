@@ -1,0 +1,27 @@
+factor-role-frame-v1
+frame attachment version 1
+schema_sha256 2ff4b23625d4e7f93f4d4c34fcd16a7465d5145e03237791bb79b9dbb9a58cc9
+domain entity
+value artist
+value child
+value robot
+value scientist
+end-domain
+domain object
+value camera
+value none
+value telescope
+end-domain
+role instrument
+slot sole factor instrument domain object
+end-role
+role observer
+slot sole factor observer domain entity
+end-role
+role patient
+slot sole factor patient domain entity
+end-role
+role patient-associated-object
+slot sole factor patient-associated-object domain object
+end-role
+constraint exactly-one-non-none instrument patient-associated-object

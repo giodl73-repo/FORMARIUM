@@ -18,7 +18,8 @@ features.
 
 `context/waves/2026-08-13-role-and-ambiguity/WAVE.md`
 
-Current pulse: **06 - Portable Wave 2 packet**
+Wave 2 is complete. The next planned product-plan stage is Wave 3, portable
+benchmark packet standardization.
 
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.
@@ -105,6 +106,16 @@ The contract is `specs/ROLE-AMBIGUITY-BAKEOFF.md`, the result is
 `docs/ROLE-AMBIGUITY-RESULT.md`, and the review is
 `context/waves/2026-08-13-role-and-ambiguity/PULSE-05-ROLE-REVIEW.md`.
 
+Pulse 06 exports the self-contained Wave 2 packet at
+`artifacts/factor-role-v1`. It chains schemas, role frames, constrained
+corpora, candidate analyses, splits, binding controls, bakeoff results, files,
+and producer source. Its embedded Python verifier independently checks custody,
+leakage declarations, denominators, owner matrices, and the `semantic-only`
+decision without importing FACTOR. The foundation packet remains unchanged.
+The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
+`docs/ROLE-PACKET-ONBOARDING.md`, and the review is
+`context/waves/2026-08-13-role-and-ambiguity/PULSE-06-ROLE-REVIEW.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -121,8 +132,10 @@ cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
 cargo run --quiet -- binding-controls
 cargo run --quiet -- role-bakeoff
+cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
+python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check

@@ -5,6 +5,7 @@ use factor::{
     packet::{validate_packet, write_packet},
     role_bakeoff::role_bakeoff_summary,
     role_fixtures::role_fixture_summary,
+    role_packet::{validate_role_packet, write_role_packet},
     SchemaDocument,
 };
 use std::env;
@@ -79,6 +80,22 @@ fn run() -> Result<(), String> {
             print!("{}", role_bakeoff_summary());
             Ok(())
         }
+        "role-packet" => {
+            let path = read_path(&mut arguments)?;
+            let packet = write_role_packet(path.as_ref()).map_err(|error| error.to_string())?;
+            println!("packet={path}");
+            println!("files={}", packet.files().len() + 1);
+            println!("packet_sha256={}", packet.sha256());
+            Ok(())
+        }
+        "role-packet-check" => {
+            let path = read_path(&mut arguments)?;
+            let identity =
+                validate_role_packet(path.as_ref()).map_err(|error| error.to_string())?;
+            println!("packet={path}");
+            println!("packet_sha256={identity}");
+            Ok(())
+        }
         "check" => {
             let (_, document) = read_document(&mut arguments)?;
             println!("schema={}", document.schema().id());
@@ -121,6 +138,6 @@ fn read_path(arguments: &mut impl Iterator<Item = String>) -> Result<String, Str
 
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>"
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor role-packet <output-dir>\n  factor role-packet-check <packet-dir>\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>"
     )
 }

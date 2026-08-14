@@ -2,6 +2,7 @@
 
 use crate::bakeoff::{run_bakeoff, BakeoffError};
 use crate::corpus::{generate_corpora, generate_splits, FixtureError};
+use crate::role_fixtures::RoleFixtureError;
 use crate::{sha256_hex, SchemaDocument};
 use std::collections::BTreeSet;
 use std::error::Error;
@@ -28,6 +29,13 @@ pub struct PacketFile {
 }
 
 impl PacketFile {
+    pub(crate) fn text(path: impl Into<String>, text: &str) -> Self {
+        Self {
+            path: path.into(),
+            bytes: normalize_lf(text).into_bytes(),
+        }
+    }
+
     /// Returns the canonical slash-separated packet path.
     #[must_use]
     pub fn path(&self) -> &str {
@@ -55,6 +63,22 @@ pub struct PortablePacket {
 }
 
 impl PortablePacket {
+    pub(crate) fn new(mut files: Vec<PacketFile>, manifest_prefix: String) -> Self {
+        files.sort_by(|left, right| left.path.cmp(&right.path));
+        let mut manifest = manifest_prefix;
+        for file in &files {
+            writeln!(
+                manifest,
+                "file {} bytes {} sha256 {}",
+                file.path(),
+                file.bytes().len(),
+                file.sha256()
+            )
+            .expect("writing to String cannot fail");
+        }
+        Self { files, manifest }
+    }
+
     /// Returns packet payload files in canonical path order.
     #[must_use]
     pub fn files(&self) -> &[PacketFile] {
@@ -79,6 +103,8 @@ impl PortablePacket {
 pub enum PacketError {
     /// Corpus or split construction failed.
     Fixtures(FixtureError),
+    /// Role corpus, analysis, or split construction failed.
+    RoleFixtures(RoleFixtureError),
     /// Bakeoff construction failed.
     Bakeoff(BakeoffError),
     /// Filesystem access failed.
@@ -95,6 +121,7 @@ impl fmt::Display for PacketError {
     fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Fixtures(error) => write!(formatter, "{error}"),
+            Self::RoleFixtures(error) => write!(formatter, "{error}"),
             Self::Bakeoff(error) => write!(formatter, "{error}"),
             Self::Io(error) => write!(formatter, "{error}"),
             Self::NonEmptyDirectory(path) => {
@@ -119,6 +146,12 @@ impl Error for PacketError {}
 impl From<FixtureError> for PacketError {
     fn from(value: FixtureError) -> Self {
         Self::Fixtures(value)
+    }
+}
+
+impl From<RoleFixtureError> for PacketError {
+    fn from(value: RoleFixtureError) -> Self {
+        Self::RoleFixtures(value)
     }
 }
 
@@ -158,19 +191,19 @@ pub fn build_packet() -> Result<PortablePacket, PacketError> {
     let mut files = Vec::new();
 
     for (id, document) in &parsed_schemas {
-        files.push(text_file(
+        files.push(PacketFile::text(
             format!("schemas/{id}.factor"),
             &document.canonical_text(),
         ));
     }
     for corpus in &corpora {
-        files.push(text_file(
+        files.push(PacketFile::text(
             format!("corpora/{}.factor-corpus", corpus.family().id()),
             &corpus.canonical_text(),
         ));
     }
     for split in &splits {
-        files.push(text_file(
+        files.push(PacketFile::text(
             format!(
                 "splits/{}-{}.factor-split",
                 split.family().id(),
@@ -179,14 +212,13 @@ pub fn build_packet() -> Result<PortablePacket, PacketError> {
             &split.canonical_text(),
         ));
     }
-    files.push(text_file(
+    files.push(PacketFile::text(
         "results/strong-control.factor-result",
         &report.canonical_text(),
     ));
-    files.push(text_file("README.txt", &packet_readme()));
-    files.push(text_file("LICENSE.txt", LICENSE));
-    files.push(text_file("verify_packet.py", VERIFIER_SOURCE));
-    files.sort_by(|left, right| left.path.cmp(&right.path));
+    files.push(PacketFile::text("README.txt", &packet_readme()));
+    files.push(PacketFile::text("LICENSE.txt", LICENSE));
+    files.push(PacketFile::text("verify_packet.py", VERIFIER_SOURCE));
 
     let mut manifest = format!(
         "factor-packet-v1\npacket factor-v1\nproducer factor {}\nproducer_source_sha256 {}\nmodel supervised-codebook-v1-d16\nclassification {}\n",
@@ -219,18 +251,7 @@ pub fn build_packet() -> Result<PortablePacket, PacketError> {
     }
     writeln!(manifest, "result strong-control {}", report.sha256())
         .expect("writing to String cannot fail");
-    for file in &files {
-        writeln!(
-            manifest,
-            "file {} bytes {} sha256 {}",
-            file.path(),
-            file.bytes().len(),
-            file.sha256()
-        )
-        .expect("writing to String cannot fail");
-    }
-
-    Ok(PortablePacket { files, manifest })
+    Ok(PortablePacket::new(files, manifest))
 }
 
 /// Writes a packet into a missing or empty directory.
@@ -239,11 +260,17 @@ pub fn build_packet() -> Result<PortablePacket, PacketError> {
 ///
 /// Returns an error for nonempty targets, generation failures, or I/O errors.
 pub fn write_packet(path: &Path) -> Result<PortablePacket, PacketError> {
+    write_built_packet(path, build_packet()?)
+}
+
+pub(crate) fn write_built_packet(
+    path: &Path,
+    packet: PortablePacket,
+) -> Result<PortablePacket, PacketError> {
     if path.exists() && fs::read_dir(path)?.next().is_some() {
         return Err(PacketError::NonEmptyDirectory(path.to_owned()));
     }
     fs::create_dir_all(path)?;
-    let packet = build_packet()?;
     for file in packet.files() {
         let output = packet_path(path, file.path())?;
         if let Some(parent) = output.parent() {
@@ -262,9 +289,16 @@ pub fn write_packet(path: &Path) -> Result<PortablePacket, PacketError> {
 /// Returns an error for malformed manifests, unsafe paths, missing or extra
 /// files, byte-count differences, digest differences, or I/O failures.
 pub fn validate_packet(path: &Path) -> Result<String, PacketError> {
+    validate_packet_header(path, "factor-packet-v1\n")
+}
+
+pub(crate) fn validate_packet_header(
+    path: &Path,
+    expected_header: &str,
+) -> Result<String, PacketError> {
     let manifest_path = path.join("MANIFEST.factor");
     let manifest = fs::read_to_string(&manifest_path)?;
-    if !manifest.starts_with("factor-packet-v1\n") || manifest.contains('\r') {
+    if !manifest.starts_with(expected_header) || manifest.contains('\r') {
         return Err(PacketError::InvalidManifest(
             "header or line endings".to_owned(),
         ));
@@ -300,14 +334,7 @@ pub fn validate_packet(path: &Path) -> Result<String, PacketError> {
     Ok(sha256_hex(manifest.as_bytes()))
 }
 
-fn text_file(path: impl Into<String>, text: &str) -> PacketFile {
-    PacketFile {
-        path: path.into(),
-        bytes: normalize_lf(text).into_bytes(),
-    }
-}
-
-fn normalize_lf(text: &str) -> String {
+pub(crate) fn normalize_lf(text: &str) -> String {
     text.replace("\r\n", "\n").replace('\r', "\n")
 }
 

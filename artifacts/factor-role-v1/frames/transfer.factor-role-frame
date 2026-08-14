@@ -1,0 +1,23 @@
+factor-role-frame-v1
+frame transfer version 1
+schema_sha256 f0e423d5edd701cc53deb28b2018008763edfb95226d50a95dee09806d65f0c3
+domain entity
+value artist
+value child
+value robot
+value scientist
+end-domain
+domain theme
+value book
+value package
+end-domain
+role giver
+slot sole factor giver domain entity
+end-role
+role recipient
+slot primary factor recipient-primary domain entity
+slot secondary factor recipient-secondary domain entity
+end-role
+role theme
+slot sole factor theme domain theme
+end-role

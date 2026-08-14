@@ -15,4 +15,18 @@ the accepted foundation packet unchanged.
 
 ## Status
 
-Pending.
+Complete.
+
+## Outcome
+
+- Added the separate `factor-role-v1` closed-world packet without modifying
+  the accepted foundation packet.
+- Chained producer, schema, frame, corpus, analysis, split, control, result,
+  file, and packet identities.
+- Embedded a standard-library Python verifier that recomputes custody,
+  candidate, leakage, denominator, owner-matrix, and decision relationships.
+- Added Rust export/check commands, round-trip, closed-world, CLI, and frozen
+  release tests.
+- Added independent onboarding and explicit supplied-analysis boundaries.
+- Froze packet identity
+  `99deb8e8276df63a368dac85e1cbc90095f20936eeb8126eb9100f8a825e441d`.

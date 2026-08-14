@@ -73,6 +73,7 @@ organized into small waves and pulses with explicit validation.
 - [Role and Ambiguity Fixtures v1](specs/ROLE-AMBIGUITY-FIXTURES.md)
 - [Role/Filler Binding Controls v1](specs/BINDING-CONTROLS.md)
 - [Role and Ambiguity Bakeoff v1](specs/ROLE-AMBIGUITY-BAKEOFF.md)
+- [Portable Role and Ambiguity Packet v1](specs/ROLE-PORTABLE-PACKET.md)
 
 ## Schema conformance
 
@@ -117,6 +118,15 @@ The [accepted Wave 2 result](docs/ROLE-AMBIGUITY-RESULT.md) is
 `semantic-only`: role sharing and explicit candidate-set composition help, but
 exact conventional controls tie HRR.
 
+Validate the self-contained Wave 2 packet without importing the Rust crate:
+
+```powershell
+cd artifacts\factor-role-v1
+python verify_role_packet.py .
+```
+
+See [independent role packet onboarding](docs/ROLE-PACKET-ONBOARDING.md).
+
 Run the deterministic strong-control comparison:
 
 ```powershell
@@ -155,8 +165,10 @@ cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
 cargo run --quiet -- binding-controls
 cargo run --quiet -- role-bakeoff
+cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
+python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
