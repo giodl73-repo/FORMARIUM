@@ -13,23 +13,28 @@ or fame.
 | [Mass density](density.md) | Definition | `rho_avg = m / V` | Bulk averaging depends on one mass-volume boundary |
 | [Ohm's law](ohms-law.md) | Empirical constitutive relation | `V = I R` | Famous laws may apply only in a bounded regime |
 | [Sample arithmetic mean](arithmetic-mean.md) | Estimator or statistic | `x_bar = sum(x_i) / n` | Inclusion and distribution determine interpretation |
+| [Pythagorean trigonometric identity](pythagorean-trigonometric-identity.md) | Identity | `sin(theta)^2 + cos(theta)^2 = 1` | Identities require definitions, domains, and restricted consequences |
+| [General accounting balance](general-accounting-balance.md) | Conservation or balance | `accumulation = input - output + generation - consumption` | Boundary and source terms distinguish accounting from conservation |
+| [Newton's method](newtons-method.md) | Algorithm or recurrence | `x_(k+1) = x_k - f(x_k)/f'(x_k)` | Fast convergence is local and conditional |
+| [Event probability range](probability-range.md) | Constraint | `0 <= P(A) <= 1` | A bounded score is not automatically a probability |
 
 ## Relation-kind coverage
 
 | Relation kind | Pilot status |
 |---|---|
 | Definition | covered by mass density |
-| Identity | pending |
+| Identity | covered by Pythagorean trigonometric identity |
 | Law or principle | covered by force |
-| Conservation or balance | pending |
+| Conservation or balance | covered by general accounting balance |
 | Constitutive model | covered empirically by Ohm's law |
 | Empirical relation | covered by Ohm's law |
 | Estimator or statistic | covered by sample arithmetic mean |
-| Algorithm or recurrence | pending |
-| Constraint | pending |
+| Algorithm or recurrence | covered by Newton's method |
+| Constraint | covered by event probability range |
 
-The next pilot selection should prefer uncovered relation kinds over adding
-several more equations of one kind.
+All V0 relation kinds are represented at pilot depth. This does not imply broad
+subject coverage. The next selection should test cross-domain lookup,
+cross-references, notation variants, and practitioner usefulness.
 
 ## Catalog rules
 
@@ -38,4 +43,3 @@ several more equations of one kind.
 - Symbols are local unless explicitly joined to canonical quantity entries.
 - Units, dimensions, domains, and failure signs remain visible.
 - Formula Tables complement rather than replace domain instruction.
-

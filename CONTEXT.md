@@ -61,6 +61,14 @@ Selection research and review are
 `docs/research/2026-08-14-formula-pilot-selection.md` and
 `context/waves/2026-08-13-factorium-vision/FORMULA-PILOTS-ROLE-REVIEW.md`.
 
+Formula relation-kind coverage is complete at pilot depth with four additional
+entries: the Pythagorean trigonometric identity, a general accounting balance,
+Newton's method, and the event probability range. This covers identity,
+conservation/balance, algorithm/recurrence, and constraint. It does not claim
+broad subject coverage. Research and review are
+`docs/research/2026-08-14-remaining-formula-relation-kinds.md` and
+`context/waves/2026-08-13-factorium-vision/FORMULA-RELATION-KINDS-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

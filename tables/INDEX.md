@@ -36,6 +36,10 @@ coverage and selection rules.
 | [Mass density](formulas/density.md) | definition | `rho_avg = m / V` | A definition can still depend on boundary and averaging scope |
 | [Ohm's law](formulas/ohms-law.md) | empirical constitutive relation | `V = I R` | A famous law may describe only a bounded regime |
 | [Sample arithmetic mean](formulas/arithmetic-mean.md) | estimator or statistic | `x_bar = sum(x_i) / n` | A simple statistic requires inclusion and interpretation rules |
+| [Pythagorean trigonometric identity](formulas/pythagorean-trigonometric-identity.md) | identity | `sin(theta)^2 + cos(theta)^2 = 1` | Identity domains and restricted consequences remain visible |
+| [General accounting balance](formulas/general-accounting-balance.md) | conservation or balance | `accumulation = input - output + generation - consumption` | System boundaries distinguish balances from slogans |
+| [Newton's method](formulas/newtons-method.md) | algorithm or recurrence | `x_(k+1) = x_k - f(x_k)/f'(x_k)` | Convergence claims require local conditions |
+| [Event probability range](formulas/probability-range.md) | constraint | `0 <= P(A) <= 1` | A probability requires a probability model |
 
 ## Composite entries
 

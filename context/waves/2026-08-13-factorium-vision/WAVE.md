@@ -101,3 +101,10 @@ definition, empirical constitutive relation, and statistic. The catalog is
 `tables/formulas/INDEX.md`, selection research is
 `docs/research/2026-08-14-formula-pilot-selection.md`, and review is
 `FORMULA-PILOTS-ROLE-REVIEW.md`.
+
+The relation-kind suite now also includes the Pythagorean trigonometric
+identity, a general accounting balance, Newton's method, and the event
+probability range. Every Formula Table V0 relation kind is represented at
+pilot depth. Research is
+`docs/research/2026-08-14-remaining-formula-relation-kinds.md`; review is
+`FORMULA-RELATION-KINDS-ROLE-REVIEW.md`.
