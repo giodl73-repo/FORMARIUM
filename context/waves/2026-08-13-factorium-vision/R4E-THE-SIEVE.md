@@ -125,3 +125,7 @@ No external reader observation exists yet. Participant code `P01`, round
 `sieve-01`, and the A/D/F/G task rotation are prepared at
 `volumes/01-structure-quantity-choice/sessions/P01.md`. The next concrete
 action is to run that worksheet with an available real reader.
+
+The full `P01`-`P05` rotation, reusable worksheet, recruitment brief, and
+mechanics-only dry run are also ready under
+`volumes/01-structure-quantity-choice/`. None is reader evidence.
