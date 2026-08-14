@@ -1,41 +1,41 @@
-# FACTOR
+# Factorium
 
-**Meaning is made of reusable parts.**
+**Tables for the structure of things.**
 
-FACTOR develops **Factor-Preserving Semantic Encoding**: representing meaning
-as explicit, independently reusable factors instead of assigning every complete
-meaning an arbitrary symbol.
+Factorium is an encyclopedia of decomposition patterns. Its primary
+deliverables are books and **Factor Tables** that help a reader look up a
+problem, distinguish its senses, compare several credible factorizations,
+choose a pivot, and assign supporting factors to suitable structural
+mechanisms.
 
-For example:
+Factorium combines the lookup form of a dictionary, the alternatives of a
+thesaurus, and the compact utility of an engineering handbook. It does not
+promise one universal decomposition; it makes the available choices,
+constraints, tradeoffs, counterexamples, and maturity visible.
 
-```text
-walk left slowly twice
-```
+Read the [grand vision](VISION.md), the draft
+[Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), and the first
+[environment example](tables/examples/environment.md).
 
-can be represented as:
+## Primary deliverables
 
-```text
-action=walk
-direction=left
-manner=slowly
-count=twice
-polarity=affirmative
-```
+- **Factorium books** — the enduring reference;
+- **Factor Tables** — canonical entries and competing decompositions;
+- **Factor Guides** — narrowed recommendations for a particular problem;
+- **evidence and reviews** — provenance, maturity, and limitations;
+- **software and experiments** — auxiliary construction and validation tools.
 
-The central hypothesis is that preserving this structure improves systematic
-generalization to unseen combinations. FACTOR is hardware-neutral: packed
-bitfields, typed product states, feature structures, vectors, and other
-representations are compared as implementations of the same semantic factors.
+## Founding research
 
-## Initial scope
+The repository began as **FACTOR**, a hardware-neutral investigation of
+Factor-Preserving Semantic Encoding. That work remains as one tested Factorium
+domain and as evidence infrastructure:
 
-- define explicit semantic-factor schemas;
-- create leakage-resistant compositional holdouts;
-- compare factored and whole-symbol representations;
-- preserve exact packed/product alias controls;
-- measure reconstruction, systematic generalization, edit locality, storage,
-  and model cost;
-- export small reproducible benchmark packets.
+- explicit semantic schemas and constraints;
+- compositional and role/ambiguity fixtures;
+- exact conventional controls and bounded HRR diagnostics;
+- `.roles` reviews and retained nulls;
+- independently verifiable evidence packets.
 
 ## Evidence inherited from Squarebit
 
@@ -46,11 +46,14 @@ exactly. FACTOR begins from that narrow result:
 
 > Factorization was useful; specialized Squarebit packing was not required.
 
-The result is a starting hypothesis, not proof of general language
-understanding.
+This narrow result helped establish Factorium's discipline. It does not prove
+the encyclopedia or any universal factorization.
 
 ## Non-goals
 
+- presenting one convenient factorization as universally canonical;
+- allowing AI-generated plausibility to substitute for review and provenance;
+- letting software become more important than the reference work;
 - claiming novelty for feature structures or compositional representation;
 - claiming that synthetic exact-match predicts broad NLP quality;
 - replacing tokenizers, embeddings, or language models without evidence;
@@ -63,7 +66,11 @@ understanding.
 Read `CONTEXT.md`, `PRODUCT_PLAN.md`, and `context/waves/PHASES.md`. Work is
 organized into small waves and pulses with explicit validation.
 
-## Specifications
+## Reference specifications
+
+- [Factor Table Entry Format V0](specs/FACTOR-TABLE-ENTRY.md)
+
+## Founding research specifications
 
 - [Semantic Factor Schema v1](specs/SEMANTIC-FACTOR-SCHEMA.md)
 - [Compositional Split Fixtures v1](specs/COMPOSITIONAL-SPLITS.md)
@@ -133,7 +140,7 @@ Run the deterministic strong-control comparison:
 cargo run --quiet -- bakeoff
 ```
 
-The current result is
+The founding result is
 [accepted, semantic-only](docs/STRONG-CONTROL-BAKEOFF-RESULT.md): factor
 preservation beats whole-meaning lookup on the systematic synthetic holdouts,
 while packed aliases, feature structures, one-hot factors, and dense factored

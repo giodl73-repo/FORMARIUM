@@ -1,25 +1,36 @@
-# FACTOR Context
+# Factorium Context
 
-FACTOR is the hardware-neutral home of Factor-Preserving Semantic Encoding.
-It begins from Squarebit's accepted synthetic-language result: explicit
-factorization generalized, while named product states tied ordinary packed
-features.
+Factorium is an encyclopedia of decomposition patterns. Books and Factor
+Tables are the primary deliverables; guides, evidence, software, and
+experiments support them.
+
+The repository began as FACTOR, the hardware-neutral home of
+Factor-Preserving Semantic Encoding. That work remains immutable founding
+evidence and one tested Factorium domain.
 
 ## Operating model
 
 - `AGENTS.md` is the startup router.
-- `README.md` explains the public purpose.
+- `VISION.md` is the canonical grand vision.
+- `README.md` explains the project.
 - `PRODUCT_PLAN.md` records the thesis, waves, and non-goals.
 - `context/waves/` records execution history.
-- `docs/research/` will hold cited design and benchmark research.
-- Future specifications must preserve strong factored and packed controls.
+- `tables/` holds Factor Tables and examples.
+- `docs/research/` holds cited design and benchmark research.
+- Existing research specifications preserve strong factored and packed
+  controls.
 
 ## Current wave
 
-`context/waves/2026-08-13-role-and-ambiguity/WAVE.md`
+`context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Wave 2 is complete. The next planned product-plan stage is Wave 3, portable
-benchmark packet standardization.
+Current pulse: **02 - General factor-role vocabulary**
+
+Pulse 01 established `VISION.md`, the draft Factor Table grammar at
+`specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
+Factorium roles for factorization method, lexicography, reference architecture,
+cross-paradigm mapping, and practitioner lookup. Its fixed-point review is
+`context/waves/2026-08-13-factorium-vision/PULSE-01-ROLE-REVIEW.md`.
 
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.

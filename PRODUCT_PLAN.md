@@ -1,30 +1,35 @@
-# FACTOR Product Plan
+# Factorium Product Plan
 
 ## Product thesis
 
-Factor-Preserving Semantic Encoding keeps reusable meaning components explicit
-through encoding, training, evaluation, editing, and interchange. Its value
-must be demonstrated against equally expressive conventional feature
-structures, packed fields, and learned factored controls.
+Factorium will be a lasting reference collection of decomposition patterns.
+Its books and Factor Tables help people discover dimensions, distinguish
+senses, compare pivots, assign factor roles to available mechanisms, and avoid
+invalid or unstable structures.
+
+Software, experiments, and evidence exist to construct and improve the
+reference. They are not the top-level product.
 
 ## Product identity
 
-- Name: **FACTOR**
-- General method: **Factor-Preserving Semantic Encoding**
-- Compact representation family: **Semantic Product Encoding**
-- Repo type: public research method and reference benchmark
-- Initial series placement: Knowledge Systems
+- Name: **Factorium**
+- Reference unit: **Factor Table**
+- Narrowed output: **Factor Guide**
+- Supporting software: **Factorium Workbench**
+- Founding research method: **Factor-Preserving Semantic Encoding**
+- Repo type: encyclopedia/reference project with supporting research and tools
 
 ## Principles
 
-1. Split data by meaning before rendering surface forms.
-2. Compare factorization against strong factored controls, not only weak
-   whole-symbol baselines.
-3. Treat identical packed and named product states as semantic aliases.
-4. Separate semantic quality, storage, model parameters, and runtime.
-5. Preserve null results and boundary failures.
-6. Generalize from synthetic corpora only after materially different fixtures
-   reproduce.
+1. Books and Factor Tables are the primary deliverable.
+2. Separate different senses from competing factorizations of one sense.
+3. Present credible alternatives instead of one unexplained canonical answer.
+4. Make pivots, dependencies, constraints, and failure signs explicit.
+5. Define general factor roles before mapping them into particular paradigms.
+6. Prefer lists and tables; use only enough exposition to prevent misuse.
+7. Preserve provenance, maturity, counterexamples, and disputed analyses.
+8. Keep software auxiliary and make AI suggestions reviewable.
+9. Preserve null results and the founding research evidence.
 
 ## Waves
 
@@ -47,17 +52,27 @@ Sequence:
 5. role/ambiguity bakeoff;
 6. portable Wave 2 packet.
 
-### Wave 3: Portable benchmark packets
+### Wave 3: Factorium reference foundation
 
-Define versioned corpus, split, schema, result, and provenance artifacts that
-other implementations can reproduce.
+Define the grand vision, Factor Table grammar, general factor-role vocabulary,
+cross-paradigm mappings, pilot entries, and Factor Guide method.
 
-### Wave 4: External adoption
+### Wave 4: First Factorium volume
 
-Onboard one independent consumer or implementation without coupling it to
-FACTOR internals.
+Assemble and usability-test a coherent table-first reference across several
+domains.
 
-## First-wave pulses
+### Wave 5: Factorium Workbench
+
+Add search, construction, comparison, narrowing, and publishing software only
+after the editorial method is stable.
+
+### Wave 6: Reference expansion
+
+Grow reviewed volumes, contributors, provenance, and cross-references without
+losing canonical entry identity.
+
+## Founding research pulses
 
 1. Workspace foundation.
 2. Semantic-factor schema contract.
@@ -69,6 +84,10 @@ FACTOR internals.
 
 ## Non-goals
 
+- replacing the books with a chat interface or generated prose;
+- claiming one universal ontology or decomposition;
+- publishing large unreviewed lists of plausible AI suggestions;
+- forcing every domain into OO, Rust, or another favored paradigm;
 - broad NLP, reasoning, or language-understanding claims from toy corpora;
 - Squarebit-specific hardware or performance claims;
 - arbitrary whole-symbol baselines presented as state of the art;
