@@ -75,6 +75,12 @@ interventions, and outputs from outcomes. Failure isolation is owned by
 `docs/research/2026-08-14-control-monitoring-response.md` and
 `CONTROL-RESPONSE-ROLE-REVIEW.md`.
 
+The portfolio-wide fixed-point assessment is
+`FACTOR-FORGE-PORTFOLIO-ROLE-REVIEW.md`. The 23-entry candidate architecture
+passes, with external usability and domain promotion still gated. Scaling
+work before 50 anchors must address typed relation pressure, machine-bound
+review coverage, unresolved-candidate triage, and balanced non-formula growth.
+
 ## Success criteria
 
 - a practitioner can find a relevant sense and alternatives within minutes;

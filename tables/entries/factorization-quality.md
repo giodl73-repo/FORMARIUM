@@ -42,6 +42,22 @@ factorization-quality
 The linked [Factorization Failure Diagnostic](../diagnostics/factorization-failures.md)
 maps recurring observations to candidate causes, tests, and repairs.
 
+## Selection procedure
+
+1. State the subject, sense, reader question, and selected decomposition view.
+2. Identify the proposed pivot and every supporting factor role.
+3. Test whether candidate factors can vary independently in representative
+   and adversarial examples.
+4. Record dependencies, invalid combinations, derived outputs, and context.
+5. Compare at least one credible alternate pivot, merge, split, or granularity.
+6. Map factors to implementation mechanisms only after semantic roles are
+   stable.
+7. Test expected changes and look for exception, subtype, or naming growth.
+8. Use observed symptoms to select discriminating tests rather than declaring
+   one structural cause by inspection.
+9. Preserve counterexamples, rejected alternatives, repair scope, and
+   confidence.
+
 ## Reference Delta
 
 | Reference form | Typical contribution | Factorium delta |
@@ -76,4 +92,3 @@ maps recurring observations to candidate causes, tests, and repairs.
 3. reviewed pilot examples under `tables/examples/`.
 
 Diagnostic organization remains `candidate`.
-

@@ -58,6 +58,24 @@ motion-measure-use
 The linked [Kinematics Formula Table](../formulas/kinematics-motion-measures.md)
 contains average, instantaneous, and constant-acceleration relations.
 
+## Selection procedure
+
+1. Select the moving subject, reference frame, origin, axes, and direction
+   convention.
+2. Decide whether the available evidence is a complete path, two endpoints,
+   position over time, velocity over time, or another bounded record.
+3. Select distance for accumulated path length and displacement for directed
+   endpoint change.
+4. Select speed for scalar path rate and velocity for directed position rate.
+5. Select acceleration only for change of velocity, including direction
+   change at constant speed.
+6. State whether the requested quantity is average over an interval or
+   instantaneous at a time.
+7. Check unit and dimension consistency and preserve vector components where
+   direction matters.
+8. Use constant-acceleration formulas only after verifying that regime over
+   the selected interval.
+
 ## Reference Delta
 
 | Reference form | Typical contribution | Factorium delta |

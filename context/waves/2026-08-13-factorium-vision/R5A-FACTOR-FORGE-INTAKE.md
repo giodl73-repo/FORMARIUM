@@ -36,6 +36,9 @@ coverage rather than add isolated headwords.
 Separate system, component, capability, interface, dependency, boundary, and
 environment. Connect these to the existing identity and lifecycle anchors.
 
+Status: first slice implemented with one canonical anchor and one Constraint
+view.
+
 ### F2 - Organization and authority
 
 Separate organization, role, responsibility, authority, accountability,
@@ -84,6 +87,22 @@ Each batch must:
 - update deterministic projections through the reference tooling;
 - close critical and major `.roles` findings;
 - preserve a clean distinction between tested R4 content and new R5 content.
+
+## Portfolio scaling gates
+
+The full-panel review at `FACTOR-FORGE-PORTFOLIO-ROLE-REVIEW.md` adds these
+continuation rules:
+
+- unresolved candidates are admitted only for recurrence, graph centrality,
+  reader demand, or a current batch need;
+- raw unresolved count is not a growth target;
+- new views choose their family by reader question and should broaden
+  non-formula coverage where semantics justify it;
+- a bounded typed-relation compatibility study begins before 50 canonical
+  anchors or Workbench implementation;
+- review coverage becomes machine-validated before 50 canonical anchors;
+- candidate content requires qualified domain review before promotion;
+- later R5 content remains outside the frozen Sieve evidence baseline.
 
 ## F1 first slice
 

@@ -36,7 +36,7 @@ geometric-measure-use
    ! overlap, holes, and excluded regions
 ```
 
-## Selection table
+## Selection procedure
 
 | Reader wants | Select | Then identify |
 |---|---|---|
@@ -51,7 +51,7 @@ The linked [Common Geometric Measures Formula Table](../formulas/common-geometri
 provides standard shape formulas, symbol contracts, dimensions, and failure
 signs.
 
-## Constraints and interactions
+## Constraints and failure signs
 
 - Perimeter and circumference use linear units.
 - Area and surface area use square units.
@@ -73,7 +73,7 @@ signs.
 | Formula sheet | Lists formulas by shape | Adds measured subset, dimensional units, parameter sufficiency, and approximation status |
 | NIST/SI reference | Owns metre, square-metre, and cubic-metre unit conventions | Links unit authority to the correct measure dimension |
 
-## Failure signs
+### Failure signs
 
 - A square or cubic unit is omitted.
 - The outside covering of a solid is reported as volume.
@@ -101,4 +101,3 @@ signs.
 
 Comparator access date: 2026-08-14. Geometric definitions and formulas are
 established within source scope; Factorium organization remains `candidate`.
-

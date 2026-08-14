@@ -20,10 +20,10 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/electrical-quantity.md` | 136 | resistivity - `unresolved-candidate` |
 | `tables/entries/electrical-quantity.md` | 137 | capacitance - `unresolved-candidate` |
 | `tables/entries/electrical-quantity.md` | 138 | impedance - `unresolved-candidate` |
-| `tables/entries/force.md` | 108 | coercion — `unresolved-candidate` |
-| `tables/entries/force.md` | 109 | influence — `unresolved-candidate` |
-| `tables/entries/force.md` | 110 | organization — `unresolved-candidate` |
-| `tables/entries/force.md` | 111 | validity — `unresolved-candidate` |
+| `tables/entries/force.md` | 127 | coercion — `unresolved-candidate` |
+| `tables/entries/force.md` | 128 | influence — `unresolved-candidate` |
+| `tables/entries/force.md` | 129 | organization — `unresolved-candidate` |
+| `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
 | `tables/entries/geometric-measure.md` | 91 | length — `unresolved-candidate` |
 | `tables/entries/geometric-measure.md` | 92 | shape — `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 128 | namespace - `unresolved-candidate` |
@@ -36,8 +36,8 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/information-data-signal-noise.md` | 143 | channel capacity - `unresolved-candidate` |
 | `tables/entries/matter-load-measure.md` | 119 | stress - `unresolved-candidate` |
 | `tables/entries/matter-load-measure.md` | 120 | gravitational field - `unresolved-candidate` |
-| `tables/entries/motion-measure.md` | 91 | path — `unresolved-candidate` |
-| `tables/entries/motion-measure.md` | 92 | frame of reference — `unresolved-candidate` |
+| `tables/entries/motion-measure.md` | 109 | path — `unresolved-candidate` |
+| `tables/entries/motion-measure.md` | 110 | frame of reference — `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 157 | position - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 158 | competency - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 159 | governance - `unresolved-candidate` |

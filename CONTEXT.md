@@ -124,6 +124,13 @@ Research and fixed-point review are
 `docs/research/2026-08-14-control-monitoring-response.md` and
 `context/waves/2026-08-13-factorium-vision/CONTROL-RESPONSE-ROLE-REVIEW.md`.
 
+The current full-panel shape assessment is
+`context/waves/2026-08-13-factorium-vision/FACTOR-FORGE-PORTFOLIO-ROLE-REVIEW.md`.
+It passes the 23-entry candidate architecture while retaining explicit
+external-usability and domain-promotion gates. It also triggers typed-relation
+and review-coverage compatibility work before 50 canonical anchors and adds
+unresolved-candidate and table-family scaling rules.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.

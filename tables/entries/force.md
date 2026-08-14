@@ -73,6 +73,25 @@ This sense covers a rule, agreement, or instrument being `in force`.
 Publication, adoption, effective date, jurisdiction, applicability, amendment,
 suspension, and repeal can differ.
 
+## Selection procedure
+
+1. Use the surrounding proposition to select one of the five senses before
+   following any formula or specialized view.
+2. For physical interaction, select the system, boundary, interaction set,
+   vector direction, duration, frame, and physical model.
+3. For coercive compulsion, identify actor, capacity, authority, target,
+   resistance, action or threat, and consequence.
+4. For an organized body, identify mission, membership, command, jurisdiction,
+   resources, and capabilities separately.
+5. For effective influence, identify source, channel, receiver context,
+   credibility, intensity, and derived effect.
+6. For operative validity, identify instrument, issuing authority,
+   jurisdiction, applicability, effective period, amendment, suspension, and
+   repeal status.
+7. Reject any specialized table whose scope belongs to a different sense.
+8. Record unresolved ambiguity when the source text does not supply enough
+   context to choose.
+
 ## Reference Delta
 
 | Reference form | What it provides for `force` | Factorium delta |

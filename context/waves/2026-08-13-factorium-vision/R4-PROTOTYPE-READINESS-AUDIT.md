@@ -92,3 +92,16 @@ No autonomous or AI-generated substitute is valid for these observations.
 The external execution milestone is
 [`R4E - The Sieve`](R4E-THE-SIEVE.md). R5 follows under the codename
 **Factor Forge** only after The Sieve closes this gate.
+
+## Execution addendum - 2026-08-14
+
+The readiness decision and R4 closure gate above remain unchanged. A later
+roadmap policy separated milestone closure from forward-work eligibility:
+
+- `sieve-01` remains frozen at commit `817e779` and tag
+  `sieve-01-prototype`;
+- R5 Factor Forge editorial batches may proceed in parallel;
+- later R5 content is not covered by Sieve observations;
+- R5 publication still requires relevant Sieve findings to be dispositioned.
+
+See `R4E-THE-SIEVE.md` and `R5A-FACTOR-FORGE-INTAKE.md`.

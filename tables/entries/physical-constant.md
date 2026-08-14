@@ -39,6 +39,23 @@ physical-constant-use
 The linked [SI Defining Constants](../values/si-defining-constants.md) owns the
 seven fixed values that define the SI.
 
+## Selection procedure
+
+1. Identify the physical quantity, symbol, unit system, and intended use.
+2. Select defining, measured, recommended, or nominal status before choosing a
+   numerical value.
+3. For a defining constant, name the unit-system authority and why the value
+   is exact.
+4. For a measured constant, retain uncertainty, correlation where relevant,
+   method/evaluation source, and publication version.
+5. For a recommended value, retain the evaluating authority, release, and
+   supersession policy.
+6. For a nominal value, state the approximation purpose and acceptable error.
+7. Preserve significant digits and conversion rules appropriate to the source
+   status rather than display convenience.
+8. Recheck the source when the authority or version changes; never treat a
+   copied number as timeless.
+
 ## Reference Delta
 
 | Reference form | Typical contribution | Factorium delta |
@@ -73,4 +90,3 @@ seven fixed values that define the SI.
 
 Metrological values are established by BIPM; Factorium organization remains
 `candidate`.
-
