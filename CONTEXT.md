@@ -183,6 +183,15 @@ Ohm's-law view remains the bounded empirical constitutive owner. Research and
 review are `docs/research/2026-08-14-electrical-quantity-cluster.md` and
 `context/waves/2026-08-13-factorium-vision/ELECTRICAL-QUANTITY-ROLE-REVIEW.md`.
 
+The information-data-signal-noise pilot at
+`tables/entries/information-data-signal-noise.md` separates semantic
+information, represented data, carrier signal, task-relative noise, Shannon
+information, entropy, and SNR by source, receiver, context, representation,
+channel, model, estimator, bandwidth, and scale. Its Formula Table is
+`tables/formulas/information-signal-measures.md`; research and review are
+`docs/research/2026-08-14-information-data-signal-noise.md` and
+`context/waves/2026-08-13-factorium-vision/INFORMATION-SIGNAL-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

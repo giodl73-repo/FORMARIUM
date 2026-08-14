@@ -123,6 +123,7 @@ relations.
 
 - [Motion Measure](motion-measure.md)
 - [Comparative Quantity](comparative-quantity.md)
+- [Information, Data, Signal, and Noise](information-data-signal-noise.md)
 - [Time](../roots/time.md)
 - [Transformation](../roots/transformation.md)
 - [Context](../roots/context.md)
@@ -142,4 +143,3 @@ relations.
 
 Comparator access date: 2026-08-14. Introductory periodic-wave relations are
 established within source scope; Factorium organization remains `candidate`.
-

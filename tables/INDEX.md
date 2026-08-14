@@ -54,6 +54,10 @@ until generated from a stable interchange format.
   potential difference, resistance, electrical power, and transferred energy
   organized by crossing surface, terminal pair, direction, state, sign, and
   time basis
+- [Information, data, signal, and noise](entries/information-data-signal-noise.md)
+  - semantic information, represented data, carrier signal, task-relative
+  noise, Shannon measures, and SNR organized by context, representation,
+  channel, model, estimator, and display scale
 
 ## Examples
 
@@ -92,6 +96,7 @@ coverage and selection rules.
 | [Amount, concentration, and composition](formulas/amount-concentration-composition.md) | definition and closure constraint | entity count, amount of substance, concentrations, and composition fractions | Separate entity, component, mixture volume, quantity basis, and state |
 | [Periodic and wave quantities](formulas/periodic-wave-quantities.md) | definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, and speed | Separate cycles, radians, temporal/spatial repetition, pattern propagation, and regime |
 | [Electrical quantities](formulas/electrical-quantities.md) | definition, rate, and accumulated transfer | charge, current, potential difference, power, and energy transfer | Separate surfaces, terminals, polarity, direction, rate, and accumulation |
+| [Information and signal measures](formulas/information-signal-measures.md) | definition, expectation, ordered ratio, and logarithmic mapping | self-information, entropy, power SNR, decibels, and sample SNR | Separate semantics, probability models, task-relative components, estimators, and scales |
 
 ## Mapping Tables
 

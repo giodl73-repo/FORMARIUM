@@ -214,3 +214,12 @@ bounded empirical Ohm relation remains in `tables/formulas/ohms-law.md`.
 Research and review are
 `docs/research/2026-08-14-electrical-quantity-cluster.md` and
 `ELECTRICAL-QUANTITY-ROLE-REVIEW.md`.
+
+The information-data-signal-noise cluster at
+`tables/entries/information-data-signal-noise.md` separates semantic
+information, represented data, communication signal, task-relative noise,
+Shannon information, entropy, and SNR through source, receiver, context,
+representation, channel, probability model, estimator, bandwidth, and scale.
+Relations are in `tables/formulas/information-signal-measures.md`; research and
+review are `docs/research/2026-08-14-information-data-signal-noise.md` and
+`INFORMATION-SIGNAL-ROLE-REVIEW.md`.

@@ -111,6 +111,7 @@ probability-risk-uncertainty-use
 ## Cross-references
 
 - [Comparative Quantity](comparative-quantity.md)
+- [Information, Data, Signal, and Noise](information-data-signal-noise.md)
 - [Possibility](../roots/possibility.md)
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
@@ -134,4 +135,3 @@ probability-risk-uncertainty-use
 Comparator access date: 2026-08-14. Probability, risk, and measurement-
 uncertainty claims are established within source scope; Factorium organization
 remains `candidate`.
-

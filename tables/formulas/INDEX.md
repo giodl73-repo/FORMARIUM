@@ -27,6 +27,7 @@ or fame.
 | [Amount, concentration, and composition](amount-concentration-composition.md) | Definition and closure constraint | entity count, amount of substance, concentrations, composition fractions | Entity, component, mixture, quantity basis, state, and closure remain explicit |
 | [Periodic and wave quantities](periodic-wave-quantities.md) | Definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, speed | Cycle, reference, propagation, medium, mode, and regime remain explicit |
 | [Electrical quantities](electrical-quantities.md) | Definition, rate, and accumulated transfer | charge, current, potential difference, power, energy transfer | Surface, terminal, polarity, direction, sign, state, and time remain explicit |
+| [Information and signal measures](information-signal-measures.md) | Definition, expectation, ordered ratio, and logarithmic mapping | self-information, entropy, power SNR, decibels, sample SNR | Semantics, model, task, estimator, bandwidth, base, and scale remain explicit |
 
 ## Relation-kind coverage
 
