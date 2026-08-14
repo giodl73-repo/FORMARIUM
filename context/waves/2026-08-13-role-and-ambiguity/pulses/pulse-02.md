@@ -22,4 +22,17 @@ constraints, and identities above unchanged complete V1 meanings.
 
 ## Status
 
-Active.
+Complete.
+
+## Outcome
+
+- Kept Semantic Factor Schema v1 meanings and aliases unchanged.
+- Added shared filler domains so equal values across factors have explicit
+  identity.
+- Added roles with semantically ordered slots mapped to schema factors.
+- Added canonical fail-closed constraints before corpus construction.
+- Added exact ASCII surfaces, analysis families, and duplicate-free candidate
+  meaning sets.
+- Distinguished ambiguity from missing, unknown, and partial meaning.
+- Froze role-frame and analysis-set grammars and SHA-256 identities.
+- Closed the Pulse 02 role review with no critical or major finding.

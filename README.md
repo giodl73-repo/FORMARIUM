@@ -69,6 +69,7 @@ organized into small waves and pulses with explicit validation.
 - [Compositional Split Fixtures v1](specs/COMPOSITIONAL-SPLITS.md)
 - [Strong-Control Bakeoff v1](specs/STRONG-CONTROL-BAKEOFF.md)
 - [Portable Evidence Packet v1](specs/PORTABLE-PACKET.md)
+- [Role Frames and Analysis Sets v1](specs/ROLE-ANALYSIS-SETS.md)
 
 ## Schema conformance
 

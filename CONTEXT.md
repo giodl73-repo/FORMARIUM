@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-role-and-ambiguity/WAVE.md`
 
-Current pulse: **02 - Analysis-set and role-frame contract**
+Current pulse: **03 - Role and ambiguity fixtures**
 
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.
@@ -74,6 +74,13 @@ meanings unchanged, adds corpus-level candidate analysis sets, separates role,
 ordered slot, and filler identity, and requires typed records plus exact sparse
 TPR before bounded HRR. The reviewed plan is
 `context/waves/2026-08-13-role-and-ambiguity/ROLE-REVIEW.md`.
+
+Pulse 02 freezes `specs/ROLE-ANALYSIS-SETS.md`. Shared filler domains establish
+identity across V1 factors; roles use explicit ordered slots; constraints
+remove uninterpreted Cartesian combinations before generation; exact surfaces
+reference duplicate-free candidate meaning sets grouped into leakage-resistant
+analysis families. Its review is
+`context/waves/2026-08-13-role-and-ambiguity/PULSE-02-ROLE-REVIEW.md`.
 
 ## Boundary
 
