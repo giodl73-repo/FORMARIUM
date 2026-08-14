@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 ## Orientation
 
 An accounting balance tracks a countable property inside a chosen system over

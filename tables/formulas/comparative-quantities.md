@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword: [Comparative Quantity](../entries/comparative-quantity.md)
 
 ## Orientation
@@ -134,4 +136,3 @@ zero-domain restrictions, and percent-versus-point diagnostics.
 
 Formula authority: established arithmetic and statistical reporting
 conventions within stated scope. Factorium presentation remains `candidate`.
-

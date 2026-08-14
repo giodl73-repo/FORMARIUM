@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword: [Electrical Quantity](../entries/electrical-quantity.md)
 
 ## Orientation
@@ -100,4 +102,3 @@ scope.
 
 Formula authority: introductory circuit relations within stated scope.
 Factorium presentation remains `candidate`.
-

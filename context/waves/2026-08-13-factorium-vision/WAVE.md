@@ -35,10 +35,11 @@ recorded in `ROADMAP-ROLE-REVIEW.md`.
 |------:|-------|--------|---------|
 | 01 | Vision, entry form, and role parliament | complete | Established the encyclopedia-first vision, hybrid Factor Table entry, first environment example, and broadened review panel. |
 | 02 | General factor-role vocabulary | complete | Established the Root and Factor Role Tables, separating twelve subject coordinates from eleven view-relative structural jobs and domain mechanisms. |
-| 03 | Pilot Factor Tables | active | Promote and extend varied semantic and Formula Tables across software, science, cloud, organizations, data, naming, and conceptual analysis. |
-| 04 | Cross-paradigm assignment tables | pending | Map general factor roles into OO, Rust, functional, database, cloud, and organizational mechanisms without forcing equivalence. |
-| 05 | Factor Guide method | pending | Define how examples and constraints narrow general tables into a reviewed problem-specific guide. |
-| 06 | First volume prototype | pending | Assemble and usability-test a coherent table-first reference volume. |
+| 03 | Pilot Factor Tables | complete | Delivered 47 canonical records, 20 anchors, 30 specialized views, and all eleven families at pilot depth. |
+| 04 | Reproducible reference | active | Freeze the smallest shared interchange core, validate it, and generate navigation projections. |
+| 05 | Cross-paradigm assignment tables | pending | Map general factor roles into OO, Rust, functional, database, cloud, and organizational mechanisms without forcing equivalence. |
+| 06 | Factor Guide method | pending | Define how examples and constraints narrow general tables into a reviewed problem-specific guide. |
+| 07 | First volume prototype | pending | Assemble and usability-test a coherent table-first reference volume. |
 
 ## Success criteria
 
@@ -250,3 +251,10 @@ SI defining constants as a Reference Value view, and the founding FACTOR
 claim matrix as an Evidence view. Research and fixed-point review are
 `docs/research/2026-08-14-remaining-table-family-pilots.md` and
 `REMAINING-FAMILIES-ROLE-REVIEW.md`.
+
+Roadmap milestone R1 and Pulse 03 are complete. The measured gate audit is
+`R1-EDITORIAL-PILOT-AUDIT.md`: 47 canonical records, 20 anchors, 30
+specialized views, all eleven families, explicit primary-family declarations,
+three direct structural anchors, repository-wide local-link integrity, and no
+open critical or major review finding. Pulse 04 now begins the reproducible
+reference interchange and generated-projection work.

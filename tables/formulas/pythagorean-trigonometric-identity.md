@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 ## Orientation
 
 The Pythagorean trigonometric identity states a relation that holds for every
@@ -95,4 +97,3 @@ identity-use
 
 Formula authority: established identity. Factorium representation remains a
 candidate pending mathematics and practitioner review.
-

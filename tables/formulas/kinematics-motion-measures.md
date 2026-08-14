@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword: [Motion Measure](../entries/motion-measure.md)
 
 ## Orientation
@@ -96,4 +98,3 @@ selection, and constant-regime gating.
 
 Formula authority: established introductory kinematics. Factorium
 presentation remains `candidate`.
-

@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword: [Work, Energy, and Power](../entries/work-energy-power.md)
 
 ## Orientation
@@ -128,4 +130,3 @@ system boundary, conservation scope, and operator diagnostics.
 
 Formula authority: established nonrelativistic mechanics within stated scope.
 Factorium presentation remains `candidate`.
-

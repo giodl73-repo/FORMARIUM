@@ -25,7 +25,7 @@ evidence and one tested Factorium domain.
 
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Current pulse: **03 - Pilot Factor Tables**
+Current pulse: **04 - Reproducible Reference**
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
@@ -33,6 +33,13 @@ Guides, a 75-125-entry usability prototype, the approximately 250-entry first
 substantial volume, and only then the Factorium Workbench. Its fixed-point
 review is
 `context/waves/2026-08-13-factorium-vision/ROADMAP-ROLE-REVIEW.md`.
+
+Roadmap R1 is complete. The gate audit at
+`context/waves/2026-08-13-factorium-vision/R1-EDITORIAL-PILOT-AUDIT.md`
+records 47 canonical records, 20 anchors, 30 specialized views, all eleven
+families, explicit family ownership, cross-domain structural breadth, and
+closed critical/major review findings. R2 now owns stable interchange,
+validation, generated indexes, and unresolved-candidate reporting.
 
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five

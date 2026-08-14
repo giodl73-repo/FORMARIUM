@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword: [Thermal Quantity](../entries/thermal-quantity.md)
 
 ## Orientation
@@ -120,4 +122,3 @@ constraint, reversible evaluation, and absolute-temperature requirements.
 
 Formula authority: established introductory thermodynamics within stated
 scope. Factorium presentation remains `candidate`.
-

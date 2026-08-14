@@ -2,6 +2,8 @@
 
 Status: candidate Mapping Table
 
+Primary family: Mapping Table
+
 Canonical headword: [Thermal Quantity](../entries/thermal-quantity.md)
 
 Sense: `temperature`

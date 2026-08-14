@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword: [Geometric Measure](../entries/geometric-measure.md)
 
 ## Orientation
@@ -102,4 +104,3 @@ boundary scope, composite-figure constraints, and exactness status.
 
 Formula authority: established elementary geometry. Factorium presentation
 remains `candidate`.
-

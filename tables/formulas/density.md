@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword:
 [Matter and Load Measure](../entries/matter-load-measure.md)
 

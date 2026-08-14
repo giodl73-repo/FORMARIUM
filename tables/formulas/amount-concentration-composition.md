@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword:
 [Amount, Concentration, and Composition](../entries/amount-concentration-composition.md)
 
@@ -105,4 +107,3 @@ component, mixture, basis, state, closure, and volume-additivity contracts.
 
 Formula authority: SI and IUPAC definitions within stated scope. Factorium
 presentation remains `candidate`.
-

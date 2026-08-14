@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 ## Orientation
 
 The sample arithmetic mean summarizes equally weighted numerical observations
@@ -105,4 +107,3 @@ sample-mean-use
 
 Formula authority: established statistic. Factorium representation remains a
 candidate pending statistical and practitioner review.
-

@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword: [Matter and Load Measure](../entries/matter-load-measure.md)
 
 ## Orientation
@@ -117,4 +119,3 @@ averaging level, local-field scope, and dimensional diagnostics.
 
 Formula authority: established introductory SI, Newtonian mechanics, and fluid
 mechanics within stated scope. Factorium presentation remains `candidate`.
-

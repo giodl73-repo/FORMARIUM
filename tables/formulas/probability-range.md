@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword:
 [Probability, Risk, and Uncertainty](../entries/probability-risk-uncertainty.md)
 

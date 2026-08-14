@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 ## Orientation
 
 Newton's method iteratively approximates a root of a differentiable function
@@ -101,4 +103,3 @@ newton-iteration-use
 
 Formula authority: established numerical method. Factorium representation
 remains a candidate pending numerical-analysis and practitioner review.
-

@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword:
 [Information, Data, Signal, and Noise](../entries/information-data-signal-noise.md)
 
@@ -98,4 +100,3 @@ identity, bandwidth, and logarithmic-unit contracts.
 
 Formula authority: Shannon discrete information measures and separately
 scoped SNR conventions. Factorium presentation remains `candidate`.
-

@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword: [Force](../entries/force.md)
 
 Sense: `physical-interaction`

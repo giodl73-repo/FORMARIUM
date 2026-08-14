@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword:
 [Cost, Price, Value, Utility, and Return](../entries/cost-price-value-return.md)
 
@@ -99,4 +101,3 @@ nonfinancial exclusion contracts.
 
 Formula authority: introductory finance relations within stated scope.
 Factorium presentation remains `candidate`.
-

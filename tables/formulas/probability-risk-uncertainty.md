@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword:
 [Probability, Risk, and Uncertainty](../entries/probability-risk-uncertainty.md)
 
@@ -129,4 +131,3 @@ coverage contracts.
 Formula authority: established probability and NIST measurement-uncertainty
 relations within stated scope. Risk aggregation remains model-specific.
 Factorium presentation remains `candidate`.
-

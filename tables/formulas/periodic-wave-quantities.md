@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 Canonical headword:
 [Periodic and Wave Quantity](../entries/periodic-wave-quantity.md)
 
@@ -106,4 +108,3 @@ reference, propagation, medium, mode, and regime contracts.
 
 Formula authority: introductory periodic-wave physics within stated scope.
 Factorium presentation remains `candidate`.
-

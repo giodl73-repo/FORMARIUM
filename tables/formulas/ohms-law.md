@@ -2,6 +2,8 @@
 
 Status: candidate Formula Table
 
+Primary family: Formula Table
+
 ## Orientation
 
 Ohm's law describes a linear voltage-current relation for an ohmic material or

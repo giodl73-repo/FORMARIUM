@@ -2,6 +2,10 @@
 
 Status: active
 
+Current milestone: **R2 - Reproducible reference**
+
+Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**
+
 Factorium grows in reviewed layers: first prove the editorial form, then make
 the reference reproducible, then publish a coherent volume, and only then
 scale software and contributors. Milestones are gate-driven rather than tied
@@ -26,23 +30,23 @@ Factorium already has:
 - eleven bounded reference table families;
 - Reference Delta comparisons against dictionaries, thesauri,
   encyclopedias, handbooks, and standards;
-- eight substantial anchor clusters spanning force, geometry, motion,
-  matter/load, work/energy/power, comparative quantities,
-  probability/risk/uncertainty, and thermal quantities;
+- twenty substantial anchor entries spanning quantities, science, information,
+  economics, identity, lifecycle, policy, publication, diagnostics, physical
+  constants, and evidence;
 - Formula Tables covering every V0 relation kind at pilot depth;
-- one Mapping Table that separates affine temperature points from intervals;
+- thirty specialized views across all eleven reference table families;
 - fixed-point `.roles` review, cited research, and immutable founding evidence.
 
-This is an architectural pilot, not yet a balanced encyclopedia or a
-publishable first volume.
+This is a balanced architectural and editorial pilot, not yet a publishable
+first volume.
 
 ## Milestone map
 
 | Milestone | Primary outcome | Exit gate |
 |---|---|---|
 | R0 - Reference foundation | Stable vision, roots, roles, entry graph, table families, and varied pilots | Complete |
-| R1 - Editorial pilot | 25-50 reviewed canonical entries across science, software, organizations, and conceptual analysis | Entry selection, source, cross-reference, and review gates pass |
-| R2 - Reproducible reference | Stable interchange format and generated navigation projections | Canonical entries round-trip; hand-maintained indexes are replaceable |
+| R1 - Editorial pilot | 47 reviewed canonical records and all eleven table families at pilot depth | Complete; see `R1-EDITORIAL-PILOT-AUDIT.md` |
+| R2 - Reproducible reference | Stable interchange format and generated navigation projections | Active; canonical entries must round-trip and hand-maintained indexes become replaceable |
 | R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | General roles remain distinct from mechanisms; narrowing is traceable |
 | R4 - Volume prototype | Coherent, usability-tested table-first book prototype | Readers can find, select, compare, and apply entries without author help |
 | R5 - First substantial volume | Approximately 250 reviewed entries with balanced coverage | Editorial, domain, graph, citation, and publication gates pass |
@@ -204,4 +208,3 @@ Nothing becomes authoritative without visible source and human review.
 6. curate and usability-test the first volume prototype;
 7. expand toward the approximately 250-entry substantial volume;
 8. begin Workbench implementation only against the proven reference contract.
-
