@@ -223,3 +223,12 @@ representation, channel, probability model, estimator, bandwidth, and scale.
 Relations are in `tables/formulas/information-signal-measures.md`; research and
 review are `docs/research/2026-08-14-information-data-signal-noise.md` and
 `INFORMATION-SIGNAL-ROLE-REVIEW.md`.
+
+The cost-price-value-return cluster at
+`tables/entries/cost-price-value-return.md` separates explicit and opportunity
+cost, exchange price, assessed value, utility, holding-period return, and
+present value through owner, perspective, counterfactual, baseline, cash-flow
+boundary, time, compounding, nominal/real basis, and purpose. Relations are in
+`tables/formulas/cost-value-return.md`; research and review are
+`docs/research/2026-08-14-cost-price-value-return.md` and
+`COST-VALUE-RETURN-ROLE-REVIEW.md`.

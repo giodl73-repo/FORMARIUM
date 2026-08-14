@@ -192,6 +192,15 @@ channel, model, estimator, bandwidth, and scale. Its Formula Table is
 `docs/research/2026-08-14-information-data-signal-noise.md` and
 `context/waves/2026-08-13-factorium-vision/INFORMATION-SIGNAL-ROLE-REVIEW.md`.
 
+The cost-price-value-return pilot at
+`tables/entries/cost-price-value-return.md` separates cost, exchange price,
+assessed value, utility, return, and discounting by owner, perspective,
+counterfactual, baseline, cash-flow boundary, dates, rate, compounding,
+nominal/real basis, and purpose. Its Formula Table is
+`tables/formulas/cost-value-return.md`; research and review are
+`docs/research/2026-08-14-cost-price-value-return.md` and
+`context/waves/2026-08-13-factorium-vision/COST-VALUE-RETURN-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

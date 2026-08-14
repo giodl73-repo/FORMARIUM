@@ -58,6 +58,10 @@ until generated from a stable interchange format.
   - semantic information, represented data, carrier signal, task-relative
   noise, Shannon measures, and SNR organized by context, representation,
   channel, model, estimator, and display scale
+- [Cost, price, value, utility, and return](entries/cost-price-value-return.md)
+  - explicit and opportunity cost, exchange price, assessed value, utility,
+  holding-period return, and present value organized by owner, perspective,
+  baseline, cash flow, time, and model
 
 ## Examples
 
@@ -97,6 +101,7 @@ coverage and selection rules.
 | [Periodic and wave quantities](formulas/periodic-wave-quantities.md) | definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, and speed | Separate cycles, radians, temporal/spatial repetition, pattern propagation, and regime |
 | [Electrical quantities](formulas/electrical-quantities.md) | definition, rate, and accumulated transfer | charge, current, potential difference, power, and energy transfer | Separate surfaces, terminals, polarity, direction, rate, and accumulation |
 | [Information and signal measures](formulas/information-signal-measures.md) | definition, expectation, ordered ratio, and logarithmic mapping | self-information, entropy, power SNR, decibels, and sample SNR | Separate semantics, probability models, task-relative components, estimators, and scales |
+| [Cost, value, and return relations](formulas/cost-value-return.md) | accounting definition, normalized return, and time-value mapping | dollar return, holding-period return, present value, future value, and annualization | Separate owner, cash flows, baseline, dates, periods, nominal/real basis, and model |
 
 ## Mapping Tables
 

@@ -112,6 +112,7 @@ probability-risk-uncertainty-use
 
 - [Comparative Quantity](comparative-quantity.md)
 - [Information, Data, Signal, and Noise](information-data-signal-noise.md)
+- [Cost, Price, Value, Utility, and Return](cost-price-value-return.md)
 - [Possibility](../roots/possibility.md)
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
@@ -119,7 +120,6 @@ probability-risk-uncertainty-use
 - [Security](../examples/security.md)
 - likelihood function - `unresolved-candidate`
 - confidence interval - `unresolved-candidate`
-- decision utility - `unresolved-candidate`
 
 ## Sources and provenance
 

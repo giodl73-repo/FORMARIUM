@@ -114,6 +114,7 @@ contains ratio, rate, proportion, percentage, and change relations.
 - [Time](../roots/time.md)
 - [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
 - [Amount, Concentration, and Composition](amount-concentration-composition.md)
+- [Cost, Price, Value, Utility, and Return](cost-price-value-return.md)
 - fraction - `unresolved-candidate`
 
 ## Sources and provenance

@@ -28,6 +28,7 @@ or fame.
 | [Periodic and wave quantities](periodic-wave-quantities.md) | Definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, speed | Cycle, reference, propagation, medium, mode, and regime remain explicit |
 | [Electrical quantities](electrical-quantities.md) | Definition, rate, and accumulated transfer | charge, current, potential difference, power, energy transfer | Surface, terminal, polarity, direction, sign, state, and time remain explicit |
 | [Information and signal measures](information-signal-measures.md) | Definition, expectation, ordered ratio, and logarithmic mapping | self-information, entropy, power SNR, decibels, sample SNR | Semantics, model, task, estimator, bandwidth, base, and scale remain explicit |
+| [Cost, value, and return relations](cost-value-return.md) | Accounting definition, normalized return, and time-value mapping | dollar return, holding-period return, present value, future value, annualization | Owner, cash flows, baseline, dates, periods, nominal/real basis, and model remain explicit |
 
 ## Relation-kind coverage
 
