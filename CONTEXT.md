@@ -18,7 +18,7 @@ features.
 
 `context/waves/2026-08-13-method-foundation/WAVE.md`
 
-Current pulse: **06 - Alias and strong-control bakeoff**
+Current pulse: **07 - Portable result packet**
 
 Pulse 02 froze `specs/SEMANTIC-FACTOR-SCHEMA.md`, including stable identifiers,
 complete assignments, explicit missing/unknown values, role slots, canonical
@@ -50,6 +50,14 @@ declares complete semantic overlap. Frozen identities and boundaries are in
 `specs/COMPOSITIONAL-SPLITS.md`, with review at
 `context/waves/2026-08-13-method-foundation/PULSE-05-ROLE-REVIEW.md`.
 
+Pulse 06 implements the frozen representation comparison in `src/bakeoff.rs`.
+Exact product/packed aliases, typed feature structures, factored one-hot, and
+factored dense controls tie on every systematic holdout; whole-meaning
+codebooks fail only where complete meanings are unseen. The accepted
+classification is `semantic-only`, with canonical evidence and boundaries in
+`docs/STRONG-CONTROL-BAKEOFF-RESULT.md` and review at
+`context/waves/2026-08-13-method-foundation/PULSE-06-ROLE-REVIEW.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -63,6 +71,7 @@ cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
+cargo run --quiet -- bakeoff
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

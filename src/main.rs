@@ -1,4 +1,4 @@
-use factor::{corpus::fixture_summary, SchemaDocument};
+use factor::{bakeoff::bakeoff_summary, corpus::fixture_summary, SchemaDocument};
 use std::env;
 use std::fs;
 use std::process::ExitCode;
@@ -18,6 +18,13 @@ fn run() -> Result<(), String> {
     let command = arguments.next().ok_or_else(|| usage("missing command"))?;
 
     match command.as_str() {
+        "bakeoff" => {
+            if arguments.next().is_some() {
+                return Err(usage("bakeoff accepts no path"));
+            }
+            print!("{}", bakeoff_summary().map_err(|error| error.to_string())?);
+            Ok(())
+        }
         "fixtures" => {
             if arguments.next().is_some() {
                 return Err(usage("fixtures accepts no path"));
@@ -59,6 +66,6 @@ fn read_document(
 
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures"
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor bakeoff"
     )
 }

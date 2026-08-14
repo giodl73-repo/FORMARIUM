@@ -1,5 +1,6 @@
 //! Reference parser and canonical writer for Semantic Factor Schema v1.
 
+pub mod bakeoff;
 pub mod corpus;
 
 use sha2::{Digest, Sha256};

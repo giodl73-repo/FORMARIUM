@@ -67,6 +67,7 @@ organized into small waves and pulses with explicit validation.
 
 - [Semantic Factor Schema v1](specs/SEMANTIC-FACTOR-SCHEMA.md)
 - [Compositional Split Fixtures v1](specs/COMPOSITIONAL-SPLITS.md)
+- [Strong-Control Bakeoff v1](specs/STRONG-CONTROL-BAKEOFF.md)
 
 ## Schema conformance
 
@@ -89,6 +90,18 @@ Inspect the frozen generated corpus and split identities:
 cargo run --quiet -- fixtures
 ```
 
+Run the deterministic strong-control comparison:
+
+```powershell
+cargo run --quiet -- bakeoff
+```
+
+The current result is
+[accepted, semantic-only](docs/STRONG-CONTROL-BAKEOFF-RESULT.md): factor
+preservation beats whole-meaning lookup on the systematic synthetic holdouts,
+while packed aliases, feature structures, one-hot factors, and dense factored
+controls tie.
+
 ## Research
 
 - [Prior art and benchmark custody](docs/research/2026-08-13-prior-art-and-benchmark-custody.md)
@@ -101,6 +114,7 @@ cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-targets
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
+cargo run --quiet -- bakeoff
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```

@@ -44,3 +44,19 @@ fn fixtures_command_reports_both_corpora_and_all_splits() {
         7
     );
 }
+
+#[test]
+fn bakeoff_command_reports_separate_decision_classes() {
+    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .arg("bakeoff")
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.starts_with("factor-bakeoff-v1\n"));
+    assert!(stdout.contains("factorization_useful true"));
+    assert!(stdout.contains("representation_specific false"));
+    assert!(stdout.contains("strong_controls_tie true"));
+    assert!(stdout.contains("classification semantic-only"));
+    assert!(stdout.contains("bakeoff_sha256 "));
+}

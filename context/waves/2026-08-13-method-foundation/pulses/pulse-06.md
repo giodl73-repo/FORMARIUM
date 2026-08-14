@@ -24,4 +24,18 @@ under a frozen decision rule.
 
 ## Status
 
-Pending.
+Complete.
+
+## Outcome
+
+- Added seven representation owners over the same canonical semantic vectors.
+- Enforced exact product/packed alias identity.
+- Retained typed feature structures, factored one-hot, and a fitted factored
+  dense codebook as strong controls.
+- Restricted whole one-hot and whole dense to training-meaning lookup.
+- Scored every frozen corpus and split with explicit exact and per-factor
+  denominators.
+- Kept payload, container, metadata, parameters, temporary bytes, locality,
+  and runtime disposition separate.
+- Froze the `semantic-only` decision and canonical evidence SHA-256.
+- Added `factor bakeoff`, focused tests, a result document, and role review.
