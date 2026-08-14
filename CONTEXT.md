@@ -174,6 +174,15 @@ Formula Table is `tables/formulas/periodic-wave-quantities.md`; research and
 review are `docs/research/2026-08-14-periodic-wave-quantity.md` and
 `context/waves/2026-08-13-factorium-vision/PERIODIC-WAVE-ROLE-REVIEW.md`.
 
+The electrical-quantity pilot at `tables/entries/electrical-quantity.md`
+separates charge, current, potential difference, resistance, electrical power,
+and transferred energy by crossing surface, terminal pair, polarity,
+direction, component state, operating range, sign, and time basis. General
+relations are in `tables/formulas/electrical-quantities.md`; the existing
+Ohm's-law view remains the bounded empirical constitutive owner. Research and
+review are `docs/research/2026-08-14-electrical-quantity-cluster.md` and
+`context/waves/2026-08-13-factorium-vision/ELECTRICAL-QUANTITY-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

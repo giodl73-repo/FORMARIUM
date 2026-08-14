@@ -50,6 +50,10 @@ until generated from a stable interchange format.
   frequency, angular frequency, wavelength, wave number, phase, and wave speed
   organized by cycle, temporal and spatial reference, propagation, medium,
   and regime
+- [Electrical quantity](entries/electrical-quantity.md) - charge, current,
+  potential difference, resistance, electrical power, and transferred energy
+  organized by crossing surface, terminal pair, direction, state, sign, and
+  time basis
 
 ## Examples
 
@@ -87,6 +91,7 @@ coverage and selection rules.
 | [Thermal quantities](formulas/thermal-quantities.md) | equilibrium, response, balance, and constraint | temperature, heat, internal energy, heat capacity, and entropy | Separate state, transfer, response, sign, phase, and reversible path |
 | [Amount, concentration, and composition](formulas/amount-concentration-composition.md) | definition and closure constraint | entity count, amount of substance, concentrations, and composition fractions | Separate entity, component, mixture volume, quantity basis, and state |
 | [Periodic and wave quantities](formulas/periodic-wave-quantities.md) | definition, angular representation, and traveling-wave model | period, frequency, wavelength, phase, wave number, and speed | Separate cycles, radians, temporal/spatial repetition, pattern propagation, and regime |
+| [Electrical quantities](formulas/electrical-quantities.md) | definition, rate, and accumulated transfer | charge, current, potential difference, power, and energy transfer | Separate surfaces, terminals, polarity, direction, rate, and accumulation |
 
 ## Mapping Tables
 

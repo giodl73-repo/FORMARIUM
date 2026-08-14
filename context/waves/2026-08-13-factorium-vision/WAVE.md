@@ -204,3 +204,13 @@ medium, mode, and regime. Relations are in
 `tables/formulas/periodic-wave-quantities.md`; research and review are
 `docs/research/2026-08-14-periodic-wave-quantity.md` and
 `PERIODIC-WAVE-ROLE-REVIEW.md`.
+
+The electrical-quantity cluster at `tables/entries/electrical-quantity.md`
+separates charge, current, potential difference, resistance, electrical power,
+and transferred energy through crossing surface, terminal pair, polarity,
+direction, component state, operating range, sign convention, and time basis.
+General relations are in `tables/formulas/electrical-quantities.md`; the
+bounded empirical Ohm relation remains in `tables/formulas/ohms-law.md`.
+Research and review are
+`docs/research/2026-08-14-electrical-quantity-cluster.md` and
+`ELECTRICAL-QUANTITY-ROLE-REVIEW.md`.

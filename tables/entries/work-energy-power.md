@@ -124,6 +124,7 @@ and mechanical-energy relations.
 - [Motion measure](motion-measure.md)
 - [Matter and load measure](matter-load-measure.md)
 - [Thermal Quantity](thermal-quantity.md)
+- [Electrical Quantity](electrical-quantity.md)
 - [Time](../roots/time.md)
 - [Transformation](../roots/transformation.md)
 - torque - `unresolved-candidate`

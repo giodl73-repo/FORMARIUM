@@ -27,8 +27,8 @@ a universal law of nature.
 | `I` | current through the component | scalar with direction convention | ampere, `A` | `I` | measured flow |
 | `R` | resistance under stated conditions | scalar | ohm, `ohm` | `M L^2 T^-3 I^-2` | constitutive parameter |
 
-Voltage, current, and resistance remain `unresolved-candidate` Factorium
-headwords pending their own entries.
+Voltage, current, and resistance resolve through the canonical
+[Electrical Quantity](../entries/electrical-quantity.md) anchor.
 
 ## Scope and assumptions
 
@@ -88,9 +88,7 @@ ohmic-relation-use
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
 - [State](../roots/state.md)
-- voltage — `unresolved-candidate`
-- current — `unresolved-candidate`
-- resistance — `unresolved-candidate`
+- [Electrical Quantity](../entries/electrical-quantity.md)
 
 ## Sources and provenance
 
@@ -102,4 +100,3 @@ ohmic-relation-use
 Formula authority: established empirical relation for ohmic behavior.
 Factorium representation remains a candidate pending electrical-engineering
 and practitioner review.
-
