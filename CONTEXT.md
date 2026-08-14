@@ -25,7 +25,7 @@ evidence and one tested Factorium domain.
 
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Current pulse: **07E - The Sieve**
+Current pulses: **07E - The Sieve** and **08A - Factor Forge intake**
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
@@ -63,13 +63,14 @@ record is
 `context/waves/2026-08-13-factorium-vision/R3-GUIDES-MAPPINGS-AUDIT.md`.
 R4 now owns a curated table-first volume prototype and reader-usability
 protocol. Completion requires observed reader evidence; author-only review
-cannot satisfy that gate.
+cannot satisfy that gate. This is a release-evidence gate, not a repository
+work stop.
 
 The R4 prototype is ready at
 `volumes/01-structure-quantity-choice/VOLUME.md`. It curates all 78 current
 records into five parts and includes neutral reader tasks, a separate
 evaluator rubric, a privacy-bounded observation template, research, and
-fixed-point readiness review. The current hard gate is external:
+fixed-point readiness review. The current R4 closure gate is external:
 `context/waves/2026-08-13-factorium-vision/R4-PROTOTYPE-READINESS-AUDIT.md`
 must remain incomplete until real target-reader observations are recorded.
 
@@ -77,7 +78,12 @@ The next execution milestone is **R4E - The Sieve**, recorded at
 `context/waves/2026-08-13-factorium-vision/R4E-THE-SIEVE.md`. It recruits and
 runs the first 3-5 external reader sessions, factors observed failures by
 their true owner, repairs critical/major issues, and reruns affected tasks.
-After The Sieve closes R4, R5 begins under the codename **Factor Forge**.
+The Sieve runs concurrently with **R5A - Factor Forge intake**, recorded at
+`context/waves/2026-08-13-factorium-vision/R5A-FACTOR-FORGE-INTAKE.md`.
+The frozen `sieve-01` baseline remains commit `817e779` and tag
+`sieve-01-prototype`; later editorial additions do not count as tested by that
+round. Factor Forge may develop new reviewed batches now, but R5 publication
+still requires dispositioning relevant Sieve findings.
 
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five

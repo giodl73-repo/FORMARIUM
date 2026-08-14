@@ -2,9 +2,11 @@
 
 Status: active
 
-Current milestone: **R4 - Volume prototype**
+Current milestones: **R4 - Volume prototype evidence** and
+**R5 - First substantial volume**
 
-Current execution milestone: **R4E - The Sieve**
+Current execution milestones: **R4E - The Sieve** and
+**R5A - Factor Forge intake**
 
 Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**,
 **R2 - Reproducible reference**, **R3 - Guides and mappings**
@@ -56,8 +58,8 @@ first volume.
 | R1 - Editorial pilot | 47 reviewed canonical records and all eleven table families at pilot depth | Complete; see `R1-EDITORIAL-PILOT-AUDIT.md` |
 | R2 - Reproducible reference | Stable interchange format and generated navigation projections | Complete; see `R2-REPRODUCIBLE-REFERENCE-AUDIT.md` |
 | R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | Complete; see `R3-GUIDES-MAPPINGS-AUDIT.md` |
-| R4 - Volume prototype | Coherent, usability-tested table-first book prototype | External testing; 78-record prototype and protocol are ready, but reader observations are required |
-| R5 - First substantial volume | Approximately 250 reviewed entries with balanced coverage | Editorial, domain, graph, citation, and publication gates pass |
+| R4 - Volume prototype | Coherent, usability-tested table-first book prototype | External testing; the frozen 78-record prototype and protocol are ready, but reader observations are required for R4 closure |
+| R5 - First substantial volume | Approximately 250 reviewed entries with balanced coverage | Editorial expansion may proceed in parallel; publication still requires the R4 evidence gate plus editorial, domain, graph, citation, and publication gates |
 | R6 - Factorium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |
 | R7 - Core reference | Approximately 1,000 canonical headwords across multiple reviewed volumes | Contributor governance and revision custody scale without identity drift |
 | R8 - Mature collection | 3,000-5,000 entries only where justified by repeated use and review | Growth preserves quality, graph integrity, and navigability |
@@ -79,8 +81,9 @@ milestone gates.
 | R7 | **Prime Atlas** | Organize the reusable core headwords and their recursive routes across volumes |
 | R8 | **Grand Factorization** | Grow the mature collection without losing identity, evidence, or navigability |
 
-The active codename is **The Sieve**. Its execution record is
-`context/waves/2026-08-13-factorium-vision/R4E-THE-SIEVE.md`.
+The active codenames are **The Sieve** and **Factor Forge**. Their execution
+records are `context/waves/2026-08-13-factorium-vision/R4E-THE-SIEVE.md` and
+`context/waves/2026-08-13-factorium-vision/R5A-FACTOR-FORGE-INTAKE.md`.
 
 ## R1 - Complete the editorial pilot
 
@@ -196,6 +199,12 @@ the external reader round:
 The Sieve is complete only from observed use. Author or AI simulation cannot
 substitute for reader evidence.
 
+The Sieve gates the claim that the prototype is usability-tested; it does not
+freeze unrelated editorial work. The `sieve-01` test baseline remains fixed at
+commit `817e779` and tag `sieve-01-prototype` while new canonical entries are
+developed separately for R5. Findings from the frozen prototype must be
+forward-applied deliberately rather than silently rewriting its evidence.
+
 ## R5 - First substantial volume
 
 Publish approximately 250 reviewed entries as a coherent reference volume.
@@ -211,6 +220,12 @@ The publication gate requires:
 - a visible maturity model;
 - usability evidence from the volume prototype;
 - no unresolved critical or major role finding.
+
+R5 editorial batches may begin while R4 reader sessions are being scheduled.
+This concurrency prevents external availability from idling the repository,
+but it does not waive either gate: R4 cannot close without observed use, and
+R5 cannot publish until relevant Sieve findings are dispositioned against the
+expanded volume.
 
 ## R6 - Factorium Workbench
 

@@ -1,6 +1,6 @@
 # R4E - The Sieve
 
-Status: next milestone; ready to recruit external readers
+Status: active external evidence track; ready to recruit readers
 
 Parent milestone: R4 - Volume prototype
 
@@ -103,7 +103,9 @@ Publish the observed gate decision:
 - rerun results;
 - remaining limitations.
 
-Only then may R4 complete and **R5 - Factor Forge** begin.
+Only then may R4 complete. Factor Forge editorial work may proceed in parallel,
+but R5 publication cannot pass until relevant Sieve findings are applied and
+dispositioned.
 
 ## Exit gate
 
@@ -119,7 +121,7 @@ Only then may R4 complete and **R5 - Factor Forge** begin.
 These thresholds guide release decisions; they are not statistical population
 claims.
 
-## Current blocker
+## Current state
 
 No external reader observation exists yet. Participant codes `P01`-`P05`,
 round `sieve-01`, and all assigned task rotations are prepared under
@@ -129,3 +131,8 @@ to run the matching worksheet with an available real reader.
 The full `P01`-`P05` rotation, reusable worksheet, recruitment brief, and
 mechanics-only dry run are also ready under
 `volumes/01-structure-quantity-choice/`. None is reader evidence.
+
+External reader availability delays this evidence track but does not block
+the repository. The tested baseline is frozen at commit `817e779` and tag
+`sieve-01-prototype`; parallel R5 work must not be represented as covered by
+this round.

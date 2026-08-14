@@ -40,6 +40,7 @@ recorded in `ROADMAP-ROLE-REVIEW.md`.
 | 05 | Cross-paradigm assignment tables | complete | Published 66 contextual many-to-many assignments across OO, Rust, functional, relational, cloud-native, and organizational slices. |
 | 06 | Factor Guide method | complete | Published the guide contract plus separately reviewed Rust authorization and laboratory concentration pilots. |
 | 07E | The Sieve - external reader validation | ready to recruit | Run 3-5 observed reader sessions, factor failures by owner, repair repeated blockers, and rerun affected tasks. |
+| 08A | Factor Forge intake | in progress | Expand the reviewed canonical corpus in versioned editorial batches while the frozen Sieve baseline awaits external sessions. |
 
 ## Success criteria
 
