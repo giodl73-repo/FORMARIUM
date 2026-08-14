@@ -121,5 +121,7 @@ claims.
 
 ## Current blocker
 
-No external reader observation exists yet. The next concrete action is to
-schedule the first reader session and assign participant code `P01`.
+No external reader observation exists yet. Participant code `P01`, round
+`sieve-01`, and the A/D/F/G task rotation are prepared at
+`volumes/01-structure-quantity-choice/sessions/P01.md`. The next concrete
+action is to run that worksheet with an available real reader.

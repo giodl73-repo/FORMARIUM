@@ -9,10 +9,10 @@ author simulation, AI role review, or guessed behavior.
 
 | Field | Value |
 |---|---|
-| Round ID | pending |
+| Round ID | `sieve-01` |
 | Dates | pending |
 | Moderator | pending |
-| Prototype commit | pending |
+| Prototype commit | `817e779` |
 | Completed participants | 0 |
 | Practitioner backgrounds represented | 0 |
 | Accessibility perspective represented | pending |
@@ -23,6 +23,7 @@ Use de-identified codes only.
 
 | Participant | Relevant background | Device/context voluntarily shared | Tasks |
 |---|---|---|---|
+| `P01` | pending participant response | pending | A, D, F, G |
 
 ## Task observations
 
