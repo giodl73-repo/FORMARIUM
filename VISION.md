@@ -52,6 +52,13 @@ relations, estimators, and algorithms. Factorium adds conceptual navigation
 around an equation; it does not derive or supersede the equation's domain
 authority.
 
+Factorium also supports a bounded family of specialized table views:
+Reference Value, Mapping, Decision, Transition, Constraint, Procedure,
+Diagnostic, Scale, and Evidence Tables. These answer different lookup
+questions while retaining one canonical entry, sense, source, maturity, and
+relationship graph. Specialized views extend Factorium's utility; they do not
+turn it into an arbitrary collection of tables.
+
 ## Editorial form
 
 Factorium is table-first, not essay-first.

@@ -69,6 +69,16 @@ broad subject coverage. Research and review are
 `docs/research/2026-08-14-remaining-formula-relation-kinds.md` and
 `context/waves/2026-08-13-factorium-vision/FORMULA-RELATION-KINDS-ROLE-REVIEW.md`.
 
+Factorium now has a candidate umbrella architecture for eleven reference table
+families at `specs/REFERENCE-TABLE-FAMILIES.md`. Factor, Formula, Reference
+Value, Mapping, Decision, Transition, Constraint, Procedure, Diagnostic,
+Scale, and Evidence Tables answer distinct governing questions while sharing
+one canonical entry graph. Mapping Tables are the first new prototype:
+`tables/mappings/temperature-scales.md` separates exact affine point
+conversion from interval scaling. Research and review are
+`docs/research/2026-08-14-reference-table-families.md` and
+`context/waves/2026-08-13-factorium-vision/REFERENCE-TABLE-FAMILIES-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

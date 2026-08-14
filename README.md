@@ -8,6 +8,9 @@ problem, distinguish its senses, compare several credible factorizations,
 choose a pivot, and assign supporting factors to suitable structural
 mechanisms. Specialized **Formula Tables** preserve major sourced equations
 with their symbols, units, dimensions, assumptions, and conceptual structure.
+Additional reference families cover values, mappings, decisions, transitions,
+constraints, procedures, diagnostics, scales, and evidence while sharing one
+canonical entry graph.
 
 Factorium combines the lookup form of a dictionary, the alternatives of a
 thesaurus, and the compact utility of an engineering handbook. It does not
@@ -18,6 +21,8 @@ Read the [grand vision](VISION.md), the draft
 [Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), the specialized
 [Formula Table format](specs/FORMULA-TABLE-ENTRY.md), and the first
 [environment example](tables/examples/environment.md).
+The candidate [reference table family architecture](specs/REFERENCE-TABLE-FAMILIES.md)
+defines how specialized views remain one coherent reference.
 
 The [entry graph](specs/FACTORIUM-ENTRY-GRAPH.md) defines progressive
 decomposition, typed joins, relative primes and composites, notation, and
@@ -34,6 +39,8 @@ security, environment structure, and sourced formulas.
 - **Factorium books** — the enduring reference;
 - **Factor Tables** — canonical entries and competing decompositions;
 - **Formula Tables** — sourced mathematical relations with scope and units;
+- **specialized reference tables** — mappings, decisions, transitions,
+  constraints, procedures, diagnostics, scales, values, and evidence;
 - **Factor Guides** — narrowed recommendations for a particular problem;
 - **evidence and reviews** — provenance, maturity, and limitations;
 - **software and experiments** — auxiliary construction and validation tools.

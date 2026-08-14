@@ -17,6 +17,8 @@ reference. They are not the top-level product.
 - Name: **Factorium**
 - Reference unit: **Factor Table**
 - Specialized mathematical unit: **Formula Table**
+- Specialized reference views: **Value, Mapping, Decision, Transition,
+  Constraint, Procedure, Diagnostic, Scale, and Evidence Tables**
 - Narrowed output: **Factor Guide**
 - Supporting software: **Factorium Workbench**
 - Founding research method: **Factor-Preserving Semantic Encoding**
@@ -34,6 +36,8 @@ reference. They are not the top-level product.
 8. Keep software auxiliary and make AI suggestions reviewable.
 9. Preserve null results and the founding research evidence.
 10. Keep mathematical equality distinct from semantic decomposition.
+11. Add specialized table families only when they answer a distinct recurring
+    lookup question and retain one canonical entry authority.
 
 ## Waves
 

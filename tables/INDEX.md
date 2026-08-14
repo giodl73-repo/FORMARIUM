@@ -8,6 +8,9 @@ until generated from a stable interchange format.
 
 ## Foundation
 
+- [Reference Table Families](foundations/REFERENCE-TABLE-FAMILIES.md) - eleven
+  specialized views for structure, quantity, values, mapping, choice, change,
+  validity, procedure, diagnosis, scale, and evidence
 - [Root Table](foundations/ROOT-TABLE.md) - twelve recurring coordinates, five
   overlapping entry families, and ten reusable decomposition grammars
 - [Factor Role Table](foundations/FACTOR-ROLES.md) - eleven structural jobs
@@ -40,6 +43,12 @@ coverage and selection rules.
 | [General accounting balance](formulas/general-accounting-balance.md) | conservation or balance | `accumulation = input - output + generation - consumption` | System boundaries distinguish balances from slogans |
 | [Newton's method](formulas/newtons-method.md) | algorithm or recurrence | `x_(k+1) = x_k - f(x_k)/f'(x_k)` | Convergence claims require local conditions |
 | [Event probability range](formulas/probability-range.md) | constraint | `0 <= P(A) <= 1` | A probability requires a probability model |
+
+## Mapping Tables
+
+| Entry | Mapping kind | Principal lesson |
+|---|---|---|
+| [Temperature scale conversion](mappings/temperature-scales.md) | exact affine conversion | Point temperatures and intervals require different transformations |
 
 ## Composite entries
 

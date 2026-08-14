@@ -108,3 +108,11 @@ probability range. Every Formula Table V0 relation kind is represented at
 pilot depth. Research is
 `docs/research/2026-08-14-remaining-formula-relation-kinds.md`; review is
 `FORMULA-RELATION-KINDS-ROLE-REVIEW.md`.
+
+The reference architecture now defines eleven bounded table families under one
+canonical entry graph. Mapping Tables are the first post-formula prototype;
+`tables/mappings/temperature-scales.md` distinguishes affine point conversion
+from interval scaling. Architecture research is
+`docs/research/2026-08-14-reference-table-families.md`; specifications are
+`specs/REFERENCE-TABLE-FAMILIES.md` and `specs/MAPPING-TABLE-ENTRY.md`; review
+is `REFERENCE-TABLE-FAMILIES-ROLE-REVIEW.md`.

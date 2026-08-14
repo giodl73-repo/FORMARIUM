@@ -32,6 +32,7 @@ artifact, and a closure condition.
 | `assurance/cross-paradigm-mapping-auditor.md` | Cross-Paradigm Mapping Auditor | General factor roles vs. one paradigm's mechanisms |
 | `assurance/domain-source-reviewer.md` | Domain Source Reviewer | Useful synthesis vs. unsupported specialized guidance |
 | `assurance/equation-units-auditor.md` | Equation & Units Auditor | Compact formulas vs. lost operators, dimensions, units, or scope |
+| `assurance/mapping-integrity-auditor.md` | Mapping Integrity Auditor | Convenient correspondence vs. hidden direction, loss, domain, or version |
 
 ## Stakeholders
 
