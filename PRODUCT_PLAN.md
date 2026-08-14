@@ -57,6 +57,10 @@ Sequence:
 Define the grand vision, Factor Table grammar, general factor-role vocabulary,
 cross-paradigm mappings, pilot entries, and Factor Guide method.
 
+Provisional scale: 25–50 pilot entries, about 250 entries for the first
+substantial volume, about 1,000 canonical headwords for the core reference,
+and 3,000–5,000 only after mature editorial validation.
+
 ### Wave 4: First Factorium volume
 
 Assemble and usability-test a coherent table-first reference across several

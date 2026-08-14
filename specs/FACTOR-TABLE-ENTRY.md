@@ -101,6 +101,26 @@ visible.
 - Separate factor discovery from mechanism assignment.
 - Separate descriptive recurrence from normative recommendation.
 
+## Provisional size classes
+
+These budgets remain provisional until a 25-entry pilot is measured:
+
+| Class | Words | Senses | Candidate rows |
+|---|---:|---:|---:|
+| Brief | 120–250 | 1 | 3–6 |
+| Standard | 250–600 | 1–3 | 6–15 total |
+| Anchor | 600–1,500 | 2–6 | 12–30 total |
+
+Additional defaults:
+
+- orientation: 40–120 words;
+- constraints: 3–7 bullets;
+- cross-references: 3–10;
+- anchor entries: no more than roughly 10% of a volume.
+
+Collection scale and comparator evidence are documented in
+`docs/research/2026-08-13-reference-scale-and-entry-size.md`.
+
 ## Quality questions
 
 An entry review asks:

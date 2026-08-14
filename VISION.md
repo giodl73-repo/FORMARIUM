@@ -107,6 +107,17 @@ The exact volume structure will evolve, but likely families include:
 Entries may appear in more than one reading path through cross-references, but
 each canonical entry has one stable identity and revision history.
 
+The provisional scale is:
+
+- 25–50 entries for the editorial pilot;
+- about 250 entries for the first substantial volume;
+- about 1,000 canonical headwords for the core multi-volume reference;
+- 3,000–5,000 only as a mature reviewed collection.
+
+Factorium is therefore smaller than a general dictionary or encyclopedia. Its
+headwords are reusable decomposition-bearing concepts and situations, not
+every word or named entity.
+
 ## Software's role
 
 Software may:

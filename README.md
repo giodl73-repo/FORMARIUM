@@ -160,6 +160,7 @@ See [independent packet onboarding](docs/ONBOARDING.md).
 
 - [Prior art and benchmark custody](docs/research/2026-08-13-prior-art-and-benchmark-custody.md)
 - [Role binding and ambiguity research](docs/research/2026-08-13-role-binding-and-ambiguity.md)
+- [Reference scale and Factorium entry size](docs/research/2026-08-13-reference-scale-and-entry-size.md)
 
 ## Validation
 

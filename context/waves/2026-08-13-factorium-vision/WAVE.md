@@ -46,3 +46,10 @@ about credible alternatives, and disciplined about evidence and uncertainty.
 - existing FACTOR packets remain immutable founding evidence;
 - software remains auxiliary to the reference;
 - `.roles` has no unresolved critical or major finding.
+
+## Scale baseline
+
+Competitive research sets provisional targets of 25–50 pilot entries, about
+250 entries for the first volume, about 1,000 core headwords, and 3,000–5,000
+only for a mature reviewed reference. Standard entries target 250–600 words.
+See `docs/research/2026-08-13-reference-scale-and-entry-size.md`.

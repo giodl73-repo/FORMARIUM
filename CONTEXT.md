@@ -32,6 +32,13 @@ Factorium roles for factorization method, lexicography, reference architecture,
 cross-paradigm mapping, and practitioner lookup. Its fixed-point review is
 `context/waves/2026-08-13-factorium-vision/PULSE-01-ROLE-REVIEW.md`.
 
+Reference-scale research compares dictionaries, thesauri, encyclopedias, and
+pattern catalogs at
+`docs/research/2026-08-13-reference-scale-and-entry-size.md`. The provisional
+targets are 25–50 pilot entries, about 250 entries for the first volume, about
+1,000 core headwords, and 3,000–5,000 only as a mature reviewed collection.
+Brief, standard, and anchor entry classes preserve table-first lookup.
+
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.
 
