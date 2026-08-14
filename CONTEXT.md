@@ -85,6 +85,15 @@ The frozen `sieve-01` baseline remains commit `817e779` and tag
 round. Factor Forge may develop new reviewed batches now, but R5 publication
 still requires dispositioning relevant Sieve findings.
 
+Factor Forge F1 has begun with
+`tables/entries/system-composition-dependency.md`, separating system, system
+element, component, capability, boundary, environment, interface, and
+directional dependency. The linked
+`tables/constraints/system-composition-integrity.md` preserves membership,
+part-whole, interaction, and reliance invariants. Research and fixed-point
+review are `docs/research/2026-08-14-system-composition-dependency.md` and
+`context/waves/2026-08-13-factorium-vision/SYSTEM-COMPOSITION-ROLE-REVIEW.md`.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.

@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 20 anchor entries, 121 senses, 193
-ordered factors, and 31 specialized views. It is strong in foundational
+The canonical corpus currently contains 21 anchor entries, 129 senses, 203
+ordered factors, and 32 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -73,8 +73,18 @@ Each batch must:
 - close critical and major `.roles` findings;
 - preserve a clean distinction between tested R4 content and new R5 content.
 
-## First action
+## F1 first slice
 
-Begin F1 with a source-backed system-composition cluster. Use it to determine
-whether the current interchange can express part-whole, offered capability,
-interaction boundary, and dependency direction without new schema fields.
+The source-backed system-composition cluster now separates system, system
+element, component, capability, boundary, environment, interface, and
+dependency. Its linked Constraint Table makes membership, part-whole
+semantics, capability conditions, interface contracts, and dependency
+direction explicit.
+
+Research concluded that V0 can preserve this slice through ordered senses,
+factors, and a linked specialized view. Richer machine-queryable relation
+payloads remain deferred behind a future versioned compatibility boundary.
+
+Next: complete F1 with narrower entries only where review shows that subsystem,
+service, contract, or architecture cannot remain visible unresolved
+candidates.

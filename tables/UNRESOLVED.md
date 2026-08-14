@@ -47,6 +47,10 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/state-event-transition-process-lifecycle.md` | 124 | workflow - `unresolved-candidate` |
 | `tables/entries/state-event-transition-process-lifecycle.md` | 125 | compensation - `unresolved-candidate` |
 | `tables/entries/state-event-transition-process-lifecycle.md` | 126 | concurrency - `unresolved-candidate` |
+| `tables/entries/system-composition-dependency.md` | 155 | architecture - `unresolved-candidate` |
+| `tables/entries/system-composition-dependency.md` | 156 | subsystem - `unresolved-candidate` |
+| `tables/entries/system-composition-dependency.md` | 157 | service - `unresolved-candidate` |
+| `tables/entries/system-composition-dependency.md` | 158 | contract - `unresolved-candidate` |
 | `tables/entries/thermal-quantity.md` | 128 | phase - `unresolved-candidate` |
 | `tables/entries/thermal-quantity.md` | 129 | thermodynamic system - `unresolved-candidate` |
 | `tables/entries/work-energy-power.md` | 130 | torque - `unresolved-candidate` |

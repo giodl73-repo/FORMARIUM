@@ -2,7 +2,7 @@
 
 Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Corpus identity: `f11fb8ee8ec9a786df0aec828af3c01b6384f8d6e8527921857ae50d71c1023d`
+Corpus identity: `e1964b0746201af83ad1cf357786bc84cca7ef7d7ec911bf42991fbefbbec1fe`
 
 ## Canonical Factor Table entries
 
@@ -24,6 +24,7 @@ Corpus identity: `f11fb8ee8ec9a786df0aec828af3c01b6384f8d6e8527921857ae50d71c102
 - [Policy, Rule, Constraint, Decision, and Exception](entries/policy-rule-constraint-decision-exception.md) — Policy states governing intent; rules operationalize conditions and outputs or actions; constraints define valid, required, or forbidden situations; decisions derive conclusions from inputs and governing logic; exceptions are authorized, bounded deviations. Mixing them causes policy prose, validation, choice, enforcement, and override records to compete for one field. (`governance`, `candidate`)
 - [Probability, Risk, and Uncertainty](entries/probability-risk-uncertainty.md) — Probability describes events inside a model. Odds re-express probability against its complement. Risk adds adverse consequences and decision context. Uncertainty describes incomplete knowledge; measurement uncertainty is one specialized, method-governed form. (`quantities`, `candidate`)
 - [State, Event, Transition, Process, and Lifecycle](entries/state-event-transition-process-lifecycle.md) — A state is a condition or active configuration; an event is an occurrence; a transition changes state when triggers and guards permit; a process organizes activities and flow; a lifecycle selects meaningful stages across an entity's existence. Status lists often mix all five and therefore hide causes, validity, and progression. (`systems`, `candidate`)
+- [System Composition, Capability, Interface, and Dependency](entries/system-composition-dependency.md) — A system is a selected whole whose interacting elements together exhibit behavior or meaning; engineered and organizational systems are commonly organized toward one or more purposes. System element, component, capability, boundary, environment, interface, and dependency keep membership, constitution, ability, inclusion, outside context, interaction, and directional reliance distinct. (`systems`, `candidate`)
 - [Thermal Quantity](entries/thermal-quantity.md) — Temperature, heat, internal energy, heat capacity, and entropy describe different parts of thermal behavior. Temperature and internal energy are state quantities; heat is boundary transfer; heat capacity describes response under conditions; entropy is a state quantity governing thermal accounting and irreversibility. (`science`, `candidate`)
 - [Work, Energy, and Power](entries/work-energy-power.md) — Work, energy, and power are connected but answer different questions. Work tracks a transfer through a mechanical interaction, energy is a system quantity expressed in multiple forms, and power tracks how quickly transfer occurs. (`science`, `candidate`)
 
@@ -71,6 +72,7 @@ Corpus identity: `f11fb8ee8ec9a786df0aec828af3c01b6384f8d6e8527921857ae50d71c102
 ## Constraint Table views
 
 - [Policy Constraint Table](constraints/policy-constraints.md) — Version, evidence, authority, bounded exceptions, output separation, enforcement, and audit remain explicit policy-evaluation invariants. (owner: `policy-rule-constraint-decision-exception`, senses: `constraint`)
+- [System Composition Integrity Constraints](constraints/system-composition-integrity.md) — Preserves viewpoint, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and whole-level behavior as distinct system-composition obligations. (owner: `system-composition-dependency`, senses: `system`, `system-element`, `component`, `capability`, `boundary`, `environment`, `interface`, `dependency`)
 
 ## Procedure Table views
 

@@ -42,6 +42,15 @@ recorded in `ROADMAP-ROLE-REVIEW.md`.
 | 07E | The Sieve - external reader validation | ready to recruit | Run 3-5 observed reader sessions, factor failures by owner, repair repeated blockers, and rerun affected tasks. |
 | 08A | Factor Forge intake | in progress | Expand the reviewed canonical corpus in versioned editorial batches while the frozen Sieve baseline awaits external sessions. |
 
+Factor Forge's first F1 slice is the system-composition cluster at
+`tables/entries/system-composition-dependency.md`, with integrity constraints
+at `tables/constraints/system-composition-integrity.md`. It separates system,
+member, constituent, capability, boundary, environment, interface, and
+directional dependency while leaving richer typed relation payloads behind a
+future interchange boundary. Research and review are
+`docs/research/2026-08-14-system-composition-dependency.md` and
+`SYSTEM-COMPOSITION-ROLE-REVIEW.md`.
+
 ## Success criteria
 
 - a practitioner can find a relevant sense and alternatives within minutes;

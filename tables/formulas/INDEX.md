@@ -2,7 +2,7 @@
 
 Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Corpus identity: `f11fb8ee8ec9a786df0aec828af3c01b6384f8d6e8527921857ae50d71c1023d`
+Corpus identity: `e1964b0746201af83ad1cf357786bc84cca7ef7d7ec911bf42991fbefbbec1fe`
 
 | Formula view | Canonical owner | Sense coverage | Purpose |
 |---|---|---|---|

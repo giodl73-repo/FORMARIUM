@@ -318,6 +318,26 @@ factor concurrency-and-ordering-semantics | concurrency and ordering semantics
 factor failure-cancellation-retry-and-compensation | failure, cancellation, retry, and compensation
 factor authority-provenance-and-observation-time | authority, provenance, and observation time
 end-entry
+entry system-composition-dependency | System Composition, Capability, Interface, and Dependency | systems | candidate | tables/entries/system-composition-dependency.md | A system is a selected whole whose interacting elements together exhibit behavior or meaning; engineered and organizational systems are commonly organized toward one or more purposes. System element, component, capability, boundary, environment, interface, and dependency keep membership, constitution, ability, inclusion, outside context, interaction, and directional reliance distinct.
+sense system | system
+sense system-element | system element
+sense component | component
+sense capability | capability
+sense boundary | boundary
+sense environment | environment
+sense interface | interface
+sense dependency | dependency
+factor system-of-interest-behavior-or-purpose | system of interest, behavior, or purpose
+factor selected-boundary-and-viewpoint | selected boundary and viewpoint
+factor elements-and-membership-rule | elements and membership rule
+factor part-whole-and-lifecycle-semantics | part-whole and lifecycle semantics
+factor capabilities-and-required-conditions | capabilities and required conditions
+factor interfaces-and-interaction-contracts | interfaces and interaction contracts
+factor dependency-source-target-and-direction | dependency source, target, and direction
+factor environment-and-external-actors | environment and external actors
+factor behavior-state-and-emergent-properties | behavior, state, and emergent properties
+factor authority-provenance-and-effective-time | authority, provenance, and effective time
+end-entry
 entry thermal-quantity | Thermal Quantity | science | candidate | tables/entries/thermal-quantity.md | Temperature, heat, internal energy, heat capacity, and entropy describe different parts of thermal behavior. Temperature and internal energy are state quantities; heat is boundary transfer; heat capacity describes response under conditions; entropy is a state quantity governing thermal accounting and irreversibility.
 sense temperature | temperature
 sense thermal-equilibrium | thermal equilibrium
@@ -355,6 +375,8 @@ factor time-interval-or-instant | time interval or instant
 factor unit-system | unit system
 end-entry
 view constraint-policy-constraints | policy-rule-constraint-decision-exception | constraint | constraint | Policy Constraint Table | tables/constraints/policy-constraints.md | Version, evidence, authority, bounded exceptions, output separation, enforcement, and audit remain explicit policy-evaluation invariants.
+end-view
+view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,capability,boundary,environment,interface,dependency | constraint | System Composition Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves viewpoint, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and whole-level behavior as distinct system-composition obligations.
 end-view
 view decision-policy-decision | policy-rule-constraint-decision-exception | decision | decision | Policy Decision Table | tables/decisions/policy-decision.md | Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate.
 end-view
