@@ -49,6 +49,12 @@ composite with eight linked factor entries. Review is recorded at
 The graph pilot also adds a 50–150-word prime entry class so base terms resolve
 without artificial exposition.
 
+The varied pilot set is indexed at `tables/INDEX.md`. It tests hierarchy pivots,
+derived incident severity, policy-derived retention, deployment identity, and
+work prioritization alongside environment and security. Its review is
+`context/waves/2026-08-13-factorium-vision/PILOT-EXAMPLES-ROLE-REVIEW.md`;
+all entries remain candidates pending cited domain review.
+
 The completed method-foundation wave remains at
 `context/waves/2026-08-13-method-foundation/WAVE.md`.
 

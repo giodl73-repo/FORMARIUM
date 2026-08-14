@@ -23,6 +23,10 @@ faceted search. The [security example](tables/examples/security.md) leads to an
 [eight-factor access-control request](tables/composites/access-control-request.md)
 whose factors each have their own entries.
 
+Browse the [pilot Factor Table index](tables/INDEX.md) for examples covering
+type design, incident severity, retention, deployments, prioritization,
+security, and environment structure.
+
 ## Primary deliverables
 
 - **Factorium books** — the enduring reference;

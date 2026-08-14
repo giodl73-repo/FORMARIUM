@@ -61,3 +61,11 @@ index, and search projections. Factor count and recursive depth remain
 separate; prime/composite roles are view-relative; every published factor
 resolves to a canonical entry or visible candidate. The first graph example is
 an eight-factor access-control request under the broader security entry.
+
+## Early pilot set
+
+Before formal Pulse 03 promotion, the repository carries candidate examples for
+OO type design, incident severity, data retention, deployment identity, and
+work prioritization. They test pivots, constraints, derived decisions,
+multiword headwords, graph links, and table-first scanability. See
+`tables/INDEX.md`.
