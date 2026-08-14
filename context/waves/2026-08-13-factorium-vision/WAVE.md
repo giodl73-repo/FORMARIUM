@@ -148,3 +148,11 @@ loaded area, and averaging level. Relations are in
 `tables/formulas/matter-load-measures.md`; research and review are
 `docs/research/2026-08-14-matter-load-measure-cluster.md` and
 `MATTER-LOAD-MEASURE-ROLE-REVIEW.md`.
+
+The work-energy-power cluster at `tables/entries/work-energy-power.md`
+separates mechanical transfer, system energy, kinetic and potential terms, and
+transfer rate through system, path, frame, potential reference, included
+forms, and time basis. Relations are in
+`tables/formulas/mechanical-work-energy-power.md`; research and review are
+`docs/research/2026-08-14-work-energy-power-cluster.md` and
+`WORK-ENERGY-POWER-ROLE-REVIEW.md`.

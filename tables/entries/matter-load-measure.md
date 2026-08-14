@@ -111,6 +111,7 @@ contains the quantity contracts, weight, density, and pressure relations.
 - [Force](force.md)
 - [Geometric measure](geometric-measure.md)
 - [Motion measure](motion-measure.md)
+- [Work, Energy, and Power](work-energy-power.md)
 - [Boundary](../roots/boundary.md)
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
@@ -131,4 +132,3 @@ contains the quantity contracts, weight, density, and pressure relations.
 
 Comparator access date: 2026-08-14. Quantity distinctions and SI units are
 established within source scope; Factorium organization remains `candidate`.
-

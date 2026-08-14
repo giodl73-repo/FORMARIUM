@@ -116,6 +116,14 @@ and review are
 `docs/research/2026-08-14-matter-load-measure-cluster.md` and
 `context/waves/2026-08-13-factorium-vision/MATTER-LOAD-MEASURE-ROLE-REVIEW.md`.
 
+The work-energy-power pilot at `tables/entries/work-energy-power.md` separates
+mechanical work, system energy, kinetic and potential energy, and power by
+transfer/state/rate role, system, path, frame, potential zero, and time basis.
+The linked Formula Table is
+`tables/formulas/mechanical-work-energy-power.md`; research and review are
+`docs/research/2026-08-14-work-energy-power-cluster.md` and
+`context/waves/2026-08-13-factorium-vision/WORK-ENERGY-POWER-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

@@ -104,6 +104,7 @@ contains structured or linked knowledge.
 - [Constraint](../roots/constraint.md)
 - [Relation](../roots/relation.md)
 - [Transformation](../roots/transformation.md)
+- [Work, Energy, and Power](work-energy-power.md)
 - coercion — `unresolved-candidate`
 - influence — `unresolved-candidate`
 - organization — `unresolved-candidate`
@@ -127,4 +128,3 @@ contains structured or linked knowledge.
 Comparator access date: 2026-08-14. Physical relation authority is
 established within its source scope. All five Factorium sense structures remain
 `candidate`; non-physical senses require specialist source review.
-

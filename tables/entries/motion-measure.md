@@ -83,6 +83,7 @@ contains average, instantaneous, and constant-acceleration relations.
 
 - [Force](force.md)
 - [Matter and Load Measure](matter-load-measure.md)
+- [Work, Energy, and Power](work-energy-power.md)
 - [Time](../roots/time.md)
 - [Transformation](../roots/transformation.md)
 - path — `unresolved-candidate`

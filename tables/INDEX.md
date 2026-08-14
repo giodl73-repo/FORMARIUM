@@ -30,6 +30,9 @@ until generated from a stable interchange format.
 - [Matter and load measure](entries/matter-load-measure.md) - mass, weight,
   density, and pressure organized by quantity kind, environment, volume, and
   area normalization
+- [Work, energy, and power](entries/work-energy-power.md) - mechanical
+  transfer, system energy, kinetic and potential terms, and transfer rate
+  organized by role, system, path, frame, and time
 
 ## Examples
 
@@ -61,6 +64,7 @@ coverage and selection rules.
 | [Common geometric measures](formulas/common-geometric-measures.md) | definition and derived shape formulas | perimeter, area, surface area, and volume by shape | Select measured subset and dimension before formula |
 | [Kinematics motion measures](formulas/kinematics-motion-measures.md) | definition, derivative, and conditional equations | distance, displacement, speed, velocity, and acceleration | Select path/endpoints, scalar/vector, frame, and rate order |
 | [Matter and load measures](formulas/matter-load-measures.md) | base quantity, definition, and scoped physical model | mass, weight, density, and pressure | Select quantity kind, boundary, gravity, and normalization basis |
+| [Mechanical work, energy, and power](formulas/mechanical-work-energy-power.md) | definition, theorem, and scoped balance | work, kinetic and potential energy, mechanical energy, and power | Separate transfer, state, system, path, frame, and rate |
 
 ## Mapping Tables
 

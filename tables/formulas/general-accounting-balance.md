@@ -91,6 +91,7 @@ balance-use
 - [Boundary](../roots/boundary.md)
 - [State](../roots/state.md)
 - [Time](../roots/time.md)
+- [Work, Energy, and Power](../entries/work-energy-power.md)
 - conservation — `unresolved-candidate`
 - flow — `unresolved-candidate`
 
@@ -104,4 +105,3 @@ balance-use
 Formula authority: established engineering accounting pattern. Factorium
 representation remains a candidate pending engineering and practitioner
 review.
-
