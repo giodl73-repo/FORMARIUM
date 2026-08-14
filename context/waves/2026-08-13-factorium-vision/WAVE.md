@@ -37,9 +37,9 @@ recorded in `ROADMAP-ROLE-REVIEW.md`.
 | 02 | General factor-role vocabulary | complete | Established the Root and Factor Role Tables, separating twelve subject coordinates from eleven view-relative structural jobs and domain mechanisms. |
 | 03 | Pilot Factor Tables | complete | Delivered 47 canonical records, 20 anchors, 30 specialized views, and all eleven families at pilot depth. |
 | 04 | Reproducible reference | complete | Froze a 20-entry, 121-sense, 193-factor, 30-view canonical corpus with deterministic validation and generated catalogs. |
-| 05 | Cross-paradigm assignment tables | active | Map general factor roles into OO, Rust, functional, database, cloud, and organizational mechanisms without forcing equivalence. |
-| 06 | Factor Guide method | pending | Define how examples and constraints narrow general tables into a reviewed problem-specific guide. |
-| 07 | First volume prototype | pending | Assemble and usability-test a coherent table-first reference volume. |
+| 05 | Cross-paradigm assignment tables | complete | Published 66 contextual many-to-many assignments across OO, Rust, functional, relational, cloud-native, and organizational slices. |
+| 06 | Factor Guide method | complete | Published the guide contract plus separately reviewed Rust authorization and laboratory concentration pilots. |
+| 07 | First volume prototype | active | Assemble and usability-test a coherent table-first reference volume. |
 
 ## Success criteria
 

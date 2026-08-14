@@ -25,7 +25,7 @@ evidence and one tested Factorium domain.
 
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Current pulse: **05 - Cross-paradigm assignment tables**
+Current pulse: **07 - First volume prototype**
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
@@ -52,6 +52,18 @@ specification, fixed-point review, and the gate record are
 and
 `context/waves/2026-08-13-factorium-vision/R2-REPRODUCIBLE-REFERENCE-AUDIT.md`.
 R3 now owns cross-paradigm Mapping views and two traceable Factor Guides.
+
+Roadmap R3 is complete. The
+`tables/mappings/factor-role-mechanisms.md` view maps eleven roles across six
+bounded paradigm slices with 66 contextual, many-to-many assignment rows.
+`guides/rust-access-control-evaluation.md` and
+`guides/aqueous-solution-amount-concentration.md` prove the Factor Guide method
+in materially different domains with separate fixed-point reviews. The gate
+record is
+`context/waves/2026-08-13-factorium-vision/R3-GUIDES-MAPPINGS-AUDIT.md`.
+R4 now owns a curated table-first volume prototype and reader-usability
+protocol. Completion requires observed reader evidence; author-only review
+cannot satisfy that gate.
 
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five

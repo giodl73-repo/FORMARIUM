@@ -11,6 +11,11 @@ Neither generated file should be edited by hand.
 This curated index owns only supporting navigation that is not duplicated in
 the canonical catalog.
 
+## Factor Guides
+
+- [Rust Access-Control Evaluation](../guides/rust-access-control-evaluation.md)
+- [Aqueous Solution Amount Concentration](../guides/aqueous-solution-amount-concentration.md)
+
 ## Foundation
 
 - [Reference Table Families](foundations/REFERENCE-TABLE-FAMILIES.md) - eleven

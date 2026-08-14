@@ -33,7 +33,9 @@ whose factors each have their own entries.
 Browse the [generated reference catalog](tables/CATALOG.md) for canonical
 anchors and specialized views. The [curated table index](tables/INDEX.md)
 retains examples, foundations, roots, roles, primes, and composites without
-copying the generated catalog.
+copying the generated catalog. The [Factor Guide pilots](guides/INDEX.md)
+demonstrate traceable narrowing in software security and laboratory
+measurement.
 
 ## Primary deliverables
 
@@ -92,6 +94,7 @@ explicit validation.
 
 - [Factor Table Entry Format V0](specs/FACTOR-TABLE-ENTRY.md)
 - [Factorium Entry Graph V0](specs/FACTORIUM-ENTRY-GRAPH.md)
+- [Factor Guide Format V0](specs/FACTOR-GUIDE.md)
 
 ## Founding research specifications
 
