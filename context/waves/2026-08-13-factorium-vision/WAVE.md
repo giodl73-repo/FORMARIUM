@@ -173,3 +173,11 @@ control state, measurand, and coverage basis. Relations are in
 `tables/formulas/probability-risk-uncertainty.md`; research and review are
 `docs/research/2026-08-14-probability-risk-uncertainty-cluster.md` and
 `PROBABILITY-RISK-UNCERTAINTY-ROLE-REVIEW.md`.
+
+The thermal-quantity cluster at `tables/entries/thermal-quantity.md`
+separates temperature, thermal equilibrium, heat, internal energy, heat
+capacity, specific heat, and entropy through state/transfer/response role,
+system boundary, path, phase, process constraint, sign convention, and
+reversible evaluation. Relations are in `tables/formulas/thermal-quantities.md`;
+research and review are `docs/research/2026-08-14-thermal-quantity-cluster.md`
+and `THERMAL-QUANTITY-ROLE-REVIEW.md`.

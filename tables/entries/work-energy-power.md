@@ -123,11 +123,10 @@ and mechanical-energy relations.
 - [Force](force.md)
 - [Motion measure](motion-measure.md)
 - [Matter and load measure](matter-load-measure.md)
+- [Thermal Quantity](thermal-quantity.md)
 - [Time](../roots/time.md)
 - [Transformation](../roots/transformation.md)
 - torque - `unresolved-candidate`
-- heat - `unresolved-candidate`
-- internal energy - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -147,4 +146,3 @@ and mechanical-energy relations.
 Comparator access date: 2026-08-14. Classical mechanics relations and SI
 units are established within source scope; Factorium organization remains
 `candidate`.
-

@@ -2,6 +2,10 @@
 
 Status: candidate Mapping Table
 
+Canonical headword: [Thermal Quantity](../entries/thermal-quantity.md)
+
+Sense: `temperature`
+
 ## Orientation
 
 Celsius, kelvin, and Fahrenheit assign different numerical values to the same
@@ -104,7 +108,7 @@ temperature-conversion
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
 - [Formula Table format](../../specs/FORMULA-TABLE-ENTRY.md)
-- temperature — `unresolved-candidate`
+- [Thermal Quantity](../entries/thermal-quantity.md)
 - unit conversion — `unresolved-candidate`
 
 ## Sources and provenance

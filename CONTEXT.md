@@ -141,6 +141,14 @@ control state, measurand, and coverage basis. The linked Formula Table is
 `docs/research/2026-08-14-probability-risk-uncertainty-cluster.md` and
 `context/waves/2026-08-13-factorium-vision/PROBABILITY-RISK-UNCERTAINTY-ROLE-REVIEW.md`.
 
+The thermal-quantity pilot at `tables/entries/thermal-quantity.md` separates
+temperature, thermal equilibrium, heat, internal energy, heat capacity,
+specific heat, and entropy by state/transfer/response role, boundary, path,
+phase, process constraint, sign convention, and reversible evaluation. The
+linked Formula Table is `tables/formulas/thermal-quantities.md`; research and
+review are `docs/research/2026-08-14-thermal-quantity-cluster.md` and
+`context/waves/2026-08-13-factorium-vision/THERMAL-QUANTITY-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

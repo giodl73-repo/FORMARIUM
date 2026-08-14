@@ -23,6 +23,7 @@ or fame.
 | [Mechanical work, energy, and power](mechanical-work-energy-power.md) | Definition, theorem, and scoped balance | work, kinetic and potential energy, mechanical energy, power | Transfer, state, path, frame, system, and rate remain distinct |
 | [Comparative quantities](comparative-quantities.md) | Definition, equality, normalization, and change | ratio, rate, proportion, percentage, relative change, percentage points | Order, units, baseline, and denominator domains remain explicit |
 | [Probability, risk, and uncertainty relations](probability-risk-uncertainty.md) | Identity, mapping, expectation, model schema, and measurement relation | conditional probability, odds, expected loss, risk, expanded uncertainty | Model, consequence, horizon, and coverage remain explicit |
+| [Thermal quantities](thermal-quantities.md) | Equilibrium, response, balance, and constraint | temperature, heat, internal energy, heat capacity, entropy | State, transfer, sign, phase, constraint, and path remain explicit |
 
 ## Relation-kind coverage
 

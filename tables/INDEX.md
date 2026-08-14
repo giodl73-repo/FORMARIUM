@@ -39,6 +39,9 @@ until generated from a stable interchange format.
 - [Probability, risk, and uncertainty](entries/probability-risk-uncertainty.md)
   - event probability, conditional probability, odds, risk, expected loss,
   and measurement uncertainty organized by model, consequence, and coverage
+- [Thermal quantity](entries/thermal-quantity.md) - temperature, thermal
+  equilibrium, heat, internal energy, heat capacity, specific heat, and
+  entropy organized by state, transfer, response, phase, and path
 
 ## Examples
 
@@ -73,6 +76,7 @@ coverage and selection rules.
 | [Mechanical work, energy, and power](formulas/mechanical-work-energy-power.md) | definition, theorem, and scoped balance | work, kinetic and potential energy, mechanical energy, and power | Separate transfer, state, system, path, frame, and rate |
 | [Comparative quantities](formulas/comparative-quantities.md) | definition, equality, normalization, and change | ratio, rate, proportion, percentage, relative change, and percentage points | Preserve order, quantity kinds, units, baseline, and denominator domains |
 | [Probability, risk, and uncertainty relations](formulas/probability-risk-uncertainty.md) | identity, mapping, expectation, model schema, and measurement relation | conditional probability, odds, expected loss, risk, and expanded uncertainty | Separate event models, representations, consequences, and coverage |
+| [Thermal quantities](formulas/thermal-quantities.md) | equilibrium, response, balance, and constraint | temperature, heat, internal energy, heat capacity, and entropy | Separate state, transfer, response, sign, phase, and reversible path |
 
 ## Mapping Tables
 
