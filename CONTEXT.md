@@ -92,6 +92,14 @@ The schema, research, and review are `specs/REFERENCE-DELTA.md`,
 `docs/research/2026-08-14-reference-delta-and-force-polysemy.md`, and
 `context/waves/2026-08-13-factorium-vision/REFERENCE-DELTA-ROLE-REVIEW.md`.
 
+The geometry pilot now organizes perimeter, circumference, area, surface area,
+and volume under `tables/entries/geometric-measure.md`. The central selection
+rule is measured subset plus dimension: boundary length `L`, planar or surface
+area `L^2`, and volume `L^3`. Common formulas and shape constraints are in
+`tables/formulas/common-geometric-measures.md`; research and review are
+`docs/research/2026-08-14-geometric-measure-cluster.md` and
+`context/waves/2026-08-13-factorium-vision/GEOMETRIC-MEASURE-ROLE-REVIEW.md`.
+
 Pulse 01 established `VISION.md`, the draft Factor Table grammar at
 `specs/FACTOR-TABLE-ENTRY.md`, the first environment entry, and expanded
 Factorium roles for factorization method, lexicography, reference architecture,

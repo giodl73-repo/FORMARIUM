@@ -21,6 +21,9 @@ until generated from a stable interchange format.
 - [Force](entries/force.md) - physical interaction, coercive compulsion,
   organized body, effective influence, and operative validity, with a
   dictionary/thesaurus/encyclopedia/handbook Reference Delta
+- [Geometric measure](entries/geometric-measure.md) - perimeter,
+  circumference, area, surface area, and volume organized by measured subset
+  and dimension
 
 ## Examples
 
@@ -49,6 +52,7 @@ coverage and selection rules.
 | [General accounting balance](formulas/general-accounting-balance.md) | conservation or balance | `accumulation = input - output + generation - consumption` | System boundaries distinguish balances from slogans |
 | [Newton's method](formulas/newtons-method.md) | algorithm or recurrence | `x_(k+1) = x_k - f(x_k)/f'(x_k)` | Convergence claims require local conditions |
 | [Event probability range](formulas/probability-range.md) | constraint | `0 <= P(A) <= 1` | A probability requires a probability model |
+| [Common geometric measures](formulas/common-geometric-measures.md) | definition and derived shape formulas | perimeter, area, surface area, and volume by shape | Select measured subset and dimension before formula |
 
 ## Mapping Tables
 

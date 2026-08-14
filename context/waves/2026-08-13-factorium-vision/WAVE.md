@@ -126,3 +126,10 @@ The Reference Delta comparison layer is specified at
 Formula Table as one physical view. Research is
 `docs/research/2026-08-14-reference-delta-and-force-polysemy.md`; review is
 `REFERENCE-DELTA-ROLE-REVIEW.md`.
+
+The geometric-measure cluster at `tables/entries/geometric-measure.md`
+separates perimeter, circumference, area, surface area, and volume through
+measured subset and dimension. Common shape formulas are linked at
+`tables/formulas/common-geometric-measures.md`. Research and review are
+`docs/research/2026-08-14-geometric-measure-cluster.md` and
+`GEOMETRIC-MEASURE-ROLE-REVIEW.md`.
