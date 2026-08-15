@@ -1,0 +1,113 @@
+use factor::{
+    reference::ReferenceCorpus,
+    reference_sidecar::{AssuranceManifest, RelationKind, RelationManifest},
+};
+use std::{fs, path::Path};
+
+fn committed_manifests() -> (ReferenceCorpus, RelationManifest, AssuranceManifest) {
+    let corpus = ReferenceCorpus::parse(
+        &fs::read_to_string("reference/factorium-reference-v0.factorium").unwrap(),
+    )
+    .unwrap();
+    let relations = RelationManifest::parse(
+        &fs::read_to_string("reference/factorium-relations-v0.factorium").unwrap(),
+    )
+    .unwrap();
+    let assurance = AssuranceManifest::parse(
+        &fs::read_to_string("reference/factorium-assurance-v0.factorium").unwrap(),
+    )
+    .unwrap();
+    (corpus, relations, assurance)
+}
+
+#[test]
+fn committed_sidecars_round_trip_and_validate() {
+    let (corpus, relations, assurance) = committed_manifests();
+    assert_eq!(
+        relations.canonical_text(),
+        fs::read_to_string("reference/factorium-relations-v0.factorium").unwrap()
+    );
+    assert_eq!(
+        assurance.canonical_text(),
+        fs::read_to_string("reference/factorium-assurance-v0.factorium").unwrap()
+    );
+    relations
+        .validate_workspace(&corpus, Path::new("."))
+        .unwrap();
+    assurance
+        .validate_workspace(
+            &corpus,
+            &relations,
+            "reference/factorium-relations-v0.factorium",
+            Path::new("."),
+        )
+        .unwrap();
+    assert_eq!(relations.relations().len(), 6);
+    assert_eq!(assurance.bindings().len(), 18);
+}
+
+#[test]
+fn representative_directional_queries_preserve_scope() {
+    let (_, relations, _) = committed_manifests();
+    let dependencies = relations.incoming(
+        RelationKind::DependsOn,
+        "factor:system-composition-dependency/interfaces-and-interaction-contracts",
+    );
+    assert_eq!(dependencies.len(), 1);
+    assert_eq!(
+        dependencies[0].scope(),
+        "view:constraint-system-composition-integrity"
+    );
+
+    let obligation_traces = relations.outgoing(
+        RelationKind::SatisfiesObligation,
+        "factor:governance-obligation-compliance/evidence-monitoring-and-assessment-criteria",
+    );
+    assert_eq!(obligation_traces.len(), 1);
+    assert_eq!(
+        obligation_traces[0]
+            .qualifiers()
+            .get("obligation-version")
+            .map(String::as_str),
+        Some("effective-version")
+    );
+}
+
+#[test]
+fn assurance_detects_a_stale_source_digest() {
+    let (corpus, relations, _) = committed_manifests();
+    let text = fs::read_to_string("reference/factorium-assurance-v0.factorium")
+        .unwrap()
+        .replacen(
+            "f08d7bed56f98cfb37df927266b357e372dbfe6e1becc39686243c7ce499e06c",
+            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            1,
+        );
+    let stale = AssuranceManifest::parse(&text).unwrap();
+    assert!(stale
+        .validate_workspace(
+            &corpus,
+            &relations,
+            "reference/factorium-relations-v0.factorium",
+            Path::new("."),
+        )
+        .unwrap_err()
+        .contains("stale review"));
+}
+
+#[test]
+fn relation_validation_rejects_an_unknown_canonical_endpoint() {
+    let (corpus, _, _) = committed_manifests();
+    let text = fs::read_to_string("reference/factorium-relations-v0.factorium")
+        .unwrap()
+        .replacen(
+            "factor:system-composition-dependency/interfaces-and-interaction-contracts",
+            "factor:system-composition-dependency/not-a-factor",
+            1,
+        );
+    let invalid = RelationManifest::parse(&text).unwrap();
+    assert!(invalid
+        .validate_workspace(&corpus, Path::new("."))
+        .unwrap_err()
+        .contains("unknown canonical artifact"));
+}

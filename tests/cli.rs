@@ -169,3 +169,22 @@ fn reference_check_validates_canonical_corpus_and_projections() {
     assert!(stdout.contains("views=39\n"));
     assert!(stdout.contains("reference_sha256="));
 }
+
+#[test]
+fn reference_sidecar_check_validates_relations_and_reviews() {
+    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .args([
+            "reference-sidecar-check",
+            "reference/factorium-reference-v0.factorium",
+            "reference/factorium-relations-v0.factorium",
+            "reference/factorium-assurance-v0.factorium",
+            ".",
+        ])
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.contains("relation_records=6\n"));
+    assert!(stdout.contains("review_bindings=18\n"));
+    assert!(stdout.contains("prototype_checks=7\n"));
+}

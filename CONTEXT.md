@@ -153,6 +153,17 @@ are `docs/research/2026-08-14-governance-ledger.md` and
 The corpus now contains 27 entries, 162 senses, 266 factors, and 39 views;
 generated triage reports 63 unresolved declarations and eight Mapping views.
 
+Factor Forge scaling-safety work now has a bounded typed-relation and review-
+coverage prototype at
+`docs/research/2026-08-14-typed-relation-review-coverage.md`. It keeps the V0
+canonical corpus unchanged while adding six representative directed edges and
+eighteen digest-bound entry, view, and relation review records. The
+`reference-sidecar-check` command exercises seven F1-F6 checks and rejects
+unknown endpoints, missing bindings, and stale reviews. Full-corpus coverage
+and any V1 migration remain future gates.
+Plan and result review are recorded at
+`context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.
@@ -483,6 +494,8 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
+cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
+cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

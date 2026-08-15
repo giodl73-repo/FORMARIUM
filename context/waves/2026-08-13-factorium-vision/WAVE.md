@@ -100,6 +100,14 @@ passes, with external usability and domain promotion still gated. Scaling
 work before 50 anchors must address typed relation pressure, machine-bound
 review coverage, unresolved-candidate triage, and balanced non-formula growth.
 
+The first scaling-safety prototype is complete at
+`docs/research/2026-08-14-typed-relation-review-coverage.md`. It preserves V0
+and implements a six-edge relation sidecar plus an eighteen-binding,
+digest-bound assurance sidecar. Seven representative checks cover F1-F6
+direction, scope, qualification, referential integrity, and stale reviews.
+Full-corpus coverage remains pending; review is recorded in
+`TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`.
+
 ## Success criteria
 
 - a practitioner can find a relevant sense and alternatives within minutes;

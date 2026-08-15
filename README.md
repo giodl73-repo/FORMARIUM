@@ -135,6 +135,15 @@ generated projections:
 cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
 ```
 
+Validate the bounded typed-relation and digest-bound review-coverage
+sidecars without changing V0:
+
+```powershell
+cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
+```
+
+See [Factorium Reference Sidecars V0 Prototype](specs/FACTORIUM-REFERENCE-SIDECARS.md).
+
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 
@@ -224,6 +233,7 @@ cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
+cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

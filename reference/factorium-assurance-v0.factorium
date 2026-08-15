@@ -1,0 +1,20 @@
+factorium-assurance-v0
+review entry:claim-evidence | f08d7bed56f98cfb37df927266b357e372dbfe6e1becc39686243c7ce499e06c | context/waves/2026-08-13-factorium-vision/OBSERVATION-INFERENCE-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:control-monitoring-response | 4e7a046eeff0c1a21e6a88a67c095a2a8b27c7f0ec019a10bbf83ca87ab9c29e | context/waves/2026-08-13-factorium-vision/CONTROL-RESPONSE-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:governance-obligation-compliance | db21234cdf29a264e3ff97903e900ca24edbbf0a216103a573cf41895386ef7f | context/waves/2026-08-13-factorium-vision/GOVERNANCE-LEDGER-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:organization-role-authority | 6957fc02d4e66ee0483ff8b549fe7c4118aeb4fd17b30d3aeba2ea840964e3dc | context/waves/2026-08-13-factorium-vision/ORGANIZATION-AUTHORITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:software-module-service-resource | d00125bbe6a13e92296ecb4dbaf3111d7ba08527d9b2d7144b02898cb0b56016 | context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:system-composition-dependency | e53d06dfa72d318168c638c23432ecd8975f9ec5ee6c02422d24694ea8e0c65c | context/waves/2026-08-13-factorium-vision/SYSTEM-COMPOSITION-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review relation:f1-dependency-interface | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review relation:f2-delegation-authority | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review relation:f3-inference-observation | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review relation:f4-feedback-monitoring | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review relation:f5-service-interface | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review relation:f6-evidence-obligation | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:constraint-system-composition-integrity | 0c9af7b63a11903cb186a6260d6b895ab27635c924ab3e3a96bc5493ffde33ef | context/waves/2026-08-13-factorium-vision/SYSTEM-COMPOSITION-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:diagnostic-control-response-failures | f41c9dc3503dcff4f5fbc61518f3f52d1d148ff3ec5a7e1d49e7d481c7c1c17a | context/waves/2026-08-13-factorium-vision/CONTROL-RESPONSE-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:evidence-observation-inference-chain | d3c71683ab9153f9382cea28b3c378047b68fb8bda79b9d08a01da3acda699ed | context/waves/2026-08-13-factorium-vision/OBSERVATION-INFERENCE-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:mapping-governance-compliance-mechanisms | 2cc5f76ddbd97cff7af579fb16c45ce33c90bfb8bc3c888631e47286e2c03828 | context/waves/2026-08-13-factorium-vision/GOVERNANCE-LEDGER-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:mapping-organizational-assignment-semantics | 53d729fbc32ef97bd88e6664b813c4cd80e4dd6ca362f6dbddfa0dfc3b687ceb | context/waves/2026-08-13-factorium-vision/ORGANIZATION-AUTHORITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:mapping-software-architecture-mechanisms | 1c81933541bbb8b9644ba6d18e0ea9419aa56009e4febfcb91419579d4febd4b | context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md | fixed-point | 2026-08-14
+end-assurance

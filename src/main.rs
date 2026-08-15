@@ -4,6 +4,7 @@ use factor::{
     corpus::fixture_summary,
     packet::{validate_packet, write_packet},
     reference::ReferenceCorpus,
+    reference_sidecar::{AssuranceManifest, RelationManifest},
     role_bakeoff::role_bakeoff_summary,
     role_fixtures::role_fixture_summary,
     role_packet::{validate_role_packet, write_role_packet},
@@ -100,6 +101,7 @@ fn run() -> Result<(), String> {
         "reference-check" | "reference-catalog" | "reference-unresolved" | "reference-sync" => {
             run_reference_command(command.as_str(), &mut arguments)
         }
+        "reference-sidecar-check" => run_reference_sidecar_check(&mut arguments),
         "check" => {
             let (_, document) = read_document(&mut arguments)?;
             println!("schema={}", document.schema().id());
@@ -118,6 +120,39 @@ fn run() -> Result<(), String> {
         }
         _ => Err(usage("unknown command")),
     }
+}
+
+fn run_reference_sidecar_check(arguments: &mut impl Iterator<Item = String>) -> Result<(), String> {
+    let (reference_path, relation_path, assurance_path, root) = read_four_paths(arguments)?;
+    let corpus = read_reference(&reference_path)?;
+    let relation_text =
+        fs::read_to_string(&relation_path).map_err(|error| format!("{relation_path}: {error}"))?;
+    let relations = RelationManifest::parse(&relation_text)
+        .map_err(|error| format!("{relation_path}: {error}"))?;
+    let assurance_text = fs::read_to_string(&assurance_path)
+        .map_err(|error| format!("{assurance_path}: {error}"))?;
+    let assurance = AssuranceManifest::parse(&assurance_text)
+        .map_err(|error| format!("{assurance_path}: {error}"))?;
+
+    corpus
+        .validate_projections(root.as_ref())
+        .map_err(|error| format!("{reference_path}: {error}"))?;
+    relations
+        .validate_workspace(&corpus, root.as_ref())
+        .map_err(|error| format!("{relation_path}: {error}"))?;
+    assurance
+        .validate_workspace(&corpus, &relations, &relation_path, root.as_ref())
+        .map_err(|error| format!("{assurance_path}: {error}"))?;
+
+    println!("reference={reference_path}");
+    println!("relations={relation_path}");
+    println!("relation_records={}", relations.relations().len());
+    println!("relation_sha256={}", relations.sha256());
+    println!("assurance={assurance_path}");
+    println!("review_bindings={}", assurance.bindings().len());
+    println!("assurance_sha256={}", assurance.sha256());
+    println!("prototype_checks=7");
+    Ok(())
 }
 
 fn run_reference_command(
@@ -235,6 +270,27 @@ fn read_two_paths(
     Ok((first, second))
 }
 
+fn read_four_paths(
+    arguments: &mut impl Iterator<Item = String>,
+) -> Result<(String, String, String, String), String> {
+    let first = arguments
+        .next()
+        .ok_or_else(|| usage("missing reference manifest path"))?;
+    let second = arguments
+        .next()
+        .ok_or_else(|| usage("missing relation manifest path"))?;
+    let third = arguments
+        .next()
+        .ok_or_else(|| usage("missing assurance manifest path"))?;
+    let fourth = arguments
+        .next()
+        .ok_or_else(|| usage("missing workspace root"))?;
+    if arguments.next().is_some() {
+        return Err(usage("unexpected extra argument"));
+    }
+    Ok((first, second, third, fourth))
+}
+
 fn read_reference(path: &str) -> Result<ReferenceCorpus, String> {
     let input = fs::read_to_string(path).map_err(|error| format!("{path}: {error}"))?;
     ReferenceCorpus::parse(&input).map_err(|error| format!("{path}: {error}"))
@@ -242,6 +298,6 @@ fn read_reference(path: &str) -> Result<ReferenceCorpus, String> {
 
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor role-packet <output-dir>\n  factor role-packet-check <packet-dir>\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>\n  factor reference-check <manifest> <workspace-root>\n  factor reference-catalog <manifest> <workspace-root>\n  factor reference-unresolved <manifest> <workspace-root>\n  factor reference-sync <manifest> <workspace-root>"
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor role-packet <output-dir>\n  factor role-packet-check <packet-dir>\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>\n  factor reference-check <manifest> <workspace-root>\n  factor reference-catalog <manifest> <workspace-root>\n  factor reference-unresolved <manifest> <workspace-root>\n  factor reference-sync <manifest> <workspace-root>\n  factor reference-sidecar-check <reference> <relations> <assurance> <workspace-root>"
     )
 }
