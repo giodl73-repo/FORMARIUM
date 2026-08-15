@@ -513,3 +513,29 @@ zero unresolved view owners. The Factor Forge delta grows to 29 records and
 the combined selection to 107 numbered records plus two guides across fifteen
 chapters. The generated `sim-07` site contains 139 pages from 123 sources,
 indexes all 109 reader destinations, and reports zero missing internal targets.
+
+## 2026-08-15 geometric-reference-structure content continuation
+
+Plan review: admit an F14 geometric reference bridge across geometry, motion,
+trigonometry, metrology, coordinate representation, geospatial reference, and
+physical frames; ground object/locus/path, length/shape, angle, coordinate
+system/reference frame, and unit-circle distinctions in authoritative sources;
+author one canonical anchor and one Diagnostic view; resolve six declarations
+across three linked artifacts; close role findings; then propagate the exact
+delta through assurance, Factor Forge, search, and the static book site. Native
+geometry, CRS, navigation, and frame authorities retain specialized scope, and
+no external-reader gate or broad scientific claim is introduced.
+
+Result review: F14 adds `geometric-reference-structure` with ten senses and the
+Geometric Reference Failure Diagnostic, resolving `length`, `shape`, `path`,
+`frame of reference`, `angle`, and `unit circle` across geometric measure,
+motion, and the Pythagorean identity. Object/representation, point/coordinates,
+curve/path, path length/displacement, shape/size/pose, angle/slope,
+coordinate-system/reference-frame, and coordinate-change/physical-motion
+remain distinct. The source campaign confirms 17 findings and fixed-point
+review closes all major findings. The reference grows to 35 entries, 222
+senses, 361 factors, and 47 views with 88 assurance bindings and zero
+unresolved view owners. The Factor Forge delta grows to 31 records and the
+combined selection to 109 numbered records plus two guides across sixteen
+chapters. The generated `sim-07` site contains 142 pages from 125 sources,
+indexes all 111 reader destinations, and reports zero missing internal targets.

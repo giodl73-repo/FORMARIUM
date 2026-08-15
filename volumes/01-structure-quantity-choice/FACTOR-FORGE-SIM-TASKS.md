@@ -185,8 +185,22 @@ domain, symbol roles, transformation implications, complete solution target,
 initial state, derivative conditions, arithmetic, residual, stopping reason,
 error status, basin, and convergence evidence before accepting the result.
 
+## Task W - The map says the object moved
+
+Two systems report different coordinate tuples for the same surveyed point,
+so a dashboard claims the object moved. One layer uses longitude-latitude axis
+order, another reverses it, their datums and epochs differ, and one transform
+is a lossy projection. A simplified closed path is also shorter than the raw
+route, while a shape matcher silently removes scale and reflection.
+
+Separate geometric object, point, curve, path, length, shape, angle,
+coordinate system, reference frame, and unit circle. Use the Diagnostic view
+to freeze the metric, units, raw traversal, equivalence rule, axes, datum/frame,
+epoch, transformation direction and loss, residuals, and physical-motion
+evidence before accepting any identity, shape, distance, or motion claim.
+
 ## Rehearsal boundary
 
-The fifteen prompts collectively exercise every entry and specialized view in the
+The sixteen prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

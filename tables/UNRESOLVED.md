@@ -20,8 +20,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/electrical-quantity.md` | 139 | impedance - `unresolved-candidate` |
 | `tables/entries/force.md` | 129 | coercion — `unresolved-candidate` |
 | `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
-| `tables/entries/geometric-measure.md` | 91 | length — `unresolved-candidate` |
-| `tables/entries/geometric-measure.md` | 92 | shape — `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 129 | namespace - `unresolved-candidate` |
 | `tables/entries/information-data-signal-noise.md` | 140 | encoding - `unresolved-candidate` |
 | `tables/entries/information-data-signal-noise.md` | 141 | channel - `unresolved-candidate` |
@@ -29,8 +27,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/information-data-signal-noise.md` | 143 | channel capacity - `unresolved-candidate` |
 | `tables/entries/matter-load-measure.md` | 119 | stress - `unresolved-candidate` |
 | `tables/entries/matter-load-measure.md` | 120 | gravitational field - `unresolved-candidate` |
-| `tables/entries/motion-measure.md` | 109 | path — `unresolved-candidate` |
-| `tables/entries/motion-measure.md` | 110 | frame of reference — `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 158 | position - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 159 | competency - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 160 | legal ownership - `unresolved-candidate` |
@@ -48,6 +44,4 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/work-energy-power.md` | 131 | torque - `unresolved-candidate` |
 | `tables/formulas/density.md` | 93 | local mass density — `unresolved-candidate` |
 | `tables/formulas/force.md` | 113 | momentum — `unresolved-candidate` |
-| `tables/formulas/pythagorean-trigonometric-identity.md` | 96 | angle — `unresolved-candidate` |
-| `tables/formulas/pythagorean-trigonometric-identity.md` | 97 | unit circle — `unresolved-candidate` |
 | `tables/mappings/temperature-scales.md` | 114 | unit conversion — `unresolved-candidate` |

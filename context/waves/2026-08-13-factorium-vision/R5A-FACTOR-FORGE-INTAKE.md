@@ -394,3 +394,25 @@ F13 assigns the two remaining unresolved Formula view owners and resolves
 `derivative`, `root`, and `convergence` in Newton's Method. Specialized angle
 and unit-circle vocabulary remains explicit graph debt. The current Factor
 Forge book delta is 29 records: fourteen entries and fifteen specialized views.
+
+## F14 first slice
+
+The Geometric Reference Structure anchor at
+`tables/entries/geometric-reference-structure.md` separates geometric objects,
+points, curves, ordered paths, metric length, criterion-dependent shape,
+angles, coordinate systems, reference frames, and the unit circle through
+ambient-space, metric, parameterization, transformation, axes, frame, epoch,
+uncertainty, and provenance factors.
+
+`tables/diagnostics/geometric-reference-structure-failures.md` maps object and
+representation confusion, path-length mismatch, shape-criterion drift,
+degree/radian errors, CRS offsets, frame/epoch conflicts, and unit-circle
+failures to candidate causes, discriminating tests, and repair owners.
+Research and fixed-point review are
+`docs/research/2026-08-15-geometric-reference-structure.md` and
+`GEOMETRIC-REFERENCE-STRUCTURE-ROLE-REVIEW.md`.
+
+F14 resolves `length`, `shape`, `path`, `frame of reference`, `angle`, and
+`unit circle` across geometric measure, motion, and the Pythagorean identity.
+The current Factor Forge book delta is 31 records: fifteen entries and sixteen
+specialized views.

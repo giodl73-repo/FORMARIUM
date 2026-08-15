@@ -215,6 +215,20 @@ without identifying the statistic, target, denominator, design, and procedure.
 Critical artifact failure: successful substitution, a returned iterate, or a
 small step is accepted as proof of identity, complete solution, or convergence.
 
+## Task W expected route
+
+- Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate System, Reference Frame, and Unit Circle;
+- Geometric Reference Failure Diagnostic;
+- objects, drawings, meshes, equations, points, and coordinates retain distinct identities;
+- curve locus, path traversal, path length, endpoint separation, shape, size,
+  and pose remain distinct;
+- angle quantity and degree/radian convention remain explicit;
+- coordinate system, datum/reference frame, epoch, transformation, and
+  physical motion remain separate.
+
+Critical artifact failure: matching or changing coordinate tuples are accepted
+as sufficient proof of object identity, geometric equivalence, or physical motion.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -249,6 +263,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/statistical-summary-interval-failures.md`
 - `tables/entries/mathematical-relation-solving.md`
 - `tables/diagnostics/mathematical-relation-solving-failures.md`
+- `tables/entries/geometric-reference-structure.md`
+- `tables/diagnostics/geometric-reference-structure-failures.md`
 
 ## Claim boundary
 

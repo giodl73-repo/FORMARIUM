@@ -106,8 +106,9 @@ contains average, instantaneous, and constant-acceleration relations.
 - [Periodic and Wave Quantity](periodic-wave-quantity.md)
 - [Time](../roots/time.md)
 - [Transformation](../roots/transformation.md)
-- path — `unresolved-candidate`
-- frame of reference — `unresolved-candidate`
+- [Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate
+  System, Reference Frame, and Unit Circle](geometric-reference-structure.md)
+  — canonical owner of `path` and `reference-frame`
 
 ## Sources and provenance
 

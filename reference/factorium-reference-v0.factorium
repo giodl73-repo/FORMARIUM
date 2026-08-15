@@ -225,6 +225,28 @@ factor sufficient-parameters | sufficient parameters
 factor unit-scale | unit scale
 factor exact-or-approximate-policy | exact-or-approximate policy
 end-entry
+entry geometric-reference-structure | Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate System, Reference Frame, and Unit Circle | reference | candidate | tables/entries/geometric-reference-structure.md | Geometric objects are distinct from their drawings and coordinates; curves differ from ordered paths; length and shape depend on declared metrics or equivalence criteria; coordinate systems represent locations while reference frames anchor them to objects, observers, and epochs.
+sense geometric-object | geometric object
+sense point | point
+sense curve | curve
+sense path | path
+sense length | length
+sense shape | shape
+sense angle | angle
+sense coordinate-system | coordinate system
+sense reference-frame | reference frame
+sense unit-circle | unit circle
+factor geometric-object-locus-or-traversal | geometric object, locus, or traversal
+factor ambient-space-dimension-topology-and-metric | ambient space, dimension, topology, and metric
+factor points-boundary-interior-connectivity-and-orientation | points, boundary, interior, connectivity, and orientation
+factor curve-or-path-parameterization-direction-and-interval | curve or path parameterization, direction, and interval
+factor length-angle-shape-and-other-invariant-or-measure-target | length, angle, shape, and other invariant or measure target
+factor coordinate-system-axes-origin-handedness-and-units | coordinate system, axes, origin, handedness, and units
+factor reference-object-observer-datum-or-frame-epoch-and-motion | reference object, observer, datum/frame, epoch, and motion
+factor transformation-preserved-properties-and-equivalence-criterion | transformation, preserved properties, and equivalence criterion
+factor exact-measured-estimated-discretized-or-approximate-status | exact, measured, estimated, discretized, or approximate status
+factor provenance-convention-uncertainty-and-verification | provenance, convention, uncertainty, and verification
+end-entry
 entry governance-obligation-compliance | Governance, Obligation, and Compliance | governance | candidate | tables/entries/governance-obligation-compliance.md | Governance directs, oversees, and holds a bounded organization or undertaking accountable toward purpose; an obligation binds a subject to required conduct from a stated source; compliance evaluates evidenced conformity with applicable obligations. None alone proves effectiveness, ethics, safety, legitimacy, or good outcomes.
 sense governance | governance
 sense obligation | obligation
@@ -642,6 +664,8 @@ end-view
 view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
+end-view
+view diagnostic-geometric-reference-structure-failures | geometric-reference-structure | geometric-object,point,curve,path,length,shape,angle,coordinate-system,reference-frame,unit-circle | diagnostic | Geometric Reference Failure Diagnostic | tables/diagnostics/geometric-reference-structure-failures.md | Maps object/representation, locus/traversal, metric, shape, angle, coordinate, reference-frame, and unit-circle symptoms to candidate causes and discriminating tests without treating coordinate agreement as proof.
 end-view
 view diagnostic-mathematical-relation-solving-failures | mathematical-relation-solving | mathematical-function,variable,equation,identity,solution,root,derivative,iteration,convergence | diagnostic | Mathematical Relation and Solver Failure Diagnostic | tables/diagnostics/mathematical-relation-solving-failures.md | Maps object, notation, domain, equality, solution-set, derivative, iteration, stopping, and convergence symptoms to candidate causes and discriminating tests without treating one symptom as proof.
 end-view

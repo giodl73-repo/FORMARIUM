@@ -28,8 +28,8 @@ not an empirical law and not an equation that selects particular solutions.
 | `sin(theta)` | sine of the angle | real scalar | dimensionless | `[-1, 1]` | function value |
 | `cos(theta)` | cosine of the angle | real scalar | dimensionless | `[-1, 1]` | function value |
 
-Angle and unit circle remain specialized `unresolved-candidate` Factorium
-headwords. Sine and cosine are mathematical functions here; the broader
+Angle and unit circle are owned by the `geometric-reference-structure`
+candidate anchor. Sine and cosine are mathematical functions here; the broader
 function, identity, and equation senses are owned by the mathematical relation
 and solving anchor.
 
@@ -93,8 +93,9 @@ identity-use
 - [Mathematical Function, Variable, Equation, Identity, Solution, Root,
   Derivative, Iteration, and Convergence](../entries/mathematical-relation-solving.md)
   — canonical owner of `identity` and `equation`
-- angle — `unresolved-candidate`
-- unit circle — `unresolved-candidate`
+- [Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate
+  System, Reference Frame, and Unit Circle](../entries/geometric-reference-structure.md)
+  — canonical owner of `angle` and `unit-circle`
 
 ## Sources and provenance
 

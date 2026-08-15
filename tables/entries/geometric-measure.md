@@ -88,8 +88,9 @@ signs.
 - [Measure](../roots/measure.md)
 - [Relation](../roots/relation.md)
 - [Volume in mass density](../formulas/density.md)
-- length — `unresolved-candidate`
-- shape — `unresolved-candidate`
+- [Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate
+  System, Reference Frame, and Unit Circle](geometric-reference-structure.md)
+  — canonical owner of `length` and `shape`
 
 ## Sources and provenance
 

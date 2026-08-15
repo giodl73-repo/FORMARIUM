@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **29 records** — 14 canonical entries and 15
+Selected current-corpus delta: **31 records** — 15 canonical entries and 16
 specialized views
 
 ## Purpose
@@ -167,6 +167,19 @@ tests symbol roles, domains, transformations, derivative existence, starting
 states, residuals, stopping, and convergence conditions without treating a
 returned number as proof.
 
+## Part XV - Geometric objects and reference frames
+
+### From a geometric subject to a represented and anchored result
+
+108. [Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate System, Reference Frame, and Unit Circle](../../tables/entries/geometric-reference-structure.md)
+109. [Geometric Reference Failure Diagnostic](../../tables/diagnostics/geometric-reference-structure-failures.md)
+
+The anchor separates objects from drawings and coordinates, loci from ordered
+paths, metric length from coordinate difference, shape from size and pose, and
+coordinate systems from reference frames. The Diagnostic view tests metric,
+parameterization, angle-unit, axes, datum/frame, epoch, transformation, and
+unit-circle failures without treating changed coordinates as physical motion.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -175,5 +188,5 @@ returned number as proof.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 107-record combined simulation remains a rehearsal projection, not a
+- The 109-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.
