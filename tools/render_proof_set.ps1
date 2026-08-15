@@ -553,6 +553,10 @@ if ($Edition -in @("sim-05", "sim-06")) {
 <select id="reader-density">
 <option value="tight">Tight</option><option value="comfortable">Comfortable</option>
 </select></label>
+<label for="reader-qualifiers">Context notation
+<select id="reader-qualifiers">
+<option value="folded">Fold repeated qualifier</option><option value="explicit">Show @ context</option>
+</select></label>
 </div>
 </details>
 </section>
@@ -579,6 +583,8 @@ if ($Edition -in @("sim-05", "sim-06")) {
         detail_levels = @("summary", "core", "full")
         metadata_levels = @("minimal", "essential", "full")
         density_levels = @("tight", "comfortable")
+        context_qualifier_modes = @("folded", "explicit")
+        default_context_qualifiers = "folded"
         indexed_sources = @($sourceIndex).Count
         indexed_records = $searchChecks.indexed_records
         per_entry_full_override = $true

@@ -65,8 +65,8 @@ Command:
 | Unselected binding paths | 0 |
 | Duplicate binding tuples | 0 |
 | Canonical interchange changed | no |
-| Standalone HTML bytes | 1,266,874 |
-| Standalone HTML SHA-256 | `f3b72ace6e15996b2711bb856cb5652182a91504ff3ab3515a287a5dd4ae3a02` |
+| Standalone HTML bytes | 1,269,283 |
+| Standalone HTML SHA-256 | `9104727013639c3dcd52e260769dec79be892981a12c01b20a115094c69f872f` |
 | Internal fragment links | 1,412 |
 | Missing internal fragment targets | 0 |
 | Filesystem-dependent links | 0 |
@@ -89,6 +89,32 @@ otherwise suppressed supporting source in the adaptive reader.
 
 This is a mechanical browser and accessibility check, not evidence that a
 reader recognizes or correctly applies inheritance.
+
+### Post-review context-notation correction
+
+Reader inspection found that a canonical structural qualifier such as
+`agency := actor x capability x authority @ context` still looked like
+repeated profile metadata. The correction is presentation-only: Compact,
+Abbreviated, and Book fold a trailing `@ context` into an accessible `◌`
+context-sensitive marker; Full displays the canonical expression. An advanced
+`Context notation` control can override either behavior, and a per-entry
+`Show full entry` override restores the explicit qualifier locally. The source
+tables, profile resolution, and canonical interchange remain unchanged.
+
+Plan review limited the transformation to inline code with an exact trailing
+`@ context`; it does not rewrite prose or an internal context term such as
+`event @ context = outcome`. The publication/editorial disposition accepts the
+quieter default, the reference-architecture disposition requires Full to
+round-trip visibly to the source expression, and the validation disposition
+requires a pure parser test plus executed-browser inspection.
+
+The pure JavaScript check passes for Agency, rejects a non-trailing qualifier,
+and confirms Book=`folded` and Full=`explicit`. Edge executed the Book view
+from a local `file:` URL with `q=agency`; the DOM retained 16 Context Profile
+bindings, set `data-reader-qualifiers="folded"`, and rendered Agency as the
+base factorization plus the accessible marker. The shared adaptive-reader
+asset also changes the regenerated `sim-05` identity to 1,243,373 bytes and
+SHA-256 `2efb8cfb2baf5b05ecfbeaaa73de3727e22e5478909f616cc1cf3c4f5f14c0cd`.
 
 ## Findings and closure
 

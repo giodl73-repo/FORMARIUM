@@ -2,10 +2,10 @@
   "use strict";
 
   var PRESETS = {
-    compact: { detail: "summary", metadata: "minimal", density: "tight" },
-    abbreviated: { detail: "core", metadata: "minimal", density: "tight" },
-    book: { detail: "core", metadata: "essential", density: "comfortable" },
-    full: { detail: "full", metadata: "full", density: "comfortable" }
+    compact: { detail: "summary", metadata: "minimal", density: "tight", qualifiers: "folded" },
+    abbreviated: { detail: "core", metadata: "minimal", density: "tight", qualifiers: "folded" },
+    book: { detail: "core", metadata: "essential", density: "comfortable", qualifiers: "folded" },
+    full: { detail: "full", metadata: "full", density: "comfortable", qualifiers: "explicit" }
   };
   var LEVELS = { summary: 0, core: 1, full: 2, minimal: 0, essential: 1 };
   var SUMMARY_HEADINGS = new Set([
@@ -55,6 +55,12 @@
 
   function requiredLevel(value) {
     return value === "full" ? 2 : LEVELS[value] || 0;
+  }
+
+  function splitContextQualifier(value) {
+    var full = String(value || "");
+    var match = full.match(/^(.*\S)\s+@\s+context\s*$/i);
+    return match ? { base: match[1], full: full } : null;
   }
 
   function initialize(documentObject, locationObject, historyObject, storageObject) {
@@ -138,10 +144,30 @@
       });
     });
 
+    Array.from(documentObject.querySelectorAll(".proof-entry code")).forEach(function (code) {
+      var qualifier = splitContextQualifier(code.textContent);
+      if (!qualifier) return;
+      var base = documentObject.createElement("span");
+      base.textContent = qualifier.base;
+      var explicit = documentObject.createElement("span");
+      explicit.className = "context-qualifier__explicit";
+      explicit.textContent = qualifier.full.slice(qualifier.base.length);
+      var folded = documentObject.createElement("span");
+      folded.className = "context-qualifier__folded";
+      folded.textContent = " ◌";
+      folded.title = "Context-sensitive; the repeated @ context qualifier is folded in this reading view";
+      folded.setAttribute("role", "img");
+      folded.setAttribute("aria-label", "context-sensitive");
+      code.textContent = "";
+      code.classList.add("context-qualifier");
+      code.append(base, explicit, folded);
+    });
+
     var toolbar = documentObject.querySelector(".reader-toolbar");
     var detailSelect = documentObject.getElementById("reader-detail");
     var metadataSelect = documentObject.getElementById("reader-metadata");
     var densitySelect = documentObject.getElementById("reader-density");
+    var qualifiersSelect = documentObject.getElementById("reader-qualifiers");
     var status = documentObject.getElementById("reader-profile-status");
     var toc = documentObject.getElementById("TOC");
     var tocButton = documentObject.getElementById("reader-toc-toggle");
@@ -156,7 +182,7 @@
       return Object.keys(PRESETS).find(function (name) {
         var preset = PRESETS[name];
         return preset.detail === state.detail && preset.metadata === state.metadata &&
-          preset.density === state.density;
+          preset.density === state.density && preset.qualifiers === state.qualifiers;
       }) || "custom";
     }
 
@@ -183,16 +209,18 @@
     function update(pushUrl) {
       var activeProfile = profileForState();
       documentObject.documentElement.dataset.readerDensity = state.density;
+      documentObject.documentElement.dataset.readerQualifiers = state.qualifiers;
       detailSelect.value = state.detail;
       metadataSelect.value = state.metadata;
       densitySelect.value = state.density;
+      qualifiersSelect.value = state.qualifiers;
       profileButtons.forEach(function (button) {
         button.setAttribute("aria-pressed", String(button.dataset.readerProfile === activeProfile));
       });
       status.textContent = (activeProfile === "custom" ? "Custom" :
         activeProfile.charAt(0).toUpperCase() + activeProfile.slice(1)) +
         " · " + state.detail + " detail · " + state.metadata +
-        " metadata · " + state.density + " spacing";
+        " metadata · " + state.density + " spacing · " + state.qualifiers + " context qualifiers";
       applyVisibility();
       if (pushUrl) {
         var next = new URLSearchParams(locationObject.search);
@@ -210,12 +238,13 @@
         update(true);
       });
     });
-    [detailSelect, metadataSelect, densitySelect].forEach(function (select) {
+    [detailSelect, metadataSelect, densitySelect, qualifiersSelect].forEach(function (select) {
       select.addEventListener("change", function () {
         state = {
           detail: detailSelect.value,
           metadata: metadataSelect.value,
-          density: densitySelect.value
+          density: densitySelect.value,
+          qualifiers: qualifiersSelect.value
         };
         update(true);
       });
@@ -251,7 +280,8 @@
   var api = {
     PRESETS: PRESETS,
     classifySection: classifySection,
-    resolvePreset: resolvePreset
+    resolvePreset: resolvePreset,
+    splitContextQualifier: splitContextQualifier
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root && root.document && root.FACTORIUM_SEARCH_INDEX && root.FACTORIUM_SOURCE_INDEX) {

@@ -80,8 +80,28 @@ body.reader-ready {
 .reader-toolbar__controls {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: repeat(3, minmax(9rem, 1fr));
+  grid-template-columns: repeat(4, minmax(9rem, 1fr));
   margin-top: 0.75rem;
+}
+
+.context-qualifier__folded {
+  color: var(--proof-accent);
+  cursor: help;
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+}
+
+html[data-reader-qualifiers="folded"] .context-qualifier__explicit,
+html[data-reader-qualifiers="explicit"] .context-qualifier__folded {
+  display: none;
+}
+
+html[data-reader-qualifiers="folded"] .proof-entry[data-local-full="true"] .context-qualifier__explicit {
+  display: inline;
+}
+
+html[data-reader-qualifiers="folded"] .proof-entry[data-local-full="true"] .context-qualifier__folded {
+  display: none;
 }
 
 .reader-toolbar__controls label {
