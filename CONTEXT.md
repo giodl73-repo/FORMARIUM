@@ -122,6 +122,13 @@ selected book paths and canonical reference metadata; they do not create a
 second content authority. `sim-04` proves website mechanics and deterministic
 lookup behavior only, not reader findability or Workbench readiness.
 
+The sixth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-06.md`
+adds adaptive reader profiles to `sim-05`. Compact, Abbreviated, Book, and Full
+are projections over independent content-detail, metadata, and density axes;
+Book is the default. Every indexed record remains present and locally
+expandable, while Full retains the complete rendered source selection.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

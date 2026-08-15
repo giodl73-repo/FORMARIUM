@@ -179,6 +179,16 @@ The generated search index is a disposable publication projection. Canonical
 Markdown and reference metadata remain authoritative, and the simulation is
 not reader evidence or the later Factorium Workbench.
 
+Render the adaptive reader edition with Compact, Abbreviated, Book, and Full
+profiles plus independent detail, metadata, and spacing controls:
+
+```powershell
+.\tools\render_proof_set.ps1 -Edition sim-05
+```
+
+Book is the default. The profile contract is
+[`specs/PROOF-SET-READER-VIEWS.md`](specs/PROOF-SET-READER-VIEWS.md).
+
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 

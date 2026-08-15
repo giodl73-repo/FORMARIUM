@@ -132,6 +132,9 @@ the `sim-03` proof and no synthetic task outcome recorded.
 The fifth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-05.md`; `sim-04` adds a
 generated static search surface over 93 selected records and two application
 guides, with browser-tested anchors and no alternate content authority.
+The sixth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-06.md`; `sim-05` adds
+four adaptive reader profiles, independent detail/metadata/density controls,
+and entry-local expansion while keeping one canonical source selection.
 
 ## Success criteria
 

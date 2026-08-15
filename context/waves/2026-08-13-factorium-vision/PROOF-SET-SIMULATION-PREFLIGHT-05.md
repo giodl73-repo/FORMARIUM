@@ -66,8 +66,8 @@ Command:
 | Missing rendered search targets | 0 |
 | Included Markdown sources | 106 |
 | Separate search assets | 2 |
-| Standalone HTML bytes | 1,209,802 |
-| Standalone HTML SHA-256 | `d54f76f5a7f742c412cdae55d522905686292e480fc43665ef4ee4e2f0da111b` |
+| Standalone HTML bytes | 1,210,065 |
+| Standalone HTML SHA-256 | `ce25ac1706c3f34fedc221b236c7b34540a5c103620de72bf74e25cfab5e351b` |
 | Internal fragment links | 1,394 |
 | Missing internal fragment targets | 0 |
 | Filesystem-dependent links | 0 |

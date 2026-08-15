@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -15,6 +15,8 @@ $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-S
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
 $searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
+$readerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.css"
+$readerScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.js"
 $volumeDirectory = Split-Path $volume
 $artifactName = "proof-set-$Edition"
 $artifactTitle = switch ($Edition) {
@@ -22,6 +24,7 @@ $artifactTitle = switch ($Edition) {
     "sim-02" { "Factorium Proof Set Expanded Simulation 02" }
     "sim-03" { "Factorium Proof Set Factor Forge Task Simulation 03" }
     "sim-04" { "Factorium Proof Set Search Simulation 04" }
+    "sim-05" { "Factorium Proof Set Adaptive Reader Simulation 05" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -211,7 +214,7 @@ if ($Edition -ne "sim-01") {
         extra_delta_paths = $extraDelta.Count
     }
 
-    if ($Edition -in @("sim-03", "sim-04")) {
+    if ($Edition -in @("sim-03", "sim-04", "sim-05")) {
         $rubricText = Get-Content -LiteralPath $factorForgeRubric -Raw
         $taskCoverage = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
@@ -240,7 +243,7 @@ if ($Edition -ne "sim-01") {
     Add-ProofSource $supplement
     $selectionDocuments.Add($supplement)
 }
-if ($Edition -in @("sim-03", "sim-04")) {
+if ($Edition -in @("sim-03", "sim-04", "sim-05")) {
     Add-ProofSource $factorForgeTasks
 }
 
@@ -357,7 +360,8 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
 
 $searchChecks = $null
 $searchAssets = @()
-if ($Edition -eq "sim-04") {
+$readerChecks = $null
+if ($Edition -in @("sim-04", "sim-05")) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing search asset: $asset"
@@ -488,6 +492,84 @@ if ($Edition -eq "sim-04") {
     }
 }
 
+if ($Edition -eq "sim-05") {
+    foreach ($asset in @($readerStyle, $readerScript)) {
+        if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+            throw "Missing reader asset: $asset"
+        }
+    }
+    $sourceIndex = foreach ($source in $sources) {
+        [ordered]@{
+            path = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
+            anchor = $headingBySource[$source]
+        }
+    }
+    $sourceIndexJson = ($sourceIndex | ConvertTo-Json -Depth 3 -Compress).Replace('</', '<\/')
+    $readerCss = Get-Content -LiteralPath $readerStyle -Raw
+    $readerJavaScript = Get-Content -LiteralPath $readerScript -Raw
+    $readerShell = @'
+<section class="reader-toolbar" aria-labelledby="reader-toolbar-heading" hidden>
+<div class="reader-toolbar__heading">
+<div>
+<h2 id="reader-toolbar-heading">Reading view</h2>
+<p id="reader-profile-status" class="reader-toolbar__status" role="status" aria-live="polite"></p>
+</div>
+<button id="reader-toc-toggle" type="button" aria-controls="TOC" aria-expanded="false">Show contents</button>
+</div>
+<div class="reader-toolbar__profiles" role="group" aria-label="Reading profile">
+<button type="button" data-reader-profile="compact" aria-pressed="false" title="Titles and orientations, minimal metadata, tight spacing">Compact</button>
+<button type="button" data-reader-profile="abbreviated" aria-pressed="false" title="Core reference content, minimal metadata, tight spacing">Abbreviated</button>
+<button type="button" data-reader-profile="book" aria-pressed="true" title="Core reference content, essential metadata, comfortable spacing">Book</button>
+<button type="button" data-reader-profile="full" aria-pressed="false" title="All content, metadata, provenance, and supporting sources">Full</button>
+</div>
+<details class="reader-toolbar__advanced">
+<summary>Customize this view</summary>
+<div class="reader-toolbar__controls">
+<label for="reader-detail">Content detail
+<select id="reader-detail">
+<option value="summary">Summary</option><option value="core">Core</option><option value="full">All</option>
+</select></label>
+<label for="reader-metadata">Metadata
+<select id="reader-metadata">
+<option value="minimal">Minimal</option><option value="essential">Essential</option><option value="full">All</option>
+</select></label>
+<label for="reader-density">Spacing
+<select id="reader-density">
+<option value="tight">Tight</option><option value="comfortable">Comfortable</option>
+</select></label>
+</div>
+</details>
+</section>
+'@
+    $htmlText = $htmlText.Replace('</head>', "<style>`n$readerCss`n</style>`n</head>")
+    $navigationIndex = $htmlText.IndexOf('<nav id="TOC"', [System.StringComparison]::Ordinal)
+    if ($navigationIndex -lt 0) {
+        throw "Could not locate proof navigation for reader controls"
+    }
+    $htmlText = $htmlText.Insert($navigationIndex, $readerShell)
+    $readerBootstrap = "<script>window.FACTORIUM_SOURCE_INDEX=$sourceIndexJson;</script>`n<script>$readerJavaScript</script>`n"
+    $htmlText = $htmlText.Replace('</body>', $readerBootstrap + '</body>')
+    $searchAssets = @($searchAssets) + @(
+        foreach ($asset in @($readerStyle, $readerScript)) {
+            [ordered]@{
+                path = [System.IO.Path]::GetRelativePath($workspace, $asset).Replace("\", "/")
+                sha256 = (Get-FileHash -LiteralPath $asset -Algorithm SHA256).Hash.ToLowerInvariant()
+            }
+        }
+    )
+    $readerChecks = [ordered]@{
+        profiles = @("compact", "abbreviated", "book", "full")
+        default_profile = "book"
+        detail_levels = @("summary", "core", "full")
+        metadata_levels = @("minimal", "essential", "full")
+        density_levels = @("tight", "comfortable")
+        indexed_sources = @($sourceIndex).Count
+        indexed_records = $searchChecks.indexed_records
+        per_entry_full_override = $true
+        deep_link_reveal = $true
+    }
+}
+
 [System.IO.File]::WriteAllText(
     $html,
     $htmlText,
@@ -549,6 +631,7 @@ $manifestRecord = [ordered]@{
     selection_checks = $selectionChecks
     search_checks = $searchChecks
     search_assets = $searchAssets
+    reader_checks = $readerChecks
     rendering_checks = [ordered]@{
         internal_fragment_links = $fragmentLinks.Count
         missing_fragment_targets = $missingFragments.Count
@@ -561,7 +644,7 @@ $manifestRecord = [ordered]@{
         bytes = (Get-Item -LiteralPath $html).Length
     }
 }
-if ($Edition -eq "sim-04") {
+if ($Edition -in @("sim-04", "sim-05")) {
     $manifestRecord.output.search_index_path = "search-index.json"
     $manifestRecord.output.search_index_sha256 = (Get-FileHash -LiteralPath $searchIndexOutput -Algorithm SHA256).Hash.ToLowerInvariant()
 }
@@ -576,13 +659,17 @@ if ($Edition -ne "sim-01") {
     Write-Output "delta_views=$($selectionChecks.delta_views)"
     Write-Output "combined_records=$($selectionChecks.combined_projection_records)"
 }
-if ($Edition -in @("sim-03", "sim-04")) {
+if ($Edition -in @("sim-03", "sim-04", "sim-05")) {
     Write-Output "tasks=$($selectionChecks.task_count)"
     Write-Output "task_coverage_records=$($selectionChecks.task_coverage_records)"
 }
-if ($Edition -eq "sim-04") {
+if ($Edition -in @("sim-04", "sim-05")) {
     Write-Output "search_records=$($searchChecks.indexed_records)"
     Write-Output "search_missing_targets=$($searchChecks.missing_rendered_targets)"
+}
+if ($Edition -eq "sim-05") {
+    Write-Output "reader_profiles=$($readerChecks.profiles.Count)"
+    Write-Output "reader_default=$($readerChecks.default_profile)"
 }
 Write-Output "internal_links=$($fragmentLinks.Count)"
 Write-Output "missing_internal_targets=$($missingFragments.Count)"

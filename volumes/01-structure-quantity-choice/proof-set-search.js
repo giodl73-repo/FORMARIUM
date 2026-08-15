@@ -79,8 +79,11 @@
       var query = queryInput.value.trim();
       var kind = kindSelect.value;
       var matches = searchRecords(records, query, kind);
-      var shown = matches.slice(0, 20);
-      var nextParameters = new URLSearchParams();
+      var awaitingQuery = !query && !kind;
+      var shown = awaitingQuery ? [] : matches.slice(0, 20);
+      var nextParameters = new URLSearchParams(locationObject.search);
+      nextParameters.delete("q");
+      nextParameters.delete("kind");
       if (query) nextParameters.set("q", query);
       if (kind) nextParameters.set("kind", kind);
       var nextUrl = locationObject.pathname +
@@ -88,9 +91,11 @@
         locationObject.hash;
       historyObject.replaceState(null, "", nextUrl);
 
-      status.textContent = matches.length + " result" +
-        (matches.length === 1 ? "" : "s") +
-        (matches.length > shown.length ? "; showing first " + shown.length : "");
+      status.textContent = awaitingQuery
+        ? records.length + " records available. Enter terms or choose a kind."
+        : matches.length + " result" +
+          (matches.length === 1 ? "" : "s") +
+          (matches.length > shown.length ? "; showing first " + shown.length : "");
       results.replaceChildren();
 
       shown.forEach(function (record) {
