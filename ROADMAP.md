@@ -5,9 +5,10 @@ Status: active
 Current milestones: **R4 - Volume prototype evidence** and
 **R5 - First substantial volume**
 
-Current execution milestones: **R4E - The Sieve** and
-**R5A - Factor Forge intake**. The next release bridge is
-**R5P - Proof Set**, an invited private preview after The Sieve closes.
+Current execution milestones: **R5A - Factor Forge intake** and the internal
+simulation preflight for **R5P - Proof Set**. External Sieve and invited
+preview sessions are deferred until readers are available; they are release
+evidence boundaries, not current repository work stops.
 
 Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**,
 **R2 - Reproducible reference**, **R3 - Guides and mappings**
@@ -267,6 +268,14 @@ use, every reported failure is dispositioned, and no repeated unresolved
 critical trust, navigation, accessibility, or semantic blocker remains. The
 gate decision is `proceed`, `repair and rerun`, or `narrow`.
 
+Before readers are available, internal simulation may exercise every task
+route, verify links and expected-answer reachability, test artifact mechanics,
+and record predicted ambiguity or accessibility risks. Simulation results must
+use synthetic scenario identifiers, remain separate from observation records,
+and report no participant count, completion rate, timing, quote, preference,
+or return use. They may repair author-detectable defects but cannot close R4,
+admit `preview-01`, or support a usability claim.
+
 Public R5 publication remains separately gated by the approximately 250-entry
 coverage goal and the editorial, domain, graph, citation, maturity, and
 publication requirements above.
@@ -308,7 +317,9 @@ Nothing becomes authoritative without visible source and human review.
 4. generate indexes and integrity reports;
 5. build cross-paradigm mappings and two Factor Guides;
 6. curate and usability-test the first volume prototype;
-7. close The Sieve, forward-apply its findings, and run the Proof Set private
-   preview on a frozen proof edition;
-8. expand toward and gate the approximately 250-entry substantial volume;
-9. begin Workbench implementation only against the proven reference contract.
+7. run internal Proof Set simulation preflights while continuing reviewed R5
+   editorial batches;
+8. when readers become available, close The Sieve, forward-apply its findings,
+   and run the Proof Set private preview on a frozen proof edition;
+9. expand toward and gate the approximately 250-entry substantial volume;
+10. begin Workbench implementation only against the proven reference contract.

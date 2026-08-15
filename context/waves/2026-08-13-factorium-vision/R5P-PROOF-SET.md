@@ -1,10 +1,10 @@
 # R5P - Proof Set
 
-Status: specified; candidate admission waits on R4E closure
+Status: internal simulation preflight active; external preview deferred
 
 Parent milestone: R5 - First substantial volume
 
-Required predecessor: R4E - The Sieve
+Required predecessor for evidence-bearing distribution: R4E - The Sieve
 
 Parallel editorial track: R5A - Factor Forge
 
@@ -57,6 +57,27 @@ Do not tag or distribute `preview-01` until all of the following are true:
 
 The gate is coherence- and evidence-driven. It does not require an arbitrary
 intermediate entry count, the approximately 250-entry R5 target, or Workbench.
+
+## Internal simulation preflight
+
+Simulation may proceed before R4E closes because it does not admit or
+distribute the preview candidate. It may:
+
+- walk synthetic scenarios through every prescribed task route;
+- verify that volume, catalog, entry, specialized-view, prime, and guide links
+  reach the expected material;
+- compare plausible first selections with the evaluator contract;
+- predict terminology, navigation, layout, trust, and accessibility risks;
+- repair defects visible from the artifacts themselves;
+- rehearse manifest, rendering, quickstart, and feedback mechanics.
+
+Simulation records use `SIM-*` identifiers and remain outside participant
+observation files. They MUST NOT invent participant identity, behavior,
+completion, timing, quotes, difficulty, preference, application success, or
+return use. A simulated success is route reachability, not evidence that a
+reader would find or understand the route.
+
+The initial result is recorded at `PROOF-SET-SIMULATION-PREFLIGHT.md`.
 
 ## Candidate artifacts
 
@@ -147,20 +168,22 @@ new evidence rather than rewriting the initial record.
 
 ## Execution sequence
 
-1. Close The Sieve from real reader evidence.
-2. Forward-apply and review relevant findings.
-3. Select the book-shaped preview candidate.
-4. Validate, review, render, manifest, freeze, and tag `preview-01`.
-5. Recruit and distribute to the invited cohort.
-6. Collect prescribed, self-selected, and return-use evidence.
-7. Factor and disposition every failure.
-8. Rerun when critical or major revisions invalidate prior evidence.
-9. Publish the de-identified gate audit and decision.
+1. Run internal simulation preflights and repair author-detectable defects.
+2. Close The Sieve from real reader evidence when readers are available.
+3. Forward-apply and review relevant findings.
+4. Select the book-shaped preview candidate.
+5. Validate, review, render, manifest, freeze, and tag `preview-01`.
+6. Recruit and distribute to the invited cohort.
+7. Collect prescribed, self-selected, and return-use evidence.
+8. Factor and disposition every failure.
+9. Rerun when critical or major revisions invalidate prior evidence.
+10. Publish the de-identified gate audit and decision.
 
 ## Current state
 
-The milestone is specified, but no preview candidate exists and no participant
-has been recruited for Proof Set. The immediate external action remains the
-prepared `sieve-01` reader round. Factor Forge may continue in parallel, but
-its additions are not covered by Sieve or Proof Set until explicitly included
-in the corresponding frozen artifact.
+No preview candidate exists and no participant has been recruited for Proof
+Set. External Sieve and preview sessions are deferred until readers are
+available. Internal simulation preflight is active alongside Factor Forge,
+but its additions are not covered by Sieve or Proof Set evidence until
+explicitly included in the corresponding frozen artifact and used by real
+readers.

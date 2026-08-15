@@ -1,6 +1,6 @@
 # R4E - The Sieve
 
-Status: active external evidence track; ready to recruit readers
+Status: external evidence deferred until readers are available; packet ready
 
 Parent milestone: R4 - Volume prototype
 
@@ -125,8 +125,9 @@ claims.
 
 No external reader observation exists yet. Participant codes `P01`-`P05`,
 round `sieve-01`, and all assigned task rotations are prepared under
-`volumes/01-structure-quantity-choice/sessions/`. The next concrete action is
-to run the matching worksheet with an available real reader.
+`volumes/01-structure-quantity-choice/sessions/`. The round is not on the
+current repository execution path. When a real reader becomes available, the
+next external action is to run the matching worksheet.
 
 The full `P01`-`P05` rotation, reusable worksheet, recruitment brief, and
 mechanics-only dry run are also ready under
@@ -136,3 +137,7 @@ External reader availability delays this evidence track but does not block
 the repository. The tested baseline is frozen at commit `817e779` and tag
 `sieve-01-prototype`; parallel R5 work must not be represented as covered by
 this round.
+
+Internal task simulations may detect author-visible defects, but they MUST use
+synthetic identifiers outside `OBSERVATIONS.md` and MUST NOT report participant
+behavior, task success, timing, quotes, preferences, or usability evidence.

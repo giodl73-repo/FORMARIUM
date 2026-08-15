@@ -39,9 +39,9 @@ recorded in `ROADMAP-ROLE-REVIEW.md`.
 | 04 | Reproducible reference | complete | Froze a 20-entry, 121-sense, 193-factor, 30-view canonical corpus with deterministic validation and generated catalogs. |
 | 05 | Cross-paradigm assignment tables | complete | Published 66 contextual many-to-many assignments across OO, Rust, functional, relational, cloud-native, and organizational slices. |
 | 06 | Factor Guide method | complete | Published the guide contract plus separately reviewed Rust authorization and laboratory concentration pilots. |
-| 07E | The Sieve - external reader validation | ready to recruit | Run 3-5 observed reader sessions, factor failures by owner, repair repeated blockers, and rerun affected tasks. |
+| 07E | The Sieve - external reader validation | deferred; packet ready | Run 3-5 observed reader sessions when readers are available; simulation cannot supply its evidence. |
 | 08A | Factor Forge intake | in progress | Expand the reviewed canonical corpus in versioned editorial batches while the frozen Sieve baseline awaits external sessions. |
-| 08P | Proof Set - private preview | specified; awaits 07E | Freeze a repaired proof edition for 8-12 invited readers and gate independent onboarding, real application, and return use before public R5 publication. |
+| 08P | Proof Set - private preview | simulation preflight active; readers deferred | Exercise synthetic task routes and preview mechanics now; later freeze a repaired edition for invited independent use. |
 
 Factor Forge's first F1 slice is the system-composition cluster at
 `tables/entries/system-composition-dependency.md`, with integrity constraints
@@ -117,6 +117,9 @@ book-shaped candidate for independent use by 8-12 invited practitioners. It
 does not require Workbench or the full 250-entry public-volume target, and it
 does not convert its small cohort into a broad usability or market claim.
 Planning and result review are recorded in `PROOF-SET-ROLE-REVIEW.md`.
+The first non-evidentiary task-route rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT.md`. Its predicted risks may drive internal
+repairs, but its route checks are not participant observations.
 
 ## Success criteria
 

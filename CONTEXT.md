@@ -25,7 +25,8 @@ evidence and one tested Factorium domain.
 
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Current pulses: **07E - The Sieve** and **08A - Factor Forge intake**
+Current pulses: **08A - Factor Forge intake** and
+**08P - Proof Set simulation preflight**
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
@@ -74,16 +75,27 @@ fixed-point readiness review. The current R4 closure gate is external:
 `context/waves/2026-08-13-factorium-vision/R4-PROTOTYPE-READINESS-AUDIT.md`
 must remain incomplete until real target-reader observations are recorded.
 
-The next execution milestone is **R4E - The Sieve**, recorded at
+The external evidence milestone is **R4E - The Sieve**, recorded at
 `context/waves/2026-08-13-factorium-vision/R4E-THE-SIEVE.md`. It recruits and
 runs the first 3-5 external reader sessions, factors observed failures by
 their true owner, repairs critical/major issues, and reruns affected tasks.
-The Sieve runs concurrently with **R5A - Factor Forge intake**, recorded at
+External recruitment is deferred until readers are available and is not the
+current repository work path. The Sieve remains open so simulated walkthroughs
+cannot be mistaken for external usability evidence.
+
+**R5A - Factor Forge intake** is recorded at
 `context/waves/2026-08-13-factorium-vision/R5A-FACTOR-FORGE-INTAKE.md`.
 The frozen `sieve-01` baseline remains commit `817e779` and tag
 `sieve-01-prototype`; later editorial additions do not count as tested by that
 round. Factor Forge may develop new reviewed batches now, but R5 publication
 still requires dispositioning relevant Sieve findings.
+
+**R5P - Proof Set** now has an internal simulation-preflight lane at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT.md`.
+It exercises deterministic task routes and predicts navigation risks without
+creating participant observations, completion rates, timing evidence, or
+return-use evidence. This lane may improve the book and preview materials now;
+the invited preview remains deferred.
 
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
