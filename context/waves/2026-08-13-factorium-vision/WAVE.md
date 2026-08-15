@@ -416,3 +416,26 @@ bindings. The Factor Forge delta grows to 21 records and the combined
 selection to 99 numbered records plus two guides across eleven chapters. The
 generated `sim-07` site contains 127 pages from 115 sources, indexes all 101
 reader destinations, and reports zero missing internal targets.
+
+## 2026-08-15 stock-flow-balance content continuation
+
+Plan review: admit an F10 structural bridge across quantities, systems,
+control, evidence, populations, energy, electricity, materials, and economics;
+ground stock, flow, accumulation, reconciliation, conservation, steady-state,
+and residual distinctions in official cross-domain sources; author one
+canonical anchor and one Diagnostic view; reassign the general balance Formula
+view; close role findings; then propagate the exact delta through assurance,
+Factor Forge, search, and the static book site. Domain laws retain their native
+authority and no external-reader gate is introduced.
+
+Result review: F10 adds `stock-flow-balance` with five senses and the
+Stock-Flow Balance Failure Diagnostic, and moves the General Accounting
+Balance Formula view to the structural owner. Stock, flow, accumulation,
+balance, and conservation remain separate; closure, steady state, residual
+cause, and truth remain distinct claims. Fixed-point review closes all major
+findings, and the reference grows to 31 entries, 187 senses, 316 factors, and
+43 views with 80 assurance bindings. The Factor Forge delta grows to 23
+records and the combined selection to 101 numbered records plus two guides
+across twelve chapters. The generated `sim-07` site contains 130 pages from
+117 sources, indexes all 103 reader destinations, and reports zero missing
+internal targets.

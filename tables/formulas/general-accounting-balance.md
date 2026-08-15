@@ -4,6 +4,8 @@ Status: candidate Formula Table
 
 Primary family: Formula Table
 
+Canonical headword: [Stock, Flow, Accumulation, Balance, and Conservation](../entries/stock-flow-balance.md)
+
 ## Orientation
 
 An accounting balance tracks a countable property inside a chosen system over
@@ -32,8 +34,9 @@ are zero.
 | `Qdot_generation` | internal creation rate | scalar | `Q` per time | `D_Q T^-1` | internal source |
 | `Qdot_consumption` | internal destruction rate | scalar | `Q` per time | `D_Q T^-1` | internal sink |
 
-The counted property and transfer terms remain domain-specific candidate
-headwords.
+The counted property and its domain-specific conservation or accounting rules
+remain explicit; the stock, flow, accumulation, and balance roles are owned by
+the canonical anchor.
 
 ## Scope and assumptions
 
@@ -93,16 +96,18 @@ balance-use
 - [Boundary](../roots/boundary.md)
 - [State](../roots/state.md)
 - [Time](../roots/time.md)
+- [Stock, Flow, Accumulation, Balance, and Conservation](../entries/stock-flow-balance.md)
 - [Work, Energy, and Power](../entries/work-energy-power.md)
-- conservation — `unresolved-candidate`
-- flow — `unresolved-candidate`
 
 ## Sources and provenance
 
-1. Rice University, "Foundations of Conservation Principles":
-   https://www.ruf.rice.edu/~bioewhit/foundations/bioe252/docs/Ch%5B1%5D.2.htm
-2. APMonitor, "Balance Equations":
-   https://apmonitor.com/pdc/index.php/Main/PhysicsBasedModels
+1. [Stock-flow-balance research note](../../docs/research/2026-08-15-stock-flow-balance.md)
+2. U.S. Geological Survey, *Water Budgets*:
+   https://pubs.usgs.gov/publication/cir1308
+3. U.S. EPA, *Green Bay/Fox River Mass Balance Study*:
+   https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=20009PPL.txt
+4. NASA, GFSSP Version 6 User Manual:
+   https://www.nasa.gov/wp-content/uploads/2024/04/gfssp-v6-usermanual.pdf
 
 Formula authority: established engineering accounting pattern. Factorium
 representation remains a candidate pending engineering and practitioner

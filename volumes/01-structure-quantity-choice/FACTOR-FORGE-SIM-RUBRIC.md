@@ -150,6 +150,23 @@ Critical artifact failure: sample size, random splitting, narrow uncertainty,
 or a representativeness label is treated as proof of deployment coverage or
 generalizability.
 
+## Task S expected route
+
+- Stock, Flow, Accumulation, Balance, and Conservation;
+- Stock-Flow Balance Failure Diagnostic;
+- opening and closing stock remain distinct from gross interval flows, flow
+  rates, capacity, net flow, and accumulation;
+- internal and external transfers plus gross and consolidated views retain
+  declared boundaries;
+- zero accumulation does not imply inactivity, equilibrium, or zero flow;
+- arithmetic closure does not prove conservation, complete terms, correct
+  measurement, or evidence custody;
+- the unexplained adjustment remains a residual until uncertainty and
+  competing omitted-term hypotheses are tested.
+
+Critical artifact failure: net zero or a balancing adjustment is treated as
+proof that no movement occurred or that every reported term is true.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -176,6 +193,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/evidence/causal-claim-evidence.md`
 - `tables/entries/sampling-generalization.md`
 - `tables/diagnostics/sampling-generalization-failures.md`
+- `tables/entries/stock-flow-balance.md`
+- `tables/diagnostics/stock-flow-balance-failures.md`
 
 ## Claim boundary
 

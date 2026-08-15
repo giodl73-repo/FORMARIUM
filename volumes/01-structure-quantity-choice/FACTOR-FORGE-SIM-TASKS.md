@@ -2,7 +2,7 @@
 
 Status: neutral internal `sim-03` prompts; not participant observations
 
-Use these prompts to rehearse coverage of the 21-record Factor Forge
+Use these prompts to rehearse coverage of the 23-record Factor Forge
 supplement. Do not consult the author-only rubric while walking a route. Record
 only artifact-level `SIM3-*` notes: plausible first title, headings followed,
 available distinctions, alternate landings, and missing or broken material.
@@ -129,8 +129,22 @@ audit leakage, exclusions, stage denominators, dependence, source-target
 differences, support, and time/version drift. Replace `representative` with the
 exact performance result, target, criterion, and evidence.
 
+## Task S - The warehouse that balances
+
+A warehouse dashboard shows the same opening and closing inventory, so the
+report calls operations inactive and the balance proven. In fact, large
+receipts and shipments cancelled in the net value, one transfer between two
+internal locations was counted twice, and a final unexplained adjustment made
+the spreadsheet close.
+
+Separate stock, gross flows, net flow, accumulation, balance, steady state,
+and conservation. Use the Diagnostic view to freeze property, boundary,
+compartments, interval, units, signs, consolidation, residual, and uncertainty.
+Identify what independent evidence would distinguish a legitimate correction
+from an omitted transfer or measurement error.
+
 ## Rehearsal boundary
 
-The eleven prompts collectively exercise every entry and specialized view in the
+The twelve prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 30 anchor entries, 182 senses, 303
-ordered factors, and 42 specialized views. It is strong in foundational
+The canonical corpus currently contains 31 anchor entries, 187 senses, 316
+ordered factors, and 43 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -128,6 +128,17 @@ Status: first slice implemented as one canonical anchor and one Diagnostic
 view. It resolves the arithmetic-mean sample declaration and adds portable
 coverage, selection, leakage, estimation, and source-to-target failure tests.
 
+### F10 - Stock, Flow, Balance, and Conservation
+
+Separate point-in-time stocks, boundary or period flows, flow totals and rates,
+accumulation, accounting balance, and domain conservation. Connect quantities,
+systems, control, evidence, populations, energy, electricity, materials, and
+economics without treating arithmetic closure as physical or custody proof.
+
+Status: first slice implemented as one canonical anchor and one Diagnostic
+view. The existing General Accounting Balance Formula view moves from an
+energy-only owner to the new structural anchor.
+
 ## Batch gate
 
 Each batch must:
@@ -164,8 +175,8 @@ result review at `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`. It keeps V0
 unchanged and implements deterministic relation and assurance sidecars before
 any V1 decision. The six-edge F1-F6 fixture passes directed queries,
 referential integrity, canonical round trips, failure tests, and fixed-point
-review. Assurance now covers all 30 V0 entries, 42 V0 views, and six admitted
-relations with 78 exact source-digest bindings. FFP-008 is closed; broader
+review. Assurance now covers all 31 V0 entries, 43 V0 views, and six admitted
+relations with 80 exact source-digest bindings. FFP-008 is closed; broader
 typed-relation coverage and a V1 decision remain open scaling gates.
 
 ## F1 first slice
@@ -278,3 +289,23 @@ discriminating tests, and repair owners. Research and fixed-point review are
 F9 resolves the arithmetic-mean `sample` declaration without adding unresolved
 vocabulary. The current Factor Forge book delta is 21 records: ten entries and
 eleven specialized views.
+
+## F10 first slice
+
+The Stock, Flow, Balance, and Conservation anchor at
+`tables/entries/stock-flow-balance.md` separates point-in-time amounts,
+boundary and period changes, rates, net accumulation, reconciliation grammar,
+and domain conservation constraints through property, boundary, interval,
+unit, direction, gross/net, internal/external, residual, and authority factors.
+
+`tables/diagnostics/stock-flow-balance-failures.md` maps nonclosure,
+suspicious closure, amount-rate confusion, hidden gross flows, compartment
+errors, slow drift, and residuals to candidate causes, discriminating tests,
+and repair owners. The General Accounting Balance Formula view is reassigned
+to the structural anchor. Research and fixed-point review are
+`docs/research/2026-08-15-stock-flow-balance.md` and
+`STOCK-FLOW-BALANCE-ROLE-REVIEW.md`.
+
+F10 resolves `flow` and `conservation` in the general balance view without
+adding unresolved vocabulary. The current Factor Forge book delta is 23
+records: eleven entries and twelve specialized views.

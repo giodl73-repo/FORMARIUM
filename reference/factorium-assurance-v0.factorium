@@ -1,12 +1,12 @@
 factorium-assurance-v0
-review entry:amount-concentration-composition | 8f35f6b2271ceac81436fd1fc7913873a998c61b17e656f06ef321b97fae866e | context/waves/2026-08-13-factorium-vision/AMOUNT-COMPOSITION-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:amount-concentration-composition | e225d020de032f21c97747660c08707a815c29345432e9d49015dfe623ec9a18 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:causal-reasoning | 665a33d595e85644f1c4df9b7968617cf26a15fa41c46b448e38cb84540f0383 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:claim-evidence | 17875b0730df45b563261a670149d4c8312ecf6487f672028b96672fd19b39e5 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:comparative-quantity | 8db9bf291155f021bdc710a83d6682bc7f06a691cde16fe4974abf6a3553acdd | context/waves/2026-08-13-factorium-vision/COMPARATIVE-QUANTITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
-review entry:control-monitoring-response | 5d1d36d42fe9aa4a5734d6b536769620e8dcb3198b7b6abe4877f6b3484a3686 | context/waves/2026-08-13-factorium-vision/CAUSAL-REASONING-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review entry:control-monitoring-response | e72a7cfcee6c478bc79afa6ffabbb9a64b86481757fb902e5a0993fec256e231 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:coordinated-work | 0222cf161280095c6f19eb41c5fa1ea6d5714ac53e59e0aa0ac46414686dd161 | context/waves/2026-08-13-factorium-vision/COORDINATED-WORK-ROLE-REVIEW.md | fixed-point | 2026-08-15
-review entry:cost-price-value-return | e10439010d4d696091de96315b2b45c696bea8fbd866ffdfcbc6d8205e6a6a92 | context/waves/2026-08-13-factorium-vision/COST-VALUE-RETURN-ROLE-REVIEW.md | fixed-point | 2026-08-14
-review entry:electrical-quantity | 26fca30856b813ad53d72340e044b2e151a3697e60584137d6872c33ded91603 | context/waves/2026-08-13-factorium-vision/ELECTRICAL-QUANTITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:cost-price-value-return | efbcbb18bd58445e31d4bb7ea020f992c211af193595e8eaa8e8cfc676e9e1ac | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review entry:electrical-quantity | e0da052f0342857dad21769b85a23d18271a12f3be4e7d95bcd8cac742890b40 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:factorium-entry-publication | 3db0ac7937b84aab72df2b251df41f294657432bc1ad7ce914ddc0d844971787 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:factorization-quality | 27978512e24b810b79b2c6ba60325d805dec1c1f4807493dc29e7832de6a13e0 | context/waves/2026-08-13-factorium-vision/FACTOR-FORGE-PORTFOLIO-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:force | e40289928fc1d389ad9af7694185d7b1d63833c7f09f7f05bdd932b543298f59 | context/waves/2026-08-13-factorium-vision/CAUSAL-REASONING-ROLE-REVIEW.md | fixed-point | 2026-08-15
@@ -26,9 +26,10 @@ review entry:software-module-service-resource | d00125bbe6a13e92296ecb4dbaf3111d
 review entry:software-transaction-message-contract | 1dae51b079938f56ce4f150972cfde60bdedd44a9492766bf03a48912103341e | context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:software-type-value-function | 42ff277d2aabb90df4996718179eba02a4151c7037b47c15d38a578720806d82 | context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:state-event-transition-process-lifecycle | 3b246217728bb926906ac9b290fa5b50bccff4b4184de765a378cf0ccfbe035d | context/waves/2026-08-13-factorium-vision/COORDINATED-WORK-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review entry:stock-flow-balance | 4f967d2328a40d9472c1259eb2736c12630dd01ce1742f82edd8c6a460186a62 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:system-composition-dependency | e53d06dfa72d318168c638c23432ecd8975f9ec5ee6c02422d24694ea8e0c65c | context/waves/2026-08-13-factorium-vision/SYSTEM-COMPOSITION-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:thermal-quantity | 339cb07a1aac75efbbce393927f6afbd2495c614a55926d1ac5a77dc8dd8fd0c | context/waves/2026-08-13-factorium-vision/THERMAL-QUANTITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
-review entry:work-energy-power | d6940701086c23f3a1e22ae46f0b7d3c354263dcee823d01642fea3fae07bb09 | context/waves/2026-08-13-factorium-vision/WORK-ENERGY-POWER-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:work-energy-power | b89a5690bbbee3c3da01831862eab0319c2d28006261a1e7469f7104991c7b68 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review relation:f1-dependency-interface | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review relation:f2-delegation-authority | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review relation:f3-inference-observation | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df | context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
@@ -42,6 +43,7 @@ review view:diagnostic-control-response-failures | f41c9dc3503dcff4f5fbc61518f3f
 review view:diagnostic-coordinated-work-failures | abb30b9edfbf4ca2daa739c4a785a8fe75c4533f061483d3cec0b5232227246c | context/waves/2026-08-13-factorium-vision/COORDINATED-WORK-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:diagnostic-factorization-failures | 275bc4301d9b19314016ba19222df136ac7cc24f5bd82e374ed133f9733a6495 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:diagnostic-sampling-generalization-failures | 6e41185bf45b3f393c8c8ec2ed5585669d498f232a7881fa8a97958f62c23b24 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review view:diagnostic-stock-flow-balance-failures | 8d39caab3bc967fb8ec4984e198987cb1d069463d241d49e46668c9b0ff6d685 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:evidence-causal-claim | d8154c9972f828cf58ddf6221ea1a5f658ef2a150dc826b94dd477736eb538da | context/waves/2026-08-13-factorium-vision/CAUSAL-REASONING-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:evidence-founding-factor-evidence | 6314905c0d750c49278e67aa386073b6fb566b06294a66dbce0496d2e5552b47 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:evidence-observation-inference-chain | d3c71683ab9153f9382cea28b3c378047b68fb8bda79b9d08a01da3acda699ed | context/waves/2026-08-13-factorium-vision/OBSERVATION-INFERENCE-ROLE-REVIEW.md | fixed-point | 2026-08-14
@@ -53,7 +55,7 @@ review view:formula-cost-value-return | 212414c4bdf9ec980b9d83ac69a72f87ea62d73a
 review view:formula-density | 9d7584358ae111f818583116f68234aab0274ee596342baea895f51ac36e86b6 | context/waves/2026-08-13-factorium-vision/FORMULA-PILOTS-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:formula-electrical-quantities | 2b1743f2d3bc040dd01227ad4726fea9fb7f3aadcc3201203367ef97340475ce | context/waves/2026-08-13-factorium-vision/ELECTRICAL-QUANTITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:formula-force | 710fe4e5adda8a1dd848da92ce430ff2b8187b13e75b6bc9b4e9221f0d302a6a | context/waves/2026-08-13-factorium-vision/REFERENCE-DELTA-ROLE-REVIEW.md | fixed-point | 2026-08-14
-review view:formula-general-accounting-balance | be4038d9c4c2e76c348ed082fb713e4777095c352dce81ed2e1ef5edbda2e70f | context/waves/2026-08-13-factorium-vision/FORMULA-RELATION-KINDS-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:formula-general-accounting-balance | dc9186dd6c306a35b5a10c11ffe0342c4ef5f8e341441a3dc1870c07094fe766 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:formula-information-signal-measures | f6beb3d5163b0615abeda07d6a1951eb6e155931182f69ab8d4ea9bf49973318 | context/waves/2026-08-13-factorium-vision/INFORMATION-SIGNAL-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:formula-kinematics-motion-measures | f2c6fb43cadc7e73a73a274acb099dbeaf221c6b3874ed7ff1c76cfae8469dc0 | context/waves/2026-08-13-factorium-vision/MOTION-MEASURE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:formula-matter-load-measures | d88d6d709437dd71b4088373c6ef50fd19fd5b7b1c95eac60b79dce90fb0a297 | context/waves/2026-08-13-factorium-vision/MATTER-LOAD-MEASURE-ROLE-REVIEW.md | fixed-point | 2026-08-14

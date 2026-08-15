@@ -132,13 +132,15 @@ owns holding-period return and single-cash-flow time-value relations.
 
 ## Cross-references
 
+- [Stock, Flow, Accumulation, Balance, and Conservation](stock-flow-balance.md)
 - [Comparative Quantity](comparative-quantity.md)
 - [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
 - [Time](../roots/time.md)
 - [Purpose](../roots/purpose.md)
 - [Context](../roots/context.md)
 - accounting basis - `unresolved-candidate`
-- cash flow - `unresolved-candidate`
+- cash flow — economic specialization of the canonical `flow` sense under a
+  declared recognition, currency, boundary, and time basis
 - inflation - `unresolved-candidate`
 - net present value - `unresolved-candidate`
 

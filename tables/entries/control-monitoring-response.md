@@ -151,6 +151,7 @@ discriminating tests.
 
 ## Cross-references
 
+- [Stock, Flow, Accumulation, Balance, and Conservation](stock-flow-balance.md)
 - [Claim and Evidence](claim-evidence.md)
 - [Policy, Rule, Constraint, Decision, and Exception](policy-rule-constraint-decision-exception.md)
 - [State, Event, Transition, Process, and Lifecycle](state-event-transition-process-lifecycle.md)

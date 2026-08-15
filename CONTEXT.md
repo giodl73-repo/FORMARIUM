@@ -539,11 +539,12 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge F9 adds the candidate Sampling and Generalization anchor and
-failure Diagnostic view. The canonical reference now contains 30 entries, 182
-senses, 303 factors, and 42 views with 78 exact assurance bindings. The current
-Factor Forge supplement contains 21 records, so `sim-07` renders 99 numbered
-book records plus two application guides across eleven chapters. Historical preflight
+Factor Forge F10 adds the candidate Stock, Flow, Accumulation, Balance, and
+Conservation anchor plus a failure Diagnostic view, and rehomes the General
+Accounting Balance formula. The canonical reference now contains 31 entries,
+187 senses, 316 factors, and 43 views with 80 exact assurance bindings. The
+current Factor Forge supplement contains 23 records, so `sim-07` renders 101
+numbered book records plus two application guides across twelve chapters. Historical preflight
 documents retain the counts of the rehearsal they recorded.
 
 ## Boundary

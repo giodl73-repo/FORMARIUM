@@ -126,6 +126,7 @@ electrical-quantity-use
 
 ## Cross-references
 
+- [Stock, Flow, Accumulation, Balance, and Conservation](stock-flow-balance.md)
 - [Work, Energy, and Power](work-energy-power.md)
 - [Comparative Quantity](comparative-quantity.md)
 - [Periodic and Wave Quantity](periodic-wave-quantity.md)

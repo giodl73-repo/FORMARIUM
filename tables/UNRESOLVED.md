@@ -4,21 +4,20 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 
 | Source | Line | Candidate declaration |
 |---|---:|---|
-| `tables/entries/amount-concentration-composition.md` | 130 | molar mass - `unresolved-candidate` |
-| `tables/entries/amount-concentration-composition.md` | 131 | mixture - `unresolved-candidate` |
-| `tables/entries/amount-concentration-composition.md` | 132 | activity - `unresolved-candidate` |
+| `tables/entries/amount-concentration-composition.md` | 131 | molar mass - `unresolved-candidate` |
+| `tables/entries/amount-concentration-composition.md` | 132 | mixture - `unresolved-candidate` |
+| `tables/entries/amount-concentration-composition.md` | 133 | activity - `unresolved-candidate` |
 | `tables/entries/comparative-quantity.md` | 118 | fraction - `unresolved-candidate` |
-| `tables/entries/control-monitoring-response.md` | 160 | set point - `unresolved-candidate` |
-| `tables/entries/control-monitoring-response.md` | 161 | actuator - `unresolved-candidate` |
-| `tables/entries/control-monitoring-response.md` | 162 | service-level objective - `unresolved-candidate` |
-| `tables/entries/cost-price-value-return.md` | 140 | accounting basis - `unresolved-candidate` |
-| `tables/entries/cost-price-value-return.md` | 141 | cash flow - `unresolved-candidate` |
-| `tables/entries/cost-price-value-return.md` | 142 | inflation - `unresolved-candidate` |
-| `tables/entries/cost-price-value-return.md` | 143 | net present value - `unresolved-candidate` |
-| `tables/entries/electrical-quantity.md` | 135 | electric field - `unresolved-candidate` |
-| `tables/entries/electrical-quantity.md` | 136 | resistivity - `unresolved-candidate` |
-| `tables/entries/electrical-quantity.md` | 137 | capacitance - `unresolved-candidate` |
-| `tables/entries/electrical-quantity.md` | 138 | impedance - `unresolved-candidate` |
+| `tables/entries/control-monitoring-response.md` | 161 | set point - `unresolved-candidate` |
+| `tables/entries/control-monitoring-response.md` | 162 | actuator - `unresolved-candidate` |
+| `tables/entries/control-monitoring-response.md` | 163 | service-level objective - `unresolved-candidate` |
+| `tables/entries/cost-price-value-return.md` | 141 | accounting basis - `unresolved-candidate` |
+| `tables/entries/cost-price-value-return.md` | 144 | inflation - `unresolved-candidate` |
+| `tables/entries/cost-price-value-return.md` | 145 | net present value - `unresolved-candidate` |
+| `tables/entries/electrical-quantity.md` | 136 | electric field - `unresolved-candidate` |
+| `tables/entries/electrical-quantity.md` | 137 | resistivity - `unresolved-candidate` |
+| `tables/entries/electrical-quantity.md` | 138 | capacitance - `unresolved-candidate` |
+| `tables/entries/electrical-quantity.md` | 139 | impedance - `unresolved-candidate` |
 | `tables/entries/force.md` | 129 | coercion — `unresolved-candidate` |
 | `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
 | `tables/entries/geometric-measure.md` | 91 | length — `unresolved-candidate` |
@@ -47,13 +46,11 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/system-composition-dependency.md` | 158 | subsystem - `unresolved-candidate` |
 | `tables/entries/thermal-quantity.md` | 128 | phase - `unresolved-candidate` |
 | `tables/entries/thermal-quantity.md` | 129 | thermodynamic system - `unresolved-candidate` |
-| `tables/entries/work-energy-power.md` | 130 | torque - `unresolved-candidate` |
+| `tables/entries/work-energy-power.md` | 131 | torque - `unresolved-candidate` |
 | `tables/formulas/arithmetic-mean.md` | 96 | median — `unresolved-candidate` |
 | `tables/formulas/arithmetic-mean.md` | 97 | weighted mean — `unresolved-candidate` |
 | `tables/formulas/density.md` | 93 | local mass density — `unresolved-candidate` |
 | `tables/formulas/force.md` | 113 | momentum — `unresolved-candidate` |
-| `tables/formulas/general-accounting-balance.md` | 97 | conservation — `unresolved-candidate` |
-| `tables/formulas/general-accounting-balance.md` | 98 | flow — `unresolved-candidate` |
 | `tables/formulas/newtons-method.md` | 95 | derivative — `unresolved-candidate` |
 | `tables/formulas/newtons-method.md` | 96 | root — `unresolved-candidate` |
 | `tables/formulas/newtons-method.md` | 97 | convergence — `unresolved-candidate` |

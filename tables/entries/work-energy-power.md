@@ -120,6 +120,7 @@ and mechanical-energy relations.
 
 ## Cross-references
 
+- [Stock, Flow, Accumulation, Balance, and Conservation](stock-flow-balance.md)
 - [Force](force.md)
 - [Motion measure](motion-measure.md)
 - [Matter and load measure](matter-load-measure.md)

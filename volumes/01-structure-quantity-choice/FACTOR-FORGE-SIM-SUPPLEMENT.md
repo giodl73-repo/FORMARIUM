@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **21 records** — 10 canonical entries and 11
+Selected current-corpus delta: **23 records** — 11 canonical entries and 12
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F9 extend
+This supplement tests whether completed Factor Forge batches F1-F10 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -113,6 +113,20 @@ inference. The Diagnostic view traces coverage, response, attrition,
 measurement, processing, weighting, dependence, split leakage, and support
 failures without treating sample size or `representative` as proof.
 
+## Part XI - Stocks, flows, balances, and conservation
+
+### From apparent closure to a scoped accounting contract
+
+100. [Stock, Flow, Accumulation, Balance, and Conservation](../../tables/entries/stock-flow-balance.md)
+101. [Stock-Flow Balance Failure Diagnostic](../../tables/diagnostics/stock-flow-balance-failures.md)
+
+The anchor separates point-in-time amounts, interval transfers, rates, net
+stock change, reconciliation, and domain conservation constraints. The
+Diagnostic view tests suspicious closure and nonclosure through property,
+boundary, interval, unit, gross/net, compartment, residual, uncertainty, and
+evidence checks without treating a balanced equation as proof that its terms
+are complete or true.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -121,5 +135,5 @@ failures without treating sample size or `representative` as proof.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 99-record combined simulation remains a rehearsal projection, not a
+- The 101-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

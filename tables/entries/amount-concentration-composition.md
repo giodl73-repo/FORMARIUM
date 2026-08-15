@@ -121,6 +121,7 @@ relations.
 
 ## Cross-references
 
+- [Stock, Flow, Accumulation, Balance, and Conservation](stock-flow-balance.md)
 - [Comparative Quantity](comparative-quantity.md)
 - [Matter and Load Measure](matter-load-measure.md)
 - [Geometric Measure](geometric-measure.md)
