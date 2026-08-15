@@ -154,6 +154,13 @@ The command writes a standalone core-book HTML file and exact-source manifest
 under `target\proof-set-sim-01`. It is an internal rehearsal artifact, not
 `preview-01` or reader evidence.
 
+Render the current-source expanded simulation with the exact 15-record Factor
+Forge delta:
+
+```powershell
+.\tools\render_proof_set.ps1 -Edition sim-02
+```
+
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 

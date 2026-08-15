@@ -100,6 +100,13 @@ the invited preview remains deferred. The second rehearsal adds a self-guided
 simulation quickstart and a reproducible static HTML proof with an exact-source
 manifest under `target/proof-set-sim-01`.
 
+The third rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-03.md`
+adds the exact current Factor Forge delta as a connected simulation supplement:
+7 entries and 8 views, producing a 93-record current-source projection. The
+renderer fails if the supplement omits or adds a canonical delta path. This is
+selection and publication-mechanics evidence only, not reader evidence.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

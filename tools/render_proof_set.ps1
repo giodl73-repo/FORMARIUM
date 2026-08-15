@@ -1,16 +1,29 @@
 param(
-    [string]$OutputDirectory = "target\proof-set-sim-01"
+    [ValidateSet("sim-01", "sim-02")]
+    [string]$Edition = "sim-01",
+    [string]$OutputDirectory = ""
 )
 
 $ErrorActionPreference = "Stop"
 
 $workspace = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $volume = Join-Path $workspace "volumes\01-structure-quantity-choice\VOLUME.md"
+$supplement = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-SUPPLEMENT.md"
 $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-SET-SIM-QUICKSTART.md"
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $volumeDirectory = Split-Path $volume
+$artifactName = "proof-set-$Edition"
+$artifactTitle = if ($Edition -eq "sim-01") {
+    "Factorium Proof Set Simulation 01"
+}
+else {
+    "Factorium Proof Set Expanded Simulation 02"
+}
+if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
+    $OutputDirectory = "target\$artifactName"
+}
 $output = [System.IO.Path]::GetFullPath((Join-Path $workspace $OutputDirectory))
-$html = Join-Path $output "proof-set-sim-01.html"
+$html = Join-Path $output "$artifactName.html"
 $manifest = Join-Path $output "manifest.json"
 
 $pandoc = Get-Command pandoc -ErrorAction Stop
@@ -41,20 +54,101 @@ function Add-ProofSource {
     }
 }
 
+function Get-WorkspaceMarkdownPathSet {
+    param([string]$Document)
+
+    $documentDirectory = Split-Path $Document
+    $documentText = Get-Content -LiteralPath $Document -Raw
+    $paths = [System.Collections.Generic.HashSet[string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    [regex]::Matches($documentText, '\[[^\]]+\]\(([^)#]+\.md)(?:#[^)]+)?\)') |
+        ForEach-Object {
+            $target = [System.IO.Path]::GetFullPath(
+                (Join-Path $documentDirectory $_.Groups[1].Value)
+            )
+            if ($target.StartsWith($workspace, [System.StringComparison]::OrdinalIgnoreCase)) {
+                $relativeTarget = [System.IO.Path]::GetRelativePath($workspace, $target).Replace("\", "/")
+                [void]$paths.Add($relativeTarget)
+            }
+        }
+    return ,$paths
+}
+
+$selectionChecks = [ordered]@{
+    mode = "base volume path selection"
+}
+if ($Edition -eq "sim-02") {
+    $canonicalKinds = [System.Collections.Generic.Dictionary[string, string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    foreach ($line in Get-Content -LiteralPath (Join-Path $workspace "reference\factorium-reference-v0.factorium")) {
+        if ($line.StartsWith("entry ", [System.StringComparison]::Ordinal)) {
+            $parts = $line -split ' \| '
+            $canonicalKinds[$parts[4]] = "entry"
+        }
+        elseif ($line.StartsWith("view ", [System.StringComparison]::Ordinal)) {
+            $parts = $line -split ' \| '
+            $canonicalKinds[$parts[5]] = "view"
+        }
+    }
+
+    $volumePaths = Get-WorkspaceMarkdownPathSet $volume
+    $supplementPaths = Get-WorkspaceMarkdownPathSet $supplement
+    $expectedDelta = [System.Collections.Generic.HashSet[string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    foreach ($canonicalPath in $canonicalKinds.Keys) {
+        if (-not $volumePaths.Contains($canonicalPath)) {
+            [void]$expectedDelta.Add($canonicalPath)
+        }
+    }
+
+    $missingDelta = @($expectedDelta | Where-Object { -not $supplementPaths.Contains($_) })
+    $extraDelta = @($supplementPaths | Where-Object { -not $expectedDelta.Contains($_) })
+    if ($missingDelta.Count -ne 0 -or $extraDelta.Count -ne 0) {
+        throw "Factor Forge supplement mismatch: missing=$($missingDelta -join ',') extra=$($extraDelta -join ',')"
+    }
+
+    $deltaEntries = @($expectedDelta | Where-Object { $canonicalKinds[$_] -eq "entry" }).Count
+    $deltaViews = @($expectedDelta | Where-Object { $canonicalKinds[$_] -eq "view" }).Count
+    $selectionChecks = [ordered]@{
+        mode = "exact current canonical delta from base volume paths"
+        canonical_entries = @($canonicalKinds.Values | Where-Object { $_ -eq "entry" }).Count
+        canonical_views = @($canonicalKinds.Values | Where-Object { $_ -eq "view" }).Count
+        delta_entries = $deltaEntries
+        delta_views = $deltaViews
+        delta_records = $expectedDelta.Count
+        combined_projection_records = 78 + $expectedDelta.Count
+        missing_delta_paths = $missingDelta.Count
+        extra_delta_paths = $extraDelta.Count
+    }
+}
+
 Add-ProofSource $quickstart
 Add-ProofSource $volume
 
-$volumeText = Get-Content -LiteralPath $volume -Raw
-$links = [regex]::Matches($volumeText, '\[[^\]]+\]\(([^)#]+)(?:#[^)]+)?\)')
-foreach ($link in $links) {
-    $relative = $link.Groups[1].Value
-    if (-not $relative.EndsWith(".md", [System.StringComparison]::OrdinalIgnoreCase)) {
-        continue
+$selectionDocuments = [System.Collections.Generic.List[string]]::new()
+$selectionDocuments.Add($volume)
+if ($Edition -eq "sim-02") {
+    Add-ProofSource $supplement
+    $selectionDocuments.Add($supplement)
+}
+
+foreach ($selectionDocument in $selectionDocuments) {
+    $selectionDirectory = Split-Path $selectionDocument
+    $selectionText = Get-Content -LiteralPath $selectionDocument -Raw
+    $links = [regex]::Matches($selectionText, '\[[^\]]+\]\(([^)#]+)(?:#[^)]+)?\)')
+    foreach ($link in $links) {
+        $relative = $link.Groups[1].Value
+        if (-not $relative.EndsWith(".md", [System.StringComparison]::OrdinalIgnoreCase)) {
+            continue
+        }
+        if ($excludedNames.Contains([System.IO.Path]::GetFileName($relative))) {
+            continue
+        }
+        Add-ProofSource (Join-Path $selectionDirectory $relative)
     }
-    if ($excludedNames.Contains([System.IO.Path]::GetFileName($relative))) {
-        continue
-    }
-    Add-ProofSource (Join-Path $volumeDirectory $relative)
 }
 
 New-Item -ItemType Directory -Force -Path $output | Out-Null
@@ -72,7 +166,7 @@ $pandocArguments = @(
     "--toc-depth=3",
     "--embed-resources",
     "--css=$relativeStyle",
-    "--metadata=title:Factorium Proof Set Simulation 01",
+    "--metadata=title:$artifactTitle",
     "--output=$html"
 ) + $pandocSources
 
@@ -195,7 +289,8 @@ $sourceRecords = foreach ($source in $sources) {
 
 $gitStatus = @(git -C $workspace status --porcelain)
 $manifestRecord = [ordered]@{
-    artifact = "proof-set-sim-01"
+    artifact = $artifactName
+    edition = $Edition
     status = "internal simulation rendering; not reader evidence or preview-01"
     source_commit = $sourceCommit
     workspace_dirty_at_render = $gitStatus.Count -gt 0
@@ -208,6 +303,7 @@ $manifestRecord = [ordered]@{
         "OBSERVATIONS.md"
     )
     sources = $sourceRecords
+    selection_checks = $selectionChecks
     rendering_checks = [ordered]@{
         internal_fragment_links = $fragmentLinks.Count
         missing_fragment_targets = $missingFragments.Count
@@ -215,7 +311,7 @@ $manifestRecord = [ordered]@{
         repository_source_links = $repositorySourceLinks.Count
     }
     output = [ordered]@{
-        path = "proof-set-sim-01.html"
+        path = "$artifactName.html"
         sha256 = (Get-FileHash -LiteralPath $html -Algorithm SHA256).Hash.ToLowerInvariant()
         bytes = (Get-Item -LiteralPath $html).Length
     }
@@ -226,6 +322,11 @@ $manifestRecord | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $manifest -
 Write-Output "artifact=$html"
 Write-Output "manifest=$manifest"
 Write-Output "sources=$($sources.Count)"
+if ($Edition -eq "sim-02") {
+    Write-Output "delta_entries=$($selectionChecks.delta_entries)"
+    Write-Output "delta_views=$($selectionChecks.delta_views)"
+    Write-Output "combined_records=$($selectionChecks.combined_projection_records)"
+}
 Write-Output "internal_links=$($fragmentLinks.Count)"
 Write-Output "missing_internal_targets=$($missingFragments.Count)"
 Write-Output "filesystem_links=$($localFileLinks.Count)"
