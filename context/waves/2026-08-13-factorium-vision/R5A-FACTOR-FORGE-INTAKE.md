@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 27 anchor entries, 162 senses, 266
-ordered factors, and 39 specialized views. It is strong in foundational
+The canonical corpus currently contains 29 anchor entries, 173 senses, 290
+ordered factors, and 41 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -105,6 +105,17 @@ view. It resolves the lifecycle anchor's workflow, concurrency, and
 compensation candidates while keeping parallelism, retry, idempotency,
 cancellation, rollback, and compensation non-equivalent.
 
+### F8 - Causal Reasoning
+
+Separate association, causal effect, contextual influence, causal mechanism,
+intervention, and actual-case attribution. Connect claim/evidence and control
+without treating prediction, temporal precedence, a diagram, a randomized
+label, a mediator, or a successful action as universal causal proof.
+
+Status: first slice implemented as one canonical anchor and one Evidence view.
+It resolves causal model and influence while preserving distinct effect,
+mechanism, transport, attribution, and responsibility questions.
+
 ## Batch gate
 
 Each batch must:
@@ -141,8 +152,8 @@ result review at `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`. It keeps V0
 unchanged and implements deterministic relation and assurance sidecars before
 any V1 decision. The six-edge F1-F6 fixture passes directed queries,
 referential integrity, canonical round trips, failure tests, and fixed-point
-review. Assurance now covers all 28 V0 entries, 40 V0 views, and six admitted
-relations with 74 exact source-digest bindings. FFP-008 is closed; broader
+review. Assurance now covers all 29 V0 entries, 41 V0 views, and six admitted
+relations with 76 exact source-digest bindings. FFP-008 is closed; broader
 typed-relation coverage and a V1 decision remain open scaling gates.
 
 ## F1 first slice
@@ -219,4 +230,20 @@ Research and fixed-point review are
 
 F7 resolves the three lifecycle declarations for workflow, concurrency, and
 compensation without adding unresolved vocabulary. The current Factor Forge
-book delta is 17 records: eight entries and nine specialized views.
+book delta was 17 records: eight entries and nine specialized views.
+
+## F8 first slice
+
+The Causal Reasoning anchor at `tables/entries/causal-reasoning.md` separates
+association, causal effect, influence, mechanism, intervention, and actual-case
+attribution through target contrast, design, assumptions, estimand, estimation,
+pathway evidence, alternatives, transport, and case-specific factors.
+
+`tables/evidence/causal-claim-evidence.md` audits six claim types without
+computing an effect or assigning responsibility. Research and fixed-point
+review are `docs/research/2026-08-15-causal-reasoning.md` and
+`CAUSAL-REASONING-ROLE-REVIEW.md`.
+
+F8 resolves `causal model` and `influence` without adding unresolved
+vocabulary. The current Factor Forge book delta is 19 records: nine entries
+and ten specialized views.

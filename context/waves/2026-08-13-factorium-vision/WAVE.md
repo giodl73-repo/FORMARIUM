@@ -377,3 +377,21 @@ findings, and the reference grows to 28 entries, 167 senses, 277 factors, and
 records and the combined book selection to 95 numbered records plus two
 application guides. Renderer and site validation results are recorded by the
 generated `sim-07` manifest.
+
+## 2026-08-15 causal-reasoning content continuation
+
+Plan review: admit an F8 bridge between claim/evidence and control; ground the
+distinctions in primary causal-inference and mechanism sources; author one
+canonical anchor and one Evidence view; repair causal-model and influence
+cross-references; close role findings; then propagate the exact delta through
+assurance, Factor Forge, search, and the static book site. External-reader
+gates and founding research claims remain unchanged.
+
+Result review: F8 adds `causal-reasoning` with six senses and the Causal Claim
+Evidence Table. Effect identification, estimation, mechanism evidence,
+intervention, transport, and actual-case attribution remain separate tasks.
+Fixed-point review closes all major findings, and the reference grows to 29
+entries, 173 senses, 290 factors, and 41 views with 76 assurance bindings. The
+Factor Forge delta grows to 19 records and the combined selection to 97
+numbered records plus two guides across ten chapters. Renderer and site
+validation results are recorded by the generated `sim-07` manifest.

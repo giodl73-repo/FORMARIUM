@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **17 records** — 8 canonical entries and 9
+Selected current-corpus delta: **19 records** — 9 canonical entries and 10
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F7 extend
+This supplement tests whether completed Factor Forge batches F1-F8 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -87,6 +87,19 @@ The Diagnostic view traces stalls, duplicates, conflicts, disagreement about
 completion, and partial effects across trigger, correlation, branch, join,
 ownership, concurrency, commitment, and recovery.
 
+## Part IX - Causal claims and evidence
+
+### From association to attributable cause
+
+96. [Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution](../../tables/entries/causal-reasoning.md)
+97. [Causal Claim Evidence Table](../../tables/evidence/causal-claim-evidence.md)
+
+The anchor selects the causal question before the method and separates
+observed dependence, counterfactual effect, contextual contribution, pathway,
+action, and actual-case attribution. The Evidence view audits the target,
+design, assumptions, estimation, mechanism evidence, alternatives, transport,
+and claim limits without computing an effect or assigning responsibility.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -95,5 +108,5 @@ ownership, concurrency, commitment, and recovery.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 95-record combined simulation remains a rehearsal projection, not a
+- The 97-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

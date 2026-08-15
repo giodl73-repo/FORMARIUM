@@ -69,8 +69,8 @@ Validation fails when:
 template from each Factor Forge F1-F6 batch. Relation coverage therefore
 remains a bounded prototype.
 
-The assurance manifest has complete current-corpus coverage: 28 entries, 40
-specialized views, and six relation records, for 74 exact bindings. The
+The assurance manifest has complete current-corpus coverage: 29 entries, 41
+specialized views, and six relation records, for 76 exact bindings. The
 validator derives that required set from parsed V0 and relation records, so a
 new canonical artifact fails until an applicable digest-bound fixed-point
 review is added. This closes current-corpus review coverage; it does not prove

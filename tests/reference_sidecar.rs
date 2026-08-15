@@ -43,7 +43,7 @@ fn committed_sidecars_round_trip_and_validate() {
         )
         .unwrap();
     assert_eq!(relations.relations().len(), 6);
-    assert_eq!(assurance.bindings().len(), 74);
+    assert_eq!(assurance.bindings().len(), 76);
 }
 
 #[test]
@@ -79,7 +79,7 @@ fn assurance_detects_a_stale_source_digest() {
     let text = fs::read_to_string("reference/factorium-assurance-v0.factorium")
         .unwrap()
         .replacen(
-            "f08d7bed56f98cfb37df927266b357e372dbfe6e1becc39686243c7ce499e06c",
+            "a50a6775585a4fbd410e5962626927f46d52547c780591b2987059b8c3ad1a65",
             "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
             1,
         );

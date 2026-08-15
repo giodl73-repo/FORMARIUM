@@ -125,8 +125,8 @@ contains structured or linked knowledge.
 - [Transformation](../roots/transformation.md)
 - [Work, Energy, and Power](work-energy-power.md)
 - [Organization, Role, Responsibility, Authority, and Accountability](organization-role-authority.md)
+- [Association and Causal Reasoning](causal-reasoning.md)
 - coercion — `unresolved-candidate`
-- influence — `unresolved-candidate`
 - validity — `unresolved-candidate`
 
 ## Sources and provenance

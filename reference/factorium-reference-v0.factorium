@@ -18,6 +18,27 @@ factor temperature-and-pressure-where-volume-matters | temperature and pressure 
 factor unit-and-display-scale | unit and display scale
 factor uncertainty | uncertainty
 end-entry
+entry causal-reasoning | Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution | reference | candidate | tables/entries/causal-reasoning.md | Association describes observed dependence; a causal effect compares outcomes under specified alternatives; influence is a contextual contribution claim; a mechanism describes how change is produced; an intervention is an action or assignment; attribution asks what caused one realized outcome. These questions require different evidence and assumptions.
+sense association | association
+sense causal-effect | causal effect
+sense influence | influence
+sense causal-mechanism | causal mechanism
+sense intervention | intervention
+sense causal-attribution | causal attribution
+factor exact-claim-and-claim-type | exact claim and claim type
+factor subject-population-and-unit | subject or population and unit
+factor exposure-action-or-candidate-cause | exposure, action, or candidate cause
+factor alternative-or-counterfactual-contrast | alternative or counterfactual contrast
+factor outcome-measure-and-time-horizon | outcome, measure, and time horizon
+factor temporal-order-and-causal-boundary | temporal order and causal boundary
+factor causal-model-variables-paths-and-interference | causal model, variables, paths, and interference
+factor design-assignment-comparison-and-provenance | design, assignment, comparison, and data provenance
+factor identification-assumptions-and-estimand | identification assumptions and estimand
+factor estimator-uncertainty-sensitivity-and-diagnostics | estimator, uncertainty, sensitivity, and diagnostics
+factor mechanism-evidence-and-competing-explanations | mechanism evidence and competing explanations
+factor transport-heterogeneity-and-applicability | transport scope, heterogeneity, and applicability
+factor actual-case-attribution-and-responsibility-boundary | actual-case facts, attribution rule, and responsibility boundary
+end-entry
 entry claim-evidence | Claim and Evidence | reference | candidate | tables/entries/claim-evidence.md | A claim states what is asserted; evidence records observations, artifacts, or arguments relevant to it; a result reports an evaluated outcome; a limitation bounds interpretation; confidence summarizes support without replacing the evidence. Provenance is mandatory metadata, while an Evidence Table is a specialized view whose lookup task is comparing support and contradiction.
 sense claim | claim
 sense evidence-item | evidence item
@@ -511,6 +532,8 @@ end-view
 view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
+end-view
+view evidence-causal-claim | causal-reasoning | association,causal-effect,influence,causal-mechanism,intervention,causal-attribution | evidence | Causal Claim Evidence Table | tables/evidence/causal-claim-evidence.md | Audits association, effect, influence, mechanism, intervention-effect, and actual-case attribution claims through explicit targets, designs, assumptions, evidence, alternatives, transport limits, and dispositions without computing a causal estimate.
 end-view
 view evidence-founding-factor-evidence | claim-evidence | claim,evidence-item,result,limitation,confidence,provenance | evidence | Founding FACTOR Evidence | tables/evidence/founding-factor-evidence.md | Supported, contradicted, excluded, and untested claims remain tied to immutable artifacts and explicit limitations.
 end-view

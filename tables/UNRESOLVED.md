@@ -8,7 +8,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/amount-concentration-composition.md` | 131 | mixture - `unresolved-candidate` |
 | `tables/entries/amount-concentration-composition.md` | 132 | activity - `unresolved-candidate` |
 | `tables/entries/comparative-quantity.md` | 118 | fraction - `unresolved-candidate` |
-| `tables/entries/control-monitoring-response.md` | 159 | causal model - `unresolved-candidate` |
 | `tables/entries/control-monitoring-response.md` | 160 | set point - `unresolved-candidate` |
 | `tables/entries/control-monitoring-response.md` | 161 | actuator - `unresolved-candidate` |
 | `tables/entries/control-monitoring-response.md` | 162 | service-level objective - `unresolved-candidate` |
@@ -20,8 +19,7 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/electrical-quantity.md` | 136 | resistivity - `unresolved-candidate` |
 | `tables/entries/electrical-quantity.md` | 137 | capacitance - `unresolved-candidate` |
 | `tables/entries/electrical-quantity.md` | 138 | impedance - `unresolved-candidate` |
-| `tables/entries/force.md` | 128 | coercion — `unresolved-candidate` |
-| `tables/entries/force.md` | 129 | influence — `unresolved-candidate` |
+| `tables/entries/force.md` | 129 | coercion — `unresolved-candidate` |
 | `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
 | `tables/entries/geometric-measure.md` | 91 | length — `unresolved-candidate` |
 | `tables/entries/geometric-measure.md` | 92 | shape — `unresolved-candidate` |

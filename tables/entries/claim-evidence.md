@@ -129,6 +129,7 @@ inference, claim implication, confidence, and limitation.
 - [Factorium Entry Publication](factorium-entry-publication.md)
 - [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
 - [Information, Data, Signal, and Noise](information-data-signal-noise.md)
+- [Association and Causal Reasoning](causal-reasoning.md)
 - [Context](../roots/context.md)
 - [Relation](../roots/relation.md)
 

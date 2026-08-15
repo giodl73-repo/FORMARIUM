@@ -156,7 +156,7 @@ discriminating tests.
 - [State, Event, Transition, Process, and Lifecycle](state-event-transition-process-lifecycle.md)
 - [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
 - [System Composition, Capability, Interface, and Dependency](system-composition-dependency.md)
-- causal model - `unresolved-candidate`
+- [Association and Causal Reasoning](causal-reasoning.md)
 - set point - `unresolved-candidate`
 - actuator - `unresolved-candidate`
 - service-level objective - `unresolved-candidate`

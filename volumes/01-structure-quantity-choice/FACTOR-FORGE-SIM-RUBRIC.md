@@ -117,6 +117,22 @@ Critical artifact failure: retry or cancellation is presented as compensation,
 concurrency as simultaneous execution, or one participant's state as the whole
 workflow outcome.
 
+## Task Q expected route
+
+- Association, Causal Effect, Influence, Mechanism, Intervention, and
+  Attribution;
+- Causal Claim Evidence Table;
+- association and prediction remain distinct from a defined causal effect;
+- mechanism requires pathway evidence rather than a configuration label;
+- attribution requires case facts, contingencies, alternatives, and a
+  governing rule beyond a population association;
+- target contrast, design, assumptions, estimator, uncertainty, sensitivity,
+  transport, and responsibility limits remain visible.
+
+Critical artifact failure: prediction, temporal precedence, a diagram, or one
+model feature is treated as sufficient proof of effect, mechanism, individual
+cause, or blame.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -139,6 +155,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/mappings/software-interaction-mechanisms.md`
 - `tables/entries/coordinated-work.md`
 - `tables/diagnostics/coordinated-work-failures.md`
+- `tables/entries/causal-reasoning.md`
+- `tables/evidence/causal-claim-evidence.md`
 
 ## Claim boundary
 

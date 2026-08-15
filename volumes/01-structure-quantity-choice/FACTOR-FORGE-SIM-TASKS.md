@@ -2,7 +2,7 @@
 
 Status: neutral internal `sim-03` prompts; not participant observations
 
-Use these prompts to rehearse coverage of the 17-record Factor Forge
+Use these prompts to rehearse coverage of the 19-record Factor Forge
 supplement. Do not consult the author-only rubric while walking a route. Record
 only artifact-level `SIM3-*` notes: plausible first title, headings followed,
 available distinctions, alternate landings, and missing or broken material.
@@ -101,8 +101,22 @@ then distinguish retry, idempotency, cancellation, rollback, compensation, and
 forward repair. Use the diagnostic without treating one participant's state or
 acknowledgment as proof of end-to-end completion.
 
+## Task Q - The feature that predicted the incident
+
+A model finds that deployments strongly predict service incidents. A report
+says deployments cause incidents, identifies configuration change as the
+mechanism, and attributes yesterday's outage to one release. The release
+preceded the outage, but traffic, a shared dependency, and missing telemetry
+also changed.
+
+Separate association, prediction, causal effect, influence, mechanism,
+intervention, and actual-case attribution. Use the Evidence view to state the
+target contrast, design, assumptions, alternatives, missing evidence, and
+scope required before strengthening each claim. Do not turn population
+evidence into automatic blame for the incident.
+
 ## Rehearsal boundary
 
-The nine prompts collectively exercise every entry and specialized view in the
+The ten prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

@@ -2,11 +2,12 @@
 
 Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Corpus identity: `14e237e0167939e9f940c6658f62407f0ef2cc2bca952c64eac5a709a62ce55e`
+Corpus identity: `5c3174bc046451138279eb75ea9e9865fceaf65f282ffd1cc2f8a8b5c26fa40a`
 
 ## Canonical Factor Table entries
 
 - [Amount, Concentration, and Composition](entries/amount-concentration-composition.md) — Count, amount of substance, concentration, and composition all answer "how much" questions, but they use different quantity kinds and denominator roles. A count enumerates specified entities; amount of substance scales that count in moles; concentration normalizes a named component by mixture volume; a composition fraction compares a component with a like-kind total. (`science`, `candidate`)
+- [Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution](entries/causal-reasoning.md) — Association describes observed dependence; a causal effect compares outcomes under specified alternatives; influence is a contextual contribution claim; a mechanism describes how change is produced; an intervention is an action or assignment; attribution asks what caused one realized outcome. These questions require different evidence and assumptions. (`reference`, `candidate`)
 - [Claim and Evidence](entries/claim-evidence.md) — A claim states what is asserted; evidence records observations, artifacts, or arguments relevant to it; a result reports an evaluated outcome; a limitation bounds interpretation; confidence summarizes support without replacing the evidence. Provenance is mandatory metadata, while an Evidence Table is a specialized view whose lookup task is comparing support and contradiction. (`reference`, `candidate`)
 - [Comparative Quantity](entries/comparative-quantity.md) — Ratios, rates, proportions, and percentages all compare quantities, but they do not ask the same question. The decisive factors are what occupies the numerator and denominator, whether units cancel or remain, whether equality is being asserted, and which baseline owns a change. (`quantities`, `candidate`)
 - [Objective, Control, Monitoring, and Response](entries/control-monitoring-response.md) — Objectives state desired results; monitoring observes; indicators summarize; thresholds classify; alerts route significant conditions; feedback controls influence future state; governance controls modify risk or support requirements; interventions act; outcomes record effects. Monitoring is not control, and control is not one universal sense. (`systems`, `candidate`)
@@ -102,5 +103,6 @@ Corpus identity: `14e237e0167939e9f940c6658f62407f0ef2cc2bca952c64eac5a709a62ce5
 
 ## Evidence Table views
 
+- [Causal Claim Evidence Table](evidence/causal-claim-evidence.md) — Audits association, effect, influence, mechanism, intervention-effect, and actual-case attribution claims through explicit targets, designs, assumptions, evidence, alternatives, transport limits, and dispositions without computing a causal estimate. (owner: `causal-reasoning`, senses: `association`, `causal-effect`, `influence`, `causal-mechanism`, `intervention`, `causal-attribution`)
 - [Founding FACTOR Evidence](evidence/founding-factor-evidence.md) — Supported, contradicted, excluded, and untested claims remain tied to immutable artifacts and explicit limitations. (owner: `claim-evidence`, senses: `claim`, `evidence-item`, `result`, `limitation`, `confidence`, `provenance`)
 - [Observation-to-Inference Evidence Chain](evidence/observation-inference-chain.md) — Preserves source, activity, observation or measurement, result, inference, claim implication, limitation, confidence, and provenance as separate stages in a traceable evidence chain. (owner: `claim-evidence`, senses: `claim`, `evidence-item`, `result`, `limitation`, `confidence`, `provenance`, `observation`, `measurement`, `inference`)
