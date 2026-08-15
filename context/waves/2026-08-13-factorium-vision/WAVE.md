@@ -129,6 +129,9 @@ the exact 7-entry, 8-view Factor Forge delta can extend the book as a
 The fourth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-04.md`; eight neutral
 tasks now own every delta record exactly, with the author rubric excluded from
 the `sim-03` proof and no synthetic task outcome recorded.
+The fifth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-05.md`; `sim-04` adds a
+generated static search surface over 93 selected records and two application
+guides, with browser-tested anchors and no alternate content authority.
 
 ## Success criteria
 

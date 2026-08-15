@@ -168,6 +168,17 @@ excluding the author-only rubric:
 .\tools\render_proof_set.ps1 -Edition sim-03
 ```
 
+Render the same book with a static in-browser search surface over all 93
+selected records and the two application guides:
+
+```powershell
+.\tools\render_proof_set.ps1 -Edition sim-04
+```
+
+The generated search index is a disposable publication projection. Canonical
+Markdown and reference metadata remain authoritative, and the simulation is
+not reader evidence or the later Factorium Workbench.
+
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 

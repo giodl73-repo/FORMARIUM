@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -13,12 +13,15 @@ $factorForgeTasks = Join-Path $workspace "volumes\01-structure-quantity-choice\F
 $factorForgeRubric = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-RUBRIC.md"
 $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-SET-SIM-QUICKSTART.md"
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
+$searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
+$searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
 $volumeDirectory = Split-Path $volume
 $artifactName = "proof-set-$Edition"
 $artifactTitle = switch ($Edition) {
     "sim-01" { "Factorium Proof Set Simulation 01" }
     "sim-02" { "Factorium Proof Set Expanded Simulation 02" }
     "sim-03" { "Factorium Proof Set Factor Forge Task Simulation 03" }
+    "sim-04" { "Factorium Proof Set Search Simulation 04" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -26,6 +29,7 @@ if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
 $output = [System.IO.Path]::GetFullPath((Join-Path $workspace $OutputDirectory))
 $html = Join-Path $output "$artifactName.html"
 $manifest = Join-Path $output "manifest.json"
+$searchIndexOutput = Join-Path $output "search-index.json"
 
 $pandoc = Get-Command pandoc -ErrorAction Stop
 $excludedNames = [System.Collections.Generic.HashSet[string]]::new(
@@ -77,21 +81,102 @@ function Get-WorkspaceMarkdownPathSet {
     return ,$paths
 }
 
+function Get-NumberedSelections {
+    param([string]$Document)
+
+    $documentDirectory = Split-Path $Document
+    $documentText = Get-Content -LiteralPath $Document -Raw
+    foreach ($match in [regex]::Matches(
+        $documentText,
+        '(?m)^\d+\. \[([^\]]+)\]\(([^)#]+\.md)(?:#[^)]+)?\)'
+    )) {
+        [ordered]@{
+            title = $match.Groups[1].Value
+            path = [System.IO.Path]::GetFullPath(
+                (Join-Path $documentDirectory $match.Groups[2].Value)
+            )
+        }
+    }
+}
+
+function Get-GuideSelections {
+    $volumeText = Get-Content -LiteralPath $volume -Raw
+    foreach ($match in [regex]::Matches(
+        $volumeText,
+        '(?m)^- \[([^\]]+ Guide)\]\((\.\./\.\./guides/[^)#]+\.md)\)'
+    )) {
+        [ordered]@{
+            title = $match.Groups[1].Value
+            path = [System.IO.Path]::GetFullPath(
+                (Join-Path $volumeDirectory $match.Groups[2].Value)
+            )
+        }
+    }
+}
+
+function ConvertTo-SearchText {
+    param([string]$Markdown)
+
+    $plain = $Markdown
+    $plain = [regex]::Replace($plain, '(?s)```.*?```', ' ')
+    $plain = [regex]::Replace($plain, '!?(?:\[([^\]]*)\])\([^)]*\)', '$1')
+    $plain = [regex]::Replace($plain, '[#*`_|>~-]', ' ')
+    $plain = [regex]::Replace($plain, '\s+', ' ').Trim()
+    return $plain
+}
+
+function Get-SearchSummary {
+    param([string]$Markdown)
+
+    $titlePattern = [regex]::new('(?m)^# .*$\r?\n?')
+    $withoutTitle = $titlePattern.Replace($Markdown, '', 1)
+    foreach ($block in [regex]::Split($withoutTitle, '(?:\r?\n){2,}')) {
+        $plain = ConvertTo-SearchText $block
+        if ($plain.Length -ge 35 -and -not $block.TrimStart().StartsWith('|')) {
+            if ($plain.Length -gt 280) {
+                return $plain.Substring(0, 277).TrimEnd() + '...'
+            }
+            return $plain
+        }
+    }
+    return "Open this record in the generated proof."
+}
+
 $selectionChecks = [ordered]@{
     mode = "base volume path selection"
 }
+$canonicalMetadata = [System.Collections.Generic.Dictionary[string, object]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
 if ($Edition -ne "sim-01") {
     $canonicalKinds = [System.Collections.Generic.Dictionary[string, string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    $entryDomains = [System.Collections.Generic.Dictionary[string, string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
     )
     foreach ($line in Get-Content -LiteralPath (Join-Path $workspace "reference\factorium-reference-v0.factorium")) {
         if ($line.StartsWith("entry ", [System.StringComparison]::Ordinal)) {
             $parts = $line -split ' \| '
+            $entryId = $parts[0].Substring("entry ".Length)
+            $entryDomains[$entryId] = $parts[2]
             $canonicalKinds[$parts[4]] = "entry"
+            $canonicalMetadata[$parts[4]] = [ordered]@{
+                kind = "entry"
+                domain = $parts[2]
+                maturity = $parts[3]
+                summary = $parts[5]
+            }
         }
         elseif ($line.StartsWith("view ", [System.StringComparison]::Ordinal)) {
             $parts = $line -split ' \| '
             $canonicalKinds[$parts[5]] = "view"
+            $canonicalMetadata[$parts[5]] = [ordered]@{
+                kind = $parts[3]
+                domain = $entryDomains[$parts[1]]
+                maturity = ""
+                summary = $parts[6]
+            }
         }
     }
 
@@ -126,7 +211,7 @@ if ($Edition -ne "sim-01") {
         extra_delta_paths = $extraDelta.Count
     }
 
-    if ($Edition -eq "sim-03") {
+    if ($Edition -in @("sim-03", "sim-04")) {
         $rubricText = Get-Content -LiteralPath $factorForgeRubric -Raw
         $taskCoverage = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
@@ -155,7 +240,7 @@ if ($Edition -ne "sim-01") {
     Add-ProofSource $supplement
     $selectionDocuments.Add($supplement)
 }
-if ($Edition -eq "sim-03") {
+if ($Edition -in @("sim-03", "sim-04")) {
     Add-ProofSource $factorForgeTasks
 }
 
@@ -270,6 +355,139 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
     $htmlText = $htmlText.Substring(0, $start) + $segment + $htmlText.Substring($end)
 }
 
+$searchChecks = $null
+$searchAssets = @()
+if ($Edition -eq "sim-04") {
+    foreach ($asset in @($searchStyle, $searchScript)) {
+        if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+            throw "Missing search asset: $asset"
+        }
+    }
+
+    $numberedSelections = @(
+        Get-NumberedSelections $volume
+        Get-NumberedSelections $supplement
+    )
+    $guideSelections = @(Get-GuideSelections)
+    if ($numberedSelections.Count -ne 93 -or $guideSelections.Count -ne 2) {
+        throw "Search selection mismatch: numbered=$($numberedSelections.Count) guides=$($guideSelections.Count)"
+    }
+
+    $searchRecords = [System.Collections.Generic.List[object]]::new()
+    $searchPaths = [System.Collections.Generic.HashSet[string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    $missingSearchTargets = [System.Collections.Generic.List[string]]::new()
+    foreach ($selection in @($numberedSelections) + @($guideSelections)) {
+        if (-not $searchPaths.Add($selection.path)) {
+            throw "Duplicate search selection: $($selection.path)"
+        }
+        if (-not $headingBySource.ContainsKey($selection.path)) {
+            $missingSearchTargets.Add($selection.path)
+            continue
+        }
+
+        $relativePath = [System.IO.Path]::GetRelativePath($workspace, $selection.path).Replace("\", "/")
+        $markdown = Get-Content -LiteralPath $selection.path -Raw
+        $plainText = ConvertTo-SearchText $markdown
+        if ($plainText.Length -gt 12000) {
+            $plainText = $plainText.Substring(0, 12000)
+        }
+        $metadata = if ($canonicalMetadata.ContainsKey($relativePath)) {
+            $canonicalMetadata[$relativePath]
+        }
+        else {
+            $directoryKind = ([System.IO.Path]::GetDirectoryName($relativePath).Replace("\", "/").Split('/') | Select-Object -Last 1)
+            $derivedKind = switch ($directoryKind) {
+                "roots" { "root" }
+                "roles" { "role" }
+                "composites" { "composite" }
+                "primes" { "prime" }
+                "guides" { "guide" }
+                default { $directoryKind.TrimEnd('s') }
+            }
+            $derivedDomain = switch ($derivedKind) {
+                "root" { "structure" }
+                "role" { "structure" }
+                "composite" { "security" }
+                "prime" { "security" }
+                "guide" { "application" }
+                default { "" }
+            }
+            [ordered]@{
+                kind = $derivedKind
+                domain = $derivedDomain
+                maturity = ""
+                summary = (Get-SearchSummary $markdown)
+            }
+        }
+
+        $searchRecords.Add([ordered]@{
+            title = $selection.title
+            kind = $metadata.kind
+            domain = $metadata.domain
+            maturity = $metadata.maturity
+            path = $relativePath
+            anchor = $headingBySource[$selection.path]
+            summary = $metadata.summary
+            text = $plainText
+        })
+    }
+    if ($missingSearchTargets.Count -ne 0) {
+        throw "Search index has $($missingSearchTargets.Count) missing rendered targets"
+    }
+
+    $searchJson = $searchRecords | ConvertTo-Json -Depth 4 -Compress
+    $searchJson = $searchJson.Replace('</', '<\/')
+    [System.IO.File]::WriteAllText(
+        $searchIndexOutput,
+        ($searchRecords | ConvertTo-Json -Depth 4),
+        [System.Text.UTF8Encoding]::new($false)
+    )
+    $searchCss = Get-Content -LiteralPath $searchStyle -Raw
+    $searchJavaScript = Get-Content -LiteralPath $searchScript -Raw
+    $searchShell = @'
+<section class="proof-search" aria-labelledby="proof-search-heading">
+<h2 id="proof-search-heading">Search this proof</h2>
+<p>Search the 93 selected records and two application guides. Results open the canonical book projection below.</p>
+<div class="proof-search__controls">
+<label for="proof-search-query">Search terms
+<input id="proof-search-query" type="search" autocomplete="off" placeholder="Try force, percentage, authority, or contract">
+</label>
+<label for="proof-search-kind">Record kind
+<select id="proof-search-kind"><option value="">All kinds</option></select>
+</label>
+</div>
+<p id="proof-search-status" class="proof-search__status" role="status" aria-live="polite"></p>
+<ol id="proof-search-results" class="proof-search__results"></ol>
+</section>
+'@
+    $htmlText = $htmlText.Replace('</head>', "<style>`n$searchCss`n</style>`n</head>")
+    $navigationIndex = $htmlText.IndexOf('<nav id="TOC"', [System.StringComparison]::Ordinal)
+    if ($navigationIndex -lt 0) {
+        throw "Could not locate proof navigation for search shell"
+    }
+    $htmlText = $htmlText.Insert($navigationIndex, $searchShell)
+    $searchBootstrap = "<script>window.FACTORIUM_SEARCH_INDEX=$searchJson;</script>`n<script>$searchJavaScript</script>`n"
+    $htmlText = $htmlText.Replace('</body>', $searchBootstrap + '</body>')
+
+    $searchAssets = foreach ($asset in @($searchStyle, $searchScript)) {
+        [ordered]@{
+            path = [System.IO.Path]::GetRelativePath($workspace, $asset).Replace("\", "/")
+            sha256 = (Get-FileHash -LiteralPath $asset -Algorithm SHA256).Hash.ToLowerInvariant()
+        }
+    }
+    $searchChecks = [ordered]@{
+        numbered_records = $numberedSelections.Count
+        application_guides = $guideSelections.Count
+        indexed_records = $searchRecords.Count
+        duplicate_paths = 95 - $searchPaths.Count
+        missing_rendered_targets = $missingSearchTargets.Count
+        result_limit = 20
+        execution = "static in-browser; no server or alternate content authority"
+    }
+}
+
 [System.IO.File]::WriteAllText(
     $html,
     $htmlText,
@@ -329,6 +547,8 @@ $manifestRecord = [ordered]@{
     )
     sources = $sourceRecords
     selection_checks = $selectionChecks
+    search_checks = $searchChecks
+    search_assets = $searchAssets
     rendering_checks = [ordered]@{
         internal_fragment_links = $fragmentLinks.Count
         missing_fragment_targets = $missingFragments.Count
@@ -341,6 +561,10 @@ $manifestRecord = [ordered]@{
         bytes = (Get-Item -LiteralPath $html).Length
     }
 }
+if ($Edition -eq "sim-04") {
+    $manifestRecord.output.search_index_path = "search-index.json"
+    $manifestRecord.output.search_index_sha256 = (Get-FileHash -LiteralPath $searchIndexOutput -Algorithm SHA256).Hash.ToLowerInvariant()
+}
 
 $manifestRecord | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $manifest -Encoding utf8
 
@@ -352,9 +576,13 @@ if ($Edition -ne "sim-01") {
     Write-Output "delta_views=$($selectionChecks.delta_views)"
     Write-Output "combined_records=$($selectionChecks.combined_projection_records)"
 }
-if ($Edition -eq "sim-03") {
+if ($Edition -in @("sim-03", "sim-04")) {
     Write-Output "tasks=$($selectionChecks.task_count)"
     Write-Output "task_coverage_records=$($selectionChecks.task_coverage_records)"
+}
+if ($Edition -eq "sim-04") {
+    Write-Output "search_records=$($searchChecks.indexed_records)"
+    Write-Output "search_missing_targets=$($searchChecks.missing_rendered_targets)"
 }
 Write-Output "internal_links=$($fragmentLinks.Count)"
 Write-Output "missing_internal_targets=$($missingFragments.Count)"

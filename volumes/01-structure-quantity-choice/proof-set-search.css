@@ -1,0 +1,82 @@
+.proof-search {
+  background: color-mix(in srgb, Canvas 94%, #4772ff 6%);
+  border: 1px solid #8888;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0 2rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.proof-search h2 {
+  margin-top: 0;
+}
+
+.proof-search__controls {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(12rem, 1fr) minmax(9rem, 14rem);
+}
+
+.proof-search label {
+  display: grid;
+  font-weight: 650;
+  gap: 0.25rem;
+}
+
+.proof-search input,
+.proof-search select {
+  background: Canvas;
+  border: 1px solid #777;
+  border-radius: 0.35rem;
+  color: CanvasText;
+  font: inherit;
+  padding: 0.6rem 0.7rem;
+}
+
+.proof-search input:focus-visible,
+.proof-search select:focus-visible {
+  outline: 0.2rem solid currentColor;
+  outline-offset: 0.15rem;
+}
+
+.proof-search__status {
+  margin: 1rem 0 0.5rem;
+}
+
+.proof-search__results {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.proof-search__result {
+  border-top: 1px solid #8888;
+  padding-top: 0.75rem;
+}
+
+.proof-search__result a {
+  font-weight: 700;
+}
+
+.proof-search__meta {
+  color: color-mix(in srgb, CanvasText 70%, Canvas 30%);
+  font-size: 0.9rem;
+  margin-left: 0.45rem;
+}
+
+.proof-search__summary {
+  margin: 0.25rem 0 0;
+}
+
+@media (max-width: 40rem) {
+  .proof-search__controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .proof-search {
+    display: none;
+  }
+}

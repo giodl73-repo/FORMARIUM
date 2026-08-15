@@ -114,6 +114,14 @@ The `sim-03` renderer fails unless task ownership covers all 15 delta records
 with no extra path, while excluding the rubric from the proof. This establishes
 task-route coverage, not task success.
 
+The fifth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-05.md`
+adds a static, in-browser search projection over the 93 selected records and
+two application guides. Search metadata and targets are generated from the
+selected book paths and canonical reference metadata; they do not create a
+second content authority. `sim-04` proves website mechanics and deterministic
+lookup behavior only, not reader findability or Workbench readiness.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

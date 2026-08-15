@@ -82,7 +82,8 @@ rendering and self-guided-material rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-02.md`. The current-corpus selection and
 expanded-book rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-03.md`. The exact
 Factor Forge task-ownership rehearsal is
-`PROOF-SET-SIMULATION-PREFLIGHT-04.md`.
+`PROOF-SET-SIMULATION-PREFLIGHT-04.md`. The static website and search-mechanics
+rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-05.md`.
 
 ## Candidate artifacts
 
