@@ -229,6 +229,20 @@ small step is accepted as proof of identity, complete solution, or convergence.
 Critical artifact failure: matching or changing coordinate tuples are accepted
 as sufficient proof of object identity, geometric equivalence, or physical motion.
 
+## Task X expected route
+
+- Chemical Entity, Substance, Compound Class, Mixture, and Solution;
+- Chemical Classification Failure Diagnostic;
+- entity, species, substance, compound, mixture, and phase retain distinct levels;
+- molecule and formula unit remain distinct representations or entity roles;
+- compound classes retain explicit membership criteria and authority;
+- halide and sugar remain examples rather than open-ended canonical taxonomies;
+- chemical solution remains distinct from mathematical solution.
+
+Critical artifact failure: a list of familiar named chemical families is
+accepted as the reusable conceptual factorization, or a class label is accepted
+as proof of identity, purity, safety, nutrition, or regulatory status.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -265,6 +279,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/mathematical-relation-solving-failures.md`
 - `tables/entries/geometric-reference-structure.md`
 - `tables/diagnostics/geometric-reference-structure-failures.md`
+- `tables/entries/chemical-substance-classification.md`
+- `tables/diagnostics/chemical-substance-classification-failures.md`
 
 ## Claim boundary
 

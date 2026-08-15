@@ -416,3 +416,25 @@ F14 resolves `length`, `shape`, `path`, `frame of reference`, `angle`, and
 `unit circle` across geometric measure, motion, and the Pythagorean identity.
 The current Factor Forge book delta is 31 records: fifteen entries and sixteen
 specialized views.
+
+## F15 first slice
+
+The Chemical Substance Classification anchor at
+`tables/entries/chemical-substance-classification.md` separates element,
+entity, species, substance, compound, formula unit, compound class, mixture,
+and chemical solution through level, composition, charge, structure,
+classification-criterion, constituent-role, quantity, authority, and
+provenance factors.
+
+`tables/diagnostics/chemical-substance-classification-failures.md` maps level
+collapse, formula-unit confusion, unsupported identity, class-criterion drift,
+mixture/solution ambiguity, and subtype explosion to discriminating checks.
+Halide and sugar remain teaching examples rather than canonical sibling
+taxonomies. Research and fixed-point review are
+`docs/research/2026-08-15-chemical-substance-classification.md` and
+`CHEMICAL-SUBSTANCE-CLASSIFICATION-ROLE-REVIEW.md`.
+
+F15 resolves `mixture` in the amount/composition anchor and adds the Concept &
+Taxonomy Boundary Editor so named-domain catalogs do not displace reusable
+conceptual structure. The current Factor Forge book delta is 33 records:
+sixteen entries and seventeen specialized views.

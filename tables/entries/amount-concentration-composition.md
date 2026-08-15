@@ -128,8 +128,8 @@ relations.
 - [Measure](../roots/measure.md)
 - [Boundary](../roots/boundary.md)
 - [Relation](../roots/relation.md)
+- [Chemical Entity, Substance, Compound Class, Mixture, and Solution](chemical-substance-classification.md)
 - molar mass - `unresolved-candidate`
-- mixture - `unresolved-candidate`
 - activity - `unresolved-candidate`
 
 ## Sources and provenance

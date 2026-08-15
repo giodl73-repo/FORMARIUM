@@ -539,3 +539,31 @@ unresolved view owners. The Factor Forge delta grows to 31 records and the
 combined selection to 109 numbered records plus two guides across sixteen
 chapters. The generated `sim-07` site contains 142 pages from 125 sources,
 indexes all 111 reader destinations, and reports zero missing internal targets.
+
+## 2026-08-15 chemical-substance-classification content continuation
+
+Plan review: admit an F15 chemical classification bridge that teaches reusable
+entity, species, substance, compound, formula-unit, compound-class, mixture,
+and solution distinctions without becoming a catalog of named chemicals;
+ground the vocabulary in IUPAC and scoped reporting sources; use halide and
+sugar as swappable examples; author one canonical anchor and one Diagnostic
+view; resolve `mixture`; review the concept-taxonomy boundary explicitly; then
+propagate the exact delta through assurance, Factor Forge, search, and the
+static book site. No external-reader gate, exhaustive chemical ontology,
+identity claim, or safety/nutrition/regulatory claim is introduced.
+
+Result review: F15 adds `chemical-substance-classification` with thirteen
+conceptual senses and the Chemical Classification Failure Diagnostic, resolving
+`mixture` in the amount/composition anchor. Entity/species/substance,
+molecule/compound/formula-unit, compound/class/member, mixture/solution, and
+chemical/mathematical solution remain distinct. An initially proposed chemical
+family atlas was rejected after concept-taxonomy review; halide and sugar now
+remain examples under explicit classification criteria. The standing role set
+gains the Concept & Taxonomy Boundary Editor to prevent open-ended named
+taxonomies from displacing reusable concepts. The source campaign confirms 18
+findings and fixed-point review closes all major findings. The reference grows
+to 36 entries, 235 senses, 372 factors, and 48 views with 90 assurance bindings
+and zero unresolved view owners. The Factor Forge delta grows to 33 records and
+the combined selection to 111 numbered records plus two guides across seventeen
+chapters. The generated `sim-07` site contains 145 pages from 127 sources,
+indexes all 113 reader destinations, and reports zero missing internal targets.

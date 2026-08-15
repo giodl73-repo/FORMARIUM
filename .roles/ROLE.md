@@ -23,6 +23,7 @@ artifact, and a closure condition.
 | `editorial/benchmark-numeracy-checker.md` | Benchmark Numeracy Checker | Denominators, storage, parameters, and uncertainty remain visible |
 | `editorial/reference-lexicographer.md` | Reference Lexicographer | Fast sense lookup vs. collapsed meanings or vague synonyms |
 | `editorial/reference-architecture-editor.md` | Reference Architecture Editor | A coherent encyclopedia vs. disconnected essays and tables |
+| `editorial/concept-taxonomy-boundary-editor.md` | Concept & Taxonomy Boundary Editor | Reusable concepts vs. open-ended named taxonomies and catalogs |
 
 ## Assurance
 

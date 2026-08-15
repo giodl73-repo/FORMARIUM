@@ -1,6 +1,7 @@
 factorium-assurance-v0
-review entry:amount-concentration-composition | e225d020de032f21c97747660c08707a815c29345432e9d49015dfe623ec9a18 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review entry:amount-concentration-composition | 51bae9ae9d498286885e57d4708bdc794037a9415b67984a3113fdda7ec299a1 | context/waves/2026-08-13-factorium-vision/CHEMICAL-SUBSTANCE-CLASSIFICATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:causal-reasoning | 665a33d595e85644f1c4df9b7968617cf26a15fa41c46b448e38cb84540f0383 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review entry:chemical-substance-classification | f906f2899d462666fffe9ae2ea350f8432671c5cc0c56a69d199a656e47b3255 | context/waves/2026-08-13-factorium-vision/CHEMICAL-SUBSTANCE-CLASSIFICATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:claim-evidence | 17875b0730df45b563261a670149d4c8312ecf6487f672028b96672fd19b39e5 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:comparative-quantity | 8db9bf291155f021bdc710a83d6682bc7f06a691cde16fe4974abf6a3553acdd | context/waves/2026-08-13-factorium-vision/COMPARATIVE-QUANTITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:control-monitoring-response | e72a7cfcee6c478bc79afa6ffabbb9a64b86481757fb902e5a0993fec256e231 | context/waves/2026-08-13-factorium-vision/STOCK-FLOW-BALANCE-ROLE-REVIEW.md | fixed-point | 2026-08-15
@@ -43,6 +44,7 @@ review relation:f6-evidence-obligation | 4c4bf8c68985c341d3ee20d2731c70038afb0c5
 review view:constraint-policy-constraints | 80b086f3f57116208373f5beabab317a3660297fc5c2db8516b166fe72aefb01 | context/waves/2026-08-13-factorium-vision/STRUCTURAL-ANCHORS-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:constraint-system-composition-integrity | 0c9af7b63a11903cb186a6260d6b895ab27635c924ab3e3a96bc5493ffde33ef | context/waves/2026-08-13-factorium-vision/SYSTEM-COMPOSITION-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:decision-policy-decision | f27ca418e628443e5ab4bda45c5a79b25931da08be85bb7e6d77d1b7321465f7 | context/waves/2026-08-13-factorium-vision/STRUCTURAL-ANCHORS-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:diagnostic-chemical-substance-classification-failures | 09c579b0bb020e4c5df81d2cf78b708cdb59c89a8331fc76e139a1a82c4c81a1 | context/waves/2026-08-13-factorium-vision/CHEMICAL-SUBSTANCE-CLASSIFICATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:diagnostic-control-response-failures | f41c9dc3503dcff4f5fbc61518f3f52d1d148ff3ec5a7e1d49e7d481c7c1c17a | context/waves/2026-08-13-factorium-vision/CONTROL-RESPONSE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:diagnostic-coordinated-work-failures | abb30b9edfbf4ca2daa739c4a785a8fe75c4533f061483d3cec0b5232227246c | context/waves/2026-08-13-factorium-vision/COORDINATED-WORK-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:diagnostic-factorization-failures | 275bc4301d9b19314016ba19222df136ac7cc24f5bd82e374ed133f9733a6495 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14

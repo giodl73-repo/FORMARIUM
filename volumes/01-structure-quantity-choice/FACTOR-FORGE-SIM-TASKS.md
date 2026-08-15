@@ -199,8 +199,22 @@ to freeze the metric, units, raw traversal, equivalence rule, axes, datum/frame,
 epoch, transformation direction and loss, residuals, and physical-motion
 evidence before accepting any identity, shape, distance, or motion claim.
 
+## Task X - The formula names a family
+
+A learning page treats `molecule`, `compound`, and `substance` as synonyms.
+It then promotes halogen, halide, chloride, oxide, sugar, and every neighboring
+named family into canonical sibling concepts. A lab result labeled `chloride`
+does not state whether it means free ion, analyte basis, or compound, while a
+food label treats carbohydrate, sugar, total sugars, and added sugars as one class.
+
+Separate chemical entity, species, substance, compound, formula unit, compound
+class, classification criterion, mixture, and chemical solution. Use halide and
+sugar only as swappable teaching examples. Apply the Diagnostic view to audit
+level, composition, charge, structure, constituent and reporting basis, class
+criterion, authority, and the stopping boundary before admitting canonical senses.
+
 ## Rehearsal boundary
 
-The sixteen prompts collectively exercise every entry and specialized view in the
+The seventeen prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

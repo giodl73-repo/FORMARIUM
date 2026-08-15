@@ -39,6 +39,32 @@ factor mechanism-evidence-and-competing-explanations | mechanism evidence and co
 factor transport-heterogeneity-and-applicability | transport scope, heterogeneity, and applicability
 factor actual-case-attribution-and-responsibility-boundary | actual-case facts, attribution rule, and responsibility boundary
 end-entry
+entry chemical-substance-classification | Chemical Entity, Substance, Compound Class, Mixture, and Solution | science | candidate | tables/entries/chemical-substance-classification.md | Chemical descriptions move between entity, species, substance, compound, mixture, and phase levels. Compound classes require explicit composition, structure, bonding, functional, reaction-role, or reporting criteria; named families remain examples rather than an open-ended canonical taxonomy.
+sense chemical-element | chemical element
+sense chemical-entity | chemical entity
+sense atom | atom
+sense molecule | molecule
+sense ion | ion
+sense chemical-species | chemical species
+sense chemical-substance | chemical substance
+sense chemical-compound | chemical compound
+sense formula-unit | formula unit
+sense compound-class | compound class
+sense classification-criterion | classification criterion
+sense mixture | mixture
+sense chemical-solution | chemical solution
+factor named-object-or-material | named object or material
+factor entity-species-substance-mixture-or-phase-level | entity, species, substance, mixture, or phase level
+factor element-identity-and-isotope-scope | element identity and isotope scope
+factor composition-stoichiometric-ratio-and-net-charge | composition, stoichiometric ratio, and net charge
+factor connectivity-bonding-spatial-structure-and-material-organization | connectivity, bonding, spatial structure, and material organization
+factor classification-criterion-hierarchy-and-membership-boundary | classification criterion, hierarchy, and membership boundary
+factor constituent-solvent-solute-and-analyte-roles | constituent, solvent, solute, and analyte roles
+factor reaction-medium-state-and-conditions | reaction, medium, state, and conditions
+factor amount-concentration-composition-unit-and-reporting-basis | amount, concentration, composition, unit, and reporting basis
+factor name-formula-identifier-authority-and-version | name, formula, identifier, authority, and version
+factor evidence-uncertainty-provenance-and-claim-scope | evidence, uncertainty, provenance, and claim scope
+end-entry
 entry claim-evidence | Claim and Evidence | reference | candidate | tables/entries/claim-evidence.md | A claim states what is asserted; evidence records observations, artifacts, or arguments relevant to it; a result reports an evaluated outcome; a limitation bounds interpretation; confidence summarizes support without replacing the evidence. Provenance is mandatory metadata, while an Evidence Table is a specialized view whose lookup task is comparing support and contradiction.
 sense claim | claim
 sense evidence-item | evidence item
@@ -658,6 +684,8 @@ end-view
 view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,capability,boundary,environment,interface,dependency | constraint | System Composition Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves viewpoint, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and whole-level behavior as distinct system-composition obligations.
 end-view
 view decision-policy-decision | policy-rule-constraint-decision-exception | decision | decision | Policy Decision Table | tables/decisions/policy-decision.md | Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate.
+end-view
+view diagnostic-chemical-substance-classification-failures | chemical-substance-classification | chemical-element,chemical-entity,atom,molecule,ion,chemical-species,chemical-substance,chemical-compound,formula-unit,compound-class,classification-criterion,mixture,chemical-solution | diagnostic | Chemical Classification Failure Diagnostic | tables/diagnostics/chemical-substance-classification-failures.md | Maps level, composition, charge, representation, class-criterion, constituent, phase, and taxonomy-boundary defects to candidate causes and discriminating checks without turning named examples into canonical chemical catalogs.
 end-view
 view diagnostic-control-response-failures | control-monitoring-response | objective,monitoring,indicator,threshold,alert,feedback-control,governance-control,feedback,intervention,outcome | diagnostic | Control and Response Failure Diagnostic | tables/diagnostics/control-response-failures.md | Maps monitoring, alerting, intervention, control, and outcome symptoms to candidate causes and discriminating tests without treating one symptom as proof of one diagnosis.
 end-view

@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **31 records** — 15 canonical entries and 16
+Selected current-corpus delta: **33 records** — 16 canonical entries and 17
 specialized views
 
 ## Purpose
@@ -180,6 +180,20 @@ coordinate systems from reference frames. The Diagnostic view tests metric,
 parameterization, angle-unit, axes, datum/frame, epoch, transformation, and
 unit-circle failures without treating changed coordinates as physical motion.
 
+## Part XVI - Chemical levels and classification
+
+### From a family name to its reusable classification rule
+
+110. [Chemical Entity, Substance, Compound Class, Mixture, and Solution](../../tables/entries/chemical-substance-classification.md)
+111. [Chemical Classification Failure Diagnostic](../../tables/diagnostics/chemical-substance-classification-failures.md)
+
+The anchor separates entity, species, substance, compound, formula unit,
+compound class, mixture, and solution while making classification criterion the
+reusable pivot. Halide and sugar demonstrate family/member, charge,
+stoichiometry, and chemical/reporting scope without expanding into a catalog.
+The Diagnostic view tests level, representation, criterion, constituent basis,
+and subtype explosion before named examples acquire canonical status.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -188,5 +202,5 @@ unit-circle failures without treating changed coordinates as physical motion.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 109-record combined simulation remains a rehearsal projection, not a
+- The 111-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.
