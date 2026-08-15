@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **19 records** — 9 canonical entries and 10
+Selected current-corpus delta: **21 records** — 10 canonical entries and 11
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F8 extend
+This supplement tests whether completed Factor Forge batches F1-F9 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -100,6 +100,19 @@ action, and actual-case attribution. The Evidence view audits the target,
 design, assumptions, estimation, mechanism evidence, alternatives, transport,
 and claim limits without computing an effect or assigning responsibility.
 
+## Part X - Sampling, estimation, and generalization
+
+### From a selected sample to a scoped target claim
+
+98. [Population, Sample, Estimand, Estimate, and Generalization](../../tables/entries/sampling-generalization.md)
+99. [Sampling and Generalization Failure Diagnostic](../../tables/diagnostics/sampling-generalization-failures.md)
+
+The anchor separates population, frame, observed sample, analytic sample,
+target quantity, estimation rule, realized result, and source-to-target
+inference. The Diagnostic view traces coverage, response, attrition,
+measurement, processing, weighting, dependence, split leakage, and support
+failures without treating sample size or `representative` as proof.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -108,5 +121,5 @@ and claim limits without computing an effect or assigning responsibility.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 97-record combined simulation remains a rehearsal projection, not a
+- The 99-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

@@ -2,7 +2,7 @@
 
 Status: neutral internal `sim-03` prompts; not participant observations
 
-Use these prompts to rehearse coverage of the 19-record Factor Forge
+Use these prompts to rehearse coverage of the 21-record Factor Forge
 supplement. Do not consult the author-only rubric while walking a route. Record
 only artifact-level `SIM3-*` notes: plausible first title, headings followed,
 available distinctions, alternate landings, and missing or broken material.
@@ -115,8 +115,22 @@ target contrast, design, assumptions, alternatives, missing evidence, and
 scope required before strengthening each claim. Do not turn population
 evidence into automatic blame for the incident.
 
+## Task R - The representative benchmark
+
+A benchmark reports 98% accuracy on a large random test split and calls the
+result representative of production. Duplicate identities and templates occur
+across the split, the corpus excludes one decision-critical environment, and
+preprocessing was fitted before splitting. The deployed population has also
+shifted since corpus collection.
+
+Separate the target population, corpus frame, observed and analytic samples,
+estimand, estimator, estimate, and uncertainty. Use the Diagnostic view to
+audit leakage, exclusions, stage denominators, dependence, source-target
+differences, support, and time/version drift. Replace `representative` with the
+exact performance result, target, criterion, and evidence.
+
 ## Rehearsal boundary
 
-The ten prompts collectively exercise every entry and specialized view in the
+The eleven prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

@@ -172,6 +172,7 @@ alternatives, and claim limits without computing a causal estimate.
 - [Claim and Evidence](claim-evidence.md)
 - [Objective, Control, Monitoring, and Response](control-monitoring-response.md)
 - [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
+- [Population, Sample, Estimand, Estimate, and Generalization](sampling-generalization.md)
 - [System Composition, Capability, Interface, and Dependency](system-composition-dependency.md)
 - [Coordinated Work](coordinated-work.md)
 - [Organization, Role, Responsibility, Authority, and Accountability](organization-role-authority.md)

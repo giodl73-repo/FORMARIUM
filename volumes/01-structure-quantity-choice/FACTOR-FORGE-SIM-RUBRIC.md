@@ -133,6 +133,23 @@ Critical artifact failure: prediction, temporal precedence, a diagram, or one
 model feature is treated as sufficient proof of effect, mechanism, individual
 cause, or blame.
 
+## Task R expected route
+
+- Population, Sample, Estimand, Estimate, and Generalization;
+- Sampling and Generalization Failure Diagnostic;
+- target population, corpus frame, observed sample, analytic sample,
+  estimand, estimator, estimate, and uncertainty remain distinct;
+- random record splitting does not prove identity, template, temporal,
+  environment, or semantic independence;
+- exclusions, preprocessing provenance, dependence, source-target
+  differences, support, and unsupported groups remain visible;
+- `representative` is replaced by an exact result, target, criterion, and
+  evidence.
+
+Critical artifact failure: sample size, random splitting, narrow uncertainty,
+or a representativeness label is treated as proof of deployment coverage or
+generalizability.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -157,6 +174,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/coordinated-work-failures.md`
 - `tables/entries/causal-reasoning.md`
 - `tables/evidence/causal-claim-evidence.md`
+- `tables/entries/sampling-generalization.md`
+- `tables/diagnostics/sampling-generalization-failures.md`
 
 ## Claim boundary
 

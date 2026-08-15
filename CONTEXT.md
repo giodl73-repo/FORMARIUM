@@ -539,11 +539,11 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge F8 adds the candidate Causal Reasoning anchor and Causal Claim
-Evidence view. The canonical reference now contains 29 entries, 173 senses,
-290 factors, and 41 views with 76 exact assurance bindings. The current Factor
-Forge supplement contains 19 records, so `sim-07` renders 97 numbered book
-records plus two application guides across ten chapters. Historical preflight
+Factor Forge F9 adds the candidate Sampling and Generalization anchor and
+failure Diagnostic view. The canonical reference now contains 30 entries, 182
+senses, 303 factors, and 42 views with 78 exact assurance bindings. The current
+Factor Forge supplement contains 21 records, so `sim-07` renders 99 numbered
+book records plus two application guides across eleven chapters. Historical preflight
 documents retain the counts of the rehearsal they recorded.
 
 ## Boundary

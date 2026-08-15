@@ -130,6 +130,7 @@ inference, claim implication, confidence, and limitation.
 - [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
 - [Information, Data, Signal, and Noise](information-data-signal-noise.md)
 - [Association and Causal Reasoning](causal-reasoning.md)
+- [Population, Sample, Estimand, Estimate, and Generalization](sampling-generalization.md)
 - [Context](../roots/context.md)
 - [Relation](../roots/relation.md)
 

@@ -30,8 +30,8 @@ population quantity depends on sampling and distribution conditions.
 | `n` | number of included observations | positive integer | count | dimensionless | denominator |
 | `i` | observation index | integer | none | dimensionless | index |
 
-Observation, sample, and population remain `unresolved-candidate` Factorium
-headwords pending their own entries.
+Observation is owned by [Claim and Evidence](../entries/claim-evidence.md);
+sample and population are owned by the sampling-and-generalization anchor.
 
 ## Scope and assumptions
 
@@ -92,7 +92,7 @@ sample-mean-use
 - [Boundary](../roots/boundary.md)
 - [Measure](../roots/measure.md)
 - [Policy](../roles/policy.md)
-- sample — `unresolved-candidate`
+- [Population, Sample, Estimand, Estimate, and Generalization](../entries/sampling-generalization.md)
 - median — `unresolved-candidate`
 - weighted mean — `unresolved-candidate`
 

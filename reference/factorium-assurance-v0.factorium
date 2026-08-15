@@ -1,7 +1,7 @@
 factorium-assurance-v0
 review entry:amount-concentration-composition | 8f35f6b2271ceac81436fd1fc7913873a998c61b17e656f06ef321b97fae866e | context/waves/2026-08-13-factorium-vision/AMOUNT-COMPOSITION-ROLE-REVIEW.md | fixed-point | 2026-08-14
-review entry:causal-reasoning | 65f25ea89c11a9df84db61e16331ae1630d4d012d9d285ae534edcbacbd5b045 | context/waves/2026-08-13-factorium-vision/CAUSAL-REASONING-ROLE-REVIEW.md | fixed-point | 2026-08-15
-review entry:claim-evidence | a50a6775585a4fbd410e5962626927f46d52547c780591b2987059b8c3ad1a65 | context/waves/2026-08-13-factorium-vision/CAUSAL-REASONING-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review entry:causal-reasoning | 665a33d595e85644f1c4df9b7968617cf26a15fa41c46b448e38cb84540f0383 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review entry:claim-evidence | 17875b0730df45b563261a670149d4c8312ecf6487f672028b96672fd19b39e5 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:comparative-quantity | 8db9bf291155f021bdc710a83d6682bc7f06a691cde16fe4974abf6a3553acdd | context/waves/2026-08-13-factorium-vision/COMPARATIVE-QUANTITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:control-monitoring-response | 5d1d36d42fe9aa4a5734d6b536769620e8dcb3198b7b6abe4877f6b3484a3686 | context/waves/2026-08-13-factorium-vision/CAUSAL-REASONING-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:coordinated-work | 0222cf161280095c6f19eb41c5fa1ea6d5714ac53e59e0aa0ac46414686dd161 | context/waves/2026-08-13-factorium-vision/COORDINATED-WORK-ROLE-REVIEW.md | fixed-point | 2026-08-15
@@ -20,7 +20,8 @@ review entry:organization-role-authority | 6957fc02d4e66ee0483ff8b549fe7c4118aeb
 review entry:periodic-wave-quantity | 99ccc23a7832be7d6cd267f84395b26a7f85b44fcee03c4912b1dcd1c5502b4f | context/waves/2026-08-13-factorium-vision/PERIODIC-WAVE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:physical-constant | d9d66056e0ce216ba6de9ec5d007b62d568d718b6301f04766f533335139081f | context/waves/2026-08-13-factorium-vision/FACTOR-FORGE-PORTFOLIO-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:policy-rule-constraint-decision-exception | 36cc250d64a309649ba7bb6bbdde060444211fbfeec7bda43cb3ad8b4c5f8e46 | context/waves/2026-08-13-factorium-vision/STRUCTURAL-ANCHORS-ROLE-REVIEW.md | fixed-point | 2026-08-14
-review entry:probability-risk-uncertainty | 9ccd725ca460fc7278802fd8022b10e651e331d5b742ba527f7892de2622c7f8 | context/waves/2026-08-13-factorium-vision/PROBABILITY-RISK-UNCERTAINTY-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:probability-risk-uncertainty | c9231cdfc2a1a232e6df95bdd1f223e0df8d58b9661bdca4d88de071ed309fc2 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
+review entry:sampling-generalization | 47d957a6622ce4bc4780efc4ee7508571cd4332e4ccbe9ce095783a98ab9d4ac | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:software-module-service-resource | d00125bbe6a13e92296ecb4dbaf3111d7ba08527d9b2d7144b02898cb0b56016 | context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:software-transaction-message-contract | 1dae51b079938f56ce4f150972cfde60bdedd44a9492766bf03a48912103341e | context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:software-type-value-function | 42ff277d2aabb90df4996718179eba02a4151c7037b47c15d38a578720806d82 | context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md | fixed-point | 2026-08-14
@@ -40,11 +41,12 @@ review view:decision-policy-decision | f27ca418e628443e5ab4bda45c5a79b25931da08b
 review view:diagnostic-control-response-failures | f41c9dc3503dcff4f5fbc61518f3f52d1d148ff3ec5a7e1d49e7d481c7c1c17a | context/waves/2026-08-13-factorium-vision/CONTROL-RESPONSE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:diagnostic-coordinated-work-failures | abb30b9edfbf4ca2daa739c4a785a8fe75c4533f061483d3cec0b5232227246c | context/waves/2026-08-13-factorium-vision/COORDINATED-WORK-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:diagnostic-factorization-failures | 275bc4301d9b19314016ba19222df136ac7cc24f5bd82e374ed133f9733a6495 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:diagnostic-sampling-generalization-failures | 6e41185bf45b3f393c8c8ec2ed5585669d498f232a7881fa8a97958f62c23b24 | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:evidence-causal-claim | d8154c9972f828cf58ddf6221ea1a5f658ef2a150dc826b94dd477736eb538da | context/waves/2026-08-13-factorium-vision/CAUSAL-REASONING-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:evidence-founding-factor-evidence | 6314905c0d750c49278e67aa386073b6fb566b06294a66dbce0496d2e5552b47 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:evidence-observation-inference-chain | d3c71683ab9153f9382cea28b3c378047b68fb8bda79b9d08a01da3acda699ed | context/waves/2026-08-13-factorium-vision/OBSERVATION-INFERENCE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:formula-amount-concentration-composition | 2acd0f60460cec5ffea5832b71c79610256600c1e0ee44b159cd67769a5f8fb5 | context/waves/2026-08-13-factorium-vision/AMOUNT-COMPOSITION-ROLE-REVIEW.md | fixed-point | 2026-08-14
-review view:formula-arithmetic-mean | c12aeea56ae5023cadf4a4fe58a33d0318c8e02f92af8284c4a43bad8e09aba8 | context/waves/2026-08-13-factorium-vision/FORMULA-PILOTS-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:formula-arithmetic-mean | 9a6e26473f7e2c0d6bbc6d5f827f45072b29f46ed531f5649ce0e359655c6c9e | context/waves/2026-08-13-factorium-vision/SAMPLING-GENERALIZATION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:formula-common-geometric-measures | a712832f399484a224ea6ab6f1d9414dc5b6d9a36456a43377f5c950b035fc4b | context/waves/2026-08-13-factorium-vision/GEOMETRIC-MEASURE-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:formula-comparative-quantities | 1bd9be3b147e3ae37c75fac4b828425b6ddb16c1891c951ff67d01b078af2aeb | context/waves/2026-08-13-factorium-vision/COMPARATIVE-QUANTITY-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:formula-cost-value-return | 212414c4bdf9ec980b9d83ac69a72f87ea62d73ab407bb4b19bc259882af176b | context/waves/2026-08-13-factorium-vision/COST-VALUE-RETURN-ROLE-REVIEW.md | fixed-point | 2026-08-14

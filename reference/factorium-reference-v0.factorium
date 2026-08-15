@@ -402,6 +402,30 @@ factor uncertainty-representation | uncertainty representation
 factor aggregation-or-decision-policy | aggregation or decision policy
 factor reporting-scale-and-provenance | reporting scale and provenance
 end-entry
+entry sampling-generalization | Population, Sample, Estimand, Estimate, and Generalization | reference | candidate | tables/entries/sampling-generalization.md | A population is the bounded inference target; a frame operationalizes access; observed and analytic samples record selection and transformation; an estimand is the target quantity, an estimator is the rule, and an estimate is its realized result. Generalization and transport require explicit source-to-target assumptions and evidence.
+sense target-population | target population
+sense sampling-frame | sampling frame
+sense sample | sample
+sense analytic-sample | analytic sample
+sense estimand | estimand
+sense estimator | estimator
+sense estimate | estimate
+sense generalization | generalization
+sense transport | transport
+factor exact-claim-and-decision-use | exact claim and decision use
+factor target-population-unit-boundary-version-and-time | target population, unit, boundary, version, and time
+factor sampling-frame-and-coverage | sampling frame and coverage
+factor selection-mechanism-and-inclusion-probabilities | selection mechanism and inclusion probabilities
+factor invitation-participation-nonresponse-and-attrition | invitation, participation, nonresponse, and attrition
+factor observed-and-analytic-sample-construction | observed and analytic sample construction
+factor target-quantity-or-estimand | target quantity or estimand
+factor estimator-weighting-adjustment-and-model | estimator, weighting, adjustment, and model
+factor estimate-sampling-uncertainty-and-diagnostics | estimate, sampling uncertainty, and diagnostics
+factor measurement-processing-linkage-and-missingness-error | measurement, processing, linkage, and missingness error
+factor source-target-differences-heterogeneity-and-support-overlap | source-target differences, heterogeneity, and support overlap
+factor generalization-or-transport-assumptions-and-evidence | generalization or transport assumptions and evidence
+factor provenance-limitations-and-revision | provenance, limitations, and revision
+end-entry
 entry software-module-service-resource | Software Module, Service, and Resource | software | candidate | tables/entries/software-module-service-resource.md | A module groups and scopes software declarations; a service provides access to capabilities through an interface under descriptions, constraints, and policies; a resource is an identified subject exposed or managed under target-system interaction and lifecycle semantics. Files, endpoints, representations, manifests, and deployments remain mechanisms rather than definitions.
 sense module | module
 sense service | service
@@ -532,6 +556,8 @@ end-view
 view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
+end-view
+view diagnostic-sampling-generalization-failures | sampling-generalization | target-population,sampling-frame,sample,analytic-sample,estimand,estimator,estimate,generalization,transport | diagnostic | Sampling and Generalization Failure Diagnostic | tables/diagnostics/sampling-generalization-failures.md | Maps coverage, selection, attrition, estimation, precision, leakage, and source-to-target symptoms to candidate causes and discriminating tests without treating sample size or representativeness as proof.
 end-view
 view evidence-causal-claim | causal-reasoning | association,causal-effect,influence,causal-mechanism,intervention,causal-attribution | evidence | Causal Claim Evidence Table | tables/evidence/causal-claim-evidence.md | Audits association, effect, influence, mechanism, intervention-effect, and actual-case attribution claims through explicit targets, designs, assumptions, evidence, alternatives, transport limits, and dispositions without computing a causal estimate.
 end-view

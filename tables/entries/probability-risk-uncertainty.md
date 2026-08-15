@@ -113,6 +113,7 @@ probability-risk-uncertainty-use
 - [Comparative Quantity](comparative-quantity.md)
 - [Information, Data, Signal, and Noise](information-data-signal-noise.md)
 - [Cost, Price, Value, Utility, and Return](cost-price-value-return.md)
+- [Population, Sample, Estimand, Estimate, and Generalization](sampling-generalization.md)
 - [Possibility](../roots/possibility.md)
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)

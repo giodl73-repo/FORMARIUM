@@ -395,3 +395,24 @@ entries, 173 senses, 290 factors, and 41 views with 76 assurance bindings. The
 Factor Forge delta grows to 19 records and the combined selection to 97
 numbered records plus two guides across ten chapters. Renderer and site
 validation results are recorded by the generated `sim-07` manifest.
+
+## 2026-08-15 sampling-and-generalization content continuation
+
+Plan review: admit an F9 bridge across evidence, causal inference, uncertainty,
+arithmetic mean, and benchmark interpretation; ground the distinctions in
+official statistical-quality guidance and primary source-to-target research;
+author one canonical anchor and one Diagnostic view; resolve the recurrent
+sample declaration; close role findings; then propagate the exact delta
+through assurance, Factor Forge, search, and the static book site. No external
+reader gate or broad founding-research claim is introduced.
+
+Result review: F9 adds `sampling-generalization` with nine senses and the
+Sampling and Generalization Failure Diagnostic. Population, frame, observed
+sample, analytic sample, estimand, estimator, estimate, generalization, and
+transport remain separate; `representative` is replaced by a scoped target
+claim. Fixed-point review closes all major findings, and the reference grows
+to 30 entries, 182 senses, 303 factors, and 42 views with 78 assurance
+bindings. The Factor Forge delta grows to 21 records and the combined
+selection to 99 numbered records plus two guides across eleven chapters. The
+generated `sim-07` site contains 127 pages from 115 sources, indexes all 101
+reader destinations, and reports zero missing internal targets.

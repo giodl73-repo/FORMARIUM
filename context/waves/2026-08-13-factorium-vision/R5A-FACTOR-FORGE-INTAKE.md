@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 29 anchor entries, 173 senses, 290
-ordered factors, and 41 specialized views. It is strong in foundational
+The canonical corpus currently contains 30 anchor entries, 182 senses, 303
+ordered factors, and 42 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -116,6 +116,18 @@ Status: first slice implemented as one canonical anchor and one Evidence view.
 It resolves causal model and influence while preserving distinct effect,
 mechanism, transport, attribution, and responsibility questions.
 
+### F9 - Sampling and Generalization
+
+Separate target population, sampling frame, observed sample, analytic sample,
+estimand, estimator, estimate, generalization, and transport. Connect evidence,
+causal, uncertainty, arithmetic mean, and benchmark interpretation without
+treating sample size, randomization, weighting, or representativeness as
+universal proof.
+
+Status: first slice implemented as one canonical anchor and one Diagnostic
+view. It resolves the arithmetic-mean sample declaration and adds portable
+coverage, selection, leakage, estimation, and source-to-target failure tests.
+
 ## Batch gate
 
 Each batch must:
@@ -152,8 +164,8 @@ result review at `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`. It keeps V0
 unchanged and implements deterministic relation and assurance sidecars before
 any V1 decision. The six-edge F1-F6 fixture passes directed queries,
 referential integrity, canonical round trips, failure tests, and fixed-point
-review. Assurance now covers all 29 V0 entries, 41 V0 views, and six admitted
-relations with 76 exact source-digest bindings. FFP-008 is closed; broader
+review. Assurance now covers all 30 V0 entries, 42 V0 views, and six admitted
+relations with 78 exact source-digest bindings. FFP-008 is closed; broader
 typed-relation coverage and a V1 decision remain open scaling gates.
 
 ## F1 first slice
@@ -247,3 +259,22 @@ review are `docs/research/2026-08-15-causal-reasoning.md` and
 F8 resolves `causal model` and `influence` without adding unresolved
 vocabulary. The current Factor Forge book delta is 19 records: nine entries
 and ten specialized views.
+
+## F9 first slice
+
+The Sampling and Generalization anchor at
+`tables/entries/sampling-generalization.md` separates the population target,
+operational frame, observed and analytic samples, estimand, estimator,
+estimate, and source-to-target inference through selection, response,
+transformation, uncertainty, error, heterogeneity, support, and provenance.
+
+`tables/diagnostics/sampling-generalization-failures.md` maps coverage,
+nonresponse, attrition, weighting instability, dependence, split leakage,
+measurement, processing, and transport symptoms to candidate causes,
+discriminating tests, and repair owners. Research and fixed-point review are
+`docs/research/2026-08-15-sampling-generalization.md` and
+`SAMPLING-GENERALIZATION-ROLE-REVIEW.md`.
+
+F9 resolves the arithmetic-mean `sample` declaration without adding unresolved
+vocabulary. The current Factor Forge book delta is 21 records: ten entries and
+eleven specialized views.
