@@ -157,8 +157,22 @@ and probability calibration. Use the Diagnostic view to identify the
 references, conditions, range, replicate design, support, uncertainty, and
 fitness-for-use tests required before either `calibrated` claim is accepted.
 
+## Task U - The average with a tiny error bar
+
+A dashboard reports an “average” response time of 120 ms with `SD = 2 ms` and
+a 95% error bar. Most requests are near 70 ms, a few retries exceed 2 seconds,
+enterprise customers were upweighted with undocumented weights, and thousands
+of requests came from only twelve clustered sessions. Another tool reports a
+different 90th percentile.
+
+Separate arithmetic mean, weighted mean, median, quantile, variance, standard
+deviation, standard error, and confidence interval. Use the Diagnostic view to
+audit the analytic set, units, weights, quantile convention, independent
+sampling units, estimator, interval target, procedure, assumptions, and
+practical decision threshold before interpreting the average or error bar.
+
 ## Rehearsal boundary
 
-The thirteen prompts collectively exercise every entry and specialized view in the
+The fourteen prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

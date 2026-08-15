@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **25 records** — 12 canonical entries and 13
+Selected current-corpus delta: **27 records** — 13 canonical entries and 14
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F11 extend
+This supplement tests whether completed Factor Forge batches F1-F12 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -140,6 +140,19 @@ calibration, and probability reliability. The Diagnostic view tests reference
 offsets, replicate scatter, coarse indications, drift, calibration misuse, and
 forecast reliability without treating one quality label as proof of fitness.
 
+## Part XIII - Statistical summaries and intervals
+
+### From one average or error bar to the correct target
+
+104. [Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval](../../tables/entries/statistical-summary-interval.md)
+105. [Statistical Summary and Interval Failure Diagnostic](../../tables/diagnostics/statistical-summary-interval-failures.md)
+
+The anchor separates equally and unequally weighted centers, order summaries,
+squared- and original-unit spread, estimator sampling variability, and
+parameter coverage. The Diagnostic view tests distribution shape, extremes,
+weight semantics, quantile conventions, denominators, dependence, and interval
+targets without treating narrowness or one `95%` label as validity proof.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -148,5 +161,5 @@ forecast reliability without treating one quality label as proof of fitness.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 103-record combined simulation remains a rehearsal projection, not a
+- The 105-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

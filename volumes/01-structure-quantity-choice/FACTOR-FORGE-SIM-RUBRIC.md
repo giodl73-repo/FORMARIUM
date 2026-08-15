@@ -183,6 +183,23 @@ proof that no movement occurred or that every reported term is true.
 Critical artifact failure: repeatability, display digits, a certificate, or a
 unit-interval score is treated as sufficient proof of accuracy or calibration.
 
+## Task U expected route
+
+- Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval;
+- Statistical Summary and Interval Failure Diagnostic;
+- the exact mean/median/quantile target, analytic set, units, transformations,
+  and tail behavior remain visible;
+- weight meaning, provenance, normalization, distribution, and effective
+  sample size are explicit;
+- variance, standard deviation, and standard error retain different units and
+  distribution ownership;
+- session clustering and estimator design determine independent replication;
+- confidence, prediction, tolerance, credible, and specification bounds remain
+  distinct and narrowness does not prove accuracy or decision value.
+
+Critical artifact failure: `average`, `SD`, record count, or `95%` is accepted
+without identifying the statistic, target, denominator, design, and procedure.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -213,6 +230,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/stock-flow-balance-failures.md`
 - `tables/entries/measurement-quality.md`
 - `tables/diagnostics/measurement-quality-failures.md`
+- `tables/entries/statistical-summary-interval.md`
+- `tables/diagnostics/statistical-summary-interval-failures.md`
 
 ## Claim boundary
 

@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 32 anchor entries, 195 senses, 328
-ordered factors, and 44 specialized views. It is strong in foundational
+The canonical corpus currently contains 33 anchor entries, 203 senses, 341
+ordered factors, and 45 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -152,6 +152,18 @@ view. It resolves the probability-range calibration declaration specifically
 to probability calibration while measurement uncertainty retains its existing
 owner.
 
+### F12 - Statistical Summaries and Intervals
+
+Separate arithmetic mean, weighted mean, median, quantile, variance, standard
+deviation, standard error, and confidence interval. Connect sampling,
+measurement, probability, benchmark, and decision interpretation without
+treating one average, error bar, denominator, or interval label as universal.
+
+Status: first slice implemented as one canonical anchor and one Diagnostic
+view. It gives the Sample Arithmetic Mean Formula view a canonical owner and
+resolves median, weighted mean, and confidence interval while leaving
+likelihood and broader statistical inference for later work.
+
 ## Batch gate
 
 Each batch must:
@@ -188,8 +200,8 @@ result review at `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`. It keeps V0
 unchanged and implements deterministic relation and assurance sidecars before
 any V1 decision. The six-edge F1-F6 fixture passes directed queries,
 referential integrity, canonical round trips, failure tests, and fixed-point
-review. Assurance now covers all 32 V0 entries, 44 V0 views, and six admitted
-relations with 82 exact source-digest bindings. FFP-008 is closed; broader
+review. Assurance now covers all 33 V0 entries, 45 V0 views, and six admitted
+relations with 84 exact source-digest bindings. FFP-008 is closed; broader
 typed-relation coverage and a V1 decision remain open scaling gates.
 
 ## F1 first slice
@@ -341,3 +353,22 @@ repair owners. Research and fixed-point review are
 F11 resolves `calibration` in the probability-range view without adding
 unresolved vocabulary. The current Factor Forge book delta is 25 records:
 twelve entries and thirteen specialized views.
+
+## F12 first slice
+
+The Statistical Summary and Interval anchor at
+`tables/entries/statistical-summary-interval.md` separates equal and weighted
+centers, rank summaries, squared- and original-unit spread, estimator sampling
+variability, and confidence-procedure coverage through analytic-set, weight,
+denominator, dependence, method, unit, convention, and provenance factors.
+
+`tables/diagnostics/statistical-summary-interval-failures.md` maps center
+conflicts, tail sensitivity, weight instability, quantile drift, denominator
+errors, pseudo-replication, narrow biased intervals, and interval-type collapse
+to candidate causes, discriminating tests, and repair owners. Research and
+fixed-point review are `docs/research/2026-08-15-statistical-summary-interval.md`
+and `STATISTICAL-SUMMARY-INTERVAL-ROLE-REVIEW.md`.
+
+F12 resolves the arithmetic-mean view owner plus `median`, `weighted mean`, and
+`confidence interval` without adding unresolved vocabulary. The current Factor
+Forge book delta is 27 records: thirteen entries and fourteen specialized views.

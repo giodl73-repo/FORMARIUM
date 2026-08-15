@@ -539,13 +539,14 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge F11 adds the candidate Error, Bias, Accuracy, Trueness, Precision,
-Resolution, and Calibration anchor plus a failure Diagnostic view, and resolves
-the probability-range calibration declaration. The canonical reference now
-contains 32 entries, 195 senses, 328 factors, and 44 views with 82 exact
-assurance bindings. The current Factor Forge supplement contains 25 records,
-so `sim-07` renders 103 numbered book records plus two application guides
-across thirteen chapters. Historical preflight
+Factor Forge F12 adds the candidate Mean, Median, Quantile, Variance, Standard
+Deviation, Standard Error, and Confidence Interval anchor plus a failure
+Diagnostic view, gives the Sample Arithmetic Mean formula a canonical owner,
+and resolves median, weighted mean, and confidence interval declarations. The
+canonical reference now contains 33 entries, 203 senses, 341 factors, and 45
+views with 84 exact assurance bindings. The current Factor Forge supplement
+contains 27 records, so `sim-07` renders 105 numbered book records plus two
+application guides across fourteen chapters. Historical preflight
 documents retain the counts of the rehearsal they recorded.
 
 ## Boundary

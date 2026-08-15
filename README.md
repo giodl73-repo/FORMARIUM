@@ -205,7 +205,7 @@ Render the multi-page static book-site simulation:
 .\tools\render_proof_set.ps1 -Edition sim-07
 ```
 
-Open `target/proof-set-sim-07/index.html` for search, thirteen chapter routes,
+Open `target/proof-set-sim-07/index.html` for search, fourteen chapter routes,
 and dedicated reading pages. The generated site remains a disposable
 publication projection; see
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).

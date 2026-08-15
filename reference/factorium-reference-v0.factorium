@@ -511,6 +511,29 @@ factor concurrency-and-ordering-semantics | concurrency and ordering semantics
 factor failure-cancellation-retry-and-compensation | failure, cancellation, retry, and compensation
 factor authority-provenance-and-observation-time | authority, provenance, and observation time
 end-entry
+entry statistical-summary-interval | Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval | reference | candidate | tables/entries/statistical-summary-interval.md | Arithmetic and weighted means, median and quantiles, variance and standard deviation, standard error, and confidence intervals answer different descriptive and inferential questions; each retains its data, weighting, denominator, estimator, design, units, and coverage contract.
+sense arithmetic-mean | arithmetic mean
+sense weighted-mean | weighted mean
+sense median | median
+sense quantile | quantile
+sense variance | variance
+sense standard-deviation | standard deviation
+sense standard-error | standard error
+sense confidence-interval | confidence interval
+factor exact-descriptive-inferential-or-decision-question | exact descriptive, inferential, or decision question
+factor population-sample-analytic-set-and-unit-of-analysis | population, sample, analytic set, and unit of analysis
+factor variable-quantity-kind-scale-unit-and-support | variable, quantity kind, scale, unit, and support
+factor inclusion-missingness-censoring-and-transformation-policy | inclusion, missingness, censoring, and transformation policy
+factor ordering-ties-and-quantile-convention | ordering, ties, and quantile convention
+factor center-or-target-parameter | center or target parameter
+factor deviations-denominator-and-degrees-of-freedom | deviations, denominator, and degrees of freedom
+factor weights-weight-meaning-normalization-and-effective-sample-size | weights, weight meaning, normalization, and effective sample size
+factor estimator-and-sampling-or-dependence-design | estimator and sampling or dependence design
+factor sampling-distribution-and-standard-error-method | sampling distribution and standard-error method
+factor interval-target-sidedness-level-procedure-and-assumptions | interval target, sidedness, level, procedure, and assumptions
+factor robustness-sensitivity-diagnostics-and-alternatives | robustness, sensitivity, diagnostics, and alternatives
+factor provenance-software-or-version-reporting-and-revision | provenance, software/version, reporting, and revision
+end-entry
 entry stock-flow-balance | Stock, Flow, Accumulation, Balance, and Conservation | systems | candidate | tables/entries/stock-flow-balance.md | A stock is an amount attributed inside a boundary at an instant; a flow is a boundary transfer or period-assigned change; accumulation is net stock change; a balance reconciles opening, changes, and closing; conservation adds a domain constraint against creation or destruction of a named property.
 sense stock | stock
 sense flow | flow
@@ -603,6 +626,8 @@ view diagnostic-measurement-quality-failures | measurement-quality | measurement
 end-view
 view diagnostic-sampling-generalization-failures | sampling-generalization | target-population,sampling-frame,sample,analytic-sample,estimand,estimator,estimate,generalization,transport | diagnostic | Sampling and Generalization Failure Diagnostic | tables/diagnostics/sampling-generalization-failures.md | Maps coverage, selection, attrition, estimation, precision, leakage, and source-to-target symptoms to candidate causes and discriminating tests without treating sample size or representativeness as proof.
 end-view
+view diagnostic-statistical-summary-interval-failures | statistical-summary-interval | arithmetic-mean,weighted-mean,median,quantile,variance,standard-deviation,standard-error,confidence-interval | diagnostic | Statistical Summary and Interval Failure Diagnostic | tables/diagnostics/statistical-summary-interval-failures.md | Maps center conflicts, extreme-value sensitivity, weight failures, quantile conventions, denominator errors, dependence, understated standard errors, and interval misuse to candidate causes and discriminating tests.
+end-view
 view diagnostic-stock-flow-balance-failures | stock-flow-balance | stock,flow,accumulation,balance,conservation | diagnostic | Stock-Flow Balance Failure Diagnostic | tables/diagnostics/stock-flow-balance-failures.md | Maps nonclosure, suspicious closure, amount-rate confusion, hidden gross flows, compartment errors, drift, and residuals to candidate causes and discriminating tests without treating arithmetic balance as conservation proof.
 end-view
 view evidence-causal-claim | causal-reasoning | association,causal-effect,influence,causal-mechanism,intervention,causal-attribution | evidence | Causal Claim Evidence Table | tables/evidence/causal-claim-evidence.md | Audits association, effect, influence, mechanism, intervention-effect, and actual-case attribution claims through explicit targets, designs, assumptions, evidence, alternatives, transport limits, and dispositions without computing a causal estimate.
@@ -613,7 +638,7 @@ view evidence-observation-inference-chain | claim-evidence | claim,evidence-item
 end-view
 view formula-amount-concentration-composition | amount-concentration-composition | entity-count,amount-of-substance,amount-concentration,mass-concentration,amount-fraction,mass-fraction,volume-fraction | formula | Amount, Concentration, and Composition Relations | tables/formulas/amount-concentration-composition.md | These relations connect a specified entity count to amount of substance and separate component-per-volume concentrations from like-kind composition fractions. Every use requires an entity or component, a system boundary, and an explicit numerator and denominator basis.
 end-view
-view formula-arithmetic-mean | unresolved-arithmetic-mean | - | formula | Sample Arithmetic Mean | tables/formulas/arithmetic-mean.md | The sample arithmetic mean summarizes equally weighted numerical observations by dividing their sum by their count. It is a statistic computed from the selected sample; whether it usefully represents location or estimates a population quantity depends on sampling and distribution conditions.
+view formula-arithmetic-mean | statistical-summary-interval | arithmetic-mean | formula | Sample Arithmetic Mean | tables/formulas/arithmetic-mean.md | The sample arithmetic mean summarizes equally weighted numerical observations by dividing their sum by their count. It is a statistic computed from the selected sample; whether it usefully represents location or estimates a population quantity depends on sampling and distribution conditions.
 end-view
 view formula-common-geometric-measures | geometric-measure | perimeter,circumference,area,surface-area,volume | formula | Common Geometric Measures | tables/formulas/common-geometric-measures.md | This Formula Table selects formulas by measure kind and shape. Exact symbolic forms are preserved; decimal evaluation and measurement uncertainty belong to the application context.
 end-view

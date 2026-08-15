@@ -463,3 +463,27 @@ and the combined selection to 103 numbered records plus two guides across
 thirteen chapters. The generated `sim-07` site contains 133 pages from 119
 sources, indexes all 105 reader destinations, and reports zero missing
 internal targets.
+
+## 2026-08-15 statistical-summary-and-interval content continuation
+
+Plan review: admit an F12 statistical bridge across sampling, measurement,
+probability, benchmarks, and decisions; ground mean, weighted mean, median,
+quantile, variance, standard deviation, standard error, and confidence interval
+in authoritative statistical sources; author one canonical anchor and one
+Diagnostic view; assign the unresolved arithmetic-mean Formula view; close
+role findings; then propagate the exact delta through assurance, Factor Forge,
+search, and the static book site. Likelihood and broader inference remain out
+of scope, and no external-reader gate or broad research claim is introduced.
+
+Result review: F12 adds `statistical-summary-interval` with eight senses and
+the Statistical Summary and Interval Failure Diagnostic, reassigns the Sample
+Arithmetic Mean Formula view, and resolves `median`, `weighted mean`, and
+`confidence interval`. Center, order, spread, sampling variability, parameter
+coverage, prediction, population coverage, posterior probability, and
+specification remain separate targets. The source campaign confirms 19
+findings and fixed-point review closes all major findings. The reference grows
+to 33 entries, 203 senses, 341 factors, and 45 views with 84 assurance
+bindings. The Factor Forge delta grows to 27 records and the combined selection
+to 105 numbered records plus two guides across fourteen chapters. The generated
+`sim-07` site contains 136 pages from 121 sources, indexes all 107 reader
+destinations, and reports zero missing internal targets.

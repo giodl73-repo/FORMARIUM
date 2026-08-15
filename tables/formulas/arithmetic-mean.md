@@ -93,8 +93,7 @@ sample-mean-use
 - [Measure](../roots/measure.md)
 - [Policy](../roles/policy.md)
 - [Population, Sample, Estimand, Estimate, and Generalization](../entries/sampling-generalization.md)
-- median — `unresolved-candidate`
-- weighted mean — `unresolved-candidate`
+- [Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval](../entries/statistical-summary-interval.md) — canonical owner of `arithmetic-mean`, `median`, and `weighted-mean`
 
 ## Sources and provenance
 

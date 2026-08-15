@@ -114,13 +114,13 @@ probability-risk-uncertainty-use
 - [Information, Data, Signal, and Noise](information-data-signal-noise.md)
 - [Cost, Price, Value, Utility, and Return](cost-price-value-return.md)
 - [Population, Sample, Estimand, Estimate, and Generalization](sampling-generalization.md)
+- [Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval](statistical-summary-interval.md) — use the `confidence-interval` sense
 - [Possibility](../roots/possibility.md)
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
 - [Constraint](../roots/constraint.md)
 - [Security](../examples/security.md)
 - likelihood function - `unresolved-candidate`
-- confidence interval - `unresolved-candidate`
 
 ## Sources and provenance
 
