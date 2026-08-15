@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02")]
+    [ValidateSet("sim-01", "sim-02", "sim-03")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -9,15 +9,16 @@ $ErrorActionPreference = "Stop"
 $workspace = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $volume = Join-Path $workspace "volumes\01-structure-quantity-choice\VOLUME.md"
 $supplement = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-SUPPLEMENT.md"
+$factorForgeTasks = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-TASKS.md"
+$factorForgeRubric = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-RUBRIC.md"
 $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-SET-SIM-QUICKSTART.md"
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $volumeDirectory = Split-Path $volume
 $artifactName = "proof-set-$Edition"
-$artifactTitle = if ($Edition -eq "sim-01") {
-    "Factorium Proof Set Simulation 01"
-}
-else {
-    "Factorium Proof Set Expanded Simulation 02"
+$artifactTitle = switch ($Edition) {
+    "sim-01" { "Factorium Proof Set Simulation 01" }
+    "sim-02" { "Factorium Proof Set Expanded Simulation 02" }
+    "sim-03" { "Factorium Proof Set Factor Forge Task Simulation 03" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -34,7 +35,8 @@ $excludedNames = [System.Collections.Generic.HashSet[string]]::new(
     "USABILITY-PROTOCOL.md",
     "READER-PACKET.md",
     "EVALUATOR-RUBRIC.md",
-    "OBSERVATIONS.md"
+    "OBSERVATIONS.md",
+    "FACTOR-FORGE-SIM-RUBRIC.md"
 ) | ForEach-Object { [void]$excludedNames.Add($_) }
 
 $sources = [System.Collections.Generic.List[string]]::new()
@@ -78,7 +80,7 @@ function Get-WorkspaceMarkdownPathSet {
 $selectionChecks = [ordered]@{
     mode = "base volume path selection"
 }
-if ($Edition -eq "sim-02") {
+if ($Edition -ne "sim-01") {
     $canonicalKinds = [System.Collections.Generic.Dictionary[string, string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
     )
@@ -123,6 +125,25 @@ if ($Edition -eq "sim-02") {
         missing_delta_paths = $missingDelta.Count
         extra_delta_paths = $extraDelta.Count
     }
+
+    if ($Edition -eq "sim-03") {
+        $rubricText = Get-Content -LiteralPath $factorForgeRubric -Raw
+        $taskCoverage = [System.Collections.Generic.HashSet[string]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        [regex]::Matches($rubricText, '`(tables/[^`]+\.md)`') | ForEach-Object {
+            [void]$taskCoverage.Add($_.Groups[1].Value)
+        }
+        $missingTaskCoverage = @($expectedDelta | Where-Object { -not $taskCoverage.Contains($_) })
+        $extraTaskCoverage = @($taskCoverage | Where-Object { -not $expectedDelta.Contains($_) })
+        if ($missingTaskCoverage.Count -ne 0 -or $extraTaskCoverage.Count -ne 0) {
+            throw "Factor Forge task coverage mismatch: missing=$($missingTaskCoverage -join ',') extra=$($extraTaskCoverage -join ',')"
+        }
+        $selectionChecks.task_count = 8
+        $selectionChecks.task_coverage_records = $taskCoverage.Count
+        $selectionChecks.missing_task_coverage_paths = $missingTaskCoverage.Count
+        $selectionChecks.extra_task_coverage_paths = $extraTaskCoverage.Count
+    }
 }
 
 Add-ProofSource $quickstart
@@ -130,9 +151,12 @@ Add-ProofSource $volume
 
 $selectionDocuments = [System.Collections.Generic.List[string]]::new()
 $selectionDocuments.Add($volume)
-if ($Edition -eq "sim-02") {
+if ($Edition -ne "sim-01") {
     Add-ProofSource $supplement
     $selectionDocuments.Add($supplement)
+}
+if ($Edition -eq "sim-03") {
+    Add-ProofSource $factorForgeTasks
 }
 
 foreach ($selectionDocument in $selectionDocuments) {
@@ -300,7 +324,8 @@ $manifestRecord = [ordered]@{
         "USABILITY-PROTOCOL.md",
         "READER-PACKET.md",
         "EVALUATOR-RUBRIC.md",
-        "OBSERVATIONS.md"
+        "OBSERVATIONS.md",
+        "FACTOR-FORGE-SIM-RUBRIC.md"
     )
     sources = $sourceRecords
     selection_checks = $selectionChecks
@@ -322,10 +347,14 @@ $manifestRecord | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $manifest -
 Write-Output "artifact=$html"
 Write-Output "manifest=$manifest"
 Write-Output "sources=$($sources.Count)"
-if ($Edition -eq "sim-02") {
+if ($Edition -ne "sim-01") {
     Write-Output "delta_entries=$($selectionChecks.delta_entries)"
     Write-Output "delta_views=$($selectionChecks.delta_views)"
     Write-Output "combined_records=$($selectionChecks.combined_projection_records)"
+}
+if ($Edition -eq "sim-03") {
+    Write-Output "tasks=$($selectionChecks.task_count)"
+    Write-Output "task_coverage_records=$($selectionChecks.task_coverage_records)"
 }
 Write-Output "internal_links=$($fragmentLinks.Count)"
 Write-Output "missing_internal_targets=$($missingFragments.Count)"

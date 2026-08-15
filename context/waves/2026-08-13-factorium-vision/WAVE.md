@@ -126,6 +126,9 @@ projection without admitting a preview candidate.
 The third rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-03.md`; it proves that
 the exact 7-entry, 8-view Factor Forge delta can extend the book as a
 93-record current-source simulation with no missing or extra canonical path.
+The fourth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-04.md`; eight neutral
+tasks now own every delta record exactly, with the author rubric excluded from
+the `sim-03` proof and no synthetic task outcome recorded.
 
 ## Success criteria
 

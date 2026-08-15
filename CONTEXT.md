@@ -107,6 +107,13 @@ adds the exact current Factor Forge delta as a connected simulation supplement:
 renderer fails if the supplement omits or adds a canonical delta path. This is
 selection and publication-mechanics evidence only, not reader evidence.
 
+The fourth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-04.md`
+adds eight neutral Factor Forge task prompts and a separate author-only rubric.
+The `sim-03` renderer fails unless task ownership covers all 15 delta records
+with no extra path, while excluding the rubric from the proof. This establishes
+task-route coverage, not task success.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

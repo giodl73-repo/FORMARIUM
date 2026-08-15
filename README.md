@@ -161,6 +161,13 @@ Forge delta:
 .\tools\render_proof_set.ps1 -Edition sim-02
 ```
 
+Render the expanded edition with eight neutral Factor Forge coverage tasks while
+excluding the author-only rubric:
+
+```powershell
+.\tools\render_proof_set.ps1 -Edition sim-03
+```
+
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 

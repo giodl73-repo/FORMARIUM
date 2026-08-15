@@ -80,7 +80,9 @@ reader would find or understand the route.
 The task-route result is recorded at `PROOF-SET-SIMULATION-PREFLIGHT.md`. The
 rendering and self-guided-material rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-02.md`. The current-corpus selection and
-expanded-book rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-03.md`.
+expanded-book rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-03.md`. The exact
+Factor Forge task-ownership rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-04.md`.
 
 ## Candidate artifacts
 
