@@ -539,12 +539,13 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge F10 adds the candidate Stock, Flow, Accumulation, Balance, and
-Conservation anchor plus a failure Diagnostic view, and rehomes the General
-Accounting Balance formula. The canonical reference now contains 31 entries,
-187 senses, 316 factors, and 43 views with 80 exact assurance bindings. The
-current Factor Forge supplement contains 23 records, so `sim-07` renders 101
-numbered book records plus two application guides across twelve chapters. Historical preflight
+Factor Forge F11 adds the candidate Error, Bias, Accuracy, Trueness, Precision,
+Resolution, and Calibration anchor plus a failure Diagnostic view, and resolves
+the probability-range calibration declaration. The canonical reference now
+contains 32 entries, 195 senses, 328 factors, and 44 views with 82 exact
+assurance bindings. The current Factor Forge supplement contains 25 records,
+so `sim-07` renders 103 numbered book records plus two application guides
+across thirteen chapters. Historical preflight
 documents retain the counts of the rehearsal they recorded.
 
 ## Boundary

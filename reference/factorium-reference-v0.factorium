@@ -294,6 +294,28 @@ factor averaging-or-local-view | averaging or local view
 factor measurement-method | measurement method
 factor unit-system | unit system
 end-entry
+entry measurement-quality | Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration | reference | candidate | tables/entries/measurement-quality.md | Error is a measured-minus-reference difference; bias estimates systematic error; accuracy, trueness, and precision ask different agreement questions; resolution concerns perceptible indication change; metrological and probability calibration relate different outputs to different references.
+sense measurement-error | measurement error
+sense measurement-bias | measurement bias
+sense measurement-accuracy | measurement accuracy
+sense measurement-trueness | measurement trueness
+sense measurement-precision | measurement precision
+sense instrument-resolution | instrument resolution
+sense metrological-calibration | metrological calibration
+sense probability-calibration | probability calibration
+factor exact-claim-and-decision-use | exact claim and decision use
+factor measurand-system-unit-and-operating-conditions | measurand, system, unit, and operating conditions
+factor measurement-procedure-instrument-operator-and-time | measurement procedure, instrument, operator, and time
+factor measured-value-reference-value-and-reference-uncertainty | measured value, reference value, and reference uncertainty
+factor replicate-design-and-repeatability-or-reproducibility-conditions | replicate design and repeatability or reproducibility conditions
+factor random-and-systematic-error-model | random and systematic error model
+factor bias-correction-drift-and-stability-evidence | bias, correction, drift, and stability evidence
+factor resolution-sensitivity-range-and-detection-behavior | resolution, sensitivity, range, and detection behavior
+factor calibration-standard-relation-hierarchy-and-traceability | calibration standard, relation, hierarchy, and traceability
+factor probability-target-outcome-definition-evaluation-population-and-bins | probability target, outcome definition, evaluation population, and bins
+factor uncertainty-budget-diagnostics-acceptance-criteria-and-fitness-for-use | uncertainty budget, diagnostics, acceptance criteria, and fitness for use
+factor provenance-validity-interval-revision-and-limitations | provenance, validity interval, revision, and limitations
+end-entry
 entry motion-measure | Motion Measure | science | candidate | tables/entries/motion-measure.md | Motion measures describe where a subject is, how its position changes, how much path it traverses, and how those quantities change with time. Everyday speech often merges distance with displacement and speed with velocity; Factorium separates them by evidence, direction, and mathematical role.
 sense position | position
 sense distance-traveled | distance traveled
@@ -576,6 +598,8 @@ end-view
 view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
+end-view
+view diagnostic-measurement-quality-failures | measurement-quality | measurement-error,measurement-bias,measurement-accuracy,measurement-trueness,measurement-precision,instrument-resolution,metrological-calibration,probability-calibration | diagnostic | Measurement Quality Failure Diagnostic | tables/diagnostics/measurement-quality-failures.md | Maps reference offsets, replicate scatter, coarse indications, drift, calibration misuse, and probability reliability failures to candidate causes and discriminating tests without treating one quality label as proof.
 end-view
 view diagnostic-sampling-generalization-failures | sampling-generalization | target-population,sampling-frame,sample,analytic-sample,estimand,estimator,estimate,generalization,transport | diagnostic | Sampling and Generalization Failure Diagnostic | tables/diagnostics/sampling-generalization-failures.md | Maps coverage, selection, attrition, estimation, precision, leakage, and source-to-target symptoms to candidate causes and discriminating tests without treating sample size or representativeness as proof.
 end-view

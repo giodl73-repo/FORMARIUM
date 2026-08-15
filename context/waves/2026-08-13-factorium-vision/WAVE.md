@@ -439,3 +439,27 @@ records and the combined selection to 101 numbered records plus two guides
 across twelve chapters. The generated `sim-07` site contains 130 pages from
 117 sources, indexes all 103 reader destinations, and reports zero missing
 internal targets.
+
+## 2026-08-15 measurement-quality content continuation
+
+Plan review: admit an F11 measurement-quality bridge across evidence,
+uncertainty, sampling, controls, instruments, formula interpretation, and
+benchmark scores; ground formal distinctions in JCGM VIM, NIST, and official
+probability-verification sources; author one canonical anchor and one
+Diagnostic view; resolve the generic calibration declaration to its exact
+probability sense; close role findings; then propagate the exact delta through
+assurance, Factor Forge, search, and the static book site. Metrological and
+probability calibration remain separate and no external-reader gate is added.
+
+Result review: F11 adds `measurement-quality` with eight senses and the
+Measurement Quality Failure Diagnostic, and resolves the probability-range
+declaration specifically to `probability-calibration`. Error, uncertainty,
+bias, accuracy, trueness, precision, resolution, metrological calibration,
+probability reliability, verification, and fitness remain distinct. The
+source campaign confirms 19 findings and fixed-point review closes all major
+findings. The reference grows to 32 entries, 195 senses, 328 factors, and 44
+views with 82 assurance bindings. The Factor Forge delta grows to 25 records
+and the combined selection to 103 numbered records plus two guides across
+thirteen chapters. The generated `sim-07` site contains 133 pages from 119
+sources, indexes all 105 reader destinations, and reports zero missing
+internal targets.

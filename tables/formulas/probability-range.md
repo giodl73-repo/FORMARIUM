@@ -89,8 +89,8 @@ probability-bound-use
 - [Measure](../roots/measure.md)
 - [Comparative Quantity](../entries/comparative-quantity.md)
 - [Probability, Risk, and Uncertainty](../entries/probability-risk-uncertainty.md)
+- [Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration](../entries/measurement-quality.md) — use the `probability-calibration` sense
 - [State, Event, Transition, Process, and Lifecycle](../entries/state-event-transition-process-lifecycle.md)
-- calibration — `unresolved-candidate`
 
 ## Sources and provenance
 

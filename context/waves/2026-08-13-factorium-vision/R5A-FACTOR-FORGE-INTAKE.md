@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 31 anchor entries, 187 senses, 316
-ordered factors, and 43 specialized views. It is strong in foundational
+The canonical corpus currently contains 32 anchor entries, 195 senses, 328
+ordered factors, and 44 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -139,6 +139,19 @@ Status: first slice implemented as one canonical anchor and one Diagnostic
 view. The existing General Accounting Balance Formula view moves from an
 energy-only owner to the new structural anchor.
 
+### F11 - Measurement Quality and Calibration
+
+Separate measurement error, bias, accuracy, trueness, precision, instrument
+resolution, metrological calibration, and probability calibration. Connect
+measurement, uncertainty, sampling, control, formula, and benchmark material
+without treating repeatability, display digits, a calibration certificate, or
+a bounded score as universal quality proof.
+
+Status: first slice implemented as one canonical anchor and one Diagnostic
+view. It resolves the probability-range calibration declaration specifically
+to probability calibration while measurement uncertainty retains its existing
+owner.
+
 ## Batch gate
 
 Each batch must:
@@ -175,8 +188,8 @@ result review at `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`. It keeps V0
 unchanged and implements deterministic relation and assurance sidecars before
 any V1 decision. The six-edge F1-F6 fixture passes directed queries,
 referential integrity, canonical round trips, failure tests, and fixed-point
-review. Assurance now covers all 31 V0 entries, 43 V0 views, and six admitted
-relations with 80 exact source-digest bindings. FFP-008 is closed; broader
+review. Assurance now covers all 32 V0 entries, 44 V0 views, and six admitted
+relations with 82 exact source-digest bindings. FFP-008 is closed; broader
 typed-relation coverage and a V1 decision remain open scaling gates.
 
 ## F1 first slice
@@ -309,3 +322,22 @@ to the structural anchor. Research and fixed-point review are
 F10 resolves `flow` and `conservation` in the general balance view without
 adding unresolved vocabulary. The current Factor Forge book delta is 23
 records: eleven entries and twelve specialized views.
+
+## F11 first slice
+
+The Measurement Quality anchor at `tables/entries/measurement-quality.md`
+separates signed reference difference, estimated systematic error, accuracy,
+trueness, replicate precision, instrument resolution, standards-based
+calibration, and probability reliability through reference, conditions,
+range, uncertainty, support, time, and fitness-for-use factors.
+
+`tables/diagnostics/measurement-quality-failures.md` maps reference offsets,
+replicate scatter, cosmetic digits, deployment drift, certificate misuse, and
+forecast reliability failures to candidate causes, discriminating tests, and
+repair owners. Research and fixed-point review are
+`docs/research/2026-08-15-measurement-quality.md` and
+`MEASUREMENT-QUALITY-ROLE-REVIEW.md`.
+
+F11 resolves `calibration` in the probability-range view without adding
+unresolved vocabulary. The current Factor Forge book delta is 25 records:
+twelve entries and thirteen specialized views.

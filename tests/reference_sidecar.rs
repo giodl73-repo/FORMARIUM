@@ -43,7 +43,7 @@ fn committed_sidecars_round_trip_and_validate() {
         )
         .unwrap();
     assert_eq!(relations.relations().len(), 6);
-    assert_eq!(assurance.bindings().len(), 80);
+    assert_eq!(assurance.bindings().len(), 82);
 }
 
 #[test]

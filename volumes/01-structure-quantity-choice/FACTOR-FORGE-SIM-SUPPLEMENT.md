@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **23 records** — 11 canonical entries and 12
+Selected current-corpus delta: **25 records** — 12 canonical entries and 13
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F10 extend
+This supplement tests whether completed Factor Forge batches F1-F11 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -127,6 +127,19 @@ boundary, interval, unit, gross/net, compartment, residual, uncertainty, and
 evidence checks without treating a balanced equation as proof that its terms
 are complete or true.
 
+## Part XII - Measurement quality and calibration
+
+### From a quality label to the governing comparison
+
+102. [Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration](../../tables/entries/measurement-quality.md)
+103. [Measurement Quality Failure Diagnostic](../../tables/diagnostics/measurement-quality-failures.md)
+
+The anchor separates signed reference difference, estimated systematic error,
+individual and replicate agreement, indication granularity, standards-based
+calibration, and probability reliability. The Diagnostic view tests reference
+offsets, replicate scatter, coarse indications, drift, calibration misuse, and
+forecast reliability without treating one quality label as proof of fitness.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -135,5 +148,5 @@ are complete or true.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 101-record combined simulation remains a rehearsal projection, not a
+- The 103-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

@@ -283,7 +283,7 @@ if ($Edition -ne "sim-01") {
         if ($missingTaskCoverage.Count -ne 0 -or $extraTaskCoverage.Count -ne 0) {
             throw "Factor Forge task coverage mismatch: missing=$($missingTaskCoverage -join ',') extra=$($extraTaskCoverage -join ',')"
         }
-        $selectionChecks.task_count = 12
+        $selectionChecks.task_count = 13
         $selectionChecks.task_coverage_records = $taskCoverage.Count
         $selectionChecks.missing_task_coverage_paths = $missingTaskCoverage.Count
         $selectionChecks.extra_task_coverage_paths = $extraTaskCoverage.Count
@@ -443,7 +443,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
         Get-NumberedSelections $supplement
     )
     $guideSelections = @(Get-GuideSelections)
-    if ($numberedSelections.Count -ne 101 -or $guideSelections.Count -ne 2) {
+    if ($numberedSelections.Count -ne 103 -or $guideSelections.Count -ne 2) {
         throw "Search selection mismatch: numbered=$($numberedSelections.Count) guides=$($guideSelections.Count)"
     }
 
@@ -527,7 +527,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
     $searchShell = @'
 <section class="proof-search" aria-labelledby="proof-search-heading">
 <h2 id="proof-search-heading">Search this proof</h2>
-<p>Search the 101 selected records and two application guides. Results open the canonical book projection below.</p>
+<p>Search the 103 selected records and two application guides. Results open the canonical book projection below.</p>
 <div class="proof-search__controls">
 <label for="proof-search-query">Search terms
 <input id="proof-search-query" type="search" autocomplete="off" placeholder="Try force, sample, balance, workflow, or contract">
@@ -559,7 +559,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
         numbered_records = $numberedSelections.Count
         application_guides = $guideSelections.Count
         indexed_records = $searchRecords.Count
-        duplicate_paths = 103 - $searchPaths.Count
+        duplicate_paths = 105 - $searchPaths.Count
         missing_rendered_targets = $missingSearchTargets.Count
         result_limit = 20
         execution = "static in-browser; no server or alternate content authority"
@@ -875,7 +875,7 @@ if ($Edition -eq "sim-07") {
             $chapterBySearchPath[$chapterRelativePath] = $chapter
         }
     }
-    if ($siteChapters.Count -ne 12 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
+    if ($siteChapters.Count -ne 13 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
         throw "Site chapter coverage mismatch: chapters=$($siteChapters.Count) records=$($chapterBySearchPath.Count)"
     }
 

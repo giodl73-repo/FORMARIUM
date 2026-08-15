@@ -54,7 +54,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/formulas/newtons-method.md` | 95 | derivative — `unresolved-candidate` |
 | `tables/formulas/newtons-method.md` | 96 | root — `unresolved-candidate` |
 | `tables/formulas/newtons-method.md` | 97 | convergence — `unresolved-candidate` |
-| `tables/formulas/probability-range.md` | 93 | calibration — `unresolved-candidate` |
 | `tables/formulas/pythagorean-trigonometric-identity.md` | 90 | angle — `unresolved-candidate` |
 | `tables/formulas/pythagorean-trigonometric-identity.md` | 91 | unit circle — `unresolved-candidate` |
 | `tables/mappings/temperature-scales.md` | 114 | unit conversion — `unresolved-candidate` |

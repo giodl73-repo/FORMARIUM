@@ -167,6 +167,22 @@ generalizability.
 Critical artifact failure: net zero or a balancing adjustment is treated as
 proof that no movement occurred or that every reported term is true.
 
+## Task T expected route
+
+- Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration;
+- Measurement Quality Failure Diagnostic;
+- measurement error remains distinct from uncertainty, and estimated bias
+  remains distinct from realized error;
+- accuracy, trueness, precision, resolution, and sensitivity retain their
+  different comparisons and conditions;
+- metrological calibration does not imply adjustment, verification, validity
+  outside range/conditions, or fitness for use;
+- probability calibration requires declared outcomes, target population,
+  horizon, support, procedure, and uncertainty rather than a bounded score.
+
+Critical artifact failure: repeatability, display digits, a certificate, or a
+unit-interval score is treated as sufficient proof of accuracy or calibration.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -195,6 +211,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/sampling-generalization-failures.md`
 - `tables/entries/stock-flow-balance.md`
 - `tables/diagnostics/stock-flow-balance-failures.md`
+- `tables/entries/measurement-quality.md`
+- `tables/diagnostics/measurement-quality-failures.md`
 
 ## Claim boundary
 

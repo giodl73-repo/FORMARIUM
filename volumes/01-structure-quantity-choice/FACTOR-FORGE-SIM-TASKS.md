@@ -143,8 +143,22 @@ compartments, interval, units, signs, consolidation, residual, and uncertainty.
 Identify what independent evidence would distinguish a legitimate correction
 from an omitted transfer or measurement error.
 
+## Task T - Precise, calibrated, and still wrong
+
+A sensor repeats within `0.01` units and displays three decimal places. Its
+certificate covers a narrower range and cooler environment than deployment,
+and comparison with a current reference shows a stable offset. A separate
+model score is called a calibrated probability because it lies in `[0,1]`,
+but outcome frequencies have never been checked.
+
+Separate measurement error, bias, accuracy, trueness, precision, resolution,
+measurement uncertainty, metrological calibration, adjustment, verification,
+and probability calibration. Use the Diagnostic view to identify the
+references, conditions, range, replicate design, support, uncertainty, and
+fitness-for-use tests required before either `calibrated` claim is accepted.
+
 ## Rehearsal boundary
 
-The twelve prompts collectively exercise every entry and specialized view in the
+The thirteen prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.
