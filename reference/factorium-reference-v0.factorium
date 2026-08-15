@@ -83,6 +83,24 @@ factor intervention-authority-action-and-side-effects | intervention authority, 
 factor outcome-measures-and-time-horizon | outcome measures and time horizon
 factor review-learning-and-revision | review, learning, and revision
 end-entry
+entry coordinated-work | Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation | systems | candidate | tables/entries/coordinated-work.md | Coordinated work connects activities, participants, decisions, interactions, and recovery toward a completion condition. Workflow organizes the work; orchestration owns sequencing inside a boundary; choreography exposes participant interactions; concurrency describes independent progress; compensation addresses effects that cannot simply be rolled back.
+sense workflow | workflow
+sense orchestration | orchestration
+sense choreography | choreography
+sense concurrency | concurrency
+sense compensation | compensation
+factor objective-and-completion-condition | objective and completion condition
+factor subject-instance-and-boundary | subject, instance, and boundary
+factor activities-and-dependencies | activities and dependencies
+factor trigger-branch-join-and-ordering | trigger, branch, join, and ordering semantics
+factor participant-role-authority-and-coordinator | participant, role, authority, and coordinator placement
+factor interaction-message-correlation-and-contract | interaction, message, correlation, and contract
+factor concurrency-scheduling-exclusion-and-synchronization | concurrency, scheduling, exclusion, and synchronization
+factor state-effect-visibility-and-commitment | state, effect, visibility, and commitment boundary
+factor failure-timeout-cancellation-retry-and-idempotency | failure, timeout, cancellation, retry, and idempotency policy
+factor compensation-repair-escalation-and-residual-obligation | compensation, repair, escalation, and residual obligation
+factor observation-provenance-and-version | observation, provenance, and version
+end-entry
 entry cost-price-value-return | Cost, Price, Value, Utility, and Return | economics | candidate | tables/entries/cost-price-value-return.md | Cost, price, value, utility, and return can all be expressed with numbers, and several can share the same currency unit, but they answer different questions. Cost records included sacrifice from a perspective; price is an exchange term; value is an assessment for a purpose and date; utility represents preference or satisfaction; return compares an investment outcome with its baseline; discounting maps amounts across time under a model.
 sense explicit-cost | explicit cost
 sense opportunity-cost | opportunity cost
@@ -489,6 +507,8 @@ end-view
 view decision-policy-decision | policy-rule-constraint-decision-exception | decision | decision | Policy Decision Table | tables/decisions/policy-decision.md | Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate.
 end-view
 view diagnostic-control-response-failures | control-monitoring-response | objective,monitoring,indicator,threshold,alert,feedback-control,governance-control,feedback,intervention,outcome | diagnostic | Control and Response Failure Diagnostic | tables/diagnostics/control-response-failures.md | Maps monitoring, alerting, intervention, control, and outcome symptoms to candidate causes and discriminating tests without treating one symptom as proof of one diagnosis.
+end-view
+view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
 end-view

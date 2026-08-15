@@ -45,9 +45,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/policy-rule-constraint-decision-exception.md` | 137 | appeal - `unresolved-candidate` |
 | `tables/entries/probability-risk-uncertainty.md` | 121 | likelihood function - `unresolved-candidate` |
 | `tables/entries/probability-risk-uncertainty.md` | 122 | confidence interval - `unresolved-candidate` |
-| `tables/entries/state-event-transition-process-lifecycle.md` | 124 | workflow - `unresolved-candidate` |
-| `tables/entries/state-event-transition-process-lifecycle.md` | 125 | compensation - `unresolved-candidate` |
-| `tables/entries/state-event-transition-process-lifecycle.md` | 126 | concurrency - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 157 | architecture - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 158 | subsystem - `unresolved-candidate` |
 | `tables/entries/thermal-quantity.md` | 128 | phase - `unresolved-candidate` |

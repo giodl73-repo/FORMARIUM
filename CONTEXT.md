@@ -537,6 +537,15 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 `docs/ROLE-PACKET-ONBOARDING.md`, and the review is
 `context/waves/2026-08-13-role-and-ambiguity/PULSE-06-ROLE-REVIEW.md`.
 
+## Current content state
+
+Factor Forge F7 adds the candidate Coordinated Work anchor and failure
+Diagnostic. The canonical reference now contains 28 entries, 167 senses, 277
+factors, and 40 views with 74 exact assurance bindings. The current Factor
+Forge supplement contains 17 records, so `sim-07` renders 95 numbered book
+records plus two application guides across nine chapters. Historical preflight
+documents retain the counts of the rehearsal they recorded.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

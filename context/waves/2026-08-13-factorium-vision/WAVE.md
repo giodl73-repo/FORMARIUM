@@ -360,3 +360,20 @@ specialized views, all eleven families, explicit primary-family declarations,
 three direct structural anchors, repository-wide local-link integrity, and no
 open critical or major review finding. Pulse 04 now begins the reproducible
 reference interchange and generated-projection work.
+
+## 2026-08-15 coordinated-work content continuation
+
+Plan review: admit one connected F7 batch from recurrent lifecycle candidates;
+research the distinctions with primary and official sources; author one
+canonical anchor and one Diagnostic view; close role findings; then propagate
+the exact delta through assurance, Factor Forge, search, and the static book
+site. No new participant claim or external-reader gate is introduced.
+
+Result review: F7 adds `coordinated-work` with five senses and the Coordinated
+Work Failure Diagnostic. The lifecycle anchor now resolves workflow,
+concurrency, and compensation canonically. Fixed-point review closes all major
+findings, and the reference grows to 28 entries, 167 senses, 277 factors, and
+40 views with 74 assurance bindings. The Factor Forge delta grows to 17
+records and the combined book selection to 95 numbered records plus two
+application guides. Renderer and site validation results are recorded by the
+generated `sim-07` manifest.

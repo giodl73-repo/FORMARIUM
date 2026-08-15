@@ -92,6 +92,19 @@ It resolves governance and obligation, repairs already-owned authority,
 compatibility, organization, event, and enforcement-point declarations, and
 leaves adjacent appeal, audit, assurance, and remedy vocabulary deferred.
 
+### F7 - Coordinated Work
+
+Separate workflow, orchestration, choreography, concurrency, and compensation
+while preserving links to lifecycle, organization, transactions, messages,
+contracts, controls, and obligations. Diagnose stalls, duplicates, conflicts,
+partial effects, and disagreement about completion without assigning every
+failure to one engine or controller.
+
+Status: first slice implemented as one canonical anchor and one Diagnostic
+view. It resolves the lifecycle anchor's workflow, concurrency, and
+compensation candidates while keeping parallelism, retry, idempotency,
+cancellation, rollback, and compensation non-equivalent.
+
 ## Batch gate
 
 Each batch must:
@@ -128,8 +141,8 @@ result review at `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`. It keeps V0
 unchanged and implements deterministic relation and assurance sidecars before
 any V1 decision. The six-edge F1-F6 fixture passes directed queries,
 referential integrity, canonical round trips, failure tests, and fixed-point
-review. Assurance now covers all 27 V0 entries, 39 V0 views, and six admitted
-relations with 72 exact source-digest bindings. FFP-008 is closed; broader
+review. Assurance now covers all 28 V0 entries, 40 V0 views, and six admitted
+relations with 74 exact source-digest bindings. FFP-008 is closed; broader
 typed-relation coverage and a V1 decision remain open scaling gates.
 
 ## F1 first slice
@@ -188,3 +201,22 @@ V0 remains unchanged; obligation-source, obligation-control,
 control-evidence, and finding-remediation edges remain inputs to the
 typed-relation compatibility study. Next-batch selection remains governed by
 recurrence, graph centrality, reader demand, and domain balance.
+
+## F7 first slice
+
+The Coordinated Work anchor at `tables/entries/coordinated-work.md` separates
+workflow, coordinator-owned orchestration, participant choreography,
+concurrency, and effect-aware compensation through completion, boundary,
+ordering, authority, interaction, synchronization, commitment, and recovery
+factors.
+
+`tables/diagnostics/coordinated-work-failures.md` maps stalls, duplicated
+effects, conflicting branches, completion disagreement, cancellation leakage,
+and incomplete recovery to multiple candidate causes and discriminating tests.
+Research and fixed-point review are
+`docs/research/2026-08-15-coordinated-work.md` and
+`COORDINATED-WORK-ROLE-REVIEW.md`.
+
+F7 resolves the three lifecycle declarations for workflow, concurrency, and
+compensation without adding unresolved vocabulary. The current Factor Forge
+book delta is 17 records: eight entries and nine specialized views.

@@ -2,7 +2,7 @@
 
 Status: neutral internal `sim-03` prompts; not participant observations
 
-Use these prompts to rehearse coverage of the 15-record Factor Forge
+Use these prompts to rehearse coverage of the 17-record Factor Forge
 supplement. Do not consult the author-only rubric while walking a route. Record
 only artifact-level `SIM3-*` notes: plausible first title, headings followed,
 available distinctions, alternate landings, and missing or broken material.
@@ -89,8 +89,20 @@ Separate transaction, message, and contract, then use the interaction Mapping
 view to state what each candidate mechanism preserves and what it does not
 prove about acknowledgment, commit, business completion, or compatibility.
 
+## Task P - Paid, timed out, retried, and cancelled
+
+A purchase instance times out after the payment participant accepts a charge.
+The coordinator retries, fulfillment sees two requests, cancellation stops the
+local workflow, and the customer still has one charge and one notification.
+
+Separate the workflow, its coordinator-owned orchestration, and the
+cross-participant choreography. Identify concurrency and correlation questions,
+then distinguish retry, idempotency, cancellation, rollback, compensation, and
+forward repair. Use the diagnostic without treating one participant's state or
+acknowledgment as proof of end-to-end completion.
+
 ## Rehearsal boundary
 
-The eight prompts collectively exercise every entry and specialized view in the
+The nine prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

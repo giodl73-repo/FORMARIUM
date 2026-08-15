@@ -101,6 +101,22 @@ Critical artifact failure: an HTTP message, database transaction, OpenAPI
 schema, or generated client becomes the universal definition of a contract or
 proof of business completion.
 
+## Task P expected route
+
+- Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and
+  Compensation;
+- Coordinated Work Failure Diagnostic;
+- workflow, coordinator boundary, participant exchange, correlation,
+  concurrency, effect visibility, and completion condition remain distinct;
+- retry, idempotency, cancellation, rollback, compensation, and forward repair
+  retain separate contracts;
+- acknowledgment, local commit, and local cancellation do not prove global or
+  business completion.
+
+Critical artifact failure: retry or cancellation is presented as compensation,
+concurrency as simultaneous execution, or one participant's state as the whole
+workflow outcome.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -121,6 +137,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/mappings/software-architecture-mechanisms.md`
 - `tables/entries/software-transaction-message-contract.md`
 - `tables/mappings/software-interaction-mechanisms.md`
+- `tables/entries/coordinated-work.md`
+- `tables/diagnostics/coordinated-work-failures.md`
 
 ## Claim boundary
 

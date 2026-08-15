@@ -121,9 +121,7 @@ owns a minimal event/guard/source/target transition pattern.
 - [State](../roots/state.md)
 - [Transformation](../roots/transformation.md)
 - [Time](../roots/time.md)
-- workflow - `unresolved-candidate`
-- compensation - `unresolved-candidate`
-- concurrency - `unresolved-candidate`
+- [Coordinated Work](coordinated-work.md)
 
 ## Sources and provenance
 

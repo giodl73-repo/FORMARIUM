@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **15 records** — 7 canonical entries and 8
+Selected current-corpus delta: **17 records** — 8 canonical entries and 9
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F6 extend
+This supplement tests whether completed Factor Forge batches F1-F7 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -74,6 +74,19 @@ mechanisms. The mappings are contextual and many-to-many; they do not let Rust,
 Haskell, PostgreSQL, HTTP, Kubernetes, or another mechanism define the general
 entry.
 
+## Part VIII - Coordinated work and recovery
+
+### Workflow and interaction failure
+
+94. [Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation](../../tables/entries/coordinated-work.md)
+95. [Coordinated Work Failure Diagnostic](../../tables/diagnostics/coordinated-work-failures.md)
+
+The anchor separates organized work, coordinator-owned execution, participant
+interaction, independently progressing activity, and effect-aware recovery.
+The Diagnostic view traces stalls, duplicates, conflicts, disagreement about
+completion, and partial effects across trigger, correlation, branch, join,
+ownership, concurrency, commitment, and recovery.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -82,5 +95,5 @@ entry.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 93-record combined simulation remains a rehearsal projection, not a
+- The 95-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.
