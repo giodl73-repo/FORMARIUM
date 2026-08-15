@@ -6,7 +6,8 @@ Current milestones: **R4 - Volume prototype evidence** and
 **R5 - First substantial volume**
 
 Current execution milestones: **R4E - The Sieve** and
-**R5A - Factor Forge intake**
+**R5A - Factor Forge intake**. The next release bridge is
+**R5P - Proof Set**, an invited private preview after The Sieve closes.
 
 Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**,
 **R2 - Reproducible reference**, **R3 - Guides and mappings**
@@ -60,6 +61,7 @@ first volume.
 | R2 - Reproducible reference | Stable interchange format and generated navigation projections | Complete; see `R2-REPRODUCIBLE-REFERENCE-AUDIT.md` |
 | R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | Complete; see `R3-GUIDES-MAPPINGS-AUDIT.md` |
 | R4 - Volume prototype | Coherent, usability-tested table-first book prototype | External testing; the frozen 78-record prototype and protocol are ready, but reader observations are required for R4 closure |
+| R5P - Private preview | Frozen, self-guided proof edition used by a small invited practitioner cohort | The Sieve is closed and forward-applied; preview use has no repeated unresolved critical blocker and every failure is dispositioned |
 | R5 - First substantial volume | Approximately 250 reviewed entries with balanced coverage | Editorial expansion may proceed in parallel; publication still requires the R4 evidence gate plus editorial, domain, graph, citation, and publication gates |
 | R6 - Factorium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |
 | R7 - Core reference | Approximately 1,000 canonical headwords across multiple reviewed volumes | Contributor governance and revision custody scale without identity drift |
@@ -77,14 +79,18 @@ milestone gates.
 | R2 | **Normal Form** | Give the reference one deterministic canonical representation |
 | R3 | **Cross Product** | Test how general roles combine with several mechanism vocabularies |
 | R4 | **The Sieve** | Put the prototype through reader tasks that retain useful structure and expose weak distinctions |
+| R5P | **Proof Set** | Test a bounded proof edition as a reference that invited readers can use independently and return to |
 | R5 | **Factor Forge** | Build the first substantial 250-entry volume through repeated reviewed batches |
 | R6 | **Workbench** | Provide tools for searching, comparing, constructing, and publishing factorizations |
 | R7 | **Prime Atlas** | Organize the reusable core headwords and their recursive routes across volumes |
 | R8 | **Grand Factorization** | Grow the mature collection without losing identity, evidence, or navigability |
 
-The active codenames are **The Sieve** and **Factor Forge**. Their execution
-records are `context/waves/2026-08-13-factorium-vision/R4E-THE-SIEVE.md` and
-`context/waves/2026-08-13-factorium-vision/R5A-FACTOR-FORGE-INTAKE.md`.
+The active codenames are **The Sieve** and **Factor Forge**. **Proof Set** is
+specified but cannot admit a preview candidate until The Sieve closes. Their
+execution records are
+`context/waves/2026-08-13-factorium-vision/R4E-THE-SIEVE.md`,
+`context/waves/2026-08-13-factorium-vision/R5A-FACTOR-FORGE-INTAKE.md`, and
+`context/waves/2026-08-13-factorium-vision/R5P-PROOF-SET.md`.
 
 ## R1 - Complete the editorial pilot
 
@@ -228,6 +234,43 @@ but it does not waive either gate: R4 cannot close without observed use, and
 R5 cannot publish until relevant Sieve findings are dispositioned against the
 expanded volume.
 
+### R5P - Proof Set private preview
+
+After The Sieve closes, curate a frozen proof edition from the repaired
+reference and selected reviewed R5 work. Give that edition to a small invited
+cohort without live moderation. The preview tests whether Factorium works as
+a book-shaped reference that practitioners can understand, apply to a real
+non-sensitive problem, and choose to use again.
+
+Proof Set is a release bridge, not a substitute for either neighboring gate.
+It does not make later R5 content part of the frozen Sieve evidence, and it
+does not make a private-preview cohort representative of a population. Unless
+separate confidential distribution terms are established, `private` means an
+invited, non-promoted round rather than secret source content.
+
+The preview entry gate requires:
+
+- completed R4 evidence and deliberate forward application of relevant Sieve
+  findings;
+- a coherent selected volume rather than an arbitrary entry-count target;
+- a tagged, immutable `preview-01` manifest and one rendered proof edition;
+- complete validation, source custody, review assurance, and link integrity
+  for everything included;
+- no open critical or major role finding on the candidate;
+- a quickstart, de-identified feedback path, and finding-disposition ledger.
+
+The first round targets 8-12 invited readers across at least three broad
+practitioner backgrounds. It may close only when at least six readers complete
+independent onboarding and a prescribed task, at least five apply the
+reference to a self-selected real scenario, at least four return for a second
+use, every reported failure is dispositioned, and no repeated unresolved
+critical trust, navigation, accessibility, or semantic blocker remains. The
+gate decision is `proceed`, `repair and rerun`, or `narrow`.
+
+Public R5 publication remains separately gated by the approximately 250-entry
+coverage goal and the editorial, domain, graph, citation, maturity, and
+publication requirements above.
+
 ## R6 - Factorium Workbench
 
 Only after the editorial contract is stable, build software for:
@@ -265,5 +308,7 @@ Nothing becomes authoritative without visible source and human review.
 4. generate indexes and integrity reports;
 5. build cross-paradigm mappings and two Factor Guides;
 6. curate and usability-test the first volume prototype;
-7. expand toward the approximately 250-entry substantial volume;
-8. begin Workbench implementation only against the proven reference contract.
+7. close The Sieve, forward-apply its findings, and run the Proof Set private
+   preview on a frozen proof edition;
+8. expand toward and gate the approximately 250-entry substantial volume;
+9. begin Workbench implementation only against the proven reference contract.

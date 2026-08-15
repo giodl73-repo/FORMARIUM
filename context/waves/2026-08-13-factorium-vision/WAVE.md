@@ -41,6 +41,7 @@ recorded in `ROADMAP-ROLE-REVIEW.md`.
 | 06 | Factor Guide method | complete | Published the guide contract plus separately reviewed Rust authorization and laboratory concentration pilots. |
 | 07E | The Sieve - external reader validation | ready to recruit | Run 3-5 observed reader sessions, factor failures by owner, repair repeated blockers, and rerun affected tasks. |
 | 08A | Factor Forge intake | in progress | Expand the reviewed canonical corpus in versioned editorial batches while the frozen Sieve baseline awaits external sessions. |
+| 08P | Proof Set - private preview | specified; awaits 07E | Freeze a repaired proof edition for 8-12 invited readers and gate independent onboarding, real application, and return use before public R5 publication. |
 
 Factor Forge's first F1 slice is the system-composition cluster at
 `tables/entries/system-composition-dependency.md`, with integrity constraints
@@ -109,6 +110,13 @@ and qualification; complete assurance checks cover referential integrity,
 missing bindings, and stale reviews. Relation expansion remains pending.
 Reviews are `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md` and
 `REFERENCE-ASSURANCE-COVERAGE-ROLE-REVIEW.md`.
+
+The R5 private-preview release bridge is specified at `R5P-PROOF-SET.md`.
+Proof Set waits on observed Sieve closure, then freezes a repaired,
+book-shaped candidate for independent use by 8-12 invited practitioners. It
+does not require Workbench or the full 250-entry public-volume target, and it
+does not convert its small cohort into a broad usability or market claim.
+Planning and result review are recorded in `PROOF-SET-ROLE-REVIEW.md`.
 
 ## Success criteria
 

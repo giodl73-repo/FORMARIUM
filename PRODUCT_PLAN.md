@@ -75,7 +75,10 @@ and 3,000–5,000 only after mature editorial validation.
 ### Wave 4: First Factorium volume
 
 Assemble and usability-test a coherent table-first reference across several
-domains.
+domains. After the moderated prototype round, distribute a repaired, frozen
+proof edition to an invited private-preview cohort. Test independent
+onboarding, application to a real non-sensitive scenario, and voluntary
+return use before the first substantial public volume.
 
 ### Wave 5: Factorium Workbench
 
@@ -90,7 +93,10 @@ losing canonical entry identity.
 The roadmap refines these waves into R0-R8 milestones. It places the
 25-50-entry editorial pilot before interchange freeze, a 75-125-entry
 usability prototype before the approximately 250-entry first substantial
-volume, and the Workbench after the editorial contract is proven.
+volume, and the Workbench after the editorial contract is proven. The R5P
+Proof Set release bridge sits between the observed R4 prototype gate and R5
+public publication. It is an invited, non-promoted proof round rather than a
+public launch, confidential-source promise, or substitute for either gate.
 
 ## Founding research pulses
 
