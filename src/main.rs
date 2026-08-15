@@ -150,6 +150,30 @@ fn run_reference_sidecar_check(arguments: &mut impl Iterator<Item = String>) -> 
     println!("relation_sha256={}", relations.sha256());
     println!("assurance={assurance_path}");
     println!("review_bindings={}", assurance.bindings().len());
+    println!(
+        "entry_review_bindings={}",
+        assurance
+            .bindings()
+            .iter()
+            .filter(|binding| binding.artifact().starts_with("entry:"))
+            .count()
+    );
+    println!(
+        "view_review_bindings={}",
+        assurance
+            .bindings()
+            .iter()
+            .filter(|binding| binding.artifact().starts_with("view:"))
+            .count()
+    );
+    println!(
+        "relation_review_bindings={}",
+        assurance
+            .bindings()
+            .iter()
+            .filter(|binding| binding.artifact().starts_with("relation:"))
+            .count()
+    );
     println!("assurance_sha256={}", assurance.sha256());
     println!("prototype_checks=7");
     Ok(())

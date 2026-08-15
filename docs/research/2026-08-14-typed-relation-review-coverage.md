@@ -131,7 +131,8 @@ per F1-F6 batch, eighteen review bindings, canonical round trips, referential
 integrity, exact-source digest checks, stale-review rejection, and seven
 representative checks through `reference-sidecar-check`.
 
-The result supports continuing the sidecar experiment. It does not close
-full-corpus typed-relation or review-coverage gates. Do not migrate the full
-corpus or name V1 until broader fixtures prove that the relation kinds and
-qualifiers remain stable.
+The relation result supports continuing the sidecar experiment but does not
+close full-corpus typed-relation coverage. Review coverage has subsequently
+expanded to all 27 V0 entries, 39 V0 views, and six admitted relation records;
+missing or stale coverage now fails validation. Do not name V1 until broader
+relation fixtures prove that the kinds and qualifiers remain stable.

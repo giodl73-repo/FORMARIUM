@@ -43,7 +43,7 @@ fn committed_sidecars_round_trip_and_validate() {
         )
         .unwrap();
     assert_eq!(relations.relations().len(), 6);
-    assert_eq!(assurance.bindings().len(), 18);
+    assert_eq!(assurance.bindings().len(), 72);
 }
 
 #[test]
@@ -110,4 +110,26 @@ fn relation_validation_rejects_an_unknown_canonical_endpoint() {
         .validate_workspace(&corpus, Path::new("."))
         .unwrap_err()
         .contains("unknown canonical artifact"));
+}
+
+#[test]
+fn assurance_names_an_exact_missing_corpus_binding() {
+    let (corpus, relations, _) = committed_manifests();
+    let input = fs::read_to_string("reference/factorium-assurance-v0.factorium").unwrap();
+    let mut incomplete = input
+        .lines()
+        .filter(|line| !line.starts_with("review entry:thermal-quantity |"))
+        .collect::<Vec<_>>()
+        .join("\n");
+    incomplete.push('\n');
+    let assurance = AssuranceManifest::parse(&incomplete).unwrap();
+    assert!(assurance
+        .validate_workspace(
+            &corpus,
+            &relations,
+            "reference/factorium-relations-v0.factorium",
+            Path::new("."),
+        )
+        .unwrap_err()
+        .contains("entry:thermal-quantity"));
 }

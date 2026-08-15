@@ -59,18 +59,22 @@ Validation fails when:
 - an artifact reference does not resolve through V0;
 - a relation source path or review path is missing;
 - a relation kind lacks its exact qualifier contract;
-- a relation has no assurance binding;
+- any V0 entry, V0 view, or admitted relation has no assurance binding;
 - source bytes no longer match the reviewed digest;
 - the review record does not declare fixed-point closure.
 
 ## Prototype coverage
 
 `reference/factorium-relations-v0.factorium` contains one representative edge
-template from each Factor Forge F1-F6 batch. The assurance manifest binds the
-six source entries, six specialized views, and six relation records. This
-proves parser, identity, direction, scope, qualification, source integrity,
-and stale-review behavior. It does not yet prove full-corpus relation or review
-coverage.
+template from each Factor Forge F1-F6 batch. Relation coverage therefore
+remains a bounded prototype.
+
+The assurance manifest has complete current-corpus coverage: 27 entries, 39
+specialized views, and six relation records, for 72 exact bindings. The
+validator derives that required set from parsed V0 and relation records, so a
+new canonical artifact fails until an applicable digest-bound fixed-point
+review is added. This closes current-corpus review coverage; it does not prove
+full-corpus typed-relation coverage.
 
 ## Command
 

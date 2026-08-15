@@ -51,6 +51,7 @@ artifacts.
 | TRC-007 | major | Representative fixtures could be reported as complete corpus coverage. | Closed: the specification and status retain full-corpus relation and review coverage as open scaling gates. |
 | TRC-008 | major | A dangling endpoint or stale review could pass because the files remain syntactically valid. | Closed: workspace validation resolves every endpoint and rejects exact-source digest mismatches. |
 
-No critical or major finding remains open for the bounded prototype. FFP-005
-and FFP-008 have concrete implementation evidence but remain open scaling
-gates until coverage expands beyond the representative F1-F6 fixture.
+No critical or major finding remains open for the bounded relation prototype.
+FFP-005 remains open until relation coverage expands beyond the representative
+F1-F6 fixture. FFP-008 is closed by the later complete assurance-coverage
+review at `REFERENCE-ASSURANCE-COVERAGE-ROLE-REVIEW.md`.

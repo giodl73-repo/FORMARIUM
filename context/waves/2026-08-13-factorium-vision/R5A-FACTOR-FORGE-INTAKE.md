@@ -126,10 +126,11 @@ The bounded typed-relation and review-coverage prototype is complete at
 `docs/research/2026-08-14-typed-relation-review-coverage.md`, with plan and
 result review at `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`. It keeps V0
 unchanged and implements deterministic relation and assurance sidecars before
-any V1 decision. The six-edge, eighteen-binding F1-F6 fixture passes directed
-queries, exact source-digest review binding, referential integrity, canonical
-round trips, failure tests, and fixed-point review. Full-corpus coverage and a
-V1 decision remain open scaling gates.
+any V1 decision. The six-edge F1-F6 fixture passes directed queries,
+referential integrity, canonical round trips, failure tests, and fixed-point
+review. Assurance now covers all 27 V0 entries, 39 V0 views, and six admitted
+relations with 72 exact source-digest bindings. FFP-008 is closed; broader
+typed-relation coverage and a V1 decision remain open scaling gates.
 
 ## F1 first slice
 

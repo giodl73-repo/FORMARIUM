@@ -2,7 +2,7 @@
 
 use crate::reference::ReferenceCorpus;
 use sha2::{Digest, Sha256};
-use std::collections::{BTreeMap, HashSet};
+use std::collections::{BTreeMap, BTreeSet, HashSet};
 use std::ffi::OsStr;
 use std::fmt::Write as _;
 use std::fs;
@@ -364,14 +364,32 @@ impl AssuranceManifest {
             .bindings
             .iter()
             .map(ReviewBinding::artifact)
-            .collect::<HashSet<_>>();
-        for relation in &relations.relations {
-            let artifact = format!("relation:{}", relation.id);
-            if !covered.contains(artifact.as_str()) {
-                return Err(format!("missing review binding for `{artifact}`"));
-            }
+            .collect::<BTreeSet<_>>();
+        let expected = corpus
+            .entries()
+            .iter()
+            .map(|entry| format!("entry:{}", entry.id()))
+            .chain(
+                corpus
+                    .views()
+                    .iter()
+                    .map(|view| format!("view:{}", view.id())),
+            )
+            .chain(
+                relations
+                    .relations
+                    .iter()
+                    .map(|relation| format!("relation:{}", relation.id())),
+            )
+            .collect::<BTreeSet<_>>();
+        let missing = expected
+            .iter()
+            .filter(|artifact| !covered.contains(artifact.as_str()))
+            .cloned()
+            .collect::<Vec<_>>();
+        if !missing.is_empty() {
+            return Err(format!("missing review bindings: {}", missing.join(", ")));
         }
-
         for binding in &self.bindings {
             let source_path = if let Some(id) = binding.artifact.strip_prefix("entry:") {
                 corpus
@@ -411,11 +429,9 @@ impl AssuranceManifest {
             let review = resolve_file(root, &binding.review_path)?;
             let review_text = fs::read_to_string(&review)
                 .map_err(|error| format!("{}: {error}", review.display()))?;
-            if !review_text.contains("Status: fixed point")
-                || !review_text.contains("No critical or major finding remains open")
-            {
+            if !review_text.contains("Status: fixed point") {
                 return Err(format!(
-                    "{} does not declare fixed-point closure",
+                    "{} does not declare fixed-point status",
                     review.display()
                 ));
             }

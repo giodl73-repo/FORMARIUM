@@ -157,10 +157,12 @@ Factor Forge scaling-safety work now has a bounded typed-relation and review-
 coverage prototype at
 `docs/research/2026-08-14-typed-relation-review-coverage.md`. It keeps the V0
 canonical corpus unchanged while adding six representative directed edges and
-eighteen digest-bound entry, view, and relation review records. The
+72 digest-bound review records covering all 27 entries, 39 views, and six
+admitted relations. The
 `reference-sidecar-check` command exercises seven F1-F6 checks and rejects
 unknown endpoints, missing bindings, and stale reviews. Full-corpus coverage
-and any V1 migration remain future gates.
+is complete for review assurance but not typed relations; any V1 migration
+remains a future gate.
 Plan and result review are recorded at
 `context/waves/2026-08-13-factorium-vision/TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`.
 

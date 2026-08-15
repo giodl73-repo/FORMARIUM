@@ -102,11 +102,13 @@ review coverage, unresolved-candidate triage, and balanced non-formula growth.
 
 The first scaling-safety prototype is complete at
 `docs/research/2026-08-14-typed-relation-review-coverage.md`. It preserves V0
-and implements a six-edge relation sidecar plus an eighteen-binding,
-digest-bound assurance sidecar. Seven representative checks cover F1-F6
-direction, scope, qualification, referential integrity, and stale reviews.
-Full-corpus coverage remains pending; review is recorded in
-`TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md`.
+and implements a six-edge relation sidecar plus a complete 72-binding,
+digest-bound assurance sidecar for all 27 entries, 39 views, and six admitted
+relations. Seven representative relation checks cover F1-F6 direction, scope,
+and qualification; complete assurance checks cover referential integrity,
+missing bindings, and stale reviews. Relation expansion remains pending.
+Reviews are `TYPED-RELATION-COMPATIBILITY-ROLE-REVIEW.md` and
+`REFERENCE-ASSURANCE-COVERAGE-ROLE-REVIEW.md`.
 
 ## Success criteria
 

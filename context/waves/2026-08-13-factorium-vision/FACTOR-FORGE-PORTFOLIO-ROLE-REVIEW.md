@@ -90,7 +90,7 @@ and scaling automation remain gates.
 | FFP-005 | major | V0 cannot machine-check dependency direction, delegation chains, evidence derivation, or control-loop edges now repeated across four R5 slices. | Deferred behind compatibility boundary: begin a bounded relation-edge successor study before 50 canonical anchors or Workbench implementation, whichever comes first. |
 | FFP-006 | major | Seventy-three unresolved declarations could become an undifferentiated backlog or vocabulary-growth excuse. | Closed for continuation: R5 now requires recurrence, graph centrality, reader demand, or batch necessity before admission; raw count is not a completion metric. |
 | FFP-007 | major | Formula views remain 20 of 35 specialized views, risking a quantity/formula identity despite broader ambitions. | Closed for continuation: R5 batches must choose families by reader question and intentionally expand non-formula views where justified; no quota overrides semantics. |
-| FFP-008 | major | Role-review coverage is documented but not machine-bound to each admitted R5 entry or view. | Deferred scaling gate: before 50 anchors, add a review manifest or equivalent validation binding new canonical IDs to fixed-point review records. |
+| FFP-008 | major | Role-review coverage is documented but not machine-bound to each admitted R5 entry or view. | Closed after the portfolio review: the assurance sidecar now binds all 27 entries, 39 views, and six admitted relations to exact source digests and fixed-point records; validation fails on every missing or stale binding. |
 | FFP-009 | major | Author review could be mistaken for practitioner usability. | Closed as a claim boundary; The Sieve remains the only R4 usability closure path. |
 | FFP-010 | minor | Historical milestone audits retain their measured counts and therefore differ from the current corpus. | Accepted: audits are immutable snapshots; current counts live in ROADMAP, CONTEXT, R5A, and generated catalogs. |
 
@@ -132,7 +132,7 @@ editorial continuation.
 1. Execute F5 as connected software-concept clusters, not nine isolated
    dictionary entries.
 2. Start the bounded typed-relation compatibility study before 50 anchors.
-3. Add review-coverage validation before R5 growth outpaces manual audit.
+3. Preserve complete review-coverage validation as new R5 artifacts are admitted.
 4. Triage unresolved candidates by recurrence, centrality, reader demand, and
    batch need.
 5. Continue recruiting for the frozen Sieve baseline without treating its
