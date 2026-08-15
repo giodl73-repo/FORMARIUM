@@ -125,9 +125,9 @@ compares generic version roles with Semantic Versioning 2.0.0.
 - [Identity](../roots/identity.md)
 - [Relation](../roots/relation.md)
 - [Time](../roots/time.md)
+- [Organization, Role, Responsibility, Authority, and Accountability](organization-role-authority.md)
 - namespace - `unresolved-candidate`
-- authority - `unresolved-candidate`
-- compatibility - `unresolved-candidate`
+- Compatibility is owned by the `compatibility-level` sense above.
 
 ## Sources and provenance
 
@@ -138,4 +138,3 @@ compares generic version roles with Semantic Versioning 2.0.0.
 
 Comparator access date: 2026-08-14. Standards remain scoped to their
 identifier and versioning domains; Factorium organization remains `candidate`.
-

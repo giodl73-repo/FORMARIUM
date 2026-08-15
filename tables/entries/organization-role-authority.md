@@ -153,10 +153,10 @@ permissions, or diagrams are equivalent to them.
 - [Policy, Rule, Constraint, Decision, and Exception](policy-rule-constraint-decision-exception.md)
 - [State, Event, Transition, Process, and Lifecycle](state-event-transition-process-lifecycle.md)
 - [System Composition, Capability, Interface, and Dependency](system-composition-dependency.md)
+- [Governance, Obligation, and Compliance](governance-obligation-compliance.md)
 - [Factor Role to Mechanism Crosswalk](../mappings/factor-role-mechanisms.md)
 - position - `unresolved-candidate`
 - competency - `unresolved-candidate`
-- governance - `unresolved-candidate`
 - legal ownership - `unresolved-candidate`
 
 ## Sources and provenance

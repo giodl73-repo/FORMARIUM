@@ -23,8 +23,8 @@ preserving the integrity of the frozen R4 usability baseline.
 
 ## Baseline
 
-The canonical corpus currently contains 26 anchor entries, 159 senses, 256
-ordered factors, and 38 specialized views. It is strong in foundational
+The canonical corpus currently contains 27 anchor entries, 162 senses, 266
+ordered factors, and 39 specialized views. It is strong in foundational
 quantities and has pilots for systems, governance, evidence, economics,
 identity, and publication. R5 must turn those pilots into balanced volume
 coverage rather than add isolated headwords.
@@ -79,6 +79,18 @@ contract. Mechanism assignments remain contextual Mapping views.
 Status: first slice implemented as three connected canonical anchors and three
 Mapping views. It resolves the recurrent `message`, `service`, and `contract`
 candidates without adding adjacent vocabulary merely for growth.
+
+### F6 - Governance Ledger
+
+Separate governance, obligation, and compliance while preserving links to
+organization, authority, policy, rules, controls, enforcement, evidence, and
+outcomes. Map organizational and technical records contextually rather than
+treating them as universal definitions.
+
+Status: first slice implemented as one canonical anchor and one Mapping view.
+It resolves governance and obligation, repairs already-owned authority,
+compatibility, organization, event, and enforcement-point declarations, and
+leaves adjacent appeal, audit, assurance, and remedy vocabulary deferred.
 
 ## Batch gate
 
@@ -143,3 +155,24 @@ The F5 relation payloads add concrete requirements to the typed-relation
 compatibility study but do not change V0. Next: select the next R5 coverage
 batch from repeated unresolved candidates and volume balance rather than
 expanding the software vocabulary automatically.
+
+## F6 first slice
+
+The Governance Ledger at
+`tables/entries/governance-obligation-compliance.md` separates governing
+direction and oversight from management; obligation sources and applicability
+from responsibility, rules, and controls; and evidence-scoped compliance from
+effectiveness, ethics, safety, legitimacy, and good outcomes.
+
+`tables/mappings/governance-compliance-mechanisms.md` maps charters, mandates,
+requirements registers, policies, controls, decision and enforcement points,
+assessments, attestations, findings, and remediation records without granting
+them universal or many-to-one semantic identity. Research and fixed-point
+review are `docs/research/2026-08-14-governance-ledger.md` and
+`GOVERNANCE-LEDGER-ROLE-REVIEW.md`.
+
+F6 closes seven unresolved declarations while adding no new unresolved terms.
+V0 remains unchanged; obligation-source, obligation-control,
+control-evidence, and finding-remediation edges remain inputs to the
+typed-relation compatibility study. Next-batch selection remains governed by
+recurrence, graph centrality, reader demand, and domain balance.

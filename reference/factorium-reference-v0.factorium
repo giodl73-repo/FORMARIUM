@@ -186,6 +186,21 @@ factor sufficient-parameters | sufficient parameters
 factor unit-scale | unit scale
 factor exact-or-approximate-policy | exact-or-approximate policy
 end-entry
+entry governance-obligation-compliance | Governance, Obligation, and Compliance | governance | candidate | tables/entries/governance-obligation-compliance.md | Governance directs, oversees, and holds a bounded organization or undertaking accountable toward purpose; an obligation binds a subject to required conduct from a stated source; compliance evaluates evidenced conformity with applicable obligations. None alone proves effectiveness, ethics, safety, legitimacy, or good outcomes.
+sense governance | governance
+sense obligation | obligation
+sense compliance | compliance
+factor governed-subject-purpose-and-boundary | governed subject, purpose, and boundary
+factor stakeholders-and-operating-context | stakeholders and operating context
+factor governing-body-authority-and-accountability | governing body, authority, and accountability
+factor obligation-sources-and-required-conduct | obligation sources and required conduct
+factor applicability-jurisdiction-scope-and-effective-time | applicability, jurisdiction, scope, and effective time
+factor policies-rules-controls-and-enforcement | policies, rules, controls, and enforcement
+factor assigned-responsibilities-and-resources | assigned responsibilities and resources
+factor evidence-monitoring-and-assessment-criteria | evidence, monitoring, and assessment criteria
+factor noncompliance-escalation-remediation-and-consequences | noncompliance, escalation, remediation, and consequences
+factor review-learning-revision-and-supersession | review, learning, revision, and supersession
+end-entry
 entry identity-naming-classification-versioning | Identity, Naming, Classification, and Versioning | systems | candidate | tables/entries/identity-naming-classification-versioning.md | Identity concerns what remains the same entity; an identifier is a token used to refer to it within a namespace; a name is a human-facing label; classification places it in one or more purpose-specific schemes; a version identifies a selected state or release under a versioning contract. These roles often appear in one string but should not be collapsed.
 sense entity-identity | entity identity
 sense identifier | identifier
@@ -522,6 +537,8 @@ end-view
 view formula-thermal-quantities | thermal-quantity | temperature,thermal-equilibrium,heat-transfer,internal-energy,heat-capacity,specific-heat-capacity,entropy | formula | Thermal Quantities | tables/formulas/thermal-quantities.md | These relations separate thermal state variables from path-dependent heat and work transfers. They require a system boundary, process conditions, sign convention, phase scope, and absolute temperature where entropy is involved.
 end-view
 view mapping-factor-role-mechanisms | factorization-quality | mechanism-assignment | mapping | Factor Role to Mechanism Crosswalk | tables/mappings/factor-role-mechanisms.md | Maps eleven general factor roles into six bounded target-system mechanism vocabularies while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
+end-view
+view mapping-governance-compliance-mechanisms | governance-obligation-compliance | governance,obligation,compliance | mapping | Governance and Compliance Mechanisms | tables/mappings/governance-compliance-mechanisms.md | Maps governance, obligation, and compliance concepts to bounded organizational records, compliance systems, policies, controls, enforcement points, assessments, and attestations while preserving authority, applicability, evidence, effectiveness, and non-equivalence.
 end-view
 view mapping-organizational-assignment-semantics | organization-role-authority | organization,organizational-role,responsibility,authority,accountability-answerability,action-accountability,delegation,ownership-stewardship | mapping | Organizational Assignment Semantics | tables/mappings/organizational-assignment-semantics.md | Maps canonical organization, role, responsibility, authority, accountability, delegation, and stewardship concepts to common organizational records while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
 end-view

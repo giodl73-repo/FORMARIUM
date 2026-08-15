@@ -142,6 +142,17 @@ Research and fixed-point review are
 `context/waves/2026-08-13-factorium-vision/SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md`.
 The corpus now contains 26 entries, 159 senses, 256 factors, and 38 views.
 
+Factor Forge F6 adds
+`tables/entries/governance-obligation-compliance.md` and the contextual
+`tables/mappings/governance-compliance-mechanisms.md`. It separates governing
+direction and oversight from management, obligation from responsibility,
+rule, and control, and compliance from evidence existence, effectiveness,
+ethics, safety, legitimacy, and good outcomes. Research and fixed-point review
+are `docs/research/2026-08-14-governance-ledger.md` and
+`context/waves/2026-08-13-factorium-vision/GOVERNANCE-LEDGER-ROLE-REVIEW.md`.
+The corpus now contains 27 entries, 162 senses, 266 factors, and 39 views;
+generated triage reports 63 unresolved declarations and eight Mapping views.
+
 Pulse 02 now begins with the candidate Root Table at
 `tables/foundations/ROOT-TABLE.md`: twelve recurring coordinates, five
 overlapping navigation families, and ten reusable decomposition grammars.

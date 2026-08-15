@@ -83,6 +83,17 @@ Research and review are
 `docs/research/2026-08-14-software-mechanism-bridge.md` and
 `SOFTWARE-MECHANISM-BRIDGE-ROLE-REVIEW.md`.
 
+The F6 Governance Ledger adds
+`tables/entries/governance-obligation-compliance.md` and
+`tables/mappings/governance-compliance-mechanisms.md`. It preserves
+governance, obligation, compliance, authority, policy, enforcement, evidence,
+effectiveness, and ethics as distinct concepts while closing seven stale or
+newly owned unresolved declarations. Research and review are
+`docs/research/2026-08-14-governance-ledger.md` and
+`GOVERNANCE-LEDGER-ROLE-REVIEW.md`. The canonical corpus now contains 27
+entries, 162 senses, 266 factors, 39 views, eight Mapping views, and 63
+unresolved declarations.
+
 The portfolio-wide fixed-point assessment is
 `FACTOR-FORGE-PORTFOLIO-ROLE-REVIEW.md`. The 23-entry candidate architecture
 passes, with external usability and domain promotion still gated. Scaling

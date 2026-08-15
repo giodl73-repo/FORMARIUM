@@ -131,9 +131,10 @@ policy-decision-use
 - [Policy](../roles/policy.md)
 - [Constraint](../roots/constraint.md)
 - [Purpose](../roots/purpose.md)
-- enforcement point - `unresolved-candidate`
+- [Governance, Obligation, and Compliance](governance-obligation-compliance.md)
+- [Governance and Compliance Mechanisms](../mappings/governance-compliance-mechanisms.md)
+- Enforcement point is owned by the `enforcement` sense above.
 - appeal - `unresolved-candidate`
-- obligation - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -144,4 +145,3 @@ policy-decision-use
 
 Comparator access date: 2026-08-14. Standards remain domain-scoped;
 Factorium organization remains `candidate`.
-
