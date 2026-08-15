@@ -229,3 +229,7 @@ python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```
+
+## License
+
+[MIT](LICENSE) - Copyright 2026 Gio Della-Libera.
