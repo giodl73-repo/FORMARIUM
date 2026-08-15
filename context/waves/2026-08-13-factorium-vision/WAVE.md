@@ -138,6 +138,10 @@ and entry-local expansion while keeping one canonical source selection.
 The seventh rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-07.md`; `sim-06` adds
 three scoped Context Profiles and 16 bindings that separate inherited defaults
 from required local selections without changing canonical interchange V0.
+The eighth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-08.md`; `sim-07`
+turns the selected proof into a deterministic static book site with search,
+eight chapter routes, dedicated source pages, routed cross-references, and the
+same adaptive reading and Context Profile behavior.
 
 ## Success criteria
 

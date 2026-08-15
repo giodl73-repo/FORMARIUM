@@ -102,7 +102,7 @@
         var item = documentObject.createElement("li");
         item.className = "proof-search__result";
         var link = documentObject.createElement("a");
-        link.href = "#" + record.anchor;
+        link.href = record.href || "#" + record.anchor;
         link.textContent = record.title;
         var meta = documentObject.createElement("span");
         meta.className = "proof-search__meta";

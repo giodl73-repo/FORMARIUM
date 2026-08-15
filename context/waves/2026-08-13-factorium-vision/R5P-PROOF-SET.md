@@ -86,6 +86,8 @@ Factor Forge task-ownership rehearsal is
 rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-05.md`. The adaptive reader-view
 rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-06.md`. The scoped Context Profile
 inheritance rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-07.md`.
+The multi-page book-site rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-08.md`.
 
 ## Candidate artifacts
 

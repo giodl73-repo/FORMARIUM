@@ -199,6 +199,17 @@ The prototype distinguishes inherited defaults and conventions from choices
 that remain required at use time. See
 [`specs/CONTEXT-PROFILE.md`](specs/CONTEXT-PROFILE.md).
 
+Render the multi-page static book-site simulation:
+
+```powershell
+.\tools\render_proof_set.ps1 -Edition sim-07
+```
+
+Open `target/proof-set-sim-07/index.html` for search, eight chapter routes,
+and dedicated reading pages. The generated site remains a disposable
+publication projection; see
+[`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
+
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 

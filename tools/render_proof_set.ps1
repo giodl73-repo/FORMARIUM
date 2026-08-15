@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -19,6 +19,7 @@ $readerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-
 $readerScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.js"
 $contextStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.css"
 $contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.js"
+$siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-site.css"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -34,6 +35,7 @@ $artifactTitle = switch ($Edition) {
     "sim-04" { "Factorium Proof Set Search Simulation 04" }
     "sim-05" { "Factorium Proof Set Adaptive Reader Simulation 05" }
     "sim-06" { "Factorium Proof Set Context Profile Simulation 06" }
+    "sim-07" { "Factorium Proof Set Book Site Simulation 07" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -126,6 +128,40 @@ function Get-GuideSelections {
     }
 }
 
+function Get-SiteChapterSelections {
+    param([string]$Document)
+
+    $documentDirectory = Split-Path $Document
+    $documentText = Get-Content -LiteralPath $Document -Raw
+    $chapterMatches = [regex]::Matches(
+        $documentText,
+        '(?m)^## Part ([IVX]+) - (.+)$'
+    )
+    for ($chapterIndex = 0; $chapterIndex -lt $chapterMatches.Count; $chapterIndex++) {
+        $chapterMatch = $chapterMatches[$chapterIndex]
+        $chapterEnd = if ($chapterIndex -lt $chapterMatches.Count - 1) {
+            $chapterMatches[$chapterIndex + 1].Index
+        }
+        else {
+            $documentText.Length
+        }
+        $chapterText = $documentText.Substring($chapterMatch.Index, $chapterEnd - $chapterMatch.Index)
+        $chapterPaths = foreach ($selectionMatch in [regex]::Matches(
+            $chapterText,
+            '(?m)^\d+\. \[[^\]]+\]\(([^)#]+\.md)(?:#[^)]+)?\)'
+        )) {
+            [System.IO.Path]::GetFullPath(
+                (Join-Path $documentDirectory $selectionMatch.Groups[1].Value)
+            )
+        }
+        [ordered]@{
+            key = "part-$($chapterMatch.Groups[1].Value.ToLowerInvariant())"
+            title = $chapterMatch.Groups[2].Value.Trim()
+            paths = @($chapterPaths)
+        }
+    }
+}
+
 function ConvertTo-SearchText {
     param([string]$Markdown)
 
@@ -154,6 +190,17 @@ function Get-SearchSummary {
     return "Open this record in the generated proof."
 }
 
+function ConvertTo-SitePageName {
+    param([string]$RelativePath)
+
+    $stem = [System.IO.Path]::ChangeExtension($RelativePath.Replace("\", "/"), $null)
+    $slug = [regex]::Replace($stem.ToLowerInvariant(), '[^a-z0-9]+', '-').Trim('-')
+    if ([string]::IsNullOrWhiteSpace($slug)) {
+        throw "Could not derive site page name from: $RelativePath"
+    }
+    return "$slug.html"
+}
+
 $selectionChecks = [ordered]@{
     mode = "base volume path selection"
 }
@@ -177,7 +224,7 @@ if ($Edition -ne "sim-01") {
                 kind = "entry"
                 domain = $parts[2]
                 maturity = $parts[3]
-                summary = $parts[5]
+                summary = ConvertTo-SearchText $parts[5]
             }
         }
         elseif ($line.StartsWith("view ", [System.StringComparison]::Ordinal)) {
@@ -223,7 +270,7 @@ if ($Edition -ne "sim-01") {
         extra_delta_paths = $extraDelta.Count
     }
 
-    if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06")) {
+    if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07")) {
         $rubricText = Get-Content -LiteralPath $factorForgeRubric -Raw
         $taskCoverage = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
@@ -252,10 +299,10 @@ if ($Edition -ne "sim-01") {
     Add-ProofSource $supplement
     $selectionDocuments.Add($supplement)
 }
-if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06")) {
+if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07")) {
     Add-ProofSource $factorForgeTasks
 }
-if ($Edition -eq "sim-06") {
+if ($Edition -in @("sim-06", "sim-07")) {
     foreach ($contextProfileSource in $contextProfileSources) {
         Add-ProofSource $contextProfileSource
     }
@@ -321,6 +368,9 @@ for ($index = 0; $index -lt $sources.Count; $index++) {
 }
 $quickstartHeading = $headingBySource[$quickstart]
 $sourceCommit = (git -C $workspace rev-parse HEAD).Trim()
+$renderedSegmentBySource = [System.Collections.Generic.Dictionary[string, string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
 
 for ($index = $sources.Count - 1; $index -ge 0; $index--) {
     $start = $headingMatches[$index].Index
@@ -369,6 +419,7 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
             return $match.Value
         }
     )
+    $renderedSegmentBySource[$sources[$index]] = $segment
     $htmlText = $htmlText.Substring(0, $start) + $segment + $htmlText.Substring($end)
 }
 
@@ -377,7 +428,10 @@ $searchAssets = @()
 $readerChecks = $null
 $contextChecks = $null
 $contextAssets = @()
-if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
+$siteChecks = $null
+$siteAssets = @()
+$siteIndex = $null
+if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing search asset: $asset"
@@ -442,7 +496,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
             }
         }
 
-        $searchRecords.Add([ordered]@{
+        $searchRecord = [ordered]@{
             title = $selection.title
             kind = $metadata.kind
             domain = $metadata.domain
@@ -451,7 +505,11 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
             anchor = $headingBySource[$selection.path]
             summary = $metadata.summary
             text = $plainText
-        })
+        }
+        if ($Edition -eq "sim-07") {
+            $searchRecord.href = "entries/$(ConvertTo-SitePageName $relativePath)"
+        }
+        $searchRecords.Add($searchRecord)
     }
     if ($missingSearchTargets.Count -ne 0) {
         throw "Search index has $($missingSearchTargets.Count) missing rendered targets"
@@ -508,7 +566,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
     }
 }
 
-if ($Edition -in @("sim-05", "sim-06")) {
+if ($Edition -in @("sim-05", "sim-06", "sim-07")) {
     foreach ($asset in @($readerStyle, $readerScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing reader asset: $asset"
@@ -592,7 +650,7 @@ if ($Edition -in @("sim-05", "sim-06")) {
     }
 }
 
-if ($Edition -eq "sim-06") {
+if ($Edition -in @("sim-06", "sim-07")) {
     foreach ($asset in @($contextStyle, $contextScript, $contextBindings)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing context-profile asset: $asset"
@@ -627,6 +685,10 @@ if ($Edition -eq "sim-06") {
             requires = @($profileRequiresMatch.Groups[1].Value -split '; ' | ForEach-Object { $_.Trim('`') })
             path = [System.IO.Path]::GetRelativePath($workspace, $profileSource).Replace("\", "/")
             anchor = $headingBySource[$profileSource]
+        }
+        if ($Edition -eq "sim-07") {
+            $profileRelativePath = [System.IO.Path]::GetRelativePath($workspace, $profileSource).Replace("\", "/")
+            $profileRecord.href = ConvertTo-SitePageName $profileRelativePath
         }
         $profilesById[$profileId] = $profileRecord
         $profileRecords.Add($profileRecord)
@@ -738,6 +800,438 @@ if ($localFileLinks.Count -ne 0) {
     throw "Rendered proof has $($localFileLinks.Count) filesystem-dependent links"
 }
 
+if ($Edition -eq "sim-07") {
+    if (-not (Test-Path -LiteralPath $siteStyle -PathType Leaf)) {
+        throw "Missing proof-site asset: $siteStyle"
+    }
+
+    $siteIndex = Join-Path $output "index.html"
+    $siteEntryDirectory = Join-Path $output "entries"
+    $siteChapterDirectory = Join-Path $output "chapters"
+    $siteAssetDirectory = Join-Path $output "assets"
+    New-Item -ItemType Directory -Force -Path $siteEntryDirectory, $siteChapterDirectory, $siteAssetDirectory | Out-Null
+
+    $pageBySource = [System.Collections.Generic.Dictionary[string, string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    $pageNames = [System.Collections.Generic.HashSet[string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    foreach ($source in $sources) {
+        $relativeSource = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
+        $pageName = ConvertTo-SitePageName $relativeSource
+        if (-not $pageNames.Add($pageName)) {
+            throw "Duplicate site page name: $pageName"
+        }
+        $pageBySource[$source] = $pageName
+    }
+
+    $sourceByRenderedId = [System.Collections.Generic.Dictionary[string, string]]::new(
+        [System.StringComparer]::Ordinal
+    )
+    foreach ($source in $sources) {
+        foreach ($idMatch in [regex]::Matches($renderedSegmentBySource[$source], ' id="([^"]+)"')) {
+            $renderedId = $idMatch.Groups[1].Value
+            if ($sourceByRenderedId.ContainsKey($renderedId)) {
+                throw "Duplicate rendered site ID: $renderedId"
+            }
+            $sourceByRenderedId[$renderedId] = $source
+        }
+    }
+
+    $searchRecordByPath = [System.Collections.Generic.Dictionary[string, object]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    $searchRecordIndexByPath = [System.Collections.Generic.Dictionary[string, int]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    for ($recordIndex = 0; $recordIndex -lt $searchRecords.Count; $recordIndex++) {
+        $searchRecord = $searchRecords[$recordIndex]
+        $searchRecordByPath[$searchRecord.path] = $searchRecord
+        $searchRecordIndexByPath[$searchRecord.path] = $recordIndex
+    }
+
+    $siteChapters = [System.Collections.Generic.List[object]]::new()
+    foreach ($chapter in @(Get-SiteChapterSelections $volume) + @(Get-SiteChapterSelections $supplement)) {
+        $siteChapters.Add($chapter)
+    }
+    $siteChapters.Add([ordered]@{
+        key = "applications"
+        title = "Applications"
+        paths = @($guideSelections | ForEach-Object { $_.path })
+    })
+    $chapterBySearchPath = [System.Collections.Generic.Dictionary[string, object]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    foreach ($chapter in $siteChapters) {
+        foreach ($chapterPath in $chapter.paths) {
+            $chapterRelativePath = [System.IO.Path]::GetRelativePath($workspace, $chapterPath).Replace("\", "/")
+            if (-not $searchRecordByPath.ContainsKey($chapterRelativePath)) {
+                throw "Chapter contains an unindexed record: $chapterRelativePath"
+            }
+            if ($chapterBySearchPath.ContainsKey($chapterRelativePath)) {
+                throw "Record appears in more than one site chapter: $chapterRelativePath"
+            }
+            $chapterBySearchPath[$chapterRelativePath] = $chapter
+        }
+    }
+    if ($siteChapters.Count -ne 8 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
+        throw "Site chapter coverage mismatch: chapters=$($siteChapters.Count) records=$($chapterBySearchPath.Count)"
+    }
+
+    $siteCss = @(
+        (Get-Content -LiteralPath $style -Raw),
+        (Get-Content -LiteralPath $searchStyle -Raw),
+        (Get-Content -LiteralPath $readerStyle -Raw),
+        (Get-Content -LiteralPath $contextStyle -Raw),
+        (Get-Content -LiteralPath $siteStyle -Raw)
+    ) -join "`n"
+    [System.IO.File]::WriteAllText(
+        (Join-Path $siteAssetDirectory "site.css"),
+        $siteCss,
+        [System.Text.UTF8Encoding]::new($false)
+    )
+    [System.IO.File]::WriteAllText(
+        (Join-Path $siteAssetDirectory "search.js"),
+        (Get-Content -LiteralPath $searchScript -Raw),
+        [System.Text.UTF8Encoding]::new($false)
+    )
+    [System.IO.File]::WriteAllText(
+        (Join-Path $siteAssetDirectory "reader.js"),
+        (Get-Content -LiteralPath $readerScript -Raw),
+        [System.Text.UTF8Encoding]::new($false)
+    )
+    [System.IO.File]::WriteAllText(
+        (Join-Path $siteAssetDirectory "context.js"),
+        (Get-Content -LiteralPath $contextScript -Raw),
+        [System.Text.UTF8Encoding]::new($false)
+    )
+    $siteData = "window.FACTORIUM_SEARCH_INDEX=$searchJson;`n" +
+        "window.FACTORIUM_SOURCE_INDEX=$sourceIndexJson;`n" +
+        "window.FACTORIUM_CONTEXT_PROFILES=$contextJson;`n"
+    [System.IO.File]::WriteAllText(
+        (Join-Path $siteAssetDirectory "site-data.js"),
+        $siteData,
+        [System.Text.UTF8Encoding]::new($false)
+    )
+
+    $chapterItems = [System.Text.StringBuilder]::new()
+    foreach ($chapter in $siteChapters) {
+        $encodedChapterTitle = [System.Net.WebUtility]::HtmlEncode($chapter.title)
+        $chapterLabel = if ($chapter.key.StartsWith("part-")) {
+            $chapter.key.Replace("part-", "Part ").ToUpperInvariant()
+        }
+        else {
+            "Guided use"
+        }
+        [void]$chapterItems.AppendLine(
+            "<li><span>$chapterLabel</span><a href=`"chapters/$($chapter.key).html`">$encodedChapterTitle</a><p>$($chapter.paths.Count) records</p></li>"
+        )
+    }
+    $homeSearchShell = $searchShell.Replace(
+        "Results open the canonical book projection below.",
+        "Results open dedicated reading pages generated from the canonical book sources."
+    )
+    $homeSearchShell = $homeSearchShell.Replace("Search this proof", "Search the book")
+    $quickstartPage = "entries/$($pageBySource[$quickstart])"
+    $homeHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A searchable, table-first Factorium book simulation.">
+<title>Structure, Quantity, and Choice · Factorium</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="proof-site reader-ready">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="index.html">Factorium</a>
+<nav class="site-nav" aria-label="Primary"><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+</div></header>
+<main id="main-content" class="site-main">
+<section class="site-hero">
+<p class="site-kicker">Proof Set · book-site simulation</p>
+<h1>Structure, Quantity, and Choice</h1>
+<p class="site-hero__deck">A linked reference for selecting senses, comparing decompositions, choosing bounded relations, and recognizing structures that fail.</p>
+</section>
+<div id="search">$homeSearchShell</div>
+<section id="contents" class="site-contents">
+<h2>Browse the book</h2>
+<p class="site-contents__intro">Eight reading routes organize ninety-five indexed records and guides. Every record also has a dedicated lookup page.</p>
+<ol class="site-chapter-grid">$chapterItems</ol>
+</section>
+</main>
+<footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01</footer>
+<script src="assets/site-data.js"></script>
+<script src="assets/search.js"></script>
+</body>
+</html>
+"@
+    [System.IO.File]::WriteAllText($siteIndex, $homeHtml, [System.Text.UTF8Encoding]::new($false))
+
+    for ($chapterIndex = 0; $chapterIndex -lt $siteChapters.Count; $chapterIndex++) {
+        $chapter = $siteChapters[$chapterIndex]
+        $encodedChapterTitle = [System.Net.WebUtility]::HtmlEncode($chapter.title)
+        $chapterLabel = if ($chapter.key.StartsWith("part-")) {
+            $chapter.key.Replace("part-", "Part ").ToUpperInvariant()
+        }
+        else {
+            "Guided use"
+        }
+        $chapterRecordItems = [System.Text.StringBuilder]::new()
+        foreach ($chapterPath in $chapter.paths) {
+            $chapterRelativePath = [System.IO.Path]::GetRelativePath($workspace, $chapterPath).Replace("\", "/")
+            $chapterRecord = $searchRecordByPath[$chapterRelativePath]
+            $encodedRecordTitle = [System.Net.WebUtility]::HtmlEncode($chapterRecord.title)
+            $encodedRecordMeta = [System.Net.WebUtility]::HtmlEncode(
+                (@($chapterRecord.kind, $chapterRecord.domain) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }) -join " · "
+            )
+            $recordPage = [System.IO.Path]::GetFileName($chapterRecord.href)
+            [void]$chapterRecordItems.AppendLine(
+                "<li><a href=`"../entries/$recordPage`">$encodedRecordTitle</a><span>$encodedRecordMeta</span></li>"
+            )
+        }
+        $previousChapter = "<span></span>"
+        $nextChapter = "<span></span>"
+        if ($chapterIndex -gt 0) {
+            $previous = $siteChapters[$chapterIndex - 1]
+            $previousTitle = [System.Net.WebUtility]::HtmlEncode($previous.title)
+            $previousChapter = "<a rel=`"prev`" href=`"$($previous.key).html`"><span>Previous chapter</span>$previousTitle</a>"
+        }
+        if ($chapterIndex -lt $siteChapters.Count - 1) {
+            $next = $siteChapters[$chapterIndex + 1]
+            $nextTitle = [System.Net.WebUtility]::HtmlEncode($next.title)
+            $nextChapter = "<a rel=`"next`" href=`"$($next.key).html`"><span>Next chapter</span>$nextTitle</a>"
+        }
+        $chapterHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$encodedChapterTitle · Factorium</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="proof-site reader-ready">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="../index.html">Factorium</a>
+<nav class="site-nav" aria-label="Primary"><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+</div></header>
+<main id="main-content" class="site-main">
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
+<section class="site-chapter-heading"><p class="site-kicker">$chapterLabel</p><h1>$encodedChapterTitle</h1><p>$($chapter.paths.Count) records in the curated reading sequence.</p></section>
+<ol class="site-entry-grid">$chapterRecordItems</ol>
+<nav class="site-pagination" aria-label="Chapter sequence">$previousChapter$nextChapter</nav>
+</main>
+<footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01</footer>
+</body>
+</html>
+"@
+        [System.IO.File]::WriteAllText(
+            (Join-Path $siteChapterDirectory "$($chapter.key).html"),
+            $chapterHtml,
+            [System.Text.UTF8Encoding]::new($false)
+        )
+    }
+
+    foreach ($source in $sources) {
+        $relativeSource = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
+        $segment = $renderedSegmentBySource[$source]
+        $segment = [regex]::Replace(
+            $segment,
+            'href="#([^"]+)"',
+            {
+                param($match)
+
+                $targetId = $match.Groups[1].Value
+                if (-not $sourceByRenderedId.ContainsKey($targetId)) {
+                    return $match.Value
+                }
+                $targetSource = $sourceByRenderedId[$targetId]
+                if ($targetSource.Equals($source, [System.StringComparison]::OrdinalIgnoreCase)) {
+                    return $match.Value
+                }
+                return 'href="' + $pageBySource[$targetSource] + '#' + $targetId + '"'
+            }
+        )
+
+        $record = if ($searchRecordByPath.ContainsKey($relativeSource)) {
+            $searchRecordByPath[$relativeSource]
+        }
+        else {
+            $null
+        }
+        $headingMatch = [regex]::Match($segment, '<h1 id="[^"]+">(.+?)</h1>', [System.Text.RegularExpressions.RegexOptions]::Singleline)
+        if (-not $headingMatch.Success) {
+            throw "Site page has no top-level heading: $relativeSource"
+        }
+        $headingText = [System.Net.WebUtility]::HtmlDecode(
+            [regex]::Replace($headingMatch.Groups[1].Value, '<[^>]+>', '')
+        ).Trim()
+        $pageTitle = if ($null -ne $record) { $record.title } else { $headingText }
+        $encodedPageTitle = [System.Net.WebUtility]::HtmlEncode($pageTitle)
+        $encodedSource = [System.Net.WebUtility]::HtmlEncode($relativeSource)
+
+        $readerControls = ""
+        $pageScripts = ""
+        $pagination = ""
+        if ($null -ne $record) {
+            $readerControls = $readerShell
+            $pageScripts = @"
+<script src="../assets/site-data.js"></script>
+<script src="../assets/reader.js"></script>
+<script src="../assets/context.js"></script>
+"@
+            $sequenceIndex = $searchRecordIndexByPath[$relativeSource]
+            $previousLink = "<span></span>"
+            $nextLink = "<span></span>"
+            if ($sequenceIndex -gt 0) {
+                $previous = $searchRecords[$sequenceIndex - 1]
+                $previousTitle = [System.Net.WebUtility]::HtmlEncode($previous.title)
+                $previousPage = [System.IO.Path]::GetFileName($previous.href)
+                $previousLink = "<a rel=`"prev`" href=`"$previousPage`"><span>Previous</span>$previousTitle</a>"
+            }
+            if ($sequenceIndex -lt $searchRecords.Count - 1) {
+                $next = $searchRecords[$sequenceIndex + 1]
+                $nextTitle = [System.Net.WebUtility]::HtmlEncode($next.title)
+                $nextPage = [System.IO.Path]::GetFileName($next.href)
+                $nextLink = "<a rel=`"next`" href=`"$nextPage`"><span>Next</span>$nextTitle</a>"
+            }
+            $pagination = "<nav class=`"site-pagination`" aria-label=`"Entry sequence`">$previousLink$nextLink</nav>"
+        }
+
+        $pageHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$encodedPageTitle · Factorium</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="proof-site">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="../index.html">Factorium</a>
+<nav class="site-nav" aria-label="Primary"><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+</div></header>
+<div class="site-main">
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
+    if ($null -ne $record) {
+        $entryChapter = $chapterBySearchPath[$relativeSource]
+        $entryChapterTitle = [System.Net.WebUtility]::HtmlEncode($entryChapter.title)
+        " / <a href=`"../chapters/$($entryChapter.key).html`">$entryChapterTitle</a>"
+    }
+) / $encodedPageTitle</nav>
+$readerControls
+<main id="main-content" class="site-entry" data-source-path="$encodedSource">$segment</main>
+$pagination
+</div>
+<footer class="site-footer">Canonical source: $encodedSource · simulation projection</footer>
+$pageScripts
+</body>
+</html>
+"@
+        $pagePath = Join-Path $siteEntryDirectory $pageBySource[$source]
+        [System.IO.File]::WriteAllText($pagePath, $pageHtml, [System.Text.UTF8Encoding]::new($false))
+    }
+
+    $actualChapterFiles = @(Get-ChildItem -LiteralPath $siteChapterDirectory -Filter "*.html")
+    $actualEntryFiles = @(Get-ChildItem -LiteralPath $siteEntryDirectory -Filter "*.html")
+    $expectedAssetNames = @("context.js", "reader.js", "search.js", "site-data.js", "site.css")
+    $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
+    $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
+    $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
+    if ($actualChapterFiles.Count -ne $siteChapters.Count -or
+        $actualEntryFiles.Count -ne $sources.Count -or
+        $unexpectedAssetNames.Count -ne 0 -or $missingAssetNames.Count -ne 0) {
+        throw "Stale or incomplete site output: chapters=$($actualChapterFiles.Count)/$($siteChapters.Count) entries=$($actualEntryFiles.Count)/$($sources.Count) unexpected-assets=$($unexpectedAssetNames -join ',') missing-assets=$($missingAssetNames -join ',')"
+    }
+    $siteHtmlFiles = @($siteIndex) +
+        @($actualChapterFiles | ForEach-Object { $_.FullName }) +
+        @($actualEntryFiles | ForEach-Object { $_.FullName })
+    $idsBySiteFile = [System.Collections.Generic.Dictionary[string, object]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    foreach ($siteHtmlFile in $siteHtmlFiles) {
+        $sitePageText = Get-Content -LiteralPath $siteHtmlFile -Raw
+        $sitePageIds = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+        [regex]::Matches($sitePageText, ' id="([^"]+)"') | ForEach-Object {
+            [void]$sitePageIds.Add($_.Groups[1].Value)
+        }
+        $idsBySiteFile[[System.IO.Path]::GetFullPath($siteHtmlFile)] = $sitePageIds
+    }
+
+    $siteLocalLinks = 0
+    $missingSiteTargets = [System.Collections.Generic.List[string]]::new()
+    foreach ($siteHtmlFile in $siteHtmlFiles) {
+        $sitePageText = Get-Content -LiteralPath $siteHtmlFile -Raw
+        foreach ($siteLink in [regex]::Matches($sitePageText, '(?:href|src)="([^"]+)"')) {
+            $siteTarget = [System.Net.WebUtility]::HtmlDecode($siteLink.Groups[1].Value)
+            if ($siteTarget -match '^(?:https?://|mailto:|data:)' ) {
+                continue
+            }
+            $siteLocalLinks += 1
+            $targetParts = $siteTarget -split '#', 2
+            $targetPath = $targetParts[0]
+            $targetFragment = if ($targetParts.Count -eq 2) { $targetParts[1] } else { "" }
+            $resolvedTarget = if ([string]::IsNullOrWhiteSpace($targetPath)) {
+                [System.IO.Path]::GetFullPath($siteHtmlFile)
+            }
+            else {
+                [System.IO.Path]::GetFullPath((Join-Path (Split-Path $siteHtmlFile) $targetPath))
+            }
+            if (-not $resolvedTarget.StartsWith($output, [System.StringComparison]::OrdinalIgnoreCase) -or
+                -not (Test-Path -LiteralPath $resolvedTarget -PathType Leaf)) {
+                $missingSiteTargets.Add("$siteHtmlFile -> $siteTarget")
+                continue
+            }
+            if (-not [string]::IsNullOrWhiteSpace($targetFragment) -and
+                $idsBySiteFile.ContainsKey($resolvedTarget) -and
+                -not $idsBySiteFile[$resolvedTarget].Contains($targetFragment)) {
+                $missingSiteTargets.Add("$siteHtmlFile -> $siteTarget")
+            }
+        }
+    }
+    if ($missingSiteTargets.Count -ne 0) {
+        throw "Book site has $($missingSiteTargets.Count) missing local targets: $($missingSiteTargets[0])"
+    }
+
+    $siteOutputFiles = @($siteIndex) +
+        @(Get-ChildItem -LiteralPath $siteChapterDirectory -File | ForEach-Object { $_.FullName }) +
+        @(Get-ChildItem -LiteralPath $siteEntryDirectory -File | ForEach-Object { $_.FullName }) +
+        @(Get-ChildItem -LiteralPath $siteAssetDirectory -File | ForEach-Object { $_.FullName })
+    $siteFileRecords = foreach ($siteOutputFile in $siteOutputFiles | Sort-Object) {
+        [ordered]@{
+            path = [System.IO.Path]::GetRelativePath($output, $siteOutputFile).Replace("\", "/")
+            sha256 = (Get-FileHash -LiteralPath $siteOutputFile -Algorithm SHA256).Hash.ToLowerInvariant()
+            bytes = (Get-Item -LiteralPath $siteOutputFile).Length
+        }
+    }
+    $siteIdentityInput = ($siteFileRecords | ForEach-Object { "$($_.path)|$($_.sha256)|$($_.bytes)" }) -join "`n"
+    $siteIdentityBytes = [System.Text.Encoding]::UTF8.GetBytes($siteIdentityInput)
+    $siteIdentityHash = [System.Security.Cryptography.SHA256]::HashData($siteIdentityBytes)
+    $siteIdentity = [System.Convert]::ToHexString($siteIdentityHash).ToLowerInvariant()
+    $siteAssets = @($siteFileRecords | Where-Object { $_.path.StartsWith("assets/") })
+    $siteChecks = [ordered]@{
+        home_pages = 1
+        chapter_pages = $siteChapters.Count
+        source_pages = $sources.Count
+        indexed_entry_pages = $searchRecords.Count
+        supporting_source_pages = $sources.Count - $searchRecords.Count
+        unique_page_names = $pageNames.Count
+        local_links = $siteLocalLinks
+        missing_local_targets = $missingSiteTargets.Count
+        previous_next_sequence_records = $searchRecords.Count
+        canonical_content_authority = "repository Markdown and reference metadata"
+        execution = "multi-page static files; no server"
+        identity = $siteIdentity
+    }
+}
+
 $sourceRecords = foreach ($source in $sources) {
     [ordered]@{
         path = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
@@ -768,6 +1262,8 @@ $manifestRecord = [ordered]@{
     reader_checks = $readerChecks
     context_checks = $contextChecks
     context_assets = $contextAssets
+    site_checks = $siteChecks
+    site_assets = $siteAssets
     rendering_checks = [ordered]@{
         internal_fragment_links = $fragmentLinks.Count
         missing_fragment_targets = $missingFragments.Count
@@ -780,9 +1276,15 @@ $manifestRecord = [ordered]@{
         bytes = (Get-Item -LiteralPath $html).Length
     }
 }
-if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
+if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
     $manifestRecord.output.search_index_path = "search-index.json"
     $manifestRecord.output.search_index_sha256 = (Get-FileHash -LiteralPath $searchIndexOutput -Algorithm SHA256).Hash.ToLowerInvariant()
+}
+if ($Edition -eq "sim-07") {
+    $manifestRecord.output.site_index_path = "index.html"
+    $manifestRecord.output.site_index_sha256 = (Get-FileHash -LiteralPath $siteIndex -Algorithm SHA256).Hash.ToLowerInvariant()
+    $manifestRecord.output.site_identity = $siteChecks.identity
+    $manifestRecord.output.site_file_count = 1 + $siteChecks.chapter_pages + $siteChecks.source_pages + $siteAssets.Count
 }
 
 $manifestRecord | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $manifest -Encoding utf8
@@ -795,21 +1297,29 @@ if ($Edition -ne "sim-01") {
     Write-Output "delta_views=$($selectionChecks.delta_views)"
     Write-Output "combined_records=$($selectionChecks.combined_projection_records)"
 }
-if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06")) {
+if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07")) {
     Write-Output "tasks=$($selectionChecks.task_count)"
     Write-Output "task_coverage_records=$($selectionChecks.task_coverage_records)"
 }
-if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
+if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
     Write-Output "search_records=$($searchChecks.indexed_records)"
     Write-Output "search_missing_targets=$($searchChecks.missing_rendered_targets)"
 }
-if ($Edition -in @("sim-05", "sim-06")) {
+if ($Edition -in @("sim-05", "sim-06", "sim-07")) {
     Write-Output "reader_profiles=$($readerChecks.profiles.Count)"
     Write-Output "reader_default=$($readerChecks.default_profile)"
 }
-if ($Edition -eq "sim-06") {
+if ($Edition -in @("sim-06", "sim-07")) {
     Write-Output "context_profiles=$($contextChecks.profiles)"
     Write-Output "context_bindings=$($contextChecks.bindings)"
+}
+if ($Edition -eq "sim-07") {
+    Write-Output "site=$siteIndex"
+    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + 1)"
+    Write-Output "site_chapters=$($siteChecks.chapter_pages)"
+    Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"
+    Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
+    Write-Output "site_identity=$($siteChecks.identity)"
 }
 Write-Output "internal_links=$($fragmentLinks.Count)"
 Write-Output "missing_internal_targets=$($missingFragments.Count)"

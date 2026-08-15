@@ -137,6 +137,14 @@ system boundary, physical frame, jurisdiction, authority, platform, version,
 and other result-changing selections explicitly required. The frozen V0
 canonical interchange is unchanged.
 
+The eighth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-08.md`
+adds a deterministic multi-page book site to `sim-07`: one searchable home,
+eight chapter routes, dedicated pages for all included sources, routed
+cross-references, and previous/next traversal for all 95 indexed records and
+guides. It remains a static publication projection, not Workbench or reader
+evidence.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

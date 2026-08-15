@@ -64,7 +64,7 @@
         appendList(documentObject, requiresValue, profile.requires);
         definitions.append(defaultsTerm, defaultsValue, requiresTerm, requiresValue);
         var link = documentObject.createElement("a");
-        link.href = "#" + profile.anchor;
+        link.href = profile.href || "#" + profile.anchor;
         link.textContent = "Open full context profile";
         details.append(summary, scope, description, definitions, link);
         container.appendChild(details);

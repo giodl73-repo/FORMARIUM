@@ -72,7 +72,7 @@
     var sourceByAnchor = new Map(sources.map(function (source) {
       return [source.anchor, source];
     }));
-    var headings = Array.from(documentObject.querySelectorAll("body > h1"));
+    var headings = Array.from(documentObject.querySelectorAll("body > h1, main.site-entry > h1"));
 
     headings.forEach(function (heading, index) {
       var nextHeading = headings[index + 1] || null;
@@ -249,12 +249,16 @@
         update(true);
       });
     });
-    toc.classList.add("reader-toc--collapsed");
-    tocButton.addEventListener("click", function () {
-      var collapsed = toc.classList.toggle("reader-toc--collapsed");
-      tocButton.setAttribute("aria-expanded", String(!collapsed));
-      tocButton.textContent = collapsed ? "Show contents" : "Hide contents";
-    });
+    if (toc) {
+      toc.classList.add("reader-toc--collapsed");
+      tocButton.addEventListener("click", function () {
+        var collapsed = toc.classList.toggle("reader-toc--collapsed");
+        tocButton.setAttribute("aria-expanded", String(!collapsed));
+        tocButton.textContent = collapsed ? "Show contents" : "Hide contents";
+      });
+    } else {
+      tocButton.hidden = true;
+    }
 
     function revealHashTarget() {
       if (!locationObject.hash) return;
