@@ -189,6 +189,16 @@ profiles plus independent detail, metadata, and spacing controls:
 Book is the default. The profile contract is
 [`specs/PROOF-SET-READER-VIEWS.md`](specs/PROOF-SET-READER-VIEWS.md).
 
+Render the bounded Context Profile prototype over the adaptive reader:
+
+```powershell
+.\tools\render_proof_set.ps1 -Edition sim-06
+```
+
+The prototype distinguishes inherited defaults and conventions from choices
+that remain required at use time. See
+[`specs/CONTEXT-PROFILE.md`](specs/CONTEXT-PROFILE.md).
+
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 

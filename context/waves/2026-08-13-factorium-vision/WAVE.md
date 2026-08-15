@@ -135,6 +135,9 @@ guides, with browser-tested anchors and no alternate content authority.
 The sixth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-06.md`; `sim-05` adds
 four adaptive reader profiles, independent detail/metadata/density controls,
 and entry-local expansion while keeping one canonical source selection.
+The seventh rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-07.md`; `sim-06` adds
+three scoped Context Profiles and 16 bindings that separate inherited defaults
+from required local selections without changing canonical interchange V0.
 
 ## Success criteria
 

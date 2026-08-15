@@ -129,6 +129,14 @@ are projections over independent content-detail, metadata, and density axes;
 Book is the default. Every indexed record remains present and locally
 expandable, while Full retains the complete rendered source selection.
 
+The seventh rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-07.md`
+adds three candidate Context Profiles and 16 simulation-only bindings to
+`sim-06`. Profiles inherit bounded defaults and conventions while keeping
+system boundary, physical frame, jurisdiction, authority, platform, version,
+and other result-changing selections explicitly required. The frozen V0
+canonical interchange is unchanged.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

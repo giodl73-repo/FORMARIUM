@@ -26,6 +26,12 @@ the canonical catalog.
 - [Factor Role Table](foundations/FACTOR-ROLES.md) - eleven structural jobs
   factors can perform within a decomposition view
 
+## Context profiles
+
+- [Candidate Context Profiles](context-profiles/INDEX.md) - scoped inherited
+  defaults, conventions, required selections, overrides, and exclusions;
+  auxiliary contracts rather than a new Reference Table family
+
 ## Examples
 
 | Entry | Principal sense | Width | Derived output or decision | Primary lesson |

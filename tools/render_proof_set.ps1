@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -17,6 +17,14 @@ $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-
 $searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
 $readerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.css"
 $readerScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.js"
+$contextStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.css"
+$contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.js"
+$contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
+$contextProfileSources = @(
+    (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
+    (Join-Path $workspace "tables\context-profiles\governed-organization.md"),
+    (Join-Path $workspace "tables\context-profiles\versioned-software-system.md")
+)
 $volumeDirectory = Split-Path $volume
 $artifactName = "proof-set-$Edition"
 $artifactTitle = switch ($Edition) {
@@ -25,6 +33,7 @@ $artifactTitle = switch ($Edition) {
     "sim-03" { "Factorium Proof Set Factor Forge Task Simulation 03" }
     "sim-04" { "Factorium Proof Set Search Simulation 04" }
     "sim-05" { "Factorium Proof Set Adaptive Reader Simulation 05" }
+    "sim-06" { "Factorium Proof Set Context Profile Simulation 06" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -214,7 +223,7 @@ if ($Edition -ne "sim-01") {
         extra_delta_paths = $extraDelta.Count
     }
 
-    if ($Edition -in @("sim-03", "sim-04", "sim-05")) {
+    if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06")) {
         $rubricText = Get-Content -LiteralPath $factorForgeRubric -Raw
         $taskCoverage = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
@@ -243,8 +252,13 @@ if ($Edition -ne "sim-01") {
     Add-ProofSource $supplement
     $selectionDocuments.Add($supplement)
 }
-if ($Edition -in @("sim-03", "sim-04", "sim-05")) {
+if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06")) {
     Add-ProofSource $factorForgeTasks
+}
+if ($Edition -eq "sim-06") {
+    foreach ($contextProfileSource in $contextProfileSources) {
+        Add-ProofSource $contextProfileSource
+    }
 }
 
 foreach ($selectionDocument in $selectionDocuments) {
@@ -361,7 +375,9 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
 $searchChecks = $null
 $searchAssets = @()
 $readerChecks = $null
-if ($Edition -in @("sim-04", "sim-05")) {
+$contextChecks = $null
+$contextAssets = @()
+if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing search asset: $asset"
@@ -492,7 +508,7 @@ if ($Edition -in @("sim-04", "sim-05")) {
     }
 }
 
-if ($Edition -eq "sim-05") {
+if ($Edition -in @("sim-05", "sim-06")) {
     foreach ($asset in @($readerStyle, $readerScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing reader asset: $asset"
@@ -570,6 +586,118 @@ if ($Edition -eq "sim-05") {
     }
 }
 
+if ($Edition -eq "sim-06") {
+    foreach ($asset in @($contextStyle, $contextScript, $contextBindings)) {
+        if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+            throw "Missing context-profile asset: $asset"
+        }
+    }
+
+    $profileRecords = [System.Collections.Generic.List[object]]::new()
+    $profilesById = [System.Collections.Generic.Dictionary[string, object]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    foreach ($profileSource in $contextProfileSources) {
+        $profileText = Get-Content -LiteralPath $profileSource -Raw
+        $profileIdMatch = [regex]::Match($profileText, '(?m)^Profile ID: `([^`]+)`$')
+        $profileNameMatch = [regex]::Match($profileText, '(?m)^# (.+?) Context Profile$')
+        $profileSummaryMatch = [regex]::Match($profileText, '(?m)^Summary: (.+)$')
+        $profileDefaultsMatch = [regex]::Match($profileText, '(?m)^Defaults: (.+)$')
+        $profileRequiresMatch = [regex]::Match($profileText, '(?m)^Requires: (.+)$')
+        if (-not $profileIdMatch.Success -or -not $profileNameMatch.Success -or
+            -not $profileSummaryMatch.Success -or -not $profileDefaultsMatch.Success -or
+            -not $profileRequiresMatch.Success) {
+            throw "Incomplete context profile contract: $profileSource"
+        }
+        $profileId = $profileIdMatch.Groups[1].Value
+        if ($profilesById.ContainsKey($profileId)) {
+            throw "Duplicate context profile ID: $profileId"
+        }
+        $profileRecord = [ordered]@{
+            id = $profileId
+            name = $profileNameMatch.Groups[1].Value
+            summary = $profileSummaryMatch.Groups[1].Value
+            defaults = @($profileDefaultsMatch.Groups[1].Value -split '; ' | ForEach-Object { $_.Trim('`') })
+            requires = @($profileRequiresMatch.Groups[1].Value -split '; ' | ForEach-Object { $_.Trim('`') })
+            path = [System.IO.Path]::GetRelativePath($workspace, $profileSource).Replace("\", "/")
+            anchor = $headingBySource[$profileSource]
+        }
+        $profilesById[$profileId] = $profileRecord
+        $profileRecords.Add($profileRecord)
+    }
+
+    $selectedSearchPaths = [System.Collections.Generic.HashSet[string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    foreach ($record in $searchRecords) {
+        [void]$selectedSearchPaths.Add($record.path)
+    }
+    $bindingText = Get-Content -LiteralPath $contextBindings -Raw
+    $bindingMatches = [regex]::Matches(
+        $bindingText,
+        '(?m)^\| \[([^\]]+)\]\(([^)]+\.md)\) \| `([^`]+)` \| ([^|]+) \|$'
+    )
+    $bindingRecords = [System.Collections.Generic.List[object]]::new()
+    $bindingKeys = [System.Collections.Generic.HashSet[string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    $bindingDirectory = Split-Path $contextBindings
+    foreach ($bindingMatch in $bindingMatches) {
+        $bindingPath = [System.IO.Path]::GetFullPath(
+            (Join-Path $bindingDirectory $bindingMatch.Groups[2].Value)
+        )
+        $relativeBindingPath = [System.IO.Path]::GetRelativePath($workspace, $bindingPath).Replace("\", "/")
+        $bindingProfileId = $bindingMatch.Groups[3].Value
+        $bindingAppliesTo = $bindingMatch.Groups[4].Value.Trim()
+        if (-not $profilesById.ContainsKey($bindingProfileId)) {
+            throw "Unknown context profile binding: $bindingProfileId"
+        }
+        if (-not $selectedSearchPaths.Contains($relativeBindingPath)) {
+            throw "Context profile binds unselected record: $relativeBindingPath"
+        }
+        $bindingKey = "$relativeBindingPath|$bindingProfileId|$bindingAppliesTo"
+        if (-not $bindingKeys.Add($bindingKey)) {
+            throw "Duplicate context profile binding: $bindingKey"
+        }
+        $bindingRecords.Add([ordered]@{
+            title = $bindingMatch.Groups[1].Value
+            path = $relativeBindingPath
+            profileId = $bindingProfileId
+            appliesTo = $bindingAppliesTo
+        })
+    }
+    if ($profileRecords.Count -ne 3 -or $bindingRecords.Count -ne 16) {
+        throw "Context profile shape mismatch: profiles=$($profileRecords.Count) bindings=$($bindingRecords.Count)"
+    }
+
+    $contextPayload = [ordered]@{
+        profiles = $profileRecords
+        bindings = $bindingRecords
+    }
+    $contextJson = ($contextPayload | ConvertTo-Json -Depth 5 -Compress).Replace('</', '<\/')
+    $contextCss = Get-Content -LiteralPath $contextStyle -Raw
+    $contextJavaScript = Get-Content -LiteralPath $contextScript -Raw
+    $htmlText = $htmlText.Replace('</head>', "<style>`n$contextCss`n</style>`n</head>")
+    $contextBootstrap = "<script>window.FACTORIUM_CONTEXT_PROFILES=$contextJson;</script>`n<script>$contextJavaScript</script>`n"
+    $htmlText = $htmlText.Replace('</body>', $contextBootstrap + '</body>')
+
+    $contextAssets = foreach ($asset in @($contextStyle, $contextScript, $contextBindings)) {
+        [ordered]@{
+            path = [System.IO.Path]::GetRelativePath($workspace, $asset).Replace("\", "/")
+            sha256 = (Get-FileHash -LiteralPath $asset -Algorithm SHA256).Hash.ToLowerInvariant()
+        }
+    }
+    $contextChecks = [ordered]@{
+        profiles = $profileRecords.Count
+        bindings = $bindingRecords.Count
+        selected_binding_paths = $bindingKeys.Count
+        missing_profile_ids = 0
+        unselected_binding_paths = 0
+        duplicate_bindings = 0
+        canonical_interchange_changed = $false
+    }
+}
+
 [System.IO.File]::WriteAllText(
     $html,
     $htmlText,
@@ -632,6 +760,8 @@ $manifestRecord = [ordered]@{
     search_checks = $searchChecks
     search_assets = $searchAssets
     reader_checks = $readerChecks
+    context_checks = $contextChecks
+    context_assets = $contextAssets
     rendering_checks = [ordered]@{
         internal_fragment_links = $fragmentLinks.Count
         missing_fragment_targets = $missingFragments.Count
@@ -644,7 +774,7 @@ $manifestRecord = [ordered]@{
         bytes = (Get-Item -LiteralPath $html).Length
     }
 }
-if ($Edition -in @("sim-04", "sim-05")) {
+if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
     $manifestRecord.output.search_index_path = "search-index.json"
     $manifestRecord.output.search_index_sha256 = (Get-FileHash -LiteralPath $searchIndexOutput -Algorithm SHA256).Hash.ToLowerInvariant()
 }
@@ -659,17 +789,21 @@ if ($Edition -ne "sim-01") {
     Write-Output "delta_views=$($selectionChecks.delta_views)"
     Write-Output "combined_records=$($selectionChecks.combined_projection_records)"
 }
-if ($Edition -in @("sim-03", "sim-04", "sim-05")) {
+if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06")) {
     Write-Output "tasks=$($selectionChecks.task_count)"
     Write-Output "task_coverage_records=$($selectionChecks.task_coverage_records)"
 }
-if ($Edition -in @("sim-04", "sim-05")) {
+if ($Edition -in @("sim-04", "sim-05", "sim-06")) {
     Write-Output "search_records=$($searchChecks.indexed_records)"
     Write-Output "search_missing_targets=$($searchChecks.missing_rendered_targets)"
 }
-if ($Edition -eq "sim-05") {
+if ($Edition -in @("sim-05", "sim-06")) {
     Write-Output "reader_profiles=$($readerChecks.profiles.Count)"
     Write-Output "reader_default=$($readerChecks.default_profile)"
+}
+if ($Edition -eq "sim-06") {
+    Write-Output "context_profiles=$($contextChecks.profiles)"
+    Write-Output "context_bindings=$($contextChecks.bindings)"
 }
 Write-Output "internal_links=$($fragmentLinks.Count)"
 Write-Output "missing_internal_targets=$($missingFragments.Count)"

@@ -84,7 +84,8 @@ expanded-book rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-03.md`. The exact
 Factor Forge task-ownership rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-04.md`. The static website and search-mechanics
 rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-05.md`. The adaptive reader-view
-rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-06.md`.
+rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-06.md`. The scoped Context Profile
+inheritance rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-07.md`.
 
 ## Candidate artifacts
 

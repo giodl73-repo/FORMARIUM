@@ -1,0 +1,61 @@
+.context-profiles {
+  display: grid;
+  gap: 0.55rem;
+  margin: -0.4rem 0 1.25rem;
+}
+
+.context-profile {
+  background: color-mix(in srgb, var(--proof-accent-soft) 60%, Canvas 40%);
+  border: 1px solid var(--proof-rule);
+  border-radius: 0.55rem;
+  max-width: 76ch;
+  padding: 0.55rem 0.75rem;
+}
+
+.context-profile summary {
+  color: var(--proof-accent);
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.context-profile__scope,
+.context-profile__summary {
+  margin: 0.65rem 0;
+}
+
+.context-profile dl {
+  display: grid;
+  gap: 0.3rem 0.75rem;
+  grid-template-columns: minmax(8rem, 11rem) 1fr;
+  margin: 0.75rem 0;
+}
+
+.context-profile dt {
+  font-weight: 750;
+}
+
+.context-profile dd {
+  margin: 0;
+}
+
+.context-profile__warning {
+  border-left: 0.2rem solid var(--proof-accent);
+  padding-left: 0.65rem;
+}
+
+html[data-reader-density="tight"] .context-profile {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+}
+
+@media (max-width: 40rem) {
+  .context-profile dl {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .context-profile:not([open]) > :not(summary) {
+    display: none;
+  }
+}
