@@ -279,6 +279,27 @@ factor measurement-interval-and-bandwidth | measurement interval and bandwidth
 factor unit-logarithm-base-and-display-scale | unit, logarithm base, and display scale
 factor provenance-and-uncertainty | provenance and uncertainty
 end-entry
+entry mathematical-relation-solving | Mathematical Function, Variable, Equation, Identity, Solution, Root, Derivative, Iteration, and Convergence | reference | candidate | tables/entries/mathematical-relation-solving.md | A mathematical function assigns admitted inputs to outputs; equations and identities differ by quantification; solutions and roots differ by target; derivatives are local limit-defined objects; iteration generates states while convergence is a separate conditional limiting claim.
+sense mathematical-function | mathematical function
+sense variable | variable
+sense equation | equation
+sense identity | identity
+sense solution | solution
+sense root | root
+sense derivative | derivative
+sense iteration | iteration
+sense convergence | convergence
+factor relation-object-and-representation | relation object and representation
+factor symbols-variables-bound-or-free-roles-and-assignments | symbols, variables, bound/free roles, and assignments
+factor domain-codomain-restrictions-and-exceptional-points | domain, codomain, restrictions, and exceptional points
+factor equality-kind-and-quantification | equality kind and quantification
+factor exact-or-approximate-status-and-error-measure | exact or approximate status and error measure
+factor target-equation-solution-object-and-multiplicity | target equation, solution object, and multiplicity
+factor operator-derivative-order-point-and-existence-conditions | operator, derivative order, point, and existence conditions
+factor iteration-map-initial-state-and-generated-sequence | iteration map, initial state, and generated sequence
+factor stopping-rule-tolerance-precision-and-resource-limit | stopping rule, tolerance, precision, and resource limit
+factor convergence-target-criterion-rate-basin-and-proof-basis | convergence target, criterion, rate, basin, and proof basis
+end-entry
 entry matter-load-measure | Matter and Load Measure | science | candidate | tables/entries/matter-load-measure.md | Mass, weight, density, and pressure are often mixed because they participate in short connected formulas and everyday speech uses "weight" for mass. Factorium separates them by quantity kind, normalization, environmental context, and measured boundary.
 sense mass | mass
 sense weight | weight
@@ -622,6 +643,8 @@ view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestr
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
 end-view
+view diagnostic-mathematical-relation-solving-failures | mathematical-relation-solving | mathematical-function,variable,equation,identity,solution,root,derivative,iteration,convergence | diagnostic | Mathematical Relation and Solver Failure Diagnostic | tables/diagnostics/mathematical-relation-solving-failures.md | Maps object, notation, domain, equality, solution-set, derivative, iteration, stopping, and convergence symptoms to candidate causes and discriminating tests without treating one symptom as proof.
+end-view
 view diagnostic-measurement-quality-failures | measurement-quality | measurement-error,measurement-bias,measurement-accuracy,measurement-trueness,measurement-precision,instrument-resolution,metrological-calibration,probability-calibration | diagnostic | Measurement Quality Failure Diagnostic | tables/diagnostics/measurement-quality-failures.md | Maps reference offsets, replicate scatter, coarse indications, drift, calibration misuse, and probability reliability failures to candidate causes and discriminating tests without treating one quality label as proof.
 end-view
 view diagnostic-sampling-generalization-failures | sampling-generalization | target-population,sampling-frame,sample,analytic-sample,estimand,estimator,estimate,generalization,transport | diagnostic | Sampling and Generalization Failure Diagnostic | tables/diagnostics/sampling-generalization-failures.md | Maps coverage, selection, attrition, estimation, precision, leakage, and source-to-target symptoms to candidate causes and discriminating tests without treating sample size or representativeness as proof.
@@ -662,7 +685,7 @@ view formula-matter-load-measures | matter-load-measure | mass,weight,mass-densi
 end-view
 view formula-mechanical-work-energy-power | work-energy-power | mechanical-work,energy,kinetic-energy,potential-energy,power | formula | Mechanical Work, Energy, and Power | tables/formulas/mechanical-work-energy-power.md | These relations connect force-displacement transfer, mechanical-energy state terms, and transfer rate. They require an explicit system, path, frame, potential reference, and model scope.
 end-view
-view formula-newtons-method | unresolved-newtons-method | - | formula | Newton's Method | tables/formulas/newtons-method.md | Newton's method iteratively approximates a root of a differentiable function by intersecting the tangent at the current estimate with the horizontal axis. Its familiar fast convergence is local and conditional, not guaranteed from every starting value.
+view formula-newtons-method | mathematical-relation-solving | mathematical-function,root,derivative,iteration,convergence | formula | Newton's Method | tables/formulas/newtons-method.md | Newton's method iteratively approximates a root of a differentiable function by intersecting the tangent at the current estimate with the horizontal axis. Its familiar fast convergence is local and conditional, not guaranteed from every starting value.
 end-view
 view formula-ohms-law | electrical-quantity | electric-current,potential-difference,resistance | formula | Ohm's Law | tables/formulas/ohms-law.md | Ohm's law describes a linear voltage-current relation for an ohmic material or component under the physical conditions for which its resistance remains applicable. Despite its familiar name, it is an empirical relation rather than a universal law of nature.
 end-view
@@ -672,7 +695,7 @@ view formula-probability-range | probability-risk-uncertainty | event-probabilit
 end-view
 view formula-probability-risk-uncertainty | probability-risk-uncertainty | event-probability,conditional-probability,odds-in-favor,risk,expected-loss,uncertainty,measurement-uncertainty | formula | Probability, Risk, and Uncertainty Relations | tables/formulas/probability-risk-uncertainty.md | These relations connect event probability, odds, consequence-valued expectation, and measurement uncertainty. Risk itself remains a declared model family rather than one universal multiplication rule.
 end-view
-view formula-pythagorean-trigonometric-identity | unresolved-pythagorean-trigonometric-identity | - | formula | Pythagorean Trigonometric Identity | tables/formulas/pythagorean-trigonometric-identity.md | The Pythagorean trigonometric identity states a relation that holds for every real angle under the standard sine and cosine definitions. It is an identity, not an empirical law and not an equation that selects particular solutions.
+view formula-pythagorean-trigonometric-identity | mathematical-relation-solving | identity,equation | formula | Pythagorean Trigonometric Identity | tables/formulas/pythagorean-trigonometric-identity.md | The Pythagorean trigonometric identity states a relation that holds for every real angle under the standard sine and cosine definitions. It is an identity, not an empirical law and not an equation that selects particular solutions.
 end-view
 view formula-thermal-quantities | thermal-quantity | temperature,thermal-equilibrium,heat-transfer,internal-energy,heat-capacity,specific-heat-capacity,entropy | formula | Thermal Quantities | tables/formulas/thermal-quantities.md | These relations separate thermal state variables from path-dependent heat and work transfers. They require a system boundary, process conditions, sign convention, phase scope, and absolute temperature where entropy is involved.
 end-view

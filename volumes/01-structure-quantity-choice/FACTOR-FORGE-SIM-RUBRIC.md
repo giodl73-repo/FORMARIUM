@@ -200,6 +200,21 @@ unit-interval score is treated as sufficient proof of accuracy or calibration.
 Critical artifact failure: `average`, `SD`, record count, or `95%` is accepted
 without identifying the statistic, target, denominator, design, and procedure.
 
+## Task V expected route
+
+- Mathematical Function, Variable, Equation, Identity, Solution, Root, Derivative, Iteration, and Convergence;
+- Mathematical Relation and Solver Failure Diagnostic;
+- function objects, formulas, variables, evaluated values, and software
+  functions retain different contracts;
+- equations, identities, solutions, and roots retain domain, quantification,
+  target, and completeness;
+- derivative existence, recurrence, initial state, stopping, residual, error,
+  and convergence remain separate;
+- Newton's familiar quadratic rate remains local and conditional.
+
+Critical artifact failure: successful substitution, a returned iterate, or a
+small step is accepted as proof of identity, complete solution, or convergence.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -232,6 +247,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/measurement-quality-failures.md`
 - `tables/entries/statistical-summary-interval.md`
 - `tables/diagnostics/statistical-summary-interval-failures.md`
+- `tables/entries/mathematical-relation-solving.md`
+- `tables/diagnostics/mathematical-relation-solving-failures.md`
 
 ## Claim boundary
 

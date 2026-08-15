@@ -48,9 +48,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/work-energy-power.md` | 131 | torque - `unresolved-candidate` |
 | `tables/formulas/density.md` | 93 | local mass density — `unresolved-candidate` |
 | `tables/formulas/force.md` | 113 | momentum — `unresolved-candidate` |
-| `tables/formulas/newtons-method.md` | 95 | derivative — `unresolved-candidate` |
-| `tables/formulas/newtons-method.md` | 96 | root — `unresolved-candidate` |
-| `tables/formulas/newtons-method.md` | 97 | convergence — `unresolved-candidate` |
-| `tables/formulas/pythagorean-trigonometric-identity.md` | 90 | angle — `unresolved-candidate` |
-| `tables/formulas/pythagorean-trigonometric-identity.md` | 91 | unit circle — `unresolved-candidate` |
+| `tables/formulas/pythagorean-trigonometric-identity.md` | 96 | angle — `unresolved-candidate` |
+| `tables/formulas/pythagorean-trigonometric-identity.md` | 97 | unit circle — `unresolved-candidate` |
 | `tables/mappings/temperature-scales.md` | 114 | unit conversion — `unresolved-candidate` |

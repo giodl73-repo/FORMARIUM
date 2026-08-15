@@ -171,8 +171,22 @@ audit the analytic set, units, weights, quantile convention, independent
 sampling units, estimator, interval target, procedure, assumptions, and
 practical decision threshold before interpreting the average or error bar.
 
+## Task V - The solver says it converged
+
+A program rewrites `sqrt(x^2) = x`, calls it an identity, and uses Newton's
+method to solve a related equation. It starts from an undocumented value,
+stops when one update is tiny, and reports the final iterate as the unique
+exact root. The derivative is nearly zero near one iterate, another valid root
+exists, and the real-domain sign restriction was lost during rewriting.
+
+Separate mathematical function, variable, equation, identity, solution, root,
+derivative, iteration, and convergence. Use the Diagnostic view to audit the
+domain, symbol roles, transformation implications, complete solution target,
+initial state, derivative conditions, arithmetic, residual, stopping reason,
+error status, basin, and convergence evidence before accepting the result.
+
 ## Rehearsal boundary
 
-The fourteen prompts collectively exercise every entry and specialized view in the
+The fifteen prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

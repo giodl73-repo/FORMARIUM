@@ -372,3 +372,25 @@ and `STATISTICAL-SUMMARY-INTERVAL-ROLE-REVIEW.md`.
 F12 resolves the arithmetic-mean view owner plus `median`, `weighted mean`, and
 `confidence interval` without adding unresolved vocabulary. The current Factor
 Forge book delta is 27 records: thirteen entries and fourteen specialized views.
+
+## F13 first slice
+
+The Mathematical Relation and Solving anchor at
+`tables/entries/mathematical-relation-solving.md` separates mathematical
+functions, symbol roles, equations, identities, solutions, roots, derivatives,
+iteration, and convergence through object, representation, domain,
+quantification, transformation, method, start, stopping, error, and proof
+factors.
+
+`tables/diagnostics/mathematical-relation-solving-failures.md` maps domain and
+notation drift, invalid identity claims, lost or extraneous solutions,
+derivative failures, Newton instability, premature stopping, and unsupported
+convergence rates to candidate causes, discriminating tests, and repair owners.
+Research and fixed-point review are
+`docs/research/2026-08-15-mathematical-relation-solving.md` and
+`MATHEMATICAL-RELATION-SOLVING-ROLE-REVIEW.md`.
+
+F13 assigns the two remaining unresolved Formula view owners and resolves
+`derivative`, `root`, and `convergence` in Newton's Method. Specialized angle
+and unit-circle vocabulary remains explicit graph debt. The current Factor
+Forge book delta is 29 records: fourteen entries and fifteen specialized views.

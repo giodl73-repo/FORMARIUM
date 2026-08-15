@@ -487,3 +487,29 @@ bindings. The Factor Forge delta grows to 27 records and the combined selection
 to 105 numbered records plus two guides across fourteen chapters. The generated
 `sim-07` site contains 136 pages from 121 sources, indexes all 107 reader
 destinations, and reports zero missing internal targets.
+
+## 2026-08-15 mathematical-relation-and-solving content continuation
+
+Plan review: admit an F13 mathematical relation and solving bridge across
+notation, algebra, calculus, numerical methods, formulas, software contrasts,
+and measurement error language; ground function, equation, identity, solution,
+root, derivative, iteration, and convergence distinctions in authoritative
+sources; author one canonical anchor and one Diagnostic view; assign the two
+remaining unresolved Formula view owners; close role findings; then propagate
+the exact delta through assurance, Factor Forge, search, and the static book
+site. Trigonometric angle and unit-circle concepts remain specialized debt,
+and no external-reader gate or broad mathematical claim is introduced.
+
+Result review: F13 adds `mathematical-relation-solving` with nine senses and
+the Mathematical Relation and Solver Failure Diagnostic, assigns Newton's
+Method and the Pythagorean Trigonometric Identity to canonical owners, and
+resolves Newton's `derivative`, `root`, and `convergence` declarations.
+Function/object/value, equation/identity, solution/root, exact/approximate,
+derivative/finite difference, iteration/stopping/convergence, and local/global
+claims remain distinct. The source campaign confirms 17 findings and
+fixed-point review closes all major findings. The reference grows to 34
+entries, 212 senses, 351 factors, and 46 views with 86 assurance bindings and
+zero unresolved view owners. The Factor Forge delta grows to 29 records and
+the combined selection to 107 numbered records plus two guides across fifteen
+chapters. The generated `sim-07` site contains 139 pages from 123 sources,
+indexes all 109 reader destinations, and reports zero missing internal targets.

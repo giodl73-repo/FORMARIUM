@@ -31,8 +31,8 @@ every starting value.
 | `k` | iteration index | nonnegative integer | `0, 1, ...` | index |
 | `x_(k+1)` | next approximation | real scalar | computed candidate | derived state |
 
-Function, derivative, root, and convergence remain `unresolved-candidate`
-Factorium headwords.
+Function, derivative, root, iteration, and convergence are owned by the
+`mathematical-relation-solving` candidate anchor.
 
 ## Scope and assumptions
 
@@ -92,9 +92,10 @@ newton-iteration-use
 - [Policy](../roles/policy.md)
 - [State](../roots/state.md)
 - [Transformation](../roots/transformation.md)
-- derivative — `unresolved-candidate`
-- root — `unresolved-candidate`
-- convergence — `unresolved-candidate`
+- [Mathematical Function, Variable, Equation, Identity, Solution, Root,
+  Derivative, Iteration, and Convergence](../entries/mathematical-relation-solving.md)
+  — canonical owner of `mathematical-function`, `root`, `derivative`,
+  `iteration`, and `convergence`
 
 ## Sources and provenance
 

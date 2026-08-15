@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **27 records** — 13 canonical entries and 14
+Selected current-corpus delta: **29 records** — 14 canonical entries and 15
 specialized views
 
 ## Purpose
@@ -153,6 +153,20 @@ parameter coverage. The Diagnostic view tests distribution shape, extremes,
 weight semantics, quantile conventions, denominators, dependence, and interval
 targets without treating narrowness or one `95%` label as validity proof.
 
+## Part XIV - Mathematical relations and solving
+
+### From notation to a scoped solution or convergence claim
+
+106. [Mathematical Function, Variable, Equation, Identity, Solution, Root, Derivative, Iteration, and Convergence](../../tables/entries/mathematical-relation-solving.md)
+107. [Mathematical Relation and Solver Failure Diagnostic](../../tables/diagnostics/mathematical-relation-solving-failures.md)
+
+The anchor separates mathematical objects from representations and values,
+conditional equations from domain-scoped identities, general solutions from
+function roots, and sequence generation from convergence. The Diagnostic view
+tests symbol roles, domains, transformations, derivative existence, starting
+states, residuals, stopping, and convergence conditions without treating a
+returned number as proof.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -161,5 +175,5 @@ targets without treating narrowness or one `95%` label as validity proof.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 105-record combined simulation remains a rehearsal projection, not a
+- The 107-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.
