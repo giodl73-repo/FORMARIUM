@@ -81,8 +81,8 @@ These are artifact counts, not reader-study denominators.
 
 | ID | Severity | Finding | Disposition |
 |---|---|---|---|
-| SIM-001 | major | The existing reader packet is moderator-directed and cannot serve as the Proof Set self-guided quickstart. | Open preview-preparation item; create the quickstart only when a proof candidate is selected. It does not block Factor Forge. |
-| SIM-002 | major | No rendered proof edition exists, so layout, scanning, and accessibility mechanics cannot yet be rehearsed. | Open preview-preparation item; choose one static format before candidate freeze. It does not require Workbench. |
+| SIM-001 | major | The existing reader packet is moderator-directed and cannot serve as the Proof Set self-guided quickstart. | Closed for simulation mechanics by `PROOF-SET-SIMULATION-PREFLIGHT-02.md`; the future candidate still requires reader-facing review. |
+| SIM-002 | major | No rendered proof edition exists, so layout, scanning, and accessibility mechanics cannot yet be rehearsed. | Closed for simulation mechanics by the reproducible `sim-01` HTML projection; this does not admit a preview edition. |
 | SIM-003 | minor | Task C has two credible first landings: Comparative Quantity and Amount, Concentration, and Composition. | Accepted for now because the entries cross-link and answer different questions; test route cost when real readers exist. |
 | SIM-004 | minor | The Subject-Object Relationship prime has less depth and source presentation than the anchor that routes to it. | Assign to later editorial expansion; do not infer reader distrust from the artifact difference alone. |
 | SIM-005 | observation | Everyday prompt language such as `size` is not an explicit volume-index alias. | Candidate for future alias/index work; reader demand is unobserved. |

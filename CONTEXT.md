@@ -91,11 +91,14 @@ round. Factor Forge may develop new reviewed batches now, but R5 publication
 still requires dispositioning relevant Sieve findings.
 
 **R5P - Proof Set** now has an internal simulation-preflight lane at
-`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT.md`.
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT.md`
+and `context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-02.md`.
 It exercises deterministic task routes and predicts navigation risks without
 creating participant observations, completion rates, timing evidence, or
 return-use evidence. This lane may improve the book and preview materials now;
-the invited preview remains deferred.
+the invited preview remains deferred. The second rehearsal adds a self-guided
+simulation quickstart and a reproducible static HTML proof with an exact-source
+manifest under `target/proof-set-sim-01`.
 
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system

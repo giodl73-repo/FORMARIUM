@@ -144,6 +144,16 @@ cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.fa
 
 See [Factorium Reference Sidecars V0 Prototype](specs/FACTORIUM-REFERENCE-SIDECARS.md).
 
+Build the disposable Proof Set simulation rendering with Pandoc:
+
+```powershell
+.\tools\render_proof_set.ps1
+```
+
+The command writes a standalone core-book HTML file and exact-source manifest
+under `target\proof-set-sim-01`. It is an internal rehearsal artifact, not
+`preview-01` or reader evidence.
+
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 

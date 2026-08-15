@@ -120,6 +120,9 @@ Planning and result review are recorded in `PROOF-SET-ROLE-REVIEW.md`.
 The first non-evidentiary task-route rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT.md`. Its predicted risks may drive internal
 repairs, but its route checks are not participant observations.
+The second rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-02.md`; it adds a
+self-guided simulation quickstart and reproducible standalone core-book HTML
+projection without admitting a preview candidate.
 
 ## Success criteria
 

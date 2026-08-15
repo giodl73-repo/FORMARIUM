@@ -77,7 +77,9 @@ completion, timing, quotes, difficulty, preference, application success, or
 return use. A simulated success is route reachability, not evidence that a
 reader would find or understand the route.
 
-The initial result is recorded at `PROOF-SET-SIMULATION-PREFLIGHT.md`.
+The task-route result is recorded at `PROOF-SET-SIMULATION-PREFLIGHT.md`. The
+rendering and self-guided-material rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-02.md`.
 
 ## Candidate artifacts
 
