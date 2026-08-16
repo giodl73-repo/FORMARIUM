@@ -300,6 +300,12 @@ body.proof-site {
   color: var(--proof-accent);
 }
 
+.site-breadcrumbs,
+.site-entry .proof-entry > h1,
+.site-entry :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+
 .site-entry {
   min-height: 45vh;
 }
@@ -374,6 +380,15 @@ body.proof-site {
 
   .site-start {
     padding: 1rem;
+  }
+
+  .reader-toolbar__profiles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reader-toolbar__profiles button {
+    width: 100%;
   }
 
   .site-pagination {

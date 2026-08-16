@@ -153,6 +153,15 @@ routes, adds a five-step orientation path, and composes canonical-domain
 filtering with existing text and record-kind search. Deterministic and browser
 checks remain publication-mechanics evidence only.
 
+The tenth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-10.md`
+adds one trace-bound Composition Query worksheet to `sim-09`. A synthetic
+report-generator dependency scenario exposes explicit sense narrowing, local
+Context Profile, F1 working graph, Constraint Evaluation, closure state, and
+loss-aware Factor Guide projection. The site indexes 125 destinations across
+the existing twelve chapters and retains zero missing targets. This is manual
+publication rehearsal, not automated closure, Workbench, or reader evidence.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

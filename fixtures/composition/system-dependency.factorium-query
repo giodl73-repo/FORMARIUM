@@ -1,6 +1,6 @@
 factorium-composition-query-v0
 query system-dependency-interface
-problem Which declared dependency and interface concepts are required to review one bounded system composition?
+problem Which dependency and interface concepts are required to review a report generator that relies on a document service?
 source 3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b81 | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df
 context synthetic-system-review | boundary=declared-system,reference-frame=not-applicable
 policy direction=forward,follow=evaluative-required,stop=stable-identity

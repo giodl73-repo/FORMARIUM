@@ -207,15 +207,16 @@ The prototype distinguishes inherited defaults and conventions from choices
 that remain required at use time. See
 [`specs/CONTEXT-PROFILE.md`](specs/CONTEXT-PROFILE.md).
 
-Render the current proof-edition reader-journey simulation:
+Render the current proof-edition composition-worksheet simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-08
+.\tools\render_proof_set.ps1 -Edition sim-09
 ```
 
-Open `target/proof-set-sim-08/index.html` for the five-step first journey,
-kind-and-domain search, twelve subsectioned chapter routes, and dedicated
-reading pages. The generated site remains a disposable publication projection;
+Open `target/proof-set-sim-09/index.html` for the five-step first journey,
+kind-and-domain search, twelve subsectioned chapter routes, dedicated reading
+pages, and the first trace-bound Composition Query worksheet under
+Applications. The generated site remains a disposable publication projection;
 see
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 

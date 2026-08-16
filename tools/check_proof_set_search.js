@@ -10,11 +10,14 @@ const search = require(path.resolve(
 
 const indexPath = process.argv[2];
 if (!indexPath) {
-  throw new Error("usage: node tools/check_proof_set_search.js <search-index.json>");
+  throw new Error("usage: node tools/check_proof_set_search.js <search-index.json> [expected-records]");
 }
 
 const records = JSON.parse(fs.readFileSync(indexPath, "utf8"));
-assert.equal(records.length, 124, "current proof search record count");
+const expectedRecords = process.argv[3] ? Number(process.argv[3]) : 124;
+assert.ok(Number.isInteger(expectedRecords) && expectedRecords > 0,
+  "expected record count is a positive integer");
+assert.equal(records.length, expectedRecords, "declared proof search record count");
 
 const all = search.searchRecords(records, "", "", "");
 assert.equal(all.length, records.length, "empty filters retain every record");
@@ -45,6 +48,22 @@ assert.deepEqual(
   combined,
   "ranking is deterministic"
 );
+
+if (expectedRecords >= 125) {
+  const composition = search.searchRecords(
+    records,
+    "report generator dependency",
+    "guide",
+    "application"
+  );
+  assert.equal(
+    composition.filter((record) =>
+      record.path === "guides/system-dependency-composition-worksheet.md"
+    ).length,
+    1,
+    "composition search resolves the worksheet exactly once"
+  );
+}
 
 console.log(
   `OK records=${records.length} query=${queryOnly.length} kind=${kindOnly.length} ` +

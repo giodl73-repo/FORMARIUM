@@ -970,3 +970,24 @@ The CLI reports query ID, state, counts, and exact SHA-256. The nine-role review
 at `COMPOSITION-QUERY-CONTRACT-ROLE-REVIEW.md` closes all P1/P2 findings. This
 is not automated closure, a human-tested worksheet, a domain conclusion, a new
 canonical entry, or Workbench implementation.
+
+## 2026-08-16 composition-query worksheet continuation
+
+Plan review: convert the validated F1 Composition Query trace into one
+human-readable synthetic worksheet and provisional Factor Guide, then render it
+through the existing book site as an ordinary Applications source. Preserve
+exact direction, predecessor, Context Profile, Evaluation, state, projection
+loss, source digests, prior sim-08 behavior, V0 authority, and Workbench and
+reader-evidence boundaries.
+
+Result review: `guides/system-dependency-composition-worksheet.md` now carries
+the reader from a report-generator dependency problem through sense narrowing,
+a complete local Context Profile, four labeled typed operations, the exact
+three-node F1 working graph, structural Constraint Evaluation, trace-relative
+closure, and a loss-aware Factor Guide projection. `sim-09` renders 139 sources,
+125 indexed destinations, and 152 pages across the same twelve chapters with
+2,913 local links and zero missing targets. Two renders share site identity
+`3460f0ed530353baf6749a7eb40a24f94140d1085765ec96a5e57ebb154209bc`;
+sim-08 retains its 124-record search regression. The ten-reviewer design pass
+and nine-role fixed point report zero open P1/P2 findings. No automated closure,
+architecture approval, preview admission, or reader evidence is claimed.

@@ -93,6 +93,8 @@ inheritance rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-07.md`.
 The multi-page book-site rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-08.md`. The reader-journey rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-09.md`.
+The trace-bound Composition Query worksheet rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-10.md`.
 
 ### Composition-query rehearsal boundary
 
