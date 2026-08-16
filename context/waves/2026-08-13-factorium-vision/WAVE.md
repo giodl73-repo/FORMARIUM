@@ -1451,3 +1451,40 @@ and standalone SHA-256
 No causality, improvement, successful-repair, semantic-validity,
 comprehension, useful-selection, accessibility, task-success, persistence,
 publication, or `preview-01` claim is admitted.
+
+## 2026-08-16 composition Factor Guide skeleton continuation
+
+Plan review: replace the current artifact-only Flatten reading with a
+deterministic, loss-aware, book-form skeleton over one identified local result.
+Retain exact source custody and graph state, separate structural membership
+from sense narrowing, enumerate every missing Factor Guide requirement, scale
+only display detail through Compact/Abbreviated/Book/Full, inherit the result
+identity, store nothing, gate the extension to `sim-28`, and retain `sim-27`
+exactly. The five-role review required exact manifest shapes, stable ordering,
+stable loss codes, an always-visible incomplete status, and complete
+missing-work retention in every profile; all P2 conditions close.
+
+Result review: `sim-28` adds the pure
+`factorium-composition-guide-skeleton-v0` manifest and a Book-default rendering
+between the Closure Map and canonical Reading Route. The declared brief,
+deduplicated canonical trace, structural working set, unresolved evaluation
+ledger, closure boundary, eight missing-work records, and retained/absent loss
+manifest create no new semantic fact or identity. Compact folds but retains
+all missing records; Full reveals exact artifact, relation, check, source, and
+result custody. Pure and live Edge cases cover incomplete, frontier,
+unreachable, inactive-exclusion, and contradiction boundaries, profile
+invariance, unknown-artifact and digest failures, and rejection of completed
+or substantively evaluated input. The 156-source edition has 129 indexed
+destinations, 170 site pages, and zero missing local targets. Full site,
+search, browser, Clippy, 66 Rust tests, five canonical query fixtures, packet,
+reference/sidecar, and `.roles` checks pass. `sim-28` has site identity
+`8a1b62e85cc29468b117b9b6e2f13fe19d7977f82763a5e9b8f07bdc01bd7147`
+and standalone SHA-256
+`80cc59252843db0007170d5449c9602fc882d414eb481512db1652c550dd39c8`;
+`sim-27` retains site identity
+`18380606e74f10f138418ba231056a3ad200376cea8ccea941740327729b30c7`
+and standalone SHA-256
+`e33478b08f641777aa902c6a96c689b172a2a4910fd26b3ee65bef6f3ad3f236`.
+No completed-guide, local-evidence, sense-selection, mechanism-assignment,
+substantive-evaluation, recommendation, comprehension, accessibility,
+task-success, publication, external-reader, or `preview-01` claim is admitted.

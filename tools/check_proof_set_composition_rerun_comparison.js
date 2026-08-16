@@ -14,7 +14,7 @@ const css = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
 const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-rerun-comparison.js"), "utf8");
 const data = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-27");
+assert.ok(Number(manifest.edition.split("-")[1]) >= 27, "rerun comparison edition");
 assert.equal(manifest.site_checks.composition_rerun_comparison_pages, 1);
 assert.equal(manifest.site_checks.composition_rerun_comparison_retained, 1);
 assert.deepEqual(manifest.composition_rerun_comparison_checks.action_dispositions,

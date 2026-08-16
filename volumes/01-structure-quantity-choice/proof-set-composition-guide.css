@@ -1,0 +1,191 @@
+.composition-guide-skeleton {
+  background: linear-gradient(180deg, #fffdf8 0%, #f8f3e9 100%);
+  border: 1px solid #d7c9ae;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(49, 39, 24, 0.08);
+  margin: 1rem 0;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.composition-guide-skeleton > h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 4vw, 2.25rem);
+  margin: 0.15rem 0 0.35rem;
+}
+
+.guide-skeleton__status {
+  border-left: 4px solid #956f2f;
+  color: #674c20;
+  font-weight: 800;
+  margin: 0.7rem 0;
+  padding: 0.45rem 0.7rem;
+  text-transform: capitalize;
+}
+
+.guide-skeleton__status--contradictory { border-color: #a23c32; color: #852c25; }
+.guide-skeleton__status--truncated { border-color: #916a24; }
+
+.guide-skeleton__caveat,
+.guide-skeleton__declarations dd,
+.guide-skeleton__boundary-list span,
+.guide-skeleton__ledger span,
+.guide-skeleton__missing-list span,
+.guide-skeleton__working-list span {
+  color: var(--proof-ink-soft);
+}
+
+.guide-skeleton__section {
+  border-top: 1px solid #ded4c2;
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+}
+
+.guide-skeleton__section h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.16rem;
+  margin: 0.2rem 0 0.75rem;
+}
+
+.guide-skeleton__eyebrow {
+  color: #755d37;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.guide-skeleton__problem {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  max-width: 70ch;
+}
+
+.guide-skeleton__declarations {
+  display: grid;
+  gap: 0.35rem 1rem;
+  grid-template-columns: minmax(8rem, 0.35fr) 1fr;
+  margin: 1rem 0 0;
+}
+
+.guide-skeleton__declarations dt { font-weight: 800; }
+.guide-skeleton__declarations dd { margin: 0; }
+
+.guide-skeleton__trace-list {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guide-skeleton__trace-item {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #d9cebb;
+  border-radius: 12px;
+  padding: 0.8rem;
+}
+
+.guide-skeleton__trace-item > a {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-top: 0.45rem;
+}
+
+.guide-skeleton__stage {
+  background: #526c5a;
+  border-radius: 99px;
+  color: white;
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 0.22rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.guide-skeleton__stage--continue { background: #82642f; }
+.guide-skeleton__stage--evaluate { background: #4b5f85; }
+
+.guide-skeleton__exact { margin-top: 0.65rem; }
+.guide-skeleton__exact summary,
+.guide-skeleton__working summary,
+.guide-skeleton__missing summary,
+.guide-skeleton__loss summary { cursor: pointer; font-weight: 800; }
+
+.guide-skeleton__exact ul,
+.guide-skeleton__ledger,
+.guide-skeleton__boundary-list,
+.guide-skeleton__working-list,
+.guide-skeleton__missing-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.guide-skeleton__exact li,
+.guide-skeleton__ledger li,
+.guide-skeleton__boundary-list li,
+.guide-skeleton__working-list li,
+.guide-skeleton__missing-list li {
+  line-height: 1.45;
+}
+
+.guide-skeleton__exact li > *,
+.guide-skeleton__ledger li > *,
+.guide-skeleton__boundary-list li > *,
+.guide-skeleton__working-list li > *,
+.guide-skeleton__missing-list li > * { display: block; }
+
+.guide-skeleton__boundary-list li {
+  border-left: 3px solid #9d8357;
+  padding-left: 0.7rem;
+}
+
+.guide-skeleton__boundary-list .is-conflict { border-color: #a23c32; }
+.guide-skeleton__boundary-list .is-frontier { border-left-style: dashed; }
+.guide-skeleton__boundary-list .is-stable { color: var(--proof-ink-soft); }
+
+.guide-skeleton__working,
+.guide-skeleton__missing,
+.guide-skeleton__loss {
+  border-top: 1px solid #ded4c2;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+}
+
+.guide-skeleton__missing > summary {
+  color: #674c20;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+}
+
+.guide-skeleton__missing-list li::marker { color: #956f2f; font-weight: 900; }
+.guide-skeleton__identity { overflow-wrap: anywhere; }
+
+html[data-composition-density="tight"] .composition-guide-skeleton {
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+}
+
+html[data-composition-density="tight"] .guide-skeleton__section {
+  margin-top: 0.8rem;
+  padding-top: 0.75rem;
+}
+
+@media (max-width: 680px) {
+  .guide-skeleton__declarations { grid-template-columns: 1fr; }
+  .guide-skeleton__declarations dd { margin-bottom: 0.45rem; }
+}
+
+@media print {
+  .composition-guide-skeleton { background: white; box-shadow: none; }
+  .guide-skeleton__missing,
+  .guide-skeleton__working,
+  .guide-skeleton__loss { display: block; }
+}

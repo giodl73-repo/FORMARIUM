@@ -318,6 +318,17 @@ and compares exact structural results. It can expose another finite boundary
 without calling the prior edit a repair, consumes the comparison after one
 run, and stores no history. `sim-26` remains byte-identical.
 
+The twenty-ninth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-29.md`
+adds a Composition Factor Guide Skeleton to `sim-28`. One identified local
+result becomes a loss-aware, book-form projection between the Closure Map and
+canonical Reading Route. The brief, canonical trace, evaluation ledger,
+closure boundary, and eight-item missing-work ledger scale through Compact,
+Abbreviated, Book, and Full without changing graph or result identity. The
+skeleton cannot supply local evidence, sense narrowing, mechanism assignment,
+substantive outcomes, change tests, review, or recommendation. `sim-27`
+remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

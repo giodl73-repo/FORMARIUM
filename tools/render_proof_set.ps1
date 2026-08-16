@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -30,6 +30,7 @@ $compositionWorkBudgetSpec = Join-Path $workspace "specs\COMPOSITION-WORK-BUDGET
 $compositionReconciliationSpec = Join-Path $workspace "specs\COMPOSITION-RESULT-RECONCILIATION.md"
 $compositionContinuationsSpec = Join-Path $workspace "specs\COMPOSITION-EXPLICIT-CONTINUATIONS.md"
 $compositionRerunComparisonSpec = Join-Path $workspace "specs\COMPOSITION-RERUN-COMPARISON.md"
+$compositionGuideSpec = Join-Path $workspace "specs\COMPOSITION-GUIDE-SKELETON.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -77,6 +78,8 @@ $compositionContinuationsStyle = Join-Path $workspace "volumes\01-structure-quan
 $compositionContinuationsScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-continuations.js"
 $compositionRerunComparisonStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-rerun-comparison.css"
 $compositionRerunComparisonScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-rerun-comparison.js"
+$compositionGuideStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-guide.css"
+$compositionGuideScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-guide.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -113,6 +116,7 @@ $artifactTitle = switch ($Edition) {
     "sim-25" { "Factorium Proof Set Result Reconciliation Simulation 25" }
     "sim-26" { "Factorium Proof Set Explicit Continuations Simulation 26" }
     "sim-27" { "Factorium Proof Set Composition Rerun Comparison Simulation 27" }
+    "sim-28" { "Factorium Proof Set Factor Guide Skeleton Simulation 28" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -656,6 +660,9 @@ if ($editionNumber -ge 26) {
 }
 if ($editionNumber -ge 27) {
     Add-ProofSource $compositionRerunComparisonSpec
+}
+if ($editionNumber -ge 28) {
+    Add-ProofSource $compositionGuideSpec
 }
 
 foreach ($selectionDocument in $selectionDocuments) {
@@ -1269,6 +1276,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 28) {
+        foreach ($asset in @($compositionGuideStyle, $compositionGuideScript, $compositionGuideSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition guide-skeleton asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1415,6 +1429,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 27) {
         $siteCssParts += (Get-Content -LiteralPath $compositionRerunComparisonStyle -Raw)
+    }
+    if ($editionNumber -ge 28) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionGuideStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -1957,6 +1974,27 @@ if ($editionNumber -ge 7) {
                     comparison_identity = "none; inherits previous and current result SHA-256"
                     storage = "none"
                     specification = "specs/COMPOSITION-RERUN-COMPARISON.md"
+                }
+            }
+            if ($editionNumber -ge 28) {
+                [System.IO.File]::WriteAllText(
+                    (Join-Path $siteAssetDirectory "composition-guide.js"),
+                    (Get-Content -LiteralPath $compositionGuideScript -Raw),
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+                $compositionGuideChecks = [ordered]@{
+                    schema = "factorium-composition-guide-skeleton-v0"
+                    projection_input = "identified local result plus digest-bound lab and reading payloads"
+                    placement = "after closure map and before canonical reading route"
+                    required_missing_work_records = 8
+                    check_outcomes = "unresolved-only"
+                    profiles = @("compact", "abbreviated", "book", "full")
+                    default_profile = "book"
+                    identity = "inherits local result SHA-256"
+                    canonical_guide = $false
+                    recommendation = $false
+                    storage = "none"
+                    specification = "specs/COMPOSITION-GUIDE-SKELETON.md"
                 }
             }
         }
@@ -2679,6 +2717,23 @@ if ($editionNumber -ge 7) {
                     "$continuationsScriptTag`n<script src=`"assets/composition-rerun-comparison.js`"></script>"
                 )
             }
+            if ($editionNumber -ge 28) {
+                $guideSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionGuideSpec)])"
+                $rerunComparisonContractLink = "<a href=`"$rerunComparisonSpecPage`">Read the rerun-comparison contract</a>"
+                $rerunComparisonScriptTag = '<script src="assets/composition-rerun-comparison.js"></script>'
+                foreach ($marker in @($rerunComparisonContractLink, $rerunComparisonScriptTag)) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition guide-skeleton page integration marker drift: $marker"
+                    }
+                }
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $rerunComparisonContractLink,
+                    "$rerunComparisonContractLink<a href=`"$guideSpecPage`">Read the guide-skeleton contract</a>"
+                ).Replace(
+                    $rerunComparisonScriptTag,
+                    "$rerunComparisonScriptTag`n<script src=`"assets/composition-guide.js`"></script>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2927,6 +2982,9 @@ $pageScripts
     if ($editionNumber -ge 27) {
         $expectedAssetNames += "composition-rerun-comparison.js"
     }
+    if ($editionNumber -ge 28) {
+        $expectedAssetNames += "composition-guide.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -3056,6 +3114,10 @@ $pageScripts
         $siteChecks.composition_rerun_comparison_pages = 1
         $siteChecks.composition_rerun_comparison_retained = 1
     }
+    if ($editionNumber -ge 28) {
+        $siteChecks.composition_guide_skeleton_pages = 1
+        $siteChecks.composition_guide_missing_work_records = 8
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -3135,6 +3197,9 @@ if ($editionNumber -ge 26) {
 }
 if ($editionNumber -ge 27) {
     $manifestRecord.composition_rerun_comparison_checks = $compositionRerunComparisonChecks
+}
+if ($editionNumber -ge 28) {
+    $manifestRecord.composition_guide_skeleton_checks = $compositionGuideChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"

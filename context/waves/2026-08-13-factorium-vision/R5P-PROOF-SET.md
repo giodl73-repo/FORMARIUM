@@ -341,3 +341,11 @@ exact action/request attribution, superseded actions, additional edits,
 neutral structural before/after records, dual-result custody, and one-use
 in-memory consumption. It is not causality, improvement, successful repair,
 history, comprehension, task-success, or external-reader evidence.
+
+Internal preflight 29 adds the `sim-28` Composition Factor Guide Skeleton. It
+tests deterministic book-form projection, exact canonical trace custody,
+state-preserving boundary rendering, eight stable missing-work requirements,
+loss vocabulary, inherited result identity, and profile-invariant content. It
+is not local evidence, sense narrowing, mechanism assignment, substantive
+evaluation, a recommendation, a completed Factor Guide, comprehension,
+task-success, or external-reader evidence.
