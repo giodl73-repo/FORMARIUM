@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **38 records** — 18 canonical entries and 20
+Selected current-corpus delta: **39 records** — 18 canonical entries and 21
 specialized views
 
 ## Purpose
@@ -223,6 +223,19 @@ isolation, incomplete state descriptions, invalid equations of state,
 phase-count shortcuts, and transition claims that omit coexistence,
 metastability, hysteresis, kinetics, conditions, or uncertainty.
 
+## Part XIX - Oscillation, spectra, and dispersion
+
+### From one waveform to scoped amplitude, spectrum, and velocity claims
+
+117. [Oscillation, Spectrum, and Dispersion Failure Diagnostic](../../tables/diagnostics/oscillation-spectrum-dispersion-failures.md)
+
+The revised base-volume Periodic and Wave anchor and Formula view own
+oscillation, amplitude, spectrum, phase velocity, group velocity, the finite
+transform pair, and dispersion contracts. This new Diagnostic view tests
+baseline, amplitude measure, preprocessing, sampling, windowing, normalization,
+aliasing, spectral interpretation, branch, bandwidth, distortion, and transport
+overclaims without duplicating the existing canonical entry in the supplement.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -231,5 +244,5 @@ metastability, hysteresis, kinetics, conditions, or uncertainty.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 116-record combined simulation remains a rehearsal projection, not a
+- The 117-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

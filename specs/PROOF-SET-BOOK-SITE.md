@@ -23,7 +23,7 @@ a disposable generated projection of those sources.
 | `assets/*` | shared presentation and static runtime | reviewed simulation assets |
 
 The simulation generates a source page for every included Markdown document.
-Only the 116 selected records and two application guides receive indexed reader
+Only the 117 selected records and two application guides receive indexed reader
 pages, previous/next order, and adaptive reading controls. Supporting sources
 remain addressable without being promoted into the indexed entry sequence.
 
@@ -32,7 +32,7 @@ remain addressable without being promoted into the indexed entry sequence.
 - Search results resolve to dedicated entry pages, not monolith fragments.
 - Each indexed record appears in exactly one chapter route.
 - Entry breadcrumbs resolve back to the owning chapter.
-- Previous and next follow the complete 118-record publication sequence.
+- Previous and next follow the complete 119-record publication sequence.
 - Cross-source Markdown links resolve to the generated target page and exact
   rendered fragment when both sources are included.
 - Links outside the selected projection resolve to visible repository sources;

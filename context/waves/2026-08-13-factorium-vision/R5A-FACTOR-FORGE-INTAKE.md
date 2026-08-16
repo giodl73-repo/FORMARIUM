@@ -479,3 +479,26 @@ F17 resolves material `phase` and `thermodynamic system` in the thermal anchor
 without conflating material phase with wave phase or lifecycle stage, and
 without admitting named phase catalogs. The current Factor Forge book delta is
 38 records: eighteen entries and twenty specialized views.
+
+## F18 first slice
+
+F18 deepens the existing `tables/entries/periodic-wave-quantity.md` authority
+rather than creating a competing wave anchor. It adds oscillation, amplitude,
+spectrum, phase velocity, and group velocity through reference, measure,
+sampling, window, transform, normalization, spectral-axis, dispersion-branch,
+bandwidth, distortion, and transport-target factors.
+
+The revised `tables/formulas/periodic-wave-quantities.md` adds a scoped
+sinusoidal oscillation, finite DFT pair, component phase velocity, and local
+group-velocity derivative. The new
+`tables/diagnostics/oscillation-spectrum-dispersion-failures.md` maps amplitude,
+detrending, aliasing, transform, peak-interpretation, and propagation failures
+to discriminating tests. Research and fixed-point review are
+`docs/research/2026-08-15-oscillation-spectrum-dispersion.md` and
+`OSCILLATION-SPECTRUM-DISPERSION-ROLE-REVIEW.md`.
+
+F18 resolves all five remaining periodic-wave candidates without admitting
+named bands, wave families, modes, or instruments as canonical senses. Because
+the anchor and Formula view already belong to the base volume, the Factor Forge
+book delta grows by only the new Diagnostic view to 39 records: eighteen
+entries and twenty-one specialized views.

@@ -245,8 +245,24 @@ intensive/extensive scaling, model validity, phase inventory, coexistence,
 metastability, hysteresis, kinetics, conditions, and uncertainty before
 accepting the labels or rejecting the path-dependent records.
 
+## Task AA - One peak, three amplitudes, and the speed of information
+
+Three analysts report different amplitudes for the same retained waveform:
+one uses peak excursion from zero, one root-mean-square after detrending, and
+one a windowed spectral component. Their spectra use different record lengths,
+windows, normalizations, and one- versus two-sided conventions. A peak that
+moves when sampling changes is called a natural mode and causal source. In a
+dispersive medium, a broadband pulse reshapes, yet its peak arrival is reported
+as phase velocity, group velocity, energy velocity, and information speed.
+
+Separate oscillation, amplitude, waveform, spectrum, phase velocity, and group
+velocity. Use the Formula and Diagnostic views to freeze the baseline,
+amplitude measure, sampling, window, transform, normalization, axes,
+resolution, medium, mode, dispersion branch, bandwidth, distortion, and
+transport target before comparing values or accepting physical claims.
+
 ## Rehearsal boundary
 
-The nineteen prompts collectively exercise every entry and specialized view in the
+The twenty prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

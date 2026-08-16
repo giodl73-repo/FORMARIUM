@@ -21,10 +21,13 @@ formula contract.
 | Frequency-period reciprocity | `f = 1 / T` | definition for a periodic phenomenon |
 | Angular frequency | `omega = 2 pi f = 2 pi / T` | angular representation |
 | Wave number | `k = 2 pi / lambda` | spatial angular representation |
-| Periodic wave speed | `v = lambda / T = f lambda` | periodic traveling-wave relation |
-| Phase speed form | `v = omega / k` | equivalent form for the scoped model |
+| Periodic component phase speed | `v_p = lambda / T = f lambda = omega / k` | periodic traveling-wave relation |
 | Positive-direction sinusoid | `y(x,t) = A sin(k x - omega t + phi_0)` | idealized traveling-wave model |
 | Negative-direction sinusoid | `y(x,t) = A sin(k x + omega t + phi_0)` | idealized traveling-wave model |
+| Sinusoidal oscillation | `y(t) = y_0 + A cos(omega t + phi_0)` | idealized oscillation model |
+| Discrete Fourier transform | `X_j = sum_(n=0)^(N-1) x_n exp(-i 2 pi j n / N)` | finite representation transform |
+| Inverse discrete Fourier transform | `x_n = (1/N) sum_(j=0)^(N-1) X_j exp(i 2 pi j n / N)` | inverse under this normalization |
+| Group velocity | `v_g = d omega / d k` | local derivative of a differentiable dispersion relation |
 
 ## Symbol contract
 
@@ -35,10 +38,14 @@ formula contract.
 | `omega` | angular frequency | temporal phase rate | `rad s^-1` | radians per second |
 | `lambda` | wavelength | positive spatial period | `m` | corresponding same-phase points |
 | `k` | angular wave number | spatial phase rate | `rad m^-1` | radians per metre |
-| `v` | scoped propagation or phase speed | scalar speed | `m s^-1` | medium, mode, and regime declared |
+| `v_p` | phase velocity | scalar component speed | `m s^-1` | `k != 0`; medium, mode, and branch declared |
+| `v_g` | group velocity | scalar local envelope speed | `m s^-1` | differentiable branch and narrowband regime |
 | `A` | amplitude of represented quantity | scalar or component magnitude | unit of `y` | equilibrium and quantity declared |
+| `y_0` | reference or equilibrium value | scalar or component value | unit of `y` | reference convention declared |
 | `phi_0` | initial phase | cyclic scalar | `rad` | reference convention declared |
 | `x`, `t` | position and time coordinates | coordinates | `m`, `s` | origins and direction declared |
+| `x_n`, `X_j` | sampled value and unnormalized spectral coefficient | real/complex values | quantity-dependent | sampling and transform convention declared |
+| `n`, `j`, `N` | sample index, spectral index, and sample count | integers | `1` | `0 <= n,j < N`, `N > 0` |
 
 ## Dimensional audit
 
@@ -48,6 +55,8 @@ formula contract.
 [2 pi/lambda] = rad m^-1
 [f lambda] = s^-1 m = m s^-1
 [omega/k] = (rad s^-1)/(rad m^-1) = m s^-1
+[d omega/d k] = (rad s^-1)/(rad m^-1) = m s^-1
+[X_j] = [x_n]
 ```
 
 Angles are dimension one in SI; the explicit `rad` label preserves the
@@ -77,8 +86,14 @@ traveling-wave form additionally assumes:
 - a single modeled mode;
 - no claim that material points move with speed `v`.
 
-Broadband pulses, dispersive media, attenuation, standing waves, and group
-velocity require additional models.
+Broadband pulses, strongly dispersive media, attenuation, and standing waves
+require additional models beyond these local relations. The DFT pair
+additionally assumes exactly `N` ordered samples and the displayed sign and
+normalization convention.
+Physical spectral amplitude requires a declared sample interval, window,
+one- or two-sided representation, and scaling. Group velocity describes a
+local narrowband envelope only while the branch is differentiable and the
+packet remains sufficiently undistorted.
 
 ## Failure signs
 
@@ -90,6 +105,11 @@ velocity require additional models.
 - A medium-specific speed is treated as universal.
 - `v = f lambda` is used to force one frequency onto a pulse.
 - Phase and group velocity are assumed identical in a dispersive regime.
+- Peak, peak-to-peak, root-mean-square, and spectral amplitudes are interchanged.
+- A DFT bin is interpreted without sampling rate, window, normalization, or alias checks.
+- A spectral peak is called a physical mode or source without model evidence.
+- `d omega / d k` is evaluated across a branch discontinuity or broad packet.
+- Group velocity is called energy or information velocity without separate justification.
 
 ## Reference Delta
 
@@ -105,6 +125,11 @@ reference, propagation, medium, mode, and regime contracts.
    https://openstax.org/books/university-physics-volume-1/pages/16-2-mathematics-of-waves
 2. BIPM, *SI Brochure*:
    https://www.bipm.org/en/publications/si-brochure
+3. NIST Digital Library of Mathematical Functions:
+   https://dlmf.nist.gov/1.14
+   https://dlmf.nist.gov/3.11
+4. NIST, *Ionospheric Radio Propagation*, section 2.4.2:
+   https://nvlpubs.nist.gov/nistpubs/Legacy/MONO/nbsmonograph80.pdf
 
 Formula authority: introductory periodic-wave physics within stated scope.
 Factorium presentation remains `candidate`.

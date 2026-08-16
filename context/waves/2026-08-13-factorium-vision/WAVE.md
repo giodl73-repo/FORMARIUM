@@ -622,3 +622,33 @@ unresolved view owners. The Factor Forge delta grows to 38 records and the
 combined selection to 116 numbered records plus two guides across nineteen
 chapters. The generated `sim-07` site contains 152 pages from 132 sources,
 indexes all 118 reader destinations, and reports zero missing internal targets.
+
+## 2026-08-15 oscillation-spectrum-dispersion content continuation
+
+Plan review: deepen the existing periodic-wave authority instead of admitting
+a competing anchor; resolve oscillation, amplitude, spectrum, phase velocity,
+and group velocity through reference, measure, representation, sampling,
+spectral-axis, dispersion-branch, bandwidth, distortion, and transport-target
+contracts; ground the spine in NIST, IUPAC, BIPM, NASA, and retained OpenStax
+sources; revise the existing Formula view; add one Diagnostic view; apply the
+Concept & Taxonomy Boundary Editor before any named band or wave family enters;
+then propagate the exact one-view delta through assurance, Factor Forge,
+search, and the static book site. No external-reader gate, named-band catalog,
+mode/source certification, energy-transport claim, information-speed claim, or
+safe-operation claim is introduced.
+
+Result review: F18 adds oscillation, amplitude, spectrum, phase velocity, and
+group velocity to `periodic-wave-quantity`, revises the Periodic and Wave
+Formula view with a scoped sinusoidal model, finite DFT pair, component phase
+speed, and local group-velocity derivative, and adds the Oscillation, Spectrum,
+and Dispersion Failure Diagnostic. Oscillation/wave, amplitude/value,
+waveform/spectrum, spectrum/named band, phase/group velocity, and group/energy
+or information velocity remain distinct. Named bands, wave families, modes,
+and instruments remain external examples. The web campaign confirms 18
+findings and the 13-role fixed-point review closes all major findings. The
+reference remains at 38 entries and grows to 270 senses, 400 factors, and 52
+views with 96 assurance bindings and zero unresolved view owners. The Factor
+Forge delta grows to 39 records and the combined selection to 117 numbered
+records plus two guides across twenty chapters. The generated `sim-07` site
+contains 154 pages from 133 sources, indexes all 119 reader destinations, and
+reports zero missing internal targets.

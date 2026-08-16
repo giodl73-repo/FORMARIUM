@@ -274,6 +274,24 @@ Critical artifact failure: a sealed container, steady reading, familiar phase
 name, or matching endpoint states is accepted as sufficient proof of isolation,
 equilibrium, phase count, or path-independent heat and work.
 
+## Task AA expected route
+
+- Periodic and Wave Quantity;
+- Periodic and Wave Quantities;
+- Oscillation, Spectrum, and Dispersion Failure Diagnostic;
+- oscillation and propagating wave remain distinct;
+- amplitude retains reference, measure, component, interval, and unit;
+- spectrum retains coordinate, ordinate, sampling, window, transform,
+  normalization, resolution, and bandwidth;
+- a spectral peak does not prove a physical mode or causal source;
+- phase velocity follows a constant-phase component;
+- group velocity follows a local dispersion derivative in a narrowband regime;
+- energy, causal-signal, information, and material transport require separate evidence.
+
+Critical artifact failure: matching units, a transform peak, pulse arrival, or
+the word velocity is accepted as sufficient proof that amplitude conventions,
+physical modes, causal sources, and transport speeds are interchangeable.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -317,6 +335,7 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/chemical-reaction-failures.md`
 - `tables/entries/thermodynamic-system-state-phase.md`
 - `tables/diagnostics/thermodynamic-system-state-phase-failures.md`
+- `tables/diagnostics/oscillation-spectrum-dispersion-failures.md`
 
 ## Claim boundary
 
