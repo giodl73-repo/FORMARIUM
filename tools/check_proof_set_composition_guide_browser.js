@@ -6,7 +6,7 @@ const path = require("node:path");
 const { pathToFileURL } = require("node:url");
 const { spawn } = require("node:child_process");
 
-const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-28");
+const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-29");
 const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"));
 const screenshotPath = path.resolve(process.argv[3] ||
   `target/${manifest.edition.replace("-", "")}-composition-guide.png`);
@@ -17,7 +17,8 @@ const edgeCandidates = [
 ].filter(Boolean);
 const edgePath = edgeCandidates.find((candidate) => fs.existsSync(candidate));
 assert.ok(edgePath, "Microsoft Edge executable not found");
-assert.equal(manifest.edition, "sim-28", "browser check requires sim-28");
+assert.ok(Number(manifest.edition.replace("sim-", "")) >= 28,
+  "browser check requires the sim-28 guide or a later retained edition");
 
 const port = 9400 + (process.pid % 400);
 const profile = path.resolve(`target/edge-composition-guide-profile-${process.pid}`);
@@ -249,7 +250,7 @@ async function waitFor(client, expression, message) {
     if (client) client.close();
     browser.kill();
     await delay(250);
-    fs.rmSync(profile, { recursive: true, force: true });
+    fs.rmSync(profile, { recursive: true, force: true, maxRetries: 20, retryDelay: 100 });
   }
 })().catch((error) => {
   console.error(error.stack || error.message);

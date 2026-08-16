@@ -329,6 +329,17 @@ skeleton cannot supply local evidence, sense narrowing, mechanism assignment,
 substantive outcomes, change tests, review, or recommendation. `sim-27`
 remains byte-identical.
 
+The thirtieth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-30.md`
+adds explicit local Evaluation Records to `sim-29`. A reader may include any
+admitted Guide Skeleton check and record a `pass`, `fail`, or `unresolved`
+declaration with an evidence reference, observation, and rationale. The
+separately identified record stays bound to the exact executed result, marks
+all evidence user-declared and unverified, exposes partial coverage, becomes
+stale when inputs or closure controls change, and disappears on Run or reload.
+It does not score, retrieve, verify, revise the graph, close guide gaps, or
+persist evaluation data. `sim-28` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

@@ -349,3 +349,11 @@ loss vocabulary, inherited result identity, and profile-invariant content. It
 is not local evidence, sense narrowing, mechanism assignment, substantive
 evaluation, a recommendation, a completed Factor Guide, comprehension,
 task-success, or external-reader evidence.
+
+Internal preflight 30 adds the `sim-29` local Evaluation Record. It tests
+explicit inclusion, complete user-declared evidence fields, partial/full
+coverage, pass/fail/unresolved retention, separate result-bound identity,
+closure-control staleness, profile invariance, and memory-only lifecycle. It
+does not retrieve or verify evidence, score outcomes, change closure state,
+complete the Guide Skeleton, persist or publish a record, or provide domain,
+task-success, or external-reader evidence.

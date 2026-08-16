@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -31,6 +31,7 @@ $compositionReconciliationSpec = Join-Path $workspace "specs\COMPOSITION-RESULT-
 $compositionContinuationsSpec = Join-Path $workspace "specs\COMPOSITION-EXPLICIT-CONTINUATIONS.md"
 $compositionRerunComparisonSpec = Join-Path $workspace "specs\COMPOSITION-RERUN-COMPARISON.md"
 $compositionGuideSpec = Join-Path $workspace "specs\COMPOSITION-GUIDE-SKELETON.md"
+$compositionEvaluationSpec = Join-Path $workspace "specs\COMPOSITION-EVALUATION-RECORD.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -80,6 +81,8 @@ $compositionRerunComparisonStyle = Join-Path $workspace "volumes\01-structure-qu
 $compositionRerunComparisonScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-rerun-comparison.js"
 $compositionGuideStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-guide.css"
 $compositionGuideScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-guide.js"
+$compositionEvaluationStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-evaluation.css"
+$compositionEvaluationScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-evaluation.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -117,6 +120,7 @@ $artifactTitle = switch ($Edition) {
     "sim-26" { "Factorium Proof Set Explicit Continuations Simulation 26" }
     "sim-27" { "Factorium Proof Set Composition Rerun Comparison Simulation 27" }
     "sim-28" { "Factorium Proof Set Factor Guide Skeleton Simulation 28" }
+    "sim-29" { "Factorium Proof Set Local Evaluation Record Simulation 29" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -663,6 +667,9 @@ if ($editionNumber -ge 27) {
 }
 if ($editionNumber -ge 28) {
     Add-ProofSource $compositionGuideSpec
+}
+if ($editionNumber -ge 29) {
+    Add-ProofSource $compositionEvaluationSpec
 }
 
 foreach ($selectionDocument in $selectionDocuments) {
@@ -1283,6 +1290,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 29) {
+        foreach ($asset in @($compositionEvaluationStyle, $compositionEvaluationScript, $compositionEvaluationSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition evaluation-record asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1432,6 +1446,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 28) {
         $siteCssParts += (Get-Content -LiteralPath $compositionGuideStyle -Raw)
+    }
+    if ($editionNumber -ge 29) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionEvaluationStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -1995,6 +2012,26 @@ if ($editionNumber -ge 7) {
                     recommendation = $false
                     storage = "none"
                     specification = "specs/COMPOSITION-GUIDE-SKELETON.md"
+                }
+            }
+            if ($editionNumber -ge 29) {
+                [System.IO.File]::WriteAllText(
+                    (Join-Path $siteAssetDirectory "composition-evaluation.js"),
+                    (Get-Content -LiteralPath $compositionEvaluationScript -Raw),
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+                $compositionEvaluationChecks = [ordered]@{
+                    schema = "factorium-composition-evaluation-record-v0"
+                    projection_input = "identified local result plus explicit user-declared check records"
+                    outcomes = @("pass", "fail", "unresolved")
+                    evidence_status = "user-declared-unverified"
+                    placement = "after Factor Guide Skeleton and before canonical reading route"
+                    identity = "separate SHA-256 over canonical evaluation JSON; bound to result SHA-256"
+                    base_result_mutation = $false
+                    outcome_scoring = $false
+                    retrieval = $false
+                    storage = "none"
+                    specification = "specs/COMPOSITION-EVALUATION-RECORD.md"
                 }
             }
         }
@@ -2734,6 +2771,23 @@ if ($editionNumber -ge 7) {
                     "$rerunComparisonScriptTag`n<script src=`"assets/composition-guide.js`"></script>"
                 )
             }
+            if ($editionNumber -ge 29) {
+                $evaluationSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionEvaluationSpec)])"
+                $guideContractLink = "<a href=`"$guideSpecPage`">Read the guide-skeleton contract</a>"
+                $guideScriptTag = '<script src="assets/composition-guide.js"></script>'
+                foreach ($marker in @($guideContractLink, $guideScriptTag)) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition evaluation-record page integration marker drift: $marker"
+                    }
+                }
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $guideContractLink,
+                    "$guideContractLink<a href=`"$evaluationSpecPage`">Read the evaluation-record contract</a>"
+                ).Replace(
+                    $guideScriptTag,
+                    "$guideScriptTag`n<script src=`"assets/composition-evaluation.js`"></script>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2985,6 +3039,9 @@ $pageScripts
     if ($editionNumber -ge 28) {
         $expectedAssetNames += "composition-guide.js"
     }
+    if ($editionNumber -ge 29) {
+        $expectedAssetNames += "composition-evaluation.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -3118,6 +3175,10 @@ $pageScripts
         $siteChecks.composition_guide_skeleton_pages = 1
         $siteChecks.composition_guide_missing_work_records = 8
     }
+    if ($editionNumber -ge 29) {
+        $siteChecks.composition_evaluation_record_pages = 1
+        $siteChecks.composition_evaluation_outcomes = 3
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -3200,6 +3261,9 @@ if ($editionNumber -ge 27) {
 }
 if ($editionNumber -ge 28) {
     $manifestRecord.composition_guide_skeleton_checks = $compositionGuideChecks
+}
+if ($editionNumber -ge 29) {
+    $manifestRecord.composition_evaluation_record_checks = $compositionEvaluationChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"

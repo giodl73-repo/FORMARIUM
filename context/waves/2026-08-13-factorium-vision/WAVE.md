@@ -1488,3 +1488,43 @@ and standalone SHA-256
 No completed-guide, local-evidence, sense-selection, mechanism-assignment,
 substantive-evaluation, recommendation, comprehension, accessibility,
 task-success, publication, external-reader, or `preview-01` claim is admitted.
+
+## 2026-08-16 explicit local evaluation-record continuation
+
+Plan review: add one separately identified, exact-result-bound local record
+after the Factor Guide Skeleton. Require explicit check inclusion and complete
+outcome, evidence-reference, observation, and rationale fields; retain
+pass/fail/unresolved and partial coverage without scoring; mark evidence
+user-declared and unverified; make evaluation edits and closure-control drift
+visibly stale; store nothing; preserve graph state, result identity, all eight
+Guide Skeleton gaps, and the canonical Reading Route; gate the extension to
+`sim-29`; and retain `sim-28` exactly. The six-role review found zero P1 and
+ten P2 conditions, all closed in the amended contract, implementation, and
+focused evidence.
+
+Result review: `sim-29` adds the pure
+`factorium-composition-evaluation-record-v0` builder and a Book-default
+worksheet after the skeleton. Full and partial receipts carry exact coverage,
+unrecorded checks, immutable evidence status, source/result custody, and a
+separate SHA-256 identity. Both evaluation-input edits and changed closure
+controls stale the receipt; a new Run or reload removes it. Pass, fail, and
+unresolved declarations never alter the structural result or close missing
+guide work. Pure, generated-site, and live Edge cases cover normalization,
+invalid and stale inputs, mixed outcomes, stable identity, default unresolved
+state, profile invariance, result-state invariance, no-check results, rerun,
+reload, and storage/network absence. The full inherited reading and guide
+browser journeys, Clippy, 66 Rust tests, five canonical query fixtures, packet
+verifiers, canonical reference/sidecar checks, and `.roles` validation pass.
+The 157-source edition has 129 indexed destinations, 171 site pages, and zero
+missing local targets. `sim-29` has site identity
+`a0d885837e2d2a791e466b43aca58051af3a84315021b386790a6882db6ddb96`
+and standalone SHA-256
+`0c767e714151698b28c0ca651b8b70f31b16c47aff315a56973538f7739df3bb`;
+`sim-28` retains site identity
+`8a1b62e85cc29468b117b9b6e2f13fe19d7977f82763a5e9b8f07bdc01bd7147`
+and standalone SHA-256
+`80cc59252843db0007170d5449c9602fc882d414eb481512db1652c550dd39c8`.
+No evidence-verification, domain-evaluation, scoring, recommendation,
+completed-guide, semantic-validity, comprehension, task-success, persistence,
+publication, external-reader, `preview-01`, or Workbench-release claim is
+admitted.

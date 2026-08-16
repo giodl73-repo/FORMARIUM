@@ -4,7 +4,7 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-28");
+const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-29");
 const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"));
 const page = fs.readFileSync(path.join(siteRoot, "compose.html"), "utf8");
 const css = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
@@ -12,7 +12,8 @@ const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-guide
 const sourceRuntime = fs.readFileSync(path.resolve(
   "volumes/01-structure-quantity-choice/proof-set-composition-guide.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-28", "guide skeleton is sim-28 gated");
+assert.ok(Number(manifest.edition.replace("sim-", "")) >= 28,
+  "guide skeleton is retained from sim-28 onward");
 assert.equal(manifest.status,
   "internal simulation rendering; not reader evidence or preview-01");
 assert.deepEqual(manifest.composition_guide_skeleton_checks, {
@@ -34,7 +35,7 @@ assert.equal(manifest.site_checks.composition_guide_missing_work_records, 8);
 assert.equal(manifest.site_checks.missing_local_targets, 0);
 assert.equal(manifest.search_checks.indexed_records, 129,
   "guide contract does not become a canonical search destination");
-assert.equal(manifest.source_count, 156, "guide contract is retained as a supporting source");
+assert.ok(manifest.source_count >= 156, "guide contract is retained as a supporting source");
 
 assert.match(page, /Read the guide-skeleton contract/);
 assert.match(page, /<script src="assets\/composition-guide\.js"><\/script>/);

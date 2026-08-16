@@ -216,10 +216,10 @@ that remain required at use time. See
 Render the current proof-edition bounded composition-lab simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-28
+.\tools\render_proof_set.ps1 -Edition sim-29
 ```
 
-Open `target/proof-set-sim-28/index.html` for a problem-led path through five
+Open `target/proof-set-sim-29/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
@@ -296,6 +296,15 @@ guide requirement. The skeleton supplies no local evidence, sense narrowing,
 mechanism assignment, substantive outcome, change test, review, or
 recommendation. See
 [`specs/COMPOSITION-GUIDE-SKELETON.md`](specs/COMPOSITION-GUIDE-SKELETON.md).
+
+When that skeleton contains admitted checks, the reader may create a separate
+local Evaluation Record. Every included check requires an explicit
+`pass`/`fail`/`unresolved` declaration, evidence reference, observation, and
+rationale. Receipts retain partial coverage and remain labelled user-declared,
+unreviewed, and unverified; they never change the closure state or close any of
+the eight guide gaps. Evaluation data stays only in page memory, becomes stale
+after edits, and disappears on Run or reload. See
+[`specs/COMPOSITION-EVALUATION-RECORD.md`](specs/COMPOSITION-EVALUATION-RECORD.md).
 
 See [`specs/COMPOSITION-WORK-BUDGET.md`](specs/COMPOSITION-WORK-BUDGET.md),
 [`specs/COMPOSITION-RESULT-RECONCILIATION.md`](specs/COMPOSITION-RESULT-RECONCILIATION.md),
@@ -409,22 +418,25 @@ node tools\check_composition_reconciliation.js
 node tools\check_composition_continuations.js
 node tools\check_composition_rerun_comparison.js
 node tools\check_composition_guide.js
-node tools\check_proof_set_composition.js target\proof-set-sim-28\manifest.json target\proof-set-sim-28\index.html
-node tools\check_proof_set_composition_lab.js target\proof-set-sim-28
-node tools\check_proof_set_composition_reading.js target\proof-set-sim-28
-node tools\check_proof_set_composition_focus.js target\proof-set-sim-28
-node tools\check_proof_set_composition_palette.js target\proof-set-sim-28
-node tools\check_proof_set_composition_views.js target\proof-set-sim-28
-node tools\check_proof_set_composition_map.js target\proof-set-sim-28
-node tools\check_proof_set_composition_starters.js target\proof-set-sim-28
-node tools\check_proof_set_composition_query_plan.js target\proof-set-sim-28
-node tools\check_proof_set_composition_work_budget.js target\proof-set-sim-28
-node tools\check_proof_set_composition_reconciliation.js target\proof-set-sim-28
-node tools\check_proof_set_composition_continuations.js target\proof-set-sim-28
-node tools\check_proof_set_composition_rerun_comparison.js target\proof-set-sim-28
-node tools\check_proof_set_composition_guide.js target\proof-set-sim-28
-node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-28
-node tools\check_proof_set_composition_guide_browser.js target\proof-set-sim-28
+node tools\check_composition_evaluation.js
+node tools\check_proof_set_composition.js target\proof-set-sim-29\manifest.json target\proof-set-sim-29\index.html
+node tools\check_proof_set_composition_lab.js target\proof-set-sim-29
+node tools\check_proof_set_composition_reading.js target\proof-set-sim-29
+node tools\check_proof_set_composition_focus.js target\proof-set-sim-29
+node tools\check_proof_set_composition_palette.js target\proof-set-sim-29
+node tools\check_proof_set_composition_views.js target\proof-set-sim-29
+node tools\check_proof_set_composition_map.js target\proof-set-sim-29
+node tools\check_proof_set_composition_starters.js target\proof-set-sim-29
+node tools\check_proof_set_composition_query_plan.js target\proof-set-sim-29
+node tools\check_proof_set_composition_work_budget.js target\proof-set-sim-29
+node tools\check_proof_set_composition_reconciliation.js target\proof-set-sim-29
+node tools\check_proof_set_composition_continuations.js target\proof-set-sim-29
+node tools\check_proof_set_composition_rerun_comparison.js target\proof-set-sim-29
+node tools\check_proof_set_composition_guide.js target\proof-set-sim-29
+node tools\check_proof_set_composition_evaluation.js target\proof-set-sim-29
+node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-29
+node tools\check_proof_set_composition_guide_browser.js target\proof-set-sim-29
+node tools\check_proof_set_composition_evaluation_browser.js target\proof-set-sim-29
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
