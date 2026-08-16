@@ -1,6 +1,6 @@
 # Proof Set Book Site Simulation Contract
 
-Status: `sim-14` publication prototype; not canonical interchange, reader
+Status: `sim-15` publication prototype; not canonical interchange, reader
 evidence, `preview-01`, or Factorium Workbench
 
 ## Purpose
@@ -37,6 +37,10 @@ sources remain addressable without being promoted into the indexed sequence.
 - The problem-led route links exactly five admitted, trace-bound Composition
   Query worksheets and states each trace/decision outcome without creating an
   interactive query form.
+- The read-only Composition Explorer compares those exact traces after the
+  problem-led route. Every panel is generated from one manifest, exposes the
+  declared Add, Multiply, Evaluate, Stop, and Flatten stages, and links to its
+  complete Factor Guide.
 - Each indexed record appears in exactly one chapter route.
 - The selected records and guides appear across exactly 12 chapters; source
   `###` headings preserve internal subsection routes.
@@ -67,6 +71,9 @@ The renderer must fail on:
 - missing, duplicate, or extra chapter-subsection ownership;
 - a missing or duplicate first-journey source;
 - a missing, duplicate, or extra problem-led Composition Query target;
+- a missing, duplicate, stale, or unbound Composition Explorer trace;
+- trace source-digest, work-accounting, worksheet-identity, state, or route
+  drift;
 - colliding source-page names or rendered identifiers;
 - stale or incomplete generated chapter, entry, or shared-asset sets;
 - a missing local page, asset, or fragment target;
@@ -86,6 +93,11 @@ search status, and print-specific suppression of navigation controls.
 Canonical content remains readable when search JavaScript is unavailable;
 adaptive entry enhancement requires JavaScript and must not change source
 meaning.
+
+The Composition Explorer uses native HTML disclosure and remains readable
+without JavaScript. It consumes only exact reviewed trace manifests. It does
+not discover relations, edit a Closure Policy, mutate the working graph,
+evaluate new domain inputs, or publish a new guide.
 
 ## Deferred work
 

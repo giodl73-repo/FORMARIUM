@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -18,6 +18,13 @@ $evidenceWorksheet = Join-Path $workspace "guides\latency-evidence-composition-w
 $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-worksheet.md"
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
+$compositionTraces = @(
+    (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
+    (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
+    (Join-Path $workspace "fixtures\composition\alert-feedback.factorium-query"),
+    (Join-Path $workspace "fixtures\composition\dependency-exclusion-conflict.factorium-query"),
+    (Join-Path $workspace "fixtures\composition\delegated-compliance-frontier.factorium-query")
+)
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
 $searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
@@ -29,6 +36,7 @@ $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-se
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
+$explorerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-explorer.css"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -52,6 +60,7 @@ $artifactTitle = switch ($Edition) {
     "sim-12" { "Factorium Proof Set Problem-Led Reading Simulation 12" }
     "sim-13" { "Factorium Proof Set Subtract Conflict Simulation 13" }
     "sim-14" { "Factorium Proof Set Truncated Frontier Simulation 14" }
+    "sim-15" { "Factorium Proof Set Composition Explorer Simulation 15" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -87,6 +96,112 @@ function Add-ProofSource {
     }
     if ($seen.Add($fullPath)) {
         $sources.Add($fullPath)
+    }
+}
+
+function Get-CompositionTraceSummary {
+    param(
+        [string]$Path,
+        [string]$Worksheet
+    )
+
+    $text = Get-Content -LiteralPath $Path -Raw
+    if ($text.Contains("`r") -or -not $text.EndsWith("`n")) {
+        throw "Composition trace is not canonical LF text: $Path"
+    }
+    $lines = @($text.TrimEnd("`n").Split("`n"))
+    if ($lines[0] -ne "factorium-composition-query-v0" -or $lines[-1] -ne "end-query") {
+        throw "Composition trace has an invalid envelope: $Path"
+    }
+
+    function Single-Record {
+        param([string]$Prefix)
+
+        $matches = @($lines | Where-Object { $_.StartsWith($Prefix, [System.StringComparison]::Ordinal) })
+        if ($matches.Count -ne 1) {
+            throw "Composition trace requires one '$Prefix' record: $Path"
+        }
+        return $matches[0].Substring($Prefix.Length)
+    }
+
+    function Repeated-Records {
+        param([string]$Prefix)
+
+        return @($lines |
+            Where-Object { $_.StartsWith($Prefix, [System.StringComparison]::Ordinal) } |
+            ForEach-Object { $_.Substring($Prefix.Length) })
+    }
+
+    $budget = [ordered]@{}
+    foreach ($pair in (Single-Record "budget ").Split(",")) {
+        $parts = $pair.Split("=", 2)
+        if ($parts.Count -ne 2) {
+            throw "Composition trace has an invalid budget pair: $Path"
+        }
+        $budget[$parts[0]] = [int]$parts[1]
+    }
+    foreach ($key in @("depth", "edges", "nodes", "work")) {
+        if (-not $budget.Contains($key)) {
+            throw "Composition trace budget omits '$key': $Path"
+        }
+    }
+
+    $policy = [ordered]@{}
+    foreach ($pair in (Single-Record "policy ").Split(",")) {
+        $parts = $pair.Split("=", 2)
+        if ($parts.Count -ne 2) {
+            throw "Composition trace has an invalid policy pair: $Path"
+        }
+        $policy[$parts[0]] = $parts[1]
+    }
+
+    $source = (Single-Record "source ") -split ' \| '
+    if ($source.Count -ne 2) {
+        throw "Composition trace has an invalid source record: $Path"
+    }
+    $referencePath = Join-Path $workspace "reference\factorium-reference-v0.factorium"
+    $relationsPath = Join-Path $workspace "reference\factorium-relations-v0.factorium"
+    $referenceHash = (Get-FileHash -LiteralPath $referencePath -Algorithm SHA256).Hash.ToLowerInvariant()
+    $relationsHash = (Get-FileHash -LiteralPath $relationsPath -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($source[0] -ne $referenceHash -or $source[1] -ne $relationsHash) {
+        throw "Composition trace source digest drift: $Path"
+    }
+
+    $seeds = @(Repeated-Records "seed ")
+    $nodes = @(Repeated-Records "node ")
+    $edges = @(Repeated-Records "edge ")
+    $frontiers = @(Repeated-Records "frontier ")
+    $conflicts = @(Repeated-Records "conflict ")
+    $checks = @(Repeated-Records "check ")
+    $projections = @(Repeated-Records "projection ")
+    $actualWork = $seeds.Count + $nodes.Count + $edges.Count + $frontiers.Count +
+        $conflicts.Count + $checks.Count + $projections.Count
+    if ($actualWork -ne $budget.work -or $nodes.Count -gt $budget.nodes -or $edges.Count -gt $budget.edges) {
+        throw "Composition trace budget accounting drift: $Path"
+    }
+
+    $sha256 = (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash.ToLowerInvariant()
+    if (-not (Get-Content -LiteralPath $Worksheet -Raw).Contains($sha256)) {
+        throw "Composition worksheet omits exact trace identity: $Worksheet"
+    }
+
+    return [ordered]@{
+        path = [System.IO.Path]::GetFullPath($Path)
+        worksheet = [System.IO.Path]::GetFullPath($Worksheet)
+        id = Single-Record "query "
+        problem = Single-Record "problem "
+        context = Single-Record "context "
+        direction = $policy.direction
+        budget = $budget
+        seeds = $seeds
+        nodes = $nodes
+        edges = $edges
+        frontiers = $frontiers
+        conflicts = $conflicts
+        checks = $checks
+        projections = $projections
+        state = Single-Record "state "
+        sha256 = $sha256
     }
 }
 
@@ -540,6 +655,7 @@ $contextAssets = @()
 $siteChecks = $null
 $siteAssets = @()
 $siteIndex = $null
+$compositionChecks = $null
 if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
@@ -1046,6 +1162,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 14) {
         $siteCssParts += (Get-Content -LiteralPath $frontierStyle -Raw)
     }
+    if ($editionNumber -ge 15) {
+        $siteCssParts += (Get-Content -LiteralPath $explorerStyle -Raw)
+    }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site.css"),
@@ -1133,8 +1252,12 @@ if ($editionNumber -ge 7) {
 
     $problemLedTargets = 0
     $problemSection = ""
+    $compositionSection = ""
     $homeProblemNav = ""
     $nestedProblemNav = ""
+    $homeComposeNav = ""
+    $nestedComposeNav = ""
+    $compositionTraceTargets = 0
     $heroDeck = "A linked reference for selecting senses, comparing decompositions, choosing bounded relations, and recognizing structures that fail."
     if ($editionNumber -ge 12) {
         $problemJourneys = @(
@@ -1143,18 +1266,21 @@ if ($editionNumber -ge 7) {
                 title = "Review a system dependency"
                 description = "Join dependency and interface concepts, run a structural constraint, and retain the exact closure trace."
                 source = $compositionWorksheet
+                trace = $compositionTraces[0]
             },
             [ordered]@{
                 state = "Complete trace · unresolved claim"
                 title = "Evaluate a performance claim"
                 description = "Separate observations from inference and see why complete graph custody does not settle a causal claim."
                 source = $evidenceWorksheet
+                trace = $compositionTraces[1]
             },
             [ordered]@{
                 state = "Incomplete trace · unresolved decision"
                 title = "Trace an alert to user outcomes"
                 description = "Traverse feedback in reverse and preserve the missing outcome evidence instead of inventing an answer."
                 source = $feedbackWorksheet
+                trace = $compositionTraces[2]
             }
         )
         if ($editionNumber -ge 13) {
@@ -1163,6 +1289,7 @@ if ($editionNumber -ge 7) {
                 title = "Subtract a required interface"
                 description = "See why a requested exclusion stays visible as a conflict when an admitted dependency still requires that node."
                 source = $conflictWorksheet
+                trace = $compositionTraces[3]
             }
         }
         if ($editionNumber -ge 14) {
@@ -1171,6 +1298,7 @@ if ($editionNumber -ge 7) {
                 title = "Review delegated compliance"
                 description = "Resolve delegated authority first, then stop at the declared edge budget with obligation satisfaction still visible as a frontier."
                 source = $frontierWorksheet
+                trace = $compositionTraces[4]
             }
         }
         $problemSources = [System.Collections.Generic.HashSet[string]]::new(
@@ -1210,6 +1338,145 @@ if ($editionNumber -ge 7) {
         $homeProblemNav = '<a href="#problems">Problems</a>'
         $nestedProblemNav = '<a href="../index.html#problems">Problems</a>'
         $heroDeck = "Start from a question you need to answer, follow its bounded concept closure, or look up one entry at a time. The tables remain the authority; worked guides show how several concepts combine."
+
+        if ($editionNumber -ge 15) {
+            $traceSummaries = @(
+                foreach ($problem in $problemJourneys) {
+                    Get-CompositionTraceSummary -Path $problem.trace -Worksheet $problem.source
+                }
+            )
+            $traceIds = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+            $traceStates = [ordered]@{
+                complete = 0
+                incomplete = 0
+                contradictory = 0
+                truncated = 0
+            }
+            $traceItems = [System.Text.StringBuilder]::new()
+            for ($traceIndex = 0; $traceIndex -lt $traceSummaries.Count; $traceIndex++) {
+                $trace = $traceSummaries[$traceIndex]
+                $problem = $problemJourneys[$traceIndex]
+                if (-not $traceIds.Add($trace.id)) {
+                    throw "Composition explorer repeats trace ID: $($trace.id)"
+                }
+                if ($trace.worksheet -ne [System.IO.Path]::GetFullPath($problem.source)) {
+                    throw "Composition explorer worksheet mismatch: $($trace.id)"
+                }
+                if (-not $problem.state.ToLowerInvariant().StartsWith($trace.state)) {
+                    throw "Composition explorer state/card mismatch: $($trace.id)"
+                }
+                if (-not $traceStates.Contains($trace.state)) {
+                    throw "Composition explorer has an unknown state: $($trace.state)"
+                }
+                $traceStates[$trace.state] += 1
+
+                $encodedTraceId = [System.Net.WebUtility]::HtmlEncode($trace.id)
+                $encodedProblem = [System.Net.WebUtility]::HtmlEncode($trace.problem)
+                $encodedState = [System.Net.WebUtility]::HtmlEncode($trace.state)
+                $encodedContext = [System.Net.WebUtility]::HtmlEncode($trace.context)
+                $encodedDirection = [System.Net.WebUtility]::HtmlEncode($trace.direction)
+                $encodedDigest = [System.Net.WebUtility]::HtmlEncode($trace.sha256)
+                $guidePage = $pageBySource[[System.IO.Path]::GetFullPath($problem.source)]
+
+                $seedItems = [System.Text.StringBuilder]::new()
+                foreach ($seed in $trace.seeds) {
+                    [void]$seedItems.AppendLine("<li><code>$([System.Net.WebUtility]::HtmlEncode($seed))</code></li>")
+                }
+                $edgeItems = [System.Text.StringBuilder]::new()
+                foreach ($edge in $trace.edges) {
+                    [void]$edgeItems.AppendLine("<li><code>$([System.Net.WebUtility]::HtmlEncode($edge))</code><span>admitted relation</span></li>")
+                }
+                foreach ($node in $trace.nodes) {
+                    $nodeFields = $node -split ' \| '
+                    if ($nodeFields[0] -notin $trace.seeds) {
+                        [void]$edgeItems.AppendLine(
+                            "<li><code>$([System.Net.WebUtility]::HtmlEncode($nodeFields[0]))</code><span>$([System.Net.WebUtility]::HtmlEncode($nodeFields[1])) · depth $([System.Net.WebUtility]::HtmlEncode($nodeFields[2]))</span></li>"
+                        )
+                    }
+                }
+                $checkItems = [System.Text.StringBuilder]::new()
+                foreach ($check in $trace.checks) {
+                    $checkFields = $check -split ' \| '
+                    [void]$checkItems.AppendLine(
+                        "<li><code>$([System.Net.WebUtility]::HtmlEncode($checkFields[0]))</code><span>$([System.Net.WebUtility]::HtmlEncode($checkFields[1])) · <strong>$([System.Net.WebUtility]::HtmlEncode($checkFields[3]))</strong></span></li>"
+                    )
+                }
+                $stopItems = [System.Text.StringBuilder]::new()
+                foreach ($frontier in $trace.frontiers) {
+                    $fields = $frontier -split ' \| '
+                    [void]$stopItems.AppendLine("<li><span>Frontier</span><code>$([System.Net.WebUtility]::HtmlEncode($fields[0]))</code><small>$([System.Net.WebUtility]::HtmlEncode($fields[1]))</small></li>")
+                }
+                foreach ($conflict in $trace.conflicts) {
+                    $fields = $conflict -split ' \| '
+                    [void]$stopItems.AppendLine("<li><span>Conflict</span><code>$([System.Net.WebUtility]::HtmlEncode($fields[1]))</code><small>$([System.Net.WebUtility]::HtmlEncode($fields[2]))</small></li>")
+                }
+                if ($trace.frontiers.Count -eq 0 -and $trace.conflicts.Count -eq 0) {
+                    [void]$stopItems.AppendLine("<li><span>Stop</span><strong>No frontier or conflict</strong><small>State follows the declared checks and working graph.</small></li>")
+                }
+
+                $seedLabel = if ($trace.seeds.Count -eq 1) { "seed" } else { "seeds" }
+                $nodeLabel = if ($trace.nodes.Count -eq 1) { "node" } else { "nodes" }
+                $edgeLabel = if ($trace.edges.Count -eq 1) { "join" } else { "joins" }
+                $projectionLabel = if ($trace.projections.Count -eq 1) { "row" } else { "rows" }
+                [void]$traceItems.AppendLine(@"
+<details class="site-trace" data-trace-id="$encodedTraceId" data-trace-state="$encodedState"$(if ($traceIndex -eq 0) { " open" })>
+<summary><span class="site-trace__state">$encodedState</span><strong>$encodedProblem</strong><span class="site-trace__counts">$($trace.seeds.Count) $seedLabel · $($trace.nodes.Count) $nodeLabel · $($trace.edges.Count) $edgeLabel</span></summary>
+<div class="site-trace__body">
+<div class="site-trace__policy"><span><strong>Context</strong> $encodedContext</span><span><strong>Policy</strong> $encodedDirection · evaluative-required · stable-identity</span><span><strong>Budget</strong> depth $($trace.budget.depth) · edges $($trace.budget.edges) · nodes $($trace.budget.nodes) · work $($trace.budget.work)</span></div>
+<div class="site-trace__stages">
+<section><p>Add</p><h3>Selected seeds</h3><ul>$seedItems</ul></section>
+<section><p>Multiply</p><h3>Join and admitted nodes</h3><ul>$edgeItems</ul></section>
+<section><p>Evaluate</p><h3>Declared checks</h3><ul>$checkItems</ul></section>
+<section><p>Stop</p><h3>Closure boundary</h3><ul>$stopItems</ul></section>
+</div>
+<div class="site-trace__footer"><span><strong>Flatten</strong> $($trace.projections.Count) loss-declared projection $projectionLabel</span><a href="entries/$guidePage">Read the full Factor Guide</a><code title="Exact trace SHA-256">$encodedDigest</code></div>
+</div>
+</details>
+"@)
+            }
+            if ($traceSummaries.Count -ne 5 -or $traceStates.complete -ne 2 -or
+                $traceStates.incomplete -ne 1 -or $traceStates.contradictory -ne 1 -or
+                $traceStates.truncated -ne 1) {
+                throw "Composition explorer trace/state coverage mismatch"
+            }
+            $compositionTraceTargets = $traceSummaries.Count
+            $compositionChecks = [ordered]@{
+                mode = "read-only exact trace inspection; no discovery or graph mutation"
+                trace_count = $traceSummaries.Count
+                worksheet_targets = $traceSummaries.Count
+                unique_trace_ids = $traceIds.Count
+                states = $traceStates
+                records = @(
+                    foreach ($trace in $traceSummaries) {
+                        [ordered]@{
+                            id = $trace.id
+                            state = $trace.state
+                            seeds = $trace.seeds.Count
+                            nodes = $trace.nodes.Count
+                            edges = $trace.edges.Count
+                            frontiers = $trace.frontiers.Count
+                            conflicts = $trace.conflicts.Count
+                            checks = $trace.checks.Count
+                            projections = $trace.projections.Count
+                            work = $trace.budget.work
+                            sha256 = $trace.sha256
+                        }
+                    }
+                )
+            }
+            $compositionSection = @"
+
+<section id="compose" class="site-compose" aria-labelledby="site-compose-heading">
+<p class="site-kicker">Read-only composition explorer</p>
+<h2 id="site-compose-heading">Compare how the working graphs close</h2>
+<p class="site-compose__intro">These panels are generated from the five exact trace manifests. Open them to compare what was added, which typed join was admitted, what was evaluated, where closure stopped, and how many rows survive flattening.</p>
+<div class="site-trace-list">$traceItems</div>
+<p class="site-compose__note"><strong>Exact traces, not automatic closure.</strong> This view inspects reviewed examples; it cannot add concepts, discover edges, change a policy, or infer a domain answer.</p>
+</section>
+"@
+            $homeComposeNav = '<a href="#compose">Compose</a>'
+            $nestedComposeNav = '<a href="../index.html#compose">Compose</a>'
+        }
     }
 
     $chapterItems = [System.Text.StringBuilder]::new()
@@ -1245,14 +1512,14 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$homeProblemNav<a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$homeProblemNav$homeComposeNav<a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <section class="site-hero">
 <p class="site-kicker">Proof Set · book-site simulation</p>
 <h1>Structure, Quantity, and Choice</h1>
 <p class="site-hero__deck">$heroDeck</p>
-</section>$problemSection
+</section>$problemSection$compositionSection
 <section id="start" class="site-start" aria-labelledby="site-start-heading">
 <p class="site-kicker">First journey</p>
 <h2 id="site-start-heading">From a vague problem to a bounded factorization</h2>
@@ -1328,7 +1595,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedProblemNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedProblemNav$nestedComposeNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
@@ -1426,7 +1693,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedProblemNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedProblemNav$nestedComposeNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <div class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
@@ -1539,6 +1806,7 @@ $pageScripts
         previous_next_sequence_records = $searchRecords.Count
         first_journey_targets = $firstJourneySources.Count
         problem_led_targets = $problemLedTargets
+        composition_trace_targets = $compositionTraceTargets
         canonical_content_authority = "repository Markdown and reference metadata"
         execution = "multi-page static files; no server"
         identity = $siteIdentity
@@ -1577,6 +1845,7 @@ $manifestRecord = [ordered]@{
     context_assets = $contextAssets
     site_checks = $siteChecks
     site_assets = $siteAssets
+    composition_checks = $compositionChecks
     rendering_checks = [ordered]@{
         internal_fragment_links = $fragmentLinks.Count
         missing_fragment_targets = $missingFragments.Count
@@ -1634,6 +1903,9 @@ if ($editionNumber -ge 7) {
     Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"
     Write-Output "site_first_journey_targets=$($siteChecks.first_journey_targets)"
     Write-Output "site_problem_led_targets=$($siteChecks.problem_led_targets)"
+    if ($editionNumber -ge 15) {
+        Write-Output "site_composition_trace_targets=$($siteChecks.composition_trace_targets)"
+    }
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"
 }

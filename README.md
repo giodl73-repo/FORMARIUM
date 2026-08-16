@@ -210,16 +210,19 @@ that remain required at use time. See
 Render the current proof-edition composition-worksheet simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-14
+.\tools\render_proof_set.ps1 -Edition sim-15
 ```
 
-Open `target/proof-set-sim-14/index.html` for a problem-led path through five
+Open `target/proof-set-sim-15/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
 examples retain relation direction, local semantics, and complete, incomplete,
 contradictory, and truncated outcomes. They are worked examples rather than an
-interactive builder. The generated site remains
+interactive builder. A read-only Composition Explorer compares the exact
+seeds, admitted joins and nodes, checks, budgets, closure boundaries,
+projection counts, and trace identities beneath those guides. The generated
+site remains
 a disposable publication projection; see
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
@@ -318,6 +321,7 @@ cargo run --quiet -- composition-query-check fixtures\composition\latency-eviden
 cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\dependency-exclusion-conflict.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\delegated-compliance-frontier.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+node tools\check_proof_set_composition.js target\proof-set-sim-15\manifest.json target\proof-set-sim-15\index.html
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

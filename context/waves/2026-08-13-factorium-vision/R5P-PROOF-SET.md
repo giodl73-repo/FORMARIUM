@@ -247,3 +247,8 @@ readers.
 Internal preflight 15 adds the `sim-14` finite-budget frontier rehearsal. It
 improves state coverage and problem-led navigation mechanics only; it does not
 change the absence of a preview candidate or external-reader evidence.
+
+Internal preflight 16 adds the `sim-15` read-only Composition Explorer. It
+tests whether exact working-graph traces can be compared without creating a
+second authority or implying live Workbench behavior; it does not change the
+preview entry gate or provide external-reader evidence.

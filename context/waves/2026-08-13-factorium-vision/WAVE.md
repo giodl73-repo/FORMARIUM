@@ -1087,3 +1087,23 @@ five state-labelled problem routes in a balanced responsive grid. The compact
 design pass and seven-role fixed point report zero open P1/P2 findings. No
 automatic frontier discovery, real compliance review, Workbench behavior, or
 reader evidence is claimed.
+
+## 2026-08-16 read-only composition-explorer continuation
+
+Plan review: turn the five worked query examples into a comparative structural
+experience without crossing into live Workbench construction. Generate every
+displayed seed, admitted edge and node, check, budget, boundary, projection
+count, state, and digest from exact trace bytes; bind each trace to its full
+guide; fail closed on drift; and retain `sim-14` exactly.
+
+Result review: `sim-15` now places a read-only Composition Explorer after the
+problem-led cards. One native disclosure is open and four remain compact; each
+shows Add, Multiply, Evaluate, Stop, and Flatten stages, exact context/policy/
+budget custody, and a route to its full Factor Guide. Renderer ingestion checks
+canonical transport, current reference/relation hashes, exact work arithmetic,
+unique IDs, worksheet digest binding, card state, and the required 2/1/1/1
+state distribution. An independent checker verifies manifest/HTML agreement
+and the absence of builder controls. The compact design pass and eight-role
+fixed point report zero open P1/P2 findings. No relation discovery, graph
+mutation, domain inference, Workbench persistence, or reader evidence is
+claimed.

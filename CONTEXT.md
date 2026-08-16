@@ -200,6 +200,14 @@ source and required conduct visibly untraversed, and returns `truncated`
 without implying delegation validity, obligation satisfaction, compliance, or
 approval. `sim-13` remains byte-identical.
 
+The sixteenth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-16.md`
+adds a read-only Composition Explorer to `sim-15`. It generates five native
+disclosure panels from the exact trace manifests, compares Add, Multiply,
+Evaluate, Stop, and Flatten stages, binds every panel to its worksheet and
+trace digest, and links back to the full Factor Guides. It does not construct,
+mutate, or automatically close a query. `sim-14` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and
