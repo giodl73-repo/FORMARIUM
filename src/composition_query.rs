@@ -761,6 +761,10 @@ mod tests {
                 "incomplete",
             ),
             (
+                "fixtures/composition/delegated-compliance-frontier.factorium-query",
+                "truncated",
+            ),
+            (
                 "fixtures/composition/dependency-exclusion-conflict.factorium-query",
                 "contradictory",
             ),

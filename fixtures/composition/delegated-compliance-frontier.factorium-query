@@ -1,0 +1,22 @@
+factorium-composition-query-v0
+query delegated-compliance-frontier
+problem Which authority and obligation concepts are needed to review a delegated compliance approval when traversal permits only one typed join?
+source 3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b81 | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df
+context synthetic-delegated-compliance-review | jurisdiction=declared-policy-domain,reference-frame=not-applicable
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=1,nodes=4,work=13
+seed factor:governance-obligation-compliance/evidence-monitoring-and-assessment-criteria
+seed factor:organization-role-authority/delegation-source-scope-and-limits
+node factor:governance-obligation-compliance/evidence-monitoring-and-assessment-criteria | required | 0 | seed | none
+node factor:organization-role-authority/decision-rights-and-resource-authority | required | 1 | relation:f2-delegation-authority | factor:organization-role-authority/delegation-source-scope-and-limits
+node factor:organization-role-authority/delegation-source-scope-and-limits | required | 0 | seed | none
+node view:mapping-organizational-assignment-semantics | evaluative | 1 | scope:f2-delegation-authority | factor:organization-role-authority/delegation-source-scope-and-limits
+edge f2-delegation-authority
+frontier factor:governance-obligation-compliance/obligation-sources-and-required-conduct | edge-budget-before-f6-evidence-obligation
+check delegation-authority-mapping | completeness | view:mapping-organizational-assignment-semantics | pass
+projection factor:governance-obligation-compliance/evidence-monitoring-and-assessment-criteria | selected | awaits-obligation-frontier
+projection factor:organization-role-authority/decision-rights-and-resource-authority | selected | retained
+projection factor:organization-role-authority/delegation-source-scope-and-limits | selected | retained
+projection view:mapping-organizational-assignment-semantics | selected | omits-full-mapping-detail
+state truncated
+end-query

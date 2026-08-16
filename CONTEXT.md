@@ -192,6 +192,14 @@ node stays required, its projection records rejection, the Constraint check
 fails, and no valid flattened recommendation is emitted. `sim-12` remains
 byte-identical.
 
+The fifteenth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-15.md`
+adds a genuine finite-budget frontier to `sim-14`. A two-seed F2/F6 review
+traverses delegated authority at an exact one-edge budget, leaves obligation
+source and required conduct visibly untraversed, and returns `truncated`
+without implying delegation validity, obligation satisfaction, compliance, or
+approval. `sim-13` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

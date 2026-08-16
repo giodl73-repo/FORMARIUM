@@ -243,3 +243,7 @@ available. Internal simulation preflight is active alongside Factor Forge,
 but its additions are not covered by Sieve or Proof Set evidence until
 explicitly included in the corresponding frozen artifact and used by real
 readers.
+
+Internal preflight 15 adds the `sim-14` finite-budget frontier rehearsal. It
+improves state coverage and problem-led navigation mechanics only; it does not
+change the absence of a preview candidate or external-reader evidence.

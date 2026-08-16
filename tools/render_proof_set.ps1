@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -17,6 +17,7 @@ $compositionWorksheet = Join-Path $workspace "guides\system-dependency-compositi
 $evidenceWorksheet = Join-Path $workspace "guides\latency-evidence-composition-worksheet.md"
 $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-worksheet.md"
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
+$frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
 $searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
@@ -27,6 +28,7 @@ $contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proo
 $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-site.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
+$frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -49,6 +51,7 @@ $artifactTitle = switch ($Edition) {
     "sim-11" { "Factorium Proof Set Incomplete Feedback Composition Simulation 11" }
     "sim-12" { "Factorium Proof Set Problem-Led Reading Simulation 12" }
     "sim-13" { "Factorium Proof Set Subtract Conflict Simulation 13" }
+    "sim-14" { "Factorium Proof Set Truncated Frontier Simulation 14" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -161,6 +164,12 @@ function Get-GuideSelections {
         [ordered]@{
             title = "Dependency Exclusion Conflict Composition Worksheet"
             path = [System.IO.Path]::GetFullPath($conflictWorksheet)
+        }
+    }
+    if ($editionNumber -ge 14) {
+        [ordered]@{
+            title = "Delegated Compliance Frontier Composition Worksheet"
+            path = [System.IO.Path]::GetFullPath($frontierWorksheet)
         }
     }
 }
@@ -404,6 +413,9 @@ if ($editionNumber -ge 11) {
 if ($editionNumber -ge 13) {
     Add-ProofSource $conflictWorksheet
 }
+if ($editionNumber -ge 14) {
+    Add-ProofSource $frontierWorksheet
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -540,7 +552,10 @@ if ($editionNumber -ge 4) {
         Get-NumberedSelections $supplement
     )
     $guideSelections = @(Get-GuideSelections)
-    $expectedGuideCount = if ($editionNumber -ge 13) {
+    $expectedGuideCount = if ($editionNumber -ge 14) {
+        7
+    }
+    elseif ($editionNumber -ge 13) {
         6
     }
     elseif ($editionNumber -ge 11) {
@@ -1028,6 +1043,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 13) {
         $siteCssParts += (Get-Content -LiteralPath $conflictStyle -Raw)
     }
+    if ($editionNumber -ge 14) {
+        $siteCssParts += (Get-Content -LiteralPath $frontierStyle -Raw)
+    }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site.css"),
@@ -1147,6 +1165,14 @@ if ($editionNumber -ge 7) {
                 source = $conflictWorksheet
             }
         }
+        if ($editionNumber -ge 14) {
+            $problemJourneys += [ordered]@{
+                state = "Truncated trace · frontier visible"
+                title = "Review delegated compliance"
+                description = "Resolve delegated authority first, then stop at the declared edge budget with obligation satisfaction still visible as a frontier."
+                source = $frontierWorksheet
+            }
+        }
         $problemSources = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
         )
@@ -1167,7 +1193,7 @@ if ($editionNumber -ge 7) {
             )
         }
         $problemLedTargets = $problemSources.Count
-        $expectedProblemTargetCount = if ($editionNumber -ge 13) { 4 } else { 3 }
+        $expectedProblemTargetCount = if ($editionNumber -ge 14) { 5 } elseif ($editionNumber -ge 13) { 4 } else { 3 }
         if ($problemLedTargets -ne $expectedProblemTargetCount) {
             throw "Problem-led target count mismatch: $problemLedTargets"
         }

@@ -1067,3 +1067,23 @@ advice. `sim-13` renders four state-labelled problem routes in a two-by-two
 desktop grid. The compact design pass and seven-role fixed point report zero
 open P1/P2 findings. No destructive edit, real architecture diagnosis,
 Workbench behavior, or reader evidence is claimed.
+
+## 2026-08-16 truncated-frontier composition continuation
+
+Plan review: exercise the remaining V0 `truncated` state with a real
+finite-budget frontier rather than an artificial label. Start from separate F2
+delegation and F6 evidence seeds, spend the exact one-edge budget on F2, retain
+its direction and qualifiers, and leave the F6 obligation target visibly
+untraversed. Add one exact problem-led route in `sim-14` while retaining
+`sim-13` exactly.
+
+Result review: `guides/delegated-compliance-frontier-worksheet.md` now scopes a
+synthetic delegated compliance review. Its validated trace has two seeds, four
+nodes, one F2 edge, one declared F6 target frontier, 13 exact work units, and
+state `truncated`. The worksheet distinguishes budget truncation from missing
+evidence, discloses that V0 does not machine-bind frontier reason text to F6,
+and refuses delegation, compliance, or approval conclusions. `sim-14` renders
+five state-labelled problem routes in a balanced responsive grid. The compact
+design pass and seven-role fixed point report zero open P1/P2 findings. No
+automatic frontier discovery, real compliance review, Workbench behavior, or
+reader evidence is claimed.

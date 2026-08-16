@@ -113,6 +113,22 @@ if (expectedRecords >= 128) {
   );
 }
 
+if (expectedRecords >= 129) {
+  const frontier = search.searchRecords(
+    records,
+    "delegated compliance frontier",
+    "guide",
+    "application"
+  );
+  assert.equal(
+    frontier.filter((record) =>
+      record.path === "guides/delegated-compliance-frontier-worksheet.md"
+    ).length,
+    1,
+    "frontier composition search resolves the worksheet exactly once"
+  );
+}
+
 console.log(
   `OK records=${records.length} query=${queryOnly.length} kind=${kindOnly.length} ` +
   `domain=${domainOnly.length} combined=${combined.length}`
