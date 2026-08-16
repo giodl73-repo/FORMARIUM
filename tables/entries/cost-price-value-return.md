@@ -4,12 +4,12 @@ Status: candidate anchor entry
 
 ## Orientation
 
-Cost, price, value, utility, and return can all be expressed with numbers, and
-several can share the same currency unit, but they answer different questions.
-Cost records included sacrifice from a perspective; price is an exchange term;
-value is an assessment for a purpose and date; utility represents preference
-or satisfaction; return compares an investment outcome with its baseline;
-discounting maps amounts across time under a model.
+Cost, price, value, utility, return, accounting basis, inflation, and net
+present value can all produce monetary numbers, but they answer different
+questions. Accounting basis governs when and how events enter a scoped record;
+inflation describes change in a declared price index; net present value combines
+signed, timed flows after discounting them to one valuation date. None is a
+context-free property of money, an asset, or a decision.
 
 ## Sense table
 
@@ -23,6 +23,9 @@ discounting maps amounts across time under a model.
 | `dollar-return` | What income plus gain or loss occurred over the holding period? | outcome difference | currency |
 | `rate-of-return` | What return occurred relative to the opening investment basis? | baseline-normalized outcome | dimension one or percent |
 | `present-value` | What current equivalent does this model assign to future cash flow? | time-discounted model result | currency at valuation date |
+| `accounting-basis` | Under which authority, purpose, recognition triggers, timing, and measurement rules does this event enter the record? | scoped recognition and measurement contract | reporting-framework and period specific |
+| `inflation` | How did a declared price index change between specified periods for its population, basket, weights, and method? | aggregate price-level change estimate | dimension one or percent over interval |
+| `net-present-value` | What is the sum of all included signed cash flows after mapping them to one valuation date under a declared discount model? | discounted net-flow total | currency at valuation date |
 
 ## Role ladder
 
@@ -41,6 +44,15 @@ opening basis, ending value, and intervening flows
 
 future cash flow
   -- under rate and compounding convention --> present value
+
+economic event
+  -- under authority, recognition, timing, and measurement rules --> accounting record
+
+priced basket and population
+  -- under index method and interval --> inflation estimate
+
+signed cash-flow timeline
+  -- discounted to one date and summed --> net present value
 ```
 
 ## Root factorization
@@ -58,6 +70,13 @@ economic-value-use
    x nominal or real currency basis
    x risk, uncertainty, fees, and taxes
    x purpose and decision policy
+   x governing authority and reporting purpose
+   x recognition trigger and accounting period
+   x measurement basis, classification, and consistency policy
+   x price-index population, basket, scope, and weights
+   x index series, reference periods, and adjustment status
+   x cash-flow timing, sign, horizon, and terminal treatment
+   x discount-rate source, nominal-real alignment, and sensitivity range
 ```
 
 ## Contrast table
@@ -72,6 +91,13 @@ economic-value-use
 | Holding-period vs. annualized return | both report performance | actual interval outcome vs. transformed per-year equivalent |
 | Present value vs. current price | both may be current currency amounts | discounted model result vs. observed or quoted market term |
 | Nominal vs. real value | both use monetary scales | current price-level units vs. inflation-adjusted purchasing basis |
+| Accounting basis vs. cash movement | cash events may trigger recognition | rules for recognition/measurement vs. receipt or payment itself |
+| Accounting basis vs. valuation method | both affect reported numbers | record-admission and timing contract vs. method for assigning an amount |
+| Inflation vs. one price change | one price may contribute to an index | aggregate scoped index change vs. movement of one item |
+| Inflation rate vs. index level | both come from a price index | relative change over an interval vs. normalized level at one period |
+| Present value vs. net present value | both discount future flows | one or selected gross flow equivalence vs. sum of all included signed flows |
+| Net present value vs. profit | both can be net monetary results | discounted model result at one date vs. result under a declared accounting basis |
+| Net present value vs. decision | NPV may inform a choice | quantitative model output vs. policy including risk, constraints, distribution, and nonmonetized effects |
 
 ## Diagnostic examples
 
@@ -86,11 +112,24 @@ economic-value-use
 - A `15%` return over three months is not automatically a `15%` annual return.
 - Two analysts can compute different present values from the same cash flows
   when their rates, timing, or risk assumptions differ.
+- A December service paid in January can enter different periods under scoped
+  cash and accrual rules without either record being a transcription error.
+- A sharp increase in one product's price is not automatically general
+  inflation; the index population, basket, weights, and interval decide scope.
+- Equal inflation rates from two differently rebased versions of the same
+  series can coexist with different index levels.
+- A project can have positive undiscounted net cash flow and negative NPV when
+  costs arrive early, benefits arrive late, and the declared discount rate is
+  positive.
 
 ## Formula view
 
 The linked [Cost, Value, and Return Formula Table](../formulas/cost-value-return.md)
-owns holding-period return and single-cash-flow time-value relations.
+owns holding-period return, time-value, price-index change, price-level
+conversion, and net-present-value relations.
+
+The linked [Economic Basis, Inflation, and Net Present Value Failure Diagnostic](../diagnostics/economic-basis-inflation-npv-failures.md)
+tests recognition, index, timing, discounting, and decision-claim failures.
 
 ## Selection procedure
 
@@ -105,6 +144,17 @@ owns holding-period return and single-cash-flow time-value relations.
    periods and state compounding.
 7. Declare nominal or real basis and any inflation index.
 8. Report model, risk, uncertainty, and nonfinancial exclusions.
+9. For accounting basis, identify authority, reporting purpose, entity,
+   recognition trigger, accounting period, measurement basis, classification,
+   materiality, consistency, and permitted changes.
+10. For inflation, identify index series, population, geography, basket,
+    weights, base and comparison periods, seasonal status, revision, and
+    uncertainty; do not infer an aggregate from one item.
+11. For NPV, freeze every included signed flow, timing convention, horizon,
+    terminal value, valuation date, rate source, compounding, nominal/real and
+    tax basis, uncertainty, and sensitivity range.
+12. Keep accounting recognition, price-level adjustment, discounted value,
+    observed price, realized profit, and decision policy separate.
 
 ## Reference Delta
 
@@ -129,6 +179,19 @@ owns holding-period return and single-cash-flow time-value relations.
 - Present value states future cash flow, timing, rate, and compounding.
 - Nominal and real amounts are not compared without an explicit conversion
   basis.
+- Accounting basis is scoped to an authority, purpose, entity, period,
+  recognition rule, and measurement policy; cash and accrual are examples,
+  not universal exhaustive senses.
+- Inflation identifies the exact price-index series and interval; one price,
+  an index level, and a cost-of-living claim are not substituted for it.
+- Index comparisons use compatible series, population, scope, base, seasonal
+  treatment, and revision status.
+- Net present value includes all admitted signed flows exactly once and aligns
+  timing, rate period, compounding, currency, tax, and nominal/real bases.
+- A positive NPV is not presented as observed profit, certainty, fairness,
+  affordability, or sufficient authorization for a decision.
+- Named standards, index products, asset classes, and appraisal methods remain
+  scoped authorities or examples unless they introduce a reusable distinction.
 
 ## Cross-references
 
@@ -138,11 +201,8 @@ owns holding-period return and single-cash-flow time-value relations.
 - [Time](../roots/time.md)
 - [Purpose](../roots/purpose.md)
 - [Context](../roots/context.md)
-- accounting basis - `unresolved-candidate`
 - cash flow — economic specialization of the canonical `flow` sense under a
   declared recognition, currency, boundary, and time basis
-- inflation - `unresolved-candidate`
-- net present value - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -155,7 +215,14 @@ owns holding-period return and single-cash-flow time-value relations.
    https://openstax.org/books/principles-finance/pages/7-2-time-value-of-money-tvm-basics
    https://openstax.org/books/principles-finance/pages/7-4-applications-of-tvm-in-finance
    https://openstax.org/books/principles-finance/pages/15-1-risk-and-return-to-an-individual-asset
+3. IRS Publication 334, accounting methods:
+   https://www.irs.gov/publications/p334
+4. U.S. Bureau of Labor Statistics, CPI concepts and calculations:
+   https://www.bls.gov/opub/hom/cpi/concepts.htm
+   https://www.bls.gov/cpi/factsheets/calculating-percent-changes.htm
+5. OMB Circular A-94, discounting, inflation, and uncertainty:
+   https://www.whitehouse.gov/wp-content/uploads/2025/12/a094.pdf
 
-Comparator access date: 2026-08-14. Economic and finance distinctions remain
+Comparator access date: 2026-08-15. Economic, accounting, and finance distinctions remain
 source-scoped; Factorium organization remains `candidate`.
 

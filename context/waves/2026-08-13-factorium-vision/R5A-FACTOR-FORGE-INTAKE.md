@@ -550,3 +550,27 @@ without admitting named formats, codes, protocols, media, or channel families
 as canonical senses. The Factor Forge book delta grows only by the new
 Diagnostic view to 41 records: eighteen entries and twenty-three specialized
 views.
+
+## F21 first slice
+
+F21 deepens `tables/entries/cost-price-value-return.md` across three monetary
+contracts: authority-owned accounting recognition and measurement, aggregate
+price-index change, and discounted aggregation of signed cash flows. It
+preserves entity and reporting purpose, recognition trigger, index population,
+basket, weights and vintage, interval, signed timing, currency and tax basis,
+discount-rate source, nominal/real alignment, terminal treatment, uncertainty,
+and sensitivity.
+
+The revised `tables/formulas/cost-value-return.md` adds price-index change,
+price-level conversion, and a scoped end-of-period NPV relation. The new
+`tables/diagnostics/economic-basis-inflation-npv-failures.md` maps recognition,
+basis-change, index, interval, spatial-level, conversion, cash-flow,
+discounting, sensitivity, and decision-claim failures to discriminating tests.
+Research and fixed-point review are
+`docs/research/2026-08-15-economic-basis-inflation-npv.md` and
+`ECONOMIC-BASIS-INFLATION-NPV-ROLE-REVIEW.md`.
+
+F21 resolves accounting basis, inflation, and net present value without
+admitting named standards, indexes, products, assets, or valuation methods as
+canonical senses. The Factor Forge book delta grows only by the new Diagnostic
+view to 42 records: eighteen entries and twenty-four specialized views.

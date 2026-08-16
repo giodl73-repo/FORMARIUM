@@ -176,7 +176,7 @@ factor failure-timeout-cancellation-retry-and-idempotency | failure, timeout, ca
 factor compensation-repair-escalation-and-residual-obligation | compensation, repair, escalation, and residual obligation
 factor observation-provenance-and-version | observation, provenance, and version
 end-entry
-entry cost-price-value-return | Cost, Price, Value, Utility, and Return | economics | candidate | tables/entries/cost-price-value-return.md | Cost, price, value, utility, and return can all be expressed with numbers, and several can share the same currency unit, but they answer different questions. Cost records included sacrifice from a perspective; price is an exchange term; value is an assessment for a purpose and date; utility represents preference or satisfaction; return compares an investment outcome with its baseline; discounting maps amounts across time under a model.
+entry cost-price-value-return | Cost, Price, Value, Utility, and Return | economics | candidate | tables/entries/cost-price-value-return.md | Cost, price, value, utility, return, accounting basis, inflation, and net present value can all produce monetary numbers, but they answer different questions. Accounting basis governs when and how events enter a scoped record; inflation describes change in a declared price index; net present value combines signed, timed flows after discounting them to one valuation date. None is a context-free property of money, an asset, or a decision.
 sense explicit-cost | explicit cost
 sense opportunity-cost | opportunity cost
 sense price | price
@@ -185,6 +185,9 @@ sense utility | utility
 sense dollar-return | dollar return
 sense rate-of-return | rate of return
 sense present-value | present value
+sense accounting-basis | accounting basis
+sense inflation | inflation
+sense net-present-value | net present value
 factor subject-or-asset | subject or asset
 factor owner-buyer-seller-or-decision-maker | owner, buyer, seller, or decision maker
 factor requested-cost-price-value-utility-or-return-sense | requested cost, price, value, utility, or return sense
@@ -196,6 +199,13 @@ factor rate-periods-and-compounding-convention | rate, periods, and compounding 
 factor nominal-or-real-currency-basis | nominal or real currency basis
 factor risk-uncertainty-fees-and-taxes | risk, uncertainty, fees, and taxes
 factor purpose-and-decision-policy | purpose and decision policy
+factor governing-authority-and-reporting-purpose | governing authority and reporting purpose
+factor recognition-trigger-and-accounting-period | recognition trigger and accounting period
+factor measurement-basis-classification-and-consistency-policy | measurement basis, classification, and consistency policy
+factor price-index-population-basket-scope-and-weights | price-index population, basket, scope, and weights
+factor index-series-reference-periods-and-adjustment-status | index series, reference periods, and adjustment status
+factor cash-flow-timing-sign-horizon-and-terminal-treatment | cash-flow timing, sign, horizon, and terminal treatment
+factor discount-rate-source-nominal-real-alignment-and-sensitivity-range | discount-rate source, nominal-real alignment, and sensitivity range
 end-entry
 entry electrical-quantity | Electrical Quantity | science | candidate | tables/entries/electrical-quantity.md | Electrical descriptions span local electric field, charge and current, point-pair potential difference, material resistivity, specimen resistance, configuration capacitance, complex impedance, power, and energy transfer. Each retains its descriptive level, geometry, state, terminals, frequency, and model scope.
 sense electric-charge | electric charge
@@ -782,6 +792,8 @@ view diagnostic-control-response-failures | control-monitoring-response | object
 end-view
 view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view
+view diagnostic-economic-basis-inflation-npv-failures | cost-price-value-return | explicit-cost,opportunity-cost,price,assessed-value,utility,dollar-return,rate-of-return,present-value,accounting-basis,inflation,net-present-value | diagnostic | Economic Basis, Inflation, and Net Present Value Failure Diagnostic | tables/diagnostics/economic-basis-inflation-npv-failures.md | Maps recognition, basis-change, price-index, interval, price-level conversion, cash-flow timing, discounting, sensitivity, and decision-claim symptoms to discriminating checks without treating an accounting result, inflation estimate, or NPV as universal economic truth or advice.
+end-view
 view diagnostic-electrical-field-material-impedance-failures | electrical-quantity | electric-charge,electric-current,potential-difference,resistance,electrical-power,electrical-energy-transfer,electric-field,electrical-resistivity,capacitance,electrical-impedance | diagnostic | Electrical Field, Material, Storage, and Impedance Failure Diagnostic | tables/diagnostics/electrical-field-material-impedance-failures.md | Maps local-field, geometry, contact, material, charge/capacitance, complex-response, phasor, fixture, and calibration symptoms to discriminating checks without treating an ideal equation or equivalent-circuit fit as physical or safety certification.
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
@@ -820,7 +832,7 @@ view formula-common-geometric-measures | geometric-measure | perimeter,circumfer
 end-view
 view formula-comparative-quantities | comparative-quantity | ratio,rate,unit-rate,proportion,percentage,relative-change,percentage-point-difference | formula | Comparative Quantities | tables/formulas/comparative-quantities.md | These relations all use comparison, division, scaling, or difference. Their meaning depends on ordered roles, quantity kinds, units, baseline, and domain restrictions.
 end-view
-view formula-cost-value-return | cost-price-value-return | dollar-return,rate-of-return,present-value | formula | Cost, Value, and Return Relations | tables/formulas/cost-value-return.md | These relations calculate one holding-period return and single-cash-flow present/future value. They do not define all cost, price, value, utility, or investment decisions. Cash-flow boundary, dates, rate basis, periods, compounding, currency basis, and risk assumptions remain mandatory.
+view formula-cost-value-return | cost-price-value-return | dollar-return,rate-of-return,present-value,inflation,net-present-value | formula | Cost, Value, and Return Relations | tables/formulas/cost-value-return.md | These relations calculate one holding-period return, time-value mappings, a price-index change, a price-level conversion, and net present value. They do not define accounting recognition, universal inflation, profit, investment merit, or a complete decision. Cash-flow boundary, dates, index identity, rate basis, periods, compounding, currency basis, and uncertainty remain mandatory.
 end-view
 view formula-density | matter-load-measure | mass-density | formula | Mass Density | tables/formulas/density.md | Average mass density relates the total mass of a chosen object or substance sample to the volume it occupies. The bulk relation does not by itself assert that density is uniform at every point.
 end-view

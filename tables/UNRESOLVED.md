@@ -9,9 +9,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/control-monitoring-response.md` | 161 | set point - `unresolved-candidate` |
 | `tables/entries/control-monitoring-response.md` | 162 | actuator - `unresolved-candidate` |
 | `tables/entries/control-monitoring-response.md` | 163 | service-level objective - `unresolved-candidate` |
-| `tables/entries/cost-price-value-return.md` | 141 | accounting basis - `unresolved-candidate` |
-| `tables/entries/cost-price-value-return.md` | 144 | inflation - `unresolved-candidate` |
-| `tables/entries/cost-price-value-return.md` | 145 | net present value - `unresolved-candidate` |
 | `tables/entries/force.md` | 129 | coercion — `unresolved-candidate` |
 | `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 129 | namespace - `unresolved-candidate` |

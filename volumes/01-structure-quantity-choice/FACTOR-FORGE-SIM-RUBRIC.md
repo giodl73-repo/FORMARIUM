@@ -328,6 +328,22 @@ Critical artifact failure: byte equality, positive mutual information, or a
 single modeled rate is accepted as proof of meaning, causation, interoperability,
 capacity achievement, or universal system performance.
 
+## Task AD expected route
+
+- Cost, Price, Value, Utility, and Return;
+- Cost, Value, and Return Relations;
+- Economic Basis, Inflation, and Net Present Value Failure Diagnostic;
+- accounting recognition remains distinct from cash movement and valuation;
+- aggregate price-index change remains distinct from one price and index level;
+- present value remains distinct from NPV and realized accounting profit;
+- every NPV flow retains sign, timing, currency, price, tax, and inclusion basis;
+- nominal flows/rates and real flows/rates remain aligned;
+- NPV remains a scoped model output rather than certainty or decision authority.
+
+Critical artifact failure: shared currency units, an index number, or a positive
+discounted total is accepted as proof of accounting error, universal inflation,
+realized profit, fairness, affordability, or mandatory approval.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -374,6 +390,7 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/oscillation-spectrum-dispersion-failures.md`
 - `tables/diagnostics/electrical-field-material-impedance-failures.md`
 - `tables/diagnostics/information-encoding-channel-failures.md`
+- `tables/diagnostics/economic-basis-inflation-npv-failures.md`
 
 ## Claim boundary
 

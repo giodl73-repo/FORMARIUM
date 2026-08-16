@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **41 records** — 18 canonical entries and 23
+Selected current-corpus delta: **42 records** — 18 canonical entries and 24
 specialized views
 
 ## Purpose
@@ -262,6 +262,19 @@ version, loss, channel-law, nonstationarity, leakage, estimator, optimization,
 throughput, and unit failures without creating a catalog of named encodings,
 codes, protocols, media, or channel families.
 
+## Part XXII - Accounting basis, inflation, and discounted value
+
+### From one currency display to the correct economic contract
+
+120. [Economic Basis, Inflation, and Net Present Value Failure Diagnostic](../../tables/diagnostics/economic-basis-inflation-npv-failures.md)
+
+The revised base-volume Cost/Price/Value anchor and Formula view own accounting
+basis, aggregate price-index change, price-level conversion, and net present
+value. This Diagnostic view tests recognition, basis changes, index scope,
+intervals, spatial-level misuse, cash-flow timing, discounting, sensitivity,
+and decision overclaims without creating a catalog of named accounting
+standards, price indexes, products, assets, or valuation methods.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -270,5 +283,5 @@ codes, protocols, media, or channel families.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 119-record combined simulation remains a rehearsal projection, not a
+- The 120-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

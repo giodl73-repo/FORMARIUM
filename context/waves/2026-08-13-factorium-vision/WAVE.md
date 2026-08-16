@@ -711,3 +711,33 @@ unresolved view owners. The Factor Forge delta grows to 41 records and the
 combined selection to 119 numbered records plus two guides across twenty-two
 chapters. The generated `sim-07` site contains 158 pages from 135 sources,
 indexes all 121 reader destinations, and reports zero missing internal targets.
+
+## 2026-08-15 economic-basis-inflation-npv content continuation
+
+Plan review: deepen the existing Cost/Price/Value authority rather than
+creating isolated accounting-basis, inflation, and NPV anchors; separate
+authority-owned recognition and measurement, aggregate price-index change,
+price-level mapping, discounted-flow aggregation, realized accounting result,
+and decision policy; ground the spine in IRS, FASAB, BLS, OMB, and GAO sources;
+revise the existing Formula view; add one Diagnostic view; apply the Concept &
+Taxonomy Boundary Editor before any named standard, index, product, asset, or
+valuation method enters; then propagate the exact one-view delta through
+assurance, Factor Forge, search, and the static book site. No external-reader
+gate, accounting or tax advice, universal cost-of-living claim, investment
+recommendation, profit guarantee, or decision authorization is introduced.
+
+Result review: F21 adds accounting basis, inflation, and net present value to
+`cost-price-value-return`, revises the Cost, Value, and Return Formula view with
+price-index change, price-level conversion, and a scoped end-of-period NPV
+relation, and adds the Economic Basis, Inflation, and Net Present Value Failure
+Diagnostic. Accounting basis/cash movement, basis/valuation, inflation/one
+price, rate/index level, present value/NPV, NPV/profit, and NPV/decision remain
+distinct. Named standards, indexes, products, assets, and valuation methods
+remain external authorities or examples. The web campaign confirms 18 findings
+and the 13-role fixed-point review closes all major findings. The reference
+remains at 38 entries and grows to 281 senses, 421 factors, and 55 views with 99
+assurance bindings and zero unresolved view owners. The Factor Forge delta
+grows to 42 records and the combined selection to 120 numbered records plus two
+guides across twenty-three chapters. The generated `sim-07` site contains 160
+pages from 136 sources, indexes all 122 reader destinations, and reports zero
+missing internal targets.

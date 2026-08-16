@@ -295,8 +295,27 @@ channel law and state, joint model, sample and estimator, admissible inputs,
 constraints, logarithm base, use clock, bandwidth, error criterion, coding
 regime, overhead, and uncertainty before accepting any equality or claim.
 
+## Task AD - Same dollars, different economic basis
+
+A service is performed in December and paid in January. One report records it
+when earned and another when cash arrives, then calls the difference an error.
+The price of one frequently purchased item rises sharply and is reported as
+the inflation rate for everyone. Two analysts compare index levels from
+different regional series as costs of living. A project has positive total
+undiscounted cash flow, but its NPV changes sign when timing, inflation basis,
+discount rate, and terminal value change; the positive case is called certain
+profit and mandatory approval.
+
+Separate accounting basis, cash movement, price, inflation, index level,
+present value, net present value, profit, and decision. Use the Formula and
+Diagnostic views to freeze authority, reporting purpose, recognition and
+measurement rules, index series and vintage, population, basket, weights,
+interval, seasonal treatment, signed flow timing, valuation date, discount
+rate, nominal/real and tax basis, horizon, terminal value, uncertainty, and
+sensitivity before reconciling the results.
+
 ## Rehearsal boundary
 
-The twenty-two prompts collectively exercise every entry and specialized view in the
+The twenty-three prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.
