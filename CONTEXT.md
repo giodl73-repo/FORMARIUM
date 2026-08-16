@@ -743,6 +743,10 @@ bindings. The current Factor Forge supplement contains 46 records, while
 thirteen chapters. Historical preflight documents retain the counts of the
 rehearsal they recorded.
 
+F28 adds parser grammar and external fail-closed fixtures for five candidate
+Decision and Evidence relation kinds. It admits no new canonical relation:
+the sidecar and Composition Lab remain fixed at the six reviewed F1-F6 edges.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

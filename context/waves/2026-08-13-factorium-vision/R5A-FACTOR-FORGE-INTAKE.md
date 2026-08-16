@@ -721,3 +721,20 @@ Stocktake, ownership research, contract, guide, and fixed-point review are
 `guides/evidence-informed-intervention-choice.md`, and
 `CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md`. The current corpus has 40
 entries, 304 senses, 479 factors, 57 views, and 103 exact assurance bindings.
+
+## F28 relation-kind grammar slice
+
+F28 makes the five F27 bridge verbs parser-visible with exact, lexically
+ordered qualifier contracts while keeping parser acceptance separate from
+canonical record admission. One external fixture covers all five kinds; five
+invalid fixtures cover missing, extra, duplicate, unordered, and
+inverse-looking forms. A combined validation fixture resolves all endpoints
+against the current 40-entry corpus.
+
+The canonical relation sidecar remains byte-identical at six records and
+SHA-256
+`4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df`.
+No candidate kind becomes a Composition Lab edge, assurance artifact, or
+closure permission. Exact records can be considered individually in a later
+batch after relation-specific loss, negative behavior, assurance, and
+traversal review.

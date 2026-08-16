@@ -103,3 +103,13 @@ relation sidecar or interactive Composition Lab until relation-kind grammar,
 parser fixtures, endpoint assurance, negative closure behavior, identity,
 and fixed-point `.roles` review are complete. It supplies no source
 verification, decision recommendation, domain authority, or reader evidence.
+
+## F28 grammar status
+
+`specs/DECISION-EVIDENCE-RELATION-KINDS.md` now defines parser-visible kinds
+and exact qualifier keys for all five candidates, with positive and
+adversarial external fixtures. This completes relation-kind grammar and
+endpoint-resolution preparation only. No record is present in the canonical
+sidecar, no assurance binding exists for a candidate edge, and the Composition
+Lab remains limited to its six admitted relations. The remaining admission
+conditions apply independently to each exact future record.

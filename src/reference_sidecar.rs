@@ -13,25 +13,38 @@ const RELATION_END: &str = "end-relations";
 const ASSURANCE_HEADER: &str = "factorium-assurance-v0";
 const ASSURANCE_END: &str = "end-assurance";
 
-/// One supported directed relation in the bounded F1-F6 prototype.
+/// One supported directed relation kind.
+///
+/// Kind support defines parser grammar only. A relation becomes canonical
+/// only when an exact record is admitted to the reviewed relation sidecar.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum RelationKind {
+    CharacterizesConsequenceFor,
+    ConstrainsFeasibilityOf,
+    ContributesCriterionTo,
     DependsOn,
     DelegatesAuthorityTo,
     DerivedFrom,
     Feeds,
     ProvidesTo,
+    QualifiesEvaluationOf,
+    QualifiesOutcomeScopeOf,
     SatisfiesObligation,
 }
 
 impl RelationKind {
     fn parse(value: &str) -> Result<Self, String> {
         match value {
+            "characterizes-consequence-for" => Ok(Self::CharacterizesConsequenceFor),
+            "constrains-feasibility-of" => Ok(Self::ConstrainsFeasibilityOf),
+            "contributes-criterion-to" => Ok(Self::ContributesCriterionTo),
             "depends-on" => Ok(Self::DependsOn),
             "delegates-authority-to" => Ok(Self::DelegatesAuthorityTo),
             "derived-from" => Ok(Self::DerivedFrom),
             "feeds" => Ok(Self::Feeds),
             "provides-to" => Ok(Self::ProvidesTo),
+            "qualifies-evaluation-of" => Ok(Self::QualifiesEvaluationOf),
+            "qualifies-outcome-scope-of" => Ok(Self::QualifiesOutcomeScopeOf),
             "satisfies-obligation" => Ok(Self::SatisfiesObligation),
             _ => Err(format!("unknown relation kind `{value}`")),
         }
@@ -41,21 +54,63 @@ impl RelationKind {
     #[must_use]
     pub const fn id(self) -> &'static str {
         match self {
+            Self::CharacterizesConsequenceFor => "characterizes-consequence-for",
+            Self::ConstrainsFeasibilityOf => "constrains-feasibility-of",
+            Self::ContributesCriterionTo => "contributes-criterion-to",
             Self::DependsOn => "depends-on",
             Self::DelegatesAuthorityTo => "delegates-authority-to",
             Self::DerivedFrom => "derived-from",
             Self::Feeds => "feeds",
             Self::ProvidesTo => "provides-to",
+            Self::QualifiesEvaluationOf => "qualifies-evaluation-of",
+            Self::QualifiesOutcomeScopeOf => "qualifies-outcome-scope-of",
             Self::SatisfiesObligation => "satisfies-obligation",
         }
     }
 
     fn required_qualifiers(self) -> &'static [&'static str] {
         match self {
+            Self::CharacterizesConsequenceFor => &[
+                "affected-entity",
+                "consequence-basis",
+                "control-state",
+                "horizon",
+                "scenario",
+            ],
+            Self::ConstrainsFeasibilityOf => &[
+                "applicability",
+                "authority",
+                "effective-period",
+                "hard-or-soft",
+                "version",
+            ],
+            Self::ContributesCriterionTo => &[
+                "basis",
+                "desired-direction",
+                "horizon",
+                "owner",
+                "unit-or-scale",
+                "value-sense",
+            ],
             Self::DependsOn | Self::Feeds => &["condition"],
             Self::DelegatesAuthorityTo => &["authority", "retained-responsibility"],
             Self::DerivedFrom => &["method"],
             Self::ProvidesTo => &["target-system"],
+            Self::QualifiesEvaluationOf => &[
+                "claim",
+                "horizon",
+                "limitation",
+                "outcome",
+                "population",
+                "provenance",
+            ],
+            Self::QualifiesOutcomeScopeOf => &[
+                "causal-status",
+                "contrast",
+                "horizon",
+                "outcome",
+                "population",
+            ],
             Self::SatisfiesObligation => &["applicability", "obligation-version"],
         }
     }
@@ -205,7 +260,7 @@ impl RelationManifest {
     /// # Errors
     ///
     /// Returns an error when an endpoint or scope does not resolve, a source
-    /// path is missing, or one of the six prototype kinds is absent.
+    /// path is missing, or one of the six admitted prototype kinds is absent.
     pub fn validate_workspace(&self, corpus: &ReferenceCorpus, root: &Path) -> Result<(), String> {
         for relation in &self.relations {
             resolve_artifact(corpus, &relation.source)?;
@@ -213,6 +268,8 @@ impl RelationManifest {
             resolve_artifact(corpus, &relation.scope)?;
             resolve_file(root, &relation.source_path)?;
         }
+        // Parser-supported candidate kinds are intentionally absent here.
+        // Workspace validation requires only kinds with admitted F1-F6 records.
         for kind in [
             RelationKind::DependsOn,
             RelationKind::DelegatesAuthorityTo,

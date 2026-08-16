@@ -36,6 +36,21 @@ The prototype kinds and exact required qualifiers are:
 | `provides-to` | `target-system` |
 | `satisfies-obligation` | `applicability`, `obligation-version` |
 
+The parser also recognizes five grammar-only candidate kinds from F28. They
+are not records in the canonical sidecar and are not required prototype
+coverage:
+
+| Candidate kind | Exact required qualifier keys |
+|---|---|
+| `characterizes-consequence-for` | `affected-entity`, `consequence-basis`, `control-state`, `horizon`, `scenario` |
+| `constrains-feasibility-of` | `applicability`, `authority`, `effective-period`, `hard-or-soft`, `version` |
+| `contributes-criterion-to` | `basis`, `desired-direction`, `horizon`, `owner`, `unit-or-scale`, `value-sense` |
+| `qualifies-evaluation-of` | `claim`, `horizon`, `limitation`, `outcome`, `population`, `provenance` |
+| `qualifies-outcome-scope-of` | `causal-status`, `contrast`, `horizon`, `outcome`, `population` |
+
+Parser recognition supplies no edge, inverse, closure permission, or
+assurance. See `specs/DECISION-EVIDENCE-RELATION-KINDS.md`.
+
 Qualifiers are lower-kebab `key=value` pairs in key order. Each relation kind
 owns its qualifier contract; the fields do not acquire universal semantics
 across kinds.

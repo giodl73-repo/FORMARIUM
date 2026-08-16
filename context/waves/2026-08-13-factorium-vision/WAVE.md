@@ -1592,3 +1592,33 @@ packet verifiers, reference/sidecar, focused bridge and closure, generated
 site, search, browser, link, `.roles`, and diff checks pass. No join truth,
 causal effect, optimality, decision quality, operational advice, reader
 evidence, external-preview, publication, or `preview-01` claim is admitted.
+
+## 2026-08-16 F28 decision/evidence relation-kind grammar
+
+Plan review: make the five reviewed F27 bridge verbs recognizable to an
+independent parser without admitting any candidate edge. Separate
+parser-supported kinds from the six relation kinds required by canonical
+workspace validation; give every new kind an exact, lexically ordered
+qualifier set and no implied inverse; commit external positive and structured
+invalid fixtures; resolve candidate endpoints only in a combined test
+document; retain the canonical relation and assurance bytes; and prove the
+Composition Lab remains on its six-record allowlist. The standard six-role
+review found zero P1 and eleven P2 conditions, all closed by explicit state
+separation, qualifier normalization, external fixtures, and non-admission
+regressions.
+
+Result review: `RelationKind` now recognizes
+`qualifies-evaluation-of`, `qualifies-outcome-scope-of`,
+`characterizes-consequence-for`, `contributes-criterion-to`, and
+`constrains-feasibility-of`. A five-record positive fixture round-trips; five
+invalid fixtures reject missing, extra, duplicate, unordered, and
+inverse-looking forms; and combined validation resolves all eleven admitted
+plus candidate records against the current corpus and source paths. The
+canonical sidecar remains six records at SHA-256
+`4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df`,
+with 103 assurance bindings and no new Composition Lab relation. Clippy, all
+70 Rust tests, reference/sidecar, focused bridge and closure, local and
+generated-site Composition Lab, `.roles`, packet, and diff checks pass. This
+is parser grammar and fail-closed fixture evidence only; it makes no semantic
+truth, relation admission, inverse, closure usefulness, recommendation,
+decision-quality, external-reader, publication, or `preview-01` claim.

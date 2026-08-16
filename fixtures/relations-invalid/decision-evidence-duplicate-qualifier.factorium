@@ -1,0 +1,3 @@
+factorium-relations-v0
+relation invalid-duplicate | constrains-feasibility-of | factor:policy-rule-constraint-decision-exception/constraints-and-invariants | factor:choice-alternative-selection/feasibility-constraints-and-exclusion-rationale | view:decision-alternative-selection | applicability=limited-trial,authority=esc-04,authority=second-authority,effective-period=twelve-weeks,hard-or-soft=hard,version=v3 | specs/DECISION-EVIDENCE-BRIDGE.md
+end-relations

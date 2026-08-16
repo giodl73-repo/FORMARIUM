@@ -393,6 +393,7 @@ See [independent packet onboarding](docs/ONBOARDING.md).
 cargo fmt --check
 cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-targets
+cargo test --test relation_kind_fixtures
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
