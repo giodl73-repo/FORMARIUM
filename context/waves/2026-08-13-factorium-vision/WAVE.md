@@ -1622,3 +1622,42 @@ generated-site Composition Lab, `.roles`, packet, and diff checks pass. This
 is parser grammar and fail-closed fixture evidence only; it makes no semantic
 truth, relation admission, inverse, closure usefulness, recommendation,
 decision-quality, external-reader, publication, or `preview-01` claim.
+
+## 2026-08-16 F29 first evidence-to-evaluation relation admission
+
+Plan review: admit only `f27-evidence-qualifies-evaluation` from the five F27
+candidate kinds; preserve Claim/Evidence as source authority, Choice as the
+evaluation owner, and the Decision view as scope; require the complete
+declarative applicability qualifier set, directional many-to-many local
+binding discipline, no inverse, and explicit loss; keep the canonical query
+`incomplete` with applicability `unresolved`; re-bind the entire changed
+relation sidecar; and separate canonical membership from interactive exposure
+through an exact six-ID Composition Lab allowlist. The standard six-role
+review found zero P1 and twelve P2 conditions, all closed by the admission
+contract, fixtures, assurance migration, and independently hashed Lab
+boundary.
+
+Result review: the canonical relation sidecar now contains seven records at
+SHA-256
+`a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6`,
+including exactly one cross-entry relation. Exact assurance covers 40 entries,
+57 views, and seven relations in 104 bindings at SHA-256
+`7f9bf10c155d164c5324c1c6f3fd8c6f9da0c71e5eadd5e4a388f72f637851dc`.
+The new three-node canonical query has SHA-256
+`50e64f3a0bae939b11619980423a59a4825d9763bb07525a0a02cf21a7c7181d`,
+retains an unresolved local-applicability check, and fails closed on an
+incorrect relation-derived predecessor. The Composition Lab consumes a
+separate six-record allowlist at SHA-256
+`35f17d2e24190be1be8897f38477a1c138d974223a73f850665e8439ef645f5a`,
+so the new edge is neither displayed nor traversable there. The regenerated
+160-source `sim-29` edition has 132 searchable destinations, 175 site pages,
+zero missing targets, site identity
+`4bfb25bbfba63365d64f56a5b58d213c2eee75ad17613b02d4056b2720c171eb`,
+and standalone SHA-256
+`61c9523d3fbef7650da76e8fccf3c0414286479267e56ddb0775d96881d571e7`.
+All 70 Rust tests, six canonical Composition Queries, reference/sidecar,
+closure, bridge, local and generated-site composition, live browser, packet,
+role, link, and diff checks pass. The remaining four F27 relations stay
+candidate-only. No local applicability, support, truth, sufficiency, causal
+effect, alternative ranking, recommendation, decision quality, reader
+success, external-preview, publication, or `preview-01` claim is admitted.

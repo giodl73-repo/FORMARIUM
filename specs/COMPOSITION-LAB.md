@@ -6,7 +6,8 @@ interchange, or production Workbench
 ## Purpose
 
 The Composition Lab lets a reader construct one bounded working graph over the
-six reviewed V0 typed relations. The reader explicitly supplies the problem,
+an exact six-ID allowlist of reviewed F1-F6 relations from the seven-record
+canonical sidecar. The reader explicitly supplies the problem,
 seed artifacts, relation allowlist, direction, context, budgets, and optional
 exclusion requests. The local browser runtime then performs deterministic
 closure, exposes its boundary, assigns unresolved structural checks, and
@@ -115,7 +116,8 @@ publication action. Reloading deletes the work product.
 ## Required interface disclosures
 
 - Problem text does not choose concepts or edges.
-- Only six reviewed prototype relations are available.
+- Only the six reviewed F1-F6 relations in the edition-local allowlist are
+  available; canonical membership alone does not expose a relation here.
 - Relation qualification is displayed before selection.
 - Budget frontiers and unreachable predecessors remain visible.
 - Unresolved checks prevent `complete`.

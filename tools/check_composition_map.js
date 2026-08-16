@@ -4,10 +4,11 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const lab = require("../volumes/01-structure-quantity-choice/proof-set-composition-lab.js");
 const closureMap = require("../volumes/01-structure-quantity-choice/proof-set-composition-map.js");
+const labAllowlist = require("./composition_lab_allowlist.js");
 
 const sha = "1".repeat(64);
 const relationText = fs.readFileSync("reference/factorium-relations-v0.factorium", "utf8");
-const relations = relationText.split(/\r?\n/).filter((line) => line.startsWith("relation "))
+const relations = labAllowlist.relationLines(relationText)
   .map((line) => {
     const fields = line.slice("relation ".length).split(" | ");
     assert.equal(fields.length, 7, "relation fields");

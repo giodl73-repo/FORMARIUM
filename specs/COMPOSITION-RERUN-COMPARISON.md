@@ -36,7 +36,7 @@ labPayload, readingPayload)` returns
 - deterministic counts and a permanent non-evaluative boundary;
 - no new digest or canonical identity.
 
-Both results are revalidated against the exact six relation records and 18
+Both results are revalidated against the exact six Lab relation records and 18
 reading bindings. Selected relations must partition into admitted edge,
 frontier, or unresolved records; selected exclusions must partition into
 conflict or inactive records; unselected boundary records, duplicate

@@ -36,11 +36,11 @@ The prototype kinds and exact required qualifiers are:
 | `provides-to` | `target-system` |
 | `satisfies-obligation` | `applicability`, `obligation-version` |
 
-The parser also recognizes five grammar-only candidate kinds from F28. They
-are not records in the canonical sidecar and are not required prototype
-coverage:
+The parser recognizes five Decision and Evidence kinds from F28. F29 admits
+one `qualifies-evaluation-of` record; the other four have no canonical record.
+None is required merely because its grammar is supported:
 
-| Candidate kind | Exact required qualifier keys |
+| Decision/evidence kind | Exact required qualifier keys |
 |---|---|
 | `characterizes-consequence-for` | `affected-entity`, `consequence-basis`, `control-state`, `horizon`, `scenario` |
 | `constrains-feasibility-of` | `applicability`, `authority`, `effective-period`, `hard-or-soft`, `version` |
@@ -81,11 +81,12 @@ Validation fails when:
 ## Prototype coverage
 
 `reference/factorium-relations-v0.factorium` contains one representative edge
-template from each Factor Forge F1-F6 batch. Relation coverage therefore
-remains a bounded prototype.
+template from each Factor Forge F1-F6 batch plus the first reviewed
+cross-entry evidence-to-evaluation edge. Relation coverage therefore remains
+a bounded seven-record prototype.
 
 The assurance manifest has complete current-corpus coverage: 40 entries, 57
-specialized views, and six relation records, for 103 exact bindings. The
+specialized views, and seven relation records, for 104 exact bindings. The
 validator derives that required set from parsed V0 and relation records, so a
 new canonical artifact fails until an applicable digest-bound fixed-point
 review is added. This closes current-corpus review coverage; it does not prove

@@ -44,8 +44,11 @@ const checkIds = [
 for (const id of relationIds) {
   assert.equal((packet.match(new RegExp(id, "g")) || []).length >= 1, true,
     `packet declares ${id}`);
-  assert.doesNotMatch(relations, new RegExp(id),
-    `${id} remains outside canonical sidecar`);
+}
+assert.match(relations, /relation f27-evidence-qualifies-evaluation \| qualifies-evaluation-of/,
+  "first evidence/evaluation bridge relation is canonical");
+for (const id of relationIds.filter((id) => id !== "f27-evidence-qualifies-evaluation")) {
+  assert.doesNotMatch(relations, new RegExp(id), `${id} remains a candidate`);
 }
 for (const id of checkIds) {
   assert.match(packet, new RegExp(id), `packet declares ${id}`);
@@ -72,12 +75,13 @@ const exactBindings = [
   ["entry:choice-alternative-selection", "tables/entries/choice-alternative-selection.md"],
   ["view:decision-alternative-selection", "tables/decisions/alternative-selection.md"],
   ["entry:policy-rule-constraint-decision-exception",
-    "tables/entries/policy-rule-constraint-decision-exception.md"]
+    "tables/entries/policy-rule-constraint-decision-exception.md"],
+  ["relation:f27-evidence-qualifies-evaluation", "reference/factorium-relations-v0.factorium"]
 ];
 for (const [id, source] of exactBindings) {
   assert.match(assurance, new RegExp(`review ${id} \\| ${sha256(source)} \\|`),
     `assurance binds exact digest for ${id}`);
 }
 
-console.log("OK relations=5 checks=5 outcomes=pass:1,fail:1,unresolved:3 " +
-  "canonical_relations_added=0 alternatives=3 final_selection=not-recorded");
+console.log("OK bridge_relations=5 admitted=1 candidate=4 checks=5 " +
+  "outcomes=pass:1,fail:1,unresolved:3 alternatives=3 final_selection=not-recorded");

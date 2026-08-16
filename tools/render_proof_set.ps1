@@ -19,6 +19,7 @@ $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-wor
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
 $decisionChoiceGuide = Join-Path $workspace "guides\evidence-informed-intervention-choice.md"
+$compositionLabAllowlist = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-lab-relations.factorium"
 $compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
 $compositionReadingSpec = Join-Path $workspace "specs\COMPOSITION-READING-ROUTE.md"
 $compositionFocusSpec = Join-Path $workspace "specs\COMPOSITION-FACTOR-FOCUS.md"
@@ -1491,6 +1492,22 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 16) {
         $relationManifestPath = Join-Path $workspace "reference\factorium-relations-v0.factorium"
         $referenceManifestPath = Join-Path $workspace "reference\factorium-reference-v0.factorium"
+        $allowlistLines = @(Get-Content -LiteralPath $compositionLabAllowlist)
+        if ($allowlistLines[0] -ne "factorium-composition-lab-relations-v0" -or $allowlistLines[-1] -ne "end-relations") {
+            throw "Composition Lab allowlist framing drift"
+        }
+        $labRelationIds = @($allowlistLines[1..($allowlistLines.Count - 2)] | ForEach-Object {
+            if (-not $_.StartsWith("relation ", [System.StringComparison]::Ordinal)) {
+                throw "Composition Lab allowlist record drift: $_"
+            }
+            $_.Substring("relation ".Length)
+        })
+        if ($labRelationIds.Count -ne 6 -or @($labRelationIds | Sort-Object -Unique).Count -ne 6) {
+            throw "Composition Lab allowlist requires six unique relation IDs"
+        }
+        $canonicalRelationCount = @(Get-Content -LiteralPath $relationManifestPath | Where-Object {
+            $_.StartsWith("relation ", [System.StringComparison]::Ordinal)
+        }).Count
         $labRelations = @(
             foreach ($line in Get-Content -LiteralPath $relationManifestPath) {
                 if (-not $line.StartsWith("relation ", [System.StringComparison]::Ordinal)) {
@@ -1499,6 +1516,9 @@ if ($editionNumber -ge 7) {
                 $fields = $line.Substring("relation ".Length) -split ' \| '
                 if ($fields.Count -ne 7) {
                     throw "Composition Lab relation field drift: $line"
+                }
+                if ($fields[0] -notin $labRelationIds) {
+                    continue
                 }
                 $scopeSource = [System.IO.Path]::GetFullPath((Join-Path $workspace $fields[6]))
                 if (-not $pageBySource.ContainsKey($scopeSource)) {
@@ -1546,7 +1566,10 @@ if ($editionNumber -ge 7) {
         )
         $compositionLabChecks = [ordered]@{
             mode = "local bounded closure over explicit reviewed relation allowlist"
+            canonical_relation_records = $canonicalRelationCount
             relation_records = $labRelations.Count
+            allowlist_path = [System.IO.Path]::GetRelativePath($workspace, $compositionLabAllowlist).Replace("\", "/")
+            allowlist_sha256 = (Get-FileHash -LiteralPath $compositionLabAllowlist -Algorithm SHA256).Hash.ToLowerInvariant()
             seed_artifacts = @($labRelations.source + $labRelations.target | Sort-Object -Unique).Count
             scope_views = @($labRelations.scope | Sort-Object -Unique).Count
             automatic_relation_discovery = $false
@@ -2462,7 +2485,7 @@ if ($editionNumber -ge 7) {
 <section class="lab-form-section">
 <span class="lab-step">2 · Add</span>
 <h2>Select one to three seed concepts</h2>
-<p class="lab-help">Only exact endpoints from the six reviewed typed relations are available.</p>
+<p class="lab-help">Only exact endpoints from the six reviewed F1-F6 relations in this edition's Lab allowlist are available.</p>
 <div id="composition-lab-seeds" class="lab-choice-grid"></div>
 </section>
 <section class="lab-form-section">

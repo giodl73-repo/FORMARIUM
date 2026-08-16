@@ -1,6 +1,6 @@
 # Decision and Evidence Relation Kinds
 
-Status: F28 grammar-only candidate contract
+Status: F28 grammar contract; one kind has an admitted F29 record
 
 ## Purpose
 
@@ -47,7 +47,7 @@ recommendation, decision-quality, or external-reader evidence.
 
 ## Later admission gate
 
-Each future canonical record needs exact endpoints, an owning view and source
+Each additional canonical record needs exact endpoints, an owning view and source
 path, a relation-specific negative fixture, loss and cardinality review, an
 assurance binding to the changed sidecar digest, closure-budget tests, and a
 separate decision about Composition Lab exposure. Kinds may be admitted one

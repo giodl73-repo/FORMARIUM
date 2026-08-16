@@ -35,9 +35,10 @@ represent a real organization.
 - `entry:cost-price-value-return`
 - `entry:policy-rule-constraint-decision-exception`
 
-The five F27 bridge relations remain candidates under
-`specs/DECISION-EVIDENCE-BRIDGE.md`; they are not canonical sidecar relations
-or available Composition Lab edges.
+The evidence-to-evaluation type relation is now canonical under
+`specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md`; its local applicability
+check remains unresolved here. The other four F27 bridge relations remain
+candidates. None of the five is available through the current Composition Lab.
 
 ## Synthetic local evidence ledger
 

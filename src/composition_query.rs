@@ -769,6 +769,10 @@ mod tests {
                 "contradictory",
             ),
             (
+                "fixtures/composition/decision-evidence.factorium-query",
+                "incomplete",
+            ),
+            (
                 "fixtures/composition/latency-evidence.factorium-query",
                 "complete",
             ),
@@ -791,6 +795,7 @@ mod tests {
         for path in [
             "fixtures/composition-invalid/ambiguous-join-direction.factorium-query",
             "fixtures/composition-invalid/cycle-replay.factorium-query",
+            "fixtures/composition-invalid/evidence-evaluation-wrong-predecessor.factorium-query",
             "fixtures/composition-invalid/hidden-frontier.factorium-query",
             "fixtures/composition-invalid/incompatible-sense-complete.factorium-query",
             "fixtures/composition-invalid/missing-context.factorium-query",

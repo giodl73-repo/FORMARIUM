@@ -1,7 +1,7 @@
 factorium-composition-query-v0
 query delegated-compliance-frontier
 problem Which authority and obligation concepts are needed to review a delegated compliance approval when traversal permits only one typed join?
-source 5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df
+source 5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e | a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6
 context synthetic-delegated-compliance-review | jurisdiction=declared-policy-domain,reference-frame=not-applicable
 policy direction=forward,follow=evaluative-required,stop=stable-identity
 budget depth=1,edges=1,nodes=4,work=13

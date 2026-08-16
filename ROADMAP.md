@@ -60,8 +60,9 @@ first volume.
 
 The current closure stocktake is
 [`docs/research/2026-08-16-reference-closure-stocktake.md`](docs/research/2026-08-16-reference-closure-stocktake.md).
-It distinguishes one connected editorial navigation graph from the six-edge
-reviewed semantic sidecar: ordinary cross-references are not closure edges.
+It distinguishes one connected editorial navigation graph from the reviewed
+semantic sidecar: ordinary cross-references are not closure edges. F29 adds
+the first exact cross-entry edge, bringing that sidecar to seven records.
 
 ## Milestone map
 

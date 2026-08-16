@@ -156,6 +156,7 @@ reference and relation identities:
 
 ```powershell
 cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 ```
 
 Build the disposable Proof Set simulation rendering with Pandoc:
@@ -229,7 +230,8 @@ open-ended builder. A read-only Composition Explorer compares the exact
 seeds, admitted joins and nodes, checks, budgets, closure boundaries,
 projection counts, and trace identities beneath those guides. The Compose page
 runs deterministic, bounded closure over explicit seeds and only the six exact
-reviewed F1-F6 relations. Problem prose never selects semantics, every check
+six allowlisted reviewed F1-F6 relations. Problem prose never selects
+semantics, every check
 remains unresolved, and drafts are neither canonical traces nor publishable
 guides. Query data is not stored or transmitted; only the non-sensitive
 reader-view preference may persist. The generated site remains a
@@ -255,7 +257,7 @@ is hidden during ordinary reading, uses CSS `:target`, and does not rewrite
 canonical Markdown or claim an exact source-text span. The Add stage groups
 those same twelve exact controls into six human-named entry topics, with the
 selected topic open first. Multiply shows live
-direction-sensitive predecessor readiness while leaving all six relations
+direction-sensitive predecessor readiness while leaving all six Lab relations
 enabled. Readiness uses only explicit controls and does not predict budget
 admission, compatibility, or domain validity.
 
@@ -404,6 +406,7 @@ cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
 cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
+cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium

@@ -29,7 +29,7 @@ interaction before implementation or change approval.
 ## Scope and non-goals
 
 This synthetic worksheet rehearses one declared Composition Query over the
-current six-edge relation prototype. It demonstrates traceability and reading
+current six-edge Composition Lab allowlist. It demonstrates traceability and reading
 form, not automatic graph discovery.
 
 It does not select an architecture, prove availability or security, inspect
@@ -259,8 +259,8 @@ Canonical trace file: `fixtures/composition/system-dependency.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df` |
-| Composition Query trace | `b1af7d914e6397050a87f164e574ac18955c044f6445302c341451ee78094eae` |
+| Relation sidecar V0 | `a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6` |
+| Composition Query trace | `29a719b825134673b4740a4baea4f169c8aafae4f0a258bbc933bbfc15455320` |
 
 Trace inventory: one seed, three working nodes, one admitted edge, zero
 frontiers, zero conflicts, one passed declared check, three projection rows,

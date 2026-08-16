@@ -1,7 +1,7 @@
-# Decision and Evidence Bridge Candidate Contract
+# Decision and Evidence Bridge Contract
 
-Status: F27 candidate packet; not admitted to
-`reference/factorium-relations-v0.factorium`
+Status: F27 bridge packet; one relation admitted by F29 and four remain
+candidate-only
 
 ## Purpose
 
@@ -34,7 +34,11 @@ retains its own check. `Many-to-many` therefore permits reviewed local
 instances; it does not permit endpoint discovery, transitive expansion, or an
 unbounded Cartesian product.
 
-## Candidate relations
+## Bridge relations
+
+`f27-evidence-qualifies-evaluation` is admitted to the canonical relation
+sidecar under `specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md`. The remaining
+four rows are candidate-only.
 
 | ID | Verb | Source -> target | Cardinality | Qualifications | Inverse | Declared loss | Join check |
 |---|---|---|---|---|---|---|---|
@@ -49,7 +53,7 @@ The reviewed endpoint basis is exact:
 | Source | SHA-256 |
 |---|---|
 | `reference/factorium-reference-v0.factorium` | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| `reference/factorium-relations-v0.factorium` | `4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df` |
+| `reference/factorium-relations-v0.factorium` | `a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6` |
 | `tables/entries/choice-alternative-selection.md` | `16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1` |
 | `tables/entries/claim-evidence.md` | `17875b0730df45b563261a670149d4c8312ecf6487f672028b96672fd19b39e5` |
 | `tables/entries/causal-reasoning.md` | `665a33d595e85644f1c4df9b7968617cf26a15fa41c46b448e38cb84540f0383` |
@@ -77,10 +81,10 @@ endpoint or any downstream recommendation.
 
 ## Closure policy
 
-The authored guide may use only these five candidates and only in their stated
+The authored guide may use only these five bridge relations and only in their stated
 direction. It starts from explicitly selected entry factors, uses no inferred
 edge, and retains every failed or unresolved join. Maximums are seven entries,
-five candidate relations, fourteen admitted factor endpoints, depth two, and
+five bridge relations, fourteen admitted factor endpoints, depth two, and
 forty work records. Reaching a bound returns `truncated`; it never widens the
 allowlist.
 
@@ -98,18 +102,20 @@ The F27 guide and checks must retain at least these cases:
 
 ## Admission boundary
 
-This packet can inform authored guide review. It cannot enter the canonical
-relation sidecar or interactive Composition Lab until relation-kind grammar,
-parser fixtures, endpoint assurance, negative closure behavior, identity,
-and fixed-point `.roles` review are complete. It supplies no source
-verification, decision recommendation, domain authority, or reader evidence.
+This packet can inform authored guide review. Each record requires independent
+relation-kind grammar, parser fixtures, endpoint assurance, negative closure
+behavior, identity, and fixed-point `.roles` review before canonical
+admission. Canonical admission does not itself expose a record through the
+interactive Composition Lab. The packet supplies no source verification,
+decision recommendation, domain authority, or reader evidence.
 
 ## F28 grammar status
 
 `specs/DECISION-EVIDENCE-RELATION-KINDS.md` now defines parser-visible kinds
-and exact qualifier keys for all five candidates, with positive and
+and exact qualifier keys for all five kinds, with positive and
 adversarial external fixtures. This completes relation-kind grammar and
-endpoint-resolution preparation only. No record is present in the canonical
-sidecar, no assurance binding exists for a candidate edge, and the Composition
-Lab remains limited to its six admitted relations. The remaining admission
-conditions apply independently to each exact future record.
+endpoint-resolution preparation. F29 subsequently admits the
+evidence-to-evaluation record and binds it through assurance while the other
+four remain absent. The Composition Lab remains limited to its separate
+six-ID F1-F6 allowlist. The remaining admission conditions apply independently
+to each future record.

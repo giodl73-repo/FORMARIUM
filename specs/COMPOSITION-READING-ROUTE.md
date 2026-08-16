@@ -19,7 +19,7 @@ which check passes, or turn the local result into a reviewed guide.
 ## Exact bindings
 
 The renderer derives one binding for every endpoint and scope in the six exact
-reviewed F1-F6 relation records:
+allowlisted reviewed F1-F6 relation records:
 
 | Graph artifact | Binding authority | Destination |
 |---|---|---|
@@ -49,7 +49,7 @@ Given one identified Composition Lab result:
 7. Retain `rejected` disposition beside any graph artifact involved in a
    subtraction conflict; the page remains available for conflict repair.
 
-The result is a finite ordered list. For the current six relations, a
+The result is a finite ordered list. For the current six Lab relations, a
 single-edge forward or reverse closure normally deduplicates its two endpoint
 factors into one anchor entry and adds one evaluative view.
 

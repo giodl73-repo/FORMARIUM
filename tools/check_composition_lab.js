@@ -5,6 +5,7 @@ const crypto = require("node:crypto");
 const fs = require("node:fs");
 const path = require("node:path");
 const lab = require("../volumes/01-structure-quantity-choice/proof-set-composition-lab.js");
+const labAllowlist = require("./composition_lab_allowlist.js");
 
 const root = path.resolve(__dirname, "..");
 const referencePath = path.join(root, "reference", "factorium-reference-v0.factorium");
@@ -15,8 +16,7 @@ function sha256(file) {
 }
 
 function relationPayload() {
-  const relations = fs.readFileSync(relationsPath, "utf8").trimEnd().split("\n")
-    .filter((line) => line.startsWith("relation "))
+  const relations = labAllowlist.relationLines(fs.readFileSync(relationsPath, "utf8"), root)
     .map((line) => {
       const fields = line.slice("relation ".length).split(" | ");
       assert.equal(fields.length, 7, "typed relation field count");
@@ -39,6 +39,13 @@ function relationPayload() {
 }
 
 const payload = relationPayload();
+assert.equal(payload.relations.length, 6, "Lab allowlist remains six relations");
+assert.equal(fs.readFileSync(relationsPath, "utf8").split(/\r?\n/)
+  .filter((line) => line.startsWith("relation ")).length, 7,
+"canonical sidecar contains one separately admitted cross-entry relation");
+assert.ok(!payload.relations.some((relation) =>
+  relation.id === "f27-evidence-qualifies-evaluation"),
+"F29 relation is not interactively exposed");
 const f1 = payload.relations[0];
 const f2 = payload.relations[1];
 

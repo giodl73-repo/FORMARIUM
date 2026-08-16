@@ -1,6 +1,7 @@
 "use strict";
 
 const assert = require("node:assert/strict");
+const crypto = require("node:crypto");
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
@@ -16,6 +17,14 @@ const editionNumber = Number(manifest.edition.split("-")[1]);
 assert.ok(Number.isInteger(editionNumber) && editionNumber >= 16, "bounded lab edition");
 assert.equal(manifest.site_checks.composition_lab_pages, 1, "one lab page");
 assert.equal(manifest.composition_lab_checks.relation_records, 6, "six reviewed relations");
+assert.equal(manifest.composition_lab_checks.canonical_relation_records, 7,
+  "canonical graph reports its separately reviewed seventh relation");
+assert.equal(manifest.composition_lab_checks.allowlist_path,
+  "volumes/01-structure-quantity-choice/proof-set-composition-lab-relations.factorium");
+const allowlistPath = path.resolve(manifest.composition_lab_checks.allowlist_path);
+const allowlistSha = crypto.createHash("sha256").update(fs.readFileSync(allowlistPath)).digest("hex");
+assert.equal(manifest.composition_lab_checks.allowlist_sha256, allowlistSha,
+  "Lab manifest binds its exact six-ID allowlist");
 assert.equal(manifest.composition_lab_checks.scope_views, 6, "six exact scope views");
 assert.equal(manifest.composition_lab_checks.automatic_relation_discovery, false,
   "no relation discovery claim");
@@ -51,6 +60,9 @@ vm.runInNewContext(siteData, sandbox, { timeout: 1000 });
 const payload = JSON.parse(JSON.stringify(sandbox.window.FACTORIUM_COMPOSITION_LAB));
 assert.equal(payload.schema, "factorium-composition-lab-payload-v0", "payload schema");
 assert.equal(payload.relations.length, 6, "payload relation count");
+assert.ok(!payload.relations.some((relation) =>
+  relation.id === "f27-evidence-qualifies-evaluation"),
+"new canonical edge remains outside interactive Lab");
 assert.equal(new Set(payload.relations.map((relation) => relation.id)).size, 6,
   "payload relation IDs are unique");
 assert.equal(new Set(payload.relations.map((relation) => relation.scope)).size, 6,

@@ -5,7 +5,7 @@ use factor::{
 use std::{fs, path::Path};
 
 #[test]
-fn decision_evidence_kind_fixture_round_trips_without_admission() {
+fn decision_evidence_kind_fixture_tracks_one_admitted_kind() {
     let path = "fixtures/relations/decision-evidence-relation-kinds.factorium";
     let text = fs::read_to_string(path).unwrap();
     let manifest = RelationManifest::parse(&text).unwrap();
@@ -21,13 +21,13 @@ fn decision_evidence_kind_fixture_round_trips_without_admission() {
     );
 
     let canonical = fs::read_to_string("reference/factorium-relations-v0.factorium").unwrap();
-    for candidate in manifest.relations() {
-        assert!(
-            !canonical.contains(candidate.id()),
-            "grammar fixture must not admit {}",
-            candidate.id()
-        );
-    }
+    let admitted = manifest
+        .relations()
+        .iter()
+        .filter(|candidate| canonical.contains(candidate.id()))
+        .map(factor::reference_sidecar::RelationRecord::id)
+        .collect::<Vec<_>>();
+    assert_eq!(admitted, ["f27-evidence-qualifies-evaluation"]);
 }
 
 #[test]
@@ -63,13 +63,13 @@ fn decision_evidence_kind_fixtures_fail_closed() {
 }
 
 #[test]
-fn canonical_sidecar_retains_six_admitted_relations() {
+fn canonical_sidecar_admits_one_cross_entry_relation() {
     let text = fs::read_to_string("reference/factorium-relations-v0.factorium").unwrap();
     let manifest = RelationManifest::parse(&text).unwrap();
-    assert_eq!(manifest.relations().len(), 6);
+    assert_eq!(manifest.relations().len(), 7);
     assert_eq!(
         manifest.sha256(),
-        "4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df"
+        "a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6"
     );
 }
 
@@ -79,10 +79,20 @@ fn decision_evidence_fixture_endpoints_resolve_when_combined_for_validation() {
     let candidates =
         fs::read_to_string("fixtures/relations/decision-evidence-relation-kinds.factorium")
             .unwrap();
-    let mut records = canonical
+    let canonical_records = canonical
         .lines()
-        .chain(candidates.lines())
         .filter(|line| line.starts_with("relation "))
+        .collect::<Vec<_>>();
+    let canonical_ids = canonical_records
+        .iter()
+        .map(|line| line["relation ".len()..].split(" | ").next().unwrap())
+        .collect::<Vec<_>>();
+    let mut records = canonical_records
+        .into_iter()
+        .chain(candidates.lines().filter(|line| {
+            line.starts_with("relation ")
+                && !canonical_ids.contains(&line["relation ".len()..].split(" | ").next().unwrap())
+        }))
         .collect::<Vec<_>>();
     records.sort_unstable();
     let combined = format!(

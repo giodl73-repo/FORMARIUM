@@ -6,13 +6,14 @@ const fs = require("node:fs");
 const path = require("node:path");
 const lab = require("../volumes/01-structure-quantity-choice/proof-set-composition-lab.js");
 const reconciliation = require("../volumes/01-structure-quantity-choice/proof-set-composition-reconciliation.js");
+const labAllowlist = require("./composition_lab_allowlist.js");
 
 const root = path.resolve(__dirname, "..");
 const referencePath = path.join(root, "reference", "factorium-reference-v0.factorium");
 const relationsPath = path.join(root, "reference", "factorium-relations-v0.factorium");
 const sha256 = (file) => crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
-const relations = fs.readFileSync(relationsPath, "utf8").trimEnd().split("\n")
-  .filter((line) => line.startsWith("relation ")).map((line) => {
+const relations = labAllowlist.relationLines(fs.readFileSync(relationsPath, "utf8"), root)
+  .map((line) => {
     const fields = line.slice("relation ".length).split(" | ");
     return { id: fields[0], verb: fields[1], source: fields[2], target: fields[3],
       scope: fields[4], qualifiers: fields[5], scopeHref: fields[6] };

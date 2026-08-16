@@ -737,15 +737,17 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 Factor Forge through F27 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
 software, and decision support. The canonical reference now contains 40
-entries, 304 senses, 479 factors, and 57 views with 103 exact assurance
+entries, 304 senses, 479 factors, and 57 views with 104 exact assurance
 bindings. The current Factor Forge supplement contains 46 records, while
 `sim-29` selects 124 canonical records and indexes 132 destinations across
 thirteen chapters. Historical preflight documents retain the counts of the
 rehearsal they recorded.
 
-F28 adds parser grammar and external fail-closed fixtures for five candidate
-Decision and Evidence relation kinds. It admits no new canonical relation:
-the sidecar and Composition Lab remain fixed at the six reviewed F1-F6 edges.
+F28 adds parser grammar and external fail-closed fixtures for five Decision
+and Evidence relation kinds. F29 admits the first exact cross-entry
+evidence-to-evaluation relation, bringing the canonical sidecar to seven
+reviewed edges. The Composition Lab remains separately fixed to its six-ID
+F1-F6 teaching allowlist.
 
 ## Boundary
 

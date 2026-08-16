@@ -5,11 +5,12 @@ const crypto = require("node:crypto");
 const fs = require("node:fs");
 const lab = require("../volumes/01-structure-quantity-choice/proof-set-composition-lab.js");
 const guides = require("../volumes/01-structure-quantity-choice/proof-set-composition-guide.js");
+const labAllowlist = require("./composition_lab_allowlist.js");
 
 const relationText = fs.readFileSync("reference/factorium-relations-v0.factorium", "utf8");
 const referenceText = fs.readFileSync("reference/factorium-reference-v0.factorium", "utf8");
 const sha = (text) => crypto.createHash("sha256").update(text).digest("hex");
-const relations = relationText.split(/\r?\n/).filter((line) => line.startsWith("relation "))
+const relations = labAllowlist.relationLines(relationText)
   .map((line) => {
     const fields = line.slice("relation ".length).split(" | ");
     assert.equal(fields.length, 7, "relation fields");

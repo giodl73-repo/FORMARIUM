@@ -738,3 +738,22 @@ No candidate kind becomes a Composition Lab edge, assurance artifact, or
 closure permission. Exact records can be considered individually in a later
 batch after relation-specific loss, negative behavior, assurance, and
 traversal review.
+
+## F29 first cross-entry relation
+
+F29 admits only `f27-evidence-qualifies-evaluation`, connecting Claim/Evidence
+supporting-and-contradicting implications to Choice evidence quality,
+applicability, and uncertainty under the Alternative Selection Decision view.
+The complete claim, population, outcome, horizon, provenance, and limitation
+qualifier contract is mandatory. The edge carries no evidence artifact,
+support direction, truth, sufficiency, causal status, local binding, or
+recommendation, and it has no implied inverse.
+
+The new canonical Composition Query reaches the three exact source, target,
+and scope nodes but remains `incomplete` because evidence applicability is
+unresolved. A relation-specific wrong-predecessor fixture fails closed. The
+canonical sidecar now has seven reviewed relations with one cross-entry edge;
+assurance has 104 exact bindings. A separately hashed six-ID F1-F6 allowlist
+keeps the new relation out of the interactive Composition Lab pending a later
+reader-facing design review. The other four F27 bridge relations remain
+candidate-only.

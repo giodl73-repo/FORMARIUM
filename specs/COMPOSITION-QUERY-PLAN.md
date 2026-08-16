@@ -24,7 +24,7 @@ The pure projection receives only:
 - current problem, Context Profile ID and selections, direction, and finite
   depth, edge, and node controls;
 - checked seed, relation, and exclusion identities;
-- the digest-bound six-relation Composition Lab payload;
+- the digest-bound six-relation Composition Lab allowlist payload;
 - the digest-bound 18-record Composition Reading payload.
 
 It returns `factorium-composition-query-plan-v0` with the repeated reference
