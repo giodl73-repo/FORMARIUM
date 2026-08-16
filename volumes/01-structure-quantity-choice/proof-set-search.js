@@ -8,13 +8,14 @@
       .toLowerCase();
   }
 
-  function searchRecords(records, query, kind) {
+  function searchRecords(records, query, kind, domain) {
     var phrase = normalize(query).trim();
     var tokens = phrase.split(/\s+/).filter(Boolean);
 
     return records
       .filter(function (record) {
-        return !kind || record.kind === kind;
+        return (!kind || record.kind === kind) &&
+          (!domain || record.domain === domain);
       })
       .map(function (record) {
         var title = normalize(record.title);
@@ -58,9 +59,10 @@
   function initialize(records, documentObject, locationObject, historyObject) {
     var queryInput = documentObject.getElementById("proof-search-query");
     var kindSelect = documentObject.getElementById("proof-search-kind");
+    var domainSelect = documentObject.getElementById("proof-search-domain");
     var status = documentObject.getElementById("proof-search-status");
     var results = documentObject.getElementById("proof-search-results");
-    if (!queryInput || !kindSelect || !status || !results) return;
+    if (!queryInput || !kindSelect || !domainSelect || !status || !results) return;
 
     Array.from(new Set(records.map(function (record) { return record.kind; })))
       .sort()
@@ -71,28 +73,42 @@
         kindSelect.appendChild(option);
       });
 
+    Array.from(new Set(records.map(function (record) { return record.domain; })))
+      .filter(Boolean)
+      .sort()
+      .forEach(function (domain) {
+        var option = documentObject.createElement("option");
+        option.value = domain;
+        option.textContent = domain.charAt(0).toUpperCase() + domain.slice(1);
+        domainSelect.appendChild(option);
+      });
+
     var parameters = new URLSearchParams(locationObject.search);
     queryInput.value = parameters.get("q") || "";
     kindSelect.value = parameters.get("kind") || "";
+    domainSelect.value = parameters.get("domain") || "";
 
     function render() {
       var query = queryInput.value.trim();
       var kind = kindSelect.value;
-      var matches = searchRecords(records, query, kind);
-      var awaitingQuery = !query && !kind;
+      var domain = domainSelect.value;
+      var matches = searchRecords(records, query, kind, domain);
+      var awaitingQuery = !query && !kind && !domain;
       var shown = awaitingQuery ? [] : matches.slice(0, 20);
       var nextParameters = new URLSearchParams(locationObject.search);
       nextParameters.delete("q");
       nextParameters.delete("kind");
+      nextParameters.delete("domain");
       if (query) nextParameters.set("q", query);
       if (kind) nextParameters.set("kind", kind);
+      if (domain) nextParameters.set("domain", domain);
       var nextUrl = locationObject.pathname +
         (nextParameters.toString() ? "?" + nextParameters.toString() : "") +
         locationObject.hash;
       historyObject.replaceState(null, "", nextUrl);
 
       status.textContent = awaitingQuery
-        ? records.length + " records available. Enter terms or choose a kind."
+        ? records.length + " records available. Enter terms or choose a filter."
         : matches.length + " result" +
           (matches.length === 1 ? "" : "s") +
           (matches.length > shown.length ? "; showing first " + shown.length : "");
@@ -119,6 +135,7 @@
 
     queryInput.addEventListener("input", render);
     kindSelect.addEventListener("change", render);
+    domainSelect.addEventListener("change", render);
     render();
   }
 

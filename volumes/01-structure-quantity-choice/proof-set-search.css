@@ -13,7 +13,7 @@
 .proof-search__controls {
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: minmax(12rem, 1fr) minmax(9rem, 14rem);
+  grid-template-columns: minmax(12rem, 1fr) repeat(2, minmax(9rem, 14rem));
 }
 
 .proof-search label {

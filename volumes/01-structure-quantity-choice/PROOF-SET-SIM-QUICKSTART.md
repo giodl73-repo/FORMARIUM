@@ -1,6 +1,6 @@
 # Proof Set Simulation Quickstart
 
-Status: internal `sim-01` rehearsal surface; not a private-preview edition
+Status: internal `sim-08` rehearsal surface; not a private-preview edition
 
 ## What this is
 
@@ -15,12 +15,15 @@ into deeper entries.
 
 ## Start here
 
-1. Open the generated proof and use its contents list or browser find.
-2. Begin from a title or phrase you would plausibly know; do not jump to a
+1. Open the generated book site and choose **Start**, **Search**, or
+   **Contents**.
+2. Use **Start** for the five-step Factorium method journey, **Search** for a
+   title or ordinary phrase, or **Contents** for a curated chapter.
+3. Begin from a title or phrase you would plausibly know; do not jump to a
    target because its internal path is familiar.
-3. Identify the sense or lookup question before choosing a formula or view.
-4. Follow at least one factor, cross-reference, or guide trace.
-5. Record only artifact-level notes with `SIM-*` identifiers.
+4. Identify the sense or lookup question before choosing a formula or view.
+5. Follow at least one factor, cross-reference, or guide trace.
+6. Record only artifact-level notes with `SIM-*` identifiers.
 
 Do not record fictional time, difficulty, preference, task completion, quote,
 or return use. Those require a real reader.

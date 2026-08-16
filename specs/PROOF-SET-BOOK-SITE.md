@@ -1,6 +1,6 @@
 # Proof Set Book Site Simulation Contract
 
-Status: `sim-07` publication prototype; not canonical interchange, reader
+Status: `sim-08` publication prototype; not canonical interchange, reader
 evidence, `preview-01`, or Factorium Workbench
 
 ## Purpose
@@ -17,22 +17,28 @@ a disposable generated projection of those sources.
 
 | Route | Role | Content authority |
 |---|---|---|
-| `index.html` | title, search, and chapter discovery | generated selection and search metadata |
-| `chapters/*.html` | curated book sequence | `VOLUME.md`, the admitted simulation supplement, and guide selection |
+| `index.html` | title, first journey, search, and chapter discovery | generated selection and search metadata |
+| `chapters/*.html` | curated book sequence and subsection routes | `VOLUME.md`, the admitted simulation supplement, and guide selection |
 | `entries/*.html` | one included Markdown source per page | exact selected source revision |
 | `assets/*` | shared presentation and static runtime | reviewed simulation assets |
 
 The simulation generates a source page for every included Markdown document.
-Only the 120 selected records and two application guides receive indexed reader
+Only the 122 selected records and two application guides receive indexed reader
 pages, previous/next order, and adaptive reading controls. Supporting sources
 remain addressable without being promoted into the indexed entry sequence.
 
 ## Navigation contract
 
 - Search results resolve to dedicated entry pages, not monolith fragments.
+- Search may narrow by exact record kind and canonical domain; both filters
+  compose with text ranking and remain visible in URL state.
+- The homepage first journey links five already selected source pages in one
+  ordered orientation route.
 - Each indexed record appears in exactly one chapter route.
+- The 122 selected records and two guides appear across exactly 12 chapters;
+  source `###` headings preserve internal subsection routes.
 - Entry breadcrumbs resolve back to the owning chapter.
-- Previous and next follow the complete 122-record publication sequence.
+- Previous and next follow the complete 124-destination publication sequence.
 - Cross-source Markdown links resolve to the generated target page and exact
   rendered fragment when both sources are included.
 - Links outside the selected projection resolve to visible repository sources;
@@ -55,6 +61,8 @@ silently broaden profile applicability.
 The renderer must fail on:
 
 - missing, duplicate, or extra chapter ownership for an indexed record;
+- missing, duplicate, or extra chapter-subsection ownership;
+- a missing or duplicate first-journey source;
 - colliding source-page names or rendered identifiers;
 - stale or incomplete generated chapter, entry, or shared-asset sets;
 - a missing local page, asset, or fragment target;
@@ -79,6 +87,7 @@ meaning.
 
 - observed reader comprehension, findability, or return use;
 - production hosting, analytics, accounts, contribution, or editorial tools;
-- faceted Workbench search and graph construction;
+- open-ended Workbench facets, recommendation, and graph construction beyond
+  the selected publication's bounded kind and domain filters;
 - public release identity or guarantees about confidential distribution;
 - schema promotion of Context Profiles or typed relations.

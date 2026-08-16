@@ -4,6 +4,12 @@
   --site-width: 86rem;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body.proof-site {
   margin: 0;
   max-width: none;
@@ -112,6 +118,64 @@ body.proof-site {
   margin: 2rem 0 3rem;
 }
 
+.site-start {
+  background: var(--proof-card);
+  border: 1px solid var(--proof-rule);
+  border-radius: 1rem;
+  margin: 2rem 0 3rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.site-start h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin: 0.35rem 0 0.4rem;
+}
+
+.site-start > p:not(.site-kicker) {
+  color: var(--proof-ink-soft);
+  margin-top: 0;
+}
+
+.site-journey {
+  counter-reset: none;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+}
+
+.site-journey li {
+  border-left: 0.22rem solid var(--proof-accent);
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.25rem 0 0.25rem 0.85rem;
+}
+
+.site-journey span {
+  color: var(--proof-accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-journey a {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.site-journey p {
+  color: var(--proof-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
 .site-contents {
   border-top: 1px solid var(--proof-rule);
   padding-top: 2rem;
@@ -186,6 +250,20 @@ body.proof-site {
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   list-style: none;
   padding: 0;
+}
+
+.site-chapter-groups {
+  display: grid;
+  gap: 2rem;
+}
+
+.site-chapter-group > h2 {
+  border-bottom: 1px solid var(--proof-rule);
+  color: var(--proof-accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  margin: 0 0 0.8rem;
+  padding-bottom: 0.35rem;
 }
 
 .site-entry-grid li {
@@ -279,6 +357,25 @@ body.proof-site {
 }
 
 @media (max-width: 42rem) {
+  .site-header__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 0.75rem;
+  }
+
+  .site-nav {
+    gap: 0.4rem 0.85rem;
+  }
+
+  .site-hero h1,
+  .site-start h2 {
+    overflow-wrap: break-word;
+  }
+
+  .site-start {
+    padding: 1rem;
+  }
+
   .site-pagination {
     grid-template-columns: 1fr;
   }

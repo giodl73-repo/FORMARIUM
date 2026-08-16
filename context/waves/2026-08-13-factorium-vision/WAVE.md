@@ -142,6 +142,10 @@ The eighth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-08.md`; `sim-07`
 turns the selected proof into a deterministic static book site with search,
 eight chapter routes, dedicated source pages, routed cross-references, and the
 same adaptive reading and Context Profile behavior.
+The ninth rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-09.md`; `sim-08`
+regroups the current 124 indexed destinations into twelve chapters with 29
+subsection routes, adds a five-step first journey, and composes canonical-domain
+filtering with text and record-kind search without changing canonical content.
 
 ## Success criteria
 
@@ -894,3 +898,31 @@ records and the combined selection remains 122 numbered records plus two
 guides across twenty-four chapters. The regenerated `sim-07` site remains 163
 pages from 138 sources, indexes all 124 reader destinations, and reports zero
 missing internal targets.
+
+## 2026-08-15 proof-edition reader-journey continuation
+
+Plan review: pause undirected vocabulary expansion and audit the current book
+projection. The measured design finds 124 indexed destinations across 24
+chapters, including 15 chapters with only one or two records. Regroup the
+current-source supplement into six subject chapters while preserving five base
+parts and Applications; retain `###` subsections inside merged chapters; add a
+five-step method-to-application journey; compose canonical-domain filtering
+with text and record-kind search; keep Book as the reader default and preserve
+Context Profiles. Change only the publication projection and simulation
+assets. Do not change canonical tables, sidecars, the frozen `sieve-01`
+baseline, the external-reader gate, or Workbench scope.
+
+Result review: `sim-08` now renders 122 numbered records plus two guides across
+12 chapters and 29 source-owned subsections. Five exact first-journey links
+lead from the Root Table through factor roles, quality, failure diagnosis, and
+one complete Factor Guide. Search indexes all 124 destinations across 13
+canonical domains and passes empty, query, kind, domain, and composed-filter
+smoke cases. The 151-page site contains 138 source pages, five shared assets,
+2,888 checked local links, and zero missing targets. Two independent renders
+produce site identity
+`562b31ee4e2a463a8b5e4bf11de6d1f987ac95762024f396ef5e945678e89bc0`.
+Desktop, narrow-width, and merged-chapter browser inspection passes for
+mechanics only. The ten-reviewer design pass and seven-role Factorium fixed
+point report 0 P1 and 0 P2 findings; observed accessibility, findability,
+comprehension, application success, preference, and return use remain deferred
+to real readers.

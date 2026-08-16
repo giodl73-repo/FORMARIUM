@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -36,6 +36,7 @@ $artifactTitle = switch ($Edition) {
     "sim-05" { "Factorium Proof Set Adaptive Reader Simulation 05" }
     "sim-06" { "Factorium Proof Set Context Profile Simulation 06" }
     "sim-07" { "Factorium Proof Set Book Site Simulation 07" }
+    "sim-08" { "Factorium Proof Set Reader Journey Simulation 08" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -146,18 +147,66 @@ function Get-SiteChapterSelections {
             $documentText.Length
         }
         $chapterText = $documentText.Substring($chapterMatch.Index, $chapterEnd - $chapterMatch.Index)
-        $chapterPaths = foreach ($selectionMatch in [regex]::Matches(
-            $chapterText,
-            '(?m)^\d+\. \[[^\]]+\]\(([^)#]+\.md)(?:#[^)]+)?\)'
-        )) {
-            [System.IO.Path]::GetFullPath(
-                (Join-Path $documentDirectory $selectionMatch.Groups[1].Value)
+        $selectionPattern = '(?m)^\d+\. \[[^\]]+\]\(([^)#]+\.md)(?:#[^)]+)?\)'
+        $chapterPaths = @(
+            foreach ($selectionMatch in [regex]::Matches($chapterText, $selectionPattern)) {
+                [System.IO.Path]::GetFullPath(
+                    (Join-Path $documentDirectory $selectionMatch.Groups[1].Value)
+                )
+            }
+        )
+        $chapterGroups = [System.Collections.Generic.List[object]]::new()
+        $groupMatches = [regex]::Matches($chapterText, '(?m)^### (.+)$')
+        if ($groupMatches.Count -eq 0) {
+            $chapterGroups.Add([ordered]@{
+                title = "Chapter records"
+                paths = $chapterPaths
+            })
+        }
+        else {
+            $firstGroupText = $chapterText.Substring(0, $groupMatches[0].Index)
+            $ungroupedPaths = @(
+                foreach ($selectionMatch in [regex]::Matches($firstGroupText, $selectionPattern)) {
+                    [System.IO.Path]::GetFullPath(
+                        (Join-Path $documentDirectory $selectionMatch.Groups[1].Value)
+                    )
+                }
             )
+            if ($ungroupedPaths.Count -gt 0) {
+                $chapterGroups.Add([ordered]@{
+                    title = "Chapter records"
+                    paths = $ungroupedPaths
+                })
+            }
+            for ($groupIndex = 0; $groupIndex -lt $groupMatches.Count; $groupIndex++) {
+                $groupMatch = $groupMatches[$groupIndex]
+                $groupEnd = if ($groupIndex -lt $groupMatches.Count - 1) {
+                    $groupMatches[$groupIndex + 1].Index
+                }
+                else {
+                    $chapterText.Length
+                }
+                $groupText = $chapterText.Substring($groupMatch.Index, $groupEnd - $groupMatch.Index)
+                $groupPaths = @(
+                    foreach ($selectionMatch in [regex]::Matches($groupText, $selectionPattern)) {
+                        [System.IO.Path]::GetFullPath(
+                            (Join-Path $documentDirectory $selectionMatch.Groups[1].Value)
+                        )
+                    }
+                )
+                if ($groupPaths.Count -gt 0) {
+                    $chapterGroups.Add([ordered]@{
+                        title = $groupMatch.Groups[1].Value.Trim()
+                        paths = $groupPaths
+                    })
+                }
+            }
         }
         [ordered]@{
             key = "part-$($chapterMatch.Groups[1].Value.ToLowerInvariant())"
             title = $chapterMatch.Groups[2].Value.Trim()
-            paths = @($chapterPaths)
+            paths = $chapterPaths
+            groups = @($chapterGroups)
         }
     }
 }
@@ -270,7 +319,7 @@ if ($Edition -ne "sim-01") {
         extra_delta_paths = $extraDelta.Count
     }
 
-    if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07")) {
+    if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08")) {
         $rubricText = Get-Content -LiteralPath $factorForgeRubric -Raw
         $taskCoverage = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
@@ -299,10 +348,10 @@ if ($Edition -ne "sim-01") {
     Add-ProofSource $supplement
     $selectionDocuments.Add($supplement)
 }
-if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07")) {
+if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08")) {
     Add-ProofSource $factorForgeTasks
 }
-if ($Edition -in @("sim-06", "sim-07")) {
+if ($Edition -in @("sim-06", "sim-07", "sim-08")) {
     foreach ($contextProfileSource in $contextProfileSources) {
         Add-ProofSource $contextProfileSource
     }
@@ -431,7 +480,7 @@ $contextAssets = @()
 $siteChecks = $null
 $siteAssets = @()
 $siteIndex = $null
-if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
+if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08")) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing search asset: $asset"
@@ -506,7 +555,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
             summary = $metadata.summary
             text = $plainText
         }
-        if ($Edition -eq "sim-07") {
+        if ($Edition -in @("sim-07", "sim-08")) {
             $searchRecord.href = "entries/$(ConvertTo-SitePageName $relativePath)"
         }
         $searchRecords.Add($searchRecord)
@@ -527,7 +576,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
     $searchShell = @'
 <section class="proof-search" aria-labelledby="proof-search-heading">
 <h2 id="proof-search-heading">Search this proof</h2>
-<p>Search the 122 selected records and two application guides. Results open the canonical book projection below.</p>
+<p>Search the selected records and application guides. Results open the canonical book projection below.</p>
 <div class="proof-search__controls">
 <label for="proof-search-query">Search terms
 <input id="proof-search-query" type="search" autocomplete="off" placeholder="Try force, sample, balance, workflow, or contract">
@@ -535,9 +584,13 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
 <label for="proof-search-kind">Record kind
 <select id="proof-search-kind"><option value="">All kinds</option></select>
 </label>
+<label for="proof-search-domain">Domain
+<select id="proof-search-domain"><option value="">All domains</option></select>
+</label>
 </div>
 <p id="proof-search-status" class="proof-search__status" role="status" aria-live="polite"></p>
 <ol id="proof-search-results" class="proof-search__results"></ol>
+<noscript><p>Search needs JavaScript. Every destination remains available in Browse the book.</p></noscript>
 </section>
 '@
     $htmlText = $htmlText.Replace('</head>', "<style>`n$searchCss`n</style>`n</head>")
@@ -559,14 +612,15 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
         numbered_records = $numberedSelections.Count
         application_guides = $guideSelections.Count
         indexed_records = $searchRecords.Count
-        duplicate_paths = 124 - $searchPaths.Count
+        indexed_domains = @($searchRecords.domain | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Sort-Object -Unique).Count
+        duplicate_paths = $searchRecords.Count - $searchPaths.Count
         missing_rendered_targets = $missingSearchTargets.Count
         result_limit = 20
         execution = "static in-browser; no server or alternate content authority"
     }
 }
 
-if ($Edition -in @("sim-05", "sim-06", "sim-07")) {
+if ($Edition -in @("sim-05", "sim-06", "sim-07", "sim-08")) {
     foreach ($asset in @($readerStyle, $readerScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing reader asset: $asset"
@@ -650,7 +704,7 @@ if ($Edition -in @("sim-05", "sim-06", "sim-07")) {
     }
 }
 
-if ($Edition -in @("sim-06", "sim-07")) {
+if ($Edition -in @("sim-06", "sim-07", "sim-08")) {
     foreach ($asset in @($contextStyle, $contextScript, $contextBindings)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing context-profile asset: $asset"
@@ -686,7 +740,7 @@ if ($Edition -in @("sim-06", "sim-07")) {
             path = [System.IO.Path]::GetRelativePath($workspace, $profileSource).Replace("\", "/")
             anchor = $headingBySource[$profileSource]
         }
-        if ($Edition -eq "sim-07") {
+        if ($Edition -in @("sim-07", "sim-08")) {
             $profileRelativePath = [System.IO.Path]::GetRelativePath($workspace, $profileSource).Replace("\", "/")
             $profileRecord.href = ConvertTo-SitePageName $profileRelativePath
         }
@@ -800,7 +854,7 @@ if ($localFileLinks.Count -ne 0) {
     throw "Rendered proof has $($localFileLinks.Count) filesystem-dependent links"
 }
 
-if ($Edition -eq "sim-07") {
+if ($Edition -in @("sim-07", "sim-08")) {
     if (-not (Test-Path -LiteralPath $siteStyle -PathType Leaf)) {
         throw "Missing proof-site asset: $siteStyle"
     }
@@ -859,11 +913,30 @@ if ($Edition -eq "sim-07") {
         key = "applications"
         title = "Applications"
         paths = @($guideSelections | ForEach-Object { $_.path })
+        groups = @([ordered]@{
+            title = "Factor Guides"
+            paths = @($guideSelections | ForEach-Object { $_.path })
+        })
     })
     $chapterBySearchPath = [System.Collections.Generic.Dictionary[string, object]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
     )
     foreach ($chapter in $siteChapters) {
+        $groupPathSet = [System.Collections.Generic.HashSet[string]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        foreach ($group in $chapter.groups) {
+            foreach ($groupPath in $group.paths) {
+                if (-not $groupPathSet.Add($groupPath)) {
+                    throw "Chapter subsection repeats a record: $($chapter.key) $groupPath"
+                }
+            }
+        }
+        $missingGroupPaths = @($chapter.paths | Where-Object { -not $groupPathSet.Contains($_) })
+        $extraGroupPaths = @($groupPathSet | Where-Object { $_ -notin $chapter.paths })
+        if ($missingGroupPaths.Count -ne 0 -or $extraGroupPaths.Count -ne 0) {
+            throw "Chapter subsection coverage mismatch: chapter=$($chapter.key) missing=$($missingGroupPaths -join ',') extra=$($extraGroupPaths -join ',')"
+        }
         foreach ($chapterPath in $chapter.paths) {
             $chapterRelativePath = [System.IO.Path]::GetRelativePath($workspace, $chapterPath).Replace("\", "/")
             if (-not $searchRecordByPath.ContainsKey($chapterRelativePath)) {
@@ -875,7 +948,7 @@ if ($Edition -eq "sim-07") {
             $chapterBySearchPath[$chapterRelativePath] = $chapter
         }
     }
-    if ($siteChapters.Count -ne 24 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
+    if ($siteChapters.Count -ne 12 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
         throw "Site chapter coverage mismatch: chapters=$($siteChapters.Count) records=$($chapterBySearchPath.Count)"
     }
 
@@ -915,6 +988,61 @@ if ($Edition -eq "sim-07") {
         [System.Text.UTF8Encoding]::new($false)
     )
 
+    $firstJourney = @(
+        [ordered]@{
+            label = "Step 1"
+            title = "Choose a coordinate"
+            description = "Use the Root Table to decide which recurring question organizes the problem."
+            source = (Join-Path $workspace "tables\foundations\ROOT-TABLE.md")
+        },
+        [ordered]@{
+            label = "Step 2"
+            title = "Name the structural job"
+            description = "Use Factor Roles to distinguish pivots, components, contexts, constraints, and derived views."
+            source = (Join-Path $workspace "tables\foundations\FACTOR-ROLES.md")
+        },
+        [ordered]@{
+            label = "Step 3"
+            title = "Judge a decomposition"
+            description = "Check whether the proposed factors preserve meaning, alternatives, and usable boundaries."
+            source = (Join-Path $workspace "tables\entries\factorization-quality.md")
+        },
+        [ordered]@{
+            label = "Step 4"
+            title = "Recognize a failure"
+            description = "Use the diagnostic to separate the failure's owner from its visible symptom."
+            source = (Join-Path $workspace "tables\diagnostics\factorization-failures.md")
+        },
+        [ordered]@{
+            label = "Step 5"
+            title = "See the method applied"
+            description = "Follow a complete Factor Guide from local question through selected relation and controls."
+            source = (Join-Path $workspace "guides\aqueous-solution-amount-concentration.md")
+        }
+    )
+    $firstJourneySources = [System.Collections.Generic.HashSet[string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    $firstJourneyItems = [System.Text.StringBuilder]::new()
+    foreach ($step in $firstJourney) {
+        $stepSource = [System.IO.Path]::GetFullPath($step.source)
+        if (-not $firstJourneySources.Add($stepSource)) {
+            throw "First journey repeats a source: $stepSource"
+        }
+        if (-not $pageBySource.ContainsKey($stepSource)) {
+            throw "First journey source is absent from the proof selection: $stepSource"
+        }
+        $encodedLabel = [System.Net.WebUtility]::HtmlEncode($step.label)
+        $encodedTitle = [System.Net.WebUtility]::HtmlEncode($step.title)
+        $encodedDescription = [System.Net.WebUtility]::HtmlEncode($step.description)
+        [void]$firstJourneyItems.AppendLine(
+            "<li><span>$encodedLabel</span><a href=`"entries/$($pageBySource[$stepSource])`">$encodedTitle</a><p>$encodedDescription</p></li>"
+        )
+    }
+    if ($firstJourneySources.Count -ne 5) {
+        throw "First journey target count mismatch: $($firstJourneySources.Count)"
+    }
+
     $chapterItems = [System.Text.StringBuilder]::new()
     foreach ($chapter in $siteChapters) {
         $encodedChapterTitle = [System.Net.WebUtility]::HtmlEncode($chapter.title)
@@ -948,7 +1076,7 @@ if ($Edition -eq "sim-07") {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary"><a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <section class="site-hero">
@@ -956,10 +1084,16 @@ if ($Edition -eq "sim-07") {
 <h1>Structure, Quantity, and Choice</h1>
 <p class="site-hero__deck">A linked reference for selecting senses, comparing decompositions, choosing bounded relations, and recognizing structures that fail.</p>
 </section>
+<section id="start" class="site-start" aria-labelledby="site-start-heading">
+<p class="site-kicker">First journey</p>
+<h2 id="site-start-heading">From a vague problem to a bounded factorization</h2>
+<p>Follow the method once, then search directly or enter any chapter.</p>
+<ol class="site-journey">$firstJourneyItems</ol>
+</section>
 <div id="search">$homeSearchShell</div>
 <section id="contents" class="site-contents">
 <h2>Browse the book</h2>
-<p class="site-contents__intro">Eight reading routes organize ninety-five indexed records and guides. Every record also has a dedicated lookup page.</p>
+<p class="site-contents__intro">$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page.</p>
 <ol class="site-chapter-grid">$chapterItems</ol>
 </section>
 </main>
@@ -980,17 +1114,24 @@ if ($Edition -eq "sim-07") {
         else {
             "Guided use"
         }
-        $chapterRecordItems = [System.Text.StringBuilder]::new()
-        foreach ($chapterPath in $chapter.paths) {
-            $chapterRelativePath = [System.IO.Path]::GetRelativePath($workspace, $chapterPath).Replace("\", "/")
-            $chapterRecord = $searchRecordByPath[$chapterRelativePath]
-            $encodedRecordTitle = [System.Net.WebUtility]::HtmlEncode($chapterRecord.title)
-            $encodedRecordMeta = [System.Net.WebUtility]::HtmlEncode(
-                (@($chapterRecord.kind, $chapterRecord.domain) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }) -join " · "
-            )
-            $recordPage = [System.IO.Path]::GetFileName($chapterRecord.href)
-            [void]$chapterRecordItems.AppendLine(
-                "<li><a href=`"../entries/$recordPage`">$encodedRecordTitle</a><span>$encodedRecordMeta</span></li>"
+        $chapterGroupItems = [System.Text.StringBuilder]::new()
+        foreach ($group in $chapter.groups) {
+            $encodedGroupTitle = [System.Net.WebUtility]::HtmlEncode($group.title)
+            $chapterRecordItems = [System.Text.StringBuilder]::new()
+            foreach ($chapterPath in $group.paths) {
+                $chapterRelativePath = [System.IO.Path]::GetRelativePath($workspace, $chapterPath).Replace("\", "/")
+                $chapterRecord = $searchRecordByPath[$chapterRelativePath]
+                $encodedRecordTitle = [System.Net.WebUtility]::HtmlEncode($chapterRecord.title)
+                $encodedRecordMeta = [System.Net.WebUtility]::HtmlEncode(
+                    (@($chapterRecord.kind, $chapterRecord.domain) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }) -join " · "
+                )
+                $recordPage = [System.IO.Path]::GetFileName($chapterRecord.href)
+                [void]$chapterRecordItems.AppendLine(
+                    "<li><a href=`"../entries/$recordPage`">$encodedRecordTitle</a><span>$encodedRecordMeta</span></li>"
+                )
+            }
+            [void]$chapterGroupItems.AppendLine(
+                "<section class=`"site-chapter-group`"><h2>$encodedGroupTitle</h2><ol class=`"site-entry-grid`">$chapterRecordItems</ol></section>"
             )
         }
         $previousChapter = "<span></span>"
@@ -1018,12 +1159,12 @@ if ($Edition -eq "sim-07") {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary"><a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
 <section class="site-chapter-heading"><p class="site-kicker">$chapterLabel</p><h1>$encodedChapterTitle</h1><p>$($chapter.paths.Count) records in the curated reading sequence.</p></section>
-<ol class="site-entry-grid">$chapterRecordItems</ol>
+<div class="site-chapter-groups">$chapterGroupItems</div>
 <nav class="site-pagination" aria-label="Chapter sequence">$previousChapter$nextChapter</nav>
 </main>
 <footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01</footer>
@@ -1116,7 +1257,7 @@ if ($Edition -eq "sim-07") {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary"><a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <div class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
@@ -1219,6 +1360,7 @@ $pageScripts
     $siteChecks = [ordered]@{
         home_pages = 1
         chapter_pages = $siteChapters.Count
+        chapter_subsections = @(foreach ($chapter in $siteChapters) { $chapter.groups }).Count
         source_pages = $sources.Count
         indexed_entry_pages = $searchRecords.Count
         supporting_source_pages = $sources.Count - $searchRecords.Count
@@ -1226,6 +1368,7 @@ $pageScripts
         local_links = $siteLocalLinks
         missing_local_targets = $missingSiteTargets.Count
         previous_next_sequence_records = $searchRecords.Count
+        first_journey_targets = $firstJourneySources.Count
         canonical_content_authority = "repository Markdown and reference metadata"
         execution = "multi-page static files; no server"
         identity = $siteIdentity
@@ -1276,11 +1419,11 @@ $manifestRecord = [ordered]@{
         bytes = (Get-Item -LiteralPath $html).Length
     }
 }
-if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
+if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08")) {
     $manifestRecord.output.search_index_path = "search-index.json"
     $manifestRecord.output.search_index_sha256 = (Get-FileHash -LiteralPath $searchIndexOutput -Algorithm SHA256).Hash.ToLowerInvariant()
 }
-if ($Edition -eq "sim-07") {
+if ($Edition -in @("sim-07", "sim-08")) {
     $manifestRecord.output.site_index_path = "index.html"
     $manifestRecord.output.site_index_sha256 = (Get-FileHash -LiteralPath $siteIndex -Algorithm SHA256).Hash.ToLowerInvariant()
     $manifestRecord.output.site_identity = $siteChecks.identity
@@ -1297,27 +1440,29 @@ if ($Edition -ne "sim-01") {
     Write-Output "delta_views=$($selectionChecks.delta_views)"
     Write-Output "combined_records=$($selectionChecks.combined_projection_records)"
 }
-if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07")) {
+if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08")) {
     Write-Output "tasks=$($selectionChecks.task_count)"
     Write-Output "task_coverage_records=$($selectionChecks.task_coverage_records)"
 }
-if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07")) {
+if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08")) {
     Write-Output "search_records=$($searchChecks.indexed_records)"
     Write-Output "search_missing_targets=$($searchChecks.missing_rendered_targets)"
 }
-if ($Edition -in @("sim-05", "sim-06", "sim-07")) {
+if ($Edition -in @("sim-05", "sim-06", "sim-07", "sim-08")) {
     Write-Output "reader_profiles=$($readerChecks.profiles.Count)"
     Write-Output "reader_default=$($readerChecks.default_profile)"
 }
-if ($Edition -in @("sim-06", "sim-07")) {
+if ($Edition -in @("sim-06", "sim-07", "sim-08")) {
     Write-Output "context_profiles=$($contextChecks.profiles)"
     Write-Output "context_bindings=$($contextChecks.bindings)"
 }
-if ($Edition -eq "sim-07") {
+if ($Edition -in @("sim-07", "sim-08")) {
     Write-Output "site=$siteIndex"
     Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + 1)"
     Write-Output "site_chapters=$($siteChecks.chapter_pages)"
+    Write-Output "site_chapter_subsections=$($siteChecks.chapter_subsections)"
     Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"
+    Write-Output "site_first_journey_targets=$($siteChecks.first_journey_targets)"
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"
 }

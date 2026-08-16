@@ -145,6 +145,14 @@ cross-references, and previous/next traversal for all 95 indexed records and
 guides. It remains a static publication projection, not Workbench or reader
 evidence.
 
+The ninth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-09.md`
+adds the current proof-edition reader journey to `sim-08`. It groups the 124
+indexed records and guides into twelve chapters with 29 preserved subsection
+routes, adds a five-step orientation path, and composes canonical-domain
+filtering with existing text and record-kind search. Deterministic and browser
+checks remain publication-mechanics evidence only.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

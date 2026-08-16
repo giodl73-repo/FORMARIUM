@@ -16,7 +16,7 @@ The base volume paths are rendered from their current source revisions for
 this simulation. That does not rewrite the frozen `sieve-01` tag or make later
 content part of its reader-evidence baseline.
 
-## Part VI - Systems, organizations, evidence, and control
+## Part VI - Systems, organizations, and coordinated work
 
 ### Systems and structural integrity
 
@@ -52,19 +52,19 @@ controller commands, actuators, observations, indicators, service-level
 objectives, thresholds, alerts, agreements, interventions, feedback, and
 outcomes before diagnosing failures by stage.
 
-## Part VII - Software mechanisms without mechanism authority
+### Software mechanisms without mechanism authority
 
-### Program constructs
+#### Program constructs
 
 88. [Software Type, Value, and Function](../../tables/entries/software-type-value-function.md)
 89. [Software Program Construct Mechanisms](../../tables/mappings/software-program-constructs.md)
 
-### Architecture subjects
+#### Architecture subjects
 
 90. [Software Module, Service, and Resource](../../tables/entries/software-module-service-resource.md)
 91. [Software Architecture Mechanisms](../../tables/mappings/software-architecture-mechanisms.md)
 
-### Interactions and obligations
+#### Interactions and obligations
 
 92. [Software Transaction, Message, and Contract](../../tables/entries/software-transaction-message-contract.md)
 93. [Software Interaction Mechanisms](../../tables/mappings/software-interaction-mechanisms.md)
@@ -75,9 +75,9 @@ mechanisms. The mappings are contextual and many-to-many; they do not let Rust,
 Haskell, PostgreSQL, HTTP, Kubernetes, or another mechanism define the general
 entry.
 
-## Part VIII - Coordinated work and recovery
+### Coordinated work and recovery
 
-### Workflow and interaction failure
+#### Workflow and interaction failure
 
 94. [Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation](../../tables/entries/coordinated-work.md)
 95. [Coordinated Work Failure Diagnostic](../../tables/diagnostics/coordinated-work-failures.md)
@@ -88,7 +88,7 @@ The Diagnostic view traces stalls, duplicates, conflicts, disagreement about
 completion, and partial effects across trigger, correlation, branch, join,
 ownership, concurrency, commitment, and recovery.
 
-## Part IX - Causal claims and evidence
+## Part VII - Claims, sampling, measurement, and statistics
 
 ### From association to attributable cause
 
@@ -101,9 +101,9 @@ action, and actual-case attribution. The Evidence view audits the target,
 design, assumptions, estimation, mechanism evidence, alternatives, transport,
 and claim limits without computing an effect or assigning responsibility.
 
-## Part X - Sampling, estimation, and generalization
+### Sampling, estimation, and generalization
 
-### From a selected sample to a scoped target claim
+#### From a selected sample to a scoped target claim
 
 98. [Population, Sample, Estimand, Estimate, and Generalization](../../tables/entries/sampling-generalization.md)
 99. [Sampling and Generalization Failure Diagnostic](../../tables/diagnostics/sampling-generalization-failures.md)
@@ -114,26 +114,12 @@ inference. The Diagnostic view traces coverage, response, attrition,
 measurement, processing, weighting, dependence, split leakage, and support
 failures without treating sample size or `representative` as proof.
 
-## Part XI - Stocks, flows, balances, and conservation
+### Measurement quality and calibration
 
-### From apparent closure to a scoped accounting contract
+#### From a quality label to the governing comparison
 
-100. [Stock, Flow, Accumulation, Balance, and Conservation](../../tables/entries/stock-flow-balance.md)
-101. [Stock-Flow Balance Failure Diagnostic](../../tables/diagnostics/stock-flow-balance-failures.md)
-
-The anchor separates point-in-time amounts, interval transfers, rates, net
-stock change, reconciliation, and domain conservation constraints. The
-Diagnostic view tests suspicious closure and nonclosure through property,
-boundary, interval, unit, gross/net, compartment, residual, uncertainty, and
-evidence checks without treating a balanced equation as proof that its terms
-are complete or true.
-
-## Part XII - Measurement quality and calibration
-
-### From a quality label to the governing comparison
-
-102. [Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration](../../tables/entries/measurement-quality.md)
-103. [Measurement Quality Failure Diagnostic](../../tables/diagnostics/measurement-quality-failures.md)
+100. [Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration](../../tables/entries/measurement-quality.md)
+101. [Measurement Quality Failure Diagnostic](../../tables/diagnostics/measurement-quality-failures.md)
 
 The anchor separates signed reference difference, estimated systematic error,
 individual and replicate agreement, indication granularity, standards-based
@@ -141,12 +127,12 @@ calibration, and probability reliability. The Diagnostic view tests reference
 offsets, replicate scatter, coarse indications, drift, calibration misuse, and
 forecast reliability without treating one quality label as proof of fitness.
 
-## Part XIII - Statistical summaries and intervals
+### Statistical summaries and intervals
 
-### From one average or error bar to the correct target
+#### From one average or error bar to the correct target
 
-104. [Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval](../../tables/entries/statistical-summary-interval.md)
-105. [Statistical Summary and Interval Failure Diagnostic](../../tables/diagnostics/statistical-summary-interval-failures.md)
+102. [Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval](../../tables/entries/statistical-summary-interval.md)
+103. [Statistical Summary and Interval Failure Diagnostic](../../tables/diagnostics/statistical-summary-interval-failures.md)
 
 The anchor separates equally and unequally weighted centers, order summaries,
 squared- and original-unit spread, estimator sampling variability, and
@@ -154,12 +140,12 @@ parameter coverage. The Diagnostic view tests distribution shape, extremes,
 weight semantics, quantile conventions, denominators, dependence, and interval
 targets without treating narrowness or one `95%` label as validity proof.
 
-## Part XIV - Mathematical relations and solving
+## Part VIII - Mathematics, geometry, and units
 
 ### From notation to a scoped solution or convergence claim
 
-106. [Mathematical Function, Variable, Equation, Identity, Solution, Root, Derivative, Iteration, and Convergence](../../tables/entries/mathematical-relation-solving.md)
-107. [Mathematical Relation and Solver Failure Diagnostic](../../tables/diagnostics/mathematical-relation-solving-failures.md)
+104. [Mathematical Function, Variable, Equation, Identity, Solution, Root, Derivative, Iteration, and Convergence](../../tables/entries/mathematical-relation-solving.md)
+105. [Mathematical Relation and Solver Failure Diagnostic](../../tables/diagnostics/mathematical-relation-solving-failures.md)
 
 The anchor separates mathematical objects from representations and values,
 conditional equations from domain-scoped identities, general solutions from
@@ -168,12 +154,12 @@ tests symbol roles, domains, transformations, derivative existence, starting
 states, residuals, stopping, and convergence conditions without treating a
 returned number as proof.
 
-## Part XV - Geometric objects and reference frames
+### Geometric objects and reference frames
 
-### From a geometric subject to a represented and anchored result
+#### From a geometric subject to a represented and anchored result
 
-108. [Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate System, Reference Frame, and Unit Circle](../../tables/entries/geometric-reference-structure.md)
-109. [Geometric Reference Failure Diagnostic](../../tables/diagnostics/geometric-reference-structure-failures.md)
+106. [Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate System, Reference Frame, and Unit Circle](../../tables/entries/geometric-reference-structure.md)
+107. [Geometric Reference Failure Diagnostic](../../tables/diagnostics/geometric-reference-structure-failures.md)
 
 The anchor separates objects from drawings and coordinates, loci from ordered
 paths, metric length from coordinate difference, shape from size and pose, and
@@ -181,7 +167,21 @@ coordinate systems from reference frames. The Diagnostic view tests metric,
 parameterization, angle-unit, axes, datum/frame, epoch, transformation, and
 unit-circle failures without treating changed coordinates as physical motion.
 
-## Part XVI - Chemical levels and classification
+### Quantity values, units, and conversion
+
+#### From one numerical display to the same scoped quantity
+
+108. [Quantity Value, Numerical Value, Unit, Dimension, and Conversion](../../tables/entries/quantity-value-unit-conversion.md)
+109. [Unit Conversion Mapping](../../tables/mappings/unit-conversion.md)
+
+The anchor separates a quantity value from its unit-dependent numerical value,
+a unit from a dimension, same dimension from same quantity kind, and conversion
+from measurement, calibration, correction, and validity. The Mapping view
+preserves direction, compound-unit powers, point-versus-interval sense,
+factor exactness, uncertainty, inverse domain, and rounding without becoming a
+catalog of named units.
+
+## Part IX - Matter, reaction, and thermodynamic state
 
 ### From a family name to its reusable classification rule
 
@@ -195,9 +195,9 @@ stoichiometry, and chemical/reporting scope without expanding into a catalog.
 The Diagnostic view tests level, representation, criterion, constituent basis,
 and subtype explosion before named examples acquire canonical status.
 
-## Part XVII - Chemical change, rate, and equilibrium
+### Chemical change, rate, and equilibrium
 
-### From a balanced representation to scoped process claims
+#### From a balanced representation to scoped process claims
 
 112. [Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst](../../tables/entries/chemical-reaction-stoichiometry-equilibrium.md)
 113. [Chemical Reaction Relations](../../tables/formulas/chemical-reaction-relations.md)
@@ -210,9 +210,9 @@ normalizations, dimensionless activities, standard states, direction, and
 equation scaling. The Diagnostic view tests balance, extent consistency, rate,
 false equilibrium, catalyst comparisons, and mechanism overclaims.
 
-## Part XVIII - Thermodynamic systems, states, processes, and phases
+### Thermodynamic systems, states, processes, and phases
 
-### From a chosen system to scoped state and transition claims
+#### From a chosen system to scoped state and transition claims
 
 115. [Thermodynamic System, Boundary, State, Process, Phase, and Transition](../../tables/entries/thermodynamic-system-state-phase.md)
 116. [Thermodynamic System and Phase Failure Diagnostic](../../tables/diagnostics/thermodynamic-system-state-phase-failures.md)
@@ -224,7 +224,7 @@ isolation, incomplete state descriptions, invalid equations of state,
 phase-count shortcuts, and transition claims that omit coexistence,
 metastability, hysteresis, kinetics, conditions, or uncertainty.
 
-## Part XIX - Oscillation, spectra, and dispersion
+## Part X - Waves, electrical response, and information
 
 ### From one waveform to scoped amplitude, spectrum, and velocity claims
 
@@ -237,9 +237,9 @@ baseline, amplitude measure, preprocessing, sampling, windowing, normalization,
 aliasing, spectral interpretation, branch, bandwidth, distortion, and transport
 overclaims without duplicating the existing canonical entry in the supplement.
 
-## Part XX - Electrical field, material, storage, and response
+### Electrical field, material, storage, and response
 
-### From shared units to the correct descriptive level
+#### From shared units to the correct descriptive level
 
 118. [Electrical Field, Material, Storage, and Impedance Failure Diagnostic](../../tables/diagnostics/electrical-field-material-impedance-failures.md)
 
@@ -250,9 +250,9 @@ spatial-model, geometry, contact, state, frequency, phase, equivalent-circuit,
 fixture, parasitic, and calibration failures without creating a catalog of
 named components or materials.
 
-## Part XXI - Encoding, channels, dependence, and limits
+### Encoding, channels, dependence, and limits
 
-### From a representation contract to a scoped communication bound
+#### From a representation contract to a scoped communication bound
 
 119. [Information, Encoding, Channel, and Capacity Failure Diagnostic](../../tables/diagnostics/information-encoding-channel-failures.md)
 
@@ -263,11 +263,27 @@ version, loss, channel-law, nonstationarity, leakage, estimator, optimization,
 throughput, and unit failures without creating a catalog of named encodings,
 codes, protocols, media, or channel families.
 
-## Part XXII - Accounting basis, inflation, and discounted value
+## Part XI - Balances, accounting, and value
 
-### From one currency display to the correct economic contract
+### Stocks, flows, balances, and conservation
 
-120. [Economic Basis, Inflation, and Net Present Value Failure Diagnostic](../../tables/diagnostics/economic-basis-inflation-npv-failures.md)
+#### From apparent closure to a scoped accounting contract
+
+120. [Stock, Flow, Accumulation, Balance, and Conservation](../../tables/entries/stock-flow-balance.md)
+121. [Stock-Flow Balance Failure Diagnostic](../../tables/diagnostics/stock-flow-balance-failures.md)
+
+The anchor separates point-in-time amounts, interval transfers, rates, net
+stock change, reconciliation, and domain conservation constraints. The
+Diagnostic view tests suspicious closure and nonclosure through property,
+boundary, interval, unit, gross/net, compartment, residual, uncertainty, and
+evidence checks without treating a balanced equation as proof that its terms
+are complete or true.
+
+### Accounting basis, inflation, and discounted value
+
+#### From one currency display to the correct economic contract
+
+122. [Economic Basis, Inflation, and Net Present Value Failure Diagnostic](../../tables/diagnostics/economic-basis-inflation-npv-failures.md)
 
 The revised base-volume Cost/Price/Value anchor and Formula view own accounting
 basis, aggregate price-index change, price-level conversion, and net present
@@ -275,20 +291,6 @@ value. This Diagnostic view tests recognition, basis changes, index scope,
 intervals, spatial-level misuse, cash-flow timing, discounting, sensitivity,
 and decision overclaims without creating a catalog of named accounting
 standards, price indexes, products, assets, or valuation methods.
-
-## Part XXIII - Quantity values, units, and conversion
-
-### From one numerical display to the same scoped quantity
-
-121. [Quantity Value, Numerical Value, Unit, Dimension, and Conversion](../../tables/entries/quantity-value-unit-conversion.md)
-122. [Unit Conversion Mapping](../../tables/mappings/unit-conversion.md)
-
-The anchor separates a quantity value from its unit-dependent numerical value,
-a unit from a dimension, same dimension from same quantity kind, and conversion
-from measurement, calibration, correction, and validity. The Mapping view
-preserves direction, compound-unit powers, point-versus-interval sense,
-factor exactness, uncertainty, inverse domain, and rounding without becoming a
-catalog of named units.
 
 ## Selection boundary
 
