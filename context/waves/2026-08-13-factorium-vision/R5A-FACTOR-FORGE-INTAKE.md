@@ -438,3 +438,24 @@ F15 resolves `mixture` in the amount/composition anchor and adds the Concept &
 Taxonomy Boundary Editor so named-domain catalogs do not displace reusable
 conceptual structure. The current Factor Forge book delta is 33 records:
 sixteen entries and seventeen specialized views.
+
+## F16 first slice
+
+The Chemical Reaction anchor at
+`tables/entries/chemical-reaction-stoichiometry-equilibrium.md` separates
+reaction process, symbolic equation, reactant/product/intermediate roles,
+signed stoichiometry, extent, rate, empirical rate law, dynamic equilibrium,
+activity, catalyst, and evidence-qualified mechanism.
+
+`tables/formulas/chemical-reaction-relations.md` owns extent, rate, activity
+quotient, Gibbs-energy, and equilibrium relations under exact equation,
+normalization, standard-state, and condition contracts.
+`tables/diagnostics/chemical-reaction-failures.md` maps balance, rate,
+equilibrium, catalysis, and mechanism overclaims to discriminating checks.
+Research and fixed-point review are
+`docs/research/2026-08-15-chemical-reaction-stoichiometry-equilibrium.md` and
+`CHEMICAL-REACTION-STOICHIOMETRY-EQUILIBRIUM-ROLE-REVIEW.md`.
+
+F16 resolves thermodynamic `activity` in the amount/composition anchor without
+admitting named reaction or catalyst families. The current Factor Forge book
+delta is 36 records: seventeen entries and nineteen specialized views.

@@ -129,8 +129,8 @@ relations.
 - [Boundary](../roots/boundary.md)
 - [Relation](../roots/relation.md)
 - [Chemical Entity, Substance, Compound Class, Mixture, and Solution](chemical-substance-classification.md)
+- [Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst](chemical-reaction-stoichiometry-equilibrium.md)
 - molar mass - `unresolved-candidate`
-- activity - `unresolved-candidate`
 
 ## Sources and provenance
 

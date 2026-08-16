@@ -567,3 +567,30 @@ and zero unresolved view owners. The Factor Forge delta grows to 33 records and
 the combined selection to 111 numbered records plus two guides across seventeen
 chapters. The generated `sim-07` site contains 145 pages from 127 sources,
 indexes all 113 reader destinations, and reports zero missing internal targets.
+
+## 2026-08-15 chemical-reaction-stoichiometry-equilibrium content continuation
+
+Plan review: admit an F16 conceptual chemical-change bridge across reaction
+process, symbolic representation, stoichiometric accounting, extent, kinetics,
+thermodynamic equilibrium, catalysis, and mechanism evidence; ground the spine
+in IUPAC sources; author one canonical anchor, one Formula view, and one
+Diagnostic view; resolve thermodynamic `activity`; apply the Concept & Taxonomy
+Boundary Editor before any named reaction family enters; close role findings;
+then propagate the exact delta through assurance, Factor Forge, search, and the
+static book site. No external-reader gate, named-reaction catalog, unique
+mechanism claim, equilibrium certification, or safe-operation claim is introduced.
+
+Result review: F16 adds `chemical-reaction-stoichiometry-equilibrium` with
+fifteen senses, Chemical Reaction Relations, and the Chemical Reaction Failure
+Diagnostic, resolving `activity` in the amount/composition anchor.
+Reaction/equation/mechanism, reactant/reagent, product/intermediate,
+stoichiometry/rate law, extent/conversion, species/reaction rate,
+rate/equilibrium, activity/concentration, and catalyst/equilibrium position
+remain distinct. Named reaction and catalyst families remain external examples.
+The source campaign confirms 18 findings and the 13-role fixed-point review
+closes all major findings. The reference grows to 37 entries, 250 senses, 383
+factors, and 50 views with 93 assurance bindings and zero unresolved view
+owners. The Factor Forge delta grows to 36 records and the combined selection
+to 114 numbered records plus two guides across eighteen chapters. The generated
+`sim-07` site contains 149 pages from 130 sources, indexes all 116 reader
+destinations, and reports zero missing internal targets.

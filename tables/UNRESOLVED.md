@@ -4,8 +4,7 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 
 | Source | Line | Candidate declaration |
 |---|---:|---|
-| `tables/entries/amount-concentration-composition.md` | 132 | molar mass - `unresolved-candidate` |
-| `tables/entries/amount-concentration-composition.md` | 133 | activity - `unresolved-candidate` |
+| `tables/entries/amount-concentration-composition.md` | 133 | molar mass - `unresolved-candidate` |
 | `tables/entries/comparative-quantity.md` | 118 | fraction - `unresolved-candidate` |
 | `tables/entries/control-monitoring-response.md` | 161 | set point - `unresolved-candidate` |
 | `tables/entries/control-monitoring-response.md` | 162 | actuator - `unresolved-candidate` |

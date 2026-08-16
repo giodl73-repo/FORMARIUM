@@ -213,8 +213,23 @@ sugar only as swappable teaching examples. Apply the Diagnostic view to audit
 level, composition, charge, structure, constituent and reporting basis, class
 criterion, authority, and the stopping boundary before admitting canonical senses.
 
+## Task Y - Balanced, fast, and supposedly at equilibrium
+
+A dashboard shows a balanced reaction equation, copies its coefficients into a
+rate law, and calls the proposed single-step mechanism proven. Species rates
+differ by constant factors, volume changes during the run, and a plateau is
+called equilibrium without a perturbation test. After adding a material, the
+plateau is reached sooner, so the report claims the catalyst changed the
+equilibrium constant.
+
+Separate reaction, equation, reactant/product/intermediate roles,
+stoichiometric numbers, extent, species and reaction rates, rate law,
+equilibrium, activity, catalyst, and mechanism. Use the Formula and Diagnostic
+views to audit direction, equation scale, units, normalization, standard states,
+conditions, alternative mechanisms, and evidence before accepting any claim.
+
 ## Rehearsal boundary
 
-The seventeen prompts collectively exercise every entry and specialized view in the
+The eighteen prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

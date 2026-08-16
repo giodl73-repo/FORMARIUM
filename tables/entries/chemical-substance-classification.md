@@ -161,6 +161,7 @@ taxonomy-boundary defects to candidate causes and discriminating checks.
 - [Amount, Concentration, and Composition](amount-concentration-composition.md)
 - [Identity, Naming, Classification, and Versioning](identity-naming-classification-versioning.md)
 - [Mathematical Function, Variable, Equation, Identity, Solution, Root, Derivative, Iteration, and Convergence](mathematical-relation-solving.md)
+- [Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst](chemical-reaction-stoichiometry-equilibrium.md)
 - [Matter and Load Measure](matter-load-measure.md)
 - [Boundary](../roots/boundary.md)
 - [Context](../roots/context.md)
@@ -183,4 +184,3 @@ taxonomy-boundary defects to candidate causes and discriminating checks.
 Comparator access date: 2026-08-15. IUPAC and specialized chemical,
 analytical, nutritional, safety, and regulatory authorities retain their
 scoped authority; Factorium's organization remains `candidate`.
-

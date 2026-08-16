@@ -243,6 +243,21 @@ Critical artifact failure: a list of familiar named chemical families is
 accepted as the reusable conceptual factorization, or a class label is accepted
 as proof of identity, purity, safety, nutrition, or regulatory status.
 
+## Task Y expected route
+
+- Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst;
+- Chemical Reaction Relations;
+- Chemical Reaction Failure Diagnostic;
+- reaction process, equation, and mechanism retain distinct identities;
+- signed stoichiometric numbers connect species changes, extent, and rate;
+- rate laws remain empirical and distinct from balanced equations;
+- dynamic equilibrium retains activities, standard states, conditions, and equation convention;
+- catalyst changes kinetic pathway/rate rather than equilibrium under matched conditions.
+
+Critical artifact failure: balance, a fitted rate curve, a composition plateau,
+or faster catalyzed approach is accepted as proof of a unique mechanism or
+changed equilibrium position.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -281,6 +296,9 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/geometric-reference-structure-failures.md`
 - `tables/entries/chemical-substance-classification.md`
 - `tables/diagnostics/chemical-substance-classification-failures.md`
+- `tables/entries/chemical-reaction-stoichiometry-equilibrium.md`
+- `tables/formulas/chemical-reaction-relations.md`
+- `tables/diagnostics/chemical-reaction-failures.md`
 
 ## Claim boundary
 

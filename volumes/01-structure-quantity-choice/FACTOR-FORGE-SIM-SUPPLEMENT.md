@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **33 records** — 16 canonical entries and 17
+Selected current-corpus delta: **36 records** — 17 canonical entries and 19
 specialized views
 
 ## Purpose
@@ -194,6 +194,21 @@ stoichiometry, and chemical/reporting scope without expanding into a catalog.
 The Diagnostic view tests level, representation, criterion, constituent basis,
 and subtype explosion before named examples acquire canonical status.
 
+## Part XVII - Chemical change, rate, and equilibrium
+
+### From a balanced representation to scoped process claims
+
+112. [Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst](../../tables/entries/chemical-reaction-stoichiometry-equilibrium.md)
+113. [Chemical Reaction Relations](../../tables/formulas/chemical-reaction-relations.md)
+114. [Chemical Reaction Failure Diagnostic](../../tables/diagnostics/chemical-reaction-failures.md)
+
+The anchor separates reaction process, symbolic equation, stoichiometric
+accounting, progress, kinetics, thermodynamic equilibrium, catalysis, and
+mechanism evidence. The Formula view preserves signed coefficients, units,
+normalizations, dimensionless activities, standard states, direction, and
+equation scaling. The Diagnostic view tests balance, extent consistency, rate,
+false equilibrium, catalyst comparisons, and mechanism overclaims.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -202,5 +217,5 @@ and subtype explosion before named examples acquire canonical status.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 111-record combined simulation remains a rehearsal projection, not a
+- The 114-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

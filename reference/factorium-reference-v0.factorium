@@ -39,6 +39,34 @@ factor mechanism-evidence-and-competing-explanations | mechanism evidence and co
 factor transport-heterogeneity-and-applicability | transport scope, heterogeneity, and applicability
 factor actual-case-attribution-and-responsibility-boundary | actual-case facts, attribution rule, and responsibility boundary
 end-entry
+entry chemical-reaction-stoichiometry-equilibrium | Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst | science | candidate | tables/entries/chemical-reaction-stoichiometry-equilibrium.md | Chemical reaction process, symbolic equation, stoichiometric amount accounting, reaction progress, kinetics, thermodynamic equilibrium, catalysis, and mechanism evidence are linked but distinct. A balanced equation does not by itself prove a rate law, elementary step, equilibrium state, or mechanism.
+sense chemical-reaction | chemical reaction
+sense reaction-equation | reaction equation
+sense reactant | reactant
+sense product | product
+sense stoichiometric-number | stoichiometric number
+sense stoichiometry | stoichiometry
+sense reaction-extent | reaction extent
+sense reaction-rate | reaction rate
+sense rate-law | rate law
+sense chemical-equilibrium | chemical equilibrium
+sense equilibrium-constant | equilibrium constant
+sense thermodynamic-activity | thermodynamic activity
+sense catalyst | catalyst
+sense reaction-mechanism | reaction mechanism
+sense reaction-intermediate | reaction intermediate
+factor system-boundary-and-phase-inventory | system boundary and phase inventory
+factor reaction-identity-direction-and-equation-version | reaction identity, direction, and equation version
+factor species-identities-and-reactant-product-intermediate-or-catalyst-roles | species identities and reactant, product, intermediate, or catalyst roles
+factor signed-stoichiometric-numbers-and-balancing-basis | signed stoichiometric numbers and balancing basis
+factor amount-changes-reaction-extent-conversion-basis-and-completeness | amount changes, reaction extent, conversion basis, and completeness
+factor time-interval-volume-surface-or-other-rate-normalization | time interval, volume, surface, or other rate normalization
+factor rate-law-parameters-regime-and-observed-species | rate law, parameters, regime, and observed species
+factor temperature-pressure-composition-medium-and-transport-conditions | temperature, pressure, composition, medium, and transport conditions
+factor activity-standard-state-equilibrium-convention-and-equilibrium-constant | activity, standard state, equilibrium convention, and equilibrium constant
+factor proposed-steps-transition-states-pathways-and-competing-mechanisms | proposed steps, transition states, pathways, and competing mechanisms
+factor measurements-uncertainty-provenance-model-status-and-claim-scope | measurements, uncertainty, provenance, model status, and claim scope
+end-entry
 entry chemical-substance-classification | Chemical Entity, Substance, Compound Class, Mixture, and Solution | science | candidate | tables/entries/chemical-substance-classification.md | Chemical descriptions move between entity, species, substance, compound, mixture, and phase levels. Compound classes require explicit composition, structure, bonding, functional, reaction-role, or reporting criteria; named families remain examples rather than an open-ended canonical taxonomy.
 sense chemical-element | chemical element
 sense chemical-entity | chemical entity
@@ -685,6 +713,8 @@ view constraint-system-composition-integrity | system-composition-dependency | s
 end-view
 view decision-policy-decision | policy-rule-constraint-decision-exception | decision | decision | Policy Decision Table | tables/decisions/policy-decision.md | Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate.
 end-view
+view diagnostic-chemical-reaction-failures | chemical-reaction-stoichiometry-equilibrium | chemical-reaction,reaction-equation,reactant,product,stoichiometric-number,stoichiometry,reaction-extent,reaction-rate,rate-law,chemical-equilibrium,equilibrium-constant,thermodynamic-activity,catalyst,reaction-mechanism,reaction-intermediate | diagnostic | Chemical Reaction Failure Diagnostic | tables/diagnostics/chemical-reaction-failures.md | Maps process/representation, role, stoichiometric, progress, rate, equilibrium, catalyst, mechanism, and taxonomy-boundary symptoms to discriminating checks without treating balance, fit, or stasis as proof.
+end-view
 view diagnostic-chemical-substance-classification-failures | chemical-substance-classification | chemical-element,chemical-entity,atom,molecule,ion,chemical-species,chemical-substance,chemical-compound,formula-unit,compound-class,classification-criterion,mixture,chemical-solution | diagnostic | Chemical Classification Failure Diagnostic | tables/diagnostics/chemical-substance-classification-failures.md | Maps level, composition, charge, representation, class-criterion, constituent, phase, and taxonomy-boundary defects to candidate causes and discriminating checks without turning named examples into canonical chemical catalogs.
 end-view
 view diagnostic-control-response-failures | control-monitoring-response | objective,monitoring,indicator,threshold,alert,feedback-control,governance-control,feedback,intervention,outcome | diagnostic | Control and Response Failure Diagnostic | tables/diagnostics/control-response-failures.md | Maps monitoring, alerting, intervention, control, and outcome symptoms to candidate causes and discriminating tests without treating one symptom as proof of one diagnosis.
@@ -714,6 +744,8 @@ end-view
 view formula-amount-concentration-composition | amount-concentration-composition | entity-count,amount-of-substance,amount-concentration,mass-concentration,amount-fraction,mass-fraction,volume-fraction | formula | Amount, Concentration, and Composition Relations | tables/formulas/amount-concentration-composition.md | These relations connect a specified entity count to amount of substance and separate component-per-volume concentrations from like-kind composition fractions. Every use requires an entity or component, a system boundary, and an explicit numerator and denominator basis.
 end-view
 view formula-arithmetic-mean | statistical-summary-interval | arithmetic-mean | formula | Sample Arithmetic Mean | tables/formulas/arithmetic-mean.md | The sample arithmetic mean summarizes equally weighted numerical observations by dividing their sum by their count. It is a statistic computed from the selected sample; whether it usefully represents location or estimates a population quantity depends on sampling and distribution conditions.
+end-view
+view formula-chemical-reaction-relations | chemical-reaction-stoichiometry-equilibrium | stoichiometric-number,stoichiometry,reaction-extent,reaction-rate,chemical-equilibrium,equilibrium-constant,thermodynamic-activity | formula | Chemical Reaction Relations | tables/formulas/chemical-reaction-relations.md | Signed stoichiometric numbers connect species amount changes to reaction extent and rate; dimensionless activities connect current state, reaction Gibbs energy, and equilibrium under an exact reaction direction, scaling, standard-state, and condition contract.
 end-view
 view formula-common-geometric-measures | geometric-measure | perimeter,circumference,area,surface-area,volume | formula | Common Geometric Measures | tables/formulas/common-geometric-measures.md | This Formula Table selects formulas by measure kind and shape. Exact symbolic forms are preserved; decimal evaluation and measurement uncertainty belong to the application context.
 end-view
