@@ -14,4 +14,3 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/probability-risk-uncertainty.md` | 123 | likelihood function - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 157 | architecture - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 158 | subsystem - `unresolved-candidate` |
-| `tables/mappings/temperature-scales.md` | 114 | unit conversion — `unresolved-candidate` |

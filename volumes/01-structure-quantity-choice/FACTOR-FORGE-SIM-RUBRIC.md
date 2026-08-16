@@ -348,6 +348,23 @@ Critical artifact failure: shared currency units, an index number, or a positive
 discounted total is accepted as proof of accounting error, universal inflation,
 realized profit, fairness, affordability, or mandatory approval.
 
+## Task AE expected route
+
+- Quantity Value, Numerical Value, Unit, Dimension, and Conversion;
+- Unit Conversion Mapping;
+- quantity value remains distinct from its unit-dependent numerical value;
+- same dimension remains insufficient to establish the same quantity kind;
+- conversion remains distinct from measurement, calibration, and correction;
+- compound-unit factors retain every power and denominator direction;
+- affine point conversion remains distinct from interval scaling;
+- exact factor status remains distinct from measurement-result uncertainty;
+- rounding preserves source information without inventing precision;
+- conversion does not create accuracy, validity, or fitness for use.
+
+Critical artifact failure: matching dimensions, successful cancellation, or an
+exact factor is accepted as proof of quantity-kind identity, added measurement
+quality, physical validity, or semantic substitutability.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -395,6 +412,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/electrical-field-material-impedance-failures.md`
 - `tables/diagnostics/information-encoding-channel-failures.md`
 - `tables/diagnostics/economic-basis-inflation-npv-failures.md`
+- `tables/entries/quantity-value-unit-conversion.md`
+- `tables/mappings/unit-conversion.md`
 
 ## Claim boundary
 

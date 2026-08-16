@@ -111,7 +111,8 @@ temperature-conversion
 - [Measure](../roots/measure.md)
 - [Formula Table format](../../specs/FORMULA-TABLE-ENTRY.md)
 - [Thermal Quantity](../entries/thermal-quantity.md)
-- unit conversion — `unresolved-candidate`
+- [Quantity Value, Numerical Value, Unit, Dimension, and Conversion](../entries/quantity-value-unit-conversion.md)
+- [Unit Conversion Mapping](unit-conversion.md)
 
 ## Sources and provenance
 

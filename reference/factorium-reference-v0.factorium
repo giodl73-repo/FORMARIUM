@@ -596,6 +596,26 @@ factor uncertainty-representation | uncertainty representation
 factor aggregation-or-decision-policy | aggregation or decision policy
 factor reporting-scale-and-provenance | reporting scale and provenance
 end-entry
+entry quantity-value-unit-conversion | Quantity Value, Numerical Value, Unit, Dimension, and Conversion | quantities | candidate | tables/entries/quantity-value-unit-conversion.md | A quantity value combines a number with a reference, usually a measurement unit. Numerical value depends on the selected unit; dimension records base-quantity dependence but does not establish quantity kind. Unit conversion re-expresses a value without creating a new measurement, calibration, or physical-validity claim.
+sense quantity-value | quantity value
+sense numerical-value | numerical value
+sense measurement-unit | measurement unit
+sense quantity-dimension | quantity dimension
+sense conversion-factor | conversion factor
+sense unit-conversion | unit conversion
+factor quantity-and-quantity-kind | quantity and quantity kind
+factor quantity-value-and-numerical-value | quantity value and numerical value
+factor source-unit-system-definition-and-authority | source unit, system, definition, and authority
+factor target-unit-system-definition-and-authority | target unit, system, definition, and authority
+factor quantity-dimension-and-compound-unit-structure | quantity dimension and compound-unit structure
+factor point-interval-ratio-level-or-ordinal-value-kind | point, interval, ratio, level, or ordinal value kind
+factor multiplicative-affine-or-other-admitted-mapping | multiplicative, affine, or other admitted mapping
+factor conversion-direction-and-inverse-domain | conversion direction and inverse domain
+factor exact-or-approximate-factor-status | exact or approximate factor status
+factor measurement-uncertainty-and-covariance | measurement uncertainty and covariance where relevant
+factor numeric-precision-and-rounding-policy | numeric precision and rounding policy
+factor provenance-version-and-intended-use | provenance, version, and intended use
+end-entry
 entry sampling-generalization | Population, Sample, Estimand, Estimate, and Generalization | reference | candidate | tables/entries/sampling-generalization.md | A population is the bounded inference target; a frame operationalizes access; observed and analytic samples record selection and transformation; an estimand is the target quantity, an estimator is the rule, and an estimate is its realized result. Generalization and transport require explicit source-to-target assumptions and evidence.
 sense target-population | target population
 sense sampling-frame | sampling frame
@@ -914,6 +934,8 @@ end-view
 view mapping-software-program-constructs | software-type-value-function | type,value,function | mapping | Software Program Construct Mechanisms | tables/mappings/software-program-constructs.md | Maps type, value, and function concepts into bounded Rust, Haskell, and PostgreSQL mechanisms without treating classes, variables, representations, signatures, purity, or target syntax as universal definitions.
 end-view
 view mapping-temperature-scales | thermal-quantity | temperature | mapping | Temperature Scale Conversion | tables/mappings/temperature-scales.md | Celsius, kelvin, and Fahrenheit assign different numerical values to the same point temperature. Point-temperature conversion is affine because scale and zero point may differ. Temperature intervals use scale only and MUST NOT reuse the point offset.
+end-view
+view mapping-unit-conversion | quantity-value-unit-conversion | quantity-value,numerical-value,measurement-unit,quantity-dimension,conversion-factor,unit-conversion | mapping | Unit Conversion Mapping | tables/mappings/unit-conversion.md | Re-expresses one quantity value in a target unit or scale while preserving quantity kind, mapping direction, compound-unit structure, point-versus-interval sense, exactness, uncertainty, and rounding boundaries.
 end-view
 view mapping-version-scheme-semantics | identity-naming-classification-versioning | version,compatibility-level | mapping | Version Scheme Semantics | tables/mappings/version-scheme-semantics.md | Generic version roles map to Semantic Versioning only when a package declares a public API.
 end-view

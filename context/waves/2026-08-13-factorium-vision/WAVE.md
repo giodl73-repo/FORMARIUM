@@ -831,3 +831,33 @@ combined selection remains 120 numbered records plus two guides across
 twenty-three chapters. The regenerated `sim-07` site remains 160 pages from
 136 sources, indexes all 122 reader destinations, and reports zero missing
 internal targets.
+
+## 2026-08-15 quantity-value-unit-conversion content continuation
+
+Plan review: add one general quantity-representation anchor rather than
+attaching unit conversion to temperature, comparative quantities, or
+measurement quality; separate quantity value, numerical value, unit,
+dimension, conversion factor, and conversion; require same quantity kind
+rather than dimension matching alone; add one Mapping view covering
+multiplicative, compound, affine-point, interval, inverse, uncertainty, and
+rounding contracts; retain Temperature Scale Conversion as the worked
+specialist; apply the Concept & Taxonomy Boundary Editor before named units or
+unit systems enter; then exercise both new records through a book chapter and
+Task AE. No external-reader gate, metrological certification, calibration,
+accuracy improvement, physical-validity claim, or unit catalog is introduced.
+
+Result review: F25 adds `quantity-value-unit-conversion` and the Unit
+Conversion Mapping, links the existing temperature-scale view into the general
+contract, and resolves the unit-conversion candidate. Quantity/quantity value,
+quantity value/numerical value, unit/dimension, same dimension/same kind,
+conversion/measurement, conversion/calibration, and exact factor/exact result
+remain distinct. Named units, systems, historical catalogs, ordinal scales,
+and logarithmic-level families remain external examples or separately governed
+views. The web campaign confirms 18 findings, the dimensional audit checks 46
+equations with zero P1 errors, and the 13-role fixed-point review closes all
+major findings. The reference grows to 39 entries, 296 senses, 461 factors,
+and 56 views with 101 assurance bindings and zero unresolved view owners. The
+Factor Forge delta grows to 44 records and the combined selection to 122
+numbered records plus two guides across twenty-four chapters. The regenerated
+`sim-07` site contains 163 pages from 138 sources, indexes all 124 reader
+destinations, and reports zero missing internal targets.

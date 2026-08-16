@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **42 records** — 18 canonical entries and 24
+Selected current-corpus delta: **44 records** — 19 canonical entries and 25
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F12 extend
+This supplement tests whether completed Factor Forge batches F1-F25 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -276,6 +276,20 @@ intervals, spatial-level misuse, cash-flow timing, discounting, sensitivity,
 and decision overclaims without creating a catalog of named accounting
 standards, price indexes, products, assets, or valuation methods.
 
+## Part XXIII - Quantity values, units, and conversion
+
+### From one numerical display to the same scoped quantity
+
+121. [Quantity Value, Numerical Value, Unit, Dimension, and Conversion](../../tables/entries/quantity-value-unit-conversion.md)
+122. [Unit Conversion Mapping](../../tables/mappings/unit-conversion.md)
+
+The anchor separates a quantity value from its unit-dependent numerical value,
+a unit from a dimension, same dimension from same quantity kind, and conversion
+from measurement, calibration, correction, and validity. The Mapping view
+preserves direction, compound-unit powers, point-versus-interval sense,
+factor exactness, uncertainty, inverse domain, and rounding without becoming a
+catalog of named units.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -284,5 +298,5 @@ standards, price indexes, products, assets, or valuation methods.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 120-record combined simulation remains a rehearsal projection, not a
+- The 122-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

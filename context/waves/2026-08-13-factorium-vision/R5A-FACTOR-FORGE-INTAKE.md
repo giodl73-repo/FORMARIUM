@@ -640,3 +640,24 @@ without admitting named material, loading, field-model, or constitutive
 families as canonical senses. It adds no record or chapter, so the Factor
 Forge book delta remains 42 records: eighteen entries and twenty-four
 specialized views.
+
+## F25 first slice
+
+F25 adds `tables/entries/quantity-value-unit-conversion.md` as the missing
+representation layer between quantity selection and formula use. It separates
+quantity value, numerical value, measurement unit, quantity dimension,
+conversion factor, and unit conversion while making same quantity kind a
+stronger gate than dimensional agreement alone.
+
+The new `tables/mappings/unit-conversion.md` owns multiplicative, compound,
+affine-point, interval, inverse, uncertainty, and rounding contracts. The
+existing Temperature Scale Conversion becomes its worked specialist view.
+Research and fixed-point review are
+`docs/research/2026-08-15-quantity-value-unit-conversion.md` and
+`QUANTITY-VALUE-UNIT-CONVERSION-ROLE-REVIEW.md`. The dimensional audit checks
+46 equations with zero P1 errors.
+
+F25 resolves unit conversion without admitting named units, unit systems,
+historical conversion catalogs, ordinal scales, or logarithmic-level families
+as canonical senses. The Factor Forge book delta grows to 44 records:
+nineteen entries and twenty-five specialized views.

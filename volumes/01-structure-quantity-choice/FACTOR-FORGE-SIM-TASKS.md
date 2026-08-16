@@ -317,8 +317,25 @@ interval, seasonal treatment, signed flow timing, valuation date, discount
 rate, nominal/real and tax basis, horizon, terminal value, uncertainty, and
 sensitivity before reconciling the results.
 
+## Task AE - Same quantity, different number
+
+A report converts `2.4 m^2` to square centimetres using the unsquared length
+factor. Another converts `90 km/h` by changing kilometres to metres but leaves
+hours unchanged. A Celsius point temperature and a temperature interval both
+receive the `273.15` offset. A torque is converted into an energy record because
+both use newton metres. Finally, an exact unit factor produces twelve reported
+digits from a coarsely rounded measurement, and the converted result is called
+more accurate and physically valid.
+
+Separate quantity value, numerical value, measurement unit, quantity
+dimension, conversion factor, and unit conversion. Use the Mapping view to
+freeze quantity kind, source and target unit authorities, direction,
+compound-unit powers, point-versus-interval sense, factor exactness,
+uncertainty, inverse domain, and rounding before accepting the conversions or
+their quality claims.
+
 ## Rehearsal boundary
 
-The twenty-three prompts collectively exercise every entry and specialized view in the
+The twenty-four prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.
