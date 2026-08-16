@@ -258,6 +258,22 @@ Critical artifact failure: balance, a fitted rate curve, a composition plateau,
 or faster catalyzed approach is accepted as proof of a unique mechanism or
 changed equilibrium position.
 
+## Task Z expected route
+
+- Thermodynamic System, Boundary, State, Process, Phase, and Transition;
+- Thermodynamic System and Phase Failure Diagnostic;
+- system, surroundings, and boundary retain explicit identities and transfer rules;
+- open, closed, and isolated classify allowed exchanges rather than container appearance;
+- state and state variables remain distinct from process and path;
+- intensive and extensive quantities retain their scaling rules;
+- equation-of-state claims retain model and validity conditions;
+- phase uses a uniformity and interface criterion rather than a named-state list;
+- transition claims retain driver, coexistence, metastability, hysteresis, and kinetics.
+
+Critical artifact failure: a sealed container, steady reading, familiar phase
+name, or matching endpoint states is accepted as sufficient proof of isolation,
+equilibrium, phase count, or path-independent heat and work.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -299,6 +315,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/entries/chemical-reaction-stoichiometry-equilibrium.md`
 - `tables/formulas/chemical-reaction-relations.md`
 - `tables/diagnostics/chemical-reaction-failures.md`
+- `tables/entries/thermodynamic-system-state-phase.md`
+- `tables/diagnostics/thermodynamic-system-state-phase-failures.md`
 
 ## Claim boundary
 

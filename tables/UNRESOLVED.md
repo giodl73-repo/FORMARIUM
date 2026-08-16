@@ -37,8 +37,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/probability-risk-uncertainty.md` | 123 | likelihood function - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 157 | architecture - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 158 | subsystem - `unresolved-candidate` |
-| `tables/entries/thermal-quantity.md` | 128 | phase - `unresolved-candidate` |
-| `tables/entries/thermal-quantity.md` | 129 | thermodynamic system - `unresolved-candidate` |
 | `tables/entries/work-energy-power.md` | 131 | torque - `unresolved-candidate` |
 | `tables/formulas/density.md` | 93 | local mass density — `unresolved-candidate` |
 | `tables/formulas/force.md` | 113 | momentum — `unresolved-candidate` |

@@ -162,6 +162,7 @@ taxonomy-boundary defects to candidate causes and discriminating checks.
 - [Identity, Naming, Classification, and Versioning](identity-naming-classification-versioning.md)
 - [Mathematical Function, Variable, Equation, Identity, Solution, Root, Derivative, Iteration, and Convergence](mathematical-relation-solving.md)
 - [Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst](chemical-reaction-stoichiometry-equilibrium.md)
+- [Thermodynamic System, Boundary, State, Process, Phase, and Transition](thermodynamic-system-state-phase.md)
 - [Matter and Load Measure](matter-load-measure.md)
 - [Boundary](../roots/boundary.md)
 - [Context](../roots/context.md)

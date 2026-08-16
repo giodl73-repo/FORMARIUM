@@ -123,10 +123,9 @@ thermal-quantity-use
 - [Work, Energy, and Power](work-energy-power.md)
 - [Matter and Load Measure](matter-load-measure.md)
 - [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
+- [Thermodynamic System, Boundary, State, Process, Phase, and Transition](thermodynamic-system-state-phase.md)
 - [State](../roots/state.md)
 - [Transformation](../roots/transformation.md)
-- phase - `unresolved-candidate`
-- thermodynamic system - `unresolved-candidate`
 
 ## Sources and provenance
 

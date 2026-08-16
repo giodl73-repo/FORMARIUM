@@ -690,6 +690,34 @@ factor heat-and-work-sign-convention | heat and work sign convention
 factor reversible-evaluation-path | reversible evaluation path
 factor unit-and-uncertainty | unit and uncertainty
 end-entry
+entry thermodynamic-system-state-phase | Thermodynamic System, Boundary, State, Process, Phase, and Transition | science | candidate | tables/entries/thermodynamic-system-state-phase.md | Thermodynamic descriptions begin with a selected system, surroundings, boundary, and exchange contract; state and path remain distinct; intensive and extensive quantities use scaling tests; phases use a uniformity criterion rather than a list of familiar names.
+sense thermodynamic-system | thermodynamic system
+sense thermodynamic-surroundings | thermodynamic surroundings
+sense thermodynamic-boundary | thermodynamic boundary
+sense open-system | open system
+sense closed-system | closed system
+sense isolated-system | isolated system
+sense thermodynamic-state | thermodynamic state
+sense state-variable | state variable
+sense intensive-quantity | intensive quantity
+sense extensive-quantity | extensive quantity
+sense equation-of-state | equation of state
+sense thermodynamic-process | thermodynamic process
+sense process-path | process path
+sense phase | phase
+sense phase-transition | phase transition
+factor selected-matter-region-or-control-volume | selected matter, region, or control volume
+factor surroundings-and-system-boundary | surroundings and system boundary
+factor matter-heat-work-and-other-allowed-transfers | matter, heat, work, and other allowed transfers
+factor equilibrium-steady-transient-or-nonequilibrium-scope | equilibrium, steady, transient, or nonequilibrium scope
+factor state-variables-property-basis-and-sufficiency-criterion | state variables, property basis, and sufficiency criterion
+factor intensive-extensive-specific-molar-or-density-scaling | intensive, extensive, specific, molar, or density scaling
+factor equation-of-state-or-constitutive-model-and-validity-range | equation-of-state or constitutive model and validity range
+factor initial-state-final-state-process-path-and-constraints | initial state, final state, process path, and constraints
+factor constituents-composition-phase-inventory-and-interfaces | constituents, composition, phase inventory, and interfaces
+factor transition-driver-coexistence-metastability-hysteresis-and-kinetics | transition driver, coexistence, metastability, hysteresis, and kinetics
+factor measurement-conditions-uncertainty-provenance-and-claim-scope | measurement conditions, uncertainty, provenance, and claim scope
+end-entry
 entry work-energy-power | Work, Energy, and Power | science | candidate | tables/entries/work-energy-power.md | Work, energy, and power are connected but answer different questions. Work tracks a transfer through a mechanical interaction, energy is a system quantity expressed in multiple forms, and power tracks how quickly transfer occurs.
 sense mechanical-work | mechanical work
 sense energy | energy
@@ -734,6 +762,8 @@ end-view
 view diagnostic-statistical-summary-interval-failures | statistical-summary-interval | arithmetic-mean,weighted-mean,median,quantile,variance,standard-deviation,standard-error,confidence-interval | diagnostic | Statistical Summary and Interval Failure Diagnostic | tables/diagnostics/statistical-summary-interval-failures.md | Maps center conflicts, extreme-value sensitivity, weight failures, quantile conventions, denominator errors, dependence, understated standard errors, and interval misuse to candidate causes and discriminating tests.
 end-view
 view diagnostic-stock-flow-balance-failures | stock-flow-balance | stock,flow,accumulation,balance,conservation | diagnostic | Stock-Flow Balance Failure Diagnostic | tables/diagnostics/stock-flow-balance-failures.md | Maps nonclosure, suspicious closure, amount-rate confusion, hidden gross flows, compartment errors, drift, and residuals to candidate causes and discriminating tests without treating arithmetic balance as conservation proof.
+end-view
+view diagnostic-thermodynamic-system-state-phase-failures | thermodynamic-system-state-phase | thermodynamic-system,thermodynamic-surroundings,thermodynamic-boundary,open-system,closed-system,isolated-system,thermodynamic-state,state-variable,intensive-quantity,extensive-quantity,equation-of-state,thermodynamic-process,process-path,phase,phase-transition | diagnostic | Thermodynamic System and Phase Failure Diagnostic | tables/diagnostics/thermodynamic-system-state-phase-failures.md | Maps boundary, exchange, state, scaling, path, phase, transition, and taxonomy-boundary symptoms to discriminating checks without treating a container, steady reading, or familiar phase name as proof.
 end-view
 view evidence-causal-claim | causal-reasoning | association,causal-effect,influence,causal-mechanism,intervention,causal-attribution | evidence | Causal Claim Evidence Table | tables/evidence/causal-claim-evidence.md | Audits association, effect, influence, mechanism, intervention-effect, and actual-case attribution claims through explicit targets, designs, assumptions, evidence, alternatives, transport limits, and dispositions without computing a causal estimate.
 end-view

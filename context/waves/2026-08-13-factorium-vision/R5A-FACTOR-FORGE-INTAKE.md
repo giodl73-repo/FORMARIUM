@@ -459,3 +459,23 @@ Research and fixed-point review are
 F16 resolves thermodynamic `activity` in the amount/composition anchor without
 admitting named reaction or catalyst families. The current Factor Forge book
 delta is 36 records: seventeen entries and nineteen specialized views.
+
+## F17 first slice
+
+The Thermodynamic System, State, and Phase anchor at
+`tables/entries/thermodynamic-system-state-phase.md` begins with the selected
+system, surroundings, boundary, and allowed transfers, then separates state
+from process path, intensive from extensive scaling, equations of state from
+universal identities, and phase criteria from familiar phase names.
+
+`tables/diagnostics/thermodynamic-system-state-phase-failures.md` maps false
+isolation, steady-state/equilibrium collapse, insufficient state variables,
+invalid model scope, path erasure, appearance-based phase counts, and omitted
+transition history to discriminating checks. Research and fixed-point review
+are `docs/research/2026-08-15-thermodynamic-system-state-phase.md` and
+`THERMODYNAMIC-SYSTEM-STATE-PHASE-ROLE-REVIEW.md`.
+
+F17 resolves material `phase` and `thermodynamic system` in the thermal anchor
+without conflating material phase with wave phase or lifecycle stage, and
+without admitting named phase catalogs. The current Factor Forge book delta is
+38 records: eighteen entries and twenty specialized views.

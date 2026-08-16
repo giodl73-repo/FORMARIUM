@@ -594,3 +594,31 @@ owners. The Factor Forge delta grows to 36 records and the combined selection
 to 114 numbered records plus two guides across eighteen chapters. The generated
 `sim-07` site contains 149 pages from 130 sources, indexes all 116 reader
 destinations, and reports zero missing internal targets.
+
+## 2026-08-15 thermodynamic-system-state-phase content continuation
+
+Plan review: admit an F17 conceptual thermodynamics bridge beginning with
+system, surroundings, boundary, and allowed exchanges; separate state from
+process path, intensive from extensive scaling, equations of state from
+universal identities, and phase criteria from named examples; ground the spine
+in NIST and IUPAC sources; author one canonical anchor and one Diagnostic view;
+resolve material `phase` and `thermodynamic system`; apply the Concept &
+Taxonomy Boundary Editor explicitly; close role findings; then propagate the
+exact delta through assurance, Factor Forge, search, and the static book site.
+No external-reader gate, named-phase catalog, equilibrium certification,
+universal equation-of-state claim, or safe-process claim is introduced.
+
+Result review: F17 adds `thermodynamic-system-state-phase` with fifteen senses
+and the Thermodynamic System and Phase Failure Diagnostic, resolving material
+`phase` and `thermodynamic system` in the thermal anchor. System/surroundings,
+boundary/container, open/closed/isolated, state/path, equilibrium/steady state,
+intensive/extensive, equation/model, phase/aggregate state, and
+transition/reaction remain distinct. Named phases and devices remain external
+examples, and material phase is not conflated with wave phase or lifecycle
+stage. The source campaign confirms 18 findings and the 13-role fixed-point
+review closes all major findings. The reference grows to 38 entries, 265
+senses, 394 factors, and 51 views with 95 assurance bindings and zero
+unresolved view owners. The Factor Forge delta grows to 38 records and the
+combined selection to 116 numbered records plus two guides across nineteen
+chapters. The generated `sim-07` site contains 152 pages from 132 sources,
+indexes all 118 reader destinations, and reports zero missing internal targets.

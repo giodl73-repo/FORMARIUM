@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **36 records** — 17 canonical entries and 19
+Selected current-corpus delta: **38 records** — 18 canonical entries and 20
 specialized views
 
 ## Purpose
@@ -209,6 +209,20 @@ normalizations, dimensionless activities, standard states, direction, and
 equation scaling. The Diagnostic view tests balance, extent consistency, rate,
 false equilibrium, catalyst comparisons, and mechanism overclaims.
 
+## Part XVIII - Thermodynamic systems, states, processes, and phases
+
+### From a chosen system to scoped state and transition claims
+
+115. [Thermodynamic System, Boundary, State, Process, Phase, and Transition](../../tables/entries/thermodynamic-system-state-phase.md)
+116. [Thermodynamic System and Phase Failure Diagnostic](../../tables/diagnostics/thermodynamic-system-state-phase-failures.md)
+
+The anchor begins with the analyst's system boundary and allowed transfers,
+then separates state from process path, property scaling from numerical size,
+and phase criteria from familiar names. The Diagnostic view tests false
+isolation, incomplete state descriptions, invalid equations of state,
+phase-count shortcuts, and transition claims that omit coexistence,
+metastability, hysteresis, kinetics, conditions, or uncertainty.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -217,5 +231,5 @@ false equilibrium, catalyst comparisons, and mechanism overclaims.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 114-record combined simulation remains a rehearsal projection, not a
+- The 116-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

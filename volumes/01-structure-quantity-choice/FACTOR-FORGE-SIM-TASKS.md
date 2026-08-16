@@ -228,8 +228,25 @@ equilibrium, activity, catalyst, and mechanism. Use the Formula and Diagnostic
 views to audit direction, equation scale, units, normalization, standard states,
 conditions, alternative mechanisms, and evidence before accepting any claim.
 
+## Task Z - Closed, steady, and called one phase
+
+A sealed vessel is called isolated because its lid is closed, even though it
+loses heat and is sampled during the run. Pressure and temperature reach a
+plateau, so the report calls the contents equilibrium and one phase by visual
+appearance. Heating and cooling produce different transition points. Two runs
+reach the same endpoint states by different paths, yet their heat and work
+records differ and the report calls one record impossible.
+
+Separate thermodynamic system, surroundings, boundary, open, closed, and
+isolated systems; state, state variables, equation of state, process, and path;
+and phase from phase transition. Use the Diagnostic view to audit allowed
+transfers, equilibrium versus steady or transient scope, property sufficiency,
+intensive/extensive scaling, model validity, phase inventory, coexistence,
+metastability, hysteresis, kinetics, conditions, and uncertainty before
+accepting the labels or rejecting the path-dependent records.
+
 ## Rehearsal boundary
 
-The eighteen prompts collectively exercise every entry and specialized view in the
+The nineteen prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

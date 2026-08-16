@@ -2,7 +2,7 @@
 
 Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Corpus identity: `c69f49a6163d0ec178b46c2f80f6357ea52c08679bbe9024b566c91bc614c9e7`
+Corpus identity: `90a481d48cb78d6afe5c54618496290883794bccb5801c22b214c942a2f2372b`
 
 ## Canonical Factor Table entries
 
@@ -42,6 +42,7 @@ Corpus identity: `c69f49a6163d0ec178b46c2f80f6357ea52c08679bbe9024b566c91bc614c9
 - [Stock, Flow, Accumulation, Balance, and Conservation](entries/stock-flow-balance.md) — A stock is an amount attributed inside a boundary at an instant; a flow is a boundary transfer or period-assigned change; accumulation is net stock change; a balance reconciles opening, changes, and closing; conservation adds a domain constraint against creation or destruction of a named property. (`systems`, `candidate`)
 - [System Composition, Capability, Interface, and Dependency](entries/system-composition-dependency.md) — A system is a selected whole whose interacting elements together exhibit behavior or meaning; engineered and organizational systems are commonly organized toward one or more purposes. System element, component, capability, boundary, environment, interface, and dependency keep membership, constitution, ability, inclusion, outside context, interaction, and directional reliance distinct. (`systems`, `candidate`)
 - [Thermal Quantity](entries/thermal-quantity.md) — Temperature, heat, internal energy, heat capacity, and entropy describe different parts of thermal behavior. Temperature and internal energy are state quantities; heat is boundary transfer; heat capacity describes response under conditions; entropy is a state quantity governing thermal accounting and irreversibility. (`science`, `candidate`)
+- [Thermodynamic System, Boundary, State, Process, Phase, and Transition](entries/thermodynamic-system-state-phase.md) — Thermodynamic descriptions begin with a selected system, surroundings, boundary, and exchange contract; state and path remain distinct; intensive and extensive quantities use scaling tests; phases use a uniformity criterion rather than a list of familiar names. (`science`, `candidate`)
 - [Work, Energy, and Power](entries/work-energy-power.md) — Work, energy, and power are connected but answer different questions. Work tracks a transfer through a mechanical interaction, energy is a system quantity expressed in multiple forms, and power tracks how quickly transfer occurs. (`science`, `candidate`)
 
 ## Formula Table views
@@ -113,6 +114,7 @@ Corpus identity: `c69f49a6163d0ec178b46c2f80f6357ea52c08679bbe9024b566c91bc614c9
 - [Sampling and Generalization Failure Diagnostic](diagnostics/sampling-generalization-failures.md) — Maps coverage, selection, attrition, estimation, precision, leakage, and source-to-target symptoms to candidate causes and discriminating tests without treating sample size or representativeness as proof. (owner: `sampling-generalization`, senses: `target-population`, `sampling-frame`, `sample`, `analytic-sample`, `estimand`, `estimator`, `estimate`, `generalization`, `transport`)
 - [Statistical Summary and Interval Failure Diagnostic](diagnostics/statistical-summary-interval-failures.md) — Maps center conflicts, extreme-value sensitivity, weight failures, quantile conventions, denominator errors, dependence, understated standard errors, and interval misuse to candidate causes and discriminating tests. (owner: `statistical-summary-interval`, senses: `arithmetic-mean`, `weighted-mean`, `median`, `quantile`, `variance`, `standard-deviation`, `standard-error`, `confidence-interval`)
 - [Stock-Flow Balance Failure Diagnostic](diagnostics/stock-flow-balance-failures.md) — Maps nonclosure, suspicious closure, amount-rate confusion, hidden gross flows, compartment errors, drift, and residuals to candidate causes and discriminating tests without treating arithmetic balance as conservation proof. (owner: `stock-flow-balance`, senses: `stock`, `flow`, `accumulation`, `balance`, `conservation`)
+- [Thermodynamic System and Phase Failure Diagnostic](diagnostics/thermodynamic-system-state-phase-failures.md) — Maps boundary, exchange, state, scaling, path, phase, transition, and taxonomy-boundary symptoms to discriminating checks without treating a container, steady reading, or familiar phase name as proof. (owner: `thermodynamic-system-state-phase`, senses: `thermodynamic-system`, `thermodynamic-surroundings`, `thermodynamic-boundary`, `open-system`, `closed-system`, `isolated-system`, `thermodynamic-state`, `state-variable`, `intensive-quantity`, `extensive-quantity`, `equation-of-state`, `thermodynamic-process`, `process-path`, `phase`, `phase-transition`)
 
 ## Scale Table views
 
