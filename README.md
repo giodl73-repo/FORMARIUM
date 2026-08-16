@@ -210,14 +210,15 @@ that remain required at use time. See
 Render the current proof-edition composition-worksheet simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-09
+.\tools\render_proof_set.ps1 -Edition sim-10
 ```
 
-Open `target/proof-set-sim-09/index.html` for the five-step first journey,
+Open `target/proof-set-sim-10/index.html` for the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, dedicated reading
-pages, and the first trace-bound Composition Query worksheet under
-Applications. The generated site remains a disposable publication projection;
-see
+pages, and two trace-bound Composition Query worksheets under Applications.
+The systems and evidence examples share one worksheet grammar while retaining
+relation-specific semantics and separate local outcomes. The generated site
+remains a disposable publication projection; see
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
 After an intentional metadata or source change, regenerate the catalog and

@@ -162,6 +162,14 @@ loss-aware Factor Guide projection. The site indexes 125 destinations across
 the existing twelve chapters and retains zero missing targets. This is manual
 publication rehearsal, not automated closure, Workbench, or reader evidence.
 
+The eleventh rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-11.md`
+adds a second trace-bound worksheet to `sim-10` across the F3 evidence relation.
+It separates structural trace completeness from an unresolved substantive
+claim, keeps its latency values explicitly synthetic, and rejects temporal
+order as causal proof. Together the F1 and F3 examples test transfer of the
+worksheet grammar without collapsing relation or domain semantics.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

@@ -95,6 +95,8 @@ The multi-page book-site rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-09.md`.
 The trace-bound Composition Query worksheet rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-10.md`.
+The cross-domain Composition Query worksheet rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-11.md`.
 
 ### Composition-query rehearsal boundary
 

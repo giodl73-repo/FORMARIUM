@@ -1,0 +1,18 @@
+factorium-composition-query-v0
+query latency-observation-inference
+problem Which observation and inference concepts are required to review a claim that a software release reduced typical request latency?
+source 3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b81 | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df
+context synthetic-evidence-review | population=declared-request-set,reference-frame=not-applicable
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=1,nodes=3,work=9
+seed factor:claim-evidence/inference-rule-and-assumptions
+node factor:claim-evidence/inference-rule-and-assumptions | required | 0 | seed | none
+node factor:claim-evidence/observation-or-result | required | 1 | relation:f3-inference-observation | factor:claim-evidence/inference-rule-and-assumptions
+node view:evidence-observation-inference-chain | evaluative | 1 | scope:f3-inference-observation | factor:claim-evidence/inference-rule-and-assumptions
+edge f3-inference-observation
+check evidence-chain-completeness | completeness | view:evidence-observation-inference-chain | pass
+projection factor:claim-evidence/inference-rule-and-assumptions | selected | retained
+projection factor:claim-evidence/observation-or-result | selected | retained
+projection view:evidence-observation-inference-chain | selected | omits-full-evidence-row-detail
+state complete
+end-query

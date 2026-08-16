@@ -65,6 +65,22 @@ if (expectedRecords >= 125) {
   );
 }
 
+if (expectedRecords >= 126) {
+  const evidence = search.searchRecords(
+    records,
+    "latency observation inference",
+    "guide",
+    "application"
+  );
+  assert.equal(
+    evidence.filter((record) =>
+      record.path === "guides/latency-evidence-composition-worksheet.md"
+    ).length,
+    1,
+    "evidence composition search resolves the worksheet exactly once"
+  );
+}
+
 console.log(
   `OK records=${records.length} query=${queryOnly.length} kind=${kindOnly.length} ` +
   `domain=${domainOnly.length} combined=${combined.length}`

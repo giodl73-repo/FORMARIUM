@@ -754,13 +754,17 @@ mod tests {
 
     #[test]
     fn committed_trace_round_trips_and_validates() {
-        let input =
-            fs::read_to_string("fixtures/composition/system-dependency.factorium-query").unwrap();
-        let query = CompositionQuery::parse(&input).unwrap();
         let (corpus, relations) = sources();
-        query.validate_sources(&corpus, &relations).unwrap();
-        assert_eq!(query.canonical_text(), input);
-        assert_eq!(query.state(), "complete");
+        for path in [
+            "fixtures/composition/latency-evidence.factorium-query",
+            "fixtures/composition/system-dependency.factorium-query",
+        ] {
+            let input = fs::read_to_string(path).unwrap();
+            let query = CompositionQuery::parse(&input).unwrap();
+            query.validate_sources(&corpus, &relations).unwrap();
+            assert_eq!(query.canonical_text(), input);
+            assert_eq!(query.state(), "complete");
+        }
     }
 
     #[test]

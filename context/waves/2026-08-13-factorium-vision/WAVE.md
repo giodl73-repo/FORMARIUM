@@ -991,3 +991,22 @@ closure, and a loss-aware Factor Guide projection. `sim-09` renders 139 sources,
 sim-08 retains its 124-record search regression. The ten-reviewer design pass
 and nine-role fixed point report zero open P1/P2 findings. No automated closure,
 architecture approval, preview admission, or reader evidence is claimed.
+
+## 2026-08-16 cross-domain composition continuation
+
+Plan review: test whether the trace-bound worksheet grammar transfers beyond
+the F1 systems example without turning Composition Query into a generic graph
+browser. Add one F3 evidence example with its own relation semantics and local
+decision state; require exact trace validation, synthetic custody, explicit
+missingness, independent search discovery, sim-09 regression, and compact
+design and role review.
+
+Result review: `guides/latency-evidence-composition-worksheet.md` now traces a
+synthetic before/after latency observation through measurement and inference
+to a proposed claim. Its graph is structurally complete because required
+stages and missing causal support are explicit, while the claim remains
+unresolved; temporal order is not promoted to causation. Both F1 and F3 traces
+round-trip under the same V0 contract and render as separate Applications
+destinations in `sim-10`. The three-reviewer compact design pass and seven-role
+fixed point report zero open P1/P2 findings. This remains synthetic publication
+rehearsal, not automated expansion, a causal result, or reader evidence.
