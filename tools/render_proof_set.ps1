@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -25,6 +25,7 @@ $compositionPaletteSpec = Join-Path $workspace "specs\COMPOSITION-PALETTE.md"
 $compositionViewsSpec = Join-Path $workspace "specs\COMPOSITION-READER-VIEWS.md"
 $compositionMapSpec = Join-Path $workspace "specs\COMPOSITION-CLOSURE-MAP.md"
 $compositionStartersSpec = Join-Path $workspace "specs\COMPOSITION-AUTHORED-STARTERS.md"
+$compositionQueryPlanSpec = Join-Path $workspace "specs\COMPOSITION-QUERY-PLAN.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -64,6 +65,8 @@ $compositionMapStyle = Join-Path $workspace "volumes\01-structure-quantity-choic
 $compositionMapScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-map.js"
 $compositionStartersStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-starters.css"
 $compositionStartersScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-starters.js"
+$compositionQueryPlanStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-query-plan.css"
+$compositionQueryPlanScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-query-plan.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -95,6 +98,7 @@ $artifactTitle = switch ($Edition) {
     "sim-20" { "Factorium Proof Set Composition Reader Views Simulation 20" }
     "sim-21" { "Factorium Proof Set Composition Closure Map Simulation 21" }
     "sim-22" { "Factorium Proof Set Authored Composition Starters Simulation 22" }
+    "sim-23" { "Factorium Proof Set Composition Query Plan Simulation 23" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -586,6 +590,9 @@ if ($editionNumber -ge 21) {
 if ($editionNumber -ge 22) {
     Add-ProofSource $compositionStartersSpec
 }
+if ($editionNumber -ge 23) {
+    Add-ProofSource $compositionQueryPlanSpec
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -718,6 +725,7 @@ $compositionPaletteChecks = $null
 $compositionViewsChecks = $null
 $compositionMapChecks = $null
 $compositionStarterChecks = $null
+$compositionQueryPlanChecks = $null
 $compositionFocusRecords = @()
 if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
@@ -1164,6 +1172,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 23) {
+        foreach ($asset in @($compositionQueryPlanStyle, $compositionQueryPlanScript, $compositionQueryPlanSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-query-plan asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1298,6 +1313,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 22) {
         $siteCssParts += (Get-Content -LiteralPath $compositionStartersStyle -Raw)
+    }
+    if ($editionNumber -ge 23) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionQueryPlanStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -1745,6 +1763,24 @@ if ($editionNumber -ge 7) {
                     url_state = "fixed authored starter ID only"
                     query_storage = "none"
                     specification = "specs/COMPOSITION-AUTHORED-STARTERS.md"
+                }
+            }
+            if ($editionNumber -ge 23) {
+                [System.IO.File]::WriteAllText(
+                    (Join-Path $siteAssetDirectory "composition-query-plan.js"),
+                    (Get-Content -LiteralPath $compositionQueryPlanScript -Raw),
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+                $compositionQueryPlanChecks = [ordered]@{
+                    projection_input = "visible explicit controls plus digest-bound payloads"
+                    control_states = @("control-complete", "needs-explicit-controls")
+                    result_alignment = @("not-run", "matches-displayed-result", "controls-changed")
+                    closure_execution = $false
+                    result_prediction = $false
+                    plan_identity = "none"
+                    problem_semantic_selection = $false
+                    storage = "none"
+                    specification = "specs/COMPOSITION-QUERY-PLAN.md"
                 }
             }
         }
@@ -2363,6 +2399,42 @@ if ($editionNumber -ge 7) {
                     "<script src=`"assets/composition-map.js`"></script>`n<script src=`"assets/composition-starters.js`"></script>"
                 )
             }
+            if ($editionNumber -ge 23) {
+                $queryPlanSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionQueryPlanSpec)])"
+                $startersContractLink = "<a href=`"$startersSpecPage`">Read the authored-starters contract</a>"
+                foreach ($marker in @(
+                    $startersContractLink,
+                    '<aside class="lab-contract">',
+                    '</aside>',
+                    '<script src="assets/composition-starters.js"></script>'
+                )) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition query-plan page integration marker drift: $marker"
+                    }
+                }
+                $queryPlanShell = @'
+<aside class="lab-contract">
+<p class="site-kicker">Visible request</p>
+<section id="composition-query-plan" class="query-plan" aria-labelledby="composition-query-plan-heading">
+<h2 id="composition-query-plan-heading">Your explicit query plan</h2>
+<p>Inspect the visible controls before running closure. The live plan enhancement is loading.</p>
+</section>
+<div class="lab-contract__static">
+'@
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $startersContractLink,
+                    "$startersContractLink<a href=`"$queryPlanSpecPage`">Read the query-plan contract</a>"
+                ).Replace(
+                    '<aside class="lab-contract">',
+                    $queryPlanShell
+                ).Replace(
+                    '</aside>',
+                    "</div>`n</aside>"
+                ).Replace(
+                    '<script src="assets/composition-starters.js"></script>',
+                    "<script src=`"assets/composition-starters.js`"></script>`n<script src=`"assets/composition-query-plan.js`"></script>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2599,6 +2671,9 @@ $pageScripts
     if ($editionNumber -ge 22) {
         $expectedAssetNames += "composition-starters.js"
     }
+    if ($editionNumber -ge 23) {
+        $expectedAssetNames += "composition-query-plan.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -2711,6 +2786,9 @@ $pageScripts
     if ($editionNumber -ge 22) {
         $siteChecks.composition_starter_cards = $compositionStarterChecks.starters
     }
+    if ($editionNumber -ge 23) {
+        $siteChecks.composition_query_plan_pages = 1
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -2778,6 +2856,9 @@ if ($editionNumber -ge 21) {
 }
 if ($editionNumber -ge 22) {
     $manifestRecord.composition_starter_checks = $compositionStarterChecks
+}
+if ($editionNumber -ge 23) {
+    $manifestRecord.composition_query_plan_checks = $compositionQueryPlanChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"
@@ -2850,6 +2931,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 22) {
         Write-Output "site_composition_starter_cards=$($siteChecks.composition_starter_cards)"
+    }
+    if ($editionNumber -ge 23) {
+        Write-Output "site_composition_query_plan_pages=$($siteChecks.composition_query_plan_pages)"
     }
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"

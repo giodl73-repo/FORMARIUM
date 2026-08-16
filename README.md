@@ -216,10 +216,10 @@ that remain required at use time. See
 Render the current proof-edition bounded composition-lab simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-22
+.\tools\render_proof_set.ps1 -Edition sim-23
 ```
 
-Open `target/proof-set-sim-22/index.html` for a problem-led path through five
+Open `target/proof-set-sim-23/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
@@ -243,6 +243,11 @@ trace. Loading a starter changes visible explicit controls but does not run
 closure, infer selections from prose, inherit reviewed outcomes, or serialize
 arbitrary query data into the URL. See
 [`specs/COMPOSITION-AUTHORED-STARTERS.md`](specs/COMPOSITION-AUTHORED-STARTERS.md).
+The sticky pre-run card now condenses the current explicit controls into Add,
+Multiply, Subtract, Frame, and Bound records. It reports only syntactic control
+completeness, never predicts closure, and warns when edited controls no longer
+match the displayed result. See
+[`specs/COMPOSITION-QUERY-PLAN.md`](specs/COMPOSITION-QUERY-PLAN.md).
 Each of the twelve reviewed endpoint factors also has an edition-local focus
 fragment: a Start or Continue link opens a generated card with the exact factor
 label and ID, then hands off to the source entry's Root factorization. The card
@@ -370,14 +375,16 @@ node tools\check_composition_reading.js
 node tools\check_composition_palette.js
 node tools\check_composition_views.js
 node tools\check_composition_map.js
-node tools\check_proof_set_composition.js target\proof-set-sim-22\manifest.json target\proof-set-sim-22\index.html
-node tools\check_proof_set_composition_lab.js target\proof-set-sim-22
-node tools\check_proof_set_composition_reading.js target\proof-set-sim-22
-node tools\check_proof_set_composition_focus.js target\proof-set-sim-22
-node tools\check_proof_set_composition_palette.js target\proof-set-sim-22
-node tools\check_proof_set_composition_views.js target\proof-set-sim-22
-node tools\check_proof_set_composition_starters.js target\proof-set-sim-22
-node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-22
+node tools\check_composition_query_plan.js
+node tools\check_proof_set_composition.js target\proof-set-sim-23\manifest.json target\proof-set-sim-23\index.html
+node tools\check_proof_set_composition_lab.js target\proof-set-sim-23
+node tools\check_proof_set_composition_reading.js target\proof-set-sim-23
+node tools\check_proof_set_composition_focus.js target\proof-set-sim-23
+node tools\check_proof_set_composition_palette.js target\proof-set-sim-23
+node tools\check_proof_set_composition_views.js target\proof-set-sim-23
+node tools\check_proof_set_composition_starters.js target\proof-set-sim-23
+node tools\check_proof_set_composition_query_plan.js target\proof-set-sim-23
+node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-23
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

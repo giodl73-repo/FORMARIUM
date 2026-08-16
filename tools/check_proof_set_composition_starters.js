@@ -13,7 +13,9 @@ const compose = fs.readFileSync(path.join(siteRoot, "compose.html"), "utf8");
 const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-starters.js"), "utf8");
 const data = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-22");
+const editionNumber = Number(manifest.edition.split("-")[1]);
+assert.ok(Number.isInteger(editionNumber) && editionNumber >= 22,
+  "authored-starter edition");
 assert.equal(manifest.site_checks.composition_starter_cards, 5);
 assert.equal(manifest.composition_starter_checks.starters, 5);
 assert.equal(manifest.composition_starter_checks.prose_semantic_selection, false);

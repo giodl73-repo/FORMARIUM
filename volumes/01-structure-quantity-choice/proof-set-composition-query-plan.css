@@ -1,0 +1,157 @@
+.query-plan {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.query-plan__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.7rem;
+}
+
+.query-plan__header h2 {
+  margin: 0;
+}
+
+.query-plan__state {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: var(--proof-accent);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 0.18rem 0.48rem;
+  text-transform: uppercase;
+}
+
+.query-plan[data-control-state="needs-explicit-controls"] .query-plan__state {
+  color: #a46a14;
+}
+
+.query-plan__status,
+.query-plan__problem,
+.query-plan__boundary {
+  line-height: 1.45;
+  margin: 0;
+}
+
+.query-plan[data-result-alignment="controls-changed"] .query-plan__boundary {
+  background: color-mix(in srgb, #a46a14 9%, var(--proof-card));
+  border-left-color: #a46a14;
+}
+
+.query-plan[data-result-alignment="matches-displayed-result"] .query-plan__boundary {
+  background: color-mix(in srgb, #2d7555 9%, var(--proof-card));
+  border-left-color: #2d7555;
+}
+
+.query-plan__status,
+.query-plan__problem {
+  color: var(--proof-ink-soft);
+  font-size: 0.82rem;
+}
+
+.query-plan__stages {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.query-plan__stage {
+  border-top: 1px solid var(--proof-rule);
+  padding-top: 0.65rem;
+}
+
+.query-plan__operator {
+  color: var(--proof-accent);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.query-plan__stage h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.96rem;
+  margin: 0.1rem 0 0.4rem;
+}
+
+.query-plan__records {
+  display: grid;
+  gap: 0.38rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.query-plan__records li {
+  display: grid;
+  gap: 0.08rem;
+  min-width: 0;
+}
+
+.query-plan__records a,
+.query-plan__records strong {
+  font-size: 0.82rem;
+  font-weight: 780;
+}
+
+.query-plan__records small,
+.query-plan__route,
+.query-plan__empty {
+  color: var(--proof-ink-soft);
+  font-size: 0.74rem;
+}
+
+.query-plan__records code,
+.query-plan__digests code {
+  font-size: 0.66rem;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.query-plan__controls {
+  display: grid;
+  gap: 0.2rem 0.55rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  margin: 0;
+}
+
+.query-plan__controls dt {
+  color: var(--proof-accent);
+  font-size: 0.68rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.query-plan__controls dd {
+  font-size: 0.74rem;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.query-plan__boundary {
+  background: color-mix(in srgb, var(--proof-accent) 7%, var(--proof-card));
+  border-left: 0.2rem solid var(--proof-accent);
+  font-size: 0.78rem;
+  padding: 0.55rem 0.65rem;
+}
+
+.query-plan__digests {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+}
+
+.lab-contract__static {
+  border-top: 1px solid var(--proof-rule);
+  margin-top: 0.3rem;
+  padding-top: 0.9rem;
+}
+
+.lab-contract__static h2 {
+  font-size: 1.15rem;
+}
+
+html[data-composition-density="tight"] .query-plan {
+  gap: 0.55rem;
+}

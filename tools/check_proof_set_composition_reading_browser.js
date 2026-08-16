@@ -222,6 +222,67 @@ async function evaluate(client, expression) {
         "only the shared profile name is stored");
       profileSummary = " profiles=4:book";
     }
+    let queryPlanSummary = "";
+    if (editionNumber >= 23) {
+      const initialPlan = await evaluate(client, `(() => {
+        const plan = document.getElementById("composition-query-plan");
+        return {
+          enhanced: plan.dataset.enhanced,
+          labelled: Boolean(document.getElementById(plan.getAttribute("aria-labelledby"))),
+          state: plan.dataset.controlState,
+          alignment: plan.dataset.resultAlignment,
+          stages: plan.querySelectorAll(".query-plan__stage").length,
+          addLinks: plan.querySelectorAll(".query-plan__stage:first-child a").length,
+          route: plan.querySelector(".query-plan__route")?.textContent || "",
+          subtract: plan.querySelector(".query-plan__stage:nth-child(3) .query-plan__empty")?.textContent || "",
+          boundary: plan.querySelector(".query-plan__boundary")?.textContent || "",
+          exactDisplay: getComputedStyle(plan.querySelector(".composition-meta--full")).display
+        };
+      })()`);
+      assert.equal(initialPlan.enhanced, "true", "query plan enhancement is installed");
+      assert.equal(initialPlan.labelled, true, "query plan keeps its programmatic heading");
+      assert.equal(initialPlan.state, "control-complete", "default controls are complete");
+      assert.equal(initialPlan.alignment, "not-run", "default plan has not executed");
+      assert.equal(initialPlan.stages, 3, "query plan shows Add, Multiply, and Subtract");
+      assert.equal(initialPlan.addLinks, 1, "query plan links one selected concept into the book");
+      assert.equal(initialPlan.route,
+        "dependency source, target, and direction → interfaces and interaction contracts",
+      "query plan shows the human forward route");
+      assert.equal(initialPlan.subtract, "No exclusion requested.");
+      assert.match(initialPlan.boundary, /^Not executed:/,
+        "query plan keeps execution boundary visible");
+      assert.equal(initialPlan.exactDisplay, "none", "Book folds exact plan custody");
+      const partialPlan = await evaluate(client, `(() => {
+        const form = document.getElementById("composition-lab-form");
+        const seed = form.querySelector('input[name="seeds"]:checked');
+        seed.checked = false;
+        seed.dispatchEvent(new Event("input", { bubbles: true }));
+        const partial = {
+          state: document.getElementById("composition-query-plan").dataset.controlState,
+          status: document.querySelector(".query-plan__status").textContent
+        };
+        seed.checked = true;
+        seed.dispatchEvent(new Event("input", { bubbles: true }));
+        return { partial, restored: document.getElementById("composition-query-plan").dataset.controlState };
+      })()`);
+      assert.deepEqual(partialPlan, {
+        partial: { state: "needs-explicit-controls", status: "Needs explicit controls: Seeds." },
+        restored: "control-complete"
+      }, "query plan reports and recovers from a missing explicit seed");
+      const planProfiles = await evaluate(client, `(() => {
+        const form = document.getElementById("composition-lab-form");
+        const snapshot = () => [...form.elements].map(node => ({ name: node.name,
+          value: node.value, checked: Boolean(node.checked) }));
+        const before = snapshot();
+        document.querySelector('[data-composition-profile="full"]').click();
+        const full = getComputedStyle(document.querySelector("#composition-query-plan .composition-meta--full")).display;
+        document.querySelector('[data-composition-profile="book"]').click();
+        return { full, same: JSON.stringify(before) === JSON.stringify(snapshot()) };
+      })()`);
+      assert.notEqual(planProfiles.full, "none", "Full reveals exact query-plan custody");
+      assert.equal(planProfiles.same, true, "plan profile changes no controls");
+      queryPlanSummary = " plan=control-complete";
+    }
     await evaluate(client, `(() => {
       const form = document.getElementById("composition-lab-form");
       form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
@@ -240,6 +301,11 @@ async function evaluate(client, expression) {
     assert.equal(state.error, "", "browser runtime error");
     assert.equal(state.labState, "incomplete", "browser default remains incomplete");
     assert.equal(state.routePages, 2, "browser renders two route pages");
+    if (editionNumber >= 23) {
+      assert.equal(await evaluate(client,
+        `document.getElementById("composition-query-plan").dataset.resultAlignment`),
+      "matches-displayed-result", "successful run binds the displayed result to current controls");
+    }
     let mapSummary = "";
     if (editionNumber >= 21) {
       const mapState = await evaluate(client, `(() => {
@@ -428,14 +494,30 @@ async function evaluate(client, expression) {
           ready: document.readyState,
           active: document.querySelector('.composition-starter[data-active="true"]')?.dataset.starterId || "",
           direction: document.getElementById("composition-lab-form")?.elements.direction.value || "",
-          empty: Boolean(document.querySelector(".lab-result__empty"))
+          empty: Boolean(document.querySelector(".lab-result__empty")),
+          alignment: document.getElementById("composition-query-plan")?.dataset.resultAlignment || ""
         }))()`);
         if (routedStarter.ready === "complete" && routedStarter.active) break;
         await delay(50);
       }
       assert.deepEqual(routedStarter, { ready: "complete", active: "alert-outcome-feedback",
-        direction: "reverse", empty: true },
+        direction: "reverse", empty: true,
+        alignment: editionNumber >= 23 ? "not-run" : "" },
       "fixed homepage-style fragment loads reverse controls without running");
+      if (editionNumber >= 23) {
+        const reversePlan = await evaluate(client, `(() => ({
+          state: document.getElementById("composition-query-plan").dataset.controlState,
+          direction: document.querySelector(".query-plan__stage:nth-child(2) small")?.textContent || "",
+          route: document.querySelector(".query-plan__route")?.textContent || "",
+          boundary: document.querySelector(".query-plan__boundary")?.textContent || ""
+        }))()`);
+        assert.equal(reversePlan.state, "control-complete");
+        assert.equal(reversePlan.direction, "reverse traversal");
+        assert.equal(reversePlan.route,
+          "monitoring method, window, and frequency → outcome measures and time horizon",
+        "reverse starter plan shows traversal without reversing canonical semantics");
+        assert.match(reversePlan.boundary, /^Not executed:/);
+      }
       const loadedConflict = await evaluate(client, `(() => {
         document.querySelector('[data-load-starter="dependency-exclusion-conflict"]').click();
         const form = document.getElementById("composition-lab-form");
@@ -462,6 +544,16 @@ async function evaluate(client, expression) {
         exclusions: 1,
         status: "Loaded “Required-interface conflict” from reviewed trace dependency-exclusion-conflict. The lab has not run; its checks will remain unresolved."
       }, "conflict starter loads controls without running");
+      if (editionNumber >= 23) {
+        const conflictPlan = await evaluate(client, `(() => ({
+          exclusions: document.querySelectorAll(".query-plan__stage:nth-child(3) a").length,
+          label: document.querySelector(".query-plan__stage:nth-child(3) a")?.textContent || "",
+          predictsContradiction: document.getElementById("composition-query-plan").textContent.includes("contradictory")
+        }))()`);
+        assert.deepEqual(conflictPlan, { exclusions: 1,
+          label: "interfaces and interaction contracts", predictsContradiction: false },
+        "conflict starter plan shows subtraction without predicting result state");
+      }
       await evaluate(client, `document.getElementById("composition-lab-form").dispatchEvent(
         new Event("submit", { bubbles: true, cancelable: true }))`);
       for (let attempt = 0; attempt < 80; attempt += 1) {
@@ -484,6 +576,17 @@ async function evaluate(client, expression) {
       assert.deepEqual(loadedFrontier.relations,
         ["f2-delegation-authority", "f6-evidence-obligation"]);
       assert.equal(loadedFrontier.edges, "1");
+      if (editionNumber >= 23) {
+        const frontierPlan = await evaluate(client, `(() => ({
+          add: document.querySelectorAll(".query-plan__stage:first-child a").length,
+          multiply: document.querySelectorAll(".query-plan__stage:nth-child(2) li").length,
+          bound: [...document.querySelectorAll(".query-plan__controls dd")].at(-1)?.textContent || "",
+          predictsFrontier: document.querySelector(".query-plan__boundary").textContent.toLowerCase().includes("frontier")
+        }))()`);
+        assert.deepEqual(frontierPlan, { add: 2, multiply: 2,
+          bound: "forward · depth 1 · edges 1 · nodes 4", predictsFrontier: false },
+        "frontier starter plan exposes selections and bound without predicting closure");
+      }
       await evaluate(client, `document.getElementById("composition-lab-form").dispatchEvent(
         new Event("submit", { bubbles: true, cancelable: true }))`);
       for (let attempt = 0; attempt < 80; attempt += 1) {
@@ -494,16 +597,29 @@ async function evaluate(client, expression) {
       assert.equal(await evaluate(client,
         `document.querySelectorAll(".closure-map__node--frontier").length`), 1,
       "frontier starter recomputes one visible stopped node");
+      if (editionNumber >= 23) {
+        assert.equal(await evaluate(client,
+          `document.getElementById("composition-query-plan").dataset.controlState`),
+        "control-complete", "executed result leaves its explicit control receipt visible");
+        assert.equal(await evaluate(client,
+          `document.getElementById("composition-query-plan").dataset.resultAlignment`),
+        "matches-displayed-result", "frontier result remains aligned to its controls");
+      }
       const modified = await evaluate(client, `(() => {
         const problem = document.getElementById("composition-lab-form").elements.problem;
         problem.value += " Modified";
         problem.dispatchEvent(new Event("input", { bubbles: true }));
         return { hash: location.hash,
           active: document.querySelectorAll('.composition-starter[data-active="true"]').length,
-          status: document.getElementById("composition-starters-status").textContent };
+          status: document.getElementById("composition-starters-status").textContent,
+          planAlignment: document.getElementById("composition-query-plan")?.dataset.resultAlignment || "",
+          planBoundary: document.querySelector(".query-plan__boundary")?.textContent || "" };
       })()`);
       assert.deepEqual(modified, { hash: "", active: 0,
-        status: "Starter modified. The visible controls now define a new local request." },
+        status: "Starter modified. The visible controls now define a new local request.",
+        planAlignment: editionNumber >= 23 ? "controls-changed" : "",
+        planBoundary: editionNumber >= 23 ?
+          "Controls changed: the displayed result belongs to the previous request. Run again to evaluate this plan." : "" },
       "editing clears authored-route identity without persistence");
       starterSummary = " starters=5 conflict=contradictory frontier=truncated";
     }
@@ -553,7 +669,7 @@ async function evaluate(client, expression) {
     }
     console.log(`OK state=${state.labState} pages=${state.routePages} ` +
       `stages=${route.stages.join(",")} mobile=one-column${paletteSummary}${profileSummary}${mapSummary} ` +
-      `screenshot=${screenshotPath}${starterSummary}${focusSummary}`);
+      `screenshot=${screenshotPath}${queryPlanSummary}${starterSummary}${focusSummary}`);
   } finally {
     if (client) client.close();
     browser.kill();

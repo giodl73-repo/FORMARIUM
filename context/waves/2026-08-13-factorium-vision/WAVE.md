@@ -1281,3 +1281,40 @@ and standalone SHA-256
 No semantic parsing, preferred-default, reviewed-outcome reproduction, query
 persistence, recommendation, reader-success, publication, or `preview-01`
 claim is admitted.
+
+## 2026-08-16 composition query-plan continuation
+
+Plan review: make the configured Composition Query legible before execution
+without creating a second closure engine. Project only visible problem,
+context, direction, budget, seed, relation, and exclusion controls through the
+exact six-relation and 18-binding payloads; summarize Add, Multiply, Subtract,
+Frame, and Bound in the sticky pre-run card; call syntactic coverage `control-
+complete`; preserve reverse relation semantics and Full custody; mint no plan
+identity; track current-result alignment only in memory; gate the projection
+to `sim-23`; and retain `sim-22` exactly.
+
+Result review: `sim-23` adds one live Composition Query Plan above the existing
+static lab boundary. The default receipt links the selected dependency factor
+into its book page, displays the human F1 forward route, says no exclusion was
+requested, and repeats exact context and finite bounds. Missing or malformed
+controls produce ordered diagnostics without inferred repair. Reverse F4,
+conflict subtraction, and two-relation frontier starters update the receipt
+without predicting admission, contradiction, frontier, checks, or state.
+After execution the plan says it matches the displayed result; after an edit
+it warns that the result belongs to the previous controls. Pure, generated-
+site, and live Edge checks cover payload drift, unknown/duplicate identities,
+input-order invariance, profile-independent bytes, Full custody, partial-form
+recovery, starter updates, load/run separation, result alignment, mobile
+layout, map, route, and factor focus. The compact design pass and eight-role
+fixed point report zero open P1/P2 findings. Full repository validation passes.
+`sim-23` has site identity
+`0509bbdea57a0ca63590a2166aa88f18dc77b9fa16431ee1ffc79b7683c31a63`
+and standalone SHA-256
+`183846b83e8e9ea82a5eb1e678f6137f454c26a77fc4c7ea6b5896ad1cf033e7`;
+`sim-22` retains site identity
+`dab967874fc304a1fa3f9ffd47bc6559102bced0d525cb2b8addccd5736d7e6b`
+and standalone SHA-256
+`8f80518d3e3c10006c60e35aa4e1eab4e6abbe5385d4660ba79a508b665101dc`.
+No prose inference, compatibility, closure or result prediction, canonical
+query identity, persistence, comprehension, accessibility, recommendation,
+publication, or `preview-01` claim is admitted.

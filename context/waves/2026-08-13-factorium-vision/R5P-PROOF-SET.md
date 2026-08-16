@@ -103,6 +103,10 @@ The problem-led homepage rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-13.md`.
 The subtract-conflict and contradictory-state rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-14.md`.
+The authored Composition Starter rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-23.md`.
+The pre-execution Composition Query Plan rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-24.md`.
 
 ### Composition-query rehearsal boundary
 
@@ -291,3 +295,15 @@ result while retaining the six-stage audit and authoritative reading route.
 Its successful rendering is not graph discovery, recommendation, domain or
 causal structure, comprehension, accessibility evidence, or external-reader
 use.
+
+Internal preflight 23 adds the `sim-22` Authored Composition Starters. It
+tests exact trace-to-control projection, fixed homepage handoffs, explicit
+load-before-run behavior, negative-state configurations, and modification
+clearing. It is not prose inference, preferred-default evidence, arbitrary
+query sharing, outcome reproduction, persistence, or external-reader use.
+
+Internal preflight 24 adds the `sim-23` Composition Query Plan. It tests a
+payload-bound Add/Multiply/Subtract/Frame/Bound receipt, exact partial-control
+diagnostics, reverse-route custody, and ephemeral current-result alignment.
+It is not closure prediction, compatibility or domain evaluation, canonical
+query identity, persistence, comprehension, or external-reader use.

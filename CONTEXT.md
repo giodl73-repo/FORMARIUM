@@ -269,6 +269,22 @@ the exact six-stage audit is folded, not removed, and the authoritative
 reading route follows immediately. The map creates no node, edge, rank, or
 identity. `sim-20` remains byte-identical.
 
+The twenty-third rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-23.md`
+adds Authored Composition Starters to `sim-22`. Five exact worked traces become
+visible starting configurations and homepage-to-Compose handoffs. Loading sets
+only explicit controls and never runs closure or inherits reviewed outcomes;
+the fixed fragment carries only an allowlisted edition-local trace ID and is
+cleared after modification. `sim-21` remains byte-identical.
+
+The twenty-fourth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-24.md`
+adds a live Composition Query Plan to `sim-23`. The sticky receipt condenses
+explicit Add, Multiply, Subtract, Frame, and Bound controls without executing
+or predicting closure. It distinguishes syntactic control coverage from
+validity and warns when edited controls no longer match the displayed result.
+`sim-22` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and
