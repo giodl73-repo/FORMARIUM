@@ -151,6 +151,8 @@
     if (!Number.isInteger(budget.depth) || budget.depth < 1 || budget.depth > 6) diagnostics.push("Depth budget");
     if (!Number.isInteger(budget.edges) || budget.edges < 1 || budget.edges > 6) diagnostics.push("Edge budget");
     if (!Number.isInteger(budget.nodes) || budget.nodes < 3 || budget.nodes > 24) diagnostics.push("Node budget");
+    // SIM24-WORK-DIAGNOSTIC
+    if (!Number.isInteger(budget.work) || budget.work < 3 || budget.work > 64) diagnostics.push("Work budget");
     if (seeds.length < 1 || seeds.length > 3) diagnostics.push("Seeds");
     if (relations.length < 1 || relations.length > 6) diagnostics.push("Relations");
 
@@ -168,7 +170,9 @@
         direction: direction,
         depth: budget.depth,
         edges: budget.edges,
-        nodes: budget.nodes
+        nodes: budget.nodes,
+        // SIM24-WORK-BOUND
+        work: budget.work
       },
       add: seeds.map(bindArtifact),
       multiply: multiply,
@@ -266,7 +270,9 @@
     [["Frame", plan.frame.contextId || "not declared"],
       ["Selections", plan.frame.selections || "not declared"],
       ["Bound", (plan.bound.direction || "no direction") + " · depth " + plan.bound.depth +
-        " · edges " + plan.bound.edges + " · nodes " + plan.bound.nodes]].forEach(function (pair) {
+        " · edges " + plan.bound.edges + " · nodes " + plan.bound.nodes +
+        // SIM24-WORK-DISPLAY
+        " · work " + plan.bound.work]].forEach(function (pair) {
       controls.append(element(documentObject, "dt", "", pair[0]),
         element(documentObject, "dd", "", String(pair[1])));
     });
@@ -308,7 +314,9 @@
           budget: {
             depth: Number(form.elements.depth.value),
             edges: Number(form.elements.edges.value),
-            nodes: Number(form.elements.nodes.value)
+            nodes: Number(form.elements.nodes.value),
+            // SIM24-WORK-FORM
+            work: Number(form.elements.work.value)
           },
           seeds: checkedValues("seeds"),
           relations: checkedValues("relations"),

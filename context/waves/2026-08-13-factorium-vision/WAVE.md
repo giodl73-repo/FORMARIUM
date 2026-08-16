@@ -1318,3 +1318,35 @@ and standalone SHA-256
 No prose inference, compatibility, closure or result prediction, canonical
 query identity, persistence, comprehension, accessibility, recommendation,
 publication, or `preview-01` claim is admitted.
+
+## 2026-08-16 composition work-budget continuation
+
+Plan review: close the mismatch between the four finite budgets required by
+the roadmap and canonical query contract and the three controls enforced by
+the live Composition Lab. Use the canonical emitted-record sum as the only
+meaning of work; reserve every atomic relation's edge, check, new nodes,
+projections, and newly reached conflicts before admission; count a frontier
+before emitting it; fail closed below the seed record floor; propagate exact
+work controls through authored starters and the Query Plan; gate the surface
+to `sim-24`; and retain `sim-23` exactly. The compact design and eight-role
+reviews report zero open P1/P2 findings.
+
+Result review: `sim-24` adds the missing Work records control and uses the
+canonical seven-record sum as a hard cap. Default F1 emits 9 of 9 records; an
+8-record cap admits no partial relation and exposes the exact six-slot atomic
+capacity requirement; seed floors fail closed; and other budget frontiers are
+emitted only when their own record fits. All five authored starters load exact
+trace work values (9, 9, 9, 10, 13) without running, and the live Query Plan
+repeats all four finite bounds. Pure, generated-site, 129-record search, Rust,
+and live Edge checks pass; Book and focus captures remain readable. The compact
+design pass and eight-role fixed point report zero open P1/P2 findings.
+`sim-24` has site identity
+`f1c09d10a492bbe4548608425dde536d5da11aa76fce96c2c3adedb757cc8f57`
+and standalone SHA-256
+`36bdf398b81ecb614685069748518616072bef40ba3f81eeabcc279e3bbfb22d`;
+`sim-23` retains site identity
+`0509bbdea57a0ca63590a2166aa88f18dc77b9fa16431ee1ffc79b7683c31a63`
+and standalone SHA-256
+`183846b83e8e9ea82a5eb1e678f6137f454c26a77fc4c7ea6b5896ad1cf033e7`.
+No runtime-performance, scaling, semantic-completeness, useful-default,
+reader-success, publishing, or `preview-01` claim is admitted.

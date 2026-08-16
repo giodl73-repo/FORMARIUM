@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -26,6 +26,7 @@ $compositionViewsSpec = Join-Path $workspace "specs\COMPOSITION-READER-VIEWS.md"
 $compositionMapSpec = Join-Path $workspace "specs\COMPOSITION-CLOSURE-MAP.md"
 $compositionStartersSpec = Join-Path $workspace "specs\COMPOSITION-AUTHORED-STARTERS.md"
 $compositionQueryPlanSpec = Join-Path $workspace "specs\COMPOSITION-QUERY-PLAN.md"
+$compositionWorkBudgetSpec = Join-Path $workspace "specs\COMPOSITION-WORK-BUDGET.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -99,6 +100,45 @@ $artifactTitle = switch ($Edition) {
     "sim-21" { "Factorium Proof Set Composition Closure Map Simulation 21" }
     "sim-22" { "Factorium Proof Set Authored Composition Starters Simulation 22" }
     "sim-23" { "Factorium Proof Set Composition Query Plan Simulation 23" }
+    "sim-24" { "Factorium Proof Set Composition Work Budget Simulation 24" }
+}
+
+function ConvertTo-Sim23CompositionAsset {
+    param([string]$Name, [string]$Text)
+    if ($Name -eq "lab") {
+        $Text = $Text.Replace('[["depth", 1, 6], ["edges", 1, 6], ["nodes", 3, 24]' + "`n" +
+            '      // SIM24-WORK-RULE' + "`n" + '      , ["work", 3, 64]' + "`n" + '    ].forEach',
+            '[["depth", 1, 6], ["edges", 1, 6], ["nodes", 3, 24]].forEach')
+        $Text = $Text.Replace('budget: { depth: budget.depth, edges: budget.edges, nodes: budget.nodes,' + "`n" +
+            '        // SIM24-WORK-NORMALIZED' + "`n" + '        work: budget.work },',
+            'budget: { depth: budget.depth, edges: budget.edges, nodes: budget.nodes },')
+        $Text = [regex]::Replace($Text, '(?s)\n    // SIM24-WORK-SEED-FLOOR.*?\n    }\n\n    var admitted', "`n`n    var admitted")
+        $Text = [regex]::Replace($Text, '(?s)          // SIM24-WORK-FRONTIER\n.*?          frontiers\.push', '          frontiers.push')
+        $Text = [regex]::Replace($Text, '(?s)\n        // SIM24-WORK-ATOMIC\n.*?\n        admitted\.add', "`n        admitted.add")
+        $Text = $Text.Replace("`n    // SIM24-WORK-ASSERT`n    assert(work <= normalized.budget.work, `"Work budget exceeded`");", "")
+        $Text = $Text.Replace('nodes: Number(form.elements.nodes.value),' + "`n" +
+            '            // SIM24-WORK-FORM' + "`n" + '            work: Number(form.elements.work.value)',
+            'nodes: Number(form.elements.nodes.value)')
+        $Text = $Text.Replace('["Edges", result.graph.edges.length],' + "`n" +
+            '      // SIM24-WORK-DISPLAY' + "`n" +
+            '      ["Work used / cap", result.work + " / " + result.request.budget.work]',
+            '["Edges", result.graph.edges.length], ["Work", result.work]')
+    }
+    elseif ($Name -eq "plan") {
+        $Text = [regex]::Replace($Text, '\n    // SIM24-WORK-DIAGNOSTIC\n    if \(!Number\.isInteger\(budget\.work\).*?;', '')
+        $Text = $Text.Replace('nodes: budget.nodes,' + "`n" + '        // SIM24-WORK-BOUND' + "`n" + '        work: budget.work', 'nodes: budget.nodes')
+        $Text = $Text.Replace('" · edges " + plan.bound.edges + " · nodes " + plan.bound.nodes +' + "`n" +
+            '        // SIM24-WORK-DISPLAY' + "`n" + '        " · work " + plan.bound.work',
+            '" · edges " + plan.bound.edges + " · nodes " + plan.bound.nodes')
+        $Text = $Text.Replace('nodes: Number(form.elements.nodes.value),' + "`n" +
+            '            // SIM24-WORK-FORM' + "`n" + '            work: Number(form.elements.work.value)',
+            'nodes: Number(form.elements.nodes.value)')
+    }
+    elseif ($Name -eq "starters") {
+        $Text = [regex]::Replace($Text, '(?s)\n      // SIM24-WORK-VALIDATION\n      if \(Object\.prototype.*?\n      }', '')
+        $Text = [regex]::Replace($Text, '(?s)\n      // SIM24-WORK-LOAD\n      if \(form\.elements\.work.*?\n      }', '')
+    }
+    return $Text
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -592,6 +632,9 @@ if ($editionNumber -ge 22) {
 }
 if ($editionNumber -ge 23) {
     Add-ProofSource $compositionQueryPlanSpec
+}
+if ($editionNumber -ge 24) {
+    Add-ProofSource $compositionWorkBudgetSpec
 }
 
 foreach ($selectionDocument in $selectionDocuments) {
@@ -1179,6 +1222,11 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 24) {
+        if (-not (Test-Path -LiteralPath $compositionWorkBudgetSpec -PathType Leaf)) {
+            throw "Missing composition work-budget specification: $compositionWorkBudgetSpec"
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1380,6 +1428,9 @@ if ($editionNumber -ge 7) {
         }
         $compositionLabJson = $compositionLabPayload | ConvertTo-Json -Depth 5 -Compress
         $labRuntimeText = Get-Content -LiteralPath $labScript -Raw
+        if ($editionNumber -lt 24) {
+            $labRuntimeText = ConvertTo-Sim23CompositionAsset -Name "lab" -Text $labRuntimeText
+        }
         $readingHookLine = '          if (root && typeof root.FACTORIUM_COMPOSITION_READING_ROUTE_RENDER === "function") root.FACTORIUM_COMPOSITION_READING_ROUTE_RENDER(identified);'
         if (-not $labRuntimeText.Contains($readingHookLine)) {
             throw "Composition Lab runtime omits the reading-route extension hook"
@@ -1633,9 +1684,13 @@ if ($editionNumber -ge 7) {
                 }
             }
             if ($editionNumber -ge 22) {
+                $starterRuntimeText = Get-Content -LiteralPath $compositionStartersScript -Raw
+                if ($editionNumber -lt 24) {
+                    $starterRuntimeText = ConvertTo-Sim23CompositionAsset -Name "starters" -Text $starterRuntimeText
+                }
                 [System.IO.File]::WriteAllText(
                     (Join-Path $siteAssetDirectory "composition-starters.js"),
-                    (Get-Content -LiteralPath $compositionStartersScript -Raw),
+                    $starterRuntimeText,
                     [System.Text.UTF8Encoding]::new($false)
                 )
                 $starterWorksheets = @(
@@ -1707,7 +1762,7 @@ if ($editionNumber -ge 7) {
                             }
                         }
                         $guidePage = $pageBySource[[System.IO.Path]::GetFullPath($starterWorksheets[$starterIndex])]
-                        [ordered]@{
+                        $starterRecord = [ordered]@{
                             id = $trace.id
                             title = $compositionStarterTitles[$starterIndex]
                             problem = $trace.problem
@@ -1726,6 +1781,10 @@ if ($editionNumber -ge 7) {
                             traceSha256 = $trace.sha256
                             guideHref = "entries/$guidePage"
                         }
+                        if ($editionNumber -ge 24) {
+                            $starterRecord.budget.work = $trace.budget.work
+                        }
+                        $starterRecord
                     }
                 )
                 if ($starterRecords.Count -ne 5 -or $starterStates.Count -ne 4) {
@@ -1766,9 +1825,13 @@ if ($editionNumber -ge 7) {
                 }
             }
             if ($editionNumber -ge 23) {
+                $queryPlanRuntimeText = Get-Content -LiteralPath $compositionQueryPlanScript -Raw
+                if ($editionNumber -lt 24) {
+                    $queryPlanRuntimeText = ConvertTo-Sim23CompositionAsset -Name "plan" -Text $queryPlanRuntimeText
+                }
                 [System.IO.File]::WriteAllText(
                     (Join-Path $siteAssetDirectory "composition-query-plan.js"),
-                    (Get-Content -LiteralPath $compositionQueryPlanScript -Raw),
+                    $queryPlanRuntimeText,
                     [System.Text.UTF8Encoding]::new($false)
                 )
                 $compositionQueryPlanChecks = [ordered]@{
@@ -1782,6 +1845,11 @@ if ($editionNumber -ge 7) {
                     storage = "none"
                     specification = "specs/COMPOSITION-QUERY-PLAN.md"
                 }
+            }
+            if ($editionNumber -ge 24) {
+                $compositionLabChecks.work_accounting = "canonical-record-count"
+                $compositionLabChecks.work_enforcement = "hard-cap"
+                $compositionLabChecks.work_range = "3-64"
             }
         }
     }
@@ -2435,6 +2503,23 @@ if ($editionNumber -ge 7) {
                     "<script src=`"assets/composition-starters.js`"></script>`n<script src=`"assets/composition-query-plan.js`"></script>"
                 )
             }
+            if ($editionNumber -ge 24) {
+                $workBudgetSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionWorkBudgetSpec)])"
+                $queryPlanContractLink = "<a href=`"$queryPlanSpecPage`">Read the query-plan contract</a>"
+                $nodeControl = '<label class="lab-field"><span>Nodes</span><input name="nodes" type="number" min="3" max="24" value="6" required></label>'
+                foreach ($marker in @($queryPlanContractLink, $nodeControl)) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition work-budget page integration marker drift: $marker"
+                    }
+                }
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $queryPlanContractLink,
+                    "$queryPlanContractLink<a href=`"$workBudgetSpecPage`">Read the work-budget contract</a>"
+                ).Replace(
+                    $nodeControl,
+                    "$nodeControl`n<label class=`"lab-field`"><span>Work records</span><input name=`"work`" type=`"number`" min=`"3`" max=`"64`" value=`"9`" required></label>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2788,6 +2873,9 @@ $pageScripts
     }
     if ($editionNumber -ge 23) {
         $siteChecks.composition_query_plan_pages = 1
+    }
+    if ($editionNumber -ge 24) {
+        $siteChecks.composition_work_budget_controls = 1
     }
 }
 

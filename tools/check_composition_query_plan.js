@@ -32,7 +32,7 @@ const request = {
   contextId: "synthetic-query",
   contextSelections: "boundary=declared-system,reference-frame=not-applicable",
   direction: "forward",
-  budget: { depth: 1, edges: 1, nodes: 6 },
+  budget: { depth: 1, edges: 1, nodes: 6, work: 9 },
   seeds: [labPayload.relations[0].source],
   relations: [labPayload.relations[0].id],
   exclusions: []
@@ -42,6 +42,7 @@ const basic = queryPlan.buildQueryPlan(request, labPayload, readingPayload);
 assert.equal(basic.schema, "factorium-composition-query-plan-v0");
 assert.equal(basic.controlState, "control-complete");
 assert.deepEqual(basic.counts, { seeds: 1, relations: 1, exclusions: 0 });
+assert.equal(basic.bound.work, 9);
 assert.equal(basic.multiply[0].predecessor.artifact, labPayload.relations[0].source);
 assert.equal(basic.multiply[0].derived.artifact, labPayload.relations[0].target);
 assert.equal(Object.hasOwn(basic, "sha256"), false, "plan mints no identity");

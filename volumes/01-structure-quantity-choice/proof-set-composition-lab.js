@@ -97,7 +97,10 @@
     assert(request.direction === "forward" || request.direction === "reverse",
       "Direction must be forward or reverse");
     var budget = request.budget || {};
-    [["depth", 1, 6], ["edges", 1, 6], ["nodes", 3, 24]].forEach(function (rule) {
+    [["depth", 1, 6], ["edges", 1, 6], ["nodes", 3, 24]
+      // SIM24-WORK-RULE
+      , ["work", 3, 64]
+    ].forEach(function (rule) {
       assert(Number.isInteger(budget[rule[0]]) &&
         budget[rule[0]] >= rule[1] && budget[rule[0]] <= rule[2],
       "Budget " + rule[0] + " must be " + rule[1] + "-" + rule[2]);
@@ -133,7 +136,9 @@
       problem: problem,
       context: { id: contextId, selections: normalizedSelections },
       direction: request.direction,
-      budget: { depth: budget.depth, edges: budget.edges, nodes: budget.nodes },
+      budget: { depth: budget.depth, edges: budget.edges, nodes: budget.nodes,
+        // SIM24-WORK-NORMALIZED
+        work: budget.work },
       seeds: seeds,
       relations: relations,
       exclusions: exclusions
@@ -162,6 +167,21 @@
         predecessor: "none"
       });
     });
+    // SIM24-WORK-SEED-FLOOR
+    assert(normalized.seeds.length * 3 <= normalized.budget.work,
+      "Work budget cannot represent the required seed records");
+
+    // Canonical work = seeds + nodes + edges + frontiers + conflicts + checks + projections.
+    // Nodes and admitted edges each imply one projection or check respectively.
+    function reachedConflictCount(candidateNodes) {
+      return normalized.exclusions.filter(function (artifact) {
+        return candidateNodes.has(artifact);
+      }).length;
+    }
+    function projectedWork(candidateNodes, edgeCount, frontierCount) {
+      return normalized.seeds.length + (2 * candidateNodes.size) + (2 * edgeCount) +
+        frontierCount + reachedConflictCount(candidateNodes);
+    }
 
     var admitted = new Set();
     var blocked = new Set();
@@ -190,6 +210,16 @@
         else if (nodes.size >= normalized.budget.nodes) reason = "node-budget-before-" + relationId;
 
         if (reason) {
+          // SIM24-WORK-FRONTIER
+          if (projectedWork(nodes, edges.length, frontiers.length + 1) > normalized.budget.work) {
+            capacityRequirements.push({
+              relation: relationId,
+              predecessor: predecessor,
+              reason: "atomic-frontier-needs-1-work-slot"
+            });
+            blocked.add(relationId);
+            return;
+          }
           frontiers.push({ artifact: derived, reason: reason, relation: relationId });
           blocked.add(relationId);
           return;
@@ -208,6 +238,21 @@
             relation: relationId,
             predecessor: predecessor,
             reason: "depth-budget-not-reached-by-working-graph"
+          });
+          blocked.add(relationId);
+          return;
+        }
+
+        // SIM24-WORK-ATOMIC
+        var candidateNodes = new Map(nodes);
+        additions.forEach(function (artifact) { candidateNodes.set(artifact, {}); });
+        var currentWork = projectedWork(nodes, edges.length, frontiers.length);
+        var candidateWork = projectedWork(candidateNodes, edges.length + 1, frontiers.length);
+        if (candidateWork > normalized.budget.work) {
+          capacityRequirements.push({
+            relation: relationId,
+            predecessor: predecessor,
+            reason: "atomic-relation-needs-" + (candidateWork - currentWork) + "-work-slots"
           });
           blocked.add(relationId);
           return;
@@ -301,6 +346,8 @@
       (frontiers.length ? "truncated" : "incomplete");
     var work = normalized.seeds.length + nodeRecords.length + edges.length +
       frontiers.length + conflicts.length + checks.length + projections.length;
+    // SIM24-WORK-ASSERT
+    assert(work <= normalized.budget.work, "Work budget exceeded");
 
     return {
       schema: "factorium-composition-lab-result-v0",
@@ -376,7 +423,9 @@
 
     var metrics = element(documentObject, "dl", "lab-metrics");
     [["Seeds", result.request.seeds.length], ["Nodes", result.graph.nodes.length],
-      ["Edges", result.graph.edges.length], ["Work", result.work]].forEach(function (pair) {
+      ["Edges", result.graph.edges.length],
+      // SIM24-WORK-DISPLAY
+      ["Work used / cap", result.work + " / " + result.request.budget.work]].forEach(function (pair) {
       metrics.append(element(documentObject, "dt", "", pair[0]),
         element(documentObject, "dd", "", String(pair[1])));
     });
@@ -538,7 +587,9 @@
           budget: {
             depth: Number(form.elements.depth.value),
             edges: Number(form.elements.edges.value),
-            nodes: Number(form.elements.nodes.value)
+            nodes: Number(form.elements.nodes.value),
+            // SIM24-WORK-FORM
+            work: Number(form.elements.work.value)
           },
           seeds: checkedValues("seeds"),
           relations: checkedValues("relations"),

@@ -54,7 +54,7 @@ const baseRequest = {
   contextId: "synthetic-query-lab",
   contextSelections: "boundary=declared-system,reference-frame=not-applicable",
   direction: "forward",
-  budget: { depth: 1, edges: 1, nodes: 6 },
+  budget: { depth: 1, edges: 1, nodes: 6, work: 9 },
   seeds: [payload.relations[0].source],
   relations: [payload.relations[0].id],
   exclusions: []

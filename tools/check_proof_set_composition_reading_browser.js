@@ -584,7 +584,8 @@ async function evaluate(client, expression) {
           predictsFrontier: document.querySelector(".query-plan__boundary").textContent.toLowerCase().includes("frontier")
         }))()`);
         assert.deepEqual(frontierPlan, { add: 2, multiply: 2,
-          bound: "forward · depth 1 · edges 1 · nodes 4", predictsFrontier: false },
+          bound: "forward · depth 1 · edges 1 · nodes 4" +
+            (editionNumber >= 24 ? " · work 13" : ""), predictsFrontier: false },
         "frontier starter plan exposes selections and bound without predicting closure");
       }
       await evaluate(client, `document.getElementById("composition-lab-form").dispatchEvent(

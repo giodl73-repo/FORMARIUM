@@ -107,6 +107,8 @@ The authored Composition Starter rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-23.md`.
 The pre-execution Composition Query Plan rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-24.md`.
+The finite emitted-record work-budget rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-25.md`.
 
 ### Composition-query rehearsal boundary
 
@@ -307,3 +309,9 @@ payload-bound Add/Multiply/Subtract/Frame/Bound receipt, exact partial-control
 diagnostics, reverse-route custody, and ephemeral current-result alignment.
 It is not closure prediction, compatibility or domain evaluation, canonical
 query identity, persistence, comprehension, or external-reader use.
+
+Internal preflight 25 adds the `sim-24` finite Work records control. It tests
+canonical record accounting, atomic admission, exact starter propagation,
+receipt/result agreement, and a hard result cap while retaining `sim-23`
+exactly. It is not performance, scale, semantic-completeness, useful-default,
+reader-success, or external-reader evidence.

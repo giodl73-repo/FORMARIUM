@@ -14,7 +14,7 @@ const css = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
 const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-query-plan.js"), "utf8");
 const data = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-23");
+assert.ok(Number(manifest.edition.split("-")[1]) >= 23, "query-plan edition");
 assert.equal(manifest.site_checks.composition_query_plan_pages, 1);
 assert.equal(manifest.composition_query_plan_checks.projection_input,
   "visible explicit controls plus digest-bound payloads");
@@ -52,7 +52,7 @@ const request = {
   contextId: "synthetic-query-lab",
   contextSelections: "boundary=declared-system,reference-frame=not-applicable",
   direction: "forward",
-  budget: { depth: 1, edges: 1, nodes: 6 },
+  budget: { depth: 1, edges: 1, nodes: 6, work: 9 },
   seeds: [relation.source], relations: [relation.id], exclusions: []
 };
 const plan = queryPlan.buildQueryPlan(request, labPayload, readingPayload);

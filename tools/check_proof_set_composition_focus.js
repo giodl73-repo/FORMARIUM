@@ -64,7 +64,7 @@ const result = lab.runComposition({
   contextId: "synthetic-query-lab",
   contextSelections: "boundary=declared-system,reference-frame=not-applicable",
   direction: "forward",
-  budget: { depth: 1, edges: 1, nodes: 6 },
+  budget: { depth: 1, edges: 1, nodes: 6, work: 9 },
   seeds: [f1.source], relations: [f1.id], exclusions: []
 }, labPayload);
 const route = reading.buildReadingRoute(result, readingPayload, "f".repeat(64));

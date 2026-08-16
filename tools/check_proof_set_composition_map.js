@@ -14,7 +14,7 @@ const css = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
 const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-map.js"), "utf8");
 const siteData = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-21", "closure-map edition");
+assert.ok(Number(manifest.edition.split("-")[1]) >= 21, "closure-map edition");
 assert.equal(manifest.site_checks.composition_closure_map_pages, 1);
 assert.equal(manifest.composition_closure_map_checks.projection_input,
   "identified composition result");
@@ -53,7 +53,7 @@ const result = lab.runComposition({
   contextId: "synthetic-query-lab",
   contextSelections: "boundary=declared-system,reference-frame=not-applicable",
   direction: "forward",
-  budget: { depth: 1, edges: 1, nodes: 6 },
+  budget: { depth: 1, edges: 1, nodes: 6, work: 9 },
   seeds: [relation.source], relations: [relation.id], exclusions: []
 }, labPayload);
 const map = closureMap.buildClosureMap(result, labPayload, readingPayload,

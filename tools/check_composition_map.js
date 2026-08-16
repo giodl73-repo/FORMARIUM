@@ -45,7 +45,7 @@ function request(overrides = {}) {
     contextId: "synthetic-map-check",
     contextSelections: "boundary=declared-system,reference-frame=not-applicable",
     direction: "forward",
-    budget: { depth: 2, edges: 2, nodes: 12 },
+    budget: { depth: 2, edges: 2, nodes: 12, work: 24 },
     seeds: [f1.source],
     relations: [f1.id],
     exclusions: [],
@@ -93,7 +93,7 @@ const f2 = relations[1];
 const f6 = relations[5];
 const frontier = mapped(request({
   seeds: [f2.source, f6.source], relations: [f2.id, f6.id],
-  budget: { depth: 2, edges: 1, nodes: 12 }
+  budget: { depth: 2, edges: 1, nodes: 12, work: 16 }
 }));
 assert.equal(frontier.map.frontiers.length, 1, "finite edge budget yields frontier");
 assert.equal(frontier.map.frontiers[0].relation, f6.id, "stable relation order stops F6");
@@ -119,7 +119,7 @@ assert.ok(!inactive.map.nodes.some((node) => node.artifact === f2.source),
 const chainedPayload = JSON.parse(JSON.stringify(labPayload));
 chainedPayload.relations[1].source = chainedPayload.relations[0].target;
 const chained = mapped(request({
-  relations: [f1.id, f2.id], budget: { depth: 2, edges: 2, nodes: 12 }
+  relations: [f1.id, f2.id], budget: { depth: 2, edges: 2, nodes: 12, work: 24 }
 }), chainedPayload, readingPayload);
 assert.equal(chained.map.traversals.length, 2, "two-edge chain admitted");
 assert.equal(chained.map.nodes.filter((node) => node.artifact === f1.target).length, 1,

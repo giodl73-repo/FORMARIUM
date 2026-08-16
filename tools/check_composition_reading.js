@@ -60,7 +60,7 @@ function request(overrides = {}) {
     contextId: "synthetic-query-lab",
     contextSelections: "boundary=declared-system,reference-frame=not-applicable",
     direction: "forward",
-    budget: { depth: 1, edges: 1, nodes: 6 },
+    budget: { depth: 1, edges: 1, nodes: 6, work: 9 },
     seeds: [relation.source], relations: [relation.id], exclusions: [],
     ...overrides
   };
@@ -98,14 +98,17 @@ assert.ok(bothSeeds.pages[0].focusHref.endsWith(
   `#factor-focus-${lexicalSeed.slice("factor:".length).replace("/", "-")}`),
 "same-stage focus uses deterministic artifact order");
 
-const conflictResult = lab.runComposition(request({ exclusions: [f1.target] }), labPayload);
+const conflictResult = lab.runComposition(request({
+  exclusions: [f1.target], budget: { depth: 1, edges: 1, nodes: 6, work: 10 }
+}), labPayload);
 const conflict = reading.buildReadingRoute(conflictResult, readingPayload, "c".repeat(64));
 assert.equal(conflict.pages[0].bindings.find((binding) => binding.artifact === f1.target).disposition,
   "rejected", "conflicting factor remains linked and marked rejected");
 
 const f2 = relations[1];
 const frontierResult = lab.runComposition(request({
-  seeds: [f1.source, f2.source], relations: [f1.id, f2.id]
+  seeds: [f1.source, f2.source], relations: [f1.id, f2.id],
+  budget: { depth: 1, edges: 1, nodes: 8, work: 13 }
 }), labPayload);
 const frontier = reading.buildReadingRoute(frontierResult, readingPayload, "d".repeat(64));
 assert.ok(frontierResult.graph.frontiers.some((item) => item.artifact === f2.target),

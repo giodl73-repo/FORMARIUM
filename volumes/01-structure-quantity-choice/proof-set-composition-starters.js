@@ -40,6 +40,10 @@
       ["depth", "edges", "nodes"].forEach(function (key) {
         assert(Number.isInteger(starter.budget[key]), "Starter budget is invalid");
       });
+      // SIM24-WORK-VALIDATION
+      if (Object.prototype.hasOwnProperty.call(starter.budget, "work")) {
+        assert(Number.isInteger(starter.budget.work), "Starter work budget is invalid");
+      }
       assert(Array.isArray(starter.seeds) && starter.seeds.length >= 1 &&
         starter.seeds.length <= 3, "Starter seed count is invalid");
       assert(Array.isArray(starter.relations) && starter.relations.length >= 1,
@@ -99,6 +103,10 @@
       form.elements.depth.value = starter.budget.depth;
       form.elements.edges.value = starter.budget.edges;
       form.elements.nodes.value = starter.budget.nodes;
+      // SIM24-WORK-LOAD
+      if (form.elements.work && Number.isInteger(starter.budget.work)) {
+        form.elements.work.value = starter.budget.work;
+      }
       checkValues("seeds", starter.seeds);
       checkValues("relations", starter.relations);
       checkValues("exclusions", starter.exclusions);

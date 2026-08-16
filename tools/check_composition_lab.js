@@ -48,7 +48,7 @@ function request(overrides = {}) {
     contextId: "synthetic-query-lab",
     contextSelections: "boundary=declared-system,reference-frame=not-applicable",
     direction: "forward",
-    budget: { depth: 1, edges: 1, nodes: 6 },
+    budget: { depth: 1, edges: 1, nodes: 6, work: 9 },
     seeds: [f1.source],
     relations: [f1.id],
     exclusions: [],
@@ -69,12 +69,12 @@ assert.equal(basic.evaluation[0].outcome, "unresolved", "lab invents no check re
 assert.equal(basic.projections.length, 3, "all working nodes flatten");
 
 const reorderedA = lab.runComposition(request({
-  budget: { depth: 1, edges: 2, nodes: 8 },
+  budget: { depth: 1, edges: 2, nodes: 8, work: 18 },
   seeds: [f2.source, f1.source],
   relations: [f2.id, f1.id]
 }), payload);
 const reorderedB = lab.runComposition(request({
-  budget: { depth: 1, edges: 2, nodes: 8 },
+  budget: { depth: 1, edges: 2, nodes: 8, work: 18 },
   seeds: [f1.source, f2.source],
   relations: [f1.id, f2.id]
 }), payload);
@@ -102,14 +102,16 @@ assert.notEqual(identity(reverse), identity(basic), "direction changes identity"
 const truncated = lab.runComposition(request({
   seeds: [f1.source, f2.source],
   relations: [f1.id, f2.id],
-  budget: { depth: 1, edges: 1, nodes: 8 }
+  budget: { depth: 1, edges: 1, nodes: 8, work: 13 }
 }), payload);
 assert.equal(truncated.state, "truncated", "exact edge budget produces truncation");
 assert.equal(truncated.graph.edges.length, 1, "one edge consumes the budget");
 assert.equal(truncated.graph.frontiers.length, 1, "next eligible target remains visible");
 assert.equal(truncated.graph.frontiers[0].relation, f2.id, "frontier names stopped relation");
 
-const contradictory = lab.runComposition(request({ exclusions: [f1.target] }), payload);
+const contradictory = lab.runComposition(request({
+  exclusions: [f1.target], budget: { depth: 1, edges: 1, nodes: 6, work: 10 }
+}), payload);
 assert.equal(contradictory.state, "contradictory", "required exclusion conflicts");
 assert.ok(contradictory.graph.nodes.some((node) => node.artifact === f1.target),
   "conflicted required node remains in graph");
@@ -118,6 +120,16 @@ assert.equal(
   "rejected",
   "projection records requested rejection"
 );
+
+const workBound = lab.runComposition(request({ budget: { depth: 1, edges: 1, nodes: 6, work: 8 } }), payload);
+assert.equal(workBound.state, "incomplete", "atomic work shortage is not a reached-budget frontier");
+assert.equal(workBound.graph.edges.length, 0, "work cap admits no partial relation");
+assert.equal(workBound.graph.nodes.length, 1, "work cap retains only the seed node");
+assert.equal(workBound.work, 3, "result stays within the declared work cap");
+assert.match(workBound.graph.unresolvedRelations[0].reason, /^atomic-relation-needs-6-work-slots$/);
+assert.throws(() => lab.runComposition(request({
+  seeds: [f1.source, f2.source], budget: { depth: 1, edges: 1, nodes: 6, work: 5 }
+}), payload), /seed records/, "seed floor fails closed");
 
 const unreachable = lab.runComposition(request({ relations: [f2.id] }), payload);
 assert.equal(unreachable.state, "incomplete", "unreachable predecessor remains incomplete");
@@ -138,7 +150,7 @@ for (const invalid of [
   request({ relations: [f1.id, f1.id] }),
   request({ contextSelections: "boundary=declared-system" }),
   request({ contextSelections: "reference-frame" }),
-  request({ budget: { depth: 0, edges: 1, nodes: 3 } }),
+  request({ budget: { depth: 0, edges: 1, nodes: 3, work: 9 } }),
   request({ exclusions: ["factor:unknown/value"] })
 ]) {
   assert.throws(() => lab.runComposition(invalid, payload), "invalid request fails closed");
