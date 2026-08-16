@@ -210,15 +210,16 @@ that remain required at use time. See
 Render the current proof-edition composition-worksheet simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-12
+.\tools\render_proof_set.ps1 -Edition sim-13
 ```
 
-Open `target/proof-set-sim-12/index.html` for a problem-led path through three
+Open `target/proof-set-sim-13/index.html` for a problem-led path through four
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
-reading pages. The systems, evidence, and feedback examples retain relation
-direction, local semantics, and complete versus incomplete outcomes. They are
-worked examples rather than an interactive builder. The generated site remains
+reading pages. The systems, evidence, feedback, and exclusion examples retain
+relation direction, local semantics, and complete, incomplete, and
+contradictory outcomes. They are worked examples rather than an interactive
+builder. The generated site remains
 a disposable publication projection; see
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
@@ -315,6 +316,7 @@ cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.fa
 cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\dependency-exclusion-conflict.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

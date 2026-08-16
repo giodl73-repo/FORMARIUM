@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -16,6 +16,7 @@ $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-S
 $compositionWorksheet = Join-Path $workspace "guides\system-dependency-composition-worksheet.md"
 $evidenceWorksheet = Join-Path $workspace "guides\latency-evidence-composition-worksheet.md"
 $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-worksheet.md"
+$conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
 $searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
@@ -25,6 +26,7 @@ $contextStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof
 $contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.js"
 $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-site.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
+$conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -46,6 +48,7 @@ $artifactTitle = switch ($Edition) {
     "sim-10" { "Factorium Proof Set Cross-Domain Composition Simulation 10" }
     "sim-11" { "Factorium Proof Set Incomplete Feedback Composition Simulation 11" }
     "sim-12" { "Factorium Proof Set Problem-Led Reading Simulation 12" }
+    "sim-13" { "Factorium Proof Set Subtract Conflict Simulation 13" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -152,6 +155,12 @@ function Get-GuideSelections {
         [ordered]@{
             title = "Alert and Outcome Feedback Composition Worksheet"
             path = [System.IO.Path]::GetFullPath($feedbackWorksheet)
+        }
+    }
+    if ($editionNumber -ge 13) {
+        [ordered]@{
+            title = "Dependency Exclusion Conflict Composition Worksheet"
+            path = [System.IO.Path]::GetFullPath($conflictWorksheet)
         }
     }
 }
@@ -392,6 +401,9 @@ if ($editionNumber -ge 10) {
 if ($editionNumber -ge 11) {
     Add-ProofSource $feedbackWorksheet
 }
+if ($editionNumber -ge 13) {
+    Add-ProofSource $conflictWorksheet
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -528,7 +540,10 @@ if ($editionNumber -ge 4) {
         Get-NumberedSelections $supplement
     )
     $guideSelections = @(Get-GuideSelections)
-    $expectedGuideCount = if ($editionNumber -ge 11) {
+    $expectedGuideCount = if ($editionNumber -ge 13) {
+        6
+    }
+    elseif ($editionNumber -ge 11) {
         5
     }
     elseif ($editionNumber -eq 10) {
@@ -1010,6 +1025,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 12) {
         $siteCssParts += (Get-Content -LiteralPath $compositionStyle -Raw)
     }
+    if ($editionNumber -ge 13) {
+        $siteCssParts += (Get-Content -LiteralPath $conflictStyle -Raw)
+    }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site.css"),
@@ -1121,6 +1139,14 @@ if ($editionNumber -ge 7) {
                 source = $feedbackWorksheet
             }
         )
+        if ($editionNumber -ge 13) {
+            $problemJourneys += [ordered]@{
+                state = "Contradictory trace · repair required"
+                title = "Subtract a required interface"
+                description = "See why a requested exclusion stays visible as a conflict when an admitted dependency still requires that node."
+                source = $conflictWorksheet
+            }
+        }
         $problemSources = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
         )
@@ -1141,7 +1167,8 @@ if ($editionNumber -ge 7) {
             )
         }
         $problemLedTargets = $problemSources.Count
-        if ($problemLedTargets -ne 3) {
+        $expectedProblemTargetCount = if ($editionNumber -ge 13) { 4 } else { 3 }
+        if ($problemLedTargets -ne $expectedProblemTargetCount) {
             throw "Problem-led target count mismatch: $problemLedTargets"
         }
         $problemSection = @"

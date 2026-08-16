@@ -761,6 +761,10 @@ mod tests {
                 "incomplete",
             ),
             (
+                "fixtures/composition/dependency-exclusion-conflict.factorium-query",
+                "contradictory",
+            ),
+            (
                 "fixtures/composition/latency-evidence.factorium-query",
                 "complete",
             ),

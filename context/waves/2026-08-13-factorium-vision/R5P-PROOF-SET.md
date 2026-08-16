@@ -101,6 +101,8 @@ The reverse-traversal and incomplete-state worksheet rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-12.md`.
 The problem-led homepage rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-13.md`.
+The subtract-conflict and contradictory-state rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-14.md`.
 
 ### Composition-query rehearsal boundary
 

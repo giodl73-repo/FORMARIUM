@@ -97,6 +97,22 @@ if (expectedRecords >= 127) {
   );
 }
 
+if (expectedRecords >= 128) {
+  const conflict = search.searchRecords(
+    records,
+    "subtract required interface",
+    "guide",
+    "application"
+  );
+  assert.equal(
+    conflict.filter((record) =>
+      record.path === "guides/dependency-exclusion-conflict-worksheet.md"
+    ).length,
+    1,
+    "conflict composition search resolves the worksheet exactly once"
+  );
+}
+
 console.log(
   `OK records=${records.length} query=${queryOnly.length} kind=${kindOnly.length} ` +
   `domain=${domainOnly.length} combined=${combined.length}`

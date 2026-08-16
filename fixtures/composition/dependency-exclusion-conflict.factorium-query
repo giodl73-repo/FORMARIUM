@@ -1,0 +1,19 @@
+factorium-composition-query-v0
+query dependency-exclusion-conflict
+problem Can a report generator retain a required service dependency while subtracting its interface contract from the review?
+source 3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b81 | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df
+context synthetic-system-review | boundary=declared-system,reference-frame=not-applicable
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=1,nodes=3,work=10
+seed factor:system-composition-dependency/dependency-source-target-and-direction
+node factor:system-composition-dependency/dependency-source-target-and-direction | required | 0 | seed | none
+node factor:system-composition-dependency/interfaces-and-interaction-contracts | required | 1 | relation:f1-dependency-interface | factor:system-composition-dependency/dependency-source-target-and-direction
+node view:constraint-system-composition-integrity | evaluative | 1 | scope:f1-dependency-interface | factor:system-composition-dependency/dependency-source-target-and-direction
+edge f1-dependency-interface
+conflict required-interface-exclusion | factor:system-composition-dependency/interfaces-and-interaction-contracts | requested-subtraction-of-required-node
+check interface-integrity | constraint | view:constraint-system-composition-integrity | fail
+projection factor:system-composition-dependency/dependency-source-target-and-direction | selected | retained
+projection factor:system-composition-dependency/interfaces-and-interaction-contracts | rejected | required-node-rejected-by-request
+projection view:constraint-system-composition-integrity | selected | omits-full-diagnostic-detail
+state contradictory
+end-query

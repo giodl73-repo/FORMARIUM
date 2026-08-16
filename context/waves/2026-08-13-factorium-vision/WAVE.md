@@ -1048,3 +1048,22 @@ three unique selected targets, and the composition stylesheet is edition-
 gated. The compact design pass and five-role fixed point report zero open
 P1/P2 findings. This establishes deterministic navigation hierarchy only, not
 observed findability, interactive Workbench behavior, or reader success.
+
+## 2026-08-16 subtract-conflict composition continuation
+
+Plan review: exercise the user's remaining `subtract` shorthand and the V0
+`contradictory` state without treating exclusion as destructive set arithmetic.
+Retain the F1-required interface node, record the attempted rejection as an
+explicit conflict and projection disposition, fail the declared Constraint
+check, and refuse to emit a valid recommendation. Add one exact problem-led
+route in `sim-13` while retaining `sim-12` exactly.
+
+Result review: `guides/dependency-exclusion-conflict-worksheet.md` now asks
+whether a service dependency can remain while its interaction contract is
+removed from review. The validated trace keeps three nodes and F1, records one
+required-node conflict, returns a failed Constraint check and state
+`contradictory`, and offers bounded repair paths rather than architecture
+advice. `sim-13` renders four state-labelled problem routes in a two-by-two
+desktop grid. The compact design pass and seven-role fixed point report zero
+open P1/P2 findings. No destructive edit, real architecture diagnosis,
+Workbench behavior, or reader evidence is claimed.

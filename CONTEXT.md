@@ -184,6 +184,14 @@ state-labelled cards link the exact admitted worksheets before the orientation
 journey and entry search, while explicitly remaining worked examples rather
 than a live Workbench. `sim-11` remains byte-identical.
 
+The fourteenth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-14.md`
+adds the missing subtract/contradictory behavior to `sim-13`. An attempted
+exclusion of an F1-required interface remains visible as a conflict: the graph
+node stays required, its projection records rejection, the Constraint check
+fails, and no valid flattened recommendation is emitted. `sim-12` remains
+byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

@@ -1,6 +1,6 @@
 # Proof Set Book Site Simulation Contract
 
-Status: `sim-12` publication prototype; not canonical interchange, reader
+Status: `sim-13` publication prototype; not canonical interchange, reader
 evidence, `preview-01`, or Factorium Workbench
 
 ## Purpose
@@ -34,7 +34,7 @@ sources remain addressable without being promoted into the indexed sequence.
   compose with text ranking and remain visible in URL state.
 - The homepage first journey links five already selected source pages in one
   ordered orientation route.
-- The problem-led route links exactly three admitted, trace-bound Composition
+- The problem-led route links exactly four admitted, trace-bound Composition
   Query worksheets and states each trace/decision outcome without creating an
   interactive query form.
 - Each indexed record appears in exactly one chapter route.
