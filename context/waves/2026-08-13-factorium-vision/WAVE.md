@@ -1107,3 +1107,24 @@ and the absence of builder controls. The compact design pass and eight-role
 fixed point report zero open P1/P2 findings. No relation discovery, graph
 mutation, domain inference, Workbench persistence, or reader evidence is
 claimed.
+
+## 2026-08-16 bounded interactive composition-lab continuation
+
+Plan review: cross the narrowest useful boundary from trace comparison to
+actual interaction. Accept explicit endpoint seeds, an explicit subset of only
+the six reviewed F1-F6 relations, direction, finite budgets, and optional
+exclusions; compute deterministic closure; preserve conflicts and exact source
+custody; and expose Add, Multiply, Subtract, Evaluate, Stop, and Flatten. Keep
+problem prose graph-inert, every structural check unresolved, and every draft
+noncanonical. Add the lab only to `sim-16` and retain `sim-15` exactly.
+
+Result review: `sim-16` now adds a dedicated Compose route backed by a pure
+bounded-closure runtime and the exact relation sidecars embedded by the
+renderer. It normalizes set order, supports forward and reverse traversal,
+distinguishes exact-budget frontiers from atomic capacity requirements,
+retains required-node exclusions as contradictions, and binds inputs, source
+digests, graph, checks, stop state, and draft projections into SHA-256 identity.
+The compact design pass and nine-role fixed point report zero open P1/P2
+findings. Independent engine, generated-site, and live Edge checks cover the
+interaction; no language discovery, domain verdict, canonical trace, storage,
+network, publication, Workbench claim, or reader evidence is admitted.

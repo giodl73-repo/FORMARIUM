@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -18,6 +18,7 @@ $evidenceWorksheet = Join-Path $workspace "guides\latency-evidence-composition-w
 $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-worksheet.md"
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
+$compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -37,6 +38,8 @@ $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\p
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
 $explorerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-explorer.css"
+$labStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-lab.css"
+$labScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-lab.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -61,6 +64,7 @@ $artifactTitle = switch ($Edition) {
     "sim-13" { "Factorium Proof Set Subtract Conflict Simulation 13" }
     "sim-14" { "Factorium Proof Set Truncated Frontier Simulation 14" }
     "sim-15" { "Factorium Proof Set Composition Explorer Simulation 15" }
+    "sim-16" { "Factorium Proof Set Bounded Composition Lab Simulation 16" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -531,6 +535,9 @@ if ($editionNumber -ge 13) {
 if ($editionNumber -ge 14) {
     Add-ProofSource $frontierWorksheet
 }
+if ($editionNumber -ge 16) {
+    Add-ProofSource $compositionLabSpec
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -656,6 +663,7 @@ $siteChecks = $null
 $siteAssets = @()
 $siteIndex = $null
 $compositionChecks = $null
+$compositionLabChecks = $null
 if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
@@ -1052,8 +1060,16 @@ if ($editionNumber -ge 7) {
     if (-not (Test-Path -LiteralPath $siteStyle -PathType Leaf)) {
         throw "Missing proof-site asset: $siteStyle"
     }
+    if ($editionNumber -ge 16) {
+        foreach ($asset in @($labStyle, $labScript, $compositionLabSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-lab asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
+    $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
     $siteEntryDirectory = Join-Path $output "entries"
     $siteChapterDirectory = Join-Path $output "chapters"
     $siteAssetDirectory = Join-Path $output "assets"
@@ -1165,6 +1181,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 15) {
         $siteCssParts += (Get-Content -LiteralPath $explorerStyle -Raw)
     }
+    if ($editionNumber -ge 16) {
+        $siteCssParts += (Get-Content -LiteralPath $labStyle -Raw)
+    }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site.css"),
@@ -1186,9 +1205,67 @@ if ($editionNumber -ge 7) {
         (Get-Content -LiteralPath $contextScript -Raw),
         [System.Text.UTF8Encoding]::new($false)
     )
+    $compositionLabJson = "null"
+    if ($editionNumber -ge 16) {
+        $relationManifestPath = Join-Path $workspace "reference\factorium-relations-v0.factorium"
+        $referenceManifestPath = Join-Path $workspace "reference\factorium-reference-v0.factorium"
+        $labRelations = @(
+            foreach ($line in Get-Content -LiteralPath $relationManifestPath) {
+                if (-not $line.StartsWith("relation ", [System.StringComparison]::Ordinal)) {
+                    continue
+                }
+                $fields = $line.Substring("relation ".Length) -split ' \| '
+                if ($fields.Count -ne 7) {
+                    throw "Composition Lab relation field drift: $line"
+                }
+                $scopeSource = [System.IO.Path]::GetFullPath((Join-Path $workspace $fields[6]))
+                if (-not $pageBySource.ContainsKey($scopeSource)) {
+                    throw "Composition Lab scope source is absent from site: $scopeSource"
+                }
+                [ordered]@{
+                    id = $fields[0]
+                    verb = $fields[1]
+                    source = $fields[2]
+                    target = $fields[3]
+                    scope = $fields[4]
+                    qualifiers = $fields[5]
+                    scopeHref = "entries/$($pageBySource[$scopeSource])"
+                }
+            }
+        )
+        if ($labRelations.Count -ne 6 -or @($labRelations.id | Sort-Object -Unique).Count -ne 6) {
+            throw "Composition Lab requires six unique reviewed relations"
+        }
+        $compositionLabPayload = [ordered]@{
+            schema = "factorium-composition-lab-payload-v0"
+            referenceSha256 = (Get-FileHash -LiteralPath $referenceManifestPath -Algorithm SHA256).Hash.ToLowerInvariant()
+            relationsSha256 = (Get-FileHash -LiteralPath $relationManifestPath -Algorithm SHA256).Hash.ToLowerInvariant()
+            relations = $labRelations
+        }
+        $compositionLabJson = $compositionLabPayload | ConvertTo-Json -Depth 5 -Compress
+        [System.IO.File]::WriteAllText(
+            (Join-Path $siteAssetDirectory "composition-lab.js"),
+            (Get-Content -LiteralPath $labScript -Raw),
+            [System.Text.UTF8Encoding]::new($false)
+        )
+        $compositionLabChecks = [ordered]@{
+            mode = "local bounded closure over explicit reviewed relation allowlist"
+            relation_records = $labRelations.Count
+            seed_artifacts = @($labRelations.source + $labRelations.target | Sort-Object -Unique).Count
+            scope_views = @($labRelations.scope | Sort-Object -Unique).Count
+            automatic_relation_discovery = $false
+            natural_language_semantic_selection = $false
+            check_outcomes = "unresolved-only"
+            persistence = "none"
+            specification = "specs/COMPOSITION-LAB.md"
+        }
+    }
     $siteData = "window.FACTORIUM_SEARCH_INDEX=$searchJson;`n" +
         "window.FACTORIUM_SOURCE_INDEX=$sourceIndexJson;`n" +
         "window.FACTORIUM_CONTEXT_PROFILES=$contextJson;`n"
+    if ($editionNumber -ge 16) {
+        $siteData += "window.FACTORIUM_COMPOSITION_LAB=$compositionLabJson;`n"
+    }
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site-data.js"),
         $siteData,
@@ -1477,6 +1554,10 @@ if ($editionNumber -ge 7) {
             $homeComposeNav = '<a href="#compose">Compose</a>'
             $nestedComposeNav = '<a href="../index.html#compose">Compose</a>'
         }
+        if ($editionNumber -ge 16) {
+            $homeComposeNav = '<a href="compose.html">Compose</a><a href="#compose">Traces</a>'
+            $nestedComposeNav = '<a href="../compose.html">Compose</a><a href="../index.html#compose">Traces</a>'
+        }
     }
 
     $chapterItems = [System.Text.StringBuilder]::new()
@@ -1540,6 +1621,93 @@ if ($editionNumber -ge 7) {
 </html>
 "@
     [System.IO.File]::WriteAllText($siteIndex, $homeHtml, [System.Text.UTF8Encoding]::new($false))
+
+    if ($editionNumber -ge 16) {
+        $labSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionLabSpec)])"
+        $compositionLabHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A bounded local simulation of explicit typed composition closure.">
+<title>Bounded Composition Lab · Factorium</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="proof-site lab-page">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="index.html">Factorium</a>
+<nav class="site-nav" aria-label="Primary"><a href="index.html#problems">Problems</a><a href="compose.html" aria-current="page">Compose</a><a href="index.html#compose">Traces</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+</div></header>
+<main id="main-content" class="site-main lab-main">
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Structure, Quantity, and Choice</a> / Bounded Composition Lab</nav>
+<section class="lab-hero">
+<p class="site-kicker">Local interactive simulation</p>
+<h1>Build a bounded working graph</h1>
+<p>Choose exact concepts and reviewed relations. The lab will follow only your allowlist, stop at finite budgets, keep exclusions visible, and flatten a structural draft.</p>
+<div class="lab-boundary-note"><strong>Your words do not choose the graph.</strong> The problem statement names your work; only explicit seed and relation selections control closure. All checks remain unresolved.</div>
+</section>
+<div class="lab-layout">
+<form id="composition-lab-form" class="composition-lab" novalidate>
+<section class="lab-form-section">
+<span class="lab-step">1 · Frame</span>
+<h2>Name the local problem and context</h2>
+<label class="lab-field"><span>Problem statement</span><textarea name="problem" rows="3" minlength="10" maxlength="240" required>Review a system dependency and its required interaction contract.</textarea><small>Identity and reading context only; no semantic extraction.</small></label>
+<div class="lab-fields-two">
+<label class="lab-field"><span>Context profile ID</span><input name="contextId" value="synthetic-query-lab" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" required></label>
+<label class="lab-field"><span>Context selections</span><input name="contextSelections" value="boundary=declared-system,reference-frame=not-applicable" required><small>Comma-separated lower-kebab <code>key=value</code>; <code>reference-frame</code> is mandatory.</small></label>
+</div>
+</section>
+<section class="lab-form-section">
+<span class="lab-step">2 · Add</span>
+<h2>Select one to three seed concepts</h2>
+<p class="lab-help">Only exact endpoints from the six reviewed typed relations are available.</p>
+<div id="composition-lab-seeds" class="lab-choice-grid"></div>
+</section>
+<section class="lab-form-section">
+<span class="lab-step">3 · Multiply</span>
+<h2>Allow specific typed relations</h2>
+<p class="lab-help">Selection is explicit. Names, links, and lexical similarity never become edges.</p>
+<div id="composition-lab-relations" class="lab-choice-grid lab-choice-grid--relations"></div>
+</section>
+<section class="lab-form-section">
+<span class="lab-step">4 · Bound</span>
+<h2>Declare direction and finite budgets</h2>
+<div class="lab-budget-grid">
+<label class="lab-field"><span>Direction</span><select name="direction"><option value="forward">Forward</option><option value="reverse">Reverse</option></select></label>
+<label class="lab-field"><span>Depth</span><input name="depth" type="number" min="1" max="6" value="1" required></label>
+<label class="lab-field"><span>Edges</span><input name="edges" type="number" min="1" max="6" value="1" required></label>
+<label class="lab-field"><span>Nodes</span><input name="nodes" type="number" min="3" max="24" value="6" required></label>
+</div>
+</section>
+<details class="lab-form-section lab-exclusions">
+<summary><span><span class="lab-step">5 · Subtract</span><strong>Request optional exclusions</strong></span></summary>
+<p class="lab-help">A reached required or evaluative node remains in the graph and creates a contradiction.</p>
+<div id="composition-lab-exclusions" class="lab-choice-grid"></div>
+</details>
+<div class="lab-submit"><button type="submit">Run bounded closure</button><p>No data leaves this page. Reloading deletes the result.</p></div>
+</form>
+<aside class="lab-contract">
+<p class="site-kicker">Before you run it</p>
+<h2>What this lab can—and cannot—do</h2>
+<ul><li>It can follow explicit F1-F6 relations in one direction.</li><li>It can expose budget frontiers, unreachable predecessors, and exclusion conflicts.</li><li>It can assign unresolved structural checks to admitted scope views.</li><li>It cannot discover concepts from prose, decide compatibility, evaluate domain evidence, or emit a canonical trace.</li></ul>
+<a href="$labSpecPage">Read the full simulation contract</a>
+</aside>
+</div>
+<section id="composition-lab-result" class="lab-result" tabindex="-1" aria-live="polite">
+<p class="lab-result__empty">Configure the explicit request, then run bounded closure. The result will appear here.</p>
+</section>
+<noscript><p class="lab-error">This local simulation requires JavaScript. The book, worked traces, and Factor Guides remain available without it.</p></noscript>
+</main>
+<footer class="site-footer">Local synthetic work product · no persistence · not canonical content</footer>
+<script src="assets/site-data.js"></script>
+<script src="assets/composition-lab.js"></script>
+</body>
+</html>
+"@
+        [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
+    }
 
     for ($chapterIndex = 0; $chapterIndex -lt $siteChapters.Count; $chapterIndex++) {
         $chapter = $siteChapters[$chapterIndex]
@@ -1719,6 +1887,9 @@ $pageScripts
     $actualChapterFiles = @(Get-ChildItem -LiteralPath $siteChapterDirectory -Filter "*.html")
     $actualEntryFiles = @(Get-ChildItem -LiteralPath $siteEntryDirectory -Filter "*.html")
     $expectedAssetNames = @("context.js", "reader.js", "search.js", "site-data.js", "site.css")
+    if ($editionNumber -ge 16) {
+        $expectedAssetNames += "composition-lab.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -1728,6 +1899,7 @@ $pageScripts
         throw "Stale or incomplete site output: chapters=$($actualChapterFiles.Count)/$($siteChapters.Count) entries=$($actualEntryFiles.Count)/$($sources.Count) unexpected-assets=$($unexpectedAssetNames -join ',') missing-assets=$($missingAssetNames -join ',')"
     }
     $siteHtmlFiles = @($siteIndex) +
+        @(if ($editionNumber -ge 16) { $siteCompose }) +
         @($actualChapterFiles | ForEach-Object { $_.FullName }) +
         @($actualEntryFiles | ForEach-Object { $_.FullName })
     $idsBySiteFile = [System.Collections.Generic.Dictionary[string, object]]::new(
@@ -1778,6 +1950,7 @@ $pageScripts
     }
 
     $siteOutputFiles = @($siteIndex) +
+        @(if ($editionNumber -ge 16) { $siteCompose }) +
         @(Get-ChildItem -LiteralPath $siteChapterDirectory -File | ForEach-Object { $_.FullName }) +
         @(Get-ChildItem -LiteralPath $siteEntryDirectory -File | ForEach-Object { $_.FullName }) +
         @(Get-ChildItem -LiteralPath $siteAssetDirectory -File | ForEach-Object { $_.FullName })
@@ -1810,6 +1983,9 @@ $pageScripts
         canonical_content_authority = "repository Markdown and reference metadata"
         execution = "multi-page static files; no server"
         identity = $siteIdentity
+    }
+    if ($editionNumber -ge 16) {
+        $siteChecks.composition_lab_pages = 1
     }
 }
 
@@ -1858,6 +2034,9 @@ $manifestRecord = [ordered]@{
         bytes = (Get-Item -LiteralPath $html).Length
     }
 }
+if ($editionNumber -ge 16) {
+    $manifestRecord.composition_lab_checks = $compositionLabChecks
+}
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"
     $manifestRecord.output.search_index_sha256 = (Get-FileHash -LiteralPath $searchIndexOutput -Algorithm SHA256).Hash.ToLowerInvariant()
@@ -1866,7 +2045,8 @@ if ($editionNumber -ge 7) {
     $manifestRecord.output.site_index_path = "index.html"
     $manifestRecord.output.site_index_sha256 = (Get-FileHash -LiteralPath $siteIndex -Algorithm SHA256).Hash.ToLowerInvariant()
     $manifestRecord.output.site_identity = $siteChecks.identity
-    $manifestRecord.output.site_file_count = 1 + $siteChecks.chapter_pages + $siteChecks.source_pages + $siteAssets.Count
+    $compositionLabPageCount = if ($editionNumber -ge 16) { $siteChecks.composition_lab_pages } else { 0 }
+    $manifestRecord.output.site_file_count = 1 + $compositionLabPageCount + $siteChecks.chapter_pages + $siteChecks.source_pages + $siteAssets.Count
 }
 
 $manifestRecord | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $manifest -Encoding utf8
@@ -1897,7 +2077,8 @@ if ($editionNumber -ge 6) {
 }
 if ($editionNumber -ge 7) {
     Write-Output "site=$siteIndex"
-    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + 1)"
+    $compositionLabPageCount = if ($editionNumber -ge 16) { $siteChecks.composition_lab_pages } else { 0 }
+    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + 1)"
     Write-Output "site_chapters=$($siteChecks.chapter_pages)"
     Write-Output "site_chapter_subsections=$($siteChecks.chapter_subsections)"
     Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"
@@ -1905,6 +2086,10 @@ if ($editionNumber -ge 7) {
     Write-Output "site_problem_led_targets=$($siteChecks.problem_led_targets)"
     if ($editionNumber -ge 15) {
         Write-Output "site_composition_trace_targets=$($siteChecks.composition_trace_targets)"
+    }
+    if ($editionNumber -ge 16) {
+        Write-Output "site_composition_lab_pages=$($siteChecks.composition_lab_pages)"
+        Write-Output "site_composition_lab_relations=$($compositionLabChecks.relation_records)"
     }
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"

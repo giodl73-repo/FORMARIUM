@@ -208,6 +208,16 @@ Evaluate, Stop, and Flatten stages, binds every panel to its worksheet and
 trace digest, and links back to the full Factor Guides. It does not construct,
 mutate, or automatically close a query. `sim-14` remains byte-identical.
 
+The seventeenth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-17.md`
+adds a bounded interactive Composition Lab to `sim-16`. It computes
+deterministic closure only over explicit seeds and the six exact reviewed
+F1-F6 relations, exposes direction and finite budgets, retains subtraction
+conflicts, emits unresolved-only structural checks, and produces a
+loss-declared draft identity. Problem prose is graph-inert, and the local page
+has no persistence, network, canonical trace export, domain verdict, or
+publication path. `sim-15` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

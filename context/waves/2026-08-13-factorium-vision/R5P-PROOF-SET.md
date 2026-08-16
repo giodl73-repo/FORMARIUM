@@ -252,3 +252,10 @@ Internal preflight 16 adds the `sim-15` read-only Composition Explorer. It
 tests whether exact working-graph traces can be compared without creating a
 second authority or implying live Workbench behavior; it does not change the
 preview entry gate or provide external-reader evidence.
+
+Internal preflight 17 adds the `sim-16` bounded interactive Composition Lab.
+It tests deterministic closure over explicit reviewed inputs, finite stopping,
+conflict retention, unresolved evaluation, and loss-declared flattening. It
+does not discover meaning from prose, create a canonical query or guide,
+persist or publish work, change the preview entry gate, or provide external-
+reader evidence.

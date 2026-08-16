@@ -12,7 +12,9 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
 const home = fs.readFileSync(homePath, "utf8");
 const checks = manifest.composition_checks;
 
-assert.equal(manifest.edition, "sim-15", "composition explorer edition");
+const editionNumber = Number(String(manifest.edition || "").slice(4));
+assert.ok(Number.isInteger(editionNumber) && editionNumber >= 15,
+  "composition explorer edition");
 assert.ok(checks, "composition checks are recorded");
 assert.equal(checks.trace_count, 5, "five exact traces");
 assert.equal(checks.worksheet_targets, 5, "five exact worksheet targets");
