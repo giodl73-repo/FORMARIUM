@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **40 records** — 18 canonical entries and 22
+Selected current-corpus delta: **41 records** — 18 canonical entries and 23
 specialized views
 
 ## Purpose
@@ -249,6 +249,19 @@ spatial-model, geometry, contact, state, frequency, phase, equivalent-circuit,
 fixture, parasitic, and calibration failures without creating a catalog of
 named components or materials.
 
+## Part XXI - Encoding, channels, dependence, and limits
+
+### From a representation contract to a scoped communication bound
+
+119. [Information, Encoding, Channel, and Capacity Failure Diagnostic](../../tables/diagnostics/information-encoding-channel-failures.md)
+
+The revised base-volume Information anchor and Formula view own encoding,
+channel, mutual information, channel capacity, and their mapping, probability,
+constraint, and normalization contracts. This Diagnostic view tests decoder,
+version, loss, channel-law, nonstationarity, leakage, estimator, optimization,
+throughput, and unit failures without creating a catalog of named encodings,
+codes, protocols, media, or channel families.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -257,5 +270,5 @@ named components or materials.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 118-record combined simulation remains a rehearsal projection, not a
+- The 119-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

@@ -310,6 +310,24 @@ Critical artifact failure: shared volts or ohms, a fitted equivalent circuit,
 or one terminal ratio is accepted as proof of identical fields, materials,
 configurations, mechanisms, frequency responses, or safe designs.
 
+## Task AC expected route
+
+- Information, Data, Signal, and Noise;
+- Information and Signal Measures;
+- Information, Encoding, Channel, and Capacity Failure Diagnostic;
+- encoding mapping remains distinct from interpretation and semantic meaning;
+- a channel retains inputs, outputs, transition law, state, and assumptions;
+- mutual information remains a statistical-dependence measure, not causation
+  or semantic agreement;
+- capacity optimizes over admissible inputs for a fixed channel and constraints;
+- bits/use, bits/s, and bits/s/Hz remain distinct normalizations;
+- model capacity, achievable code rate, line rate, and payload throughput remain
+  distinct claims.
+
+Critical artifact failure: byte equality, positive mutual information, or a
+single modeled rate is accepted as proof of meaning, causation, interoperability,
+capacity achievement, or universal system performance.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -355,6 +373,7 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/thermodynamic-system-state-phase-failures.md`
 - `tables/diagnostics/oscillation-spectrum-dispersion-failures.md`
 - `tables/diagnostics/electrical-field-material-impedance-failures.md`
+- `tables/diagnostics/information-encoding-channel-failures.md`
 
 ## Claim boundary
 

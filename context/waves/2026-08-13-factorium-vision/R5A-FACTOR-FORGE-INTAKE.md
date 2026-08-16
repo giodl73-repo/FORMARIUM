@@ -525,3 +525,28 @@ F19 resolves all four remaining electrical candidates without admitting named
 components, materials, bands, or circuit topologies as canonical senses. The
 Factor Forge book delta grows only by the new Diagnostic view to 40 records:
 eighteen entries and twenty-two specialized views.
+
+## F20 first slice
+
+F20 deepens `tables/entries/information-data-signal-noise.md` from semantic
+content through representation mapping, conditional channel behavior,
+statistical dependence, and constrained communication limits. It preserves
+encoding direction and version, source and target spaces, decoder and loss,
+channel law and state, admissible inputs, estimator and sample, logarithm base,
+use clock, bandwidth, error criterion, and coding regime.
+
+The revised `tables/formulas/information-signal-measures.md` adds discrete
+mutual-information identities and a scoped discrete-memoryless-channel capacity
+definition. The new
+`tables/diagnostics/information-encoding-channel-failures.md` maps decoding,
+semantic-collapse, channel-model, dependence, leakage, estimator, optimization,
+throughput, and normalization failures to discriminating tests. Research and
+fixed-point review are
+`docs/research/2026-08-15-information-encoding-channel-capacity.md` and
+`INFORMATION-ENCODING-CHANNEL-CAPACITY-ROLE-REVIEW.md`.
+
+F20 resolves encoding, channel, mutual information, and channel capacity
+without admitting named formats, codes, protocols, media, or channel families
+as canonical senses. The Factor Forge book delta grows only by the new
+Diagnostic view to 41 records: eighteen entries and twenty-three specialized
+views.

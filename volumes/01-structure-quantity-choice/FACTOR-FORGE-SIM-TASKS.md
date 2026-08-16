@@ -277,8 +277,26 @@ Diagnostic views to freeze spatial model, geometry, material state, conductor
 configuration, terminals, frequency, phasor convention, equivalent model,
 fixture, calibration plane, parasitics, and uncertainty before comparing values.
 
+## Task AC - Same bytes, shared dependence, and a claimed capacity
+
+Two systems exchange identical byte strings but decode them under different
+versions and assign different meanings. A report names the cable and protocol
+as the channel without declaring input-output variables or transition behavior.
+Mutual information estimated after adaptive feature construction is called
+shared meaning and causal influence. The value for one convenient input
+distribution is labeled channel capacity, then compared directly with payload
+throughput in bits per second and spectral efficiency in bits per second per
+hertz.
+
+Separate encoding, interpretation, channel model, mutual information, channel
+capacity, and achieved rate. Use the Formula and Diagnostic views to freeze
+source and target spaces, mapping direction and version, decoder and loss,
+channel law and state, joint model, sample and estimator, admissible inputs,
+constraints, logarithm base, use clock, bandwidth, error criterion, coding
+regime, overhead, and uncertainty before accepting any equality or claim.
+
 ## Rehearsal boundary
 
-The twenty-one prompts collectively exercise every entry and specialized view in the
+The twenty-two prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

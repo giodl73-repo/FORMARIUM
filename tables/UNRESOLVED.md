@@ -15,10 +15,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/force.md` | 129 | coercion — `unresolved-candidate` |
 | `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 129 | namespace - `unresolved-candidate` |
-| `tables/entries/information-data-signal-noise.md` | 140 | encoding - `unresolved-candidate` |
-| `tables/entries/information-data-signal-noise.md` | 141 | channel - `unresolved-candidate` |
-| `tables/entries/information-data-signal-noise.md` | 142 | mutual information - `unresolved-candidate` |
-| `tables/entries/information-data-signal-noise.md` | 143 | channel capacity - `unresolved-candidate` |
 | `tables/entries/matter-load-measure.md` | 119 | stress - `unresolved-candidate` |
 | `tables/entries/matter-load-measure.md` | 120 | gravitational field - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 158 | position - `unresolved-candidate` |

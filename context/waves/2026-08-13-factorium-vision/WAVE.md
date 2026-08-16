@@ -681,3 +681,33 @@ owners. The Factor Forge delta grows to 40 records and the combined selection
 to 118 numbered records plus two guides across twenty-one chapters. The
 generated `sim-07` site contains 156 pages from 134 sources, indexes all 120
 reader destinations, and reports zero missing internal targets.
+
+## 2026-08-15 information-encoding-channel-capacity content continuation
+
+Plan review: deepen the existing Information authority rather than creating
+isolated encoding, channel, mutual-information, and capacity anchors; separate
+semantic interpretation, directional representation mapping, conditional
+input-output behavior, statistical dependence, constrained optimization, and
+observed performance; ground the spine in Shannon, ITU, and NIST sources;
+revise the existing Formula view; add one Diagnostic view; apply the Concept &
+Taxonomy Boundary Editor before any named format, code, protocol, medium, or
+channel family enters; then propagate the exact one-view delta through
+assurance, Factor Forge, search, and the static book site. No external-reader
+gate, semantic-agreement claim, causal claim, interoperability certification,
+capacity-achievement claim, or performance guarantee is introduced.
+
+Result review: F20 adds encoding, channel, mutual information, and channel
+capacity to `information-data-signal-noise`, revises the Information and Signal
+Measures Formula view with discrete mutual-information identities and a scoped
+discrete-memoryless-channel capacity definition, and adds the Information,
+Encoding, Channel, and Capacity Failure Diagnostic. Encoding/meaning,
+encoding/channel, channel/medium, dependence/causation, dependence/semantics,
+capacity/one input distribution, and capacity/throughput remain distinct.
+Named formats, codes, protocols, media, and channel families remain external
+examples. The web campaign confirms 18 findings and the 13-role fixed-point
+review closes all major findings. The reference remains at 38 entries and grows
+to 278 senses, 414 factors, and 54 views with 98 assurance bindings and zero
+unresolved view owners. The Factor Forge delta grows to 41 records and the
+combined selection to 119 numbered records plus two guides across twenty-two
+chapters. The generated `sim-07` site contains 158 pages from 135 sources,
+indexes all 121 reader destinations, and reports zero missing internal targets.
