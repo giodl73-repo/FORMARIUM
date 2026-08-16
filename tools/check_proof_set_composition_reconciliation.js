@@ -14,7 +14,7 @@ const css = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
 const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-reconciliation.js"), "utf8");
 const data = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-25");
+assert.ok(Number(manifest.edition.split("-")[1]) >= 25, "reconciliation edition");
 assert.equal(manifest.site_checks.composition_reconciliation_pages, 1);
 assert.equal(manifest.composition_reconciliation_checks.projection_input,
   "identified local result plus digest-bound payloads");

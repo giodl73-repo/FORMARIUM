@@ -113,6 +113,8 @@ The executed-request reconciliation rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-26.md`.
 The explicit next-request continuation rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-27.md`.
+The explicit-rerun comparison rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-28.md`.
 
 ### Composition-query rehearsal boundary
 
@@ -333,3 +335,9 @@ visible unavailable actions, retained result identity/state, and explicit
 run separation. It is not a recommendation, result prediction, semantic
 repair, successful-rerun, comprehension, task-success, or external-reader
 evidence.
+
+Internal preflight 28 adds the `sim-27` Rerun Comparison projection. It tests
+exact action/request attribution, superseded actions, additional edits,
+neutral structural before/after records, dual-result custody, and one-use
+in-memory consumption. It is not causality, improvement, successful repair,
+history, comprehension, task-success, or external-reader evidence.

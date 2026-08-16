@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -29,6 +29,7 @@ $compositionQueryPlanSpec = Join-Path $workspace "specs\COMPOSITION-QUERY-PLAN.m
 $compositionWorkBudgetSpec = Join-Path $workspace "specs\COMPOSITION-WORK-BUDGET.md"
 $compositionReconciliationSpec = Join-Path $workspace "specs\COMPOSITION-RESULT-RECONCILIATION.md"
 $compositionContinuationsSpec = Join-Path $workspace "specs\COMPOSITION-EXPLICIT-CONTINUATIONS.md"
+$compositionRerunComparisonSpec = Join-Path $workspace "specs\COMPOSITION-RERUN-COMPARISON.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -74,6 +75,8 @@ $compositionReconciliationStyle = Join-Path $workspace "volumes\01-structure-qua
 $compositionReconciliationScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reconciliation.js"
 $compositionContinuationsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-continuations.css"
 $compositionContinuationsScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-continuations.js"
+$compositionRerunComparisonStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-rerun-comparison.css"
+$compositionRerunComparisonScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-rerun-comparison.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -109,6 +112,7 @@ $artifactTitle = switch ($Edition) {
     "sim-24" { "Factorium Proof Set Composition Work Budget Simulation 24" }
     "sim-25" { "Factorium Proof Set Result Reconciliation Simulation 25" }
     "sim-26" { "Factorium Proof Set Explicit Continuations Simulation 26" }
+    "sim-27" { "Factorium Proof Set Composition Rerun Comparison Simulation 27" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -649,6 +653,9 @@ if ($editionNumber -ge 25) {
 }
 if ($editionNumber -ge 26) {
     Add-ProofSource $compositionContinuationsSpec
+}
+if ($editionNumber -ge 27) {
+    Add-ProofSource $compositionRerunComparisonSpec
 }
 
 foreach ($selectionDocument in $selectionDocuments) {
@@ -1255,6 +1262,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 27) {
+        foreach ($asset in @($compositionRerunComparisonStyle, $compositionRerunComparisonScript, $compositionRerunComparisonSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-rerun-comparison asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1398,6 +1412,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 26) {
         $siteCssParts += (Get-Content -LiteralPath $compositionContinuationsStyle -Raw)
+    }
+    if ($editionNumber -ge 27) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionRerunComparisonStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -1921,6 +1938,25 @@ if ($editionNumber -ge 7) {
                     identity = "inherits local result SHA-256"
                     storage = "none"
                     specification = "specs/COMPOSITION-EXPLICIT-CONTINUATIONS.md"
+                }
+            }
+            if ($editionNumber -ge 27) {
+                [System.IO.File]::WriteAllText(
+                    (Join-Path $siteAssetDirectory "composition-rerun-comparison.js"),
+                    (Get-Content -LiteralPath $compositionRerunComparisonScript -Raw),
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+                $compositionRerunComparisonChecks = [ordered]@{
+                    projection_input = "previous and current identified local results plus exact applied continuation actions"
+                    action_dispositions = @("present-in-executed-request", "superseded-before-run")
+                    request_change_sources = @("continuation-action", "additional-control-edit")
+                    result_dimensions = @("state", "work", "nodes", "relations", "exclusions", "checks")
+                    retention = "one pending source and one consumed comparison in page memory"
+                    auto_run = $false
+                    causal_attribution = $false
+                    comparison_identity = "none; inherits previous and current result SHA-256"
+                    storage = "none"
+                    specification = "specs/COMPOSITION-RERUN-COMPARISON.md"
                 }
             }
         }
@@ -2626,6 +2662,23 @@ if ($editionNumber -ge 7) {
                     "$reconciliationScriptTag`n<script src=`"assets/composition-continuations.js`"></script>"
                 )
             }
+            if ($editionNumber -ge 27) {
+                $rerunComparisonSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionRerunComparisonSpec)])"
+                $continuationsContractLink = "<a href=`"$continuationsSpecPage`">Read the explicit-continuations contract</a>"
+                $continuationsScriptTag = '<script src="assets/composition-continuations.js"></script>'
+                foreach ($marker in @($continuationsContractLink, $continuationsScriptTag)) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition rerun-comparison page integration marker drift: $marker"
+                    }
+                }
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $continuationsContractLink,
+                    "$continuationsContractLink<a href=`"$rerunComparisonSpecPage`">Read the rerun-comparison contract</a>"
+                ).Replace(
+                    $continuationsScriptTag,
+                    "$continuationsScriptTag`n<script src=`"assets/composition-rerun-comparison.js`"></script>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2871,6 +2924,9 @@ $pageScripts
     if ($editionNumber -ge 26) {
         $expectedAssetNames += "composition-continuations.js"
     }
+    if ($editionNumber -ge 27) {
+        $expectedAssetNames += "composition-rerun-comparison.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -2996,6 +3052,10 @@ $pageScripts
         $siteChecks.composition_continuation_pages = 1
         $siteChecks.composition_continuation_actions = 3
     }
+    if ($editionNumber -ge 27) {
+        $siteChecks.composition_rerun_comparison_pages = 1
+        $siteChecks.composition_rerun_comparison_retained = 1
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -3072,6 +3132,9 @@ if ($editionNumber -ge 25) {
 }
 if ($editionNumber -ge 26) {
     $manifestRecord.composition_continuation_checks = $compositionContinuationsChecks
+}
+if ($editionNumber -ge 27) {
+    $manifestRecord.composition_rerun_comparison_checks = $compositionRerunComparisonChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"

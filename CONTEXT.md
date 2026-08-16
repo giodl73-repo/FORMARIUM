@@ -309,6 +309,15 @@ exclusion. Each action revalidates the prior control value, changes one visible
 control, leaves the previous result intact and stale, and requires a separate
 Run. `sim-25` remains byte-identical.
 
+The twenty-eighth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-28.md`
+adds Rerun Comparison to `sim-27`. After a successful optional continuation
+edit and a separate explicit Run, one ephemeral receipt shows whether that
+edit survived into the executed request, names every additional control edit,
+and compares exact structural results. It can expose another finite boundary
+without calling the prior edit a repair, consumes the comparison after one
+run, and stores no history. `sim-26` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

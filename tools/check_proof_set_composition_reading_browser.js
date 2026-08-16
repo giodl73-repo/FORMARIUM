@@ -732,6 +732,81 @@ async function evaluate(client, expression) {
         assert.equal(frontierContinuation.stateSame, true, "budget edit does not rerun closure");
         assert.equal(frontierContinuation.alignment, "controls-changed", "budget edit marks old result stale");
       }
+      if (editionNumber >= 27) {
+        await evaluate(client, `document.getElementById("composition-lab-form").dispatchEvent(
+          new Event("submit", { bubbles: true, cancelable: true }))`);
+        for (let attempt = 0; attempt < 80; attempt += 1) {
+          if (await evaluate(client, `Boolean(document.getElementById("composition-rerun-comparison"))`)) break;
+          await delay(50);
+        }
+        const comparison = await evaluate(client, `(() => {
+          const section = document.getElementById("composition-rerun-comparison");
+          const reconciliation = document.getElementById("composition-result-reconciliation");
+          const map = document.getElementById("composition-closure-map");
+          return { exists: Boolean(section), heading: section?.querySelector("h3")?.textContent || "",
+            summary: section?.querySelector(".rerun-comparison__summary")?.textContent || "",
+            action: section?.querySelector(".rerun-comparison__actions li")?.textContent || "",
+            request: section?.querySelector(".rerun-comparison__request-list li")?.textContent || "",
+            states: [...section.querySelectorAll(".rerun-comparison__state .lab-state")].map(node => node.textContent),
+            decision: section?.querySelector(".rerun-comparison__decision-list li")?.textContent || "",
+            boundary: section?.querySelector(".rerun-comparison__boundary")?.textContent || "",
+            afterReconciliation: Boolean(reconciliation?.compareDocumentPosition(section) & Node.DOCUMENT_POSITION_FOLLOWING),
+            beforeMap: Boolean(section?.compareDocumentPosition(map) & Node.DOCUMENT_POSITION_FOLLOWING),
+            alignment: document.getElementById("composition-query-plan").dataset.resultAlignment,
+            forbidden: /\b(success|improv\w*|better|valid|resolved)\b/i.test(section?.textContent || "") };
+        })()`);
+        assert.deepEqual(comparison.states, ["truncated", "truncated"]);
+        assert.equal(comparison.exists, true, "explicit rerun renders one comparison receipt");
+        assert.equal(comparison.heading, "Compared with your previous run");
+        assert.equal(comparison.summary, "1 of 1 recorded continuation edit was present in the executed request.");
+        assert.match(comparison.action, /Raise edges budget: 1 → 2present in executed request/);
+        assert.match(comparison.request, /budget\.edges · replace · 1 → 2continuation action/);
+        assert.match(comparison.decision, /stopped at edge budget → stopped at node budget/);
+        assert.match(comparison.boundary, /^This compares two explicit local runs\./);
+        assert.equal(comparison.afterReconciliation, true);
+        assert.equal(comparison.beforeMap, true);
+        assert.equal(comparison.alignment, "matches-displayed-result");
+        assert.equal(comparison.forbidden, false, "comparison uses no success or validity language");
+        const comparisonProfiles = await evaluate(client, `(async () => {
+          const form = document.getElementById("composition-lab-form");
+          const snapshot = () => [...form.elements].map(node => ({ name: node.name, value: node.value,
+            checked: node.checked, selectedIndex: node.selectedIndex }));
+          const before = snapshot();
+          document.querySelector('[data-composition-profile="compact"]').click();
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+          const compact = { actions: document.querySelectorAll(".rerun-comparison__actions li").length,
+            requests: document.querySelectorAll(".rerun-comparison__request-list li").length,
+            decisions: document.querySelectorAll(".rerun-comparison__decision-list li").length,
+            detail: getComputedStyle(document.querySelector(".rerun-comparison__detail")).display,
+            identity: getComputedStyle(document.querySelector(".rerun-comparison__identity")).display };
+          document.querySelector('[data-composition-profile="full"]').click();
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+          const fullIdentity = getComputedStyle(document.querySelector(".rerun-comparison__identity")).display;
+          document.querySelector('[data-composition-profile="book"]').click();
+          return { compact, fullIdentity, same: JSON.stringify(before) === JSON.stringify(snapshot()) };
+        })()`);
+        assert.deepEqual(comparisonProfiles.compact, { actions: 1, requests: 1, decisions: 1,
+          detail: "none", identity: "none" }, "Compact retains decisions and folds extended comparison custody");
+        assert.notEqual(comparisonProfiles.fullIdentity, "none", "Full exposes both result identities");
+        assert.equal(comparisonProfiles.same, true, "comparison profiles change no query control");
+        const comparisonMetrics = await client.call("Page.getLayoutMetrics");
+        const comparisonScreenshot = await client.call("Page.captureScreenshot", {
+          format: "png", captureBeyondViewport: true,
+          clip: { x: 0, y: 0, width: Math.ceil(comparisonMetrics.cssContentSize.width),
+            height: Math.ceil(comparisonMetrics.cssContentSize.height), scale: 1 }
+        });
+        fs.writeFileSync(screenshotPath.replace(/\.png$/i, "-comparison.png"),
+          Buffer.from(comparisonScreenshot.data, "base64"));
+        await evaluate(client, `document.getElementById("composition-lab-form").dispatchEvent(
+          new Event("submit", { bubbles: true, cancelable: true }))`);
+        for (let attempt = 0; attempt < 80; attempt += 1) {
+          if (!await evaluate(client, `Boolean(document.getElementById("composition-rerun-comparison"))`)) break;
+          await delay(50);
+        }
+        assert.equal(await evaluate(client,
+          `Boolean(document.getElementById("composition-rerun-comparison"))`), false,
+        "ordinary rerun consumes and clears the one-use comparison");
+      }
       const modified = await evaluate(client, `(() => {
         const problem = document.getElementById("composition-lab-form").elements.problem;
         problem.value += " Modified";
@@ -749,7 +824,8 @@ async function evaluate(client, expression) {
           "Controls changed: the displayed result belongs to the previous request. Run again to evaluate this plan." : "" },
       "editing clears authored-route identity without persistence");
       starterSummary = " starters=5 conflict=contradictory frontier=truncated" +
-        (editionNumber >= 26 ? " continuations=explicit" : "");
+        (editionNumber >= 26 ? " continuations=explicit" : "") +
+        (editionNumber >= 27 ? " comparison=one-use" : "");
     }
     let focusSummary = "";
     if (editionNumber >= 18) {

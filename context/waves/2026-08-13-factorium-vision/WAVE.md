@@ -1415,3 +1415,39 @@ and standalone SHA-256
 No recommendation, semantic repair, result prediction, comprehension,
 useful-selection, accessibility, task-success, publication, or `preview-01`
 claim is admitted.
+
+## 2026-08-16 composition rerun-comparison continuation
+
+Plan review: retain one identified source result in page memory only after a
+successful explicit continuation edit, then compare it with the next result
+created by the existing Run action. Account atomically for every executed
+request change, distinguish action-attributed edits from additional manual
+edits, mark actions present or superseded, compare exact state/work/node/
+relation/exclusion/check records without a good/bad ordering, inherit both
+result identities, mint no comparison identity, keep one consumed receipt,
+store nothing, gate the extension to `sim-27`, and retain `sim-26` exactly.
+The compact design and nine-role reviews report zero open P1/P2 findings.
+
+Result review: `sim-27` adds one ephemeral `Compared with your previous run`
+receipt after an explicitly rerun continuation. Successfully activated actions
+are independently reconstructed from the source result, then marked present
+or superseded against atomic executed-request differences; every other change
+is labelled additional. Exact state, work, relation, exclusion, node, and
+check records compare without a good/bad scale or comparison identity. The
+frontier path correctly reports `stopped at edge budget → stopped at node
+budget`, demonstrating that one edit may expose another boundary. Book,
+Compact, and Full retain the required attribution and custody; a later ordinary
+run clears the consumed receipt. Pure, generated-site, search, live Edge,
+Clippy, 66 Rust tests, five canonical query fixtures, packet verifiers,
+canonical reference/sidecar checks, and `.roles` validation pass. `sim-27`
+has site identity
+`18380606e74f10f138418ba231056a3ad200376cea8ccea941740327729b30c7`
+and standalone SHA-256
+`e33478b08f641777aa902c6a96c689b172a2a4910fd26b3ee65bef6f3ad3f236`;
+`sim-26` retains site identity
+`0d663d146adcacbb1e43c33e73ec3b9ec135770864448578a924df45d8c1bdf0`
+and standalone SHA-256
+`754252bd71c05347bea6c971068af7be141ad7b01f95ca13b8284c09b4616bb7`.
+No causality, improvement, successful-repair, semantic-validity,
+comprehension, useful-selection, accessibility, task-success, persistence,
+publication, or `preview-01` claim is admitted.

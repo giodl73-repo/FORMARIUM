@@ -216,10 +216,10 @@ that remain required at use time. See
 Render the current proof-edition bounded composition-lab simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-23
+.\tools\render_proof_set.ps1 -Edition sim-27
 ```
 
-Open `target/proof-set-sim-23/index.html` for a problem-led path through five
+Open `target/proof-set-sim-27/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
@@ -272,6 +272,23 @@ traversals, dashed links distinguish evaluation ownership and stopped
 frontiers, and conflicts remain visible in text as well as styling. A complete
 HTML record equivalent and the folded six-stage audit remain available; the
 map adds no nodes, edges, ranking, or identity.
+
+All four declared finite bounds are live, including the canonical emitted-
+record Work cap. After execution, Result Reconciliation accounts for every
+selected seed, relation, exclusion, and budget without treating unselected
+routes as rejected. Exact stopped or conflicting reasons may offer optional
+single-control edits for a possible next request; those buttons never submit
+or predict closure. If the reader separately runs after such an edit, one
+ephemeral comparison shows whether the edit survived into the executed
+request, names every additional control change, and compares the two exact
+structural results without calling either one better, valid, or successful.
+The comparison is consumed after that run and no query, action, result, or
+history is stored.
+
+See [`specs/COMPOSITION-WORK-BUDGET.md`](specs/COMPOSITION-WORK-BUDGET.md),
+[`specs/COMPOSITION-RESULT-RECONCILIATION.md`](specs/COMPOSITION-RESULT-RECONCILIATION.md),
+[`specs/COMPOSITION-EXPLICIT-CONTINUATIONS.md`](specs/COMPOSITION-EXPLICIT-CONTINUATIONS.md),
+and [`specs/COMPOSITION-RERUN-COMPARISON.md`](specs/COMPOSITION-RERUN-COMPARISON.md).
 
 See [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
@@ -376,15 +393,23 @@ node tools\check_composition_palette.js
 node tools\check_composition_views.js
 node tools\check_composition_map.js
 node tools\check_composition_query_plan.js
-node tools\check_proof_set_composition.js target\proof-set-sim-23\manifest.json target\proof-set-sim-23\index.html
-node tools\check_proof_set_composition_lab.js target\proof-set-sim-23
-node tools\check_proof_set_composition_reading.js target\proof-set-sim-23
-node tools\check_proof_set_composition_focus.js target\proof-set-sim-23
-node tools\check_proof_set_composition_palette.js target\proof-set-sim-23
-node tools\check_proof_set_composition_views.js target\proof-set-sim-23
-node tools\check_proof_set_composition_starters.js target\proof-set-sim-23
-node tools\check_proof_set_composition_query_plan.js target\proof-set-sim-23
-node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-23
+node tools\check_composition_reconciliation.js
+node tools\check_composition_continuations.js
+node tools\check_composition_rerun_comparison.js
+node tools\check_proof_set_composition.js target\proof-set-sim-27\manifest.json target\proof-set-sim-27\index.html
+node tools\check_proof_set_composition_lab.js target\proof-set-sim-27
+node tools\check_proof_set_composition_reading.js target\proof-set-sim-27
+node tools\check_proof_set_composition_focus.js target\proof-set-sim-27
+node tools\check_proof_set_composition_palette.js target\proof-set-sim-27
+node tools\check_proof_set_composition_views.js target\proof-set-sim-27
+node tools\check_proof_set_composition_map.js target\proof-set-sim-27
+node tools\check_proof_set_composition_starters.js target\proof-set-sim-27
+node tools\check_proof_set_composition_query_plan.js target\proof-set-sim-27
+node tools\check_proof_set_composition_work_budget.js target\proof-set-sim-27
+node tools\check_proof_set_composition_reconciliation.js target\proof-set-sim-27
+node tools\check_proof_set_composition_continuations.js target\proof-set-sim-27
+node tools\check_proof_set_composition_rerun_comparison.js target\proof-set-sim-27
+node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-27
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

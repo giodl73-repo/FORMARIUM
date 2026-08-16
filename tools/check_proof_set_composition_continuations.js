@@ -14,7 +14,7 @@ const css = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
 const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-continuations.js"), "utf8");
 const data = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-26");
+assert.ok(Number(manifest.edition.split("-")[1]) >= 26, "continuation edition");
 assert.equal(manifest.site_checks.composition_continuation_pages, 1);
 assert.equal(manifest.site_checks.composition_continuation_actions, 3);
 assert.deepEqual(manifest.composition_continuation_checks.action_kinds,
