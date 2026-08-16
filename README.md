@@ -104,6 +104,7 @@ explicit validation.
 - [Bounded Composition Lab Simulation](specs/COMPOSITION-LAB.md)
 - [Composition Reading Route Simulation](specs/COMPOSITION-READING-ROUTE.md)
 - [Composition Factor Focus Simulation](specs/COMPOSITION-FACTOR-FOCUS.md)
+- [Composition Concept Palette Simulation](specs/COMPOSITION-PALETTE.md)
 
 ## Founding research specifications
 
@@ -213,10 +214,10 @@ that remain required at use time. See
 Render the current proof-edition bounded composition-lab simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-18
+.\tools\render_proof_set.ps1 -Edition sim-19
 ```
 
-Open `target/proof-set-sim-18/index.html` for a problem-led path through five
+Open `target/proof-set-sim-19/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
@@ -238,7 +239,12 @@ of the twelve reviewed endpoint factors also has an edition-local focus
 fragment: a Start or Continue link opens a generated card with the exact factor
 label and ID, then hands off to the source entry's Root factorization. The card
 is hidden during ordinary reading, uses CSS `:target`, and does not rewrite
-canonical Markdown or claim an exact source-text span. See
+canonical Markdown or claim an exact source-text span. The Add stage groups
+those same twelve exact controls into six human-named entry topics, with the
+selected topic open first. Multiply shows live
+direction-sensitive predecessor readiness while leaving all six relations
+enabled. Readiness uses only explicit controls and does not predict budget
+admission, compatibility, or domain validity. See
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
 After an intentional metadata or source change, regenerate the catalog and
@@ -338,11 +344,13 @@ cargo run --quiet -- composition-query-check fixtures\composition\dependency-exc
 cargo run --quiet -- composition-query-check fixtures\composition\delegated-compliance-frontier.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 node tools\check_composition_lab.js
 node tools\check_composition_reading.js
-node tools\check_proof_set_composition.js target\proof-set-sim-18\manifest.json target\proof-set-sim-18\index.html
-node tools\check_proof_set_composition_lab.js target\proof-set-sim-18
-node tools\check_proof_set_composition_reading.js target\proof-set-sim-18
-node tools\check_proof_set_composition_focus.js target\proof-set-sim-18
-node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-18
+node tools\check_composition_palette.js
+node tools\check_proof_set_composition.js target\proof-set-sim-19\manifest.json target\proof-set-sim-19\index.html
+node tools\check_proof_set_composition_lab.js target\proof-set-sim-19
+node tools\check_proof_set_composition_reading.js target\proof-set-sim-19
+node tools\check_proof_set_composition_focus.js target\proof-set-sim-19
+node tools\check_proof_set_composition_palette.js target\proof-set-sim-19
+node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-19
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

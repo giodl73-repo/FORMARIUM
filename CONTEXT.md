@@ -238,6 +238,16 @@ during ordinary reading; scope views remain whole-page destinations. This is
 not canonical source markup or an exact prose-span annotation. `sim-17`
 remains byte-identical.
 
+The twentieth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-20.md`
+adds a progressive Composition Concept Palette to `sim-19`. The twelve exact
+endpoint controls are grouped under six owning entry titles with canonical
+factor labels, the selected group open first, reversible native disclosure,
+and no changed checkbox identity. Six live readiness cues report only whether
+each direction-specific predecessor is structurally reachable from explicit
+seeds and selected relations. All relations remain enabled; budgets and the
+closure result still decide admission. `sim-18` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

@@ -1173,3 +1173,28 @@ visible states, source handoff, reduced motion, and local targets. The compact
 design pass and seven-role fixed point report zero open P1/P2 findings. No
 canonical factor anchor, exact prose span, findability improvement, reader
 success, persistence, or publication claim is admitted.
+
+## 2026-08-16 progressive composition concept-palette continuation
+
+Plan review: replace the Add stage's flat schema wall without changing its
+exact inputs. Move the original 12 controls into six owner-entry disclosures,
+use exact factor labels, put the selected group first, preserve IDs and
+selection through Open all/Collapse, and show direction-sensitive structural
+readiness on all six still-enabled relations. Compute readiness only from
+explicit seeds, selected relations, and direction; leave budgets, admission,
+and evaluation to closure. Add this only to `sim-19` and retain `sim-18`
+exactly.
+
+Result review: `sim-19` now opens with the selected System Composition topic
+and two exact human-labelled concepts, while five other topics remain compact.
+Multiply reports one of six relations structurally reachable in the default
+request and names each missing predecessor without clearing or disabling an
+unready selection. The extension moves original controls intact, uses native
+details and a reversible toggle, recomputes on seeds/relations/direction, and
+stores nothing. Pure algorithm, generated-site, and live Edge checks cover six
+groups, 12 controls, exact labels, one selected-first group, disclosure state,
+direction changes, fixed-point chain reachability, unchanged submitted
+closure, mobile layout, focus navigation, and invalid inputs. The compact
+design pass and eight-role fixed point report zero open P1/P2 findings. No
+semantic search, recommendation, budget preview, domain approval, observed
+usability, persistence, or publication claim is admitted.

@@ -13,7 +13,8 @@ const page = fs.readFileSync(path.join(siteRoot, "compose.html"), "utf8");
 const siteData = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 const siteCss = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
 
-assert.equal(manifest.edition, "sim-18", "factor-focus edition");
+const editionNumber = Number(manifest.edition.split("-")[1]);
+assert.ok(Number.isInteger(editionNumber) && editionNumber >= 18, "factor-focus edition");
 assert.equal(manifest.site_checks.composition_factor_focus_records, 12,
   "site records all factor focuses");
 assert.equal(manifest.composition_factor_focus_checks.factor_focus_records, 12,

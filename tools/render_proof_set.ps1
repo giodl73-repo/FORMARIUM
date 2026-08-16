@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -21,6 +21,7 @@ $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-
 $compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
 $compositionReadingSpec = Join-Path $workspace "specs\COMPOSITION-READING-ROUTE.md"
 $compositionFocusSpec = Join-Path $workspace "specs\COMPOSITION-FACTOR-FOCUS.md"
+$compositionPaletteSpec = Join-Path $workspace "specs\COMPOSITION-PALETTE.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -45,6 +46,8 @@ $labScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-se
 $compositionReadingStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reading.css"
 $compositionReadingScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reading.js"
 $compositionFocusStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-focus.css"
+$compositionPaletteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-palette.css"
+$compositionPaletteScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-palette.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -72,6 +75,7 @@ $artifactTitle = switch ($Edition) {
     "sim-16" { "Factorium Proof Set Bounded Composition Lab Simulation 16" }
     "sim-17" { "Factorium Proof Set Closure Reading Route Simulation 17" }
     "sim-18" { "Factorium Proof Set Exact Factor Focus Simulation 18" }
+    "sim-19" { "Factorium Proof Set Progressive Concept Palette Simulation 19" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -551,6 +555,9 @@ if ($editionNumber -ge 17) {
 if ($editionNumber -ge 18) {
     Add-ProofSource $compositionFocusSpec
 }
+if ($editionNumber -ge 19) {
+    Add-ProofSource $compositionPaletteSpec
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -679,6 +686,7 @@ $compositionChecks = $null
 $compositionLabChecks = $null
 $compositionReadingChecks = $null
 $compositionFocusChecks = $null
+$compositionPaletteChecks = $null
 $compositionFocusRecords = @()
 if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
@@ -1097,6 +1105,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 19) {
+        foreach ($asset in @($compositionPaletteStyle, $compositionPaletteScript, $compositionPaletteSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-palette asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1219,6 +1234,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 18) {
         $siteCssParts += (Get-Content -LiteralPath $compositionFocusStyle -Raw)
+    }
+    if ($editionNumber -ge 19) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionPaletteStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -1465,6 +1483,35 @@ if ($editionNumber -ge 7) {
                     source_handoff = "existing Root factorization heading"
                     canonical_source_mutation = $false
                     specification = "specs/COMPOSITION-FACTOR-FOCUS.md"
+                }
+            }
+            if ($editionNumber -ge 19) {
+                $paletteGroupCounts = @{}
+                foreach ($binding in $readingBindings | Where-Object { $_.kind -eq "anchor" }) {
+                    if (-not $paletteGroupCounts.ContainsKey($binding.href)) {
+                        $paletteGroupCounts[$binding.href] = 0
+                    }
+                    $paletteGroupCounts[$binding.href] += 1
+                }
+                if ($paletteGroupCounts.Count -ne 6 -or
+                    @($paletteGroupCounts.Values | Where-Object { $_ -ne 2 }).Count -ne 0) {
+                    throw "Composition palette requires six anchor groups of two exact factors"
+                }
+                [System.IO.File]::WriteAllText(
+                    (Join-Path $siteAssetDirectory "composition-palette.js"),
+                    (Get-Content -LiteralPath $compositionPaletteScript -Raw),
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+                $compositionPaletteChecks = [ordered]@{
+                    concept_groups = $paletteGroupCounts.Count
+                    concept_controls = @($readingBindings | Where-Object { $_.kind -eq "anchor" }).Count
+                    relation_readiness_records = $labRelations.Count
+                    readiness_inputs = "explicit seeds, selected relation allowlist, direction"
+                    natural_language_semantic_selection = $false
+                    automatic_selection = $false
+                    disabled_relations = 0
+                    persistence = "none"
+                    specification = "specs/COMPOSITION-PALETTE.md"
                 }
             }
         }
@@ -1954,6 +2001,29 @@ if ($editionNumber -ge 7) {
                     "$readingContractLink<a href=`"$focusSpecPage`">Read the factor-focus contract</a>"
                 )
             }
+            if ($editionNumber -ge 19) {
+                $paletteSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionPaletteSpec)])"
+                $focusContractLink = "<a href=`"$focusSpecPage`">Read the factor-focus contract</a>"
+                foreach ($marker in @(
+                    $focusContractLink,
+                    '<h2>Select one to three seed concepts</h2>',
+                    '<script src="assets/composition-reading.js"></script>'
+                )) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition palette page integration marker drift: $marker"
+                    }
+                }
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $focusContractLink,
+                    "$focusContractLink<a href=`"$paletteSpecPage`">Read the concept-palette contract</a>"
+                ).Replace(
+                    '<h2>Select one to three seed concepts</h2>',
+                    '<h2>Choose one to three concepts by topic</h2>'
+                ).Replace(
+                    '<script src="assets/composition-reading.js"></script>',
+                    "<script src=`"assets/composition-reading.js`"></script>`n<script src=`"assets/composition-palette.js`"></script>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2178,6 +2248,9 @@ $pageScripts
     if ($editionNumber -ge 17) {
         $expectedAssetNames += "composition-reading.js"
     }
+    if ($editionNumber -ge 19) {
+        $expectedAssetNames += "composition-palette.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -2278,6 +2351,9 @@ $pageScripts
     if ($editionNumber -ge 18) {
         $siteChecks.composition_factor_focus_records = $compositionFocusRecords.Count
     }
+    if ($editionNumber -ge 19) {
+        $siteChecks.composition_palette_groups = $compositionPaletteChecks.concept_groups
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -2333,6 +2409,9 @@ if ($editionNumber -ge 17) {
 }
 if ($editionNumber -ge 18) {
     $manifestRecord.composition_factor_focus_checks = $compositionFocusChecks
+}
+if ($editionNumber -ge 19) {
+    $manifestRecord.composition_palette_checks = $compositionPaletteChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"
@@ -2393,6 +2472,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 18) {
         Write-Output "site_composition_factor_focus_records=$($compositionFocusChecks.factor_focus_records)"
+    }
+    if ($editionNumber -ge 19) {
+        Write-Output "site_composition_palette_groups=$($compositionPaletteChecks.concept_groups)"
     }
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"

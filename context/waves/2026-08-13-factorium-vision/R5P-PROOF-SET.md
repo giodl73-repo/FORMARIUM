@@ -271,3 +271,9 @@ It tests exact endpoint fragments, CSS target visibility, and handoff to an
 existing Root factorization without changing canonical source. The generated
 cards are edition-local navigation metadata, not stable public anchors,
 source-span annotations, observed findability, or external-reader evidence.
+
+Internal preflight 20 adds the `sim-19` Composition Concept Palette. It tests
+exact human-labelled grouping, reversible disclosure, and structural relation
+readiness while preserving every explicit control and closure behavior. Its
+cleaner layout and successful browser interaction are not evidence of better
+seed selection, relation discovery, task success, or external-reader use.

@@ -103,6 +103,59 @@ async function evaluate(client, expression) {
       if (await evaluate(client, "document.readyState === 'complete'")) break;
       await delay(100);
     }
+    let paletteSummary = "";
+    if (editionNumber >= 19) {
+      const paletteState = await evaluate(client, `(() => ({
+        groups: document.querySelectorAll(".lab-concept-group").length,
+        openGroups: document.querySelectorAll(".lab-concept-group[open]").length,
+        concepts: document.querySelectorAll('.lab-concept-group input[name="seeds"]').length,
+        readinessBadges: document.querySelectorAll(".lab-relation-readiness").length,
+        readyRelations: document.querySelectorAll('.lab-choice[data-readiness="seed-ready"], .lab-choice[data-readiness="route-ready"]').length,
+        selectedLabel: document.querySelector('input[name="seeds"]:checked')?.closest("label")?.querySelector("strong")?.textContent || "",
+        summary: document.getElementById("composition-relation-readiness")?.textContent || ""
+      }))()`);
+      assert.equal(paletteState.groups, 6, "browser renders six concept groups");
+      assert.equal(paletteState.openGroups, 1, "only selected topic opens initially");
+      assert.equal(paletteState.concepts, 12, "browser retains 12 exact seed controls");
+      assert.equal(paletteState.readinessBadges, 6, "browser renders six readiness badges");
+      assert.equal(paletteState.readyRelations, 1, "default has one reachable relation");
+      assert.equal(paletteState.selectedLabel, "dependency source, target, and direction",
+        "palette uses exact human factor label");
+      assert.match(paletteState.summary, /^1 of 6 relations structurally reachable/,
+        "palette live summary");
+      const disclosure = await evaluate(client, `(() => {
+        const button = document.querySelector(".lab-palette-toggle");
+        button.click();
+        const opened = document.querySelectorAll(".lab-concept-group[open]").length;
+        button.click();
+        return {
+          opened,
+          collapsed: document.querySelectorAll(".lab-concept-group[open]").length,
+          selected: document.querySelectorAll('input[name="seeds"]:checked').length
+        };
+      })()`);
+      assert.deepEqual(disclosure, { opened: 6, collapsed: 1, selected: 1 },
+        "palette disclosure never changes selection");
+      const directionState = await evaluate(client, `(() => {
+        const direction = document.querySelector('select[name="direction"]');
+        const selectedRelation = document.querySelector('input[name="relations"]:checked');
+        direction.value = "reverse";
+        direction.dispatchEvent(new Event("change", { bubbles: true }));
+        const reverse = {
+          readiness: selectedRelation.closest("label").dataset.readiness,
+          badge: selectedRelation.closest("label").querySelector(".lab-relation-readiness").textContent,
+          selected: selectedRelation.checked
+        };
+        direction.value = "forward";
+        direction.dispatchEvent(new Event("change", { bubbles: true }));
+        return reverse;
+      })()`);
+      assert.equal(directionState.readiness, "needs-predecessor",
+        "reverse direction changes structural predecessor");
+      assert.match(directionState.badge, /^Needs /, "reverse badge names missing predecessor");
+      assert.equal(directionState.selected, true, "readiness never clears selected relation");
+      paletteSummary = ` palette=${paletteState.groups}x${paletteState.concepts}`;
+    }
     await evaluate(client, `(() => {
       const form = document.getElementById("composition-lab-form");
       form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
@@ -198,7 +251,8 @@ async function evaluate(client, expression) {
       focusSummary = ` focus=${focus.hash.slice(1)} focus_screenshot=${focusScreenshotPath}`;
     }
     console.log(`OK state=${state.labState} pages=${state.routePages} ` +
-      `stages=${route.stages.join(",")} mobile=one-column screenshot=${screenshotPath}${focusSummary}`);
+      `stages=${route.stages.join(",")} mobile=one-column${paletteSummary} ` +
+      `screenshot=${screenshotPath}${focusSummary}`);
   } finally {
     if (client) client.close();
     browser.kill();
