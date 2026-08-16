@@ -21,7 +21,7 @@ assert.ok(edgePath, "Microsoft Edge executable not found");
 assert.ok(fs.existsSync(path.join(siteRoot, "compose.html")), "sim-17 compose page not found");
 
 const port = 9337;
-const profile = path.resolve("target/edge-composition-reading-profile");
+const profile = path.resolve(`target/edge-composition-reading-profile-${process.pid}`);
 fs.mkdirSync(profile, { recursive: true });
 const browser = spawn(edgePath, [
   "--headless=new",
@@ -87,7 +87,10 @@ async function evaluate(client, expression) {
     awaitPromise: true,
     returnByValue: true
   });
-  if (response.exceptionDetails) throw new Error(response.exceptionDetails.text);
+  if (response.exceptionDetails) {
+    throw new Error(response.exceptionDetails.exception?.description ||
+      response.exceptionDetails.text);
+  }
   return response.result.value;
 }
 
@@ -156,6 +159,69 @@ async function evaluate(client, expression) {
       assert.equal(directionState.selected, true, "readiness never clears selected relation");
       paletteSummary = ` palette=${paletteState.groups}x${paletteState.concepts}`;
     }
+    let profileSummary = "";
+    let defaultControlSnapshot = null;
+    if (editionNumber >= 20) {
+      const profileState = await evaluate(client, `(() => {
+        const snapshot = () => [...document.getElementById("composition-lab-form").elements].map(node => ({
+          tag: node.tagName, type: node.type, name: node.name, value: node.value,
+          checked: Boolean(node.checked), disabled: Boolean(node.disabled)
+        }));
+        return {
+          buttons: document.querySelectorAll("[data-composition-profile]").length,
+          active: document.querySelector('[data-composition-profile][aria-pressed="true"]')?.dataset.compositionProfile || "",
+          metadata: document.documentElement.dataset.compositionMetadata,
+          density: document.documentElement.dataset.compositionDensity,
+          exactDisplay: getComputedStyle(document.querySelector(".lab-choice code")).display,
+          routeDisplay: getComputedStyle(document.querySelector(".composition-relation-route")).display,
+          relationLabel: document.querySelector('input[name="relations"]')?.closest("label")?.querySelector("strong")?.textContent || "",
+          snapshot: snapshot()
+        };
+      })()`);
+      assert.equal(profileState.buttons, 4, "browser renders four composition profiles");
+      assert.equal(profileState.active, "book", "Book is the fresh default");
+      assert.equal(profileState.metadata, "essential", "Book uses essential metadata");
+      assert.equal(profileState.density, "comfortable", "Book uses comfortable spacing");
+      assert.equal(profileState.exactDisplay, "none", "Book folds exact audit identifiers");
+      assert.notEqual(profileState.routeDisplay, "none", "Book shows human endpoint route");
+      assert.equal(profileState.relationLabel, "F1 · Depends on", "Book uses short human relation label");
+      defaultControlSnapshot = profileState.snapshot;
+      const switched = await evaluate(client, `(() => {
+        const snapshot = () => [...document.getElementById("composition-lab-form").elements].map(node => ({
+          tag: node.tagName, type: node.type, name: node.name, value: node.value,
+          checked: Boolean(node.checked), disabled: Boolean(node.disabled)
+        }));
+        const read = () => ({
+          active: document.querySelector('[data-composition-profile][aria-pressed="true"]')?.dataset.compositionProfile || "",
+          exactDisplay: getComputedStyle(document.querySelector(".lab-choice code")).display,
+          routeDisplay: getComputedStyle(document.querySelector(".composition-relation-route")).display,
+          helpDisplay: getComputedStyle(document.querySelector(".lab-help")).display,
+          snapshot: snapshot()
+        });
+        document.querySelector('[data-composition-profile="compact"]').click();
+        const compact = read();
+        document.querySelector('[data-composition-profile="full"]').click();
+        const full = read();
+        document.querySelector('[data-composition-profile="book"]').click();
+        return { compact, full, restored: read(), storage: Object.entries(localStorage) };
+      })()`);
+      assert.equal(switched.compact.active, "compact");
+      assert.equal(switched.compact.exactDisplay, "none");
+      assert.equal(switched.compact.routeDisplay, "none");
+      assert.equal(switched.compact.helpDisplay, "none");
+      assert.deepEqual(switched.compact.snapshot, defaultControlSnapshot,
+        "Compact changes no query control");
+      assert.equal(switched.full.active, "full");
+      assert.notEqual(switched.full.exactDisplay, "none");
+      assert.notEqual(switched.full.routeDisplay, "none");
+      assert.deepEqual(switched.full.snapshot, defaultControlSnapshot,
+        "Full changes no query control");
+      assert.deepEqual(switched.restored.snapshot, defaultControlSnapshot,
+        "Book restoration changes no query control");
+      assert.deepEqual(switched.storage, [["factorium-reader-profile", "book"]],
+        "only the shared profile name is stored");
+      profileSummary = " profiles=4:book";
+    }
     await evaluate(client, `(() => {
       const form = document.getElementById("composition-lab-form");
       form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
@@ -174,6 +240,37 @@ async function evaluate(client, expression) {
     assert.equal(state.error, "", "browser runtime error");
     assert.equal(state.labState, "incomplete", "browser default remains incomplete");
     assert.equal(state.routePages, 2, "browser renders two route pages");
+    if (editionNumber >= 20) {
+      const projected = await evaluate(client, `(() => {
+        const identity = () => document.querySelector(".lab-identity code")?.textContent || "";
+        const snapshot = () => [...document.getElementById("composition-lab-form").elements].map(node => ({
+          tag: node.tagName, type: node.type, name: node.name, value: node.value,
+          checked: Boolean(node.checked), disabled: Boolean(node.disabled)
+        }));
+        const before = identity();
+        document.querySelector('[data-composition-profile="compact"]').click();
+        const compact = { identity: identity(), snapshot: snapshot() };
+        document.querySelector('[data-composition-profile="full"]').click();
+        const full = {
+          identity: identity(), snapshot: snapshot(),
+          exactDisplay: getComputedStyle(document.querySelector(".lab-result code")).display
+        };
+        document.querySelector('[data-composition-profile="book"]').click();
+        return { before, compact, full, restored: identity() };
+      })()`);
+      assert.match(projected.before, /^[0-9a-f]{64}$/, "browser result has exact SHA-256");
+      assert.equal(projected.compact.identity, projected.before,
+        "Compact leaves result identity unchanged");
+      assert.equal(projected.full.identity, projected.before,
+        "Full leaves result identity unchanged");
+      assert.equal(projected.restored, projected.before,
+        "Book restoration leaves result identity unchanged");
+      assert.deepEqual(projected.compact.snapshot, defaultControlSnapshot,
+        "post-result Compact changes no controls");
+      assert.deepEqual(projected.full.snapshot, defaultControlSnapshot,
+        "post-result Full changes no controls");
+      assert.notEqual(projected.full.exactDisplay, "none", "Full reveals exact result custody");
+    }
     const route = await evaluate(client, `(() => ({
       title: document.querySelector(".composition-reading-route h3")?.textContent,
       summary: document.querySelector(".composition-reading-route__summary")?.textContent,
@@ -206,6 +303,47 @@ async function evaluate(client, expression) {
       `[...document.querySelectorAll(".composition-reading-route__page")].map(node => node.getBoundingClientRect().top)`);
     assert.ok(mobileCardTops[1] > mobileCardTops[0],
       "reading route collapses to one column at 600 pixels");
+    if (editionNumber >= 20) {
+      await evaluate(client,
+        `document.querySelector('[data-composition-profile="full"]').click()`);
+      await client.call("Page.reload");
+      let reloaded;
+      for (let attempt = 0; attempt < 80; attempt += 1) {
+        reloaded = await evaluate(client, `(() => ({
+          ready: document.readyState,
+          enhanced: document.body.classList.contains("composition-views-ready"),
+          active: document.querySelector('[data-composition-profile][aria-pressed="true"]')?.dataset.compositionProfile || "",
+          resultEmpty: Boolean(document.querySelector(".lab-result__empty")),
+          snapshot: [...document.getElementById("composition-lab-form").elements].map(node => ({
+            tag: node.tagName, type: node.type, name: node.name, value: node.value,
+            checked: Boolean(node.checked), disabled: Boolean(node.disabled)
+          })),
+          storage: Object.entries(localStorage)
+        }))()`);
+        if (reloaded.ready === "complete" && reloaded.enhanced) break;
+        await delay(100);
+      }
+      assert.equal(reloaded.active, "full", "reload retains only the shared view preference");
+      assert.equal(reloaded.resultEmpty, true, "reload deletes the composition result");
+      assert.deepEqual(reloaded.snapshot, defaultControlSnapshot,
+        "reload restores edition query defaults");
+      assert.deepEqual(reloaded.storage, [["factorium-reader-profile", "full"]],
+        "reload retains no work product in storage");
+      await evaluate(client, `(() => {
+        document.querySelector('[data-composition-profile="book"]').click();
+        document.getElementById("composition-lab-form").dispatchEvent(
+          new Event("submit", { bubbles: true, cancelable: true }));
+      })()`);
+      for (let attempt = 0; attempt < 80; attempt += 1) {
+        const rerunPages = await evaluate(client,
+          `document.querySelectorAll(".composition-reading-route__page").length`);
+        if (rerunPages === 2) break;
+        await delay(100);
+      }
+      assert.equal(await evaluate(client,
+        `document.querySelectorAll(".composition-reading-route__page").length`), 2,
+      "reloaded default query recreates the same reading route");
+    }
     let focusSummary = "";
     if (editionNumber >= 18) {
       assert.match(route.hrefs[0], /#factor-focus-[a-z0-9-]+$/,
@@ -251,7 +389,7 @@ async function evaluate(client, expression) {
       focusSummary = ` focus=${focus.hash.slice(1)} focus_screenshot=${focusScreenshotPath}`;
     }
     console.log(`OK state=${state.labState} pages=${state.routePages} ` +
-      `stages=${route.stages.join(",")} mobile=one-column${paletteSummary} ` +
+      `stages=${route.stages.join(",")} mobile=one-column${paletteSummary}${profileSummary} ` +
       `screenshot=${screenshotPath}${focusSummary}`);
   } finally {
     if (client) client.close();

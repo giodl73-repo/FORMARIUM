@@ -277,3 +277,10 @@ exact human-labelled grouping, reversible disclosure, and structural relation
 readiness while preserving every explicit control and closure behavior. Its
 cleaner layout and successful browser interaction are not evidence of better
 seed selection, relation discovery, task success, or external-reader use.
+
+Internal preflight 21 adds `sim-20` Composition Reader Views. It tests the
+existing four reader profiles over the lab while preserving every exact
+control, canonical result byte, identity, negative state, and reading route.
+Its Book default, reduced audit noise, and profile continuity are deterministic
+display mechanics, not evidence of comprehension, accessibility, speed,
+preference, task success, or external-reader use.

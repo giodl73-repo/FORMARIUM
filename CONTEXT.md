@@ -248,6 +248,17 @@ each direction-specific predecessor is structurally reachable from explicit
 seeds and selected relations. All relations remain enabled; budgets and the
 closure result still decide admission. `sim-18` remains byte-identical.
 
+The twenty-first rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-21.md`
+adds Composition Reader Views to `sim-20`. Compact, Abbreviated, Book, and
+Full now govern the lab as well as the book. Book leads with human labels,
+short relation codes, endpoint routes, and essential context; Full retains
+every exact artifact, relation qualification, check ID, and result digest.
+Profiles alter no form control, canonical result JSON, closure identity, or
+reading route. Only the existing non-sensitive reader-view preference may
+persist; the query and result still disappear on reload. `sim-19` remains
+byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

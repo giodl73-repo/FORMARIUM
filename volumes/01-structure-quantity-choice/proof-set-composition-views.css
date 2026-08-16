@@ -1,0 +1,67 @@
+.composition-view-toolbar {
+  margin: 1rem 0 1.4rem;
+}
+
+.composition-view-toolbar .reader-toolbar__profiles {
+  margin-bottom: 0;
+}
+
+html[data-composition-metadata="minimal"] .composition-meta--essential,
+html[data-composition-metadata="minimal"] .composition-meta--full,
+html[data-composition-metadata="essential"] .composition-meta--full {
+  display: none !important;
+}
+
+html[data-composition-detail="summary"] .composition-detail--core,
+html[data-composition-detail="summary"] .composition-detail--full,
+html[data-composition-detail="core"] .composition-detail--full {
+  display: none !important;
+}
+
+.composition-relation-route,
+.composition-record-context {
+  color: var(--proof-ink-soft);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+html[data-composition-density="tight"] .composition-lab {
+  gap: 0.65rem;
+}
+
+html[data-composition-density="tight"] .lab-form-section,
+html[data-composition-density="tight"] .lab-contract,
+html[data-composition-density="tight"] .lab-result {
+  padding: 0.85rem 1rem;
+}
+
+html[data-composition-density="tight"] .lab-choice {
+  padding: 0.55rem 0.65rem;
+}
+
+html[data-composition-density="tight"] .lab-concept-group > summary {
+  padding: 0.65rem 0.75rem;
+}
+
+html[data-composition-density="tight"] .lab-concept-group__choices {
+  padding: 0 0.65rem 0.65rem;
+}
+
+html[data-composition-density="tight"] .lab-result__stages {
+  gap: 0.65rem;
+}
+
+@media print {
+  .composition-view-toolbar {
+    display: none !important;
+  }
+
+  .composition-meta--essential,
+  .composition-meta--full,
+  .composition-detail--core,
+  .composition-detail--full {
+    display: revert !important;
+  }
+}

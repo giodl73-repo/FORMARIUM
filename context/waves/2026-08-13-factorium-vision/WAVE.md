@@ -1198,3 +1198,27 @@ closure, mobile layout, focus navigation, and invalid inputs. The compact
 design pass and eight-role fixed point report zero open P1/P2 findings. No
 semantic search, recommendation, budget preview, domain approval, observed
 usability, persistence, or publication claim is admitted.
+
+## 2026-08-16 composition reader-view continuation
+
+Plan review: extend the already established Compact, Abbreviated, Book, and
+Full profiles into Compose instead of creating a second view vocabulary. Keep
+every input and negative state visible; let Book lead with exact human labels,
+short relation codes, endpoint routes, and essential explanations; reserve
+raw artifacts, full relation qualifications, check IDs, and the complete
+digest for Full. Share only the existing reader-profile preference, keep query
+data ephemeral, add the enhancement only to `sim-20`, and retain `sim-19`
+exactly.
+
+Result review: `sim-20` now presents one Composition view toolbar before the
+lab. Compact removes core explanation and uses tight spacing, Abbreviated
+restores core explanation, Book adds human endpoint and owning-page context,
+and Full reveals every exact custody string. All labels derive from the exact
+reading bindings and relation payload. Pure, generated-site, and live Edge
+checks cover four-profile precedence and fallback, human labeling, visibility,
+control snapshots, canonical-result equality, unchanged SHA-256, storage
+contents, reload deletion, responsive layout, reading route, and factor focus.
+The compact design pass and eight-role fixed point report zero open P1/P2
+findings. No preferred-default, comprehension, accessibility, speed, semantic
+selection, query persistence, publication, or reader-success claim is
+admitted.

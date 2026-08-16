@@ -13,7 +13,9 @@ const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-palet
 const siteData = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 const siteCss = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
 
-assert.equal(manifest.edition, "sim-19", "concept-palette edition");
+const editionNumber = Number(manifest.edition.split("-")[1]);
+assert.ok(Number.isInteger(editionNumber) && editionNumber >= 19,
+  "concept-palette edition");
 assert.equal(manifest.site_checks.composition_palette_groups, 6, "six site palette groups");
 assert.equal(manifest.composition_palette_checks.concept_groups, 6, "six exact groups");
 assert.equal(manifest.composition_palette_checks.concept_controls, 12, "12 exact controls");

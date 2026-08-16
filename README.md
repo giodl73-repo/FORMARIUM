@@ -105,6 +105,7 @@ explicit validation.
 - [Composition Reading Route Simulation](specs/COMPOSITION-READING-ROUTE.md)
 - [Composition Factor Focus Simulation](specs/COMPOSITION-FACTOR-FOCUS.md)
 - [Composition Concept Palette Simulation](specs/COMPOSITION-PALETTE.md)
+- [Composition Reader Views Simulation](specs/COMPOSITION-READER-VIEWS.md)
 
 ## Founding research specifications
 
@@ -214,10 +215,10 @@ that remain required at use time. See
 Render the current proof-edition bounded composition-lab simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-19
+.\tools\render_proof_set.ps1 -Edition sim-20
 ```
 
-Open `target/proof-set-sim-19/index.html` for a problem-led path through five
+Open `target/proof-set-sim-20/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
@@ -244,8 +245,15 @@ those same twelve exact controls into six human-named entry topics, with the
 selected topic open first. Multiply shows live
 direction-sensitive predecessor readiness while leaving all six relations
 enabled. Readiness uses only explicit controls and does not predict budget
-admission, compatibility, or domain validity. See
-[`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
+admission, compatibility, or domain validity.
+
+The Compose page now carries the same Compact, Abbreviated, Book, and Full
+profiles as the book reader. Book remains the default: it leads with human
+concept labels, short relation codes, and endpoint routes while Full reveals
+the exact artifacts, qualifications, check IDs, and result digest. Profiles
+change only display detail, metadata, and spacing. Query controls and closure
+identity remain unchanged; only the shared reader-view preference may persist.
+See [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
 After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
@@ -345,12 +353,14 @@ cargo run --quiet -- composition-query-check fixtures\composition\delegated-comp
 node tools\check_composition_lab.js
 node tools\check_composition_reading.js
 node tools\check_composition_palette.js
-node tools\check_proof_set_composition.js target\proof-set-sim-19\manifest.json target\proof-set-sim-19\index.html
-node tools\check_proof_set_composition_lab.js target\proof-set-sim-19
-node tools\check_proof_set_composition_reading.js target\proof-set-sim-19
-node tools\check_proof_set_composition_focus.js target\proof-set-sim-19
-node tools\check_proof_set_composition_palette.js target\proof-set-sim-19
-node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-19
+node tools\check_composition_views.js
+node tools\check_proof_set_composition.js target\proof-set-sim-20\manifest.json target\proof-set-sim-20\index.html
+node tools\check_proof_set_composition_lab.js target\proof-set-sim-20
+node tools\check_proof_set_composition_reading.js target\proof-set-sim-20
+node tools\check_proof_set_composition_focus.js target\proof-set-sim-20
+node tools\check_proof_set_composition_palette.js target\proof-set-sim-20
+node tools\check_proof_set_composition_views.js target\proof-set-sim-20
+node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-20
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

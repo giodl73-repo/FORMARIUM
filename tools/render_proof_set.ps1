@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -22,6 +22,7 @@ $compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
 $compositionReadingSpec = Join-Path $workspace "specs\COMPOSITION-READING-ROUTE.md"
 $compositionFocusSpec = Join-Path $workspace "specs\COMPOSITION-FACTOR-FOCUS.md"
 $compositionPaletteSpec = Join-Path $workspace "specs\COMPOSITION-PALETTE.md"
+$compositionViewsSpec = Join-Path $workspace "specs\COMPOSITION-READER-VIEWS.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -48,6 +49,8 @@ $compositionReadingScript = Join-Path $workspace "volumes\01-structure-quantity-
 $compositionFocusStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-focus.css"
 $compositionPaletteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-palette.css"
 $compositionPaletteScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-palette.js"
+$compositionViewsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-views.css"
+$compositionViewsScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-views.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -76,6 +79,7 @@ $artifactTitle = switch ($Edition) {
     "sim-17" { "Factorium Proof Set Closure Reading Route Simulation 17" }
     "sim-18" { "Factorium Proof Set Exact Factor Focus Simulation 18" }
     "sim-19" { "Factorium Proof Set Progressive Concept Palette Simulation 19" }
+    "sim-20" { "Factorium Proof Set Composition Reader Views Simulation 20" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -558,6 +562,9 @@ if ($editionNumber -ge 18) {
 if ($editionNumber -ge 19) {
     Add-ProofSource $compositionPaletteSpec
 }
+if ($editionNumber -ge 20) {
+    Add-ProofSource $compositionViewsSpec
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -687,6 +694,7 @@ $compositionLabChecks = $null
 $compositionReadingChecks = $null
 $compositionFocusChecks = $null
 $compositionPaletteChecks = $null
+$compositionViewsChecks = $null
 $compositionFocusRecords = @()
 if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
@@ -1112,6 +1120,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 20) {
+        foreach ($asset in @($compositionViewsStyle, $compositionViewsScript, $compositionViewsSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-reader-views asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1237,6 +1252,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 19) {
         $siteCssParts += (Get-Content -LiteralPath $compositionPaletteStyle -Raw)
+    }
+    if ($editionNumber -ge 20) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionViewsStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -1512,6 +1530,25 @@ if ($editionNumber -ge 7) {
                     disabled_relations = 0
                     persistence = "none"
                     specification = "specs/COMPOSITION-PALETTE.md"
+                }
+            }
+            if ($editionNumber -ge 20) {
+                [System.IO.File]::WriteAllText(
+                    (Join-Path $siteAssetDirectory "composition-views.js"),
+                    (Get-Content -LiteralPath $compositionViewsScript -Raw),
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+                $compositionViewsChecks = [ordered]@{
+                    profiles = @("compact", "abbreviated", "book", "full")
+                    default_profile = "book"
+                    shared_preference_key = "factorium-reader-profile"
+                    profile_inputs_to_closure = 0
+                    hidden_query_controls = 0
+                    exact_metadata_retained = $true
+                    query_storage = "none"
+                    result_storage = "none"
+                    preference_storage = "profile name only"
+                    specification = "specs/COMPOSITION-READER-VIEWS.md"
                 }
             }
         }
@@ -2024,6 +2061,51 @@ if ($editionNumber -ge 7) {
                     "<script src=`"assets/composition-reading.js`"></script>`n<script src=`"assets/composition-palette.js`"></script>"
                 )
             }
+            if ($editionNumber -ge 20) {
+                $viewsSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionViewsSpec)])"
+                $paletteContractLink = "<a href=`"$paletteSpecPage`">Read the concept-palette contract</a>"
+                $compositionViewToolbar = @'
+<section id="composition-view-toolbar" class="reader-toolbar composition-view-toolbar" aria-labelledby="composition-view-heading" hidden>
+<div class="reader-toolbar__heading"><div>
+<h2 id="composition-view-heading">Composition view</h2>
+<p id="composition-view-status" class="reader-toolbar__status" role="status" aria-live="polite"></p>
+</div></div>
+<div class="reader-toolbar__profiles" role="group" aria-label="Composition profile">
+<button type="button" data-composition-profile="compact" aria-pressed="false">Compact</button>
+<button type="button" data-composition-profile="abbreviated" aria-pressed="false">Abbreviated</button>
+<button type="button" data-composition-profile="book" aria-pressed="true">Book</button>
+<button type="button" data-composition-profile="full" aria-pressed="false">Full</button>
+</div>
+</section>
+'@
+                foreach ($marker in @(
+                    $paletteContractLink,
+                    '<section class="lab-hero">',
+                    '<div class="lab-submit"><button type="submit">Run bounded closure</button><p>No data leaves this page. Reloading deletes the result.</p></div>',
+                    '<footer class="site-footer">Local synthetic work product · no persistence · not canonical content</footer>',
+                    '<script src="assets/composition-palette.js"></script>'
+                )) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition reader-views page integration marker drift: $marker"
+                    }
+                }
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $paletteContractLink,
+                    "$paletteContractLink<a href=`"$viewsSpecPage`">Read the composition-view contract</a>"
+                ).Replace(
+                    '<section class="lab-hero">',
+                    "$compositionViewToolbar<section class=`"lab-hero`">"
+                ).Replace(
+                    '<div class="lab-submit"><button type="submit">Run bounded closure</button><p>No data leaves this page. Reloading deletes the result.</p></div>',
+                    '<div class="lab-submit"><button type="submit">Run bounded closure</button><p>Query data stays in this page. Only the reader-view preference may persist; reloading deletes the result.</p></div>'
+                ).Replace(
+                    '<footer class="site-footer">Local synthetic work product · no persistence · not canonical content</footer>',
+                    '<footer class="site-footer">Local synthetic work product · no query persistence · not canonical content</footer>'
+                ).Replace(
+                    '<script src="assets/composition-palette.js"></script>',
+                    "<script src=`"assets/composition-palette.js`"></script>`n<script src=`"assets/composition-views.js`"></script>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2251,6 +2333,9 @@ $pageScripts
     if ($editionNumber -ge 19) {
         $expectedAssetNames += "composition-palette.js"
     }
+    if ($editionNumber -ge 20) {
+        $expectedAssetNames += "composition-views.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -2354,6 +2439,9 @@ $pageScripts
     if ($editionNumber -ge 19) {
         $siteChecks.composition_palette_groups = $compositionPaletteChecks.concept_groups
     }
+    if ($editionNumber -ge 20) {
+        $siteChecks.composition_view_profiles = $compositionViewsChecks.profiles.Count
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -2412,6 +2500,9 @@ if ($editionNumber -ge 18) {
 }
 if ($editionNumber -ge 19) {
     $manifestRecord.composition_palette_checks = $compositionPaletteChecks
+}
+if ($editionNumber -ge 20) {
+    $manifestRecord.composition_view_checks = $compositionViewsChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"
@@ -2475,6 +2566,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 19) {
         Write-Output "site_composition_palette_groups=$($compositionPaletteChecks.concept_groups)"
+    }
+    if ($editionNumber -ge 20) {
+        Write-Output "site_composition_view_profiles=$($compositionViewsChecks.profiles.Count)"
     }
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"
