@@ -300,6 +300,15 @@ result while preserving distinct frontier, capacity, reachability, and
 conflict reasons. Unselected routes are not evaluated, and `sim-24` remains
 byte-identical.
 
+The twenty-seventh rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-27.md`
+adds Explicit Continuations to `sim-26`. Exact stopped/capacity reasons can
+offer one finite-budget edit, an unreachable relation can offer its exact
+predecessor seed, and an exclusion result can offer removal of that exact
+exclusion. Each action revalidates the prior control value, changes one visible
+control, leaves the previous result intact and stale, and requires a separate
+Run. `sim-25` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

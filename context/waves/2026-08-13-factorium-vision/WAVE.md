@@ -1382,3 +1382,36 @@ and standalone SHA-256
 `36bdf398b81ecb614685069748518616072bef40ba3f81eeabcc279e3bbfb22d`.
 No semantic-validity, recommendation, comprehension, useful-selection,
 reader-success, publishing, or `preview-01` claim is admitted.
+
+## 2026-08-16 explicit composition-continuations continuation
+
+Plan review: translate only exact non-traversal and exclusion result reasons
+into optional single-control edits for the next request. Derive finite budget
+targets arithmetically, add only the exact traversal predecessor as a seed,
+remove only the selected exclusion, preserve unavailable actions at UI maxima,
+revalidate the before-value at activation, mutate the visible staged form,
+keep the previous result and identity visible, force Query Plan stale alignment,
+never submit or predict closure, gate the extension to `sim-26`, and retain
+`sim-25` exactly. The compact design and nine-role reviews report zero open
+P1/P2 findings.
+
+Result review: `sim-26` adds deterministic optional next-request edits beneath
+Result Reconciliation. Exact frontier and capacity records can raise one
+finite bound; predecessor-unreached records can add only their traversal
+predecessor; conflicts and inactive exclusions can remove only their selected
+artifact. Every click revalidates its exact before-value, changes one visible
+control, dispatches no submit, preserves the displayed result and identity,
+and makes Query Plan alignment `controls-changed`. Unavailable actions remain
+visible at UI maxima. Pure, generated-site, search, live Edge, Clippy, 66 Rust
+tests, packet verifiers, canonical reference/sidecar checks, and `.roles`
+validation pass. `sim-26` has site identity
+`0d663d146adcacbb1e43c33e73ec3b9ec135770864448578a924df45d8c1bdf0`
+and standalone SHA-256
+`754252bd71c05347bea6c971068af7be141ad7b01f95ca13b8284c09b4616bb7`;
+`sim-25` retains site identity
+`561e46d4e5dea6ea275f8fae256dae740a083bc0331e27f72e978efdf5e4e191`
+and standalone SHA-256
+`70508fd76ed453765d1c80217bab299cc9e66401231761d5e959399a878dfa06`.
+No recommendation, semantic repair, result prediction, comprehension,
+useful-selection, accessibility, task-success, publication, or `preview-01`
+claim is admitted.

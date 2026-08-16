@@ -350,6 +350,18 @@ async function evaluate(client, expression) {
       assert.equal(reconciliationProfiles.same, true, "reconciliation profiles change no controls");
       reconciliationSummary = " reconcile=1a/4b";
     }
+    if (editionNumber >= 26) {
+      const continuationsState = await evaluate(client, `(() => {
+        const section = document.querySelector(".composition-continuations");
+        return { exists: Boolean(section), actions: section?.querySelectorAll("button").length || 0,
+          empty: section?.querySelector(".lab-empty")?.textContent || "",
+          boundary: section?.querySelector(".composition-continuations__boundary")?.textContent || "" };
+      })()`);
+      assert.deepEqual(continuationsState, { exists: true, actions: 0,
+        empty: "No mechanical next edit is derived from this result.",
+        boundary: "These optional edits change controls only. They do not rerun closure or predict the next result." },
+      "default admitted result offers no invented continuation");
+    }
     let mapSummary = "";
     if (editionNumber >= 21) {
       const mapState = await evaluate(client, `(() => {
@@ -616,6 +628,28 @@ async function evaluate(client, expression) {
         }))()`), { state: "contradictory", conflict: 1, admitted: 1 },
         "conflict reconciliation keeps relation admission separate from exclusion conflict");
       }
+      if (editionNumber >= 26) {
+        const removedConflict = await evaluate(client, `(() => {
+          const identity = document.querySelector(".lab-identity code").textContent;
+          const button = document.querySelector('.composition-continuations button[data-continuation-id^="exclusion-"]');
+          const state = document.querySelector(".lab-state").textContent;
+          button.click();
+          const form = document.getElementById("composition-lab-form");
+          return { label: button.textContent, applied: button.dataset.applied,
+            exclusions: form.querySelectorAll('input[name="exclusions"]:checked').length,
+            identitySame: document.querySelector(".lab-identity code").textContent === identity,
+            stateSame: document.querySelector(".lab-state").textContent === state,
+            alignment: document.getElementById("composition-query-plan").dataset.resultAlignment,
+            status: document.querySelector(".composition-continuations__status").textContent };
+        })()`);
+        assert.equal(removedConflict.applied, "true", "conflict continuation applies explicitly");
+        assert.match(removedConflict.label, /^Remove .* exclusion$/);
+        assert.equal(removedConflict.exclusions, 0, "conflict continuation changes only its exclusion");
+        assert.equal(removedConflict.identitySame, true, "conflict continuation retains old result identity");
+        assert.equal(removedConflict.stateSame, true, "conflict continuation does not rerun closure");
+        assert.equal(removedConflict.alignment, "controls-changed", "conflict continuation marks result stale");
+        assert.match(removedConflict.status, /^Applied to controls:/);
+      }
       const loadedFrontier = await evaluate(client, `(() => {
         document.querySelector('[data-load-starter="delegated-compliance-frontier"]').click();
         const form = document.getElementById("composition-lab-form");
@@ -667,6 +701,37 @@ async function evaluate(client, expression) {
           `document.getElementById("composition-query-plan").dataset.resultAlignment`),
         "matches-displayed-result", "frontier result remains aligned to its controls");
       }
+      if (editionNumber >= 26) {
+        const frontierContinuation = await evaluate(client, `(() => {
+          const form = document.getElementById("composition-lab-form");
+          const edges = form.elements.edges;
+          const button = document.querySelector('.composition-continuations button[data-continuation-id*="raise-edges"]');
+          const identity = document.querySelector(".lab-identity code").textContent;
+          const state = document.querySelector(".lab-state").textContent;
+          edges.value = "3";
+          edges.dispatchEvent(new Event("input", { bubbles: true }));
+          button.click();
+          const refused = { edges: edges.value, applied: button.dataset.applied || "",
+            status: document.querySelector(".composition-continuations__status").textContent };
+          edges.value = "1";
+          edges.dispatchEvent(new Event("input", { bubbles: true }));
+          button.click();
+          return { label: button.textContent, refused, after: edges.value,
+            applied: button.dataset.applied,
+            identitySame: document.querySelector(".lab-identity code").textContent === identity,
+            stateSame: document.querySelector(".lab-state").textContent === state,
+            alignment: document.getElementById("composition-query-plan").dataset.resultAlignment };
+        })()`);
+        assert.match(frontierContinuation.label, /^Raise edges budget: 1 → 2$/);
+        assert.deepEqual(frontierContinuation.refused, { edges: "3", applied: "",
+          status: "Not applied: controls changed since this result." },
+        "stale continuation never overwrites a manual control edit");
+        assert.equal(frontierContinuation.after, "2", "fresh continuation raises the exact edge bound");
+        assert.equal(frontierContinuation.applied, "true");
+        assert.equal(frontierContinuation.identitySame, true, "budget edit retains old result identity");
+        assert.equal(frontierContinuation.stateSame, true, "budget edit does not rerun closure");
+        assert.equal(frontierContinuation.alignment, "controls-changed", "budget edit marks old result stale");
+      }
       const modified = await evaluate(client, `(() => {
         const problem = document.getElementById("composition-lab-form").elements.problem;
         problem.value += " Modified";
@@ -683,7 +748,8 @@ async function evaluate(client, expression) {
         planBoundary: editionNumber >= 23 ?
           "Controls changed: the displayed result belongs to the previous request. Run again to evaluate this plan." : "" },
       "editing clears authored-route identity without persistence");
-      starterSummary = " starters=5 conflict=contradictory frontier=truncated";
+      starterSummary = " starters=5 conflict=contradictory frontier=truncated" +
+        (editionNumber >= 26 ? " continuations=explicit" : "");
     }
     let focusSummary = "";
     if (editionNumber >= 18) {

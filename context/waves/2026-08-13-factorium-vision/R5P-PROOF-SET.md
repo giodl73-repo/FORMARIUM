@@ -111,6 +111,8 @@ The finite emitted-record work-budget rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-25.md`.
 The executed-request reconciliation rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-26.md`.
+The explicit next-request continuation rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-27.md`.
 
 ### Composition-query rehearsal boundary
 
@@ -323,4 +325,11 @@ tests exhaustive selected-control partitioning, distinct structural
 non-traversal reasons, exact four-budget ledgers, reverse-direction custody,
 inherited identity, and unselected-route boundaries. It is not semantic
 evaluation, recommendation, comprehension, task-success, or external-reader
+evidence.
+
+Internal preflight 27 adds the `sim-26` Explicit Continuations projection. It
+tests reason-bound single-control edits, exact before-value revalidation,
+visible unavailable actions, retained result identity/state, and explicit
+run separation. It is not a recommendation, result prediction, semantic
+repair, successful-rerun, comprehension, task-success, or external-reader
 evidence.
