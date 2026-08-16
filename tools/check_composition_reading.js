@@ -31,13 +31,17 @@ for (const relation of relations) {
     seen.add(artifact);
     const isView = artifact.startsWith("view:");
     const owner = isView ? artifact.slice(5) : artifact.split(":")[1].split("/")[0];
-    bindings.push({
+    const binding = {
       artifact,
       label: artifact.split("/").pop().split(":").pop().replace(/-/g, " "),
       pageTitle: owner.replace(/-/g, " "),
       kind: isView ? "view" : "anchor",
       href: `entries/${isView ? "view" : "entry"}-${owner}.html`
-    });
+    };
+    if (!isView) {
+      binding.focusHref = `${binding.href}#factor-focus-${artifact.slice("factor:".length).replace("/", "-")}`;
+    }
+    bindings.push(binding);
   }
 }
 bindings.sort((left, right) => left.artifact.localeCompare(right.artifact));
@@ -69,6 +73,9 @@ assert.equal(basic.pages.length, 2, "two deduplicated book pages");
 assert.deepEqual(basic.pages.map((page) => page.stage), ["start", "evaluate"],
   "anchor precedes evaluative view");
 assert.equal(basic.pages[0].bindings.length, 2, "both endpoint factors remain visible");
+assert.ok(basic.pages[0].focusHref.endsWith(
+  `#factor-focus-${f1.source.slice("factor:".length).replace("/", "-")}`),
+"route link focuses the selected factor");
 assert.deepEqual(basic.pages[0].bindings.map((binding) => binding.graphRole).sort(),
   ["required", "seed"], "seed and derived roles remain distinct");
 
@@ -80,6 +87,16 @@ assert.deepEqual(reverse.pages.map((page) => page.href), basic.pages.map((page) 
   "direction preserves exact owning pages");
 assert.equal(reverse.pages[0].bindings.find((binding) => binding.artifact === f1.target).graphRole,
   "seed", "reverse-selected endpoint remains the seed");
+assert.ok(reverse.pages[0].focusHref.endsWith(
+  `#factor-focus-${f1.target.slice("factor:".length).replace("/", "-")}`),
+"reverse route focuses the reverse-selected factor");
+
+const bothSeedsResult = lab.runComposition(request({ seeds: [f1.target, f1.source] }), labPayload);
+const bothSeeds = reading.buildReadingRoute(bothSeedsResult, readingPayload, "1".repeat(64));
+const lexicalSeed = [f1.source, f1.target].sort()[0];
+assert.ok(bothSeeds.pages[0].focusHref.endsWith(
+  `#factor-focus-${lexicalSeed.slice("factor:".length).replace("/", "-")}`),
+"same-stage focus uses deterministic artifact order");
 
 const conflictResult = lab.runComposition(request({ exclusions: [f1.target] }), labPayload);
 const conflict = reading.buildReadingRoute(conflictResult, readingPayload, "c".repeat(64));
@@ -120,6 +137,10 @@ const duplicatePayload = JSON.parse(JSON.stringify(readingPayload));
 duplicatePayload.bindings[1].artifact = duplicatePayload.bindings[0].artifact;
 assert.throws(() => reading.validatePayload(duplicatePayload), /Duplicate reading binding/,
   "duplicate binding fails closed");
+const invalidFocusPayload = JSON.parse(JSON.stringify(readingPayload));
+invalidFocusPayload.bindings.find((binding) => binding.kind === "anchor").focusHref = "entries/entry.html#unknown";
+assert.throws(() => reading.validatePayload(invalidFocusPayload), /invalid factor focus/,
+  "malformed focus destination fails closed");
 
 console.log(`OK bindings=${bindings.length} basic_pages=${basic.pages.length} ` +
   `frontier_pages=${frontier.pages.length} conflict=${conflictResult.state}`);

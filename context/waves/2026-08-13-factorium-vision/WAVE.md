@@ -1151,3 +1151,25 @@ ordering, unknown-artifact rejection, actual submission, and links. The
 compact design pass and nine-role fixed point report zero open P1/P2 findings.
 No graph expansion, relevance ranking, reader-success, canonical guide,
 persistence, network, or publication claim is admitted.
+
+## 2026-08-16 exact composition factor-focus continuation
+
+Plan review: repair the remaining coarse handoff from an exact factor node to
+the top of its whole entry. Generate one edition-local fragment for each of
+the 12 reviewed relation endpoints, keep page deduplication fragment-free,
+choose focus by structural stage then artifact order, reveal a compact card
+only under CSS `:target`, and link it to the existing Root factorization.
+Retain exact factor/source custody, create no scope fragments, modify no
+canonical Markdown, and preserve `sim-17` exactly.
+
+Result review: `sim-18` adds 12 exact focus cards across six anchor-entry
+pages. The default F1 Start link lands on `dependency source, target, and
+direction`, prints its full factor artifact, and hands off to System
+Composition's source-owned Root factorization. Reverse traversal focuses the
+reverse-selected endpoint; same-stage factors use lexical artifact order;
+ordinary entry visits show no card. Renderer, pure-route, site-fragment, and
+live Edge checks cover IDs, counts, deduplication, default hidden and targeted
+visible states, source handoff, reduced motion, and local targets. The compact
+design pass and seven-role fixed point report zero open P1/P2 findings. No
+canonical factor anchor, exact prose span, findability improvement, reader
+success, persistence, or publication claim is admitted.

@@ -7,7 +7,10 @@ const { pathToFileURL } = require("node:url");
 const { spawn } = require("node:child_process");
 
 const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-17");
-const screenshotPath = path.resolve(process.argv[3] || "target/sim17-composition-reading.png");
+const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"));
+const editionNumber = Number(manifest.edition.split("-")[1]);
+const screenshotPath = path.resolve(process.argv[3] ||
+  `target/${manifest.edition.replace("-", "")}-composition-reading.png`);
 const edgeCandidates = [
   process.env.EDGE_PATH,
   "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
@@ -130,7 +133,8 @@ async function evaluate(client, expression) {
     assert.deepEqual(route.stages, ["Start", "Evaluate"], "browser route order");
     assert.equal(route.bindings.length, 3, "browser retains three exact graph bindings");
     for (const href of route.hrefs) {
-      assert.ok(fs.existsSync(path.join(siteRoot, href)), `browser route target exists: ${href}`);
+      assert.ok(fs.existsSync(path.join(siteRoot, href.split("#")[0])),
+        `browser route target exists: ${href}`);
     }
     const metrics = await client.call("Page.getLayoutMetrics");
     const width = Math.ceil(metrics.cssContentSize.width);
@@ -149,8 +153,52 @@ async function evaluate(client, expression) {
       `[...document.querySelectorAll(".composition-reading-route__page")].map(node => node.getBoundingClientRect().top)`);
     assert.ok(mobileCardTops[1] > mobileCardTops[0],
       "reading route collapses to one column at 600 pixels");
+    let focusSummary = "";
+    if (editionNumber >= 18) {
+      assert.match(route.hrefs[0], /#factor-focus-[a-z0-9-]+$/,
+        "start route carries exact factor focus");
+      await evaluate(client, `location.href = ${JSON.stringify(route.hrefs[0])}`);
+      let focus;
+      for (let attempt = 0; attempt < 80; attempt += 1) {
+        focus = await evaluate(client, `(() => {
+          const target = document.querySelector(location.hash);
+          const root = target?.querySelector('a[href^="#"]');
+          return {
+            ready: document.readyState,
+            hash: location.hash,
+            display: target ? getComputedStyle(target).display : "",
+            kicker: target?.querySelector(".factor-focus__kicker")?.textContent || "",
+            label: target?.querySelector(".factor-focus__title")?.textContent || "",
+            artifact: target?.querySelector("code")?.textContent || "",
+            rootHref: root?.getAttribute("href") || "",
+            rootExists: root ? Boolean(document.querySelector(root.getAttribute("href"))) : false
+          };
+        })()`);
+        if (focus.ready === "complete" && focus.display) break;
+        await delay(100);
+      }
+      assert.equal(focus.display, "block", "targeted factor focus is visible");
+      assert.equal(focus.kicker, "Composition focus", "focus card status");
+      assert.match(focus.artifact, /^factor:/, "focus card retains exact factor artifact");
+      assert.equal(focus.rootExists, true, "focus card hands off to Root factorization");
+      const focusMetrics = await client.call("Page.getLayoutMetrics");
+      const focusScreenshot = await client.call("Page.captureScreenshot", {
+        format: "png",
+        captureBeyondViewport: true,
+        clip: {
+          x: 0,
+          y: 0,
+          width: Math.ceil(focusMetrics.cssContentSize.width),
+          height: Math.ceil(focusMetrics.cssContentSize.height),
+          scale: 1
+        }
+      });
+      const focusScreenshotPath = screenshotPath.replace(/\.png$/i, "-focus.png");
+      fs.writeFileSync(focusScreenshotPath, Buffer.from(focusScreenshot.data, "base64"));
+      focusSummary = ` focus=${focus.hash.slice(1)} focus_screenshot=${focusScreenshotPath}`;
+    }
     console.log(`OK state=${state.labState} pages=${state.routePages} ` +
-      `stages=${route.stages.join(",")} mobile=one-column screenshot=${screenshotPath}`);
+      `stages=${route.stages.join(",")} mobile=one-column screenshot=${screenshotPath}${focusSummary}`);
   } finally {
     if (client) client.close();
     browser.kill();

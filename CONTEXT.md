@@ -228,6 +228,16 @@ stages rather than relevance rankings. Exact graph roles and conflict
 dispositions remain disclosed, while frontiers and unreachable predecessors
 do not expand the route. `sim-16` remains byte-identical.
 
+The nineteenth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-19.md`
+adds exact Composition Factor Focus to `sim-18`. Twelve endpoint bindings now
+carry edition-local fragments across six owning anchor-entry pages. A targeted
+CSS-only card shows the exact factor label and ID, states generated-navigation
+custody, and links into the existing Root factorization. Cards remain hidden
+during ordinary reading; scope views remain whole-page destinations. This is
+not canonical source markup or an exact prose-span annotation. `sim-17`
+remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

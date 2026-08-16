@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -20,6 +20,7 @@ $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
 $compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
 $compositionReadingSpec = Join-Path $workspace "specs\COMPOSITION-READING-ROUTE.md"
+$compositionFocusSpec = Join-Path $workspace "specs\COMPOSITION-FACTOR-FOCUS.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -43,6 +44,7 @@ $labStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set
 $labScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-lab.js"
 $compositionReadingStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reading.css"
 $compositionReadingScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reading.js"
+$compositionFocusStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-focus.css"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -69,6 +71,7 @@ $artifactTitle = switch ($Edition) {
     "sim-15" { "Factorium Proof Set Composition Explorer Simulation 15" }
     "sim-16" { "Factorium Proof Set Bounded Composition Lab Simulation 16" }
     "sim-17" { "Factorium Proof Set Closure Reading Route Simulation 17" }
+    "sim-18" { "Factorium Proof Set Exact Factor Focus Simulation 18" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -545,6 +548,9 @@ if ($editionNumber -ge 16) {
 if ($editionNumber -ge 17) {
     Add-ProofSource $compositionReadingSpec
 }
+if ($editionNumber -ge 18) {
+    Add-ProofSource $compositionFocusSpec
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -672,6 +678,8 @@ $siteIndex = $null
 $compositionChecks = $null
 $compositionLabChecks = $null
 $compositionReadingChecks = $null
+$compositionFocusChecks = $null
+$compositionFocusRecords = @()
 if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
@@ -1082,6 +1090,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 18) {
+        foreach ($asset in @($compositionFocusStyle, $compositionFocusSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-focus asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1201,6 +1216,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 17) {
         $siteCssParts += (Get-Content -LiteralPath $compositionReadingStyle -Raw)
+    }
+    if ($editionNumber -ge 18) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionFocusStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -1324,13 +1342,30 @@ if ($editionNumber -ge 7) {
                     if (-not $pageBySource.ContainsKey($currentEntry.source)) {
                         throw "Composition reading anchor page is absent: $($currentEntry.source)"
                     }
-                    $factorBindings[$artifact] = [ordered]@{
+                    $factorBinding = [ordered]@{
                         artifact = $artifact
                         label = $fields[1]
                         pageTitle = $currentEntry.title
                         kind = "anchor"
                         href = "entries/$($pageBySource[$currentEntry.source])"
                     }
+                    if ($editionNumber -ge 18) {
+                        $focusId = "factor-focus-$($artifact.Substring("factor:".Length).Replace("/", "-"))"
+                        if ($focusId -notmatch '^factor-focus-[a-z0-9]+(?:-[a-z0-9]+)*$') {
+                            throw "Composition factor focus ID is invalid: $focusId"
+                        }
+                        $factorBinding.focusHref = "$($factorBinding.href)#$focusId"
+                        $compositionFocusRecords += [ordered]@{
+                            artifact = $artifact
+                            label = $fields[1]
+                            entryTitle = $currentEntry.title
+                            source = $currentEntry.source
+                            page = $factorBinding.href
+                            focusId = $focusId
+                            focusHref = $factorBinding.focusHref
+                        }
+                    }
+                    $factorBindings[$artifact] = $factorBinding
                 }
                 elseif ($line -eq "end-entry") {
                     $currentEntry = $null
@@ -1376,9 +1411,32 @@ if ($editionNumber -ge 7) {
                 bindings = $readingBindings
             }
             $compositionReadingJson = $compositionReadingPayload | ConvertTo-Json -Depth 5 -Compress
+            $readingRuntimeText = Get-Content -LiteralPath $compositionReadingScript -Raw
+            $focusValidationLine = '      if (binding.focusHref !== undefined) assert(/^entries\/[a-z0-9-]+\.html#factor-focus-[a-z0-9-]+$/.test(binding.focusHref), "Reading binding has invalid factor focus destination");'
+            $orderedNodesLine = '    var orderedNodes = result.graph.nodes.slice().sort(function (left, right) { return left.artifact.localeCompare(right.artifact); });'
+            $orderedLoopLine = '    orderedNodes.forEach(function (node) {'
+            $focusCreateLine = '        if (binding.focusHref) page.focusHref = binding.focusHref;'
+            $focusUpdateLine = '          if (binding.focusHref) page.focusHref = binding.focusHref;'
+            foreach ($marker in @($focusValidationLine, $orderedNodesLine, $orderedLoopLine, $focusCreateLine, $focusUpdateLine, 'page.focusHref || page.href')) {
+                if (-not $readingRuntimeText.Contains($marker)) {
+                    throw "Composition reading runtime extension marker drift: $marker"
+                }
+            }
+            if ($editionNumber -eq 17) {
+                foreach ($line in @($focusValidationLine, $orderedNodesLine, $focusUpdateLine, $focusCreateLine)) {
+                    $readingRuntimeText = $readingRuntimeText.Replace("$line`r`n", "").Replace("$line`n", "")
+                }
+                $readingRuntimeText = $readingRuntimeText.Replace($orderedLoopLine, '    result.graph.nodes.forEach(function (node) {')
+                $readingRuntimeText = $readingRuntimeText.Replace('page.focusHref || page.href', 'page.href')
+                foreach ($marker in @($focusValidationLine, $orderedNodesLine, $orderedLoopLine, $focusCreateLine, $focusUpdateLine, 'page.focusHref || page.href')) {
+                    if ($readingRuntimeText.Contains($marker)) {
+                        throw "Composition Reading sim-17 extension removal failed: $marker"
+                    }
+                }
+            }
             [System.IO.File]::WriteAllText(
                 (Join-Path $siteAssetDirectory "composition-reading.js"),
-                (Get-Content -LiteralPath $compositionReadingScript -Raw),
+                $readingRuntimeText,
                 [System.Text.UTF8Encoding]::new($false)
             )
             $compositionReadingChecks = [ordered]@{
@@ -1392,6 +1450,22 @@ if ($editionNumber -ge 7) {
                 authority = "existing book pages"
                 persistence = "none"
                 specification = "specs/COMPOSITION-READING-ROUTE.md"
+            }
+            if ($editionNumber -ge 18) {
+                if ($compositionFocusRecords.Count -ne 12 -or
+                    @($compositionFocusRecords.focusId | Sort-Object -Unique).Count -ne 12 -or
+                    @($compositionFocusRecords.source | Sort-Object -Unique).Count -ne 6) {
+                    throw "Composition factor focus requires 12 unique factors across 6 anchor pages"
+                }
+                $compositionFocusChecks = [ordered]@{
+                    factor_focus_records = $compositionFocusRecords.Count
+                    anchor_pages = @($compositionFocusRecords.source | Sort-Object -Unique).Count
+                    scope_focus_records = 0
+                    target_behavior = "CSS :target; JavaScript not required"
+                    source_handoff = "existing Root factorization heading"
+                    canonical_source_mutation = $false
+                    specification = "specs/COMPOSITION-FACTOR-FOCUS.md"
+                }
             }
         }
     }
@@ -1869,6 +1943,17 @@ if ($editionNumber -ge 7) {
                 -not $compositionLabHtml.Contains('src="assets/composition-reading.js"')) {
                 throw "Composition reading page integration failed"
             }
+            if ($editionNumber -ge 18) {
+                $focusSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionFocusSpec)])"
+                $readingContractLink = "<a href=`"$readingSpecPage`">Read the reading-route contract</a>"
+                if (-not $compositionLabHtml.Contains($readingContractLink)) {
+                    throw "Composition factor-focus contract marker drift"
+                }
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $readingContractLink,
+                    "$readingContractLink<a href=`"$focusSpecPage`">Read the factor-focus contract</a>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2012,6 +2097,42 @@ if ($editionNumber -ge 7) {
             $pagination = "<nav class=`"site-pagination`" aria-label=`"Entry sequence`">$previousLink$nextLink</nav>"
         }
 
+        $factorFocusHtml = ""
+        if ($editionNumber -ge 18) {
+            $sourceFocusRecords = @($compositionFocusRecords | Where-Object {
+                $_.source.Equals($source, [System.StringComparison]::OrdinalIgnoreCase)
+            })
+            if ($sourceFocusRecords.Count -gt 0) {
+                $rootFactorizationMatches = [regex]::Matches(
+                    $segment,
+                    '<h2 id="([^"]+)">Root\s*factorization</h2>',
+                    [System.Text.RegularExpressions.RegexOptions]::Singleline
+                )
+                if ($rootFactorizationMatches.Count -ne 1) {
+                    throw "Composition factor focus requires one Root factorization heading: $relativeSource"
+                }
+                $rootFactorizationId = $rootFactorizationMatches[0].Groups[1].Value
+                $focusCards = [System.Text.StringBuilder]::new()
+                foreach ($focusRecord in $sourceFocusRecords | Sort-Object artifact) {
+                    $encodedFocusId = [System.Net.WebUtility]::HtmlEncode($focusRecord.focusId)
+                    $encodedFocusLabel = [System.Net.WebUtility]::HtmlEncode($focusRecord.label)
+                    $encodedFocusArtifact = [System.Net.WebUtility]::HtmlEncode($focusRecord.artifact)
+                    $encodedFocusEntry = [System.Net.WebUtility]::HtmlEncode($focusRecord.entryTitle)
+                    $focusTitleId = "$encodedFocusId-title"
+                    [void]$focusCards.AppendLine(@"
+<aside id="$encodedFocusId" class="factor-focus" aria-labelledby="$focusTitleId">
+<p class="factor-focus__kicker">Composition focus</p>
+<p id="$focusTitleId" class="factor-focus__title">$encodedFocusLabel</p>
+<p>This generated landing point identifies an exact factor owned by <strong>$encodedFocusEntry</strong>. The repository entry remains authoritative.</p>
+<code>$encodedFocusArtifact</code>
+<a href="#$rootFactorizationId">Read the owning Root factorization</a>
+</aside>
+"@)
+                }
+                $factorFocusHtml = "<section class=`"factor-focus-stack`" aria-label=`"Composition factor focus`">$focusCards</section>"
+            }
+        }
+
         $pageHtml = @"
 <!doctype html>
 <html lang="en">
@@ -2036,7 +2157,7 @@ if ($editionNumber -ge 7) {
     }
 ) / $encodedPageTitle</nav>
 $readerControls
-<main id="main-content" class="site-entry" data-source-path="$encodedSource">$segment</main>
+<main id="main-content" class="site-entry" data-source-path="$encodedSource">$factorFocusHtml$segment</main>
 $pagination
 </div>
 <footer class="site-footer">Canonical source: $encodedSource · simulation projection</footer>
@@ -2154,6 +2275,9 @@ $pageScripts
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1
     }
+    if ($editionNumber -ge 18) {
+        $siteChecks.composition_factor_focus_records = $compositionFocusRecords.Count
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -2206,6 +2330,9 @@ if ($editionNumber -ge 16) {
 }
 if ($editionNumber -ge 17) {
     $manifestRecord.composition_reading_checks = $compositionReadingChecks
+}
+if ($editionNumber -ge 18) {
+    $manifestRecord.composition_factor_focus_checks = $compositionFocusChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"
@@ -2263,6 +2390,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 17) {
         Write-Output "site_composition_reading_bindings=$($compositionReadingChecks.artifact_bindings)"
+    }
+    if ($editionNumber -ge 18) {
+        Write-Output "site_composition_factor_focus_records=$($compositionFocusChecks.factor_focus_records)"
     }
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"

@@ -265,3 +265,9 @@ whether admitted closure nodes can become a short, exact path into existing
 book pages without expanding the graph or creating a second authority. Its
 structural order, successful links, and browser execution are not relevance,
 findability, comprehension, return-use, or external-reader evidence.
+
+Internal preflight 19 adds the `sim-18` Composition Factor Focus projection.
+It tests exact endpoint fragments, CSS target visibility, and handoff to an
+existing Root factorization without changing canonical source. The generated
+cards are edition-local navigation metadata, not stable public anchors,
+source-span annotations, observed findability, or external-reader evidence.

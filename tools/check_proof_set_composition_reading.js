@@ -14,7 +14,8 @@ const labRuntime = fs.readFileSync(path.join(siteRoot, "assets", "composition-la
 const routeRuntime = fs.readFileSync(path.join(siteRoot, "assets", "composition-reading.js"), "utf8");
 const siteData = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-17", "reading-route edition");
+const editionNumber = Number(manifest.edition.split("-")[1]);
+assert.ok(Number.isInteger(editionNumber) && editionNumber >= 17, "reading-route edition");
 assert.equal(manifest.composition_reading_checks.artifact_bindings, 18, "all artifacts bound");
 assert.equal(manifest.composition_reading_checks.endpoint_bindings, 12, "all endpoints bound");
 assert.equal(manifest.composition_reading_checks.scope_bindings, 6, "all scopes bound");

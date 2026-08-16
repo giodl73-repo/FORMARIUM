@@ -30,6 +30,7 @@
       });
       assert(/^entries\/[a-z0-9-]+\.html$/.test(binding.href),
         "Reading binding has invalid local destination");
+      if (binding.focusHref !== undefined) assert(/^entries\/[a-z0-9-]+\.html#factor-focus-[a-z0-9-]+$/.test(binding.focusHref), "Reading binding has invalid factor focus destination");
     });
   }
 
@@ -54,7 +55,8 @@
       return conflict.artifact;
     }));
     var pages = new Map();
-    result.graph.nodes.forEach(function (node) {
+    var orderedNodes = result.graph.nodes.slice().sort(function (left, right) { return left.artifact.localeCompare(right.artifact); });
+    orderedNodes.forEach(function (node) {
       var binding = bindingByArtifact.get(node.artifact);
       assert(binding, "No reading binding for admitted artifact " + node.artifact);
       if (node.class === "evaluative") {
@@ -74,6 +76,7 @@
           stageRank: stage.rank,
           bindings: []
         };
+        if (binding.focusHref) page.focusHref = binding.focusHref;
         pages.set(binding.href, page);
       } else {
         assert(page.pageTitle === binding.pageTitle && page.kind === binding.kind,
@@ -82,6 +85,7 @@
           page.stage = stage.id;
           page.stageLabel = stage.label;
           page.stageRank = stage.rank;
+          if (binding.focusHref) page.focusHref = binding.focusHref;
         }
       }
       page.bindings.push({
@@ -145,7 +149,7 @@
       heading.append(element(documentObject, "span", "composition-reading-route__stage composition-reading-route__stage--" + page.stage,
         page.stageLabel));
       var link = element(documentObject, "a", "", page.pageTitle);
-      link.href = page.href;
+      link.href = page.focusHref || page.href;
       heading.appendChild(link);
       item.append(heading, element(documentObject, "p", "", explanation(page)));
       var details = element(documentObject, "details", "composition-reading-route__bindings");
