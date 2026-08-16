@@ -177,6 +177,13 @@ the directional `feeds` relation in reverse without reversing its meaning, and
 ends `incomplete` because user-outcome evidence is absent. Edition capability
 boundaries are centralized while `sim-10` remains an exact regression.
 
+The thirteenth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-13.md`
+makes problem-led composition a first-class homepage route in `sim-12`. Three
+state-labelled cards link the exact admitted worksheets before the orientation
+journey and entry search, while explicitly remaining worked examples rather
+than a live Workbench. `sim-11` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

@@ -1029,3 +1029,22 @@ improvement decision unresolved. `sim-11` adds the guide as a separate
 Applications destination. The compact design pass and seven-role fixed point
 report zero open P1/P2 findings. No production observation, threshold advice,
 automated loop expansion, or reader evidence is claimed.
+
+## 2026-08-16 problem-led homepage continuation
+
+Plan review: correct the proof site's entry-search emphasis now that three
+materially distinct Composition Query worksheets exist. Add a first-class
+problem-led route before the method journey and search; bind it only to exact
+selected guides; show trace and local decision states; preserve table
+authority; and deny live construction, inferred closure, or reader-evidence
+claims. Retain `sim-11` exactly.
+
+Result review: `sim-12` now opens with three recognizable questions covering
+system dependency, performance evidence, and alert outcomes. Each card states
+its complete/unresolved/incomplete disposition and resolves to the exact
+trace-bound reading page. The homepage says the tables remain authoritative
+and the cards are worked examples, not a live builder. Renderer checks require
+three unique selected targets, and the composition stylesheet is edition-
+gated. The compact design pass and five-role fixed point report zero open
+P1/P2 findings. This establishes deterministic navigation hierarchy only, not
+observed findability, interactive Workbench behavior, or reader success.

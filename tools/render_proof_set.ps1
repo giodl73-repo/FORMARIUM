@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -24,6 +24,7 @@ $readerScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof
 $contextStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.css"
 $contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.js"
 $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-site.css"
+$compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -44,6 +45,7 @@ $artifactTitle = switch ($Edition) {
     "sim-09" { "Factorium Proof Set Composition Worksheet Simulation 09" }
     "sim-10" { "Factorium Proof Set Cross-Domain Composition Simulation 10" }
     "sim-11" { "Factorium Proof Set Incomplete Feedback Composition Simulation 11" }
+    "sim-12" { "Factorium Proof Set Problem-Led Reading Simulation 12" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -526,7 +528,18 @@ if ($editionNumber -ge 4) {
         Get-NumberedSelections $supplement
     )
     $guideSelections = @(Get-GuideSelections)
-    $expectedGuideCount = 2 + [Math]::Max(0, $editionNumber - 8)
+    $expectedGuideCount = if ($editionNumber -ge 11) {
+        5
+    }
+    elseif ($editionNumber -eq 10) {
+        4
+    }
+    elseif ($editionNumber -eq 9) {
+        3
+    }
+    else {
+        2
+    }
     if ($numberedSelections.Count -ne 122 -or $guideSelections.Count -ne $expectedGuideCount) {
         throw "Search selection mismatch: numbered=$($numberedSelections.Count) guides=$($guideSelections.Count)"
     }
@@ -987,13 +1000,17 @@ if ($editionNumber -ge 7) {
         throw "Site chapter coverage mismatch: chapters=$($siteChapters.Count) records=$($chapterBySearchPath.Count)"
     }
 
-    $siteCss = @(
+    $siteCssParts = @(
         (Get-Content -LiteralPath $style -Raw),
         (Get-Content -LiteralPath $searchStyle -Raw),
         (Get-Content -LiteralPath $readerStyle -Raw),
         (Get-Content -LiteralPath $contextStyle -Raw),
         (Get-Content -LiteralPath $siteStyle -Raw)
-    ) -join "`n"
+    )
+    if ($editionNumber -ge 12) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionStyle -Raw)
+    }
+    $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site.css"),
         $siteCss,
@@ -1078,6 +1095,70 @@ if ($editionNumber -ge 7) {
         throw "First journey target count mismatch: $($firstJourneySources.Count)"
     }
 
+    $problemLedTargets = 0
+    $problemSection = ""
+    $homeProblemNav = ""
+    $nestedProblemNav = ""
+    $heroDeck = "A linked reference for selecting senses, comparing decompositions, choosing bounded relations, and recognizing structures that fail."
+    if ($editionNumber -ge 12) {
+        $problemJourneys = @(
+            [ordered]@{
+                state = "Complete trace · structural review"
+                title = "Review a system dependency"
+                description = "Join dependency and interface concepts, run a structural constraint, and retain the exact closure trace."
+                source = $compositionWorksheet
+            },
+            [ordered]@{
+                state = "Complete trace · unresolved claim"
+                title = "Evaluate a performance claim"
+                description = "Separate observations from inference and see why complete graph custody does not settle a causal claim."
+                source = $evidenceWorksheet
+            },
+            [ordered]@{
+                state = "Incomplete trace · unresolved decision"
+                title = "Trace an alert to user outcomes"
+                description = "Traverse feedback in reverse and preserve the missing outcome evidence instead of inventing an answer."
+                source = $feedbackWorksheet
+            }
+        )
+        $problemSources = [System.Collections.Generic.HashSet[string]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        $problemItems = [System.Text.StringBuilder]::new()
+        foreach ($problem in $problemJourneys) {
+            $problemSource = [System.IO.Path]::GetFullPath($problem.source)
+            if (-not $problemSources.Add($problemSource)) {
+                throw "Problem-led route repeats a source: $problemSource"
+            }
+            if (-not $pageBySource.ContainsKey($problemSource)) {
+                throw "Problem-led route source is absent from the proof selection: $problemSource"
+            }
+            $encodedState = [System.Net.WebUtility]::HtmlEncode($problem.state)
+            $encodedTitle = [System.Net.WebUtility]::HtmlEncode($problem.title)
+            $encodedDescription = [System.Net.WebUtility]::HtmlEncode($problem.description)
+            [void]$problemItems.AppendLine(
+                "<li><span class=`"site-problem-state`">$encodedState</span><a href=`"entries/$($pageBySource[$problemSource])`">$encodedTitle</a><p>$encodedDescription</p></li>"
+            )
+        }
+        $problemLedTargets = $problemSources.Count
+        if ($problemLedTargets -ne 3) {
+            throw "Problem-led target count mismatch: $problemLedTargets"
+        }
+        $problemSection = @"
+
+<section id="problems" class="site-problems" aria-labelledby="site-problems-heading">
+<p class="site-kicker">Problem-led reading</p>
+<h2 id="site-problems-heading">Start with what you need to decide</h2>
+<p class="site-problems__intro">Each worked Composition Query selects several concepts and senses, follows a bounded typed closure, runs declared checks, and flattens the graph into a traceable guide.</p>
+<ul class="site-problem-grid">$problemItems</ul>
+<p class="site-problem-note"><strong>Worked examples, not a live builder.</strong> Choose one to inspect its declared graph, exclusions, Evaluation, state, and projection. Interactive construction remains later Workbench scope.</p>
+</section>
+"@
+        $homeProblemNav = '<a href="#problems">Problems</a>'
+        $nestedProblemNav = '<a href="../index.html#problems">Problems</a>'
+        $heroDeck = "Start from a question you need to answer, follow its bounded concept closure, or look up one entry at a time. The tables remain the authority; worked guides show how several concepts combine."
+    }
+
     $chapterItems = [System.Text.StringBuilder]::new()
     foreach ($chapter in $siteChapters) {
         $encodedChapterTitle = [System.Net.WebUtility]::HtmlEncode($chapter.title)
@@ -1111,14 +1192,14 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$homeProblemNav<a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <section class="site-hero">
 <p class="site-kicker">Proof Set · book-site simulation</p>
 <h1>Structure, Quantity, and Choice</h1>
-<p class="site-hero__deck">A linked reference for selecting senses, comparing decompositions, choosing bounded relations, and recognizing structures that fail.</p>
-</section>
+<p class="site-hero__deck">$heroDeck</p>
+</section>$problemSection
 <section id="start" class="site-start" aria-labelledby="site-start-heading">
 <p class="site-kicker">First journey</p>
 <h2 id="site-start-heading">From a vague problem to a bounded factorization</h2>
@@ -1194,7 +1275,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedProblemNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
@@ -1292,7 +1373,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedProblemNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <div class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
@@ -1404,6 +1485,7 @@ $pageScripts
         missing_local_targets = $missingSiteTargets.Count
         previous_next_sequence_records = $searchRecords.Count
         first_journey_targets = $firstJourneySources.Count
+        problem_led_targets = $problemLedTargets
         canonical_content_authority = "repository Markdown and reference metadata"
         execution = "multi-page static files; no server"
         identity = $siteIdentity
@@ -1498,6 +1580,7 @@ if ($editionNumber -ge 7) {
     Write-Output "site_chapter_subsections=$($siteChecks.chapter_subsections)"
     Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"
     Write-Output "site_first_journey_targets=$($siteChecks.first_journey_targets)"
+    Write-Output "site_problem_led_targets=$($siteChecks.problem_led_targets)"
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"
 }

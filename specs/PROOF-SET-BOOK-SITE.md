@@ -1,6 +1,6 @@
 # Proof Set Book Site Simulation Contract
 
-Status: `sim-08` publication prototype; not canonical interchange, reader
+Status: `sim-12` publication prototype; not canonical interchange, reader
 evidence, `preview-01`, or Factorium Workbench
 
 ## Purpose
@@ -17,15 +17,15 @@ a disposable generated projection of those sources.
 
 | Route | Role | Content authority |
 |---|---|---|
-| `index.html` | title, first journey, search, and chapter discovery | generated selection and search metadata |
+| `index.html` | title, problem-led examples, first journey, search, and chapter discovery | generated selection and search metadata |
 | `chapters/*.html` | curated book sequence and subsection routes | `VOLUME.md`, the admitted simulation supplement, and guide selection |
 | `entries/*.html` | one included Markdown source per page | exact selected source revision |
 | `assets/*` | shared presentation and static runtime | reviewed simulation assets |
 
 The simulation generates a source page for every included Markdown document.
-Only the 122 selected records and two application guides receive indexed reader
-pages, previous/next order, and adaptive reading controls. Supporting sources
-remain addressable without being promoted into the indexed entry sequence.
+Only the selected records and admitted application guides receive indexed
+reader pages, previous/next order, and adaptive reading controls. Supporting
+sources remain addressable without being promoted into the indexed sequence.
 
 ## Navigation contract
 
@@ -34,11 +34,14 @@ remain addressable without being promoted into the indexed entry sequence.
   compose with text ranking and remain visible in URL state.
 - The homepage first journey links five already selected source pages in one
   ordered orientation route.
+- The problem-led route links exactly three admitted, trace-bound Composition
+  Query worksheets and states each trace/decision outcome without creating an
+  interactive query form.
 - Each indexed record appears in exactly one chapter route.
-- The 122 selected records and two guides appear across exactly 12 chapters;
-  source `###` headings preserve internal subsection routes.
+- The selected records and guides appear across exactly 12 chapters; source
+  `###` headings preserve internal subsection routes.
 - Entry breadcrumbs resolve back to the owning chapter.
-- Previous and next follow the complete 124-destination publication sequence.
+- Previous and next follow the complete indexed publication sequence.
 - Cross-source Markdown links resolve to the generated target page and exact
   rendered fragment when both sources are included.
 - Links outside the selected projection resolve to visible repository sources;
@@ -63,6 +66,7 @@ The renderer must fail on:
 - missing, duplicate, or extra chapter ownership for an indexed record;
 - missing, duplicate, or extra chapter-subsection ownership;
 - a missing or duplicate first-journey source;
+- a missing, duplicate, or extra problem-led Composition Query target;
 - colliding source-page names or rendered identifiers;
 - stale or incomplete generated chapter, entry, or shared-asset sets;
 - a missing local page, asset, or fragment target;
@@ -89,5 +93,7 @@ meaning.
 - production hosting, analytics, accounts, contribution, or editorial tools;
 - open-ended Workbench facets, recommendation, and graph construction beyond
   the selected publication's bounded kind and domain filters;
+- interactive Composition Query construction, inferred closure, persistence,
+  or a form that implies those capabilities;
 - public release identity or guarantees about confidential distribution;
 - schema promotion of Context Profiles or typed relations.
