@@ -109,6 +109,8 @@ The pre-execution Composition Query Plan rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-24.md`.
 The finite emitted-record work-budget rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-25.md`.
+The executed-request reconciliation rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-26.md`.
 
 ### Composition-query rehearsal boundary
 
@@ -315,3 +317,10 @@ canonical record accounting, atomic admission, exact starter propagation,
 receipt/result agreement, and a hard result cap while retaining `sim-23`
 exactly. It is not performance, scale, semantic-completeness, useful-default,
 reader-success, or external-reader evidence.
+
+Internal preflight 26 adds the `sim-25` Result Reconciliation projection. It
+tests exhaustive selected-control partitioning, distinct structural
+non-traversal reasons, exact four-budget ledgers, reverse-direction custody,
+inherited identity, and unselected-route boundaries. It is not semantic
+evaluation, recommendation, comprehension, task-success, or external-reader
+evidence.

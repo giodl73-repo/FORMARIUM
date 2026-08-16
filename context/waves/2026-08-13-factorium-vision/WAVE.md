@@ -1350,3 +1350,35 @@ and standalone SHA-256
 `183846b83e8e9ea82a5eb1e678f6137f454c26a77fc4c7ea6b5896ad1cf033e7`.
 No runtime-performance, scaling, semantic-completeness, useful-default,
 reader-success, publishing, or `preview-01` claim is admitted.
+
+## 2026-08-16 composition result-reconciliation continuation
+
+Plan review: project one identified local result into an exhaustive account of
+what happened to every explicit seed, relation, and exclusion without rerunning
+closure or interpreting problem prose. Partition selected relations exactly
+once into admitted, stopped, capacity-limited, or predecessor-unreached;
+partition exclusions into conflict or inactive; preserve canonical and
+traversal direction; show all four observed budget ledgers; inherit result
+identity; keep unselected routes outside the evaluated set; add the read-only
+surface only to `sim-25`; and retain `sim-24` exactly. The compact design and
+nine-role reviews report zero open P1/P2 findings.
+
+Result review: `sim-25` adds one deterministic `What happened to your request`
+projection before the detailed map. Every selected relation is accounted for
+exactly once as admitted, stopped, capacity-limited, or predecessor-unreached;
+every selected exclusion is conflict or inactive; all seeds and four finite
+budget ledgers reconcile; canonical and traversal direction remain separate;
+and unselected result records fail closed. Book leads with human routes and
+plain structural explanations, Compact retains every decision, and Full adds
+raw reasons, qualifications, digests, and inherited result identity. Pure,
+generated-site, search, live Edge, Clippy, 66 Rust tests, packet verifiers, and
+`.roles` validation pass. `sim-25` has site identity
+`561e46d4e5dea6ea275f8fae256dae740a083bc0331e27f72e978efdf5e4e191`
+and standalone SHA-256
+`70508fd76ed453765d1c80217bab299cc9e66401231761d5e959399a878dfa06`;
+`sim-24` retains site identity
+`f1c09d10a492bbe4548608425dde536d5da11aa76fce96c2c3adedb757cc8f57`
+and standalone SHA-256
+`36bdf398b81ecb614685069748518616072bef40ba3f81eeabcc279e3bbfb22d`.
+No semantic-validity, recommendation, comprehension, useful-selection,
+reader-success, publishing, or `preview-01` claim is admitted.

@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -27,6 +27,7 @@ $compositionMapSpec = Join-Path $workspace "specs\COMPOSITION-CLOSURE-MAP.md"
 $compositionStartersSpec = Join-Path $workspace "specs\COMPOSITION-AUTHORED-STARTERS.md"
 $compositionQueryPlanSpec = Join-Path $workspace "specs\COMPOSITION-QUERY-PLAN.md"
 $compositionWorkBudgetSpec = Join-Path $workspace "specs\COMPOSITION-WORK-BUDGET.md"
+$compositionReconciliationSpec = Join-Path $workspace "specs\COMPOSITION-RESULT-RECONCILIATION.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -68,6 +69,8 @@ $compositionStartersStyle = Join-Path $workspace "volumes\01-structure-quantity-
 $compositionStartersScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-starters.js"
 $compositionQueryPlanStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-query-plan.css"
 $compositionQueryPlanScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-query-plan.js"
+$compositionReconciliationStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reconciliation.css"
+$compositionReconciliationScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reconciliation.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -101,6 +104,7 @@ $artifactTitle = switch ($Edition) {
     "sim-22" { "Factorium Proof Set Authored Composition Starters Simulation 22" }
     "sim-23" { "Factorium Proof Set Composition Query Plan Simulation 23" }
     "sim-24" { "Factorium Proof Set Composition Work Budget Simulation 24" }
+    "sim-25" { "Factorium Proof Set Result Reconciliation Simulation 25" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -635,6 +639,9 @@ if ($editionNumber -ge 23) {
 }
 if ($editionNumber -ge 24) {
     Add-ProofSource $compositionWorkBudgetSpec
+}
+if ($editionNumber -ge 25) {
+    Add-ProofSource $compositionReconciliationSpec
 }
 
 foreach ($selectionDocument in $selectionDocuments) {
@@ -1227,6 +1234,13 @@ if ($editionNumber -ge 7) {
             throw "Missing composition work-budget specification: $compositionWorkBudgetSpec"
         }
     }
+    if ($editionNumber -ge 25) {
+        foreach ($asset in @($compositionReconciliationStyle, $compositionReconciliationScript, $compositionReconciliationSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-reconciliation asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1364,6 +1378,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 23) {
         $siteCssParts += (Get-Content -LiteralPath $compositionQueryPlanStyle -Raw)
+    }
+    if ($editionNumber -ge 25) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionReconciliationStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -1850,6 +1867,25 @@ if ($editionNumber -ge 7) {
                 $compositionLabChecks.work_accounting = "canonical-record-count"
                 $compositionLabChecks.work_enforcement = "hard-cap"
                 $compositionLabChecks.work_range = "3-64"
+            }
+            if ($editionNumber -ge 25) {
+                [System.IO.File]::WriteAllText(
+                    (Join-Path $siteAssetDirectory "composition-reconciliation.js"),
+                    (Get-Content -LiteralPath $compositionReconciliationScript -Raw),
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+                $compositionReconciliationChecks = [ordered]@{
+                    projection_input = "identified local result plus digest-bound payloads"
+                    relation_decisions = @("admitted", "stopped", "capacity-limited", "predecessor-unreached")
+                    exclusion_decisions = @("conflict", "inactive")
+                    budget_ledgers = @("depth", "edges", "nodes", "work")
+                    partition = "exhaustive and disjoint over selected controls"
+                    identity = "inherits local result SHA-256"
+                    closure_execution = $false
+                    semantic_evaluation = $false
+                    storage = "none"
+                    specification = "specs/COMPOSITION-RESULT-RECONCILIATION.md"
+                }
             }
         }
     }
@@ -2520,6 +2556,23 @@ if ($editionNumber -ge 7) {
                     "$nodeControl`n<label class=`"lab-field`"><span>Work records</span><input name=`"work`" type=`"number`" min=`"3`" max=`"64`" value=`"9`" required></label>"
                 )
             }
+            if ($editionNumber -ge 25) {
+                $reconciliationSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionReconciliationSpec)])"
+                $workBudgetContractLink = "<a href=`"$workBudgetSpecPage`">Read the work-budget contract</a>"
+                $queryPlanScriptTag = '<script src="assets/composition-query-plan.js"></script>'
+                foreach ($marker in @($workBudgetContractLink, $queryPlanScriptTag)) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition reconciliation page integration marker drift: $marker"
+                    }
+                }
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $workBudgetContractLink,
+                    "$workBudgetContractLink<a href=`"$reconciliationSpecPage`">Read the result-reconciliation contract</a>"
+                ).Replace(
+                    $queryPlanScriptTag,
+                    "$queryPlanScriptTag`n<script src=`"assets/composition-reconciliation.js`"></script>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2759,6 +2812,9 @@ $pageScripts
     if ($editionNumber -ge 23) {
         $expectedAssetNames += "composition-query-plan.js"
     }
+    if ($editionNumber -ge 25) {
+        $expectedAssetNames += "composition-reconciliation.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -2877,6 +2933,9 @@ $pageScripts
     if ($editionNumber -ge 24) {
         $siteChecks.composition_work_budget_controls = 1
     }
+    if ($editionNumber -ge 25) {
+        $siteChecks.composition_reconciliation_pages = 1
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -2947,6 +3006,9 @@ if ($editionNumber -ge 22) {
 }
 if ($editionNumber -ge 23) {
     $manifestRecord.composition_query_plan_checks = $compositionQueryPlanChecks
+}
+if ($editionNumber -ge 25) {
+    $manifestRecord.composition_reconciliation_checks = $compositionReconciliationChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"

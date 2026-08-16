@@ -1,0 +1,159 @@
+.composition-reconciliation {
+  margin: 1.25rem 0;
+  padding: 1.15rem;
+  border: 1px solid var(--proof-rule);
+  border-left: 0.35rem solid var(--proof-accent);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--proof-card) 92%, var(--proof-accent));
+}
+
+.composition-reconciliation > h3,
+.composition-reconciliation h4 {
+  margin: 0.2rem 0 0.65rem;
+}
+
+.composition-reconciliation__state,
+.composition-reconciliation__boundary {
+  max-width: 70ch;
+}
+
+.composition-reconciliation__totals {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: 1rem 0;
+}
+
+.composition-reconciliation__totals > div,
+.composition-reconciliation__budgets li {
+  padding: 0.65rem;
+  border: 1px solid var(--proof-rule);
+  border-radius: 0.55rem;
+  background: var(--proof-card);
+}
+
+.composition-reconciliation__totals dt {
+  font-size: 0.72rem;
+  color: var(--proof-ink-soft);
+}
+
+.composition-reconciliation__totals dd {
+  margin: 0.2rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.composition-reconciliation__budgets ul,
+.reconciliation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.composition-reconciliation__budgets ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.composition-reconciliation__budgets li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.45rem;
+  text-transform: capitalize;
+}
+
+.composition-reconciliation__decisions {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(14rem, 0.85fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.reconciliation-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.reconciliation-list__item {
+  padding: 0.75rem;
+  border: 1px solid var(--proof-rule);
+  border-radius: 0.6rem;
+  background: var(--proof-card);
+}
+
+.reconciliation-list__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.reconciliation-list__route,
+.reconciliation-list__reason,
+.reconciliation-list__exact {
+  margin: 0.4rem 0 0;
+}
+
+.reconciliation-list__exact,
+.composition-reconciliation__identity {
+  overflow-wrap: anywhere;
+}
+
+.reconciliation-status {
+  display: inline-block;
+  padding: 0.15rem 0.42rem;
+  border-radius: 999px;
+  background: var(--proof-accent-soft);
+  color: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.reconciliation-status--admitted,
+.reconciliation-status--reached {
+  background: light-dark(#e3eee7, #293b31);
+  color: light-dark(#244c3a, #b9dfc8);
+}
+
+.reconciliation-status--stopped,
+.reconciliation-status--capacity-limited,
+.reconciliation-status--predecessor-unreached {
+  background: light-dark(#f4ead2, #4a3a20);
+  color: light-dark(#735315, #f0d28c);
+}
+
+.reconciliation-status--conflict {
+  background: light-dark(#f5dfdc, #4b2925);
+  color: light-dark(#842f27, #efb4ad);
+}
+
+.composition-reconciliation__boundary {
+  margin: 1rem 0 0;
+  padding: 0.65rem;
+  border-left: 0.25rem solid var(--proof-rule);
+  background: var(--proof-accent-soft);
+}
+
+html[data-reader-profile="compact"] .composition-reconciliation__budgets h4,
+html[data-reader-profile="compact"] .composition-reconciliation__decisions h4,
+html[data-reader-profile="compact"] .reconciliation-list__reason {
+  display: none;
+}
+
+html[data-reader-profile="compact"] .composition-reconciliation {
+  padding: 0.85rem;
+}
+
+@media (max-width: 760px) {
+  .composition-reconciliation__totals,
+  .composition-reconciliation__budgets ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .composition-reconciliation__decisions {
+    grid-template-columns: 1fr;
+  }
+}

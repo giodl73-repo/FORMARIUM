@@ -285,6 +285,21 @@ or predicting closure. It distinguishes syntactic control coverage from
 validity and warns when edited controls no longer match the displayed result.
 `sim-22` remains byte-identical.
 
+The twenty-fifth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-25.md`
+adds the canonical fourth finite Work records budget to `sim-24`. It hard-caps
+the live emitted-record sum, reserves atomic relation bundles, carries exact
+work values through authored starters and the Query Plan, and reports used / cap.
+`sim-23` remains byte-identical.
+
+The twenty-sixth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-26.md`
+adds deterministic Result Reconciliation to `sim-25`. It accounts for every
+selected seed, relation, exclusion, and finite budget from the identified
+result while preserving distinct frontier, capacity, reachability, and
+conflict reasons. Unselected routes are not evaluated, and `sim-24` remains
+byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

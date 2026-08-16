@@ -12,7 +12,7 @@ const page = fs.readFileSync(path.join(siteRoot, "compose.html"), "utf8");
 const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-lab.js"), "utf8");
 const data = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-24");
+assert.ok(Number(manifest.edition.split("-")[1]) >= 24, "work-budget edition");
 assert.equal(manifest.site_checks.composition_work_budget_controls, 1);
 assert.equal(manifest.composition_lab_checks.work_accounting, "canonical-record-count");
 assert.equal(manifest.composition_lab_checks.work_enforcement, "hard-cap");

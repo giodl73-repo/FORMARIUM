@@ -306,6 +306,50 @@ async function evaluate(client, expression) {
         `document.getElementById("composition-query-plan").dataset.resultAlignment`),
       "matches-displayed-result", "successful run binds the displayed result to current controls");
     }
+    let reconciliationSummary = "";
+    if (editionNumber >= 25) {
+      const reconciled = await evaluate(client, `(() => {
+        const section = document.getElementById("composition-result-reconciliation");
+        const metrics = document.querySelector(".lab-metrics");
+        const map = document.getElementById("composition-closure-map");
+        return {
+          exists: Boolean(section), state: section?.dataset.state || "",
+          relationDecisions: section?.querySelectorAll(".reconciliation-list__item").length || 0,
+          admitted: section?.querySelectorAll(".reconciliation-status--admitted").length || 0,
+          budgets: section?.querySelectorAll(".composition-reconciliation__budgets li").length || 0,
+          boundary: section?.querySelector(".composition-reconciliation__boundary")?.textContent || "",
+          afterMetrics: Boolean(metrics?.compareDocumentPosition(section) & Node.DOCUMENT_POSITION_FOLLOWING),
+          beforeMap: Boolean(section?.compareDocumentPosition(map) & Node.DOCUMENT_POSITION_FOLLOWING)
+        };
+      })()`);
+      assert.deepEqual(reconciled, { exists: true, state: "incomplete", relationDecisions: 1,
+        admitted: 1, budgets: 4,
+        boundary: "Only explicitly selected relations and exclusions were evaluated. Unselected routes were not considered.",
+        afterMetrics: true, beforeMap: true },
+      "default result reconciles every selected control before the detailed map");
+      const reconciliationProfiles = await evaluate(client, `(async () => {
+        const toolbar = document.getElementById("composition-view-toolbar");
+        const form = document.getElementById("composition-lab-form");
+        const snapshot = () => [...form.elements].map(node => ({ name: node.name, value: node.value,
+          checked: node.checked, selectedIndex: node.selectedIndex }));
+        const before = snapshot();
+        toolbar.querySelector('[data-composition-profile="compact"]').click();
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+        const compactExact = getComputedStyle(document.querySelector("#composition-result-reconciliation .composition-meta--full")).display;
+        const compactDecisions = document.querySelectorAll("#composition-result-reconciliation .reconciliation-list__item").length;
+        toolbar.querySelector('[data-composition-profile="full"]').click();
+        await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+        const fullExact = getComputedStyle(document.querySelector("#composition-result-reconciliation .composition-meta--full")).display;
+        toolbar.querySelector('[data-composition-profile="book"]').click();
+        return { compactExact, compactDecisions, fullExact,
+          same: JSON.stringify(before) === JSON.stringify(snapshot()) };
+      })()`);
+      assert.equal(reconciliationProfiles.compactExact, "none", "compact hides exact reconciliation custody");
+      assert.equal(reconciliationProfiles.compactDecisions, 1, "compact retains every selected decision");
+      assert.notEqual(reconciliationProfiles.fullExact, "none", "Full exposes exact reconciliation custody");
+      assert.equal(reconciliationProfiles.same, true, "reconciliation profiles change no controls");
+      reconciliationSummary = " reconcile=1a/4b";
+    }
     let mapSummary = "";
     if (editionNumber >= 21) {
       const mapState = await evaluate(client, `(() => {
@@ -564,6 +608,14 @@ async function evaluate(client, expression) {
       assert.equal(await evaluate(client,
         `document.querySelector(".lab-state")?.textContent`), "contradictory",
       "conflict starter recomputes a contradictory unresolved draft");
+      if (editionNumber >= 25) {
+        assert.deepEqual(await evaluate(client, `(() => ({
+          state: document.getElementById("composition-result-reconciliation")?.dataset.state || "",
+          conflict: document.querySelectorAll("#composition-result-reconciliation .reconciliation-status--conflict").length,
+          admitted: document.querySelectorAll("#composition-result-reconciliation .reconciliation-status--admitted").length
+        }))()`), { state: "contradictory", conflict: 1, admitted: 1 },
+        "conflict reconciliation keeps relation admission separate from exclusion conflict");
+      }
       const loadedFrontier = await evaluate(client, `(() => {
         document.querySelector('[data-load-starter="delegated-compliance-frontier"]').click();
         const form = document.getElementById("composition-lab-form");
@@ -598,6 +650,15 @@ async function evaluate(client, expression) {
       assert.equal(await evaluate(client,
         `document.querySelectorAll(".closure-map__node--frontier").length`), 1,
       "frontier starter recomputes one visible stopped node");
+      if (editionNumber >= 25) {
+        assert.deepEqual(await evaluate(client, `(() => ({
+          state: document.getElementById("composition-result-reconciliation")?.dataset.state || "",
+          admitted: document.querySelectorAll("#composition-result-reconciliation .reconciliation-status--admitted").length,
+          stopped: document.querySelectorAll("#composition-result-reconciliation .reconciliation-status--stopped").length,
+          decisions: document.querySelectorAll("#composition-result-reconciliation .reconciliation-list__item").length
+        }))()`), { state: "truncated", admitted: 1, stopped: 1, decisions: 2 },
+        "frontier reconciliation partitions both selected relations");
+      }
       if (editionNumber >= 23) {
         assert.equal(await evaluate(client,
           `document.getElementById("composition-query-plan").dataset.controlState`),
@@ -670,7 +731,7 @@ async function evaluate(client, expression) {
     }
     console.log(`OK state=${state.labState} pages=${state.routePages} ` +
       `stages=${route.stages.join(",")} mobile=one-column${paletteSummary}${profileSummary}${mapSummary} ` +
-      `screenshot=${screenshotPath}${queryPlanSummary}${starterSummary}${focusSummary}`);
+      `screenshot=${screenshotPath}${queryPlanSummary}${reconciliationSummary}${starterSummary}${focusSummary}`);
   } finally {
     if (client) client.close();
     browser.kill();
