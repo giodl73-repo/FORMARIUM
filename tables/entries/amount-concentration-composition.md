@@ -8,7 +8,9 @@ Count, amount of substance, concentration, and composition all answer "how
 much" questions, but they use different quantity kinds and denominator roles.
 A count enumerates specified entities; amount of substance scales that count
 in moles; concentration normalizes a named component by mixture volume; a
-composition fraction compares a component with a like-kind total.
+composition fraction compares a component with a like-kind total. Molar mass
+connects a specified material's mass to its amount of substance; it is not a
+dimensionless relative mass or a context-free property of an unnamed sample.
 
 ## Sense table
 
@@ -21,6 +23,7 @@ composition fraction compares a component with a like-kind total.
 | `amount-fraction` | What share of total substance amount belongs to this component? | like-kind part-whole ratio | one, `1` |
 | `mass-fraction` | What share of total mass belongs to this component? | like-kind part-whole ratio | one, `1` |
 | `volume-fraction` | What share of the declared component-volume total belongs to this component? | state-dependent like-kind ratio | one, `1` |
+| `molar-mass` | What mass corresponds to one amount of substance for this specified material or entity definition? | mass-per-amount bridge | `kg mol^-1` |
 
 ## Quantity ladder
 
@@ -31,6 +34,12 @@ specified entity count
 component quantity
   -- divided by mixture volume --> concentration
   -- divided by total like-kind quantity --> composition fraction
+
+specified material mass and amount of substance
+  -- related by molar mass --> mass/amount conversion
+
+component fractions and component molar masses
+  -- transformed with explicit weighting --> another composition basis
 ```
 
 The two denominator choices answer different questions. A concentration is
@@ -49,6 +58,10 @@ amount-composition-use
    x total-mixture definition
    x preparation and measurement state
    x temperature and pressure where volume matters
+   x molar-mass subject, entity definition, formula, composition, and state
+   x mass and amount values, units, and uncertainties
+   x molar-mass source, value, unit, and validity scope
+   x conversion direction, component set, and weighting basis
    x unit and display scale
    x uncertainty
 ```
@@ -61,8 +74,11 @@ amount-composition-use
 | Amount concentration vs. mass concentration | same component and volume role | substance amount numerator vs. mass numerator |
 | Mass concentration vs. mass density | both may use `kg m^-3` | named component per mixture volume vs. total selected material mass per occupied volume |
 | Concentration vs. fraction | both compare a component to a basis | unlike-kind per-volume rate vs. like-kind part-whole ratio |
-| Amount fraction vs. mass fraction | both are dimension one | mole basis vs. mass basis |
+| Amount fraction vs. mass fraction | both are dimension one and can be converted with component molar masses | amount-weighted composition vs. mass-weighted composition |
 | Volume fraction vs. final-volume quotient | both involve volume | declared component-volume convention vs. potentially nonadditive final mixture volume |
+| Molar mass vs. mass | both use mass in their description | mass-per-amount property for a specified material vs. amount of mass in a sample |
+| Molar mass vs. relative molecular mass | numerical values may coincide in `g mol^-1` | dimensioned mass per amount vs. dimension-one entity-mass ratio |
+| Molar mass vs. mass concentration | both can connect mass and substance amount | `kg mol^-1` material bridge vs. `kg m^-3` component per mixture volume |
 
 ## Diagnostic examples
 
@@ -76,12 +92,16 @@ amount-composition-use
 - Percent by mass, percent by amount, and percent by volume are incomplete
   unless the basis is stated.
 - Volumes measured before mixing may not sum to the final solution volume.
+- Equal amount fractions do not imply equal mass fractions when component
+  molar masses differ.
+- A bare tabulated number does not identify whether it is molar mass in
+  `g mol^-1` or relative molecular mass with unit one.
 
 ## Formula view
 
 The linked [Amount and Composition Formula Table](../formulas/amount-concentration-composition.md)
-owns entity-count conversion, concentration, and composition-fraction
-relations.
+owns entity-count conversion, concentration, composition-fraction, molar-mass,
+and composition-basis conversion relations.
 
 ## Selection procedure
 
@@ -93,7 +113,11 @@ relations.
 5. For concentration, use the declared mixture volume at stated conditions.
 6. For a fraction, use the matching like-kind total.
 7. State any before-mixing or after-mixing volume convention.
-8. Label units, percent scaling, significant figures, and uncertainty.
+8. For molar mass, specify the material/entity definition, formula or
+   composition model, state where relevant, value source, and unit.
+9. For a composition-basis conversion, require one consistent exhaustive
+   component set and component molar masses on the same identity basis.
+10. Label units, percent scaling, significant figures, and uncertainty.
 
 ## Reference Delta
 
@@ -118,6 +142,14 @@ relations.
   volume.
 - Shared units do not make component concentration identical to bulk density.
 - Volume nonadditivity is not hidden by an informal fraction formula.
+- Molar mass retains its specified material or entity identity and the unit
+  `kg mol^-1` or an explicitly converted equivalent.
+- Molar mass and relative molecular mass remain different quantity kinds even
+  when their numerical values happen to match under one unit convention.
+- Mass/amount and amount/mass conversions reject zero or invalid divisors and
+  propagate input and molar-mass uncertainty.
+- Composition-basis conversions preserve the component set, normalization,
+  weighting direction, and remainder policy.
 
 ## Cross-references
 
@@ -130,7 +162,6 @@ relations.
 - [Relation](../roots/relation.md)
 - [Chemical Entity, Substance, Compound Class, Mixture, and Solution](chemical-substance-classification.md)
 - [Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst](chemical-reaction-stoichiometry-equilibrium.md)
-- molar mass - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -142,7 +173,13 @@ relations.
    https://media.iupac.org/publications/analytical_compendium/Cha01sec37.pdf
 4. BIPM, *SI Brochure*:
    https://www.bipm.org/en/publications/si-brochure
+5. IUPAC Gold Book, "molar mass":
+   https://goldbook.iupac.org/terms/view/12214
+6. IUPAC Gold Book, "fraction":
+   https://goldbook.iupac.org/terms/view/F02494
+7. IUPAC Gold Book, "relative molecular mass":
+   https://goldbook.iupac.org/terms/view/M04000
 
-Comparator access date: 2026-08-14. SI and IUPAC quantity conventions are
+Comparator access date: 2026-08-15. SI and IUPAC quantity conventions are
 established within source scope; Factorium organization remains `candidate`.
 

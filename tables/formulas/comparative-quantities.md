@@ -9,8 +9,9 @@ Canonical headword: [Comparative Quantity](../entries/comparative-quantity.md)
 ## Orientation
 
 These relations all use comparison, division, scaling, or difference. Their
-meaning depends on ordered roles, quantity kinds, units, baseline, and domain
-restrictions.
+meaning depends on ordered roles, quantity kinds, units, baseline, membership,
+and domain restrictions. Boundedness is a semantic constraint on a fraction,
+not a property of every like-kind quotient.
 
 ## Core relations
 
@@ -20,7 +21,7 @@ restrictions.
 | Rate | `q_rate = Q_num / Q_den` | cross-kind quotient definition |
 | Unit rate | `q_rate per 1 denominator-unit` | normalized equivalent representation |
 | Proportion | `A / B = C / D` | equality of ordered comparisons |
-| Part-whole fraction | `f = part / whole` | bounded ratio when `part` is a subset |
+| Part-whole fraction | `f = part / whole` | bounded ratio under nonnegative subset assumptions |
 | Numerical percent value | `p = 100 f` | per-hundred scaling |
 | Displayed percentage | `p%` | representation of ratio `p / 100` |
 | Absolute change | `Delta x = x_new - x_old` | directed difference |
@@ -76,6 +77,19 @@ A D = B C
 Cross multiplication is a valid algebraic consequence after the relation
 contract is established. It does not validate mismatched units or meanings.
 
+## Fraction closure
+
+For nonnegative parts that form an exhaustive mutually exclusive partition of
+one whole:
+
+```text
+f_i = part_i / whole
+sum_i(f_i) = 1
+```
+
+The closure relation does not apply unchanged to overlapping categories,
+partial lists, signed contributions, or differently bounded wholes.
+
 ## Change example
 
 For a percentage level changing from 10% to 15%:
@@ -109,6 +123,7 @@ The two results answer different questions.
 - A denominator is zero.
 - A percentage lacks a named base.
 - A part-whole percentage over 100 is accepted despite the subset contract.
+- Fractions from overlapping or incomplete categories are forced to sum to one.
 - Relative change divides by the new value instead of the declared original.
 - A zero baseline produces a finite percent change through an arbitrary
   fallback.
@@ -133,6 +148,8 @@ zero-domain restrictions, and percent-versus-point diagnostics.
    https://service-manual.ons.gov.uk/content/numbers/percentages
 3. BIPM, *SI Brochure*:
    https://www.bipm.org/en/publications/si-brochure
+4. IUPAC Gold Book, "fraction":
+   https://goldbook.iupac.org/terms/view/F02494
 
 Formula authority: established arithmetic and statistical reporting
 conventions within stated scope. Factorium presentation remains `candidate`.

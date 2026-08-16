@@ -110,6 +110,12 @@ Records: **15**
 
 Records: **32**
 
+This part moves from a named quantity to the relation that can legitimately
+connect it to another. In the composition route, a fraction is a bounded
+part-whole ratio only under an explicit membership contract, while molar mass
+bridges mass and amount for one specified material and enables traceable
+conversion between mass- and amount-fraction descriptions.
+
 ### Canonical anchors
 
 34. [Force](../../tables/entries/force.md)

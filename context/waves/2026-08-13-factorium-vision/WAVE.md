@@ -770,3 +770,33 @@ records and the combined selection remains 120 numbered records plus two
 guides across twenty-three chapters. The regenerated `sim-07` site remains 160
 pages from 136 sources, indexes all 122 reader destinations, and reports zero
 missing internal targets.
+
+## 2026-08-15 fraction-molar-mass-composition-basis content continuation
+
+Plan review: deepen the existing Comparative Quantity and Amount/Composition
+authorities instead of creating isolated fraction or molar-mass anchors;
+separate arbitrary ratios from bounded part-whole fractions and per-hundred
+display; separate molar mass from sample mass, mass concentration, and relative
+molecular mass; add directed mass/amount and composition-basis transformations
+with component-set, partition, unit, identity, normalization, and uncertainty
+contracts; ground the spine in IUPAC and BIPM sources; apply the Concept &
+Taxonomy Boundary Editor before any named substance or specialist average
+enters; then propagate the in-place revision through assurance and the static
+book site. No external-reader gate, composition catalog, material-identity
+claim, analytical certification, or safety claim is introduced.
+
+Result review: F23 adds fraction to `comparative-quantity` and molar mass to
+`amount-concentration-composition`, and revises both linked Formula views.
+Ratio/fraction, fraction/percentage, part/whole, exhaustive/partial,
+overlapping/mutually-exclusive, molar mass/sample mass, molar mass/mass
+concentration, molar/relative molecular mass, and amount/mass fraction remain
+distinct. Named substances, component taxonomies, and specialist average
+families remain external examples or authorities. The web campaign confirms
+18 findings, the dimensional audit checks 31 relations with zero P1 errors,
+and the 13-role fixed-point review closes all major findings. The reference
+remains at 38 entries and 55 views and grows to 286 senses and 434
+factors with 99 assurance bindings and zero unresolved view owners. The Factor
+Forge delta remains 42 records and the combined selection remains 120 numbered
+records plus two guides across twenty-three chapters. The regenerated `sim-07`
+site remains 160 pages from 136 sources, indexes all 122 reader destinations,
+and reports zero missing internal targets.

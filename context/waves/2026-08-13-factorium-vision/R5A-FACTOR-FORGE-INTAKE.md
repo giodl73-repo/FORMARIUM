@@ -594,3 +594,25 @@ named controller families, actuator types, monitoring products, or service
 tiers as canonical senses. It deepens the existing Diagnostic and Task K route,
 so the Factor Forge book delta remains 42 records: eighteen entries and
 twenty-four specialized views.
+
+## F23 first slice
+
+F23 deepens `tables/entries/comparative-quantity.md` and
+`tables/entries/amount-concentration-composition.md` around the shared
+part-whole and mass/amount bridge. Fraction becomes the bounded member/whole
+specialization of a ratio, with separate exhaustiveness, overlap, and remainder
+contracts. Molar mass becomes the specified-material mass-per-amount quantity
+that supports directed mass/amount and composition-basis transformations.
+
+The two existing Formula views add partition closure, molar-mass relations,
+mixture mean molar mass, and normalized mass/amount fraction conversions.
+Research and fixed-point review are
+`docs/research/2026-08-15-fraction-molar-mass-composition-basis.md` and
+`FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md`.
+The dedicated dimensional audit checks 31 relations with zero P1 errors.
+
+F23 resolves fraction and molar mass without admitting named substances,
+component catalogs, tabulation sources, or specialist molar-mass-average
+families as canonical senses. It deepens current base-volume sources, so the
+Factor Forge book delta remains 42 records: eighteen entries and twenty-four
+specialized views.

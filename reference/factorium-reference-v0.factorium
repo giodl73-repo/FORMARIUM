@@ -1,5 +1,5 @@
 factorium-reference-v0
-entry amount-concentration-composition | Amount, Concentration, and Composition | science | candidate | tables/entries/amount-concentration-composition.md | Count, amount of substance, concentration, and composition all answer "how much" questions, but they use different quantity kinds and denominator roles. A count enumerates specified entities; amount of substance scales that count in moles; concentration normalizes a named component by mixture volume; a composition fraction compares a component with a like-kind total.
+entry amount-concentration-composition | Amount, Concentration, and Composition | science | candidate | tables/entries/amount-concentration-composition.md | Count, amount of substance, concentration, composition, and molar mass answer different quantity questions. Count enumerates specified entities; amount scales count in moles; concentration normalizes a component by volume; composition fractions compare a component with a like-kind total; molar mass bridges mass and amount for a specified material.
 sense entity-count | entity count
 sense amount-of-substance | amount of substance
 sense amount-concentration | amount concentration
@@ -7,6 +7,7 @@ sense mass-concentration | mass concentration
 sense amount-fraction | amount fraction
 sense mass-fraction | mass fraction
 sense volume-fraction | volume fraction
+sense molar-mass | molar mass
 factor system-or-sample-boundary | system or sample boundary
 factor specified-entity-or-component | specified entity or component
 factor requested-quantity-kind | requested quantity kind
@@ -15,6 +16,10 @@ factor denominator-basis | denominator basis
 factor total-mixture-definition | total-mixture definition
 factor preparation-and-measurement-state | preparation and measurement state
 factor temperature-and-pressure-where-volume-matters | temperature and pressure where volume matters
+factor molar-mass-subject-entity-definition-formula-composition-and-state | molar-mass subject, entity definition, formula, composition, and state
+factor mass-and-amount-values-units-and-uncertainties | mass and amount values, units, and uncertainties
+factor molar-mass-source-value-unit-and-validity-scope | molar-mass source, value, unit, and validity scope
+factor conversion-direction-component-set-and-weighting-basis | conversion direction, component set, and weighting basis
 factor unit-and-display-scale | unit and display scale
 factor uncertainty | uncertainty
 end-entry
@@ -116,8 +121,9 @@ factor reviewer-and-revision | reviewer and revision
 factor measurement-model-procedure-and-system | measurement model, procedure, and system
 factor inference-rule-and-assumptions | inference rule and assumptions
 end-entry
-entry comparative-quantity | Comparative Quantity | quantities | candidate | tables/entries/comparative-quantity.md | Ratios, rates, proportions, and percentages all compare quantities, but they do not ask the same question. The decisive factors are what occupies the numerator and denominator, whether units cancel or remain, whether equality is being asserted, and which baseline owns a change.
+entry comparative-quantity | Comparative Quantity | quantities | candidate | tables/entries/comparative-quantity.md | Ratios, fractions, rates, proportions, and percentages compare quantities under different role contracts. A fraction is a bounded part-whole ratio only when its nonnegative numerator belongs to its declared whole; closure additionally requires an exhaustive mutually exclusive partition.
 sense ratio | ratio
+sense fraction | fraction
 sense rate | rate
 sense unit-rate | unit rate
 sense proportion | proportion
@@ -130,6 +136,8 @@ factor comparison-order | comparison order
 factor quantity-kinds | quantity kinds
 factor unit-alignment | unit alignment
 factor subset-rate-equality-or-change-interpretation | subset, rate, equality, or change interpretation
+factor part-whole-membership-and-boundary | part-whole membership and boundary
+factor exhaustiveness-overlap-and-remainder-policy | exhaustiveness, overlap, and remainder policy
 factor original-and-new-state-when-changing | original and new state when changing
 factor sign-and-direction-convention | sign and direction convention
 factor zero-denominator-policy | zero-denominator policy
@@ -832,7 +840,7 @@ view evidence-founding-factor-evidence | claim-evidence | claim,evidence-item,re
 end-view
 view evidence-observation-inference-chain | claim-evidence | claim,evidence-item,result,limitation,confidence,provenance,observation,measurement,inference | evidence | Observation-to-Inference Evidence Chain | tables/evidence/observation-inference-chain.md | Preserves source, activity, observation or measurement, result, inference, claim implication, limitation, confidence, and provenance as separate stages in a traceable evidence chain.
 end-view
-view formula-amount-concentration-composition | amount-concentration-composition | entity-count,amount-of-substance,amount-concentration,mass-concentration,amount-fraction,mass-fraction,volume-fraction | formula | Amount, Concentration, and Composition Relations | tables/formulas/amount-concentration-composition.md | These relations connect a specified entity count to amount of substance and separate component-per-volume concentrations from like-kind composition fractions. Every use requires an entity or component, a system boundary, and an explicit numerator and denominator basis.
+view formula-amount-concentration-composition | amount-concentration-composition | entity-count,amount-of-substance,amount-concentration,mass-concentration,amount-fraction,mass-fraction,volume-fraction,molar-mass | formula | Amount, Concentration, and Composition Relations | tables/formulas/amount-concentration-composition.md | These relations connect count, amount, concentration, composition fraction, molar mass, and mass/amount composition-basis conversions while preserving entity, component set, boundary, unit, weighting, and closure contracts.
 end-view
 view formula-arithmetic-mean | statistical-summary-interval | arithmetic-mean | formula | Sample Arithmetic Mean | tables/formulas/arithmetic-mean.md | The sample arithmetic mean summarizes equally weighted numerical observations by dividing their sum by their count. It is a statistic computed from the selected sample; whether it usefully represents location or estimates a population quantity depends on sampling and distribution conditions.
 end-view
@@ -840,7 +848,7 @@ view formula-chemical-reaction-relations | chemical-reaction-stoichiometry-equil
 end-view
 view formula-common-geometric-measures | geometric-measure | perimeter,circumference,area,surface-area,volume | formula | Common Geometric Measures | tables/formulas/common-geometric-measures.md | This Formula Table selects formulas by measure kind and shape. Exact symbolic forms are preserved; decimal evaluation and measurement uncertainty belong to the application context.
 end-view
-view formula-comparative-quantities | comparative-quantity | ratio,rate,unit-rate,proportion,percentage,relative-change,percentage-point-difference | formula | Comparative Quantities | tables/formulas/comparative-quantities.md | These relations all use comparison, division, scaling, or difference. Their meaning depends on ordered roles, quantity kinds, units, baseline, and domain restrictions.
+view formula-comparative-quantities | comparative-quantity | ratio,fraction,rate,unit-rate,proportion,percentage,relative-change,percentage-point-difference | formula | Comparative Quantities | tables/formulas/comparative-quantities.md | These relations use comparison, division, scaling, or difference while preserving ordered roles, quantity kinds, units, baseline, membership, partition, and domain restrictions.
 end-view
 view formula-cost-value-return | cost-price-value-return | dollar-return,rate-of-return,present-value,inflation,net-present-value | formula | Cost, Value, and Return Relations | tables/formulas/cost-value-return.md | These relations calculate one holding-period return, time-value mappings, a price-index change, a price-level conversion, and net present value. They do not define accounting recognition, universal inflation, profit, investment merit, or a complete decision. Cash-flow boundary, dates, index identity, rate basis, periods, compounding, currency basis, and uncertainty remain mandatory.
 end-view

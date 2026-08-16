@@ -4,8 +4,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 
 | Source | Line | Candidate declaration |
 |---|---:|---|
-| `tables/entries/amount-concentration-composition.md` | 133 | molar mass - `unresolved-candidate` |
-| `tables/entries/comparative-quantity.md` | 118 | fraction - `unresolved-candidate` |
 | `tables/entries/force.md` | 129 | coercion — `unresolved-candidate` |
 | `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 129 | namespace - `unresolved-candidate` |
