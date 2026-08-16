@@ -576,9 +576,10 @@ factor enforcement-point-and-action | enforcement point and action
 factor exception-scope-approver-reason-controls-and-expiry | exception scope, approver, reason, controls, and expiry
 factor audit-appeal-and-review | audit, appeal, and review
 end-entry
-entry probability-risk-uncertainty | Probability, Risk, and Uncertainty | quantities | candidate | tables/entries/probability-risk-uncertainty.md | Probability describes events inside a model. Odds re-express probability against its complement. Risk adds adverse consequences and decision context. Uncertainty describes incomplete knowledge; measurement uncertainty is one specialized, method-governed form.
+entry probability-risk-uncertainty | Probability, Risk, and Uncertainty | quantities | candidate | tables/entries/probability-risk-uncertainty.md | Probability varies possible events or data inside a fixed model. Likelihood fixes observed data and compares parameter values under a declared sampling and observation contract. Odds, risk, expected loss, general uncertainty, and measurement uncertainty retain separate roles.
 sense event-probability | event probability
 sense conditional-probability | conditional probability
+sense likelihood-function | likelihood function
 sense odds-in-favor | odds in favor
 sense risk | risk
 sense expected-loss | expected loss
@@ -588,6 +589,11 @@ factor subject-event-or-scenario | subject, event, or scenario
 factor model-and-sample-space | model and sample space
 factor evidence-and-assumptions | evidence and assumptions
 factor condition-or-complement | condition or complement
+factor observed-data-sampling-selection-and-censoring-mechanism | observed data, sampling, selection, and censoring mechanism
+factor statistical-model-family-and-common-reference-measure | statistical model family and common reference measure
+factor parameter-space-parameterization-and-constraints | parameter space, parameterization, and constraints
+factor likelihood-factorization-and-dependence-structure | likelihood factorization and dependence structure
+factor comparison-reference-maximizer-and-optimization-diagnostics | comparison reference, maximizer, and optimization diagnostics
 factor affected-entity | affected entity
 factor consequence-set | consequence set
 factor time-horizon | time horizon
@@ -915,7 +921,7 @@ view formula-periodic-wave-quantities | periodic-wave-quantity | period,frequenc
 end-view
 view formula-probability-range | probability-risk-uncertainty | event-probability | formula | Event Probability Range | tables/formulas/probability-range.md | Within a probability model, every event receives a probability between zero and one inclusive. The bound is a mathematical constraint on a probability measure; it does not make every arbitrary score in that interval a calibrated probability.
 end-view
-view formula-probability-risk-uncertainty | probability-risk-uncertainty | event-probability,conditional-probability,odds-in-favor,risk,expected-loss,uncertainty,measurement-uncertainty | formula | Probability, Risk, and Uncertainty Relations | tables/formulas/probability-risk-uncertainty.md | These relations connect event probability, odds, consequence-valued expectation, and measurement uncertainty. Risk itself remains a declared model family rather than one universal multiplication rule.
+view formula-probability-risk-uncertainty | probability-risk-uncertainty | event-probability,conditional-probability,likelihood-function,odds-in-favor,risk,expected-loss,uncertainty,measurement-uncertainty | formula | Probability, Risk, and Uncertainty Relations | tables/formulas/probability-risk-uncertainty.md | These relations connect event probability, parameter likelihood, relative likelihood, maximum-likelihood selection, odds, consequence-valued expectation, and measurement uncertainty while preserving fixed-data direction, observation mechanism, reference measure, and model scope.
 end-view
 view formula-pythagorean-trigonometric-identity | mathematical-relation-solving | identity,equation | formula | Pythagorean Trigonometric Identity | tables/formulas/pythagorean-trigonometric-identity.md | The Pythagorean trigonometric identity states a relation that holds for every real angle under the standard sine and cosine definitions. It is an identity, not an empirical law and not an equation that selects particular solutions.
 end-view

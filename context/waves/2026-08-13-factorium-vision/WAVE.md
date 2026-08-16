@@ -861,3 +861,36 @@ Factor Forge delta grows to 44 records and the combined selection to 122
 numbered records plus two guides across twenty-four chapters. The regenerated
 `sim-07` site contains 163 pages from 138 sources, indexes all 124 reader
 destinations, and reports zero missing internal targets.
+
+## 2026-08-15 probability-likelihood-function content continuation
+
+Plan review: deepen the existing Probability/Risk/Uncertainty authority rather
+than creating a likelihood anchor or new statistical chapter; make fixed-
+parameter/possible-data probability and fixed-data/variable-parameter
+likelihood directions explicit; distinguish discrete mass, continuous density,
+observation contribution, relative likelihood, relative log likelihood,
+maximum-likelihood estimate, posterior probability, model adequacy, and
+decision use; preserve sampling, selection, censoring, dependence, reference
+measure, parameter domain, and optimizer diagnostics; ground the spine in
+NIST, MIT, Cambridge, and official technical sources; apply the Concept &
+Taxonomy Boundary Editor before named distributions, estimators, tests, priors,
+or software enter. No external-reader gate, estimator-performance guarantee,
+model-validation claim, posterior claim, causal conclusion, or statistical
+advice is introduced.
+
+Result review: F26 adds likelihood function to
+`probability-risk-uncertainty` and revises its Formula view with mass/density,
+independent-product, relative-likelihood, relative-log-likelihood, and
+maximum-likelihood relations. Probability/likelihood, likelihood/parameter
+probability, likelihood/posterior, likelihood/model fit, raw/relative
+likelihood, optimizer/uncertainty, and optimizer/decision remain distinct.
+Named distributions, estimators, tests, priors, and software remain external
+examples or separately governed views. The web campaign confirms 18 findings,
+the dimensional audit checks 28 equations with zero P1 errors, and the 13-role
+fixed-point review closes all major findings. The reference remains at 39
+entries and 56 views and grows to 297 senses and 466 factors with 101 assurance
+bindings and zero unresolved view owners. The Factor Forge delta remains 44
+records and the combined selection remains 122 numbered records plus two
+guides across twenty-four chapters. The regenerated `sim-07` site remains 163
+pages from 138 sources, indexes all 124 reader destinations, and reports zero
+missing internal targets.

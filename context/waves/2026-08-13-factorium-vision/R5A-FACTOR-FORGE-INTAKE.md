@@ -661,3 +661,24 @@ F25 resolves unit conversion without admitting named units, unit systems,
 historical conversion catalogs, ordinal scales, or logarithmic-level families
 as canonical senses. The Factor Forge book delta grows to 44 records:
 nineteen entries and twenty-five specialized views.
+
+## F26 first slice
+
+F26 deepens `tables/entries/probability-risk-uncertainty.md` with likelihood
+function as the fixed-observation, variable-parameter reading of a declared
+sampling model. It keeps event probability, qualitative likelihood assessment,
+parameter probability, posterior distribution, model fit, evidence, and
+decision roles separate.
+
+The existing `tables/formulas/probability-risk-uncertainty.md` adds discrete
+mass and continuous-density likelihood, observation contribution,
+independent-product, relative-likelihood, relative-log-likelihood, and
+maximum-likelihood relations. Research and fixed-point review are
+`docs/research/2026-08-15-probability-likelihood-function.md` and
+`PROBABILITY-LIKELIHOOD-FUNCTION-ROLE-REVIEW.md`. The dimensional audit checks
+28 equations with zero P1 errors.
+
+F26 resolves likelihood function without admitting named distributions,
+estimators, tests, priors, or software implementations as canonical senses. It
+deepens existing base-volume sources, so the Factor Forge book delta remains
+44 records: nineteen entries and twenty-five specialized views.
