@@ -734,15 +734,14 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge F12 adds the candidate Mean, Median, Quantile, Variance, Standard
-Deviation, Standard Error, and Confidence Interval anchor plus a failure
-Diagnostic view, gives the Sample Arithmetic Mean formula a canonical owner,
-and resolves median, weighted mean, and confidence interval declarations. The
-canonical reference now contains 33 entries, 203 senses, 341 factors, and 45
-views with 84 exact assurance bindings. The current Factor Forge supplement
-contains 27 records, so `sim-07` renders 105 numbered book records plus two
-application guides across fourteen chapters. Historical preflight
-documents retain the counts of the rehearsal they recorded.
+Factor Forge through F26 has expanded and deepened the connected reference
+across structure, evidence, quantities, science, governance, organizations,
+software, and decision support. The canonical reference now contains 39
+entries, 297 senses, 466 factors, and 56 views with 101 exact assurance
+bindings. The current Factor Forge supplement contains 44 records, while
+`sim-29` selects 122 canonical records and indexes 129 destinations across
+twelve chapters. Historical preflight documents retain the counts of the
+rehearsal they recorded.
 
 ## Boundary
 

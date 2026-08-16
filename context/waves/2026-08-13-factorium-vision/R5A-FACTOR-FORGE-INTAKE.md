@@ -682,3 +682,28 @@ F26 resolves likelihood function without admitting named distributions,
 estimators, tests, priors, or software implementations as canonical senses. It
 deepens existing base-volume sources, so the Factor Forge book delta remains
 44 records: nineteen entries and twenty-five specialized views.
+
+## F27 stocktake and proposed slice
+
+The reproducible current-reference closure stocktake finds 39 entries, 297
+senses, 466 factors, 56 views, and 101 exact assurance bindings. All entries
+belong to one editorial Markdown-link component, but the six reviewed typed
+relations touch only twelve factors in six entries and contain no cross-entry
+edge. Treating 140 editorial link pairs as symmetric semantics reaches all 39
+entries within four hops and is rejected as nonselective.
+
+F27 is therefore proposed as a bounded **Decision and Evidence Bridge**, not a
+broad relation import. Research must first distinguish rule-derived case
+decision from choice among feasible alternatives under evidence, uncertainty,
+consequence, value, and constraint. It may admit a new owner only if the full
+choice contract cannot be represented by existing entries without duplicated
+or contradictory authority. The first packet is limited to three to five
+cross-entry relation candidates, one independently fail-able check per join,
+negative and ambiguous fixtures, and one authored synthetic guide. Named
+decision methods, risk frameworks, preference scales, optimization families,
+and option catalogs remain outside the canonical core.
+
+Stocktake and role review are
+`docs/research/2026-08-16-reference-closure-stocktake.md` and
+`signals/roles/check/reference-closure-stocktake-roles-check-2026-08-16.md`.
+No F27 Factor Table, relation, guide, or canonical source is admitted yet.

@@ -1528,3 +1528,33 @@ No evidence-verification, domain-evaluation, scoring, recommendation,
 completed-guide, semantic-validity, comprehension, task-success, persistence,
 publication, external-reader, `preview-01`, or Workbench-release claim is
 admitted.
+
+## 2026-08-16 current-reference closure stocktake
+
+Plan review: measure the complete current entry set without promoting
+editorial links, repeated labels, chapter adjacency, view ownership, or
+formula co-occurrence into semantic edges. Compare the exact reviewed relation
+sidecar with canonical entry-source Markdown connectivity, keep all counts and
+algorithms reproducible, identify missing content separately from missing
+joins and traversal policy, and use the result only to bound the next Factor
+Forge batch. The seven-role review requires validated-input preconditions,
+exact mapping cardinality/version/inverse/loss fields, a falsifiable choice-gap
+hypothesis, a taxonomy stopping rule, a bounded synthetic task, and synchronized
+current-state counts; all conditions close in the amended artifacts.
+
+Result review: `factorium-reference-closure-stocktake-v0` reports 39 entries,
+297 senses, 466 factors, and 56 views. The six reviewed typed relations touch
+12 factors across six entries—2.58% and 15.38% respectively—and contain zero
+cross-entry relations. In contrast, 185 directed editorial Markdown links
+form 140 entry pairs and one 39-entry component. An intentionally invalid
+symmetric-link closure reaches an average 8.2, 26.2, 37.5, and 39 entries at
+radii one through four, demonstrating exhaustive but nonselective expansion.
+The evidence/uncertainty/decision neighborhood already contains most source
+concepts; missing layers are cross-entry relation custody, a resolved owner
+for choice versus rule-derived decision, explicit cross-owner sense binding,
+bounded traversal policy, join-owned checks, and one complete authored guide.
+F27 is bounded to research this Decision and Evidence Bridge, review at most
+three to five candidate cross-entry joins, and author one synthetic book-first
+guide before any broader relation expansion. No Factor Table, relation,
+canonical guide, semantic-completeness, automatic-selection, usability,
+decision-quality, external-reader, or preview claim is admitted.

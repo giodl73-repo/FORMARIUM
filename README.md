@@ -419,6 +419,7 @@ node tools\check_composition_continuations.js
 node tools\check_composition_rerun_comparison.js
 node tools\check_composition_guide.js
 node tools\check_composition_evaluation.js
+node tools\check_reference_closure_coverage.js
 node tools\check_proof_set_composition.js target\proof-set-sim-29\manifest.json target\proof-set-sim-29\index.html
 node tools\check_proof_set_composition_lab.js target\proof-set-sim-29
 node tools\check_proof_set_composition_reading.js target\proof-set-sim-29
