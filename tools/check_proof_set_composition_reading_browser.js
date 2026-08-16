@@ -240,6 +240,53 @@ async function evaluate(client, expression) {
     assert.equal(state.error, "", "browser runtime error");
     assert.equal(state.labState, "incomplete", "browser default remains incomplete");
     assert.equal(state.routePages, 2, "browser renders two route pages");
+    let mapSummary = "";
+    if (editionNumber >= 21) {
+      const mapState = await evaluate(client, `(() => {
+        const map = document.getElementById("composition-closure-map");
+        const audit = document.querySelector(".closure-map__audit");
+        const route = document.getElementById("composition-reading-route");
+        const artifacts = [...map.querySelectorAll(".closure-map__node[data-artifact]")]
+          .map(node => node.dataset.artifact);
+        return {
+          exists: Boolean(map),
+          nodes: map.querySelectorAll(".closure-map__node:not(.closure-map__node--frontier)").length,
+          uniqueNodes: new Set(artifacts).size,
+          edges: map.querySelectorAll(".closure-map__edge").length,
+          scopes: map.querySelectorAll(".closure-map__scope-edge").length,
+          frontiers: map.querySelectorAll(".closure-map__node--frontier").length,
+          svgRole: map.querySelector("svg")?.getAttribute("role") || "",
+          svgTitle: map.querySelector("svg title")?.textContent || "",
+          svgDescription: map.querySelector("svg desc")?.textContent || "",
+          recordNodes: map.querySelectorAll(".closure-map__records-body h4:first-of-type + ul > li").length,
+          recordTraversals: map.querySelectorAll(".closure-map__records-body h4:nth-of-type(2) + ul > li").length,
+          auditOpen: audit?.open,
+          mapBeforeAudit: Boolean(map.compareDocumentPosition(audit) & Node.DOCUMENT_POSITION_FOLLOWING),
+          auditBeforeRoute: Boolean(audit.compareDocumentPosition(route) & Node.DOCUMENT_POSITION_FOLLOWING),
+          mapIdentity: map.querySelector(".closure-map__identity code")?.textContent || "",
+          resultIdentity: document.querySelector(".lab-identity code")?.textContent || ""
+        };
+      })()`);
+      assert.equal(mapState.exists, true, "browser renders closure map");
+      assert.equal(mapState.nodes, 3, "map renders three admitted nodes");
+      assert.equal(mapState.uniqueNodes, 3, "map nodes are unique by artifact");
+      assert.equal(mapState.edges, 1, "map renders one typed traversal");
+      assert.equal(mapState.scopes, 1, "map renders one non-semantic scope connector");
+      assert.equal(mapState.frontiers, 0, "default map has no frontier ghost");
+      assert.equal(mapState.svgRole, "img", "map SVG has image semantics");
+      assert.equal(mapState.svgTitle, "Composition closure map", "map SVG has a title");
+      assert.match(mapState.svgDescription, /3 admitted nodes, 1 typed traversals/,
+        "map SVG has an exact count description");
+      assert.equal(mapState.recordNodes, 3, "HTML alternative retains three node records");
+      assert.equal(mapState.recordTraversals, 1,
+        "HTML alternative retains one traversal record");
+      assert.equal(mapState.auditOpen, false, "Book begins with exact stage audit folded");
+      assert.equal(mapState.mapBeforeAudit, true, "map precedes exact stage audit");
+      assert.equal(mapState.auditBeforeRoute, true, "audit precedes book route");
+      assert.equal(mapState.mapIdentity, mapState.resultIdentity,
+        "map inherits the exact local result identity");
+      mapSummary = " map=3n/1e";
+    }
     if (editionNumber >= 20) {
       const projected = await evaluate(client, `(() => {
         const identity = () => document.querySelector(".lab-identity code")?.textContent || "";
@@ -249,14 +296,21 @@ async function evaluate(client, expression) {
         }));
         const before = identity();
         document.querySelector('[data-composition-profile="compact"]').click();
-        const compact = { identity: identity(), snapshot: snapshot() };
+        const compact = {
+          identity: identity(), snapshot: snapshot(),
+          auditOpen: document.querySelector(".closure-map__audit")?.open
+        };
         document.querySelector('[data-composition-profile="full"]').click();
         const full = {
           identity: identity(), snapshot: snapshot(),
-          exactDisplay: getComputedStyle(document.querySelector(".lab-result code")).display
+          exactDisplay: getComputedStyle(document.querySelector(".lab-result code")).display,
+          auditOpen: document.querySelector(".closure-map__audit")?.open
         };
         document.querySelector('[data-composition-profile="book"]').click();
-        return { before, compact, full, restored: identity() };
+        return {
+          before, compact, full, restored: identity(),
+          restoredAuditOpen: document.querySelector(".closure-map__audit")?.open
+        };
       })()`);
       assert.match(projected.before, /^[0-9a-f]{64}$/, "browser result has exact SHA-256");
       assert.equal(projected.compact.identity, projected.before,
@@ -270,6 +324,11 @@ async function evaluate(client, expression) {
       assert.deepEqual(projected.full.snapshot, defaultControlSnapshot,
         "post-result Full changes no controls");
       assert.notEqual(projected.full.exactDisplay, "none", "Full reveals exact result custody");
+      if (editionNumber >= 21) {
+        assert.equal(projected.compact.auditOpen, false, "Compact folds exact stage audit");
+        assert.equal(projected.full.auditOpen, true, "Full opens exact stage audit");
+        assert.equal(projected.restoredAuditOpen, false, "Book refolds exact stage audit");
+      }
     }
     const route = await evaluate(client, `(() => ({
       title: document.querySelector(".composition-reading-route h3")?.textContent,
@@ -303,6 +362,16 @@ async function evaluate(client, expression) {
       `[...document.querySelectorAll(".composition-reading-route__page")].map(node => node.getBoundingClientRect().top)`);
     assert.ok(mobileCardTops[1] > mobileCardTops[0],
       "reading route collapses to one column at 600 pixels");
+    if (editionNumber >= 21) {
+      const mobileMap = await evaluate(client, `(() => {
+        const scroll = document.querySelector(".closure-map__scroll");
+        return { scrollWidth: scroll.scrollWidth, clientWidth: scroll.clientWidth,
+          tabIndex: scroll.tabIndex };
+      })()`);
+      assert.ok(mobileMap.scrollWidth > mobileMap.clientWidth,
+        "closure map remains horizontally accessible at 600 pixels");
+      assert.equal(mobileMap.tabIndex, 0, "closure map scroll region is keyboard focusable");
+    }
     if (editionNumber >= 20) {
       await evaluate(client,
         `document.querySelector('[data-composition-profile="full"]').click()`);
@@ -343,6 +412,11 @@ async function evaluate(client, expression) {
       assert.equal(await evaluate(client,
         `document.querySelectorAll(".composition-reading-route__page").length`), 2,
       "reloaded default query recreates the same reading route");
+      if (editionNumber >= 21) {
+        assert.equal(await evaluate(client,
+          `document.querySelectorAll(".closure-map__node:not(.closure-map__node--frontier)").length`),
+        3, "reloaded default query recreates the same unique-node map");
+      }
     }
     let focusSummary = "";
     if (editionNumber >= 18) {
@@ -389,7 +463,7 @@ async function evaluate(client, expression) {
       focusSummary = ` focus=${focus.hash.slice(1)} focus_screenshot=${focusScreenshotPath}`;
     }
     console.log(`OK state=${state.labState} pages=${state.routePages} ` +
-      `stages=${route.stages.join(",")} mobile=one-column${paletteSummary}${profileSummary} ` +
+      `stages=${route.stages.join(",")} mobile=one-column${paletteSummary}${profileSummary}${mapSummary} ` +
       `screenshot=${screenshotPath}${focusSummary}`);
   } finally {
     if (client) client.close();

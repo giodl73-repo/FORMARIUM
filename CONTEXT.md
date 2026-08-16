@@ -259,6 +259,16 @@ reading route. Only the existing non-sensitive reader-view preference may
 persist; the query and result still disappear on reload. `sim-19` remains
 byte-identical.
 
+The twenty-second rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-22.md`
+adds a Composition Closure Map to `sim-21`. The already identified result is
+projected into unique admitted-node cards, solid direction-aware typed
+traversals, dashed non-semantic evaluation links, and explicit frontier and
+conflict states. An ordinary-HTML record equivalent remains beside the SVG;
+the exact six-stage audit is folded, not removed, and the authoritative
+reading route follows immediately. The map creates no node, edge, rank, or
+identity. `sim-20` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

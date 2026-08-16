@@ -13,7 +13,9 @@ const css = fs.readFileSync(path.join(siteRoot, "assets", "site.css"), "utf8");
 const script = fs.readFileSync(path.join(siteRoot, "assets", "composition-views.js"), "utf8");
 const siteData = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-20", "composition view edition");
+const editionNumber = Number(manifest.edition.split("-")[1]);
+assert.ok(Number.isInteger(editionNumber) && editionNumber >= 20,
+  "composition view edition");
 assert.equal(manifest.site_checks.composition_view_profiles, 4, "site profile count");
 assert.deepEqual(manifest.composition_view_checks.profiles,
   ["compact", "abbreviated", "book", "full"], "manifest profile vocabulary");

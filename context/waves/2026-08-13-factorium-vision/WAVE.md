@@ -1222,3 +1222,28 @@ The compact design pass and eight-role fixed point report zero open P1/P2
 findings. No preferred-default, comprehension, accessibility, speed, semantic
 selection, query persistence, publication, or reader-success claim is
 admitted.
+
+## 2026-08-16 composition closure-map continuation
+
+Plan review: make the bounded working graph visible without introducing a
+second graph engine. Consume the exact identified result passed to the reading
+route; place every admitted artifact once by closure depth; draw each admitted
+typed traversal separately; distinguish evaluation ownership, frontiers,
+conflicts, and unresolved predecessors without color-only meaning; provide a
+complete HTML equivalent; fold rather than remove the six-stage audit; gate
+the projection to `sim-21`; and retain `sim-20` exactly.
+
+Result review: `sim-21` now leads its result with a three-node default Closure
+Map: selected dependency factor, required interface factor, and evaluative
+constraint scope. One solid F1 arrow records forward traversal and one dashed
+Evaluate connector records non-semantic scope ownership. Counts, legend,
+programmatic SVG title/description, exact HTML records, keyboard-scrollable
+mobile viewport, folded stage audit, and the two-page reading route remain in
+one hierarchy. Pure, generated-site, and live Edge checks cover forward and
+reverse direction, shared-node uniqueness, conflict, frontier, unresolved and
+inactive boundaries, array-order invariance, coordinate uniqueness, invalid
+inputs, identity binding, profile behavior, mobile access, reload, route, and
+factor focus. The compact design pass and eight-role fixed point report zero
+open P1/P2 findings. No inferred edge, graph analysis, recommendation, causal
+or domain structure, observed comprehension, accessibility, persistence,
+publication, or reader-success claim is admitted.

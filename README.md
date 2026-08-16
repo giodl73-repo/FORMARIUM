@@ -106,6 +106,7 @@ explicit validation.
 - [Composition Factor Focus Simulation](specs/COMPOSITION-FACTOR-FOCUS.md)
 - [Composition Concept Palette Simulation](specs/COMPOSITION-PALETTE.md)
 - [Composition Reader Views Simulation](specs/COMPOSITION-READER-VIEWS.md)
+- [Composition Closure Map Simulation](specs/COMPOSITION-CLOSURE-MAP.md)
 
 ## Founding research specifications
 
@@ -215,10 +216,10 @@ that remain required at use time. See
 Render the current proof-edition bounded composition-lab simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-20
+.\tools\render_proof_set.ps1 -Edition sim-21
 ```
 
-Open `target/proof-set-sim-20/index.html` for a problem-led path through five
+Open `target/proof-set-sim-21/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
@@ -230,7 +231,8 @@ projection counts, and trace identities beneath those guides. The Compose page
 runs deterministic, bounded closure over explicit seeds and only the six exact
 reviewed F1-F6 relations. Problem prose never selects semantics, every check
 remains unresolved, and drafts are neither canonical traces nor publishable
-guides. The page stores or transmits nothing. The generated site remains a
+guides. Query data is not stored or transmitted; only the non-sensitive
+reader-view preference may persist. The generated site remains a
 disposable publication projection. After closure, a deterministic reading
 route deduplicates admitted factors into their owning anchor-entry pages and
 then links the specialized views that own unresolved checks. Human page titles
@@ -253,6 +255,14 @@ concept labels, short relation codes, and endpoint routes while Full reveals
 the exact artifacts, qualifications, check IDs, and result digest. Profiles
 change only display detail, metadata, and spacing. Query controls and closure
 identity remain unchanged; only the shared reader-view preference may persist.
+
+The result now leads with a unique-node Closure Map generated from the same
+identified graph as the reading route. Solid arrows show exact typed
+traversals, dashed links distinguish evaluation ownership and stopped
+frontiers, and conflicts remain visible in text as well as styling. A complete
+HTML record equivalent and the folded six-stage audit remain available; the
+map adds no nodes, edges, ranking, or identity.
+
 See [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
 After an intentional metadata or source change, regenerate the catalog and
@@ -354,13 +364,15 @@ node tools\check_composition_lab.js
 node tools\check_composition_reading.js
 node tools\check_composition_palette.js
 node tools\check_composition_views.js
-node tools\check_proof_set_composition.js target\proof-set-sim-20\manifest.json target\proof-set-sim-20\index.html
-node tools\check_proof_set_composition_lab.js target\proof-set-sim-20
-node tools\check_proof_set_composition_reading.js target\proof-set-sim-20
-node tools\check_proof_set_composition_focus.js target\proof-set-sim-20
-node tools\check_proof_set_composition_palette.js target\proof-set-sim-20
-node tools\check_proof_set_composition_views.js target\proof-set-sim-20
-node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-20
+node tools\check_composition_map.js
+node tools\check_proof_set_composition.js target\proof-set-sim-21\manifest.json target\proof-set-sim-21\index.html
+node tools\check_proof_set_composition_lab.js target\proof-set-sim-21
+node tools\check_proof_set_composition_reading.js target\proof-set-sim-21
+node tools\check_proof_set_composition_focus.js target\proof-set-sim-21
+node tools\check_proof_set_composition_palette.js target\proof-set-sim-21
+node tools\check_proof_set_composition_views.js target\proof-set-sim-21
+node tools\check_proof_set_composition_map.js target\proof-set-sim-21
+node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-21
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

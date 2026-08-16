@@ -284,3 +284,10 @@ control, canonical result byte, identity, negative state, and reading route.
 Its Book default, reduced audit noise, and profile continuity are deterministic
 display mechanics, not evidence of comprehension, accessibility, speed,
 preference, task success, or external-reader use.
+
+Internal preflight 22 adds the `sim-21` Composition Closure Map. It tests a
+unique-node, direction-aware visual and HTML projection of the exact identified
+result while retaining the six-stage audit and authoritative reading route.
+Its successful rendering is not graph discovery, recommendation, domain or
+causal structure, comprehension, accessibility evidence, or external-reader
+use.
