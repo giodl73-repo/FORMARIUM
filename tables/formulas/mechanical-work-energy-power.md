@@ -1,4 +1,4 @@
-# Mechanical Work, Energy, and Power
+# Mechanical Work, Energy, Power, and Torque
 
 Status: candidate Formula Table
 
@@ -9,8 +9,9 @@ Canonical headword: [Work, Energy, and Power](../entries/work-energy-power.md)
 ## Orientation
 
 These relations connect force-displacement transfer, mechanical-energy state
-terms, and transfer rate. They require an explicit system, path, frame,
-potential reference, and model scope.
+terms, transfer rate, and the turning effect of force about a reference. They
+require an explicit system, path, frame, potential reference, torque origin or
+axis, operator, and model scope.
 
 ## Core relations
 
@@ -26,6 +27,9 @@ potential reference, and model scope.
 | Mechanical-energy change | `W_nonconservative = Delta E_mech` | scoped balance | `M L^2 T^-2` |
 | Average power | `P_avg = Delta E_transferred / Delta t` | definition | `M L^2 T^-3` |
 | Instantaneous mechanical power | `P = dW/dt = F_vec dot v_vec` | derivative relation | `M L^2 T^-3` |
+| Torque about point `O` | `tau_O = r_O_to_P cross F_vec` | axial-vector moment of force | `M L^2 T^-2` |
+| Torque magnitude | `magnitude(tau_O) = r F sin(theta) = F ell_perp` | geometric magnitude form | `M L^2 T^-2` |
+| Net torque | `tau_net,O = sum_i(r_i cross F_i)` | vector aggregation about one reference | `M L^2 T^-2` |
 
 ## Symbol contract
 
@@ -43,6 +47,9 @@ potential reference, and model scope.
 | `E_mech` | selected mechanical energy | scalar | `J` | included `K` and `U` terms declared |
 | `P`, `P_avg` | signed power or average power | scalar rate | `W` | transfer direction convention declared |
 | `Delta t` | elapsed time | scalar | `s` | positive for average power |
+| `tau_O`, `tau_net,O` | torque about reference point `O` | axial vector | `N m` | reference and orientation convention declared |
+| `r_O_to_P`, `r_i` | position from reference to force application point | vector | `m` | same frame and origin |
+| `ell_perp` | perpendicular moment arm to force line of action | nonnegative scalar | `m` | reference-to-line distance |
 
 The symbol `W` for work and the unit symbol `W` for watt occupy different
 syntactic roles. A value such as `50 W` uses the latter as a unit.
@@ -67,6 +74,7 @@ energy.
 [m speed^2] = M (L T^-1)^2 = M L^2 T^-2
 [E / t]     = (M L^2 T^-2) T^-1 = M L^2 T^-3
 [F dot v]   = (M L T^-2) (L T^-1) = M L^2 T^-3
+[r cross F] = L (M L T^-2) = M L^2 T^-2
 ```
 
 ## Conditional near-Earth potential form
@@ -91,6 +99,8 @@ height reference. It is not a universal gravitational-potential formula.
 6. For mechanical-energy conservation, account for nonconservative work.
 7. For power, select average interval or instantaneous derivative.
 8. Preserve dot products, signs, units, and dimensions.
+9. For torque, select one reference point or axis, preserve cross-product
+   order, and compute each force's perpendicular moment arm before summing.
 
 ## Failure signs
 
@@ -107,6 +117,11 @@ height reference. It is not a universal gravitational-potential formula.
 - Power is treated as accumulated energy.
 - Energy is inferred from a power rating without duration.
 - A torque in `N m` is reported as joules solely because the base units match.
+- Torque is computed from force magnitude and radial distance without the
+  included angle or perpendicular moment arm.
+- Torques about different origins or axes are summed directly.
+- A nonzero force through the reference point is assigned nonzero torque.
+- Cross-product direction is replaced by an unsigned scalar without a justified plane.
 
 ## Reference Delta
 
@@ -127,6 +142,10 @@ system boundary, conservation scope, and operator diagnostics.
    https://openstax.org/books/university-physics-volume-1/pages/8-3-conservation-of-energy
 3. NIST, Special Publication 811:
    https://www.nist.gov/pml/special-publication-811
+4. NASA Glenn Research Center, "Torque (Moment)":
+   https://www.grc.nasa.gov/WWW/K-12/airplane/torque.html
+5. BIPM, *SI Brochure*:
+   https://www.bipm.org/en/publications/si-brochure
 
 Formula authority: established nonrelativistic mechanics within stated scope.
 Factorium presentation remains `candidate`.

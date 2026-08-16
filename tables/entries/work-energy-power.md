@@ -4,10 +4,10 @@ Status: candidate anchor entry
 
 ## Orientation
 
-Work, energy, and power are connected but answer different questions. Work
-tracks a transfer through a mechanical interaction, energy is a system
-quantity expressed in multiple forms, and power tracks how quickly transfer
-occurs.
+Work, energy, power, and torque are connected but answer different questions.
+Work tracks scalar transfer along displacement; energy is a system quantity;
+power tracks transfer rate; torque is the axial turning effect of force about
+a declared point or axis. Shared `N m` dimensions do not make torque energy.
 
 ## Sense table
 
@@ -18,6 +18,7 @@ occurs.
 | `kinetic-energy` | What energy is associated with motion in this frame? | motion-associated state term | `M L^2 T^-2` | joule, `J` |
 | `potential-energy` | What energy is associated with configuration and interaction in this system? | interaction-associated state term | `M L^2 T^-2` | joule, `J` |
 | `power` | At what rate is work done or energy transferred? | transfer rate | `M L^2 T^-3` | watt, `W` |
+| `torque` | What axial turning effect does this force have about the selected point or axis? | axial vector or moment | `M L^2 T^-2` | newton metre, `N m` |
 
 ## Role ladder
 
@@ -33,6 +34,9 @@ conservative interaction and configuration
 
 work or energy transfer
   -- divided by elapsed time --> average power
+
+position from reference point and applied force
+  -- combined by cross product --> torque about that reference
 ```
 
 The arrows express scoped relations, not synonymy.
@@ -50,6 +54,10 @@ work-energy-power-use
    x reference frame
    x potential-zero convention
    x time interval or instant
+   x torque reference point, origin, or axis
+   x position vector, force application point, and line of action
+   x cross-product orientation and axial-vector convention
+   x moment-arm geometry and force-component selection
    x unit system
 ```
 
@@ -62,6 +70,9 @@ work-energy-power-use
 | Energy vs. power | both describe transfer capability or behavior | amount in joules vs. rate in watts |
 | Kinetic vs. potential energy | both are mechanical-energy terms | motion in a frame vs. system configuration and interaction |
 | Work vs. torque | both may be written using `N m` | dot product and scalar transfer vs. cross product and axial effect |
+| Torque vs. force | force participates in torque | interaction vector vs. moment about a chosen reference |
+| Torque vs. moment arm | both depend on geometry | axial effect in `N m` vs. perpendicular distance in `m` |
+| Torque about different points | same applied force may be used | reference-dependent moment values unless resultant conditions remove dependence |
 | Mechanical vs. total energy | both are energy accounts | selected `K + U` subset vs. all included forms for the system |
 
 ## Diagnostic examples
@@ -77,12 +88,15 @@ work-energy-power-use
 - Changing the zero of potential energy changes reported values but not
   consistent potential-energy differences.
 - Writing `N m` does not reveal whether the quantity is work or torque.
+- A force whose line of action passes through the selected pivot has zero
+  torque about that pivot even when the force is nonzero.
+- Moving the reference point can change torque without changing the applied force.
 
 ## Formula view
 
-The linked [Mechanical Work, Energy, and Power Formula Table](../formulas/mechanical-work-energy-power.md)
+The linked [Mechanical Work, Energy, Power, and Torque Formula Table](../formulas/mechanical-work-energy-power.md)
 contains dot-product work, kinetic and potential energy, work-energy, power,
-and mechanical-energy relations.
+mechanical-energy, and torque relations.
 
 ## Selection procedure
 
@@ -95,6 +109,8 @@ and mechanical-energy relations.
 6. For conservation, list included energy forms and boundary transfers.
 7. For power, declare the interval or instantaneous view.
 8. Audit operator, sign, unit, and dimension.
+9. For torque, declare the reference point or axis, position vector, force
+   application point and line of action, cross-product order, and orientation convention.
 
 ## Reference Delta
 
@@ -117,6 +133,12 @@ and mechanical-energy relations.
 - `W` used as a quantity symbol for work and `W` used as the unit symbol watt
   must be distinguished by context and typography.
 - A shared unit or dimension does not prove semantic equivalence.
+- Torque is not intrinsic to a force alone; its reference and application
+  geometry remain part of the quantity.
+- Scalar `rF` is valid only when `r` is the perpendicular moment arm or the
+  angle factor is otherwise retained.
+- Torque direction follows the declared cross-product orientation; clockwise
+  and counterclockwise signs require an axis convention.
 
 ## Cross-references
 
@@ -128,7 +150,6 @@ and mechanical-energy relations.
 - [Electrical Quantity](electrical-quantity.md)
 - [Time](../roots/time.md)
 - [Transformation](../roots/transformation.md)
-- torque - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -144,7 +165,11 @@ and mechanical-energy relations.
    https://openstax.org/books/university-physics-volume-1/pages/10-6-torque
 4. NIST, Special Publication 811:
    https://www.nist.gov/pml/special-publication-811
+5. NASA Glenn Research Center, "Torque (Moment)":
+   https://www.grc.nasa.gov/WWW/K-12/airplane/torque.html
+6. BIPM, *SI Brochure*:
+   https://www.bipm.org/en/publications/si-brochure
 
-Comparator access date: 2026-08-14. Classical mechanics relations and SI
+Comparator access date: 2026-08-15. Classical mechanics relations and SI
 units are established within source scope; Factorium organization remains
 `candidate`.

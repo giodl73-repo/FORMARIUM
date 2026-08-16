@@ -800,3 +800,34 @@ Forge delta remains 42 records and the combined selection remains 120 numbered
 records plus two guides across twenty-three chapters. The regenerated `sim-07`
 site remains 160 pages from 136 sources, indexes all 122 reader destinations,
 and reports zero missing internal targets.
+
+## 2026-08-15 momentum-torque-stress-field-density content continuation
+
+Plan review: deepen the existing Motion Measure, Matter and Load Measure, and
+Work/Energy/Power authorities rather than creating isolated momentum, torque,
+stress, field, or local-density anchors; separate state from rate and impulse,
+axial moment from scalar work, pressure from traction and tensor stress, field
+from body force and observed motion, and bulk quotient from a resolution-scoped
+local field; ground the spine in NASA, NIST, and BIPM sources; revise five
+existing Formula views; apply the Concept & Taxonomy Boundary Editor before
+named material, loading, constitutive, or field-model families enter; then
+propagate the in-place revision through assurance and the static book site. No
+external-reader gate, safety or design certification, constitutive-law claim,
+or universal continuum assumption is introduced.
+
+Result review: F24 adds linear momentum to `motion-measure`, stress and
+gravitational field to `matter-load-measure`, and torque to
+`work-energy-power`; it deepens local density in the existing mass-density
+sense and revises five Formula views. Momentum/velocity, momentum/force,
+momentum/impulse, torque/work, pressure/stress, traction/stress, field/weight,
+and average/local density remain distinct. Named material, loading,
+constitutive, and field-model families remain external examples or
+authorities. The web campaign confirms 18 findings, the dimensional audit
+checks 60 relations with zero P1 errors, and the 13-role fixed-point review
+closes all major findings. The reference remains at 38 entries and 55 views
+and grows to 290 senses and 449 factors with 99 assurance bindings and zero
+unresolved view owners. The Factor Forge delta remains 42 records and the
+combined selection remains 120 numbered records plus two guides across
+twenty-three chapters. The regenerated `sim-07` site remains 160 pages from
+136 sources, indexes all 122 reader destinations, and reports zero missing
+internal targets.

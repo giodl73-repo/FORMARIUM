@@ -4,10 +4,11 @@ Status: candidate anchor entry
 
 ## Orientation
 
-Mass, weight, density, and pressure are often mixed because they participate in
-short connected formulas and everyday speech uses "weight" for mass.
-Factorium separates them by quantity kind, normalization, environmental
-context, and measured boundary.
+Mass, weight, density, pressure, stress, and gravitational field participate
+in short connected formulas but occupy different levels. A total mass differs
+from a local density field; weight is a force on a selected body; gravitational
+field is force per test mass at a location; pressure is scalar normal loading;
+stress is a tensor relating surface orientation to traction.
 
 ## Sense table
 
@@ -17,6 +18,8 @@ context, and measured boundary.
 | `weight` | What gravitational force acts on the subject here? | vector force or its magnitude | `M L T^-2` | newton, `N` |
 | `mass-density` | How much mass occupies each unit volume? | scalar field or bulk average | `M L^-3` | `kg m^-3` |
 | `pressure` | How much normal force is distributed over each unit area? | scalar | `M L^-1 T^-2` | pascal, `Pa` |
+| `stress` | What local traction would act across surfaces of different orientation at this material point? | second-order tensor | `M L^-1 T^-2` | pascal, `Pa` |
+| `gravitational-field` | What gravitational force per unit test mass is assigned to this location and frame by the selected model? | vector field | `L T^-2` | `N kg^-1` or `m s^-2` |
 
 ## Quantity-role ladder
 
@@ -27,6 +30,15 @@ mass
 
 normal force
   -- divided by loaded area --> average pressure
+
+surface orientation at a material point
+  -- mapped by stress tensor --> traction vector
+
+gravitational force on a test body
+  -- divided by test mass --> gravitational field at its location
+
+local mass density field
+  -- integrated over selected volume --> total mass
 ```
 
 These operations connect the quantities but do not make them interchangeable.
@@ -42,6 +54,13 @@ matter-load-measure-use
    x environmental context
    x normalization basis
    x averaging or local view
+   x spatial location, neighborhood, resolution, and continuum assumption
+   x source distribution, field model, frame, and validity region
+   x test-body mass, location, and nonperturbing approximation
+   x surface point, orientation, and unit normal
+   x traction vector and normal/shear decomposition
+   x stress tensor, basis, sign convention, and symmetry assumptions
+   x volume integration domain and boundary treatment
    x measurement method
    x unit system
 ```
@@ -55,6 +74,11 @@ matter-load-measure-use
 | Weight vs. pressure | both involve force | total gravitational force vs. normal force distributed over area |
 | Density vs. pressure | both may vary through a fluid | mass per volume vs. normal force per area |
 | Pressure vs. stress | both concern distributed loading | scalar normal pressure vs. a broader directional stress description |
+| Average vs. local density | same unit and quantity kind | finite-volume quotient vs. pointwise continuum field at declared resolution |
+| Weight vs. gravitational field | connected by test-body mass | force on one selected body vs. force-per-mass field assigned to location |
+| Gravitational field vs. acceleration | same dimensions and may coincide in free fall | modeled interaction field vs. kinematic rate of velocity change |
+| Pressure vs. stress tensor | pressure may determine isotropic stress under a sign convention | scalar normal loading vs. orientation-dependent traction map |
+| Traction vs. stress | related at a surface point | vector on one oriented plane vs. tensor encoding all plane orientations |
 
 ## Diagnostic examples
 
@@ -68,11 +92,17 @@ matter-load-measure-use
   distribution are known.
 - A scale display labeled in kilograms reports inferred mass, even if its
   sensing mechanism responds to a support force.
+- Equal average densities do not establish equal local density distributions.
+- A gravitational field value at one location does not establish a uniform
+  field over an extended body.
+- One normal force divided by one area does not reconstruct shear components
+  or the full stress tensor.
 
 ## Formula view
 
 The linked [Matter and Load Formula Table](../formulas/matter-load-measures.md)
 contains the quantity contracts, weight, density, and pressure relations.
+It also owns gravitational-field, traction/stress, and local-density relations.
 
 ## Selection procedure
 
@@ -83,6 +113,12 @@ contains the quantity contracts, weight, density, and pressure relations.
 4. Declare occupied volume and averaging conditions for density.
 5. Declare the perpendicular force component and loaded area for pressure.
 6. Confirm the unit and dimension before arithmetic.
+7. For local density, declare the spatial resolution, continuum model, and
+   integration domain used to recover mass.
+8. For gravitational field, declare source distribution, location, frame,
+   field model, validity region, and test-body approximation.
+9. For stress, declare material point, oriented surface normal, basis, traction,
+   normal/shear convention, and whether a continuum tensor model is warranted.
 
 ## Reference Delta
 
@@ -105,6 +141,14 @@ contains the quantity contracts, weight, density, and pressure relations.
 - Instrument display units do not by themselves reveal the sensed quantity or
   calibration model.
 - A pressure description should not silently replace a fuller stress analysis.
+- Local density is not inferred uniquely from one bulk average.
+- Gravitational field and free-fall acceleration are not made universally
+  identical outside the declared Newtonian model and frame.
+- A field evaluated at one point is not automatically uniform across a body.
+- Stress components require an orientation and basis; a shared pascal unit
+  does not make pressure, normal stress, and shear stress identical.
+- A traction vector on one plane does not determine the full stress tensor
+  without a model or sufficient independent orientations.
 
 ## Cross-references
 
@@ -116,8 +160,6 @@ contains the quantity contracts, weight, density, and pressure relations.
 - [Boundary](../roots/boundary.md)
 - [Context](../roots/context.md)
 - [Measure](../roots/measure.md)
-- stress - `unresolved-candidate`
-- gravitational field - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -130,6 +172,12 @@ contains the quantity contracts, weight, density, and pressure relations.
    https://openstax.org/books/college-physics/pages/11-3-pressure
 4. OpenStax, *University Physics Volume 1*, section 5.3:
    https://openstax.org/books/university-physics-volume-1/pages/5-3-newtons-second-law
+5. NIST, continuum-mechanics reference with Cauchy stress and traction:
+   https://nehrpsearch.nist.gov/static/files/NSF/PB87234308.pdf
+6. NASA, gravitational field relation:
+   https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/possible_scalar_terms.htm
+7. NASA PO.DAAC, "Gravity/Gravitational Field":
+   https://podaac.jpl.nasa.gov/gravity
 
-Comparator access date: 2026-08-14. Quantity distinctions and SI units are
+Comparator access date: 2026-08-15. Quantity distinctions and SI units are
 established within source scope; Factorium organization remains `candidate`.

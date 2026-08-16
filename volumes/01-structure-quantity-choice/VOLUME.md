@@ -116,6 +116,13 @@ part-whole ratio only under an explicit membership contract, while molar mass
 bridges mass and amount for one specified material and enables traceable
 conversion between mass- and amount-fraction descriptions.
 
+The mechanics route moves from motion state to momentum, then from external
+force over time to impulse and momentum change. It distinguishes torque's
+reference-dependent turning effect from work's scalar energy transfer even
+though both can use newton metres. It also moves from bulk to local density,
+from scalar pressure to oriented traction and tensor stress, and from a
+gravitational field to the body force on a specified test mass.
+
 ### Canonical anchors
 
 34. [Force](../../tables/entries/force.md)
@@ -136,11 +143,11 @@ conversion between mass- and amount-fraction descriptions.
 46. [Newtonian Net Force](../../tables/formulas/force.md)
 47. [Common Geometric Measures](../../tables/formulas/common-geometric-measures.md)
 48. [Pythagorean Trigonometric Identity](../../tables/formulas/pythagorean-trigonometric-identity.md)
-49. [Kinematics Motion Measures](../../tables/formulas/kinematics-motion-measures.md)
+49. [Motion and Momentum Measures](../../tables/formulas/kinematics-motion-measures.md)
 50. [Mass Density](../../tables/formulas/density.md)
 51. [Matter and Load Measures](../../tables/formulas/matter-load-measures.md)
 52. [General Accounting Balance](../../tables/formulas/general-accounting-balance.md)
-53. [Mechanical Work, Energy, and Power](../../tables/formulas/mechanical-work-energy-power.md)
+53. [Mechanical Work, Energy, Power, and Torque](../../tables/formulas/mechanical-work-energy-power.md)
 54. [Comparative Quantities](../../tables/formulas/comparative-quantities.md)
 55. [Sample Arithmetic Mean](../../tables/formulas/arithmetic-mean.md)
 56. [Event Probability Range](../../tables/formulas/probability-range.md)

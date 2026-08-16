@@ -7,8 +7,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/force.md` | 129 | coercion — `unresolved-candidate` |
 | `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 129 | namespace - `unresolved-candidate` |
-| `tables/entries/matter-load-measure.md` | 119 | stress - `unresolved-candidate` |
-| `tables/entries/matter-load-measure.md` | 120 | gravitational field - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 158 | position - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 159 | competency - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 160 | legal ownership - `unresolved-candidate` |
@@ -16,7 +14,4 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/probability-risk-uncertainty.md` | 123 | likelihood function - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 157 | architecture - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 158 | subsystem - `unresolved-candidate` |
-| `tables/entries/work-energy-power.md` | 131 | torque - `unresolved-candidate` |
-| `tables/formulas/density.md` | 93 | local mass density — `unresolved-candidate` |
-| `tables/formulas/force.md` | 113 | momentum — `unresolved-candidate` |
 | `tables/mappings/temperature-scales.md` | 114 | unit conversion — `unresolved-candidate` |

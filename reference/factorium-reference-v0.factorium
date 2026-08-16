@@ -426,11 +426,13 @@ factor iteration-map-initial-state-and-generated-sequence | iteration map, initi
 factor stopping-rule-tolerance-precision-and-resource-limit | stopping rule, tolerance, precision, and resource limit
 factor convergence-target-criterion-rate-basin-and-proof-basis | convergence target, criterion, rate, basin, and proof basis
 end-entry
-entry matter-load-measure | Matter and Load Measure | science | candidate | tables/entries/matter-load-measure.md | Mass, weight, density, and pressure are often mixed because they participate in short connected formulas and everyday speech uses "weight" for mass. Factorium separates them by quantity kind, normalization, environmental context, and measured boundary.
+entry matter-load-measure | Matter and Load Measure | science | candidate | tables/entries/matter-load-measure.md | Mass, weight, average and local density, pressure, stress, and gravitational field occupy different descriptive levels. Total, field, force, scalar normal loading, and tensor traction-map quantities retain boundary, location, orientation, frame, scale, and model contracts.
 sense mass | mass
 sense weight | weight
 sense mass-density | mass density
 sense pressure | pressure
+sense stress | stress
+sense gravitational-field | gravitational field
 factor subject-or-system | subject or system
 factor requested-quantity | requested quantity
 factor system-or-sample-boundary | system or sample boundary
@@ -438,6 +440,13 @@ factor quantity-kind | quantity kind
 factor environmental-context | environmental context
 factor normalization-basis | normalization basis
 factor averaging-or-local-view | averaging or local view
+factor spatial-location-neighborhood-resolution-and-continuum-assumption | spatial location, neighborhood, resolution, and continuum assumption
+factor source-distribution-field-model-frame-and-validity-region | source distribution, field model, frame, and validity region
+factor test-body-mass-location-and-nonperturbing-approximation | test-body mass, location, and nonperturbing approximation
+factor surface-point-orientation-and-unit-normal | surface point, orientation, and unit normal
+factor traction-vector-and-normal-shear-decomposition | traction vector and normal/shear decomposition
+factor stress-tensor-basis-sign-convention-and-symmetry-assumptions | stress tensor, basis, sign convention, and symmetry assumptions
+factor volume-integration-domain-and-boundary-treatment | volume integration domain and boundary treatment
 factor measurement-method | measurement method
 factor unit-system | unit system
 end-entry
@@ -463,13 +472,14 @@ factor probability-target-outcome-definition-evaluation-population-and-bins | pr
 factor uncertainty-budget-diagnostics-acceptance-criteria-and-fitness-for-use | uncertainty budget, diagnostics, acceptance criteria, and fitness for use
 factor provenance-validity-interval-revision-and-limitations | provenance, validity interval, revision, and limitations
 end-entry
-entry motion-measure | Motion Measure | science | candidate | tables/entries/motion-measure.md | Motion measures describe where a subject is, how its position changes, how much path it traverses, and how those quantities change with time. Everyday speech often merges distance with displacement and speed with velocity; Factorium separates them by evidence, direction, and mathematical role.
+entry motion-measure | Motion Measure | science | candidate | tables/entries/motion-measure.md | Motion measures separate position, path length, displacement, velocity, acceleration, and linear momentum. Momentum combines selected mass and velocity in one frame; impulse changes momentum over an interval; conservation remains scoped to a declared system and external transfer boundary.
 sense position | position
 sense distance-traveled | distance traveled
 sense displacement | displacement
 sense speed | speed
 sense velocity | velocity
 sense acceleration | acceleration
+sense linear-momentum | linear momentum
 factor subject | subject
 factor reference-frame | reference frame
 factor coordinate-and-direction-convention | coordinate and direction convention
@@ -477,6 +487,10 @@ factor path-or-endpoint-evidence | path-or-endpoint evidence
 factor scalar-or-vector-kind | scalar-or-vector kind
 factor average-or-instantaneous-view | average-or-instantaneous view
 factor time-interval-or-instant | time interval or instant
+factor system-boundary-membership-and-mass-distribution | system boundary, membership, and mass distribution
+factor momentum-aggregation-and-reference-frame | momentum aggregation and reference frame
+factor impulse-interval-and-external-force-aggregation | impulse interval and external-force aggregation
+factor open-system-transfer-or-fixed-membership-scope | open-system transfer or fixed-membership scope
 factor unit-system | unit system
 end-entry
 entry organization-role-authority | Organization, Role, Responsibility, Authority, and Accountability | organizations | candidate | tables/entries/organization-role-authority.md | An organization coordinates actors and resources toward purposes within a boundary. Role, responsibility, authority, accountability, delegation, and ownership separate expected functions, duties, legitimate rights, answerability, bounded transfer, and governed custody. Technical action traceability is a second accountability sense rather than a substitute for organizational answerability.
@@ -779,12 +793,13 @@ factor constituents-composition-phase-inventory-and-interfaces | constituents, c
 factor transition-driver-coexistence-metastability-hysteresis-and-kinetics | transition driver, coexistence, metastability, hysteresis, and kinetics
 factor measurement-conditions-uncertainty-provenance-and-claim-scope | measurement conditions, uncertainty, provenance, and claim scope
 end-entry
-entry work-energy-power | Work, Energy, and Power | science | candidate | tables/entries/work-energy-power.md | Work, energy, and power are connected but answer different questions. Work tracks a transfer through a mechanical interaction, energy is a system quantity expressed in multiple forms, and power tracks how quickly transfer occurs.
+entry work-energy-power | Work, Energy, and Power | science | candidate | tables/entries/work-energy-power.md | Work, energy, power, and torque are connected but distinct. Work is scalar transfer along displacement; energy is a system quantity; power is transfer rate; torque is an axial turning effect about a declared reference. Shared dimensions or `N m` notation do not make torque energy.
 sense mechanical-work | mechanical work
 sense energy | energy
 sense kinetic-energy | kinetic energy
 sense potential-energy | potential energy
 sense power | power
+sense torque | torque
 factor system | system
 factor boundary | boundary
 factor requested-role | requested role
@@ -794,6 +809,10 @@ factor path-or-state-endpoints | path or state endpoints
 factor reference-frame | reference frame
 factor potential-zero-convention | potential-zero convention
 factor time-interval-or-instant | time interval or instant
+factor torque-reference-point-origin-or-axis | torque reference point, origin, or axis
+factor position-vector-force-application-point-and-line-of-action | position vector, force application point, and line of action
+factor cross-product-orientation-and-axial-vector-convention | cross-product orientation and axial-vector convention
+factor moment-arm-geometry-and-force-component-selection | moment-arm geometry and force-component selection
 factor unit-system | unit system
 end-entry
 view constraint-policy-constraints | policy-rule-constraint-decision-exception | constraint | constraint | Policy Constraint Table | tables/constraints/policy-constraints.md | Version, evidence, authority, bounded exceptions, output separation, enforcement, and audit remain explicit policy-evaluation invariants.
@@ -852,21 +871,21 @@ view formula-comparative-quantities | comparative-quantity | ratio,fraction,rate
 end-view
 view formula-cost-value-return | cost-price-value-return | dollar-return,rate-of-return,present-value,inflation,net-present-value | formula | Cost, Value, and Return Relations | tables/formulas/cost-value-return.md | These relations calculate one holding-period return, time-value mappings, a price-index change, a price-level conversion, and net present value. They do not define accounting recognition, universal inflation, profit, investment merit, or a complete decision. Cash-flow boundary, dates, index identity, rate basis, periods, compounding, currency basis, and uncertainty remain mandatory.
 end-view
-view formula-density | matter-load-measure | mass-density | formula | Mass Density | tables/formulas/density.md | Average mass density relates the total mass of a chosen object or substance sample to the volume it occupies. The bulk relation does not by itself assert that density is uniform at every point.
+view formula-density | matter-load-measure | mass-density | formula | Mass Density | tables/formulas/density.md | Average mass density is a finite-volume quotient; local mass density is a continuum field whose spatial integral recovers mass over a declared region. One bulk average does not determine the field or prove uniformity.
 end-view
 view formula-electrical-quantities | electrical-quantity | electric-charge,electric-current,potential-difference,electrical-power,electrical-energy-transfer,electric-field,electrical-resistivity,capacitance,electrical-impedance | formula | Electrical Quantities | tables/formulas/electrical-quantities.md | These relations separate local field, charge, current, potential difference, material resistivity, specimen resistance, configuration capacitance, complex impedance, power, and energy transfer under explicit spatial, material, geometry, state, terminal, frequency, phase, sign, and validity contracts.
 end-view
-view formula-force | force | physical-interaction | formula | Force - Newtonian Net-Force Formula View | tables/formulas/force.md | In Newtonian mechanics, Newton's second law relates the net external force on a chosen system to its mass and acceleration. The familiar `F = ma` shorthand is useful only when `F` is understood as the vector sum of external forces and the system and model assumptions are fixed.
+view formula-force | force | physical-interaction | formula | Force - Newtonian Net-Force Formula View | tables/formulas/force.md | In Newtonian mechanics, net external force is the time rate of change of a fixed-membership system's momentum; the familiar mass-times-acceleration form is the constant-mass reduction, not a general open-system balance.
 end-view
 view formula-general-accounting-balance | stock-flow-balance | stock,flow,accumulation,balance,conservation | formula | General Accounting Balance | tables/formulas/general-accounting-balance.md | An accounting balance tracks a countable property inside a chosen system over time. Input and generation add to the system; output and consumption remove from it. When the property is strictly conserved, generation and consumption are zero.
 end-view
 view formula-information-signal-measures | information-data-signal-noise | self-information,shannon-entropy,signal-to-noise-ratio,mutual-information,channel-capacity | formula | Information and Signal Measures | tables/formulas/information-signal-measures.md | These relations quantify modeled surprise, average discrete uncertainty, statistical dependence, a constrained discrete-channel bound, and selected signal-to-noise comparisons. They do not measure semantic meaning, causation, truth, usefulness, achieved throughput, or universal signal quality.
 end-view
-view formula-kinematics-motion-measures | motion-measure | position,distance-traveled,displacement,speed,velocity,acceleration | formula | Kinematics Motion Measures | tables/formulas/kinematics-motion-measures.md | These relations separate path-based scalars from endpoint- or derivative-based vectors. Average relations use finite intervals; instantaneous relations use derivatives. Constant-acceleration equations form a narrower conditional view.
+view formula-kinematics-motion-measures | motion-measure | position,distance-traveled,displacement,speed,velocity,acceleration,linear-momentum | formula | Motion and Momentum Measures | tables/formulas/kinematics-motion-measures.md | These relations separate path, endpoint, derivative, and mass-weighted motion quantities; momentum aggregation, impulse, and conservation retain system membership, frame, force interval, and boundary-transfer scope.
 end-view
-view formula-matter-load-measures | matter-load-measure | mass,weight,mass-density,pressure | formula | Matter and Load Measures | tables/formulas/matter-load-measures.md | These relations distinguish a base quantity from gravitational force and from volume- or area-normalized quantities. Their short algebra is useful only when the subject boundary, environment, averaging scope, and loaded geometry are known.
+view formula-matter-load-measures | matter-load-measure | mass,weight,mass-density,pressure,stress,gravitational-field | formula | Matter and Load Measures | tables/formulas/matter-load-measures.md | These relations distinguish mass, gravitational force and field, bulk and local density, scalar pressure, traction, and tensor stress under explicit boundary, location, scale, surface orientation, frame, sign, and model contracts.
 end-view
-view formula-mechanical-work-energy-power | work-energy-power | mechanical-work,energy,kinetic-energy,potential-energy,power | formula | Mechanical Work, Energy, and Power | tables/formulas/mechanical-work-energy-power.md | These relations connect force-displacement transfer, mechanical-energy state terms, and transfer rate. They require an explicit system, path, frame, potential reference, and model scope.
+view formula-mechanical-work-energy-power | work-energy-power | mechanical-work,energy,kinetic-energy,potential-energy,power,torque | formula | Mechanical Work, Energy, Power, and Torque | tables/formulas/mechanical-work-energy-power.md | These relations connect scalar force-displacement transfer, mechanical-energy state, transfer rate, and axial moment of force while preserving system, path, frame, potential reference, torque origin/axis, operator, and model scope.
 end-view
 view formula-newtons-method | mathematical-relation-solving | mathematical-function,root,derivative,iteration,convergence | formula | Newton's Method | tables/formulas/newtons-method.md | Newton's method iteratively approximates a root of a differentiable function by intersecting the tangent at the current estimate with the horizontal axis. Its familiar fast convergence is local and conditional, not guaranteed from every starting value.
 end-view

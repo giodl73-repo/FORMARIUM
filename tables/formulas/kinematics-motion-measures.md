@@ -1,4 +1,4 @@
-# Kinematics Motion Measures
+# Motion and Momentum Measures
 
 Status: candidate Formula Table
 
@@ -10,7 +10,8 @@ Canonical headword: [Motion Measure](../entries/motion-measure.md)
 
 These relations separate path-based scalars from endpoint- or derivative-based
 vectors. Average relations use finite intervals; instantaneous relations use
-derivatives. Constant-acceleration equations form a narrower conditional view.
+derivatives. Momentum adds mass and system membership; impulse adds an
+external-force interval. Constant-acceleration equations remain narrower.
 
 ## Core relations
 
@@ -24,6 +25,10 @@ derivatives. Constant-acceleration equations form a narrower conditional view.
 | Instantaneous speed | `speed(t) = magnitude(v(t))` | scalar | `L T^-1` |
 | Average acceleration | `a_avg = Delta v / Delta t` | vector | `L T^-2` |
 | Instantaneous acceleration | `a(t) = dv(t) / dt = d^2 x(t) / dt^2` | vector | `L T^-2` |
+| Particle linear momentum | `p_vec = m v_vec` | vector | `M L T^-1` |
+| System linear momentum | `P_vec = sum_i(m_i v_i)` | vector sum for discrete members | `M L T^-1` |
+| Net external impulse | `J_vec = integral_t0^t1 sum(F_external) dt` | accumulated interaction | `M L T^-1` |
+| Impulse-momentum relation | `J_vec = Delta P_vec` | theorem for the selected fixed-membership system | `M L T^-1` |
 
 ## Symbol contract
 
@@ -35,6 +40,10 @@ derivatives. Constant-acceleration equations form a narrower conditional view.
 | `Delta t` | elapsed time | scalar | positive for average-rate formulas |
 | `v` | velocity | vector | frame-relative |
 | `a` | acceleration | vector | rate of velocity change |
+| `m`, `m_i` | mass of particle or member | nonnegative scalar | same system membership as momentum sum |
+| `p_vec`, `P_vec` | particle or system linear momentum | vector | one reference frame |
+| `J_vec` | net external impulse | vector | exact force set and interval required |
+| `sum(F_external)` | net external force on the system | vector | boundary and membership fixed |
 
 ## Constant-acceleration view
 
@@ -58,6 +67,8 @@ values are available.
 [Delta v / Delta t] = (L T^-1) T^-1 = L T^-2
 [v_0 t]             = (L T^-1) T = L
 [a t^2]             = (L T^-2) T^2 = L
+[m v]               = M (L T^-1) = M L T^-1
+[F Delta t]         = (M L T^-2) T = M L T^-1
 ```
 
 ## Selection procedure
@@ -68,6 +79,9 @@ values are available.
 4. Choose average interval or instantaneous value.
 5. Use constant-acceleration formulas only after establishing the regime.
 6. Convert units before arithmetic.
+7. For momentum, fix system membership, mass, and reference frame.
+8. For impulse, integrate the net external force over the exact interval and
+   account separately for open-system momentum transfer.
 
 ## Failure signs
 
@@ -78,6 +92,13 @@ values are available.
 - Negative acceleration is automatically described as slowing.
 - A derivative is used where the function is not defined or differentiable.
 - Constant-acceleration equations are used over variable acceleration.
+- Momentum vectors from different frames or system boundaries are added.
+- Equal velocity is treated as equal momentum without comparing mass.
+- Force is equated with momentum rather than its time rate of change.
+- Average force is multiplied by the wrong duration or substituted for a
+  varying-force integral without justification.
+- Momentum conservation is asserted while external impulse or boundary mass
+  transfer is omitted.
 
 ## Reference Delta
 
@@ -95,6 +116,10 @@ selection, and constant-regime gating.
 2. NIST, "SI Units - Length" and "SI Units - Time":
    https://www.nist.gov/pml/owm/si-units-length
    https://www.nist.gov/pml/owm/si-units-time
+3. NASA, "Momentum and Impulse":
+   https://www.nasa.gov/wp-content/uploads/2024/05/momentum-and-impulse-classroom-connection-508.pdf
+4. NASA Glenn Research Center, "Newton's Second Law of Motion":
+   https://www.grc.nasa.gov/www/k-12/BGP/newton2.html
 
 Formula authority: established introductory kinematics. Factorium
 presentation remains `candidate`.

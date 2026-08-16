@@ -5,9 +5,9 @@ Status: candidate anchor entry
 ## Orientation
 
 Motion measures describe where a subject is, how its position changes, how
-much path it traverses, and how those quantities change with time. Everyday
-speech often merges distance with displacement and speed with velocity;
-Factorium separates them by evidence, direction, and mathematical role.
+much path it traverses, how those quantities change with time, and how mass
+and velocity combine as linear momentum. Momentum is a frame-dependent system
+quantity, not another name for velocity, force, impulse, or kinetic energy.
 
 ## Sense table
 
@@ -19,6 +19,7 @@ Factorium separates them by evidence, direction, and mathematical role.
 | `speed` | How fast is path length accumulating? | scalar | `L T^-1` | distance and elapsed time |
 | `velocity` | How fast and in what direction is position changing? | vector | `L T^-1` | displacement or position derivative |
 | `acceleration` | How is velocity changing? | vector | `L T^-2` | velocity change or derivative |
+| `linear-momentum` | What directed motion quantity does this selected mass carry in the chosen frame? | vector | `M L T^-1` | mass distribution and velocity in one frame |
 
 ## Root factorization
 
@@ -31,6 +32,10 @@ motion-measure-use
    x scalar-or-vector kind
    x average-or-instantaneous view
    x time interval or instant
+   x system boundary, membership, and mass distribution
+   x momentum aggregation and reference frame
+   x impulse interval and external-force aggregation
+   x open-system transfer or fixed-membership scope
    x unit system
 ```
 
@@ -42,6 +47,10 @@ motion-measure-use
 | Speed vs. velocity | unit and dimension `L T^-1` | scalar path rate vs. vector position rate |
 | Velocity vs. acceleration | both may be vectors | first vs. second time derivative of position |
 | Average vs. instantaneous | describe the same quantity family | finite interval ratio vs. limiting derivative |
+| Velocity vs. momentum | both are directed and frame-dependent | motion per time vs. mass-weighted motion quantity |
+| Momentum vs. kinetic energy | both depend on mass and velocity | vector linear in velocity vs. scalar quadratic in speed |
+| Momentum vs. force | force can change momentum | system motion quantity vs. interaction rate of change |
+| Momentum change vs. impulse | equal under a scoped impulse-momentum relation | state difference vs. force accumulated over time |
 
 ## Diagnostic examples
 
@@ -52,11 +61,17 @@ motion-measure-use
   direction changes.
 - Negative acceleration can speed up an object moving in the negative
   direction.
+- Two objects can have equal velocity and different momentum because their
+  selected masses differ.
+- Equal momentum magnitudes do not imply equal kinetic energies or directions.
+- Momentum conservation requires the declared system and external impulse;
+  it is not certified by a collision diagram alone.
 
 ## Formula view
 
-The linked [Kinematics Formula Table](../formulas/kinematics-motion-measures.md)
-contains average, instantaneous, and constant-acceleration relations.
+The linked [Motion and Momentum Formula Table](../formulas/kinematics-motion-measures.md)
+contains average, instantaneous, constant-acceleration, momentum, aggregation,
+and impulse relations.
 
 ## Selection procedure
 
@@ -75,6 +90,10 @@ contains average, instantaneous, and constant-acceleration relations.
    direction matters.
 8. Use constant-acceleration formulas only after verifying that regime over
    the selected interval.
+9. For momentum, select the system membership, mass distribution, velocity
+   field or body velocity, and one reference frame.
+10. For conservation or impulse, declare the time interval, external-force
+    set, boundary transfers, and whether membership is fixed.
 
 ## Reference Delta
 
@@ -96,6 +115,13 @@ contains average, instantaneous, and constant-acceleration relations.
 - Acceleration can result from direction change with constant speed.
 - Constant-acceleration formulas require constant acceleration over the
   interval.
+- Momentum values combine only after transformation to one frame and one
+  declared system boundary.
+- `p = m v` is a particle or rigid-translation relation; distributed systems
+  require mass-weighted aggregation.
+- Momentum conservation requires zero net external impulse for the chosen
+  closed or fixed-membership system over the interval.
+- Impulse is an accumulated interaction, not a force value or momentum state.
 
 ## Cross-references
 
@@ -119,6 +145,10 @@ contains average, instantaneous, and constant-acceleration relations.
 2. NIST, "SI Units - Length" and "SI Units - Time":
    https://www.nist.gov/pml/owm/si-units-length
    https://www.nist.gov/pml/owm/si-units-time
+3. NASA, "Momentum and Impulse":
+   https://www.nasa.gov/wp-content/uploads/2024/05/momentum-and-impulse-classroom-connection-508.pdf
+4. NASA Glenn Research Center, "Newton's Second Law of Motion":
+   https://www.grc.nasa.gov/www/k-12/BGP/newton2.html
 
-Comparator access date: 2026-08-14. Physics distinctions are established
+Comparator access date: 2026-08-15. Physics distinctions are established
 within source scope; Factorium organization remains `candidate`.

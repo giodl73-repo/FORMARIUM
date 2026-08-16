@@ -616,3 +616,27 @@ component catalogs, tabulation sources, or specialist molar-mass-average
 families as canonical senses. It deepens current base-volume sources, so the
 Factor Forge book delta remains 42 records: eighteen entries and twenty-four
 specialized views.
+
+## F24 first slice
+
+F24 deepens `tables/entries/motion-measure.md`,
+`tables/entries/matter-load-measure.md`, and
+`tables/entries/work-energy-power.md` as one mechanics-and-continuum route.
+Momentum is a system state distinct from velocity, force, impulse, and energy;
+torque is a reference-dependent axial turning effect distinct from work;
+stress maps surface orientation to traction; gravitational field is distinct
+from the force on a test body; and local density is a resolution-scoped field
+whose volume integral recovers mass.
+
+Five existing Formula views now carry the corresponding momentum, impulse,
+torque, traction, stress, field, and density relations. Research and
+fixed-point review are
+`docs/research/2026-08-15-momentum-torque-stress-field-density.md` and
+`MOMENTUM-TORQUE-STRESS-FIELD-DENSITY-ROLE-REVIEW.md`. The dedicated
+dimensional audit checks 60 relations with zero P1 errors.
+
+F24 resolves momentum, torque, stress, gravitational field, and local density
+without admitting named material, loading, field-model, or constitutive
+families as canonical senses. It adds no record or chapter, so the Factor
+Forge book delta remains 42 records: eighteen entries and twenty-four
+specialized views.
