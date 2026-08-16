@@ -502,3 +502,26 @@ named bands, wave families, modes, or instruments as canonical senses. Because
 the anchor and Formula view already belong to the base volume, the Factor Forge
 book delta grows by only the new Diagnostic view to 39 records: eighteen
 entries and twenty-one specialized views.
+
+## F19 first slice
+
+F19 deepens `tables/entries/electrical-quantity.md` across four descriptive
+levels: local electric field, material resistivity, configuration capacitance,
+and complex frequency-dependent impedance. It preserves their relations to
+potential difference, specimen resistance, stored charge, current, power, and
+energy without treating shared units or familiar circuit metaphors as identity.
+
+The revised `tables/formulas/electrical-quantities.md` adds scoped field,
+uniform-specimen resistivity, linear capacitance, and sinusoidal impedance
+relations. The new
+`tables/diagnostics/electrical-field-material-impedance-failures.md` maps
+spatial, geometry, contact, material-state, charge/capacitance, complex-phase,
+fixture, parasitic, and calibration-plane failures to discriminating tests.
+Research and fixed-point review are
+`docs/research/2026-08-15-electrical-field-material-impedance.md` and
+`ELECTRICAL-FIELD-MATERIAL-IMPEDANCE-ROLE-REVIEW.md`.
+
+F19 resolves all four remaining electrical candidates without admitting named
+components, materials, bands, or circuit topologies as canonical senses. The
+Factor Forge book delta grows only by the new Diagnostic view to 40 records:
+eighteen entries and twenty-two specialized views.

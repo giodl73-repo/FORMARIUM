@@ -9,7 +9,10 @@ form a connected circuit vocabulary but answer different questions. Charge is
 a quantity; current is charge flow rate; potential difference is energy change
 per charge between points; resistance describes a scoped voltage-current
 relation; power is energy-transfer rate; electrical energy accumulates that
-transfer through time.
+transfer through time. Electric field is a local vector quantity; resistivity
+is a material property distinct from a specimen's resistance; capacitance is a
+configuration-and-state relation; impedance is a complex, frequency-scoped
+terminal response rather than a synonym for resistance.
 
 ## Sense table
 
@@ -21,6 +24,10 @@ transfer through time.
 | `resistance` | What scoped voltage-current relation characterizes this component or operating point? | constitutive or derived parameter | ohm, `ohm` |
 | `electrical-power` | At what rate is electrical energy supplied or absorbed at these terminals? | signed transfer rate | watt, `W` |
 | `electrical-energy-transfer` | How much energy crossed through the electrical interaction over the interval? | signed transfer amount | joule, `J` |
+| `electric-field` | What force per charge or potential gradient is assigned locally in space and time? | vector field quantity | volt per metre, `V m^-1` |
+| `electrical-resistivity` | What local or effective material property relates field and current density under declared conditions? | material constitutive property | ohm metre, `ohm m` |
+| `capacitance` | What charge-potential relation characterizes a declared conductor configuration and state? | configuration constitutive parameter | farad, `F = C V^-1` |
+| `electrical-impedance` | What complex voltage-current ratio characterizes a terminal pair at a declared frequency and regime? | complex frequency response | ohm, `ohm` |
 
 ## Quantity ladder
 
@@ -39,6 +46,11 @@ electrical power
 
 voltage-current behavior
   -- under a declared component regime --> resistance or another constitutive relation
+
+force per test charge or potential gradient -> electric field
+material + direction + conditions -> resistivity -> specimen geometry -> resistance
+conductor configuration + dielectric + state -> capacitance
+complex voltage/current phasors + frequency -> impedance
 ```
 
 ## Root factorization
@@ -52,6 +64,13 @@ electrical-quantity-use
    x carrier and transport context
    x material and component state
    x operating range and waveform
+   x local field point, direction, frame, and spatial scale
+   x material, microstructure, direction, temperature, and constitutive regime
+   x geometry, electrodes, dielectric, boundary conditions, and leakage
+   x steady, transient, sinusoidal, or broadband excitation regime
+   x frequency, phase reference, complex convention, and harmonic index
+   x ideal, equivalent-circuit, distributed, or measured representation
+   x calibration, parasitics, uncertainty, and validity range
    x average, instantaneous, or accumulated view
    x energy-transfer sign convention
    x unit and uncertainty
@@ -67,6 +86,12 @@ electrical-quantity-use
 | Resistance vs. resistivity | both characterize conduction | component/geometry relation vs. material property |
 | Electrical energy vs. power | both concern transfer | accumulated joules vs. watts as joules per second |
 | Power absorbed vs. supplied | same magnitude and unit may appear | polarity-current sign relation determines direction |
+| Electric field vs. potential difference | both connect to volts | local vector gradient/force-per-charge vs. ordered difference between points |
+| Resistance vs. resistivity | both concern conduction | specimen terminal response vs. material property with geometry removed under a model |
+| Capacitance vs. stored charge | related by a scoped constitutive relation | configuration parameter vs. state quantity |
+| Capacitance vs. capacitor | property vs. physical component or implementation |
+| Resistance vs. impedance | both use ohms | real scoped voltage-current parameter vs. complex frequency-dependent terminal ratio |
+| Impedance magnitude vs. impedance | both use ohms | nonnegative magnitude vs. complex response retaining phase |
 
 ## Diagnostic examples
 
@@ -80,6 +105,10 @@ electrical-quantity-use
 - A `100 W` device used for one hour transfers `100 Wh` of energy, not
   `100 W` of energy.
 - A diode's changing `V/I` ratio does not make it one constant ohmic resistor.
+- Equal potential difference over different distances does not imply equal local electric field.
+- Equal material resistivity does not imply equal specimen resistance when geometry differs.
+- A charged configuration can have fixed capacitance while its stored charge changes.
+- Two devices can share impedance magnitude while their voltage-current phase differs.
 
 ## Specialized views
 
@@ -87,6 +116,8 @@ electrical-quantity-use
   owns current, potential-difference, power, and energy-transfer relations.
 - [Ohm's Law](../formulas/ohms-law.md) owns the bounded linear
   voltage-current constitutive relation.
+- [Electrical Field, Material, Storage, and Impedance Failure Diagnostic](../diagnostics/electrical-field-material-impedance-failures.md)
+  tests local/terminal, material/specimen, state/property, and real/complex collapse.
 
 ## Selection procedure
 
@@ -95,10 +126,15 @@ electrical-quantity-use
    constitutive response, transfer rate, or accumulated transfer.
 3. Declare voltage polarity and conventional-current direction.
 4. Identify average, instantaneous, steady, or time-varying scope.
-5. Apply Ohm's law only after confirming ohmic behavior and operating state.
-6. Use the chosen energy-transfer sign convention consistently.
-7. Integrate or multiply by duration to convert power to energy.
-8. Audit units, waveform assumptions, and uncertainty.
+5. For fields, declare point or region, vector direction, frame, time, and boundary conditions.
+6. For resistivity, separate material, direction, temperature, and model from specimen geometry.
+7. For capacitance, declare conductors, dielectric, geometry, state, frequency, leakage, and linearity.
+8. For impedance, declare terminal pair, frequency, phasor convention, excitation,
+   equivalent representation, parasitics, and calibration plane.
+9. Apply Ohm's law only after confirming ohmic behavior and operating state.
+10. Use the chosen energy-transfer sign convention consistently.
+11. Integrate or multiply by duration to convert power to energy.
+12. Audit units, waveform assumptions, and uncertainty.
 
 ## Reference Delta
 
@@ -123,6 +159,11 @@ electrical-quantity-use
 - Resistive power forms inherit all Ohm-law restrictions.
 - Energy requires a duration or integration of power.
 - A shared joule or watt unit does not identify the transfer mechanism.
+- Electric field is not inferred from voltage alone without geometry and field conditions.
+- Resistivity-to-resistance relations state uniformity, geometry, contacts, and direction.
+- Capacitance does not name stored charge, stored energy, or one component type.
+- Impedance retains complex phase, frequency, terminal, and calibration reference.
+- Ideal resistor/capacitor models are not promoted beyond their validity regimes.
 
 ## Cross-references
 
@@ -133,10 +174,6 @@ electrical-quantity-use
 - [Measure](../roots/measure.md)
 - [Boundary](../roots/boundary.md)
 - [State](../roots/state.md)
-- electric field - `unresolved-candidate`
-- resistivity - `unresolved-candidate`
-- capacitance - `unresolved-candidate`
-- impedance - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -149,6 +186,12 @@ electrical-quantity-use
    https://openstax.org/books/university-physics-volume-2/pages/9-5-electrical-energy-and-power
 2. NIST, "SI Units - Electric Current":
    https://www.nist.gov/pml/owm/si-units-electric-current
+3. BIPM, *SI Brochure*: https://www.bipm.org/en/publications/si-brochure
+4. NIST, *The Measurement of Lumped Parameter Impedance*:
+   https://www.nist.gov/system/files/documents/calibrations/mn141.pdf
+5. NIST, Farad and Impedance Metrology:
+   https://www.nist.gov/programs-projects/farad-and-impedance-metrology
+6. [Research note](../../docs/research/2026-08-15-electrical-field-material-impedance.md)
 
 Comparator access date: 2026-08-14. Introductory electrical relations and SI
 units are established within source scope; Factorium organization remains

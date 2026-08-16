@@ -197,13 +197,17 @@ factor nominal-or-real-currency-basis | nominal or real currency basis
 factor risk-uncertainty-fees-and-taxes | risk, uncertainty, fees, and taxes
 factor purpose-and-decision-policy | purpose and decision policy
 end-entry
-entry electrical-quantity | Electrical Quantity | science | candidate | tables/entries/electrical-quantity.md | Electric charge, current, potential difference, resistance, power, and energy form a connected circuit vocabulary but answer different questions. Charge is a quantity; current is charge flow rate; potential difference is energy change per charge between points; resistance describes a scoped voltage-current relation; power is energy-transfer rate; electrical energy accumulates that transfer through time.
+entry electrical-quantity | Electrical Quantity | science | candidate | tables/entries/electrical-quantity.md | Electrical descriptions span local electric field, charge and current, point-pair potential difference, material resistivity, specimen resistance, configuration capacitance, complex impedance, power, and energy transfer. Each retains its descriptive level, geometry, state, terminals, frequency, and model scope.
 sense electric-charge | electric charge
 sense electric-current | electric current
 sense potential-difference | potential difference
 sense resistance | resistance
 sense electrical-power | electrical power
 sense electrical-energy-transfer | electrical energy transfer
+sense electric-field | electric field
+sense electrical-resistivity | electrical resistivity
+sense capacitance | capacitance
+sense electrical-impedance | electrical impedance
 factor system-or-component | system or component
 factor terminal-pair-or-oriented-surface | terminal pair or oriented surface
 factor requested-quantity | requested quantity
@@ -211,6 +215,13 @@ factor polarity-and-current-direction | polarity and current direction
 factor carrier-and-transport-context | carrier and transport context
 factor material-and-component-state | material and component state
 factor operating-range-and-waveform | operating range and waveform
+factor local-field-point-direction-frame-and-spatial-scale | local field point, direction, frame, and spatial scale
+factor material-microstructure-direction-temperature-and-constitutive-regime | material, microstructure, direction, temperature, and constitutive regime
+factor geometry-electrodes-dielectric-boundary-conditions-and-leakage | geometry, electrodes, dielectric, boundary conditions, and leakage
+factor steady-transient-sinusoidal-or-broadband-excitation-regime | steady, transient, sinusoidal, or broadband excitation regime
+factor frequency-phase-reference-complex-convention-and-harmonic-index | frequency, phase reference, complex convention, and harmonic index
+factor ideal-equivalent-circuit-distributed-or-measured-representation | ideal, equivalent-circuit, distributed, or measured representation
+factor calibration-parasitics-uncertainty-and-validity-range | calibration, parasitics, uncertainty, and validity range
 factor average-instantaneous-or-accumulated-view | average, instantaneous, or accumulated view
 factor energy-transfer-sign-convention | energy-transfer sign convention
 factor unit-and-uncertainty | unit and uncertainty
@@ -760,6 +771,8 @@ view diagnostic-control-response-failures | control-monitoring-response | object
 end-view
 view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view
+view diagnostic-electrical-field-material-impedance-failures | electrical-quantity | electric-charge,electric-current,potential-difference,resistance,electrical-power,electrical-energy-transfer,electric-field,electrical-resistivity,capacitance,electrical-impedance | diagnostic | Electrical Field, Material, Storage, and Impedance Failure Diagnostic | tables/diagnostics/electrical-field-material-impedance-failures.md | Maps local-field, geometry, contact, material, charge/capacitance, complex-response, phasor, fixture, and calibration symptoms to discriminating checks without treating an ideal equation or equivalent-circuit fit as physical or safety certification.
+end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
 end-view
 view diagnostic-geometric-reference-structure-failures | geometric-reference-structure | geometric-object,point,curve,path,length,shape,angle,coordinate-system,reference-frame,unit-circle | diagnostic | Geometric Reference Failure Diagnostic | tables/diagnostics/geometric-reference-structure-failures.md | Maps object/representation, locus/traversal, metric, shape, angle, coordinate, reference-frame, and unit-circle symptoms to candidate causes and discriminating tests without treating coordinate agreement as proof.
@@ -798,7 +811,7 @@ view formula-cost-value-return | cost-price-value-return | dollar-return,rate-of
 end-view
 view formula-density | matter-load-measure | mass-density | formula | Mass Density | tables/formulas/density.md | Average mass density relates the total mass of a chosen object or substance sample to the volume it occupies. The bulk relation does not by itself assert that density is uniform at every point.
 end-view
-view formula-electrical-quantities | electrical-quantity | electric-charge,electric-current,potential-difference,electrical-power,electrical-energy-transfer | formula | Electrical Quantities | tables/formulas/electrical-quantities.md | These relations separate charge, current, potential difference, electrical power, and transferred energy. They require a system or component, terminal pair or oriented surface, time basis, and consistent voltage-current sign convention.
+view formula-electrical-quantities | electrical-quantity | electric-charge,electric-current,potential-difference,electrical-power,electrical-energy-transfer,electric-field,electrical-resistivity,capacitance,electrical-impedance | formula | Electrical Quantities | tables/formulas/electrical-quantities.md | These relations separate local field, charge, current, potential difference, material resistivity, specimen resistance, configuration capacitance, complex impedance, power, and energy transfer under explicit spatial, material, geometry, state, terminal, frequency, phase, sign, and validity contracts.
 end-view
 view formula-force | force | physical-interaction | formula | Force - Newtonian Net-Force Formula View | tables/formulas/force.md | In Newtonian mechanics, Newton's second law relates the net external force on a chosen system to its mass and acceleration. The familiar `F = ma` shorthand is useful only when `F` is understood as the vector sum of external forces and the system and model assumptions are fixed.
 end-view

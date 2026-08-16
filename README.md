@@ -161,14 +161,14 @@ Forge delta:
 .\tools\render_proof_set.ps1 -Edition sim-02
 ```
 
-Render the expanded edition with twenty neutral Factor Forge coverage tasks while
+Render the expanded edition with twenty-one neutral Factor Forge coverage tasks while
 excluding the author-only rubric:
 
 ```powershell
 .\tools\render_proof_set.ps1 -Edition sim-03
 ```
 
-Render the same book with a static in-browser search surface over all 117
+Render the same book with a static in-browser search surface over all 118
 selected records and the two application guides:
 
 ```powershell
@@ -205,7 +205,7 @@ Render the multi-page static book-site simulation:
 .\tools\render_proof_set.ps1 -Edition sim-07
 ```
 
-Open `target/proof-set-sim-07/index.html` for search, twenty chapter routes,
+Open `target/proof-set-sim-07/index.html` for search, twenty-one chapter routes,
 and dedicated reading pages. The generated site remains a disposable
 publication projection; see
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).

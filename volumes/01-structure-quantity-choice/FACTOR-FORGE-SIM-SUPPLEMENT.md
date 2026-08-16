@@ -2,7 +2,7 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **39 records** — 18 canonical entries and 21
+Selected current-corpus delta: **40 records** — 18 canonical entries and 22
 specialized views
 
 ## Purpose
@@ -236,6 +236,19 @@ baseline, amplitude measure, preprocessing, sampling, windowing, normalization,
 aliasing, spectral interpretation, branch, bandwidth, distortion, and transport
 overclaims without duplicating the existing canonical entry in the supplement.
 
+## Part XX - Electrical field, material, storage, and response
+
+### From shared units to the correct descriptive level
+
+118. [Electrical Field, Material, Storage, and Impedance Failure Diagnostic](../../tables/diagnostics/electrical-field-material-impedance-failures.md)
+
+The revised base-volume Electrical Quantity anchor and Formula view own local
+field, material resistivity, specimen resistance, configuration capacitance,
+complex impedance, and their scoped relations. This Diagnostic view tests
+spatial-model, geometry, contact, state, frequency, phase, equivalent-circuit,
+fixture, parasitic, and calibration failures without creating a catalog of
+named components or materials.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -244,5 +257,5 @@ overclaims without duplicating the existing canonical entry in the supplement.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 117-record combined simulation remains a rehearsal projection, not a
+- The 118-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

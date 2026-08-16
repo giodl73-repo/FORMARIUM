@@ -261,8 +261,24 @@ amplitude measure, sampling, window, transform, normalization, axes,
 resolution, medium, mode, dispersion branch, bandwidth, distortion, and
 transport target before comparing values or accepting physical claims.
 
+## Task AB - Same ohms, different electrical story
+
+A report divides a voltage by distance and calls the result the electric field
+everywhere. Two specimens of the same material have different resistance, so
+their resistivities are declared different without accounting for length,
+area, contacts, direction, or temperature. Stored charge changes and is
+reported as changed capacitance. At one AC frequency, two devices have the
+same impedance magnitude but opposite phase, yet both are replaced by the same
+DC resistance. Moving the measurement fixture changes the result.
+
+Separate electric field, potential difference, resistivity, resistance,
+capacitance, charge, impedance, and impedance magnitude. Use the Formula and
+Diagnostic views to freeze spatial model, geometry, material state, conductor
+configuration, terminals, frequency, phasor convention, equivalent model,
+fixture, calibration plane, parasitics, and uncertainty before comparing values.
+
 ## Rehearsal boundary
 
-The twenty prompts collectively exercise every entry and specialized view in the
+The twenty-one prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

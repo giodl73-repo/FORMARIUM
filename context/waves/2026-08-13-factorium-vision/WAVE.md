@@ -652,3 +652,32 @@ Forge delta grows to 39 records and the combined selection to 117 numbered
 records plus two guides across twenty chapters. The generated `sim-07` site
 contains 154 pages from 133 sources, indexes all 119 reader destinations, and
 reports zero missing internal targets.
+
+## 2026-08-15 electrical-field-material-impedance content continuation
+
+Plan review: deepen the existing Electrical Quantity authority rather than
+creating isolated field, resistivity, capacitance, and impedance anchors;
+separate local field, material property, configuration property, and complex
+terminal response levels; ground units, relations, and metrology scope in BIPM
+and NIST sources; revise the existing Formula view; add one Diagnostic view;
+apply the Concept & Taxonomy Boundary Editor before any named component,
+material, band, or circuit family enters; then propagate the exact one-view
+delta through assurance, Factor Forge, search, and the static book site. No
+external-reader gate, exposure claim, equivalent-circuit mechanism claim,
+component certification, or safe-design claim is introduced.
+
+Result review: F19 adds electric field, electrical resistivity, capacitance,
+and electrical impedance to `electrical-quantity`, revises the Electrical
+Quantities Formula view with electrostatic field, uniform-specimen resistivity,
+linear capacitance, and sinusoidal impedance relations, and adds the Electrical
+Field, Material, Storage, and Impedance Failure Diagnostic. Field/potential,
+resistivity/resistance, capacitance/charge, capacitance/component,
+resistance/impedance, and impedance/magnitude remain distinct. Named components,
+materials, bands, and topologies remain external examples. The web campaign
+confirms 18 findings and the 13-role fixed-point review closes all major
+findings. The reference remains at 38 entries and grows to 274 senses, 407
+factors, and 53 views with 97 assurance bindings and zero unresolved view
+owners. The Factor Forge delta grows to 40 records and the combined selection
+to 118 numbered records plus two guides across twenty-one chapters. The
+generated `sim-07` site contains 156 pages from 134 sources, indexes all 120
+reader destinations, and reports zero missing internal targets.

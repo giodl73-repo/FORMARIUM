@@ -292,6 +292,24 @@ Critical artifact failure: matching units, a transform peak, pulse arrival, or
 the word velocity is accepted as sufficient proof that amplitude conventions,
 physical modes, causal sources, and transport speeds are interchangeable.
 
+## Task AB expected route
+
+- Electrical Quantity;
+- Electrical Quantities;
+- Ohm's Law;
+- Electrical Field, Material, Storage, and Impedance Failure Diagnostic;
+- local electric field and point-pair potential difference remain distinct;
+- material resistivity and specimen resistance retain geometry and state;
+- capacitance and stored charge remain property and state, respectively;
+- complex impedance retains magnitude, phase, terminals, and frequency;
+- ideal component equations retain electrostatic, uniform, linear, lumped,
+  sinusoidal, and nonzero-denominator restrictions;
+- fixture, parasitics, and calibration plane remain measurement context.
+
+Critical artifact failure: shared volts or ohms, a fitted equivalent circuit,
+or one terminal ratio is accepted as proof of identical fields, materials,
+configurations, mechanisms, frequency responses, or safe designs.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -336,6 +354,7 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/entries/thermodynamic-system-state-phase.md`
 - `tables/diagnostics/thermodynamic-system-state-phase-failures.md`
 - `tables/diagnostics/oscillation-spectrum-dispersion-failures.md`
+- `tables/diagnostics/electrical-field-material-impedance-failures.md`
 
 ## Claim boundary
 

@@ -12,10 +12,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/cost-price-value-return.md` | 141 | accounting basis - `unresolved-candidate` |
 | `tables/entries/cost-price-value-return.md` | 144 | inflation - `unresolved-candidate` |
 | `tables/entries/cost-price-value-return.md` | 145 | net present value - `unresolved-candidate` |
-| `tables/entries/electrical-quantity.md` | 136 | electric field - `unresolved-candidate` |
-| `tables/entries/electrical-quantity.md` | 137 | resistivity - `unresolved-candidate` |
-| `tables/entries/electrical-quantity.md` | 138 | capacitance - `unresolved-candidate` |
-| `tables/entries/electrical-quantity.md` | 139 | impedance - `unresolved-candidate` |
 | `tables/entries/force.md` | 129 | coercion — `unresolved-candidate` |
 | `tables/entries/force.md` | 130 | validity — `unresolved-candidate` |
 | `tables/entries/identity-naming-classification-versioning.md` | 129 | namespace - `unresolved-candidate` |
