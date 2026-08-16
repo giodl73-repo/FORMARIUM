@@ -157,6 +157,7 @@ reference and relation identities:
 ```powershell
 cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 ```
 
 Build the disposable Proof Set simulation rendering with Pandoc:
@@ -411,6 +412,7 @@ cargo run --quiet -- packet-check artifacts\factor-v1
 cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
 cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
 cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
@@ -429,6 +431,7 @@ node tools\check_composition_guide.js
 node tools\check_composition_evaluation.js
 node tools\check_reference_closure_coverage.js
 node tools\check_decision_evidence_bridge.js
+node tools\check_constraint_feasibility_relation.js
 node tools\check_decision_evidence_reading_route.js
 node tools\check_proof_set_composition.js target\proof-set-sim-29\manifest.json target\proof-set-sim-29\index.html
 node tools\check_proof_set_decision_evidence_reading.js target\proof-set-sim-29

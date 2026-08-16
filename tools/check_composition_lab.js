@@ -41,11 +41,14 @@ function relationPayload() {
 const payload = relationPayload();
 assert.equal(payload.relations.length, 6, "Lab allowlist remains six relations");
 assert.equal(fs.readFileSync(relationsPath, "utf8").split(/\r?\n/)
-  .filter((line) => line.startsWith("relation ")).length, 7,
-"canonical sidecar contains one separately admitted cross-entry relation");
+  .filter((line) => line.startsWith("relation ")).length, 8,
+"canonical sidecar contains two separately admitted cross-entry relations");
 assert.ok(!payload.relations.some((relation) =>
   relation.id === "f27-evidence-qualifies-evaluation"),
 "F29 relation is not interactively exposed");
+assert.ok(!payload.relations.some((relation) =>
+  relation.id === "f27-constraint-filters-feasibility"),
+"F31 relation is not interactively exposed");
 const f1 = payload.relations[0];
 const f2 = payload.relations[1];
 

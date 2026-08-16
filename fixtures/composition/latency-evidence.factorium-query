@@ -1,7 +1,7 @@
 factorium-composition-query-v0
 query latency-observation-inference
 problem Which observation and inference concepts are required to review a claim that a software release reduced typical request latency?
-source 5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e | a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6
+source 5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e | 9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60
 context synthetic-evidence-review | population=declared-request-set,reference-frame=not-applicable
 policy direction=forward,follow=evaluative-required,stop=stable-identity
 budget depth=1,edges=1,nodes=3,work=9

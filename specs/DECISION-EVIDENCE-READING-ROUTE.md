@@ -43,10 +43,11 @@ contract. The reader route carries no evidence artifact, local
 evidence-to-alternative binding, support direction, causal status, score,
 ranking, recommendation, or final selection.
 
-The full guide contains synthetic local analysis beyond this one structural
-edge. Those authored records remain guide content and do not become canonical
-query outcomes. In particular, the route's unresolved check and incomplete
-closure state remain visible next to the guide's conditional recommendation.
+The full guide contains a separately admitted constraint-to-feasibility route
+and synthetic local analysis beyond this one structural edge. Neither changes
+this query's outcomes. In particular, the evidence route's unresolved check
+and incomplete closure state remain visible next to the guide's conditional
+recommendation.
 
 ## Profiles, identity, and storage
 

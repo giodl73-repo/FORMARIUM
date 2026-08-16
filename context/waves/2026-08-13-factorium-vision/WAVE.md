@@ -1697,3 +1697,45 @@ read-only publication projection only. It makes no local applicability,
 support, truth, sufficiency, causal, ranking, recommendation-validity,
 decision-quality, reader-success, external-preview, publication, Workbench,
 or `preview-01` claim.
+
+## 2026-08-16 F31 constraint-to-feasibility relation admission
+
+Plan review: admit only `f27-constraint-filters-feasibility` from the three
+remaining F27 candidates; preserve Policy/Rule as authority and exception
+owner, Choice as feasibility owner, and the Decision view as scope; require
+declared authority, version, effective period, applicability, and hard/soft
+status; carry no option status or automatic exclusion; keep the canonical
+check `unresolved` and closure `incomplete`; separate the guide's local
+limited-trial pass from canonical state; migrate the complete sidecar and all
+query identities; and leave the Lab on F1-F6. The six-role review found zero
+P1 and twelve P2 conditions, all closed by the exact contract, loss boundary,
+fixtures, guide route, assurance migration, and Lab exclusions.
+
+Result review: the canonical relation sidecar now contains eight records at
+SHA-256
+`9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60`,
+including exactly two cross-entry relations. Exact assurance covers 40
+entries, 57 views, and eight relations in 105 bindings at SHA-256
+`56cbedeceac35ce2c4e087f7965b227f4bae28cd607a7f4a281c1bdc86381480`.
+The new three-node query has SHA-256
+`2c32158a2a51ea5ccf0f5a51fbdfaed55ea0053552fcd79814f8c6bda5758de1`,
+retains unresolved authority/applicability/alternative-satisfaction review,
+and fails closed on an incorrect predecessor. The guide adds an exact
+constraint-to-feasibility reading route, states the noncompensatory hard-
+constraint boundary, preserves its local pass only for the authored limited
+trial, and leaves broad adoption unresolved. The other three bridge relations
+remain candidates; the separately hashed six-ID Lab allowlist excludes both
+canonical F27 edges.
+
+The regenerated 161-source `sim-29` edition retains 132 searchable
+destinations and 176 site pages with zero missing targets. Its site identity
+is `850371b94b19cd0aa000a3ca287ceac571453bc3f2b66c1526e43196d12e7b64`
+and standalone SHA-256 is
+`bfa3a12e23abe3b49cf791fc90c4b96cc2dd4b5fbb6c2546810e3ad9c5e08eea`.
+All 70 Rust tests, Clippy, seven canonical queries, relation-specific negative
+fixtures, focused bridge and constraint checks, reference/sidecar, closure,
+local and generated-site composition, live browser, packet, role, link, and
+diff checks pass. No constraint applicability, policy interpretation,
+compliance, satisfaction, enforcement, automatic exclusion, ranking,
+recommendation validity, decision quality, reader success, external-preview,
+publication, Workbench, or `preview-01` claim is admitted.

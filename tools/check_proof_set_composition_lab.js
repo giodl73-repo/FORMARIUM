@@ -17,8 +17,8 @@ const editionNumber = Number(manifest.edition.split("-")[1]);
 assert.ok(Number.isInteger(editionNumber) && editionNumber >= 16, "bounded lab edition");
 assert.equal(manifest.site_checks.composition_lab_pages, 1, "one lab page");
 assert.equal(manifest.composition_lab_checks.relation_records, 6, "six reviewed relations");
-assert.equal(manifest.composition_lab_checks.canonical_relation_records, 7,
-  "canonical graph reports its separately reviewed seventh relation");
+assert.equal(manifest.composition_lab_checks.canonical_relation_records, 8,
+  "canonical graph reports its two separately reviewed cross-entry relations");
 assert.equal(manifest.composition_lab_checks.allowlist_path,
   "volumes/01-structure-quantity-choice/proof-set-composition-lab-relations.factorium");
 const allowlistPath = path.resolve(manifest.composition_lab_checks.allowlist_path);
@@ -62,7 +62,10 @@ assert.equal(payload.schema, "factorium-composition-lab-payload-v0", "payload sc
 assert.equal(payload.relations.length, 6, "payload relation count");
 assert.ok(!payload.relations.some((relation) =>
   relation.id === "f27-evidence-qualifies-evaluation"),
-"new canonical edge remains outside interactive Lab");
+"evidence canonical edge remains outside interactive Lab");
+assert.ok(!payload.relations.some((relation) =>
+  relation.id === "f27-constraint-filters-feasibility"),
+"constraint canonical edge remains outside interactive Lab");
 assert.equal(new Set(payload.relations.map((relation) => relation.id)).size, 6,
   "payload relation IDs are unique");
 assert.equal(new Set(payload.relations.map((relation) => relation.scope)).size, 6,

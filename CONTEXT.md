@@ -737,7 +737,7 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 Factor Forge through F27 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
 software, and decision support. The canonical reference now contains 40
-entries, 304 senses, 479 factors, and 57 views with 104 exact assurance
+entries, 304 senses, 479 factors, and 57 views with 105 exact assurance
 bindings. The current Factor Forge supplement contains 46 records, while
 `sim-29` selects 124 canonical records and indexes 132 destinations across
 thirteen chapters. Historical preflight documents retain the counts of the
@@ -745,9 +745,10 @@ rehearsal they recorded.
 
 F28 adds parser grammar and external fail-closed fixtures for five Decision
 and Evidence relation kinds. F29 admits the first exact cross-entry
-evidence-to-evaluation relation, bringing the canonical sidecar to seven
-reviewed edges. The Composition Lab remains separately fixed to its six-ID
-F1-F6 teaching allowlist.
+evidence-to-evaluation relation, and F31 admits the constraint-to-feasibility
+relation, bringing the canonical sidecar to eight reviewed edges. The
+Composition Lab remains separately fixed to its six-ID F1-F6 teaching
+allowlist.
 
 F30 makes that admitted cross-entry edge legible without expanding the Lab.
 The existing Evidence-Informed Intervention Choice Guide now owns an exact
@@ -755,6 +756,12 @@ Add/Multiply/Evaluate/Stop/Flatten reading route whose applicability check is
 `unresolved` and closure state is `incomplete`. The proof home and read-only
 Composition Explorer expose six worked traces, while Compose retains exactly
 five authored starters over its existing six-relation allowlist.
+
+F31 admits the second cross-entry edge: a Policy/Rule constraint can constrain
+Choice feasibility only under declared authority, version, effective period,
+applicability, and hard/soft status. Its canonical check remains unresolved;
+the guide's local pass is limited to the authored monitored-trial alternative.
+Three Decision/Evidence bridge kinds remain candidate-only.
 
 ## Boundary
 
@@ -779,6 +786,7 @@ cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium 
 cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
 node tools\check_reference_closure_coverage.js
 node tools\check_decision_evidence_bridge.js
+node tools\check_constraint_feasibility_relation.js
 node tools\check_decision_evidence_reading_route.js
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1

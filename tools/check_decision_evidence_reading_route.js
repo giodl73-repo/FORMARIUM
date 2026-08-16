@@ -14,7 +14,7 @@ const spec = read("specs/DECISION-EVIDENCE-READING-ROUTE.md");
 const digest = crypto.createHash("sha256").update(query).digest("hex");
 
 assert.equal(digest,
-  "50e64f3a0bae939b11619980423a59a4825d9763bb07525a0a02cf21a7c7181d",
+  "f0f9a3a2d600eac0d33d90f5e769c1b043998348ecd338da028c1ebdc8e69e51",
   "canonical Decision/Evidence query identity");
 assert.match(query, /^edge f27-evidence-qualifies-evaluation$/m,
   "query uses the admitted relation");
@@ -40,5 +40,7 @@ assert.ok(spec.includes("six read-only traces and five authored Lab"),
   "contract separates reader and Lab counts");
 assert.ok(!relationIds(workspace).includes("f27-evidence-qualifies-evaluation"),
   "Decision/Evidence relation remains outside Lab allowlist");
+assert.ok(!relationIds(workspace).includes("f27-constraint-filters-feasibility"),
+  "Constraint/Feasibility relation remains outside Lab allowlist");
 
 console.log(`OK route=read-only state=incomplete trace=${digest} lab=excluded`);

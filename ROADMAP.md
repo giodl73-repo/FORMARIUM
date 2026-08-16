@@ -62,7 +62,8 @@ The current closure stocktake is
 [`docs/research/2026-08-16-reference-closure-stocktake.md`](docs/research/2026-08-16-reference-closure-stocktake.md).
 It distinguishes one connected editorial navigation graph from the reviewed
 semantic sidecar: ordinary cross-references are not closure edges. F29 adds
-the first exact cross-entry edge, bringing that sidecar to seven records.
+the first exact cross-entry edge, and F31 adds the second, bringing that
+sidecar to eight records.
 F30 exposes that edge through one exact incomplete book and problem-led
 reading route while leaving the interactive Composition Lab unchanged.
 

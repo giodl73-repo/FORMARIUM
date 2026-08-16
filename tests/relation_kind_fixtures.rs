@@ -5,7 +5,7 @@ use factor::{
 use std::{fs, path::Path};
 
 #[test]
-fn decision_evidence_kind_fixture_tracks_one_admitted_kind() {
+fn decision_evidence_kind_fixture_tracks_two_admitted_kinds() {
     let path = "fixtures/relations/decision-evidence-relation-kinds.factorium";
     let text = fs::read_to_string(path).unwrap();
     let manifest = RelationManifest::parse(&text).unwrap();
@@ -27,7 +27,21 @@ fn decision_evidence_kind_fixture_tracks_one_admitted_kind() {
         .filter(|candidate| canonical.contains(candidate.id()))
         .map(factor::reference_sidecar::RelationRecord::id)
         .collect::<Vec<_>>();
-    assert_eq!(admitted, ["f27-evidence-qualifies-evaluation"]);
+    assert_eq!(
+        admitted,
+        [
+            "f27-constraint-filters-feasibility",
+            "f27-evidence-qualifies-evaluation"
+        ]
+    );
+    for id in admitted {
+        let prefix = format!("relation {id} | ");
+        let fixture_line = text.lines().find(|line| line.starts_with(&prefix)).unwrap();
+        assert!(
+            canonical.lines().any(|line| line == fixture_line),
+            "admitted fixture record must match canonical bytes: {id}"
+        );
+    }
 }
 
 #[test]
@@ -63,13 +77,13 @@ fn decision_evidence_kind_fixtures_fail_closed() {
 }
 
 #[test]
-fn canonical_sidecar_admits_one_cross_entry_relation() {
+fn canonical_sidecar_admits_two_cross_entry_relations() {
     let text = fs::read_to_string("reference/factorium-relations-v0.factorium").unwrap();
     let manifest = RelationManifest::parse(&text).unwrap();
-    assert_eq!(manifest.relations().len(), 7);
+    assert_eq!(manifest.relations().len(), 8);
     assert_eq!(
         manifest.sha256(),
-        "a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6"
+        "9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60"
     );
 }
 

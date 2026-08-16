@@ -51,7 +51,8 @@ inverse-looking relation grammar.
 
 Canonical graph membership and interactive availability are separate. F29
 keeps the current Lab on an exact six-ID edition-local allowlist while the
-canonical sidecar grows to seven records. The allowlist has its own source
+canonical sidecar grows independently. F31 brings it to eight records without
+widening the Lab. The allowlist has its own source
 file and digest. The Lab must not display, select, discover, or traverse the
 new edge until its reader-facing controls and evaluation behavior receive a
 separate design review.
@@ -71,10 +72,14 @@ completeness, reader success, or preview evidence.
 ## Published identities
 
 - Canonical relation sidecar SHA-256:
-  `a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6`
+  `9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60`
 - Exact assurance sidecar SHA-256:
-  `7f9bf10c155d164c5324c1c6f3fd8c6f9da0c71e5eadd5e4a388f72f637851dc`
+  `56cbedeceac35ce2c4e087f7965b227f4bae28cd607a7f4a281c1bdc86381480`
 - Composition Lab allowlist SHA-256:
   `35f17d2e24190be1be8897f38477a1c138d974223a73f850665e8439ef645f5a`
 - Canonical query SHA-256:
-  `50e64f3a0bae939b11619980423a59a4825d9763bb07525a0a02cf21a7c7181d`
+  `f0f9a3a2d600eac0d33d90f5e769c1b043998348ecd338da028c1ebdc8e69e51`
+
+These current identities include the F31 whole-sidecar assurance and query
+digest migration; the evidence relation record itself is byte-identical to
+its F29 admission.

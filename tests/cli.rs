@@ -184,11 +184,11 @@ fn reference_sidecar_check_validates_relations_and_reviews() {
         .unwrap();
     assert!(output.status.success());
     let stdout = String::from_utf8(output.stdout).unwrap();
-    assert!(stdout.contains("relation_records=7\n"));
-    assert!(stdout.contains("review_bindings=104\n"));
+    assert!(stdout.contains("relation_records=8\n"));
+    assert!(stdout.contains("review_bindings=105\n"));
     assert!(stdout.contains("entry_review_bindings=40\n"));
     assert!(stdout.contains("view_review_bindings=57\n"));
-    assert!(stdout.contains("relation_review_bindings=7\n"));
+    assert!(stdout.contains("relation_review_bindings=8\n"));
     assert!(stdout.contains("prototype_checks=7\n"));
 }
 

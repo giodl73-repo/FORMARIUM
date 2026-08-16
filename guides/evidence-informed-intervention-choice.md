@@ -35,17 +35,17 @@ represent a real organization.
 - `entry:cost-price-value-return`
 - `entry:policy-rule-constraint-decision-exception`
 
-The evidence-to-evaluation type relation is now canonical under
-`specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md`; its local applicability
-check remains unresolved here. The other four F27 bridge relations remain
-candidates. None of the five is available through the current Composition Lab.
+The evidence-to-evaluation and constraint-to-feasibility type relations are
+canonical under their separate admission contracts. Three F27 bridge
+relations remain candidates. None of the five is available through the current
+Composition Lab.
 
 ## Canonical evidence-to-evaluation reading route
 
 Governing question: **Which evidence qualification must be reviewed before
 using a claim to evaluate an alternative?**
 
-This is the one canonical structural path used by the guide. It remains
+This is one of two canonical structural paths used by the guide. It remains
 incomplete because graph membership cannot decide whether the synthetic
 evidence applies to a particular alternative, population, outcome, horizon,
 provenance, or limitation.
@@ -59,7 +59,7 @@ provenance, or limitation.
 | Flatten | three loss-declared rows | Retain the selected source, unresolved evaluation target, and Decision scope while omitting the full evidence artifact, local alternative bindings, and full Decision Table. |
 
 The guide sections below contain additional synthetic authored analysis,
-including evaluations of four relation candidates. Those records are not
+including evaluations of three relation candidates. Those records are not
 canonical query outcomes and do not change this route's unresolved check or
 incomplete state. The route is intentionally read-only in this edition and is
 not a Composition Lab control or starter.
@@ -69,8 +69,8 @@ Exact trace file: `fixtures/composition/decision-evidence.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6` |
-| Composition Query trace | `50e64f3a0bae939b11619980423a59a4825d9763bb07525a0a02cf21a7c7181d` |
+| Relation sidecar V0 | `9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60` |
+| Composition Query trace | `f0f9a3a2d600eac0d33d90f5e769c1b043998348ecd338da028c1ebdc8e69e51` |
 
 See the
 [relation admission contract](../specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md)
@@ -125,6 +125,43 @@ Explicit unknowns:
 | Limited monitored trial | human approval and rollback retained by `SYN-04` | `feasible` | compatible with `ESC-04` as authored |
 | Broad adoption | approval behavior and exception status incomplete | `unresolved` | feasibility cannot default from the limited-trial assumption |
 
+## Canonical constraint-to-feasibility reading route
+
+Governing question: **Which governing constraints must be checked before
+treating an alternative as feasible?**
+
+This canonical structural path remains incomplete because the relation cannot
+decide authority, version, effective period, applicability, hard/soft status,
+exception status, or whether a particular alternative satisfies the
+constraint. An applicable hard constraint is noncompensatory: preference or a
+favorable score cannot erase it. A soft criterion cannot silently become an
+exclusion.
+
+| Stage | Exact route | Reader meaning |
+|---|---|---|
+| Add | `factor:policy-rule-constraint-decision-exception/constraints-and-invariants` | Start from the governing constraint while retaining Policy/Rule authority. |
+| Multiply | `f27-constraint-filters-feasibility` -> `factor:choice-alternative-selection/feasibility-constraints-and-exclusion-rationale` -> `view:decision-alternative-selection` | Bring the constraint into feasibility review without declaring it applicable, satisfied, violated, or enforced. |
+| Evaluate | `f27-check-constraint-applicability` = `unresolved` | Authority, version, period, applicability, hard/soft status, exception status, and alternative satisfaction still require local review. |
+| Stop | state = `incomplete`; no frontier or conflict | The exact structural route is present, but no canonical option status or exclusion follows. |
+| Flatten | three loss-declared rows | Retain the governing source, unresolved feasibility target, and Decision scope while omitting the full policy/rule/exception/enforcement artifact, local option status, exclusion decision, and full Decision Table. |
+
+The local bridge evaluation below records `pass` only for the limited trial
+under authored `SYN-04` and `SYN-07`. Broad adoption remains unresolved. That
+local result does not alter this canonical query's unresolved check or prove
+compliance, enforcement, benefit, ranking, or final selection.
+
+Exact trace file: `fixtures/composition/constraint-feasibility.factorium-query`
+
+| Identity | SHA-256 |
+|---|---|
+| Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Relation sidecar V0 | `9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60` |
+| Composition Query trace | `2c32158a2a51ea5ccf0f5a51fbdfaed55ea0053552fcd79814f8c6bda5758de1` |
+
+See the
+[constraint-to-feasibility admission contract](../specs/CONSTRAINT-FEASIBILITY-RELATION-ADMISSION.md)
+for its exact direction, qualifiers, loss, and claim boundary.
+
 ## Alternative-state outcome map
 
 | Alternative | State or scenario | Outcome claim | Cell status | Evidence and uncertainty |
@@ -138,9 +175,9 @@ Explicit unknowns:
 
 ## Bridge join evaluation
 
-The admitted evidence-to-evaluation check and all four candidate-relation
-checks record one of `pass`, `fail`, or `unresolved`; none is omitted. Only the
-first row is a canonical relation check.
+The two admitted relation checks and all three candidate-relation checks record
+one of `pass`, `fail`, or `unresolved`; none is omitted. The first and last
+rows are canonical relation checks.
 
 | Check | Outcome | Evidence | Rationale |
 |---|---|---|---|

@@ -774,3 +774,21 @@ and states that Compose is unavailable. The interactive payload remains five
 authored starters over the separate six-ID F1-F6 allowlist. The route adds no
 local binding, evidence applicability, support, causal status, ranking,
 recommendation validity, or final selection.
+
+## F31 constraint-to-feasibility relation
+
+F31 admits only `f27-constraint-filters-feasibility`, connecting the exact
+Policy/Rule constraints-and-invariants factor to Choice feasibility,
+constraints, and exclusion rationale under the Alternative Selection Decision
+view. Authority, version, effective period, applicability, and hard/soft
+status are mandatory declarative qualifiers. The edge carries no full policy,
+rule, exception, enforcement, local binding, satisfaction result, option
+status, exclusion, ranking, or recommendation, and it has no implied inverse.
+
+The canonical three-node query remains `incomplete` because constraint
+applicability and alternative satisfaction are unresolved. The guide adds a
+separate book route and preserves its local pass only for the authored limited
+trial; broad adoption remains unresolved. The canonical sidecar now has eight
+relations, including two cross-entry edges, with 105 exact assurance bindings.
+The interactive Lab remains on its separate six-ID F1-F6 allowlist, and the
+other three F27 bridge relations remain candidate-only.

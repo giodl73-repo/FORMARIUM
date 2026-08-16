@@ -1,6 +1,6 @@
 # Decision and Evidence Relation Kinds
 
-Status: F28 grammar contract; one kind has an admitted F29 record
+Status: F28 grammar contract; two kinds have admitted F29/F31 records
 
 ## Purpose
 
@@ -41,8 +41,9 @@ The parser must:
 5. expose no candidate kind through the canonical relation sidecar until an
    exact record and assurance binding pass fixed-point review.
 
-The positive fixture establishes grammar coverage only. It is not loaded by
-the Composition Lab, is not an assurance artifact, and supplies no closure,
+The positive fixture establishes grammar coverage; its two admitted rows now
+match their canonical records exactly. It is not loaded by the Composition
+Lab, is not an assurance artifact, and independently supplies no closure,
 recommendation, decision-quality, or external-reader evidence.
 
 ## Later admission gate
