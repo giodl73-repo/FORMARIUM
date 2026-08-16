@@ -1,0 +1,14 @@
+factorium-composition-query-v0
+query unreached-truncation
+problem Demonstrate that truncation must identify a real reached budget.
+source 3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b81 | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df
+context synthetic-system-review | boundary=declared-system,reference-frame=not-applicable
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=9,edges=9,nodes=9,work=99
+seed factor:system-composition-dependency/dependency-source-target-and-direction
+node factor:system-composition-dependency/dependency-source-target-and-direction | required | 0 | seed | none
+frontier factor:system-composition-dependency/interfaces-and-interaction-contracts | edge-budget
+check closure | completeness | view:constraint-system-composition-integrity | unresolved
+projection factor:system-composition-dependency/dependency-source-target-and-direction | selected | retained
+state truncated
+end-query

@@ -1,0 +1,16 @@
+factorium-composition-query-v0
+query required-exclusion
+problem Demonstrate that an admitted edge cannot silently traverse an excluded required node.
+source 3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b81 | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df
+context synthetic-system-review | boundary=declared-system,reference-frame=not-applicable
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=1,nodes=3,work=8
+seed factor:system-composition-dependency/dependency-source-target-and-direction
+node factor:system-composition-dependency/dependency-source-target-and-direction | required | 0 | seed | none
+node factor:system-composition-dependency/interfaces-and-interaction-contracts | excluded | 1 | relation:f1-dependency-interface | factor:system-composition-dependency/dependency-source-target-and-direction
+node view:constraint-system-composition-integrity | evaluative | 1 | scope:f1-dependency-interface | factor:system-composition-dependency/dependency-source-target-and-direction
+edge f1-dependency-interface
+check interface-integrity | constraint | view:constraint-system-composition-integrity | pass
+projection factor:system-composition-dependency/interfaces-and-interaction-contracts | rejected | required-node-excluded
+state complete
+end-query

@@ -100,6 +100,7 @@ explicit validation.
 - [Factor Table Entry Format V0](specs/FACTOR-TABLE-ENTRY.md)
 - [Factorium Entry Graph V0](specs/FACTORIUM-ENTRY-GRAPH.md)
 - [Factor Guide Format V0](specs/FACTOR-GUIDE.md)
+- [Composition Query Trace V0](specs/COMPOSITION-QUERY.md)
 
 ## Founding research specifications
 
@@ -143,6 +144,13 @@ cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.fa
 ```
 
 See [Factorium Reference Sidecars V0 Prototype](specs/FACTORIUM-REFERENCE-SIDECARS.md).
+
+Validate one bounded, author-declared Composition Query trace against exact
+reference and relation identities:
+
+```powershell
+cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+```
 
 Build the disposable Proof Set simulation rendering with Pandoc:
 
@@ -301,6 +309,7 @@ cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
 cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
+cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

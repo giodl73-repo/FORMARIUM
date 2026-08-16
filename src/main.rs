@@ -1,6 +1,7 @@
 use factor::{
     bakeoff::bakeoff_summary,
     binding::binding_control_summary,
+    composition_query::CompositionQuery,
     corpus::fixture_summary,
     packet::{validate_packet, write_packet},
     reference::ReferenceCorpus,
@@ -102,6 +103,7 @@ fn run() -> Result<(), String> {
             run_reference_command(command.as_str(), &mut arguments)
         }
         "reference-sidecar-check" => run_reference_sidecar_check(&mut arguments),
+        "composition-query-check" => run_composition_query_check(&mut arguments),
         "check" => {
             let (_, document) = read_document(&mut arguments)?;
             println!("schema={}", document.schema().id());
@@ -120,6 +122,37 @@ fn run() -> Result<(), String> {
         }
         _ => Err(usage("unknown command")),
     }
+}
+
+fn run_composition_query_check(arguments: &mut impl Iterator<Item = String>) -> Result<(), String> {
+    let query_path = arguments
+        .next()
+        .ok_or_else(|| usage("missing query path"))?;
+    let reference_path = arguments
+        .next()
+        .ok_or_else(|| usage("missing reference path"))?;
+    let relation_path = arguments
+        .next()
+        .ok_or_else(|| usage("missing relation path"))?;
+    if arguments.next().is_some() {
+        return Err(usage("composition-query-check accepts exactly three paths"));
+    }
+    let query = CompositionQuery::parse(
+        &fs::read_to_string(&query_path).map_err(|error| format!("{query_path}: {error}"))?,
+    )
+    .map_err(|error| format!("{query_path}: {error}"))?;
+    let corpus = read_reference(&reference_path)?;
+    let relations = RelationManifest::parse(
+        &fs::read_to_string(&relation_path).map_err(|error| format!("{relation_path}: {error}"))?,
+    )
+    .map_err(|error| format!("{relation_path}: {error}"))?;
+    query.validate_sources(&corpus, &relations)?;
+    println!("query={}", query.id());
+    println!("state={}", query.state());
+    println!("nodes={}", query.node_count());
+    println!("edges={}", query.edge_count());
+    println!("query_sha256={}", query.sha256());
+    Ok(())
 }
 
 fn run_reference_sidecar_check(arguments: &mut impl Iterator<Item = String>) -> Result<(), String> {
@@ -322,6 +355,6 @@ fn read_reference(path: &str) -> Result<ReferenceCorpus, String> {
 
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor role-packet <output-dir>\n  factor role-packet-check <packet-dir>\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>\n  factor reference-check <manifest> <workspace-root>\n  factor reference-catalog <manifest> <workspace-root>\n  factor reference-unresolved <manifest> <workspace-root>\n  factor reference-sync <manifest> <workspace-root>\n  factor reference-sidecar-check <reference> <relations> <assurance> <workspace-root>"
+        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor role-packet <output-dir>\n  factor role-packet-check <packet-dir>\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>\n  factor reference-check <manifest> <workspace-root>\n  factor reference-catalog <manifest> <workspace-root>\n  factor reference-unresolved <manifest> <workspace-root>\n  factor reference-sync <manifest> <workspace-root>\n  factor reference-sidecar-check <reference> <relations> <assurance> <workspace-root>\n  factor composition-query-check <query> <reference> <relations>"
     )
 }

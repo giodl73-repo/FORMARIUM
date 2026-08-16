@@ -2,6 +2,7 @@
 
 pub mod bakeoff;
 pub mod binding;
+pub mod composition_query;
 pub mod corpus;
 pub mod packet;
 pub mod reference;

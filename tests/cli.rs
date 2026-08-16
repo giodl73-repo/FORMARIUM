@@ -191,3 +191,27 @@ fn reference_sidecar_check_validates_relations_and_reviews() {
     assert!(stdout.contains("relation_review_bindings=6\n"));
     assert!(stdout.contains("prototype_checks=7\n"));
 }
+
+#[test]
+fn composition_query_check_validates_declared_closure() {
+    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+        .args([
+            "composition-query-check",
+            "fixtures/composition/system-dependency.factorium-query",
+            "reference/factorium-reference-v0.factorium",
+            "reference/factorium-relations-v0.factorium",
+        ])
+        .output()
+        .unwrap();
+    assert!(
+        output.status.success(),
+        "{}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.contains("query=system-dependency-interface\n"));
+    assert!(stdout.contains("state=complete\n"));
+    assert!(stdout.contains("nodes=3\n"));
+    assert!(stdout.contains("edges=1\n"));
+    assert!(stdout.contains("query_sha256="));
+}

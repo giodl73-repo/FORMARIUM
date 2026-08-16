@@ -950,3 +950,23 @@ noncanonical user work products. The ten-role fixed-point review at
 `COMPOSITION-QUERY-CLOSURE-PLAN-ROLE-REVIEW.md` reports 0 P1, 0 P2, and 30 P3
 notes with verdict `APPROVED`. No Workbench implementation, preview candidate,
 domain conclusion, or reader-evidence claim is admitted.
+
+## 2026-08-15 composition-query trace contract continuation
+
+Plan review: freeze the smallest machine-checkable artifact beneath the manual
+Proof Set composition worksheet before interactive Workbench work. Specify
+problem, source, Context Profile, Closure Policy, budget, seed, working-node,
+edge, frontier, conflict, Evaluation, projection, and state records. Bind them
+to current reference and relation bytes; preserve V0 and book authority; test
+every roadmap adversarial class; and apply `.roles` to fixed point.
+
+Result review: `Composition Query Trace V0` now validates a deterministic,
+author-declared graph over exact reference and six-edge relation identities.
+The systems fixture closes three nodes through F1 with one Constraint check and
+a three-row loss-aware projection. Seven negative fixtures fail closed across
+cycle replay, incompatible sense completion, missing context, required
+exclusion, join-direction ambiguity, unreached truncation, and hidden frontier.
+The CLI reports query ID, state, counts, and exact SHA-256. The nine-role review
+at `COMPOSITION-QUERY-CONTRACT-ROLE-REVIEW.md` closes all P1/P2 findings. This
+is not automated closure, a human-tested worksheet, a domain conclusion, a new
+canonical entry, or Workbench implementation.
