@@ -135,7 +135,7 @@ factor sign-and-direction-convention | sign and direction convention
 factor zero-denominator-policy | zero-denominator policy
 factor display-scale | display scale
 end-entry
-entry control-monitoring-response | Objective, Control, Monitoring, and Response | systems | candidate | tables/entries/control-monitoring-response.md | Objectives state desired results; monitoring observes; indicators summarize; thresholds classify; alerts route significant conditions; feedback controls influence future state; governance controls modify risk or support requirements; interventions act; outcomes record effects. Monitoring is not control, and control is not one universal sense.
+entry control-monitoring-response | Objective, Control, Monitoring, and Response | systems | candidate | tables/entries/control-monitoring-response.md | Objectives state desired results; set points reference controlled variables; controllers issue commands; actuators influence processes; monitoring observes; indicators summarize; thresholds classify; alerts communicate; service-level objectives bind scoped indicators to targets and windows; outcomes record wider effects. Target, mechanism, measurement, commitment, and outcome remain distinct.
 sense objective | objective
 sense monitoring | monitoring
 sense indicator | indicator
@@ -146,6 +146,9 @@ sense governance-control | governance control
 sense feedback | feedback
 sense intervention | intervention
 sense outcome | outcome
+sense set-point | set point
+sense actuator | actuator
+sense service-level-objective | service-level objective
 factor subject-system-and-boundary | subject, system, and boundary
 factor objective-and-desired-state | objective and desired state
 factor indicator-definition-and-measurement | indicator definition and measurement
@@ -157,6 +160,13 @@ factor feedback-path-delay-and-sign | feedback path, delay, and sign
 factor intervention-authority-action-and-side-effects | intervention authority, action, and side effects
 factor outcome-measures-and-time-horizon | outcome measures and time horizon
 factor review-learning-and-revision | review, learning, and revision
+factor controlled-variable-set-point-schedule-and-operating-mode | controlled variable, set point, schedule, and operating mode
+factor controller-command-control-law-and-update-cadence | controller command, control law, and update cadence
+factor actuator-interface-range-saturation-dynamics-and-failure-state | actuator interface, range, saturation, dynamics, and failure state
+factor service-boundary-user-population-and-eligible-event-definition | service boundary, user population, and eligible-event definition
+factor service-level-indicator-numerator-denominator-threshold-and-measurement-point | service-level indicator numerator, denominator, threshold, and measurement point
+factor objective-target-comparison-operator-and-compliance-window | objective target, comparison operator, and compliance window
+factor commitment-or-agreement-consequences-and-error-budget-policy | commitment or agreement, consequences, and error-budget policy
 end-entry
 entry coordinated-work | Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation | systems | candidate | tables/entries/coordinated-work.md | Coordinated work connects activities, participants, decisions, interactions, and recovery toward a completion condition. Workflow organizes the work; orchestration owns sequencing inside a boundary; choreography exposes participant interactions; concurrency describes independent progress; compensation addresses effects that cannot simply be rolled back.
 sense workflow | workflow
@@ -788,7 +798,7 @@ view diagnostic-chemical-reaction-failures | chemical-reaction-stoichiometry-equ
 end-view
 view diagnostic-chemical-substance-classification-failures | chemical-substance-classification | chemical-element,chemical-entity,atom,molecule,ion,chemical-species,chemical-substance,chemical-compound,formula-unit,compound-class,classification-criterion,mixture,chemical-solution | diagnostic | Chemical Classification Failure Diagnostic | tables/diagnostics/chemical-substance-classification-failures.md | Maps level, composition, charge, representation, class-criterion, constituent, phase, and taxonomy-boundary defects to candidate causes and discriminating checks without turning named examples into canonical chemical catalogs.
 end-view
-view diagnostic-control-response-failures | control-monitoring-response | objective,monitoring,indicator,threshold,alert,feedback-control,governance-control,feedback,intervention,outcome | diagnostic | Control and Response Failure Diagnostic | tables/diagnostics/control-response-failures.md | Maps monitoring, alerting, intervention, control, and outcome symptoms to candidate causes and discriminating tests without treating one symptom as proof of one diagnosis.
+view diagnostic-control-response-failures | control-monitoring-response | objective,monitoring,indicator,threshold,alert,feedback-control,governance-control,feedback,intervention,outcome,set-point,actuator,service-level-objective | diagnostic | Control and Response Failure Diagnostic | tables/diagnostics/control-response-failures.md | Maps target, command, actuation, monitoring, service-level, agreement, intervention, control, and outcome symptoms to candidate causes and discriminating tests without treating one symptom or status as proof of one diagnosis.
 end-view
 view diagnostic-coordinated-work-failures | coordinated-work | workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view

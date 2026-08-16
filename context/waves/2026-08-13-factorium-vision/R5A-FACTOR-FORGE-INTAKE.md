@@ -574,3 +574,23 @@ F21 resolves accounting basis, inflation, and net present value without
 admitting named standards, indexes, products, assets, or valuation methods as
 canonical senses. The Factor Forge book delta grows only by the new Diagnostic
 view to 42 records: eighteen entries and twenty-four specialized views.
+
+## F22 first slice
+
+F22 deepens `tables/entries/control-monitoring-response.md` across two linked
+contracts: reference-command-actuation-process control and
+service-SLI-target-window performance management. It separates objectives,
+set points, observed values, thresholds, controller commands, actuator
+influence, SLO targets, observed service levels, agreements, and wider outcomes.
+
+The revised `tables/diagnostics/control-response-failures.md` adds set-point,
+actuation, transient-response, SLI-coverage, compliance-replay, agreement, and
+outcome-gap tests. Research and fixed-point review are
+`docs/research/2026-08-15-control-target-actuation-service-objective.md` and
+`CONTROL-TARGET-ACTUATION-SERVICE-OBJECTIVE-ROLE-REVIEW.md`.
+
+F22 resolves set point, actuator, and service-level objective without admitting
+named controller families, actuator types, monitoring products, or service
+tiers as canonical senses. It deepens the existing Diagnostic and Task K route,
+so the Factor Forge book delta remains 42 records: eighteen entries and
+twenty-four specialized views.

@@ -8,7 +8,8 @@ Canonical headword:
 [Objective, Control, Monitoring, and Response](../entries/control-monitoring-response.md)
 
 Canonical senses: `objective`, `monitoring`, `indicator`, `threshold`, `alert`,
-`feedback-control`, `governance-control`, `feedback`, `intervention`, `outcome`
+`feedback-control`, `governance-control`, `feedback`, `intervention`, `outcome`,
+`set-point`, `actuator`, `service-level-objective`
 
 ## Governing question
 
@@ -29,6 +30,15 @@ intervention, or outcome failure, and what test would discriminate it?
 | Metric target is met but desired outcome is not | proxy gaming; output substituted for outcome; horizon too short | compare objective, proxy, behaviors, and longer-horizon effects | objective and outcome model |
 | Threshold changes silently alter workload | versioning or review absent; impact not modeled | compare rule versions, alert volume, and response capacity | threshold governance |
 | Same signal triggers conflicting actions | competing policies; unclear priority; several control loops interact | enumerate decision precedence and simulate combined actions | policy and system control architecture |
+| Set point changes but controlled value does not | actuator saturation, command-path failure, insufficient authority, process limit, sensor fault, or excessive delay | trace command, actuator response, manipulated variable, and process state under a bounded test | control-loop owner |
+| Controlled value reaches the set point but objective still fails | wrong controlled variable, local objective, omitted disturbance, unsafe transient, or broader outcome mismatch | compare the set-point contract with system and stakeholder outcomes | objective and system owner |
+| Set point is reached only after overshoot or long oscillation | controller tuning, actuator dynamics, delay, rate limit, hysteresis, or sensor placement differs | step-test within safe bounds and compare transient response with declared limits | control-design owner |
+| Controller reports success while actuator is ineffective | acknowledgment covers command receipt, not physical/logical action | inspect actuator feedback and independent process response | actuator and instrumentation owner |
+| SLO is green while a user segment fails | eligible-event exclusion, server-side proxy, aggregation, low-volume masking, or missing client path | recompute the SLI by user journey, segment, and measurement point | SLI owner |
+| Teams disagree whether the SLO was met | numerator, denominator, good-event threshold, window, timezone, missingness, or revision differs | replay one frozen event set through both versioned SLO contracts | reliability owner |
+| SLO miss is called an agreement breach | operational target was conflated with a commitment, parties, authority, or consequences | inspect the agreement and map each obligation to its governed measure | service-governance owner |
+| Error budget remains while severe harm occurs | SLI omits correctness, safety, durability, distribution, or critical low-volume events | compare error-budget policy with direct outcomes and severity-weighted cases | product and risk owner |
+| Named controllers, actuators, or monitoring products multiply as senses | mechanism catalog replaced reference, command, influence, and objective roles | swap examples and verify the control chain survives | concept-taxonomy editor |
 
 ## Use contract
 
@@ -39,6 +49,13 @@ intervention, or outcome failure, and what test would discriminate it?
 4. Run the smallest discriminating test without hiding contradictory evidence.
 5. Repair the owning stage rather than merely suppressing the symptom.
 6. Re-evaluate intended and unintended outcomes after repair.
+7. For loop failures, preserve set-point version, mode, controlled and
+   manipulated variables, commands, actuator telemetry, limits, delays,
+   overrides, raw sensor data, and safe test boundaries.
+8. For SLO failures, preserve service/SLI/SLO versions, event eligibility,
+   raw numerator and denominator inputs, measurement point, aggregation,
+   compliance window, exclusions, missingness, error-budget policy, and any
+   separately governed agreement.
 
 ## Failure signs
 
@@ -49,6 +66,12 @@ intervention, or outcome failure, and what test would discriminate it?
 - controls are counted rather than tested for effectiveness;
 - local objectives destabilize neighboring systems;
 - outcome review stops at immediate outputs.
+- set-point change is treated as evidence of target attainment or stability;
+- command acknowledgment is treated as actuator or process success;
+- actuator limits, delay, rate, and failure state are omitted;
+- SLO targets are selected from current performance without user or policy rationale;
+- averages hide tail behavior, user segments, or low-volume critical events;
+- an SLO is treated as an SLA, universal reliability, or proof of user outcomes.
 
 ## Sources and provenance
 
@@ -59,6 +82,12 @@ intervention, or outcome failure, and what test would discriminate it?
    https://sre.google/workbook/alerting-on-slos/
 4. CDC, "Looking for Feedback":
    https://www.cdc.gov/polaris/php/thinking-in-systems/looking-for-feedback.html
+5. NIST, process controllers:
+   https://www.nist.gov/ncnr/nice-help/devices/process-controllers-temperature-pressure-etc
+6. NIST, actuator definition:
+   https://www.nist.gov/el/intelligent-systems-division-73500/definitions
+7. Google SRE, "Service Level Objectives":
+   https://sre.google/sre-book/service-level-objectives/
 
 The diagnostic is a candidate cross-domain synthesis, not a substitute for
 domain-specific safety, clinical, industrial, or security analysis.

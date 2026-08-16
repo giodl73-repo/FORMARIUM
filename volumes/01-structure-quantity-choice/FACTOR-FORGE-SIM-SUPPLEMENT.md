@@ -47,8 +47,9 @@ enforcement, remediation, and separate effectiveness questions.
 
 The Evidence view preserves the route from source and activity through
 observation, measurement, result, inference, implication, limitation, and
-confidence. The control cluster then separates objectives, monitoring,
-indicators, thresholds, alerts, controls, interventions, feedback, and
+confidence. The control cluster then separates objectives, set points,
+controller commands, actuators, observations, indicators, service-level
+objectives, thresholds, alerts, agreements, interventions, feedback, and
 outcomes before diagnosing failures by stage.
 
 ## Part VII - Software mechanisms without mechanism authority

@@ -741,3 +741,32 @@ grows to 42 records and the combined selection to 120 numbered records plus two
 guides across twenty-three chapters. The generated `sim-07` site contains 160
 pages from 136 sources, indexes all 122 reader destinations, and reports zero
 missing internal targets.
+
+## 2026-08-15 control-target-actuation-service-objective content continuation
+
+Plan review: deepen the existing Objective/Control/Monitoring authority rather
+than creating isolated set-point, actuator, or SLO anchors; separate broad
+objectives, loop references, observations, decision thresholds, commands,
+actuator influence, scoped service targets, measured compliance, agreements,
+and outcomes; ground the spine in NIST and Google SRE sources; revise the
+existing Diagnostic view and Task K route; apply the Concept & Taxonomy
+Boundary Editor before any named controller, device, product, or service tier
+enters; then propagate the in-place revision through reference, assurance, and
+the static book site. No external-reader gate, safety certification,
+contractual interpretation, reliability guarantee, or user-outcome claim is
+introduced.
+
+Result review: F22 adds set point, actuator, and service-level objective to
+`control-monitoring-response` and revises the Control and Response Failure
+Diagnostic. Objective/set point, set point/threshold, set point/observation,
+controller/actuator, actuator/intervention, indicator/SLO, SLO/achieved level,
+SLO/agreement, and SLO/user outcome remain distinct. Named controller families,
+actuator types, monitoring products, and service tiers remain external examples
+or authorities. The web campaign confirms 18 findings and the 13-role
+fixed-point review closes all major findings. The reference remains at 38
+entries and 55 views and grows to 284 senses and 428 factors with 99 assurance
+bindings and zero unresolved view owners. The Factor Forge delta remains 42
+records and the combined selection remains 120 numbered records plus two
+guides across twenty-three chapters. The regenerated `sim-07` site remains 160
+pages from 136 sources, indexes all 122 reader destinations, and reports zero
+missing internal targets.

@@ -47,13 +47,17 @@ the underlying evidence and transformations.
 
 - Objective, Control, Monitoring, and Response;
 - Control and Response Failure Diagnostic;
-- monitoring, indicator, threshold, alert, control, intervention, feedback,
+- objective, set point, observed value, indicator, service-level objective,
+  threshold, alert, controller, actuator, intervention, feedback, agreement,
   output, and outcome remain distinct;
-- missing decision ownership, authority, routing, or action are candidate
-  failure stages rather than proven causes.
+- the reader tests event eligibility and SLI scope, then traces controller
+  command, actuator response, manipulated influence, and controlled value;
+- missing ownership, authority, routing, actuation, measurement coverage, or
+  action are candidate failure stages rather than proven causes.
 
-Critical artifact failure: alert delivery is treated as completed control or
-as proof of outcome improvement.
+Critical artifact failure: green SLO status, alert delivery, set-point change,
+or command acknowledgment is treated as completed control, agreement
+compliance, or proof of outcome improvement.
 
 ## Task L expected route
 

@@ -41,15 +41,18 @@ traceable. Identify where measurement, result, inference, claim implication,
 limitation, confidence, and provenance belong without treating them as one
 evidence field.
 
-## Task K - Alert without response
+## Task K - Targets without response
 
-A dashboard crosses a threshold and sends an alert. The alert is acknowledged,
-but no person owns a decision, no intervention occurs, and the undesirable
-state continues.
+A service dashboard crosses an alert threshold. Its SLO remains green because
+the affected requests are excluded from the indicator. A controller then
+changes a set point and acknowledges its command, but the actuator is saturated,
+the controlled value does not move, no person owns an intervention, and the
+undesirable user outcome continues.
 
-Determine which parts are monitoring, indicator, threshold, alert, control,
-intervention, feedback, and outcome. Use the diagnostic view to locate the
-likely failure stages without claiming that the symptom proves one cause.
+Determine which parts are objective, set point, observed value, indicator,
+SLO, threshold, alert, controller, actuator, intervention, feedback, agreement,
+and outcome. Use the diagnostic view to locate discriminating tests without
+claiming that a green status, acknowledgment, or symptom proves one cause.
 
 ## Task L - Compliant but ineffective
 

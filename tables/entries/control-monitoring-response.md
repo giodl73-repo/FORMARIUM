@@ -4,14 +4,12 @@ Status: candidate anchor entry
 
 ## Orientation
 
-An objective states a desired result or condition. Monitoring observes a
-subject over time; indicators summarize selected observations; thresholds
-compare indicators with decision boundaries; alerts route significant
-conditions to recipients. Feedback control deliberately influences a process
-using observed state, while a governance control is a safeguard or
-countermeasure that modifies risk or supports requirements. Interventions are
-actions; outcomes are resulting effects. Feedback may balance or reinforce
-change and is not automatically beneficial.
+An objective states a desired result or condition. A set point is a selected
+reference value for a controlled variable; an actuator converts a command into
+influence on a process. Monitoring observes; indicators summarize; thresholds
+classify; alerts communicate. A service-level objective binds a service-level
+indicator to a target and compliance window. These are different target,
+measurement, mechanism, communication, and effect layers.
 
 ## Sense table
 
@@ -27,6 +25,9 @@ change and is not automatically beneficial.
 | `feedback` | How do effects return to influence causes or future activity? | reinforcing or balancing loop relation |
 | `intervention` | Which deliberate action changes the subject, process, or environment? | applied response |
 | `outcome` | Which intended or unintended effect resulted over the selected horizon? | resulting effect |
+| `set-point` | What reference value or schedule should this controlled variable follow under the current operating mode? | control-loop reference input |
+| `actuator` | Which mechanism accepts a command and converts it into physical or logical action on the selected process? | command-to-process influence mechanism |
+| `service-level-objective` | What target or range must a declared service-level indicator meet for an eligible population over a compliance window? | scoped service-performance objective |
 
 ## Role ladder
 
@@ -43,6 +44,14 @@ indicator and threshold policy
 
 observed state and objective
   -- evaluated by feedback control --> intervention
+
+controlled-variable observation and set point
+  -- compared by controller --> command
+  -- converted by actuator --> manipulated process influence
+
+service behavior
+  -- measured by SLI over eligible events --> observed service level
+  -- compared over compliance window --> service-level objective status
 
 policy, requirement, or risk
   -- treated by governance control --> changed exposure or behavior
@@ -66,6 +75,13 @@ control-response-use
    x intervention authority, action, and side effects
    x outcome measures and time horizon
    x review, learning, and revision
+   x controlled variable, set point, schedule, and operating mode
+   x controller command, control law, and update cadence
+   x actuator interface, range, saturation, dynamics, and failure state
+   x service boundary, user population, and eligible-event definition
+   x service-level indicator numerator, denominator, threshold, and measurement point
+   x objective target, comparison operator, and compliance window
+   x commitment or agreement, consequences, and error-budget policy
 ```
 
 ## Contrast table
@@ -82,6 +98,15 @@ control-response-use
 | Feedback vs. outcome | outcomes can feed future activity | loop relation over time vs. selected resulting effect |
 | Intervention vs. outcome | intervention seeks outcome | action applied vs. effect observed |
 | Output vs. outcome | both follow action | immediate product/state change vs. effect over selected horizon |
+| Objective vs. set point | a set point may operationalize an objective | broad desired result vs. reference for one controlled variable and mode |
+| Set point vs. threshold | both may be comparison values | reference the loop seeks to track vs. boundary that classifies or triggers action |
+| Set point vs. observed value | both use the controlled variable's unit | selected reference vs. measured or estimated state |
+| Controller vs. actuator | both participate in control | computes/selects command vs. converts command into process influence |
+| Actuator vs. intervention | an actuator may execute an intervention | persistent mechanism role vs. particular action applied in context |
+| Indicator vs. service-level objective | an SLO is measured through an indicator | defined service measure vs. target plus comparison window |
+| SLO vs. achieved service level | both may use the same percentage | desired target vs. observed aggregate |
+| SLO vs. service-level agreement | an agreement may contain an SLO | operational objective vs. commitment with parties, authority, and consequences |
+| SLO vs. user outcome | SLOs should reflect user-relevant behavior | scoped service proxy/target vs. broader experienced effect |
 
 ## Diagnostic examples
 
@@ -94,6 +119,14 @@ control-response-use
   condition or log event.
 - A corrective intervention can create reinforcing side effects elsewhere.
 - Meeting an activity target does not prove the desired outcome occurred.
+- A temperature objective can produce different set points by operating mode;
+  changing the set point does not prove the process reached or stabilized at it.
+- A controller can issue the correct command while a saturated, delayed,
+  disconnected, or failed actuator produces little process change.
+- A service can meet an average-latency SLO while a user segment experiences
+  severe tail latency excluded or hidden by the indicator definition.
+- Missing an internal SLO is not automatically breach of an agreement, and
+  meeting it does not prove every user outcome or contractual obligation.
 
 ## Specialized view
 
@@ -123,6 +156,15 @@ discriminating tests.
    baseline or comparison.
 10. Revise indicators, thresholds, controls, and interventions from observed
     failure, drift, and feedback.
+11. For a set point, declare controlled variable, unit, reference source,
+    schedule, mode, bounds, ramping, tolerance, and change authority.
+12. For an actuator, declare command/interface, manipulated variable, range,
+    saturation, rate limits, delay, dynamics, feedback, failure modes, manual
+    override, and safe-state ownership.
+13. For an SLO, declare service and user boundary, SLI specification and
+    implementation, eligible events, numerator/denominator or statistic,
+    threshold, target, compliance window, exclusions, missingness, error-budget
+    policy, owner, revision, and relation to any agreement.
 
 ## Reference Delta
 
@@ -148,6 +190,18 @@ discriminating tests.
   effectiveness, and residual exposure.
 - Interventions are not relabeled as outcomes.
 - Intended and unintended outcomes are reviewed over the declared horizon.
+- Set points are not substituted for objectives, thresholds, observations, or
+  evidence that the target was reached.
+- Actuator existence or command acknowledgment is not evidence of process
+  influence; range, saturation, dynamics, feedback, and failure state remain visible.
+- An SLO retains service boundary, user population, SLI, eligible events,
+  measurement point, aggregation, target, and compliance window.
+- SLO target, observed service level, error budget, alert threshold, and
+  contractual commitment remain separate.
+- Meeting an SLO does not certify correctness, user satisfaction, safety,
+  compliance, or all service outcomes.
+- Named controller families, actuator types, monitoring products, and service
+  commitments remain examples or scoped authorities rather than senses.
 
 ## Cross-references
 
@@ -158,9 +212,6 @@ discriminating tests.
 - [Probability, Risk, and Uncertainty](probability-risk-uncertainty.md)
 - [System Composition, Capability, Interface, and Dependency](system-composition-dependency.md)
 - [Association and Causal Reasoning](causal-reasoning.md)
-- set point - `unresolved-candidate`
-- actuator - `unresolved-candidate`
-- service-level objective - `unresolved-candidate`
 
 ## Sources and provenance
 
@@ -178,6 +229,12 @@ discriminating tests.
    https://sre.google/workbook/alerting-on-slos/
 7. NASA, Human Integration Design Handbook, Appendix C definitions:
    https://www.nasa.gov/reference/appendix-c-vol-2/
+8. NIST, actuator definition:
+   https://www.nist.gov/el/intelligent-systems-division-73500/definitions
+9. Google SRE, "Service Level Objectives":
+   https://sre.google/sre-book/service-level-objectives/
+10. Google Cloud Observability, service-monitoring concepts:
+    https://docs.cloud.google.com/stackdriver/docs/solutions/slo-monitoring
 
-Comparator access date: 2026-08-14. Cross-domain organization remains
+Comparator access date: 2026-08-15. Cross-domain organization remains
 `candidate`; cited control and alert mechanisms retain their source scopes.
