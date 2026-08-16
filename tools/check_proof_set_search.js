@@ -81,6 +81,22 @@ if (expectedRecords >= 126) {
   );
 }
 
+if (expectedRecords >= 127) {
+  const feedback = search.searchRecords(
+    records,
+    "alert outcome feedback",
+    "guide",
+    "application"
+  );
+  assert.equal(
+    feedback.filter((record) =>
+      record.path === "guides/alert-feedback-composition-worksheet.md"
+    ).length,
+    1,
+    "feedback composition search resolves the worksheet exactly once"
+  );
+}
+
 console.log(
   `OK records=${records.length} query=${queryOnly.length} kind=${kindOnly.length} ` +
   `domain=${domainOnly.length} combined=${combined.length}`

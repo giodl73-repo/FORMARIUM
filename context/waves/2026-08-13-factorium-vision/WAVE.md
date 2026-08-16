@@ -1010,3 +1010,22 @@ round-trip under the same V0 contract and render as separate Applications
 destinations in `sim-10`. The three-reviewer compact design pass and seven-role
 fixed point report zero open P1/P2 findings. This remains synthetic publication
 rehearsal, not automated expansion, a causal result, or reader evidence.
+
+## 2026-08-16 reverse-incomplete composition continuation
+
+Plan review: add an F4 feedback example only if it exercises semantics absent
+from the complete forward F1 and F3 traces. Begin from a monitoring-policy
+change, traverse `feeds` in reverse while preserving its canonical direction,
+and require an `incomplete` trace when outcome evidence is missing. Integrate
+it as an ordinary guide, centralize monotone renderer edition boundaries, and
+retain exact prior-edition regression.
+
+Result review: `guides/alert-feedback-composition-worksheet.md` separates
+monitoring, threshold, alert, intervention, feedback, control, and outcome in
+a synthetic alert-policy scenario. Its F4 trace validates with reverse policy,
+three nodes, one unresolved Diagnostic check, and state `incomplete`; the
+guide reports only the configuration and delivery facts while leaving the
+improvement decision unresolved. `sim-11` adds the guide as a separate
+Applications destination. The compact design pass and seven-role fixed point
+report zero open P1/P2 findings. No production observation, threshold advice,
+automated loop expansion, or reader evidence is claimed.

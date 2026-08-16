@@ -1,10 +1,11 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
 
 $ErrorActionPreference = "Stop"
+$editionNumber = [int]$Edition.Substring(4)
 
 $workspace = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $volume = Join-Path $workspace "volumes\01-structure-quantity-choice\VOLUME.md"
@@ -14,6 +15,7 @@ $factorForgeRubric = Join-Path $workspace "volumes\01-structure-quantity-choice\
 $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-SET-SIM-QUICKSTART.md"
 $compositionWorksheet = Join-Path $workspace "guides\system-dependency-composition-worksheet.md"
 $evidenceWorksheet = Join-Path $workspace "guides\latency-evidence-composition-worksheet.md"
+$feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-worksheet.md"
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
 $searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
@@ -41,6 +43,7 @@ $artifactTitle = switch ($Edition) {
     "sim-08" { "Factorium Proof Set Reader Journey Simulation 08" }
     "sim-09" { "Factorium Proof Set Composition Worksheet Simulation 09" }
     "sim-10" { "Factorium Proof Set Cross-Domain Composition Simulation 10" }
+    "sim-11" { "Factorium Proof Set Incomplete Feedback Composition Simulation 11" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -131,16 +134,22 @@ function Get-GuideSelections {
             )
         }
     }
-    if ($Edition -in @("sim-09", "sim-10")) {
+    if ($editionNumber -ge 9) {
         [ordered]@{
             title = "Report Generator Dependency Composition Worksheet"
             path = [System.IO.Path]::GetFullPath($compositionWorksheet)
         }
     }
-    if ($Edition -eq "sim-10") {
+    if ($editionNumber -ge 10) {
         [ordered]@{
             title = "Latency Claim Evidence Composition Worksheet"
             path = [System.IO.Path]::GetFullPath($evidenceWorksheet)
+        }
+    }
+    if ($editionNumber -ge 11) {
+        [ordered]@{
+            title = "Alert and Outcome Feedback Composition Worksheet"
+            path = [System.IO.Path]::GetFullPath($feedbackWorksheet)
         }
     }
 }
@@ -335,7 +344,7 @@ if ($Edition -ne "sim-01") {
         extra_delta_paths = $extraDelta.Count
     }
 
-    if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+    if ($editionNumber -ge 3) {
         $rubricText = Get-Content -LiteralPath $factorForgeRubric -Raw
         $taskCoverage = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
@@ -364,19 +373,22 @@ if ($Edition -ne "sim-01") {
     Add-ProofSource $supplement
     $selectionDocuments.Add($supplement)
 }
-if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 3) {
     Add-ProofSource $factorForgeTasks
 }
-if ($Edition -in @("sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 6) {
     foreach ($contextProfileSource in $contextProfileSources) {
         Add-ProofSource $contextProfileSource
     }
 }
-if ($Edition -in @("sim-09", "sim-10")) {
+if ($editionNumber -ge 9) {
     Add-ProofSource $compositionWorksheet
 }
-if ($Edition -eq "sim-10") {
+if ($editionNumber -ge 10) {
     Add-ProofSource $evidenceWorksheet
+}
+if ($editionNumber -ge 11) {
+    Add-ProofSource $feedbackWorksheet
 }
 
 foreach ($selectionDocument in $selectionDocuments) {
@@ -502,7 +514,7 @@ $contextAssets = @()
 $siteChecks = $null
 $siteAssets = @()
 $siteIndex = $null
-if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing search asset: $asset"
@@ -514,7 +526,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "
         Get-NumberedSelections $supplement
     )
     $guideSelections = @(Get-GuideSelections)
-    $expectedGuideCount = if ($Edition -eq "sim-10") { 4 } elseif ($Edition -eq "sim-09") { 3 } else { 2 }
+    $expectedGuideCount = 2 + [Math]::Max(0, $editionNumber - 8)
     if ($numberedSelections.Count -ne 122 -or $guideSelections.Count -ne $expectedGuideCount) {
         throw "Search selection mismatch: numbered=$($numberedSelections.Count) guides=$($guideSelections.Count)"
     }
@@ -578,7 +590,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "
             summary = $metadata.summary
             text = $plainText
         }
-        if ($Edition -in @("sim-07", "sim-08", "sim-09", "sim-10")) {
+        if ($editionNumber -ge 7) {
             $searchRecord.href = "entries/$(ConvertTo-SitePageName $relativePath)"
         }
         $searchRecords.Add($searchRecord)
@@ -643,7 +655,7 @@ if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "
     }
 }
 
-if ($Edition -in @("sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 5) {
     foreach ($asset in @($readerStyle, $readerScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing reader asset: $asset"
@@ -727,7 +739,7 @@ if ($Edition -in @("sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) 
     }
 }
 
-if ($Edition -in @("sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 6) {
     foreach ($asset in @($contextStyle, $contextScript, $contextBindings)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing context-profile asset: $asset"
@@ -763,7 +775,7 @@ if ($Edition -in @("sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
             path = [System.IO.Path]::GetRelativePath($workspace, $profileSource).Replace("\", "/")
             anchor = $headingBySource[$profileSource]
         }
-        if ($Edition -in @("sim-07", "sim-08", "sim-09", "sim-10")) {
+        if ($editionNumber -ge 7) {
             $profileRelativePath = [System.IO.Path]::GetRelativePath($workspace, $profileSource).Replace("\", "/")
             $profileRecord.href = ConvertTo-SitePageName $profileRelativePath
         }
@@ -877,7 +889,7 @@ if ($localFileLinks.Count -ne 0) {
     throw "Rendered proof has $($localFileLinks.Count) filesystem-dependent links"
 }
 
-if ($Edition -in @("sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 7) {
     if (-not (Test-Path -LiteralPath $siteStyle -PathType Leaf)) {
         throw "Missing proof-site asset: $siteStyle"
     }
@@ -1442,11 +1454,11 @@ $manifestRecord = [ordered]@{
         bytes = (Get-Item -LiteralPath $html).Length
     }
 }
-if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"
     $manifestRecord.output.search_index_sha256 = (Get-FileHash -LiteralPath $searchIndexOutput -Algorithm SHA256).Hash.ToLowerInvariant()
 }
-if ($Edition -in @("sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 7) {
     $manifestRecord.output.site_index_path = "index.html"
     $manifestRecord.output.site_index_sha256 = (Get-FileHash -LiteralPath $siteIndex -Algorithm SHA256).Hash.ToLowerInvariant()
     $manifestRecord.output.site_identity = $siteChecks.identity
@@ -1463,23 +1475,23 @@ if ($Edition -ne "sim-01") {
     Write-Output "delta_views=$($selectionChecks.delta_views)"
     Write-Output "combined_records=$($selectionChecks.combined_projection_records)"
 }
-if ($Edition -in @("sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 3) {
     Write-Output "tasks=$($selectionChecks.task_count)"
     Write-Output "task_coverage_records=$($selectionChecks.task_coverage_records)"
 }
-if ($Edition -in @("sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 4) {
     Write-Output "search_records=$($searchChecks.indexed_records)"
     Write-Output "search_missing_targets=$($searchChecks.missing_rendered_targets)"
 }
-if ($Edition -in @("sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 5) {
     Write-Output "reader_profiles=$($readerChecks.profiles.Count)"
     Write-Output "reader_default=$($readerChecks.default_profile)"
 }
-if ($Edition -in @("sim-06", "sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 6) {
     Write-Output "context_profiles=$($contextChecks.profiles)"
     Write-Output "context_bindings=$($contextChecks.bindings)"
 }
-if ($Edition -in @("sim-07", "sim-08", "sim-09", "sim-10")) {
+if ($editionNumber -ge 7) {
     Write-Output "site=$siteIndex"
     Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + 1)"
     Write-Output "site_chapters=$($siteChecks.chapter_pages)"

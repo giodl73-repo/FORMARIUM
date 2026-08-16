@@ -210,15 +210,15 @@ that remain required at use time. See
 Render the current proof-edition composition-worksheet simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-10
+.\tools\render_proof_set.ps1 -Edition sim-11
 ```
 
-Open `target/proof-set-sim-10/index.html` for the five-step first journey,
+Open `target/proof-set-sim-11/index.html` for the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, dedicated reading
-pages, and two trace-bound Composition Query worksheets under Applications.
-The systems and evidence examples share one worksheet grammar while retaining
-relation-specific semantics and separate local outcomes. The generated site
-remains a disposable publication projection; see
+pages, and three trace-bound Composition Query worksheets under Applications.
+The systems, evidence, and feedback examples share one worksheet grammar while
+retaining relation direction, local semantics, and complete versus incomplete
+outcomes. The generated site remains a disposable publication projection; see
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
 After an intentional metadata or source change, regenerate the catalog and
@@ -312,6 +312,8 @@ cargo run --quiet -- packet-check artifacts\factor-v1
 cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
 cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
 cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

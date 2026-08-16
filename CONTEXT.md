@@ -170,6 +170,13 @@ claim, keeps its latency values explicitly synthetic, and rejects temporal
 order as causal proof. Together the F1 and F3 examples test transfer of the
 worksheet grammar without collapsing relation or domain semantics.
 
+The twelfth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-12.md`
+adds an F4 feedback worksheet to `sim-11`. It starts from monitoring, traverses
+the directional `feeds` relation in reverse without reversing its meaning, and
+ends `incomplete` because user-outcome evidence is absent. Edition capability
+boundaries are centralized while `sim-10` remains an exact regression.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

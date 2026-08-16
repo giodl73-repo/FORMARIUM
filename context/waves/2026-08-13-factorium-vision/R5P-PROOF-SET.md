@@ -97,6 +97,8 @@ The trace-bound Composition Query worksheet rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-10.md`.
 The cross-domain Composition Query worksheet rehearsal is
 `PROOF-SET-SIMULATION-PREFLIGHT-11.md`.
+The reverse-traversal and incomplete-state worksheet rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-12.md`.
 
 ### Composition-query rehearsal boundary
 

@@ -1,0 +1,18 @@
+factorium-composition-query-v0
+query alert-outcome-feedback
+problem Which monitoring and outcome concepts are required to review an alert-threshold change when user impact is still unknown?
+source 3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b81 | 4c4bf8c68985c341d3ee20d2731c70038afb0c5787cbe16126928d9896ddd4df
+context synthetic-feedback-review | boundary=declared-service,reference-frame=service-observation-window
+policy direction=reverse,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=1,nodes=3,work=9
+seed factor:control-monitoring-response/monitoring-method-window-and-frequency
+node factor:control-monitoring-response/monitoring-method-window-and-frequency | required | 0 | seed | none
+node factor:control-monitoring-response/outcome-measures-and-time-horizon | required | 1 | relation:f4-feedback-monitoring | factor:control-monitoring-response/monitoring-method-window-and-frequency
+node view:diagnostic-control-response-failures | evaluative | 1 | scope:f4-feedback-monitoring | factor:control-monitoring-response/monitoring-method-window-and-frequency
+edge f4-feedback-monitoring
+check outcome-feedback-diagnostic | diagnostic | view:diagnostic-control-response-failures | unresolved
+projection factor:control-monitoring-response/monitoring-method-window-and-frequency | selected | retained
+projection factor:control-monitoring-response/outcome-measures-and-time-horizon | unresolved | omits-missing-user-impact-observation
+projection view:diagnostic-control-response-failures | selected | omits-full-diagnostic-row-detail
+state incomplete
+end-query
