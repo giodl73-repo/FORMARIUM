@@ -12,7 +12,8 @@ const page = fs.readFileSync(path.join(siteRoot, "compose.html"), "utf8");
 const runtime = fs.readFileSync(path.join(siteRoot, "assets", "composition-lab.js"), "utf8");
 const siteData = fs.readFileSync(path.join(siteRoot, "assets", "site-data.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-16", "bounded lab edition");
+const editionNumber = Number(manifest.edition.split("-")[1]);
+assert.ok(Number.isInteger(editionNumber) && editionNumber >= 16, "bounded lab edition");
 assert.equal(manifest.site_checks.composition_lab_pages, 1, "one lab page");
 assert.equal(manifest.composition_lab_checks.relation_records, 6, "six reviewed relations");
 assert.equal(manifest.composition_lab_checks.scope_views, 6, "six exact scope views");

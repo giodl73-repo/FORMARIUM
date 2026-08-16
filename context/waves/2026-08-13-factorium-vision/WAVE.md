@@ -1128,3 +1128,26 @@ The compact design pass and nine-role fixed point report zero open P1/P2
 findings. Independent engine, generated-site, and live Edge checks cover the
 interaction; no language discovery, domain verdict, canonical trace, storage,
 network, publication, Workbench claim, or reader evidence is admitted.
+
+## 2026-08-16 composition reading-route continuation
+
+Plan review: make an interactive closure useful as a path back into the
+primary book without adding another discovery engine. Bind every reviewed
+endpoint factor to its owning anchor entry and every relation scope to its
+specialized view; project admitted nodes only; deduplicate page destinations
+while retaining exact graph bindings; order Start, Continue, then Evaluate;
+and preserve rejected conflict disposition. Add this only to `sim-17` and
+retain `sim-16` exactly.
+
+Result review: `sim-17` appends `Read the admitted closure` after Flatten. The
+default F1 result turns three nodes into two page cards: the System Composition
+anchor at Start and System Composition Integrity view at Evaluate. Native
+disclosure retains both endpoint factor IDs, their seed/required roles, and
+the scope binding. The renderer derives all 12 endpoint and six scope bindings
+from exact reference bytes, validates every local destination, and repeats the
+closure source digests. Pure projection, generated-site, and live Edge checks
+cover deduplication, reverse traversal, conflicts, frontier exclusion,
+ordering, unknown-artifact rejection, actual submission, and links. The
+compact design pass and nine-role fixed point report zero open P1/P2 findings.
+No graph expansion, relevance ranking, reader-success, canonical guide,
+persistence, network, or publication claim is admitted.

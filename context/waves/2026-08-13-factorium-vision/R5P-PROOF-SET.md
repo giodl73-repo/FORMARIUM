@@ -259,3 +259,9 @@ conflict retention, unresolved evaluation, and loss-declared flattening. It
 does not discover meaning from prose, create a canonical query or guide,
 persist or publish work, change the preview entry gate, or provide external-
 reader evidence.
+
+Internal preflight 18 adds the `sim-17` Composition Reading Route. It tests
+whether admitted closure nodes can become a short, exact path into existing
+book pages without expanding the graph or creating a second authority. Its
+structural order, successful links, and browser execution are not relevance,
+findability, comprehension, return-use, or external-reader evidence.

@@ -547,6 +547,7 @@
         output.setAttribute("aria-busy", "true");
         identify(result).then(function (identified) {
           renderResult(documentObject, output, identified);
+          if (root && typeof root.FACTORIUM_COMPOSITION_READING_ROUTE_RENDER === "function") root.FACTORIUM_COMPOSITION_READING_ROUTE_RENDER(identified);
           output.setAttribute("aria-busy", "false");
           output.focus();
         }).catch(function (error) {

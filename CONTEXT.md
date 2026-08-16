@@ -218,6 +218,16 @@ loss-declared draft identity. Problem prose is graph-inert, and the local page
 has no persistence, network, canonical trace export, domain verdict, or
 publication path. `sim-15` remains byte-identical.
 
+The eighteenth rehearsal at
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-SIMULATION-PREFLIGHT-18.md`
+adds a deterministic Composition Reading Route to `sim-17`. Every admitted
+closure node resolves through one of 18 exact reference bindings; endpoint
+factors deduplicate into their owning anchor-entry pages and evaluative scopes
+remain specialized-view pages. Start, Continue, and Evaluate are structural
+stages rather than relevance rankings. Exact graph roles and conflict
+dispositions remain disclosed, while frontiers and unreachable predecessors
+do not expand the route. `sim-16` remains byte-identical.
+
 Factor Forge F1 has begun with
 `tables/entries/system-composition-dependency.md`, separating system, system
 element, component, capability, boundary, environment, interface, and

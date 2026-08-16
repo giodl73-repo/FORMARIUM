@@ -102,6 +102,7 @@ explicit validation.
 - [Factor Guide Format V0](specs/FACTOR-GUIDE.md)
 - [Composition Query Trace V0](specs/COMPOSITION-QUERY.md)
 - [Bounded Composition Lab Simulation](specs/COMPOSITION-LAB.md)
+- [Composition Reading Route Simulation](specs/COMPOSITION-READING-ROUTE.md)
 
 ## Founding research specifications
 
@@ -211,10 +212,10 @@ that remain required at use time. See
 Render the current proof-edition bounded composition-lab simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-16
+.\tools\render_proof_set.ps1 -Edition sim-17
 ```
 
-Open `target/proof-set-sim-16/index.html` for a problem-led path through five
+Open `target/proof-set-sim-17/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
@@ -227,7 +228,11 @@ runs deterministic, bounded closure over explicit seeds and only the six exact
 reviewed F1-F6 relations. Problem prose never selects semantics, every check
 remains unresolved, and drafts are neither canonical traces nor publishable
 guides. The page stores or transmits nothing. The generated site remains a
-disposable publication projection; see
+disposable publication projection. After closure, a deterministic reading
+route deduplicates admitted factors into their owning anchor-entry pages and
+then links the specialized views that own unresolved checks. Human page titles
+lead; exact graph roles and dispositions remain under disclosure. The route
+does not expand the graph, rank relevance, or create a canonical guide. See
 [`specs/PROOF-SET-BOOK-SITE.md`](specs/PROOF-SET-BOOK-SITE.md).
 
 After an intentional metadata or source change, regenerate the catalog and
@@ -326,8 +331,11 @@ cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback
 cargo run --quiet -- composition-query-check fixtures\composition\dependency-exclusion-conflict.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\delegated-compliance-frontier.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 node tools\check_composition_lab.js
-node tools\check_proof_set_composition.js target\proof-set-sim-16\manifest.json target\proof-set-sim-16\index.html
-node tools\check_proof_set_composition_lab.js target\proof-set-sim-16
+node tools\check_composition_reading.js
+node tools\check_proof_set_composition.js target\proof-set-sim-17\manifest.json target\proof-set-sim-17\index.html
+node tools\check_proof_set_composition_lab.js target\proof-set-sim-17
+node tools\check_proof_set_composition_reading.js target\proof-set-sim-17
+node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-17
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

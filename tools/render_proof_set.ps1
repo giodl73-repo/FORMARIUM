@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -19,6 +19,7 @@ $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-wor
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
 $compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
+$compositionReadingSpec = Join-Path $workspace "specs\COMPOSITION-READING-ROUTE.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -40,6 +41,8 @@ $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proo
 $explorerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-explorer.css"
 $labStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-lab.css"
 $labScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-lab.js"
+$compositionReadingStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reading.css"
+$compositionReadingScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-reading.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -65,6 +68,7 @@ $artifactTitle = switch ($Edition) {
     "sim-14" { "Factorium Proof Set Truncated Frontier Simulation 14" }
     "sim-15" { "Factorium Proof Set Composition Explorer Simulation 15" }
     "sim-16" { "Factorium Proof Set Bounded Composition Lab Simulation 16" }
+    "sim-17" { "Factorium Proof Set Closure Reading Route Simulation 17" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -538,6 +542,9 @@ if ($editionNumber -ge 14) {
 if ($editionNumber -ge 16) {
     Add-ProofSource $compositionLabSpec
 }
+if ($editionNumber -ge 17) {
+    Add-ProofSource $compositionReadingSpec
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -664,6 +671,7 @@ $siteAssets = @()
 $siteIndex = $null
 $compositionChecks = $null
 $compositionLabChecks = $null
+$compositionReadingChecks = $null
 if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
@@ -1067,6 +1075,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 17) {
+        foreach ($asset in @($compositionReadingStyle, $compositionReadingScript, $compositionReadingSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-reading asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1184,6 +1199,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 16) {
         $siteCssParts += (Get-Content -LiteralPath $labStyle -Raw)
     }
+    if ($editionNumber -ge 17) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionReadingStyle -Raw)
+    }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site.css"),
@@ -1206,6 +1224,7 @@ if ($editionNumber -ge 7) {
         [System.Text.UTF8Encoding]::new($false)
     )
     $compositionLabJson = "null"
+    $compositionReadingJson = "null"
     if ($editionNumber -ge 16) {
         $relationManifestPath = Join-Path $workspace "reference\factorium-relations-v0.factorium"
         $referenceManifestPath = Join-Path $workspace "reference\factorium-reference-v0.factorium"
@@ -1243,9 +1262,20 @@ if ($editionNumber -ge 7) {
             relations = $labRelations
         }
         $compositionLabJson = $compositionLabPayload | ConvertTo-Json -Depth 5 -Compress
+        $labRuntimeText = Get-Content -LiteralPath $labScript -Raw
+        $readingHookLine = '          if (root && typeof root.FACTORIUM_COMPOSITION_READING_ROUTE_RENDER === "function") root.FACTORIUM_COMPOSITION_READING_ROUTE_RENDER(identified);'
+        if (-not $labRuntimeText.Contains($readingHookLine)) {
+            throw "Composition Lab runtime omits the reading-route extension hook"
+        }
+        if ($editionNumber -eq 16) {
+            $labRuntimeText = $labRuntimeText.Replace("$readingHookLine`r`n", "").Replace("$readingHookLine`n", "")
+            if ($labRuntimeText.Contains($readingHookLine)) {
+                throw "Composition Lab sim-16 hook removal failed"
+            }
+        }
         [System.IO.File]::WriteAllText(
             (Join-Path $siteAssetDirectory "composition-lab.js"),
-            (Get-Content -LiteralPath $labScript -Raw),
+            $labRuntimeText,
             [System.Text.UTF8Encoding]::new($false)
         )
         $compositionLabChecks = [ordered]@{
@@ -1259,12 +1289,120 @@ if ($editionNumber -ge 7) {
             persistence = "none"
             specification = "specs/COMPOSITION-LAB.md"
         }
+        if ($editionNumber -ge 17) {
+            $readingArtifacts = @($labRelations.source + $labRelations.target + $labRelations.scope | Sort-Object -Unique)
+            $readingArtifactSet = [System.Collections.Generic.HashSet[string]]::new(
+                [System.StringComparer]::Ordinal
+            )
+            foreach ($artifact in $readingArtifacts) { [void]$readingArtifactSet.Add($artifact) }
+            $factorBindings = [System.Collections.Generic.Dictionary[string, object]]::new(
+                [System.StringComparer]::Ordinal
+            )
+            $viewBindings = [System.Collections.Generic.Dictionary[string, object]]::new(
+                [System.StringComparer]::Ordinal
+            )
+            $currentEntry = $null
+            foreach ($line in Get-Content -LiteralPath $referenceManifestPath) {
+                if ($line.StartsWith("entry ", [System.StringComparison]::Ordinal)) {
+                    $fields = $line -split ' \| '
+                    if ($fields.Count -ne 6) { throw "Composition reading entry field drift: $line" }
+                    $currentEntry = [ordered]@{
+                        id = $fields[0].Substring("entry ".Length)
+                        title = $fields[1]
+                        source = [System.IO.Path]::GetFullPath((Join-Path $workspace $fields[4]))
+                    }
+                }
+                elseif ($line.StartsWith("factor ", [System.StringComparison]::Ordinal)) {
+                    if ($null -eq $currentEntry) { throw "Composition reading factor has no entry: $line" }
+                    $fields = $line -split ' \| '
+                    if ($fields.Count -ne 2) { throw "Composition reading factor field drift: $line" }
+                    $artifact = "factor:$($currentEntry.id)/$($fields[0].Substring("factor ".Length))"
+                    if (-not $readingArtifactSet.Contains($artifact)) { continue }
+                    if ($factorBindings.ContainsKey($artifact)) {
+                        throw "Duplicate composition reading factor binding: $artifact"
+                    }
+                    if (-not $pageBySource.ContainsKey($currentEntry.source)) {
+                        throw "Composition reading anchor page is absent: $($currentEntry.source)"
+                    }
+                    $factorBindings[$artifact] = [ordered]@{
+                        artifact = $artifact
+                        label = $fields[1]
+                        pageTitle = $currentEntry.title
+                        kind = "anchor"
+                        href = "entries/$($pageBySource[$currentEntry.source])"
+                    }
+                }
+                elseif ($line -eq "end-entry") {
+                    $currentEntry = $null
+                }
+                elseif ($line.StartsWith("view ", [System.StringComparison]::Ordinal)) {
+                    $fields = $line -split ' \| '
+                    if ($fields.Count -ne 7) { throw "Composition reading view field drift: $line" }
+                    $artifact = "view:$($fields[0].Substring("view ".Length))"
+                    if (-not $readingArtifactSet.Contains($artifact)) { continue }
+                    if ($viewBindings.ContainsKey($artifact)) {
+                        throw "Duplicate composition reading view binding: $artifact"
+                    }
+                    $viewSource = [System.IO.Path]::GetFullPath((Join-Path $workspace $fields[5]))
+                    if (-not $pageBySource.ContainsKey($viewSource)) {
+                        throw "Composition reading view page is absent: $viewSource"
+                    }
+                    $viewBindings[$artifact] = [ordered]@{
+                        artifact = $artifact
+                        label = $fields[4]
+                        pageTitle = $fields[4]
+                        kind = "view"
+                        href = "entries/$($pageBySource[$viewSource])"
+                    }
+                }
+            }
+            $readingBindings = @(
+                foreach ($artifact in $readingArtifacts) {
+                    if ($factorBindings.ContainsKey($artifact)) { $factorBindings[$artifact] }
+                    elseif ($viewBindings.ContainsKey($artifact)) { $viewBindings[$artifact] }
+                    else { throw "Composition reading artifact has no exact reference binding: $artifact" }
+                }
+            )
+            if ($readingBindings.Count -ne 18 -or
+                @($readingBindings.artifact | Sort-Object -Unique).Count -ne 18 -or
+                @($readingBindings | Where-Object { $_.kind -eq "anchor" }).Count -ne 12 -or
+                @($readingBindings | Where-Object { $_.kind -eq "view" }).Count -ne 6) {
+                throw "Composition reading requires 12 endpoint and 6 scope bindings"
+            }
+            $compositionReadingPayload = [ordered]@{
+                schema = "factorium-composition-reading-payload-v0"
+                referenceSha256 = $compositionLabPayload.referenceSha256
+                relationsSha256 = $compositionLabPayload.relationsSha256
+                bindings = $readingBindings
+            }
+            $compositionReadingJson = $compositionReadingPayload | ConvertTo-Json -Depth 5 -Compress
+            [System.IO.File]::WriteAllText(
+                (Join-Path $siteAssetDirectory "composition-reading.js"),
+                (Get-Content -LiteralPath $compositionReadingScript -Raw),
+                [System.Text.UTF8Encoding]::new($false)
+            )
+            $compositionReadingChecks = [ordered]@{
+                mode = "deterministic admitted-closure reading projection"
+                artifact_bindings = $readingBindings.Count
+                endpoint_bindings = @($readingBindings | Where-Object { $_.kind -eq "anchor" }).Count
+                scope_bindings = @($readingBindings | Where-Object { $_.kind -eq "view" }).Count
+                projection_scope = "admitted graph nodes only"
+                ordering = "start, continue, evaluate; then title, destination, artifact"
+                deduplication = "local destination with all artifact bindings retained"
+                authority = "existing book pages"
+                persistence = "none"
+                specification = "specs/COMPOSITION-READING-ROUTE.md"
+            }
+        }
     }
     $siteData = "window.FACTORIUM_SEARCH_INDEX=$searchJson;`n" +
         "window.FACTORIUM_SOURCE_INDEX=$sourceIndexJson;`n" +
         "window.FACTORIUM_CONTEXT_PROFILES=$contextJson;`n"
     if ($editionNumber -ge 16) {
         $siteData += "window.FACTORIUM_COMPOSITION_LAB=$compositionLabJson;`n"
+    }
+    if ($editionNumber -ge 17) {
+        $siteData += "window.FACTORIUM_COMPOSITION_READING=$compositionReadingJson;`n"
     }
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site-data.js"),
@@ -1706,6 +1844,32 @@ if ($editionNumber -ge 7) {
 </body>
 </html>
 "@
+        if ($editionNumber -ge 17) {
+            $readingSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionReadingSpec)])"
+            foreach ($marker in @(
+                '<p>Choose exact concepts and reviewed relations. The lab will follow only your allowlist, stop at finite budgets, keep exclusions visible, and flatten a structural draft.</p>',
+                "<a href=`"$labSpecPage`">Read the full simulation contract</a>",
+                '<script src="assets/composition-lab.js"></script>'
+            )) {
+                if (-not $compositionLabHtml.Contains($marker)) {
+                    throw "Composition reading page integration marker drift: $marker"
+                }
+            }
+            $compositionLabHtml = $compositionLabHtml.Replace(
+                '<p>Choose exact concepts and reviewed relations. The lab will follow only your allowlist, stop at finite budgets, keep exclusions visible, and flatten a structural draft.</p>',
+                '<p>Choose exact concepts and reviewed relations. The lab will follow only your allowlist, stop at finite budgets, keep exclusions visible, flatten a structural draft, and route the admitted closure into the book.</p>'
+            ).Replace(
+                "<a href=`"$labSpecPage`">Read the full simulation contract</a>",
+                "<a href=`"$labSpecPage`">Read the full simulation contract</a><a href=`"$readingSpecPage`">Read the reading-route contract</a>"
+            ).Replace(
+                '<script src="assets/composition-lab.js"></script>',
+                "<script src=`"assets/composition-lab.js`"></script>`n<script src=`"assets/composition-reading.js`"></script>"
+            )
+            if (-not $compositionLabHtml.Contains("href=`"$readingSpecPage`"") -or
+                -not $compositionLabHtml.Contains('src="assets/composition-reading.js"')) {
+                throw "Composition reading page integration failed"
+            }
+        }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
 
@@ -1890,6 +2054,9 @@ $pageScripts
     if ($editionNumber -ge 16) {
         $expectedAssetNames += "composition-lab.js"
     }
+    if ($editionNumber -ge 17) {
+        $expectedAssetNames += "composition-reading.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -2037,6 +2204,9 @@ $manifestRecord = [ordered]@{
 if ($editionNumber -ge 16) {
     $manifestRecord.composition_lab_checks = $compositionLabChecks
 }
+if ($editionNumber -ge 17) {
+    $manifestRecord.composition_reading_checks = $compositionReadingChecks
+}
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"
     $manifestRecord.output.search_index_sha256 = (Get-FileHash -LiteralPath $searchIndexOutput -Algorithm SHA256).Hash.ToLowerInvariant()
@@ -2090,6 +2260,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 16) {
         Write-Output "site_composition_lab_pages=$($siteChecks.composition_lab_pages)"
         Write-Output "site_composition_lab_relations=$($compositionLabChecks.relation_records)"
+    }
+    if ($editionNumber -ge 17) {
+        Write-Output "site_composition_reading_bindings=$($compositionReadingChecks.artifact_bindings)"
     }
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"
