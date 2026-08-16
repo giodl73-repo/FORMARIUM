@@ -2,7 +2,7 @@
 
 Status: neutral internal `sim-03` prompts; not participant observations
 
-Use these prompts to rehearse coverage of the 23-record Factor Forge
+Use these prompts to rehearse coverage of the 46-record Factor Forge
 supplement. Do not consult the author-only rubric while walking a route. Record
 only artifact-level `SIM3-*` notes: plausible first title, headings followed,
 available distinctions, alternate landings, and missing or broken material.
@@ -334,8 +334,26 @@ compound-unit powers, point-versus-interval sense, factor exactness,
 uncertainty, inverse domain, and rounding before accepting the conversions or
 their quality claims.
 
+## Task AF - The score chose broad adoption
+
+A team compares current practice, a limited monitored trial, and broad
+adoption of an escalation intervention. A retrospective shadow record covers
+one group and has missing follow-up. A spreadsheet treats earlier notification
+as proven benefit, converts incomplete cost ranges and qualitative burden into
+one score, drops current practice, treats a soft preference as a hard
+constraint, and copies the highest-ranked alternative into the final-decision
+field.
+
+Separate choice from rule-derived decision; candidate from feasible,
+excluded, and unresolved alternative; alternative from state and outcome;
+objective from criterion; constraint from preference; evidence from causal
+effect; probability from utility; and recommendation from final selection.
+Use the Decision view to retain missing and contested outcome cells, exact
+measurement bases, noncompensatory gates, sensitivity, ties, authority, and
+reconsideration triggers without inventing a universal score.
+
 ## Rehearsal boundary
 
-The twenty-four prompts collectively exercise every entry and specialized view in the
+The twenty-five prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

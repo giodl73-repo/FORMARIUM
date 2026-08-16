@@ -734,13 +734,13 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge through F26 has expanded and deepened the connected reference
+Factor Forge through F27 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
-software, and decision support. The canonical reference now contains 39
-entries, 297 senses, 466 factors, and 56 views with 101 exact assurance
-bindings. The current Factor Forge supplement contains 44 records, while
-`sim-29` selects 122 canonical records and indexes 129 destinations across
-twelve chapters. Historical preflight documents retain the counts of the
+software, and decision support. The canonical reference now contains 40
+entries, 304 senses, 479 factors, and 57 views with 103 exact assurance
+bindings. The current Factor Forge supplement contains 46 records, while
+`sim-29` selects 124 canonical records and indexes 132 destinations across
+thirteen chapters. Historical preflight documents retain the counts of the
 rehearsal they recorded.
 
 ## Boundary
@@ -764,6 +764,8 @@ cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
 cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
 cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
+node tools\check_reference_closure_coverage.js
+node tools\check_decision_evidence_bridge.js
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

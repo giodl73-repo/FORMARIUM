@@ -683,7 +683,7 @@ estimators, tests, priors, or software implementations as canonical senses. It
 deepens existing base-volume sources, so the Factor Forge book delta remains
 44 records: nineteen entries and twenty-five specialized views.
 
-## F27 stocktake and proposed slice
+## F27 Decision and Evidence Bridge
 
 The reproducible current-reference closure stocktake finds 39 entries, 297
 senses, 466 factors, 56 views, and 101 exact assurance bindings. All entries
@@ -692,9 +692,9 @@ relations touch only twelve factors in six entries and contain no cross-entry
 edge. Treating 140 editorial link pairs as symmetric semantics reaches all 39
 entries within four hops and is rejected as nonselective.
 
-F27 is therefore proposed as a bounded **Decision and Evidence Bridge**, not a
-broad relation import. Research must first distinguish rule-derived case
-decision from choice among feasible alternatives under evidence, uncertainty,
+F27 implements a bounded **Decision and Evidence Bridge**, not a
+broad relation import. Research distinguishes rule-derived case decision from
+choice among feasible alternatives under evidence, uncertainty,
 consequence, value, and constraint. It may admit a new owner only if the full
 choice contract cannot be represented by existing entries without duplicated
 or contradictory authority. The first packet is limited to three to five
@@ -703,7 +703,21 @@ negative and ambiguous fixtures, and one authored synthetic guide. Named
 decision methods, risk frameworks, preference scales, optimization families,
 and option catalogs remain outside the canonical core.
 
-Stocktake and role review are
+The existing-owner test required one new canonical
+`choice-alternative-selection` entry and one Decision view. They distinguish
+alternative status, partial alternative-state outcome maps, criteria,
+preference, noncompensatory gates, recommendation, and authority-owned final
+selection without copying evidence, causal, risk, value, or policy authority.
+One synthetic Factor Guide retains current practice, a limited monitored
+trial, and broad adoption; its five candidate join checks close as one pass,
+one fail, and three unresolved outcomes, and final selection remains
+`not-recorded`. The five relation candidates remain outside the canonical
+sidecar and Composition Lab.
+
+Stocktake, ownership research, contract, guide, and fixed-point review are
 `docs/research/2026-08-16-reference-closure-stocktake.md` and
-`signals/roles/check/reference-closure-stocktake-roles-check-2026-08-16.md`.
-No F27 Factor Table, relation, guide, or canonical source is admitted yet.
+`docs/research/2026-08-16-choice-alternative-selection.md`,
+`specs/DECISION-EVIDENCE-BRIDGE.md`,
+`guides/evidence-informed-intervention-choice.md`, and
+`CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md`. The current corpus has 40
+entries, 304 senses, 479 factors, 57 views, and 103 exact assurance bindings.

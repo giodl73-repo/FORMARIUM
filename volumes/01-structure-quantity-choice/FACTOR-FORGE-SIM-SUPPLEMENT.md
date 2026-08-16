@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **44 records** — 19 canonical entries and 25
+Selected current-corpus delta: **46 records** — 20 canonical entries and 26
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F25 extend
+This supplement tests whether completed Factor Forge batches F1-F27 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -292,6 +292,21 @@ intervals, spatial-level misuse, cash-flow timing, discounting, sensitivity,
 and decision overclaims without creating a catalog of named accounting
 standards, price indexes, products, assets, or valuation methods.
 
+## Part XII - Evidence, alternatives, and selection
+
+### From rule-derived decisions to bounded choice
+
+123. [Choice, Alternative, Criterion, Preference, Recommendation, and Selection](../../tables/entries/choice-alternative-selection.md)
+124. [Alternative Selection Decision Table](../../tables/decisions/alternative-selection.md)
+
+The anchor distinguishes selection among feasible alternatives from a
+rule-derived case conclusion. It keeps alternatives, states, outcomes,
+evidence, criteria, preferences, trade-offs, recommendation, and final
+selection in separate roles. The Decision view retains excluded and unresolved
+alternatives, missing or contested outcome cells, unlike measurement bases,
+noncompensatory constraints, sensitivity, and authority without prescribing a
+universal score or named decision method.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -300,5 +315,5 @@ standards, price indexes, products, assets, or valuation methods.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 122-record combined simulation remains a rehearsal projection, not a
+- The 124-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

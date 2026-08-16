@@ -18,6 +18,7 @@ $evidenceWorksheet = Join-Path $workspace "guides\latency-evidence-composition-w
 $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-worksheet.md"
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
+$decisionChoiceGuide = Join-Path $workspace "guides\evidence-informed-intervention-choice.md"
 $compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
 $compositionReadingSpec = Join-Path $workspace "specs\COMPOSITION-READING-ROUTE.md"
 $compositionFocusSpec = Join-Path $workspace "specs\COMPOSITION-FACTOR-FOCUS.md"
@@ -385,6 +386,12 @@ function Get-GuideSelections {
             path = [System.IO.Path]::GetFullPath($frontierWorksheet)
         }
     }
+    if ($editionNumber -ge 29) {
+        [ordered]@{
+            title = "Evidence-Informed Intervention Choice Guide"
+            path = [System.IO.Path]::GetFullPath($decisionChoiceGuide)
+        }
+    }
 }
 
 function Get-SiteChapterSelections {
@@ -590,7 +597,7 @@ if ($Edition -ne "sim-01") {
         if ($missingTaskCoverage.Count -ne 0 -or $extraTaskCoverage.Count -ne 0) {
             throw "Factor Forge task coverage mismatch: missing=$($missingTaskCoverage -join ',') extra=$($extraTaskCoverage -join ',')"
         }
-        $selectionChecks.task_count = 24
+        $selectionChecks.task_count = 25
         $selectionChecks.task_coverage_records = $taskCoverage.Count
         $selectionChecks.missing_task_coverage_paths = $missingTaskCoverage.Count
         $selectionChecks.extra_task_coverage_paths = $extraTaskCoverage.Count
@@ -628,6 +635,9 @@ if ($editionNumber -ge 13) {
 }
 if ($editionNumber -ge 14) {
     Add-ProofSource $frontierWorksheet
+}
+if ($editionNumber -ge 29) {
+    Add-ProofSource $decisionChoiceGuide
 }
 if ($editionNumber -ge 16) {
     Add-ProofSource $compositionLabSpec
@@ -817,7 +827,10 @@ if ($editionNumber -ge 4) {
         Get-NumberedSelections $supplement
     )
     $guideSelections = @(Get-GuideSelections)
-    $expectedGuideCount = if ($editionNumber -ge 14) {
+    $expectedGuideCount = if ($editionNumber -ge 29) {
+        8
+    }
+    elseif ($editionNumber -ge 14) {
         7
     }
     elseif ($editionNumber -ge 13) {
@@ -835,7 +848,7 @@ if ($editionNumber -ge 4) {
     else {
         2
     }
-    if ($numberedSelections.Count -ne 122 -or $guideSelections.Count -ne $expectedGuideCount) {
+    if ($numberedSelections.Count -ne 124 -or $guideSelections.Count -ne $expectedGuideCount) {
         throw "Search selection mismatch: numbered=$($numberedSelections.Count) guides=$($guideSelections.Count)"
     }
 
@@ -1388,7 +1401,7 @@ if ($editionNumber -ge 7) {
             $chapterBySearchPath[$chapterRelativePath] = $chapter
         }
     }
-    if ($siteChapters.Count -ne 12 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
+    if ($siteChapters.Count -ne 13 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
         throw "Site chapter coverage mismatch: chapters=$($siteChapters.Count) records=$($chapterBySearchPath.Count)"
     }
 

@@ -40,17 +40,19 @@ Factorium already has:
 - eleven bounded reference table families;
 - Reference Delta comparisons against dictionaries, thesauri,
   encyclopedias, handbooks, and standards;
-- thirty-nine substantial anchor entries spanning quantities, science,
+- forty substantial anchor entries spanning quantities, science,
   information, economics, identity, lifecycle, policy, publication,
   diagnostics, physical constants, evidence, systems, organizations, control,
   governance, compliance, and software;
 - Formula Tables covering every V0 relation kind at pilot depth;
-- fifty-six specialized views across all eleven reference table families;
-- a canonical 39-entry, 297-sense, 466-factor, 56-view interchange corpus;
+- fifty-seven specialized views across all eleven reference table families;
+- a canonical 40-entry, 304-sense, 479-factor, 57-view interchange corpus;
 - deterministic generated catalogs and unresolved-candidate reporting;
 - a six-paradigm, 66-row role-to-mechanism Mapping view;
 - two independently reviewed Factor Guides in software security and
   laboratory measurement;
+- one synthetic decision guide that preserves incomplete evidence,
+  alternatives, recommendation, and final authority without scoring;
 - fixed-point `.roles` review, cited research, and immutable founding evidence.
 
 This is a balanced architectural and editorial pilot, not yet a publishable

@@ -1558,3 +1558,37 @@ three to five candidate cross-entry joins, and author one synthetic book-first
 guide before any broader relation expansion. No Factor Table, relation,
 canonical guide, semantic-completeness, automatic-selection, usability,
 decision-quality, external-reader, or preview claim is admitted.
+
+## 2026-08-16 F27 Decision and Evidence Bridge continuation
+
+Plan review: resolve choice versus rule-derived decision ownership before
+adding joins; test the distinction against primary engineering, appraisal,
+decision-theory, and uncertainty guidance; admit at most one entry and one
+Decision view; specify no more than five directional, loss-bearing candidate
+relations with one closed-outcome check each; keep those candidates outside
+the canonical relation grammar; and exercise them in one synthetic book-first
+guide that retains a status quo, a reversible trial, broad adoption,
+incomplete evidence, recommendation, and separate final authority. The
+ten-role review found zero P1 and thirteen P2 conditions. Alternative status,
+partial outcome maps, incomplete preference, noncompensatory gates, exact
+endpoint identities, and no manufactured winner close all conditions.
+
+Result review: F27 adds the canonical `choice-alternative-selection` entry
+with seven senses and thirteen factors plus the
+`decision-alternative-selection` Decision view. Its guide records three
+alternatives and five candidate join checks as one pass, one fail, and three
+unresolved outcomes, recommends only a reversible evidence-producing next
+step, and leaves final selection `not-recorded`. The five candidate relations
+remain absent from the six-relation canonical sidecar. Exact assurance now
+covers 40 entries, 57 views, and six relations in 103 bindings. The updated
+46-record Factor Forge supplement selects 124 canonical records; `sim-29`
+indexes 132 destinations across 13 chapters and 175 site pages from 160
+sources, with zero missing search or local targets. Its site identity is
+`0858cf546d293866fd215bdba73fe2b1a560fb5cc871a132f8c65a637e91c502`
+and standalone SHA-256 is
+`c89b5f3fb1bd746c1bba652fbcc568efc297335984d9fd36ba5c95f655a543a5`.
+Clippy, all 66 Rust tests, canonical and adversarial composition fixtures,
+packet verifiers, reference/sidecar, focused bridge and closure, generated
+site, search, browser, link, `.roles`, and diff checks pass. No join truth,
+causal effect, optimality, decision quality, operational advice, reader
+evidence, external-preview, publication, or `preview-01` claim is admitted.

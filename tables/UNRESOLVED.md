@@ -10,6 +10,6 @@ Generated from canonical linked Markdown sources. Do not edit by hand.
 | `tables/entries/organization-role-authority.md` | 158 | position - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 159 | competency - `unresolved-candidate` |
 | `tables/entries/organization-role-authority.md` | 160 | legal ownership - `unresolved-candidate` |
-| `tables/entries/policy-rule-constraint-decision-exception.md` | 137 | appeal - `unresolved-candidate` |
+| `tables/entries/policy-rule-constraint-decision-exception.md` | 139 | appeal - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 157 | architecture - `unresolved-candidate` |
 | `tables/entries/system-composition-dependency.md` | 158 | subsystem - `unresolved-candidate` |

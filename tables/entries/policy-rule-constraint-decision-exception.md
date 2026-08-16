@@ -61,6 +61,7 @@ policy-decision-use
 | Policy vs. rule | rules implement policy | governing intent vs. executable/evaluable condition-output logic |
 | Rule vs. constraint | both restrict behavior | selected output/action vs. valid/invalid boundary |
 | Rule vs. decision | decision follows rules | reusable logic vs. case-specific evaluated result |
+| Rule-derived decision vs. choice | both can produce a case-specific action | conclusion from governing logic vs. selection among feasible alternatives under criteria and preference |
 | Decision vs. enforcement | decision may authorize action | conclusion vs. mechanism that makes it effective |
 | Exception vs. rule change | both alter ordinary outcome | bounded approved deviation vs. new governing logic |
 | Exception vs. violation | both depart from ordinary policy | authorized deviation vs. noncompliance |
@@ -132,6 +133,7 @@ policy-decision-use
 - [Constraint](../roots/constraint.md)
 - [Purpose](../roots/purpose.md)
 - [Governance, Obligation, and Compliance](governance-obligation-compliance.md)
+- [Choice, Alternative, Criterion, Preference, Recommendation, and Selection](choice-alternative-selection.md)
 - [Governance and Compliance Mechanisms](../mappings/governance-compliance-mechanisms.md)
 - Enforcement point is owned by the `enforcement` sense above.
 - appeal - `unresolved-candidate`

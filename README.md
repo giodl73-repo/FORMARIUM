@@ -221,7 +221,7 @@ Render the current proof-edition bounded composition-lab simulation:
 
 Open `target/proof-set-sim-29/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
-kind-and-domain search, twelve subsectioned chapter routes, and dedicated
+kind-and-domain search, thirteen subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
 examples retain relation direction, local semantics, and complete, incomplete,
 contradictory, and truncated outcomes. They are worked examples rather than an
@@ -420,6 +420,7 @@ node tools\check_composition_rerun_comparison.js
 node tools\check_composition_guide.js
 node tools\check_composition_evaluation.js
 node tools\check_reference_closure_coverage.js
+node tools\check_decision_evidence_bridge.js
 node tools\check_proof_set_composition.js target\proof-set-sim-29\manifest.json target\proof-set-sim-29\index.html
 node tools\check_proof_set_composition_lab.js target\proof-set-sim-29
 node tools\check_proof_set_composition_reading.js target\proof-set-sim-29

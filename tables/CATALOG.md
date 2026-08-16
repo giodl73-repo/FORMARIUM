@@ -2,7 +2,7 @@
 
 Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.
 
-Corpus identity: `3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b81`
+Corpus identity: `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e`
 
 ## Canonical Factor Table entries
 
@@ -10,6 +10,7 @@ Corpus identity: `3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b
 - [Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution](entries/causal-reasoning.md) — Association describes observed dependence; a causal effect compares outcomes under specified alternatives; influence is a contextual contribution claim; a mechanism describes how change is produced; an intervention is an action or assignment; attribution asks what caused one realized outcome. These questions require different evidence and assumptions. (`reference`, `candidate`)
 - [Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst](entries/chemical-reaction-stoichiometry-equilibrium.md) — Chemical reaction process, symbolic equation, stoichiometric amount accounting, reaction progress, kinetics, thermodynamic equilibrium, catalysis, and mechanism evidence are linked but distinct. A balanced equation does not by itself prove a rate law, elementary step, equilibrium state, or mechanism. (`science`, `candidate`)
 - [Chemical Entity, Substance, Compound Class, Mixture, and Solution](entries/chemical-substance-classification.md) — Chemical descriptions move between entity, species, substance, compound, mixture, and phase levels. Compound classes require explicit composition, structure, bonding, functional, reaction-role, or reporting criteria; named families remain examples rather than an open-ended canonical taxonomy. (`science`, `candidate`)
+- [Choice, Alternative, Criterion, Preference, Recommendation, and Selection](entries/choice-alternative-selection.md) — A bounded choice compares candidate courses, filters them by applicable constraints, maps alternatives and states to outcomes, and evaluates admitted options under declared evidence, criteria, preferences, and uncertainty. Recommendation remains distinct from the authorized final selection. (`reference`, `candidate`)
 - [Claim and Evidence](entries/claim-evidence.md) — A claim states what is asserted; evidence records observations, artifacts, or arguments relevant to it; a result reports an evaluated outcome; a limitation bounds interpretation; confidence summarizes support without replacing the evidence. Provenance is mandatory metadata, while an Evidence Table is a specialized view whose lookup task is comparing support and contradiction. (`reference`, `candidate`)
 - [Comparative Quantity](entries/comparative-quantity.md) — Ratios, fractions, rates, proportions, and percentages compare quantities under different role contracts. A fraction is a bounded part-whole ratio only when its nonnegative numerator belongs to its declared whole; closure additionally requires an exhaustive mutually exclusive partition. (`quantities`, `candidate`)
 - [Objective, Control, Monitoring, and Response](entries/control-monitoring-response.md) — Objectives state desired results; set points reference controlled variables; controllers issue commands; actuators influence processes; monitoring observes; indicators summarize; thresholds classify; alerts communicate; service-level objectives bind scoped indicators to targets and windows; outcomes record wider effects. Target, mechanism, measurement, commitment, and outcome remain distinct. (`systems`, `candidate`)
@@ -88,6 +89,7 @@ Corpus identity: `3a348d0f90c32afbcaca402b99dd6c67a964b26707e975fcf0a371017ec93b
 
 ## Decision Table views
 
+- [Alternative Selection Decision Table](decisions/alternative-selection.md) — A bounded choice preserves candidate, feasible, excluded, and unresolved alternatives; partial outcome cells; operational criteria; attributed preference; sensitivity; recommendation; and authority-owned final selection without requiring one scoring method. (owner: `choice-alternative-selection`, senses: `choice`, `alternative`, `decision-criterion`, `preference`, `trade-off`, `recommendation`, `selection`)
 - [Policy Decision Table](decisions/policy-decision.md) — Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate. (owner: `policy-rule-constraint-decision-exception`, senses: `decision`)
 
 ## Transition Table views

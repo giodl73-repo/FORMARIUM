@@ -98,6 +98,28 @@ factor amount-concentration-composition-unit-and-reporting-basis | amount, conce
 factor name-formula-identifier-authority-and-version | name, formula, identifier, authority, and version
 factor evidence-uncertainty-provenance-and-claim-scope | evidence, uncertainty, provenance, and claim scope
 end-entry
+entry choice-alternative-selection | Choice, Alternative, Criterion, Preference, Recommendation, and Selection | reference | candidate | tables/entries/choice-alternative-selection.md | A bounded choice compares candidate courses, filters them by applicable constraints, maps alternatives and states to outcomes, and evaluates admitted options under declared evidence, criteria, preferences, and uncertainty. Recommendation remains distinct from the authorized final selection.
+sense choice | choice
+sense alternative | alternative
+sense decision-criterion | decision criterion
+sense preference | preference
+sense trade-off | trade-off
+sense recommendation | recommendation
+sense selection | selection
+factor decision-question-scope-and-owner | decision question, scope, and owner
+factor objectives-desired-outcomes-and-affected-parties | objectives, desired outcomes, and affected parties
+factor candidate-alternatives-and-generation-boundary | candidate alternatives and generation boundary
+factor feasibility-constraints-and-exclusion-rationale | feasibility constraints and exclusion rationale
+factor states-scenarios-horizon-and-controllability | states, scenarios, horizon, and controllability
+factor alternative-state-outcomes-and-consequences | alternative-state outcomes and consequences
+factor evidence-quality-applicability-and-uncertainty | evidence quality, applicability, and uncertainty
+factor criteria-definitions-measurement-bases-and-directions | criteria definitions, measurement bases, and directions
+factor preferences-priorities-weights-and-provenance | preferences, priorities, weights, and provenance
+factor aggregation-decision-rule-and-noncompensatory-gates | aggregation, decision rule, and noncompensatory gates
+factor sensitivity-robustness-ties-and-information-value | sensitivity, robustness, ties, and information value
+factor recommendation-rationale-limitations-and-review-state | recommendation, rationale, limitations, and review state
+factor final-selection-authority-implementation-and-reconsideration-trigger | final selection, authority, implementation, and reconsideration trigger
+end-entry
 entry claim-evidence | Claim and Evidence | reference | candidate | tables/entries/claim-evidence.md | A claim states what is asserted; evidence records observations, artifacts, or arguments relevant to it; a result reports an evaluated outcome; a limitation bounds interpretation; confidence summarizes support without replacing the evidence. Provenance is mandatory metadata, while an Evidence Table is a specialized view whose lookup task is comparing support and contradiction.
 sense claim | claim
 sense evidence-item | evidence item
@@ -844,6 +866,8 @@ end-entry
 view constraint-policy-constraints | policy-rule-constraint-decision-exception | constraint | constraint | Policy Constraint Table | tables/constraints/policy-constraints.md | Version, evidence, authority, bounded exceptions, output separation, enforcement, and audit remain explicit policy-evaluation invariants.
 end-view
 view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,capability,boundary,environment,interface,dependency | constraint | System Composition Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves viewpoint, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and whole-level behavior as distinct system-composition obligations.
+end-view
+view decision-alternative-selection | choice-alternative-selection | choice,alternative,decision-criterion,preference,trade-off,recommendation,selection | decision | Alternative Selection Decision Table | tables/decisions/alternative-selection.md | A bounded choice preserves candidate, feasible, excluded, and unresolved alternatives; partial outcome cells; operational criteria; attributed preference; sensitivity; recommendation; and authority-owned final selection without requiring one scoring method.
 end-view
 view decision-policy-decision | policy-rule-constraint-decision-exception | decision | decision | Policy Decision Table | tables/decisions/policy-decision.md | Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate.
 end-view

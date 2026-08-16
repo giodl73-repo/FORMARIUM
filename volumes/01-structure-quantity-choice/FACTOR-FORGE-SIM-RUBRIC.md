@@ -365,6 +365,27 @@ Critical artifact failure: matching dimensions, successful cancellation, or an
 exact factor is accepted as proof of quantity-kind identity, added measurement
 quality, physical validity, or semantic substitutability.
 
+## Task AF expected route
+
+- Choice, Alternative, Criterion, Preference, Recommendation, and Selection;
+- Alternative Selection Decision Table;
+- choice among alternatives remains distinct from rule-derived case decision;
+- current practice remains visible inside the candidate-generation boundary;
+- candidate, feasible, excluded, and unresolved are statuses with exact
+  constraint and evidence reasons;
+- alternative, uncertain state, and outcome remain distinct;
+- evidence applicability and causal status remain explicit;
+- constraints are noncompensatory while criteria and preferences retain their
+  own roles;
+- cost, value, utility, probability, expected loss, and score remain distinct;
+- missing and contested outcome cells do not receive favorable defaults;
+- recommendation remains separate from authority-owned final selection;
+- sensitivity and reconsideration triggers remain visible.
+
+Critical artifact failure: a retrospective association, incomplete score, or
+structural route is accepted as proof of benefit, optimality, authority, or
+final selection.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -414,6 +435,8 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/economic-basis-inflation-npv-failures.md`
 - `tables/entries/quantity-value-unit-conversion.md`
 - `tables/mappings/unit-conversion.md`
+- `tables/entries/choice-alternative-selection.md`
+- `tables/decisions/alternative-selection.md`
 
 ## Claim boundary
 
