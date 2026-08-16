@@ -63,6 +63,8 @@ The current closure stocktake is
 It distinguishes one connected editorial navigation graph from the reviewed
 semantic sidecar: ordinary cross-references are not closure edges. F29 adds
 the first exact cross-entry edge, bringing that sidecar to seven records.
+F30 exposes that edge through one exact incomplete book and problem-led
+reading route while leaving the interactive Composition Lab unchanged.
 
 ## Milestone map
 

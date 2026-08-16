@@ -1661,3 +1661,39 @@ role, link, and diff checks pass. The remaining four F27 relations stay
 candidate-only. No local applicability, support, truth, sufficiency, causal
 effect, alternative ranking, recommendation, decision quality, reader
 success, external-preview, publication, or `preview-01` claim is admitted.
+
+## 2026-08-16 F30 Decision/Evidence reading route
+
+Plan review: make the first admitted cross-entry relation legible through the
+existing book guide and problem-led site without expanding the interactive
+Composition Lab. Require one exact Add/Multiply/Evaluate/Stop/Flatten route,
+retain the applicability check as `unresolved` and closure as `incomplete`,
+separate the canonical query from broader authored guide analysis, expose all
+three projection losses, and report reader traces independently from Lab
+starters and relation controls. The standard six-role review found zero P1
+and twelve P2 conditions; all close through the guide-owned route, explicit
+read-only card, exact digest checks, and separate five-starter boundary.
+
+Result review: the Evidence-Informed Intervention Choice Guide now leads its
+cross-entry analysis with the exact Claim/Evidence source, admitted
+`f27-evidence-qualifies-evaluation` edge, Choice evaluation target, Decision
+scope, unresolved applicability check, incomplete stop state, and three
+loss-declared projection rows. The proof home adds a sixth problem-led card
+and the read-only Composition Explorer adds the corresponding sixth trace.
+The card links to the guide, not Compose, and explicitly says the route is
+unavailable there. Compose retains five authored starters over its separately
+hashed six-relation F1-F6 allowlist; the canonical graph remains seven
+relations and the other four F27 bridge kinds remain candidates.
+
+The regenerated 161-source `sim-29` edition has 132 searchable destinations,
+176 site pages, zero missing targets, site identity
+`f38aa02f07ef9b91a04a8a491d59874357ce8836499ad524e73b9e7ad33eeb37`,
+and standalone SHA-256
+`a263723792984cb504c54eb0cb9b1ae7519f40ec7a51fb2298ca8b5473b48b36`.
+All 70 Rust tests, Clippy, six canonical queries, focused route and bridge
+checks, reference/sidecar, closure, local and generated-site composition,
+live browser, packet, role, link, visual, and diff checks pass. This is a
+read-only publication projection only. It makes no local applicability,
+support, truth, sufficiency, causal, ranking, recommendation-validity,
+decision-quality, reader-success, external-preview, publication, Workbench,
+or `preview-01` claim.

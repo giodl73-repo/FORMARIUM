@@ -22,6 +22,11 @@ Its relation allowlist is the union of admitted `edge` records and relation IDs
 in strict `*-budget-before-<relation-id>` frontier reasons. Its exclusions are
 the exact artifact fields in conflict records.
 
+The proof edition may contain additional read-only canonical traces. F30
+publishes the Decision/Evidence trace as the sixth problem-led and Explorer
+route, but it remains outside this five-record starter payload because its
+relation is not in the Composition Lab allowlist.
+
 Generation fails closed on an unknown or duplicate ID, malformed context,
 unknown seed/relation/exclusion, frontier reason without an exact reviewed
 relation, guide mismatch, source digest drift, or coverage other than five

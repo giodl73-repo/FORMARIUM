@@ -40,6 +40,43 @@ The evidence-to-evaluation type relation is now canonical under
 check remains unresolved here. The other four F27 bridge relations remain
 candidates. None of the five is available through the current Composition Lab.
 
+## Canonical evidence-to-evaluation reading route
+
+Governing question: **Which evidence qualification must be reviewed before
+using a claim to evaluate an alternative?**
+
+This is the one canonical structural path used by the guide. It remains
+incomplete because graph membership cannot decide whether the synthetic
+evidence applies to a particular alternative, population, outcome, horizon,
+provenance, or limitation.
+
+| Stage | Exact route | Reader meaning |
+|---|---|---|
+| Add | `factor:claim-evidence/supporting-and-contradicting-implications` | Start from what the declared evidence would imply, including contradiction. |
+| Multiply | `f27-evidence-qualifies-evaluation` -> `factor:choice-alternative-selection/evidence-quality-applicability-and-uncertainty` -> `view:decision-alternative-selection` | Bring the evidence-quality factor into the Decision scope without copying the evidence artifact or declaring it applicable. |
+| Evaluate | `f27-check-evidence-applicability` = `unresolved` | Local claim, population, outcome, horizon, provenance, and limitations still require explicit review. |
+| Stop | state = `incomplete`; no frontier or conflict | The exact structural route is present, but its required substantive check is unsettled. |
+| Flatten | three loss-declared rows | Retain the selected source, unresolved evaluation target, and Decision scope while omitting the full evidence artifact, local alternative bindings, and full Decision Table. |
+
+The guide sections below contain additional synthetic authored analysis,
+including evaluations of four relation candidates. Those records are not
+canonical query outcomes and do not change this route's unresolved check or
+incomplete state. The route is intentionally read-only in this edition and is
+not a Composition Lab control or starter.
+
+Exact trace file: `fixtures/composition/decision-evidence.factorium-query`
+
+| Identity | SHA-256 |
+|---|---|
+| Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Relation sidecar V0 | `a0568473d52be46772148c13218ea0a2e693d4705966c04e8d3b0b0dc18084f6` |
+| Composition Query trace | `50e64f3a0bae939b11619980423a59a4825d9763bb07525a0a02cf21a7c7181d` |
+
+See the
+[relation admission contract](../specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md)
+and [reader-route contract](../specs/DECISION-EVIDENCE-READING-ROUTE.md) for
+direction, loss, identity, and claim boundaries.
+
 ## Synthetic local evidence ledger
 
 All records below are author-created fixtures. They are not observations of a
@@ -99,10 +136,11 @@ Explicit unknowns:
 | Broad adoption | other groups match the observed group | broader earlier notification may occur | `contested` | `SYN-05`; no transport evidence |
 | Broad adoption | other groups differ materially | benefit, burden, and missed-case behavior unknown | `missing` | no applicable observations |
 
-## Candidate join evaluation
+## Bridge join evaluation
 
-Every admitted join records one of `pass`, `fail`, or `unresolved`; none is
-omitted.
+The admitted evidence-to-evaluation check and all four candidate-relation
+checks record one of `pass`, `fail`, or `unresolved`; none is omitted. Only the
+first row is a canonical relation check.
 
 | Check | Outcome | Evidence | Rationale |
 |---|---|---|---|
@@ -181,12 +219,13 @@ Required controls:
 ## Validation and claim boundary
 
 - All local facts are synthetic and explicitly identified.
-- Every recommendation traces to canonical candidate sources and visible F27
-  relation candidates.
+- Every recommendation traces to canonical sources and visible F27 bridge
+  relation statuses.
 - Alternatives, states, outcomes, constraints, criteria, and authority remain
   separate.
-- Every admitted join has an explicit outcome, including one failure and three
-  unresolved records.
+- Every evaluated bridge join has an explicit outcome, including one failure
+  and three unresolved records; only the admitted relation participates in the
+  canonical closure trace.
 - Missing information does not default to success.
 - No formula, probability, utility, total score, causal effect, or final
   decision is invented.

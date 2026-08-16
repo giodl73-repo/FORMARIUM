@@ -19,6 +19,7 @@ $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-wor
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
 $decisionChoiceGuide = Join-Path $workspace "guides\evidence-informed-intervention-choice.md"
+$decisionCompositionTrace = Join-Path $workspace "fixtures\composition\decision-evidence.factorium-query"
 $compositionLabAllowlist = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-lab-relations.factorium"
 $compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
 $compositionReadingSpec = Join-Path $workspace "specs\COMPOSITION-READING-ROUTE.md"
@@ -34,6 +35,7 @@ $compositionContinuationsSpec = Join-Path $workspace "specs\COMPOSITION-EXPLICIT
 $compositionRerunComparisonSpec = Join-Path $workspace "specs\COMPOSITION-RERUN-COMPARISON.md"
 $compositionGuideSpec = Join-Path $workspace "specs\COMPOSITION-GUIDE-SKELETON.md"
 $compositionEvaluationSpec = Join-Path $workspace "specs\COMPOSITION-EVALUATION-RECORD.md"
+$decisionEvidenceReadingSpec = Join-Path $workspace "specs\DECISION-EVIDENCE-READING-ROUTE.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -639,6 +641,7 @@ if ($editionNumber -ge 14) {
 }
 if ($editionNumber -ge 29) {
     Add-ProofSource $decisionChoiceGuide
+    Add-ProofSource $decisionEvidenceReadingSpec
 }
 if ($editionNumber -ge 16) {
     Add-ProofSource $compositionLabSpec
@@ -2196,6 +2199,16 @@ if ($editionNumber -ge 7) {
                 trace = $compositionTraces[4]
             }
         }
+        if ($editionNumber -ge 29) {
+            $problemJourneys += [ordered]@{
+                state = "Incomplete trace · applicability unresolved"
+                title = "Check evidence before evaluating an alternative"
+                description = "Follow the admitted evidence-to-evaluation route while keeping local applicability unresolved and the final choice outside the graph."
+                source = $decisionChoiceGuide
+                trace = $decisionCompositionTrace
+                starter = $false
+            }
+        }
         $problemSources = [System.Collections.Generic.HashSet[string]]::new(
             [System.StringComparer]::OrdinalIgnoreCase
         )
@@ -2212,22 +2225,27 @@ if ($editionNumber -ge 7) {
             $encodedTitle = [System.Net.WebUtility]::HtmlEncode($problem.title)
             $encodedDescription = [System.Net.WebUtility]::HtmlEncode($problem.description)
             $starterLink = ""
-            if ($editionNumber -ge 22) {
+            $starterAvailable = -not $problem.Contains("starter") -or $problem.starter
+            if ($editionNumber -ge 22 -and $starterAvailable) {
                 $starterTrace = Get-CompositionTraceSummary -Path $problem.trace -Worksheet $problem.source
                 $starterLink = "<a class=`"site-problem-try`" href=`"compose.html#starter-$([System.Net.WebUtility]::HtmlEncode($starterTrace.id))`">Try these explicit controls in Compose</a>"
+            }
+            elseif ($editionNumber -ge 22) {
+                $starterLink = '<span class="site-problem-state">Read-only trace · not available in Compose</span>'
             }
             [void]$problemItems.AppendLine(
                 "<li><span class=`"site-problem-state`">$encodedState</span><a href=`"entries/$($pageBySource[$problemSource])`">$encodedTitle</a><p>$encodedDescription</p>$starterLink</li>"
             )
         }
         $problemLedTargets = $problemSources.Count
-        $expectedProblemTargetCount = if ($editionNumber -ge 14) { 5 } elseif ($editionNumber -ge 13) { 4 } else { 3 }
+        $expectedProblemTargetCount = if ($editionNumber -ge 29) { 6 } elseif ($editionNumber -ge 14) { 5 } elseif ($editionNumber -ge 13) { 4 } else { 3 }
         if ($problemLedTargets -ne $expectedProblemTargetCount) {
             throw "Problem-led target count mismatch: $problemLedTargets"
         }
+        $problemSectionClass = if ($problemLedTargets -eq 6) { "site-problems site-problems--six" } else { "site-problems" }
         $problemSection = @"
 
-<section id="problems" class="site-problems" aria-labelledby="site-problems-heading">
+<section id="problems" class="$problemSectionClass" aria-labelledby="site-problems-heading">
 <p class="site-kicker">Problem-led reading</p>
 <h2 id="site-problems-heading">Start with what you need to decide</h2>
 <p class="site-problems__intro">Each worked Composition Query selects several concepts and senses, follows a bounded typed closure, runs declared checks, and flattens the graph into a traceable guide.</p>
@@ -2334,8 +2352,10 @@ if ($editionNumber -ge 7) {
 </details>
 "@)
             }
-            if ($traceSummaries.Count -ne 5 -or $traceStates.complete -ne 2 -or
-                $traceStates.incomplete -ne 1 -or $traceStates.contradictory -ne 1 -or
+            $expectedTraceCount = if ($editionNumber -ge 29) { 6 } else { 5 }
+            $expectedIncompleteCount = if ($editionNumber -ge 29) { 2 } else { 1 }
+            if ($traceSummaries.Count -ne $expectedTraceCount -or $traceStates.complete -ne 2 -or
+                $traceStates.incomplete -ne $expectedIncompleteCount -or $traceStates.contradictory -ne 1 -or
                 $traceStates.truncated -ne 1) {
                 throw "Composition explorer trace/state coverage mismatch"
             }

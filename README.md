@@ -220,17 +220,19 @@ Render the current proof-edition bounded composition-lab simulation:
 .\tools\render_proof_set.ps1 -Edition sim-29
 ```
 
-Open `target/proof-set-sim-29/index.html` for a problem-led path through five
-trace-bound Composition Query worksheets, the five-step first journey,
+Open `target/proof-set-sim-29/index.html` for a problem-led path through six
+trace-bound Composition Query guides, the five-step first journey,
 kind-and-domain search, thirteen subsectioned chapter routes, and dedicated
-reading pages. The systems, evidence, feedback, exclusion, and finite-budget
-examples retain relation direction, local semantics, and complete, incomplete,
-contradictory, and truncated outcomes. They are worked examples rather than an
-open-ended builder. A read-only Composition Explorer compares the exact
+reading pages. The systems, evidence, feedback, exclusion, finite-budget, and
+Decision/Evidence examples retain relation direction, local semantics, and
+complete, incomplete, contradictory, and truncated outcomes. They are worked
+examples rather than an open-ended builder. The Decision/Evidence route is an
+exact incomplete read-only trace over the first admitted cross-entry relation;
+it remains outside Compose. A read-only Composition Explorer compares the exact
 seeds, admitted joins and nodes, checks, budgets, closure boundaries,
 projection counts, and trace identities beneath those guides. The Compose page
-runs deterministic, bounded closure over explicit seeds and only the six exact
-six allowlisted reviewed F1-F6 relations. Problem prose never selects
+runs deterministic, bounded closure over explicit seeds and only the six
+allowlisted reviewed F1-F6 relations. Problem prose never selects
 semantics, every check
 remains unresolved, and drafts are neither canonical traces nor publishable
 guides. Query data is not stored or transmitted; only the non-sensitive
@@ -240,11 +242,13 @@ route deduplicates admitted factors into their owning anchor-entry pages and
 then links the specialized views that own unresolved checks. Human page titles
 lead; exact graph roles and dispositions remain under disclosure. The route
 does not expand the graph, rank relevance, or create a canonical guide. Problem
-cards also link to authored Compose starters derived from their exact
-trace. Loading a starter changes visible explicit controls but does not run
+Five problem cards also link to authored Compose starters derived from their
+exact traces; the sixth is explicitly read-only. Loading a starter changes visible explicit controls but does not run
 closure, infer selections from prose, inherit reviewed outcomes, or serialize
 arbitrary query data into the URL. See
 [`specs/COMPOSITION-AUTHORED-STARTERS.md`](specs/COMPOSITION-AUTHORED-STARTERS.md).
+See [`specs/DECISION-EVIDENCE-READING-ROUTE.md`](specs/DECISION-EVIDENCE-READING-ROUTE.md)
+for the canonical/read-only boundary.
 The sticky pre-run card now condenses the current explicit controls into Add,
 Multiply, Subtract, Frame, and Bound records. It reports only syntactic control
 completeness, never predicts closure, and warns when edited controls no longer
@@ -425,7 +429,9 @@ node tools\check_composition_guide.js
 node tools\check_composition_evaluation.js
 node tools\check_reference_closure_coverage.js
 node tools\check_decision_evidence_bridge.js
+node tools\check_decision_evidence_reading_route.js
 node tools\check_proof_set_composition.js target\proof-set-sim-29\manifest.json target\proof-set-sim-29\index.html
+node tools\check_proof_set_decision_evidence_reading.js target\proof-set-sim-29
 node tools\check_proof_set_composition_lab.js target\proof-set-sim-29
 node tools\check_proof_set_composition_reading.js target\proof-set-sim-29
 node tools\check_proof_set_composition_focus.js target\proof-set-sim-29

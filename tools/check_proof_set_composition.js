@@ -16,16 +16,18 @@ const editionNumber = Number(String(manifest.edition || "").slice(4));
 assert.ok(Number.isInteger(editionNumber) && editionNumber >= 15,
   "composition explorer edition");
 assert.ok(checks, "composition checks are recorded");
-assert.equal(checks.trace_count, 5, "five exact traces");
-assert.equal(checks.worksheet_targets, 5, "five exact worksheet targets");
-assert.equal(checks.unique_trace_ids, 5, "trace IDs are unique");
+const expectedTraceCount = editionNumber >= 29 ? 6 : 5;
+const expectedIncomplete = editionNumber >= 29 ? 2 : 1;
+assert.equal(checks.trace_count, expectedTraceCount, "exact trace count");
+assert.equal(checks.worksheet_targets, expectedTraceCount, "exact worksheet targets");
+assert.equal(checks.unique_trace_ids, expectedTraceCount, "trace IDs are unique");
 assert.deepEqual(checks.states, {
   complete: 2,
-  incomplete: 1,
+  incomplete: expectedIncomplete,
   contradictory: 1,
   truncated: 1
 }, "all declared closure states are represented");
-assert.equal(checks.records.length, 5, "five trace records are manifested");
+assert.equal(checks.records.length, expectedTraceCount, "trace records are manifested");
 
 const ids = new Set();
 for (const record of checks.records) {
@@ -51,19 +53,44 @@ for (const record of checks.records) {
 const composeMatch = home.match(/<section id="compose"[\s\S]*?<\/section>\s*<section id="start"/);
 assert.ok(composeMatch, "composition explorer appears before the first journey");
 const compose = composeMatch[0];
-assert.equal((compose.match(/<details class="site-trace"/g) || []).length, 5,
-  "five trace disclosure panels");
-assert.equal((compose.match(/data-trace-state=/g) || []).length, 5,
+assert.equal((compose.match(/<details class="site-trace"/g) || []).length, expectedTraceCount,
+  "trace disclosure panels");
+assert.equal((compose.match(/data-trace-state=/g) || []).length, expectedTraceCount,
   "every panel exposes state");
 assert.equal((compose.match(/<details class="site-trace"[^>]* open>/g) || []).length, 1,
   "one trace is initially expanded");
-assert.equal((compose.match(/Read the full Factor Guide/g) || []).length, 5,
+assert.equal((compose.match(/Read the full Factor Guide/g) || []).length, expectedTraceCount,
   "every trace resolves to a full guide");
 for (const operation of ["Add", "Multiply", "Evaluate", "Stop", "Flatten"]) {
   assert.ok(compose.includes(operation), `${operation} operation is visible`);
 }
 assert.ok(!/<form\b|<input\b|<button\b/i.test(compose),
   "explorer does not imply live query construction");
+
+if (editionNumber >= 29) {
+  const decision = checks.records.find(
+    (record) => record.id === "evidence-qualifies-alternative-evaluation"
+  );
+  assert.deepEqual(decision, {
+    id: "evidence-qualifies-alternative-evaluation",
+    state: "incomplete",
+    seeds: 1,
+    nodes: 3,
+    edges: 1,
+    frontiers: 0,
+    conflicts: 0,
+    checks: 1,
+    projections: 3,
+    work: 9,
+    sha256: "50e64f3a0bae939b11619980423a59a4825d9763bb07525a0a02cf21a7c7181d"
+  }, "Decision/Evidence trace remains exact and incomplete");
+  assert.equal((home.match(/compose\.html#starter-[a-z0-9-]+/g) || []).length, 5,
+    "only the five allowlisted traces link to Compose starters");
+  assert.ok(home.includes("Read-only trace · not available in Compose"),
+    "Decision/Evidence capability boundary is visible");
+  assert.ok(home.includes("site-problems site-problems--six"),
+    "six-card problem layout is explicit");
+}
 
 console.log(
   `OK traces=${checks.trace_count} states=${Object.keys(checks.states).length} ` +

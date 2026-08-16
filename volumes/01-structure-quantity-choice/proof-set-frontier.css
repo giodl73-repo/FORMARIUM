@@ -14,6 +14,11 @@
   grid-column: 4 / span 2;
 }
 
+.site-problems--six .site-problem-grid li:nth-last-child(2),
+.site-problems--six .site-problem-grid li:last-child {
+  grid-column: span 2;
+}
+
 @media (max-width: 70rem) {
   .site-problem-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -26,6 +31,10 @@
 
   .site-problem-grid li:last-child {
     grid-column: 1 / -1;
+  }
+
+  .site-problems--six .site-problem-grid li:last-child {
+    grid-column: auto;
   }
 }
 

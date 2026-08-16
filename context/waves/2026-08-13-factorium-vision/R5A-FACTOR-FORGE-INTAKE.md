@@ -757,3 +757,20 @@ assurance has 104 exact bindings. A separately hashed six-ID F1-F6 allowlist
 keeps the new relation out of the interactive Composition Lab pending a later
 reader-facing design review. The other four F27 bridge relations remain
 candidate-only.
+
+## F30 Decision/Evidence reading route
+
+F30 completes the reader-facing design review without adding another relation
+or changing the Lab. The existing Evidence-Informed Intervention Choice Guide
+now begins its cross-entry analysis with an exact five-stage reading route over
+`f27-evidence-qualifies-evaluation`. Add names the Claim/Evidence source;
+Multiply names the relation, Choice target, and Decision scope; Evaluate keeps
+applicability `unresolved`; Stop keeps the closure `incomplete`; and Flatten
+retains all three declared losses.
+
+The proof home and read-only Composition Explorer now expose six exact traces
+and two incomplete examples. The new problem card links only to the book guide
+and states that Compose is unavailable. The interactive payload remains five
+authored starters over the separate six-ID F1-F6 allowlist. The route adds no
+local binding, evidence applicability, support, causal status, ranking,
+recommendation validity, or final selection.

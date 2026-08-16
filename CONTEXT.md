@@ -749,6 +749,13 @@ evidence-to-evaluation relation, bringing the canonical sidecar to seven
 reviewed edges. The Composition Lab remains separately fixed to its six-ID
 F1-F6 teaching allowlist.
 
+F30 makes that admitted cross-entry edge legible without expanding the Lab.
+The existing Evidence-Informed Intervention Choice Guide now owns an exact
+Add/Multiply/Evaluate/Stop/Flatten reading route whose applicability check is
+`unresolved` and closure state is `incomplete`. The proof home and read-only
+Composition Explorer expose six worked traces, while Compose retains exactly
+five authored starters over its existing six-relation allowlist.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
@@ -772,6 +779,7 @@ cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium 
 cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
 node tools\check_reference_closure_coverage.js
 node tools\check_decision_evidence_bridge.js
+node tools\check_decision_evidence_reading_route.js
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
