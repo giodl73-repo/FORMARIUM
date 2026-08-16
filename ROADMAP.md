@@ -20,10 +20,13 @@ to speculative calendar dates.
 
 ## North-star outcome
 
-A reader can look up a concept, select the intended sense, compare credible
-structures or relations, see decisive constraints and failure signs, and
-follow every important factor to another reviewed entry or visible unresolved
-candidate.
+A reader can look up one concept or compose a problem from several concepts,
+select the intended senses, compare credible structures or relations, see
+decisive constraints and failure signs, and follow every required factor to
+another reviewed entry or visible unresolved candidate. A composed problem
+produces a bounded, traceable closure over the selected concept graph and a
+loss-aware Factor Guide projection rather than an unqualified flattening of
+everything reachable.
 
 The enduring product is a linked reference and its books. Software remains a
 supporting publication and navigation system.
@@ -62,7 +65,7 @@ first volume.
 | R2 - Reproducible reference | Stable interchange format and generated navigation projections | Complete; see `R2-REPRODUCIBLE-REFERENCE-AUDIT.md` |
 | R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | Complete; see `R3-GUIDES-MAPPINGS-AUDIT.md` |
 | R4 - Volume prototype | Coherent, usability-tested table-first book prototype | External testing; the frozen 78-record prototype and protocol are ready, but reader observations are required for R4 closure |
-| R5P - Private preview | Frozen, self-guided proof edition used by a small invited practitioner cohort | The Sieve is closed and forward-applied; preview use has no repeated unresolved critical blocker and every failure is dispositioned |
+| R5P - Private preview | Frozen, self-guided proof edition used for lookup and bounded multi-concept application by a small invited practitioner cohort | The Sieve is closed and forward-applied; preview use has no repeated unresolved critical blocker and every failure is dispositioned |
 | R5 - First substantial volume | Approximately 250 reviewed entries with balanced coverage | Editorial expansion may proceed in parallel; publication still requires the R4 evidence gate plus editorial, domain, graph, citation, and publication gates |
 | R6 - Factorium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |
 | R7 - Core reference | Approximately 1,000 canonical headwords across multiple reviewed volumes | Contributor governance and revision custody scale without identity drift |
@@ -286,13 +289,89 @@ Only after the editorial contract is stable, build software for:
 
 - faceted search by headword, sense, factor role, family, domain, and maturity;
 - side-by-side comparison of decompositions and formulas;
-- graph navigation and unresolved-candidate queues;
+- composition queries that begin from several selected concepts and senses;
+- bounded graph closure over admitted, typed, directional relations;
+- graph navigation and unresolved-candidate frontiers;
 - guided construction and review of entries;
-- narrowing canonical tables into Factor Guides;
+- narrowing a closed working graph into traceable Factor Guides;
 - citation, revision, and publication workflows.
 
 AI may propose candidates, alternatives, links, and missing constraints.
 Nothing becomes authoritative without visible source and human review.
+
+### Composition-query and closure contract
+
+The Workbench's primary structural operation is not a search-result merge. A
+Composition Query owns:
+
+1. an ordinary-language problem statement and explicit seed concepts;
+2. selected and rejected senses for every ambiguous seed;
+3. a Closure Policy naming admitted edge kinds, directions, context and
+   reference-frame selections, stopping rules, and optional frontiers;
+4. a working graph containing admitted nodes and edges, excluded branches,
+   contradictions, unresolved requirements, provenance, and one declared
+   closure state: `complete`, `incomplete`, `contradictory`, or `truncated`;
+5. an Evaluation record containing only declared constraint, diagnostic,
+   procedure, formula-scope, and completeness checks;
+6. a loss-aware flattened Factor Guide whose claims trace back to the working
+   graph and canonical sources.
+
+Candidate composition operators have bounded meanings:
+
+- **add** admits another seed or optional branch;
+- **multiply** performs a typed, compatibility-constrained join rather than a
+  Cartesian product;
+- **subtract** records an exclusion and exposes a contradiction when the
+  excluded node is required for closure;
+- **evaluate** runs declared checks without claiming domain truth, causal
+  proof, or numerical solution beyond the selected specialized views;
+- **flatten** projects the result for reading while retaining sense, edge,
+  context, exclusion, uncertainty, and provenance traces.
+
+These operator names are interface shorthand, not mathematical equalities,
+Factorium decomposition marks, or a claim that semantic composition follows
+ordinary arithmetic. Every stored operation uses an explicit typed record;
+the symbols or words shown to a reader are presentation only.
+
+Closure starts from the selected seed set and repeatedly follows only admitted
+required or evaluative edges until no new required node is added. Explanation,
+provenance, and merely related frontiers remain separately selectable so that
+`everything related` cannot masquerade as a useful fixed point. Cycles must
+terminate by stable node identity, and every derived inclusion must name its
+predecessor edge and closure rule.
+
+Every execution also declares finite node, edge, depth, and work budgets. A
+budget stop produces `truncated` plus a visible unresolved frontier; it MUST
+NOT be labelled complete. An exclusion that removes a required node produces
+`contradictory` unless another admitted trace satisfies the same declared
+requirement. Missing required context or typed-relation coverage produces
+`incomplete`.
+
+Before implementation, the closure contract must pass these gates:
+
+- typed relation coverage—including direction, arity, role labels,
+  qualifications, context, version, and loss—is sufficient for every admitted
+  traversal; Markdown links and lexical similarity do not silently become
+  semantic edges;
+- the same query, canonical revision, and Closure Policy produce one
+  deterministic working-graph identity;
+- changing sense, direction, context, or exclusion changes or invalidates the
+  identity visibly;
+- required, evaluative, explanatory, provenance, optional, excluded, and
+  unresolved nodes remain distinguishable;
+- every flattened guide carries an exact closure-trace manifest so it can
+  round-trip to the selected working graph and never become a new canonical
+  entry or broad claim;
+- adversarial fixtures cover cycles, incompatible senses, missing contexts,
+  required exclusions, ambiguous joins, and closure explosion;
+- all critical and major `.roles` findings on the contract and fixtures are
+  closed before interactive construction software is admitted.
+
+Composition Queries, problem statements, working graphs, exclusions, and
+evaluations are user work products, not canonical reference content. Their
+storage, sharing, deletion, and sensitivity policy must be explicit before
+persistence or collaboration is implemented; early rehearsals use only
+non-sensitive synthetic scenarios.
 
 ## Ongoing workstreams
 
@@ -300,7 +379,7 @@ Nothing becomes authoritative without visible source and human review.
 |---|---|
 | Editorial quality | Preserve sense separation, concise tables, alternatives, constraints, and failure signs |
 | Domain authority | Cite appropriate standards, textbooks, handbooks, or primary sources |
-| Graph integrity | Resolve factors and cross-references without inventing duplicate headwords |
+| Graph integrity | Resolve factors and typed relations without duplicate headwords, silent traversal semantics, or unbounded query closure |
 | Role review | Run the relevant `.roles` panel to fixed point before publication |
 | Reader evidence | Record lookup failures and revise the reference form, not just individual prose |
 | Founding evidence | Keep FACTOR packets immutable and claims narrow |
@@ -322,4 +401,7 @@ Nothing becomes authoritative without visible source and human review.
 8. when readers become available, close The Sieve, forward-apply its findings,
    and run the Proof Set private preview on a frozen proof edition;
 9. expand toward and gate the approximately 250-entry substantial volume;
-10. begin Workbench implementation only against the proven reference contract.
+10. freeze and adversarially test the Composition Query, Closure Policy,
+    working-graph, Evaluation, and flattened Factor Guide contracts;
+11. begin Workbench implementation only against those proven reference and
+    closure contracts.

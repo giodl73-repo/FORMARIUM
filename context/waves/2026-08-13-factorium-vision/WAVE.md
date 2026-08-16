@@ -926,3 +926,27 @@ mechanics only. The ten-reviewer design pass and seven-role Factorium fixed
 point report 0 P1 and 0 P2 findings; observed accessibility, findability,
 comprehension, application success, preference, and return use remain deferred
 to real readers.
+
+## 2026-08-15 composition-query closure planning
+
+Plan review: revise the North-star and R6 Workbench plan around the user's
+actual structural task rather than entry retrieval alone. A Composition Query
+starts from several explicit concepts and selected senses, applies a visible
+Closure Policy over admitted typed relations, records the resulting working
+graph and closure state, runs only declared checks, and flattens the result into
+a traceable Factor Guide. Candidate add, multiply, subtract, evaluate, and
+flatten labels remain interface shorthand rather than mathematical equations.
+Proof Set may rehearse one manual declared worksheet, but automated expansion,
+interactive construction, persistence, and publishing remain R6 scope.
+
+Result review: `ROADMAP.md`, `PRODUCT_PLAN.md`, and `R5P-PROOF-SET.md` now own
+the composition-query sequence and gate. Closure distinguishes required,
+evaluative, explanatory, provenance, optional, excluded, and unresolved nodes;
+declares `complete`, `incomplete`, `contradictory`, or `truncated`; stops cycles
+by stable identity; exposes finite-budget frontiers; and requires direction,
+arity, roles, qualification, context, version, and loss for traversed
+relations. Flattened guides carry exact closure-trace manifests and remain
+noncanonical user work products. The ten-role fixed-point review at
+`COMPOSITION-QUERY-CLOSURE-PLAN-ROLE-REVIEW.md` reports 0 P1, 0 P2, and 30 P3
+notes with verdict `APPROVED`. No Workbench implementation, preview candidate,
+domain conclusion, or reader-evidence claim is admitted.

@@ -85,6 +85,13 @@ return use before the first substantial public volume.
 Add search, construction, comparison, narrowing, and publishing software only
 after the editorial method is stable.
 
+Its central construction artifact is a noncanonical Composition Query: several
+selected concepts and senses induce a bounded, typed, policy-governed closure
+over the reference graph; declared checks evaluate that working graph; and a
+loss-aware projection produces a traceable Factor Guide. Automated closure is
+not admitted until relation semantics, stopping states, adversarial fixtures,
+identity, provenance, and `.roles` review are frozen.
+
 ### Wave 6: Reference expansion
 
 Grow reviewed volumes, contributors, provenance, and cross-references without

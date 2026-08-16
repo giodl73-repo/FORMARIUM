@@ -19,8 +19,9 @@ claiming that it is the whole reference.
 
 Determine whether invited practitioners can independently navigate,
 understand, and apply a frozen Factorium proof edition to real, non-sensitive
-problems, then choose to return for another use, without repeated unresolved
-critical blockers.
+problems—including problems that require several concepts to be composed—then
+choose to return for another use, without repeated unresolved critical
+blockers.
 
 ## Evidence boundary
 
@@ -70,6 +71,9 @@ distribute the preview candidate. It may:
 - predict terminology, navigation, layout, trust, and accessibility risks;
 - repair defects visible from the artifacts themselves;
 - rehearse manifest, rendering, quickstart, and feedback mechanics.
+- rehearse a manual Composition Query worksheet whose seed concepts, sense
+  choices, admitted relations, closure steps, exclusions, unresolved frontier,
+  checks, and Factor Guide projection are completely declared.
 
 Simulation records use `SIM-*` identifiers and remain outside participant
 observation files. They MUST NOT invent participant identity, behavior,
@@ -87,13 +91,43 @@ rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-05.md`. The adaptive reader-view
 rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-06.md`. The scoped Context Profile
 inheritance rehearsal is `PROOF-SET-SIMULATION-PREFLIGHT-07.md`.
 The multi-page book-site rehearsal is
-`PROOF-SET-SIMULATION-PREFLIGHT-08.md`.
+`PROOF-SET-SIMULATION-PREFLIGHT-08.md`. The reader-journey rehearsal is
+`PROOF-SET-SIMULATION-PREFLIGHT-09.md`.
+
+### Composition-query rehearsal boundary
+
+Proof Set may test whether a fixed edition contains the material needed for a
+declared multi-concept problem and whether one author-specified closure trace
+can be rendered as a readable worksheet. The rehearsal may exercise these
+candidate operations:
+
+- add a seed concept;
+- join selected senses through one admitted typed relation;
+- record an exclusion or required-node contradiction;
+- run an explicitly named Constraint, Diagnostic, Procedure, Formula-scope, or
+  completeness check;
+- flatten the resulting working graph into a traceable provisional Factor
+  Guide.
+
+The worksheet declares `complete`, `incomplete`, `contradictory`, or
+`truncated`; records finite traversal budgets; and carries a manifest of every
+included, excluded, unresolved, and projected node and edge. Operator labels
+such as add, multiply, subtract, evaluate, and flatten are reading aids only,
+not mathematical or semantic equations.
+
+The rehearsal MUST NOT infer semantic edges from prose, silently choose among
+senses or Context Profiles, present all reachable links as required closure,
+generate domain conclusions, or claim that the author-declared trace predicts
+reader behavior. Automated graph expansion, interactive construction,
+recommendation, persistence, and publishing remain R6 Workbench scope.
 
 ## Candidate artifacts
 
 - tag `preview-01` and a manifest identifying exact source revisions;
 - a rendered static HTML or PDF proof edition;
 - a concise reader quickstart;
+- when admitted, one bounded composition worksheet with its exact closure
+  trace and flattened Factor Guide projection;
 - an invitation and consent brief adapted from The Sieve materials;
 - a de-identified feedback and use log;
 - a finding and disposition ledger;
@@ -171,6 +205,8 @@ new evidence rather than rewriting the initial record.
 - completion of the approximately 250-entry R5 volume;
 - statistically representative usability or market validation;
 - Workbench, chat, or application implementation;
+- automated semantic-edge inference, unrestricted graph traversal, or
+  generated domain conclusions;
 - monetization or pricing experiments;
 - broad semantic, scientific, or domain-authority claims;
 - confidential participant data or work products;
