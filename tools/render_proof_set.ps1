@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -24,12 +24,20 @@ $compositionFocusSpec = Join-Path $workspace "specs\COMPOSITION-FACTOR-FOCUS.md"
 $compositionPaletteSpec = Join-Path $workspace "specs\COMPOSITION-PALETTE.md"
 $compositionViewsSpec = Join-Path $workspace "specs\COMPOSITION-READER-VIEWS.md"
 $compositionMapSpec = Join-Path $workspace "specs\COMPOSITION-CLOSURE-MAP.md"
+$compositionStartersSpec = Join-Path $workspace "specs\COMPOSITION-AUTHORED-STARTERS.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
     (Join-Path $workspace "fixtures\composition\alert-feedback.factorium-query"),
     (Join-Path $workspace "fixtures\composition\dependency-exclusion-conflict.factorium-query"),
     (Join-Path $workspace "fixtures\composition\delegated-compliance-frontier.factorium-query")
+)
+$compositionStarterTitles = @(
+    "System dependency",
+    "Claim and evidence",
+    "Feedback and outcome",
+    "Required-interface conflict",
+    "Delegated compliance frontier"
 )
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
@@ -54,6 +62,8 @@ $compositionViewsStyle = Join-Path $workspace "volumes\01-structure-quantity-cho
 $compositionViewsScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-views.js"
 $compositionMapStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-map.css"
 $compositionMapScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-map.js"
+$compositionStartersStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-starters.css"
+$compositionStartersScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-starters.js"
 $contextBindings = Join-Path $workspace "volumes\01-structure-quantity-choice\CONTEXT-PROFILE-SIM-BINDINGS.md"
 $contextProfileSources = @(
     (Join-Path $workspace "tables\context-profiles\newtonian-mechanics.md"),
@@ -84,6 +94,7 @@ $artifactTitle = switch ($Edition) {
     "sim-19" { "Factorium Proof Set Progressive Concept Palette Simulation 19" }
     "sim-20" { "Factorium Proof Set Composition Reader Views Simulation 20" }
     "sim-21" { "Factorium Proof Set Composition Closure Map Simulation 21" }
+    "sim-22" { "Factorium Proof Set Authored Composition Starters Simulation 22" }
 }
 if ([string]::IsNullOrWhiteSpace($OutputDirectory)) {
     $OutputDirectory = "target\$artifactName"
@@ -572,6 +583,9 @@ if ($editionNumber -ge 20) {
 if ($editionNumber -ge 21) {
     Add-ProofSource $compositionMapSpec
 }
+if ($editionNumber -ge 22) {
+    Add-ProofSource $compositionStartersSpec
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -703,6 +717,7 @@ $compositionFocusChecks = $null
 $compositionPaletteChecks = $null
 $compositionViewsChecks = $null
 $compositionMapChecks = $null
+$compositionStarterChecks = $null
 $compositionFocusRecords = @()
 if ($editionNumber -ge 4) {
     foreach ($asset in @($searchStyle, $searchScript)) {
@@ -1142,6 +1157,13 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 22) {
+        foreach ($asset in @($compositionStartersStyle, $compositionStartersScript, $compositionStartersSpec)) {
+            if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
+                throw "Missing composition-starters asset: $asset"
+            }
+        }
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
@@ -1274,6 +1296,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 21) {
         $siteCssParts += (Get-Content -LiteralPath $compositionMapStyle -Raw)
     }
+    if ($editionNumber -ge 22) {
+        $siteCssParts += (Get-Content -LiteralPath $compositionStartersStyle -Raw)
+    }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site.css"),
@@ -1297,6 +1322,8 @@ if ($editionNumber -ge 7) {
     )
     $compositionLabJson = "null"
     $compositionReadingJson = "null"
+    $compositionStartersJson = "null"
+    $compositionStarterCards = ""
     if ($editionNumber -ge 16) {
         $relationManifestPath = Join-Path $workspace "reference\factorium-relations-v0.factorium"
         $referenceManifestPath = Join-Path $workspace "reference\factorium-reference-v0.factorium"
@@ -1587,6 +1614,139 @@ if ($editionNumber -ge 7) {
                     specification = "specs/COMPOSITION-CLOSURE-MAP.md"
                 }
             }
+            if ($editionNumber -ge 22) {
+                [System.IO.File]::WriteAllText(
+                    (Join-Path $siteAssetDirectory "composition-starters.js"),
+                    (Get-Content -LiteralPath $compositionStartersScript -Raw),
+                    [System.Text.UTF8Encoding]::new($false)
+                )
+                $starterWorksheets = @(
+                    $compositionWorksheet, $evidenceWorksheet, $feedbackWorksheet,
+                    $conflictWorksheet, $frontierWorksheet
+                )
+                $knownRelationIds = [System.Collections.Generic.HashSet[string]]::new(
+                    [System.StringComparer]::Ordinal
+                )
+                $knownArtifacts = [System.Collections.Generic.HashSet[string]]::new(
+                    [System.StringComparer]::Ordinal
+                )
+                foreach ($relation in $labRelations) {
+                    [void]$knownRelationIds.Add($relation.id)
+                    [void]$knownArtifacts.Add($relation.source)
+                    [void]$knownArtifacts.Add($relation.target)
+                    [void]$knownArtifacts.Add($relation.scope)
+                }
+                $starterIds = [System.Collections.Generic.HashSet[string]]::new(
+                    [System.StringComparer]::Ordinal
+                )
+                $starterStates = [System.Collections.Generic.HashSet[string]]::new(
+                    [System.StringComparer]::Ordinal
+                )
+                $starterRecords = @(
+                    for ($starterIndex = 0; $starterIndex -lt $compositionTraces.Count; $starterIndex++) {
+                        $trace = Get-CompositionTraceSummary -Path $compositionTraces[$starterIndex] -Worksheet $starterWorksheets[$starterIndex]
+                        if (-not $starterIds.Add($trace.id)) {
+                            throw "Composition starter repeats trace ID: $($trace.id)"
+                        }
+                        [void]$starterStates.Add($trace.state)
+                        $contextFields = $trace.context -split ' \| ', 2
+                        if ($contextFields.Count -ne 2 -or $contextFields[1] -notmatch '(^|,)reference-frame=[a-z0-9-]+($|,)') {
+                            throw "Composition starter context drift: $($trace.id)"
+                        }
+                        $relationSet = [System.Collections.Generic.HashSet[string]]::new(
+                            [System.StringComparer]::Ordinal
+                        )
+                        foreach ($edge in $trace.edges) {
+                            if (-not $knownRelationIds.Contains($edge)) {
+                                throw "Composition starter has unknown admitted relation: $edge"
+                            }
+                            [void]$relationSet.Add($edge)
+                        }
+                        foreach ($frontier in $trace.frontiers) {
+                            $frontierFields = $frontier -split ' \| '
+                            if ($frontierFields.Count -ne 2 -or
+                                $frontierFields[1] -notmatch '^(?:edge|depth|node)-budget-before-(.+)$') {
+                                throw "Composition starter frontier reason drift: $frontier"
+                            }
+                            $frontierRelation = $Matches[1]
+                            if (-not $knownRelationIds.Contains($frontierRelation)) {
+                                throw "Composition starter frontier has unknown relation: $frontierRelation"
+                            }
+                            [void]$relationSet.Add($frontierRelation)
+                        }
+                        $exclusions = @(
+                            foreach ($conflict in $trace.conflicts) {
+                                $conflictFields = $conflict -split ' \| '
+                                if ($conflictFields.Count -ne 3 -or -not $knownArtifacts.Contains($conflictFields[1])) {
+                                    throw "Composition starter conflict drift: $conflict"
+                                }
+                                $conflictFields[1]
+                            }
+                        )
+                        foreach ($seed in $trace.seeds) {
+                            if (-not $knownArtifacts.Contains($seed)) {
+                                throw "Composition starter has unknown seed: $seed"
+                            }
+                        }
+                        $guidePage = $pageBySource[[System.IO.Path]::GetFullPath($starterWorksheets[$starterIndex])]
+                        [ordered]@{
+                            id = $trace.id
+                            title = $compositionStarterTitles[$starterIndex]
+                            problem = $trace.problem
+                            contextId = $contextFields[0]
+                            contextSelections = $contextFields[1]
+                            direction = $trace.direction
+                            budget = [ordered]@{
+                                depth = $trace.budget.depth
+                                edges = $trace.budget.edges
+                                nodes = $trace.budget.nodes
+                            }
+                            seeds = @($trace.seeds)
+                            relations = @($relationSet | Sort-Object)
+                            exclusions = @($exclusions | Sort-Object -Unique)
+                            traceState = $trace.state
+                            traceSha256 = $trace.sha256
+                            guideHref = "entries/$guidePage"
+                        }
+                    }
+                )
+                if ($starterRecords.Count -ne 5 -or $starterStates.Count -ne 4) {
+                    throw "Composition starter trace/state coverage mismatch"
+                }
+                $compositionStartersPayload = [ordered]@{
+                    schema = "factorium-composition-starters-v0"
+                    referenceSha256 = $compositionLabPayload.referenceSha256
+                    relationsSha256 = $compositionLabPayload.relationsSha256
+                    starters = $starterRecords
+                }
+                $compositionStartersJson = $compositionStartersPayload | ConvertTo-Json -Depth 6 -Compress
+                $starterCardBuilder = [System.Text.StringBuilder]::new()
+                foreach ($starter in $starterRecords) {
+                    $encodedStarterId = [System.Net.WebUtility]::HtmlEncode($starter.id)
+                    $encodedStarterTitle = [System.Net.WebUtility]::HtmlEncode($starter.title)
+                    $encodedStarterProblem = [System.Net.WebUtility]::HtmlEncode($starter.problem)
+                    $encodedStarterState = [System.Net.WebUtility]::HtmlEncode($starter.traceState)
+                    [void]$starterCardBuilder.AppendLine(@"
+<article id="starter-$encodedStarterId" class="composition-starter" data-starter-id="$encodedStarterId" data-active="false">
+<span class="composition-starter__state">$encodedStarterState reviewed trace</span>
+<h3>$encodedStarterTitle</h3><p>$encodedStarterProblem</p>
+<p><small>Loads explicit controls only; the lab recomputes an unresolved draft.</small></p>
+<div class="composition-starter__actions"><button type="button" data-load-starter="$encodedStarterId">Load explicit controls</button><a href="$($starter.guideHref)">Read reviewed guide</a></div>
+</article>
+"@)
+                }
+                $compositionStarterCards = $starterCardBuilder.ToString()
+                $compositionStarterChecks = [ordered]@{
+                    starters = $starterRecords.Count
+                    source = "five exact reviewed composition traces"
+                    relation_derivation = "admitted edges plus exact budget-frontier relation IDs"
+                    prose_semantic_selection = $false
+                    auto_run = $false
+                    url_state = "fixed authored starter ID only"
+                    query_storage = "none"
+                    specification = "specs/COMPOSITION-AUTHORED-STARTERS.md"
+                }
+            }
         }
     }
     $siteData = "window.FACTORIUM_SEARCH_INDEX=$searchJson;`n" +
@@ -1597,6 +1757,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 17) {
         $siteData += "window.FACTORIUM_COMPOSITION_READING=$compositionReadingJson;`n"
+    }
+    if ($editionNumber -ge 22) {
+        $siteData += "window.FACTORIUM_COMPOSITION_STARTERS=$compositionStartersJson;`n"
     }
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site-data.js"),
@@ -1725,8 +1888,13 @@ if ($editionNumber -ge 7) {
             $encodedState = [System.Net.WebUtility]::HtmlEncode($problem.state)
             $encodedTitle = [System.Net.WebUtility]::HtmlEncode($problem.title)
             $encodedDescription = [System.Net.WebUtility]::HtmlEncode($problem.description)
+            $starterLink = ""
+            if ($editionNumber -ge 22) {
+                $starterTrace = Get-CompositionTraceSummary -Path $problem.trace -Worksheet $problem.source
+                $starterLink = "<a class=`"site-problem-try`" href=`"compose.html#starter-$([System.Net.WebUtility]::HtmlEncode($starterTrace.id))`">Try these explicit controls in Compose</a>"
+            }
             [void]$problemItems.AppendLine(
-                "<li><span class=`"site-problem-state`">$encodedState</span><a href=`"entries/$($pageBySource[$problemSource])`">$encodedTitle</a><p>$encodedDescription</p></li>"
+                "<li><span class=`"site-problem-state`">$encodedState</span><a href=`"entries/$($pageBySource[$problemSource])`">$encodedTitle</a><p>$encodedDescription</p>$starterLink</li>"
             )
         }
         $problemLedTargets = $problemSources.Count
@@ -2161,6 +2329,40 @@ if ($editionNumber -ge 7) {
                     "<script src=`"assets/composition-views.js`"></script>`n<script src=`"assets/composition-map.js`"></script>"
                 )
             }
+            if ($editionNumber -ge 22) {
+                $startersSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionStartersSpec)])"
+                $mapContractLink = "<a href=`"$mapSpecPage`">Read the closure-map contract</a>"
+                foreach ($marker in @(
+                    $mapContractLink,
+                    '</section>' + "`n" + '<div class="lab-layout">',
+                    '<script src="assets/composition-map.js"></script>'
+                )) {
+                    if (-not $compositionLabHtml.Contains($marker)) {
+                        throw "Composition starters page integration marker drift: $marker"
+                    }
+                }
+                $starterSection = @"
+</section>
+<section id="composition-starters" class="composition-starters" aria-labelledby="composition-starters-heading">
+<p class="site-kicker">Authored starting configurations</p>
+<h2 id="composition-starters-heading">Begin from a known structural pattern</h2>
+<p class="composition-starters__intro">Load exact controls from a reviewed worked trace, then inspect or change them. Problem words never choose the graph, and loading never runs the lab.</p>
+<div class="composition-starters__grid">$compositionStarterCards</div>
+<p id="composition-starters-status" class="composition-starters__status" role="status" aria-live="polite">No starter loaded. The default controls remain active.</p>
+</section>
+<div class="lab-layout">
+"@
+                $compositionLabHtml = $compositionLabHtml.Replace(
+                    $mapContractLink,
+                    "$mapContractLink<a href=`"$startersSpecPage`">Read the authored-starters contract</a>"
+                ).Replace(
+                    '</section>' + "`n" + '<div class="lab-layout">',
+                    $starterSection
+                ).Replace(
+                    '<script src="assets/composition-map.js"></script>',
+                    "<script src=`"assets/composition-map.js`"></script>`n<script src=`"assets/composition-starters.js`"></script>"
+                )
+            }
         }
         [System.IO.File]::WriteAllText($siteCompose, $compositionLabHtml, [System.Text.UTF8Encoding]::new($false))
     }
@@ -2394,6 +2596,9 @@ $pageScripts
     if ($editionNumber -ge 21) {
         $expectedAssetNames += "composition-map.js"
     }
+    if ($editionNumber -ge 22) {
+        $expectedAssetNames += "composition-starters.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -2503,6 +2708,9 @@ $pageScripts
     if ($editionNumber -ge 21) {
         $siteChecks.composition_closure_map_pages = 1
     }
+    if ($editionNumber -ge 22) {
+        $siteChecks.composition_starter_cards = $compositionStarterChecks.starters
+    }
 }
 
 $sourceRecords = foreach ($source in $sources) {
@@ -2567,6 +2775,9 @@ if ($editionNumber -ge 20) {
 }
 if ($editionNumber -ge 21) {
     $manifestRecord.composition_closure_map_checks = $compositionMapChecks
+}
+if ($editionNumber -ge 22) {
+    $manifestRecord.composition_starter_checks = $compositionStarterChecks
 }
 if ($editionNumber -ge 4) {
     $manifestRecord.output.search_index_path = "search-index.json"
@@ -2636,6 +2847,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 21) {
         Write-Output "site_composition_closure_map_pages=$($siteChecks.composition_closure_map_pages)"
+    }
+    if ($editionNumber -ge 22) {
+        Write-Output "site_composition_starter_cards=$($siteChecks.composition_starter_cards)"
     }
     Write-Output "site_missing_targets=$($siteChecks.missing_local_targets)"
     Write-Output "site_identity=$($siteChecks.identity)"

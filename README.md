@@ -216,10 +216,10 @@ that remain required at use time. See
 Render the current proof-edition bounded composition-lab simulation:
 
 ```powershell
-.\tools\render_proof_set.ps1 -Edition sim-21
+.\tools\render_proof_set.ps1 -Edition sim-22
 ```
 
-Open `target/proof-set-sim-21/index.html` for a problem-led path through five
+Open `target/proof-set-sim-22/index.html` for a problem-led path through five
 trace-bound Composition Query worksheets, the five-step first journey,
 kind-and-domain search, twelve subsectioned chapter routes, and dedicated
 reading pages. The systems, evidence, feedback, exclusion, and finite-budget
@@ -237,8 +237,13 @@ disposable publication projection. After closure, a deterministic reading
 route deduplicates admitted factors into their owning anchor-entry pages and
 then links the specialized views that own unresolved checks. Human page titles
 lead; exact graph roles and dispositions remain under disclosure. The route
-does not expand the graph, rank relevance, or create a canonical guide. Each
-of the twelve reviewed endpoint factors also has an edition-local focus
+does not expand the graph, rank relevance, or create a canonical guide. Problem
+cards also link to authored Compose starters derived from their exact
+trace. Loading a starter changes visible explicit controls but does not run
+closure, infer selections from prose, inherit reviewed outcomes, or serialize
+arbitrary query data into the URL. See
+[`specs/COMPOSITION-AUTHORED-STARTERS.md`](specs/COMPOSITION-AUTHORED-STARTERS.md).
+Each of the twelve reviewed endpoint factors also has an edition-local focus
 fragment: a Start or Continue link opens a generated card with the exact factor
 label and ID, then hands off to the source entry's Root factorization. The card
 is hidden during ordinary reading, uses CSS `:target`, and does not rewrite
@@ -365,14 +370,14 @@ node tools\check_composition_reading.js
 node tools\check_composition_palette.js
 node tools\check_composition_views.js
 node tools\check_composition_map.js
-node tools\check_proof_set_composition.js target\proof-set-sim-21\manifest.json target\proof-set-sim-21\index.html
-node tools\check_proof_set_composition_lab.js target\proof-set-sim-21
-node tools\check_proof_set_composition_reading.js target\proof-set-sim-21
-node tools\check_proof_set_composition_focus.js target\proof-set-sim-21
-node tools\check_proof_set_composition_palette.js target\proof-set-sim-21
-node tools\check_proof_set_composition_views.js target\proof-set-sim-21
-node tools\check_proof_set_composition_map.js target\proof-set-sim-21
-node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-21
+node tools\check_proof_set_composition.js target\proof-set-sim-22\manifest.json target\proof-set-sim-22\index.html
+node tools\check_proof_set_composition_lab.js target\proof-set-sim-22
+node tools\check_proof_set_composition_reading.js target\proof-set-sim-22
+node tools\check_proof_set_composition_focus.js target\proof-set-sim-22
+node tools\check_proof_set_composition_palette.js target\proof-set-sim-22
+node tools\check_proof_set_composition_views.js target\proof-set-sim-22
+node tools\check_proof_set_composition_starters.js target\proof-set-sim-22
+node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-22
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

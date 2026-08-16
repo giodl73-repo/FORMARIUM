@@ -1247,3 +1247,37 @@ factor focus. The compact design pass and eight-role fixed point report zero
 open P1/P2 findings. No inferred edge, graph analysis, recommendation, causal
 or domain structure, observed comprehension, accessibility, persistence,
 publication, or reader-success claim is admitted.
+
+## 2026-08-16 authored composition-starters continuation
+
+Plan review: connect the five problem-led worked traces to Compose without
+making prose a semantic selector or adding general query serialization. Derive
+each starting configuration from the exact trace's context, policy, budgets,
+seeds, admitted edges, budget-frontier relation IDs, and conflict artifacts;
+load only visible explicit controls; require a separate Run action; link back
+to the reviewed Factor Guide; clear authored identity after modification; gate
+the projection to `sim-22`; and retain `sim-21` exactly.
+
+Result review: `sim-22` adds five authored starter cards and five homepage
+handoffs for system dependency, claim/evidence, reverse feedback, required-
+interface conflict, and delegated-compliance frontier patterns. Fixed edition-
+local fragments carry only an allowlisted trace ID. Loading clears any prior
+result, opens the selected concept groups, updates every visible control, and
+states that the reviewed trace outcome is not inherited; closure still needs
+an explicit Run and every new check remains unresolved. Static and live Edge
+checks cover the five exact payloads, direct fragment loading, no automatic
+run, modification-state clearing, reverse controls, contradictory conflict,
+truncated frontier, one frontier ghost, source links, asset order, mobile
+layout, and no storage/network surface. The compact design pass and eight-role
+fixed point report zero open P1/P2 findings. Full repository validation passes,
+with `sim-22` site identity
+`dab967874fc304a1fa3f9ffd47bc6559102bced0d525cb2b8addccd5736d7e6b`
+and standalone SHA-256
+`8f80518d3e3c10006c60e35aa4e1eab4e6abbe5385d4660ba79a508b665101dc`;
+`sim-21` retains site identity
+`30daf344d6baaa03c467abc37e7d608e766ec8628658b5a6328c18a211c06475`
+and standalone SHA-256
+`d56fcb5ebd412effdf57b640bc753bf0a6a0d1220b9cf0261107e8a26f0e059f`.
+No semantic parsing, preferred-default, reviewed-outcome reproduction, query
+persistence, recommendation, reader-success, publication, or `preview-01`
+claim is admitted.

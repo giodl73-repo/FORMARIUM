@@ -418,6 +418,95 @@ async function evaluate(client, expression) {
         3, "reloaded default query recreates the same unique-node map");
       }
     }
+    let starterSummary = "";
+    if (editionNumber >= 22) {
+      await client.call("Page.navigate", { url: pathToFileURL(
+        path.join(siteRoot, "compose.html")).href + "#starter-alert-outcome-feedback" });
+      let routedStarter;
+      for (let attempt = 0; attempt < 80; attempt += 1) {
+        routedStarter = await evaluate(client, `(() => ({
+          ready: document.readyState,
+          active: document.querySelector('.composition-starter[data-active="true"]')?.dataset.starterId || "",
+          direction: document.getElementById("composition-lab-form")?.elements.direction.value || "",
+          empty: Boolean(document.querySelector(".lab-result__empty"))
+        }))()`);
+        if (routedStarter.ready === "complete" && routedStarter.active) break;
+        await delay(50);
+      }
+      assert.deepEqual(routedStarter, { ready: "complete", active: "alert-outcome-feedback",
+        direction: "reverse", empty: true },
+      "fixed homepage-style fragment loads reverse controls without running");
+      const loadedConflict = await evaluate(client, `(() => {
+        document.querySelector('[data-load-starter="dependency-exclusion-conflict"]').click();
+        const form = document.getElementById("composition-lab-form");
+        return {
+          cards: document.querySelectorAll(".composition-starter").length,
+          active: document.querySelector('.composition-starter[data-active="true"]')?.dataset.starterId || "",
+          hash: location.hash,
+          empty: Boolean(document.querySelector(".lab-result__empty")),
+          direction: form.elements.direction.value,
+          seeds: form.querySelectorAll('input[name="seeds"]:checked').length,
+          relations: form.querySelectorAll('input[name="relations"]:checked').length,
+          exclusions: form.querySelectorAll('input[name="exclusions"]:checked').length,
+          status: document.getElementById("composition-starters-status").textContent
+        };
+      })()`);
+      assert.deepEqual(loadedConflict, {
+        cards: 5,
+        active: "dependency-exclusion-conflict",
+        hash: "#starter-dependency-exclusion-conflict",
+        empty: true,
+        direction: "forward",
+        seeds: 1,
+        relations: 1,
+        exclusions: 1,
+        status: "Loaded “Required-interface conflict” from reviewed trace dependency-exclusion-conflict. The lab has not run; its checks will remain unresolved."
+      }, "conflict starter loads controls without running");
+      await evaluate(client, `document.getElementById("composition-lab-form").dispatchEvent(
+        new Event("submit", { bubbles: true, cancelable: true }))`);
+      for (let attempt = 0; attempt < 80; attempt += 1) {
+        if (await evaluate(client,
+          `document.querySelector(".lab-state")?.textContent === "contradictory"`)) break;
+        await delay(50);
+      }
+      assert.equal(await evaluate(client,
+        `document.querySelector(".lab-state")?.textContent`), "contradictory",
+      "conflict starter recomputes a contradictory unresolved draft");
+      const loadedFrontier = await evaluate(client, `(() => {
+        document.querySelector('[data-load-starter="delegated-compliance-frontier"]').click();
+        const form = document.getElementById("composition-lab-form");
+        const values = name => [...form.querySelectorAll('input[name="' + name + '"]:checked')].map(node => node.value).sort();
+        return { empty: Boolean(document.querySelector(".lab-result__empty")),
+          seeds: values("seeds"), relations: values("relations"), edges: form.elements.edges.value };
+      })()`);
+      assert.equal(loadedFrontier.empty, true, "loading another starter clears the prior result");
+      assert.equal(loadedFrontier.seeds.length, 2);
+      assert.deepEqual(loadedFrontier.relations,
+        ["f2-delegation-authority", "f6-evidence-obligation"]);
+      assert.equal(loadedFrontier.edges, "1");
+      await evaluate(client, `document.getElementById("composition-lab-form").dispatchEvent(
+        new Event("submit", { bubbles: true, cancelable: true }))`);
+      for (let attempt = 0; attempt < 80; attempt += 1) {
+        if (await evaluate(client,
+          `document.querySelector(".lab-state")?.textContent === "truncated"`)) break;
+        await delay(50);
+      }
+      assert.equal(await evaluate(client,
+        `document.querySelectorAll(".closure-map__node--frontier").length`), 1,
+      "frontier starter recomputes one visible stopped node");
+      const modified = await evaluate(client, `(() => {
+        const problem = document.getElementById("composition-lab-form").elements.problem;
+        problem.value += " Modified";
+        problem.dispatchEvent(new Event("input", { bubbles: true }));
+        return { hash: location.hash,
+          active: document.querySelectorAll('.composition-starter[data-active="true"]').length,
+          status: document.getElementById("composition-starters-status").textContent };
+      })()`);
+      assert.deepEqual(modified, { hash: "", active: 0,
+        status: "Starter modified. The visible controls now define a new local request." },
+      "editing clears authored-route identity without persistence");
+      starterSummary = " starters=5 conflict=contradictory frontier=truncated";
+    }
     let focusSummary = "";
     if (editionNumber >= 18) {
       assert.match(route.hrefs[0], /#factor-focus-[a-z0-9-]+$/,
@@ -464,7 +553,7 @@ async function evaluate(client, expression) {
     }
     console.log(`OK state=${state.labState} pages=${state.routePages} ` +
       `stages=${route.stages.join(",")} mobile=one-column${paletteSummary}${profileSummary}${mapSummary} ` +
-      `screenshot=${screenshotPath}${focusSummary}`);
+      `screenshot=${screenshotPath}${starterSummary}${focusSummary}`);
   } finally {
     if (client) client.close();
     browser.kill();
