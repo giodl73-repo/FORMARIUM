@@ -84,8 +84,8 @@ These are artifact counts, not reader-study denominators.
 | SIM-001 | major | The existing reader packet is moderator-directed and cannot serve as the Proof Set self-guided quickstart. | Closed for simulation mechanics by `PROOF-SET-SIMULATION-PREFLIGHT-02.md`; the future candidate still requires reader-facing review. |
 | SIM-002 | major | No rendered proof edition exists, so layout, scanning, and accessibility mechanics cannot yet be rehearsed. | Closed for simulation mechanics by the reproducible `sim-01` HTML projection; this does not admit a preview edition. |
 | SIM-003 | minor | Task C has two credible first landings: Comparative Quantity and Amount, Concentration, and Composition. | Accepted for now because the entries cross-link and answer different questions; test route cost when real readers exist. |
-| SIM-004 | minor | The Subject-Object Relationship prime has less depth and source presentation than the anchor that routes to it. | Assign to later editorial expansion; do not infer reader distrust from the artifact difference alone. |
-| SIM-005 | observation | Everyday prompt language such as `size` is not an explicit volume-index alias. | Candidate for future alias/index work; reader demand is unobserved. |
+| SIM-004 | minor | The Subject-Object Relationship prime has less depth and source presentation than the anchor that routes to it. | Closed as a navigation-maintenance defect in `sim-41`: two purpose-labelled authored links route to general Relation structure and the sourced Access/Permission/Authorization Table without copying authority or expanding the prime. Reader value remains unobserved. |
+| SIM-005 | observation | Everyday prompt language such as `size` is not an explicit volume-index alias. | Closed as a bounded navigation cue in `sim-40`: exact ordinary phrases conditionally route to Geometric Measure without becoming aliases, changing lexical results, or adding semantic authority. Reader demand remains unobserved. |
 
 No broken route or missing expected-answer content was found. Open major items
 are missing preview artifacts, not defects in the canonical task answers and

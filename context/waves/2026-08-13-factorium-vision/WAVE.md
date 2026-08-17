@@ -2610,3 +2610,16 @@ Add exactly two purpose-labelled Cross-references, preserve the compact prime
 and candidate status, expose the links through the existing untyped navigator,
 reproduce `sim-40` exactly, and stop before rewriting the other legacy primes.
 Detailed conditions are in `SUBJECT-OBJECT-CANONICAL-DEPTH-ROLE-REVIEW.md`.
+
+Result review: `sim-41` adds exactly two purpose-labelled authored routes from
+Subject–Object Relationship: general Relation structure and the sourced
+Access/Permission/Authorization Table. The generated navigator exposes both as
+untyped; every prior prime field and candidate status remains unchanged. No
+canonical record, semantic edge, source, or claim was added. Static and live
+Edge checks pass with zero missing targets and no 390-pixel overflow. Site
+identity is
+`b4daf02a7b16140ebd4608a0d9703a7868da92cd63e71750dbedd3b1f7f675c9`;
+standalone SHA-256 is
+`fcab6402c50c5b29420599666d624e63f43041ee2ba1cc919d15dbb70857e005`.
+`sim-40` reproduces exactly. Product Owner decision: keep the repair and stop
+before expanding other legacy primes; reader value remains untested.

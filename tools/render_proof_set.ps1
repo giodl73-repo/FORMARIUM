@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -160,6 +160,7 @@ $artifactTitle = switch ($Edition) {
     "sim-38" { "Factorium Reader Primary Start Simulation 38" }
     "sim-39" { "Factorium Reader Terminal Handoff Simulation 39" }
     "sim-40" { "Factorium Everyday Search Cue Simulation 40" }
+    "sim-41" { "Factorium Subject-Object Canonical Depth Simulation 41" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -893,8 +894,38 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
         $segment = $segment.Replace("Question first:</strong> use the candidate guide", "Question first:</strong> use the Reader guide")
         $segment = $segment.Replace("five-part candidate spine", "five-part Reader spine")
     }
+    if ($editionNumber -lt 41 -and
+        $sources[$index] -eq [System.IO.Path]::GetFullPath(
+            (Join-Path $workspace "tables\primes\subject-object-relationship.md")
+        )) {
+        $segment = [regex]::Replace(
+            $segment,
+            '(?s)<h2 id="[^"]*cross-references">Cross-references</h2>.*?(?=<p><strong>Maturity:)',
+            ''
+        )
+    }
     $renderedSegmentBySource[$sources[$index]] = $segment
     $htmlText = $htmlText.Substring(0, $start) + $segment + $htmlText.Substring($end)
+}
+if ($editionNumber -lt 41) {
+    $subjectObjectCrossReferenceId =
+        "tables__primes__subject-object-relationshipmd__cross-references"
+    $htmlText = [regex]::Replace(
+        $htmlText,
+        '<li><a href="#' + $subjectObjectCrossReferenceId +
+            '" id="toc-' + $subjectObjectCrossReferenceId +
+            '">Cross-references</a></li>\r?\n',
+        ''
+    )
+    $subjectObjectHeadingId =
+        "tables__primes__subject-object-relationshipmd__subject-object-relationship"
+    $htmlText = [regex]::Replace(
+        $htmlText,
+        '(<li><a href="#' + $subjectObjectHeadingId +
+            '" id="toc-' + $subjectObjectHeadingId +
+            '">Subject-Object\r?\nRelationship</a>)\r?\n<ul>\r?\n</ul></li>',
+        '$1</li>'
+    )
 }
 
 $searchChecks = $null
@@ -985,6 +1016,14 @@ if ($editionNumber -ge 4) {
 
         $relativePath = [System.IO.Path]::GetRelativePath($workspace, $selection.path).Replace("\", "/")
         $markdown = Get-Content -LiteralPath $selection.path -Raw
+        if ($editionNumber -lt 41 -and
+            $relativePath -eq "tables/primes/subject-object-relationship.md") {
+            $markdown = [regex]::Replace(
+                $markdown,
+                '(?ms)^## Cross-references\r?\n.*?(?=^\*\*Maturity:)',
+                ''
+            )
+        }
         $plainText = ConvertTo-SearchText $markdown
         if ($plainText.Length -gt 12000) {
             $plainText = $plainText.Substring(0, 12000)

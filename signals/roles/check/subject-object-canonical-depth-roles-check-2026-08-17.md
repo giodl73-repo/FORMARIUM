@@ -5,7 +5,7 @@ date: 2026-08-17
 roles_used: 8
 p1_count: 0
 p2_count: 0
-verdict: APPROVED-WITH-CONDITIONS
+verdict: PASS
 ---
 
 # Subject–Object Canonical Depth Roles Check
@@ -115,3 +115,18 @@ two purpose-labelled, authored, untyped cross-references.
 1. Link general relation structure and application-specific access semantics separately.
 2. Copy no definitions, claims, factors, or sources into the prime.
 3. Gate the addition at `sim-41`, close `SIM-004`, and retain `sim-40` exactly.
+
+## Fixed-point result
+
+All sixteen P2 findings are closed in `sim-41`. The curated prime retains its
+title, status, tagline, two candidate factorizations, warnings, contextual-fact
+boundary, and candidate maturity. One Cross-references section adds exactly
+two purpose-labelled links; the generated navigator exposes both as authored
+and untyped. No canonical record, semantic sidecar relation, copied source, or
+specialized claim was added.
+
+Static and live 390-pixel Edge checks pass with zero missing targets.
+`sim-40` reproduces exact site and standalone identities.
+
+Final verdict: PASS. The eight P3 notes remain durable boundaries. Route
+mechanics do not establish reader comprehension, usefulness, or source review.

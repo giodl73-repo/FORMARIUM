@@ -1020,6 +1020,13 @@ ownership grouping, filters, counts, or canonical reference. The cue is
 explicitly navigation, not synonym or classification. This is mechanical
 simulation only; reader findability and value remain untested.
 
+`sim-41` closes the remaining `SIM-004` navigation-maintenance note. The
+compact Subject–Object Relationship prime now routes separately to general
+Relation structure and the sourced Access/Permission/Authorization Table.
+Both links remain authored and untyped; the prime's candidate content and
+status are unchanged. This does not establish independent source review or
+reader value and does not reopen the other legacy primes.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

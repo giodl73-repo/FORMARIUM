@@ -504,6 +504,8 @@ node tools\check_factorium_reader_end.js target\proof-set-sim-39
 node tools\check_factorium_reader_end_browser.js target\proof-set-sim-39 target\sim39-factorium-reader-end.png
 node tools\check_tables_everyday_search_cue.js target\proof-set-sim-40
 node tools\check_tables_everyday_search_cue_browser.js target\proof-set-sim-40 target\sim40-everyday-search-cue.png
+node tools\check_subject_object_canonical_depth.js target\proof-set-sim-41
+node tools\check_subject_object_canonical_depth_browser.js target\proof-set-sim-41 target\sim41-subject-object-depth.png
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
