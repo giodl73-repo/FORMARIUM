@@ -2674,3 +2674,22 @@ states, dispositions, descriptive mechanical measures, and prohibited reader
 metrics. Candidate seeds remain hypotheses and the corpus contains no result
 or disposition. The validator passes all 24 unique matrix cells. No canonical
 or rendered artifact changes in Q0. See `QUERY-LED-CAMPAIGN-01-FREEZE.md`.
+
+## 2026-08-17 QLD-01 sim-41 baseline
+
+Result review: all 24 frozen packets now have exact `sim-41` results under the
+predeclared `QLD-RC-01` contract. Forty-eight lexical searches use the original
+185-record index; exact senses, relation IDs, finite graph budgets, checks,
+closure, route, loss, manual-concept, gap, disposition, and claim-boundary
+records are reconstructable. Nine routes are structurally complete and
+fifteen stop incomplete. No result is contradictory or truncated; frozen
+design flags were pressures rather than expected labels.
+
+The baseline records twelve QG-0 no-change results, five QG-1 discovery
+frictions, five QG-3 view pressures, zero anchor gaps, zero relation gaps, one
+Guide-local mechanism, and three external-catalog boundaries. The five view
+pressures independently converge on the distinction among capacity shortage,
+queue or service-order limit, dependency blocker, binding constraint, and
+evidentiary limitation. Q2 must perform the owner and source test before any
+repair is admitted. Baseline identity remains exact and no reader-value claim
+is made. See `QUERY-LED-CAMPAIGN-01-BASELINE.md`.

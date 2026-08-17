@@ -1,0 +1,272 @@
+{
+  "analysis_id": "QLD-BA-01",
+  "campaign_id": "QLD-01",
+  "campaign_revision": 1,
+  "evidence_class": "internal-authored-rehearsal",
+  "entries": {
+    "QLD-01-01": {
+      "senses": ["matter-load-measure/mass", "matter-load-measure/weight", "quantity-value-unit-conversion/measurement-unit", "force/physical-interaction"],
+      "route": ["tables/entries/matter-load-measure.md", "tables/entries/quantity-value-unit-conversion.md", "tables/entries/force.md"],
+      "relations": [],
+      "checks": [["mass-weight-unit-distinction", "pass"], ["procedure-and-local-gravity", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No instrument procedure", "No local gravitational field value"],
+      "manual": [],
+      "gaps": [["QG-1", "ordinary-unit-expression", "The focused query reaches Matter and Load Measure, but the literal unit expression `10 kg` produces a broad incidental ranking.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-01-02": {
+      "senses": ["thermal-quantity/temperature", "measurement-quality/measurement-accuracy", "measurement-quality/measurement-precision", "measurement-quality/metrological-calibration", "evaluation-measure-scale-criterion/criterion", "spatial-operating-context/location", "choice-alternative-selection/alternative"],
+      "route": ["tables/entries/thermal-quantity.md", "tables/entries/measurement-quality.md", "tables/diagnostics/measurement-quality-failures.md", "tables/entries/spatial-operating-context.md", "tables/entries/evaluation-measure-scale-criterion.md", "tables/entries/choice-alternative-selection.md"],
+      "relations": [],
+      "checks": [["criteria-and-operating-context", "pass"], ["comparator-evidence-and-threshold", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No sensor performance evidence", "No acceptable-error authority"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Existing measurement, context, evaluation, and choice owners express the comparison without a sensor catalog.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-03": {
+      "senses": ["stock-flow-balance/stock", "stock-flow-balance/flow", "stock-flow-balance/balance", "claim-evidence/observation", "claim-evidence/measurement", "system-composition-dependency/boundary", "causal-reasoning/causal-mechanism"],
+      "route": ["tables/entries/stock-flow-balance.md", "tables/diagnostics/stock-flow-balance-failures.md", "tables/entries/claim-evidence.md", "tables/entries/measurement-quality.md", "tables/entries/system-composition-dependency.md", "tables/entries/causal-reasoning.md"],
+      "relations": ["f3-inference-observation"],
+      "checks": [["balance-boundary-and-proxy", "pass"], ["leak-causal-attribution", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Level-to-inventory conversion absent", "Unrecorded flows and calibration unresolved"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The current balance, evidence, measurement, boundary, and causal distinctions retain the competing explanations.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-04": {
+      "senses": ["amount-concentration-composition/amount-concentration", "amount-concentration-composition/amount-of-substance", "quantity-value-unit-conversion/quantity-value", "quantity-value-unit-conversion/unit-conversion", "requirement-specification-verification-validation/verification"],
+      "route": ["guides/aqueous-solution-amount-concentration.md", "tables/entries/amount-concentration-composition.md", "tables/formulas/amount-concentration-composition.md", "tables/entries/quantity-value-unit-conversion.md", "tables/entries/requirement-specification-verification-validation.md"],
+      "relations": [],
+      "checks": [["quantity-basis-and-units", "pass"], ["substance-specific-handling", "not-applicable"]],
+      "closure": "complete",
+      "losses": ["Symbolic preparation only", "Substance-specific safety excluded"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The existing amount-concentration Guide and owners supply the bounded symbolic route.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-01-05": {
+      "senses": ["comparative-quantity/percentage", "comparative-quantity/relative-change", "comparative-quantity/percentage-point-difference", "evaluation-measure-scale-criterion/metric", "evaluation-measure-scale-criterion/comparator", "claim-evidence/claim", "claim-evidence/provenance", "statistical-summary-interval/confidence-interval"],
+      "route": ["tables/entries/comparative-quantity.md", "tables/entries/evaluation-measure-scale-criterion.md", "tables/entries/claim-evidence.md", "tables/evidence/observation-inference-chain.md", "tables/entries/statistical-summary-interval.md"],
+      "relations": ["f3-inference-observation"],
+      "checks": [["change-sense-and-denominator", "pass"], ["reported-claim-support", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Metric definition absent", "Comparator observations and uncertainty absent"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Comparative Quantity and Evaluation already separate the number's possible meanings and audit fields.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-06": {
+      "senses": ["stock-flow-balance/stock", "stock-flow-balance/flow", "stock-flow-balance/balance", "stock-flow-balance/conservation", "decomposition-modes-combination-contracts/projection"],
+      "route": ["tables/entries/stock-flow-balance.md", "tables/diagnostics/stock-flow-balance-failures.md", "tables/entries/decomposition-modes-combination-contracts.md"],
+      "relations": [],
+      "checks": [["shared-stock-flow-roles", "pass"], ["physical-conservation-transfer", "fail"]],
+      "closure": "complete",
+      "losses": ["Cash custody rules remain local", "Physical conservation does not transfer"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Existing balance and projection distinctions support the transfer and its failure boundary.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-01-07": {
+      "senses": ["software-module-service-resource/service", "software-module-service-resource/resource", "system-composition-dependency/interface", "system-composition-dependency/capability", "identity-naming-classification-versioning/entity-identity"],
+      "route": ["tables/entries/software-module-service-resource.md", "tables/mappings/software-architecture-mechanisms.md", "tables/entries/system-composition-dependency.md", "tables/entries/identity-naming-classification-versioning.md"],
+      "relations": ["f5-service-interface"],
+      "checks": [["service-interface-resource-role", "pass"], ["endpoint-universal-class", "fail"]],
+      "closure": "complete",
+      "losses": ["Deployment mechanism remains contextual", "No endpoint taxonomy inferred"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The software and system owners already separate service, resource, interface, capability, and identity.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-01-08": {
+      "senses": ["software-transaction-message-contract/message", "software-transaction-message-contract/contract", "interaction-request-response-correlation/request", "interaction-request-response-correlation/response", "dependability-reliability-availability-resilience/recovery", "scenario-assumption-condition-case/scenario"],
+      "route": ["tables/mappings/software-interaction-mechanisms.md", "tables/entries/software-transaction-message-contract.md", "tables/entries/interaction-request-response-correlation.md", "tables/entries/dependability-reliability-availability-resilience.md", "tables/entries/scenario-assumption-condition-case.md"],
+      "relations": [],
+      "checks": [["mechanism-comparison-frame", "pass"], ["workload-and-delivery-evidence", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No platform semantics", "No workload or failure observations"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The interaction Mapping and existing owners express the comparison without promoting mechanism names.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-09": {
+      "senses": ["operational-resource-capacity-demand/capacity", "operational-resource-capacity-demand/demand", "operational-resource-capacity-demand/load", "coordinated-work/workflow", "system-composition-dependency/dependency", "claim-evidence/measurement", "causal-reasoning/causal-mechanism"],
+      "route": ["tables/entries/operational-resource-capacity-demand.md", "tables/procedures/queue-service-order.md", "tables/diagnostics/dependency-critical-path.md", "tables/entries/system-composition-dependency.md", "tables/entries/measurement-quality.md", "tables/entries/causal-reasoning.md"],
+      "relations": ["f3-inference-observation"],
+      "checks": [["demand-capacity-dependency-separation", "pass"], ["latency-mechanism", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No cross-owner limiting-condition diagnostic", "No discriminating observations"],
+      "manual": [["limiting condition or bottleneck role", "proxy", "operational-resource-capacity-demand", "Capacity, queue, and dependency pages must be manually reconciled to identify what actually limits response."]],
+      "gaps": [["QG-3", "limiting-factor-bottleneck", "The concepts exist, but distinguishing capacity shortage, queueing, dependency, and evidence limitation requires a manual cross-owner diagnostic.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-01-10": {
+      "senses": ["system-composition-dependency/system", "system-composition-dependency/component", "system-composition-dependency/interface", "system-composition-dependency/dependency", "software-type-value-function/function", "software-module-service-resource/service", "software-transaction-message-contract/contract"],
+      "route": ["guides/system-dependency-composition-worksheet.md", "tables/entries/system-composition-dependency.md", "tables/constraints/system-composition-integrity.md", "tables/entries/software-type-value-function.md", "tables/entries/software-module-service-resource.md", "tables/entries/software-transaction-message-contract.md"],
+      "relations": ["f1-dependency-interface"],
+      "checks": [["required-interface-integrity", "pass"], ["local-architecture-completeness", "unresolved"]],
+      "closure": "complete",
+      "losses": ["Local mechanism choices unresolved", "No architecture-completeness claim"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The existing F1 worksheet and software owners supply the bounded composition route.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-01-11": {
+      "senses": ["access-permission-authorization-entitlement/access", "access-permission-authorization-entitlement/authorization-decision", "access-permission-authorization-entitlement/access-control", "organization-role-authority/organizational-role", "organization-role-authority/authority", "policy-rule-constraint-decision-exception/enforcement", "claim-evidence/evidence-item"],
+      "route": ["tables/entries/access-permission-authorization-entitlement.md", "tables/constraints/access-authorization-integrity.md", "tables/entries/organization-role-authority.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/claim-evidence.md"],
+      "relations": ["f2-delegation-authority"],
+      "checks": [["decision-enforcement-distinction", "pass"], ["local-access-event-validity", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Local policy and event records absent", "Grant does not prove authorization or compliance"],
+      "manual": [],
+      "gaps": [["QG-1", "ordinary-access-explanation", "The ordinary query `why access authorized` does not rank the Access owner in its first visible results, although a more technical query routes through policy records.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-01-12": {
+      "senses": ["system-composition-dependency/dependency", "coordinated-work/task", "coordinated-work/plan", "operational-resource-capacity-demand/capacity", "organization-role-authority/responsibility"],
+      "route": ["tables/diagnostics/dependency-critical-path.md", "tables/entries/system-composition-dependency.md", "tables/entries/coordinated-work.md", "tables/procedures/planned-work.md", "tables/entries/organization-role-authority.md"],
+      "relations": [],
+      "checks": [["dependency-role-transfer", "pass"], ["component-task-equivalence", "fail"]],
+      "closure": "complete",
+      "losses": ["Scheduling and resource evidence remain local", "Membership does not transfer as precedence"],
+      "manual": [["limiting condition or bottleneck role", "proxy", "operational-resource-capacity-demand", "The critical path identifies a limiting sequence but the reusable relation to capacity and other binding constraints is manual."]],
+      "gaps": [["QG-3", "limiting-factor-bottleneck", "The critical-path view handles precedence, but cross-domain distinction from capacity and other limiting conditions requires manual reconciliation.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-01-13": {
+      "senses": ["organization-role-authority/responsibility", "organization-role-authority/authority", "organization-role-authority/accountability-answerability", "organization-role-authority/ownership-stewardship", "identity-naming-classification-versioning/classification", "policy-rule-constraint-decision-exception/decision"],
+      "route": ["tables/entries/organization-role-authority.md", "tables/mappings/organizational-assignment-semantics.md", "tables/entries/identity-naming-classification-versioning.md", "tables/entries/policy-rule-constraint-decision-exception.md"],
+      "relations": ["f2-delegation-authority"],
+      "checks": [["organizational-assignment-senses", "pass"], ["legal-property-ownership", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Informal owns wording remains ambiguous", "Legal property meaning is external"],
+      "manual": [["property ownership", "external", "none", "Jurisdiction-specific legal ownership is outside the organizational assignment owner."]],
+      "gaps": [["QG-7", "property-ownership-law", "The canonical organizational sense covers stewardship, not jurisdiction-specific property ownership.", "external"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-14": {
+      "senses": ["choice-alternative-selection/alternative", "choice-alternative-selection/decision-criterion", "choice-alternative-selection/recommendation", "claim-evidence/evidence-item", "policy-rule-constraint-decision-exception/constraint", "probability-risk-uncertainty/risk", "cost-price-value-return/assessed-value"],
+      "route": ["guides/evidence-informed-intervention-choice.md", "tables/entries/choice-alternative-selection.md", "tables/decisions/alternative-selection.md", "tables/entries/claim-evidence.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/probability-risk-uncertainty.md", "tables/entries/cost-price-value-return.md"],
+      "relations": ["f27-causal-scope-qualifies-outcome", "f27-constraint-filters-feasibility", "f27-evidence-qualifies-evaluation", "f27-risk-characterizes-consequence", "f27-value-contributes-criterion"],
+      "checks": [["hard-constraint-exclusion", "pass"], ["evidence-value-and-outcome-applicability", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No common utility or ranking", "Final authority remains separate"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The five-edge Decision bridge and Guide already preserve exclusion, unresolved evidence, values, and separate authority.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-15": {
+      "senses": ["governance-obligation-compliance/obligation", "governance-obligation-compliance/compliance", "control-monitoring-response/monitoring", "control-monitoring-response/intervention", "organization-role-authority/responsibility", "claim-evidence/observation", "causal-reasoning/causal-mechanism"],
+      "route": ["tables/entries/governance-obligation-compliance.md", "tables/mappings/governance-compliance-mechanisms.md", "tables/entries/control-monitoring-response.md", "tables/diagnostics/control-response-failures.md", "tables/entries/organization-role-authority.md", "tables/entries/claim-evidence.md", "tables/entries/causal-reasoning.md"],
+      "relations": ["f3-inference-observation", "f4-feedback-monitoring", "f6-evidence-obligation"],
+      "checks": [["obligation-control-evidence-separation", "pass"], ["cause-of-conduct", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Local capability and incentive evidence absent", "No intent or legal conclusion"],
+      "manual": [["local conduct mechanism", "guide-local", "causal-reasoning", "Capability, incentive, interpretation, and opportunity are local candidate explanations, not a universal compliance taxonomy."]],
+      "gaps": [["QG-6", "local-compliance-mechanism", "The remaining mechanism distinctions depend on the local organization and evidence and belong in a Guide.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-16": {
+      "senses": ["organization-role-authority/delegation", "organization-role-authority/authority", "organization-role-authority/accountability-answerability", "governance-obligation-compliance/obligation", "policy-rule-constraint-decision-exception/review", "policy-rule-constraint-decision-exception/appeal", "state-event-transition-process-lifecycle/lifecycle-stage"],
+      "route": ["tables/entries/organization-role-authority.md", "tables/mappings/organizational-assignment-semantics.md", "tables/entries/governance-obligation-compliance.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/state-event-transition-process-lifecycle.md"],
+      "relations": ["f2-delegation-authority", "f6-evidence-obligation"],
+      "checks": [["delegation-scope-and-retained-accountability", "pass"], ["local-validity-and-appeal-effect", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Jurisdiction and local authority absent", "Appeal effect not inferred"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Delegation, accountability, obligation, appeal, and lifecycle already have distinct owners and a reviewed delegation relation.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-17": {
+      "senses": ["claim-evidence/evidence-item", "claim-evidence/provenance", "policy-rule-constraint-decision-exception/decision", "policy-rule-constraint-decision-exception/review", "organization-role-authority/authority", "identity-naming-classification-versioning/version"],
+      "route": ["tables/evidence/change-lineage.md", "tables/entries/claim-evidence.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/organization-role-authority.md", "tables/entries/identity-naming-classification-versioning.md"],
+      "relations": [],
+      "checks": [["decision-record-lineage", "pass"], ["decision-correctness-or-effectiveness", "not-applicable"]],
+      "closure": "complete",
+      "losses": ["Trace completeness does not establish correctness", "Outcome effectiveness excluded"],
+      "manual": [],
+      "gaps": [["QG-1", "revision-provenance-lookup", "The exact History/Revision/Provenance view exists but `decision revision provenance` does not surface it in the first visible lexical results.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-01-18": {
+      "senses": ["control-monitoring-response/monitoring", "control-monitoring-response/feedback-control", "control-monitoring-response/governance-control", "control-monitoring-response/outcome", "governance-obligation-compliance/governance", "policy-rule-constraint-decision-exception/policy", "decomposition-modes-combination-contracts/projection"],
+      "route": ["tables/entries/control-monitoring-response.md", "tables/diagnostics/control-response-failures.md", "tables/entries/governance-obligation-compliance.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/decomposition-modes-combination-contracts.md"],
+      "relations": ["f4-feedback-monitoring"],
+      "checks": [["shared-monitor-feedback-roles", "pass"], ["governance-as-controller-equivalence", "fail"]],
+      "closure": "complete",
+      "losses": ["Authority and legitimacy do not project", "Measured output is not public outcome"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Control, governance, policy, and projection owners support the analogy and its explicit failure boundary.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-01-19": {
+      "senses": ["geometric-measure/area", "geometric-measure/volume", "sampling-generalization/sample", "operational-resource-capacity-demand/capacity", "quantity-value-unit-conversion/quantity-value"],
+      "route": ["tables/entries/geometric-measure.md", "tables/entries/sampling-generalization.md", "tables/entries/operational-resource-capacity-demand.md", "tables/entries/quantity-value-unit-conversion.md"],
+      "relations": [],
+      "checks": [["size-context-discrimination", "pass"], ["size-universal-synonym", "fail"]],
+      "closure": "complete",
+      "losses": ["No intended quantity selected until context is supplied"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The sim-40 conditional cue supplies the geometric route while lexical results and competing senses remain intact.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-01-20": {
+      "senses": ["choice-alternative-selection/alternative", "hazard-exposure-harm-safety/safety", "cost-price-value-return/explicit-cost", "dependability-reliability-availability-resilience/failure", "scenario-assumption-condition-case/feasibility", "policy-rule-constraint-decision-exception/constraint"],
+      "route": ["tables/entries/choice-alternative-selection.md", "tables/decisions/alternative-selection.md", "tables/entries/hazard-exposure-harm-safety.md", "tables/entries/cost-price-value-return.md", "tables/entries/dependability-reliability-availability-resilience.md", "tables/entries/scenario-assumption-condition-case.md", "tables/entries/policy-rule-constraint-decision-exception.md"],
+      "relations": ["f27-constraint-filters-feasibility", "f27-risk-characterizes-consequence", "f27-value-contributes-criterion"],
+      "checks": [["hard-safety-gate", "pass"], ["inspection-cost-and-authority", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No professional inspection", "No local cost or safety threshold"],
+      "manual": [["binding or limiting condition", "proxy", "policy-rule-constraint-decision-exception", "The safety gate is binding, but comparison with capacity and dependency limits is not presented in one diagnostic."]],
+      "gaps": [["QG-3", "limiting-factor-bottleneck", "A hard constraint can bind a choice without being a capacity shortage or dependency blocker; that distinction is assembled manually.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-01-21": {
+      "senses": ["claim-evidence/observation", "claim-evidence/inference", "spatial-operating-context/location", "stock-flow-balance/balance", "causal-reasoning/causal-mechanism", "hazard-exposure-harm-safety/exposure"],
+      "route": ["tables/entries/claim-evidence.md", "tables/evidence/observation-inference-chain.md", "tables/entries/spatial-operating-context.md", "tables/entries/stock-flow-balance.md", "tables/entries/causal-reasoning.md", "tables/entries/hazard-exposure-harm-safety.md"],
+      "relations": ["f3-inference-observation"],
+      "checks": [["observation-inference-separation", "pass"], ["biological-diagnosis", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Species and biological knowledge excluded", "No treatment recommendation"],
+      "manual": [["plant-specific diagnosis", "external", "none", "Species, pathology, and treatment belong to qualified external sources."]],
+      "gaps": [["QG-7", "plant-diagnostic-catalog", "The general diagnostic structure is covered; species and pathology classification remain external.", "external"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-01-22": {
+      "senses": ["coordinated-work/plan", "coordinated-work/task", "organization-role-authority/organizational-role", "operational-resource-capacity-demand/capacity", "scenario-assumption-condition-case/scenario", "hazard-exposure-harm-safety/safety", "temporal-organization/schedule"],
+      "route": ["tables/procedures/planned-work.md", "tables/entries/coordinated-work.md", "tables/entries/organization-role-authority.md", "tables/entries/operational-resource-capacity-demand.md", "tables/diagnostics/dependency-critical-path.md", "tables/entries/scenario-assumption-condition-case.md", "tables/entries/hazard-exposure-harm-safety.md", "tables/entries/temporal-organization.md"],
+      "relations": [],
+      "checks": [["plan-role-capacity-scenario-structure", "pass"], ["local-requirements-and-capacities", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Local safety and accessibility rules external", "No capacity values or authority"],
+      "manual": [["limiting condition or bottleneck role", "proxy", "operational-resource-capacity-demand", "The plan must reconcile capacity, dependency, deadline, and safety gates manually."]],
+      "gaps": [["QG-3", "limiting-factor-bottleneck", "Several different conditions can bind the event plan, but their cross-owner distinction has no compact diagnostic route.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-01-23": {
+      "senses": ["claim-evidence/claim", "claim-evidence/evidence-item", "chemical-substance-classification/compound-class", "chemical-substance-classification/classification-criterion", "amount-concentration-composition/mass-fraction", "quantity-value-unit-conversion/quantity-value", "policy-rule-constraint-decision-exception/rule", "evaluation-measure-scale-criterion/tolerance"],
+      "route": ["tables/entries/claim-evidence.md", "tables/entries/chemical-substance-classification.md", "tables/entries/amount-concentration-composition.md", "tables/entries/quantity-value-unit-conversion.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/evaluation-measure-scale-criterion.md"],
+      "relations": ["f3-inference-observation"],
+      "checks": [["class-amount-threshold-authority-separation", "pass"], ["jurisdictional-compliance", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No method or serving basis", "Jurisdiction and rule version external"],
+      "manual": [["jurisdictional label category", "external", "none", "The legally authorized label meaning belongs to the applicable external regulatory authority."]],
+      "gaps": [["QG-1", "qualified-label-claim-lookup", "The ordinary phrase `sugar free claim` ranks a specialized causal-claim view before the general Claim owner and does not expose the multi-owner interpretation route.", "defer"], ["QG-7", "food-label-regulation", "Threshold and authorization are jurisdiction- and version-specific external rules.", "external"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-01-24": {
+      "senses": ["operational-resource-capacity-demand/capacity", "operational-resource-capacity-demand/shortage", "system-composition-dependency/dependency", "coordinated-work/task", "claim-evidence/limitation", "decomposition-modes-combination-contracts/epistemic-status", "decomposition-modes-combination-contracts/completeness-contract"],
+      "route": ["tables/entries/operational-resource-capacity-demand.md", "tables/procedures/queue-service-order.md", "tables/diagnostics/dependency-critical-path.md", "tables/entries/system-composition-dependency.md", "tables/entries/claim-evidence.md", "tables/evidence/factor-status-completeness.md", "tables/entries/decomposition-modes-combination-contracts.md"],
+      "relations": [],
+      "checks": [["capacity-precedence-evidence-distinction", "pass"], ["universal-bottleneck-factor", "fail"]],
+      "closure": "complete",
+      "losses": ["Bottleneck remains a context-selected role", "No optimization method inferred"],
+      "manual": [["limiting condition or bottleneck role", "candidate", "none", "The route needs a manual distinction among capacity shortage, dependency blocker, binding constraint, and evidence limitation."]],
+      "gaps": [["QG-3", "limiting-factor-bottleneck", "Five existing destinations provide the pieces but no compact view owns the governing distinction among different limiting roles.", "defer"], ["QG-1", "bottleneck-lookup", "The literal bottleneck query does not surface the capacity or critical-path owners in the first visible results.", "merge"]],
+      "disposition": "routed-with-friction"
+    }
+  }
+}
