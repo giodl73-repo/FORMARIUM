@@ -2426,3 +2426,22 @@ The index must contain 53 canonical families under 17 occupied letters, with
 curated Table records remain separate; Guides and Reader records remain out.
 No semantic adjacency, completeness, or reader-value claim is admitted.
 Detailed conditions are in `TABLES-ALPHABETICAL-INDEX-ROLE-REVIEW.md`.
+
+Result review: `sim-35` separates canonical dictionary browse from ordered
+book contents. A dedicated Tables A-Z page contains all 53 canonical families
+once under 17 occupied letters, with domain labels and exact owned-view counts
+summing to 95. A separate section contains 27 curated Table records; all
+specialized views, nine Guides, and one Reader record remain out of the top-
+level index.
+
+Static and live Edge checks pass for membership, normalized title order,
+letter anchors, route separation, destinations, desktop columns, zero missing
+targets, and no 390-pixel overflow. The edition retains 217 sources, 175
+canonical records, 185 search records, eighteen chapters, and adds one page
+for 238 total. Site identity is
+`650c586be6decb293359a49ddc1fbdc6009e4d59cd9f418d7d8d4b04bc0f1384`;
+standalone SHA-256 is
+`59b8b8ab97e7f3adfbe967523a6218556b5d8b07018a775c00ce6fbd5dd6d50b`.
+`sim-34` reproduces exactly. Product Owner decision: keep canonical-first A-Z
+browse and stop before semantic clusters, facets, or recommendations; reader
+value remains untested.

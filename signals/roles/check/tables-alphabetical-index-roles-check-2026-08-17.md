@@ -4,7 +4,8 @@ topic: tables-alphabetical-index
 date: 2026-08-17
 roles_used: 7
 p1_count: 0
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Tables Alphabetical Index Roles Check
@@ -104,3 +105,15 @@ or copied content.
 1. Generate a dedicated exact A-Z route with canonical families primary.
 2. Separate curated records and exclude Guides/Reader material.
 3. Preserve Contents, validate routing and responsive layout, and regress sim-34.
+
+## Fixed-point result
+
+All fourteen P2 findings are closed in `sim-35`: 53 canonical families appear
+once under 17 occupied letters, exact owned-view counts sum to 95, 27 curated
+records stay separate, specialized views/Guides/Reader records are excluded,
+title order and anchors are deterministic, Index and Contents routes remain
+distinct, mobile has no overflow, and `sim-34` reproduces exactly.
+
+Final verdict: PASS. The seven P3 notes remain durable design boundaries, not
+release blockers. No semantic adjacency, completeness, findability,
+preference, or preview claim is admitted.

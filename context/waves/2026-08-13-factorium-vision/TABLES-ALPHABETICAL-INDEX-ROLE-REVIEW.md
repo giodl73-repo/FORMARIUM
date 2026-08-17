@@ -1,6 +1,6 @@
 # Tables Alphabetical Index Role Review
 
-Status: plan reviewed; implementation pending
+Status: fixed-point result reviewed
 
 Date: 2026-08-17
 
@@ -32,3 +32,31 @@ Skill review:
 - no alphabetical semantic or completeness claim is admitted;
 - `sim-34` reproduces exactly and `sim-35` has zero missing targets;
 - fixed-point Product Owner decision.
+
+## Result review
+
+All fourteen P2 conditions are closed. `sim-35` adds one dedicated
+`tables.html` route. Its primary A-Z index contains all 53 canonical entry
+families exactly once under 17 occupied letters. Each row links the selected
+entry and gives its domain and exact owned-view count; those counts sum to all
+95 specialized views without promoting views to headwords.
+
+A separate section contains all 27 curated Table records. Static checks prove
+that 95 specialized views, nine Factor Guides, and one Reader record do not
+enter either top-level index class. Browse Tables now targets the A-Z route;
+Index persists in navigation; Contents retains the existing eighteen-part
+Reader and guided-use route.
+
+Static and live Edge checks verify normalized title order, exact membership,
+letter anchors, owned-view counts, route separation, local destinations,
+two-column desktop presentation, and a one-column 390-pixel layout without
+overflow. The edition retains 217 sources, 175 canonical records, 185 search
+records, eighteen chapters, and adds one page for 238 total with zero missing
+targets. `sim-34` reproduces exactly with site identity
+`dce87b6cfb93cc74a33b24f577a84307d02ced97a01b9c3347c1b8579b484d8e`
+and standalone SHA-256
+`60d3bb5396969f025f99e64d13d377793f9a0c93510276797c3c81304a209392`.
+
+Product Owner decision: **continue with canonical-first A-Z browse and stop
+before semantic clusters, facets, or recommendations**. Human findability and
+preferred ordering remain untested.

@@ -1,6 +1,8 @@
 # Factorium Tables Alphabetical Index
 
-Status: internal browse contract candidate
+Status: internal browse contract fixed point
+
+Reference implementation: `sim-35`
 
 ## Reader job
 

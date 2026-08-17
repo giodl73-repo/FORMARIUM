@@ -931,6 +931,23 @@ standalone SHA-256 is
 `sim-33` reproduces exactly. This is publication navigation, not semantic
 taxonomy or reader-value evidence.
 
+`sim-35` gives Factorium Tables a dedicated alphabetical browse route rather
+than treating the Reader's chapter sequence as its index. The A-Z page lists
+all 53 canonical entry families under 17 occupied letters, with domains and
+exact owned-view counts summing to 95. The 27 curated Table records occupy a
+separate labelled section; specialized views, nine Factor Guides, and one
+Reader record do not become top-level index headwords. Contents continues to
+own the eighteen-part ordered route.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+eighteen chapters, and adds one page for 238 total with zero missing targets.
+Site identity is
+`650c586be6decb293359a49ddc1fbdc6009e4d59cd9f418d7d8d4b04bc0f1384`;
+standalone SHA-256 is
+`59b8b8ab97e7f3adfbe967523a6218556b5d8b07018a775c00ce6fbd5dd6d50b`.
+`sim-34` reproduces exactly. Alphabetical adjacency is presentation only, not
+semantic relatedness or reader-value evidence.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

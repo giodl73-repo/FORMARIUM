@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -77,6 +77,7 @@ $candidateSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice
 $twoBookSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-two-book.css"
 $tableNavigatorStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-navigator.css"
 $tableFamilyContentsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-family-contents.css"
+$tablesIndexStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-tables-index.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -149,6 +150,7 @@ $artifactTitle = switch ($Edition) {
     "sim-32" { "Factorium Tables Navigator Simulation 32" }
     "sim-33" { "Factorium Canonical-Family Search Simulation 33" }
     "sim-34" { "Factorium Canonical-Family Contents Simulation 34" }
+    "sim-35" { "Factorium Tables Alphabetical Index Simulation 35" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -1483,6 +1485,7 @@ if ($editionNumber -ge 7) {
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
+    $siteTablesIndex = if ($editionNumber -ge 35) { Join-Path $output "tables.html" } else { $null }
     $siteEntryDirectory = Join-Path $output "entries"
     $siteChapterDirectory = Join-Path $output "chapters"
     $siteAssetDirectory = Join-Path $output "assets"
@@ -1647,6 +1650,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 34) {
         $siteCssParts += (Get-Content -LiteralPath $tableFamilyContentsStyle -Raw)
+    }
+    if ($editionNumber -ge 35) {
+        $siteCssParts += (Get-Content -LiteralPath $tablesIndexStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -2417,7 +2423,7 @@ if ($editionNumber -ge 7) {
 <p class="site-book-card__kind">Primary reference · dictionary and thesaurus</p>
 <h3>Factorium Tables</h3>
 <p>Look up a concept, distinguish its senses, compare neighboring ideas, inspect factors and constraints, or move through the canonical concept graph.</p>
-<div class="site-book-card__actions"><a class="site-book-card__primary" href="#search">Search the Tables</a><a href="#contents">Browse the Tables</a></div>
+<div class="site-book-card__actions"><a class="site-book-card__primary" href="#search">Search the Tables</a><a href="$(if ($editionNumber -ge 35) { 'tables.html' } else { '#contents' })">Browse the Tables</a></div>
 </article>
 <article class="site-book-card site-book-card--reader" data-book="reader">
 <p class="site-book-card__kind">Teaching companion · selected route</p>
@@ -2711,6 +2717,8 @@ if ($editionNumber -ge 7) {
         $heroDeck = "Use Factorium as a dictionary and thesaurus when you know what you need to distinguish, or open the Reader when you want to learn the method through worked questions. Both lead back to the same canonical Tables."
     }
     $quickstartPage = "entries/$($pageBySource[$quickstart])"
+    $homeTablesIndexNav = if ($editionNumber -ge 35) { '<a href="tables.html">Index</a>' } else { '' }
+    $nestedTablesIndexNav = if ($editionNumber -ge 35) { '<a href="../tables.html">Index</a>' } else { '' }
     $homeHtml = @"
 <!doctype html>
 <html lang="en">
@@ -2725,7 +2733,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$homeCandidateNav$homeProblemNav$homeComposeNav<a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$homeCandidateNav$homeProblemNav$homeComposeNav$homeTablesIndexNav<a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <section class="site-hero">
@@ -2741,8 +2749,8 @@ if ($editionNumber -ge 7) {
 </section>
 <div id="search">$homeSearchShell</div>
 <section id="contents" class="site-contents">
-<h2>$(if ($editionNumber -ge 31) { 'Browse the Tables' } else { 'Browse the book' })</h2>
-<p class="site-contents__intro">$(if ($editionNumber -ge 31) { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination has a dedicated lookup page; record-kind labels keep canonical Tables distinct from Guides." } else { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page." })</p>
+<h2>$(if ($editionNumber -ge 35) { 'Book contents and guided use' } elseif ($editionNumber -ge 31) { 'Browse the Tables' } else { 'Browse the book' })</h2>
+<p class="site-contents__intro">$(if ($editionNumber -ge 35) { "$($siteChapters.Count) parts retain the ordered Reader and guided-use route across $($searchRecords.Count) indexed destinations. Use the Tables Index for alphabetical headword browse." } elseif ($editionNumber -ge 31) { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination has a dedicated lookup page; record-kind labels keep canonical Tables distinct from Guides." } else { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page." })</p>
 <ol class="site-chapter-grid">$chapterItems</ol>
 </section>
 </main>
@@ -2753,6 +2761,100 @@ if ($editionNumber -ge 7) {
 </html>
 "@
     [System.IO.File]::WriteAllText($siteIndex, $homeHtml, [System.Text.UTF8Encoding]::new($false))
+
+    $tablesIndexCanonicalCount = 0
+    $tablesIndexCuratedCount = 0
+    $tablesIndexLetterCount = 0
+    $tablesIndexOwnedViewCount = 0
+    if ($editionNumber -ge 35) {
+        $canonicalIndexRecords = @($searchRecords | Where-Object { $_.recordClass -eq "canonical-entry" } |
+            Sort-Object @{ Expression = { $_.title.ToLowerInvariant() } }, @{ Expression = { $_.path } })
+        $curatedIndexRecords = @($searchRecords | Where-Object { $_.recordClass -eq "curated-record" } |
+            Sort-Object @{ Expression = { $_.title.ToLowerInvariant() } }, @{ Expression = { $_.path } })
+        $canonicalLetterGroups = [ordered]@{}
+        foreach ($indexRecord in $canonicalIndexRecords) {
+            $letterMatch = [regex]::Match($indexRecord.title, '[A-Za-z0-9]')
+            if (-not $letterMatch.Success) {
+                throw "Tables index title has no sortable character: $($indexRecord.path)"
+            }
+            $indexLetter = $letterMatch.Value.ToUpperInvariant()
+            if (-not $canonicalLetterGroups.Contains($indexLetter)) {
+                $canonicalLetterGroups[$indexLetter] = [System.Collections.Generic.List[object]]::new()
+            }
+            $canonicalLetterGroups[$indexLetter].Add($indexRecord)
+        }
+        $letterLinks = [System.Text.StringBuilder]::new()
+        $letterSections = [System.Text.StringBuilder]::new()
+        foreach ($indexLetter in $canonicalLetterGroups.Keys) {
+            $letterId = "tables-index-letter-$($indexLetter.ToLowerInvariant())"
+            [void]$letterLinks.Append("<a href=`"#$letterId`">$indexLetter</a>")
+            $letterRows = [System.Text.StringBuilder]::new()
+            foreach ($indexRecord in $canonicalLetterGroups[$indexLetter]) {
+                $ownedViewCount = @($canonicalViewsByOwnerPath[$indexRecord.path]).Count
+                $tablesIndexOwnedViewCount += $ownedViewCount
+                $encodedTitle = [System.Net.WebUtility]::HtmlEncode($indexRecord.title)
+                $encodedDomain = [System.Net.WebUtility]::HtmlEncode($indexRecord.domain)
+                [void]$letterRows.Append(
+                    "<li data-index-path=`"$($indexRecord.path)`"><a href=`"$($indexRecord.href)`">$encodedTitle</a><span>$encodedDomain · $ownedViewCount $(if ($ownedViewCount -eq 1) { 'specialized view' } else { 'specialized views' })</span></li>"
+                )
+                $tablesIndexCanonicalCount += 1
+            }
+            [void]$letterSections.Append(
+                "<section class=`"tables-index__letter`" id=`"$letterId`"><h2>$indexLetter <span>$($canonicalLetterGroups[$indexLetter].Count) Tables</span></h2><ol>$letterRows</ol></section>"
+            )
+            $tablesIndexLetterCount += 1
+        }
+        $curatedRows = [System.Text.StringBuilder]::new()
+        foreach ($indexRecord in $curatedIndexRecords) {
+            $encodedTitle = [System.Net.WebUtility]::HtmlEncode($indexRecord.title)
+            $encodedMeta = [System.Net.WebUtility]::HtmlEncode(
+                (@($indexRecord.kind, $indexRecord.domain) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }) -join " · "
+            )
+            [void]$curatedRows.Append(
+                "<li data-index-path=`"$($indexRecord.path)`"><a href=`"$($indexRecord.href)`">$encodedTitle</a><span>$encodedMeta</span></li>"
+            )
+            $tablesIndexCuratedCount += 1
+        }
+        $tablesIndexHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An alphabetical index of canonical Factorium Table families.">
+<title>Factorium Tables A-Z · Factorium</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="proof-site reader-ready tables-index-page">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="index.html">Factorium</a>
+<nav class="site-nav" aria-label="Primary"><a href="tables.html" aria-current="page">Tables</a><a href="index.html#reader">Reader</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+</div></header>
+<main id="main-content" class="site-main tables-index">
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Factorium</a> / Tables A-Z</nav>
+<section class="tables-index__heading">
+<p class="site-kicker">Primary reference · alphabetical browse</p>
+<h1>Factorium Tables A-Z</h1>
+<p>Scan 53 canonical Table families by selected headword. Open an entry to read its definition and all 95 exact specialized views.</p>
+<div class="tables-index__actions"><a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
+<p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
+</section>
+<nav class="tables-index__letters" aria-label="Canonical Table initial letters">$letterLinks</nav>
+<div class="tables-index__canonical">$letterSections</div>
+<section class="tables-index__curated" aria-labelledby="tables-index-curated-heading">
+<p class="site-kicker">Edition selection · separate from canonical families</p>
+<h2 id="tables-index-curated-heading">Curated Table records</h2>
+<p>These 27 useful foundations and examples are selected into this edition but are not relabelled canonical entries.</p>
+<ol>$curatedRows</ol>
+</section>
+</main>
+<footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01</footer>
+</body>
+</html>
+"@
+        [System.IO.File]::WriteAllText($siteTablesIndex, $tablesIndexHtml, [System.Text.UTF8Encoding]::new($false))
+    }
 
     if ($editionNumber -ge 16) {
         $labSpecPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($compositionLabSpec)])"
@@ -2770,7 +2872,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="index.html#problems">Problems</a><a href="compose.html" aria-current="page">Compose</a><a href="index.html#compose">Traces</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary"><a href="index.html#problems">Problems</a><a href="compose.html" aria-current="page">Compose</a><a href="index.html#compose">Traces</a>$homeTablesIndexNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main lab-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Structure, Quantity, and Choice</a> / Bounded Composition Lab</nav>
@@ -3191,7 +3293,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
@@ -3397,7 +3499,10 @@ if ($editionNumber -ge 7) {
             }
 
             $localActions = [System.Text.StringBuilder]::new()
-            [void]$localActions.Append('<a href="../index.html#search">Search Tables</a><a href="../index.html#contents">Browse Tables</a>')
+            [void]$localActions.Append(
+                '<a href="../index.html#search">Search Tables</a>' +
+                $(if ($editionNumber -ge 35) { '<a href="../tables.html">Browse Tables</a>' } else { '<a href="../index.html#contents">Browse Tables</a>' })
+            )
             $contrastMatch = [regex]::Match(
                 $segment,
                 '<h2 id="([^"]+)">Contrast\s*table</h2>',
@@ -3467,7 +3572,7 @@ $connectionList
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <div class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
@@ -3538,6 +3643,7 @@ $pageScripts
         throw "Stale or incomplete site output: chapters=$($actualChapterFiles.Count)/$($siteChapters.Count) entries=$($actualEntryFiles.Count)/$($sources.Count) unexpected-assets=$($unexpectedAssetNames -join ',') missing-assets=$($missingAssetNames -join ',')"
     }
     $siteHtmlFiles = @($siteIndex) +
+        @(if ($editionNumber -ge 35) { $siteTablesIndex }) +
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @($actualChapterFiles | ForEach-Object { $_.FullName }) +
         @($actualEntryFiles | ForEach-Object { $_.FullName })
@@ -3589,6 +3695,7 @@ $pageScripts
     }
 
     $siteOutputFiles = @($siteIndex) +
+        @(if ($editionNumber -ge 35) { $siteTablesIndex }) +
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @(Get-ChildItem -LiteralPath $siteChapterDirectory -File | ForEach-Object { $_.FullName }) +
         @(Get-ChildItem -LiteralPath $siteEntryDirectory -File | ForEach-Object { $_.FullName }) +
@@ -3670,6 +3777,23 @@ $pageScripts
         $siteChecks.table_family_contents_open = $tableFamilyContentsOpen
         $siteChecks.table_family_contents_folded = $tableFamilyContentsFolded
         $siteChecks.table_family_contents_semantics = "exact-publication-ownership-only"
+    }
+    if ($editionNumber -ge 35) {
+        if ($tablesIndexCanonicalCount -ne 53 -or
+            $tablesIndexCuratedCount -ne 27 -or
+            $tablesIndexLetterCount -ne 17 -or
+            $tablesIndexOwnedViewCount -ne 95) {
+            throw "Tables alphabetical index mismatch: canonical=$tablesIndexCanonicalCount curated=$tablesIndexCuratedCount letters=$tablesIndexLetterCount views=$tablesIndexOwnedViewCount"
+        }
+        $siteChecks.tables_index_pages = 1
+        $siteChecks.tables_index_canonical_families = $tablesIndexCanonicalCount
+        $siteChecks.tables_index_curated_records = $tablesIndexCuratedCount
+        $siteChecks.tables_index_letters = $tablesIndexLetterCount
+        $siteChecks.tables_index_owned_views = $tablesIndexOwnedViewCount
+        $siteChecks.tables_index_guides = 0
+        $siteChecks.tables_index_reader_records = 0
+        $siteChecks.tables_index_order = "normalized-selected-title"
+        $siteChecks.tables_index_semantics = "alphabetical-presentation-only"
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1
@@ -3841,7 +3965,8 @@ if ($editionNumber -ge 6) {
 if ($editionNumber -ge 7) {
     Write-Output "site=$siteIndex"
     $compositionLabPageCount = if ($editionNumber -ge 16) { $siteChecks.composition_lab_pages } else { 0 }
-    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + 1)"
+    $tablesIndexPageCount = if ($editionNumber -ge 35) { $siteChecks.tables_index_pages } else { 0 }
+    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + $tablesIndexPageCount + 1)"
     Write-Output "site_chapters=$($siteChecks.chapter_pages)"
     Write-Output "site_chapter_subsections=$($siteChecks.chapter_subsections)"
     Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"
