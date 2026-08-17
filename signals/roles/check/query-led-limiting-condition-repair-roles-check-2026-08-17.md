@@ -10,6 +10,8 @@ verdict: APPROVED
 
 # Query-Led Limiting-Condition Repair Roles Check
 
+Status: fixed point for candidate publication
+
 ## Artifact identification
 
 Type: source-backed plan for one existing Diagnostic Table repair.

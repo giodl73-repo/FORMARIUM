@@ -1,7 +1,7 @@
 factorium-composition-query-v0
 query system-dependency-interface
 problem Which dependency and interface concepts are required to review a report generator that relies on a document service?
-source 7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218 | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
+source 489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324 | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
 context synthetic-system-review | boundary=declared-system,reference-frame=not-applicable
 policy direction=forward,follow=evaluative-required,stop=stable-identity
 budget depth=1,edges=1,nodes=3,work=9

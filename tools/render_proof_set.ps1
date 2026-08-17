@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -161,6 +161,7 @@ $artifactTitle = switch ($Edition) {
     "sim-39" { "Factorium Reader Terminal Handoff Simulation 39" }
     "sim-40" { "Factorium Everyday Search Cue Simulation 40" }
     "sim-41" { "Factorium Subject-Object Canonical Depth Simulation 41" }
+    "sim-42" { "Factorium Query-Led Limiting Condition Simulation 42" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -622,7 +623,11 @@ if ($Edition -ne "sim-01") {
                 kind = $parts[3]
                 domain = $entryDomains[$parts[1]]
                 maturity = ""
-                summary = $parts[6]
+                summary = if ($editionNumber -lt 42 -and
+                    $parts[5] -eq "tables/diagnostics/dependency-critical-path.md") {
+                    "Diagnoses start failures, stalls, bottlenecks, blockers, enablers, and critical paths while retaining direction, graph, lags, resources, uncertainty, ties, alternate paths, and result-relative scope."
+                }
+                else { $parts[6] }
             }
         }
     }
@@ -904,6 +909,16 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
             ''
         )
     }
+    if ($editionNumber -lt 42 -and
+        $sources[$index] -eq [System.IO.Path]::GetFullPath(
+            (Join-Path $workspace "tables\diagnostics\dependency-critical-path.md")
+        )) {
+        $segment = [regex]::Replace(
+            $segment,
+            '(?s)<h2 id="[^"]*limit-owner-test">Limit owner test</h2>.*?(?=<h2 id="[^"]*sources-and-provenance">)',
+            ''
+        )
+    }
     $renderedSegmentBySource[$sources[$index]] = $segment
     $htmlText = $htmlText.Substring(0, $start) + $segment + $htmlText.Substring($end)
 }
@@ -925,6 +940,17 @@ if ($editionNumber -lt 41) {
             '" id="toc-' + $subjectObjectHeadingId +
             '">Subject-Object\r?\nRelationship</a>)\r?\n<ul>\r?\n</ul></li>',
         '$1</li>'
+    )
+}
+if ($editionNumber -lt 42) {
+    $limitOwnerTestId =
+        "tables__diagnostics__dependency-critical-pathmd__limit-owner-test"
+    $htmlText = [regex]::Replace(
+        $htmlText,
+        '(?s)<li><a href="#' + $limitOwnerTestId +
+            '" id="toc-' + $limitOwnerTestId +
+            '">Limit owner test</a>\s*<ul>.*?</ul>\s*</li>\s*',
+        ''
     )
 }
 
@@ -1021,6 +1047,14 @@ if ($editionNumber -ge 4) {
             $markdown = [regex]::Replace(
                 $markdown,
                 '(?ms)^## Cross-references\r?\n.*?(?=^\*\*Maturity:)',
+                ''
+            )
+        }
+        if ($editionNumber -lt 42 -and
+            $relativePath -eq "tables/diagnostics/dependency-critical-path.md") {
+            $markdown = [regex]::Replace(
+                $markdown,
+                '(?ms)^## Limit owner test\r?\n.*?(?=^## Sources and provenance)',
                 ''
             )
         }

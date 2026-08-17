@@ -6,7 +6,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
-const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-30");
+const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-42");
 const manifestRelative = "volumes/01-structure-quantity-choice/book-one-sim-candidate-v0.factorium";
 const candidatePath = path.join(root, manifestRelative);
 const manifestPath = path.join(siteRoot, "manifest.json");
@@ -58,12 +58,12 @@ function sha256(file) {
 const candidate = fs.readFileSync(candidatePath, "utf8");
 assert.match(candidate, /^status internal-simulation-only$/m);
 assert.match(candidate, /^source-base af22e57$/m);
-assert.match(candidate, /^source reference \| 7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218$/m);
+assert.match(candidate, /^source reference \| 489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324$/m);
 assert.match(candidate, /^source relations \| df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634$/m);
 assert.match(candidate, /^guide guides\/bounded-question-composition-book-one\.md \| 407a64aedc0db959a23b969ccd6f08554379db62215566ad9006069ad083afde$/m);
 assert.match(candidate, /^spine 6344336d8304bc2c678f80a71820d0e5ae7a37da5082b2cb95c0aeac2ab23780 \| records=24 \| specialized-depth=151 \| canonical-total=175$/m);
 assert.equal(sha256(path.join(root, "reference/factorium-reference-v0.factorium")),
-  "7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218");
+  "489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324");
 assert.equal(sha256(path.join(root, "reference/factorium-relations-v0.factorium")),
   "df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634");
 assert.equal(sha256(path.join(root, "guides/bounded-question-composition-book-one.md")),
@@ -79,7 +79,7 @@ assert.deepEqual(strategies.map((match) => match[1]),
   ["SIM-BO-01", "SIM-BO-02", "SIM-BO-03", "SIM-BO-04"]);
 
 const rendered = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-assert.equal(rendered.edition, "sim-30");
+assert.equal(rendered.edition, "sim-42");
 assert.equal(rendered.selection_checks.book_one_candidate_path, manifestRelative);
 assert.equal(rendered.selection_checks.book_one_candidate_sha256, sha256(candidatePath));
 assert.equal(rendered.selection_checks.book_one_spine_records, 24);

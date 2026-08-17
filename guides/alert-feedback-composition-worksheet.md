@@ -212,9 +212,9 @@ Canonical trace file: `fixtures/composition/alert-feedback.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium reference V0 | `7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218` |
+| Factorium reference V0 | `489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324` |
 | Typed relations V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `3cb937004ac3b410405bc55c5d1d691f76026b6ddc513508d2f60ad587cfdeeb` |
+| Composition Query trace | `3fa9aa7144c8c957c73373c55f37f8480293b7e122e9f623c6920d481797b2ac` |
 
 Trace manifest: one seed, three nodes, one reverse-traversed F4 edge, zero
 frontiers, zero conflicts, one unresolved Diagnostic check, three projection

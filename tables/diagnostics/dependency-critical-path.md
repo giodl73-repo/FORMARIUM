@@ -47,6 +47,59 @@ blocker, enabler, bottleneck, or critical path actually explains the limit?
   alternate path changes.
 - An enabler is not automatically sufficient or beneficial overall.
 
+## Limit owner test
+
+Start with the exact flow, transition, completion measure, feasible option, or
+claim that appears limited. `Bottleneck` is a result- and condition-relative
+role, not a permanent identity or a synonym for every kind of limitation.
+
+| Candidate owner | Discriminating question | Required record | Route |
+|---|---|---|---|
+| capacity bottleneck | Where does demand or load exceed effective compatible capacity for this flow/result under these conditions? | boundary/path, resource, capacity, demand/load, interval, conditions, utilization/shortage, result sensitivity | [Operational Resource](../entries/operational-resource-capacity-demand.md) and [Resource Allocation](../procedures/resource-allocation.md) |
+| service-order delay | Is waiting determined by admission, priority, scheduling, setup, service, retry, abandonment, or starvation? | queue population, arrivals, backlog, order rule, service record, delay distribution | [Queue and Service Order](../procedures/queue-service-order.md) |
+| dependency blocker | Which directed prerequisite is unsatisfied and prevents the declared transition or result? | source, target, direction, condition, state, consequence, alternate path | [System Composition and Dependency](../entries/system-composition-dependency.md) |
+| critical or driving path | Which exact path controls the selected completion measure in the current schedule model? | graph, activities, dependencies, lags, calendars, durations, resources, float/driving analysis, version | [Coordinated Work](../entries/coordinated-work.md) and [Temporal Organization](../entries/temporal-organization.md) |
+| binding constraint | Which applicable requirement, rule, invariant, or safety boundary makes a case invalid or option infeasible? | subject/case, authority, version, effective time, hard/soft status, applicability, result | [Policy Constraints](../constraints/policy-constraints.md) and [Feasibility and Sufficiency](../constraints/feasibility-sufficiency.md) |
+| evidence limitation | Which missing, weak, inapplicable, or contradictory support prevents a stated inference or claim? | exact claim, evidence, method, implication, scope, limitation, provenance, next test | [Claim and Evidence](../entries/claim-evidence.md) and [Factor Status and Completeness](../evidence/factor-status-completeness.md) |
+
+### Owner procedure
+
+1. Name the selected result and the observed limit without naming its cause.
+2. Classify the candidate mechanism as capacity, service order, directed
+   prerequisite, schedule path, applicable constraint, or evidence support.
+3. Apply the row's discriminating test under the same declared conditions.
+4. Route the resulting record to its existing owner; do not infer a typed
+   relation from this editorial comparison.
+5. Retain alternate or tied limits, sensitivity to changed conditions, and
+   unresolved evidence.
+
+### Boundaries
+
+- The smallest nominal capacity need not be the active bottleneck when load,
+  compatibility, routing, or available capacity differs.
+- A critical path is relative to an exact schedule model and selected
+  milestone; a hard date constraint can make a path appear critical without
+  making it the driving path.
+- A binding policy, requirement, or safety constraint limits validity or
+  feasibility; it is not automatically an operational capacity bottleneck.
+- An evidence limitation bounds an inference or claim. It is not an
+  operational blocker, and missing evidence is not evidence of falsity.
+- Several limits may be tied or interacting. The test selects record owners;
+  it does not rank remedies or optimize the system.
+
+### Additional source boundary
+
+1. IETF RFC 5136, *Defining Network Capacity*:
+   https://www.rfc-editor.org/info/rfc5136/
+2. W3C Recommendation, *PROV-O: The PROV Ontology*:
+   https://www.w3.org/TR/prov-o/
+3. [Query-led limiting-condition owner research](../../docs/research/2026-08-17-query-led-limiting-condition-owner-test.md)
+
+RFC 5136 supplies a network-specific example of path, load, and available-
+capacity relativity. PROV-O supplies provenance structure, not evidence
+sufficiency. The cross-domain owner test remains a candidate Factorium
+editorial synthesis.
+
 ## Sources and provenance
 
 1. GAO, *Schedule Assessment Guide*: https://www.gao.gov/products/gao-16-89g

@@ -2,7 +2,7 @@ factorium-book-one-sim-candidate-v0
 candidate book-one-24
 status internal-simulation-only
 source-base af22e57
-source reference | 7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218
+source reference | 489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324
 source relations | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
 guide guides/bounded-question-composition-book-one.md | 407a64aedc0db959a23b969ccd6f08554379db62215566ad9006069ad083afde
 spine 6344336d8304bc2c678f80a71820d0e5ae7a37da5082b2cb95c0aeac2ab23780 | records=24 | specialized-depth=151 | canonical-total=175
