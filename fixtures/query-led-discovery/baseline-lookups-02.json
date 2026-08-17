@@ -1,0 +1,2585 @@
+{
+  "artifact": "QLD-02 sim-42 baseline lexical lookup trace",
+  "evidence_class": "internal-authored-rehearsal",
+  "campaign_id": "QLD-02",
+  "campaign_revision": 1,
+  "executed_against": {
+    "edition": "sim-42",
+    "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+    "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+    "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+    "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+    "search_records": 185
+  },
+  "ranking": "exact sim-42 lexical ranking; no aliases, query expansion, or semantic inference",
+  "lookups": [
+    {
+      "packet_id": "QLD-02-01",
+      "queries": [
+        {
+          "query": "amount concentration composition fraction",
+          "match_count": 70,
+          "first_five": [
+            {
+              "title": "Amount, Concentration, and Composition",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/amount-concentration-composition.md",
+              "href": "entries/tables-entries-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Amount, Concentration, and Composition Relations",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/amount-concentration-composition.md",
+              "href": "entries/tables-formulas-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Aqueous Solution Amount-Concentration Guide",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/aqueous-solution-amount-concentration.md",
+              "href": "entries/guides-aqueous-solution-amount-concentration.html",
+              "family_key": "guides/aqueous-solution-amount-concentration.md",
+              "family_title": "Aqueous Solution Amount-Concentration Guide"
+            },
+            {
+              "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            },
+            {
+              "title": "Comparative Quantity",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/comparative-quantity.md",
+              "href": "entries/tables-entries-comparative-quantity.html",
+              "family_key": "tables/entries/comparative-quantity.md",
+              "family_title": "Comparative Quantity"
+            }
+          ]
+        },
+        {
+          "query": "solution label denominator basis",
+          "match_count": 125,
+          "first_five": [
+            {
+              "title": "Aqueous Solution Amount-Concentration Guide",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/aqueous-solution-amount-concentration.md",
+              "href": "entries/guides-aqueous-solution-amount-concentration.html",
+              "family_key": "guides/aqueous-solution-amount-concentration.md",
+              "family_title": "Aqueous Solution Amount-Concentration Guide"
+            },
+            {
+              "title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/statistical-summary-interval.md",
+              "href": "entries/tables-entries-statistical-summary-interval.html",
+              "family_key": "tables/entries/statistical-summary-interval.md",
+              "family_title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval"
+            },
+            {
+              "title": "Amount, Concentration, and Composition",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/amount-concentration-composition.md",
+              "href": "entries/tables-entries-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Chemical Classification Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "science",
+              "path": "tables/diagnostics/chemical-substance-classification-failures.md",
+              "href": "entries/tables-diagnostics-chemical-substance-classification-failures.html",
+              "family_key": "tables/entries/chemical-substance-classification.md",
+              "family_title": "Chemical Entity, Substance, Compound Class, Mixture, and Solution"
+            },
+            {
+              "title": "Objective, Control, Monitoring, and Response",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/control-monitoring-response.md",
+              "href": "entries/tables-entries-control-monitoring-response.html",
+              "family_key": "tables/entries/control-monitoring-response.md",
+              "family_title": "Objective, Control, Monitoring, and Response"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-02",
+      "queries": [
+        {
+          "query": "mean median quantile skew outlier",
+          "match_count": 79,
+          "first_five": [
+            {
+              "title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/statistical-summary-interval.md",
+              "href": "entries/tables-entries-statistical-summary-interval.html",
+              "family_key": "tables/entries/statistical-summary-interval.md",
+              "family_title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval"
+            },
+            {
+              "title": "Sample Arithmetic Mean",
+              "kind": "formula",
+              "domain": "reference",
+              "path": "tables/formulas/arithmetic-mean.md",
+              "href": "entries/tables-formulas-arithmetic-mean.html",
+              "family_key": "tables/entries/statistical-summary-interval.md",
+              "family_title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval"
+            },
+            {
+              "title": "Statistical Summary and Interval Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/statistical-summary-interval-failures.md",
+              "href": "entries/tables-diagnostics-statistical-summary-interval-failures.html",
+              "family_key": "tables/entries/statistical-summary-interval.md",
+              "family_title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval"
+            },
+            {
+              "title": "Latency Claim Evidence Composition Worksheet",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/latency-evidence-composition-worksheet.md",
+              "href": "entries/guides-latency-evidence-composition-worksheet.html",
+              "family_key": "guides/latency-evidence-composition-worksheet.md",
+              "family_title": "Latency Claim Evidence Composition Worksheet"
+            },
+            {
+              "title": "Probability, Risk, and Uncertainty",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/probability-risk-uncertainty.md",
+              "href": "entries/tables-entries-probability-risk-uncertainty.html",
+              "family_key": "tables/entries/probability-risk-uncertainty.md",
+              "family_title": "Probability, Risk, and Uncertainty"
+            }
+          ]
+        },
+        {
+          "query": "choose summary missingness threshold",
+          "match_count": 49,
+          "first_five": [
+            {
+              "title": "Alert and Outcome Feedback Composition Worksheet",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/alert-feedback-composition-worksheet.md",
+              "href": "entries/guides-alert-feedback-composition-worksheet.html",
+              "family_key": "guides/alert-feedback-composition-worksheet.md",
+              "family_title": "Alert and Outcome Feedback Composition Worksheet"
+            },
+            {
+              "title": "Evaluation Threshold and Acceptance Constraint Table",
+              "kind": "constraint",
+              "domain": "reference",
+              "path": "tables/constraints/evaluation-threshold-acceptance.md",
+              "href": "entries/tables-constraints-evaluation-threshold-acceptance.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            },
+            {
+              "title": "Statistical Summary and Interval Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/statistical-summary-interval-failures.md",
+              "href": "entries/tables-diagnostics-statistical-summary-interval-failures.html",
+              "family_key": "tables/entries/statistical-summary-interval.md",
+              "family_title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval"
+            },
+            {
+              "title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/statistical-summary-interval.md",
+              "href": "entries/tables-entries-statistical-summary-interval.html",
+              "family_key": "tables/entries/statistical-summary-interval.md",
+              "family_title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval"
+            },
+            {
+              "title": "Evaluation Aggregation Procedure",
+              "kind": "procedure",
+              "domain": "reference",
+              "path": "tables/procedures/evaluation-aggregation.md",
+              "href": "entries/tables-procedures-evaluation-aggregation.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-03",
+      "queries": [
+        {
+          "query": "temperature thermal energy heat equilibrium",
+          "match_count": 39,
+          "first_five": [
+            {
+              "title": "Thermal Quantity",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/thermal-quantity.md",
+              "href": "entries/tables-entries-thermal-quantity.html",
+              "family_key": "tables/entries/thermal-quantity.md",
+              "family_title": "Thermal Quantity"
+            },
+            {
+              "title": "Thermal Quantities",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/thermal-quantities.md",
+              "href": "entries/tables-formulas-thermal-quantities.html",
+              "family_key": "tables/entries/thermal-quantity.md",
+              "family_title": "Thermal Quantity"
+            },
+            {
+              "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            },
+            {
+              "title": "Temperature Scale Conversion",
+              "kind": "mapping",
+              "domain": "science",
+              "path": "tables/mappings/temperature-scales.md",
+              "href": "entries/tables-mappings-temperature-scales.html",
+              "family_key": "tables/entries/thermal-quantity.md",
+              "family_title": "Thermal Quantity"
+            },
+            {
+              "title": "Work, Energy, and Power",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/work-energy-power.md",
+              "href": "entries/tables-entries-work-energy-power.html",
+              "family_key": "tables/entries/work-energy-power.md",
+              "family_title": "Work, Energy, and Power"
+            }
+          ]
+        },
+        {
+          "query": "same temperature different energy",
+          "match_count": 105,
+          "first_five": [
+            {
+              "title": "Thermal Quantity",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/thermal-quantity.md",
+              "href": "entries/tables-entries-thermal-quantity.html",
+              "family_key": "tables/entries/thermal-quantity.md",
+              "family_title": "Thermal Quantity"
+            },
+            {
+              "title": "Electrical Quantity",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/electrical-quantity.md",
+              "href": "entries/tables-entries-electrical-quantity.html",
+              "family_key": "tables/entries/electrical-quantity.md",
+              "family_title": "Electrical Quantity"
+            },
+            {
+              "title": "Thermal Quantities",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/thermal-quantities.md",
+              "href": "entries/tables-formulas-thermal-quantities.html",
+              "family_key": "tables/entries/thermal-quantity.md",
+              "family_title": "Thermal Quantity"
+            },
+            {
+              "title": "Electrical Field, Material, Storage, and Impedance Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "science",
+              "path": "tables/diagnostics/electrical-field-material-impedance-failures.md",
+              "href": "entries/tables-diagnostics-electrical-field-material-impedance-failures.html",
+              "family_key": "tables/entries/electrical-quantity.md",
+              "family_title": "Electrical Quantity"
+            },
+            {
+              "title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/quantity-value-unit-conversion.md",
+              "href": "entries/tables-entries-quantity-value-unit-conversion.html",
+              "family_key": "tables/entries/quantity-value-unit-conversion.md",
+              "family_title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-04",
+      "queries": [
+        {
+          "query": "stoichiometry limiting reactant conversion yield selectivity",
+          "match_count": 39,
+          "first_five": [
+            {
+              "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            },
+            {
+              "title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/quantity-value-unit-conversion.md",
+              "href": "entries/tables-entries-quantity-value-unit-conversion.html",
+              "family_key": "tables/entries/quantity-value-unit-conversion.md",
+              "family_title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion"
+            },
+            {
+              "title": "Unit Conversion Mapping",
+              "kind": "mapping",
+              "domain": "quantities",
+              "path": "tables/mappings/unit-conversion.md",
+              "href": "entries/tables-mappings-unit-conversion.html",
+              "family_key": "tables/entries/quantity-value-unit-conversion.md",
+              "family_title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion"
+            },
+            {
+              "title": "Temperature Scale Conversion",
+              "kind": "mapping",
+              "domain": "science",
+              "path": "tables/mappings/temperature-scales.md",
+              "href": "entries/tables-mappings-temperature-scales.html",
+              "family_key": "tables/entries/thermal-quantity.md",
+              "family_title": "Thermal Quantity"
+            },
+            {
+              "title": "Chemical Reaction Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "science",
+              "path": "tables/diagnostics/chemical-reaction-failures.md",
+              "href": "entries/tables-diagnostics-chemical-reaction-failures.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            }
+          ]
+        },
+        {
+          "query": "reaction mass balance observed yield",
+          "match_count": 74,
+          "first_five": [
+            {
+              "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            },
+            {
+              "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/stock-flow-balance.md",
+              "href": "entries/tables-entries-stock-flow-balance.html",
+              "family_key": "tables/entries/stock-flow-balance.md",
+              "family_title": "Stock, Flow, Accumulation, Balance, and Conservation"
+            },
+            {
+              "title": "Chemical Reaction Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "science",
+              "path": "tables/diagnostics/chemical-reaction-failures.md",
+              "href": "entries/tables-diagnostics-chemical-reaction-failures.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            },
+            {
+              "title": "Chemical Reaction Relations",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/chemical-reaction-relations.md",
+              "href": "entries/tables-formulas-chemical-reaction-relations.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            },
+            {
+              "title": "General Accounting Balance",
+              "kind": "formula",
+              "domain": "systems",
+              "path": "tables/formulas/general-accounting-balance.md",
+              "href": "entries/tables-formulas-general-accounting-balance.html",
+              "family_key": "tables/entries/stock-flow-balance.md",
+              "family_title": "Stock, Flow, Accumulation, Balance, and Conservation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-05",
+      "queries": [
+        {
+          "query": "measurement error uncertainty variability bias",
+          "match_count": 110,
+          "first_five": [
+            {
+              "title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/measurement-quality.md",
+              "href": "entries/tables-entries-measurement-quality.html",
+              "family_key": "tables/entries/measurement-quality.md",
+              "family_title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration"
+            },
+            {
+              "title": "Population, Sample, Estimand, Estimate, and Generalization",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/sampling-generalization.md",
+              "href": "entries/tables-entries-sampling-generalization.html",
+              "family_key": "tables/entries/sampling-generalization.md",
+              "family_title": "Population, Sample, Estimand, Estimate, and Generalization"
+            },
+            {
+              "title": "Probability, Risk, and Uncertainty",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/probability-risk-uncertainty.md",
+              "href": "entries/tables-entries-probability-risk-uncertainty.html",
+              "family_key": "tables/entries/probability-risk-uncertainty.md",
+              "family_title": "Probability, Risk, and Uncertainty"
+            },
+            {
+              "title": "Probability, Risk, and Uncertainty Relations",
+              "kind": "formula",
+              "domain": "quantities",
+              "path": "tables/formulas/probability-risk-uncertainty.md",
+              "href": "entries/tables-formulas-probability-risk-uncertainty.html",
+              "family_key": "tables/entries/probability-risk-uncertainty.md",
+              "family_title": "Probability, Risk, and Uncertainty"
+            },
+            {
+              "title": "Measurement Quality Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/measurement-quality-failures.md",
+              "href": "entries/tables-diagnostics-measurement-quality-failures.html",
+              "family_key": "tables/entries/measurement-quality.md",
+              "family_title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration"
+            }
+          ]
+        },
+        {
+          "query": "disagreement reference value precision accuracy",
+          "match_count": 151,
+          "first_five": [
+            {
+              "title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/measurement-quality.md",
+              "href": "entries/tables-entries-measurement-quality.html",
+              "family_key": "tables/entries/measurement-quality.md",
+              "family_title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration"
+            },
+            {
+              "title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/quantity-value-unit-conversion.md",
+              "href": "entries/tables-entries-quantity-value-unit-conversion.html",
+              "family_key": "tables/entries/quantity-value-unit-conversion.md",
+              "family_title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion"
+            },
+            {
+              "title": "Criterion, Preference, and Priority Decision Table",
+              "kind": "decision",
+              "domain": "reference",
+              "path": "tables/decisions/criterion-preference-priority.md",
+              "href": "entries/tables-decisions-criterion-preference-priority.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            },
+            {
+              "title": "Geometric Reference Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/geometric-reference-structure-failures.md",
+              "href": "entries/tables-diagnostics-geometric-reference-structure-failures.html",
+              "family_key": "tables/entries/geometric-reference-structure.md",
+              "family_title": "Geometric Object, Point, Curve, Path, Length, Shape, Angle, Coordinate System, Reference Frame, and Unit Circle"
+            },
+            {
+              "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/choice-alternative-selection.md",
+              "href": "entries/tables-entries-choice-alternative-selection.html",
+              "family_key": "tables/entries/choice-alternative-selection.md",
+              "family_title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-06",
+      "queries": [
+        {
+          "query": "force pressure stress distributed load",
+          "match_count": 73,
+          "first_five": [
+            {
+              "title": "Matter and Load Measure",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/matter-load-measure.md",
+              "href": "entries/tables-entries-matter-load-measure.html",
+              "family_key": "tables/entries/matter-load-measure.md",
+              "family_title": "Matter and Load Measure"
+            },
+            {
+              "title": "Force",
+              "kind": "entry",
+              "domain": "polysemy",
+              "path": "tables/entries/force.md",
+              "href": "entries/tables-entries-force.html",
+              "family_key": "tables/entries/force.md",
+              "family_title": "Force"
+            },
+            {
+              "title": "Matter and Load Measures",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/matter-load-measures.md",
+              "href": "entries/tables-formulas-matter-load-measures.html",
+              "family_key": "tables/entries/matter-load-measure.md",
+              "family_title": "Matter and Load Measure"
+            },
+            {
+              "title": "Newtonian Net Force",
+              "kind": "formula",
+              "domain": "polysemy",
+              "path": "tables/formulas/force.md",
+              "href": "entries/tables-formulas-force.html",
+              "family_key": "tables/entries/force.md",
+              "family_title": "Force"
+            },
+            {
+              "title": "Enforcement Point",
+              "kind": "prime",
+              "domain": "security",
+              "path": "tables/primes/enforcement-point.md",
+              "href": "entries/tables-primes-enforcement-point.html",
+              "family_key": "tables/primes/enforcement-point.md",
+              "family_title": "Enforcement Point"
+            }
+          ]
+        },
+        {
+          "query": "area direction material safety",
+          "match_count": 109,
+          "first_five": [
+            {
+              "title": "Electrical Field, Material, Storage, and Impedance Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "science",
+              "path": "tables/diagnostics/electrical-field-material-impedance-failures.md",
+              "href": "entries/tables-diagnostics-electrical-field-material-impedance-failures.html",
+              "family_key": "tables/entries/electrical-quantity.md",
+              "family_title": "Electrical Quantity"
+            },
+            {
+              "title": "Hazard, Exposure, Harm, Vulnerability, and Safety",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/hazard-exposure-harm-safety.md",
+              "href": "entries/tables-entries-hazard-exposure-harm-safety.html",
+              "family_key": "tables/entries/hazard-exposure-harm-safety.md",
+              "family_title": "Hazard, Exposure, Harm, Vulnerability, and Safety"
+            },
+            {
+              "title": "Compatibility, Conflict, Substitution, and Interchangeability Mapping",
+              "kind": "mapping",
+              "domain": "operations",
+              "path": "tables/mappings/compatibility-substitution.md",
+              "href": "entries/tables-mappings-compatibility-substitution.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Electrical Quantities",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/electrical-quantities.md",
+              "href": "entries/tables-formulas-electrical-quantities.html",
+              "family_key": "tables/entries/electrical-quantity.md",
+              "family_title": "Electrical Quantity"
+            },
+            {
+              "title": "System Composition and Architecture Integrity Constraints",
+              "kind": "constraint",
+              "domain": "systems",
+              "path": "tables/constraints/system-composition-integrity.md",
+              "href": "entries/tables-constraints-system-composition-integrity.html",
+              "family_key": "tables/entries/system-composition-dependency.md",
+              "family_title": "System Composition, Architecture, Capability, Interface, and Dependency"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-07",
+      "queries": [
+        {
+          "query": "status state mode health configuration lifecycle",
+          "match_count": 185,
+          "first_five": [
+            {
+              "title": "State, Event, Transition, Process, and Lifecycle",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/state-event-transition-process-lifecycle.md",
+              "href": "entries/tables-entries-state-event-transition-process-lifecycle.html",
+              "family_key": "tables/entries/state-event-transition-process-lifecycle.md",
+              "family_title": "State, Event, Transition, Process, and Lifecycle"
+            },
+            {
+              "title": "Decomposition Modes and Combination Contracts",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/decomposition-modes-combination-contracts.md",
+              "href": "entries/tables-entries-decomposition-modes-combination-contracts.html",
+              "family_key": "tables/entries/decomposition-modes-combination-contracts.md",
+              "family_title": "Decomposition Modes and Combination Contracts"
+            },
+            {
+              "title": "Generic Lifecycle Transition",
+              "kind": "transition",
+              "domain": "systems",
+              "path": "tables/transitions/generic-lifecycle.md",
+              "href": "entries/tables-transitions-generic-lifecycle.html",
+              "family_key": "tables/entries/state-event-transition-process-lifecycle.md",
+              "family_title": "State, Event, Transition, Process, and Lifecycle"
+            },
+            {
+              "title": "Model and Simulation Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/model-simulation-failures.md",
+              "href": "entries/tables-diagnostics-model-simulation-failures.html",
+              "family_key": "tables/entries/model-representation-simulation.md",
+              "family_title": "Model, Representation, and Simulation"
+            },
+            {
+              "title": "Model, Representation, and Simulation",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/model-representation-simulation.md",
+              "href": "entries/tables-entries-model-representation-simulation.html",
+              "family_key": "tables/entries/model-representation-simulation.md",
+              "family_title": "Model, Representation, and Simulation"
+            }
+          ]
+        },
+        {
+          "query": "dashboard reported label readiness",
+          "match_count": 93,
+          "first_five": [
+            {
+              "title": "Measurement Quality Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/measurement-quality-failures.md",
+              "href": "entries/tables-diagnostics-measurement-quality-failures.html",
+              "family_key": "tables/entries/measurement-quality.md",
+              "family_title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration"
+            },
+            {
+              "title": "Latency Claim Evidence Composition Worksheet",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/latency-evidence-composition-worksheet.md",
+              "href": "entries/guides-latency-evidence-composition-worksheet.html",
+              "family_key": "guides/latency-evidence-composition-worksheet.md",
+              "family_title": "Latency Claim Evidence Composition Worksheet"
+            },
+            {
+              "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/stock-flow-balance.md",
+              "href": "entries/tables-entries-stock-flow-balance.html",
+              "family_key": "tables/entries/stock-flow-balance.md",
+              "family_title": "Stock, Flow, Accumulation, Balance, and Conservation"
+            },
+            {
+              "title": "Identity, Naming, Classification, and Versioning",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/identity-naming-classification-versioning.md",
+              "href": "entries/tables-entries-identity-naming-classification-versioning.html",
+              "family_key": "tables/entries/identity-naming-classification-versioning.md",
+              "family_title": "Identity, Naming, Classification, and Versioning"
+            },
+            {
+              "title": "Aqueous Solution Amount-Concentration Guide",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/aqueous-solution-amount-concentration.md",
+              "href": "entries/guides-aqueous-solution-amount-concentration.html",
+              "family_key": "guides/aqueous-solution-amount-concentration.md",
+              "family_title": "Aqueous Solution Amount-Concentration Guide"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-08",
+      "queries": [
+        {
+          "query": "timeout retry fallback isolation alerting",
+          "match_count": 17,
+          "first_five": [
+            {
+              "title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/coordinated-work.md",
+              "href": "entries/tables-entries-coordinated-work.html",
+              "family_key": "tables/entries/coordinated-work.md",
+              "family_title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation"
+            },
+            {
+              "title": "Queue, Backlog, Priority, Scheduling, and Service-Order Procedure",
+              "kind": "procedure",
+              "domain": "operations",
+              "path": "tables/procedures/queue-service-order.md",
+              "href": "entries/tables-procedures-queue-service-order.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Software Interaction Mechanisms",
+              "kind": "mapping",
+              "domain": "software",
+              "path": "tables/mappings/software-interaction-mechanisms.md",
+              "href": "entries/tables-mappings-software-interaction-mechanisms.html",
+              "family_key": "tables/entries/software-transaction-message-contract.md",
+              "family_title": "Software Transaction, Message, and Contract"
+            },
+            {
+              "title": "Software Transaction, Message, and Contract",
+              "kind": "entry",
+              "domain": "software",
+              "path": "tables/entries/software-transaction-message-contract.md",
+              "href": "entries/tables-entries-software-transaction-message-contract.html",
+              "family_key": "tables/entries/software-transaction-message-contract.md",
+              "family_title": "Software Transaction, Message, and Contract"
+            },
+            {
+              "title": "Coordinated Work Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "systems",
+              "path": "tables/diagnostics/coordinated-work-failures.md",
+              "href": "entries/tables-diagnostics-coordinated-work-failures.html",
+              "family_key": "tables/entries/coordinated-work.md",
+              "family_title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation"
+            }
+          ]
+        },
+        {
+          "query": "failure handling reliability side effects",
+          "match_count": 151,
+          "first_five": [
+            {
+              "title": "Measurement Quality Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/measurement-quality-failures.md",
+              "href": "entries/tables-diagnostics-measurement-quality-failures.html",
+              "family_key": "tables/entries/measurement-quality.md",
+              "family_title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration"
+            },
+            {
+              "title": "Reliability, Availability, Maintainability, Resilience, and Recovery",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/dependability-reliability-availability-resilience.md",
+              "href": "entries/tables-entries-dependability-reliability-availability-resilience.html",
+              "family_key": "tables/entries/dependability-reliability-availability-resilience.md",
+              "family_title": "Reliability, Availability, Maintainability, Resilience, and Recovery"
+            },
+            {
+              "title": "Control and Response Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "systems",
+              "path": "tables/diagnostics/control-response-failures.md",
+              "href": "entries/tables-diagnostics-control-response-failures.html",
+              "family_key": "tables/entries/control-monitoring-response.md",
+              "family_title": "Objective, Control, Monitoring, and Response"
+            },
+            {
+              "title": "Coordinated Work Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "systems",
+              "path": "tables/diagnostics/coordinated-work-failures.md",
+              "href": "entries/tables-diagnostics-coordinated-work-failures.html",
+              "family_key": "tables/entries/coordinated-work.md",
+              "family_title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation"
+            },
+            {
+              "title": "Economic Basis, Inflation, and Net Present Value Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "economics",
+              "path": "tables/diagnostics/economic-basis-inflation-npv-failures.md",
+              "href": "entries/tables-diagnostics-economic-basis-inflation-npv-failures.html",
+              "family_key": "tables/entries/cost-price-value-return.md",
+              "family_title": "Cost, Price, Value, Utility, and Return"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-09",
+      "queries": [
+        {
+          "query": "available but unusable service",
+          "match_count": 120,
+          "first_five": [
+            {
+              "title": "Software Module, Service, and Resource",
+              "kind": "entry",
+              "domain": "software",
+              "path": "tables/entries/software-module-service-resource.md",
+              "href": "entries/tables-entries-software-module-service-resource.html",
+              "family_key": "tables/entries/software-module-service-resource.md",
+              "family_title": "Software Module, Service, and Resource"
+            },
+            {
+              "title": "Queue, Backlog, Priority, Scheduling, and Service-Order Procedure",
+              "kind": "procedure",
+              "domain": "operations",
+              "path": "tables/procedures/queue-service-order.md",
+              "href": "entries/tables-procedures-queue-service-order.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Contribution and Reconciliation Procedure",
+              "kind": "procedure",
+              "domain": "reference",
+              "path": "tables/procedures/contribution-reconciliation.md",
+              "href": "entries/tables-procedures-contribution-reconciliation.html",
+              "family_key": "tables/entries/decomposition-modes-combination-contracts.md",
+              "family_title": "Decomposition Modes and Combination Contracts"
+            },
+            {
+              "title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/causal-reasoning.md",
+              "href": "entries/tables-entries-causal-reasoning.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Dependency, Prerequisite, Blocker, Enabler, and Critical-Path Diagnostic",
+              "kind": "diagnostic",
+              "domain": "operations",
+              "path": "tables/diagnostics/dependency-critical-path.md",
+              "href": "entries/tables-diagnostics-dependency-critical-path.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            }
+          ]
+        },
+        {
+          "query": "availability accessibility capability correctness quality",
+          "match_count": 86,
+          "first_five": [
+            {
+              "title": "Reliability, Availability, Maintainability, Resilience, and Recovery",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/dependability-reliability-availability-resilience.md",
+              "href": "entries/tables-entries-dependability-reliability-availability-resilience.html",
+              "family_key": "tables/entries/dependability-reliability-availability-resilience.md",
+              "family_title": "Reliability, Availability, Maintainability, Resilience, and Recovery"
+            },
+            {
+              "title": "Capability",
+              "kind": "role",
+              "domain": "structure",
+              "path": "tables/roles/capability.md",
+              "href": "entries/tables-roles-capability.html",
+              "family_key": "tables/roles/capability.md",
+              "family_title": "Capability"
+            },
+            {
+              "title": "Factorization Quality",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/factorization-quality.md",
+              "href": "entries/tables-entries-factorization-quality.html",
+              "family_key": "tables/entries/factorization-quality.md",
+              "family_title": "Factorization Quality"
+            },
+            {
+              "title": "Measurement Quality Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/measurement-quality-failures.md",
+              "href": "entries/tables-diagnostics-measurement-quality-failures.html",
+              "family_key": "tables/entries/measurement-quality.md",
+              "family_title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration"
+            },
+            {
+              "title": "System Composition, Architecture, Capability, Interface, and Dependency",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/system-composition-dependency.md",
+              "href": "entries/tables-entries-system-composition-dependency.html",
+              "family_key": "tables/entries/system-composition-dependency.md",
+              "family_title": "System Composition, Architecture, Capability, Interface, and Dependency"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-10",
+      "queries": [
+        {
+          "query": "data structure encoding representation transformation",
+          "match_count": 138,
+          "first_five": [
+            {
+              "title": "Data Structure Mapping",
+              "kind": "mapping",
+              "domain": "information",
+              "path": "tables/mappings/data-structure.md",
+              "href": "entries/tables-mappings-data-structure.html",
+              "family_key": "tables/entries/information-data-signal-noise.md",
+              "family_title": "Information, Data, Signal, and Noise"
+            },
+            {
+              "title": "Information, Data, Signal, and Noise",
+              "kind": "entry",
+              "domain": "information",
+              "path": "tables/entries/information-data-signal-noise.md",
+              "href": "entries/tables-entries-information-data-signal-noise.html",
+              "family_key": "tables/entries/information-data-signal-noise.md",
+              "family_title": "Information, Data, Signal, and Noise"
+            },
+            {
+              "title": "Information, Encoding, Channel, and Capacity Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "information",
+              "path": "tables/diagnostics/information-encoding-channel-failures.md",
+              "href": "entries/tables-diagnostics-information-encoding-channel-failures.html",
+              "family_key": "tables/entries/information-data-signal-noise.md",
+              "family_title": "Information, Data, Signal, and Noise"
+            },
+            {
+              "title": "Basis Transformation Mapping",
+              "kind": "mapping",
+              "domain": "reference",
+              "path": "tables/mappings/basis-transformation.md",
+              "href": "entries/tables-mappings-basis-transformation.html",
+              "family_key": "tables/entries/decomposition-modes-combination-contracts.md",
+              "family_title": "Decomposition Modes and Combination Contracts"
+            },
+            {
+              "title": "Transformation",
+              "kind": "root",
+              "domain": "structure",
+              "path": "tables/roots/transformation.md",
+              "href": "entries/tables-roots-transformation.html",
+              "family_key": "tables/roots/transformation.md",
+              "family_title": "Transformation"
+            }
+          ]
+        },
+        {
+          "query": "serialization transmission semantic equivalence loss",
+          "match_count": 107,
+          "first_five": [
+            {
+              "title": "Organizational Assignment Semantics",
+              "kind": "mapping",
+              "domain": "organizations",
+              "path": "tables/mappings/organizational-assignment-semantics.md",
+              "href": "entries/tables-mappings-organizational-assignment-semantics.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Version Scheme Semantics",
+              "kind": "mapping",
+              "domain": "systems",
+              "path": "tables/mappings/version-scheme-semantics.md",
+              "href": "entries/tables-mappings-version-scheme-semantics.html",
+              "family_key": "tables/entries/identity-naming-classification-versioning.md",
+              "family_title": "Identity, Naming, Classification, and Versioning"
+            },
+            {
+              "title": "Basis Transformation Mapping",
+              "kind": "mapping",
+              "domain": "reference",
+              "path": "tables/mappings/basis-transformation.md",
+              "href": "entries/tables-mappings-basis-transformation.html",
+              "family_key": "tables/entries/decomposition-modes-combination-contracts.md",
+              "family_title": "Decomposition Modes and Combination Contracts"
+            },
+            {
+              "title": "Compatibility, Conflict, Substitution, and Interchangeability Mapping",
+              "kind": "mapping",
+              "domain": "operations",
+              "path": "tables/mappings/compatibility-substitution.md",
+              "href": "entries/tables-mappings-compatibility-substitution.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Factor Role to Mechanism Crosswalk",
+              "kind": "mapping",
+              "domain": "reference",
+              "path": "tables/mappings/factor-role-mechanisms.md",
+              "href": "entries/tables-mappings-factor-role-mechanisms.html",
+              "family_key": "tables/entries/factorization-quality.md",
+              "family_title": "Factorization Quality"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-11",
+      "queries": [
+        {
+          "query": "exactly once delivery receipt effect",
+          "match_count": 127,
+          "first_five": [
+            {
+              "title": "Economic Basis, Inflation, and Net Present Value Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "economics",
+              "path": "tables/diagnostics/economic-basis-inflation-npv-failures.md",
+              "href": "entries/tables-diagnostics-economic-basis-inflation-npv-failures.html",
+              "family_key": "tables/entries/cost-price-value-return.md",
+              "family_title": "Cost, Price, Value, Utility, and Return"
+            },
+            {
+              "title": "Amount, Concentration, and Composition Relations",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/amount-concentration-composition.md",
+              "href": "entries/tables-formulas-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Aqueous Solution Amount-Concentration Guide",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/aqueous-solution-amount-concentration.md",
+              "href": "entries/guides-aqueous-solution-amount-concentration.html",
+              "family_key": "guides/aqueous-solution-amount-concentration.md",
+              "family_title": "Aqueous Solution Amount-Concentration Guide"
+            },
+            {
+              "title": "Amount, Concentration, and Composition",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/amount-concentration-composition.md",
+              "href": "entries/tables-entries-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/causal-reasoning.md",
+              "href": "entries/tables-entries-causal-reasoning.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            }
+          ]
+        },
+        {
+          "query": "message deduplication committed state retry evidence",
+          "match_count": 163,
+          "first_five": [
+            {
+              "title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/coordinated-work.md",
+              "href": "entries/tables-entries-coordinated-work.html",
+              "family_key": "tables/entries/coordinated-work.md",
+              "family_title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation"
+            },
+            {
+              "title": "Software Transaction, Message, and Contract",
+              "kind": "entry",
+              "domain": "software",
+              "path": "tables/entries/software-transaction-message-contract.md",
+              "href": "entries/tables-entries-software-transaction-message-contract.html",
+              "family_key": "tables/entries/software-transaction-message-contract.md",
+              "family_title": "Software Transaction, Message, and Contract"
+            },
+            {
+              "title": "Claim and Evidence",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/claim-evidence.md",
+              "href": "entries/tables-entries-claim-evidence.html",
+              "family_key": "tables/entries/claim-evidence.md",
+              "family_title": "Claim and Evidence"
+            },
+            {
+              "title": "Mechanism Path Evidence Table",
+              "kind": "evidence",
+              "domain": "reference",
+              "path": "tables/evidence/mechanism-path.md",
+              "href": "entries/tables-evidence-mechanism-path.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Evidence-Informed Intervention Choice Guide",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/evidence-informed-intervention-choice.md",
+              "href": "entries/guides-evidence-informed-intervention-choice.html",
+              "family_key": "guides/evidence-informed-intervention-choice.md",
+              "family_title": "Evidence-Informed Intervention Choice Guide"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-12",
+      "queries": [
+        {
+          "query": "identity authentication permission authorization enforcement",
+          "match_count": 114,
+          "first_five": [
+            {
+              "title": "Access, Permission, Authorization, and Entitlement",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/access-permission-authorization-entitlement.md",
+              "href": "entries/tables-entries-access-permission-authorization-entitlement.html",
+              "family_key": "tables/entries/access-permission-authorization-entitlement.md",
+              "family_title": "Access, Permission, Authorization, and Entitlement"
+            },
+            {
+              "title": "Access Authorization Integrity Constraint Table",
+              "kind": "constraint",
+              "domain": "governance",
+              "path": "tables/constraints/access-authorization-integrity.md",
+              "href": "entries/tables-constraints-access-authorization-integrity.html",
+              "family_key": "tables/entries/access-permission-authorization-entitlement.md",
+              "family_title": "Access, Permission, Authorization, and Entitlement"
+            },
+            {
+              "title": "Authentication Assurance",
+              "kind": "prime",
+              "domain": "security",
+              "path": "tables/primes/authentication-assurance.md",
+              "href": "entries/tables-primes-authentication-assurance.html",
+              "family_key": "tables/primes/authentication-assurance.md",
+              "family_title": "Authentication Assurance"
+            },
+            {
+              "title": "Authorization Policy",
+              "kind": "prime",
+              "domain": "security",
+              "path": "tables/primes/authorization-policy.md",
+              "href": "entries/tables-primes-authorization-policy.html",
+              "family_key": "tables/primes/authorization-policy.md",
+              "family_title": "Authorization Policy"
+            },
+            {
+              "title": "Identity",
+              "kind": "root",
+              "domain": "structure",
+              "path": "tables/roots/identity.md",
+              "href": "entries/tables-roots-identity.html",
+              "family_key": "tables/roots/identity.md",
+              "family_title": "Identity"
+            }
+          ]
+        },
+        {
+          "query": "software resource naming access decision",
+          "match_count": 126,
+          "first_five": [
+            {
+              "title": "Access, Permission, Authorization, and Entitlement",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/access-permission-authorization-entitlement.md",
+              "href": "entries/tables-entries-access-permission-authorization-entitlement.html",
+              "family_key": "tables/entries/access-permission-authorization-entitlement.md",
+              "family_title": "Access, Permission, Authorization, and Entitlement"
+            },
+            {
+              "title": "Software Module, Service, and Resource",
+              "kind": "entry",
+              "domain": "software",
+              "path": "tables/entries/software-module-service-resource.md",
+              "href": "entries/tables-entries-software-module-service-resource.html",
+              "family_key": "tables/entries/software-module-service-resource.md",
+              "family_title": "Software Module, Service, and Resource"
+            },
+            {
+              "title": "Software Type, Value, and Function",
+              "kind": "entry",
+              "domain": "software",
+              "path": "tables/entries/software-type-value-function.md",
+              "href": "entries/tables-entries-software-type-value-function.html",
+              "family_key": "tables/entries/software-type-value-function.md",
+              "family_title": "Software Type, Value, and Function"
+            },
+            {
+              "title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/coordinated-work.md",
+              "href": "entries/tables-entries-coordinated-work.html",
+              "family_key": "tables/entries/coordinated-work.md",
+              "family_title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation"
+            },
+            {
+              "title": "System Composition, Architecture, Capability, Interface, and Dependency",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/system-composition-dependency.md",
+              "href": "entries/tables-entries-system-composition-dependency.html",
+              "family_key": "tables/entries/system-composition-dependency.md",
+              "family_title": "System Composition, Architecture, Capability, Interface, and Dependency"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-13",
+      "queries": [
+        {
+          "query": "policy rule requirement obligation commitment decision",
+          "match_count": 138,
+          "first_five": [
+            {
+              "title": "Policy, Rule, Constraint, Decision, and Exception",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Governance, Obligation, and Compliance",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/governance-obligation-compliance.md",
+              "href": "entries/tables-entries-governance-obligation-compliance.html",
+              "family_key": "tables/entries/governance-obligation-compliance.md",
+              "family_title": "Governance, Obligation, and Compliance"
+            },
+            {
+              "title": "Operational Resource, Capacity, Demand, and Allocation",
+              "kind": "entry",
+              "domain": "operations",
+              "path": "tables/entries/operational-resource-capacity-demand.md",
+              "href": "entries/tables-entries-operational-resource-capacity-demand.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Policy Decision",
+              "kind": "decision",
+              "domain": "governance",
+              "path": "tables/decisions/policy-decision.md",
+              "href": "entries/tables-decisions-policy-decision.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Governance and Compliance Mechanisms",
+              "kind": "mapping",
+              "domain": "governance",
+              "path": "tables/mappings/governance-compliance-mechanisms.md",
+              "href": "entries/tables-mappings-governance-compliance-mechanisms.html",
+              "family_key": "tables/entries/governance-obligation-compliance.md",
+              "family_title": "Governance, Obligation, and Compliance"
+            }
+          ]
+        },
+        {
+          "query": "governance authority applicability conduct",
+          "match_count": 130,
+          "first_five": [
+            {
+              "title": "Governance and Compliance Mechanisms",
+              "kind": "mapping",
+              "domain": "governance",
+              "path": "tables/mappings/governance-compliance-mechanisms.md",
+              "href": "entries/tables-mappings-governance-compliance-mechanisms.html",
+              "family_key": "tables/entries/governance-obligation-compliance.md",
+              "family_title": "Governance, Obligation, and Compliance"
+            },
+            {
+              "title": "Governance, Obligation, and Compliance",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/governance-obligation-compliance.md",
+              "href": "entries/tables-entries-governance-obligation-compliance.html",
+              "family_key": "tables/entries/governance-obligation-compliance.md",
+              "family_title": "Governance, Obligation, and Compliance"
+            },
+            {
+              "title": "Delegated Compliance Frontier Composition Worksheet",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/delegated-compliance-frontier-worksheet.md",
+              "href": "entries/guides-delegated-compliance-frontier-worksheet.html",
+              "family_key": "guides/delegated-compliance-frontier-worksheet.md",
+              "family_title": "Delegated Compliance Frontier Composition Worksheet"
+            },
+            {
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "kind": "entry",
+              "domain": "organizations",
+              "path": "tables/entries/organization-role-authority.md",
+              "href": "entries/tables-entries-organization-role-authority.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Evaluation Applicability Evidence Table",
+              "kind": "evidence",
+              "domain": "reference",
+              "path": "tables/evidence/evaluation-applicability.md",
+              "href": "entries/tables-evidence-evaluation-applicability.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-14",
+      "queries": [
+        {
+          "query": "assessment audit assurance certification accreditation",
+          "match_count": 67,
+          "first_five": [
+            {
+              "title": "Assurance, Assessment, Audit, Certification, and Accreditation",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/assurance-assessment-audit-certification.md",
+              "href": "entries/tables-entries-assurance-assessment-audit-certification.html",
+              "family_key": "tables/entries/assurance-assessment-audit-certification.md",
+              "family_title": "Assurance, Assessment, Audit, Certification, and Accreditation"
+            },
+            {
+              "title": "Assurance and Conformity Evidence Table",
+              "kind": "evidence",
+              "domain": "governance",
+              "path": "tables/evidence/assurance-conformity.md",
+              "href": "entries/tables-evidence-assurance-conformity.html",
+              "family_key": "tables/entries/assurance-assessment-audit-certification.md",
+              "family_title": "Assurance, Assessment, Audit, Certification, and Accreditation"
+            },
+            {
+              "title": "Authentication Assurance",
+              "kind": "prime",
+              "domain": "security",
+              "path": "tables/primes/authentication-assurance.md",
+              "href": "entries/tables-primes-authentication-assurance.html",
+              "family_key": "tables/primes/authentication-assurance.md",
+              "family_title": "Authentication Assurance"
+            },
+            {
+              "title": "Governance and Compliance Mechanisms",
+              "kind": "mapping",
+              "domain": "governance",
+              "path": "tables/mappings/governance-compliance-mechanisms.md",
+              "href": "entries/tables-mappings-governance-compliance-mechanisms.html",
+              "family_key": "tables/entries/governance-obligation-compliance.md",
+              "family_title": "Governance, Obligation, and Compliance"
+            },
+            {
+              "title": "Basis Transformation Mapping",
+              "kind": "mapping",
+              "domain": "reference",
+              "path": "tables/mappings/basis-transformation.md",
+              "href": "entries/tables-mappings-basis-transformation.html",
+              "family_key": "tables/entries/decomposition-modes-combination-contracts.md",
+              "family_title": "Decomposition Modes and Combination Contracts"
+            }
+          ]
+        },
+        {
+          "query": "independent review criteria authority recognition",
+          "match_count": 156,
+          "first_five": [
+            {
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "kind": "entry",
+              "domain": "organizations",
+              "path": "tables/entries/organization-role-authority.md",
+              "href": "entries/tables-entries-organization-role-authority.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Evaluation Review and Disposition Procedure",
+              "kind": "procedure",
+              "domain": "reference",
+              "path": "tables/procedures/evaluation-review-disposition.md",
+              "href": "entries/tables-procedures-evaluation-review-disposition.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            },
+            {
+              "title": "Policy, Rule, Constraint, Decision, and Exception",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Alternative Selection Decision Table",
+              "kind": "decision",
+              "domain": "reference",
+              "path": "tables/decisions/alternative-selection.md",
+              "href": "entries/tables-decisions-alternative-selection.html",
+              "family_key": "tables/entries/choice-alternative-selection.md",
+              "family_title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection"
+            },
+            {
+              "title": "Trade-off, Compensation, Dominance, and Conflict Decision Table",
+              "kind": "decision",
+              "domain": "reference",
+              "path": "tables/decisions/tradeoff-dominance-conflict.md",
+              "href": "entries/tables-decisions-tradeoff-dominance-conflict.html",
+              "family_key": "tables/entries/scenario-assumption-condition-case.md",
+              "family_title": "Assumption, Condition, Scenario, Case, and Feasibility"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-15",
+      "queries": [
+        {
+          "query": "causal contribution responsibility accountability fault liability",
+          "match_count": 94,
+          "first_five": [
+            {
+              "title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/causal-reasoning.md",
+              "href": "entries/tables-entries-causal-reasoning.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "kind": "entry",
+              "domain": "organizations",
+              "path": "tables/entries/organization-role-authority.md",
+              "href": "entries/tables-entries-organization-role-authority.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Causal Claim Evidence Table",
+              "kind": "evidence",
+              "domain": "reference",
+              "path": "tables/evidence/causal-claim-evidence.md",
+              "href": "entries/tables-evidence-causal-claim-evidence.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Contribution and Reconciliation Procedure",
+              "kind": "procedure",
+              "domain": "reference",
+              "path": "tables/procedures/contribution-reconciliation.md",
+              "href": "entries/tables-procedures-contribution-reconciliation.html",
+              "family_key": "tables/entries/decomposition-modes-combination-contracts.md",
+              "family_title": "Decomposition Modes and Combination Contracts"
+            },
+            {
+              "title": "Reliability, Availability, Maintainability, Resilience, and Recovery",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/dependability-reliability-availability-resilience.md",
+              "href": "entries/tables-entries-dependability-reliability-availability-resilience.html",
+              "family_key": "tables/entries/dependability-reliability-availability-resilience.md",
+              "family_title": "Reliability, Availability, Maintainability, Resilience, and Recovery"
+            }
+          ]
+        },
+        {
+          "query": "outcome explanation blame authority evidence",
+          "match_count": 156,
+          "first_five": [
+            {
+              "title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/causal-reasoning.md",
+              "href": "entries/tables-entries-causal-reasoning.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Mechanism Path Evidence Table",
+              "kind": "evidence",
+              "domain": "reference",
+              "path": "tables/evidence/mechanism-path.md",
+              "href": "entries/tables-evidence-mechanism-path.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Claim and Evidence",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/claim-evidence.md",
+              "href": "entries/tables-entries-claim-evidence.html",
+              "family_key": "tables/entries/claim-evidence.md",
+              "family_title": "Claim and Evidence"
+            },
+            {
+              "title": "Causal Claim Evidence Table",
+              "kind": "evidence",
+              "domain": "reference",
+              "path": "tables/evidence/causal-claim-evidence.md",
+              "href": "entries/tables-evidence-causal-claim-evidence.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Evidence-Informed Intervention Choice Guide",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/evidence-informed-intervention-choice.md",
+              "href": "entries/guides-evidence-informed-intervention-choice.html",
+              "family_key": "guides/evidence-informed-intervention-choice.md",
+              "family_title": "Evidence-Informed Intervention Choice Guide"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-16",
+      "queries": [
+        {
+          "query": "criterion threshold constraint exception override appeal",
+          "match_count": 130,
+          "first_five": [
+            {
+              "title": "Evaluation Threshold and Acceptance Constraint Table",
+              "kind": "constraint",
+              "domain": "reference",
+              "path": "tables/constraints/evaluation-threshold-acceptance.md",
+              "href": "entries/tables-constraints-evaluation-threshold-acceptance.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            },
+            {
+              "title": "Policy, Rule, Constraint, Decision, and Exception",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Evaluation Review and Disposition Procedure",
+              "kind": "procedure",
+              "domain": "reference",
+              "path": "tables/procedures/evaluation-review-disposition.md",
+              "href": "entries/tables-procedures-evaluation-review-disposition.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            },
+            {
+              "title": "Policy Constraints",
+              "kind": "constraint",
+              "domain": "governance",
+              "path": "tables/constraints/policy-constraints.md",
+              "href": "entries/tables-constraints-policy-constraints.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Criterion, Preference, and Priority Decision Table",
+              "kind": "decision",
+              "domain": "reference",
+              "path": "tables/decisions/criterion-preference-priority.md",
+              "href": "entries/tables-decisions-criterion-preference-priority.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            }
+          ]
+        },
+        {
+          "query": "decision rule precedence authority",
+          "match_count": 161,
+          "first_five": [
+            {
+              "title": "Policy, Rule, Constraint, Decision, and Exception",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Criterion, Preference, and Priority Decision Table",
+              "kind": "decision",
+              "domain": "reference",
+              "path": "tables/decisions/criterion-preference-priority.md",
+              "href": "entries/tables-decisions-criterion-preference-priority.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            },
+            {
+              "title": "Policy Decision",
+              "kind": "decision",
+              "domain": "governance",
+              "path": "tables/decisions/policy-decision.md",
+              "href": "entries/tables-decisions-policy-decision.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Access, Permission, Authorization, and Entitlement",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/access-permission-authorization-entitlement.md",
+              "href": "entries/tables-entries-access-permission-authorization-entitlement.html",
+              "family_key": "tables/entries/access-permission-authorization-entitlement.md",
+              "family_title": "Access, Permission, Authorization, and Entitlement"
+            },
+            {
+              "title": "Governance and Compliance Mechanisms",
+              "kind": "mapping",
+              "domain": "governance",
+              "path": "tables/mappings/governance-compliance-mechanisms.md",
+              "href": "entries/tables-mappings-governance-compliance-mechanisms.html",
+              "family_key": "tables/entries/governance-obligation-compliance.md",
+              "family_title": "Governance, Obligation, and Compliance"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-17",
+      "queries": [
+        {
+          "query": "delegation authorization assignment permission approval",
+          "match_count": 60,
+          "first_five": [
+            {
+              "title": "Organizational Assignment Semantics",
+              "kind": "mapping",
+              "domain": "organizations",
+              "path": "tables/mappings/organizational-assignment-semantics.md",
+              "href": "entries/tables-mappings-organizational-assignment-semantics.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Access, Permission, Authorization, and Entitlement",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/access-permission-authorization-entitlement.md",
+              "href": "entries/tables-entries-access-permission-authorization-entitlement.html",
+              "family_key": "tables/entries/access-permission-authorization-entitlement.md",
+              "family_title": "Access, Permission, Authorization, and Entitlement"
+            },
+            {
+              "title": "Access Authorization Integrity Constraint Table",
+              "kind": "constraint",
+              "domain": "governance",
+              "path": "tables/constraints/access-authorization-integrity.md",
+              "href": "entries/tables-constraints-access-authorization-integrity.html",
+              "family_key": "tables/entries/access-permission-authorization-entitlement.md",
+              "family_title": "Access, Permission, Authorization, and Entitlement"
+            },
+            {
+              "title": "Authorization Policy",
+              "kind": "prime",
+              "domain": "security",
+              "path": "tables/primes/authorization-policy.md",
+              "href": "entries/tables-primes-authorization-policy.html",
+              "family_key": "tables/primes/authorization-policy.md",
+              "family_title": "Authorization Policy"
+            },
+            {
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "kind": "entry",
+              "domain": "organizations",
+              "path": "tables/entries/organization-role-authority.md",
+              "href": "entries/tables-entries-organization-role-authority.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            }
+          ]
+        },
+        {
+          "query": "retained accountability authority trace",
+          "match_count": 139,
+          "first_five": [
+            {
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "kind": "entry",
+              "domain": "organizations",
+              "path": "tables/entries/organization-role-authority.md",
+              "href": "entries/tables-entries-organization-role-authority.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Governance and Compliance Mechanisms",
+              "kind": "mapping",
+              "domain": "governance",
+              "path": "tables/mappings/governance-compliance-mechanisms.md",
+              "href": "entries/tables-mappings-governance-compliance-mechanisms.html",
+              "family_key": "tables/entries/governance-obligation-compliance.md",
+              "family_title": "Governance, Obligation, and Compliance"
+            },
+            {
+              "title": "Delegated Compliance Frontier Composition Worksheet",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/delegated-compliance-frontier-worksheet.md",
+              "href": "entries/guides-delegated-compliance-frontier-worksheet.html",
+              "family_key": "guides/delegated-compliance-frontier-worksheet.md",
+              "family_title": "Delegated Compliance Frontier Composition Worksheet"
+            },
+            {
+              "title": "Organizational Assignment Semantics",
+              "kind": "mapping",
+              "domain": "organizations",
+              "path": "tables/mappings/organizational-assignment-semantics.md",
+              "href": "entries/tables-mappings-organizational-assignment-semantics.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Evaluation Review and Disposition Procedure",
+              "kind": "procedure",
+              "domain": "reference",
+              "path": "tables/procedures/evaluation-review-disposition.md",
+              "href": "entries/tables-procedures-evaluation-review-disposition.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-18",
+      "queries": [
+        {
+          "query": "queue priority policy priority urgency importance",
+          "match_count": 83,
+          "first_five": [
+            {
+              "title": "Queue, Backlog, Priority, Scheduling, and Service-Order Procedure",
+              "kind": "procedure",
+              "domain": "operations",
+              "path": "tables/procedures/queue-service-order.md",
+              "href": "entries/tables-procedures-queue-service-order.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Criterion, Preference, and Priority Decision Table",
+              "kind": "decision",
+              "domain": "reference",
+              "path": "tables/decisions/criterion-preference-priority.md",
+              "href": "entries/tables-decisions-criterion-preference-priority.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            },
+            {
+              "title": "Policy Decision",
+              "kind": "decision",
+              "domain": "governance",
+              "path": "tables/decisions/policy-decision.md",
+              "href": "entries/tables-decisions-policy-decision.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Policy, Rule, Constraint, Decision, and Exception",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html",
+              "family_key": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "family_title": "Policy, Rule, Constraint, Decision, and Exception"
+            },
+            {
+              "title": "Policy",
+              "kind": "role",
+              "domain": "structure",
+              "path": "tables/roles/policy.md",
+              "href": "entries/tables-roles-policy.html",
+              "family_key": "tables/roles/policy.md",
+              "family_title": "Policy"
+            }
+          ]
+        },
+        {
+          "query": "service order entitlement authority",
+          "match_count": 148,
+          "first_five": [
+            {
+              "title": "Queue, Backlog, Priority, Scheduling, and Service-Order Procedure",
+              "kind": "procedure",
+              "domain": "operations",
+              "path": "tables/procedures/queue-service-order.md",
+              "href": "entries/tables-procedures-queue-service-order.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Access, Permission, Authorization, and Entitlement",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/access-permission-authorization-entitlement.md",
+              "href": "entries/tables-entries-access-permission-authorization-entitlement.html",
+              "family_key": "tables/entries/access-permission-authorization-entitlement.md",
+              "family_title": "Access, Permission, Authorization, and Entitlement"
+            },
+            {
+              "title": "Ordered Path Transition Table",
+              "kind": "transition",
+              "domain": "systems",
+              "path": "tables/transitions/ordered-path.md",
+              "href": "entries/tables-transitions-ordered-path.html",
+              "family_key": "tables/entries/temporal-organization.md",
+              "family_title": "Instant, Duration, Interval, Deadline, and Schedule"
+            },
+            {
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "kind": "entry",
+              "domain": "organizations",
+              "path": "tables/entries/organization-role-authority.md",
+              "href": "entries/tables-entries-organization-role-authority.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Software Module, Service, and Resource",
+              "kind": "entry",
+              "domain": "software",
+              "path": "tables/entries/software-module-service-resource.md",
+              "href": "entries/tables-entries-software-module-service-resource.html",
+              "family_key": "tables/entries/software-module-service-resource.md",
+              "family_title": "Software Module, Service, and Resource"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-19",
+      "queries": [
+        {
+          "query": "danger hazard exposure harm risk vulnerability safety",
+          "match_count": 63,
+          "first_five": [
+            {
+              "title": "Hazard, Exposure, Harm, Vulnerability, and Safety",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/hazard-exposure-harm-safety.md",
+              "href": "entries/tables-entries-hazard-exposure-harm-safety.html",
+              "family_key": "tables/entries/hazard-exposure-harm-safety.md",
+              "family_title": "Hazard, Exposure, Harm, Vulnerability, and Safety"
+            },
+            {
+              "title": "Probability, Risk, and Uncertainty",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/probability-risk-uncertainty.md",
+              "href": "entries/tables-entries-probability-risk-uncertainty.html",
+              "family_key": "tables/entries/probability-risk-uncertainty.md",
+              "family_title": "Probability, Risk, and Uncertainty"
+            },
+            {
+              "title": "Prevention, Protection, Detection, Mitigation, Response, and Recovery Procedure",
+              "kind": "procedure",
+              "domain": "systems",
+              "path": "tables/procedures/risk-treatment-response.md",
+              "href": "entries/tables-procedures-risk-treatment-response.html",
+              "family_key": "tables/entries/hazard-exposure-harm-safety.md",
+              "family_title": "Hazard, Exposure, Harm, Vulnerability, and Safety"
+            },
+            {
+              "title": "Probability, Risk, and Uncertainty Relations",
+              "kind": "formula",
+              "domain": "quantities",
+              "path": "tables/formulas/probability-risk-uncertainty.md",
+              "href": "entries/tables-formulas-probability-risk-uncertainty.html",
+              "family_key": "tables/entries/probability-risk-uncertainty.md",
+              "family_title": "Probability, Risk, and Uncertainty"
+            },
+            {
+              "title": "Operating-Condition Composition Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "reference",
+              "path": "tables/diagnostics/operating-condition-failures.md",
+              "href": "entries/tables-diagnostics-operating-condition-failures.html",
+              "family_key": "tables/entries/scenario-assumption-condition-case.md",
+              "family_title": "Assumption, Condition, Scenario, Case, and Feasibility"
+            }
+          ]
+        },
+        {
+          "query": "ordinary safety statement",
+          "match_count": 55,
+          "first_five": [
+            {
+              "title": "Hazard, Exposure, Harm, Vulnerability, and Safety",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/hazard-exposure-harm-safety.md",
+              "href": "entries/tables-entries-hazard-exposure-harm-safety.html",
+              "family_key": "tables/entries/hazard-exposure-harm-safety.md",
+              "family_title": "Hazard, Exposure, Harm, Vulnerability, and Safety"
+            },
+            {
+              "title": "Assurance, Assessment, Audit, Certification, and Accreditation",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/assurance-assessment-audit-certification.md",
+              "href": "entries/tables-entries-assurance-assessment-audit-certification.html",
+              "family_key": "tables/entries/assurance-assessment-audit-certification.md",
+              "family_title": "Assurance, Assessment, Audit, Certification, and Accreditation"
+            },
+            {
+              "title": "Bounded-Question Composition and Evaluation Guide",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/bounded-question-composition-book-one.md",
+              "href": "entries/guides-bounded-question-composition-book-one.html",
+              "family_key": "guides/bounded-question-composition-book-one.md",
+              "family_title": "Bounded-Question Composition and Evaluation Guide"
+            },
+            {
+              "title": "Cost, Value, and Return Relations",
+              "kind": "formula",
+              "domain": "economics",
+              "path": "tables/formulas/cost-value-return.md",
+              "href": "entries/tables-formulas-cost-value-return.html",
+              "family_key": "tables/entries/cost-price-value-return.md",
+              "family_title": "Cost, Price, Value, Utility, and Return"
+            },
+            {
+              "title": "Electrical Field, Material, Storage, and Impedance Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "science",
+              "path": "tables/diagnostics/electrical-field-material-impedance-failures.md",
+              "href": "entries/tables-diagnostics-electrical-field-material-impedance-failures.html",
+              "family_key": "tables/entries/electrical-quantity.md",
+              "family_title": "Electrical Quantity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-20",
+      "queries": [
+        {
+          "query": "price cost affordability value benefit return",
+          "match_count": 113,
+          "first_five": [
+            {
+              "title": "Cost, Price, Value, Utility, and Return",
+              "kind": "entry",
+              "domain": "economics",
+              "path": "tables/entries/cost-price-value-return.md",
+              "href": "entries/tables-entries-cost-price-value-return.html",
+              "family_key": "tables/entries/cost-price-value-return.md",
+              "family_title": "Cost, Price, Value, Utility, and Return"
+            },
+            {
+              "title": "Cost, Value, and Return Relations",
+              "kind": "formula",
+              "domain": "economics",
+              "path": "tables/formulas/cost-value-return.md",
+              "href": "entries/tables-formulas-cost-value-return.html",
+              "family_key": "tables/entries/cost-price-value-return.md",
+              "family_title": "Cost, Price, Value, Utility, and Return"
+            },
+            {
+              "title": "Economic Basis, Inflation, and Net Present Value Failure Diagnostic",
+              "kind": "diagnostic",
+              "domain": "economics",
+              "path": "tables/diagnostics/economic-basis-inflation-npv-failures.md",
+              "href": "entries/tables-diagnostics-economic-basis-inflation-npv-failures.html",
+              "family_key": "tables/entries/cost-price-value-return.md",
+              "family_title": "Cost, Price, Value, Utility, and Return"
+            },
+            {
+              "title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/quantity-value-unit-conversion.md",
+              "href": "entries/tables-entries-quantity-value-unit-conversion.html",
+              "family_key": "tables/entries/quantity-value-unit-conversion.md",
+              "family_title": "Quantity Value, Numerical Value, Unit, Dimension, and Conversion"
+            },
+            {
+              "title": "Software Type, Value, and Function",
+              "kind": "entry",
+              "domain": "software",
+              "path": "tables/entries/software-type-value-function.md",
+              "href": "entries/tables-entries-software-type-value-function.html",
+              "family_key": "tables/entries/software-type-value-function.md",
+              "family_title": "Software Type, Value, and Function"
+            }
+          ]
+        },
+        {
+          "query": "compare purchase horizon priorities",
+          "match_count": 71,
+          "first_five": [
+            {
+              "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/choice-alternative-selection.md",
+              "href": "entries/tables-entries-choice-alternative-selection.html",
+              "family_key": "tables/entries/choice-alternative-selection.md",
+              "family_title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection"
+            },
+            {
+              "title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/causal-reasoning.md",
+              "href": "entries/tables-entries-causal-reasoning.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Probability, Risk, and Uncertainty",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/probability-risk-uncertainty.md",
+              "href": "entries/tables-entries-probability-risk-uncertainty.html",
+              "family_key": "tables/entries/probability-risk-uncertainty.md",
+              "family_title": "Probability, Risk, and Uncertainty"
+            },
+            {
+              "title": "Alternative Selection Decision Table",
+              "kind": "decision",
+              "domain": "reference",
+              "path": "tables/decisions/alternative-selection.md",
+              "href": "entries/tables-decisions-alternative-selection.html",
+              "family_key": "tables/entries/choice-alternative-selection.md",
+              "family_title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection"
+            },
+            {
+              "title": "Evaluation Measure, Scale, Criterion, and Score",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/evaluation-measure-scale-criterion.md",
+              "href": "entries/tables-entries-evaluation-measure-scale-criterion.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-21",
+      "queries": [
+        {
+          "query": "same mean different distribution spread",
+          "match_count": 123,
+          "first_five": [
+            {
+              "title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/statistical-summary-interval.md",
+              "href": "entries/tables-entries-statistical-summary-interval.html",
+              "family_key": "tables/entries/statistical-summary-interval.md",
+              "family_title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval"
+            },
+            {
+              "title": "Sample Arithmetic Mean",
+              "kind": "formula",
+              "domain": "reference",
+              "path": "tables/formulas/arithmetic-mean.md",
+              "href": "entries/tables-formulas-arithmetic-mean.html",
+              "family_key": "tables/entries/statistical-summary-interval.md",
+              "family_title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval"
+            },
+            {
+              "title": "Information, Data, Signal, and Noise",
+              "kind": "entry",
+              "domain": "information",
+              "path": "tables/entries/information-data-signal-noise.md",
+              "href": "entries/tables-entries-information-data-signal-noise.html",
+              "family_key": "tables/entries/information-data-signal-noise.md",
+              "family_title": "Information, Data, Signal, and Noise"
+            },
+            {
+              "title": "Information and Signal Measures",
+              "kind": "formula",
+              "domain": "information",
+              "path": "tables/formulas/information-signal-measures.md",
+              "href": "entries/tables-formulas-information-signal-measures.html",
+              "family_key": "tables/entries/information-data-signal-noise.md",
+              "family_title": "Information, Data, Signal, and Noise"
+            },
+            {
+              "title": "Temperature Scale Conversion",
+              "kind": "mapping",
+              "domain": "science",
+              "path": "tables/mappings/temperature-scales.md",
+              "href": "entries/tables-mappings-temperature-scales.html",
+              "family_key": "tables/entries/thermal-quantity.md",
+              "family_title": "Thermal Quantity"
+            }
+          ]
+        },
+        {
+          "query": "sample composition uncertainty consequence",
+          "match_count": 126,
+          "first_five": [
+            {
+              "title": "Probability, Risk, and Uncertainty Relations",
+              "kind": "formula",
+              "domain": "quantities",
+              "path": "tables/formulas/probability-risk-uncertainty.md",
+              "href": "entries/tables-formulas-probability-risk-uncertainty.html",
+              "family_key": "tables/entries/probability-risk-uncertainty.md",
+              "family_title": "Probability, Risk, and Uncertainty"
+            },
+            {
+              "title": "Alert and Outcome Feedback Composition Worksheet",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/alert-feedback-composition-worksheet.md",
+              "href": "entries/guides-alert-feedback-composition-worksheet.html",
+              "family_key": "guides/alert-feedback-composition-worksheet.md",
+              "family_title": "Alert and Outcome Feedback Composition Worksheet"
+            },
+            {
+              "title": "Amount, Concentration, and Composition",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/amount-concentration-composition.md",
+              "href": "entries/tables-entries-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Latency Claim Evidence Composition Worksheet",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/latency-evidence-composition-worksheet.md",
+              "href": "entries/guides-latency-evidence-composition-worksheet.html",
+              "family_key": "guides/latency-evidence-composition-worksheet.md",
+              "family_title": "Latency Claim Evidence Composition Worksheet"
+            },
+            {
+              "title": "Probability, Risk, and Uncertainty",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/probability-risk-uncertainty.md",
+              "href": "entries/tables-entries-probability-risk-uncertainty.html",
+              "family_key": "tables/entries/probability-risk-uncertainty.md",
+              "family_title": "Probability, Risk, and Uncertainty"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-22",
+      "queries": [
+        {
+          "query": "ratio fraction concentration amount scale",
+          "match_count": 152,
+          "first_five": [
+            {
+              "title": "Amount, Concentration, and Composition",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/amount-concentration-composition.md",
+              "href": "entries/tables-entries-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Aqueous Solution Amount-Concentration Guide",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/aqueous-solution-amount-concentration.md",
+              "href": "entries/guides-aqueous-solution-amount-concentration.html",
+              "family_key": "guides/aqueous-solution-amount-concentration.md",
+              "family_title": "Aqueous Solution Amount-Concentration Guide"
+            },
+            {
+              "title": "Amount, Concentration, and Composition Relations",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/amount-concentration-composition.md",
+              "href": "entries/tables-formulas-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Comparative Quantity",
+              "kind": "entry",
+              "domain": "quantities",
+              "path": "tables/entries/comparative-quantity.md",
+              "href": "entries/tables-entries-comparative-quantity.html",
+              "family_key": "tables/entries/comparative-quantity.md",
+              "family_title": "Comparative Quantity"
+            },
+            {
+              "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            }
+          ]
+        },
+        {
+          "query": "mixture serving mass volume",
+          "match_count": 65,
+          "first_five": [
+            {
+              "title": "Amount, Concentration, and Composition Relations",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/amount-concentration-composition.md",
+              "href": "entries/tables-formulas-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Mass Density",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/density.md",
+              "href": "entries/tables-formulas-density.html",
+              "family_key": "tables/entries/matter-load-measure.md",
+              "family_title": "Matter and Load Measure"
+            },
+            {
+              "title": "Chemical Entity, Substance, Compound Class, Mixture, and Solution",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/chemical-substance-classification.md",
+              "href": "entries/tables-entries-chemical-substance-classification.html",
+              "family_key": "tables/entries/chemical-substance-classification.md",
+              "family_title": "Chemical Entity, Substance, Compound Class, Mixture, and Solution"
+            },
+            {
+              "title": "Amount, Concentration, and Composition",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/amount-concentration-composition.md",
+              "href": "entries/tables-entries-amount-concentration-composition.html",
+              "family_key": "tables/entries/amount-concentration-composition.md",
+              "family_title": "Amount, Concentration, and Composition"
+            },
+            {
+              "title": "Mechanical Work, Energy, Power, and Torque",
+              "kind": "formula",
+              "domain": "science",
+              "path": "tables/formulas/mechanical-work-energy-power.md",
+              "href": "entries/tables-formulas-mechanical-work-energy-power.html",
+              "family_key": "tables/entries/work-energy-power.md",
+              "family_title": "Work, Energy, and Power"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-23",
+      "queries": [
+        {
+          "query": "natural green claim classification evidence",
+          "match_count": 134,
+          "first_five": [
+            {
+              "title": "Causal Claim Evidence Table",
+              "kind": "evidence",
+              "domain": "reference",
+              "path": "tables/evidence/causal-claim-evidence.md",
+              "href": "entries/tables-evidence-causal-claim-evidence.html",
+              "family_key": "tables/entries/causal-reasoning.md",
+              "family_title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution"
+            },
+            {
+              "title": "Claim and Evidence",
+              "kind": "entry",
+              "domain": "reference",
+              "path": "tables/entries/claim-evidence.md",
+              "href": "entries/tables-entries-claim-evidence.html",
+              "family_key": "tables/entries/claim-evidence.md",
+              "family_title": "Claim and Evidence"
+            },
+            {
+              "title": "Latency Claim Evidence Composition Worksheet",
+              "kind": "guide",
+              "domain": "application",
+              "path": "guides/latency-evidence-composition-worksheet.md",
+              "href": "entries/guides-latency-evidence-composition-worksheet.html",
+              "family_key": "guides/latency-evidence-composition-worksheet.md",
+              "family_title": "Latency Claim Evidence Composition Worksheet"
+            },
+            {
+              "title": "Observation-to-Inference Evidence Chain",
+              "kind": "evidence",
+              "domain": "reference",
+              "path": "tables/evidence/observation-inference-chain.md",
+              "href": "entries/tables-evidence-observation-inference-chain.html",
+              "family_key": "tables/entries/claim-evidence.md",
+              "family_title": "Claim and Evidence"
+            },
+            {
+              "title": "Assurance and Conformity Evidence Table",
+              "kind": "evidence",
+              "domain": "governance",
+              "path": "tables/evidence/assurance-conformity.md",
+              "href": "entries/tables-evidence-assurance-conformity.html",
+              "family_key": "tables/entries/assurance-assessment-audit-certification.md",
+              "family_title": "Assurance, Assessment, Audit, Certification, and Accreditation"
+            }
+          ]
+        },
+        {
+          "query": "environmental package threshold authority jurisdiction",
+          "match_count": 136,
+          "first_five": [
+            {
+              "title": "Evaluation Threshold and Acceptance Constraint Table",
+              "kind": "constraint",
+              "domain": "reference",
+              "path": "tables/constraints/evaluation-threshold-acceptance.md",
+              "href": "entries/tables-constraints-evaluation-threshold-acceptance.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            },
+            {
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "kind": "entry",
+              "domain": "organizations",
+              "path": "tables/entries/organization-role-authority.md",
+              "href": "entries/tables-entries-organization-role-authority.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            },
+            {
+              "title": "Access, Permission, Authorization, and Entitlement",
+              "kind": "entry",
+              "domain": "governance",
+              "path": "tables/entries/access-permission-authorization-entitlement.md",
+              "href": "entries/tables-entries-access-permission-authorization-entitlement.html",
+              "family_key": "tables/entries/access-permission-authorization-entitlement.md",
+              "family_title": "Access, Permission, Authorization, and Entitlement"
+            },
+            {
+              "title": "Agreement, Commitment, Obligation, Guarantee, and Contract Integrity",
+              "kind": "constraint",
+              "domain": "governance",
+              "path": "tables/constraints/agreement-commitment-integrity.md",
+              "href": "entries/tables-constraints-agreement-commitment-integrity.html",
+              "family_key": "tables/entries/governance-obligation-compliance.md",
+              "family_title": "Governance, Obligation, and Compliance"
+            },
+            {
+              "title": "Criterion, Preference, and Priority Decision Table",
+              "kind": "decision",
+              "domain": "reference",
+              "path": "tables/decisions/criterion-preference-priority.md",
+              "href": "entries/tables-decisions-criterion-preference-priority.html",
+              "family_key": "tables/entries/evaluation-measure-scale-criterion.md",
+              "family_title": "Evaluation Measure, Scale, Criterion, and Score"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packet_id": "QLD-02-24",
+      "queries": [
+        {
+          "query": "capacity container service resource workload",
+          "match_count": 78,
+          "first_five": [
+            {
+              "title": "Operational Resource, Capacity, Demand, and Allocation",
+              "kind": "entry",
+              "domain": "operations",
+              "path": "tables/entries/operational-resource-capacity-demand.md",
+              "href": "entries/tables-entries-operational-resource-capacity-demand.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Software Module, Service, and Resource",
+              "kind": "entry",
+              "domain": "software",
+              "path": "tables/entries/software-module-service-resource.md",
+              "href": "entries/tables-entries-software-module-service-resource.html",
+              "family_key": "tables/entries/software-module-service-resource.md",
+              "family_title": "Software Module, Service, and Resource"
+            },
+            {
+              "title": "Factor Role to Mechanism Crosswalk",
+              "kind": "mapping",
+              "domain": "reference",
+              "path": "tables/mappings/factor-role-mechanisms.md",
+              "href": "entries/tables-mappings-factor-role-mechanisms.html",
+              "family_key": "tables/entries/factorization-quality.md",
+              "family_title": "Factorization Quality"
+            },
+            {
+              "title": "Queue, Backlog, Priority, Scheduling, and Service-Order Procedure",
+              "kind": "procedure",
+              "domain": "operations",
+              "path": "tables/procedures/queue-service-order.md",
+              "href": "entries/tables-procedures-queue-service-order.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Resource Allocation, Reservation, and Shortage Procedure",
+              "kind": "procedure",
+              "domain": "operations",
+              "path": "tables/procedures/resource-allocation.md",
+              "href": "entries/tables-procedures-resource-allocation.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            }
+          ]
+        },
+        {
+          "query": "volume rate resources human capability",
+          "match_count": 149,
+          "first_five": [
+            {
+              "title": "Capability",
+              "kind": "role",
+              "domain": "structure",
+              "path": "tables/roles/capability.md",
+              "href": "entries/tables-roles-capability.html",
+              "family_key": "tables/roles/capability.md",
+              "family_title": "Capability"
+            },
+            {
+              "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+              "kind": "entry",
+              "domain": "science",
+              "path": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html",
+              "family_key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+              "family_title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst"
+            },
+            {
+              "title": "System Composition, Architecture, Capability, Interface, and Dependency",
+              "kind": "entry",
+              "domain": "systems",
+              "path": "tables/entries/system-composition-dependency.md",
+              "href": "entries/tables-entries-system-composition-dependency.html",
+              "family_key": "tables/entries/system-composition-dependency.md",
+              "family_title": "System Composition, Architecture, Capability, Interface, and Dependency"
+            },
+            {
+              "title": "Operational Resource, Capacity, Demand, and Allocation",
+              "kind": "entry",
+              "domain": "operations",
+              "path": "tables/entries/operational-resource-capacity-demand.md",
+              "href": "entries/tables-entries-operational-resource-capacity-demand.html",
+              "family_key": "tables/entries/operational-resource-capacity-demand.md",
+              "family_title": "Operational Resource, Capacity, Demand, and Allocation"
+            },
+            {
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "kind": "entry",
+              "domain": "organizations",
+              "path": "tables/entries/organization-role-authority.md",
+              "href": "entries/tables-entries-organization-role-authority.html",
+              "family_key": "tables/entries/organization-role-authority.md",
+              "family_title": "Organization, Role, Responsibility, Authority, and Accountability"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
