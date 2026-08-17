@@ -1025,3 +1025,24 @@ The thirteen-role plan review found zero P1 blockers, thirty-two P2 closure
 conditions, and eight P3 notes. The Product Owner decision is proceed under a
 two-owner, seven-view ceiling. Internal rehearsal may establish structure and
 mechanics only; it cannot establish real-world feasibility or reader value.
+
+## F71-F80 scenario and operational closure result
+
+F71-F80 add separate Scenario/Condition/Feasibility and Operational
+Resource/Capacity owners plus seven views rather than ten phase-labelled
+entries. The reader route composes scenario comparison and evidence,
+trade-off/conflict, feasibility gates, allocation, dependency/critical path,
+and compatibility/substitution. Five neutral tasks cover all nine admitted
+paths.
+
+The fixed point contains 50 entries, 395 senses, 596 factors, 89 views, and
+150 assurance bindings at reference SHA-256
+`ac1468a1731290ccba842a11e976f352287046abb93caf3e59d176e251bcc445`
+and assurance SHA-256
+`732393fd7986ef151349842631e56adaa752c527275e7b8ab2e31ba9fda1c3ac`.
+The relation sidecar remains eleven records. The 88-record Factor Forge delta
+and 48 tasks produce a 166-record book with 174 searchable destinations,
+seventeen chapters, 223 pages, and zero missing targets. The Product Owner
+decision is continue to F81-F90 under an owner-first merge/defer budget.
+Internal checks establish structure and mechanics only, not real-world
+feasibility, reader value, or publication readiness.

@@ -545,8 +545,67 @@ sources, derivation, implementation, source and target frames, gaps,
 limitations, authority, disposition, decision/action boundary, invalidation,
 and prohibited generalizations.
 
+## Task AY - The scenario became a forecast
+
+A team bundles assumptions about demand, staffing, weather, and supplier
+behavior into a “likely case.” It compares the case with an old benchmark from
+another population, calls a modeled counterfactual an observed control, and
+reports the scenario output as a confident forecast.
+
+Use the Scenario anchor, Comparison Mapping, and Applicability Evidence view
+to separate facts, assumptions, conditions, scenarios, cases, benchmarks,
+controls, counterfactuals, uncertainty, correspondence, adjustment, and
+prohibited claims.
+
+## Task AZ - The highest score must be feasible
+
+One option dominates an aggregate score but violates an admissibility rule,
+depends on an unresolved prerequisite, and requires capacity unavailable in
+the selected scenario. A soft gain compensates for a hard conflict, and
+“eligible,” “admissible,” “feasible,” and “sufficient” are treated as synonyms.
+
+Use the Trade-off/Dominance Decision and Feasibility/Sufficiency Constraint
+views to preserve statuses, hard rules, conflicts, incomparability, resources,
+dependencies, evidence, authority, and unresolved state before recommendation.
+
+## Task BA - Eighty percent of what capacity?
+
+A dashboard reports `80% utilization` by dividing average served work by a
+peak capacity measured under different conditions and windows. Aggregate spare
+capacity hides a local bottleneck; demand, presented load, backlog, throughput,
+and resource stock are used interchangeably.
+
+Use the Operational Resource anchor to state resource identity, capability,
+capacity basis, conditions, service level, units, window, demand, load,
+backlog, numerator, denominator, bottleneck, uncertainty, and provenance.
+
+## Task BB - Reserved means available
+
+The same exclusive resource is reserved for overlapping uses, a supplier
+commitment is recorded as delivered capacity, consumption has no release or
+replenishment event, and unmet requests disappear from the denominator. A
+delayed prerequisite shifts the critical path, but the plan retains its old
+path label.
+
+Use the Resource Allocation Procedure and Dependency/Critical-Path Diagnostic
+to reconstruct request, policy, reservation, commitment, allocation, use,
+release, shortage, dependency direction, graph, lags, resources, ties,
+sensitivity, and residual obligation.
+
+## Task BC - Compatible means interchangeable
+
+A substitute matches an interface name but provides different quantity,
+quality, location, timing, authority, and failure behavior. It works in one
+direction for a narrow use, yet the feasibility record closes every shortage
+and calls the two resources equivalent everywhere.
+
+Use the Compatibility/Substitution Mapping with both new anchors to preserve
+exact role, direction, domain, quantity, quality, timing, dependencies,
+authority, loss, inverse limits, residual shortage, scenario, and conditional
+feasibility.
+
 ## Rehearsal boundary
 
-The forty-three prompts collectively exercise every entry and specialized view in the
+The forty-eight prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

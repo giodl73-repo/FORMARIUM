@@ -508,6 +508,45 @@ final selection.
   disposition, action boundary, invalidation, and prohibited claims remain
   separate.
 
+## Task AY expected route
+
+- Assumption, Condition, Scenario, Case, and Feasibility;
+- Scenario Comparison Mapping;
+- Scenario Evidence, Confidence, and Applicability Table;
+- facts, assumptions, conditions, scenario, case, benchmark, control,
+  counterfactual, uncertainty, correspondence, adjustment, and claim boundary
+  remain separate.
+
+## Task AZ expected route
+
+- Trade-off, Compensation, Dominance, and Conflict Decision Table;
+- Eligibility, Admissibility, Feasibility, and Sufficiency Constraint Table;
+- membership, rule acceptance, practical possibility, sufficiency, hard
+  conflict, incomparability, resource, dependency, evidence, and authority
+  remain explicit.
+
+## Task BA expected route
+
+- Operational Resource, Capacity, Demand, and Allocation;
+- resource, capability, capacity basis, conditions, unit, window, demand,
+  load, backlog, utilization numerator/denominator, bottleneck, uncertainty,
+  and provenance remain distinct.
+
+## Task BB expected route
+
+- Resource Allocation, Reservation, and Shortage Procedure;
+- Dependency, Prerequisite, Blocker, Enabler, and Critical-Path Diagnostic;
+- request, reservation, commitment, allocation, use, release, shortage,
+  dependency direction, graph, lags, resources, ties, and residual remain
+  reconstructable.
+
+## Task BC expected route
+
+- Compatibility, Conflict, Substitution, and Interchangeability Mapping;
+- both new anchors;
+- role, direction, domain, quantity, quality, location, timing, authority,
+  loss, inverse, residual shortage, scenario, and feasibility remain scoped.
+
 Critical artifact failure: any route treats a representation, pass flag,
 percentage, date, matching field, login, certificate, or plan as universal
 proof of meaning, validity, dependability, authority, assurance, or outcome.
@@ -517,6 +556,9 @@ path, a diagram proves mechanism, or a lossy projection replaces its source.
 The F61-F70 routes fail critically if a display defines its own meaning,
 normalization creates comparability, rank preserves distance, a threshold
 proves broad quality, or internal rehearsal establishes reader value.
+The F71-F80 routes fail critically if a scenario becomes a forecast,
+feasibility becomes preference or success, a reservation becomes availability,
+aggregate capacity erases a bottleneck, or compatibility becomes identity.
 
 ## Exact task-coverage manifest
 
@@ -602,6 +644,15 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/diagnostics/evaluation-sensitivity.md`
 - `tables/evidence/evaluation-applicability.md`
 - `tables/procedures/evaluation-review-disposition.md`
+- `tables/entries/scenario-assumption-condition-case.md`
+- `tables/mappings/scenario-comparison.md`
+- `tables/evidence/scenario-applicability.md`
+- `tables/decisions/tradeoff-dominance-conflict.md`
+- `tables/constraints/feasibility-sufficiency.md`
+- `tables/entries/operational-resource-capacity-demand.md`
+- `tables/procedures/resource-allocation.md`
+- `tables/diagnostics/dependency-critical-path.md`
+- `tables/mappings/compatibility-substitution.md`
 
 ## Claim boundary
 

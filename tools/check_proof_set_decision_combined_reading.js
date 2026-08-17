@@ -9,7 +9,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json")
 const home = fs.readFileSync(path.join(siteRoot, "index.html"), "utf8");
 const guideName = "guides-evidence-informed-intervention-choice.html";
 const guide = fs.readFileSync(path.join(siteRoot, "entries", guideName), "utf8");
-const digest = "d3facaab829b7d9186741078a7bc6e4804fa8ef139c2e74fdee3a6f4b735c24d";
+const digest = "bcdd6eae3f7f555102f9dd9d7cf902fb03a482655d48f24b92dd8df1ebca3991";
 
 assert.equal(manifest.site_checks.problem_led_targets, 6,
   "six problem-led destinations remain");

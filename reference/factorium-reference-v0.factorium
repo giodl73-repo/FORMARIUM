@@ -647,6 +647,31 @@ factor impulse-interval-and-external-force-aggregation | impulse interval and ex
 factor open-system-transfer-or-fixed-membership-scope | open-system transfer or fixed-membership scope
 factor unit-system | unit system
 end-entry
+entry operational-resource-capacity-demand | Operational Resource, Capacity, Demand, and Allocation | operations | candidate | tables/entries/operational-resource-capacity-demand.md | Operational resources provide capability or stock for work and outcomes. Capacity, demand, load, utilization, allocation, reservation, commitment, consumption, and shortage retain exact quantity, quality, time, policy, dependency, and evidence roles.
+sense operational-resource | operational resource
+sense capacity | capacity
+sense demand | demand
+sense load | load
+sense utilization | utilization
+sense allocation | allocation
+sense reservation | reservation
+sense resource-commitment | resource commitment
+sense consumption | consumption
+sense shortage | shortage
+factor intended-outcome-activity-and-system-boundary | intended outcome, activity, and system boundary
+factor resource-identity-kind-owner-authority-and-location | resource identity, kind, owner, authority, and location
+factor capability-quantity-unit-or-scale-quality-and-compatibility | capability, quantity, unit or scale, quality, and compatibility
+factor capacity-definition-conditions-time-basis-and-service-level | capacity definition, conditions, time basis, and service level
+factor demand-source-quantity-or-rate-timing-priority-and-uncertainty | demand source, quantity or rate, timing, priority, and uncertainty
+factor presented-load-eligible-load-backlog-and-distribution | presented load, eligible load, backlog, and distribution
+factor allocation-policy-recipient-amount-interval-and-preemption | allocation policy, recipient, amount, interval, and preemption
+factor reservation-commitment-exclusivity-expiration-and-release | reservation, commitment, exclusivity, expiration, and release
+factor consumption-occupation-transformation-replenishment-and-recovery | consumption, occupation, transformation, replenishment, and recovery
+factor utilization-numerator-denominator-window-and-aggregation | utilization numerator, denominator, window, and aggregation
+factor bottleneck-dependency-substitution-and-transfer-loss | bottleneck, dependency, substitution, and transfer loss
+factor shortage-deferred-demand-residual-capacity-and-consequence | shortage, deferred demand, residual capacity, and consequence
+factor observation-forecast-plan-actual-reconciliation-and-provenance | observation, forecast, plan, actual, reconciliation, and provenance
+end-entry
 entry organization-role-authority | Organization, Position, Role, Competency, Responsibility, Authority, and Accountability | organizations | candidate | tables/entries/organization-role-authority.md | An organization coordinates actors and resources toward purposes. A position is a continuing work assignment; a role groups expected functions; competency is a work-capability criterion. Responsibility, authority, accountability, delegation, ownership, stewardship, and custody remain distinct.
 sense organization | organization
 sense position | position
@@ -822,6 +847,32 @@ factor measurement-processing-linkage-and-missingness-error | measurement, proce
 factor source-target-differences-heterogeneity-and-support-overlap | source-target differences, heterogeneity, and support overlap
 factor generalization-or-transport-assumptions-and-evidence | generalization or transport assumptions and evidence
 factor provenance-limitations-and-revision | provenance, limitations, and revision
+end-entry
+entry scenario-assumption-condition-case | Assumption, Condition, Scenario, Case, and Feasibility | reference | candidate | tables/entries/scenario-assumption-condition-case.md | Assumptions are provisional premises; conditions qualify claims and results; scenarios configure coherent possibility frames; cases identify exact subjects. Eligibility, admissibility, feasibility, and sufficiency remain distinct, conditional statuses rather than predictions, preferences, selections, or outcomes.
+sense assumption | assumption
+sense condition | condition
+sense scenario | scenario
+sense case | case
+sense counterfactual | counterfactual
+sense benchmark-comparison | benchmark comparison
+sense control-comparison | control comparison
+sense eligibility | eligibility
+sense admissibility | admissibility
+sense feasibility | feasibility
+sense sufficiency | sufficiency
+factor reader-question-purpose-and-decision-horizon | reader question, purpose, and decision horizon
+factor exact-case-subject-alternative-and-version | exact case, subject, alternative, and version
+factor source-state-factual-or-reference-frame-and-comparison-role | source state, factual or reference frame, and comparison role
+factor assumptions-conditions-events-developments-and-dependencies | assumptions, conditions, events, developments, and dependencies
+factor scenario-inclusion-rule-coherence-coverage-and-invalid-combinations | scenario inclusion rule, coherence, coverage, and invalid combinations
+factor evidence-status-source-confidence-uncertainty-and-applicability | evidence status, source, confidence, uncertainty, and applicability
+factor benchmark-control-counterfactual-matching-and-adjustment-basis | benchmark, control, counterfactual, matching, and adjustment basis
+factor requirements-eligibility-admissibility-and-sufficiency-criteria | requirements, eligibility, admissibility, and sufficiency criteria
+factor resource-capacity-demand-allocation-and-time-conditions | resource, capacity, demand, allocation, and time conditions
+factor compatibility-prerequisite-blocker-enabler-and-substitution-conditions | compatibility, prerequisite, blocker, enabler, and substitution conditions
+factor feasible-infeasible-conditional-unresolved-or-out-of-scope-result | feasible, infeasible, conditional, unresolved, or out-of-scope result
+factor sensitivity-alternate-scenarios-residuals-and-stop-reason | sensitivity, alternate scenarios, residuals, and stop reason
+factor authority-provenance-review-revision-and-invalidation | authority, provenance, review, revision, and invalidation
 end-entry
 entry software-module-service-resource | Software Module, Service, and Resource | software | candidate | tables/entries/software-module-service-resource.md | A module groups and scopes software declarations; a service provides access to capabilities through an interface under descriptions, constraints, and policies; a resource is an identified subject exposed or managed under target-system interaction and lifecycle semantics. Files, endpoints, representations, manifests, and deployments remain mechanisms rather than definitions.
 sense module | module
@@ -1046,6 +1097,8 @@ view constraint-evaluation-threshold-acceptance | evaluation-measure-scale-crite
 end-view
 view constraint-factor-interaction-integrity | decomposition-modes-combination-contracts | interaction,combination-contract,decomposition-mode | constraint | Factor Interaction Integrity Constraint Table | tables/constraints/factor-interaction-integrity.md | Requires exact factor identity, dependence, interaction semantics, operator domain, invalid combinations, and residual limits before joint behavior is interpreted.
 end-view
+view constraint-feasibility-sufficiency | scenario-assumption-condition-case | eligibility,admissibility,feasibility,sufficiency,case,scenario | constraint | Eligibility, Admissibility, Feasibility, and Sufficiency Constraint Table | tables/constraints/feasibility-sufficiency.md | Separates membership, rule acceptance, practical possibility, and purpose-bounded adequacy while retaining exact case, scenario, requirements, resources, dependencies, evidence, authority, and unresolved state.
+end-view
 view constraint-policy-constraints | policy-rule-constraint-decision-exception | constraint,review,appeal | constraint | Policy Constraint Table | tables/constraints/policy-constraints.md | Version, evidence, authority, bounded exceptions, output separation, enforcement, audit, review independence, appeal integrity, and disposition separation remain explicit policy-evaluation invariants.
 end-view
 view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,architecture,architecture-description,capability,boundary,environment,interface,dependency | constraint | System Composition and Architecture Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves entity, architecture, description, viewpoint/view, contextual subsystem role, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and cross-view consistency as distinct obligations.
@@ -1056,6 +1109,8 @@ view decision-criterion-preference-priority | evaluation-measure-scale-criterion
 end-view
 view decision-policy-decision | policy-rule-constraint-decision-exception | decision | decision | Policy Decision Table | tables/decisions/policy-decision.md | Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate.
 end-view
+view decision-tradeoff-dominance-conflict | scenario-assumption-condition-case | scenario,feasibility,sufficiency | decision | Trade-off, Compensation, Dominance, and Conflict Decision Table | tables/decisions/tradeoff-dominance-conflict.md | Distinguishes trade-off, compensation, dominance, conflict, and incomparability under exact alternatives, scenarios, criteria, directions, constraints, preferences, uncertainty, and authority.
+end-view
 view diagnostic-chemical-reaction-failures | chemical-reaction-stoichiometry-equilibrium | chemical-reaction,reaction-equation,reactant,product,stoichiometric-number,stoichiometry,reaction-extent,reaction-rate,rate-law,chemical-equilibrium,equilibrium-constant,thermodynamic-activity,catalyst,reaction-mechanism,reaction-intermediate | diagnostic | Chemical Reaction Failure Diagnostic | tables/diagnostics/chemical-reaction-failures.md | Maps process/representation, role, stoichiometric, progress, rate, equilibrium, catalyst, mechanism, and taxonomy-boundary symptoms to discriminating checks without treating balance, fit, or stasis as proof.
 end-view
 view diagnostic-chemical-substance-classification-failures | chemical-substance-classification | chemical-element,chemical-entity,atom,molecule,ion,chemical-species,chemical-substance,chemical-compound,formula-unit,compound-class,classification-criterion,mixture,chemical-solution | diagnostic | Chemical Classification Failure Diagnostic | tables/diagnostics/chemical-substance-classification-failures.md | Maps level, composition, charge, representation, class-criterion, constituent, phase, and taxonomy-boundary defects to candidate causes and discriminating checks without turning named examples into canonical chemical catalogs.
@@ -1065,6 +1120,8 @@ end-view
 view diagnostic-coordinated-work-failures | coordinated-work | plan,task,work-milestone,workflow,orchestration,choreography,concurrency,compensation | diagnostic | Coordinated Work Failure Diagnostic | tables/diagnostics/coordinated-work-failures.md | Maps planning, task, milestone, stalls, duplicates, conflicts, and partial-completion effects to candidate coordination causes and discriminating tests without assuming one engine, controller, or recovery mechanism.
 end-view
 view diagnostic-dependability-failures | dependability-reliability-availability-resilience | reliability,availability,maintainability,resilience,recovery,failure | diagnostic | Dependability Failure Diagnostic | tables/diagnostics/dependability-failures.md | Maps measurement, dependency, maintenance, adversity, recovery-time, recovery-data, and user-boundary symptoms to discriminating checks without treating one metric as universal dependability.
+end-view
+view diagnostic-dependency-critical-path | operational-resource-capacity-demand | operational-resource,capacity,demand,shortage | diagnostic | Dependency, Prerequisite, Blocker, Enabler, and Critical-Path Diagnostic | tables/diagnostics/dependency-critical-path.md | Diagnoses start failures, stalls, bottlenecks, blockers, enablers, and critical paths while retaining direction, graph, lags, resources, uncertainty, ties, alternate paths, and result-relative scope.
 end-view
 view diagnostic-economic-basis-inflation-npv-failures | cost-price-value-return | explicit-cost,opportunity-cost,price,assessed-value,utility,dollar-return,rate-of-return,present-value,accounting-basis,inflation,net-present-value | diagnostic | Economic Basis, Inflation, and Net Present Value Failure Diagnostic | tables/diagnostics/economic-basis-inflation-npv-failures.md | Maps recognition, basis-change, price-index, interval, price-level conversion, cash-flow timing, discounting, sensitivity, and decision-claim symptoms to discriminating checks without treating an accounting result, inflation estimate, or NPV as universal economic truth or advice.
 end-view
@@ -1112,6 +1169,8 @@ view evidence-observation-inference-chain | claim-evidence | claim,evidence-item
 end-view
 view evidence-requirement-verification-validation | requirement-specification-verification-validation | stakeholder-need,requirement,specification,verification,validation,nonconformity | evidence | Requirement Verification and Validation Evidence Table | tables/evidence/requirement-verification-validation.md | Keeps requirements, specifications, product configurations, criteria, methods, evidence, verification, intended-use validation, nonconformity, exceptions, and limitations separately traceable.
 end-view
+view evidence-scenario-applicability | scenario-assumption-condition-case | assumption,condition,scenario,case,feasibility | evidence | Scenario Evidence, Confidence, and Applicability Table | tables/evidence/scenario-applicability.md | Binds cases, assumptions, conditions, scenarios, comparisons, requirements, resources, dependencies, and conditional feasibility to exact evidence status, uncertainty, applicability, limitations, and prohibited generalizations.
+end-view
 view formula-amount-concentration-composition | amount-concentration-composition | entity-count,amount-of-substance,amount-concentration,mass-concentration,amount-fraction,mass-fraction,volume-fraction,molar-mass | formula | Amount, Concentration, and Composition Relations | tables/formulas/amount-concentration-composition.md | These relations connect count, amount, concentration, composition fraction, molar mass, and mass/amount composition-basis conversions while preserving entity, component set, boundary, unit, weighting, and closure contracts.
 end-view
 view formula-arithmetic-mean | statistical-summary-interval | arithmetic-mean | formula | Sample Arithmetic Mean | tables/formulas/arithmetic-mean.md | The sample arithmetic mean summarizes equally weighted numerical observations by dividing their sum by their count. It is a statistic computed from the selected sample; whether it usefully represents location or estimates a population quantity depends on sampling and distribution conditions.
@@ -1156,6 +1215,8 @@ view formula-thermal-quantities | thermal-quantity | temperature,thermal-equilib
 end-view
 view mapping-basis-transformation | decomposition-modes-combination-contracts | basis-transformation,projection,combination-contract | mapping | Basis Transformation Mapping | tables/mappings/basis-transformation.md | Audits source and target bases, direction, domain, transformation, invariants, inverse, round-trip limits, and loss without assuming every semantic mapping is linear or invertible.
 end-view
+view mapping-compatibility-substitution | operational-resource-capacity-demand | operational-resource,capacity,demand,shortage | mapping | Compatibility, Conflict, Substitution, and Interchangeability Mapping | tables/mappings/compatibility-substitution.md | Separates compatibility, conflict, substitution, interchangeability, and purpose-equivalence while retaining direction, domain, quantity, quality, timing, authority, inverse limits, and loss.
+end-view
 view mapping-data-structure | information-data-signal-noise | semantic-information,data,record,schema,field,encoding | mapping | Data Structure Mapping | tables/mappings/data-structure.md | Maps record, schema, field, value, and link roles to common data mechanisms while preserving identity, authority, interpretation, cardinality, missingness, evolution, provenance, and loss.
 end-view
 view mapping-evaluation-comparison-frame | evaluation-measure-scale-criterion | evaluation-frame,baseline,comparator,target,tolerance | mapping | Evaluation Comparison Frame Mapping | tables/mappings/evaluation-comparison-frame.md | Maps baseline, comparator, reference, target, and tolerance roles across declared subject, population, context, time, method, unit/scale, uncertainty, authority, and loss boundaries.
@@ -1171,6 +1232,8 @@ end-view
 view mapping-organizational-assignment-semantics | organization-role-authority | organization,position,organizational-role,competency,responsibility,authority,accountability-answerability,action-accountability,delegation,ownership-stewardship | mapping | Organizational Assignment Semantics | tables/mappings/organizational-assignment-semantics.md | Maps organization, position, role, competency, responsibility, authority, accountability, delegation, ownership, stewardship, and custody to records while preserving contextual, partial, many-to-many semantics and non-equivalence.
 end-view
 view mapping-perspective-projection | model-representation-simulation | model,representation,simulation-result | mapping | Perspective and Projection Mapping | tables/mappings/perspective-projection.md | Maps a source subject or model into a purpose-specific view while retaining direction, identity, selection, derivation, loss, reconstruction limits, and source-change invalidation.
+end-view
+view mapping-scenario-comparison | scenario-assumption-condition-case | scenario,counterfactual,benchmark-comparison,control-comparison,case | mapping | Scenario Comparison Mapping | tables/mappings/scenario-comparison.md | Maps alternative, historical, external, normative, control, and counterfactual frames while preserving case identity, population, time, method, conditions, adjustment, uncertainty, correspondence, and loss.
 end-view
 view mapping-software-architecture-mechanisms | software-module-service-resource | module,service,resource | mapping | Software Architecture Mechanisms | tables/mappings/software-architecture-mechanisms.md | Maps module, service, and resource concepts into bounded language, SOA, HTTP, and Kubernetes mechanisms while preserving namespace, capability-access, resource, representation, state, lifecycle, and non-equivalence distinctions.
 end-view
@@ -1195,6 +1258,8 @@ end-view
 view procedure-evaluation-review-disposition | evaluation-measure-scale-criterion | evaluation-result,evaluation-frame,criterion,score | procedure | Evaluation Review and Disposition Procedure | tables/procedures/evaluation-review-disposition.md | Reconstructs and challenges an evaluation before issuing a scoped, authority-bound disposition while retaining evidence gaps, limitations, history, and invalidation triggers.
 end-view
 view procedure-planned-work | coordinated-work | plan,task,work-milestone,workflow,orchestration,choreography,concurrency,compensation | procedure | Planned Work Procedure | tables/procedures/planned-work.md | Frames outcomes, decomposes tasks, connects dependencies, allocates resources, defines milestones, preserves baselines, records actuals, and governs review without treating a plan as prediction.
+end-view
+view procedure-resource-allocation | operational-resource-capacity-demand | operational-resource,capacity,demand,load,allocation,reservation,resource-commitment,consumption,shortage | procedure | Resource Allocation, Reservation, and Shortage Procedure | tables/procedures/resource-allocation.md | Admits, assigns, reserves, commits, consumes, releases, and reconciles resource claims while preserving capacity basis, timing, exclusivity, policy, actual use, residual supply, and unmet demand.
 end-view
 view reference-value-si-defining-constants | physical-constant | defining-constant | reference-value | SI Defining Constants | tables/values/si-defining-constants.md | Exact SI defining values retain their quantities, symbols, units, defining status, authority, and scope.
 end-view

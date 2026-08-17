@@ -410,24 +410,24 @@ non-sensitive synthetic scenarios.
 
 ## Immediate execution order
 
-Factor Forge F51-F70 is complete at the candidate-content layer. The factoring
+Factor Forge F51-F80 is complete at the candidate-content layer. The factoring
 grammar makes combination contracts explicit; the evaluation grammar makes an
 unfamiliar score reconstructable through comparison frame, scale, criteria,
 aggregation, threshold, sensitivity, applicability, and disposition. The
-current fixed point is 48 entries and 82 views with an empty generated
-unresolved list. The Product Owner's F70 decision is continue under an
-owner-first merge/defer budget; internal rehearsal does not establish reader
-value.
+scenario/operational grammar makes feasibility conditional on assumptions,
+requirements, capacity, demand, allocation, dependencies, compatibility, and
+unresolved shortage. The current fixed point is 50 entries and 89 views with
+an empty generated unresolved list. Internal rehearsal does not establish
+real-world feasibility or reader value.
 
-1. build and fixed-point review F71-F80 scenario and operational closure;
-2. build and fixed-point review F81-F90 interaction and operating conditions;
-3. build and fixed-point review F91-F100 composition and Book One capstone;
-4. continue internal Proof Set simulation preflights across every batch while
+1. build and fixed-point review F81-F90 interaction and operating conditions;
+2. build and fixed-point review F91-F100 composition and Book One capstone;
+3. continue internal Proof Set simulation preflights across every batch while
    keeping software subordinate to canonical books and Factor Tables;
-5. when readers become available, close The Sieve, forward-apply its findings,
+4. when readers become available, close The Sieve, forward-apply its findings,
    and run the Proof Set private preview on a frozen proof edition;
-6. expand toward and gate the approximately 250-entry substantial volume;
-7. freeze and adversarially test the Composition Query, Closure Policy,
+5. expand toward and gate the approximately 250-entry substantial volume;
+6. freeze and adversarially test the Composition Query, Closure Policy,
     working-graph, Evaluation, and flattened Factor Guide contracts;
-8. begin Workbench implementation only against those proven reference and
+7. begin Workbench implementation only against those proven reference and
     closure contracts.

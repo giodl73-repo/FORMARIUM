@@ -490,6 +490,50 @@ derivation, and source-to-target gap. The Procedure reconstructs, challenges,
 bounds, and dispositions the result while keeping recommendation, decision,
 action, authority, history, and invalidation separate.
 
+## Part XVI - Can this option work?
+
+### From assumptions to a comparable scenario
+
+158. [Assumption, Condition, Scenario, Case, and Feasibility](../../tables/entries/scenario-assumption-condition-case.md)
+159. [Scenario Comparison Mapping](../../tables/mappings/scenario-comparison.md)
+160. [Scenario Evidence, Confidence, and Applicability Table](../../tables/evidence/scenario-applicability.md)
+
+The anchor separates assumptions, conditions, scenarios, cases,
+counterfactuals, comparisons, eligibility, admissibility, feasibility, and
+sufficiency. The Mapping and Evidence views preserve frame correspondence,
+epistemic status, uncertainty, adjustment, applicability, and loss without
+turning a scenario into a forecast or a counterfactual into an observed fact.
+
+### From preference to a feasibility gate
+
+161. [Trade-off, Compensation, Dominance, and Conflict Decision Table](../../tables/decisions/tradeoff-dominance-conflict.md)
+162. [Eligibility, Admissibility, Feasibility, and Sufficiency Constraint Table](../../tables/constraints/feasibility-sufficiency.md)
+
+The Decision view distinguishes trade-offs, compensation, dominance,
+conflict, and incomparability under exact scenarios and authorities. The
+Constraint view keeps membership, rule acceptance, practical possibility, and
+purpose-bounded adequacy as separate statuses.
+
+### From a resource label to a capacity ledger
+
+163. [Operational Resource, Capacity, Demand, and Allocation](../../tables/entries/operational-resource-capacity-demand.md)
+164. [Resource Allocation, Reservation, and Shortage Procedure](../../tables/procedures/resource-allocation.md)
+
+The anchor separates resource, capacity, demand, load, utilization,
+allocation, reservation, commitment, consumption, and shortage. The Procedure
+reconciles claims and events without treating a plan, reservation, or
+commitment as actual availability or delivered outcome.
+
+### From a dependency label to an operational limit
+
+165. [Dependency, Prerequisite, Blocker, Enabler, and Critical-Path Diagnostic](../../tables/diagnostics/dependency-critical-path.md)
+166. [Compatibility, Conflict, Substitution, and Interchangeability Mapping](../../tables/mappings/compatibility-substitution.md)
+
+The Diagnostic localizes start failures, stalls, bottlenecks, blockers, and
+critical paths under exact graphs and resource assumptions. The Mapping view
+preserves directional, partial, conditional, quantity-limited, and lossy
+substitution rather than treating compatibility as identity or equivalence.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -498,5 +542,5 @@ action, authority, history, and invalidation separate.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 157-record combined simulation remains a rehearsal projection, not a
+- The 166-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

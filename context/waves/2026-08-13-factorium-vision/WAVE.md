@@ -2159,3 +2159,30 @@ scope, substitution loss, and unresolved shortage. Stop before automated
 feasibility judgment, named scenario or resource catalogs, new typed
 relations, or reader-value claims. Detailed closure tests are in
 `F71-F80-SCENARIO-OPERATIONAL-CLOSURE-ROLE-REVIEW.md`.
+
+Result review: F71-F80 add separate Scenario/Condition/Feasibility and
+Operational Resource/Capacity anchors plus seven views for comparison,
+evidence, trade-off/conflict, feasibility gates, allocation,
+dependency/critical path, and compatibility/substitution. Five neutral tasks
+cover every admitted path. The Product Owner decision is continue to F81-F90
+with an owner-first merge/defer budget; no real-world feasibility or reader
+claim is admitted.
+
+The canonical fixed point has 50 entries, 395 senses, 596 factors, 89 views,
+zero unresolved candidates, and 150 exact assurance bindings. Reference
+SHA-256 is
+`ac1468a1731290ccba842a11e976f352287046abb93caf3e59d176e251bcc445`;
+assurance SHA-256 is
+`732393fd7986ef151349842631e56adaa752c527275e7b8ab2e31ba9fda1c3ac`.
+The eleven-relation sidecar is unchanged and all query fixtures migrate to the
+new exact reference identity.
+
+The Factor Forge delta is 88 records—30 entries and 58 views—and 48 tasks
+cover every path. The regenerated 204-source `sim-29` edition indexes 174
+destinations in seventeen chapters and renders 223 pages with zero missing
+targets. Site identity is
+`693f0005f00c37b0823ce966b37ac9b558349f3a42a7e17f4fbd7a6c6d44c3f7`;
+standalone SHA-256 is
+`80a3759ef766c70780d4562d7ba309d4003a66c71b9428061e9359fd2526ffee`.
+No real-world feasibility, safety, reader value, external-preview,
+publication, Workbench, or `preview-01` claim is admitted.

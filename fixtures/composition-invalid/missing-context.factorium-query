@@ -1,7 +1,7 @@
 factorium-composition-query-v0
 query missing-context
 problem Demonstrate that a trace cannot silently invent required context.
-source e75ddeee864bea6be85e2b62289038c4123aa760743cac13e44852896d54ec4b | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
+source ac1468a1731290ccba842a11e976f352287046abb93caf3e59d176e251bcc445 | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
 policy direction=forward,follow=evaluative-required,stop=stable-identity
 budget depth=0,edges=1,nodes=1,work=4
 seed factor:system-composition-dependency/dependency-source-target-and-direction
