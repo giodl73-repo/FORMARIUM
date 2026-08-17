@@ -1,0 +1,12 @@
+{
+  "contract_id": "SUJ-RC-02",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "evidence_class": "authored-synthetic-product-rehearsal",
+  "entrances": ["search", "tables-az", "reader", "compose", "none"],
+  "inertia_relationships": ["stay-with-current", "supplement", "switch-for-structure", "not-served"],
+  "view_profiles": ["compact", "abbreviated", "book", "full"],
+  "change_dispositions": ["no-change", "defer", "external", "repair"],
+  "required_result_fields": ["persona_id", "prompt", "incumbent_chain", "lexical_browse", "selected_route", "ordinary_language_landing", "first_entrance", "switch_trigger", "inertia_relationship", "authored_proxy_response", "view_profile_hypothesis", "trust_cues", "trust_blockers", "stopping_rule", "outward_handoff", "memory_trigger", "fun_continuation", "projection_losses", "change_disposition", "claim_boundary"],
+  "prohibited_measure_keys": ["reader_success", "reader_time", "completion_rate", "comprehension", "confidence", "satisfaction", "preference", "usefulness", "accessibility_success", "adoption", "return_intent", "return_use"]
+}
