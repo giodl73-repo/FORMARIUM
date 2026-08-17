@@ -2219,3 +2219,17 @@ standalone SHA-256 is
 The Product Owner decision is continue to F91-F100 only as a composition
 capstone and Book One selection. Internal rehearsal does not establish safety,
 field utility, reader value, external-preview, or publication claims.
+
+## 2026-08-16 F91-F100 composition and book capstone plan
+
+Plan review: make multi-concept questions materially easier without adding
+another semantic owner. Thirteen roles found zero P1 blockers, thirteen P2
+conditions, and five P3 notes. F91-F98 audit the existing relation,
+composition, projection, budget, residual, and evaluation contracts. F99-F100
+may add one integrated bounded-question guide that declares an exact candidate
+Book One spine.
+
+The Product Owner decision is proceed under a zero-new-owner, one-artifact
+ceiling. Stop before phase-count content, a second query language, new relation
+kinds, automated judgment, external-reader claims, or publication. Detailed
+conditions are in `F91-F100-COMPOSITION-BOOK-CAPSTONE-ROLE-REVIEW.md`.

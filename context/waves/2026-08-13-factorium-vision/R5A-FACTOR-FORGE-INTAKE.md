@@ -1077,3 +1077,16 @@ Product Owner decision is continue to F91-F100 only as a composition capstone
 and Book One selection, with no automatic entitlement to more anchors.
 Internal checks establish structure and mechanics only, not safety, field
 utility, reader value, or publication readiness.
+
+## F91-F100 composition and book capstone plan
+
+F91-F98 audit the existing typed relation, evidence admission, union, join,
+exclusion, interaction, projection, deduplication, budget, truncation,
+residual, reconciliation, and evaluation-trace contracts. F99-F100 integrate
+those contracts into one bounded-question guide and exact candidate Book One
+spine.
+
+The thirteen-role review found zero P1 blockers, thirteen P2 conditions, and
+five P3 notes. The Product Owner permits no new canonical owner and one
+reader-facing capstone artifact. The batch must reduce navigation across the
+current corpus rather than grow it.
