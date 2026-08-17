@@ -2315,3 +2315,18 @@ standalone SHA-256 is
 `sim-30` reproduces exactly. Product Owner decision: continue the two-book
 model and stop mixed-book naming, without claiming reader effectiveness or
 preview admission.
+
+## 2026-08-17 Tables thesaurus navigation plan
+
+The next slice improves the primary Factorium Tables job without creating a
+thesaurus ontology. `sim-32` will add one generated Explore-this-Table
+navigator to all 175 selected Table pages. It uses exact canonical view-owner
+metadata, authored Contrast table headings, and links bounded to authored
+Cross-references sections. Every Table also receives direct Search and Browse
+actions.
+
+Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
+The principal constraint is non-inference: authored links remain explicitly
+untyped and cannot become synonym, broader/narrower, equivalence, dependency,
+or closure claims. No canonical entry, relation, sidecar, or content changes.
+Detailed conditions are in `TABLES-THESAURUS-NAVIGATION-ROLE-REVIEW.md`.
