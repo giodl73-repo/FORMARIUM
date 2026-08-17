@@ -2728,3 +2728,20 @@ mechanism, and required record. Preserve title, owner, senses, family, sidecar,
 and search mechanics; use authored untyped routes; keep sim-41 exact; and mint
 sim-42 only as the QLD-01 candidate projection. See
 `QUERY-LED-CAMPAIGN-01-REPAIR-PLAN.md`.
+
+## 2026-08-17 sim-42 internal preview rehearsal
+
+Plan and result review: six revision-1 artifact tasks and 27 requirements were
+frozen at commit `0decc3e` before execution against exact sim-42 custody. The
+portfolio covers the two-book front door, literal limiting-condition lookup,
+percentage-basis comparison, a multi-concept scheduling decision, an
+evidence-sufficiency stop, and the Reader-to-specialized-depth handoff.
+
+All 27 requirements are present, both homepage and Reader have no horizontal
+overflow at the deterministic 390 x 844 viewport, and no content, UI, search,
+or edition repair is admitted. Ten roles reach fixed point with no open P1 or
+P2 finding. Product Owner decision: prepare and maintain sim-42 internally,
+then stop this simulation slice. No reader participated, `preview-01` remains
+inadmissible, and R4E/R5P reader evidence remains open. See
+`SIM-42-INTERNAL-PREVIEW-REHEARSAL-PLAN.md` and
+`SIM-42-INTERNAL-PREVIEW-REHEARSAL-RESULT.md`.

@@ -1,0 +1,378 @@
+{
+  "artifact": "SIM-PP-01 exact sim-42 internal preview rehearsal",
+  "evidence_class": "internal-artifact-rehearsal",
+  "campaign_id": "SIM-PP-01",
+  "campaign_revision": 1,
+  "contract_id": "SIM-PP-RC-01",
+  "campaign_sha256": "61c392519f91273e5d4c8be3ca0160763c2ccdb4807fd8aae3cfdad44505ceb6",
+  "contract_sha256": "05736f4275ca394f191eec82b2cda0d5fd6a63d97d71b3e17ad9a101678c6796",
+  "executed_against": {
+    "edition": "sim-42",
+    "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+    "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+    "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+    "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+    "search_records": 185,
+    "site_pages": 239
+  },
+  "results": [
+    {
+      "task_id": "SIM-PP-01",
+      "campaign_revision": 1,
+      "executed_against": {
+        "edition": "sim-42",
+        "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+        "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+        "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+        "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+        "search_records": 185,
+        "site_pages": 239
+      },
+      "strategy": "onboarding-first",
+      "mechanical_observations": {
+        "queries_executed": 0,
+        "destinations_inspected": 3,
+        "first_result_path": null,
+        "first_ten_paths": [],
+        "required_targets_present": 4,
+        "required_targets_missing": 0,
+        "local_links_missing": 0,
+        "narrow_viewport_overflow": false
+      },
+      "requirement_results": [
+        {
+          "id": "tables-start-present",
+          "state": "present",
+          "evidence": "Tables card links to the search start."
+        },
+        {
+          "id": "reader-start-present",
+          "state": "present",
+          "evidence": "Reader card links to reader.html."
+        },
+        {
+          "id": "tables-authority-stated",
+          "state": "present",
+          "evidence": "The front door states Tables authority and Reader teaching scope."
+        },
+        {
+          "id": "reader-precedes-problem-routes",
+          "state": "present",
+          "evidence": "The Reader start precedes the worked-problem section."
+        }
+      ],
+      "artifact_state": "reached",
+      "findings": [],
+      "disposition": "keep",
+      "claim_boundary": "Do not infer that a first-time reader notices, understands, or prefers either start."
+    },
+    {
+      "task_id": "SIM-PP-02",
+      "campaign_revision": 1,
+      "executed_against": {
+        "edition": "sim-42",
+        "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+        "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+        "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+        "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+        "search_records": 185,
+        "site_pages": 239
+      },
+      "strategy": "dictionary-first",
+      "mechanical_observations": {
+        "queries_executed": 1,
+        "destinations_inspected": 1,
+        "first_result_path": "tables/diagnostics/dependency-critical-path.md",
+        "first_ten_paths": [
+          "tables/diagnostics/dependency-critical-path.md",
+          "tables/diagnostics/coordinated-work-failures.md",
+          "tables/constraints/feasibility-sufficiency.md",
+          "tables/diagnostics/operating-condition-failures.md",
+          "tables/entries/operational-resource-capacity-demand.md",
+          "tables/procedures/queue-service-order.md",
+          "tables/procedures/resource-allocation.md"
+        ],
+        "required_targets_present": 4,
+        "required_targets_missing": 0,
+        "local_links_missing": 0,
+        "narrow_viewport_overflow": false
+      },
+      "requirement_results": [
+        {
+          "id": "existing-owner-ranked-first",
+          "state": "present",
+          "evidence": "First result: tables/diagnostics/dependency-critical-path.md."
+        },
+        {
+          "id": "six-owner-rows-present",
+          "state": "present",
+          "evidence": "All six limiting-role labels occur in the indexed diagnostic."
+        },
+        {
+          "id": "untyped-routes-present",
+          "state": "present",
+          "evidence": "The owner procedure rejects inferred typed relations."
+        },
+        {
+          "id": "result-relative-boundary-present",
+          "state": "present",
+          "evidence": "The indexed boundary makes bottleneck result- and condition-relative."
+        }
+      ],
+      "artifact_state": "reached",
+      "findings": [],
+      "disposition": "keep",
+      "claim_boundary": "Do not infer reader recognition, diagnostic correctness, or practical usefulness."
+    },
+    {
+      "task_id": "SIM-PP-03",
+      "campaign_revision": 1,
+      "executed_against": {
+        "edition": "sim-42",
+        "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+        "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+        "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+        "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+        "search_records": 185,
+        "site_pages": 239
+      },
+      "strategy": "compare-first",
+      "mechanical_observations": {
+        "queries_executed": 1,
+        "destinations_inspected": 2,
+        "first_result_path": "tables/entries/amount-concentration-composition.md",
+        "first_ten_paths": [
+          "tables/entries/amount-concentration-composition.md",
+          "tables/formulas/amount-concentration-composition.md",
+          "guides/aqueous-solution-amount-concentration.md",
+          "tables/entries/measurement-quality.md",
+          "tables/formulas/probability-risk-uncertainty.md",
+          "tables/entries/dependability-reliability-availability-resilience.md",
+          "tables/roles/component.md",
+          "tables/entries/comparative-quantity.md",
+          "tables/procedures/evaluation-aggregation.md",
+          "tables/entries/periodic-wave-quantity.md"
+        ],
+        "required_targets_present": 4,
+        "required_targets_missing": 0,
+        "local_links_missing": 0,
+        "narrow_viewport_overflow": false
+      },
+      "requirement_results": [
+        {
+          "id": "composition-owner-ranked-first",
+          "state": "present",
+          "evidence": "First result: tables/entries/amount-concentration-composition.md."
+        },
+        {
+          "id": "comparative-owner-in-first-ten",
+          "state": "present",
+          "evidence": "Comparative Quantity rank: 8."
+        },
+        {
+          "id": "basis-fields-present",
+          "state": "present",
+          "evidence": "Amount/Composition retains numerator basis, denominator roles, and component-set custody."
+        },
+        {
+          "id": "invalid-shortcut-boundary-present",
+          "state": "present",
+          "evidence": "The indexed entry rejects an unstated composition basis."
+        }
+      ],
+      "artifact_state": "reached",
+      "findings": [],
+      "disposition": "keep",
+      "claim_boundary": "Do not infer comprehension or correct application to an unstated report."
+    },
+    {
+      "task_id": "SIM-PP-04",
+      "campaign_revision": 1,
+      "executed_against": {
+        "edition": "sim-42",
+        "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+        "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+        "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+        "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+        "search_records": 185,
+        "site_pages": 239
+      },
+      "strategy": "multi-concept-decision",
+      "mechanical_observations": {
+        "queries_executed": 2,
+        "destinations_inspected": 22,
+        "first_result_path": "tables/diagnostics/dependency-critical-path.md",
+        "first_ten_paths": [
+          "tables/diagnostics/dependency-critical-path.md",
+          "tables/entries/operational-resource-capacity-demand.md",
+          "tables/procedures/resource-allocation.md",
+          "guides/dependency-exclusion-conflict-worksheet.md",
+          "tables/transitions/ordered-path.md",
+          "tables/entries/software-module-service-resource.md",
+          "tables/entries/system-composition-dependency.md",
+          "tables/evidence/mechanism-path.md",
+          "tables/procedures/queue-service-order.md",
+          "guides/system-dependency-composition-worksheet.md"
+        ],
+        "required_targets_present": 6,
+        "required_targets_missing": 0,
+        "local_links_missing": 0,
+        "narrow_viewport_overflow": false
+      },
+      "requirement_results": [
+        {
+          "id": "limiting-condition-owner-reachable",
+          "state": "present",
+          "evidence": "The limiting-condition diagnostic appears in the first scheduling query."
+        },
+        {
+          "id": "capacity-owner-reachable",
+          "state": "present",
+          "evidence": "Operational Resource appears in the query union."
+        },
+        {
+          "id": "queue-owner-reachable",
+          "state": "present",
+          "evidence": "Queue and Service Order appears in the query union."
+        },
+        {
+          "id": "hazard-owner-reachable",
+          "state": "present",
+          "evidence": "Hazard and Safety appears in the query union."
+        },
+        {
+          "id": "decision-guide-reachable",
+          "state": "present",
+          "evidence": "The bounded decision Guide appears in the second query."
+        },
+        {
+          "id": "authority-boundary-present",
+          "state": "present",
+          "evidence": "The Guide retains an unresolved final selection and states that the authorized owner has not selected."
+        }
+      ],
+      "artifact_state": "reached",
+      "findings": [],
+      "disposition": "keep",
+      "claim_boundary": "Do not infer an optimal schedule, safety verdict, or final authorized decision."
+    },
+    {
+      "task_id": "SIM-PP-05",
+      "campaign_revision": 1,
+      "executed_against": {
+        "edition": "sim-42",
+        "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+        "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+        "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+        "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+        "search_records": 185,
+        "site_pages": 239
+      },
+      "strategy": "evidence-stop",
+      "mechanical_observations": {
+        "queries_executed": 0,
+        "destinations_inspected": 2,
+        "first_result_path": null,
+        "first_ten_paths": [],
+        "required_targets_present": 4,
+        "required_targets_missing": 0,
+        "local_links_missing": 0,
+        "narrow_viewport_overflow": false
+      },
+      "requirement_results": [
+        {
+          "id": "evidence-worksheet-linked",
+          "state": "present",
+          "evidence": "The problem-led home links the indexed latency worksheet."
+        },
+        {
+          "id": "structural-complete-state-present",
+          "state": "present",
+          "evidence": "The worksheet declares structural completeness."
+        },
+        {
+          "id": "substantive-unresolved-state-present",
+          "state": "present",
+          "evidence": "The claim remains explicitly unresolved."
+        },
+        {
+          "id": "temporal-order-causal-boundary-present",
+          "state": "present",
+          "evidence": "The worksheet rejects temporal order as causal isolation."
+        }
+      ],
+      "artifact_state": "reached",
+      "findings": [],
+      "disposition": "keep",
+      "claim_boundary": "Do not infer that the latency claim is true, false, or understood by a reader."
+    },
+    {
+      "task_id": "SIM-PP-06",
+      "campaign_revision": 1,
+      "executed_against": {
+        "edition": "sim-42",
+        "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+        "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+        "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+        "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+        "search_records": 185,
+        "site_pages": 239
+      },
+      "strategy": "reader-to-depth",
+      "mechanical_observations": {
+        "queries_executed": 0,
+        "destinations_inspected": 4,
+        "first_result_path": null,
+        "first_ten_paths": [],
+        "required_targets_present": 5,
+        "required_targets_missing": 0,
+        "local_links_missing": 0,
+        "narrow_viewport_overflow": false
+      },
+      "requirement_results": [
+        {
+          "id": "reader-route-has-24-records",
+          "state": "present",
+          "evidence": "Reader route contains 24 unique ordered records."
+        },
+        {
+          "id": "first-record-purpose",
+          "state": "present",
+          "evidence": "First record: tables/roots/purpose.md."
+        },
+        {
+          "id": "last-record-change-lineage",
+          "state": "present",
+          "evidence": "Last record: tables/evidence/change-lineage.md."
+        },
+        {
+          "id": "specialized-depth-count-151",
+          "state": "present",
+          "evidence": "Reader boundary retains 151 records outside the teaching spine."
+        },
+        {
+          "id": "canonical-authority-preserved",
+          "state": "present",
+          "evidence": "Reader states canonical authority and non-universal order."
+        }
+      ],
+      "artifact_state": "reached",
+      "findings": [],
+      "disposition": "keep",
+      "claim_boundary": "Do not infer that the teaching order is universal or that a reader can follow it independently."
+    }
+  ],
+  "summary": {
+    "task_records": 6,
+    "requirement_records": 27,
+    "requirements_present": 27,
+    "requirements_missing": 0,
+    "artifact_states": {
+      "reached": 6,
+      "blocked": 0,
+      "invalid": 0
+    },
+    "findings": 0,
+    "reader_evidence": "not collected"
+  }
+}

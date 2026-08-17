@@ -1,0 +1,24 @@
+{
+  "artifact": "SIM-PP-01 narrow-viewport browser mechanics",
+  "edition": "sim-42",
+  "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "home": {
+    "overflow": false,
+    "tables": true,
+    "reader": true,
+    "authority": true,
+    "readerBeforeProblems": true
+  },
+  "reader": {
+    "overflow": false,
+    "records": 24,
+    "first": "tables/roots/purpose.md",
+    "last": "tables/evidence/change-lineage.md",
+    "boundary": true
+  },
+  "evidence_boundary": "mechanical overflow and DOM presence only; not accessibility or reader evidence"
+}

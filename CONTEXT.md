@@ -1027,20 +1027,22 @@ Both links remain authored and untyped; the prime's candidate content and
 status are unchanged. This does not establish independent source review or
 reader value and does not reopen the other legacy primes.
 
-The internal Proof Set lane is now at a fixed point. `sim-41` is the maintained
-mechanical reference, not `preview-01`; no further feature edition or content
-batch is admitted without a concrete reopening trigger. The fixed-point audit
-is `context/waves/2026-08-13-factorium-vision/PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`.
-The next evidence-bearing action remains a real R4E worksheet when readers are
-available.
+The internal Proof Set lane is now prepared and stopped at `sim-42`, not
+`preview-01`. The earlier `sim-41` fixed-point audit remains historical
+custody. QLD-01 later froze and executed 24 query packets, admitted one bounded
+repair to the existing Dependency/Critical-Path Diagnostic, reran the exact
+portfolio, and stopped with no new anchor, view, relation, or product mechanic.
+The result is
+`context/waves/2026-08-13-factorium-vision/QUERY-LED-CAMPAIGN-01-RESULT.md`.
 
-The proposed repository work path is query-led content discovery, not a claim
-that the reference is complete. The blueprint at
-`context/waves/2026-08-13-factorium-vision/QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md`
-freezes realistic questions before running them against `sim-41`, then uses
-repeated or source-backed failures to decide whether the smallest repair is
-navigation, a sense, a view, an anchor, a relation, a Guide-local concept, or
-an external-catalog route. Execution awaits a funded goal.
+The current internal preview rehearsal at
+`context/waves/2026-08-13-factorium-vision/SIM-42-INTERNAL-PREVIEW-REHEARSAL-RESULT.md`
+binds six frozen artifact routes and 27 mechanical requirements to exact
+sim-42 custody. All are present and no content or UI repair is admitted. This
+is internal artifact evidence only: no reader participated, `preview-01`
+remains inadmissible, and the next evidence-bearing action remains a real R4E
+worksheet when readers are available. Further work requires a concrete
+content, artifact, regression, composition, or actual reader trigger.
 
 ## Boundary
 
