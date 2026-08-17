@@ -991,3 +991,23 @@ loss, authority, and versions must remain visible. Stop before universal
 scoring algebra, named-metric catalogs, automated metric selection, new typed
 relations, or reader-value claims. Detailed closure tests are in
 `F61-F70-EVALUATION-GRAMMAR-ROLE-REVIEW.md`.
+
+## F61-F70 evaluation grammar result
+
+F61-F70 add one Evaluation Measure, Scale, Criterion, and Score anchor plus
+eight views rather than ten phase-labelled entries. The reader route separates
+comparison frame, scale/ranking, judgment roles, threshold/acceptance,
+aggregation, sensitivity, applicability, and review/disposition. Five neutral
+tasks cover all nine admitted paths.
+
+The fixed point contains 48 entries, 374 senses, 570 factors, 82 views, and
+141 assurance bindings at reference SHA-256
+`e75ddeee864bea6be85e2b62289038c4123aa760743cac13e44852896d54ec4b`
+and assurance SHA-256
+`61e1fa0070558768d404b5823b17c86ddcabd51fe8dbb520effd1bd74117d63a`.
+The relation sidecar remains eleven records. The 79-record Factor Forge delta
+and 43 tasks produce a 157-record book with 165 searchable destinations,
+sixteen chapters, 213 pages, and zero missing targets. The Product Owner
+decision is continue to F71-F80 under an owner-first merge/defer budget.
+Internal checks establish structure and mechanics only, not evaluation
+validity, reader value, or publication readiness.

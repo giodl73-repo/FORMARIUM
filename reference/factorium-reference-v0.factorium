@@ -355,6 +355,35 @@ factor average-instantaneous-or-accumulated-view | average, instantaneous, or ac
 factor energy-transfer-sign-convention | energy-transfer sign convention
 factor unit-and-uncertainty | unit and uncertainty
 end-entry
+entry evaluation-measure-scale-criterion | Evaluation Measure, Scale, Criterion, and Score | reference | candidate | tables/entries/evaluation-measure-scale-criterion.md | An evaluation relates evidence about a declared subject to a purpose and rule. Measures, metrics, indicators, indexes, scores, scales, criteria, comparisons, and results retain distinct roles, exact derivations, uncertainty, applicability, and provenance.
+sense evaluation-frame | evaluation frame
+sense baseline | baseline
+sense comparator | comparator
+sense target | target
+sense tolerance | tolerance
+sense measure | measure
+sense metric | metric
+sense indicator | indicator
+sense index | index
+sense score | score
+sense evaluation-scale | evaluation scale
+sense criterion | criterion
+sense evaluation-result | evaluation result
+factor reader-question-decision-and-intended-use | reader question, decision, and intended use
+factor subject-alternative-claim-or-system-boundary | subject, alternative, claim, or system boundary
+factor eligible-population-cases-exclusions-and-missingness | eligible population, cases, exclusions, and missingness
+factor context-operating-conditions-time-horizon-and-version | context, operating conditions, time, horizon, and version
+factor baseline-comparator-reference-target-and-tolerance | baseline, comparator, reference, target, and tolerance
+factor property-measure-definition-method-unit-or-scale-and-direction | property, measure definition, method, unit or scale, and direction
+factor observation-source-data-statistic-numerator-and-denominator | observation, source data, statistic, numerator, and denominator
+factor indicator-purpose-proxy-assumptions-and-limitations | indicator purpose, proxy assumptions, and limitations
+factor criteria-constraints-preferences-priorities-and-authorities | criteria, constraints, preferences, priorities, and authorities
+factor normalization-weighting-aggregation-interaction-and-residual | normalization, weighting, aggregation, interaction, and residual
+factor threshold-gate-veto-boundary-behavior-and-acceptance-region | threshold, gate, veto, boundary behavior, and acceptance region
+factor uncertainty-support-sensitivity-domain-and-alternate-assumptions | uncertainty, support, sensitivity domain, and alternate assumptions
+factor result-rank-class-disposition-explanation-and-limitations | result, rank, class, disposition, explanation, and limitations
+factor provenance-applicability-review-revision-and-invalidation | provenance, applicability, review, revision, and invalidation
+end-entry
 entry factorium-entry-publication | Factorium Entry Publication | reference | candidate | tables/entries/factorium-entry-publication.md | Factorium publication is the governed progression from a research question to a reviewable canonical entry and specialized views. Publication status, editorial maturity, source authority, and external domain authority are related but separate. A document is not published merely because Markdown exists or automated checks pass.
 sense editorial-workflow | editorial workflow
 sense entry-maturity | entry maturity
@@ -1013,6 +1042,8 @@ factor unit-system | unit system
 end-entry
 view constraint-access-authorization-integrity | access-permission-authorization-entitlement | access,permission,authorization-decision,entitlement,access-control | constraint | Access Authorization Integrity Constraint Table | tables/constraints/access-authorization-integrity.md | Exact request, policy, permission, entitlement, decision, enforcement, revocation, delegation, and privacy-minimized review bindings remain reconstructable and fail closed.
 end-view
+view constraint-evaluation-threshold-acceptance | evaluation-measure-scale-criterion | tolerance,criterion,evaluation-result | constraint | Evaluation Threshold and Acceptance Constraint Table | tables/constraints/evaluation-threshold-acceptance.md | Requires exact measure, scale, direction, boundary, uncertainty, missing-data, noncompensation, veto, override, and authority semantics before a threshold changes status or action.
+end-view
 view constraint-factor-interaction-integrity | decomposition-modes-combination-contracts | interaction,combination-contract,decomposition-mode | constraint | Factor Interaction Integrity Constraint Table | tables/constraints/factor-interaction-integrity.md | Requires exact factor identity, dependence, interaction semantics, operator domain, invalid combinations, and residual limits before joint behavior is interpreted.
 end-view
 view constraint-policy-constraints | policy-rule-constraint-decision-exception | constraint,review,appeal | constraint | Policy Constraint Table | tables/constraints/policy-constraints.md | Version, evidence, authority, bounded exceptions, output separation, enforcement, audit, review independence, appeal integrity, and disposition separation remain explicit policy-evaluation invariants.
@@ -1020,6 +1051,8 @@ end-view
 view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,architecture,architecture-description,capability,boundary,environment,interface,dependency | constraint | System Composition and Architecture Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves entity, architecture, description, viewpoint/view, contextual subsystem role, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and cross-view consistency as distinct obligations.
 end-view
 view decision-alternative-selection | choice-alternative-selection | choice,alternative,decision-criterion,preference,trade-off,recommendation,selection | decision | Alternative Selection Decision Table | tables/decisions/alternative-selection.md | A bounded choice preserves candidate, feasible, excluded, and unresolved alternatives; partial outcome cells; operational criteria; attributed preference; sensitivity; recommendation; and authority-owned final selection without requiring one scoring method.
+end-view
+view decision-criterion-preference-priority | evaluation-measure-scale-criterion | criterion,evaluation-frame,evaluation-result | decision | Criterion, Preference, and Priority Decision Table | tables/decisions/criterion-preference-priority.md | Separates criterion, preference, weight, priority, and importance while retaining sense, holder, authority, conditions, noncompensation, ties, and unresolved values.
 end-view
 view decision-policy-decision | policy-rule-constraint-decision-exception | decision | decision | Policy Decision Table | tables/decisions/policy-decision.md | Prioritized policy evaluation keeps missing facts, blocking constraints, exceptions, derived outputs, and enforcement separate.
 end-view
@@ -1036,6 +1069,8 @@ end-view
 view diagnostic-economic-basis-inflation-npv-failures | cost-price-value-return | explicit-cost,opportunity-cost,price,assessed-value,utility,dollar-return,rate-of-return,present-value,accounting-basis,inflation,net-present-value | diagnostic | Economic Basis, Inflation, and Net Present Value Failure Diagnostic | tables/diagnostics/economic-basis-inflation-npv-failures.md | Maps recognition, basis-change, price-index, interval, price-level conversion, cash-flow timing, discounting, sensitivity, and decision-claim symptoms to discriminating checks without treating an accounting result, inflation estimate, or NPV as universal economic truth or advice.
 end-view
 view diagnostic-electrical-field-material-impedance-failures | electrical-quantity | electric-charge,electric-current,potential-difference,resistance,electrical-power,electrical-energy-transfer,electric-field,electrical-resistivity,capacitance,electrical-impedance | diagnostic | Electrical Field, Material, Storage, and Impedance Failure Diagnostic | tables/diagnostics/electrical-field-material-impedance-failures.md | Maps local-field, geometry, contact, material, charge/capacitance, complex-response, phasor, fixture, and calibration symptoms to discriminating checks without treating an ideal equation or equivalent-circuit fit as physical or safety certification.
+end-view
+view diagnostic-evaluation-sensitivity | evaluation-measure-scale-criterion | evaluation-frame,evaluation-result,score | diagnostic | Evaluation Sensitivity, Stability, Robustness, and Fragility Diagnostic | tables/diagnostics/evaluation-sensitivity.md | Tests how results, ranks, classes, and dispositions change under declared variation without turning one stable aggregate or perturbation range into universal robustness.
 end-view
 view diagnostic-factorization-failures | factorization-quality | sense-quality,factor-independence,pivot-quality,constraint-quality,mechanism-assignment,change-quality | diagnostic | Factorization Failure Diagnostic | tables/diagnostics/factorization-failures.md | Structural symptoms identify candidate causes and discriminating tests rather than asserting certain diagnoses.
 end-view
@@ -1064,6 +1099,8 @@ end-view
 view evidence-assurance-conformity | assurance-assessment-audit-certification | assurance,assessment,audit,attestation,certification,accreditation | evidence | Assurance and Conformity Evidence Table | tables/evidence/assurance-conformity.md | Binds assurance, assessment, audit, certification, and accreditation artifacts to exact subject, criteria, scheme, party, scope, evidence, time, status, and excluded claims.
 end-view
 view evidence-causal-claim | causal-reasoning | association,causal-effect,influence,causal-mechanism,intervention,causal-attribution | evidence | Causal Claim Evidence Table | tables/evidence/causal-claim-evidence.md | Audits association, effect, influence, mechanism, intervention-effect, and actual-case attribution claims through explicit targets, designs, assumptions, evidence, alternatives, transport limits, and dispositions without computing a causal estimate.
+end-view
+view evidence-evaluation-applicability | evaluation-measure-scale-criterion | evaluation-frame,evaluation-result,indicator,score | evidence | Evaluation Applicability Evidence Table | tables/evidence/evaluation-applicability.md | Binds subject, population, measure, proxy, rule, implementation, comparator, criteria, derivation, applicability, result, and disposition to exact evidence and prohibited generalizations.
 end-view
 view evidence-factor-status-completeness | decomposition-modes-combination-contracts | epistemic-status,completeness-contract,projection,decomposition-mode | evidence | Factor Status and Completeness Evidence Table | tables/evidence/factor-status-completeness.md | Binds observed, measured, asserted, assumed, inferred, simulated, derived, and unresolved factors to evidence while auditing exhaustive, partial, open, truncated, and residual-bearing boundaries.
 end-view
@@ -1121,6 +1158,10 @@ view mapping-basis-transformation | decomposition-modes-combination-contracts | 
 end-view
 view mapping-data-structure | information-data-signal-noise | semantic-information,data,record,schema,field,encoding | mapping | Data Structure Mapping | tables/mappings/data-structure.md | Maps record, schema, field, value, and link roles to common data mechanisms while preserving identity, authority, interpretation, cardinality, missingness, evolution, provenance, and loss.
 end-view
+view mapping-evaluation-comparison-frame | evaluation-measure-scale-criterion | evaluation-frame,baseline,comparator,target,tolerance | mapping | Evaluation Comparison Frame Mapping | tables/mappings/evaluation-comparison-frame.md | Maps baseline, comparator, reference, target, and tolerance roles across declared subject, population, context, time, method, unit/scale, uncertainty, authority, and loss boundaries.
+end-view
+view mapping-evaluation-scale-ranking | evaluation-measure-scale-criterion | evaluation-scale,score,evaluation-result | mapping | Evaluation Scale and Ranking Mapping | tables/mappings/evaluation-scale-ranking.md | Records admissible comparisons and transformation loss when values become ratings, ranks, grades, or classes, including direction, ties, incomparable cases, uncertainty, and inverse limits.
+end-view
 view mapping-factor-role-mechanisms | factorization-quality | mechanism-assignment | mapping | Factor Role to Mechanism Crosswalk | tables/mappings/factor-role-mechanisms.md | Maps eleven general factor roles into six bounded target-system mechanism vocabularies while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
 end-view
 view mapping-governance-compliance-mechanisms | governance-obligation-compliance | governance,obligation,compliance | mapping | Governance and Compliance Mechanisms | tables/mappings/governance-compliance-mechanisms.md | Maps governance, obligation, and compliance concepts to bounded organizational records, compliance systems, policies, controls, enforcement points, assessments, and attestations while preserving authority, applicability, evidence, effectiveness, and non-equivalence.
@@ -1148,6 +1189,10 @@ end-view
 view procedure-contribution-reconciliation | decomposition-modes-combination-contracts | contribution,combination-contract,completeness-contract | procedure | Contribution and Reconciliation Procedure | tables/procedures/contribution-reconciliation.md | Frames a bounded result, common basis, contributors, overlap, combination, residual, and disposition without double counting or naming reconciliation gaps as causes.
 end-view
 view procedure-entry-publication | factorium-entry-publication | editorial-workflow,entry-maturity,publication-state,source-authority,domain-acceptance | procedure | Entry Publication Procedure | tables/procedures/entry-publication.md | Research, canonicalization, specialized views, role review, validation, integration, and publication use explicit gates and recovery.
+end-view
+view procedure-evaluation-aggregation | evaluation-measure-scale-criterion | index,score,evaluation-scale,evaluation-result | procedure | Evaluation Aggregation Procedure | tables/procedures/evaluation-aggregation.md | Preserves source components, units/scales, transformations, weight semantics, dependencies, interactions, missingness, noncompensation, uncertainty, and loss before deriving an index or score.
+end-view
+view procedure-evaluation-review-disposition | evaluation-measure-scale-criterion | evaluation-result,evaluation-frame,criterion,score | procedure | Evaluation Review and Disposition Procedure | tables/procedures/evaluation-review-disposition.md | Reconstructs and challenges an evaluation before issuing a scoped, authority-bound disposition while retaining evidence gaps, limitations, history, and invalidation triggers.
 end-view
 view procedure-planned-work | coordinated-work | plan,task,work-milestone,workflow,orchestration,choreography,concurrency,compensation | procedure | Planned Work Procedure | tables/procedures/planned-work.md | Frames outcomes, decomposes tasks, connects dependencies, allocates resources, defines milestones, preserves baselines, records actuals, and governs review without treating a plan as prediction.
 end-view

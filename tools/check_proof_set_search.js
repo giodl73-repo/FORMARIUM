@@ -14,7 +14,7 @@ if (!indexPath) {
 }
 
 const records = JSON.parse(fs.readFileSync(indexPath, "utf8"));
-const expectedRecords = process.argv[3] ? Number(process.argv[3]) : 156;
+const expectedRecords = process.argv[3] ? Number(process.argv[3]) : 165;
 assert.ok(Number.isInteger(expectedRecords) && expectedRecords > 0,
   "expected record count is a positive integer");
 assert.equal(records.length, expectedRecords, "declared proof search record count");

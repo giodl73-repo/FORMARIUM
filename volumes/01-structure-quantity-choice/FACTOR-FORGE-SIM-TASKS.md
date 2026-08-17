@@ -489,8 +489,64 @@ Factor Status and Completeness Evidence view to retain source/target identity,
 direction, invariants, loss, inverse limits, derivation, unresolved frontier,
 version, and invalidation.
 
+## Task AT - We improved by twelve points
+
+A dashboard says a service improved from `62` to `74`. The older result used a
+different eligible population and missing-event rule; `70` is called a
+baseline, benchmark, target, and tolerance interchangeably. The displayed
+number has no direction, unit, scale, uncertainty, or rule version.
+
+Use the Evaluation anchor and Comparison Frame Mapping to identify the exact
+subject, population, measure, source data, baseline, comparator, reference,
+target, tolerance, context, time, and loss before interpreting improvement.
+
+## Task AU - Rank one is twice as good
+
+Three alternatives receive ratings, ranks, and letter grades from partly
+qualitative criteria. A spreadsheet treats the ordinal labels as equal
+intervals, doubles one preference weight, averages away a hard constraint,
+breaks a tie silently, and calls the result objective importance.
+
+Use the Scale/Ranking Mapping and Criterion/Preference/Priority Decision view
+to retain admissible comparisons, ties, incomparable cases, criteria,
+preference holders, weight semantics, noncompensation, authority, and loss.
+
+## Task AV - Passed by rounding
+
+A value displayed as `90` passes a `>= 90` gate, although its source interval
+straddles the boundary. Missing cases leave the denominator, a veto is averaged
+with other dimensions, and a manual override erases the original result.
+
+Use the Threshold and Acceptance Constraint view to specify source precision,
+operator, inclusion, window, missing/indeterminate behavior, acceptance region,
+veto, uncertainty, override authority, history, and disposition.
+
+## Task AW - The stable score hid the reversal
+
+Cost, latency, reliability, and burden are normalized against last year's
+population and combined into one score. Component movements cancel, rankings
+reverse under credible weights, subgroup failures disappear in the total, and
+clipping makes the aggregate look stable.
+
+Use the Aggregation Procedure and Sensitivity Diagnostic to preserve the
+component vector, source/target scales, population, weights, interactions,
+missingness, noncompensation, uncertainty, variation domain, reversals, and
+practical consequence.
+
+## Task AX - Accepted means proven useful
+
+A derived score is stored as an observation, reviewed under an undocumented
+rule version, and accepted for a new population. The acceptance flag is then
+reported as proof that the intervention is valid, safe, effective, valuable,
+and ready for every reader.
+
+Use the Applicability Evidence and Review/Disposition views to reconstruct
+sources, derivation, implementation, source and target frames, gaps,
+limitations, authority, disposition, decision/action boundary, invalidation,
+and prohibited generalizations.
+
 ## Rehearsal boundary
 
-The thirty-eight prompts collectively exercise every entry and specialized view in the
+The forty-three prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

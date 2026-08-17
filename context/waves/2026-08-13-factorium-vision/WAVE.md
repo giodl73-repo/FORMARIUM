@@ -2116,3 +2116,29 @@ versions. Stop before universal scoring algebra, automated metric selection,
 named-metric catalogs, new typed relations, or reader-value claims. Detailed
 plan conditions are recorded in
 `F61-F70-EVALUATION-GRAMMAR-ROLE-REVIEW.md`.
+
+Result review: F61-F70 add one Evaluation Measure, Scale, Criterion, and Score
+anchor plus eight distinct views for comparison frames, scale/ranking,
+judgment roles, threshold/acceptance, aggregation, sensitivity, applicability,
+and review/disposition. Five neutral tasks cover every admitted path. The
+Product Owner decision is continue to F71-F80 with an owner-first merge/defer
+budget; no internal rehearsal is reported as reader evidence.
+
+The canonical fixed point has 48 entries, 374 senses, 570 factors, 82 views,
+zero unresolved candidates, and 141 exact assurance bindings. Reference
+SHA-256 is
+`e75ddeee864bea6be85e2b62289038c4123aa760743cac13e44852896d54ec4b`;
+assurance SHA-256 is
+`61e1fa0070558768d404b5823b17c86ddcabd51fe8dbb520effd1bd74117d63a`.
+The eleven-relation sidecar is unchanged and all query fixtures migrate to the
+new exact reference identity.
+
+The Factor Forge delta is 79 records—28 entries and 51 views—and 43 tasks
+cover every path. The regenerated 195-source `sim-29` edition indexes 165
+destinations in sixteen chapters and renders 213 pages with zero missing
+targets. Site identity is
+`fc8fe4711750782429c0468196780bac3a10140219230a9e0c6ac252a36f367e`;
+standalone SHA-256 is
+`33b03a648f154c3e1502f3a260fef448195522b97e927f1d974f6b32a93da7a8`.
+No evaluation validity, reader value, external-preview, publication,
+Workbench, or `preview-01` claim is admitted.

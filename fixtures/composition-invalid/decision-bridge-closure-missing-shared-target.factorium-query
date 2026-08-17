@@ -1,7 +1,7 @@
 factorium-composition-query-v0
 query decision-bridge-closure-missing-shared-target
 problem Which evidence, causal, consequence, value, and constraint concepts must remain joined and unresolved when evaluating an intervention choice?
-source a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
+source e75ddeee864bea6be85e2b62289038c4123aa760743cac13e44852896d54ec4b | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
 context synthetic-intervention-choice | authority=choice-owner,reference-frame=decision-horizon
 policy direction=forward,follow=evaluative-required,stop=stable-identity
 budget depth=1,edges=5,nodes=10,work=35

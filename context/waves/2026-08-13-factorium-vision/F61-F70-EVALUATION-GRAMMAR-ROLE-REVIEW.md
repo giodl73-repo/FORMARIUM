@@ -1,6 +1,6 @@
 # F61-F70 Evaluation Grammar Role Review
 
-Status: plan reviewed; implementation pending
+Status: fixed point for candidate publication
 
 Date: 2026-08-16
 
@@ -87,5 +87,72 @@ in one procedure. Stop before a universal scoring algebra, automated metric
 selection, named-metric catalogs, a new relation vocabulary, or any reader
 value claim.
 
-Result findings, exact identities, evidence exclusions, and the next
-portfolio decision will be added here only after the F70 fixed point passes.
+## Result review
+
+All thirty-one P2 conditions close in the candidate artifacts. One Evaluation
+Measure, Scale, Criterion, and Score anchor owns the reusable evaluation
+grammar while eight views answer distinct reader questions: comparison frame,
+scale/ranking, judgment roles, threshold/acceptance, aggregation, sensitivity,
+applicability, and review/disposition. The planned merge budget held: scale and
+ranking share one Mapping view; provenance is carried by Applicability
+Evidence; review and disposition share one Procedure.
+
+The anchor gives measure, metric, indicator, index, score, scale, criterion,
+baseline, comparator, target, tolerance, and result separate governing
+questions. Every route retains exact subject, population, statistic or
+denominator, comparator, unit/scale, direction, missingness, uncertainty,
+transformations, component vector, weight semantics, interactions,
+noncompensation, vetoes, loss, authority, version, and unresolved state where
+applicable. A computed score never becomes an observation; normalization does
+not establish commensurability; rank does not preserve distance; and passing a
+threshold does not establish validity, safety, quality, usefulness, or success.
+
+Five neutral rehearsal tasks cover all nine admitted paths as one route from
+comparison frame through disposition. The book chapter leads with questions a
+reader can ask of an unfamiliar score and retains exact contracts in the
+linked tables. Canonical synchronization closes at 48 entries, 374 senses,
+570 factors, 82 views, and zero unresolved candidates. Exact assurance covers
+48 entries, 82 views, and eleven relations in 141 bindings. The eleven-relation
+sidecar remains unchanged.
+
+Reference SHA-256 is
+`e75ddeee864bea6be85e2b62289038c4123aa760743cac13e44852896d54ec4b`;
+assurance SHA-256 is
+`61e1fa0070558768d404b5823b17c86ddcabd51fe8dbb520effd1bd74117d63a`.
+
+The Factor Forge supplement now selects 79 records—28 entries and 51 views—
+for a 157-record combined book. Forty-three neutral tasks cover every delta
+path. The regenerated 195-source `sim-29` edition indexes 165 destinations in
+sixteen chapters and renders 213 site pages with zero missing targets.
+Site identity is
+`fc8fe4711750782429c0468196780bac3a10140219230a9e0c6ac252a36f367e`;
+standalone SHA-256 is
+`33b03a648f154c3e1502f3a260fef448195522b97e927f1d974f6b32a93da7a8`.
+
+All Rust, reference, sidecar, canonical/adversarial query, closure, source,
+task, search, local/generated composition, packet, role, browser, link, and
+diff checks pass at the recorded boundary.
+
+## Product Owner result decision
+
+Decision: **continue to F71-F80 with conditions**.
+
+The batch earns continued investment because it converts a common but opaque
+artifact—a score, rating, comparison, or pass/fail status—into a reconstructable
+reader route. Portfolio cost is one anchor, eight views, one chapter, five
+tasks, nine review bindings, and exact identity migration. The value is
+intended and internally rehearsed utility only; no reader observation exists.
+
+F71-F80 must use this evaluation grammar to expose whether an option is
+feasible under explicit assumptions, alternatives, uncertainty, resources,
+and dependencies. Merge assumption/condition/scenario material under the
+smallest viable owner, reuse existing Choice, Risk, Evidence, Coordinated Work,
+and System owners, and defer any resource or compatibility view that does not
+save distinct reader work. Stop before automated feasibility judgment, a
+universal scenario taxonomy, new typed relations, or external-value claims.
+
+No P1 or P2 finding remains open. Internal validation establishes content
+structure, source custody, task coverage, and publication mechanics only; it
+does not establish comprehension, usefulness, market value, evaluation
+validity, decision quality, external-preview readiness, publication,
+Workbench behavior, or `preview-01` status.

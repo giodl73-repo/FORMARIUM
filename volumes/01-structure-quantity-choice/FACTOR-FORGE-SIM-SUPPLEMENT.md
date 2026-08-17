@@ -439,6 +439,57 @@ keeps observed, measured, asserted, assumed, inferred, simulated, derived, and
 unresolved status separate while bounding exhaustive, purpose-complete,
 partial, open, truncated, and residual-bearing claims.
 
+## Part XV - How evaluations mean
+
+### From a displayed score to its comparison frame
+
+149. [Evaluation Measure, Scale, Criterion, and Score](../../tables/entries/evaluation-measure-scale-criterion.md)
+150. [Evaluation Comparison Frame Mapping](../../tables/mappings/evaluation-comparison-frame.md)
+
+The anchor separates evaluation frame, baseline, comparator, target,
+tolerance, measure, metric, indicator, index, score, scale, criterion, and
+result. The Mapping view shows which reference role each comparison value
+plays and what must remain aligned when the frame changes.
+
+### From one number to scale and judgment semantics
+
+151. [Evaluation Scale and Ranking Mapping](../../tables/mappings/evaluation-scale-ranking.md)
+152. [Criterion, Preference, and Priority Decision Table](../../tables/decisions/criterion-preference-priority.md)
+
+The Mapping view records which comparisons survive when values become
+ratings, ranks, grades, or classes and exposes ties, incomparable cases, and
+inverse loss. The Decision view keeps criterion, preference, weight, priority,
+and importance separate rather than turning unlike judgment roles into one
+importance number.
+
+### From a boundary to an acceptance contract
+
+153. [Evaluation Threshold and Acceptance Constraint Table](../../tables/constraints/evaluation-threshold-acceptance.md)
+
+The Constraint view binds threshold, gate, veto, limit, and acceptance-region
+behavior to the exact subject, measure, scale, direction, window, missingness,
+uncertainty, authority, and override record.
+
+### From components to an inspectable aggregate
+
+154. [Evaluation Aggregation Procedure](../../tables/procedures/evaluation-aggregation.md)
+155. [Evaluation Sensitivity, Stability, Robustness, and Fragility Diagnostic](../../tables/diagnostics/evaluation-sensitivity.md)
+
+The Procedure retains component values, normalization, weight semantics,
+dependence, interaction, noncompensation, missingness, and loss before deriving
+an index or score. The Diagnostic tests credible changes without treating one
+stable aggregate as universal robustness.
+
+### From a result to a bounded disposition
+
+156. [Evaluation Applicability Evidence Table](../../tables/evidence/evaluation-applicability.md)
+157. [Evaluation Review and Disposition Procedure](../../tables/procedures/evaluation-review-disposition.md)
+
+The Evidence view binds the subject, population, proxy, rule, implementation,
+derivation, and source-to-target gap. The Procedure reconstructs, challenges,
+bounds, and dispositions the result while keeping recommendation, decision,
+action, authority, history, and invalidation separate.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -447,5 +498,5 @@ partial, open, truncated, and residual-bearing claims.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 148-record combined simulation remains a rehearsal projection, not a
+- The 157-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

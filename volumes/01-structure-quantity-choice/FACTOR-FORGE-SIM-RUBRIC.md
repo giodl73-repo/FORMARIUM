@@ -472,12 +472,51 @@ final selection.
 - source/target, direction, invariants, loss, inverse, derivation, frontier,
   version, and invalidation remain reconstructable.
 
+## Task AT expected route
+
+- Evaluation Measure, Scale, Criterion, and Score;
+- Evaluation Comparison Frame Mapping;
+- subject, population, source, measure, baseline, comparator, target,
+  tolerance, scale, direction, time, version, uncertainty, and loss remain
+  explicit.
+
+## Task AU expected route
+
+- Evaluation Scale and Ranking Mapping;
+- Criterion, Preference, and Priority Decision Table;
+- admissible comparisons, ties, incomparability, criteria, preference holder,
+  weight semantics, noncompensation, authority, and mapping loss remain visible.
+
+## Task AV expected route
+
+- Evaluation Threshold and Acceptance Constraint Table;
+- exact source value, operator, boundary, missingness, uncertainty, veto,
+  acceptance region, override, history, and disposition remain reconstructable.
+
+## Task AW expected route
+
+- Evaluation Aggregation Procedure;
+- Evaluation Sensitivity, Stability, Robustness, and Fragility Diagnostic;
+- component vector, scales, normalization, weights, interactions, missingness,
+  noncompensation, uncertainty, variation domain, and reversals remain visible.
+
+## Task AX expected route
+
+- Evaluation Applicability Evidence Table;
+- Evaluation Review and Disposition Procedure;
+- source, derivation, implementation, applicability gap, limitation, authority,
+  disposition, action boundary, invalidation, and prohibited claims remain
+  separate.
+
 Critical artifact failure: any route treats a representation, pass flag,
 percentage, date, matching field, login, certificate, or plan as universal
 proof of meaning, validity, dependability, authority, assurance, or outcome.
 The F51-F60 routes also fail critically if separate columns establish
 independence, arithmetic closure establishes cause, endpoint equality erases
 path, a diagram proves mechanism, or a lossy projection replaces its source.
+The F61-F70 routes fail critically if a display defines its own meaning,
+normalization creates comparability, rank preserves distance, a threshold
+proves broad quality, or internal rehearsal establishes reader value.
 
 ## Exact task-coverage manifest
 
@@ -554,6 +593,15 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/mappings/perspective-projection.md`
 - `tables/mappings/basis-transformation.md`
 - `tables/evidence/factor-status-completeness.md`
+- `tables/entries/evaluation-measure-scale-criterion.md`
+- `tables/mappings/evaluation-comparison-frame.md`
+- `tables/mappings/evaluation-scale-ranking.md`
+- `tables/decisions/criterion-preference-priority.md`
+- `tables/constraints/evaluation-threshold-acceptance.md`
+- `tables/procedures/evaluation-aggregation.md`
+- `tables/diagnostics/evaluation-sensitivity.md`
+- `tables/evidence/evaluation-applicability.md`
+- `tables/procedures/evaluation-review-disposition.md`
 
 ## Claim boundary
 

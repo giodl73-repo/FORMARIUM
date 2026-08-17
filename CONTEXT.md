@@ -734,13 +734,13 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge through F60 has expanded and deepened the connected reference
+Factor Forge through F70 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
-software, decision support, and factoring grammar. The canonical reference now
-contains 47 entries, 361 senses, 556 factors, and 74 views with 132 exact
-assurance bindings. The current Factor Forge supplement contains 70 records,
-while `sim-29` selects 148 canonical records and indexes 156 destinations
-across fifteen chapters. Historical preflight documents retain the counts of the
+software, decision support, factoring grammar, and evaluation grammar. The
+canonical reference now contains 48 entries, 374 senses, 570 factors, and 82
+views with 141 exact assurance bindings. The current Factor Forge supplement
+contains 79 records, while `sim-29` selects 157 canonical records and indexes
+165 destinations across sixteen chapters. Historical preflight documents retain the counts of the
 rehearsal they recorded.
 
 F38-F42 close the generated unresolved list through existing semantic owners:
@@ -757,6 +757,14 @@ perspective projection, basis transformation, and factor
 status/completeness. The permanent `.roles` organization now includes a
 Product Owner who gates every ten-phase batch on recognizable reader value,
 portfolio cost, evidence level, and a continue/merge/defer/stop decision.
+
+F61-F70 add one owner for evaluation measure, scale, criterion, and score plus
+eight task-specific views for comparison frames, scale/ranking, judgment
+roles, threshold/acceptance, aggregation, sensitivity, applicability, and
+review/disposition. The route lets a reader reconstruct an unfamiliar score
+without treating its display, normalization, rank, threshold, or acceptance
+as self-explanatory evidence. Internal rehearsal establishes structure and
+mechanics only, not reader value or evaluation validity.
 
 F28 adds parser grammar and external fail-closed fixtures for five Decision
 and Evidence relation kinds. F29 admits the first exact cross-entry
