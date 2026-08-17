@@ -433,8 +433,64 @@ Separate plan, task, work milestone, workflow, schedule, resource, baseline,
 forecast, actual event, and outcome. Use the Planned Work Procedure to produce
 a reviewable course without treating the plan as prediction.
 
+## Task AO - Separate columns, therefore independent
+
+A review places cost, latency, reliability, and user burden in separate
+columns, multiplies normalized values, and calls the factors independent. Two
+columns share the same observations, one factor matters only above a load
+threshold, and several combinations are impossible.
+
+Use Decomposition Modes and the Interaction Constraint to state root roles,
+domains, dependence, interaction, operator meaning, invalid combinations,
+evidence status, and completeness before combining the columns.
+
+## Task AP - The unexplained remainder is the cause
+
+An accounting explanation starts from a baseline, assigns overlapping savings
+to two interventions, allocates their joint effect to both, and labels the
+remaining difference “waste.” The result reconciles only after a balancing
+adjustment whose source is unknown.
+
+Use the Contribution and Reconciliation Procedure to freeze the result basis,
+signs, overlap, joint contribution, uncertainty, residual, and disposition.
+Keep arithmetic closure separate from causal attribution or responsibility.
+
+## Task AQ - Same endpoint, same path
+
+A project hierarchy mixes product parts, organizational teams, and work tasks
+under one parent. A summary rolls them into one percentage. Two executions end
+in the same status, so the report ignores that one reordered a noncommuting
+step, waited beyond an expiry window, and left a residual obligation.
+
+Use the Hierarchy Mapping and Ordered Path Transition view to separate pivots,
+levels, coverage, roll-up, order, lag, intermediate state, failure behavior,
+and cross-level or endpoint loss.
+
+## Task AR - A plausible pathway removed uncertainty
+
+A diagram shows an action, intermediate metric, and desired outcome. Because
+the order is plausible and the metric moves, the report calls the mechanism
+proven and removes model, measurement, and applicability uncertainty from the
+result.
+
+Use the Mechanism Path Evidence and Uncertainty Source Diagnostic views to
+bind evidence and alternatives to every step while keeping effect,
+mechanism, measurement, model, scenario, and transport claims distinct.
+
+## Task AS - The compact projection is the source
+
+A compact dashboard merges two categories, drops unresolved cases, converts
+coordinates under an undocumented basis, and stores its score as an observed
+fact. The source changes, but the dashboard remains current because its
+displayed total is unchanged.
+
+Use the Perspective/Projection and Basis Transformation mappings plus the
+Factor Status and Completeness Evidence view to retain source/target identity,
+direction, invariants, loss, inverse limits, derivation, unresolved frontier,
+version, and invalidation.
+
 ## Rehearsal boundary
 
-The thirty-three prompts collectively exercise every entry and specialized view in the
+The thirty-eight prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

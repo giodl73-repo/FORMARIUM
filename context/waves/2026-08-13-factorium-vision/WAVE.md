@@ -2068,6 +2068,32 @@ Contracts anchor plus nine specialized or existing-owner slices. Its detailed
 twelve-role review found zero P1 blockers, twenty-nine P2 closure conditions,
 and seven P3 notes. A new Product Owner role now reviews every batch for a
 recognizable reader job, book and composition value, portfolio cost, honest
-evidence level, and an explicit continue/merge/defer/stop decision. The F51-
-F60 result remains pending; no phase, content, corpus, reader-value, release,
-Workbench, or `preview-01` result is admitted by this plan record.
+evidence level, and an explicit continue/merge/defer/stop decision.
+
+Result review: F51-F60 add one Decomposition Modes and Combination Contracts
+anchor and nine specialized views rather than ten phase-labelled entries. The
+batch makes factor role, mode, operator, dependency, polarity, granularity,
+provenance, completeness, and loss separately inspectable. Five neutral tasks
+cover every new path, and the Product Owner decision is continue to F61-F70
+with overlapping evaluation terms merged and low-value views deferred.
+
+The canonical fixed point has 47 entries, 361 senses, 556 factors, 74 views,
+zero unresolved candidates, and 132 exact assurance bindings. Reference
+SHA-256 is
+`a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a`;
+assurance SHA-256 is
+`0ce7dd65f1ede28c2b86ab0a2be18c60f988c89a14db2ff35f96f45a4010678c`.
+The eleven-relation sidecar is unchanged. All valid and adversarial queries
+migrate to the new reference identity.
+
+The Factor Forge delta is 70 records—27 entries and 43 views—and 38 tasks
+cover every path. The regenerated 186-source `sim-29` edition indexes 156
+destinations in fifteen chapters and renders 203 pages with zero missing
+targets. Site identity is
+`fc6e9bc524627ee54b3c524c2587bd27420f458206fc2743911f66834ba4b2de`;
+standalone SHA-256 is
+`33fc2729a1c52c8cea03f6a2be432713226365835b7cc0a95eced872b04f98fc`.
+All Rust, reference, query, closure, task, search, composition, packet, role,
+browser, link, and diff checks pass. No independence, causal mechanism,
+attribution, completeness, model validity, reader value, external-preview,
+publication, Workbench, or `preview-01` claim is admitted.

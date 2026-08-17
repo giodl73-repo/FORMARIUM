@@ -258,9 +258,9 @@ Canonical trace file: `fixtures/composition/system-dependency.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f` |
+| Factorium Reference V0 | `a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `423329c43499fb3564dbed905fd0ff2bc6394ea697ad4455adcd347d4c20c117` |
+| Composition Query trace | `1cd71b0cb9f3cda5713c79f8365ab08f7e54aefce37bea145d3ba9c2d9dfcff7` |
 
 Trace inventory: one seed, three working nodes, one admitted edge, zero
 frontiers, zero conflicts, one passed declared check, three projection rows,

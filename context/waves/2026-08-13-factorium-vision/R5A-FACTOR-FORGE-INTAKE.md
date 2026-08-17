@@ -950,3 +950,23 @@ the available evidence level, and issue a continue/merge/defer/stop portfolio
 decision. The detailed campaign plan is
 `docs/research/2026-08-16-f51-f100-factoring-evaluation-campaign.md`; the first
 batch review is `F51-F60-FACTORING-GRAMMAR-ROLE-REVIEW.md`.
+
+## F51-F60 factoring grammar
+
+F51-F60 add one Decomposition Modes and Combination Contracts anchor plus nine
+distinct views for interaction validity, contribution reconciliation,
+hierarchy/granularity, ordered paths, mechanism evidence, uncertainty sources,
+perspective projection, basis transformation, and factor-status/completeness
+evidence. The owner test rejects nine extra anchors. The Product Owner decision
+is continue to F61-F70 because the batch makes the pre-evaluation job—deciding
+how factors combine and what remains unknown—materially more explicit.
+
+The fixed point contains 47 entries, 361 senses, 556 factors, 74 views, and 132
+assurance bindings at reference SHA-256
+`a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a`
+and assurance SHA-256
+`0ce7dd65f1ede28c2b86ab0a2be18c60f988c89a14db2ff35f96f45a4010678c`.
+The relation sidecar remains eleven records. The 70-record Factor Forge delta
+and 38 tasks produce a 148-record book with 156 searchable destinations,
+fifteen chapters, 203 pages, and zero missing targets. Internal checks establish
+structure and mechanics only, not reader value or publication readiness.

@@ -410,27 +410,25 @@ non-sensitive synthetic scenarios.
 
 ## Immediate execution order
 
-Factor Forge F38-F50 is complete at the candidate-content layer: the generated
-unresolved list is empty, six new anchors and eight views are integrated, and
-Data/Record plus Plan/Task were correctly deepened under existing owners. The
-next editorial work begins from the 46-entry, 65-view fixed point and should be
-driven by reader tasks or closure gaps rather than an arbitrary label list.
+Factor Forge F51-F60 is complete at the candidate-content layer: one new
+factoring-grammar anchor and nine specialized views make interaction,
+contribution, hierarchy, ordered path, uncertainty, projection, basis change,
+epistemic status, and completeness explicit without creating ten disconnected
+headwords. The current fixed point is 47 entries and 74 views with an empty
+generated unresolved list. A Product Owner now joins every ten-phase `.roles`
+review so phase progress must improve a recognizable reader job and justify
+portfolio cost.
 
-1. finish R1 breadth through the quantity clusters and three structural
-   anchors;
-2. prototype the remaining specialized table families while those entries are
-   being built;
-3. freeze the interchange format only after the expanded pilots expose its
-   required fields;
-4. generate indexes and integrity reports;
-5. build cross-paradigm mappings and two Factor Guides;
-6. curate and usability-test the first volume prototype;
-7. run internal Proof Set simulation preflights while continuing reviewed R5
-   editorial batches;
-8. when readers become available, close The Sieve, forward-apply its findings,
+1. build and fixed-point review F61-F70 evaluation grammar;
+2. build and fixed-point review F71-F80 scenario and operational closure;
+3. build and fixed-point review F81-F90 interaction and operating conditions;
+4. build and fixed-point review F91-F100 composition and Book One capstone;
+5. continue internal Proof Set simulation preflights across every batch while
+   keeping software subordinate to canonical books and Factor Tables;
+6. when readers become available, close The Sieve, forward-apply its findings,
    and run the Proof Set private preview on a frozen proof edition;
-9. expand toward and gate the approximately 250-entry substantial volume;
-10. freeze and adversarially test the Composition Query, Closure Policy,
+7. expand toward and gate the approximately 250-entry substantial volume;
+8. freeze and adversarially test the Composition Query, Closure Policy,
     working-graph, Evaluation, and flattened Factor Guide contracts;
-11. begin Workbench implementation only against those proven reference and
+9. begin Workbench implementation only against those proven reference and
     closure contracts.

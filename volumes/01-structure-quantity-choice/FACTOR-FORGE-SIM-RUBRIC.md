@@ -437,9 +437,47 @@ final selection.
 - plan, task, milestone, dependency, resource, schedule, baseline, actual, and
   outcome remain separate.
 
+## Task AO expected route
+
+- Decomposition Modes and Combination Contracts;
+- Factor Interaction Integrity Constraint Table;
+- factor role, mode, dependence, interaction, operator, invalid combination,
+  evidence status, and completeness remain separate.
+
+## Task AP expected route
+
+- Contribution and Reconciliation Procedure;
+- baseline, common basis, signs, overlap, joint contribution, uncertainty,
+  residual, and disposition remain visible without invented cause or blame.
+
+## Task AQ expected route
+
+- Hierarchy and Granularity Mapping;
+- Ordered Path Transition Table;
+- pivot, level, coverage, roll-up, order, lag, intermediate state, failure,
+  endpoint, and loss remain distinct.
+
+## Task AR expected route
+
+- Mechanism Path Evidence Table;
+- Uncertainty Source Failure Diagnostic;
+- path evidence, alternatives, effect, mechanism, measurement, model,
+  scenario, and applicability uncertainty remain separate.
+
+## Task AS expected route
+
+- Perspective and Projection Mapping;
+- Basis Transformation Mapping;
+- Factor Status and Completeness Evidence Table;
+- source/target, direction, invariants, loss, inverse, derivation, frontier,
+  version, and invalidation remain reconstructable.
+
 Critical artifact failure: any route treats a representation, pass flag,
 percentage, date, matching field, login, certificate, or plan as universal
 proof of meaning, validity, dependability, authority, assurance, or outcome.
+The F51-F60 routes also fail critically if separate columns establish
+independence, arithmetic closure establishes cause, endpoint equality erases
+path, a diagram proves mechanism, or a lossy projection replaces its source.
 
 ## Exact task-coverage manifest
 
@@ -506,6 +544,16 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/procedures/planned-work.md`
 - `tables/entries/assurance-assessment-audit-certification.md`
 - `tables/evidence/assurance-conformity.md`
+- `tables/entries/decomposition-modes-combination-contracts.md`
+- `tables/constraints/factor-interaction-integrity.md`
+- `tables/procedures/contribution-reconciliation.md`
+- `tables/mappings/hierarchy-granularity.md`
+- `tables/transitions/ordered-path.md`
+- `tables/evidence/mechanism-path.md`
+- `tables/diagnostics/uncertainty-source-failures.md`
+- `tables/mappings/perspective-projection.md`
+- `tables/mappings/basis-transformation.md`
+- `tables/evidence/factor-status-completeness.md`
 
 ## Claim boundary
 

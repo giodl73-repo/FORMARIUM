@@ -71,9 +71,9 @@ Exact trace file: `fixtures/composition/decision-bridge-closure.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f` |
+| Factorium Reference V0 | `a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `e582bce92fcb29aee32c6e089003e09ed56e26944aa62eb9201ddbfa1ee76038` |
+| Composition Query trace | `684d66c31d427e1305b2dc3e6b86d62771fef223e3bb767b3c716e6d857ac93b` |
 
 See the
 [combined-closure contract](../specs/DECISION-BRIDGE-COMBINED-CLOSURE.md) for
@@ -108,9 +108,9 @@ Exact trace file: `fixtures/composition/decision-evidence.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f` |
+| Factorium Reference V0 | `a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `59ea644408b75325a2b2a3f0ccccbcd23d22c1d587aba5c932417d41fe37cf09` |
+| Composition Query trace | `13a2cfafa8676f9cb5488d2fae9b27548b94aaa8b8f65496fd1bed5c7a410958` |
 
 See the
 [relation admission contract](../specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md)
@@ -194,9 +194,9 @@ Exact trace file: `fixtures/composition/constraint-feasibility.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f` |
+| Factorium Reference V0 | `a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `737217d67843951e92ec118d6fb5dfc1704ba63c25d05d8aad24e6f734acb127` |
+| Composition Query trace | `e39aa65a621ed183a279370cc90ea447f08884229cd1555f493763f17acedd8d` |
 
 See the
 [constraint-to-feasibility admission contract](../specs/CONSTRAINT-FEASIBILITY-RELATION-ADMISSION.md)
@@ -241,9 +241,9 @@ Exact trace file: `fixtures/composition/causal-outcome-scope.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f` |
+| Factorium Reference V0 | `a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `7f44e8a2c0dd347e8d02150fb6ec9daf42577d095cf1ba148696895ece8c422e` |
+| Composition Query trace | `ab464305f8af9272ee1ecf28c18ed85a110a3fc8bd9f04d164461a63803c7297` |
 
 See the
 [causal-scope-to-outcome admission contract](../specs/CAUSAL-OUTCOME-RELATION-ADMISSION.md)
@@ -276,9 +276,9 @@ Exact trace file: `fixtures/composition/risk-consequence.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f` |
+| Factorium Reference V0 | `a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `fb47d79974c87e252be957b89370be3e274798c19e4f6166f9d2e8d088cfea90` |
+| Composition Query trace | `923a2c366f1b408843fe72e12058f957a1625ab974f2c8226557f8db6ac9f79e` |
 
 See the
 [risk-to-consequence admission contract](../specs/RISK-CONSEQUENCE-RELATION-ADMISSION.md)
@@ -311,9 +311,9 @@ Exact trace file: `fixtures/composition/value-criterion.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f` |
+| Factorium Reference V0 | `a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `44688c61c90a8acbaf129248ac78cfdc7a92c70addd61e86bc4a07a809cf6bc8` |
+| Composition Query trace | `39e09ce957b4104acc211eb29458815daf2d3860d137539dce734270f89b3375` |
 
 See the
 [value-to-criterion admission contract](../specs/VALUE-CRITERION-RELATION-ADMISSION.md)

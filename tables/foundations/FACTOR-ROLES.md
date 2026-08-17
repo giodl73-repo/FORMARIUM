@@ -9,6 +9,11 @@ job a factor performs inside one decomposition view. The same canonical entry
 can therefore be a context in one view, a pivot in another, and a derived
 output in a third. Roles are view-relative annotations, not permanent types.
 
+[Decomposition Modes and Combination Contracts](../entries/decomposition-modes-combination-contracts.md)
+adds a separate layer: how the subject was divided and how selected factors
+may recombine. A component role therefore does not imply an additive operator,
+and separate factor roles do not imply independence or completeness.
+
 ## Structural roles
 
 | Role | Governing question | Characteristic test |
@@ -82,6 +87,8 @@ These are candidate assignments, not equivalences or definitions.
 - A derived view is not counted as an independently observed input.
 - Policies and constraints may interact but MUST NOT be silently collapsed.
 - Mechanisms do not prove that the assigned factors are well chosen.
+- Decomposition mode, combination operator, dependence, epistemic status, and
+  completeness remain separate from role assignment.
 
 ## Maturity and provenance
 

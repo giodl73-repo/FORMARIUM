@@ -1,6 +1,6 @@
 # F51-F60 Factoring Grammar Role Review
 
-Status: plan approved with conditions; result review pending
+Status: fixed point for candidate publication
 
 Date: 2026-08-16
 
@@ -59,5 +59,63 @@ No critical or major plan finding remains without a declared closure test.
 
 ## Result review
 
-Pending implementation, canonical synchronization, book integration, full
-validation, and closure of all P2 conditions.
+All twenty-nine P2 conditions close in the candidate artifacts. One new anchor
+owns decomposition mode, interaction, contribution, refinement, ordered path,
+projection, basis transformation, epistemic status, completeness, and
+combination contract without turning those execution slices into sibling
+headwords. Nine views each answer a distinct reader question: interaction
+validity, contribution reconciliation, hierarchy/granularity, ordered paths,
+mechanism evidence, uncertainty sources, perspective projection, basis
+transformation, and factor-status/completeness evidence.
+
+Factor role, mode, operator, dependence, polarity, granularity, provenance,
+completeness, and loss remain separate throughout. Statistical interaction is
+one bounded example rather than the definition of semantic interaction;
+engineering hierarchies retain their selected pivots; uncertainty categories
+remain owner- and purpose-specific; sequence does not become causation; and
+projection or arithmetic closure does not become empirical adequacy.
+
+Five neutral rehearsal tasks cover all ten admitted paths. The new book chapter
+forms one reader route from hidden dependence through reconciliation,
+hierarchy/path, mechanism/uncertainty, and loss-aware projection. Canonical
+reference synchronization closes at 47 entries, 361 senses, 556 factors, 74
+views, and zero unresolved candidates. Exact assurance covers 47 entries, 74
+views, and eleven relations in 132 bindings. Reference SHA-256 is
+`a2934766eecde6dd8fd8139a0929888cc1ea497c2bdfe1328e0ef9dadf80fc9a`;
+assurance SHA-256 is
+`0ce7dd65f1ede28c2b86ab0a2be18c60f988c89a14db2ff35f96f45a4010678c`.
+The eleven-relation sidecar remains unchanged.
+
+The Factor Forge supplement now selects 70 records—27 entries and 43 views—
+for a 148-record combined book. Thirty-eight neutral tasks cover every delta
+path. The regenerated 186-source `sim-29` edition indexes 156 destinations in
+fifteen chapters and renders 203 site pages with zero missing targets. Site
+identity is
+`fc6e9bc524627ee54b3c524c2587bd27420f458206fc2743911f66834ba4b2de`;
+standalone SHA-256 is
+`33fc2729a1c52c8cea03f6a2be432713226365835b7cc0a95eced872b04f98fc`.
+
+All Rust tests, formatting, Clippy, reference/sidecar, canonical/adversarial
+query, closure, source, task, search, local and generated composition, packet,
+role, browser, link, and diff checks pass.
+
+## Product Owner decision
+
+Decision: **continue to F61-F70 with conditions**.
+
+The batch earns continued investment because it makes one recognizable job
+materially easier: before combining factors, a reader can determine whether
+they are independent, interacting, ordered, projected, or incomplete and can
+see the evidence and loss boundary. Portfolio cost is one anchor, nine views,
+one chapter, five tasks, ten review bindings, and the associated navigation and
+identity migration. The owner test avoided nine additional anchors.
+
+F61-F70 must reuse this grammar and improve an actual evaluation route. Merge
+overlapping metric/indicator/score material, defer any scale or robustness view
+without distinct reader work, and stop before automated operator inference,
+new typed relations, or reader-value claims.
+
+No P1 or P2 finding remains open. Internal validation still establishes only
+content structure, exact custody, task coverage, and publication mechanics; it
+does not establish comprehension, usefulness, market value, external-preview
+readiness, publication, or Workbench behavior.

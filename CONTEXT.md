@@ -734,13 +734,13 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge through F50 has expanded and deepened the connected reference
+Factor Forge through F60 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
-software, and decision support. The canonical reference now contains 46
-entries, 351 senses, 542 factors, and 65 views with 122 exact assurance
-bindings. The current Factor Forge supplement contains 60 records, while
-`sim-29` selects 138 canonical records and indexes 146 destinations across
-fourteen chapters. Historical preflight documents retain the counts of the
+software, decision support, and factoring grammar. The canonical reference now
+contains 47 entries, 361 senses, 556 factors, and 74 views with 132 exact
+assurance bindings. The current Factor Forge supplement contains 70 records,
+while `sim-29` selects 148 canonical records and indexes 156 destinations
+across fifteen chapters. Historical preflight documents retain the counts of the
 rehearsal they recorded.
 
 F38-F42 close the generated unresolved list through existing semantic owners:
@@ -749,6 +749,14 @@ review and appeal; and Force's coercion/validity homonyms. F43-F50 add six
 independent anchors and deepen two existing owners across models,
 requirements, dependability, time, data structure, access, planned work, and
 assurance. The campaign adds no named-member catalog or typed relation.
+
+F51-F60 add one owner for decomposition modes and combination contracts plus
+nine task-specific views for interaction, contribution/reconciliation,
+hierarchy/granularity, ordered paths, mechanism evidence, uncertainty sources,
+perspective projection, basis transformation, and factor
+status/completeness. The permanent `.roles` organization now includes a
+Product Owner who gates every ten-phase batch on recognizable reader value,
+portfolio cost, evidence level, and a continue/merge/defer/stop decision.
 
 F28 adds parser grammar and external fail-closed fixtures for five Decision
 and Evidence relation kinds. F29 admits the first exact cross-entry

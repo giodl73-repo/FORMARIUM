@@ -90,12 +90,15 @@ template from each Factor Forge F1-F6 batch plus five reviewed cross-entry
 Decision/Evidence edges. Relation coverage therefore remains a bounded
 eleven-record prototype.
 
-The assurance manifest has complete current-corpus coverage: 46 entries, 65
-specialized views, and eleven relation records, for 122 exact bindings. The
+The assurance manifest has complete current-corpus coverage: 47 entries, 74
+specialized views, and eleven relation records, for 132 exact bindings. The
 validator derives that required set from parsed V0 and relation records, so a
 new canonical artifact fails until an applicable digest-bound fixed-point
 review is added. This closes current-corpus review coverage; it does not prove
 full-corpus typed-relation coverage.
+
+Current assurance SHA-256:
+`0ce7dd65f1ede28c2b86ab0a2be18c60f988c89a14db2ff35f96f45a4010678c`.
 
 ## Command
 

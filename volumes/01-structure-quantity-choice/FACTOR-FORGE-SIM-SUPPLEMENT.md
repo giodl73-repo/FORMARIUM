@@ -385,6 +385,60 @@ certification, and accreditation. The Evidence view prevents a logo,
 certificate, audit completion, or accreditation scope from becoming universal
 proof of quality, safety, legality, effectiveness, or future performance.
 
+## Part XIV - How factors combine
+
+### From a factor list to a declared combination contract
+
+139. [Decomposition Modes and Combination Contracts](../../tables/entries/decomposition-modes-combination-contracts.md)
+140. [Factor Interaction Integrity Constraint Table](../../tables/constraints/factor-interaction-integrity.md)
+
+The anchor separates root coordinate, factor role, decomposition mode,
+combination operator, dependency, epistemic status, and completeness. The
+Constraint view tests whether apparent independence or interaction has an
+exact subject, model, domain, operator, invalid-case, and residual contract.
+
+### From an explained total to a reconciled contribution record
+
+141. [Contribution and Reconciliation Procedure](../../tables/procedures/contribution-reconciliation.md)
+
+The Procedure chooses a bounded result and common comparison basis before
+admitting signed, enabling, blocking, joint, or residual contributions. It
+keeps arithmetic reconciliation distinct from causal attribution,
+responsibility, and evidence that a named residual mechanism exists.
+
+### From one hierarchy and endpoint to levels and paths
+
+142. [Hierarchy and Granularity Mapping](../../tables/mappings/hierarchy-granularity.md)
+143. [Ordered Path Transition Table](../../tables/transitions/ordered-path.md)
+
+The Mapping view records source/target level, pivot, coverage, roll-up,
+nonunique drill-down, cross-level identity, and loss. The Transition view
+retains order, lag, memory, intermediate state, concurrency, reversibility,
+and residual effect rather than treating endpoint equality as path equivalence.
+
+### From a causal story to path and uncertainty evidence
+
+144. [Mechanism Path Evidence Table](../../tables/evidence/mechanism-path.md)
+145. [Uncertainty Source Failure Diagnostic](../../tables/diagnostics/uncertainty-source-failures.md)
+
+The Evidence view binds proposed entities, activities, states, propagation,
+and outcomes to step-specific evidence and competing explanations. The
+Diagnostic view separates measurement, sampling, parameter, model, scenario,
+processing, dependence, and applicability failures without claiming one
+universal uncertainty taxonomy.
+
+### From a full source to a loss-aware reading view
+
+146. [Perspective and Projection Mapping](../../tables/mappings/perspective-projection.md)
+147. [Basis Transformation Mapping](../../tables/mappings/basis-transformation.md)
+148. [Factor Status and Completeness Evidence Table](../../tables/evidence/factor-status-completeness.md)
+
+The two Mapping views expose selection, direction, cardinality, invariants,
+unmapped cases, reconstruction limits, and projection loss. The Evidence view
+keeps observed, measured, asserted, assumed, inferred, simulated, derived, and
+unresolved status separate while bounding exhaustive, purpose-complete,
+partial, open, truncated, and residual-bearing claims.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -393,5 +447,5 @@ proof of quality, safety, legality, effectiveness, or future performance.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 138-record combined simulation remains a rehearsal projection, not a
+- The 148-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

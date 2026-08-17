@@ -284,6 +284,32 @@ factor index-series-reference-periods-and-adjustment-status | index series, refe
 factor cash-flow-timing-sign-horizon-and-terminal-treatment | cash-flow timing, sign, horizon, and terminal treatment
 factor discount-rate-source-nominal-real-alignment-and-sensitivity-range | discount-rate source, nominal-real alignment, and sensitivity range
 end-entry
+entry decomposition-modes-combination-contracts | Decomposition Modes and Combination Contracts | reference | candidate | tables/entries/decomposition-modes-combination-contracts.md | A decomposition mode states how selected factors divide or relate to a subject; a combination contract states how they may be used together. Separate factors do not by themselves establish independence, additivity, causation, completeness, or invertibility.
+sense decomposition-mode | decomposition mode
+sense interaction | interaction
+sense contribution | contribution
+sense refinement | refinement
+sense ordered-path | ordered path
+sense projection | projection
+sense basis-transformation | basis transformation
+sense epistemic-status | epistemic status
+sense completeness-contract | completeness contract
+sense combination-contract | combination contract
+factor subject-and-reader-question | subject and reader question
+factor root-coordinates-and-factor-roles | root coordinates and factor roles
+factor decomposition-mode-and-selected-pivot | decomposition mode and selected pivot
+factor factor-identities-domains-and-granularity | factor identities, domains, and granularity
+factor dependency-and-interaction-contract | dependency and interaction contract
+factor combination-operator-order-and-failure-behavior | combination operator, order, and failure behavior
+factor polarity-baseline-and-common-basis | polarity, baseline, and common basis
+factor source-target-direction-cardinality-and-invariants | source-target direction, cardinality, and invariants
+factor epistemic-status-source-activity-and-authority | epistemic status, source activity, and authority
+factor completeness-coverage-remainder-and-residual | completeness, coverage, remainder, and residual
+factor constraints-invalid-combinations-and-unmapped-cases | constraints, invalid combinations, and unmapped cases
+factor projection-loss-inverse-and-round-trip-limits | projection loss, inverse, and round-trip limits
+factor counterexamples-alternate-decompositions-and-sensitivity | counterexamples, alternate decompositions, and sensitivity
+factor provenance-version-review-and-revision | provenance, version, review, and revision
+end-entry
 entry dependability-reliability-availability-resilience | Reliability, Availability, Maintainability, Resilience, and Recovery | systems | candidate | tables/entries/dependability-reliability-availability-resilience.md | Reliability concerns continuity without specified failure; availability concerns usable state when required; maintainability concerns restoration support; resilience concerns maintaining and recovering required capability under adversity; recovery is a bounded restoration process or outcome. Every claim retains subject, conditions, and time.
 sense reliability | reliability
 sense availability | availability
@@ -987,6 +1013,8 @@ factor unit-system | unit system
 end-entry
 view constraint-access-authorization-integrity | access-permission-authorization-entitlement | access,permission,authorization-decision,entitlement,access-control | constraint | Access Authorization Integrity Constraint Table | tables/constraints/access-authorization-integrity.md | Exact request, policy, permission, entitlement, decision, enforcement, revocation, delegation, and privacy-minimized review bindings remain reconstructable and fail closed.
 end-view
+view constraint-factor-interaction-integrity | decomposition-modes-combination-contracts | interaction,combination-contract,decomposition-mode | constraint | Factor Interaction Integrity Constraint Table | tables/constraints/factor-interaction-integrity.md | Requires exact factor identity, dependence, interaction semantics, operator domain, invalid combinations, and residual limits before joint behavior is interpreted.
+end-view
 view constraint-policy-constraints | policy-rule-constraint-decision-exception | constraint,review,appeal | constraint | Policy Constraint Table | tables/constraints/policy-constraints.md | Version, evidence, authority, bounded exceptions, output separation, enforcement, audit, review independence, appeal integrity, and disposition separation remain explicit policy-evaluation invariants.
 end-view
 view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,architecture,architecture-description,capability,boundary,environment,interface,dependency | constraint | System Composition and Architecture Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves entity, architecture, description, viewpoint/view, contextual subsystem role, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and cross-view consistency as distinct obligations.
@@ -1031,11 +1059,17 @@ view diagnostic-stock-flow-balance-failures | stock-flow-balance | stock,flow,ac
 end-view
 view diagnostic-thermodynamic-system-state-phase-failures | thermodynamic-system-state-phase | thermodynamic-system,thermodynamic-surroundings,thermodynamic-boundary,open-system,closed-system,isolated-system,thermodynamic-state,state-variable,intensive-quantity,extensive-quantity,equation-of-state,thermodynamic-process,process-path,phase,phase-transition | diagnostic | Thermodynamic System and Phase Failure Diagnostic | tables/diagnostics/thermodynamic-system-state-phase-failures.md | Maps boundary, exchange, state, scaling, path, phase, transition, and taxonomy-boundary symptoms to discriminating checks without treating a container, steady reading, or familiar phase name as proof.
 end-view
+view diagnostic-uncertainty-source-failures | probability-risk-uncertainty | uncertainty,measurement-uncertainty,risk | diagnostic | Uncertainty Source Failure Diagnostic | tables/diagnostics/uncertainty-source-failures.md | Separates source, representation, propagation, dependence, and interpretation failures without treating one source taxonomy or narrower interval as universal certainty.
+end-view
 view evidence-assurance-conformity | assurance-assessment-audit-certification | assurance,assessment,audit,attestation,certification,accreditation | evidence | Assurance and Conformity Evidence Table | tables/evidence/assurance-conformity.md | Binds assurance, assessment, audit, certification, and accreditation artifacts to exact subject, criteria, scheme, party, scope, evidence, time, status, and excluded claims.
 end-view
 view evidence-causal-claim | causal-reasoning | association,causal-effect,influence,causal-mechanism,intervention,causal-attribution | evidence | Causal Claim Evidence Table | tables/evidence/causal-claim-evidence.md | Audits association, effect, influence, mechanism, intervention-effect, and actual-case attribution claims through explicit targets, designs, assumptions, evidence, alternatives, transport limits, and dispositions without computing a causal estimate.
 end-view
+view evidence-factor-status-completeness | decomposition-modes-combination-contracts | epistemic-status,completeness-contract,projection,decomposition-mode | evidence | Factor Status and Completeness Evidence Table | tables/evidence/factor-status-completeness.md | Binds observed, measured, asserted, assumed, inferred, simulated, derived, and unresolved factors to evidence while auditing exhaustive, partial, open, truncated, and residual-bearing boundaries.
+end-view
 view evidence-founding-factor-evidence | claim-evidence | claim,evidence-item,result,limitation,confidence,provenance | evidence | Founding FACTOR Evidence | tables/evidence/founding-factor-evidence.md | Supported, contradicted, excluded, and untested claims remain tied to immutable artifacts and explicit limitations.
+end-view
+view evidence-mechanism-path | causal-reasoning | causal-mechanism,causal-effect,influence,intervention,causal-attribution | evidence | Mechanism Path Evidence Table | tables/evidence/mechanism-path.md | Binds evidence and competing explanations to proposed pathway entities, activities, states, order, propagation, and outcome without identifying an effect or assigning responsibility.
 end-view
 view evidence-observation-inference-chain | claim-evidence | claim,evidence-item,result,limitation,confidence,provenance,observation,measurement,inference | evidence | Observation-to-Inference Evidence Chain | tables/evidence/observation-inference-chain.md | Preserves source, activity, observation or measurement, result, inference, claim implication, limitation, confidence, and provenance as separate stages in a traceable evidence chain.
 end-view
@@ -1083,13 +1117,19 @@ view formula-pythagorean-trigonometric-identity | mathematical-relation-solving 
 end-view
 view formula-thermal-quantities | thermal-quantity | temperature,thermal-equilibrium,heat-transfer,internal-energy,heat-capacity,specific-heat-capacity,entropy | formula | Thermal Quantities | tables/formulas/thermal-quantities.md | These relations separate thermal state variables from path-dependent heat and work transfers. They require a system boundary, process conditions, sign convention, phase scope, and absolute temperature where entropy is involved.
 end-view
+view mapping-basis-transformation | decomposition-modes-combination-contracts | basis-transformation,projection,combination-contract | mapping | Basis Transformation Mapping | tables/mappings/basis-transformation.md | Audits source and target bases, direction, domain, transformation, invariants, inverse, round-trip limits, and loss without assuming every semantic mapping is linear or invertible.
+end-view
 view mapping-data-structure | information-data-signal-noise | semantic-information,data,record,schema,field,encoding | mapping | Data Structure Mapping | tables/mappings/data-structure.md | Maps record, schema, field, value, and link roles to common data mechanisms while preserving identity, authority, interpretation, cardinality, missingness, evolution, provenance, and loss.
 end-view
 view mapping-factor-role-mechanisms | factorization-quality | mechanism-assignment | mapping | Factor Role to Mechanism Crosswalk | tables/mappings/factor-role-mechanisms.md | Maps eleven general factor roles into six bounded target-system mechanism vocabularies while preserving contextual, partial, many-to-many semantics and explicit non-equivalence.
 end-view
 view mapping-governance-compliance-mechanisms | governance-obligation-compliance | governance,obligation,compliance | mapping | Governance and Compliance Mechanisms | tables/mappings/governance-compliance-mechanisms.md | Maps governance, obligation, and compliance concepts to bounded organizational records, compliance systems, policies, controls, enforcement points, assessments, and attestations while preserving authority, applicability, evidence, effectiveness, and non-equivalence.
 end-view
+view mapping-hierarchy-granularity | decomposition-modes-combination-contracts | refinement,decomposition-mode,completeness-contract | mapping | Hierarchy and Granularity Mapping | tables/mappings/hierarchy-granularity.md | Maps between refinement levels while preserving pivot, coverage, aggregation, cross-level identity, nonunique disaggregation, and loss instead of imposing one universal tree.
+end-view
 view mapping-organizational-assignment-semantics | organization-role-authority | organization,position,organizational-role,competency,responsibility,authority,accountability-answerability,action-accountability,delegation,ownership-stewardship | mapping | Organizational Assignment Semantics | tables/mappings/organizational-assignment-semantics.md | Maps organization, position, role, competency, responsibility, authority, accountability, delegation, ownership, stewardship, and custody to records while preserving contextual, partial, many-to-many semantics and non-equivalence.
+end-view
+view mapping-perspective-projection | model-representation-simulation | model,representation,simulation-result | mapping | Perspective and Projection Mapping | tables/mappings/perspective-projection.md | Maps a source subject or model into a purpose-specific view while retaining direction, identity, selection, derivation, loss, reconstruction limits, and source-change invalidation.
 end-view
 view mapping-software-architecture-mechanisms | software-module-service-resource | module,service,resource | mapping | Software Architecture Mechanisms | tables/mappings/software-architecture-mechanisms.md | Maps module, service, and resource concepts into bounded language, SOA, HTTP, and Kubernetes mechanisms while preserving namespace, capability-access, resource, representation, state, lifecycle, and non-equivalence distinctions.
 end-view
@@ -1105,6 +1145,8 @@ view mapping-unit-conversion | quantity-value-unit-conversion | quantity-value,n
 end-view
 view mapping-version-scheme-semantics | identity-naming-classification-versioning | version,compatibility-level | mapping | Version Scheme Semantics | tables/mappings/version-scheme-semantics.md | Generic version roles map to Semantic Versioning only when a package declares a public API.
 end-view
+view procedure-contribution-reconciliation | decomposition-modes-combination-contracts | contribution,combination-contract,completeness-contract | procedure | Contribution and Reconciliation Procedure | tables/procedures/contribution-reconciliation.md | Frames a bounded result, common basis, contributors, overlap, combination, residual, and disposition without double counting or naming reconciliation gaps as causes.
+end-view
 view procedure-entry-publication | factorium-entry-publication | editorial-workflow,entry-maturity,publication-state,source-authority,domain-acceptance | procedure | Entry Publication Procedure | tables/procedures/entry-publication.md | Research, canonicalization, specialized views, role review, validation, integration, and publication use explicit gates and recovery.
 end-view
 view procedure-planned-work | coordinated-work | plan,task,work-milestone,workflow,orchestration,choreography,concurrency,compensation | procedure | Planned Work Procedure | tables/procedures/planned-work.md | Frames outcomes, decomposes tasks, connects dependencies, allocates resources, defines milestones, preserves baselines, records actuals, and governs review without treating a plan as prediction.
@@ -1114,5 +1156,7 @@ end-view
 view scale-editorial-maturity | factorium-entry-publication | entry-maturity | scale | Editorial Maturity Scale | tables/scales/editorial-maturity.md | Candidate, supported, established, disputed, and deprecated are evidence-backed interpretations rather than automatic scores.
 end-view
 view transition-generic-lifecycle | state-event-transition-process-lifecycle | transition,lifecycle-stage,status | transition | Generic Lifecycle Transition Table | tables/transitions/generic-lifecycle.md | A lifecycle change preserves source, event, guard, effect, target, and failure behavior as distinct fields.
+end-view
+view transition-ordered-path | temporal-organization | time-instant,duration,time-interval,schedule,milestone | transition | Ordered Path Transition Table | tables/transitions/ordered-path.md | Retains order, lag, history, intermediate state, concurrency, reversibility, and residual effects without treating endpoint equality as path equivalence or precedence as causation.
 end-view
 end-reference
