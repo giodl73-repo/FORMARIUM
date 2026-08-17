@@ -68,6 +68,8 @@ F33 adds risk-to-consequence characterization without importing probability or
 preference, bringing the sidecar to ten records.
 F34 adds value-to-criterion without manufacturing comparability, preference,
 or a universal objective, completing the bounded packet at eleven records.
+F35 exercises the completed packet as one canonical five-edge closure with
+shared-node deduplication and all substantive checks unresolved.
 F30 exposes the first evidence edge through one exact incomplete book and problem-led
 reading route while leaving the interactive Composition Lab unchanged.
 

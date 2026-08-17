@@ -785,6 +785,13 @@ utility, and return do not collapse, and no comparability, weight, aggregation,
 objective, or ranking follows. All five bounded F27 relations are now admitted
 but remain outside the F1-F6 Composition Lab.
 
+F35 composes all five F27 edges in the first canonical multi-relation Decision
+closure: five seeds, five edges, four deduplicated Choice targets, one Decision
+scope, five unresolved checks, and ten loss-declared projections. Causal scope
+and risk consequence share one alternative-outcome node without losing either
+edge. The trace remains `incomplete`, imports no local guide verdict, and stays
+read-only outside the Lab and homepage trace set.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

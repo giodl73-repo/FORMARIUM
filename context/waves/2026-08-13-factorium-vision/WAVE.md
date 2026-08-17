@@ -1869,3 +1869,45 @@ equivalence, comparability, cost, price, utility, return, preference, weight,
 aggregation, objective, ranking, recommendation validity, decision quality,
 reader success, external-preview, publication, Workbench, or `preview-01`
 claim is admitted.
+
+## 2026-08-16 F35 combined decision-bridge closure
+
+Plan review: compose the five completed F27 bridge relations into one
+canonical, depth-one query without changing the V0 grammar; retain five
+independent source concepts and all five explicit relation records; deduplicate
+the Choice alternative-state outcome target shared by the causal and risk
+edges; keep every canonical check `unresolved` and the closure `incomplete`;
+declare every projection loss; add a fail-closed fixture that removes the
+shared target; do not import the guide's local pass, fail, or unresolved
+records; and leave the Lab, homepage trace set, and Compose starters unchanged.
+The six-role review found zero P1 and twelve P2 conditions, all closed by the
+shared-node/explicit-edge contract, exact budgets, negative fixture, guide
+staging, hash binding, and publication exclusions.
+
+Result review: the first combined decision closure has five seeds, five
+admitted cross-entry edges, ten unique nodes, five unresolved checks, ten
+loss-declared projections, and exact work 35. Its SHA-256 is
+`41c4e2d14e2169fef9902120be6111d310a12a829981149c307fccd24fae6e59`.
+The causal and risk traversals retain separate edge records while sharing one
+canonical Choice outcome node; the negative fixture fails source validation
+when that node and its projection are absent. The V0 query grammar needed no
+extension. The guide now exposes the exact Add, Multiply, Evaluate, Stop, and
+Flatten stages while leaving component routes authoritative and all local
+evaluation outcomes separate. The eleven-relation sidecar remains at SHA-256
+`df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634`;
+the 108-binding assurance sidecar remains at SHA-256
+`9a566c472fc07c3d553cf13744be3a00565b04fe409a406161da287abfcf8edc`.
+
+The regenerated 161-source `sim-29` edition retains 132 searchable
+destinations and 176 site pages with zero missing targets. Its site identity
+is `798556c0711c28b7b81c4f117c63a2843318bd01e6f6174010bb90c5eaa140cf`
+and standalone SHA-256 is
+`44959d26460032ef637f5b04645154b003a967de102ab320fef5240275bfde3d`.
+All 70 Rust tests, Clippy, eleven canonical queries, the missing-shared-target
+negative fixture, focused combined-closure and bridge checks,
+reference/sidecar, closure, local and generated-site composition, browser,
+search, packet, role, link, visual, and diff checks pass. No local
+applicability, evidence support, causal identification, probability, value
+comparability, constraint satisfaction, preference, aggregation, ranking,
+recommendation validity, decision quality, reader success, external-preview,
+publication, Workbench, or `preview-01` claim is admitted.

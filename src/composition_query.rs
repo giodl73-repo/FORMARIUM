@@ -781,6 +781,10 @@ mod tests {
                 "incomplete",
             ),
             (
+                "fixtures/composition/decision-bridge-closure.factorium-query",
+                "incomplete",
+            ),
+            (
                 "fixtures/composition/latency-evidence.factorium-query",
                 "complete",
             ),
@@ -813,6 +817,7 @@ mod tests {
             "fixtures/composition-invalid/causal-outcome-wrong-predecessor.factorium-query",
             "fixtures/composition-invalid/constraint-feasibility-wrong-predecessor.factorium-query",
             "fixtures/composition-invalid/cycle-replay.factorium-query",
+            "fixtures/composition-invalid/decision-bridge-closure-missing-shared-target.factorium-query",
             "fixtures/composition-invalid/evidence-evaluation-wrong-predecessor.factorium-query",
             "fixtures/composition-invalid/hidden-frontier.factorium-query",
             "fixtures/composition-invalid/incompatible-sense-complete.factorium-query",

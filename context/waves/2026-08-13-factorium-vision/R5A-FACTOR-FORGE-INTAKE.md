@@ -847,3 +847,20 @@ sidecar now has eleven relations, including five cross-entry edges, with 108
 exact assurance bindings. All five bounded F27 packet records are admitted,
 while the Lab remains on F1-F6. Packet closure is not ontology completeness or
 permission for unreviewed relation expansion.
+
+## F35 combined Decision bridge closure
+
+F35 adds no relation and changes no sidecar identity. It publishes one
+canonical multi-relation query over all five admitted F27 edges. Five explicit
+source seeds join four deduplicated Choice targets and one Decision scope in a
+ten-node graph; causal scope and risk consequence share one alternative-
+outcome node while both edge identities remain explicit. All five canonical
+checks remain `unresolved`, closure remains `incomplete`, and ten projection
+rows retain exact loss.
+
+The existing V0 grammar is sufficient: one node origin records one valid
+discovery path, while the complete edge set retains all admitted traversals.
+A negative fixture removes the shared target and fails closed. The combined
+trace imports none of the guide's local outcomes, changes no Lab allowlist,
+adds no homepage trace or Compose starter, and establishes no sufficiency,
+ranking, recommendation, final selection, or ontology-completeness claim.

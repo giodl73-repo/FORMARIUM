@@ -41,6 +41,45 @@ relations are canonical under their separate admission contracts. The bounded
 F27 packet is fully admitted. None is available through the current
 Composition Lab.
 
+## Canonical five-bridge decision closure
+
+Governing question: **Which evidence, causal, consequence, value, and
+constraint concepts must remain joined and unresolved when evaluating this
+intervention choice?**
+
+This is the guide's combined structural closure over all five admitted F27
+relations. Five explicit source factors join four deduplicated Choice targets
+and one Decision scope. The causal-scope and risk-consequence edges share one
+canonical alternative-outcome node; both edges remain explicit, so node
+deduplication does not collapse their meanings.
+
+| Stage | Exact route | Reader meaning |
+|---|---|---|
+| Add | five exact source factors from Claim/Evidence, Causal Reasoning, Probability/Risk/Uncertainty, Cost/Price/Value/Return, and Policy/Rule | Begin with every independently owned source concept; prose does not discover or omit one. |
+| Multiply | all five F27 edges -> four deduplicated Choice targets -> `view:decision-alternative-selection` | Form one bounded working graph while retaining every direction and sharing canonical targets by identity. |
+| Evaluate | five canonical checks = `unresolved` | Canonical structure imports none of the authored guide's local pass, fail, or unresolved declarations. |
+| Stop | state = `incomplete`; no frontier or conflict | The graph is structurally present, but substantive applicability, causality, consequence, value, and constraint work remains. |
+| Flatten | ten loss-declared rows | Retain five sources, four unresolved Choice targets, and one Decision scope without manufacturing local bindings, truth, comparability, ranking, or selection. |
+
+Exact closure: five seeds, five edges, ten nodes, five unresolved checks, ten
+projection rows, and 35 work records. Removing the shared alternative-outcome
+node invalidates both the causal and risk traversals. This read-only trace is
+not exposed through the Composition Lab, a homepage trace, or a Compose
+starter.
+
+Exact trace file: `fixtures/composition/decision-bridge-closure.factorium-query`
+
+| Identity | SHA-256 |
+|---|---|
+| Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
+| Composition Query trace | `41c4e2d14e2169fef9902120be6111d310a12a829981149c307fccd24fae6e59` |
+
+See the
+[combined-closure contract](../specs/DECISION-BRIDGE-COMBINED-CLOSURE.md) for
+node-sharing, loss, evaluation, and publication boundaries. The five component
+routes below remain authoritative explanations of each individual edge.
+
 ## Canonical evidence-to-evaluation reading route
 
 Governing question: **Which evidence qualification must be reviewed before

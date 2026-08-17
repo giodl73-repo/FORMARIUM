@@ -61,6 +61,9 @@ loss for that row.
   target resolves through the selected reference.
 - Every edge resolves through the selected relation sidecar. Its source,
   target, and scope nodes are present and not excluded.
+- Multiple edges may share one canonical node. The node origin retains one
+  valid discovery path; the complete sorted edge set retains all incident
+  admitted traversals required by the query.
 - A seed is a depth-zero `required` node with origin `seed`.
 - A relation-derived node names an admitted edge, exact predecessor, and
   policy-consistent direction; a scope-derived node names an admitted edge,
