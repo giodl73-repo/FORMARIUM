@@ -965,6 +965,21 @@ standalone SHA-256 is
 `sim-35` reproduces exactly. Teaching order is editorial only, not hierarchy,
 prerequisite truth, completeness, or reader-value evidence.
 
+`sim-37` repairs continuous reading after a Reader step is opened. Exactly the
+24 manifest-selected Table pages receive one static position panel with exact
+step, authored part, Reader-contents return, and bounded previous/next links.
+The projection emits 24 panels, 24 contents links, 23 previous links, and 23
+next links; the other 161 indexed pages receive none. Existing global entry
+pagination remains separately labelled All contents sequence.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+eighteen chapters, and 239 pages with zero missing targets. Site identity is
+`6af1a5b9200ad0be65c070099202ebed5d07f40a613b5a933272be643b04f56e`;
+standalone SHA-256 is
+`f79561fa527db7045a382cefefd6beade9cd76d043a7715b35c09425e96a223e`.
+`sim-36` reproduces exactly. Reader position is editorial only, not a
+prerequisite, dependency, semantic, progress, mastery, or reader-value claim.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

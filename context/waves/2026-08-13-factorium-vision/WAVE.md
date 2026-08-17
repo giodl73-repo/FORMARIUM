@@ -2496,3 +2496,22 @@ direction, leave non-spine pages untouched, and distinguish the existing global
 pagination. No progress, prerequisite, mastery, semantic adjacency,
 personalization, or learning-value claim is admitted. Detailed conditions are
 in `FACTORIUM-READER-SEQUENCE-ROLE-REVIEW.md`.
+
+Result review: `sim-37` repairs the demonstrated Reader continuation break.
+Exactly the 24 manifest-selected Table pages receive one static panel with
+contiguous step, authored part, Reader-contents return, and exact bounded
+previous/next destinations. The projection emits 24 panels, 24 contents links,
+23 previous links, and 23 next links; the other 161 indexed pages receive none.
+
+The existing global pagination remains intact and is separately labelled All
+contents sequence. Static and live Edge checks pass for exact membership,
+positions, part bounds, destinations, first/last behavior, nonmember exclusion,
+an actual step-1-to-step-2 transition, zero missing targets, and no 390-pixel
+overflow. The edition retains 217 sources, 175 canonical records, 185 search
+records, eighteen chapters, and 239 pages. Site identity is
+`6af1a5b9200ad0be65c070099202ebed5d07f40a613b5a933272be643b04f56e`;
+standalone SHA-256 is
+`f79561fa527db7045a382cefefd6beade9cd76d043a7715b35c09425e96a223e`.
+`sim-36` reproduces exactly. Product Owner decision: keep static Reader
+continuation and stop before progress, prerequisites, mastery, personalization,
+or lesson expansion; reader value remains untested.

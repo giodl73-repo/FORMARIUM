@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -79,6 +79,7 @@ $tableNavigatorStyle = Join-Path $workspace "volumes\01-structure-quantity-choic
 $tableFamilyContentsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-family-contents.css"
 $tablesIndexStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-tables-index.css"
 $readerRouteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader-route.css"
+$readerSequenceStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader-sequence.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -153,6 +154,7 @@ $artifactTitle = switch ($Edition) {
     "sim-34" { "Factorium Canonical-Family Contents Simulation 34" }
     "sim-35" { "Factorium Tables Alphabetical Index Simulation 35" }
     "sim-36" { "Factorium Reader Route Simulation 36" }
+    "sim-37" { "Factorium Reader Sequence Simulation 37" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -1663,6 +1665,12 @@ if ($editionNumber -ge 7) {
         }
         $siteCssParts += (Get-Content -LiteralPath $readerRouteStyle -Raw)
     }
+    if ($editionNumber -ge 37) {
+        if (-not (Test-Path -LiteralPath $readerSequenceStyle -PathType Leaf)) {
+            throw "Missing Reader sequence style: $readerSequenceStyle"
+        }
+        $siteCssParts += (Get-Content -LiteralPath $readerSequenceStyle -Raw)
+    }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site.css"),
@@ -2879,6 +2887,9 @@ if ($editionNumber -ge 7) {
             throw "Reader route manifest record mismatch: $($candidateRecordMatches.Count)"
         }
         $candidateRecordPaths = [System.Collections.Generic.List[string]]::new()
+        $candidateRecordIndexByPath = [System.Collections.Generic.Dictionary[string, int]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
         for ($candidateIndex = 0; $candidateIndex -lt $candidateRecordMatches.Count; $candidateIndex++) {
             $expectedOrdinal = $candidateIndex + 1
             $actualOrdinal = [int]$candidateRecordMatches[$candidateIndex].Groups[1].Value
@@ -2890,6 +2901,7 @@ if ($editionNumber -ge 7) {
                 throw "Reader route record is absent from selected search custody: $candidateRecordPath"
             }
             $candidateRecordPaths.Add($candidateRecordPath)
+            $candidateRecordIndexByPath[$candidateRecordPath] = $candidateIndex
         }
         if (@($candidateRecordPaths | Sort-Object -Unique).Count -ne 24) {
             throw "Reader route manifest repeats a record"
@@ -2904,6 +2916,12 @@ if ($editionNumber -ge 7) {
             throw "Reader route authored part mismatch: $($candidatePartMatches.Count)"
         }
         $authoredRecordPaths = [System.Collections.Generic.List[string]]::new()
+        $readerPartNumberByPath = [System.Collections.Generic.Dictionary[string, int]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        $readerPartTitleByPath = [System.Collections.Generic.Dictionary[string, string]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
         $readerPartSections = [System.Text.StringBuilder]::new()
         $readerSequence = 0
         foreach ($candidatePartMatch in $candidatePartMatches) {
@@ -2919,6 +2937,8 @@ if ($editionNumber -ge 7) {
             foreach ($partLinkMatch in $partLinkMatches) {
                 $recordPath = $partLinkMatch.Groups[1].Value
                 $authoredRecordPaths.Add($recordPath)
+                $readerPartNumberByPath[$recordPath] = $readerRoutePartCount + 1
+                $readerPartTitleByPath[$recordPath] = $partTitle
                 $record = $searchRecordByPath[$recordPath]
                 $readerSequence += 1
                 $encodedSequence = $readerSequence.ToString("00")
@@ -3462,6 +3482,10 @@ if ($editionNumber -ge 7) {
     $tableFamilyContentsLinks = 0
     $tableFamilyContentsOpen = 0
     $tableFamilyContentsFolded = 0
+    $readerSequencePanels = 0
+    $readerSequenceContentsLinks = 0
+    $readerSequencePreviousLinks = 0
+    $readerSequenceNextLinks = 0
     foreach ($source in $sources) {
         $relativeSource = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
         $segment = $renderedSegmentBySource[$source]
@@ -3525,7 +3549,48 @@ if ($editionNumber -ge 7) {
                 $nextPage = [System.IO.Path]::GetFileName($next.href)
                 $nextLink = "<a rel=`"next`" href=`"$nextPage`"><span>Next</span>$nextTitle</a>"
             }
-            $pagination = "<nav class=`"site-pagination`" aria-label=`"Entry sequence`">$previousLink$nextLink</nav>"
+            $pagination = if ($editionNumber -ge 37) {
+                "<div class=`"all-record-sequence`"><p>All contents sequence</p><nav class=`"site-pagination`" aria-label=`"All-record sequence`">$previousLink$nextLink</nav></div>"
+            }
+            else {
+                "<nav class=`"site-pagination`" aria-label=`"Entry sequence`">$previousLink$nextLink</nav>"
+            }
+        }
+
+        $readerSequenceHtml = ""
+        if ($editionNumber -ge 37 -and $candidateRecordIndexByPath.ContainsKey($relativeSource)) {
+            $readerPositionIndex = $candidateRecordIndexByPath[$relativeSource]
+            $readerStep = $readerPositionIndex + 1
+            $readerPartNumber = $readerPartNumberByPath[$relativeSource]
+            $encodedReaderPartTitle = [System.Net.WebUtility]::HtmlEncode($readerPartTitleByPath[$relativeSource])
+            $readerPrevious = "<span></span>"
+            $readerNext = "<span></span>"
+            if ($readerPositionIndex -gt 0) {
+                $readerPreviousPath = $candidateRecordPaths[$readerPositionIndex - 1]
+                $readerPreviousRecord = $searchRecordByPath[$readerPreviousPath]
+                $readerPreviousTitle = [System.Net.WebUtility]::HtmlEncode($readerPreviousRecord.title)
+                $readerPreviousPage = [System.IO.Path]::GetFileName($readerPreviousRecord.href)
+                $readerPrevious = "<a data-reader-direction=`"previous`" href=`"$readerPreviousPage`"><span>Previous Reader step</span>$readerPreviousTitle</a>"
+                $readerSequencePreviousLinks += 1
+            }
+            if ($readerPositionIndex -lt $candidateRecordPaths.Count - 1) {
+                $readerNextPath = $candidateRecordPaths[$readerPositionIndex + 1]
+                $readerNextRecord = $searchRecordByPath[$readerNextPath]
+                $readerNextTitle = [System.Net.WebUtility]::HtmlEncode($readerNextRecord.title)
+                $readerNextPage = [System.IO.Path]::GetFileName($readerNextRecord.href)
+                $readerNext = "<a data-reader-direction=`"next`" href=`"$readerNextPage`"><span>Next Reader step</span>$readerNextTitle</a>"
+                $readerSequenceNextLinks += 1
+            }
+            $readerSequencePanels += 1
+            $readerSequenceContentsLinks += 1
+            $readerSequenceHtml = @"
+<nav class="reader-sequence" aria-label="Reader sequence" data-reader-step="$readerStep" data-reader-part="$readerPartNumber">
+<div class="reader-sequence__heading"><p>The Factorium Reader · Step $readerStep of 24</p><a href="../reader.html">Back to Reader contents</a></div>
+<p class="reader-sequence__part">Part $readerPartNumber · $encodedReaderPartTitle</p>
+<div class="reader-sequence__links">$readerPrevious$readerNext</div>
+<p class="reader-sequence__boundary">Editorial teaching order only—not prerequisite, dependency, semantic adjacency, hierarchy, progress, or mastery.</p>
+</nav>
+"@
         }
 
         $factorFocusHtml = ""
@@ -3720,7 +3785,7 @@ $connectionList
     }
 ) / $encodedPageTitle</nav>
 $readerControls
-<main id="main-content" class="site-entry" data-source-path="$encodedSource">$tableNavigatorHtml$factorFocusHtml$segment</main>
+$readerSequenceHtml<main id="main-content" class="site-entry" data-source-path="$encodedSource">$tableNavigatorHtml$factorFocusHtml$segment</main>
 $pagination
 </div>
 <footer class="site-footer">Canonical source: $encodedSource · simulation projection</footer>
@@ -3948,6 +4013,21 @@ $pageScripts
         $siteChecks.reader_route_support_records = 0
         $siteChecks.reader_route_order = "exact-frozen-manifest"
         $siteChecks.reader_route_semantics = "editorial-teaching-sequence-only"
+    }
+    if ($editionNumber -ge 37) {
+        if ($readerSequencePanels -ne 24 -or
+            $readerSequenceContentsLinks -ne 24 -or
+            $readerSequencePreviousLinks -ne 23 -or
+            $readerSequenceNextLinks -ne 23) {
+            throw "Factorium Reader sequence mismatch: panels=$readerSequencePanels contents=$readerSequenceContentsLinks previous=$readerSequencePreviousLinks next=$readerSequenceNextLinks"
+        }
+        $siteChecks.reader_sequence_panels = $readerSequencePanels
+        $siteChecks.reader_sequence_contents_links = $readerSequenceContentsLinks
+        $siteChecks.reader_sequence_previous_links = $readerSequencePreviousLinks
+        $siteChecks.reader_sequence_next_links = $readerSequenceNextLinks
+        $siteChecks.reader_sequence_nonmember_panels = 0
+        $siteChecks.reader_sequence_state = "none"
+        $siteChecks.reader_sequence_semantics = "editorial-teaching-order-only"
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1

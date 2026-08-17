@@ -1,6 +1,6 @@
 # Factorium Reader Sequence Navigation
 
-Status: internal navigation contract under implementation
+Status: internal navigation contract fixed point
 
 Reference implementation: `sim-37`
 

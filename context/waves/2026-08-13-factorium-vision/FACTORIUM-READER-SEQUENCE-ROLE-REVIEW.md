@@ -1,6 +1,6 @@
 # Factorium Reader Sequence Navigation Role Review
 
-Status: plan reviewed; implementation pending
+Status: fixed-point result reviewed
 
 Date: 2026-08-17
 
@@ -31,3 +31,32 @@ Skill review:
 - no prerequisite, progress, mastery, or semantic-order claim is admitted;
 - `sim-36` reproduces exactly and `sim-37` has zero missing targets;
 - fixed-point Product Owner decision.
+
+## Result review
+
+All fourteen P2 conditions are closed. `sim-37` adds one generated Reader
+sequence panel to each of the exact 24 manifest-selected Table pages. Every
+panel identifies its contiguous step and authored part, returns to Reader
+contents, and links the exact previous and next Reader records where they
+exist. Counts are exact: 24 panels, 24 contents links, 23 previous links, and
+23 next links.
+
+The other 161 indexed pages and all supporting pages receive no panel. Existing
+global pagination remains intact and is now separately labelled **All contents
+sequence** on entry pages, so Reader step 1 continues to Context while the
+global sequence retains its distinct neighbor. Tables and source markup remain
+unchanged; the projection stores no progress or route state.
+
+Static and live Edge checks verify all positions, authored part bounds,
+destinations, first/last boundaries, nonmember exclusion, separate navigation
+labels, an actual step-1-to-step-2 transition, and a 390-pixel layout without
+overflow. The edition retains 217 sources, 175 canonical records, 185 search
+records, eighteen chapters, and 239 pages with zero missing targets. `sim-36`
+reproduces exactly with site identity
+`e7527e7213f414c56d3c4c546565ff249ee36e0525a6b90bbbda20e67fa3ed9a`
+and standalone SHA-256
+`ac962f4423204e620fa451a4a159339f7a00f2f531f111543768839ff274c861`.
+
+Product Owner decision: **keep static Reader continuation and stop before
+progress, prerequisites, mastery, personalization, or lesson expansion**.
+Human learning value and preferred order remain untested.
