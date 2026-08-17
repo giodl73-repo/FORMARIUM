@@ -386,6 +386,61 @@ Critical artifact failure: a retrospective association, incomplete score, or
 structural route is accepted as proof of benefit, optimality, authority, or
 final selection.
 
+## Task AG expected route
+
+- Model, Representation, and Simulation;
+- Model and Simulation Failure Diagnostic;
+- no verification, calibration, or visual-realism overclaim.
+
+## Task AH expected route
+
+- Requirement, Specification, Verification, and Validation;
+- Requirement Verification and Validation Evidence Table;
+- exact subject, criterion, method, environment, evidence, and intended-use scope.
+
+## Task AI expected route
+
+- Reliability, Availability, Maintainability, Resilience, and Recovery;
+- Dependability Failure Diagnostic;
+- service boundary, denominator, dependency, recovery-time, recovery-data, and
+  residual-loss distinctions.
+
+## Task AJ expected route
+
+- Instant, Duration, Interval, Deadline, and Schedule;
+- Temporal Representation Mapping;
+- scale, zone, calendar, bounds, authority, logic, and milestone criteria.
+
+## Task AK expected route
+
+- Data Structure Mapping plus the revised Information/Data anchor;
+- record, schema, field, interpretation, identity, cardinality, missingness,
+  unit, and declared loss remain visible.
+
+## Task AL expected route
+
+- Access, Permission, Authorization, and Entitlement;
+- Access Authorization Integrity Constraint Table;
+- authentication, grant, decision, enforcement, revocation, indeterminate
+  result, and audit correlation remain separate.
+
+## Task AM expected route
+
+- Assurance, Assessment, Audit, Certification, and Accreditation;
+- Assurance and Conformity Evidence Table;
+- subject, scheme, party, scope, version, time, status, and excluded claims
+  bound the conclusion.
+
+## Task AN expected route
+
+- Planned Work Procedure plus revised Coordinated Work;
+- plan, task, milestone, dependency, resource, schedule, baseline, actual, and
+  outcome remain separate.
+
+Critical artifact failure: any route treats a representation, pass flag,
+percentage, date, matching field, login, certificate, or plan as universal
+proof of meaning, validity, dependability, authority, assurance, or outcome.
+
 ## Exact task-coverage manifest
 
 The renderer compares these paths with the exact canonical delta derived for
@@ -437,6 +492,20 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/mappings/unit-conversion.md`
 - `tables/entries/choice-alternative-selection.md`
 - `tables/decisions/alternative-selection.md`
+- `tables/entries/model-representation-simulation.md`
+- `tables/diagnostics/model-simulation-failures.md`
+- `tables/entries/requirement-specification-verification-validation.md`
+- `tables/evidence/requirement-verification-validation.md`
+- `tables/entries/dependability-reliability-availability-resilience.md`
+- `tables/diagnostics/dependability-failures.md`
+- `tables/entries/temporal-organization.md`
+- `tables/mappings/temporal-representation.md`
+- `tables/mappings/data-structure.md`
+- `tables/entries/access-permission-authorization-entitlement.md`
+- `tables/constraints/access-authorization-integrity.md`
+- `tables/procedures/planned-work.md`
+- `tables/entries/assurance-assessment-audit-certification.md`
+- `tables/evidence/assurance-conformity.md`
 
 ## Claim boundary
 

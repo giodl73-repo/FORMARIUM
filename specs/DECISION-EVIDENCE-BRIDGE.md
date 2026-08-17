@@ -55,14 +55,14 @@ The reviewed endpoint basis is exact:
 
 | Source | SHA-256 |
 |---|---|
-| `reference/factorium-reference-v0.factorium` | `108f2d424d8cb3ac4145ca2727fcbd2fa1b43067d81a462506616ad6110f13ae` |
+| `reference/factorium-reference-v0.factorium` | `4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f` |
 | `reference/factorium-relations-v0.factorium` | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
 | `tables/entries/choice-alternative-selection.md` | `16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1` |
 | `tables/entries/claim-evidence.md` | `17875b0730df45b563261a670149d4c8312ecf6487f672028b96672fd19b39e5` |
 | `tables/entries/causal-reasoning.md` | `665a33d595e85644f1c4df9b7968617cf26a15fa41c46b448e38cb84540f0383` |
 | `tables/entries/probability-risk-uncertainty.md` | `7702916b84e7d33acb06a4ec0bf020ef9d97c958839abb34db9b4198b97b336f` |
 | `tables/entries/cost-price-value-return.md` | `c7d2c4bb13e2c8e45e406aec5ef55e4e886949eaba124874f4aeb23b18c668dd` |
-| `tables/entries/policy-rule-constraint-decision-exception.md` | `d0af3d9f10c13cfa1c78cf9a35270141d11d996b4b818bde8ba099eaf1681388` |
+| `tables/entries/policy-rule-constraint-decision-exception.md` | `639339b380e0a4b6ad37ee7ef7aecd20400d1ea45e90ad966c3adf9718c24977` |
 
 Any endpoint or relation-sidecar edit makes the candidate packet stale until
 the exact basis is updated and re-reviewed.

@@ -1,4 +1,4 @@
-# Information, Data, Signal, and Noise
+# Information, Data, Record, Schema, Signal, and Noise
 
 Status: candidate anchor entry
 
@@ -17,6 +17,9 @@ Shannon measures quantify modeled surprise or dependence rather than meaning.
 |---|---|---|---|
 | `semantic-information` | What meaningful content is communicated or understood in this context? | interpreted content or knowledge claim | domain-specific |
 | `data` | In what representation is content recorded, transmitted, or processed? | encoded or formalized representation | symbols, records, bytes, or other medium |
+| `record` | Which grouped data items describe one identified subject, event, assertion, or transaction under a record contract? | addressable data grouping | schema- and domain-specific |
+| `schema` | Which governed structure, names, types, constraints, and interpretation rules apply to admitted data? | data-structure contract | language- and domain-specific |
+| `field` | Which named role within a schema carries one admitted value or nested structure? | schema-relative component | declared type/cardinality |
 | `signal` | What observable variation carries the wanted representation through this channel? | physical or mathematical carrier | quantity and domain specific |
 | `noise` | What component is unwanted, interfering, or outside the selected model for this task? | model-relative disturbance or residual | quantity and domain specific |
 | `self-information` | How surprising is this modeled outcome? | logarithmic function of event probability | bit, nat, or declared logarithmic unit |
@@ -49,6 +52,9 @@ source objects
 joint input-output model
   -- compared with product of marginals --> mutual information
   -- optimized over admissible inputs --> channel capacity
+
+schema and version
+  -- govern --> records, fields, values, and constraints
 ```
 
 These arrows describe relationships, not identity. The same data can support
@@ -63,6 +69,9 @@ information-signal-use
    x semantic context and task
    x message or content
    x data representation and encoding
+   x record subject, identity, grouping, and lifecycle
+   x schema authority, version, structure, constraints, and evolution
+   x field name, role, type, cardinality, null/missing semantics, and unit
    x physical or logical signal
    x channel and observation domain
    x signal-noise decomposition rule
@@ -84,6 +93,10 @@ information-signal-use
 | Pair | Shared feature | Decisive distinction |
 |---|---|---|
 | Information vs. data | data can represent information | interpreted meaning/content vs. formalized representation |
+| Data vs. record | records contain data | representation generally vs. governed grouping about a subject/event/assertion |
+| Record vs. row/document/message | each may implement a record | semantic grouping and identity vs. mechanism-specific container |
+| Schema vs. data | schema governs admitted data | structure/interpretation contract vs. represented instances |
+| Field vs. value | a field carries values | schema-relative role vs. one admitted content instance |
 | Data vs. signal | a signal can carry encoded data | symbolic/record structure vs. observable carrier variation |
 | Signal vs. noise | both may be present in one observation | wanted/model-selected component vs. unwanted or residual component |
 | Shannon information vs. meaning | messages participate in both | modeled surprise vs. semantic content, truth, or usefulness |
@@ -100,6 +113,8 @@ information-signal-use
 
 - The same byte sequence can be meaningless under one encoding and
   intelligible under another.
+- Two rows with equal fields may be different records when subject, source, or
+  record identity differs; identical shape does not establish identity.
 - A carrier waveform can be measured even when its message cannot be decoded.
 - Background music is signal for a music-recognition task and noise for a
   speech-transcription task.
@@ -134,7 +149,8 @@ tests layer, mapping, estimation, constraint, and rate-normalization failures.
 1. Decide whether the question concerns meaning, representation, carrier,
    disturbance, modeled surprise, or measurement quality.
 2. Name source, receiver, task, and semantic context.
-3. Declare data representation, encoding, and interpretation convention.
+3. Declare data representation, encoding, interpretation convention, record
+   subject/identity, schema/version, and field missing/null semantics.
 4. Identify the signal quantity, channel, observation domain, and wanted
    component.
 5. Define noise or residual relative to the task and model.
@@ -164,6 +180,10 @@ tests layer, mapping, estimation, constraint, and rate-normalization failures.
 ## Constraints and failure signs
 
 - Data identifies its representation and interpretation convention.
+- Records state grouping subject, identity, schema/version, lifecycle, and
+  provenance; rows, documents, and messages remain possible mechanisms.
+- Schemas state authority, interpretation, constraints, and evolution; a field
+  name or storage type alone does not define meaning.
 - Information claims identify semantic context and intended use.
 - Signal identifies its physical or mathematical quantity and channel.
 - Noise is relative to a task, wanted component, and decomposition rule.
@@ -197,6 +217,8 @@ tests layer, mapping, estimation, constraint, and rate-normalization failures.
 - [Software Transaction, Message, and Contract](software-transaction-message-contract.md)
 - [Causal Reasoning](causal-reasoning.md)
 - [Sampling and Generalization](sampling-generalization.md)
+- [Identity, Namespace, Naming, Classification, and Versioning](identity-naming-classification-versioning.md)
+- [Data Structure Mapping](../mappings/data-structure.md)
 
 ## Sources and provenance
 

@@ -410,6 +410,12 @@ non-sensitive synthetic scenarios.
 
 ## Immediate execution order
 
+Factor Forge F38-F50 is complete at the candidate-content layer: the generated
+unresolved list is empty, six new anchors and eight views are integrated, and
+Data/Record plus Plan/Task were correctly deepened under existing owners. The
+next editorial work begins from the 46-entry, 65-view fixed point and should be
+driven by reader tasks or closure gaps rather than an arbitrary label list.
+
 1. finish R1 breadth through the quantity clusters and three structural
    anchors;
 2. prototype the remaining specialized table families while those entries are

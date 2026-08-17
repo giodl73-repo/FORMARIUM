@@ -2,7 +2,7 @@
 
 Status: neutral internal `sim-03` prompts; not participant observations
 
-Use these prompts to rehearse coverage of the 46-record Factor Forge
+Use these prompts to rehearse coverage of the 60-record Factor Forge
 supplement. Do not consult the author-only rubric while walking a route. Record
 only artifact-level `SIM3-*` notes: plausible first title, headings followed,
 available distinctions, alternate landings, and missing or broken material.
@@ -352,8 +352,89 @@ Use the Decision view to retain missing and contested outcome cells, exact
 measurement bases, noncompensatory gates, sensitivity, ties, authority, and
 reconsideration triggers without inventing a universal score.
 
+## Task AG - The model passed, so reality must agree
+
+Two teams use the same equations but different discretization, solver,
+tolerance, seed, and input versions. One run matches a calibration dataset and
+is declared validated for every operating regime.
+
+Separate subject, model, representation, implementation, simulation, run, and
+result. Localize disagreement and state what verification, validation,
+sensitivity, uncertainty, and reproducibility records are still required.
+
+## Task AH - Verified, validated, and accepted
+
+A product passes one test, so a dashboard marks every requirement verified,
+the complete specification valid, and every intended use accepted.
+
+Separate stakeholder need, requirement, specification, verification,
+validation, test method, nonconformity, exception, and acceptance authority.
+Use the Evidence view to bind each conclusion to exact versions and scope.
+
+## Task AI - Five nines and no recovery
+
+Component request success is high, but a shared dependency causes a long user
+outage. Restoration meets the time target while losing more data than allowed;
+the service is still called resilient because it has redundant instances.
+
+Separate reliability, availability, maintainability, resilience, recovery,
+failure, SLO, dependency, recovery-time, and recovery-data objectives. Use the
+Diagnostic view to test the claim at the service boundary.
+
+## Task AJ - One time field
+
+A record stores local date-times without zones, mixes seconds with calendar
+months, treats an end date as sometimes inclusive, copies a forecast into a
+contractual deadline, and gives a milestone three days of work.
+
+Separate instant, duration, interval, deadline, schedule, milestone, calendar,
+timezone, and authority. Use the Mapping view to propose a loss-aware record.
+
+## Task AK - Same field names, same meaning
+
+Two systems have `owner`, `status`, and `time` fields with matching storage
+types. One means legal title, one means steward; one status is lifecycle state,
+the other an event; one time is an instant, the other a duration.
+
+Separate data, record, schema, field, value, identity, and interpretation. Use
+the Data Structure Mapping to state the version, cardinality, missingness,
+unit/reference, provenance, and declared loss needed for migration.
+
+## Task AL - Logged in means allowed
+
+A user authenticates successfully, inherits a stale group grant, and requests
+an operation on an aliased resource. The policy lookup times out, the system
+allows access, and the audit log records only the username.
+
+Separate authentication evidence, permission, entitlement, authorization
+decision, enforcement, access event, organizational authority, and resource
+identity. Apply the Constraint view to revocation, indeterminate handling, and
+request-decision-enforcement correlation.
+
+## Task AM - Certified means safe forever
+
+A vendor shows an expired certificate and an accreditation logo. A buyer
+concludes that the product is secure, legally compliant, effective, and
+continuously monitored, without checking scheme, subject, scope, version,
+issuer, findings, surveillance, or status.
+
+Separate assurance, assessment, audit, attestation, certification,
+accreditation, conformity, and effectiveness. Use the Evidence view to bound
+the exact supported claim and reject broader conclusions.
+
+## Task AN - The date list is the plan
+
+A project lists tasks and promised dates but omits completion evidence,
+dependencies, resource contention, assumptions, baseline history, and change
+authority. Actual dates overwrite the original plan, and every dated item is
+called a milestone.
+
+Separate plan, task, work milestone, workflow, schedule, resource, baseline,
+forecast, actual event, and outcome. Use the Planned Work Procedure to produce
+a reviewable course without treating the plan as prediction.
+
 ## Rehearsal boundary
 
-The twenty-five prompts collectively exercise every entry and specialized view in the
+The thirty-three prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

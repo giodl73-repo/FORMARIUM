@@ -1,4 +1,4 @@
-# Policy, Rule, Constraint, Decision, and Exception
+# Policy, Rule, Constraint, Decision, Review, Appeal, and Exception
 
 Status: candidate anchor entry
 
@@ -18,6 +18,8 @@ choice, enforcement, and override records to compete for one field.
 | `rule` | When these conditions hold, what result or action follows? | operational condition-output binding |
 | `constraint` | What combinations are valid, required, forbidden, or invariant? | validity boundary |
 | `decision` | Which conclusion or action is derived for this case? | evaluated output |
+| `review` | Which authorized examination reconsiders the decision, procedure, evidence, or governing basis? | bounded reconsideration process |
+| `appeal` | Which request invokes an available review path, by whom, on what grounds, and within what scope? | review-triggering request |
 | `exception` | Which approved deviation applies, by whose authority, and until when? | bounded override record |
 | `enforcement` | Where and how is the governing result made effective? | implementation and control mechanism |
 
@@ -49,6 +51,8 @@ policy-decision-use
    x rule conditions, priority, and outputs
    x constraints and invariants
    x decision procedure and result
+   x review forum, authority, scope, standard, record, and disposition
+   x appeal standing, grounds, submission, deadline, and requested remedy
    x enforcement point and action
    x exception scope, approver, reason, controls, and expiry
    x audit, appeal, and review
@@ -63,6 +67,8 @@ policy-decision-use
 | Rule vs. decision | decision follows rules | reusable logic vs. case-specific evaluated result |
 | Rule-derived decision vs. choice | both can produce a case-specific action | conclusion from governing logic vs. selection among feasible alternatives under criteria and preference |
 | Decision vs. enforcement | decision may authorize action | conclusion vs. mechanism that makes it effective |
+| Review vs. appeal | an appeal may initiate review | examination process vs. request invoking an available path |
+| Appeal vs. remedy | an appeal can request a remedy | procedural request vs. relief an authority may grant |
 | Exception vs. rule change | both alter ordinary outcome | bounded approved deviation vs. new governing logic |
 | Exception vs. violation | both depart from ordinary policy | authorized deviation vs. noncompliance |
 
@@ -79,6 +85,8 @@ policy-decision-use
 - A temporary exception with no expiry quietly becomes undocumented policy.
 - Adding a special-case rule to hide a data-quality problem is not a governed
   exception.
+- A rejected request is not evidence that no appeal path exists; authority,
+  standing, grounds, deadline, and review scope must be checked.
 
 ## Specialized views
 
@@ -99,6 +107,8 @@ policy-decision-use
 7. Record exceptions with scope, authority, reason, controls, expiry, and
    review.
 8. Preserve audit, appeal, supersession, and rollback paths.
+9. Record an appeal request separately from the review process, disposition,
+   and any remedy; preserve the original decision and governing versions.
 
 ## Reference Delta
 
@@ -123,6 +133,8 @@ policy-decision-use
   expiry, and review.
 - A violation is not relabeled as an exception after the fact.
 - Rule changes supersede versions rather than rewriting history.
+- Appeal availability, standing, grounds, forum, scope, deadline, and possible
+  remedies come from an applicable authority, not from this generic entry.
 
 ## Cross-references
 
@@ -136,7 +148,6 @@ policy-decision-use
 - [Choice, Alternative, Criterion, Preference, Recommendation, and Selection](choice-alternative-selection.md)
 - [Governance and Compliance Mechanisms](../mappings/governance-compliance-mechanisms.md)
 - Enforcement point is owned by the `enforcement` sense above.
-- appeal - `unresolved-candidate`
 
 ## Sources and provenance
 

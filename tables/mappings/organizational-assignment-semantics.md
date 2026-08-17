@@ -5,9 +5,9 @@ Status: candidate Mapping Table
 Primary family: Mapping Table
 
 Canonical headword:
-[Organization, Role, Responsibility, Authority, and Accountability](../entries/organization-role-authority.md)
+[Organization, Position, Role, Competency, Responsibility, Authority, and Accountability](../entries/organization-role-authority.md)
 
-Canonical senses: `organization`, `organizational-role`, `responsibility`,
+Canonical senses: `organization`, `position`, `organizational-role`, `competency`, `responsibility`,
 `authority`, `accountability-answerability`, `action-accountability`,
 `delegation`, `ownership-stewardship`
 
@@ -32,19 +32,22 @@ governing semantics.
 | Source concept | Candidate records or mechanisms | Required condition | Not equivalent to |
 |---|---|---|---|
 | organization | charter, legal entity record, unit/service boundary, membership relation, operating model | purpose, boundary, membership, resources, processes, and interfaces are visible | org chart alone |
+| position | position description, work-assignment record, organizational slot | assigned work, organizational location, validity, and incumbent history remain distinct | person, role, or job title alone |
 | organizational role | role profile, work-role catalog, committee office, service function | expected functions and context are independent of current assignee | person, title, job, or permission set |
+| competency | competency definition, proficiency scale, job-analysis criterion, assessment result | work context, required/demonstrated level, method, evidence, assessor, and time are stated | title, credential, responsibility, or authority |
 | responsibility | responsibility assignment, objective, duty statement, service obligation, control ownership | subject, expected result, conditions, resources, and period are stated | authority or task activity alone |
 | authority | decision-right register, approval limit, mandate, authorization policy, budget/resource control | legitimate source, permitted action/decision, scope, limits, and revocation are stated | influence, expertise, or responsibility |
 | accountability-answerability | accountable-owner record, review cadence, escalation path, performance agreement, risk acceptance | actor, subject, review forum, evidence, consequence, and period are stated | audit logging |
 | action-accountability | authenticated identity, signed approval, immutable audit event, attributable change record | attribution strength, event scope, time, and integrity are sufficient | organizational answerability |
 | delegation | delegation instrument, temporary acting assignment, power-of-attorney record, scoped approval transfer | delegator, recipient, transferred scope, retained duties, expiry, and revocation are stated | informal handoff |
-| ownership-stewardship | system owner, information owner, product owner, custodian/steward register | governing scheme, subject, lifecycle rights, duties, authority, and operator relation are stated | legal title, possession, or doing all work |
+| ownership-stewardship | title/rights record, system or information owner, product owner, custodian/steward register | governing authority/jurisdiction, subject, rights or lifecycle duties, custody, limits, and operator relation are stated | title, stewardship, custody, possession, and doing all work being interchangeable |
 
 ## Cardinality and preservation
 
 | Property | Treatment |
 |---|---|
 | One actor, many roles | allowed with conflict and capacity review |
+| One position, changing incumbents | allowed with effective-time history and separate person identity |
 | One role, many actors | allowed with partition, concurrency, and escalation rules |
 | One responsibility, many contributors | allowed when accountable review and result integration remain explicit |
 | One authority, several delegates | allowed only under the grant's delegation and conflict rules |
@@ -75,6 +78,10 @@ governing semantics.
 - audit identity is treated as complete answerability;
 - delegated authority has no expiry or revocation;
 - ownership fields omit the governed subject or lifecycle scope.
+- competency requirements are copied from a catalog without work analysis, or
+  demonstrated capability is inferred from title alone;
+- legal title, stewardship, and technical custody share one unqualified
+  `owner` value.
 
 ## Sources and provenance
 

@@ -1,7 +1,7 @@
 factorium-composition-query-v0
 query risk-characterizes-alternative-consequence
 problem Which consequence basis must be aligned before using a risk consequence in an alternative outcome?
-source 108f2d424d8cb3ac4145ca2727fcbd2fa1b43067d81a462506616ad6110f13ae | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
+source 4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
 context synthetic-intervention-choice | affected-entity=bounded-service-team,reference-frame=decision-horizon
 policy direction=forward,follow=evaluative-required,stop=stable-identity
 budget depth=1,edges=1,nodes=3,work=9

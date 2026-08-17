@@ -894,3 +894,41 @@ Reference SHA-256 is
 `108f2d424d8cb3ac4145ca2727fcbd2fa1b43067d81a462506616ad6110f13ae`;
 assurance SHA-256 is
 `11a17d3077bd32be242a256e64cec2096a3edc8ab90d3fbfa3d9d4d4c3b4b7db`.
+
+## F38-F50 bounded content campaign
+
+F38-F42 close the seven remaining generated candidates through existing
+owners: namespace under Identity/Naming; position, competency, and ownership
+custody under Organization/Role; appeal under Policy/Decision; and coercion
+and operative validity under Force polysemy. F43-F50 then fill six independent
+anchor gaps and deepen two existing owners: model/simulation;
+requirement/verification/validation; dependability; temporal organization;
+data/record/schema structure; access authorization; planned work; and
+assurance/conformity assessment.
+
+The owner test rejects duplicate Data/Record and Plan/Task anchors because
+Information/Data and Coordinated Work already own their decisive pivots. Each
+F43-F50 slice receives one specialized view. All content remains candidate,
+named methods and member catalogs remain examples only, and no typed relation
+or Composition Lab expansion is authorized. Source and role plans are
+`docs/research/2026-08-16-f38-f50-content-ownership.md` and
+`F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md`.
+
+The completed campaign contains 46 entries, 351 senses, 542 factors, and 65
+views. Eleven relations remain unchanged. Exact assurance grows to 122
+bindings. The generated unresolved catalog is empty. The Factor Forge delta is
+60 records—26 entries and 34 views—and its 33 synthetic rehearsal tasks cover
+every delta path. Reference SHA-256 is
+`4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f`;
+assurance SHA-256 is
+`857f653bc0acd34b5edda94d129ef15d7125d0e50eddbbbfba167c6f9e6defe3`.
+
+The regenerated 176-source `sim-29` edition has 146 searchable destinations,
+fourteen chapters, and 192 site pages with zero missing targets. Its site
+identity is
+`5cafd894665ef8e353e605002790c9686c3f2653689c2ffad3ace482884f25b5`
+and standalone SHA-256 is
+`4242883425693c4734cc6347fdda9d6d286af84054eaaae12d0654c647fa627e`.
+All Rust tests, Clippy, reference/sidecar, canonical/adversarial query, source,
+task coverage, search, local and generated composition, link, roles, browser,
+and diff checks pass.

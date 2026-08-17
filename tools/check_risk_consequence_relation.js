@@ -16,7 +16,7 @@ const relations = read("reference/factorium-relations-v0.factorium");
 const digest = crypto.createHash("sha256").update(query).digest("hex");
 
 assert.equal(digest,
-  "79deec5b752b347bfa10e6850ccb639a33071216e93fbb2e6cfc27ca203a43f7",
+  "fb47d79974c87e252be957b89370be3e274798c19e4f6166f9d2e8d088cfea90",
   "canonical Risk/Consequence query identity");
 assert.match(relations, new RegExp(
   `^relation ${relationId} \\| characterizes-consequence-for \\| ` +

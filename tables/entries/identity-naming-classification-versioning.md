@@ -1,4 +1,4 @@
-# Identity, Naming, Classification, and Versioning
+# Identity, Namespace, Naming, Classification, and Versioning
 
 Status: candidate anchor entry
 
@@ -15,6 +15,7 @@ roles often appear in one string but should not be collapsed.
 | Sense | Governing question | Role |
 |---|---|---|
 | `entity-identity` | What continuity criteria make observations refer to the same entity? | canonical entity boundary |
+| `namespace` | Under which governed scope is an identifier interpreted and kept distinct from otherwise identical tokens? | identifier scope and authority |
 | `identifier` | Which token refers to the entity within this namespace and authority? | machine- or system-facing reference |
 | `name` | Which label helps people recognize or discuss the entity? | human-facing designation |
 | `alias` | Which alternate token or label refers to the same entity under stated scope? | secondary reference |
@@ -47,7 +48,8 @@ change boundary and versioning scheme
 identity-version-use
   := entity and continuity criteria
    x identifier token
-   x namespace and assigning authority
+   x namespace identity, authority, scope, and persistence/version policy
+   x identifier assigning authority
    x names, aliases, language, and audience
    x classification scheme and criteria
    x versioned subject and release boundary
@@ -62,6 +64,8 @@ identity-version-use
 | Pair | Shared feature | Decisive distinction |
 |---|---|---|
 | Identity vs. identifier | identifier refers to identity | entity continuity vs. namespace token |
+| Namespace vs. identifier | both participate in reference | governed interpretation scope vs. token interpreted inside it |
+| Namespace vs. registry | a registry can administer a namespace | semantic scope and authority vs. one operating mechanism |
 | Identifier vs. name | both may be strings | scoped reference token vs. human-facing label |
 | Name vs. alias | both aid recognition | selected preferred label vs. alternate label |
 | Identity vs. classification | classes describe entities | same-entity claim vs. scheme-relative membership |
@@ -72,6 +76,8 @@ identity-version-use
 
 - Renaming a service need not create a new service identity.
 - Reusing a deleted account name can refer to a different entity.
+- Moving a token into another namespace may change its referent even when the
+  character sequence is unchanged.
 - One book can have a work identity, edition identities, manifestation
   identities, titles, aliases, and classifications.
 - One deployment may change operational owner without changing identity.
@@ -87,7 +93,8 @@ compares generic version roles with Semantic Versioning 2.0.0.
 ## Selection procedure
 
 1. Select the entity and state the continuity criteria.
-2. Name the namespace and assigning authority for every identifier.
+2. Name the namespace identity, authority, scope, persistence/version policy,
+   and assigning authority for every identifier.
 3. Separate preferred names, aliases, locators, and opaque identifiers.
 4. For classification, declare scheme, class, criteria, purpose, authority,
    effective period, and confidence.
@@ -109,6 +116,8 @@ compares generic version roles with Semantic Versioning 2.0.0.
 ## Constraints and failure signs
 
 - Every identifier states namespace and authority.
+- A prefix, locator, registry, or syntax is not silently treated as the
+  namespace itself.
 - Human readability does not prove uniqueness or persistence.
 - Names may change without changing identity.
 - Identifier reuse is governed and does not silently join different entities.
@@ -126,7 +135,6 @@ compares generic version roles with Semantic Versioning 2.0.0.
 - [Relation](../roots/relation.md)
 - [Time](../roots/time.md)
 - [Organization, Role, Responsibility, Authority, and Accountability](organization-role-authority.md)
-- namespace - `unresolved-candidate`
 - Compatibility is owned by the `compatibility-level` sense above.
 
 ## Sources and provenance
@@ -135,6 +143,8 @@ compares generic version roles with Semantic Versioning 2.0.0.
    https://www.rfc-editor.org/rfc/rfc3986
 2. Semantic Versioning 2.0.0:
    https://semver.org/spec/v2.0.0.html
+3. W3C, *URIs for W3C Namespaces*:
+   https://www.w3.org/guide/editor/namespaces
 
 Comparator access date: 2026-08-14. Standards remain scoped to their
 identifier and versioning domains; Factorium organization remains `candidate`.

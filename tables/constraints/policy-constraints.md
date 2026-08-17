@@ -3,7 +3,7 @@
 Status: candidate Constraint Table
 
 Canonical headword:
-[Policy, Rule, Constraint, Decision, and Exception](../entries/policy-rule-constraint-decision-exception.md)
+[Policy, Rule, Constraint, Decision, Review, Appeal, and Exception](../entries/policy-rule-constraint-decision-exception.md)
 
 Primary family: Constraint Table
 
@@ -21,6 +21,9 @@ without embedding them in one decision procedure.
 | Derived-output separation | decisions are outputs, not source facts | decision copied into its own input set | reject circular evaluation |
 | Enforcement visibility | required action has owner and observable result | decision marked complete without enforcement evidence | report unenforced decision |
 | Audit retention | facts, rules, output, actor, and time remain reconstructable | overwritten history | fail auditability gate |
+| Review independence | reviewer authority, scope, conflicts, and standard are explicit | original decision-maker silently performs every review | escalate or disclose applicable exception |
+| Appeal integrity | request, appellant/standing, grounds, forum, deadline, original decision, and requested remedy are retained | appeal overwrites decision or bypasses governing path | reject or route under applicable authority |
+| Disposition separation | review finding, appeal disposition, and remedy remain separate records | one `reversed` flag hides reasoning and granted relief | fail review record |
 
 ## Scope
 

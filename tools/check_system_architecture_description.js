@@ -45,8 +45,8 @@ assert.ok(!unresolved.includes("architecture - `unresolved-candidate`"),
   "architecture candidate is resolved");
 assert.ok(!unresolved.includes("subsystem - `unresolved-candidate`"),
   "subsystem candidate is resolved");
-assert.equal((unresolved.match(/`unresolved-candidate`/g) || []).length, 7,
-  "seven unrelated candidates remain");
+assert.equal((unresolved.match(/`unresolved-candidate`/g) || []).length, 0,
+  "the later F38-F50 campaign closes the remaining candidates");
 assert.match(research, /ISO\/IEC\/IEEE 42010:2022/);
 assert.match(research, /`Subsystem` does not pass the independent-owner test/);
 assert.match(supplement, /System Composition, Architecture, Capability, Interface, and Dependency/);
@@ -55,4 +55,4 @@ assert.match(assurance,
 assert.match(assurance,
   new RegExp(`^review view:constraint-system-composition-integrity \\| ${digest(viewPath)} \\| .*SYSTEM-ARCHITECTURE-DESCRIPTION-ROLE-REVIEW.md \\| fixed-point \\| 2026-08-16$`, "m"));
 
-console.log("OK senses=architecture,architecture-description subsystem=contextual factors=4 constraints=5 unresolved=7");
+console.log("OK senses=architecture,architecture-description subsystem=contextual factors=4 constraints=5 unresolved=0");

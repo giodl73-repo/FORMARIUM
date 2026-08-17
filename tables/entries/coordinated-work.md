@@ -1,4 +1,4 @@
-# Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation
+# Coordinated Work: Plan, Task, Milestone, Workflow, Coordination, and Recovery
 
 Status: candidate anchor entry
 
@@ -17,6 +17,9 @@ back. These are compatible views, not interchangeable implementation styles.
 | Sense | Governing question | Role |
 |---|---|---|
 | `workflow` | What activities, decisions, dependencies, and flows organize the work toward completion? | work-and-flow model |
+| `plan` | Which intended work, outcomes, assumptions, activities, dependencies, resources, and review points are committed as a revisable course? | governed intended-work model |
+| `task` | Which bounded unit of intended or assigned work has a completion condition, owner, inputs, and outputs? | actionable work unit |
+| `work-milestone` | Which zero-duration event marks a defined accomplishment or decision point in the plan? | planned completion marker |
 | `orchestration` | Which bounded participant or coordinator owns sequencing, decisions, and invocation of other work? | coordinator-owned execution view |
 | `choreography` | What exchanges and ordering obligations are observable among independent participants? | participant-interaction view |
 | `concurrency` | Which activities can progress independently or overlap, and what orders or synchronizes them? | composition and ordering property |
@@ -27,6 +30,9 @@ back. These are compatible views, not interchangeable implementation styles.
 ```text
 activities + dependencies + completion condition
   -- organized as --> workflow
+
+objective + scope + assumptions + work + resources + review
+  -- organized as --> plan
 
 sequencing + decisions owned within one execution boundary
   -- viewed as --> orchestration
@@ -46,8 +52,9 @@ committed or externally visible effects + later failure
 ```text
 coordinated-work-use
   := objective and completion condition
+   x plan scope, assumptions, baseline, and review cadence
    x subject, instance, and boundary
-   x activities and dependencies
+   x activities, tasks, dependencies, milestones, deliverables, and resources
    x trigger, branch, join, and ordering semantics
    x participant, role, authority, and coordinator placement
    x interaction, message, correlation, and contract
@@ -74,6 +81,10 @@ coordinated-work-use
 | Pair | Shared feature | Decisive distinction |
 |---|---|---|
 | Process vs. workflow | both organize activities and flow | broad work/change organization vs. a selected operational model; usage varies by domain |
+| Plan vs. execution | execution may follow a plan | intended revisable course vs. realized events and state |
+| Task vs. role | roles may own tasks | bounded work unit vs. expected function bundle |
+| Milestone vs. task | both appear in a plan | zero-duration accomplishment marker vs. work with duration/resources |
+| Resource vs. owner | both enable work | consumed/allocated capability vs. accountable actor or authority |
 | Workflow vs. orchestration | both can show sequence and decisions | organized work vs. an execution view owned within a coordinator boundary |
 | Orchestration vs. choreography | both coordinate participants | internal coordinator-owned logic vs. observable inter-participant obligations |
 | Concurrency vs. parallelism | both concern more than one activity | independent composition or overlap vs. simultaneous execution on resources |
@@ -97,11 +108,16 @@ coordinated-work-use
   notification was seen or restore inventory sold to another party.
 - A validly waiting instance can be mislabeled failed when its expected join
   condition is absent from the status projection.
+- A milestone labeled “design complete” is not achieved until its explicit
+  completion evidence holds; a date alone is only a planned or forecast instant.
 
 ## Selection procedure
 
 1. State the objective, completion condition, subject, instance, and boundary.
-2. List activities and their data, resource, and state dependencies.
+2. Baseline the plan's scope, assumptions, tasks, deliverables, milestones,
+   resources, review cadence, and change authority.
+3. List activities and their data, resource, and state dependencies; give each
+   task an owner, inputs, outputs, duration/effort basis, and completion evidence.
 3. Declare triggers, choices, permitted ordering, branches, joins, and terminal
    conditions.
 4. Assign participant roles, authority, ownership, and any coordinator boundary.
@@ -131,6 +147,10 @@ coordinated-work-use
 
 - A workflow states its objective and completion condition; activity completion
   alone does not prove the outcome.
+- Plans retain baselines and revisions; actual work and forecasts do not
+  silently rewrite intended work.
+- Tasks have bounded work and completion evidence; milestones have zero
+  duration and explicit accomplishment criteria.
 - Orchestration declares the coordinator boundary rather than assuming one
   global controller.
 - Choreography exposes participant, exchange, correlation, ordering, and
@@ -151,6 +171,10 @@ The [Coordinated Work Failure Diagnostic](../diagnostics/coordinated-work-failur
 maps stalls, duplicates, races, and partial completion to candidate causes and
 discriminating tests.
 
+The [Planned Work Procedure](../procedures/planned-work.md) turns outcome,
+scope, tasks, dependencies, milestones, resources, and review into a compact
+revisable work record.
+
 ## Cross-references
 
 - [State, Event, Transition, Process, and Lifecycle](state-event-transition-process-lifecycle.md)
@@ -159,6 +183,7 @@ discriminating tests.
 - [Objective, Control, Monitoring, and Response](control-monitoring-response.md)
 - [Governance, Obligation, and Compliance](governance-obligation-compliance.md)
 - [System Composition, Capability, Interface, and Dependency](system-composition-dependency.md)
+- [Instant, Duration, Interval, Deadline, and Schedule](temporal-organization.md)
 
 ## Sources and provenance
 

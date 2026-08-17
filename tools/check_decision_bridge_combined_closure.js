@@ -22,7 +22,7 @@ const relationSet = [
 ];
 
 assert.equal(digest,
-  "7447236458c0a2ee6049debc2b52f367cceb807be39e9151de3a2c968a98a166",
+  "e582bce92fcb29aee32c6e089003e09ed56e26944aa62eb9201ddbfa1ee76038",
   "combined closure identity");
 assert.equal((query.match(/^seed /gm) || []).length, 5, "five explicit seeds");
 assert.equal((query.match(/^node /gm) || []).length, 10, "ten deduplicated nodes");

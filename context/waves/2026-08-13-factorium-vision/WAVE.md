@@ -2005,3 +2005,49 @@ description conformance, architecture quality, subsystem taxonomy,
 framework/style completeness, evaluation validity, reader comprehension,
 project outcome, external-preview, publication, Workbench, or `preview-01`
 claim is admitted.
+
+## 2026-08-16 F38-F50 bounded content campaign
+
+Plan review: close the seven generated unresolved terms through existing
+Identity, Organization, Policy, and Force owners; add six independent anchors
+for model/simulation, requirement/verification/validation, dependability,
+temporal organization, access authorization, and assurance/conformity
+assessment; deepen Information/Data and Coordinated Work rather than create
+duplicate data-record or plan-task owners; add one task-oriented specialized
+view for each F43-F50 slice; retain candidate maturity, authority, time,
+evidence, jurisdiction, and intended-use boundaries; stop before named-member
+catalogs; migrate exact identities at the campaign boundary; and leave typed
+relations and interactive Composition behavior unchanged. The nine-role plan
+review found zero P1 and eighteen P2 conditions, with closure tests recorded in
+`F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md`.
+
+Result review: F38-F42 close all seven candidates through their existing
+owners. F43-F50 add six independent anchors and deepen Information/Data plus
+Coordinated Work with one specialized view each. The owner test prevents
+duplicate Data/Record and Plan/Task anchors; named methods, products,
+standards, job families, schemas, access models, and certificates remain
+examples or external authorities.
+
+The canonical fixed point has 46 entries, 351 senses, 542 factors, 65 views,
+and zero unresolved candidates. The eleven-relation sidecar is unchanged.
+Exact assurance has 122 bindings. Reference SHA-256 is
+`4ff6d4a6b2a5c3587212e5e5d6d5e0526d7700177d1eeceb374e0706a092394f`;
+assurance SHA-256 is
+`857f653bc0acd34b5edda94d129ef15d7125d0e50eddbbbfba167c6f9e6defe3`.
+All eleven valid and thirteen adversarial Composition Query fixtures migrate
+without relation-sidecar change.
+
+The Factor Forge supplement selects 60 records—26 entries and 34 views—for a
+138-record combined book. Thirty-three synthetic tasks cover every delta path.
+The regenerated 176-source `sim-29` edition indexes 146 destinations in
+fourteen chapters and renders 192 site pages with zero missing targets. Site
+identity is
+`5cafd894665ef8e353e605002790c9686c3f2653689c2ffad3ace482884f25b5`;
+standalone SHA-256 is
+`4242883425693c4734cc6347fdda9d6d286af84054eaaae12d0654c647fa627e`.
+All Rust tests, Clippy, reference/sidecar, query, source, task, search,
+composition, link, roles, browser, and diff checks pass. No legal ownership or
+appeal conclusion, model validity, requirements conformance, dependability,
+schedule feasibility, access authorization, assurance/certification, reader
+success, external-preview, publication, Workbench, or `preview-01` claim is
+admitted.

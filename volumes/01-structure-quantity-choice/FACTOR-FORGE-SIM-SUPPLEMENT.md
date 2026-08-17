@@ -2,12 +2,12 @@
 
 Status: internal `sim-02` selection; not part of `sieve-01` or `preview-01`
 
-Selected current-corpus delta: **46 records** — 20 canonical entries and 26
+Selected current-corpus delta: **60 records** — 26 canonical entries and 34
 specialized views
 
 ## Purpose
 
-This supplement tests whether completed Factor Forge batches F1-F27 extend
+This supplement tests whether completed Factor Forge batches F1-F50 extend
 *Structure, Quantity, and Choice* as connected book material rather than as a
 repository changelog. It adds every current canonical entry and specialized
 view whose Markdown path is absent from the 78-record volume selection.
@@ -309,6 +309,82 @@ alternatives, missing or contested outcome cells, unlike measurement bases,
 noncompensatory constraints, sensitivity, and authority without prescribing a
 universal score or named decision method.
 
+## Part XIII - Models, time, access, and assurance
+
+### From model language to a reproducible run
+
+125. [Model, Representation, and Simulation](../../tables/entries/model-representation-simulation.md)
+126. [Model and Simulation Failure Diagnostic](../../tables/diagnostics/model-simulation-failures.md)
+
+The anchor separates subject, model, representation, implementation, run, and
+result. The Diagnostic view localizes discrepancies without treating code
+verification, calibration, visual realism, or numerical precision as
+intended-use validation.
+
+### From stakeholder need to bounded evidence
+
+127. [Requirement, Specification, Verification, and Validation](../../tables/entries/requirement-specification-verification-validation.md)
+128. [Requirement Verification and Validation Evidence Table](../../tables/evidence/requirement-verification-validation.md)
+
+The anchor separates need, requirement, specification, verification,
+validation, and nonconformity. The Evidence view binds every conclusion to
+exact subject, criteria, version, method, environment, evidence, and limit.
+
+### From uptime language to service-bound dependability
+
+129. [Reliability, Availability, Maintainability, Resilience, and Recovery](../../tables/entries/dependability-reliability-availability-resilience.md)
+130. [Dependability Failure Diagnostic](../../tables/diagnostics/dependability-failures.md)
+
+The anchor distinguishes continuity, usable state, restoration support,
+adversity response, recovery, and failure. The Diagnostic view tests measure,
+dependency, maintenance, data, and user-boundary explanations.
+
+### From one time field to explicit temporal roles
+
+131. [Instant, Duration, Interval, Deadline, and Schedule](../../tables/entries/temporal-organization.md)
+132. [Temporal Representation Mapping](../../tables/mappings/temporal-representation.md)
+
+The anchor separates scale points, elapsed quantities, bounded regions,
+authority-backed deadlines, schedules, and milestones. The Mapping view
+preserves scale, zone, bounds, calendars, dependencies, resources, and history.
+
+### From data containers to governed structure
+
+133. [Data Structure Mapping](../../tables/mappings/data-structure.md)
+
+The revised base-volume Information/Data anchor now owns record, schema, and
+field roles. The Mapping view preserves subject, identity, interpretation,
+cardinality, missingness, evolution, provenance, and declared loss.
+
+### From login to a reconstructable access decision
+
+134. [Access, Permission, Authorization, and Entitlement](../../tables/entries/access-permission-authorization-entitlement.md)
+135. [Access Authorization Integrity Constraint Table](../../tables/constraints/access-authorization-integrity.md)
+
+The anchor separates authentication evidence, permission relations,
+entitlements, authorization decisions, enforcement, and access events. The
+Constraint view makes missing facts, revocation, propagation, delegation, and
+review behavior fail-able.
+
+### From activity list to governed planned work
+
+136. [Planned Work Procedure](../../tables/procedures/planned-work.md)
+
+The revised Coordinated Work anchor now owns plan, task, and work-milestone
+roles. The Procedure view connects outcomes, work, dependencies, resources,
+baselines, actuals, evidence, and change without presenting a plan as a
+prediction.
+
+### From assurance language to scoped conformity evidence
+
+137. [Assurance, Assessment, Audit, Certification, and Accreditation](../../tables/entries/assurance-assessment-audit-certification.md)
+138. [Assurance and Conformity Evidence Table](../../tables/evidence/assurance-conformity.md)
+
+The anchor separates confidence cases, assessment, audit, attestation,
+certification, and accreditation. The Evidence view prevents a logo,
+certificate, audit completion, or accreditation scope from becoming universal
+proof of quality, safety, legality, effectiveness, or future performance.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -317,5 +393,5 @@ universal score or named decision method.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 124-record combined simulation remains a rehearsal projection, not a
+- The 138-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.
