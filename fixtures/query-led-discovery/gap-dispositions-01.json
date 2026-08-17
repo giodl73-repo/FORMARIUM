@@ -1,0 +1,324 @@
+{
+  "artifact": "QLD-01 clustered gap dispositions",
+  "evidence_class": "internal-authored-rehearsal",
+  "campaign_id": "QLD-01",
+  "baseline_results_sha256": "9e768d1a43cf247f4a6718eead1d868283581bfb72bbe5fe2b6b86f8b46d61a7",
+  "gaps": [
+    {
+      "gap_id": "QLD-01-01-G1",
+      "packet_id": "QLD-01-01",
+      "baseline_code": "QG-1",
+      "recurrence_key": "ordinary-unit-expression",
+      "baseline_observation": "The focused query reaches Matter and Load Measure, but the literal unit expression `10 kg` produces a broad incidental ranking.",
+      "baseline_disposition": "defer",
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "One numeric-unit expression is insufficient for a general alias or cue; focused mass/weight wording reaches the correct owner."
+    },
+    {
+      "gap_id": "QLD-01-02-G1",
+      "packet_id": "QLD-01-02",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Existing measurement, context, evaluation, and choice owners express the comparison without a sensor catalog.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-03-G1",
+      "packet_id": "QLD-01-03",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The current balance, evidence, measurement, boundary, and causal distinctions retain the competing explanations.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-04-G1",
+      "packet_id": "QLD-01-04",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The existing amount-concentration Guide and owners supply the bounded symbolic route.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-05-G1",
+      "packet_id": "QLD-01-05",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Comparative Quantity and Evaluation already separate the number's possible meanings and audit fields.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-06-G1",
+      "packet_id": "QLD-01-06",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Existing balance and projection distinctions support the transfer and its failure boundary.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-07-G1",
+      "packet_id": "QLD-01-07",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The software and system owners already separate service, resource, interface, capability, and identity.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-08-G1",
+      "packet_id": "QLD-01-08",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The interaction Mapping and existing owners express the comparison without promoting mechanism names.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-09-G1",
+      "packet_id": "QLD-01-09",
+      "baseline_code": "QG-3",
+      "recurrence_key": "limiting-factor-bottleneck",
+      "baseline_observation": "The concepts exist, but distinguishing capacity shortage, queueing, dependency, and evidence limitation requires a manual cross-owner diagnostic.",
+      "baseline_disposition": "defer",
+      "final_disposition": "repair",
+      "target": "tables/diagnostics/dependency-critical-path.md",
+      "rationale": "Five packets need the same owner test. The existing diagnostic already owns bottleneck, blocker, and critical path, so deepen it rather than add a view or anchor."
+    },
+    {
+      "gap_id": "QLD-01-10-G1",
+      "packet_id": "QLD-01-10",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The existing F1 worksheet and software owners supply the bounded composition route.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-11-G1",
+      "packet_id": "QLD-01-11",
+      "baseline_code": "QG-1",
+      "recurrence_key": "ordinary-access-explanation",
+      "baseline_observation": "The ordinary query `why access authorized` does not rank the Access owner in its first visible results, although a more technical query routes through policy records.",
+      "baseline_disposition": "defer",
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "The access owner and integrity view exist; one authored phrase does not justify query expansion."
+    },
+    {
+      "gap_id": "QLD-01-12-G1",
+      "packet_id": "QLD-01-12",
+      "baseline_code": "QG-3",
+      "recurrence_key": "limiting-factor-bottleneck",
+      "baseline_observation": "The critical-path view handles precedence, but cross-domain distinction from capacity and other limiting conditions requires manual reconciliation.",
+      "baseline_disposition": "defer",
+      "final_disposition": "repair",
+      "target": "tables/diagnostics/dependency-critical-path.md",
+      "rationale": "Five packets need the same owner test. The existing diagnostic already owns bottleneck, blocker, and critical path, so deepen it rather than add a view or anchor."
+    },
+    {
+      "gap_id": "QLD-01-13-G1",
+      "packet_id": "QLD-01-13",
+      "baseline_code": "QG-7",
+      "recurrence_key": "property-ownership-law",
+      "baseline_observation": "The canonical organizational sense covers stewardship, not jurisdiction-specific property ownership.",
+      "baseline_disposition": "external",
+      "final_disposition": "external",
+      "target": "applicable legal authority",
+      "rationale": "Jurisdiction-specific property ownership remains outside the organizational stewardship sense."
+    },
+    {
+      "gap_id": "QLD-01-14-G1",
+      "packet_id": "QLD-01-14",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The five-edge Decision bridge and Guide already preserve exclusion, unresolved evidence, values, and separate authority.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-15-G1",
+      "packet_id": "QLD-01-15",
+      "baseline_code": "QG-6",
+      "recurrence_key": "local-compliance-mechanism",
+      "baseline_observation": "The remaining mechanism distinctions depend on the local organization and evidence and belong in a Guide.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "Guide-local analysis",
+      "rationale": "Capability, incentive, interpretation, and opportunity are local hypotheses, not a universal canonical taxonomy."
+    },
+    {
+      "gap_id": "QLD-01-16-G1",
+      "packet_id": "QLD-01-16",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Delegation, accountability, obligation, appeal, and lifecycle already have distinct owners and a reviewed delegation relation.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-17-G1",
+      "packet_id": "QLD-01-17",
+      "baseline_code": "QG-1",
+      "recurrence_key": "revision-provenance-lookup",
+      "baseline_observation": "The exact History/Revision/Provenance view exists but `decision revision provenance` does not surface it in the first visible lexical results.",
+      "baseline_disposition": "defer",
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "The exact History/Revision/Provenance view exists; one compound query does not justify a cue."
+    },
+    {
+      "gap_id": "QLD-01-18-G1",
+      "packet_id": "QLD-01-18",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Control, governance, policy, and projection owners support the analogy and its explicit failure boundary.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-19-G1",
+      "packet_id": "QLD-01-19",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The sim-40 conditional cue supplies the geometric route while lexical results and competing senses remain intact.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-01-20-G1",
+      "packet_id": "QLD-01-20",
+      "baseline_code": "QG-3",
+      "recurrence_key": "limiting-factor-bottleneck",
+      "baseline_observation": "A hard constraint can bind a choice without being a capacity shortage or dependency blocker; that distinction is assembled manually.",
+      "baseline_disposition": "defer",
+      "final_disposition": "repair",
+      "target": "tables/diagnostics/dependency-critical-path.md",
+      "rationale": "Five packets need the same owner test. The existing diagnostic already owns bottleneck, blocker, and critical path, so deepen it rather than add a view or anchor."
+    },
+    {
+      "gap_id": "QLD-01-21-G1",
+      "packet_id": "QLD-01-21",
+      "baseline_code": "QG-7",
+      "recurrence_key": "plant-diagnostic-catalog",
+      "baseline_observation": "The general diagnostic structure is covered; species and pathology classification remain external.",
+      "baseline_disposition": "external",
+      "final_disposition": "external",
+      "target": "qualified botanical or plant-health source",
+      "rationale": "Species, pathology, and treatment catalogs are external; the general diagnostic structure is already covered."
+    },
+    {
+      "gap_id": "QLD-01-22-G1",
+      "packet_id": "QLD-01-22",
+      "baseline_code": "QG-3",
+      "recurrence_key": "limiting-factor-bottleneck",
+      "baseline_observation": "Several different conditions can bind the event plan, but their cross-owner distinction has no compact diagnostic route.",
+      "baseline_disposition": "defer",
+      "final_disposition": "repair",
+      "target": "tables/diagnostics/dependency-critical-path.md",
+      "rationale": "Five packets need the same owner test. The existing diagnostic already owns bottleneck, blocker, and critical path, so deepen it rather than add a view or anchor."
+    },
+    {
+      "gap_id": "QLD-01-23-G1",
+      "packet_id": "QLD-01-23",
+      "baseline_code": "QG-1",
+      "recurrence_key": "qualified-label-claim-lookup",
+      "baseline_observation": "The ordinary phrase `sugar free claim` ranks a specialized causal-claim view before the general Claim owner and does not expose the multi-owner interpretation route.",
+      "baseline_disposition": "defer",
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "The interpretation is deliberately multi-owner and jurisdiction-bound; one label phrase does not justify canonical query expansion."
+    },
+    {
+      "gap_id": "QLD-01-23-G2",
+      "packet_id": "QLD-01-23",
+      "baseline_code": "QG-7",
+      "recurrence_key": "food-label-regulation",
+      "baseline_observation": "Threshold and authorization are jurisdiction- and version-specific external rules.",
+      "baseline_disposition": "external",
+      "final_disposition": "external",
+      "target": "applicable food-label authority and version",
+      "rationale": "Authorized thresholds and label categories are jurisdiction- and version-specific."
+    },
+    {
+      "gap_id": "QLD-01-24-G1",
+      "packet_id": "QLD-01-24",
+      "baseline_code": "QG-3",
+      "recurrence_key": "limiting-factor-bottleneck",
+      "baseline_observation": "Five existing destinations provide the pieces but no compact view owns the governing distinction among different limiting roles.",
+      "baseline_disposition": "defer",
+      "final_disposition": "repair",
+      "target": "tables/diagnostics/dependency-critical-path.md",
+      "rationale": "Five packets need the same owner test. The existing diagnostic already owns bottleneck, blocker, and critical path, so deepen it rather than add a view or anchor."
+    },
+    {
+      "gap_id": "QLD-01-24-G2",
+      "packet_id": "QLD-01-24",
+      "baseline_code": "QG-1",
+      "recurrence_key": "bottleneck-lookup",
+      "baseline_observation": "The literal bottleneck query does not surface the capacity or critical-path owners in the first visible results.",
+      "baseline_disposition": "merge",
+      "final_disposition": "merge",
+      "target": "tables/diagnostics/dependency-critical-path.md",
+      "rationale": "Literal `bottleneck` already ranks the existing diagnostic first; merge the compound-query friction into the view-content repair instead of changing search."
+    }
+  ],
+  "summary": {
+    "no-change": 13,
+    "defer": 4,
+    "external": 3,
+    "merge": 1,
+    "repair": 5
+  },
+  "admitted_batch": {
+    "reader_job": "Distinguish what actually limits a selected flow, completion result, feasible option, or justified claim.",
+    "artifact": "Repair the existing Dependency, Prerequisite, Blocker, Enabler, and Critical-Path Diagnostic.",
+    "new_anchors": 0,
+    "new_views": 0,
+    "new_relations": 0,
+    "product_mechanic_repairs": 0,
+    "existing_view_repairs": 1,
+    "required_content": [
+      "A compact limit-owner test separating capacity bottleneck, service-order delay, dependency blocker, critical path, binding feasibility or policy constraint, and evidence limitation.",
+      "Explicit boundary that bottleneck is a result- and condition-relative role, not one universal factor or synonym for every limitation.",
+      "Routes to Policy/Constraint, Claim/Evidence, Coordinated Work, Scenario/Feasibility, and the existing capacity/allocation procedures without typed semantic edges."
+    ],
+    "rejected_scope": [
+      "new Bottleneck or Limiting Factor anchor",
+      "new typed relation",
+      "renaming the existing view",
+      "general alias or query expansion",
+      "optimization procedure",
+      "domain-specific bottleneck catalog"
+    ],
+    "implementation_gate": "bounded source review and fixed-point role review"
+  }
+}

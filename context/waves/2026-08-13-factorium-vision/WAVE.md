@@ -2693,3 +2693,20 @@ queue or service-order limit, dependency blocker, binding constraint, and
 evidentiary limitation. Q2 must perform the owner and source test before any
 repair is admitted. Baseline identity remains exact and no reader-value claim
 is made. See `QUERY-LED-CAMPAIGN-01-BASELINE.md`.
+
+## 2026-08-17 QLD-01 gap clustering and owner test
+
+Result review: all 26 baseline gaps now have exact final cluster dispositions:
+thirteen no-change, four defer, three external, one merge, and five repair.
+Inspection changes the preliminary QG-3 interpretation because the existing
+Dependency/Prerequisite/Blocker/Enabler/Critical-Path Diagnostic already owns
+bottleneck and literal `bottleneck` search ranks it first. No new anchor, view,
+relation, or mechanic is admitted.
+
+The smallest proposed batch is one bounded repair to that existing diagnostic:
+make the owner test among capacity bottleneck, service-order delay, dependency
+blocker, critical path, binding constraint, and evidence limitation explicit,
+then route non-operational limits to their existing owners. A new Bottleneck
+entry, renamed view, typed edge, query expansion, optimization procedure, and
+domain catalog are rejected. Q3 must establish the source and role boundary
+before implementation. See `QUERY-LED-CAMPAIGN-01-OWNER-TEST.md`.

@@ -1,0 +1,86 @@
+{
+  "decision_id": "QLD-GD-01",
+  "campaign_id": "QLD-01",
+  "baseline_results_sha256": "9e768d1a43cf247f4a6718eead1d868283581bfb72bbe5fe2b6b86f8b46d61a7",
+  "evidence_class": "internal-authored-rehearsal",
+  "rules": {
+    "none": {
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    "ordinary-unit-expression": {
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "One numeric-unit expression is insufficient for a general alias or cue; focused mass/weight wording reaches the correct owner."
+    },
+    "ordinary-access-explanation": {
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "The access owner and integrity view exist; one authored phrase does not justify query expansion."
+    },
+    "revision-provenance-lookup": {
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "The exact History/Revision/Provenance view exists; one compound query does not justify a cue."
+    },
+    "qualified-label-claim-lookup": {
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "The interpretation is deliberately multi-owner and jurisdiction-bound; one label phrase does not justify canonical query expansion."
+    },
+    "bottleneck-lookup": {
+      "final_disposition": "merge",
+      "target": "tables/diagnostics/dependency-critical-path.md",
+      "rationale": "Literal `bottleneck` already ranks the existing diagnostic first; merge the compound-query friction into the view-content repair instead of changing search."
+    },
+    "limiting-factor-bottleneck": {
+      "final_disposition": "repair",
+      "target": "tables/diagnostics/dependency-critical-path.md",
+      "rationale": "Five packets need the same owner test. The existing diagnostic already owns bottleneck, blocker, and critical path, so deepen it rather than add a view or anchor."
+    },
+    "local-compliance-mechanism": {
+      "final_disposition": "no-change",
+      "target": "Guide-local analysis",
+      "rationale": "Capability, incentive, interpretation, and opportunity are local hypotheses, not a universal canonical taxonomy."
+    },
+    "property-ownership-law": {
+      "final_disposition": "external",
+      "target": "applicable legal authority",
+      "rationale": "Jurisdiction-specific property ownership remains outside the organizational stewardship sense."
+    },
+    "plant-diagnostic-catalog": {
+      "final_disposition": "external",
+      "target": "qualified botanical or plant-health source",
+      "rationale": "Species, pathology, and treatment catalogs are external; the general diagnostic structure is already covered."
+    },
+    "food-label-regulation": {
+      "final_disposition": "external",
+      "target": "applicable food-label authority and version",
+      "rationale": "Authorized thresholds and label categories are jurisdiction- and version-specific."
+    }
+  },
+  "admitted_batch": {
+    "reader_job": "Distinguish what actually limits a selected flow, completion result, feasible option, or justified claim.",
+    "artifact": "Repair the existing Dependency, Prerequisite, Blocker, Enabler, and Critical-Path Diagnostic.",
+    "new_anchors": 0,
+    "new_views": 0,
+    "new_relations": 0,
+    "product_mechanic_repairs": 0,
+    "existing_view_repairs": 1,
+    "required_content": [
+      "A compact limit-owner test separating capacity bottleneck, service-order delay, dependency blocker, critical path, binding feasibility or policy constraint, and evidence limitation.",
+      "Explicit boundary that bottleneck is a result- and condition-relative role, not one universal factor or synonym for every limitation.",
+      "Routes to Policy/Constraint, Claim/Evidence, Coordinated Work, Scenario/Feasibility, and the existing capacity/allocation procedures without typed semantic edges."
+    ],
+    "rejected_scope": [
+      "new Bottleneck or Limiting Factor anchor",
+      "new typed relation",
+      "renaming the existing view",
+      "general alias or query expansion",
+      "optimization procedure",
+      "domain-specific bottleneck catalog"
+    ],
+    "implementation_gate": "bounded source review and fixed-point role review"
+  }
+}
