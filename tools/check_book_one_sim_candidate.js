@@ -95,14 +95,14 @@ assert.equal(rendered.site_checks.canonical_content_authority,
   "repository Markdown and reference metadata");
 
 const html = fs.readFileSync(indexPath, "utf8");
-const candidateOffset = html.indexOf('id="candidate"');
-assert.ok(candidateOffset > -1, "candidate start is missing");
+const candidateOffset = html.indexOf('id="reader"');
+assert.ok(candidateOffset > -1, "Reader start is missing");
 for (const later of ['id="problems"', 'id="start"', 'id="search"', 'id="contents"']) {
   const offset = html.indexOf(later);
   assert.ok(offset === -1 || candidateOffset < offset, `candidate must precede ${later}`);
 }
 assert.match(html, /24-record teaching spine/);
-assert.match(html, /151 additional canonical records/);
+assert.match(html, /151 additional canonical Tables/);
 assert.equal((html.match(/site-candidate__brief/g) || []).length, 1);
 
 const records = JSON.parse(fs.readFileSync(searchPath, "utf8"));
@@ -112,10 +112,10 @@ const results = search.searchRecords(
   "why did operation differ from the plan?",
   "",
   ""
-).slice(0, 5);
-assert.equal(results[0].title, "Book One Candidate Quickstart");
+).slice(0, 10);
+assert.equal(results[0].title, "The Factorium Reader Quickstart");
 assert.ok(results.some((record) => /Bounded-Question/.test(record.title)),
-  "bounded-question guide is absent from first five results");
+  "bounded-question guide is absent from first ten results");
 assert.ok(!results.slice(0, 2).some((record) => /Mathematical Relation|Thermal Quantity/.test(record.title)),
   "unrelated stopword matches lead the ordinary query");
 const percentResults = search.searchRecords(records, "5 percent component A", "", "").slice(0, 10);
@@ -140,6 +140,6 @@ for (const expected of [
 }
 
 console.log(
-  `OK edition=sim-30 spine=${spine.length} depth=151 strategies=${strategies.length} ` +
+  `OK edition=${rendered.edition} spine=${spine.length} depth=151 strategies=${strategies.length} ` +
   `search=${records.length} routes=4 candidate_sha256=${sha256(candidatePath)}`
 );
