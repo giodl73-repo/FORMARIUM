@@ -2536,3 +2536,13 @@ content remain unchanged. Static and live Edge checks pass. Site identity is
 standalone SHA-256 is
 `ee1650305e7aa64f51f369542ce8587d3b9e9b078ea699a559101a4fa9b82488`.
 `sim-37` reproduces exactly.
+
+## 2026-08-17 Factorium Reader terminal-handoff plan
+
+Structural inspection found that exact step 24 ends in an empty next slot.
+`sim-39` will add one static **End of selected route** link to the Reader's
+existing after-route choices. Seven roles approve with zero P1, fourteen P2,
+and seven P3 findings. The link must attach only to manifest record 24, preserve
+all other navigation, and add no completion, mastery, closure, progress, survey,
+or learning claim. This closes Reader mechanics unless new evidence identifies
+another concrete break.
