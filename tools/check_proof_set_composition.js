@@ -69,25 +69,25 @@ assert.ok(!/<form\b|<input\b|<button\b/i.test(compose),
 
 if (editionNumber >= 29) {
   const decision = checks.records.find(
-    (record) => record.id === "evidence-qualifies-alternative-evaluation"
+    (record) => record.id === "decision-bridge-five-relation-closure"
   );
   assert.deepEqual(decision, {
-    id: "evidence-qualifies-alternative-evaluation",
+    id: "decision-bridge-five-relation-closure",
     state: "incomplete",
-    seeds: 1,
-    nodes: 3,
-    edges: 1,
+    seeds: 5,
+    nodes: 10,
+    edges: 5,
     frontiers: 0,
     conflicts: 0,
-    checks: 1,
-    projections: 3,
-    work: 9,
-    sha256: "50c1116a42480858d4e4f802fcc5071b8067b4517a47be60ffa7978de615bba2"
-  }, "Decision/Evidence trace remains exact and incomplete");
+    checks: 5,
+    projections: 10,
+    work: 35,
+    sha256: "41c4e2d14e2169fef9902120be6111d310a12a829981149c307fccd24fae6e59"
+  }, "combined Decision trace remains exact and incomplete");
   assert.equal((home.match(/compose\.html#starter-[a-z0-9-]+/g) || []).length, 5,
     "only the five allowlisted traces link to Compose starters");
   assert.ok(home.includes("Read-only trace · not available in Compose"),
-    "Decision/Evidence capability boundary is visible");
+    "combined Decision capability boundary is visible");
   assert.ok(home.includes("site-problems site-problems--six"),
     "six-card problem layout is explicit");
 }

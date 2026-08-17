@@ -48,6 +48,8 @@ for (const stage of ["Add", "Multiply", "Evaluate", "Stop", "Flatten"]) {
 }
 assert.match(guide, /imports none of the authored guide's local pass, fail, or unresolved declarations/i);
 assert.match(spec, /No query-grammar change is required/);
-assert.match(spec, /F35 adds no\s+homepage trace or Compose starter/i);
+assert.match(spec, /F35 added no\s+homepage trace or Compose starter/i);
+assert.match(spec, /F36 promotes the proof site's existing Decision problem slot/i);
+assert.match(spec, /five authored starters and the six-relation F1-F6 Lab remain unchanged/i);
 
 console.log("OK closure=5s/5e/10n/5c/10p shared-target=deduplicated state=incomplete lab=excluded");

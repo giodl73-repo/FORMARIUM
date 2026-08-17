@@ -26,14 +26,15 @@ guide into a second graph authority.
 
 ## Home and Explorer projection
 
-The proof-site home page adds one problem-led card and one read-only
-Composition Explorer panel for the exact canonical query. Both link to the
-existing full guide. The card must say that the route is read-only and not
-available in Compose.
+F30 added one problem-led card and one read-only Composition Explorer panel
+for this exact canonical query. F36 promotes that single Decision navigation
+slot to the complete five-bridge closure without removing this component route
+from the existing full guide. This evidence-only trace is no longer a separate
+homepage panel.
 
-Technical manifests report six read-only traces and five authored Lab
-starters separately. The sixth trace may not appear in the starter payload,
-Lab relation controls, palette, closure engine, or Compose deep links.
+Technical manifests still report six read-only traces and five authored Lab
+starters separately. The combined Decision trace may not appear in the starter
+payload, Lab relation controls, palette, closure engine, or Compose deep links.
 
 ## Semantic boundary
 
@@ -61,11 +62,14 @@ state, persistence, network behavior, export, or publication control.
 ## Acceptance checks
 
 - The guide names the exact reference, relation, and query SHA-256 values.
+- The guide retains this exact evidence-only route, query digest, unresolved
+  check, incomplete state, and all three projection losses.
 - The home page contains six unique problem-led destinations and six unique
-  read-only trace panels.
+  read-only trace panels; its Decision slot uses the separately contracted
+  five-bridge closure.
 - Trace states are two complete, two incomplete, one contradictory, and one
   truncated.
-- Exactly five problem cards link to Compose starters; the Decision/Evidence
+- Exactly five problem cards link to Compose starters; the combined Decision
   card has no Compose link and explicitly names its read-only boundary.
 - The separate Composition Lab allowlist remains six F1-F6 relations and does
   not contain `f27-evidence-qualifies-evaluation`.

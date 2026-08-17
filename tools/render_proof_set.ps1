@@ -19,7 +19,7 @@ $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-wor
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
 $decisionChoiceGuide = Join-Path $workspace "guides\evidence-informed-intervention-choice.md"
-$decisionCompositionTrace = Join-Path $workspace "fixtures\composition\decision-evidence.factorium-query"
+$decisionCombinedTrace = Join-Path $workspace "fixtures\composition\decision-bridge-closure.factorium-query"
 $compositionLabAllowlist = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition-lab-relations.factorium"
 $compositionLabSpec = Join-Path $workspace "specs\COMPOSITION-LAB.md"
 $compositionReadingSpec = Join-Path $workspace "specs\COMPOSITION-READING-ROUTE.md"
@@ -36,6 +36,7 @@ $compositionRerunComparisonSpec = Join-Path $workspace "specs\COMPOSITION-RERUN-
 $compositionGuideSpec = Join-Path $workspace "specs\COMPOSITION-GUIDE-SKELETON.md"
 $compositionEvaluationSpec = Join-Path $workspace "specs\COMPOSITION-EVALUATION-RECORD.md"
 $decisionEvidenceReadingSpec = Join-Path $workspace "specs\DECISION-EVIDENCE-READING-ROUTE.md"
+$decisionCombinedClosureSpec = Join-Path $workspace "specs\DECISION-BRIDGE-COMBINED-CLOSURE.md"
 $compositionTraces = @(
     (Join-Path $workspace "fixtures\composition\system-dependency.factorium-query"),
     (Join-Path $workspace "fixtures\composition\latency-evidence.factorium-query"),
@@ -642,6 +643,7 @@ if ($editionNumber -ge 14) {
 if ($editionNumber -ge 29) {
     Add-ProofSource $decisionChoiceGuide
     Add-ProofSource $decisionEvidenceReadingSpec
+    Add-ProofSource $decisionCombinedClosureSpec
 }
 if ($editionNumber -ge 16) {
     Add-ProofSource $compositionLabSpec
@@ -2201,11 +2203,11 @@ if ($editionNumber -ge 7) {
         }
         if ($editionNumber -ge 29) {
             $problemJourneys += [ordered]@{
-                state = "Incomplete trace · applicability unresolved"
-                title = "Check evidence before evaluating an alternative"
-                description = "Follow the admitted evidence-to-evaluation route while keeping local applicability unresolved and the final choice outside the graph."
+                state = "Incomplete trace · five checks unresolved"
+                title = "Evaluate an intervention choice across concepts"
+                description = "Join evidence, causal scope, consequences, value, and constraints in one bounded working set without inventing a ranking or final choice."
                 source = $decisionChoiceGuide
-                trace = $decisionCompositionTrace
+                trace = $decisionCombinedTrace
                 starter = $false
             }
         }
@@ -2389,7 +2391,7 @@ if ($editionNumber -ge 7) {
 <section id="compose" class="site-compose" aria-labelledby="site-compose-heading">
 <p class="site-kicker">Read-only composition explorer</p>
 <h2 id="site-compose-heading">Compare how the working graphs close</h2>
-<p class="site-compose__intro">These panels are generated from the five exact trace manifests. Open them to compare what was added, which typed join was admitted, what was evaluated, where closure stopped, and how many rows survive flattening.</p>
+<p class="site-compose__intro">These panels are generated from $($traceSummaries.Count) exact trace manifests. Open them to compare what was added, which typed join was admitted, what was evaluated, where closure stopped, and how many rows survive flattening.</p>
 <div class="site-trace-list">$traceItems</div>
 <p class="site-compose__note"><strong>Exact traces, not automatic closure.</strong> This view inspects reviewed examples; it cannot add concepts, discover edges, change a policy, or infer a domain answer.</p>
 </section>

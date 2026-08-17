@@ -63,9 +63,9 @@ deduplication does not collapse their meanings.
 
 Exact closure: five seeds, five edges, ten nodes, five unresolved checks, ten
 projection rows, and 35 work records. Removing the shared alternative-outcome
-node invalidates both the causal and risk traversals. This read-only trace is
-not exposed through the Composition Lab, a homepage trace, or a Compose
-starter.
+node invalidates both the causal and risk traversals. The proof homepage and
+read-only Explorer expose this exact combined trace as one Decision journey.
+It remains unavailable through the Composition Lab or a Compose starter.
 
 Exact trace file: `fixtures/composition/decision-bridge-closure.factorium-query`
 

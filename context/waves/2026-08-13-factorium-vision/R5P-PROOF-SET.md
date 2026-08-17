@@ -357,3 +357,10 @@ closure-control staleness, profile invariance, and memory-only lifecycle. It
 does not retrieve or verify evidence, score outcomes, change closure state,
 complete the Guide Skeleton, persist or publish a record, or provide domain,
 task-success, or external-reader evidence.
+
+F36 updates the current `sim-29` publication projection so its single Decision
+problem slot and read-only Explorer panel use the canonical five-bridge
+closure. It tests one complete multi-concept reading handoff without adding a
+second guide destination, changing the five Lab starters, or admitting the F27
+relations to Compose. Successful rendering is navigation mechanics only, not
+evaluation validity, comprehension, task success, or external-reader evidence.

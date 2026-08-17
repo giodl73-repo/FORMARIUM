@@ -34,9 +34,10 @@ sources remain addressable without being promoted into the indexed sequence.
   compose with text ranking and remain visible in URL state.
 - The homepage first journey links five already selected source pages in one
   ordered orientation route.
-- The problem-led route links exactly five admitted, trace-bound Composition
-  Query worksheets and states each trace/decision outcome without creating an
-  interactive query form.
+- The current problem-led route links exactly six admitted, trace-bound
+  Composition Query destinations and states each trace/decision outcome
+  without creating an interactive query form. Five are Lab-compatible worked
+  worksheets; one is the read-only combined Decision Guide route.
 - The read-only Composition Explorer compares those exact traces after the
   problem-led route. Every panel is generated from one manifest, exposes the
   declared Add, Multiply, Evaluate, Stop, and Flatten stages, and links to its

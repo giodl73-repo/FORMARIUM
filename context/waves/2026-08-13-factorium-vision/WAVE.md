@@ -1911,3 +1911,43 @@ applicability, evidence support, causal identification, probability, value
 comparability, constraint satisfaction, preference, aggregation, ranking,
 recommendation validity, decision quality, reader success, external-preview,
 publication, Workbench, or `preview-01` claim is admitted.
+
+## 2026-08-16 F36 combined Decision reading journey
+
+Plan review: replace the proof homepage's existing one-edge Decision/Evidence
+slot with the canonical five-edge Decision closure rather than adding a second
+card to the same guide; keep the Evidence-Informed Intervention Choice Guide
+as the sole human destination and retain every component route inside it;
+generate the card and Explorer panel from the exact query; preserve five
+unresolved checks, incomplete state, all ten projection losses, and shared-node
+edge custody; add no Lab relation, starter, Compose fragment, persistence,
+evaluation, recommendation, or publication behavior. The six-role review
+found zero P1 and twelve P2 conditions, all closed by the replacement route,
+exact trace derivation, focused generated-site checks, and unchanged
+interactive boundaries.
+
+Result review: the sixth problem-led card now asks the reader to evaluate an
+intervention choice across concepts and names evidence, causal scope,
+consequences, value, and constraints as one bounded working set. Its read-only
+Explorer panel renders the exact
+`decision-bridge-five-relation-closure` query at SHA-256
+`41c4e2d14e2169fef9902120be6111d310a12a829981149c307fccd24fae6e59`:
+five seeds, five explicit joins, ten unique nodes, five unresolved checks, ten
+loss-declared rows, work 35, and state `incomplete`. The prior evidence-only
+route remains in the guide but no longer duplicates the Decision homepage
+slot. Six problem destinations, six read-only panels, five authored starters,
+and the six-relation F1-F6 Lab remain exact.
+
+The regenerated 162-source `sim-29` edition retains 132 searchable
+destinations and now contains 177 site pages with zero missing targets. Its
+site identity is
+`a3d128b6bac6ba19bee24e398d2a9946f0fd4e26388a10d21d059542fc01141b`
+and standalone SHA-256 is
+`2b4dcb9fbab37fa7a2e18e60c51e30fe43f1cc04c88c794b19d5b0727ca5adbd`.
+All 70 Rust tests, Clippy, eleven canonical queries, focused F35/F36 and
+preserved-evidence checks, local and generated-site composition, browser,
+search, packet, role, link, visual, and diff checks pass. No evidence
+applicability, causal identification, consequence sufficiency, value
+comparability, constraint satisfaction, aggregation, ranking, recommendation
+validity, decision quality, reader comprehension, task success,
+external-preview, publication, Workbench, or `preview-01` claim is admitted.

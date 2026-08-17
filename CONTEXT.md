@@ -790,7 +790,14 @@ closure: five seeds, five edges, four deduplicated Choice targets, one Decision
 scope, five unresolved checks, and ten loss-declared projections. Causal scope
 and risk consequence share one alternative-outcome node without losing either
 edge. The trace remains `incomplete`, imports no local guide verdict, and stays
-read-only outside the Lab and homepage trace set.
+read-only outside the Lab.
+
+F36 promotes the existing proof-site Decision slot from the one-edge evidence
+trace to that five-edge closure. One problem-led card and one read-only
+Explorer panel now open the complete working set in the existing guide; the
+component evidence route remains in the guide, six homepage destinations and
+five Lab starters remain stable, and no interactive or substantive result is
+added.
 
 ## Boundary
 

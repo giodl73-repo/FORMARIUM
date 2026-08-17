@@ -1,6 +1,6 @@
 # Decision Bridge Combined Closure
 
-Status: F35 canonical multi-relation query
+Status: F35 canonical query; F36 reader-facing journey
 
 ## Decision
 
@@ -42,9 +42,35 @@ selection.
 ## Lab and publication boundary
 
 The query is a read-only book trace. The Composition Lab remains on its exact
-six-ID F1-F6 allowlist and cannot execute these five F27 edges. F35 adds no
-homepage trace or Compose starter; reader-facing exposure beyond the guide
-requires a separate navigation review.
+six-ID F1-F6 allowlist and cannot execute these five F27 edges. F35 added no
+homepage trace or Compose starter.
+
+F36 promotes the proof site's existing Decision problem slot from the
+single-edge evidence trace to this complete five-edge closure. The one card and
+one read-only Explorer panel link to the existing guide as the sole human
+reading destination. They disclose five seeds, five joins, ten unique nodes,
+five unresolved checks, ten loss-declared rows, work 35, and state
+`incomplete`. The individual evidence route remains authoritative inside the
+guide but no longer occupies a separate homepage panel.
+
+The F36 projection adds no starter, Compose fragment, Lab relation, graph
+mutation, result evaluation, persistence, or publication control. It is a
+navigation projection over the exact canonical query.
+
+## Reader-journey acceptance
+
+- The homepage retains six unique problem-led destinations and the Explorer
+  retains six unique read-only traces; the combined closure replaces rather
+  than duplicates the prior Decision/Evidence slot.
+- The Decision card asks readers to evaluate an intervention choice across
+  evidence, causal scope, consequences, value, and constraints.
+- The card and panel resolve to the existing Evidence-Informed Intervention
+  Choice Guide and explicitly remain unavailable in Compose.
+- The combined trace digest, counts, all five edge identities, all five
+  unresolved checks, and incomplete state are generated from the query file.
+- Five authored starters and the six-relation F1-F6 Lab remain unchanged.
+- Compact, Abbreviated, Book, and Full alter presentation only; no trace
+  identity, relation, check, state, or loss changes by profile.
 
 ## Published identity
 

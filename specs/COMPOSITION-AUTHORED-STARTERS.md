@@ -23,9 +23,10 @@ in strict `*-budget-before-<relation-id>` frontier reasons. Its exclusions are
 the exact artifact fields in conflict records.
 
 The proof edition may contain additional read-only canonical traces. F30
-publishes the Decision/Evidence trace as the sixth problem-led and Explorer
-route, but it remains outside this five-record starter payload because its
-relation is not in the Composition Lab allowlist.
+published the Decision/Evidence trace as the sixth problem-led and Explorer
+route; F36 replaces that navigation slot with the complete five-bridge
+Decision closure. The combined trace remains outside this five-record starter
+payload because its relations are not in the Composition Lab allowlist.
 
 Generation fails closed on an unknown or duplicate ID, malformed context,
 unknown seed/relation/exclusion, frontier reason without an exact reviewed
