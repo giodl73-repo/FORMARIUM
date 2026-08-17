@@ -2186,3 +2186,13 @@ standalone SHA-256 is
 `80a3759ef766c70780d4562d7ba309d4003a66c71b9428061e9359fd2526ffee`.
 No real-world feasibility, safety, reader value, external-preview,
 publication, Workbench, or `preview-01` claim is admitted.
+
+## 2026-08-16 F81-F90 operating conditions plan
+
+Plan review: explain why real operation differs from a static feasible plan by
+making exchange, commitment, queue, space, hazard, response, actor roles, and
+history reconstructable. The thirteen-role review found zero P1 blockers,
+thirty P2 closure conditions, and seven P3 notes. It admits three anchors
+and six views under a Product Owner ceiling. Safety material remains
+descriptive, candidate, source-bounded, and non-prescriptive. Detailed closure
+tests are in `F81-F90-OPERATING-CONDITIONS-ROLE-REVIEW.md`.

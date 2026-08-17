@@ -1046,3 +1046,13 @@ seventeen chapters, 223 pages, and zero missing targets. The Product Owner
 decision is continue to F81-F90 under an owner-first merge/defer budget.
 Internal checks establish structure and mechanics only, not real-world
 feasibility, reader value, or publication readiness.
+
+## F81-F90 operating conditions plan
+
+The next batch targets why operation differs from a static feasible plan.
+Three anchors—interaction exchange, spatial operating context, and
+hazard/safety—pass independent owner tests. Six views deepen existing
+agreement, resource/work, control, organization, identity, and provenance
+owners. The Product Owner caps navigation cost and blocks operational
+automation, professional safety guidance, catalogs, new typed relations, and
+reader/safety claims.
