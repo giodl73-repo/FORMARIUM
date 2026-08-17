@@ -191,6 +191,7 @@ records:
 
 - [Rust Access-Control Evaluation Guide](../../guides/rust-access-control-evaluation.md)
 - [Aqueous Solution Amount-Concentration Guide](../../guides/aqueous-solution-amount-concentration.md)
+- [Bounded-Question Composition and Evaluation Guide](../../guides/bounded-question-composition-book-one.md)
 
 ## Reader testing
 

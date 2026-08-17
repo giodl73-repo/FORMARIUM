@@ -157,6 +157,15 @@ one coherent book-derived route from declared question through typed closure,
 factoring contract, bounded evaluation, loss-aware projection, and
 reconstructable guide.
 
+## F100 result
+
+The campaign reaches fixed point without adding a canonical owner in
+F91-F100. Existing relation, query, closure, evaluation, and projection
+contracts carry F91-F98. One integrated guide carries F99's explanation route
+and F100's exact 24-record candidate Book One spine. The Product Owner stops
+F-number content expansion and selects internal private-preview preparation;
+external-reader evidence remains absent.
+
 ## Source anchors for the first batch
 
 - NIST Engineering Statistics Handbook, interaction effects and factorial

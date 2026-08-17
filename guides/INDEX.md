@@ -17,3 +17,6 @@ They do not create new headword authority. See
 - [Evidence-Informed Intervention Choice](evidence-informed-intervention-choice.md)
   - compares three synthetic alternatives while preserving incomplete
   evidence, failed and unresolved joins, recommendation, and final authority
+- [Bounded-Question Composition and Evaluation](bounded-question-composition-book-one.md)
+  - composes a multi-concept closure through typed operations, evaluation,
+  projection, reconciliation, and an exact 24-record candidate Book One spine

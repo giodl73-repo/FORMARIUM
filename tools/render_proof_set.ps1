@@ -834,7 +834,7 @@ if ($editionNumber -ge 4) {
     )
     $guideSelections = @(Get-GuideSelections)
     $expectedGuideCount = if ($editionNumber -ge 29) {
-        8
+        9
     }
     elseif ($editionNumber -ge 14) {
         7

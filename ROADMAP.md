@@ -410,19 +410,24 @@ non-sensitive synthetic scenarios.
 
 ## Immediate execution order
 
-Factor Forge F51-F80 is complete at the candidate-content layer. The factoring
+Factor Forge F51-F100 is complete at the candidate-content and composition-
+capstone layer. The factoring
 grammar makes combination contracts explicit; the evaluation grammar makes an
 unfamiliar score reconstructable through comparison frame, scale, criteria,
 aggregation, threshold, sensitivity, applicability, and disposition. The
 scenario/operational grammar makes feasibility conditional on assumptions,
 requirements, capacity, demand, allocation, dependencies, compatibility, and
-unresolved shortage. The current fixed point is 50 entries and 89 views with
-an empty generated unresolved list. Internal rehearsal does not establish
-real-world feasibility or reader value.
+unresolved shortage. The composition capstone audits typed closure,
+combination, exclusion, interaction, projection, budgets, reconciliation, and
+evaluation, then selects an exact 24-record candidate Book One spine. The
+current fixed point is 53 entries and 95 views with an empty generated
+unresolved list. Internal rehearsal does not establish real-world feasibility
+or reader value.
 
-1. build and fixed-point review F81-F90 interaction and operating conditions;
-2. build and fixed-point review F91-F100 composition and Book One capstone;
-3. continue internal Proof Set simulation preflights across every batch while
+1. freeze and internally simulate the 24-record candidate Book One spine for
+   independent onboarding and bounded application while readers are absent;
+2. repair only demonstrated route, projection, or explanation defects;
+3. continue internal Proof Set simulation preflights while
    keeping software subordinate to canonical books and Factor Tables;
 4. when readers become available, close The Sieve, forward-apply its findings,
    and run the Proof Set private preview on a frozen proof edition;

@@ -2233,3 +2233,21 @@ The Product Owner decision is proceed under a zero-new-owner, one-artifact
 ceiling. Stop before phase-count content, a second query language, new relation
 kinds, automated judgment, external-reader claims, or publication. Detailed
 conditions are in `F91-F100-COMPOSITION-BOOK-CAPSTONE-ROLE-REVIEW.md`.
+
+Result review: F91-F98 pass as audits over existing contracts, not new
+canonical content. F99-F100 add one Bounded-Question Composition and
+Evaluation Guide with a six-field default, ten-step full route, and exact
+24-record candidate Book One spine. The canonical fixed point remains 53
+entries, 412 senses, 627 factors, 95 views, 11 relations, and 159 assurance
+bindings.
+
+The 214-source `sim-29` edition contains 175 canonical book records and nine
+application guides, indexes 184 destinations, and renders 234 pages across
+eighteen chapters with zero missing targets. Site identity is
+`41b581dffd8a6ec61af788bc7cd32320c3780286b42d383735b958b71adbe0af`;
+standalone SHA-256 is
+`8faf3fab330baf8feee29c7446f73d9229384d8e7ac4f14a6c9092dd774da660`.
+
+The Product Owner decision is stop F-number content expansion and prepare an
+internal private-preview candidate around the 24-record spine. Internal
+simulation may repair route defects but cannot establish reader value.

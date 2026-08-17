@@ -740,7 +740,7 @@ software, decision support, factoring, evaluation, scenario, and operational
 grammar. The canonical reference now contains 53 entries, 412 senses, 627
 factors, and 95 views with 159 exact assurance bindings. The current Factor
 Forge supplement contains 97 records, while `sim-29` selects 175 canonical
-records and indexes 183 destinations across eighteen chapters. Historical preflight documents retain the counts of the
+records and indexes 184 destinations across eighteen chapters. Historical preflight documents retain the counts of the
 rehearsal they recorded.
 
 F38-F42 close the generated unresolved list through existing semantic owners:
@@ -764,6 +764,12 @@ why operation differs from a static feasible plan while keeping safety
 material descriptive and non-prescriptive. The Product Owner continues to
 F91-F100 only for a composition capstone and Book One selection; more anchors
 must be separately earned.
+
+F91-F100 add no canonical owner or relation. The bounded-question capstone
+audits existing composition contracts and selects a 24-record candidate Book
+One spine in one integrated guide. `sim-29` now renders 234 pages from 214
+sources. The Product Owner stops F-number content expansion and selects
+internal private-preview preparation; no external-reader claim is admitted.
 
 F61-F70 add one owner for evaluation measure, scale, criterion, and score plus
 eight task-specific views for comparison frames, scale/ranking, judgment

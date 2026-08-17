@@ -77,3 +77,12 @@ Verdict: APPROVED-WITH-CONDITIONS
    trace, limitations, provenance, and non-equivalence in every profile.
 5. At F100, the Product Owner must choose stop, prepare private preview, or
    reopen a specific evidenced gap.
+
+## Fixed-point verification
+
+The implementation adds no canonical owner or relation. One integrated guide
+audits F91-F98 and declares the F100 24-record spine. Mechanical validation
+confirms eight audit stages, exact unique selection targets, volume discovery,
+search admission, internal-only status, 184 search records, 234 pages, and
+zero missing targets. The Product Owner stops F-number expansion and selects
+internal private-preview preparation; external-reader evidence remains absent.

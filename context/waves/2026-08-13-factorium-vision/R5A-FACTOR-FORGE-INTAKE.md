@@ -1090,3 +1090,16 @@ The thirteen-role review found zero P1 blockers, thirteen P2 conditions, and
 five P3 notes. The Product Owner permits no new canonical owner and one
 reader-facing capstone artifact. The batch must reduce navigation across the
 current corpus rather than grow it.
+
+## F91-F100 composition and book capstone result
+
+No new canonical content or relation was needed. One integrated guide audits
+F91-F98 and supplies F99's evaluation/explanation route plus F100's exact
+24-record candidate Book One spine. The canonical counts remain 53 entries,
+412 senses, 627 factors, 95 views, 11 relations, and 159 assurance bindings.
+
+The 214-source proof edition selects 175 canonical records and nine guides,
+indexes 184 destinations, and renders 234 pages across eighteen chapters with
+zero missing targets. The Product Owner stops F-number content expansion and
+selects internal private-preview preparation around the candidate spine;
+external-reader evidence remains future work.
