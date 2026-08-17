@@ -883,6 +883,23 @@ standalone SHA-256 is
 `3b624f39e0f5f6134196b40cecbc25fa19f8ff560b859b3172a7c3df87e97ebb`.
 This establishes product hierarchy and publication mechanics only.
 
+`sim-32` strengthens the Tables side of that model with generated, bounded
+navigation over authored data. All 175 selected Table pages identify
+themselves as one of 53 canonical entries, 95 specialized views, or 27 curated
+Table records. Every page links back to Search and Browse; all specialized
+views link to their exact owning entry. The projection exposes 47 authored
+Contrast tables and 63 authored Cross-references sections containing 399
+connections, while previewing at most six per page and explicitly treating
+them as untyped navigation only.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+237 pages, and zero missing targets. Site identity is
+`e5f64a47752fee1e1ae829b889f9ca1ac434332ffc66220f32b144d0580a5270`;
+standalone SHA-256 is
+`eb726e0500c8df71f4234d0e4b0dab649cf836e1f8582767719d98b023179b1f`.
+`sim-31` reproduces exactly. This establishes navigation mechanics, not typed
+thesaurus semantics or reader value.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

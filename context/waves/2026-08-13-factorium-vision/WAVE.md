@@ -2330,3 +2330,20 @@ The principal constraint is non-inference: authored links remain explicitly
 untyped and cannot become synonym, broader/narrower, equivalence, dependency,
 or closure claims. No canonical entry, relation, sidecar, or content changes.
 Detailed conditions are in `TABLES-THESAURUS-NAVIGATION-ROLE-REVIEW.md`.
+
+Result review: `sim-32` projects a compact Explore-this-Table navigator onto
+all 175 selected Table pages: 53 canonical entries, 95 specialized views, and
+27 curated Table records. All pages retain direct Search and Browse actions;
+all 95 views expose their exact Owning Table. Authored sections provide 47
+comparison routes and 63 Cross-references routes with 399 untyped authored
+connections, capped at six visible previews per page.
+
+Static and live Edge checks pass with zero missing targets and no 390-pixel
+overflow. The edition retains 217 sources, 175 canonical records, 185 search
+records, and 237 pages. Site identity is
+`e5f64a47752fee1e1ae829b889f9ca1ac434332ffc66220f32b144d0580a5270`;
+standalone SHA-256 is
+`eb726e0500c8df71f4234d0e4b0dab649cf836e1f8582767719d98b023179b1f`.
+`sim-31` reproduces exactly. Product Owner decision: keep this untyped
+navigator and stop before inferred or typed thesaurus relations; human
+findability remains untested.

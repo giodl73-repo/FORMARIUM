@@ -486,6 +486,8 @@ node tools\check_proof_set_search.js target\proof-set-sim-30\search-index.json 1
 node tools\check_book_one_simulation_browser.js target\proof-set-sim-30 target\sim30-book-one-candidate.png
 node tools\check_two_book_site.js target\proof-set-sim-31
 node tools\check_two_book_site_browser.js target\proof-set-sim-31 target\sim31-two-book-front-door.png
+node tools\check_tables_navigator.js target\proof-set-sim-32
+node tools\check_tables_navigator_browser.js target\proof-set-sim-32 target\sim32-table-navigator.png
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

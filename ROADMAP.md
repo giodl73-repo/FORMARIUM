@@ -426,21 +426,23 @@ current fixed point is 53 entries and 95 views with an empty generated
 unresolved list. Internal rehearsal does not establish real-world feasibility
 or reader value.
 
-1. maintain `sim-31` as the two-book front-door projection while retaining
-   exact `sim-30` custody and its 24-record spine, 151-record depth boundary,
+1. maintain `sim-32` as the two-book front door plus bounded Tables navigator,
+   while retaining exact `sim-31` custody and its product hierarchy;
+2. retain exact `sim-30` custody and its 24-record spine, 151-record depth
+   boundary,
    four route prompts, and findings ledger;
-2. improve the Factorium Tables dictionary/thesaurus projection only where
+3. improve the Factorium Tables dictionary/thesaurus projection only where
    structural inspection or later readers demonstrate lookup and concept-
    relation friction; keep Reader prose and order separately owned;
-3. repair only newly demonstrated route, projection, search, or explanation
+4. repair only newly demonstrated route, projection, search, or explanation
    defects; do not add content merely to keep the sequence moving;
-4. continue internal Proof Set simulation preflights only when they test a
+5. continue internal Proof Set simulation preflights only when they test a
    concrete product-value risk, while
    keeping software subordinate to canonical books and Factor Tables;
-5. when readers become available, close The Sieve, forward-apply its findings,
+6. when readers become available, close The Sieve, forward-apply its findings,
    and run the Proof Set private preview on a frozen proof edition;
-6. expand toward and gate the approximately 250-entry substantial volume;
-7. freeze and adversarially test the Composition Query, Closure Policy,
+7. expand toward and gate the approximately 250-entry substantial volume;
+8. freeze and adversarially test the Composition Query, Closure Policy,
     working-graph, Evaluation, and flattened Factor Guide contracts;
-8. begin Workbench implementation only against those proven reference and
+9. begin Workbench implementation only against those proven reference and
     closure contracts.

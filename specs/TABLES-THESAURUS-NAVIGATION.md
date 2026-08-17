@@ -1,6 +1,8 @@
 # Factorium Tables Navigator
 
-Status: internal navigation contract candidate
+Status: internal navigation contract fixed point
+
+Reference implementation: `sim-32`
 
 ## Reader job
 

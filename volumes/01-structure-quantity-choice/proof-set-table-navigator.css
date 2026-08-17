@@ -1,0 +1,104 @@
+.table-navigator {
+  background: color-mix(in srgb, var(--proof-card) 92%, var(--proof-accent));
+  border: 1px solid var(--proof-rule);
+  border-radius: 0.9rem;
+  display: grid;
+  gap: 0.9rem;
+  margin: 0 0 2rem;
+  padding: 1rem;
+}
+
+.table-navigator__heading {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  justify-content: space-between;
+}
+
+.table-navigator__heading p,
+.table-navigator__heading span,
+.table-navigator__connections > p {
+  margin: 0;
+}
+
+.table-navigator__heading p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 750;
+}
+
+.table-navigator__heading span,
+.table-navigator__connections > p {
+  color: var(--proof-accent);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.table-navigator__owner {
+  display: grid;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 750;
+  gap: 0.1rem;
+  justify-self: start;
+}
+
+.table-navigator__owner span {
+  color: var(--proof-ink-soft);
+  font-family: system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.table-navigator__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+}
+
+.table-navigator__actions a,
+.table-navigator__more {
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+.table-navigator__connections {
+  border-top: 1px solid var(--proof-rule);
+  padding-top: 0.75rem;
+}
+
+.table-navigator__connections ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+
+.table-navigator__connections li a {
+  background: var(--proof-card);
+  border: 1px solid var(--proof-rule);
+  border-radius: 999px;
+  display: block;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.65rem;
+  text-decoration: none;
+}
+
+.table-navigator__more {
+  display: inline-block;
+  margin-top: 0.65rem;
+}
+
+.table-navigator__boundary {
+  color: var(--proof-ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  margin: 0;
+}

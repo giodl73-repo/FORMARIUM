@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -70,6 +70,7 @@ $contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proo
 $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-site.css"
 $candidateSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-candidate.css"
 $twoBookSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-two-book.css"
+$tableNavigatorStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-navigator.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -139,6 +140,7 @@ $artifactTitle = switch ($Edition) {
     "sim-29" { "Factorium Proof Set Local Evaluation Record Simulation 29" }
     "sim-30" { "Factorium Book One Internal Preview Simulation 30" }
     "sim-31" { "Factorium Two-Book Product Architecture Simulation 31" }
+    "sim-32" { "Factorium Tables Navigator Simulation 32" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -544,6 +546,18 @@ $selectionChecks = [ordered]@{
 $canonicalMetadata = [System.Collections.Generic.Dictionary[string, object]]::new(
     [System.StringComparer]::OrdinalIgnoreCase
 )
+$canonicalEntryPathById = [System.Collections.Generic.Dictionary[string, string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
+$canonicalEntryTitleById = [System.Collections.Generic.Dictionary[string, string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
+$canonicalOwnerByPath = [System.Collections.Generic.Dictionary[string, string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
+$canonicalClassByPath = [System.Collections.Generic.Dictionary[string, string]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
 if ($Edition -ne "sim-01") {
     $canonicalKinds = [System.Collections.Generic.Dictionary[string, string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
@@ -557,6 +571,10 @@ if ($Edition -ne "sim-01") {
             $entryId = $parts[0].Substring("entry ".Length)
             $entryDomains[$entryId] = $parts[2]
             $canonicalKinds[$parts[4]] = "entry"
+            $canonicalEntryPathById[$entryId] = $parts[4]
+            $canonicalEntryTitleById[$entryId] = $parts[1]
+            $canonicalOwnerByPath[$parts[4]] = $parts[4]
+            $canonicalClassByPath[$parts[4]] = "entry"
             $canonicalMetadata[$parts[4]] = [ordered]@{
                 kind = "entry"
                 domain = $parts[2]
@@ -566,7 +584,12 @@ if ($Edition -ne "sim-01") {
         }
         elseif ($line.StartsWith("view ", [System.StringComparison]::Ordinal)) {
             $parts = $line -split ' \| '
+            if (-not $canonicalEntryPathById.ContainsKey($parts[1])) {
+                throw "Canonical view has unknown owner: $($parts[0]) -> $($parts[1])"
+            }
             $canonicalKinds[$parts[5]] = "view"
+            $canonicalOwnerByPath[$parts[5]] = $canonicalEntryPathById[$parts[1]]
+            $canonicalClassByPath[$parts[5]] = $parts[3]
             $canonicalMetadata[$parts[5]] = [ordered]@{
                 kind = $parts[3]
                 domain = $entryDomains[$parts[1]]
@@ -1521,6 +1544,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 31) {
         $siteCssParts += (Get-Content -LiteralPath $twoBookSiteStyle -Raw)
+    }
+    if ($editionNumber -ge 32) {
+        $siteCssParts += (Get-Content -LiteralPath $tableNavigatorStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -3084,6 +3110,15 @@ if ($editionNumber -ge 7) {
         )
     }
 
+    $tableNavigatorPages = 0
+    $tableCanonicalEntryPages = 0
+    $tableSpecializedViewPages = 0
+    $tableCuratedRecordPages = 0
+    $tableOwnerLinks = 0
+    $tableContrastRoutes = 0
+    $tableCrossReferenceRoutes = 0
+    $tableAuthoredConnections = 0
+    $tableConnectionPreviewLinks = 0
     foreach ($source in $sources) {
         $relativeSource = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
         $segment = $renderedSegmentBySource[$source]
@@ -3186,6 +3221,91 @@ if ($editionNumber -ge 7) {
             }
         }
 
+        $tableNavigatorHtml = ""
+        if ($editionNumber -ge 32 -and $null -ne $record -and
+            $relativeSource.StartsWith("tables/", [System.StringComparison]::OrdinalIgnoreCase)) {
+            $tableNavigatorPages += 1
+            $tableIdentity = "Curated Table record"
+            $ownerAction = ""
+            if ($canonicalClassByPath.ContainsKey($relativeSource)) {
+                if ($canonicalClassByPath[$relativeSource] -eq "entry") {
+                    $tableIdentity = "Canonical entry"
+                    $tableCanonicalEntryPages += 1
+                }
+                else {
+                    $encodedViewFamily = [System.Net.WebUtility]::HtmlEncode($canonicalClassByPath[$relativeSource])
+                    $tableIdentity = "Specialized $encodedViewFamily view"
+                    $tableSpecializedViewPages += 1
+                    $ownerRelative = $canonicalOwnerByPath[$relativeSource]
+                    $ownerSource = [System.IO.Path]::GetFullPath((Join-Path $workspace $ownerRelative))
+                    if (-not $pageBySource.ContainsKey($ownerSource) -or
+                        -not $searchRecordByPath.ContainsKey($ownerRelative)) {
+                        throw "Table navigator cannot resolve canonical owner: $relativeSource -> $ownerRelative"
+                    }
+                    $ownerTitle = [System.Net.WebUtility]::HtmlEncode($searchRecordByPath[$ownerRelative].title)
+                    $ownerPage = $pageBySource[$ownerSource]
+                    $ownerAction = "<a class=`"table-navigator__owner`" href=`"$ownerPage`"><span>Owning Table</span>$ownerTitle</a>"
+                    $tableOwnerLinks += 1
+                }
+            }
+            else {
+                $tableCuratedRecordPages += 1
+            }
+
+            $localActions = [System.Text.StringBuilder]::new()
+            [void]$localActions.Append('<a href="../index.html#search">Search Tables</a><a href="../index.html#contents">Browse Tables</a>')
+            $contrastMatch = [regex]::Match(
+                $segment,
+                '<h2 id="([^"]+)">Contrast\s*table</h2>',
+                [System.Text.RegularExpressions.RegexOptions]::Singleline
+            )
+            if ($contrastMatch.Success) {
+                [void]$localActions.Append('<a href="#' + $contrastMatch.Groups[1].Value + '">Compare nearby terms</a>')
+                $tableContrastRoutes += 1
+            }
+
+            $crossReferenceMatch = [regex]::Match(
+                $segment,
+                '(?s)<h2 id="([^"]+)">Cross-references</h2>(.*?)(?=<h2\s|$)'
+            )
+            $connectionList = ""
+            if ($crossReferenceMatch.Success) {
+                $crossReferenceId = $crossReferenceMatch.Groups[1].Value
+                $connectionMatches = @([regex]::Matches(
+                    $crossReferenceMatch.Groups[2].Value,
+                    '<a href="(?!https?://|mailto:|#)([^"]+)">(.+?)</a>',
+                    [System.Text.RegularExpressions.RegexOptions]::Singleline
+                ))
+                [void]$localActions.Append('<a href="#' + $crossReferenceId + '">All cross-references (' + $connectionMatches.Count + ')</a>')
+                $tableCrossReferenceRoutes += 1
+                $tableAuthoredConnections += $connectionMatches.Count
+                $previewItems = [System.Text.StringBuilder]::new()
+                $previewCount = [Math]::Min(6, $connectionMatches.Count)
+                for ($connectionIndex = 0; $connectionIndex -lt $previewCount; $connectionIndex++) {
+                    $connection = $connectionMatches[$connectionIndex]
+                    [void]$previewItems.Append('<li><a href="' + $connection.Groups[1].Value + '">' + $connection.Groups[2].Value + '</a></li>')
+                }
+                $tableConnectionPreviewLinks += $previewCount
+                $remainingConnections = $connectionMatches.Count - $previewCount
+                $moreConnections = if ($remainingConnections -gt 0) {
+                    "<a class=`"table-navigator__more`" href=`"#$crossReferenceId`">+$remainingConnections more in the authored section</a>"
+                }
+                else { "" }
+                $connectionList = "<div class=`"table-navigator__connections`"><p>Authored connections · untyped</p><ul>$previewItems</ul>$moreConnections</div>"
+            }
+
+            $encodedTableIdentity = [System.Net.WebUtility]::HtmlEncode($tableIdentity)
+            $tableNavigatorHtml = @"
+<nav class="table-navigator" aria-label="Explore this Table" data-table-class="$encodedTableIdentity">
+<div class="table-navigator__heading"><p>Explore this Table</p><span>$encodedTableIdentity</span></div>
+$ownerAction
+<div class="table-navigator__actions">$localActions</div>
+$connectionList
+<p class="table-navigator__boundary">Authored connections are navigation, not synonym, broader/narrower, equivalence, dependency, or closure claims.</p>
+</nav>
+"@
+        }
+
         $pageHtml = @"
 <!doctype html>
 <html lang="en">
@@ -3210,7 +3330,7 @@ if ($editionNumber -ge 7) {
     }
 ) / $encodedPageTitle</nav>
 $readerControls
-<main id="main-content" class="site-entry" data-source-path="$encodedSource">$factorFocusHtml$segment</main>
+<main id="main-content" class="site-entry" data-source-path="$encodedSource">$tableNavigatorHtml$factorFocusHtml$segment</main>
 $pagination
 </div>
 <footer class="site-footer">Canonical source: $encodedSource · simulation projection</footer>
@@ -3363,6 +3483,25 @@ $pageScripts
         $siteChecks.tables_start_targets = $tablesStartTargets
         $siteChecks.reader_start_targets = $readerStartTargets
         $siteChecks.product_authority = "Factorium Tables canonical; Reader and Factor Guides are linked projections"
+    }
+    if ($editionNumber -ge 32) {
+        $expectedTableNavigatorPages = @($searchRecords | Where-Object { $_.path.StartsWith("tables/") }).Count
+        $expectedSpecializedViews = @($canonicalClassByPath.Keys | Where-Object { $canonicalClassByPath[$_] -ne "entry" }).Count
+        if ($tableNavigatorPages -ne $expectedTableNavigatorPages -or
+            $tableSpecializedViewPages -ne $expectedSpecializedViews -or
+            $tableOwnerLinks -ne $expectedSpecializedViews) {
+            throw "Table navigator coverage mismatch: pages=$tableNavigatorPages/$expectedTableNavigatorPages views=$tableSpecializedViewPages/$expectedSpecializedViews owners=$tableOwnerLinks/$expectedSpecializedViews"
+        }
+        $siteChecks.table_navigator_pages = $tableNavigatorPages
+        $siteChecks.table_canonical_entry_pages = $tableCanonicalEntryPages
+        $siteChecks.table_specialized_view_pages = $tableSpecializedViewPages
+        $siteChecks.table_curated_record_pages = $tableCuratedRecordPages
+        $siteChecks.table_owner_links = $tableOwnerLinks
+        $siteChecks.table_contrast_routes = $tableContrastRoutes
+        $siteChecks.table_cross_reference_routes = $tableCrossReferenceRoutes
+        $siteChecks.table_authored_connections = $tableAuthoredConnections
+        $siteChecks.table_connection_preview_links = $tableConnectionPreviewLinks
+        $siteChecks.table_connection_semantics = "authored-untyped-navigation-only"
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1

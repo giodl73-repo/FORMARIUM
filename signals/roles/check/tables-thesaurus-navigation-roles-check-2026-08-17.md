@@ -4,7 +4,8 @@ topic: tables-thesaurus-navigation
 date: 2026-08-17
 roles_used: 7
 p1_count: 0
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Tables Thesaurus Navigation Roles Check
@@ -106,3 +107,15 @@ defer inferred hierarchy and synonymy.
 2. Generate universal Search/Browse actions plus exact owner, Contrast, and
    bounded Cross-reference routes with mechanical coverage checks.
 3. Preserve sim-31 and all canonical artifacts; report no human-value claim.
+
+## Fixed-point result
+
+All fourteen P2 findings are closed in `sim-32`: exact owner links cover all
+95 specialized views, all 175 selected Table pages receive universal lookup
+actions, section extraction is exact and bounded, connection previews are
+capped at six, semantic non-inference is visible, local targets are complete,
+the 390-pixel browser route has no overflow, and `sim-31` reproduces exactly.
+
+Final verdict: PASS. The seven P3 notes remain durable design boundaries, not
+release blockers. No human lookup, semantic completeness, or preview claim is
+admitted.
