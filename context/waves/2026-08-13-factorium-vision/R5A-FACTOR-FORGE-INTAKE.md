@@ -1119,9 +1119,13 @@ anchor and two justified views. See `FACTOR-FORGE-NEXT-BATCH-AUDIT.md`.
 ## Query-led discovery lane
 
 The fixed point stops speculative entry production, not content discovery.
-`QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md` defines the next proposed funded
-campaign: freeze a varied set of realistic questions, run them against
-`sim-41`, preserve null and failed routes, classify each friction by its true
-owner, and admit only the smallest repeated or source-backed repair. The lane
-may reopen intake through evidence; it does not assume that a new batch, entry,
-or relation will be earned.
+QLD-01 executed the blueprint's 24 frozen questions against `sim-41`, admitted
+one bounded repair to an existing diagnostic, and stopped without a new
+anchor, view, relation, or product mechanic. The result is
+`QUERY-LED-CAMPAIGN-01-RESULT.md`. The later `sim-42` internal preview rehearsal
+also stopped without a new edition. A separate source-custody audit then
+admitted only the two existing-view maintenance repair recorded in
+`OPERATING-CONDITION-SOURCE-CUSTODY-RESULT.md`, bringing explicit source or
+provenance headings to all 148 canonical paths without expanding the
+inventory. These results preserve null routes and permit later evidence-led
+intake; they are not reader evidence or entitlement to another content batch.

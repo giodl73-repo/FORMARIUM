@@ -460,12 +460,15 @@ reopens only under the evidence triggers in
 `context/waves/2026-08-13-factorium-vision/FACTOR-FORGE-NEXT-BATCH-AUDIT.md`;
 the first reopened slice is capped at one anchor and two justified views.
 
-The proposed next discovery investment is the query-led campaign in
-`context/waves/2026-08-13-factorium-vision/QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md`.
-It freezes 24 varied reader-question packets before executing them against
-`sim-41`, preserves no-gap and failed results, and uses repeated manual
-concepts, overloaded owners, source-backed distinctions, and product-mechanic
-failures to decide whether the smallest repair is an alias, sense, view,
-anchor, relation, Guide-local concept, external catalog route, or software
-change. It is an intake method, not reader evidence or automatic permission to
-resume content production.
+The first query-led campaign in
+`context/waves/2026-08-13-factorium-vision/QUERY-LED-CAMPAIGN-01-RESULT.md`
+froze and executed 24 varied packets against `sim-41`, admitted one bounded
+repair to the existing Dependency/Critical-Path Diagnostic, reran the exact
+portfolio, and stopped without a new anchor, view, relation, or product
+mechanic. The subsequent `sim-42` internal preview rehearsal also stopped
+without a new edition. A later source-custody audit admitted only the two-view
+maintenance repair in `OPERATING-CONDITION-SOURCE-CUSTODY-RESULT.md`; it
+completed source/provenance headings across all 148 canonical paths without
+expanding the inventory. These are internal intake and repository-completeness
+results, not reader evidence or automatic permission to resume content
+production.

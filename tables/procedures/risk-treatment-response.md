@@ -40,3 +40,19 @@ shows implementation, operation, effectiveness, side effects, and residual risk?
 
 This descriptive procedure does not prescribe controls, certify safety, or
 replace domain professionals, regulation, or emergency procedures.
+
+## Sources and provenance
+
+- CDC/NIOSH, [*Hierarchy of
+  Controls*](https://www.cdc.gov/niosh/hierarchy-of-controls/index.html),
+  supports a workplace-specific preference for removing or controlling
+  hazards and exposures nearer their source before relying on administrative
+  controls or personal protective equipment.
+- FEMA, [*National Preparedness Goal*, second
+  edition](https://www.fema.gov/sites/default/files/2020-04/National_Preparedness_Goal_2nd_Edition-oct2015.pdf),
+  supplies an emergency-preparedness example that distinguishes prevention,
+  protection, mitigation, response, and recovery mission areas.
+
+Neither source defines a universal six-role treatment taxonomy. Detection is
+not a sixth FEMA mission area, and this table is Factorium editorial routing,
+not an exhaustive hierarchy or field-guidance substitute.

@@ -1044,6 +1044,15 @@ remains inadmissible, and the next evidence-bearing action remains a real R4E
 worksheet when readers are available. Further work requires a concrete
 content, artifact, regression, composition, or actual reader trigger.
 
+A later canonical audit supplied one such bounded maintenance trigger: the
+operating-condition diagnostic and risk-treatment procedure were the only two
+of 148 canonical entry/view paths without explicit source custody. The repair
+at `context/waves/2026-08-13-factorium-vision/OPERATING-CONDITION-SOURCE-CUSTODY-RESULT.md`
+adds bounded primary-source provenance and identifies both cross-domain
+structures as editorial synthesis. Inventory and relations are unchanged,
+`sim-42` remains frozen, and the result is repository completeness rather than
+reader, field, causal, effectiveness, or safety evidence.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

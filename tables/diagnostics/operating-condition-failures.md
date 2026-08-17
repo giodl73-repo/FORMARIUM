@@ -40,3 +40,18 @@ remain unresolved in operation?
 
 This diagnostic organizes investigation questions. It does not diagnose a
 real incident, establish cause, certify safety, or prescribe response.
+
+## Sources and provenance
+
+- NASA, [*NASA Systems Engineering Handbook*](https://www.nasa.gov/reference/system-engineering-handbook-appendix/),
+  supports distinguishing verification against requirements from validation
+  in an intended environment, and checking integrated interfaces and
+  configuration.
+- NIST, [SP 800-160 Vol. 1 Rev. 1, *Engineering Trustworthy Secure
+  Systems*](https://csrc.nist.gov/pubs/sp/800/160/v1/r1/final), supplies a
+  security-engineering example in which lifecycle, operational environment,
+  integration, verification, and validation matter together.
+
+These sources support bounded distinctions, not this table as a universal
+diagnostic. The seven symptom groupings are Factorium editorial synthesis;
+they do not establish cause, safety, or outcome.
