@@ -2411,3 +2411,18 @@ standalone SHA-256 is
 `sim-33` reproduces exactly. Product Owner decision: keep reciprocal exact
 family navigation and stop before inferred members, recommendations, or
 semantic hierarchy; reader value remains untested.
+
+## 2026-08-17 Tables alphabetical index plan
+
+The next slice separates dictionary browse from Reader/book order. The current
+Browse the Tables action leads to eighteen mixed chapter routes, even though
+Tables now has exact family-aware search and reciprocal entry navigation.
+`sim-35` will add one dedicated A-Z route over canonical entry families and
+retain the existing chapter grid as Contents.
+
+Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
+The index must contain 53 canonical families under 17 occupied letters, with
+95 exact owned views counted but not promoted to top-level headwords. The 27
+curated Table records remain separate; Guides and Reader records remain out.
+No semantic adjacency, completeness, or reader-value claim is admitted.
+Detailed conditions are in `TABLES-ALPHABETICAL-INDEX-ROLE-REVIEW.md`.
