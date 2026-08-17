@@ -2379,3 +2379,18 @@ standalone SHA-256 is
 `sim-32` reproduces exactly. Product Owner decision: keep ownership-aware
 search and stop before semantic grouping, query expansion, or Composition
 execution; reader value remains untested.
+
+## 2026-08-17 Tables canonical-family contents plan
+
+The next slice closes the reciprocal publication-navigation loop. `sim-33`
+can group a specialized search hit under its canonical owner, and `sim-32`
+links a specialized page back to that owner, but the canonical entry still
+does not expose the complete set of views it owns. `sim-34` will add exact
+ordered owned-view contents to canonical entry navigators only.
+
+Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
+All 95 views must appear once under the 52 entries that own views; the one
+zero-view entry gets no empty panel. Small families open, families of four or
+more fold, and ownership remains explicitly non-taxonomic and non-
+compositional. Detailed conditions are in
+`TABLES-CANONICAL-FAMILY-CONTENTS-ROLE-REVIEW.md`.
