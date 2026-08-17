@@ -459,3 +459,13 @@ approximately 250-entry target do not independently justify new owners. Intake
 reopens only under the evidence triggers in
 `context/waves/2026-08-13-factorium-vision/FACTOR-FORGE-NEXT-BATCH-AUDIT.md`;
 the first reopened slice is capped at one anchor and two justified views.
+
+The proposed next discovery investment is the query-led campaign in
+`context/waves/2026-08-13-factorium-vision/QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md`.
+It freezes 24 varied reader-question packets before executing them against
+`sim-41`, preserves no-gap and failed results, and uses repeated manual
+concepts, overloaded owners, source-backed distinctions, and product-mechanic
+failures to decide whether the smallest repair is an alias, sense, view,
+anchor, relation, Guide-local concept, external catalog route, or software
+change. It is an intake method, not reader evidence or automatic permission to
+resume content production.

@@ -1115,3 +1115,13 @@ Intake reopens only from a repeated unresolved owner, repeated manual
 composition need, observed lookup failure, source-backed domain gap, or
 demonstrated overloaded-owner split. The first reopened slice is capped at one
 anchor and two justified views. See `FACTOR-FORGE-NEXT-BATCH-AUDIT.md`.
+
+## Query-led discovery lane
+
+The fixed point stops speculative entry production, not content discovery.
+`QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md` defines the next proposed funded
+campaign: freeze a varied set of realistic questions, run them against
+`sim-41`, preserve null and failed routes, classify each friction by its true
+owner, and admit only the smallest repeated or source-backed repair. The lane
+may reopen intake through evidence; it does not assume that a new batch, entry,
+or relation will be earned.

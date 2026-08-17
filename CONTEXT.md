@@ -1034,6 +1034,14 @@ is `context/waves/2026-08-13-factorium-vision/PROOF-SET-INTERNAL-FIXED-POINT-AUD
 The next evidence-bearing action remains a real R4E worksheet when readers are
 available.
 
+The proposed repository work path is query-led content discovery, not a claim
+that the reference is complete. The blueprint at
+`context/waves/2026-08-13-factorium-vision/QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md`
+freezes realistic questions before running them against `sim-41`, then uses
+repeated or source-backed failures to decide whether the smallest repair is
+navigation, a sense, a view, an anchor, a relation, a Guide-local concept, or
+an external-catalog route. Execution awaits a funded goal.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

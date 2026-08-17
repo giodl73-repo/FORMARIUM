@@ -2638,3 +2638,22 @@ composition need, source-backed gap, external reader finding, or dependency /
 browser / security regression. The next evidence action, when readers exist,
 is the first prepared R4E worksheet—not another simulation. Full custody and
 boundaries are in `PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`.
+
+## 2026-08-17 query-led content discovery blueprint
+
+Plan review: continue discovery without treating the 53-entry fixed point as
+content completeness. The proposed funded campaign freezes 24 questions across
+six reader jobs and four contexts before inspecting their routes through
+`sim-41`. Exact baseline results preserve successful, failed, incomplete,
+contradictory, and no-gap cases. A ten-owner gap taxonomy separates discovery,
+sense, view, anchor, relation, Guide-local, external-catalog, source, and
+product-mechanic repairs.
+
+Ten roles approve the amended blueprint with no open P1/P2 finding. The first
+implementation batch is capped at one anchor, two views, one relation proposal,
+and two mechanic repairs, with zero additions explicitly valid. Query
+recurrence earns investigation rather than content; the ordered owner test,
+source boundary, smallest-artifact rule, exact rerun, and Product Owner stop
+decision govern admission. Internal results remain structural rehearsal and
+cannot become reader, preview, or completeness evidence. Execution awaits a
+funded goal. See `QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md`.
