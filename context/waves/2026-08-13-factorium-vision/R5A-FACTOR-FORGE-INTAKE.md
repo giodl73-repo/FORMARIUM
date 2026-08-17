@@ -1103,3 +1103,15 @@ indexes 184 destinations, and renders 234 pages across eighteen chapters with
 zero missing targets. The Product Owner stops F-number content expansion and
 selects internal private-preview preparation around the candidate spine;
 external-reader evidence remains future work.
+
+## Post-F100 next-batch audit
+
+The 2026-08-17 audit finds no internally demonstrated owner gap: all 53 entries
+and 95 views have closure coverage in one connected editorial graph, and the
+generated unresolved catalog is empty. Uneven domain counts are not an
+admission test. No F101 batch is admitted.
+
+Intake reopens only from a repeated unresolved owner, repeated manual
+composition need, observed lookup failure, source-backed domain gap, or
+demonstrated overloaded-owner split. The first reopened slice is capped at one
+anchor and two justified views. See `FACTOR-FORGE-NEXT-BATCH-AUDIT.md`.

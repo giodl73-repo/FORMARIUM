@@ -1006,6 +1006,13 @@ standalone SHA-256 is
 `sim-38` reproduces exactly. Terminal position is not evidence of completion,
 mastery, conceptual closure, comprehension, or learning value.
 
+The post-F100 portfolio audit admits no new content batch. All 53 entries and
+95 views have closure coverage in one connected editorial graph, and the
+generated unresolved catalog is empty. Uneven domain counts and the 250-entry
+target are not owner evidence. Factor Forge reopens only from a repeated owner,
+composition, observed lookup, source, or maintenance trigger; the first slice
+is capped at one anchor and two justified views.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

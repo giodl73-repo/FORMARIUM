@@ -2556,3 +2556,16 @@ standalone SHA-256 is
 `d80c3d4a81ce074ab043b76aa5363418357259697ffbdebbc796f94736b36be3`.
 `sim-38` reproduces exactly. Product Owner decision: stop further Reader
 mechanics absent new evidence.
+
+## 2026-08-17 Factor Forge next-batch audit
+
+The post-F100 portfolio audit admits no new content batch. All 53 entries and
+95 views have closure coverage in one connected editorial graph, the eleven
+typed relations resolve, and the generated unresolved catalog is empty. Domain
+counts remain uneven but cannot justify taxonomy filling.
+
+Five roles reach a fixed point: intake reopens only from a repeated unresolved
+owner, repeated manual composition need, observed lookup failure, source-backed
+domain gap, or demonstrably overloaded existing owner. The first reopened slice
+is capped at one anchor and two justified views. Until then, maintain `sim-39`;
+do not invent F101, reader behavior, or completeness.

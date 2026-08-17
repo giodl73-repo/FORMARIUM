@@ -449,3 +449,11 @@ or reader value.
     working-graph, Evaluation, and flattened Factor Guide contracts;
 9. begin Workbench implementation only against those proven reference and
     closure contracts.
+
+Post-F100 portfolio decision: no new content batch is currently admitted. The
+reference graph is connected, all 53 entries and 95 views have closure
+coverage, and the unresolved catalog is empty. Domain imbalance and the
+approximately 250-entry target do not independently justify new owners. Intake
+reopens only under the evidence triggers in
+`context/waves/2026-08-13-factorium-vision/FACTOR-FORGE-NEXT-BATCH-AUDIT.md`;
+the first reopened slice is capped at one anchor and two justified views.
