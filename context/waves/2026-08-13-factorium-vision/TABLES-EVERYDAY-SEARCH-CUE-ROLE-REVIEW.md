@@ -1,6 +1,6 @@
 # Tables Everyday Search Cue Role Review
 
-Status: plan reviewed
+Status: fixed-point result reviewed
 
 Date: 2026-08-17
 
@@ -42,3 +42,30 @@ Proceed because this closes a previously recorded and now mechanically
 reproduced lookup detour. Do not treat it as authorization for a general
 thesaurus layer or new content. Stop after the single bounded cue unless
 observed lookup failures justify another explicit route.
+
+## Result review
+
+All fourteen P2 conditions are closed. `sim-40` renders one **Navigation cue**
+for exact normalized `size`, `how big`, and `how large`: **If you mean
+geometric size: Geometric Measure**. Its boundary says that the route is not a
+synonym or classification. Empty, extended, and near-match queries emit no
+cue.
+
+The selected target resolves exactly once. The 185-record search index has the
+same SHA-256 as `sim-39`, and focused checks compare the complete ranked paths
+for all admitted phrases and `sample size` with the prior edition. Counts,
+filters, family grouping, flat results, URL state, and record identities are
+untouched. A live Edge check verifies cue presentation, the unchanged first
+lexical result, conditional removal, direct destination, and zero horizontal
+overflow at 390 pixels.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+eighteen chapters, 239 pages, and zero missing targets. Site identity is
+`2cd79e84f912969f2338ac34c123eaffb02ab2442fcc50c0ca4ee772f7b9433f`;
+standalone SHA-256 is
+`8a0d991ef3b934028d2ced0fc4dda1adcc24f0449074b8037785e3e9795be4e7`.
+`sim-39` reproduces exactly.
+
+Product Owner decision: **keep the one conditional route and stop before a
+general alias or query-expansion layer**. Reader findability and value remain
+untested.

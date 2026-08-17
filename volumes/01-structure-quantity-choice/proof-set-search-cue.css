@@ -1,0 +1,38 @@
+.proof-search__cue {
+  align-items: baseline;
+  background: color-mix(in srgb, Canvas 92%, #28664f 8%);
+  border: 1px solid color-mix(in srgb, #28664f 38%, Canvas 62%);
+  border-radius: 0.7rem;
+  display: grid;
+  gap: 0.25rem 0.75rem;
+  grid-template-columns: auto auto 1fr;
+  margin: 0.9rem 0 0;
+  padding: 0.75rem 0.85rem;
+}
+
+.proof-search__cue[hidden] {
+  display: none;
+}
+
+.proof-search__cue > span {
+  color: #28664f;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.proof-search__cue > small {
+  color: color-mix(in srgb, CanvasText 68%, Canvas 32%);
+  grid-column: 2 / -1;
+}
+
+@media (max-width: 40rem) {
+  .proof-search__cue {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-search__cue > small {
+    grid-column: auto;
+  }
+}

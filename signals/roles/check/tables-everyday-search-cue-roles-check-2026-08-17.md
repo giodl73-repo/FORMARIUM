@@ -5,7 +5,7 @@ date: 2026-08-17
 roles_used: 7
 p1_count: 0
 p2_count: 0
-verdict: APPROVED-WITH-CONDITIONS
+verdict: PASS
 ---
 
 # Tables Everyday Search Cue Roles Check
@@ -107,3 +107,17 @@ authority unchanged.
 1. Render an explicitly conditional cue for three exact normalized phrases.
 2. Resolve its one target against the selected edition and test nonactivation.
 3. Freeze `sim-39`, make no canonical change, and admit no reader-value claim.
+
+## Fixed-point result
+
+All fourteen P2 findings are closed in `sim-40`. One visible conditional cue
+activates for the three exact normalized phrases and resolves the selected
+Geometric Measure target once. The complete search index and complete ranked
+paths for the admitted phrases remain identical to `sim-39`; filters,
+grouping, counts, URL state, direct identities, and canonical sources are
+unchanged. Near misses do not activate. Static and live 390-pixel Edge checks
+pass, and `sim-39` reproduces its frozen identities exactly.
+
+Final verdict: PASS. The seven P3 notes remain durable boundaries. No synonym,
+classification, query-expansion, findability, comprehension, preference, or
+preview-readiness claim is admitted.

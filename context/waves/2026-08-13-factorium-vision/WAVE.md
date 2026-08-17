@@ -2584,3 +2584,15 @@ must preserve lexical results, ranking, grouping, filters, counts, and record
 identity; add no canonical content or semantic relation; reproduce `sim-39`
 exactly; and make no reader-value claim. Detailed conditions are in
 `TABLES-EVERYDAY-SEARCH-CUE-ROLE-REVIEW.md`.
+
+Result review: `sim-40` adds one visible conditional route for exact normalized
+`size`, `how big`, and `how large` queries. It points to the selected Geometric
+Measure Table while explicitly remaining neither synonym nor classification.
+The complete lexical rankings, 185-record index, counts, filters, grouping,
+URL state, and canonical sources are unchanged. Static and live Edge checks
+pass with zero missing targets and no 390-pixel overflow. Site identity is
+`2cd79e84f912969f2338ac34c123eaffb02ab2442fcc50c0ca4ee772f7b9433f`;
+standalone SHA-256 is
+`8a0d991ef3b934028d2ced0fc4dda1adcc24f0449074b8037785e3e9795be4e7`.
+`sim-39` reproduces exactly. Product Owner decision: keep the bounded cue and
+stop before general aliases or query expansion; reader value remains untested.

@@ -1013,6 +1013,13 @@ target are not owner evidence. Factor Forge reopens only from a repeated owner,
 composition, observed lookup, source, or maintenance trigger; the first slice
 is capped at one anchor and two justified views.
 
+`sim-40` closes one previously documented everyday-language lookup detour.
+Exact normalized `size`, `how big`, and `how large` queries show a conditional
+route to Geometric Measure without changing the lexical result set, ranking,
+ownership grouping, filters, counts, or canonical reference. The cue is
+explicitly navigation, not synonym or classification. This is mechanical
+simulation only; reader findability and value remain untested.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
