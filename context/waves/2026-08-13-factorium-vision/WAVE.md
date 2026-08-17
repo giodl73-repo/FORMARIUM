@@ -2251,3 +2251,14 @@ standalone SHA-256 is
 The Product Owner decision is stop F-number content expansion and prepare an
 internal private-preview candidate around the 24-record spine. Internal
 simulation may repair route defects but cannot establish reader value.
+
+## 2026-08-17 Book One internal preview simulation plan
+
+The next slice freezes four artifact-level route strategies around the
+24-record candidate Book One spine. Ten roles approve the plan with zero P1,
+twenty P2, and ten P3 findings, all converted into admission conditions. The
+work adds one calm candidate front door, candidate-specific quickstart and
+feedback mechanics, exact custody, and a findings ledger. It adds no canonical
+content, relation, builder feature, fictional participant evidence, or
+`preview-01` claim. Detailed conditions are in
+`BOOK-ONE-INTERNAL-PREVIEW-SIMULATION-ROLE-REVIEW.md`.
