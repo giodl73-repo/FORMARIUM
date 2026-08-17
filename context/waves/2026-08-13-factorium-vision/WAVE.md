@@ -2710,3 +2710,21 @@ then route non-operational limits to their existing owners. A new Bottleneck
 entry, renamed view, typed edge, query expansion, optimization procedure, and
 domain catalog are rejected. Q3 must establish the source and role boundary
 before implementation. See `QUERY-LED-CAMPAIGN-01-OWNER-TEST.md`.
+
+## 2026-08-17 QLD-01 limiting-condition repair plan
+
+Plan review: GAO schedule guidance supports exact graph, logic, calendar,
+resource, float, milestone, and version custody for critical paths. IETF RFC
+5136 supplies a bounded network example showing that smallest nominal capacity
+and active bottleneck can differ with load and available capacity. W3C PROV-O
+supports trace custody but not evidence sufficiency, which remains under the
+existing Claim/Evidence owner.
+
+Eight roles approve one six-row Limit owner test inside the existing
+Dependency/Critical-Path Diagnostic, with no open P1/P2 finding. The repair
+distinguishes capacity bottleneck, service-order delay, dependency blocker,
+critical path, binding constraint, and evidence limitation by selected result,
+mechanism, and required record. Preserve title, owner, senses, family, sidecar,
+and search mechanics; use authored untyped routes; keep sim-41 exact; and mint
+sim-42 only as the QLD-01 candidate projection. See
+`QUERY-LED-CAMPAIGN-01-REPAIR-PLAN.md`.
