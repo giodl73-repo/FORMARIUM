@@ -2515,3 +2515,15 @@ standalone SHA-256 is
 `sim-36` reproduces exactly. Product Owner decision: keep static Reader
 continuation and stop before progress, prerequisites, mastery, personalization,
 or lesson expansion; reader value remains untested.
+
+## 2026-08-17 Factorium Reader primary-start plan
+
+Structural inspection found that the strongest Reader start action exits to an
+optional Quickstart support record instead of entering the continuous sequence.
+`sim-38` will derive one primary **Begin with Purpose** action from exact
+manifest record 01 and retain Quickstart as a secondary orientation route.
+
+Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
+The change is limited to action target, label, and order; method, tasks, Tables,
+contents, source content, and sequence custody remain unchanged. No onboarding
+automation, prerequisite, progress, preference, or learning claim is admitted.
