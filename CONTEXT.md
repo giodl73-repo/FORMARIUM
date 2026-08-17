@@ -734,13 +734,13 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 
 ## Current content state
 
-Factor Forge through F80 has expanded and deepened the connected reference
+Factor Forge through F90 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
 software, decision support, factoring, evaluation, scenario, and operational
-grammar. The canonical reference now contains 50 entries, 395 senses, 596
-factors, and 89 views with 150 exact assurance bindings. The current Factor
-Forge supplement contains 88 records, while `sim-29` selects 166 canonical
-records and indexes 174 destinations across seventeen chapters. Historical preflight documents retain the counts of the
+grammar. The canonical reference now contains 53 entries, 412 senses, 627
+factors, and 95 views with 159 exact assurance bindings. The current Factor
+Forge supplement contains 97 records, while `sim-29` selects 175 canonical
+records and indexes 183 destinations across eighteen chapters. Historical preflight documents retain the counts of the
 rehearsal they recorded.
 
 F38-F42 close the generated unresolved list through existing semantic owners:
@@ -757,6 +757,13 @@ perspective projection, basis transformation, and factor
 status/completeness. The permanent `.roles` organization now includes a
 Product Owner who gates every ten-phase batch on recognizable reader value,
 portfolio cost, evidence level, and a continue/merge/defer/stop decision.
+
+F81-F90 add Interaction Exchange, Spatial Operating Context, and
+Hazard/Exposure/Safety owners plus six views. The question-led route explains
+why operation differs from a static feasible plan while keeping safety
+material descriptive and non-prescriptive. The Product Owner continues to
+F91-F100 only for a composition capstone and Book One selection; more anchors
+must be separately earned.
 
 F61-F70 add one owner for evaluation measure, scale, criterion, and score plus
 eight task-specific views for comparison frames, scale/ranking, judgment

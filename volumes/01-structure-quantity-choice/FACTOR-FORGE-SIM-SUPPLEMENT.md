@@ -534,6 +534,52 @@ critical paths under exact graphs and resource assumptions. The Mapping view
 preserves directional, partial, conditional, quantity-limited, and lossy
 substitution rather than treating compatibility as identity or equivalence.
 
+## Part XVII - What changed in operation?
+
+### From a message label to a bounded exchange
+
+167. [Interaction, Request, Response, Acknowledgment, Notification, and Correlation](../../tables/entries/interaction-request-response-correlation.md)
+168. [Actor, Action, Object, Instrument, Recipient, and Outcome Mapping](../../tables/mappings/semantic-participant-roles.md)
+
+The anchor separates request, response, acknowledgment, notification, and
+correlation. The Mapping keeps semantic roles explicit without treating
+transport endpoints, titles, or matching identifiers as universal meaning.
+
+### From promised work to service order
+
+169. [Agreement, Commitment, Obligation, Guarantee, and Contract Integrity](../../tables/constraints/agreement-commitment-integrity.md)
+170. [Queue, Backlog, Priority, Scheduling, and Service-Order Procedure](../../tables/procedures/queue-service-order.md)
+
+The Constraint preserves parties, authority, terms, state, performance,
+evidence, breach, and remedy. The Procedure exposes admission, backlog,
+priority, service, cancellation, and residual demand without equating a
+commitment with delivery.
+
+### From a place label to spatial operating context
+
+171. [Location, Region, Containment, Proximity, Route, and Network](../../tables/entries/spatial-operating-context.md)
+
+The anchor binds spatial relations to a reference system, frame, datum,
+topology, resolution, time, uncertainty, and transformation contract.
+
+### From a risk label to an inspectable response
+
+172. [Hazard, Exposure, Harm, Vulnerability, and Safety](../../tables/entries/hazard-exposure-harm-safety.md)
+173. [Prevention, Protection, Detection, Mitigation, Response, and Recovery Procedure](../../tables/procedures/risk-treatment-response.md)
+
+The anchor separates potential source, exposure, consequence, susceptibility,
+and bounded safety judgment. The Procedure records treatment, authority,
+evidence, residual risk, and revision; it is not professional safety guidance.
+
+### From the current record to lineage and operating diagnosis
+
+174. [History, Revision, Provenance, Lineage, and Change Evidence](../../tables/evidence/change-lineage.md)
+175. [Operating-Condition Composition Failure Diagnostic](../../tables/diagnostics/operating-condition-failures.md)
+
+The Evidence view reconstructs versions, derivations, forks, merges, gaps, and
+supersession. The Diagnostic checks whether interaction, commitment, queue,
+place, hazard, time, resource, and scenario conditions still compose.
+
 ## Selection boundary
 
 - Every added path is present in the current canonical interchange.
@@ -542,5 +588,5 @@ substitution rather than treating compatibility as identity or equivalence.
   are not counted as canonical delta records.
 - Existing base-volume paths may have later revisions; the supplement counts
   path admission, not historical line-level change.
-- The 166-record combined simulation remains a rehearsal projection, not a
+- The 175-record combined simulation remains a rehearsal projection, not a
   publication or evidence-bearing preview candidate.

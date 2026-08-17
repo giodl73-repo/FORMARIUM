@@ -547,6 +547,40 @@ final selection.
 - role, direction, domain, quantity, quality, location, timing, authority,
   loss, inverse, residual shortage, scenario, and feasibility remain scoped.
 
+## Task BD expected route
+
+- Interaction, Request, Response, Acknowledgment, Notification, and Correlation;
+- Actor, Action, Object, Instrument, Recipient, and Outcome Mapping;
+- exchange roles, request, response, acknowledgment level, notification,
+  correlation, retry, outcome, and remaining completion remain separate.
+
+## Task BE expected route
+
+- Agreement, Commitment, Obligation, Guarantee, and Contract Integrity;
+- Queue, Backlog, Priority, Scheduling, and Service-Order Procedure;
+- parties, authority, terms, state, admission, backlog, priority, service,
+  cancellation, breach, evidence, and residual remain reconstructable.
+
+## Task BF expected route
+
+- Location, Region, Containment, Proximity, Route, and Network;
+- reference system, frame, datum, topology, boundary, metric, direction, time,
+  uncertainty, transformation, and loss remain explicit.
+
+## Task BG expected route
+
+- Hazard, Exposure, Harm, Vulnerability, and Safety;
+- Prevention, Protection, Detection, Mitigation, Response, and Recovery Procedure;
+- hazard, exposure, harm, vulnerability, criteria, treatment, evidence,
+  residual risk, monitoring, response, and recovery remain non-prescriptive.
+
+## Task BH expected route
+
+- History, Revision, Provenance, Lineage, and Change Evidence;
+- Operating-Condition Composition Failure Diagnostic;
+- identity, version, derivation, forks/merges, gaps, conditions, queue,
+  location, hazard, uncertainty, and competing checks remain visible.
+
 Critical artifact failure: any route treats a representation, pass flag,
 percentage, date, matching field, login, certificate, or plan as universal
 proof of meaning, validity, dependability, authority, assurance, or outcome.
@@ -559,6 +593,9 @@ proves broad quality, or internal rehearsal establishes reader value.
 The F71-F80 routes fail critically if a scenario becomes a forecast,
 feasibility becomes preference or success, a reservation becomes availability,
 aggregate capacity erases a bottleneck, or compatibility becomes identity.
+The F81-F90 routes fail critically if acknowledgment becomes completion,
+commitment becomes delivery, coordinate equality becomes spatial identity,
+absence of incidents proves safety, or a current record erases lineage.
 
 ## Exact task-coverage manifest
 
@@ -653,6 +690,15 @@ the supplement. Missing or extra paths fail `sim-03`.
 - `tables/procedures/resource-allocation.md`
 - `tables/diagnostics/dependency-critical-path.md`
 - `tables/mappings/compatibility-substitution.md`
+- `tables/entries/interaction-request-response-correlation.md`
+- `tables/mappings/semantic-participant-roles.md`
+- `tables/constraints/agreement-commitment-integrity.md`
+- `tables/procedures/queue-service-order.md`
+- `tables/entries/spatial-operating-context.md`
+- `tables/entries/hazard-exposure-harm-safety.md`
+- `tables/procedures/risk-treatment-response.md`
+- `tables/evidence/change-lineage.md`
+- `tables/diagnostics/operating-condition-failures.md`
 
 ## Claim boundary
 

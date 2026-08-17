@@ -447,7 +447,7 @@ node tools\check_risk_consequence_relation.js
 node tools\check_value_criterion_relation.js
 node tools\check_decision_evidence_reading_route.js
 node tools\check_proof_set_decision_combined_reading.js target\proof-set-sim-29
-node tools\check_proof_set_search.js target\proof-set-sim-29\search-index.json 174
+node tools\check_proof_set_search.js target\proof-set-sim-29\search-index.json 183
 node tools\check_proof_set_composition.js target\proof-set-sim-29\manifest.json target\proof-set-sim-29\index.html
 node tools\check_proof_set_decision_evidence_reading.js target\proof-set-sim-29
 node tools\check_proof_set_composition_lab.js target\proof-set-sim-29

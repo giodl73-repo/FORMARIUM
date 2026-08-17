@@ -55,7 +55,7 @@ The reviewed endpoint basis is exact:
 
 | Source | SHA-256 |
 |---|---|
-| `reference/factorium-reference-v0.factorium` | `ac1468a1731290ccba842a11e976f352287046abb93caf3e59d176e251bcc445` |
+| `reference/factorium-reference-v0.factorium` | `7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218` |
 | `reference/factorium-relations-v0.factorium` | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
 | `tables/entries/choice-alternative-selection.md` | `16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1` |
 | `tables/entries/claim-evidence.md` | `17875b0730df45b563261a670149d4c8312ecf6487f672028b96672fd19b39e5` |

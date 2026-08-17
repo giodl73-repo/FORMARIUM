@@ -1056,3 +1056,24 @@ agreement, resource/work, control, organization, identity, and provenance
 owners. The Product Owner caps navigation cost and blocks operational
 automation, professional safety guidance, catalogs, new typed relations, and
 reader/safety claims.
+
+## F81-F90 operating conditions result
+
+F81-F90 add three independent owners—Interaction Exchange, Spatial Operating
+Context, and Hazard/Exposure/Safety—plus six views for agreement integrity,
+queue service order, treatment/response, semantic participant roles, change
+lineage, and operating-condition failures. Five neutral tasks cover all nine
+paths through one question-led reader route.
+
+The fixed point contains 53 entries, 412 senses, 627 factors, 95 views, and
+159 assurance bindings at reference SHA-256
+`7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218`.
+Assurance SHA-256 is
+`a7c2b881f1a8be055c8a4a95548729e4fdf1062ee19cab491fcfeb5bdd5944c1`.
+The unchanged relation sidecar contains eleven records. The 97-record Factor
+Forge delta and 53 tasks produce a 175-record book with 183 searchable
+destinations, eighteen chapters, 233 pages, and zero missing targets. The
+Product Owner decision is continue to F91-F100 only as a composition capstone
+and Book One selection, with no automatic entitlement to more anchors.
+Internal checks establish structure and mechanics only, not safety, field
+utility, reader value, or publication readiness.

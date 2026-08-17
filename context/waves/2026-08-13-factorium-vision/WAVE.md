@@ -2196,3 +2196,26 @@ thirty P2 closure conditions, and seven P3 notes. It admits three anchors
 and six views under a Product Owner ceiling. Safety material remains
 descriptive, candidate, source-bounded, and non-prescriptive. Detailed closure
 tests are in `F81-F90-OPERATING-CONDITIONS-ROLE-REVIEW.md`.
+
+Result review: F81-F90 admit exactly three anchors and six views, then connect
+them through one Part XVII route and five neutral tasks. The route explains
+operational divergence through exchange, commitment, queue, spatial context,
+hazard/exposure, treatment, semantic roles, lineage, and diagnostic checks.
+
+The canonical fixed point has 53 entries, 412 senses, 627 factors, 95 views,
+zero unresolved candidates, and 159 exact assurance bindings. Reference
+SHA-256 is
+`7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218`.
+Assurance SHA-256 is
+`a7c2b881f1a8be055c8a4a95548729e4fdf1062ee19cab491fcfeb5bdd5944c1`.
+The eleven-relation sidecar is unchanged. The 97-record delta and 53 tasks
+produce a 175-record book; the 213-source `sim-29` edition indexes 183
+destinations across eighteen chapters and renders 233 pages with zero missing
+targets. Site identity is
+`49258dec63e6311d5a70ab6bcbe8b6c45a68cf5a351c406e46c009b536eabb8a`;
+standalone SHA-256 is
+`a9afed9e86b9f677c1ae6ca062bf72139e8d31ea6c56b992d1dbb3ab60d327a9`.
+
+The Product Owner decision is continue to F91-F100 only as a composition
+capstone and Book One selection. Internal rehearsal does not establish safety,
+field utility, reader value, external-preview, or publication claims.

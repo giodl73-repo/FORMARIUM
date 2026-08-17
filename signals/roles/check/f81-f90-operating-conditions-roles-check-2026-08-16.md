@@ -158,3 +158,13 @@ roles, and change history remain separately reconstructable.
    provenance owners for agreements, queues, response, roles, and history.
 3. Keep all safety material descriptive, source-bounded, candidate, and
    non-prescriptive; bind F90 to exact review and Product Owner decision.
+
+## Fixed-point verification
+
+All three anchors and six views were admitted without new typed relations.
+Exact reference synchronization, assurance binding, delta coverage, task
+coverage, search targets, chapter ownership, and render targets pass. The
+result is 53 entries, 412 senses, 627 factors, 95 views, 159 assurance
+bindings, 175 combined book records, 53 tasks, and 183 searchable
+destinations. The Product Owner continues only to a composition capstone and
+Book One selection; further owner growth must be separately earned.

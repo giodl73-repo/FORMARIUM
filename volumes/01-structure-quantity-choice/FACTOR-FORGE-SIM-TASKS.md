@@ -604,8 +604,50 @@ exact role, direction, domain, quantity, quality, timing, dependencies,
 authority, loss, inverse limits, residual shortage, scenario, and conditional
 feasibility.
 
+## Task BD - Acknowledged means completed
+
+A correlated acknowledgment proves receipt of one request, but a dashboard
+reports business completion. Retries duplicate actions, a notification becomes
+a response, and matching identifiers become causal proof. Use the Interaction
+anchor and Semantic Participant Roles Mapping to retain participants, roles,
+request, response, acknowledgment level, notification, correlation, retry,
+outcome, and remaining completion.
+
+## Task BE - Promised means next in line
+
+A supplier promise is entered as delivered capacity and admitted queue work.
+Priority changes without authority, an old agreement remains active, canceled
+work stays in load, and timeout erases residual obligation. Use the Agreement
+Constraint and Queue Procedure to reconstruct parties, authority, terms,
+state, admission, backlog, priority, service, cancellation, breach, and residue.
+
+## Task BF - Same coordinates means same place
+
+Two records share numbers but use different frames, datums, epochs, units, and
+resolution. Proximity uses another metric, a route ignores direction, and
+network reachability comes from a diagram. Use the Spatial Operating Context
+anchor to retain reference, topology, boundary, metric, direction, time,
+uncertainty, transformation, and loss.
+
+## Task BG - No incident means safe
+
+A low incident count is called proof that no hazard exists. Exposure pathways
+and vulnerable groups are omitted; protection is credited before deployment;
+transferred and residual risk disappear. Use the Hazard anchor and Treatment
+Procedure to separate hazard, exposure, harm, vulnerability, criteria,
+treatment, evidence, residual risk, monitoring, response, and recovery. This
+is a semantic rehearsal, not professional safety guidance.
+
+## Task BH - The latest record explains the failure
+
+A current record silently merges histories, drops a superseded condition, and
+blames a queue failure on one nearby change. The scenario uses the wrong
+location, agreement, hazard state, and resource window. Use Change Lineage
+Evidence and the Operating-Condition Diagnostic to retain identity, version,
+derivation, forks/merges, gaps, conditions, uncertainty, and competing checks.
+
 ## Rehearsal boundary
 
-The forty-eight prompts collectively exercise every entry and specialized view in the
+The fifty-three prompts collectively exercise every entry and specialized view in the
 current Factor Forge delta. Route coverage is checked mechanically against the
 author-only rubric; successful reader use is not simulated.

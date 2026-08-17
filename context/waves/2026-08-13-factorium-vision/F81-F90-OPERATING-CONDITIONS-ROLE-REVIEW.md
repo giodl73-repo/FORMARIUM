@@ -1,6 +1,6 @@
 # F81-F90 Operating Conditions Role Review
 
-Status: plan reviewed; implementation pending
+Status: fixed point for candidate publication
 
 Date: 2026-08-16
 
@@ -45,3 +45,35 @@ The batch earns work only as one operating-condition route. Existing owners
 must absorb agreement, queue, response, semantic-role, and lineage work.
 Stop before operational automation, professional safety guidance, member
 catalogs, new typed relations, or reader/safety claims.
+
+## F90 result
+
+The batch admits exactly the planned three anchors and six views. One Part
+XVII route and Tasks BD-BH cover all nine paths through the questions a reader
+actually encounters in operation. The canonical fixed point contains 53
+entries, 412 senses, 627 factors, 95 views, zero unresolved candidates, and
+159 exact assurance bindings at reference SHA-256
+`7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218`.
+Assurance SHA-256 is
+`a7c2b881f1a8be055c8a4a95548729e4fdf1062ee19cab491fcfeb5bdd5944c1`.
+The eleven-relation sidecar is unchanged.
+
+The Factor Forge delta is 97 records—33 entries and 64 views—and 53 tasks
+cover every path. The 213-source `sim-29` edition selects 175 canonical
+records, indexes 183 destinations, and renders 233 pages across eighteen
+chapters with zero missing targets. Site identity is
+`49258dec63e6311d5a70ab6bcbe8b6c45a68cf5a351c406e46c009b536eabb8a`;
+standalone SHA-256 is
+`a9afed9e86b9f677c1ae6ca062bf72139e8d31ea6c56b992d1dbb3ab60d327a9`.
+
+## Product Owner result decision
+
+Decision: **continue to F91-F100 as a composition capstone, with no automatic
+entitlement to more anchors**.
+
+This batch earns its navigation cost because it creates one coherent route
+from static feasibility to operational explanation. The next batch must prove
+value by composing and evaluating existing concepts, then selecting a Book
+One candidate. Stop or merge work that merely adds phase-count content.
+Internal checks establish structural and mechanical closure only; they do not
+establish safety, field utility, reader value, or publication readiness.

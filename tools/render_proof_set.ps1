@@ -601,7 +601,7 @@ if ($Edition -ne "sim-01") {
         if ($missingTaskCoverage.Count -ne 0 -or $extraTaskCoverage.Count -ne 0) {
             throw "Factor Forge task coverage mismatch: missing=$($missingTaskCoverage -join ',') extra=$($extraTaskCoverage -join ',')"
         }
-        $selectionChecks.task_count = 48
+        $selectionChecks.task_count = 53
         $selectionChecks.task_coverage_records = $taskCoverage.Count
         $selectionChecks.missing_task_coverage_paths = $missingTaskCoverage.Count
         $selectionChecks.extra_task_coverage_paths = $extraTaskCoverage.Count
@@ -854,7 +854,7 @@ if ($editionNumber -ge 4) {
     else {
         2
     }
-    if ($numberedSelections.Count -ne 166 -or $guideSelections.Count -ne $expectedGuideCount) {
+    if ($numberedSelections.Count -ne 175 -or $guideSelections.Count -ne $expectedGuideCount) {
         throw "Search selection mismatch: numbered=$($numberedSelections.Count) guides=$($guideSelections.Count)"
     }
 
@@ -1407,7 +1407,7 @@ if ($editionNumber -ge 7) {
             $chapterBySearchPath[$chapterRelativePath] = $chapter
         }
     }
-    if ($siteChapters.Count -ne 17 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
+    if ($siteChapters.Count -ne 18 -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
         throw "Site chapter coverage mismatch: chapters=$($siteChapters.Count) records=$($chapterBySearchPath.Count)"
     }
 
