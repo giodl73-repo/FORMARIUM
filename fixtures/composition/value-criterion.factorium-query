@@ -1,0 +1,18 @@
+factorium-composition-query-v0
+query value-contributes-decision-criterion
+problem Which exact value sense and basis must be declared before using it as a decision criterion?
+source 5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
+context synthetic-intervention-choice | owner=choice-owner,reference-frame=decision-horizon
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=1,nodes=3,work=9
+seed factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense
+node factor:choice-alternative-selection/criteria-definitions-measurement-bases-and-directions | required | 1 | relation:f27-value-contributes-criterion | factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense
+node factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense | required | 0 | seed | none
+node view:decision-alternative-selection | evaluative | 1 | scope:f27-value-contributes-criterion | factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense
+edge f27-value-contributes-criterion
+check f27-check-value-basis | completeness | view:decision-alternative-selection | unresolved
+projection factor:choice-alternative-selection/criteria-definitions-measurement-bases-and-directions | unresolved | omits-local-criterion-binding-comparability-and-weight
+projection factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense | selected | omits-full-value-artifact-mappings-date-and-uncertainty
+projection view:decision-alternative-selection | selected | omits-full-decision-table
+state incomplete
+end-query

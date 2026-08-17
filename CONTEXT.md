@@ -737,7 +737,7 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 Factor Forge through F27 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
 software, and decision support. The canonical reference now contains 40
-entries, 304 senses, 479 factors, and 57 views with 107 exact assurance
+entries, 304 senses, 479 factors, and 57 views with 108 exact assurance
 bindings. The current Factor Forge supplement contains 46 records, while
 `sim-29` selects 124 canonical records and indexes 132 destinations across
 thirteen chapters. Historical preflight documents retain the counts of the
@@ -748,7 +748,9 @@ and Evidence relation kinds. F29 admits the first exact cross-entry
 evidence-to-evaluation relation, and F31 admits the constraint-to-feasibility
 relation. F32 admits causal-scope-to-outcome qualification, bringing the
 canonical sidecar to nine reviewed edges. F33 admits risk-to-consequence
-characterization, bringing it to ten reviewed edges. The
+characterization, bringing it to ten reviewed edges. F34 value-to-criterion
+admission completes the bounded F27 packet and brings the sidecar to eleven
+reviewed edges. The
 Composition Lab remains separately fixed to its six-ID F1-F6 teaching
 allowlist.
 
@@ -773,7 +775,15 @@ F33 admits the fourth cross-entry edge: a consequence set may characterize an
 alternative consequence only under declared affected entity, scenario,
 horizon, control state, and consequence basis. The canonical check remains
 unresolved; no probability, expected loss, risk attitude, decision weight, or
-ranking follows. Only the value-to-criterion bridge remains candidate-only.
+ranking follows. At F33, only the value-to-criterion bridge remained a
+candidate.
+
+F34 admits the fifth cross-entry edge: one exact value sense may contribute a
+criterion only under declared owner, basis, horizon, unit or scale, and desired
+direction. The canonical check remains unresolved; cost, price, value,
+utility, and return do not collapse, and no comparability, weight, aggregation,
+objective, or ranking follows. All five bounded F27 relations are now admitted
+but remain outside the F1-F6 Composition Lab.
 
 ## Boundary
 

@@ -211,8 +211,8 @@ Canonical trace file:
 | Identity | SHA-256 |
 |---|---|
 | Factorium reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Typed relations V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
-| Composition Query trace | `a0985902fe52075ec0443f8619df484b6eaea5ed6262a5b0500a9c8de7dcb048` |
+| Typed relations V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
+| Composition Query trace | `6d8e8ecd49fb38ea1743f36c9f2de88624927207b73865b1c8d896583b69c2c6` |
 
 Trace manifest: one seed, three nodes, one F1 edge, zero frontiers, one
 required-node conflict, one failed Constraint check, three projection rows,

@@ -44,7 +44,7 @@ evidence-to-alternative binding, support direction, causal status, score,
 ranking, recommendation, or final selection.
 
 The full guide contains separately admitted constraint-to-feasibility,
-causal-scope-to-outcome, and risk-to-consequence routes plus synthetic local
+causal-scope-to-outcome, risk-to-consequence, and value-to-criterion routes plus synthetic local
 analysis beyond this one
 structural edge. Neither changes
 this query's outcomes. In particular, the evidence route's unresolved check

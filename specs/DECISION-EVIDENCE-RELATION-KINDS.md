@@ -1,6 +1,6 @@
 # Decision and Evidence Relation Kinds
 
-Status: F28 grammar contract; four kinds have admitted F29/F31/F32/F33 records
+Status: F28 grammar contract; all five kinds have admitted F29/F31/F32/F33/F34 records
 
 ## Purpose
 
@@ -41,16 +41,16 @@ The parser must:
 5. expose no candidate kind through the canonical relation sidecar until an
    exact record and assurance binding pass fixed-point review.
 
-The positive fixture establishes grammar coverage; its four admitted rows now
+The positive fixture establishes grammar coverage; all five rows now
 match their canonical records exactly. It is not loaded by the Composition
 Lab, is not an assurance artifact, and independently supplies no closure,
 recommendation, decision-quality, or external-reader evidence.
 
 ## Later admission gate
 
-Each additional canonical record needs exact endpoints, an owning view and source
+Any future canonical record needs exact endpoints, an owning view and source
 path, a relation-specific negative fixture, loss and cardinality review, an
 assurance binding to the changed sidecar digest, closure-budget tests, and a
-separate decision about Composition Lab exposure. Kinds may be admitted one
-record at a time; acceptance of all five does not require simultaneous edge
-admission.
+separate decision about Composition Lab exposure. The staged F29/F31-F34
+admissions demonstrate that parser acceptance did not require simultaneous
+edge admission.

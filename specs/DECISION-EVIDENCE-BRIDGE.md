@@ -1,7 +1,6 @@
 # Decision and Evidence Bridge Contract
 
-Status: F27 bridge packet; four relations admitted by F29/F31/F32/F33 and one remains
-candidate-only
+Status: F27 bridge packet; all five relations admitted by F29/F31/F32/F33/F34
 
 ## Purpose
 
@@ -39,9 +38,10 @@ unbounded Cartesian product.
 `f27-evidence-qualifies-evaluation`,
 `f27-causal-scope-qualifies-outcome`, and
 `f27-constraint-filters-feasibility`, and
-`f27-risk-characterizes-consequence` are admitted to the canonical relation
-sidecar under their separate admission contracts. The remaining row is
-candidate-only.
+`f27-risk-characterizes-consequence`, and
+`f27-value-contributes-criterion` are admitted to the canonical relation
+sidecar under their separate admission contracts. No packet row remains a
+candidate.
 
 | ID | Verb | Source -> target | Cardinality | Qualifications | Inverse | Declared loss | Join check |
 |---|---|---|---|---|---|---|---|
@@ -56,7 +56,7 @@ The reviewed endpoint basis is exact:
 | Source | SHA-256 |
 |---|---|
 | `reference/factorium-reference-v0.factorium` | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| `reference/factorium-relations-v0.factorium` | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
+| `reference/factorium-relations-v0.factorium` | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
 | `tables/entries/choice-alternative-selection.md` | `16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1` |
 | `tables/entries/claim-evidence.md` | `17875b0730df45b563261a670149d4c8312ecf6487f672028b96672fd19b39e5` |
 | `tables/entries/causal-reasoning.md` | `665a33d595e85644f1c4df9b7968617cf26a15fa41c46b448e38cb84540f0383` |
@@ -120,7 +120,8 @@ adversarial external fixtures. This completes relation-kind grammar and
 endpoint-resolution preparation. F29 subsequently admits the
 evidence-to-evaluation record and F31 admits the constraint-to-feasibility
 record. F32 admits the causal-scope-to-outcome record, and F33 admits the
-risk-to-consequence record. One remains absent. The
-Composition Lab remains limited to its
+risk-to-consequence record. F34 admits the value-to-criterion record, closing
+the bounded five-record packet. None remains absent. The Composition Lab
+remains limited to its
 separate six-ID F1-F6 allowlist. The remaining admission conditions apply
 independently to each future record.

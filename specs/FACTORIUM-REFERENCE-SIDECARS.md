@@ -40,7 +40,9 @@ The parser recognizes five Decision and Evidence kinds from F28. F29 admits
 one `qualifies-evaluation-of` record, F31 admits one
 `constrains-feasibility-of` record, and F32 admits one
 `qualifies-outcome-scope-of` record. F33 admits one
-`characterizes-consequence-for` record; the other kind has no canonical record.
+`characterizes-consequence-for` record, and F34 admits one
+`contributes-criterion-to` record. All five recognized kinds now have one
+canonical packet record.
 None is required merely because its grammar is supported:
 
 | Decision/evidence kind | Exact required qualifier keys |
@@ -84,12 +86,12 @@ Validation fails when:
 ## Prototype coverage
 
 `reference/factorium-relations-v0.factorium` contains one representative edge
-template from each Factor Forge F1-F6 batch plus four reviewed cross-entry
+template from each Factor Forge F1-F6 batch plus five reviewed cross-entry
 Decision/Evidence edges. Relation coverage therefore remains a bounded
-ten-record prototype.
+eleven-record prototype.
 
 The assurance manifest has complete current-corpus coverage: 40 entries, 57
-specialized views, and ten relation records, for 107 exact bindings. The
+specialized views, and eleven relation records, for 108 exact bindings. The
 validator derives that required set from parsed V0 and relation records, so a
 new canonical artifact fails until an applicable digest-bound fixed-point
 review is added. This closes current-corpus review coverage; it does not prove

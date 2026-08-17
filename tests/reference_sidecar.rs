@@ -42,8 +42,8 @@ fn committed_sidecars_round_trip_and_validate() {
             Path::new("."),
         )
         .unwrap();
-    assert_eq!(relations.relations().len(), 10);
-    assert_eq!(assurance.bindings().len(), 107);
+    assert_eq!(relations.relations().len(), 11);
+    assert_eq!(assurance.bindings().len(), 108);
 }
 
 #[test]

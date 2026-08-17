@@ -792,6 +792,10 @@ mod tests {
                 "fixtures/composition/system-dependency.factorium-query",
                 "complete",
             ),
+            (
+                "fixtures/composition/value-criterion.factorium-query",
+                "incomplete",
+            ),
         ] {
             let input = fs::read_to_string(path).unwrap();
             let query = CompositionQuery::parse(&input).unwrap();
@@ -816,6 +820,7 @@ mod tests {
             "fixtures/composition-invalid/required-exclusion.factorium-query",
             "fixtures/composition-invalid/risk-consequence-wrong-predecessor.factorium-query",
             "fixtures/composition-invalid/unreached-truncation.factorium-query",
+            "fixtures/composition-invalid/value-criterion-wrong-predecessor.factorium-query",
         ] {
             let result = CompositionQuery::parse(&fs::read_to_string(path).unwrap())
                 .and_then(|query| query.validate_sources(&corpus, &relations));

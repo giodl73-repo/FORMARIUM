@@ -828,3 +828,22 @@ escalations lack a complete benefit, burden, and affected-party consequence
 basis. The canonical sidecar now has ten relations, including four cross-entry
 edges, with 107 exact assurance bindings. The Lab remains on F1-F6, and only
 the value-to-criterion F27 relation remains candidate-only.
+
+## F34 value-to-criterion relation and packet closure
+
+F34 admits `f27-value-contributes-criterion`, connecting the exact requested
+Cost/Price/Value/Return sense to Choice criterion definitions, measurement
+bases, and directions under the Alternative Selection Decision view. Basis,
+desired direction, horizon, owner, unit or scale, and value sense are mandatory
+declarative qualifiers. The edge carries no full value artifact, mapping,
+comparability result, normalization, preference, weight, aggregation rule,
+utility, objective, ranking, or recommendation.
+
+The canonical three-node query remains `incomplete` with value-basis review
+`unresolved`; a wrong-predecessor fixture fails closed. The guide adds a fifth
+book route and retains its local unresolved record because incomplete cost
+ranges supply neither utility nor a common preference scale. The canonical
+sidecar now has eleven relations, including five cross-entry edges, with 108
+exact assurance bindings. All five bounded F27 packet records are admitted,
+while the Lab remains on F1-F6. Packet closure is not ontology completeness or
+permission for unreviewed relation expansion.

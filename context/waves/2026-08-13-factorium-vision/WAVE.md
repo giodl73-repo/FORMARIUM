@@ -1824,3 +1824,48 @@ role, link, and diff checks pass. No probability, expected loss, likelihood,
 severity, risk acceptability, preference, decision weight, ranking,
 recommendation validity, decision quality, reader success, external-preview,
 publication, Workbench, or `preview-01` claim is admitted.
+
+## 2026-08-16 F34 value-to-criterion relation and packet closure
+
+Plan review: admit `f27-value-contributes-criterion`, the final F27 candidate;
+preserve Cost/Price/Value/Return as exact value-sense, basis, unit/scale,
+horizon, mapping, and uncertainty authority; preserve Choice as criterion,
+desired-direction, preference, and trade-off owner; require declared basis,
+direction, horizon, owner, unit or scale, and value sense; carry no
+comparability, normalization, preference, weight, aggregation, objective,
+ranking, or recommendation; keep the canonical check `unresolved` and closure
+`incomplete`; retain the guide's local utility/common-scale uncertainty;
+migrate the complete shared sidecar and every query identity; close only the
+bounded five-relation packet; and leave the Composition Lab on F1-F6. The
+six-role review found zero P1 and twelve P2 conditions, all closed by the exact
+contract, fail-closed fixtures, loss boundary, guide route, assurance
+migration, bounded packet claim, and Lab exclusion.
+
+Result review: the canonical relation sidecar now contains eleven records at
+SHA-256
+`df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634`,
+including exactly five cross-entry relations. Exact assurance covers 40
+entries, 57 views, and eleven relations in 108 bindings at SHA-256
+`9a566c472fc07c3d553cf13744be3a00565b04fe409a406161da287abfcf8edc`.
+The new three-node query has SHA-256
+`109e473e4269117940e1114b26f40e259057a6a765a0adfcaca34fa83723bcf3`,
+retains unresolved value sense, owner, basis, scale, comparability, and
+preference review, and fails closed on an incorrect predecessor. The guide
+adds an exact value-to-criterion route while retaining its local `unresolved`
+record: incomplete cost ranges supply neither utility nor a common preference
+scale. All five F27 records are canonical; the six-ID Lab allowlist excludes
+all five. Packet closure is not decision-ontology completeness.
+
+The regenerated 161-source `sim-29` edition retains 132 searchable
+destinations and 176 site pages with zero missing targets. Its site identity
+is `66bb24817c4a82917025598bd10eb7d5cfc4b74ab8b40f73a771d3a0e6cc5dd4`
+and standalone SHA-256 is
+`0471001458907b9d34ffd799f6c881ec1a45944e2eda1057163333e82bc526e9`.
+All 70 Rust tests, Clippy, ten canonical queries, relation-specific negative
+fixtures, focused bridge/constraint/causal/risk/value checks,
+reference/sidecar, closure, local and generated-site composition, live
+browser, search, packet, role, link, and diff checks pass. No value
+equivalence, comparability, cost, price, utility, return, preference, weight,
+aggregation, objective, ranking, recommendation validity, decision quality,
+reader success, external-preview, publication, Workbench, or `preview-01`
+claim is admitted.

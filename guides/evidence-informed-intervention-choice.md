@@ -35,17 +35,18 @@ represent a real organization.
 - `entry:cost-price-value-return`
 - `entry:policy-rule-constraint-decision-exception`
 
-The evidence-to-evaluation, causal-scope-to-outcome, risk-to-consequence, and
-constraint-to-feasibility type relations are canonical under their separate
-admission contracts. One F27 bridge relation remains a candidate. None of the
-five is available through the current Composition Lab.
+All five evidence-to-evaluation, causal-scope-to-outcome,
+risk-to-consequence, value-to-criterion, and constraint-to-feasibility type
+relations are canonical under their separate admission contracts. The bounded
+F27 packet is fully admitted. None is available through the current
+Composition Lab.
 
 ## Canonical evidence-to-evaluation reading route
 
 Governing question: **Which evidence qualification must be reviewed before
 using a claim to evaluate an alternative?**
 
-This is one of four canonical structural paths used by the guide. It remains
+This is one of five canonical structural paths used by the guide. It remains
 incomplete because graph membership cannot decide whether the synthetic
 evidence applies to a particular alternative, population, outcome, horizon,
 provenance, or limitation.
@@ -59,7 +60,7 @@ provenance, or limitation.
 | Flatten | three loss-declared rows | Retain the selected source, unresolved evaluation target, and Decision scope while omitting the full evidence artifact, local alternative bindings, and full Decision Table. |
 
 The guide sections below contain additional synthetic authored analysis,
-including evaluations of three relation candidates. Those records are not
+including local evaluations of all five admitted relation checks. Those records are not
 canonical query outcomes and do not change this route's unresolved check or
 incomplete state. The route is intentionally read-only in this edition and is
 not a Composition Lab control or starter.
@@ -69,8 +70,8 @@ Exact trace file: `fixtures/composition/decision-evidence.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
-| Composition Query trace | `7be1bafbec97557d5ffae061879f1ea492ad48ac598fb108b8b35f15999f8cad` |
+| Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
+| Composition Query trace | `50c1116a42480858d4e4f802fcc5071b8067b4517a47be60ffa7978de615bba2` |
 
 See the
 [relation admission contract](../specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md)
@@ -155,8 +156,8 @@ Exact trace file: `fixtures/composition/constraint-feasibility.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
-| Composition Query trace | `ef4b875e21d0560ff57ee52dcdd39326e7f0f36a32bd95970b6d1e31af6c3e22` |
+| Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
+| Composition Query trace | `305f6dc1665bc796802cee744b1b7fdbe36628cb3b7ad89860c7325a01c9d4d0` |
 
 See the
 [constraint-to-feasibility admission contract](../specs/CONSTRAINT-FEASIBILITY-RELATION-ADMISSION.md)
@@ -202,8 +203,8 @@ Exact trace file: `fixtures/composition/causal-outcome-scope.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
-| Composition Query trace | `2f588593cbb535501269e85f051e9637051f5b3c1d7a2a8ef1ea0768db9a27d6` |
+| Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
+| Composition Query trace | `4cbb256f64eab98427a613c84421caef3e42d4289a099e589f66ea9f670e8db6` |
 
 See the
 [causal-scope-to-outcome admission contract](../specs/CAUSAL-OUTCOME-RELATION-ADMISSION.md)
@@ -237,18 +238,52 @@ Exact trace file: `fixtures/composition/risk-consequence.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
-| Composition Query trace | `dd840001f8b0fa3606b66a0f11f5c94cc0b26f2535f09660f4555eb7011bca6f` |
+| Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
+| Composition Query trace | `3947d10e3d432f61c6ab67920b1bcfb54356993c17673659595d278b33719c85` |
 
 See the
 [risk-to-consequence admission contract](../specs/RISK-CONSEQUENCE-RELATION-ADMISSION.md)
 for its exact direction, qualifiers, loss, and claim boundary.
 
+## Canonical value-to-criterion reading route
+
+Governing question: **Which exact value sense and basis must be declared before
+using it as a decision criterion?**
+
+This canonical structural path remains incomplete because graph membership
+cannot decide the local value sense, owner, basis, horizon, unit or scale,
+desired direction, comparability, preference, or weight. Cost, price, value,
+utility, and return remain distinct; unlike values cannot be added without an
+explicit reviewed mapping.
+
+| Stage | Exact route | Reader meaning |
+|---|---|---|
+| Add | `factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense` | Start from the exact requested value sense while retaining Cost/Price/Value/Return authority. |
+| Multiply | `f27-value-contributes-criterion` -> `factor:choice-alternative-selection/criteria-definitions-measurement-bases-and-directions` -> `view:decision-alternative-selection` | Bring the declared value basis into criterion definition without manufacturing comparability, preference, weight, aggregation, or a universal objective. |
+| Evaluate | `f27-check-value-basis` = `unresolved` | Value sense, owner, basis, horizon, scale, direction, comparability, and preference still require local review. |
+| Stop | state = `incomplete`; no frontier or conflict | The structural route exists, but no normalized score, ranking, or recommendation follows. |
+| Flatten | three loss-declared rows | Retain the unresolved criterion, selected value source, and Decision scope while omitting the full value artifact, mappings, date, uncertainty, local binding, comparability, weight, and full Decision Table. |
+
+The local bridge evaluation also remains `unresolved`: the synthetic cost
+ranges are incomplete and supply neither utility nor a common preference
+scale. That local record does not alter the canonical query state.
+
+Exact trace file: `fixtures/composition/value-criterion.factorium-query`
+
+| Identity | SHA-256 |
+|---|---|
+| Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
+| Composition Query trace | `109e473e4269117940e1114b26f40e259057a6a765a0adfcaca34fa83723bcf3` |
+
+See the
+[value-to-criterion admission contract](../specs/VALUE-CRITERION-RELATION-ADMISSION.md)
+for its exact direction, qualifiers, loss, and claim boundary.
+
 ## Bridge join evaluation
 
-The four admitted relation checks and the candidate-relation check record one
-of `pass`, `fail`, or `unresolved`; none is omitted. Every row except the
-value-basis row is a canonical relation check.
+All five admitted relation checks record one of `pass`, `fail`, or
+`unresolved`; none is omitted. Every row is a canonical relation check.
 
 | Check | Outcome | Evidence | Rationale |
 |---|---|---|---|
@@ -332,7 +367,7 @@ Required controls:
 - Alternatives, states, outcomes, constraints, criteria, and authority remain
   separate.
 - Every evaluated bridge join has an explicit outcome, including one failure
-  and three unresolved records; only the four admitted relations participate
+  and three unresolved records; all five admitted relations participate
   in their separate canonical closure traces.
 - Missing information does not default to success.
 - No formula, probability, utility, total score, causal effect, or final

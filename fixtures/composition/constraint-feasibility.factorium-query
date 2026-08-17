@@ -1,7 +1,7 @@
 factorium-composition-query-v0
 query constraint-constrains-alternative-feasibility
 problem Which governing constraints must be checked before treating an alternative as feasible?
-source 5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e | e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b
+source 5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
 context synthetic-intervention-choice | authority=declared-authority,reference-frame=decision-horizon
 policy direction=forward,follow=evaluative-required,stop=stable-identity
 budget depth=1,edges=1,nodes=3,work=9

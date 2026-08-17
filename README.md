@@ -160,6 +160,7 @@ cargo run --quiet -- composition-query-check fixtures\composition\decision-evide
 cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 ```
 
 Build the disposable Proof Set simulation rendering with Pandoc:
@@ -417,6 +418,7 @@ cargo run --quiet -- composition-query-check fixtures\composition\decision-evide
 cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
@@ -438,6 +440,7 @@ node tools\check_decision_evidence_bridge.js
 node tools\check_constraint_feasibility_relation.js
 node tools\check_causal_outcome_relation.js
 node tools\check_risk_consequence_relation.js
+node tools\check_value_criterion_relation.js
 node tools\check_decision_evidence_reading_route.js
 node tools\check_proof_set_composition.js target\proof-set-sim-29\manifest.json target\proof-set-sim-29\index.html
 node tools\check_proof_set_decision_evidence_reading.js target\proof-set-sim-29

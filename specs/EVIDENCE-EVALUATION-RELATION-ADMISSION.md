@@ -72,13 +72,13 @@ completeness, reader success, or preview evidence.
 ## Published identities
 
 - Canonical relation sidecar SHA-256:
-  `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b`
+  `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634`
 - Exact assurance sidecar SHA-256:
-  `7a41452f82c9b953214be0e016ef78b9a329272ee6248313593de45342b5af97`
+  `9a566c472fc07c3d553cf13744be3a00565b04fe409a406161da287abfcf8edc`
 - Composition Lab allowlist SHA-256:
   `35f17d2e24190be1be8897f38477a1c138d974223a73f850665e8439ef645f5a`
 - Canonical query SHA-256:
-  `7be1bafbec97557d5ffae061879f1ea492ad48ac598fb108b8b35f15999f8cad`
+  `50c1116a42480858d4e4f802fcc5071b8067b4517a47be60ffa7978de615bba2`
 
 These current identities include the F31 whole-sidecar assurance and query
 digest migration; the evidence relation record itself is byte-identical to
