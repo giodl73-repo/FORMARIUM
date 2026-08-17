@@ -2347,3 +2347,17 @@ standalone SHA-256 is
 `sim-31` reproduces exactly. Product Owner decision: keep this untyped
 navigator and stop before inferred or typed thesaurus relations; human
 findability remains untested.
+
+## 2026-08-17 Tables canonical-family search plan
+
+The next slice addresses one structural lookup defect in the Tables product:
+flat search results hide the canonical concept that owns a specialized view.
+`sim-33` will group matches by exact canonical publication owner by default
+while retaining the existing ranked All records view.
+
+Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
+The projection may group only by exact reference ownership, after filters and
+ranking. Curated records and Guides remain standalone, all matched records
+retain direct identities, and no semantic hierarchy, query expansion,
+Composition execution, or reader-value claim is admitted. Detailed conditions
+are in `TABLES-CANONICAL-FAMILY-SEARCH-ROLE-REVIEW.md`.
