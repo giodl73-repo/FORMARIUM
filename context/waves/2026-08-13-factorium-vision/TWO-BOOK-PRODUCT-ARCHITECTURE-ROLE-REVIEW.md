@@ -1,6 +1,6 @@
 # Two-Book Product Architecture Role Review
 
-Status: plan reviewed; implementation pending
+Status: fixed-point result reviewed
 
 Date: 2026-08-17
 
@@ -32,3 +32,32 @@ Skill review:
 - desktop and narrow-screen routes expose both books without overflow;
 - no external-reader or publication claim is admitted;
 - fixed-point Product Owner decision.
+
+## Result review
+
+All fourteen P2 conditions are closed. `sim-31` presents two equal-sized but
+hierarchically explicit book cards: Factorium Tables appears first as the
+primary dictionary/thesaurus, with direct Search and Browse actions; The
+Factorium Reader appears second as a selected teaching companion, with direct
+Reader and worked-question actions. The authority statement places Factor
+Guides beneath both as bounded applications.
+
+The Reader introduction retains the 24-record teaching spine, 151-record depth
+handoff, six-field brief, non-universal order, and exact links. Its quickstart
+is projected under the Reader name in sim-31 without changing the frozen
+sim-30 source artifact. Tables/Reader navigation persists on generated pages.
+
+Static and live Edge checks verify two books, Tables-first DOM and visual
+order, two direct actions per book, six Reader fields, two-column desktop and
+stacked 390-pixel layouts, no horizontal overflow, 175 canonical records, 185
+search records, 217 sources, 237 pages, and zero missing targets. `sim-30`
+reproduces exactly with site identity
+`651ce6faf5bd95ce00da918e6d917c3e305e654ccd76e03fd68f7ba55dead820`
+and standalone SHA-256
+`c965a8d608ddbceca8559258f4e65c0c6f9c08218dea3cdb6a5f94c00626fd28`.
+
+Product Owner decision: **continue with the two-book model and stop mixed-book
+naming**. The next investment belongs to the Tables' dictionary/thesaurus
+projection or the Reader's separately owned teaching flow only when a concrete
+reader job warrants it. No completeness, lookup-success, teaching-
+effectiveness, external-preview, or publication claim is admitted.

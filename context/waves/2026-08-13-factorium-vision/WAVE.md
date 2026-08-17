@@ -2296,3 +2296,22 @@ labels, and routes only: Tables first with direct Search/Browse actions, Reader
 second with its quickstart and worked examples, persistent cross-navigation,
 no canonical-count change, and exact `sim-30` regression. Detailed conditions
 are in `TWO-BOOK-PRODUCT-ARCHITECTURE-ROLE-REVIEW.md`.
+
+Result review: `sim-31` implements the two-book front door without changing
+canonical content. Factorium Tables appears first with direct Search and
+Browse actions; The Factorium Reader appears second with direct Guide and
+worked-question actions. A plain authority statement keeps Tables canonical,
+Reader explanatory, and Factor Guides bounded. Generated entry pages retain
+both book routes, and the Reader quickstart receives a sim-31 projection name
+without mutating its frozen sim-30 source.
+
+The edition retains 217 sources, 175 canonical records, 10 guides, 185 search
+records, and 237 pages across 18 chapters with zero missing targets. Live Edge
+checks pass for two-column desktop order, stacked 390-pixel order, direct
+actions, six Reader fields, and no horizontal overflow. Site identity is
+`f7d394ec438e34d2e4e5b23c2f82a1a4f277fb6b6f2761f6431c26eda2ec710e`;
+standalone SHA-256 is
+`3b624f39e0f5f6134196b40cecbc25fa19f8ff560b859b3172a7c3df87e97ebb`.
+`sim-30` reproduces exactly. Product Owner decision: continue the two-book
+model and stop mixed-book naming, without claiming reader effectiveness or
+preview admission.

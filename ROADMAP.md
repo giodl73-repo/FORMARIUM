@@ -28,8 +28,10 @@ produces a bounded, traceable closure over the selected concept graph and a
 loss-aware Factor Guide projection rather than an unqualified flattening of
 everything reachable.
 
-The enduring product is a linked reference and its books. Software remains a
-supporting publication and navigation system.
+The enduring product is one linked reference through two books: canonical
+**Factorium Tables** for lookup and traversal, and **The Factorium Reader** for
+teaching and worked questions. Factor Guides are bounded applications.
+Software remains a supporting publication and navigation system.
 
 ## Current baseline
 
@@ -87,9 +89,9 @@ reading route while leaving the interactive Composition Lab unchanged.
 | R1 - Editorial pilot | 47 reviewed canonical records and all eleven table families at pilot depth | Complete; see `R1-EDITORIAL-PILOT-AUDIT.md` |
 | R2 - Reproducible reference | Stable interchange format and generated navigation projections | Complete; see `R2-REPRODUCIBLE-REFERENCE-AUDIT.md` |
 | R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | Complete; see `R3-GUIDES-MAPPINGS-AUDIT.md` |
-| R4 - Volume prototype | Coherent, usability-tested table-first book prototype | External testing; the frozen 78-record prototype and protocol are ready, but reader observations are required for R4 closure |
+| R4 - Volume prototype | Coherent, usability-tested Factorium Tables prototype with a separately labelled Reader companion | External testing; the frozen 78-record prototype and protocol are ready, but reader observations are required for R4 closure |
 | R5P - Private preview | Frozen, self-guided proof edition used for lookup and bounded multi-concept application by a small invited practitioner cohort | The Sieve is closed and forward-applied; preview use has no repeated unresolved critical blocker and every failure is dispositioned |
-| R5 - First substantial volume | Approximately 250 reviewed entries with balanced coverage | Editorial expansion may proceed in parallel; publication still requires the R4 evidence gate plus editorial, domain, graph, citation, and publication gates |
+| R5 - First substantial volume | Approximately 250 reviewed Tables with balanced coverage and a linked Reader companion | Editorial expansion may proceed in parallel; publication still requires the R4 evidence gate plus editorial, domain, graph, citation, and publication gates |
 | R6 - Factorium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |
 | R7 - Core reference | Approximately 1,000 canonical headwords across multiple reviewed volumes | Contributor governance and revision custody scale without identity drift |
 | R8 - Mature collection | 3,000-5,000 entries only where justified by repeated use and review | Growth preserves quality, graph integrity, and navigability |
@@ -424,17 +426,21 @@ current fixed point is 53 entries and 95 views with an empty generated
 unresolved list. Internal rehearsal does not establish real-world feasibility
 or reader value.
 
-1. maintain the frozen `sim-30` Book One candidate and its exact 24-record
-   spine, 151-record depth boundary, four route prompts, and custody ledger;
-2. repair only newly demonstrated route, projection, search, or explanation
+1. maintain `sim-31` as the two-book front-door projection while retaining
+   exact `sim-30` custody and its 24-record spine, 151-record depth boundary,
+   four route prompts, and findings ledger;
+2. improve the Factorium Tables dictionary/thesaurus projection only where
+   structural inspection or later readers demonstrate lookup and concept-
+   relation friction; keep Reader prose and order separately owned;
+3. repair only newly demonstrated route, projection, search, or explanation
    defects; do not add content merely to keep the sequence moving;
-3. continue internal Proof Set simulation preflights only when they test a
+4. continue internal Proof Set simulation preflights only when they test a
    concrete product-value risk, while
    keeping software subordinate to canonical books and Factor Tables;
-4. when readers become available, close The Sieve, forward-apply its findings,
+5. when readers become available, close The Sieve, forward-apply its findings,
    and run the Proof Set private preview on a frozen proof edition;
-5. expand toward and gate the approximately 250-entry substantial volume;
-6. freeze and adversarially test the Composition Query, Closure Policy,
+6. expand toward and gate the approximately 250-entry substantial volume;
+7. freeze and adversarially test the Composition Query, Closure Policy,
     working-graph, Evaluation, and flattened Factor Guide contracts;
-7. begin Workbench implementation only against those proven reference and
+8. begin Workbench implementation only against those proven reference and
     closure contracts.

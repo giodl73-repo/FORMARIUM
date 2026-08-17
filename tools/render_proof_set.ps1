@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -69,6 +69,7 @@ $contextStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof
 $contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.js"
 $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-site.css"
 $candidateSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-candidate.css"
+$twoBookSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-two-book.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -137,6 +138,7 @@ $artifactTitle = switch ($Edition) {
     "sim-28" { "Factorium Proof Set Factor Guide Skeleton Simulation 28" }
     "sim-29" { "Factorium Proof Set Local Evaluation Record Simulation 29" }
     "sim-30" { "Factorium Book One Internal Preview Simulation 30" }
+    "sim-31" { "Factorium Two-Book Product Architecture Simulation 31" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -409,7 +411,7 @@ function Get-GuideSelections {
     }
     if ($editionNumber -ge 30) {
         [ordered]@{
-            title = "Book One Candidate Quickstart"
+            title = if ($editionNumber -ge 31) { "The Factorium Reader Quickstart" } else { "Book One Candidate Quickstart" }
             path = [System.IO.Path]::GetFullPath($bookOneQuickstart)
         }
     }
@@ -834,6 +836,13 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
             return $match.Value
         }
     )
+    if ($editionNumber -ge 31 -and
+        $sources[$index] -eq [System.IO.Path]::GetFullPath($bookOneQuickstart)) {
+        $segment = $segment.Replace("Book One Candidate Quickstart", "The Factorium Reader Quickstart")
+        $segment = $segment.Replace("internal <code>sim-30</code> candidate surface", "internal <code>sim-31</code> Reader projection")
+        $segment = $segment.Replace("Question first:</strong> use the candidate guide", "Question first:</strong> use the Reader guide")
+        $segment = $segment.Replace("five-part candidate spine", "five-part Reader spine")
+    }
     $renderedSegmentBySource[$sources[$index]] = $segment
     $htmlText = $htmlText.Substring(0, $start) + $segment + $htmlText.Substring($end)
 }
@@ -1509,6 +1518,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 30) {
         $siteCssParts += (Get-Content -LiteralPath $candidateSiteStyle -Raw)
+    }
+    if ($editionNumber -ge 31) {
+        $siteCssParts += (Get-Content -LiteralPath $twoBookSiteStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -2194,6 +2206,10 @@ if ($editionNumber -ge 7) {
     $problemLedTargets = 0
     $candidateStartTargets = 0
     $candidateSection = ""
+    $librarySection = ""
+    $productBooks = 0
+    $tablesStartTargets = 0
+    $readerStartTargets = 0
     $problemSection = ""
     $compositionSection = ""
     $homeProblemNav = ""
@@ -2215,7 +2231,31 @@ if ($editionNumber -ge 7) {
         $candidateQuickstartPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneQuickstart)])"
         $candidateFeedbackPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneFeedback)])"
         $candidateStartTargets = 3
-        $candidateSection = @"
+        if ($editionNumber -ge 31) {
+            $candidateSection = @"
+
+<section id="reader" class="site-start site-candidate site-reader" aria-labelledby="site-reader-heading">
+<p class="site-kicker">The Factorium Reader · teaching companion</p>
+<h2 id="site-reader-heading">Learn how to use the Tables</h2>
+<p>Follow a selected 24-record teaching spine, then hand off to any of 151 additional canonical Tables when the question needs specialized depth. The Reader explains a method; it does not redefine the reference or claim a universal order.</p>
+<div class="site-candidate__actions">
+<a class="site-candidate__primary" href="$candidateQuickstartPage">Start the Reader</a>
+<a href="$candidateGuidePage">Open the Reader route</a>
+<a href="$candidateFeedbackPage">Inspect the future feedback path</a>
+</div>
+<ol class="site-candidate__brief">
+<li><strong>Question</strong><span>What exact distinction, decision, comparison, or explanation is needed?</span></li>
+<li><strong>Working concepts</strong><span>Which concepts may matter, and which senses remain unresolved?</span></li>
+<li><strong>Decisive constraints</strong><span>What can invalidate an attractive answer?</span></li>
+<li><strong>Result state</strong><span>Complete, incomplete, contradictory, or truncated?</span></li>
+<li><strong>Unresolved frontier</strong><span>What concept, evidence, condition, or authority is still missing?</span></li>
+<li><strong>Next action</strong><span>Inspect, obtain evidence, revise, reconcile, defer, or decide under authority.</span></li>
+</ol>
+</section>
+"@
+        }
+        else {
+            $candidateSection = @"
 
 <section id="candidate" class="site-start site-candidate" aria-labelledby="site-candidate-heading">
 <p class="site-kicker">Book One · internal candidate</p>
@@ -2236,8 +2276,40 @@ if ($editionNumber -ge 7) {
 </ol>
 </section>
 "@
-        $homeCandidateNav = '<a href="#candidate">Candidate</a>'
-        $nestedCandidateNav = '<a href="../index.html#candidate">Candidate</a>'
+        }
+        if ($editionNumber -ge 31) {
+            $productBooks = 2
+            $tablesStartTargets = 2
+            $readerStartTargets = 2
+            $librarySection = @"
+
+<section id="library" class="site-library" aria-labelledby="site-library-heading">
+<p class="site-kicker">Choose how you want to enter</p>
+<h2 id="site-library-heading">Two books, one reference</h2>
+<div class="site-library__grid">
+<article class="site-book-card site-book-card--tables" data-book="tables">
+<p class="site-book-card__kind">Primary reference · dictionary and thesaurus</p>
+<h3>Factorium Tables</h3>
+<p>Look up a concept, distinguish its senses, compare neighboring ideas, inspect factors and constraints, or move through the canonical concept graph.</p>
+<div class="site-book-card__actions"><a class="site-book-card__primary" href="#search">Search the Tables</a><a href="#contents">Browse the Tables</a></div>
+</article>
+<article class="site-book-card site-book-card--reader" data-book="reader">
+<p class="site-book-card__kind">Teaching companion · selected route</p>
+<h3>The Factorium Reader</h3>
+<p>Learn the method through a 24-record spine and worked bounded questions, then return to the owning Tables whenever more depth is needed.</p>
+<div class="site-book-card__actions"><a class="site-book-card__primary" href="#reader">Read the Guide</a><a href="#problems">See worked questions</a></div>
+</article>
+</div>
+<p class="site-library__authority"><strong>The Tables define and distinguish.</strong> The Reader teaches and demonstrates. Factor Guides apply selected Tables to one bounded question.</p>
+</section>
+"@
+            $homeCandidateNav = '<a href="#library">Tables</a><a href="#reader">Reader</a>'
+            $nestedCandidateNav = '<a href="../index.html#library">Tables</a><a href="../index.html#reader">Reader</a>'
+        }
+        else {
+            $homeCandidateNav = '<a href="#candidate">Candidate</a>'
+            $nestedCandidateNav = '<a href="../index.html#candidate">Candidate</a>'
+        }
         $heroDeck = "Bring a bounded question. Start with the 24-record Book One teaching spine, retain decisive constraints and unresolved frontier, and open the larger reference only when the question requires more depth."
     }
     if ($editionNumber -ge 12) {
@@ -2504,6 +2576,14 @@ if ($editionNumber -ge 7) {
         "Results open dedicated reading pages generated from the canonical book sources."
     )
     $homeSearchShell = $homeSearchShell.Replace("Search this proof", "Search the book")
+    if ($editionNumber -ge 31) {
+        $homeSearchShell = $homeSearchShell.Replace("Search the book", "Search the Tables")
+        $homeSearchShell = $homeSearchShell.Replace(
+            "Search the selected records and application guides.",
+            "Search canonical Tables and clearly labelled application guides. Rankings do not change authority."
+        )
+        $heroDeck = "Use Factorium as a dictionary and thesaurus when you know what you need to distinguish, or open the Reader when you want to learn the method through worked questions. Both lead back to the same canonical Tables."
+    }
     $quickstartPage = "entries/$($pageBySource[$quickstart])"
     $homeHtml = @"
 <!doctype html>
@@ -2511,7 +2591,7 @@ if ($editionNumber -ge 7) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A searchable, table-first Factorium book simulation.">
+<meta name="description" content="$(if ($editionNumber -ge 31) { 'A searchable Factorium Tables reference with an explanatory Reader companion.' } else { 'A searchable, table-first Factorium book simulation.' })">
 <title>Structure, Quantity, and Choice · Factorium</title>
 <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -2523,10 +2603,10 @@ if ($editionNumber -ge 7) {
 </div></header>
 <main id="main-content" class="site-main">
 <section class="site-hero">
-<p class="site-kicker">$(if ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
-<h1>Structure, Quantity, and Choice</h1>
+<p class="site-kicker">$(if ($editionNumber -ge 31) { 'Two books · one canonical reference' } elseif ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
+<h1>$(if ($editionNumber -ge 31) { 'Factorium' } else { 'Structure, Quantity, and Choice' })</h1>
 <p class="site-hero__deck">$heroDeck</p>
-</section>$candidateSection$problemSection$compositionSection
+</section>$librarySection$candidateSection$problemSection$compositionSection
 <section id="start" class="site-start" aria-labelledby="site-start-heading">
 <p class="site-kicker">First journey</p>
 <h2 id="site-start-heading">From a vague problem to a bounded factorization</h2>
@@ -2535,8 +2615,8 @@ if ($editionNumber -ge 7) {
 </section>
 <div id="search">$homeSearchShell</div>
 <section id="contents" class="site-contents">
-<h2>Browse the book</h2>
-<p class="site-contents__intro">$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page.</p>
+<h2>$(if ($editionNumber -ge 31) { 'Browse the Tables' } else { 'Browse the book' })</h2>
+<p class="site-contents__intro">$(if ($editionNumber -ge 31) { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination has a dedicated lookup page; record-kind labels keep canonical Tables distinct from Guides." } else { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page." })</p>
 <ol class="site-chapter-grid">$chapterItems</ol>
 </section>
 </main>
@@ -3277,6 +3357,12 @@ $pageScripts
     }
     if ($editionNumber -ge 30) {
         $siteChecks.candidate_start_targets = $candidateStartTargets
+    }
+    if ($editionNumber -ge 31) {
+        $siteChecks.product_books = $productBooks
+        $siteChecks.tables_start_targets = $tablesStartTargets
+        $siteChecks.reader_start_targets = $readerStartTargets
+        $siteChecks.product_authority = "Factorium Tables canonical; Reader and Factor Guides are linked projections"
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1

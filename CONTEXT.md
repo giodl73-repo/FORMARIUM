@@ -1,8 +1,10 @@
 # Factorium Context
 
-Factorium is an encyclopedia of decomposition patterns. Books and Factor
-Tables are the primary deliverables; guides, evidence, software, and
-experiments support them.
+Factorium is an encyclopedia of decomposition patterns expressed through two
+books over one authority. **Factorium Tables** is the primary dictionary/
+thesaurus and canonical structured reference. **The Factorium Reader** is its
+explanatory teaching companion. Factor Guides, evidence, software, and
+experiments support them without becoming alternate authorities.
 
 The repository began as FACTOR, the hardware-neutral home of
 Factor-Preserving Semantic Encoding. That work remains immutable founding
@@ -868,6 +870,18 @@ standalone SHA-256 is
 `c965a8d608ddbceca8559258f4e65c0c6f9c08218dea3cdb6a5f94c00626fd28`.
 The Product Owner decision is prepare, not broaden. No external-reader or
 `preview-01` claim is admitted, and R4/R5P remain open.
+
+`sim-31` separates that candidate into the canonical two-book product model.
+Factorium Tables is the first, primary dictionary/thesaurus route with direct
+Search and Browse actions. The Factorium Reader is the second, explanatory
+route through the 24-record teaching spine and worked questions. Factor Guides
+remain bounded applications rather than a third authority. The edition keeps
+217 sources, 175 canonical records, 10 guides, 185 search records, and 237
+pages with zero missing targets. Site identity is
+`f7d394ec438e34d2e4e5b23c2f82a1a4f277fb6b6f2761f6431c26eda2ec710e`;
+standalone SHA-256 is
+`3b624f39e0f5f6134196b40cecbc25fa19f8ff560b859b3172a7c3df87e97ebb`.
+This establishes product hierarchy and publication mechanics only.
 
 ## Boundary
 

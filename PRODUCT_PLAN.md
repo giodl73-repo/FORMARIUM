@@ -15,6 +15,10 @@ reference. They are not the top-level product.
 ## Product identity
 
 - Name: **Factorium**
+- Primary reference book: **Factorium Tables** — dictionary, thesaurus, and
+  structured canonical reference
+- Teaching companion: **The Factorium Reader** — linked explanations, selected
+  routes, and worked bounded questions
 - Reference unit: **Factor Table**
 - Specialized mathematical unit: **Formula Table**
 - Specialized reference views: **Value, Mapping, Decision, Transition,
@@ -26,7 +30,8 @@ reference. They are not the top-level product.
 
 ## Principles
 
-1. Books and Factor Tables are the primary deliverable.
+1. Factorium Tables and its canonical Factor Tables are the primary authority;
+   The Factorium Reader teaches their use without copying that authority.
 2. Separate different senses from competing factorizations of one sense.
 3. Present credible alternatives instead of one unexplained canonical answer.
 4. Make pivots, dependencies, constraints, and failure signs explicit.
@@ -38,6 +43,8 @@ reference. They are not the top-level product.
 10. Keep mathematical equality distinct from semantic decomposition.
 11. Add specialized table families only when they answer a distinct recurring
     lookup question and retain one canonical entry authority.
+12. Keep Factor Guides as bounded applied projections, not a third book or
+    alternate definition source.
 
 ## Waves
 
@@ -72,13 +79,14 @@ Provisional scale: 25–50 pilot entries, about 250 entries for the first
 substantial volume, about 1,000 canonical headwords for the core reference,
 and 3,000–5,000 only after mature editorial validation.
 
-### Wave 4: First Factorium volume
+### Wave 4: First Factorium Tables volume and Reader companion
 
 Assemble and usability-test a coherent table-first reference across several
-domains. After the moderated prototype round, distribute a repaired, frozen
-proof edition to an invited private-preview cohort. Test independent
-onboarding, application to a real non-sensitive scenario, and voluntary
-return use before the first substantial public volume.
+domains, with a separately labelled Reader companion for learning and worked
+questions. After the moderated prototype round, distribute a repaired, frozen
+proof edition to an invited private-preview cohort. Test independent lookup,
+Reader onboarding, application to a real non-sensitive scenario, and
+voluntary return use before the first substantial public volume.
 
 ### Wave 5: Factorium Workbench
 

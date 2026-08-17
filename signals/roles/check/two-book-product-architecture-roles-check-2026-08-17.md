@@ -4,7 +4,8 @@ topic: two-book-product-architecture
 date: 2026-08-17
 roles_used: 7
 p1_count: 0
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Two-Book Product Architecture Roles Check
@@ -109,3 +110,21 @@ authority.
    persistent cross-navigation, and exact deterministic checks.
 3. Preserve sim-30 and canonical counts; report only architecture and browser
    mechanics, not reader effectiveness or release readiness.
+
+## Fixed-point result verification
+
+All fourteen P2 recommendations were implemented and rerun; no P1/P2 finding
+remains open.
+
+| Role | Closure evidence |
+|---|---|
+| Reference Lexicographer | Tables are explicitly dictionary/thesaurus, direct Search/Browse starts, with kind-labelled mixed search and unchanged authority. |
+| Reference Architecture Editor | One canonical Table authority serves two separately named books; Guides are subordinate applications. |
+| Evidence & Claims Editor | Product labels describe intended form only; simulation, R4/R5P, and publication boundaries remain explicit. |
+| Mapping Integrity Auditor | Reader selection discloses 24 included and 151 depth records, non-universal order, and exact Table handoff. |
+| Reference Practitioner | Lookup requires no Reader preamble; learning has a plain-language Reader start; both links persist. |
+| Schema Implementer | Sim-31 has exact book/route/count/order checks and its own CSS; sim-30 reproduces exactly. |
+| Product Owner | The smallest hierarchy-and-routing slice makes two recognizable jobs explicit without content or feature expansion. |
+
+Final verdict: **PASS**. Product decision: **continue the two-book model;
+stop mixed-book naming**.

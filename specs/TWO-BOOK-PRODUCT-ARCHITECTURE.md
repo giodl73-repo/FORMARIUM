@@ -1,6 +1,6 @@
 # Factorium Two-Book Product Architecture
 
-Status: internal product architecture candidate
+Status: internal product architecture fixed point
 
 ## Decision
 
@@ -87,3 +87,12 @@ This architecture clarifies product identity and generated navigation. It does
 not establish dictionary completeness, thesaurus quality, teaching efficacy,
 reader comprehension, practical decision quality, accessibility success,
 return use, external-preview readiness, or publication readiness.
+
+## Reference implementation
+
+`sim-31` is the first deterministic two-book publication projection. It keeps
+the canonical 175-record selection unchanged, presents Tables before Reader,
+provides two direct actions for each book, retains six Reader fields and the
+24/151 handoff, and keeps both book routes on generated pages. Its static and
+live-browser contracts are `tools/check_two_book_site.js` and
+`tools/check_two_book_site_browser.js`.

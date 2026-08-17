@@ -17,6 +17,18 @@ thesaurus, and the compact utility of an engineering handbook. It does not
 promise one universal decomposition; it makes the available choices,
 constraints, tradeoffs, counterexamples, and maturity visible.
 
+Factorium has two complementary books over one canonical reference:
+
+- **Factorium Tables** is the primary dictionary/thesaurus and structured
+  reference. It defines and distinguishes concepts through canonical Factor
+  Tables and specialized views.
+- **The Factorium Reader** is the explanatory companion. It teaches and
+  demonstrates how to use selected Tables for bounded questions without
+  becoming a second authority.
+
+**Factor Guides** are shorter applied journeys through selected Tables. The
+complete contract is [Two-Book Product Architecture](specs/TWO-BOOK-PRODUCT-ARCHITECTURE.md).
+
 Read the [grand vision](VISION.md), the active [roadmap](ROADMAP.md), the draft
 [Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), the specialized
 [Formula Table format](specs/FORMULA-TABLE-ENTRY.md), and the first
@@ -44,12 +56,13 @@ reader packet, evaluator rubric, and de-identified observation record.
 
 ## Primary deliverables
 
-- **Factorium books** — the enduring reference;
+- **Factorium Tables** — the enduring dictionary/thesaurus reference book;
+- **The Factorium Reader** — the linked explanatory companion;
 - **Factor Tables** — canonical entries and competing decompositions;
 - **Formula Tables** — sourced mathematical relations with scope and units;
 - **specialized reference tables** — mappings, decisions, transitions,
   constraints, procedures, diagnostics, scales, values, and evidence;
-- **Factor Guides** — narrowed recommendations for a particular problem;
+- **Factor Guides** — bounded, loss-aware applications for a particular problem;
 - **evidence and reviews** — provenance, maturity, and limitations;
 - **software and experiments** — auxiliary construction and validation tools.
 
@@ -471,6 +484,8 @@ node tools\check_book_one_candidate.js target\proof-set-sim-30\search-index.json
 node tools\check_book_one_sim_candidate.js target\proof-set-sim-30
 node tools\check_proof_set_search.js target\proof-set-sim-30\search-index.json 185
 node tools\check_book_one_simulation_browser.js target\proof-set-sim-30 target\sim30-book-one-candidate.png
+node tools\check_two_book_site.js target\proof-set-sim-31
+node tools\check_two_book_site_browser.js target\proof-set-sim-31 target\sim31-two-book-front-door.png
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
