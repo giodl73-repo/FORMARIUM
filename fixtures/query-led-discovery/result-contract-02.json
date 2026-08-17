@@ -1,0 +1,44 @@
+{
+  "contract_id": "QLD-RC-02",
+  "revision": 1,
+  "status": "frozen-before-baseline",
+  "evidence_class": "internal-authored-rehearsal",
+  "baseline_edition": "sim-42",
+  "required_result_fields": [
+    "packet_id", "packet_revision", "executed_against", "lookup_attempt",
+    "selected_senses", "context_selections", "working_graph", "checks",
+    "closure_state", "reading_route", "projection_losses", "manual_concepts",
+    "mechanical_observations", "gaps", "packet_disposition", "claim_boundary"
+  ],
+  "closure_states": ["complete", "incomplete", "contradictory", "truncated"],
+  "gap_codes": {
+    "QG-0": "no-gap", "QG-1": "discovery", "QG-2": "sense",
+    "QG-3": "view", "QG-4": "anchor", "QG-5": "relation",
+    "QG-6": "guide-local", "QG-7": "external-catalog",
+    "QG-8": "evidence-source", "QG-9": "product-mechanic"
+  },
+  "gap_dispositions": ["repair", "merge", "defer", "external", "no-change"],
+  "packet_dispositions": ["routed", "routed-with-friction", "blocked-by-gap", "stopped-as-designed"],
+  "check_states": ["pass", "fail", "unresolved", "not-applicable"],
+  "manual_concept_states": ["none", "candidate", "proxy", "external", "guide-local"],
+  "mechanical_measures": [
+    "lookup_queries", "lookup_destinations_opened", "route_hops",
+    "graph_nodes", "graph_edges", "manual_concept_count",
+    "unresolved_destination_count"
+  ],
+  "prohibited_measures": [
+    "reader_success", "reader_time", "comprehension", "confidence",
+    "preference", "usefulness", "return_intent", "simulated_success_rate"
+  ],
+  "rules": [
+    "Every packet contains an explicit contrast or boundary and no QLD-01 question is reused.",
+    "Design flags balance the frozen portfolio and are not expected result labels.",
+    "QG-0 is recorded only when no content, evidence, or product repair is proposed.",
+    "Every non-QG-0 gap has one primary code, one recurrence key, one owner rationale, and one disposition.",
+    "A manual concept is not a canonical candidate until clustering and the ordered owner test are complete.",
+    "Closure state describes the declared working graph and does not score the packet or reader.",
+    "Substantive checks remain unresolved when local evidence or qualified judgment is absent.",
+    "Results never rewrite packet revision 1 and never mutate the sim-42 baseline."
+  ]
+}
+
