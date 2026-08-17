@@ -2569,3 +2569,18 @@ owner, repeated manual composition need, observed lookup failure, source-backed
 domain gap, or demonstrably overloaded existing owner. The first reopened slice
 is capped at one anchor and two justified views. Until then, maintain `sim-39`;
 do not invent F101, reader behavior, or completeness.
+
+## 2026-08-17 Tables everyday-search cue plan
+
+A mechanical check confirms the oldest open simulation lookup note: the
+everyday query `size` ranks a sampling diagnostic before the intended
+Geometric Measure owner, while `how big` and `how large` collect broad
+incidental matches. This is a navigation defect, not a content gap.
+
+Seven roles approve a bounded `sim-40` plan with zero P1, fourteen P2, and
+seven P3 findings. The edition may show one conditional **If you mean
+geometric size** navigation cue for those three exact normalized phrases. It
+must preserve lexical results, ranking, grouping, filters, counts, and record
+identity; add no canonical content or semantic relation; reproduce `sim-39`
+exactly; and make no reader-value claim. Detailed conditions are in
+`TABLES-EVERYDAY-SEARCH-CUE-ROLE-REVIEW.md`.
