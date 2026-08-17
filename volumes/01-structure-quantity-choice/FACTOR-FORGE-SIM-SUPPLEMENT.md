@@ -20,12 +20,14 @@ content part of its reader-evidence baseline.
 
 ### Systems and structural integrity
 
-79. [System Composition, Capability, Interface, and Dependency](../../tables/entries/system-composition-dependency.md)
-80. [System Composition Integrity Constraints](../../tables/constraints/system-composition-integrity.md)
+79. [System Composition, Architecture, Capability, Interface, and Dependency](../../tables/entries/system-composition-dependency.md)
+80. [System Composition and Architecture Integrity Constraints](../../tables/constraints/system-composition-integrity.md)
 
-Begin with the selected whole, viewpoint, boundary, environment, interfaces,
-and directional dependencies. The Constraint view then tests whether diagrams
-and assignments preserve those distinctions through change.
+Begin with the selected whole, viewpoint, boundary, environment, architecture,
+architecture description, interfaces, and directional dependencies. Treat a
+subsystem as a contextual role in a containing-system view, not a permanent
+entity type. The Constraint view then tests whether descriptions, views,
+diagrams, and assignments preserve those distinctions through change.
 
 ### Organizational assignment and governance
 

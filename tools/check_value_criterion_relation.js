@@ -16,7 +16,7 @@ const relations = read("reference/factorium-relations-v0.factorium");
 const digest = crypto.createHash("sha256").update(query).digest("hex");
 
 assert.equal(digest,
-  "109e473e4269117940e1114b26f40e259057a6a765a0adfcaca34fa83723bcf3",
+  "9e3928da4790197267dbbd1bdd7cca90d12349b98ec583c32e6b0b9ed711626d",
   "canonical Value/Criterion query identity");
 assert.match(relations, new RegExp(
   `^relation ${relationId} \\| contributes-criterion-to \\| ` +

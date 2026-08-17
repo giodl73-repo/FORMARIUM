@@ -73,6 +73,9 @@ shared-node deduplication and all substantive checks unresolved.
 F36 makes that closure the proof site's single reader-facing Decision journey,
 replacing the narrower homepage slot while preserving component routes and the
 Lab boundary.
+F37 deepens the canonical system cluster with architecture versus architecture
+description and resolves subsystem as a contextual containing-system role,
+without creating a style or framework catalog.
 F30 exposes the first evidence edge through one exact incomplete book and problem-led
 reading route while leaving the interactive Composition Lab unchanged.
 

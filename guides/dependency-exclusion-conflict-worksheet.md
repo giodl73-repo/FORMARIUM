@@ -106,7 +106,7 @@ identity. Budgets: depth 1, edges 1, nodes 3, total work 10.
 |---|---|---:|---|---|
 | dependency source, target, and direction | required seed | 0 | seed | none |
 | interfaces and interaction contracts | required | 1 | F1 `depends-on` | dependency source, target, and direction |
-| System Composition Integrity Constraints | evaluative | 1 | scope of F1 | dependency source, target, and direction |
+| System Composition and Architecture Integrity Constraints | evaluative | 1 | scope of F1 | dependency source, target, and direction |
 
 Typed edge: F1 dependency **depends on** interface, qualified by
 `condition=required-interaction`.
@@ -124,7 +124,7 @@ internally inconsistent.
 ## Evaluation
 
 Declared check: `interface-integrity`, kind `constraint`, target
-[System Composition Integrity Constraints](../tables/constraints/system-composition-integrity.md).
+[System Composition and Architecture Integrity Constraints](../tables/constraints/system-composition-integrity.md).
 
 | Constraint | Supplied status | Guide consequence |
 |---|---|---|
@@ -158,7 +158,7 @@ query under a policy that accurately represents the new problem.
 |---|---|---|---|
 | dependency source, target, and direction | retained seed | selected | requires the F1 target under current policy |
 | interfaces and interaction contracts | required joined node | rejected | explicit conflict; node remains visible |
-| System Composition Integrity Constraints | Evaluation | selected | failed check records why closure cannot flatten normally |
+| System Composition and Architecture Integrity Constraints | Evaluation | selected | failed check records why closure cannot flatten normally |
 
 ### Required repairs
 
@@ -210,9 +210,9 @@ Canonical trace file:
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Factorium reference V0 | `108f2d424d8cb3ac4145ca2727fcbd2fa1b43067d81a462506616ad6110f13ae` |
 | Typed relations V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `6d8e8ecd49fb38ea1743f36c9f2de88624927207b73865b1c8d896583b69c2c6` |
+| Composition Query trace | `871f35bcf90e16f39498040a0ad613707c45a34a4539a2721fed8b01caf89355` |
 
 Trace manifest: one seed, three nodes, one F1 edge, zero frontiers, one
 required-node conflict, one failed Constraint check, three projection rows,
@@ -224,8 +224,8 @@ page do not add machine edges or repair the conflict.
 
 ## Canonical sources and custody
 
-1. [System Composition, Capability, Interface, and Dependency](../tables/entries/system-composition-dependency.md)
-2. [System Composition Integrity Constraints](../tables/constraints/system-composition-integrity.md)
+1. [System Composition, Architecture, Capability, Interface, and Dependency](../tables/entries/system-composition-dependency.md)
+2. [System Composition and Architecture Integrity Constraints](../tables/constraints/system-composition-integrity.md)
 3. [Context Profile V0](../specs/CONTEXT-PROFILE.md)
 4. [Composition Query Trace V0](../specs/COMPOSITION-QUERY.md)
 5. [Factor Guide Format V0](../specs/FACTOR-GUIDE.md)

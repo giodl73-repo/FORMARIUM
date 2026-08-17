@@ -7,8 +7,8 @@ not score a fictional participant or create usability evidence.
 
 ## Task H expected route
 
-- System Composition, Capability, Interface, and Dependency;
-- System Composition Integrity Constraints;
+- System Composition, Architecture, Capability, Interface, and Dependency;
+- System Composition and Architecture Integrity Constraints;
 - component, capability, boundary, environment, interface, relationship, and
   directional dependency remain distinct;
 - dependency retains source, target, required property, condition,

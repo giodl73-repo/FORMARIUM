@@ -1,20 +1,21 @@
-# System Composition Integrity Constraints
+# System Composition and Architecture Integrity Constraints
 
 Status: candidate Constraint Table
 
 Primary family: Constraint Table
 
 Canonical headword:
-[System Composition, Capability, Interface, and Dependency](../entries/system-composition-dependency.md)
+[System Composition, Architecture, Capability, Interface, and Dependency](../entries/system-composition-dependency.md)
 
-Canonical senses: `system`, `system-element`, `component`, `capability`,
-`boundary`, `environment`, `interface`, `dependency`
+Canonical senses: `system`, `system-element`, `component`, `architecture`,
+`architecture-description`, `capability`, `boundary`, `environment`,
+`interface`, `dependency`
 
 ## Governing question
 
-Which minimum invariants keep a system-composition view from collapsing
-membership, ownership, ability, interaction, and reliance into one undirected
-diagram?
+Which minimum invariants keep a system and architecture account from
+collapsing entity, description, viewpoint, membership, ownership, ability,
+interaction, and reliance into one undirected diagram?
 
 ## Constraint table
 
@@ -30,6 +31,11 @@ diagram?
 | `SC-08` | environment | Keep external actors and influences outside the selected boundary | an external dependency is silently modeled as an internal component | context model and boundary version |
 | `SC-09` | whole behavior | Separate system-level from element-level claims | one element is credited with an emergent result without support | behavior model, observation, or test |
 | `SC-10` | revision | Re-evaluate assignments when viewpoint or boundary changes | old component and dependency labels survive a changed model unreviewed | revision and migration record |
+| `SC-11` | subsystem role | Name the selected system and its containing-system context separately | nesting creates a new entity identity or makes subsystem a permanent intrinsic type | entity identity, containing view, and role rationale |
+| `SC-12` | architecture | Name the entity, environment, stakeholders, concerns, fundamental concepts/properties, material relationships, and organizing principles | a component inventory or fashionable style label is presented as the complete architecture | architecture claim, concern coverage, and decision rationale |
+| `SC-13` | architecture description | Separate the entity's architecture from the work product expressing it | a diagram, model repository, or document is called the architecture without qualification | description identity, scope, version, provenance, and represented architecture |
+| `SC-14` | viewpoint and view | State which concerns a viewpoint frames and which conventions govern each resulting view/model | one view is treated as complete for every stakeholder and concern | viewpoint specification, view/model identity, and concern correspondence |
+| `SC-15` | description consistency | Record correspondences, assumptions, decisions, rationale, omissions, and unresolved inconsistencies across views | conflicting views are silently merged or one is selected without disposition | correspondence, issue, decision, and revision ledger |
 
 ## Invalid combination examples
 
@@ -40,6 +46,9 @@ diagram?
 | `outside = irrelevant` | environmental actors can influence or interact across the boundary | model external influence and interface explicitly |
 | `dependency(A,B) = dependency(B,A)` | reliance is directional unless both directions are separately supported | record two assertions when mutual |
 | `system = components` | relationships, behavior, purpose, and context are omitted | restore the complete selected system view |
+| `architecture = diagram` | the entity's organizing concepts/properties are collapsed into one representation | identify the architecture claim, description, viewpoint, view, and known loss |
+| `subsystem = intrinsic type` | a contextual containing-system role is mistaken for a permanent entity class | retain system identity and state the containing view separately |
+| `view = complete description` | one concern-framed representation is generalized to every concern | add required viewpoints/views or declare the uncovered concerns |
 
 ## Change tests
 
@@ -50,6 +59,9 @@ diagram?
 | Change an interface contract | all dependent subjects and capability claims |
 | Change the operating environment | capability conditions, constraints, risks, and external dependencies |
 | Change viewpoint | every component, boundary, environment, and dependency assignment |
+| Add or remove a stakeholder concern | viewpoint coverage, views/models, decisions, assumptions, and known omissions |
+| Revise one architecture view | cross-view correspondences, consistency, affected decisions, rationale, and description version |
+| Move a system under a different containing system | subsystem/component role, boundary, interfaces, dependencies, and retained entity identity |
 
 ## Failure signs
 
@@ -61,6 +73,15 @@ diagram?
   observation;
 - environment is reduced to a miscellaneous context box;
 - whole-level outcomes have no relationship or interaction explanation.
+- architecture is used as a synonym for one diagram, component inventory,
+  implementation stack, or named style;
+- the architecture description has no entity, scope, version, provenance,
+  stakeholder concern, or intended decision;
+- viewpoints, views, and model kinds are unnamed or treated as synonyms;
+- cross-view inconsistency, assumptions, decisions, rationale, and known
+  omissions have no visible disposition;
+- subsystem labels survive a changed containing-system view as intrinsic
+  entity types.
 
 ## Sources and provenance
 
@@ -72,7 +93,16 @@ diagram?
    https://csrc.nist.gov/glossary/term/interface
 4. SEBoK, "Introduction to Systems Engineering Fundamentals":
    https://sebokwiki.org/wiki/Introduction_to_Systems_Engineering_Fundamentals
+5. ISO/IEC/IEEE 42010:2022, *Software, systems and enterprise — Architecture
+   description*: https://www.iso.org/standard/74393.html
+6. NIST CSRC Glossary, "architecture viewpoint":
+   https://csrc.nist.gov/glossary/term/architecture_viewpoint
+7. ISO/IEC/IEEE 42030:2019, *Software, systems and enterprise — Architecture
+   evaluation framework*: https://www.iso.org/standard/73436.html
+8. [System architecture and description ownership research](../../docs/research/2026-08-16-system-architecture-description.md)
 
-The constraints are a candidate Factorium synthesis. Domain-specific
-architecture, safety, security, and organizational rules remain outside this
-general view.
+The constraints are a candidate Factorium synthesis. They do not certify an
+architecture, architecture description, evaluation, or conformance result.
+Named architecture styles, frameworks, description languages, model kinds,
+methods, tools, and domain-specific safety, security, or organizational rules
+remain outside this general view.

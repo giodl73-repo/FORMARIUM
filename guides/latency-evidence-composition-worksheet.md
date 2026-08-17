@@ -226,9 +226,9 @@ Canonical trace file: `fixtures/composition/latency-evidence.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Factorium Reference V0 | `108f2d424d8cb3ac4145ca2727fcbd2fa1b43067d81a462506616ad6110f13ae` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `29bf2dcf0c7db44119d53cc427ac53f0c73b7ede5bcbc16adb1e7f1dc4ec9293` |
+| Composition Query trace | `79097c76c75abb23a474a16cefbf21ec1e8bff86fa7bc13a48246e61f2f49049` |
 
 Trace inventory: one seed, three nodes, one admitted edge, zero frontiers,
 zero conflicts, one passed structural check, three projection rows, and state

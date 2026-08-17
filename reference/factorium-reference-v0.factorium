@@ -774,10 +774,12 @@ factor conservation-law-invariant-or-accounting-authority | conservation law, in
 factor residual-uncertainty-omissions-and-reconciliation-status | residual, uncertainty, omissions, and reconciliation status
 factor provenance-version-revision-and-supersession | provenance, version, revision, and supersession
 end-entry
-entry system-composition-dependency | System Composition, Capability, Interface, and Dependency | systems | candidate | tables/entries/system-composition-dependency.md | A system is a selected whole whose interacting elements together exhibit behavior or meaning; engineered and organizational systems are commonly organized toward one or more purposes. System element, component, capability, boundary, environment, interface, and dependency keep membership, constitution, ability, inclusion, outside context, interaction, and directional reliance distinct.
+entry system-composition-dependency | System Composition, Architecture, Capability, Interface, and Dependency | systems | candidate | tables/entries/system-composition-dependency.md | A system is a selected whole whose interacting elements together exhibit behavior or meaning. Architecture concerns its fundamental organization and principles in context; an architecture description is a versioned artifact expressing that architecture. System element, component, capability, boundary, environment, interface, dependency, and contextual subsystem roles remain distinct.
 sense system | system
 sense system-element | system element
 sense component | component
+sense architecture | architecture
+sense architecture-description | architecture description
 sense capability | capability
 sense boundary | boundary
 sense environment | environment
@@ -787,6 +789,10 @@ factor system-of-interest-behavior-or-purpose | system of interest, behavior, or
 factor selected-boundary-and-viewpoint | selected boundary and viewpoint
 factor elements-and-membership-rule | elements and membership rule
 factor part-whole-and-lifecycle-semantics | part-whole and lifecycle semantics
+factor stakeholder-concerns-and-decision-use | stakeholder concerns and decision use
+factor fundamental-concepts-properties-and-organizing-principles | fundamental concepts, properties, and organizing principles
+factor architecture-description-viewpoints-views-and-model-kinds | architecture-description viewpoints, views, and model kinds
+factor assumptions-decisions-rationale-consistency-and-version | assumptions, decisions, rationale, consistency, and version
 factor capabilities-and-required-conditions | capabilities and required conditions
 factor interfaces-and-interaction-contracts | interfaces and interaction contracts
 factor dependency-source-target-and-direction | dependency source, target, and direction
@@ -865,7 +871,7 @@ factor unit-system | unit system
 end-entry
 view constraint-policy-constraints | policy-rule-constraint-decision-exception | constraint | constraint | Policy Constraint Table | tables/constraints/policy-constraints.md | Version, evidence, authority, bounded exceptions, output separation, enforcement, and audit remain explicit policy-evaluation invariants.
 end-view
-view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,capability,boundary,environment,interface,dependency | constraint | System Composition Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves viewpoint, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and whole-level behavior as distinct system-composition obligations.
+view constraint-system-composition-integrity | system-composition-dependency | system,system-element,component,architecture,architecture-description,capability,boundary,environment,interface,dependency | constraint | System Composition and Architecture Integrity Constraints | tables/constraints/system-composition-integrity.md | Preserves entity, architecture, description, viewpoint/view, contextual subsystem role, membership, part-whole semantics, capability conditions, interface contracts, dependency direction, environment, and cross-view consistency as distinct obligations.
 end-view
 view decision-alternative-selection | choice-alternative-selection | choice,alternative,decision-criterion,preference,trade-off,recommendation,selection | decision | Alternative Selection Decision Table | tables/decisions/alternative-selection.md | A bounded choice preserves candidate, feasible, excluded, and unresolved alternatives; partial outcome cells; operational criteria; attributed preference; sensitivity; recommendation; and authority-owned final selection without requiring one scoring method.
 end-view

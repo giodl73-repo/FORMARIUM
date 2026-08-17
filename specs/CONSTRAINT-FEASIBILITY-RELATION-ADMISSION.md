@@ -83,8 +83,8 @@ recommendation validity, decision quality, reader success, or preview evidence.
 - Canonical relation sidecar SHA-256:
   `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634`
 - Exact assurance sidecar SHA-256:
-  `9a566c472fc07c3d553cf13744be3a00565b04fe409a406161da287abfcf8edc`
+  `11a17d3077bd32be242a256e64cec2096a3edc8ab90d3fbfa3d9d4d4c3b4b7db`
 - Composition Lab allowlist SHA-256:
   `35f17d2e24190be1be8897f38477a1c138d974223a73f850665e8439ef645f5a`
 - Canonical query SHA-256:
-  `305f6dc1665bc796802cee744b1b7fdbe36628cb3b7ad89860c7325a01c9d4d0`
+  `b1844533548260a20713105d54b7407ab511f5b0a032e688019b652a6547723b`

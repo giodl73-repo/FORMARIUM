@@ -737,7 +737,7 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 Factor Forge through F27 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
 software, and decision support. The canonical reference now contains 40
-entries, 304 senses, 479 factors, and 57 views with 108 exact assurance
+entries, 306 senses, 483 factors, and 57 views with 108 exact assurance
 bindings. The current Factor Forge supplement contains 46 records, while
 `sim-29` selects 124 canonical records and indexes 132 destinations across
 thirteen chapters. Historical preflight documents retain the counts of the
@@ -798,6 +798,14 @@ Explorer panel now open the complete working set in the existing guide; the
 component evidence route remains in the guide, six homepage destinations and
 five Lab starters remain stable, and no interactive or substantive result is
 added.
+
+F37 returns to canonical content by deepening System Composition with separate
+`architecture` and `architecture-description` senses and four description-
+custody factors. `Subsystem` resolves as a contextual role of a system within
+a containing-system view rather than a permanent subtype. The existing
+Constraint view gains five integrity rules and the unresolved catalog drops
+from nine terms to seven without admitting architecture styles or named
+frameworks.
 
 ## Boundary
 

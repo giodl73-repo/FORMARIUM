@@ -1848,7 +1848,7 @@ including exactly five cross-entry relations. Exact assurance covers 40
 entries, 57 views, and eleven relations in 108 bindings at SHA-256
 `9a566c472fc07c3d553cf13744be3a00565b04fe409a406161da287abfcf8edc`.
 The new three-node query has SHA-256
-`109e473e4269117940e1114b26f40e259057a6a765a0adfcaca34fa83723bcf3`,
+`9e3928da4790197267dbbd1bdd7cca90d12349b98ec583c32e6b0b9ed711626d`,
 retains unresolved value sense, owner, basis, scale, comparability, and
 preference review, and fails closed on an incorrect predecessor. The guide
 adds an exact value-to-criterion route while retaining its local `unresolved`
@@ -1887,7 +1887,7 @@ staging, hash binding, and publication exclusions.
 Result review: the first combined decision closure has five seeds, five
 admitted cross-entry edges, ten unique nodes, five unresolved checks, ten
 loss-declared projections, and exact work 35. Its SHA-256 is
-`41c4e2d14e2169fef9902120be6111d310a12a829981149c307fccd24fae6e59`.
+`7447236458c0a2ee6049debc2b52f367cceb807be39e9151de3a2c968a98a166`.
 The causal and risk traversals retain separate edge records while sharing one
 canonical Choice outcome node; the negative fixture fails source validation
 when that node and its projection are absent. The V0 query grammar needed no
@@ -1931,7 +1931,7 @@ intervention choice across concepts and names evidence, causal scope,
 consequences, value, and constraints as one bounded working set. Its read-only
 Explorer panel renders the exact
 `decision-bridge-five-relation-closure` query at SHA-256
-`41c4e2d14e2169fef9902120be6111d310a12a829981149c307fccd24fae6e59`:
+`7447236458c0a2ee6049debc2b52f367cceb807be39e9151de3a2c968a98a166`:
 five seeds, five explicit joins, ten unique nodes, five unresolved checks, ten
 loss-declared rows, work 35, and state `incomplete`. The prior evidence-only
 route remains in the guide but no longer duplicates the Decision homepage
@@ -1951,3 +1951,57 @@ applicability, causal identification, consequence sufficiency, value
 comparability, constraint satisfaction, aggregation, ranking, recommendation
 validity, decision quality, reader comprehension, task success,
 external-preview, publication, Workbench, or `preview-01` claim is admitted.
+
+## 2026-08-16 F37 system architecture and description content
+
+Plan review: resolve the `architecture` and `subsystem` candidates through the
+existing System Composition owner rather than add disconnected headwords;
+separate an entity's architecture from every architecture description
+expressing it; represent subsystem as a system-in-containing-view role rather
+than an intrinsic subtype; add only reusable concern, principle, description,
+and rationale factors; extend the existing Constraint view rather than mint a
+new family record; retain candidate maturity; and stop before named styles,
+frameworks, languages, model-kind catalogs, methods, tools, domains,
+evaluations, or conformance claims. The standard eight-role review found zero
+P1 and sixteen P2 conditions, all closed by the owner decision, explicit
+pivots, source limits, taxonomy boundary, fail-able constraints, and exact
+identity migration.
+
+Result review: `system-composition-dependency` now owns separate
+`architecture` and `architecture-description` senses plus four factors for
+stakeholder concerns/decision use, fundamental concepts/properties/organizing
+principles, description viewpoints/views/model kinds, and
+assumptions/decisions/rationale/consistency/version. `Subsystem` remains a
+contextual role requiring both the selected system and its containing-system
+view. The existing System Composition and Architecture Integrity Constraint
+Table adds `SC-11` through `SC-15` for subsystem role, architecture claim,
+description identity, viewpoint/view coverage, and cross-view consistency.
+The source-backed owner note cites ISO/IEC/IEEE 42010:2022, NIST
+SP 800-160-derived terminology, ISO/IEC/IEEE 42030:2019, and NASA systems-
+engineering material while retaining Factorium's synthesis at candidate
+maturity.
+
+The canonical corpus remains 40 entries and 57 views while growing from 304
+to 306 senses and from 479 to 483 factors. Exact assurance remains 108
+bindings. The generated unresolved catalog drops from nine candidates to seven
+and the Factor Forge supplement remains 46 records. Reference SHA-256 is
+`108f2d424d8cb3ac4145ca2727fcbd2fa1b43067d81a462506616ad6110f13ae`;
+assurance SHA-256 is
+`11a17d3077bd32be242a256e64cec2096a3edc8ab90d3fbfa3d9d4d4c3b4b7db`.
+All eleven valid and thirteen adversarial Composition Query fixtures migrate
+to the new reference identity without relation-sidecar change.
+
+The regenerated 162-source `sim-29` edition retains 132 searchable
+destinations and 177 site pages with zero missing targets. Its site identity
+is `47770f1cdeb3f0fcb74c2e0191eb0bdb804f1adca64294b9d2f5f84e414737ae`
+and standalone SHA-256 is
+`27c79667d0ad915a3d54379e4fa463d64bd04343a621422ba5840df8e05e0920`.
+All 70 Rust tests, Clippy, canonical and adversarial query checks, reference,
+assurance, generated catalogs, focused F37, local and generated-site
+composition, browser, search, packet, role, link, visual, and diff checks
+pass. One initial browser run passed its assertions but met a temporary Edge
+Crashpad profile cleanup race; the isolated rerun passed. No architecture or
+description conformance, architecture quality, subsystem taxonomy,
+framework/style completeness, evaluation validity, reader comprehension,
+project outcome, external-preview, publication, Workbench, or `preview-01`
+claim is admitted.

@@ -864,3 +864,33 @@ A negative fixture removes the shared target and fails closed. The combined
 trace imports none of the guide's local outcomes, changes no Lab allowlist,
 adds no homepage trace or Compose starter, and establishes no sufficiency,
 ranking, recommendation, final selection, or ontology-completeness claim.
+
+## F37 system architecture and description
+
+F37 resolves the System Composition entry's `architecture` and `subsystem`
+candidates through an existing-owner test. `Architecture` and
+`architecture-description` become separate canonical senses: the former owns
+fundamental concepts/properties and organizing principles of an entity in its
+environment; the latter owns the versioned work product expressing an
+architecture for declared stakeholders, concerns, viewpoints, and uses.
+`Subsystem` does not become a sense or subtype. It is a contextual role formed
+when an already identified system is treated as an element or component of a
+containing-system view.
+
+The entry adds four factors for stakeholder concerns/decision use,
+fundamental concepts/properties/principles, description viewpoints/views/model
+kinds, and assumptions/decisions/rationale/consistency/version. The existing
+Constraint view adds five fail-able rules for subsystem role, architecture
+claim, description identity, viewpoint/view coverage, and cross-view
+consistency. ISO/IEC/IEEE 42010:2022, NIST SP 800-160-derived terminology,
+ISO/IEC/IEEE 42030:2019, and NASA systems-engineering material bound the
+source claims. Named styles, frameworks, languages, methods, tools, domains,
+evaluations, and conformance results remain outside the canonical slice.
+
+The corpus remains 40 entries and 57 views while growing to 306 senses and 483
+factors. Exact assurance remains 108 bindings. The unresolved catalog drops
+from nine terms to seven, and the Factor Forge book delta remains 46 records.
+Reference SHA-256 is
+`108f2d424d8cb3ac4145ca2727fcbd2fa1b43067d81a462506616ad6110f13ae`;
+assurance SHA-256 is
+`11a17d3077bd32be242a256e64cec2096a3edc8ab90d3fbfa3d9d4d4c3b4b7db`.

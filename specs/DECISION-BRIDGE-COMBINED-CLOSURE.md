@@ -75,7 +75,7 @@ navigation projection over the exact canonical query.
 ## Published identity
 
 - Canonical query SHA-256:
-  `41c4e2d14e2169fef9902120be6111d310a12a829981149c307fccd24fae6e59`
+  `7447236458c0a2ee6049debc2b52f367cceb807be39e9151de3a2c968a98a166`
 - Relation sidecar SHA-256:
   `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634`
 - Composition Lab allowlist SHA-256:

@@ -438,6 +438,7 @@ node tools\check_composition_rerun_comparison.js
 node tools\check_composition_guide.js
 node tools\check_composition_evaluation.js
 node tools\check_reference_closure_coverage.js
+node tools\check_system_architecture_description.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_decision_bridge_combined_closure.js
 node tools\check_constraint_feasibility_relation.js

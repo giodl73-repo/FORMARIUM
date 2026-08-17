@@ -142,7 +142,7 @@ nine units of declared work.
   -- f1: depends-on / required-interaction -->
 [interfaces and interaction contracts]
   -- evaluated in -->
-[System Composition Integrity Constraints]
+[System Composition and Architecture Integrity Constraints]
 ```
 
 | Node | Class | Depth | Origin | Predecessor |
@@ -158,7 +158,7 @@ claim that the entire architecture has been modeled.
 ## Evaluation
 
 Declared check: `interface-integrity`, kind `constraint`, target
-[System Composition Integrity Constraints](../tables/constraints/system-composition-integrity.md).
+[System Composition and Architecture Integrity Constraints](../tables/constraints/system-composition-integrity.md).
 
 | Constraint | Supplied evidence | Worksheet outcome |
 |---|---|---|
@@ -258,9 +258,9 @@ Canonical trace file: `fixtures/composition/system-dependency.factorium-query`
 
 | Identity | SHA-256 |
 |---|---|
-| Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Factorium Reference V0 | `108f2d424d8cb3ac4145ca2727fcbd2fa1b43067d81a462506616ad6110f13ae` |
 | Relation sidecar V0 | `df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634` |
-| Composition Query trace | `11465f11bd10ecbdf149836ad692f9a63889df5506ebccc501925c0c72f63c98` |
+| Composition Query trace | `654bad1a288c4fe8f589d0e577dd48689b04d0a5ec2bb810f70c43326be02cca` |
 
 Trace inventory: one seed, three working nodes, one admitted edge, zero
 frontiers, zero conflicts, one passed declared check, three projection rows,
@@ -274,8 +274,8 @@ cargo run --quiet -- composition-query-check fixtures\composition\system-depende
 
 ## Canonical sources and custody
 
-1. [System Composition, Capability, Interface, and Dependency](../tables/entries/system-composition-dependency.md)
-2. [System Composition Integrity Constraints](../tables/constraints/system-composition-integrity.md)
+1. [System Composition, Architecture, Capability, Interface, and Dependency](../tables/entries/system-composition-dependency.md)
+2. [System Composition and Architecture Integrity Constraints](../tables/constraints/system-composition-integrity.md)
 3. Relation `f1-dependency-interface` in
    `reference/factorium-relations-v0.factorium`
 4. [Composition Query Trace V0](../specs/COMPOSITION-QUERY.md)
