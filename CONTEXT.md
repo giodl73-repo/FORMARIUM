@@ -900,6 +900,21 @@ standalone SHA-256 is
 `sim-31` reproduces exactly. This establishes navigation mechanics, not typed
 thesaurus semantics or reader value.
 
+`sim-33` makes Tables search ownership-aware without changing its ranked match
+set. Table families are the default result view: the 185 search records form
+90 lossless groups comprising 53 canonical entry families, 27 curated Table
+records, nine Factor Guides, and one Reader record. All 95 specialized views
+appear under their exact selected canonical owner. All records retains the
+prior flat ranking, and query, kind, and domain filters run before grouping.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+237 pages, and zero missing targets. Site identity is
+`7af5ff58b9f62ceed1c2ef8f41bdebd844b87426742eb648fb917b185f08f113`;
+standalone SHA-256 is
+`d366023a2e44e30f9fe6a33622eabf43a582ce1991679b247451ff4e55a008c8`.
+`sim-32` reproduces exactly. The groups express publication ownership only,
+not semantic hierarchy, relatedness, closure, or reader-value evidence.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

@@ -1,6 +1,8 @@
 # Factorium Tables Canonical-Family Search
 
-Status: internal search contract candidate
+Status: internal search contract fixed point
+
+Reference implementation: `sim-33`
 
 ## Reader job
 
@@ -16,7 +18,8 @@ ranking:
 - **Table families** is the default. Matches are grouped by exact canonical
   owner. A matching canonical entry owns its family; a specialized view joins
   the family named by its canonical owner metadata. Curated Table records and
-  Factor Guides remain separately labelled standalone groups.
+  Factor Guides and Reader records remain separately labelled standalone
+  groups.
 - **All records** preserves the existing flat ranked result list.
 
 The query, kind, and domain filters continue to select matching records. The
@@ -39,7 +42,8 @@ Composition relations, or search co-occurrence.
 - each matched member retains its own title, kind, domain, summary, and link;
 - a family states the number of matching records, not its total canonical
   number of views;
-- curated records and guides never receive a fabricated canonical owner;
+- curated records, guides, and Reader records never receive a fabricated
+  canonical owner;
 - no result is labelled broader, narrower, synonym, related, dependency, or
   closure.
 

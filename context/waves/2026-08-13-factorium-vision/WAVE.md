@@ -2357,7 +2357,25 @@ while retaining the existing ranked All records view.
 
 Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
 The projection may group only by exact reference ownership, after filters and
-ranking. Curated records and Guides remain standalone, all matched records
+ranking. Curated records, Guides, and Reader records remain standalone, all matched records
 retain direct identities, and no semantic hierarchy, query expansion,
 Composition execution, or reader-value claim is admitted. Detailed conditions
 are in `TABLES-CANONICAL-FAMILY-SEARCH-ROLE-REVIEW.md`.
+
+Result review: `sim-33` groups the 185 ranked search records into 90 exact
+publication-ownership groups by default: 53 canonical Table families, 27
+curated Table records, nine Factor Guides, and one Reader record. All 95
+specialized views resolve to their selected canonical owner. An All records
+view preserves the prior flat ranking, and query, kind, and domain filters run
+before either projection.
+
+Static and live Edge checks pass with lossless grouping, exact Evaluation
+ownership, bounded URL state, zero missing targets, and no 390-pixel overflow.
+The edition retains 217 sources, 175 canonical records, 185 search records,
+and 237 pages. Site identity is
+`7af5ff58b9f62ceed1c2ef8f41bdebd844b87426742eb648fb917b185f08f113`;
+standalone SHA-256 is
+`d366023a2e44e30f9fe6a33622eabf43a582ce1991679b247451ff4e55a008c8`.
+`sim-32` reproduces exactly. Product Owner decision: keep ownership-aware
+search and stop before semantic grouping, query expansion, or Composition
+execution; reader value remains untested.

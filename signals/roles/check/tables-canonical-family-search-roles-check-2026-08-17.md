@@ -4,7 +4,8 @@ topic: tables-canonical-family-search
 date: 2026-08-17
 roles_used: 7
 p1_count: 0
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Tables Canonical-Family Search Roles Check
@@ -43,7 +44,7 @@ navigation, URL state, and responsive publication.
 | # | Finding | Severity | Section | Recommendation |
 |---|---|---|---|---|
 | 1 | Copying owner summaries into search would create another content authority. | P2 | family header | Link and name the canonical owner; render matched record summaries only. |
-| 2 | A family must not absorb curated records or Guides under a false owner. | P2 | grouping | Keep each noncanonical record a clearly labelled standalone group. |
+| 2 | A family must not absorb curated records, Guides, or Reader records under a false owner. | P2 | grouping | Keep each noncanonical record a clearly labelled standalone group. |
 | 3 | Search grouping should not alter source, chapter, or page identity. | P3 | compatibility | Keep the projection edition-local. |
 
 ### Concept & Taxonomy Boundary Editor
@@ -104,3 +105,16 @@ grouping as semantic hierarchy or automatic composition.
 1. Generate exact edition-local owner metadata and fail on unresolved owners.
 2. Group after ranking and filtering with lossless coverage and a flat mode.
 3. Keep labels, counts, URL state, responsive behavior, and claims bounded.
+
+## Fixed-point result
+
+All fourteen P2 findings are closed in `sim-33`: ownership metadata covers all
+95 specialized views, family grouping is a lossless deterministic partition,
+filters and ranking precede grouping, owner context does not inflate matches,
+the prior flat list remains available, noncanonical records stay standalone,
+URL state is bounded, the 390-pixel browser route has no overflow, and
+`sim-32` reproduces exactly.
+
+Final verdict: PASS. The seven P3 notes remain durable design boundaries, not
+release blockers. No findability, preference, semantic hierarchy, automatic
+composition, or preview claim is admitted.

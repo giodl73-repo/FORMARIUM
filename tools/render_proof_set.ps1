@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -60,8 +60,13 @@ $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.cs
 $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
 $searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
 $candidateSearchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search-candidate.js"
+$familySearchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search-families.js"
+$familySearchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search-families.css"
 if ($editionNumber -ge 30) {
     $searchScript = $candidateSearchScript
+}
+if ($editionNumber -ge 33) {
+    $searchScript = $familySearchScript
 }
 $readerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.css"
 $readerScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.js"
@@ -141,6 +146,7 @@ $artifactTitle = switch ($Edition) {
     "sim-30" { "Factorium Book One Internal Preview Simulation 30" }
     "sim-31" { "Factorium Two-Book Product Architecture Simulation 31" }
     "sim-32" { "Factorium Tables Navigator Simulation 32" }
+    "sim-33" { "Factorium Canonical-Family Search Simulation 33" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -932,6 +938,16 @@ if ($editionNumber -ge 4) {
     $searchPaths = [System.Collections.Generic.HashSet[string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
     )
+    $searchTitleByPath = [System.Collections.Generic.Dictionary[string, string]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    foreach ($selectedRecord in @($numberedSelections) + @($guideSelections)) {
+        $selectedRelativePath = [System.IO.Path]::GetRelativePath(
+            $workspace,
+            $selectedRecord.path
+        ).Replace("\", "/")
+        $searchTitleByPath[$selectedRelativePath] = $selectedRecord.title
+    }
     $missingSearchTargets = [System.Collections.Generic.List[string]]::new()
     foreach ($selection in @($numberedSelections) + @($guideSelections)) {
         if (-not $searchPaths.Add($selection.path)) {
@@ -990,6 +1006,37 @@ if ($editionNumber -ge 4) {
         if ($editionNumber -ge 7) {
             $searchRecord.href = "entries/$(ConvertTo-SitePageName $relativePath)"
         }
+        if ($editionNumber -ge 33) {
+            if ($canonicalClassByPath.ContainsKey($relativePath)) {
+                $ownerPath = $canonicalOwnerByPath[$relativePath]
+                if (-not $searchTitleByPath.ContainsKey($ownerPath)) {
+                    throw "Canonical-family search owner is not selected: $relativePath -> $ownerPath"
+                }
+                $searchRecord.familyKey = $ownerPath
+                $searchRecord.familyKind = "canonical"
+                $searchRecord.familyTitle = $searchTitleByPath[$ownerPath]
+                $searchRecord.familyHref = "entries/$(ConvertTo-SitePageName $ownerPath)"
+                $searchRecord.recordClass = if ($canonicalClassByPath[$relativePath] -eq "entry") {
+                    "canonical-entry"
+                }
+                else { "specialized-view" }
+            }
+            else {
+                $searchRecord.familyKey = $relativePath
+                $searchRecord.familyKind = if ($relativePath.StartsWith("guides/")) {
+                    "guide"
+                }
+                elseif ($relativePath.StartsWith("tables/")) { "curated" }
+                else { "reader" }
+                $searchRecord.familyTitle = $selection.title
+                $searchRecord.familyHref = $searchRecord.href
+                $searchRecord.recordClass = if ($relativePath.StartsWith("guides/")) {
+                    "guide"
+                }
+                elseif ($relativePath.StartsWith("tables/")) { "curated-record" }
+                else { "reader-record" }
+            }
+        }
         $searchRecords.Add($searchRecord)
     }
     if ($missingSearchTargets.Count -ne 0) {
@@ -1004,6 +1051,9 @@ if ($editionNumber -ge 4) {
         [System.Text.UTF8Encoding]::new($false)
     )
     $searchCss = Get-Content -LiteralPath $searchStyle -Raw
+    if ($editionNumber -ge 33) {
+        $searchCss += "`n" + (Get-Content -LiteralPath $familySearchStyle -Raw)
+    }
     $searchJavaScript = Get-Content -LiteralPath $searchScript -Raw
     $searchShell = @'
 <section class="proof-search" aria-labelledby="proof-search-heading">
@@ -1025,6 +1075,22 @@ if ($editionNumber -ge 4) {
 <noscript><p>Search needs JavaScript. Every destination remains available in Browse the book.</p></noscript>
 </section>
 '@
+    if ($editionNumber -ge 33) {
+        $searchShell = $searchShell.Replace(
+            '<div class="proof-search__controls">',
+            '<div class="proof-search__controls proof-search__controls--families">'
+        ).Replace(
+            '</div>' + "`n" + '<p id="proof-search-status"',
+            @'
+<label for="proof-search-view">Result view
+<select id="proof-search-view"><option value="families">Table families</option><option value="records">All records</option></select>
+</label>
+</div>
+<p class="proof-search__families-boundary">Table families show exact publication ownership, not broader/narrower, synonym, relatedness, dependency, or closure.</p>
+<p id="proof-search-status"
+'@
+        )
+    }
     $htmlText = $htmlText.Replace('</head>', "<style>`n$searchCss`n</style>`n</head>")
     $navigationIndex = $htmlText.IndexOf('<nav id="TOC"', [System.StringComparison]::Ordinal)
     if ($navigationIndex -lt 0) {
@@ -1034,7 +1100,11 @@ if ($editionNumber -ge 4) {
     $searchBootstrap = "<script>window.FACTORIUM_SEARCH_INDEX=$searchJson;</script>`n<script>$searchJavaScript</script>`n"
     $htmlText = $htmlText.Replace('</body>', $searchBootstrap + '</body>')
 
-    $searchAssets = foreach ($asset in @($searchStyle, $searchScript)) {
+    $searchAssetPaths = @($searchStyle, $searchScript)
+    if ($editionNumber -ge 33) {
+        $searchAssetPaths += $familySearchStyle
+    }
+    $searchAssets = foreach ($asset in $searchAssetPaths) {
         [ordered]@{
             path = [System.IO.Path]::GetRelativePath($workspace, $asset).Replace("\", "/")
             sha256 = (Get-FileHash -LiteralPath $asset -Algorithm SHA256).Hash.ToLowerInvariant()
@@ -1049,6 +1119,20 @@ if ($editionNumber -ge 4) {
         missing_rendered_targets = $missingSearchTargets.Count
         result_limit = 20
         execution = "static in-browser; no server or alternate content authority"
+    }
+    if ($editionNumber -ge 33) {
+        $familyKeys = @($searchRecords.familyKey | Sort-Object -Unique)
+        $familyOwnerRecords = @($searchRecords | Where-Object { $_.familyKind -eq "canonical" })
+        $familySpecializedViews = @($familyOwnerRecords | Where-Object { $_.recordClass -eq "specialized-view" })
+        if ($familySpecializedViews.Count -ne 95 -or
+            @($familyOwnerRecords | Where-Object { [string]::IsNullOrWhiteSpace($_.familyHref) }).Count -ne 0) {
+            throw "Canonical-family search ownership mismatch"
+        }
+        $searchChecks.result_views = @("families", "records")
+        $searchChecks.default_result_view = "families"
+        $searchChecks.ownership_groups = $familyKeys.Count
+        $searchChecks.specialized_view_owners = $familySpecializedViews.Count
+        $searchChecks.family_semantics = "exact-publication-ownership-only"
     }
 }
 
@@ -1547,6 +1631,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 32) {
         $siteCssParts += (Get-Content -LiteralPath $tableNavigatorStyle -Raw)
+    }
+    if ($editionNumber -ge 33) {
+        $siteCssParts += (Get-Content -LiteralPath $familySearchStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -3502,6 +3589,13 @@ $pageScripts
         $siteChecks.table_authored_connections = $tableAuthoredConnections
         $siteChecks.table_connection_preview_links = $tableConnectionPreviewLinks
         $siteChecks.table_connection_semantics = "authored-untyped-navigation-only"
+    }
+    if ($editionNumber -ge 33) {
+        $siteChecks.search_result_views = @("families", "records")
+        $siteChecks.search_default_result_view = "families"
+        $siteChecks.search_ownership_groups = $searchChecks.ownership_groups
+        $siteChecks.search_specialized_view_owners = $searchChecks.specialized_view_owners
+        $siteChecks.search_family_semantics = $searchChecks.family_semantics
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1
