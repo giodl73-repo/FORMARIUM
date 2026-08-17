@@ -460,6 +460,10 @@ node tools\check_synthetic_user_campaign.js
 node tools\run_synthetic_user_browse.js
 node tools\build_synthetic_user_results.js
 node tools\check_synthetic_user_results.js
+node tools\check_synthetic_route_campaign.js
+node tools\run_synthetic_route_browse.js
+node tools\build_synthetic_route_results.js
+node tools\check_synthetic_route_results.js
 node tools\check_system_architecture_description.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_decision_bridge_combined_closure.js

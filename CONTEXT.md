@@ -1072,6 +1072,17 @@ stopping boundaries. No repair or new edition is admitted. The personas and
 reactions are synthetic and provide no reader, demographic, usability,
 accessibility, demand, preference, adoption, or return-use evidence.
 
+The dependent term-blind follow-up at
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-ROUTE-CHOICE-INERTIA-RESULT.md`
+reuses those profiles for 25 new problem prompts and 50 frozen queries. Exact
+`sim-42` rankings reach a relevant canonical family for 24 prompts. Authored
+product hypotheses assign 14 first entrances to Search, eight to Compose, two
+to Reader, and one to none; none begin at Tables A-Z. This sharpens the
+two-entrance hypothesis while preserving HIGH incumbent inertia: Factorium
+supplements familiar tools or earns a switch for structure, then stops and
+hands outward. No product repair, edition, external gate, or reader claim is
+admitted.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

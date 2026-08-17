@@ -2780,3 +2780,20 @@ multi-concept questions. Six roles approve that synthesis with no P1/P2
 finding. No content, search, UI, or edition repair is admitted; only real
 readers can test whether the job is recognized or valuable. See
 `SYNTHETIC-USER-JOB-DISCOVERY-RESULT.md`.
+
+## 2026-08-17 synthetic route choice and inertia
+
+The dependent SUJ-02 follow-up froze 25 term-blind problem prompts and 50
+literal queries at commit `1703de0`, then ran them unchanged against the exact
+185-record `sim-42` index. Twenty-four prompts reach a selected destination or
+another view owned by its canonical family within either first-five list. The
+green dashboard-dot prompt is the sole canonical-vocabulary miss.
+
+Authored product hypotheses assign fourteen first entrances to Search, eight
+to Compose, two to Reader, and one to none. Sixteen routes supplement the
+incumbent chain, eight switch for structure, and one stays with the incumbent.
+Tables A-Z receives no term-blind first entrance and remains recognized-term
+browse. Six roles approve the result with no P1/P2 finding. No content,
+search, UI, navigation, or edition repair is admitted. Trust, memory, fun,
+density, route choice, and inertia classifications remain authored hypotheses,
+not reader evidence. See `SYNTHETIC-ROUTE-CHOICE-INERTIA-RESULT.md`.

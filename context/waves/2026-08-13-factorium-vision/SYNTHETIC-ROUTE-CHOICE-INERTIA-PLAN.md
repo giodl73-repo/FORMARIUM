@@ -2,7 +2,8 @@
 
 Date: 2026-08-17
 
-Status: proposed freeze; execution not started
+Status: complete; executed unchanged against `sim-42`; see
+`SYNTHETIC-ROUTE-CHOICE-INERTIA-RESULT.md`
 
 Campaign: `SUJ-02`
 
