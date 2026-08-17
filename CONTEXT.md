@@ -948,6 +948,23 @@ standalone SHA-256 is
 `sim-34` reproduces exactly. Alphabetical adjacency is presentation only, not
 semantic relatedness or reader-value evidence.
 
+`sim-36` gives The Factorium Reader a dedicated route reciprocal to the Tables
+A-Z page. It reconstructs the exact frozen 24-record teaching spine once and in
+manifest order across its five authored parts sized 6/6/5/4/3. Every step links
+its selected-edition Table destination; Guides and Reader support records stay
+outside the spine. Home, Table pages, Tables A-Z, chapters, and Reader now share
+direct book navigation. The complete eighteen-part directory is separately
+labelled All contents and applications.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+eighteen chapters, and adds one page for 239 total with zero missing targets.
+Site identity is
+`e7527e7213f414c56d3c4c546565ff249ee36e0525a6b90bbbda20e67fa3ed9a`;
+standalone SHA-256 is
+`ac962f4423204e620fa451a4a159339f7a00f2f531f111543768839ff274c861`.
+`sim-35` reproduces exactly. Teaching order is editorial only, not hierarchy,
+prerequisite truth, completeness, or reader-value evidence.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

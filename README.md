@@ -494,6 +494,8 @@ node tools\check_tables_family_contents.js target\proof-set-sim-34
 node tools\check_tables_family_contents_browser.js target\proof-set-sim-34 target\sim34-table-family-contents.png
 node tools\check_tables_alphabetical_index.js target\proof-set-sim-35
 node tools\check_tables_alphabetical_index_browser.js target\proof-set-sim-35 target\sim35-tables-alphabetical-index.png
+node tools\check_factorium_reader_route.js target\proof-set-sim-36
+node tools\check_factorium_reader_route_browser.js target\proof-set-sim-36 target\sim36-factorium-reader-route.png
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

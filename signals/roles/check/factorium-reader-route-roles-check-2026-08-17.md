@@ -4,8 +4,8 @@ topic: factorium-reader-route
 date: 2026-08-17
 roles_used: 7
 p1_count: 0
-p2_count: 14
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Factorium Reader Route Roles Check
@@ -106,3 +106,16 @@ inventing hierarchy, prerequisites, copied content, or user state.
 1. Generate one exact five-part Reader route from the frozen 24-record manifest.
 2. Preserve canonical destinations and keep Guides/support records outside the spine.
 3. Make navigation reciprocal, validate responsive behavior, and regress sim-35.
+
+## Fixed-point result
+
+All fourteen P2 findings are closed in `sim-36`: the exact frozen 24-record
+manifest appears once in exact order across five authored parts sized
+6/6/5/4/3; destinations retain selected-edition custody; Guides and Reader
+support records remain outside the spine; book navigation is reciprocal;
+Contents remains the complete mixed directory; mobile has no overflow; and
+`sim-35` reproduces exactly.
+
+Final verdict: PASS. The seven P3 notes remain durable design boundaries, not
+release blockers. No hierarchy, prerequisite, completeness, teaching-value,
+preference, or preview claim is admitted.

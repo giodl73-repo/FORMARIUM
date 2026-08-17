@@ -2461,3 +2461,23 @@ all-destinations directory, and state that editorial sequence is neither
 hierarchy nor prerequisite truth. No new lesson, content, relation,
 personalization, progress state, or reader-value claim is admitted. Detailed
 conditions are in `FACTORIUM-READER-ROUTE-ROLE-REVIEW.md`.
+
+Result review: `sim-36` gives The Factorium Reader one complete dedicated route
+beside Factorium Tables. It reconstructs the frozen 24-record candidate exactly
+once and in exact order across five authored parts sized 6/6/5/4/3. Every step
+reuses its selected-edition destination; Guides and Reader support records stay
+outside the spine. Home, Table pages, Tables A-Z, chapters, and Reader now have
+reciprocal book navigation, while the full mixed directory is explicitly All
+contents and applications.
+
+Static and live Edge checks pass for exact order, membership, part sizes,
+destinations, support-record exclusion, zero state, route separation, desktop
+columns, zero missing targets, and no 390-pixel overflow. The edition retains
+217 sources, 175 canonical records, 185 search records, eighteen chapters, and
+adds one page for 239 total. Site identity is
+`e7527e7213f414c56d3c4c546565ff249ee36e0525a6b90bbbda20e67fa3ed9a`;
+standalone SHA-256 is
+`ac962f4423204e620fa451a4a159339f7a00f2f531f111543768839ff274c861`.
+`sim-35` reproduces exactly. Product Owner decision: keep the reciprocal Reader
+route and stop before new lessons, inferred prerequisites, personalization, or
+progress state; reader value remains untested.

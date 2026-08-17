@@ -1,6 +1,6 @@
 # Factorium Reader Route
 
-Status: internal route contract under implementation
+Status: internal route contract fixed point
 
 Reference implementation: `sim-36`
 

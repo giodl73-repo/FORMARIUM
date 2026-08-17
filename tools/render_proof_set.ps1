@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -78,6 +78,7 @@ $twoBookSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\p
 $tableNavigatorStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-navigator.css"
 $tableFamilyContentsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-family-contents.css"
 $tablesIndexStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-tables-index.css"
+$readerRouteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader-route.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -151,6 +152,7 @@ $artifactTitle = switch ($Edition) {
     "sim-33" { "Factorium Canonical-Family Search Simulation 33" }
     "sim-34" { "Factorium Canonical-Family Contents Simulation 34" }
     "sim-35" { "Factorium Tables Alphabetical Index Simulation 35" }
+    "sim-36" { "Factorium Reader Route Simulation 36" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -1486,6 +1488,7 @@ if ($editionNumber -ge 7) {
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
     $siteTablesIndex = if ($editionNumber -ge 35) { Join-Path $output "tables.html" } else { $null }
+    $siteReader = if ($editionNumber -ge 36) { Join-Path $output "reader.html" } else { $null }
     $siteEntryDirectory = Join-Path $output "entries"
     $siteChapterDirectory = Join-Path $output "chapters"
     $siteAssetDirectory = Join-Path $output "assets"
@@ -1653,6 +1656,12 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 35) {
         $siteCssParts += (Get-Content -LiteralPath $tablesIndexStyle -Raw)
+    }
+    if ($editionNumber -ge 36) {
+        if (-not (Test-Path -LiteralPath $readerRouteStyle -PathType Leaf)) {
+            throw "Missing Reader route style: $readerRouteStyle"
+        }
+        $siteCssParts += (Get-Content -LiteralPath $readerRouteStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -2353,7 +2362,7 @@ if ($editionNumber -ge 7) {
     $compositionTraceTargets = 0
     $heroDeck = "A linked reference for selecting senses, comparing decompositions, choosing bounded relations, and recognizing structures that fail."
     if ($editionNumber -ge 30) {
-        foreach ($candidateSource in @($bookOneGuide, $bookOneQuickstart, $bookOneFeedback)) {
+        foreach ($candidateSource in @($bookOneGuide, $bookOneQuickstart, $bookOneTasks, $bookOneFeedback)) {
             $candidateSource = [System.IO.Path]::GetFullPath($candidateSource)
             if (-not $pageBySource.ContainsKey($candidateSource)) {
                 throw "Book One candidate source is absent from the proof: $candidateSource"
@@ -2361,6 +2370,7 @@ if ($editionNumber -ge 7) {
         }
         $candidateGuidePage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneGuide)])"
         $candidateQuickstartPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneQuickstart)])"
+        $candidateTasksPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneTasks)])"
         $candidateFeedbackPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneFeedback)])"
         $candidateStartTargets = 3
         if ($editionNumber -ge 31) {
@@ -2429,14 +2439,14 @@ if ($editionNumber -ge 7) {
 <p class="site-book-card__kind">Teaching companion · selected route</p>
 <h3>The Factorium Reader</h3>
 <p>Learn the method through a 24-record spine and worked bounded questions, then return to the owning Tables whenever more depth is needed.</p>
-<div class="site-book-card__actions"><a class="site-book-card__primary" href="#reader">Read the Guide</a><a href="#problems">See worked questions</a></div>
+<div class="site-book-card__actions"><a class="site-book-card__primary" href="$(if ($editionNumber -ge 36) { 'reader.html' } else { '#reader' })">$(if ($editionNumber -ge 36) { 'Open the Reader' } else { 'Read the Guide' })</a><a href="#problems">See worked questions</a></div>
 </article>
 </div>
 <p class="site-library__authority"><strong>The Tables define and distinguish.</strong> The Reader teaches and demonstrates. Factor Guides apply selected Tables to one bounded question.</p>
 </section>
 "@
-            $homeCandidateNav = '<a href="#library">Tables</a><a href="#reader">Reader</a>'
-            $nestedCandidateNav = '<a href="../index.html#library">Tables</a><a href="../index.html#reader">Reader</a>'
+            $homeCandidateNav = if ($editionNumber -ge 36) { '<a href="tables.html">Tables</a><a href="reader.html">Reader</a>' } else { '<a href="#library">Tables</a><a href="#reader">Reader</a>' }
+            $nestedCandidateNav = if ($editionNumber -ge 36) { '<a href="../tables.html">Tables</a><a href="../reader.html">Reader</a>' } else { '<a href="../index.html#library">Tables</a><a href="../index.html#reader">Reader</a>' }
         }
         else {
             $homeCandidateNav = '<a href="#candidate">Candidate</a>'
@@ -2749,8 +2759,8 @@ if ($editionNumber -ge 7) {
 </section>
 <div id="search">$homeSearchShell</div>
 <section id="contents" class="site-contents">
-<h2>$(if ($editionNumber -ge 35) { 'Book contents and guided use' } elseif ($editionNumber -ge 31) { 'Browse the Tables' } else { 'Browse the book' })</h2>
-<p class="site-contents__intro">$(if ($editionNumber -ge 35) { "$($siteChapters.Count) parts retain the ordered Reader and guided-use route across $($searchRecords.Count) indexed destinations. Use the Tables Index for alphabetical headword browse." } elseif ($editionNumber -ge 31) { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination has a dedicated lookup page; record-kind labels keep canonical Tables distinct from Guides." } else { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page." })</p>
+<h2>$(if ($editionNumber -ge 36) { 'All contents and applications' } elseif ($editionNumber -ge 35) { 'Book contents and guided use' } elseif ($editionNumber -ge 31) { 'Browse the Tables' } else { 'Browse the book' })</h2>
+<p class="site-contents__intro">$(if ($editionNumber -ge 36) { "$($siteChapters.Count) parts organize all $($searchRecords.Count) indexed destinations. Use the Tables Index for canonical headwords or the Reader for its selected 24-record teaching route." } elseif ($editionNumber -ge 35) { "$($siteChapters.Count) parts retain the ordered Reader and guided-use route across $($searchRecords.Count) indexed destinations. Use the Tables Index for alphabetical headword browse." } elseif ($editionNumber -ge 31) { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination has a dedicated lookup page; record-kind labels keep canonical Tables distinct from Guides." } else { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page." })</p>
 <ol class="site-chapter-grid">$chapterItems</ol>
 </section>
 </main>
@@ -2829,7 +2839,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="tables.html" aria-current="page">Tables</a><a href="index.html#reader">Reader</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary"><a href="tables.html" aria-current="page">Tables</a><a href="$(if ($editionNumber -ge 36) { 'reader.html' } else { 'index.html#reader' })">Reader</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main tables-index">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Factorium</a> / Tables A-Z</nav>
@@ -2854,6 +2864,133 @@ if ($editionNumber -ge 7) {
 </html>
 "@
         [System.IO.File]::WriteAllText($siteTablesIndex, $tablesIndexHtml, [System.Text.UTF8Encoding]::new($false))
+    }
+
+    $readerRouteRecordCount = 0
+    $readerRoutePartCount = 0
+    $readerRoutePartSizes = @()
+    if ($editionNumber -ge 36) {
+        $candidateManifestText = Get-Content -LiteralPath $bookOneCandidateManifest -Raw
+        $candidateRecordMatches = [regex]::Matches(
+            $candidateManifestText,
+            '(?m)^record\s+(\d{2})\s+\|\s+(tables/[^\r\n]+)$'
+        )
+        if ($candidateRecordMatches.Count -ne 24) {
+            throw "Reader route manifest record mismatch: $($candidateRecordMatches.Count)"
+        }
+        $candidateRecordPaths = [System.Collections.Generic.List[string]]::new()
+        for ($candidateIndex = 0; $candidateIndex -lt $candidateRecordMatches.Count; $candidateIndex++) {
+            $expectedOrdinal = $candidateIndex + 1
+            $actualOrdinal = [int]$candidateRecordMatches[$candidateIndex].Groups[1].Value
+            if ($actualOrdinal -ne $expectedOrdinal) {
+                throw "Reader route manifest ordinal mismatch: $actualOrdinal/$expectedOrdinal"
+            }
+            $candidateRecordPath = $candidateRecordMatches[$candidateIndex].Groups[2].Value.Trim()
+            if (-not $searchRecordByPath.ContainsKey($candidateRecordPath)) {
+                throw "Reader route record is absent from selected search custody: $candidateRecordPath"
+            }
+            $candidateRecordPaths.Add($candidateRecordPath)
+        }
+        if (@($candidateRecordPaths | Sort-Object -Unique).Count -ne 24) {
+            throw "Reader route manifest repeats a record"
+        }
+
+        $candidateGuideText = Get-Content -LiteralPath $bookOneGuide -Raw
+        $candidatePartMatches = [regex]::Matches(
+            $candidateGuideText,
+            '(?ms)^###\s+([IVX]+)\.\s+([^\r\n]+)\r?\n(.*?)(?=^###\s+|^##\s+Fixed boundary)'
+        )
+        if ($candidatePartMatches.Count -ne 5) {
+            throw "Reader route authored part mismatch: $($candidatePartMatches.Count)"
+        }
+        $authoredRecordPaths = [System.Collections.Generic.List[string]]::new()
+        $readerPartSections = [System.Text.StringBuilder]::new()
+        $readerSequence = 0
+        foreach ($candidatePartMatch in $candidatePartMatches) {
+            $partRoman = $candidatePartMatch.Groups[1].Value
+            $partTitle = $candidatePartMatch.Groups[2].Value.Trim()
+            $partLinkMatches = [regex]::Matches(
+                $candidatePartMatch.Groups[3].Value,
+                '\]\(\.\./(tables/[^\)]+)\)'
+            )
+            $partSize = $partLinkMatches.Count
+            $readerRoutePartSizes += $partSize
+            $partRows = [System.Text.StringBuilder]::new()
+            foreach ($partLinkMatch in $partLinkMatches) {
+                $recordPath = $partLinkMatch.Groups[1].Value
+                $authoredRecordPaths.Add($recordPath)
+                $record = $searchRecordByPath[$recordPath]
+                $readerSequence += 1
+                $encodedSequence = $readerSequence.ToString("00")
+                $encodedRecordTitle = [System.Net.WebUtility]::HtmlEncode($record.title)
+                $encodedRecordMeta = [System.Net.WebUtility]::HtmlEncode(
+                    (@($record.kind, $record.domain) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }) -join " · "
+                )
+                [void]$partRows.Append(
+                    "<li data-reader-path=`"$recordPath`"><span class=`"reader-route__number`">$encodedSequence</span><a href=`"$($record.href)`">$encodedRecordTitle</a><span class=`"reader-route__meta`">$encodedRecordMeta</span></li>"
+                )
+                $readerRouteRecordCount += 1
+            }
+            $encodedPartTitle = [System.Net.WebUtility]::HtmlEncode($partTitle)
+            $readerRoutePartCount += 1
+            [void]$readerPartSections.Append(
+                "<section class=`"reader-route__part`" id=`"reader-part-$readerRoutePartCount`"><p class=`"reader-route__part-number`">Part $partRoman · $partSize records</p><h2>$encodedPartTitle</h2><ol>$partRows</ol></section>"
+            )
+        }
+        if ($authoredRecordPaths.Count -ne $candidateRecordPaths.Count) {
+            throw "Reader route authored record count mismatch: $($authoredRecordPaths.Count)/$($candidateRecordPaths.Count)"
+        }
+        for ($candidateIndex = 0; $candidateIndex -lt $candidateRecordPaths.Count; $candidateIndex++) {
+            if (-not $candidateRecordPaths[$candidateIndex].Equals(
+                    $authoredRecordPaths[$candidateIndex],
+                    [System.StringComparison]::OrdinalIgnoreCase
+                )) {
+                throw "Reader route manifest/guide order mismatch at $($candidateIndex + 1): $($candidateRecordPaths[$candidateIndex])/$($authoredRecordPaths[$candidateIndex])"
+            }
+        }
+        if (($readerRoutePartSizes -join ",") -ne "6,6,5,4,3") {
+            throw "Reader route part sizes mismatch: $($readerRoutePartSizes -join ',')"
+        }
+
+        $readerRouteHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The selected five-part teaching route through Factorium Tables.">
+<title>The Factorium Reader · Factorium</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="proof-site reader-ready reader-route-page">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="index.html">Factorium</a>
+<nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html" aria-current="page">Reader</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$candidateQuickstartPage">Quickstart</a></nav>
+</div></header>
+<main id="main-content" class="site-main reader-route">
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Factorium</a> / Reader</nav>
+<section class="reader-route__heading">
+<p class="site-kicker">Teaching companion · selected route</p>
+<h1>The Factorium Reader</h1>
+<p>Learn one bounded method through 24 selected records in five parts, then return to the canonical Tables whenever the question needs more depth.</p>
+<div class="reader-route__actions"><a class="reader-route__primary" href="$candidateQuickstartPage">Start with the quickstart</a><a href="$candidateGuidePage">Read the complete method</a><a href="$candidateTasksPage">Try worked questions</a><a href="tables.html">Browse Tables A-Z</a></div>
+<p class="reader-route__boundary"><strong>Tables remain authoritative.</strong> This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other 151 records.</p>
+</section>
+<nav class="reader-route__parts" aria-label="Reader parts"><a href="#reader-part-1">I</a><a href="#reader-part-2">II</a><a href="#reader-part-3">III</a><a href="#reader-part-4">IV</a><a href="#reader-part-5">V</a></nav>
+<div class="reader-route__spine">$readerPartSections</div>
+<section class="reader-route__after" aria-labelledby="reader-route-after-heading">
+<p class="site-kicker">After the selected route</p>
+<h2 id="reader-route-after-heading">Branch only when the question requires it</h2>
+<p>Search or browse the full Tables for specialized depth. Factor Guides apply selected Tables to bounded questions; they are not additional Reader chapters or a third authority.</p>
+<div class="reader-route__actions"><a href="index.html#search">Search all Tables</a><a href="index.html#problems">Open bounded applications</a><a href="index.html#contents">See all contents</a></div>
+</section>
+</main>
+<footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01</footer>
+</body>
+</html>
+"@
+        [System.IO.File]::WriteAllText($siteReader, $readerRouteHtml, [System.Text.UTF8Encoding]::new($false))
     }
 
     if ($editionNumber -ge 16) {
@@ -3644,6 +3781,7 @@ $pageScripts
     }
     $siteHtmlFiles = @($siteIndex) +
         @(if ($editionNumber -ge 35) { $siteTablesIndex }) +
+        @(if ($editionNumber -ge 36) { $siteReader }) +
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @($actualChapterFiles | ForEach-Object { $_.FullName }) +
         @($actualEntryFiles | ForEach-Object { $_.FullName })
@@ -3696,6 +3834,7 @@ $pageScripts
 
     $siteOutputFiles = @($siteIndex) +
         @(if ($editionNumber -ge 35) { $siteTablesIndex }) +
+        @(if ($editionNumber -ge 36) { $siteReader }) +
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @(Get-ChildItem -LiteralPath $siteChapterDirectory -File | ForEach-Object { $_.FullName }) +
         @(Get-ChildItem -LiteralPath $siteEntryDirectory -File | ForEach-Object { $_.FullName }) +
@@ -3794,6 +3933,21 @@ $pageScripts
         $siteChecks.tables_index_reader_records = 0
         $siteChecks.tables_index_order = "normalized-selected-title"
         $siteChecks.tables_index_semantics = "alphabetical-presentation-only"
+    }
+    if ($editionNumber -ge 36) {
+        if ($readerRouteRecordCount -ne 24 -or
+            $readerRoutePartCount -ne 5 -or
+            ($readerRoutePartSizes -join ",") -ne "6,6,5,4,3") {
+            throw "Factorium Reader route mismatch: records=$readerRouteRecordCount parts=$readerRoutePartCount sizes=$($readerRoutePartSizes -join ',')"
+        }
+        $siteChecks.reader_route_pages = 1
+        $siteChecks.reader_route_records = $readerRouteRecordCount
+        $siteChecks.reader_route_parts = $readerRoutePartCount
+        $siteChecks.reader_route_part_sizes = @($readerRoutePartSizes)
+        $siteChecks.reader_route_guides = 0
+        $siteChecks.reader_route_support_records = 0
+        $siteChecks.reader_route_order = "exact-frozen-manifest"
+        $siteChecks.reader_route_semantics = "editorial-teaching-sequence-only"
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1
@@ -3966,7 +4120,8 @@ if ($editionNumber -ge 7) {
     Write-Output "site=$siteIndex"
     $compositionLabPageCount = if ($editionNumber -ge 16) { $siteChecks.composition_lab_pages } else { 0 }
     $tablesIndexPageCount = if ($editionNumber -ge 35) { $siteChecks.tables_index_pages } else { 0 }
-    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + $tablesIndexPageCount + 1)"
+    $readerRoutePageCount = if ($editionNumber -ge 36) { $siteChecks.reader_route_pages } else { 0 }
+    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + $tablesIndexPageCount + $readerRoutePageCount + 1)"
     Write-Output "site_chapters=$($siteChecks.chapter_pages)"
     Write-Output "site_chapter_subsections=$($siteChecks.chapter_subsections)"
     Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"
