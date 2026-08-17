@@ -2445,3 +2445,19 @@ standalone SHA-256 is
 `sim-34` reproduces exactly. Product Owner decision: keep canonical-first A-Z
 browse and stop before semantic clusters, facets, or recommendations; reader
 value remains untested.
+
+## 2026-08-17 Factorium Reader route plan
+
+The next slice closes the reciprocal two-book route mismatch demonstrated by
+structural inspection. Factorium Tables has a complete dedicated A-Z route,
+but its named Reader companion is still split across homepage fragments and a
+mixed 185-destination Contents directory. `sim-36` will add one dedicated
+Reader page over the frozen 24-record, five-part teaching spine.
+
+Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
+The route must reconstruct exact manifest order, retain canonical destinations,
+exclude Guides and Reader support records from the spine, keep Contents as an
+all-destinations directory, and state that editorial sequence is neither
+hierarchy nor prerequisite truth. No new lesson, content, relation,
+personalization, progress state, or reader-value claim is admitted. Detailed
+conditions are in `FACTORIUM-READER-ROUTE-ROLE-REVIEW.md`.
