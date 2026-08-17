@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -13,6 +13,11 @@ $supplement = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-
 $factorForgeTasks = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-TASKS.md"
 $factorForgeRubric = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-RUBRIC.md"
 $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-SET-SIM-QUICKSTART.md"
+$bookOneGuide = Join-Path $workspace "guides\bounded-question-composition-book-one.md"
+$bookOneQuickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\BOOK-ONE-SIM-QUICKSTART.md"
+$bookOneTasks = Join-Path $workspace "volumes\01-structure-quantity-choice\BOOK-ONE-SIM-TASKS.md"
+$bookOneFeedback = Join-Path $workspace "volumes\01-structure-quantity-choice\BOOK-ONE-PREVIEW-FEEDBACK-TEMPLATE.md"
+$bookOneCandidateManifest = Join-Path $workspace "volumes\01-structure-quantity-choice\book-one-sim-candidate-v0.factorium"
 $compositionWorksheet = Join-Path $workspace "guides\system-dependency-composition-worksheet.md"
 $evidenceWorksheet = Join-Path $workspace "guides\latency-evidence-composition-worksheet.md"
 $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-worksheet.md"
@@ -54,11 +59,16 @@ $compositionStarterTitles = @(
 $style = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set.css"
 $searchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.css"
 $searchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search.js"
+$candidateSearchScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search-candidate.js"
+if ($editionNumber -ge 30) {
+    $searchScript = $candidateSearchScript
+}
 $readerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.css"
 $readerScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader.js"
 $contextStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.css"
 $contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-context.js"
 $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-site.css"
+$candidateSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-candidate.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -126,6 +136,7 @@ $artifactTitle = switch ($Edition) {
     "sim-27" { "Factorium Proof Set Composition Rerun Comparison Simulation 27" }
     "sim-28" { "Factorium Proof Set Factor Guide Skeleton Simulation 28" }
     "sim-29" { "Factorium Proof Set Local Evaluation Record Simulation 29" }
+    "sim-30" { "Factorium Book One Internal Preview Simulation 30" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -396,6 +407,12 @@ function Get-GuideSelections {
             path = [System.IO.Path]::GetFullPath($decisionChoiceGuide)
         }
     }
+    if ($editionNumber -ge 30) {
+        [ordered]@{
+            title = "Book One Candidate Quickstart"
+            path = [System.IO.Path]::GetFullPath($bookOneQuickstart)
+        }
+    }
 }
 
 function Get-SiteChapterSelections {
@@ -606,6 +623,13 @@ if ($Edition -ne "sim-01") {
         $selectionChecks.missing_task_coverage_paths = $missingTaskCoverage.Count
         $selectionChecks.extra_task_coverage_paths = $extraTaskCoverage.Count
     }
+    if ($editionNumber -ge 30) {
+        $selectionChecks.book_one_candidate_path = [System.IO.Path]::GetRelativePath($workspace, $bookOneCandidateManifest).Replace("\", "/")
+        $selectionChecks.book_one_candidate_sha256 = (Get-FileHash -LiteralPath $bookOneCandidateManifest -Algorithm SHA256).Hash.ToLowerInvariant()
+        $selectionChecks.book_one_spine_records = 24
+        $selectionChecks.book_one_specialized_depth_records = 151
+        $selectionChecks.book_one_route_strategies = 4
+    }
 }
 
 Add-ProofSource $quickstart
@@ -687,6 +711,11 @@ if ($editionNumber -ge 28) {
 if ($editionNumber -ge 29) {
     Add-ProofSource $compositionEvaluationSpec
 }
+if ($editionNumber -ge 30) {
+    Add-ProofSource $bookOneQuickstart
+    Add-ProofSource $bookOneTasks
+    Add-ProofSource $bookOneFeedback
+}
 
 foreach ($selectionDocument in $selectionDocuments) {
     $selectionDirectory = Split-Path $selectionDocument
@@ -735,6 +764,12 @@ finally {
 }
 
 $htmlText = Get-Content -LiteralPath $html -Raw
+if ($editionNumber -lt 30) {
+    # The Book One guide was added to guides/INDEX.md after sim-29 was frozen.
+    # Keep historical editions reproducible while sim-30 adopts that index row.
+    $bookOneIndexPattern = '(?s)<li><a [^>]*>Bounded-Question\s*Composition and Evaluation</a>\s*<ul>.*?exact 24-record candidate\s*Book One spine</li>\s*</ul></li>\s*'
+    $htmlText = [regex]::Replace($htmlText, $bookOneIndexPattern, '')
+}
 $headingMatches = [regex]::Matches($htmlText, '<h1 id="([^"]+)"')
 if ($headingMatches.Count -ne $sources.Count) {
     throw "Expected one top-level heading per source; found $($headingMatches.Count) for $($sources.Count) sources"
@@ -833,7 +868,10 @@ if ($editionNumber -ge 4) {
         Get-NumberedSelections $supplement
     )
     $guideSelections = @(Get-GuideSelections)
-    $expectedGuideCount = if ($editionNumber -ge 29) {
+    $expectedGuideCount = if ($editionNumber -ge 30) {
+        10
+    }
+    elseif ($editionNumber -ge 29) {
         9
     }
     elseif ($editionNumber -ge 14) {
@@ -1468,6 +1506,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 29) {
         $siteCssParts += (Get-Content -LiteralPath $compositionEvaluationStyle -Raw)
+    }
+    if ($editionNumber -ge 30) {
+        $siteCssParts += (Get-Content -LiteralPath $candidateSiteStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -2151,14 +2192,54 @@ if ($editionNumber -ge 7) {
     }
 
     $problemLedTargets = 0
+    $candidateStartTargets = 0
+    $candidateSection = ""
     $problemSection = ""
     $compositionSection = ""
     $homeProblemNav = ""
     $nestedProblemNav = ""
     $homeComposeNav = ""
+    $homeCandidateNav = ""
+    $nestedCandidateNav = ""
     $nestedComposeNav = ""
     $compositionTraceTargets = 0
     $heroDeck = "A linked reference for selecting senses, comparing decompositions, choosing bounded relations, and recognizing structures that fail."
+    if ($editionNumber -ge 30) {
+        foreach ($candidateSource in @($bookOneGuide, $bookOneQuickstart, $bookOneFeedback)) {
+            $candidateSource = [System.IO.Path]::GetFullPath($candidateSource)
+            if (-not $pageBySource.ContainsKey($candidateSource)) {
+                throw "Book One candidate source is absent from the proof: $candidateSource"
+            }
+        }
+        $candidateGuidePage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneGuide)])"
+        $candidateQuickstartPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneQuickstart)])"
+        $candidateFeedbackPage = "entries/$($pageBySource[[System.IO.Path]::GetFullPath($bookOneFeedback)])"
+        $candidateStartTargets = 3
+        $candidateSection = @"
+
+<section id="candidate" class="site-start site-candidate" aria-labelledby="site-candidate-heading">
+<p class="site-kicker">Book One · internal candidate</p>
+<h2 id="site-candidate-heading">Bring one bounded question</h2>
+<p>Begin with a 24-record teaching spine, then open any of 151 additional canonical records as specialized depth. The spine is a route through the reference, not a second authority or completeness claim.</p>
+<div class="site-candidate__actions">
+<a class="site-candidate__primary" href="$candidateQuickstartPage">Start the candidate</a>
+<a href="$candidateGuidePage">Read the bounded-question guide</a>
+<a href="$candidateFeedbackPage">Inspect the future feedback path</a>
+</div>
+<ol class="site-candidate__brief">
+<li><strong>Question</strong><span>What exact distinction, decision, comparison, or explanation is needed?</span></li>
+<li><strong>Working concepts</strong><span>Which concepts may matter, and which senses remain unresolved?</span></li>
+<li><strong>Decisive constraints</strong><span>What can invalidate an attractive answer?</span></li>
+<li><strong>Result state</strong><span>Complete, incomplete, contradictory, or truncated?</span></li>
+<li><strong>Unresolved frontier</strong><span>What concept, evidence, condition, or authority is still missing?</span></li>
+<li><strong>Next action</strong><span>Inspect, obtain evidence, revise, reconcile, defer, or decide under authority.</span></li>
+</ol>
+</section>
+"@
+        $homeCandidateNav = '<a href="#candidate">Candidate</a>'
+        $nestedCandidateNav = '<a href="../index.html#candidate">Candidate</a>'
+        $heroDeck = "Bring a bounded question. Start with the 24-record Book One teaching spine, retain decisive constraints and unresolved frontier, and open the larger reference only when the question requires more depth."
+    }
     if ($editionNumber -ge 12) {
         $problemJourneys = @(
             [ordered]@{
@@ -2438,14 +2519,14 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$homeProblemNav$homeComposeNav<a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$homeCandidateNav$homeProblemNav$homeComposeNav<a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <section class="site-hero">
-<p class="site-kicker">Proof Set · book-site simulation</p>
+<p class="site-kicker">$(if ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
 <h1>Structure, Quantity, and Choice</h1>
 <p class="site-hero__deck">$heroDeck</p>
-</section>$problemSection$compositionSection
+</section>$candidateSection$problemSection$compositionSection
 <section id="start" class="site-start" aria-labelledby="site-start-heading">
 <p class="site-kicker">First journey</p>
 <h2 id="site-start-heading">From a vague problem to a bounded factorization</h2>
@@ -2904,7 +2985,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedProblemNav$nestedComposeNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
@@ -3038,7 +3119,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedProblemNav$nestedComposeNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <div class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
@@ -3193,6 +3274,9 @@ $pageScripts
         canonical_content_authority = "repository Markdown and reference metadata"
         execution = "multi-page static files; no server"
         identity = $siteIdentity
+    }
+    if ($editionNumber -ge 30) {
+        $siteChecks.candidate_start_targets = $candidateStartTargets
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1

@@ -2262,3 +2262,21 @@ feedback mechanics, exact custody, and a findings ledger. It adds no canonical
 content, relation, builder feature, fictional participant evidence, or
 `preview-01` claim. Detailed conditions are in
 `BOOK-ONE-INTERNAL-PREVIEW-SIMULATION-ROLE-REVIEW.md`.
+
+Result review: `sim-30` freezes and renders the 24-record Book One teaching
+spine over 151 searchable depth records. One candidate homepage route exposes
+the six-field brief, three direct starts, exact scope, and canonical-authority
+boundary. Four artifact strategies cover onboarding, an ordinary operating-
+plan query, an ambiguous percentage, and a synthetic scheduling decision.
+
+The simulation repaired a demonstrated stopword-ranking defect with a sim-30-
+specific search asset. It adds no canonical entry, view, relation, builder, or
+human evidence. The fixed edition contains 217 sources, 175 canonical records,
+10 guides, 185 search records, and 237 pages across 18 chapters with zero
+missing targets. Site identity is
+`651ce6faf5bd95ce00da918e6d917c3e305e654ccd76e03fd68f7ba55dead820`;
+standalone SHA-256 is
+`c965a8d608ddbceca8559258f4e65c0c6f9c08218dea3cdb6a5f94c00626fd28`.
+Historical `sim-29` reproduces exactly. Product Owner decision: prepare the
+candidate for future invited readers, without admitting `preview-01` or
+closing R4/R5P.

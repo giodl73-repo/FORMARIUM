@@ -1,6 +1,6 @@
 # Book One Internal Preview Simulation Role Review
 
-Status: plan reviewed; implementation pending
+Status: fixed-point result reviewed
 
 Date: 2026-08-17
 
@@ -46,3 +46,32 @@ They cannot close R4, admit `preview-01`, or satisfy R5P reader gates.
 - deterministic route and browser checks, including narrow-screen mechanics;
 - earlier `sim-29` identity retained;
 - fixed-point Product Owner decision.
+
+## Result review
+
+All twenty P2 plan conditions are closed. `sim-30` makes the candidate the
+first substantial homepage route, exposes the six-field brief and exact
+24-spine/151-depth boundary, and links directly to a candidate quickstart,
+bounded-question guide, and dormant future feedback path. The candidate
+manifest freezes four strategies, all 24 ordered paths, source/reference/
+relation/spine custody, and supporting artifacts.
+
+The route simulation found and repaired one concrete search defect: the
+ordinary operating-plan query previously promoted unrelated mathematical and
+thermal records through stopword matches. The separately versioned sim-30
+search ranks the candidate quickstart first and the guide fifth. The percent
+and scheduling routes retain alternate bases, constraints, evidence gaps,
+projection loss, result state, reconciliation, and decision authority.
+
+Static and live Edge checks cover candidate order, six fields, three links,
+exact counts, all four routes, punctuation handling, narrow-screen overflow,
+canonical authority, and zero missing targets. Historical `sim-29` reproduces
+with identity
+`41b581dffd8a6ec61af788bc7cd32320c3780286b42d383735b958b71adbe0af`
+and standalone SHA-256
+`8faf3fab330baf8feee29c7446f73d9229384d8e7ac4f14a6c9092dd774da660`.
+
+Product Owner decision: **prepare** this internal candidate for a future
+invited preview. Do not add content, builders, or gates now. No participant,
+comprehension, accessibility, application-value, preference, return-use,
+external-preview, or publication claim is admitted; R4 and R5P remain open.

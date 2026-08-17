@@ -424,10 +424,12 @@ current fixed point is 53 entries and 95 views with an empty generated
 unresolved list. Internal rehearsal does not establish real-world feasibility
 or reader value.
 
-1. freeze and internally simulate the 24-record candidate Book One spine for
-   independent onboarding and bounded application while readers are absent;
-2. repair only demonstrated route, projection, or explanation defects;
-3. continue internal Proof Set simulation preflights while
+1. maintain the frozen `sim-30` Book One candidate and its exact 24-record
+   spine, 151-record depth boundary, four route prompts, and custody ledger;
+2. repair only newly demonstrated route, projection, search, or explanation
+   defects; do not add content merely to keep the sequence moving;
+3. continue internal Proof Set simulation preflights only when they test a
+   concrete product-value risk, while
    keeping software subordinate to canonical books and Factor Tables;
 4. when readers become available, close The Sieve, forward-apply its findings,
    and run the Proof Set private preview on a frozen proof edition;

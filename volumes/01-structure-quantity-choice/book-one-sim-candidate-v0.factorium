@@ -1,0 +1,42 @@
+factorium-book-one-sim-candidate-v0
+candidate book-one-24
+status internal-simulation-only
+source-base af22e57
+source reference | 7f0ae1879dfba6148fdc3b31d0fc30a9a5140c406bb8341e62bf19db07bf1218
+source relations | df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634
+guide guides/bounded-question-composition-book-one.md | 407a64aedc0db959a23b969ccd6f08554379db62215566ad9006069ad083afde
+spine 6344336d8304bc2c678f80a71820d0e5ae7a37da5082b2cb95c0aeac2ab23780 | records=24 | specialized-depth=151 | canonical-total=175
+record 01 | tables/roots/purpose.md
+record 02 | tables/roots/context.md
+record 03 | tables/roots/boundary.md
+record 04 | tables/roots/identity.md
+record 05 | tables/roots/relation.md
+record 06 | tables/entries/claim-evidence.md
+record 07 | tables/entries/factorization-quality.md
+record 08 | tables/entries/decomposition-modes-combination-contracts.md
+record 09 | tables/constraints/factor-interaction-integrity.md
+record 10 | tables/entries/system-composition-dependency.md
+record 11 | tables/entries/scenario-assumption-condition-case.md
+record 12 | tables/evidence/factor-status-completeness.md
+record 13 | tables/entries/operational-resource-capacity-demand.md
+record 14 | tables/entries/interaction-request-response-correlation.md
+record 15 | tables/entries/spatial-operating-context.md
+record 16 | tables/entries/hazard-exposure-harm-safety.md
+record 17 | tables/diagnostics/operating-condition-failures.md
+record 18 | tables/entries/evaluation-measure-scale-criterion.md
+record 19 | tables/procedures/evaluation-aggregation.md
+record 20 | tables/diagnostics/evaluation-sensitivity.md
+record 21 | tables/entries/choice-alternative-selection.md
+record 22 | tables/mappings/perspective-projection.md
+record 23 | tables/procedures/contribution-reconciliation.md
+record 24 | tables/evidence/change-lineage.md
+strategy SIM-BO-01 | onboarding-first
+strategy SIM-BO-02 | search-first
+strategy SIM-BO-03 | contents-first
+strategy SIM-BO-04 | composition-first
+artifact quickstart | volumes/01-structure-quantity-choice/BOOK-ONE-SIM-QUICKSTART.md
+artifact tasks | volumes/01-structure-quantity-choice/BOOK-ONE-SIM-TASKS.md
+artifact rubric | volumes/01-structure-quantity-choice/BOOK-ONE-SIM-RUBRIC.md
+artifact feedback | volumes/01-structure-quantity-choice/BOOK-ONE-PREVIEW-FEEDBACK-TEMPLATE.md
+artifact findings | volumes/01-structure-quantity-choice/BOOK-ONE-SIM-FINDINGS.md
+end-candidate

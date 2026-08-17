@@ -467,6 +467,10 @@ node tools\check_proof_set_composition_evaluation.js target\proof-set-sim-29
 node tools\check_proof_set_composition_reading_browser.js target\proof-set-sim-29
 node tools\check_proof_set_composition_guide_browser.js target\proof-set-sim-29
 node tools\check_proof_set_composition_evaluation_browser.js target\proof-set-sim-29
+node tools\check_book_one_candidate.js target\proof-set-sim-30\search-index.json
+node tools\check_book_one_sim_candidate.js target\proof-set-sim-30
+node tools\check_proof_set_search.js target\proof-set-sim-30\search-index.json 185
+node tools\check_book_one_simulation_browser.js target\proof-set-sim-30 target\sim30-book-one-candidate.png
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

@@ -851,6 +851,24 @@ Constraint view gains five integrity rules and the unresolved catalog drops
 from nine terms to seven without admitting architecture styles or named
 frameworks.
 
+The F100 content and composition capstone is now followed by one Book One
+internal candidate fixed point. `sim-30` presents the exact 24-record teaching
+spine as the first homepage route while retaining 151 canonical records as
+searchable specialized depth. Four deterministic artifact inspections cover
+onboarding, an ordinary operating-plan query, an ambiguous percentage, and a
+synthetic scheduling decision. They repaired one demonstrated search-ranking
+defect and added exact candidate custody, a quickstart, separate prompts and
+rubric, a dormant future feedback path, and a result ledger.
+
+The edition contains 217 sources, 175 canonical records, 10 guides, 185 search
+records, and 237 pages across 18 chapters with zero missing targets. Site
+identity is
+`651ce6faf5bd95ce00da918e6d917c3e305e654ccd76e03fd68f7ba55dead820`;
+standalone SHA-256 is
+`c965a8d608ddbceca8559258f4e65c0c6f9c08218dea3cdb6a5f94c00626fd28`.
+The Product Owner decision is prepare, not broaden. No external-reader or
+`preview-01` claim is admitted, and R4/R5P remain open.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

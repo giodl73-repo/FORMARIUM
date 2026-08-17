@@ -4,7 +4,8 @@ topic: book-one-internal-preview-simulation
 date: 2026-08-17
 roles_used: 10
 p1_count: 0
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Book One Internal Preview Simulation Roles Check
@@ -153,3 +154,24 @@ evidence.
 3. Bind the candidate to exact source/reference/relation/spine/render
    identities, maintain a stable findings ledger, and leave R4/R5P external
    evidence gates open.
+
+## Fixed-point result verification
+
+All twenty P2 recommendations were implemented and rerun; no P1/P2 finding
+remains open.
+
+| Role | Closure evidence |
+|---|---|
+| Compositional Semantics Steward | The quickstart and guide retain typed ownership, ambiguity, exclusion, frontier, projection loss, and non-automatic evaluation. |
+| Experimental Methodologist | Four prompts remain artifact inspections; the ledger contains no participant denominator or human outcome field. |
+| Reference Architecture Editor | One 24-record teaching route fronts the site while 151 records remain canonical searchable depth. |
+| Evidence & Claims Editor | Every candidate artifact says internal simulation; R4/R5P and `preview-01` remain open. |
+| Benchmark Numeracy Checker | Mechanical checks reconcile 24 + 151 = 175, four strategies, ten guides, 185 search records, 217 sources, and 237 pages. |
+| Research Integrity & Provenance | The manifest binds source, reference, relation, guide, spine, artifact, site, and standalone identities. |
+| Mapping Integrity Auditor | The route is explicitly lossy and non-universal; direct search and specialized depth remain available. |
+| Reference Practitioner | The homepage leads with an ordinary bounded question and six retained fields; live narrow-screen mechanics pass. |
+| Schema Implementer | Missing/reordered spine paths, manifest drift, route omissions, bad rankings, and missing targets fail deterministic checks. |
+| Product Owner | One onboarding and search slice repaired demonstrated defects without new canonical content or product machinery. |
+
+Final verdict: **PASS**. Product decision: **prepare**, without external-reader
+or release admission.
