@@ -2097,3 +2097,22 @@ All Rust, reference, query, closure, task, search, composition, packet, role,
 browser, link, and diff checks pass. No independence, causal mechanism,
 attribution, completeness, model validity, reader value, external-preview,
 publication, Workbench, or `preview-01` claim is admitted.
+
+## 2026-08-16 F61-F70 evaluation grammar plan
+
+Plan review: make one reader job materially easier—interpret an unfamiliar
+score, rating, comparison, or pass/fail judgment without confusing its
+measure, scale, baseline, criterion, aggregation, threshold, or sensitivity.
+The thirteen-role review found zero P1 blockers, thirty-one P2 closure
+conditions, and eight P3 notes. It admits at most one evaluation anchor and a
+budget of eight task-specific views, merging overlapping scale/mapping and
+provenance/record work.
+
+The Product Owner decision is proceed under that merge/defer budget. Preserve
+source observations, populations and denominators, comparators, units/scales,
+direction, rules, missingness, uncertainty, component dimensions,
+interactions, noncompensation, vetoes, transformation loss, authority, and
+versions. Stop before universal scoring algebra, automated metric selection,
+named-metric catalogs, new typed relations, or reader-value claims. Detailed
+plan conditions are recorded in
+`F61-F70-EVALUATION-GRAMMAR-ROLE-REVIEW.md`.

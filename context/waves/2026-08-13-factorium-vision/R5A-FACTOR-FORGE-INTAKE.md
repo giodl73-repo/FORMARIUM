@@ -970,3 +970,24 @@ The relation sidecar remains eleven records. The 70-record Factor Forge delta
 and 38 tasks produce a 148-record book with 156 searchable destinations,
 fifteen chapters, 203 pages, and zero missing targets. Internal checks establish
 structure and mechanics only, not reader value or publication readiness.
+
+## F61-F70 evaluation grammar plan
+
+The next batch targets one reader job: reconstruct the meaning of an
+unfamiliar score, rating, comparison, or pass/fail judgment. The plan admits
+at most one Evaluation Measure anchor and no more than eight task-specific
+views, reusing Measurement Quality, Control/Monitoring, Choice/Alternative,
+Statistical Summary, and Decomposition/Combination owners. Scale
+transformation and ranking share one mapping; applicability remains evidence;
+review and disposition share one procedure.
+
+The thirteen-role plan review found zero P1 blockers, thirty-one P2 closure
+conditions, and eight P3 notes. The Product Owner decision is proceed under a
+merge/defer budget because the batch can reduce real reconstruction work while
+keeping the book primary. Source observations, populations, denominators,
+comparators, units/scales, direction, rules, missingness, uncertainty,
+component dimensions, interactions, noncompensation, vetoes, transformation
+loss, authority, and versions must remain visible. Stop before universal
+scoring algebra, named-metric catalogs, automated metric selection, new typed
+relations, or reader-value claims. Detailed closure tests are in
+`F61-F70-EVALUATION-GRAMMAR-ROLE-REVIEW.md`.
