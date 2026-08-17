@@ -2142,3 +2142,20 @@ standalone SHA-256 is
 `33b03a648f154c3e1502f3a260fef448195522b97e927f1d974f6b32a93da7a8`.
 No evaluation validity, reader value, external-preview, publication,
 Workbench, or `preview-01` claim is admitted.
+
+## 2026-08-16 F71-F80 scenario and operational closure plan
+
+Plan review: make one reader job materially easier—determine whether a proposed
+option can work under explicit scenarios, requirements, resources,
+dependencies, and compatibility conditions. The thirteen-role review found
+zero P1 blockers, thirty-two P2 closure conditions, and eight P3 notes. It
+admits two independent owners, Scenario/Condition and Operational
+Resource/Capacity, plus no more than seven task-specific views.
+
+The Product Owner decision is proceed under that ceiling. Preserve epistemic
+status, frame correspondence, capacity/demand units and windows, resource
+vectors, bottlenecks, allocation events, dependency direction, compatibility
+scope, substitution loss, and unresolved shortage. Stop before automated
+feasibility judgment, named scenario or resource catalogs, new typed
+relations, or reader-value claims. Detailed closure tests are in
+`F71-F80-SCENARIO-OPERATIONAL-CLOSURE-ROLE-REVIEW.md`.

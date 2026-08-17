@@ -1011,3 +1011,17 @@ sixteen chapters, 213 pages, and zero missing targets. The Product Owner
 decision is continue to F71-F80 under an owner-first merge/defer budget.
 Internal checks establish structure and mechanics only, not evaluation
 validity, reader value, or publication readiness.
+
+## F71-F80 scenario and operational closure plan
+
+The next batch targets one reader job: determine whether an option can work
+under declared scenarios, resources, dependencies, and compatibility
+conditions. Two anchors pass separate owner tests—Scenario/Condition and
+Operational Resource/Capacity—and seven views form the comparison-to-
+feasibility route. Existing Choice, Risk, Evidence, Work, System, and
+Evaluation owners retain their authority.
+
+The thirteen-role plan review found zero P1 blockers, thirty-two P2 closure
+conditions, and eight P3 notes. The Product Owner decision is proceed under a
+two-owner, seven-view ceiling. Internal rehearsal may establish structure and
+mechanics only; it cannot establish real-world feasibility or reader value.
