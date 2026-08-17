@@ -1,0 +1,113 @@
+{
+  "campaign_id": "SIM-PP-01",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "evidence_class": "internal-artifact-rehearsal",
+  "candidate": {
+    "edition": "sim-42",
+    "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+    "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4",
+    "standalone_sha256": "f1f6bb2d26eaa97979afdede39064f321e822e7a961d7d68ae8deb41174111c7",
+    "search_index_sha256": "0812f44f42d833ac97587a2ed76007e8a900a7e20402956149f9f9003747874a",
+    "search_records": 185,
+    "site_pages": 239
+  },
+  "tasks": [
+    {
+      "id": "SIM-PP-01",
+      "strategy": "onboarding-first",
+      "reader_job": "Choose between dictionary/thesaurus lookup and the teaching Reader from the front door.",
+      "start": "index.html with no known entry title",
+      "prompt": "Identify the two books, their authority relationship, and one direct start for each without relying on repository paths.",
+      "mechanical_requirements": [
+        "tables-start-present",
+        "reader-start-present",
+        "tables-authority-stated",
+        "reader-precedes-problem-routes"
+      ],
+      "stop_condition": "Stop after both starts and the authority statement are located.",
+      "forbidden_inference": "Do not infer that a first-time reader notices, understands, or prefers either start."
+    },
+    {
+      "id": "SIM-PP-02",
+      "strategy": "dictionary-first",
+      "reader_job": "Distinguish what bottleneck names across capacity, queues, dependencies, constraints, and evidence.",
+      "start": "Tables search",
+      "prompt": "Search the literal word bottleneck, open the leading owner, and locate the six limiting-condition distinctions and their routes.",
+      "queries": ["bottleneck"],
+      "mechanical_requirements": [
+        "existing-owner-ranked-first",
+        "six-owner-rows-present",
+        "untyped-routes-present",
+        "result-relative-boundary-present"
+      ],
+      "stop_condition": "Stop after the six rows and result-relative boundary are located.",
+      "forbidden_inference": "Do not infer reader recognition, diagnostic correctness, or practical usefulness."
+    },
+    {
+      "id": "SIM-PP-03",
+      "strategy": "compare-first",
+      "reader_job": "Separate materially different percentage bases before interpreting a reported value.",
+      "start": "Tables search",
+      "prompt": "Search 5 percent component A and locate both composition and comparative-quantity material without treating percentage as a complete quantity.",
+      "queries": ["5 percent component A"],
+      "mechanical_requirements": [
+        "composition-owner-ranked-first",
+        "comparative-owner-in-first-ten",
+        "basis-fields-present",
+        "invalid-shortcut-boundary-present"
+      ],
+      "stop_condition": "Stop after two distinct bases and one invalid shortcut are reachable.",
+      "forbidden_inference": "Do not infer comprehension or correct application to an unstated report."
+    },
+    {
+      "id": "SIM-PP-04",
+      "strategy": "multi-concept-decision",
+      "reader_job": "Organize a scheduling decision without manufacturing a ranking or authorized choice.",
+      "start": "Tables search followed by the Reader or a worked Guide",
+      "prompt": "Trace dependency, scheduling, capacity, service order, evidence limitation, hazard, and decision authority for a synthetic scheduling change.",
+      "queries": ["dependency scheduling path resource allocation", "scheduling capacity agreement hazard evidence decision"],
+      "mechanical_requirements": [
+        "limiting-condition-owner-reachable",
+        "capacity-owner-reachable",
+        "queue-owner-reachable",
+        "hazard-owner-reachable",
+        "decision-guide-reachable",
+        "authority-boundary-present"
+      ],
+      "stop_condition": "Stop with the result incomplete when evidence or authority remains unresolved.",
+      "forbidden_inference": "Do not infer an optimal schedule, safety verdict, or final authorized decision."
+    },
+    {
+      "id": "SIM-PP-05",
+      "strategy": "evidence-stop",
+      "reader_job": "Keep structural trace completeness separate from evidentiary sufficiency.",
+      "start": "problem-led evidence worksheet",
+      "prompt": "Open the latency evidence worksheet and verify that its structural route can be complete while its causal claim remains unresolved.",
+      "mechanical_requirements": [
+        "evidence-worksheet-linked",
+        "structural-complete-state-present",
+        "substantive-unresolved-state-present",
+        "temporal-order-causal-boundary-present"
+      ],
+      "stop_condition": "Stop at the recorded unresolved substantive claim.",
+      "forbidden_inference": "Do not infer that the latency claim is true, false, or understood by a reader."
+    },
+    {
+      "id": "SIM-PP-06",
+      "strategy": "reader-to-depth",
+      "reader_job": "Follow the selected teaching route and hand off to canonical specialized depth.",
+      "start": "reader.html",
+      "prompt": "Locate the 24-record teaching sequence, its first and last records, and a handoff that preserves the remaining 151 canonical records as searchable depth.",
+      "mechanical_requirements": [
+        "reader-route-has-24-records",
+        "first-record-purpose",
+        "last-record-change-lineage",
+        "specialized-depth-count-151",
+        "canonical-authority-preserved"
+      ],
+      "stop_condition": "Stop after the sequence boundary and specialized-depth handoff are located.",
+      "forbidden_inference": "Do not infer that the teaching order is universal or that a reader can follow it independently."
+    }
+  ]
+}

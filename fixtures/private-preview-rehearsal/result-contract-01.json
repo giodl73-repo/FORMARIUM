@@ -1,0 +1,56 @@
+{
+  "contract_id": "SIM-PP-RC-01",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "evidence_class": "internal-artifact-rehearsal",
+  "required_result_fields": [
+    "task_id",
+    "campaign_revision",
+    "executed_against",
+    "strategy",
+    "mechanical_observations",
+    "requirement_results",
+    "artifact_state",
+    "findings",
+    "disposition",
+    "claim_boundary"
+  ],
+  "artifact_states": ["reached", "blocked", "invalid"],
+  "requirement_states": ["present", "missing", "not-applicable"],
+  "finding_severities": ["major", "minor", "note"],
+  "dispositions": ["keep", "repair", "narrow", "defer"],
+  "mechanical_measures": [
+    "queries_executed",
+    "destinations_inspected",
+    "first_result_path",
+    "first_ten_paths",
+    "required_targets_present",
+    "required_targets_missing",
+    "local_links_missing",
+    "narrow_viewport_overflow"
+  ],
+  "prohibited_measures": [
+    "participant_count",
+    "reader_success",
+    "reader_findability",
+    "completion_rate",
+    "task_time",
+    "difficulty",
+    "comprehension",
+    "confidence",
+    "preference",
+    "usefulness",
+    "application_success",
+    "accessibility_success",
+    "return_intent",
+    "return_use",
+    "quote"
+  ],
+  "rules": [
+    "Task text, order, requirements, candidate identity, and this contract are frozen before execution.",
+    "Artifact state reports deterministic reachability only and is never a reader outcome.",
+    "A missing requirement creates a finding and cannot be rewritten after inspection.",
+    "Browser viewport checks report overflow mechanics only, not accessibility.",
+    "No internal result can close R4E, admit preview-01, or satisfy an R5P reader gate."
+  ]
+}
