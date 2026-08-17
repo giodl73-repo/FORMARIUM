@@ -1053,6 +1053,15 @@ structures as editorial synthesis. Inventory and relations are unchanged,
 `sim-42` remains frozen, and the result is repository completeness rather than
 reader, field, causal, effectiveness, or safety evidence.
 
+Query-led Campaign 02 is complete at
+`context/waves/2026-08-13-factorium-vision/QUERY-LED-CAMPAIGN-02-RESULT.md`.
+Its 24 frozen contrast-and-boundary packets produce 20 no-change packet
+results, two isolated view pressures, one Guide-local mechanism boundary, one
+authored discovery friction, and one external-scheme boundary. The ordered
+owner test admits no content or product batch. `sim-42` remains frozen and no
+`sim-43` exists. These are internal authored structural results, not reader or
+completeness evidence.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

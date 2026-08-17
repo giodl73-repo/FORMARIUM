@@ -2745,3 +2745,19 @@ then stop this simulation slice. No reader participated, `preview-01` remains
 inadmissible, and R4E/R5P reader evidence remains open. See
 `SIM-42-INTERNAL-PREVIEW-REHEARSAL-PLAN.md` and
 `SIM-42-INTERNAL-PREVIEW-REHEARSAL-RESULT.md`.
+
+## 2026-08-17 QLD-02 contrast-and-boundary result
+
+The second query-led campaign froze 24 new contrast-and-boundary packets and
+48 literal queries against exact `sim-42` custody before manual analysis. Ten
+routes are structurally complete and fourteen stop incomplete; none is
+contradictory or truncated. Twenty packets propose no change.
+
+The owner test dispositions all 25 gap records as 21 no-change, three defer,
+one external, and zero merge or repair. Available-but-unusable service and
+exactly-once guarantee scope occur once each and do not pass the recurrence
+gate. One natural/green phrase remains authored lookup friction, applicable
+environmental claim schemes remain external, and named failure-handling
+mechanisms remain Guide-local. Six roles approve the stop decision with no P1
+or P2 finding. No batch is admitted, `sim-42` remains the maintained artifact,
+and `sim-43` is not minted. See `QUERY-LED-CAMPAIGN-02-RESULT.md`.

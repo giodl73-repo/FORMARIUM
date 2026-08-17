@@ -1,0 +1,315 @@
+{
+  "artifact": "QLD-02 clustered gap dispositions",
+  "evidence_class": "internal-authored-rehearsal",
+  "campaign_id": "QLD-02",
+  "baseline_results_sha256": "de00f5d2f785f7f10aa08c08233476fbb720761f6eb683cfde5441b2f790a021",
+  "gaps": [
+    {
+      "gap_id": "QLD-02-01-G1",
+      "packet_id": "QLD-02-01",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The amount, composition, comparison, unit, and existing Guide owners expose every requested basis without adding a label taxonomy.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-02-G1",
+      "packet_id": "QLD-02-02",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The statistical diagnostic and existing sampling and evaluation owners preserve the choice conditions without declaring a universally preferred summary.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-03-G1",
+      "packet_id": "QLD-02-03",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Thermal Quantity already owns the requested state, amount, transfer, and equilibrium distinctions and routes outward for system boundary and energy.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-04-G1",
+      "packet_id": "QLD-02-04",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The reaction entry, formulas, diagnostic, balance, measurement, and evidence owners supply the bounded calculation-and-claim skeleton.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-05-G1",
+      "packet_id": "QLD-02-05",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Existing measurement, uncertainty, and evidence owners distinguish disagreement from known error and bias without inventing a reference status.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-06-G1",
+      "packet_id": "QLD-02-06",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The current force, load, geometry, formula, and dimension records make the transferable roles and non-equivalences explicit.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-07-G1",
+      "packet_id": "QLD-02-07",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The canonical status sense is already a reported label and routes cleanly to state, lifecycle, evaluation, classification, and capability owners.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-08-G1",
+      "packet_id": "QLD-02-08",
+      "baseline_code": "QG-6",
+      "recurrence_key": "local-failure-handling-mechanisms",
+      "baseline_observation": "The remaining comparison depends on the local failure model, timing, capacity, side effects, and implementation semantics and belongs in a Factor Guide.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "Guide-local analysis",
+      "rationale": "Timeout, retry, fallback, isolation, and alerting remain local mechanisms selected against a declared failure model; their reusable roles already have canonical owners."
+    },
+    {
+      "gap_id": "QLD-02-09-G1",
+      "packet_id": "QLD-02-09",
+      "baseline_code": "QG-3",
+      "recurrence_key": "service-availability-usability-boundary",
+      "baseline_observation": "The concepts exist, but separating an available service from accessible, capable, correct, and requirement-satisfying service requires a manual cross-owner route.",
+      "baseline_disposition": "defer",
+      "final_disposition": "defer",
+      "target": "future independently frozen recurrence or observed lookup evidence",
+      "rationale": "One authored packet does not justify a new diagnostic. Availability, access, capability, correctness, and validation retain distinct current owners."
+    },
+    {
+      "gap_id": "QLD-02-10-G1",
+      "packet_id": "QLD-02-10",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Existing information, mapping, representation, projection, message, and contract records preserve the stages and their loss boundaries.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-11-G1",
+      "packet_id": "QLD-02-11",
+      "baseline_code": "QG-3",
+      "recurrence_key": "exactly-once-guarantee-scope",
+      "baseline_observation": "Existing interaction, state, identity, transaction, and evidence owners contain the pieces, but the guarantee-scope distinction is assembled manually.",
+      "baseline_disposition": "defer",
+      "final_disposition": "defer",
+      "target": "future independently frozen recurrence or bounded source campaign",
+      "rationale": "The distinction is potentially reusable, but one packet cannot yet establish whether a compact view reduces enough repeated work to offset a new maintenance surface."
+    },
+    {
+      "gap_id": "QLD-02-12-G1",
+      "packet_id": "QLD-02-12",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The identity and access owners plus the existing integrity constraint already preserve every requested separation.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-13-G1",
+      "packet_id": "QLD-02-13",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Policy, governance, requirement, and authority owners distinguish the record roles without turning labels into legal conclusions.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-14-G1",
+      "packet_id": "QLD-02-14",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The assurance entry and evidence view compactly support the commissioning contrast while leaving scheme recognition external.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-15-G1",
+      "packet_id": "QLD-02-15",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Causal, organizational, evidence, obligation, and policy owners preserve causal contribution separately from responsibility and adjudicated fault.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-16-G1",
+      "packet_id": "QLD-02-16",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Existing evaluation, policy, and choice views compose the roles while keeping exceptions, appeals, and decisions distinct.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-17-G1",
+      "packet_id": "QLD-02-17",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The organizational assignment mapping and access integrity view already provide the requested authority trace and retained-accountability boundary.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-18-G1",
+      "packet_id": "QLD-02-18",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The queue procedure and criterion-preference-priority decision view already support the transfer and its explicit losses.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-19-G1",
+      "packet_id": "QLD-02-19",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The hazard and risk owners already separate the everyday terms and force the missing scenario and authority to remain visible.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-20-G1",
+      "packet_id": "QLD-02-20",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "The economic, choice, evaluation, and uncertainty owners preserve the comparison without collapsing lowest price into value or recommendation.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-21-G1",
+      "packet_id": "QLD-02-21",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Statistical and sampling diagnostics already expose why equality of one summary does not imply equivalent groups or decisions.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-22-G1",
+      "packet_id": "QLD-02-22",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Existing amount, comparison, unit, density, and Guide records preserve every basis needed for generic mixture scaling.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    {
+      "gap_id": "QLD-02-23-G1",
+      "packet_id": "QLD-02-23",
+      "baseline_code": "QG-1",
+      "recurrence_key": "vague-environmental-label-lookup",
+      "baseline_observation": "The literal natural/green query exposes evidence but not the classification and policy owners in its first visible results.",
+      "baseline_disposition": "defer",
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "One authored phrase does not justify query expansion; the deliberately multi-owner route is present once the claim and authority questions are made explicit."
+    },
+    {
+      "gap_id": "QLD-02-23-G2",
+      "packet_id": "QLD-02-23",
+      "baseline_code": "QG-7",
+      "recurrence_key": "environmental-claim-scheme",
+      "baseline_observation": "Authorized definitions, thresholds, conformity rules, jurisdictions, and versions belong to external schemes and authorities.",
+      "baseline_disposition": "external",
+      "final_disposition": "external",
+      "target": "applicable environmental claim scheme, authority, jurisdiction, and version",
+      "rationale": "Authorized definitions, thresholds, conformity rules, and category membership are scheme- and jurisdiction-specific external authority."
+    },
+    {
+      "gap_id": "QLD-02-24-G1",
+      "packet_id": "QLD-02-24",
+      "baseline_code": "QG-0",
+      "recurrence_key": "none",
+      "baseline_observation": "Capacity, geometric volume, system capability, coordinated work, and unit owners support the transfer while explicitly rejecting one universal capacity quantity.",
+      "baseline_disposition": "no-change",
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    }
+  ],
+  "summary": {
+    "no-change": 21,
+    "defer": 3,
+    "external": 1,
+    "merge": 0,
+    "repair": 0
+  },
+  "admitted_batch": {
+    "reader_job": "Distinguish neighboring meanings and governing boundaries without promoting isolated phrases, named mechanisms, or external schemes into canon.",
+    "artifact": "No content or product batch admitted from QLD-02.",
+    "new_anchors": 0,
+    "new_views": 0,
+    "new_relations": 0,
+    "product_mechanic_repairs": 0,
+    "existing_view_repairs": 0,
+    "preserved_nulls": [
+      "Twenty packets route without a proposed change.",
+      "Named failure-handling mechanisms remain Guide-local.",
+      "Two isolated compact-view pressures remain deferred pending independent recurrence or sources.",
+      "One authored lookup phrase remains deferred pending observed evidence.",
+      "Environmental claim schemes remain external."
+    ],
+    "rejected_scope": [
+      "new Usability or Service Quality anchor",
+      "new Exactly Once anchor",
+      "new retry, fallback, isolation, or alerting mechanism entries",
+      "general natural or green aliases",
+      "environmental scheme or category catalog",
+      "sim-43 publication artifact"
+    ],
+    "portfolio_decision": "stop with no batch; preserve sim-42"
+  }
+}

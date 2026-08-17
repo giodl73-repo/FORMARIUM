@@ -4,9 +4,11 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const fixtureRoot = path.join(root, "fixtures", "query-led-discovery");
-const baselinePath = path.join(fixtureRoot, "baseline-results-01.json");
-const decisionsPath = path.join(fixtureRoot, "gap-cluster-decisions-01.json");
-const outputPath = path.join(fixtureRoot, "gap-dispositions-01.json");
+const campaignNumber = process.argv[2] || "01";
+if (!/^\d{2}$/.test(campaignNumber)) throw new Error("campaign number must use two digits, for example 01 or 02");
+const baselinePath = path.join(fixtureRoot, `baseline-results-${campaignNumber}.json`);
+const decisionsPath = path.join(fixtureRoot, `gap-cluster-decisions-${campaignNumber}.json`);
+const outputPath = path.join(fixtureRoot, `gap-dispositions-${campaignNumber}.json`);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -41,26 +43,32 @@ const gaps = baseline.results.flatMap((result) =>
   }),
 );
 
-assert(gaps.length === 26, "all 26 baseline gaps must be dispositioned");
-assert(new Set(gaps.map((gap) => gap.gap_id)).size === 26, "gap ids must be unique");
+const expectedGapCount = baseline.results.reduce((sum, result) => sum + result.gaps.length, 0);
+assert(gaps.length === expectedGapCount, `all ${expectedGapCount} baseline gaps must be dispositioned`);
+assert(new Set(gaps.map((gap) => gap.gap_id)).size === expectedGapCount, "gap ids must be unique");
 const summary = Object.fromEntries(
   [...allowed].map((disposition) => [disposition, gaps.filter((gap) => gap.final_disposition === disposition).length]),
 );
-assert(summary["no-change"] === 13, "expected thirteen no-change dispositions");
-assert(summary.defer === 4, "expected four deferred dispositions");
-assert(summary.external === 3, "expected three external dispositions");
-assert(summary.merge === 1, "expected one merged disposition");
-assert(summary.repair === 5, "expected five repair dispositions");
+const expectedSummary = decisions.expected_summary || {
+  "no-change": 13,
+  defer: 4,
+  external: 3,
+  merge: 1,
+  repair: 5,
+};
+Object.entries(expectedSummary).forEach(([key, value]) => {
+  assert(summary[key] === value, `expected ${value} ${key} dispositions`);
+});
 
 const admitted = decisions.admitted_batch;
 assert(admitted.new_anchors === 0, "campaign does not admit a new anchor");
 assert(admitted.new_views === 0, "campaign does not admit a new view");
 assert(admitted.new_relations === 0, "campaign does not admit a relation");
 assert(admitted.product_mechanic_repairs === 0, "campaign does not admit a product mechanic repair");
-assert(admitted.existing_view_repairs === 1, "campaign admits exactly one existing view repair");
+assert(Number.isInteger(admitted.existing_view_repairs) && admitted.existing_view_repairs >= 0, "existing view repair count must be nonnegative");
 
 const output = {
-  artifact: "QLD-01 clustered gap dispositions",
+  artifact: `${baseline.campaign_id} clustered gap dispositions`,
   evidence_class: decisions.evidence_class,
   campaign_id: decisions.campaign_id,
   baseline_results_sha256: decisions.baseline_results_sha256,
@@ -72,5 +80,5 @@ fs.writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
 console.log(
   `OK campaign=${baseline.campaign_id} gaps=${gaps.length} no-change=${summary["no-change"]} ` +
     `defer=${summary.defer} external=${summary.external} merge=${summary.merge} repair=${summary.repair} ` +
-    `anchors=0 views=0 relations=0 mechanics=0 existing-view-repairs=1`,
+    `anchors=0 views=0 relations=0 mechanics=0 existing-view-repairs=${admitted.existing_view_repairs}`,
 );

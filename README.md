@@ -451,6 +451,11 @@ node tools\check_composition_rerun_comparison.js
 node tools\check_composition_guide.js
 node tools\check_composition_evaluation.js
 node tools\check_reference_closure_coverage.js
+node tools\check_query_led_campaign_02.js
+node tools\check_query_led_lookup_02.js
+node tools\run_query_led_baseline.js 02
+node tools\check_query_led_baseline_02.js
+node tools\run_query_led_gap_disposition.js 02
 node tools\check_system_architecture_description.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_decision_bridge_combined_closure.js

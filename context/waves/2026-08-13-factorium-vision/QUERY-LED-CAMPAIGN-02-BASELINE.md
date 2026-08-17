@@ -2,7 +2,7 @@
 
 Date: 2026-08-17
 
-Status: exact lexical baseline executed; manual route analysis not yet frozen
+Status: complete; exact lexical baseline and manual route analysis frozen
 
 ## Custody
 
@@ -42,7 +42,28 @@ gap dispositions:
   across several plausible current owners, as the frozen stress intended.
 
 These are deterministic lexical observations, not findability or reader
-evidence. The next action is to author exact sense, route, check, manual-
-concept, and QG classifications for every packet without changing the frozen
-questions or lookup trace.
+evidence.
 
+## Manual route result
+
+Exact analysis is retained in
+`fixtures/query-led-discovery/baseline-analysis-02.json`; the generated
+16-field results are in
+`fixtures/query-led-discovery/baseline-results-02.json`.
+
+| Measure | Result |
+|---|---:|
+| packets / literal queries | 24 / 48 |
+| structurally complete / incomplete | 10 / 14 |
+| contradictory / truncated | 0 / 0 |
+| QG-0 / QG-1 / QG-3 | 20 / 1 / 2 |
+| QG-6 / QG-7 | 1 / 1 |
+| manual concepts | 4 |
+| route hops | 113 |
+
+Twenty packets propose no change. Named failure-handling mechanisms remain
+Guide-local. One packet each exposes a manual availability/usability boundary
+and an exactly-once guarantee-scope distinction; neither recurs within the
+frozen portfolio. The environmental-label packet records separate discovery
+friction and an external scheme boundary. These classifications are internal
+authored analysis, not reader behavior or content-admission decisions.

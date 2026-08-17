@@ -3,14 +3,16 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const fixtureRoot = path.join(root, "fixtures", "query-led-discovery");
-const campaign = JSON.parse(fs.readFileSync(path.join(fixtureRoot, "campaign-01.json"), "utf8"));
-const contract = JSON.parse(fs.readFileSync(path.join(fixtureRoot, "result-contract-01.json"), "utf8"));
-const lookups = JSON.parse(fs.readFileSync(path.join(fixtureRoot, "baseline-lookups-01.json"), "utf8"));
-const analysis = JSON.parse(fs.readFileSync(path.join(fixtureRoot, "baseline-analysis-01.json"), "utf8"));
-const searchIndex = JSON.parse(fs.readFileSync(path.join(root, "target", "proof-set-sim-41", "search-index.json"), "utf8"));
+const campaignNumber = process.argv[2] || "01";
+if (!/^\d{2}$/.test(campaignNumber)) throw new Error("campaign number must use two digits, for example 01 or 02");
+const campaign = JSON.parse(fs.readFileSync(path.join(fixtureRoot, `campaign-${campaignNumber}.json`), "utf8"));
+const contract = JSON.parse(fs.readFileSync(path.join(fixtureRoot, `result-contract-${campaignNumber}.json`), "utf8"));
+const lookups = JSON.parse(fs.readFileSync(path.join(fixtureRoot, `baseline-lookups-${campaignNumber}.json`), "utf8"));
+const analysis = JSON.parse(fs.readFileSync(path.join(fixtureRoot, `baseline-analysis-${campaignNumber}.json`), "utf8"));
+const searchIndex = JSON.parse(fs.readFileSync(path.join(root, "target", `proof-set-${lookups.executed_against.edition}`, "search-index.json"), "utf8"));
 const relationsText = fs.readFileSync(path.join(root, "reference", "factorium-relations-v0.factorium"), "utf8");
 const referenceText = fs.readFileSync(path.join(root, "reference", "factorium-reference-v0.factorium"), "utf8");
-const outputPath = path.join(fixtureRoot, "baseline-results-01.json");
+const outputPath = path.join(fixtureRoot, `baseline-results-${campaignNumber}.json`);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -67,7 +69,7 @@ const results = campaign.packets.map((packet) => {
     assert(entry.senses.has(senseId), `${packet.id} references unknown sense ${identity}`);
     return { identity: `sense:${identity}`, entry_id: entryId, sense_id: senseId, path: entry.path };
   });
-  authored.route.forEach((routePath) => assert(selectedPaths.has(routePath), `${packet.id} route path not in sim-41: ${routePath}`));
+  authored.route.forEach((routePath) => assert(selectedPaths.has(routePath), `${packet.id} route path not in ${lookups.executed_against.edition}: ${routePath}`));
   authored.relations.forEach((relation) => assert(relationIds.has(relation), `${packet.id} relation not admitted: ${relation}`));
   authored.checks.forEach((check) => assert(validCheckStates.has(check[1]), `${packet.id} invalid check state ${check[1]}`));
   authored.manual.forEach((manual) => assert(validManualStates.has(manual[1]), `${packet.id} invalid manual state ${manual[1]}`));
@@ -131,7 +133,7 @@ const summary = {
 };
 
 const output = {
-  artifact: "QLD-01 sim-41 baseline results",
+  artifact: `${campaign.campaign_id} ${lookups.executed_against.edition} baseline results`,
   evidence_class: "internal-authored-rehearsal",
   campaign_id: campaign.campaign_id,
   campaign_revision: campaign.revision,

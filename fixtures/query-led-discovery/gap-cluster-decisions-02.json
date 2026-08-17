@@ -1,0 +1,70 @@
+{
+  "decision_id": "QLD-GD-02",
+  "campaign_id": "QLD-02",
+  "baseline_results_sha256": "de00f5d2f785f7f10aa08c08233476fbb720761f6eb683cfde5441b2f790a021",
+  "evidence_class": "internal-authored-rehearsal",
+  "rules": {
+    "none": {
+      "final_disposition": "no-change",
+      "target": "none",
+      "rationale": "The route proposes no content, evidence, or product repair."
+    },
+    "local-failure-handling-mechanisms": {
+      "final_disposition": "no-change",
+      "target": "Guide-local analysis",
+      "rationale": "Timeout, retry, fallback, isolation, and alerting remain local mechanisms selected against a declared failure model; their reusable roles already have canonical owners."
+    },
+    "service-availability-usability-boundary": {
+      "final_disposition": "defer",
+      "target": "future independently frozen recurrence or observed lookup evidence",
+      "rationale": "One authored packet does not justify a new diagnostic. Availability, access, capability, correctness, and validation retain distinct current owners."
+    },
+    "exactly-once-guarantee-scope": {
+      "final_disposition": "defer",
+      "target": "future independently frozen recurrence or bounded source campaign",
+      "rationale": "The distinction is potentially reusable, but one packet cannot yet establish whether a compact view reduces enough repeated work to offset a new maintenance surface."
+    },
+    "vague-environmental-label-lookup": {
+      "final_disposition": "defer",
+      "target": "future observed lookup evidence",
+      "rationale": "One authored phrase does not justify query expansion; the deliberately multi-owner route is present once the claim and authority questions are made explicit."
+    },
+    "environmental-claim-scheme": {
+      "final_disposition": "external",
+      "target": "applicable environmental claim scheme, authority, jurisdiction, and version",
+      "rationale": "Authorized definitions, thresholds, conformity rules, and category membership are scheme- and jurisdiction-specific external authority."
+    }
+  },
+  "expected_summary": {
+    "no-change": 21,
+    "defer": 3,
+    "external": 1,
+    "merge": 0,
+    "repair": 0
+  },
+  "admitted_batch": {
+    "reader_job": "Distinguish neighboring meanings and governing boundaries without promoting isolated phrases, named mechanisms, or external schemes into canon.",
+    "artifact": "No content or product batch admitted from QLD-02.",
+    "new_anchors": 0,
+    "new_views": 0,
+    "new_relations": 0,
+    "product_mechanic_repairs": 0,
+    "existing_view_repairs": 0,
+    "preserved_nulls": [
+      "Twenty packets route without a proposed change.",
+      "Named failure-handling mechanisms remain Guide-local.",
+      "Two isolated compact-view pressures remain deferred pending independent recurrence or sources.",
+      "One authored lookup phrase remains deferred pending observed evidence.",
+      "Environmental claim schemes remain external."
+    ],
+    "rejected_scope": [
+      "new Usability or Service Quality anchor",
+      "new Exactly Once anchor",
+      "new retry, fallback, isolation, or alerting mechanism entries",
+      "general natural or green aliases",
+      "environmental scheme or category catalog",
+      "sim-43 publication artifact"
+    ],
+    "portfolio_decision": "stop with no batch; preserve sim-42"
+  }
+}

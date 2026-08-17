@@ -1,0 +1,272 @@
+{
+  "analysis_id": "QLD-BA-02",
+  "campaign_id": "QLD-02",
+  "campaign_revision": 1,
+  "evidence_class": "internal-authored-rehearsal",
+  "entries": {
+    "QLD-02-01": {
+      "senses": ["amount-concentration-composition/amount-of-substance", "amount-concentration-composition/amount-concentration", "amount-concentration-composition/mass-concentration", "amount-concentration-composition/amount-fraction", "amount-concentration-composition/mass-fraction", "amount-concentration-composition/volume-fraction", "comparative-quantity/fraction", "quantity-value-unit-conversion/measurement-unit"],
+      "route": ["tables/entries/amount-concentration-composition.md", "tables/formulas/amount-concentration-composition.md", "guides/aqueous-solution-amount-concentration.md", "tables/entries/comparative-quantity.md", "tables/entries/quantity-value-unit-conversion.md"],
+      "relations": [],
+      "checks": [["numerator-denominator-component-basis", "pass"], ["label-specific-identity-and-purity", "not-applicable"]],
+      "closure": "complete",
+      "losses": ["No chemical identity or preparation record", "No purity or safety inference"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The amount, composition, comparison, unit, and existing Guide owners expose every requested basis without adding a label taxonomy.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-02": {
+      "senses": ["statistical-summary-interval/arithmetic-mean", "statistical-summary-interval/median", "statistical-summary-interval/quantile", "statistical-summary-interval/standard-deviation", "sampling-generalization/estimand", "evaluation-measure-scale-criterion/criterion", "evaluation-measure-scale-criterion/target"],
+      "route": ["tables/entries/statistical-summary-interval.md", "tables/diagnostics/statistical-summary-interval-failures.md", "tables/entries/sampling-generalization.md", "tables/entries/evaluation-measure-scale-criterion.md", "tables/constraints/evaluation-threshold-acceptance.md"],
+      "relations": [],
+      "checks": [["summary-estimand-and-distribution", "pass"], ["loss-missingness-and-decision-threshold", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No target estimand or loss", "No missing-data rule or decision authority"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The statistical diagnostic and existing sampling and evaluation owners preserve the choice conditions without declaring a universally preferred summary.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-03": {
+      "senses": ["thermal-quantity/temperature", "thermal-quantity/internal-energy", "thermal-quantity/heat-transfer", "thermal-quantity/thermal-equilibrium", "thermal-quantity/heat-capacity", "thermodynamic-system-state-phase/thermodynamic-boundary", "work-energy-power/energy"],
+      "route": ["tables/entries/thermal-quantity.md", "tables/formulas/thermal-quantities.md", "tables/entries/thermodynamic-system-state-phase.md", "tables/entries/work-energy-power.md", "tables/entries/quantity-value-unit-conversion.md"],
+      "relations": [],
+      "checks": [["state-energy-transfer-equilibrium-distinction", "pass"], ["material-mass-boundary-and-history", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Mass, composition, and heat capacity absent", "Boundary, timing, and measurement history absent"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Thermal Quantity already owns the requested state, amount, transfer, and equilibrium distinctions and routes outward for system boundary and energy.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-04": {
+      "senses": ["chemical-reaction-stoichiometry-equilibrium/stoichiometry", "chemical-reaction-stoichiometry-equilibrium/reactant", "chemical-reaction-stoichiometry-equilibrium/reaction-extent", "stock-flow-balance/balance", "stock-flow-balance/conservation", "claim-evidence/result", "probability-risk-uncertainty/measurement-uncertainty"],
+      "route": ["tables/entries/chemical-reaction-stoichiometry-equilibrium.md", "tables/formulas/chemical-reaction-relations.md", "tables/diagnostics/chemical-reaction-failures.md", "tables/entries/stock-flow-balance.md", "tables/entries/measurement-quality.md", "tables/entries/claim-evidence.md"],
+      "relations": [],
+      "checks": [["stoichiometry-conversion-yield-selectivity-balance", "pass"], ["product-condition-and-safety-prediction", "not-applicable"]],
+      "closure": "complete",
+      "losses": ["Symbolic reaction only", "No kinetic, equilibrium, product, or safety prediction"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The reaction entry, formulas, diagnostic, balance, measurement, and evidence owners supply the bounded calculation-and-claim skeleton.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-05": {
+      "senses": ["measurement-quality/measurement-error", "measurement-quality/measurement-bias", "measurement-quality/measurement-precision", "measurement-quality/measurement-accuracy", "probability-risk-uncertainty/measurement-uncertainty", "claim-evidence/observation", "claim-evidence/evidence-item"],
+      "route": ["tables/entries/measurement-quality.md", "tables/diagnostics/measurement-quality-failures.md", "tables/entries/probability-risk-uncertainty.md", "tables/entries/claim-evidence.md", "tables/evidence/observation-inference-chain.md"],
+      "relations": [],
+      "checks": [["error-uncertainty-variability-bias-distinction", "pass"], ["reference-calibration-and-method-custody", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Reference status and calibration absent", "No uncertainty model or repetition custody"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Existing measurement, uncertainty, and evidence owners distinguish disagreement from known error and bias without inventing a reference status.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-06": {
+      "senses": ["force/physical-interaction", "matter-load-measure/pressure", "matter-load-measure/stress", "geometric-measure/area", "quantity-value-unit-conversion/quantity-dimension"],
+      "route": ["tables/entries/force.md", "tables/formulas/force.md", "tables/entries/matter-load-measure.md", "tables/formulas/matter-load-measures.md", "tables/entries/geometric-measure.md", "tables/entries/quantity-value-unit-conversion.md"],
+      "relations": [],
+      "checks": [["force-area-direction-distribution-roles", "pass"], ["force-pressure-stress-equivalence", "fail"]],
+      "closure": "complete",
+      "losses": ["Material response remains domain-specific", "No design allowable or safety conclusion"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The current force, load, geometry, formula, and dimension records make the transferable roles and non-equivalences explicit.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-07": {
+      "senses": ["state-event-transition-process-lifecycle/status", "state-event-transition-process-lifecycle/state", "state-event-transition-process-lifecycle/lifecycle-stage", "evaluation-measure-scale-criterion/evaluation-result", "identity-naming-classification-versioning/classification", "system-composition-dependency/capability"],
+      "route": ["tables/entries/state-event-transition-process-lifecycle.md", "tables/entries/evaluation-measure-scale-criterion.md", "tables/entries/identity-naming-classification-versioning.md", "tables/entries/system-composition-dependency.md"],
+      "relations": [],
+      "checks": [["status-source-field-and-governing-question", "pass"], ["status-as-health-or-readiness", "fail"]],
+      "closure": "complete",
+      "losses": ["Dashboard schema remains local", "No health, readiness, or configuration inference"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The canonical status sense is already a reported label and routes cleanly to state, lifecycle, evaluation, classification, and capability owners.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-08": {
+      "senses": ["control-monitoring-response/intervention", "control-monitoring-response/alert", "dependability-reliability-availability-resilience/recovery", "dependability-reliability-availability-resilience/failure", "interaction-request-response-correlation/request", "scenario-assumption-condition-case/scenario"],
+      "route": ["tables/entries/control-monitoring-response.md", "tables/diagnostics/control-response-failures.md", "tables/entries/dependability-reliability-availability-resilience.md", "tables/diagnostics/dependability-failures.md", "tables/entries/interaction-request-response-correlation.md", "tables/mappings/software-interaction-mechanisms.md", "tables/entries/scenario-assumption-condition-case.md"],
+      "relations": [],
+      "checks": [["mechanism-role-and-failure-mode", "pass"], ["timing-capacity-side-effects-and-authority", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No failure frequencies or budgets", "No platform semantics or side-effect evidence"],
+      "manual": [["timeout, retry, fallback, isolation, and alerting mechanisms", "guide-local", "control-monitoring-response", "The named mechanisms are local implementations whose reusable roles are already owned by control, interaction, dependability, and scenario records."]],
+      "gaps": [["QG-6", "local-failure-handling-mechanisms", "The remaining comparison depends on the local failure model, timing, capacity, side effects, and implementation semantics and belongs in a Factor Guide.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-09": {
+      "senses": ["dependability-reliability-availability-resilience/availability", "access-permission-authorization-entitlement/access", "system-composition-dependency/capability", "requirement-specification-verification-validation/validation", "requirement-specification-verification-validation/nonconformity", "claim-evidence/evidence-item"],
+      "route": ["tables/entries/dependability-reliability-availability-resilience.md", "tables/diagnostics/dependability-failures.md", "tables/entries/access-permission-authorization-entitlement.md", "tables/entries/system-composition-dependency.md", "tables/entries/requirement-specification-verification-validation.md", "tables/entries/claim-evidence.md"],
+      "relations": [],
+      "checks": [["availability-access-capability-correctness-quality", "pass"], ["declared-user-service-and-evidence", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Required user-visible service undeclared", "No access-path, correctness, or service-quality evidence"],
+      "manual": [["usable service", "proxy", "requirement-specification-verification-validation", "Usability is reconstructed across required service, access path, capability, correctness, and validation rather than owned by one compact current view."]],
+      "gaps": [["QG-3", "service-availability-usability-boundary", "The concepts exist, but separating an available service from accessible, capable, correct, and requirement-satisfying service requires a manual cross-owner route.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-02-10": {
+      "senses": ["information-data-signal-noise/data", "information-data-signal-noise/schema", "information-data-signal-noise/encoding", "model-representation-simulation/representation", "decomposition-modes-combination-contracts/projection", "software-transaction-message-contract/message", "software-transaction-message-contract/contract"],
+      "route": ["tables/entries/information-data-signal-noise.md", "tables/mappings/data-structure.md", "tables/entries/model-representation-simulation.md", "tables/mappings/perspective-projection.md", "tables/entries/software-transaction-message-contract.md", "tables/entries/claim-evidence.md"],
+      "relations": [],
+      "checks": [["structure-encoding-representation-transformation-path", "pass"], ["byte-preservation-as-semantic-equivalence", "fail"]],
+      "closure": "complete",
+      "losses": ["No protocol or format", "Semantic equivalence remains a local check"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Existing information, mapping, representation, projection, message, and contract records preserve the stages and their loss boundaries.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-11": {
+      "senses": ["interaction-request-response-correlation/request", "interaction-request-response-correlation/acknowledgment", "interaction-request-response-correlation/correlation", "state-event-transition-process-lifecycle/event", "state-event-transition-process-lifecycle/transition", "identity-naming-classification-versioning/entity-identity", "claim-evidence/claim", "claim-evidence/evidence-item"],
+      "route": ["tables/entries/interaction-request-response-correlation.md", "tables/entries/state-event-transition-process-lifecycle.md", "tables/entries/identity-naming-classification-versioning.md", "tables/entries/software-transaction-message-contract.md", "tables/entries/claim-evidence.md", "tables/evidence/observation-inference-chain.md"],
+      "relations": [],
+      "checks": [["delivery-receipt-effect-commit-observation-scope", "pass"], ["boundary-replay-commit-and-effect-evidence", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No protocol or failure model", "No replay, commit, or effect records"],
+      "manual": [["exactly-once guarantee scope", "candidate", "none", "The route manually separates delivery, receipt, effect, committed state, and deduplicated observation; no current compact view owns that guarantee-scope test."]],
+      "gaps": [["QG-3", "exactly-once-guarantee-scope", "Existing interaction, state, identity, transaction, and evidence owners contain the pieces, but the guarantee-scope distinction is assembled manually.", "defer"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-02-12": {
+      "senses": ["identity-naming-classification-versioning/entity-identity", "identity-naming-classification-versioning/name", "access-permission-authorization-entitlement/permission", "access-permission-authorization-entitlement/authorization-decision", "access-permission-authorization-entitlement/access-control", "policy-rule-constraint-decision-exception/decision", "organization-role-authority/authority"],
+      "route": ["tables/entries/identity-naming-classification-versioning.md", "tables/entries/access-permission-authorization-entitlement.md", "tables/constraints/access-authorization-integrity.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/organization-role-authority.md"],
+      "relations": [],
+      "checks": [["identity-authentication-permission-decision-enforcement", "pass"], ["named-or-authenticated-means-authorized", "fail"]],
+      "closure": "complete",
+      "losses": ["Authentication mechanism remains local", "No authorization or enforcement event inferred"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The identity and access owners plus the existing integrity constraint already preserve every requested separation.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-13": {
+      "senses": ["policy-rule-constraint-decision-exception/policy", "policy-rule-constraint-decision-exception/rule", "policy-rule-constraint-decision-exception/decision", "governance-obligation-compliance/obligation", "requirement-specification-verification-validation/requirement", "organization-role-authority/authority"],
+      "route": ["tables/entries/policy-rule-constraint-decision-exception.md", "tables/constraints/policy-constraints.md", "tables/entries/governance-obligation-compliance.md", "tables/entries/requirement-specification-verification-validation.md", "tables/entries/organization-role-authority.md"],
+      "relations": [],
+      "checks": [["governance-record-role-distinction", "pass"], ["document-label-as-applicability-or-enforcement", "fail"]],
+      "closure": "complete",
+      "losses": ["Jurisdiction and applicability remain external", "No approval or enforcement inferred"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Policy, governance, requirement, and authority owners distinguish the record roles without turning labels into legal conclusions.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-14": {
+      "senses": ["assurance-assessment-audit-certification/assessment", "assurance-assessment-audit-certification/audit", "assurance-assessment-audit-certification/assurance", "assurance-assessment-audit-certification/certification", "assurance-assessment-audit-certification/accreditation", "claim-evidence/claim", "organization-role-authority/authority"],
+      "route": ["tables/entries/assurance-assessment-audit-certification.md", "tables/evidence/assurance-conformity.md", "tables/entries/claim-evidence.md", "tables/entries/organization-role-authority.md", "tables/entries/policy-rule-constraint-decision-exception.md"],
+      "relations": [],
+      "checks": [["purpose-criteria-independence-authority-output", "pass"], ["scheme-recognition-and-provider-competence", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No governing scheme", "Competence, independence, and recognition requirements remain local"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The assurance entry and evidence view compactly support the commissioning contrast while leaving scheme recognition external.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-15": {
+      "senses": ["causal-reasoning/causal-effect", "causal-reasoning/causal-attribution", "organization-role-authority/responsibility", "organization-role-authority/accountability-answerability", "organization-role-authority/authority", "claim-evidence/evidence-item", "governance-obligation-compliance/obligation"],
+      "route": ["tables/entries/causal-reasoning.md", "tables/evidence/causal-claim-evidence.md", "tables/entries/organization-role-authority.md", "tables/entries/claim-evidence.md", "tables/entries/governance-obligation-compliance.md", "tables/entries/policy-rule-constraint-decision-exception.md"],
+      "relations": [],
+      "checks": [["causal-normative-authority-attribution-boundary", "pass"], ["fault-liability-intent-or-negligence", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Causal evidence and role assignment incomplete", "Fault and liability adjudication excluded"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Causal, organizational, evidence, obligation, and policy owners preserve causal contribution separately from responsibility and adjudicated fault.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-16": {
+      "senses": ["evaluation-measure-scale-criterion/criterion", "evaluation-measure-scale-criterion/target", "policy-rule-constraint-decision-exception/constraint", "policy-rule-constraint-decision-exception/exception", "policy-rule-constraint-decision-exception/appeal", "policy-rule-constraint-decision-exception/decision", "choice-alternative-selection/selection"],
+      "route": ["tables/entries/evaluation-measure-scale-criterion.md", "tables/constraints/evaluation-threshold-acceptance.md", "tables/decisions/criterion-preference-priority.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/decisions/policy-decision.md", "tables/entries/choice-alternative-selection.md", "tables/decisions/alternative-selection.md"],
+      "relations": [],
+      "checks": [["criterion-threshold-constraint-exception-appeal-decision", "pass"], ["local-precedence-evidence-and-final-authority", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No local precedence or evidence", "Final authority remains undeclared"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Existing evaluation, policy, and choice views compose the roles while keeping exceptions, appeals, and decisions distinct.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-17": {
+      "senses": ["organization-role-authority/delegation", "organization-role-authority/authority", "organization-role-authority/responsibility", "organization-role-authority/accountability-answerability", "access-permission-authorization-entitlement/permission", "access-permission-authorization-entitlement/authorization-decision", "policy-rule-constraint-decision-exception/decision"],
+      "route": ["tables/entries/organization-role-authority.md", "tables/mappings/organizational-assignment-semantics.md", "tables/entries/access-permission-authorization-entitlement.md", "tables/constraints/access-authorization-integrity.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/governance-obligation-compliance.md"],
+      "relations": [],
+      "checks": [["delegation-assignment-permission-approval-accountability", "pass"], ["source-scope-enforcement-and-retained-duty", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Source authority and local scope absent", "No decision or enforcement event supplied"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The organizational assignment mapping and access integrity view already provide the requested authority trace and retained-accountability boundary.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-18": {
+      "senses": ["coordinated-work/task", "operational-resource-capacity-demand/allocation", "evaluation-measure-scale-criterion/criterion", "choice-alternative-selection/preference", "policy-rule-constraint-decision-exception/rule", "access-permission-authorization-entitlement/entitlement"],
+      "route": ["tables/entries/coordinated-work.md", "tables/entries/operational-resource-capacity-demand.md", "tables/procedures/queue-service-order.md", "tables/entries/evaluation-measure-scale-criterion.md", "tables/decisions/criterion-preference-priority.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/access-permission-authorization-entitlement.md"],
+      "relations": [],
+      "checks": [["ordering-question-and-priority-basis", "pass"], ["queue-order-as-value-entitlement-or-authority", "fail"]],
+      "closure": "complete",
+      "losses": ["Scheduling algorithm remains local", "Importance and entitlement do not transfer into queue precedence"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The queue procedure and criterion-preference-priority decision view already support the transfer and its explicit losses.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-19": {
+      "senses": ["hazard-exposure-harm-safety/hazard", "hazard-exposure-harm-safety/exposure", "hazard-exposure-harm-safety/harm", "hazard-exposure-harm-safety/vulnerability", "hazard-exposure-harm-safety/safety", "probability-risk-uncertainty/risk", "claim-evidence/claim"],
+      "route": ["tables/entries/hazard-exposure-harm-safety.md", "tables/entries/probability-risk-uncertainty.md", "tables/formulas/probability-risk-uncertainty.md", "tables/entries/claim-evidence.md"],
+      "relations": [],
+      "checks": [["hazard-exposure-harm-risk-vulnerability-safety", "pass"], ["scenario-pathway-evidence-and-authority", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["No subject, activity, pathway, or consequence scenario", "No quantified evidence or qualified assessment"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The hazard and risk owners already separate the everyday terms and force the missing scenario and authority to remain visible.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-20": {
+      "senses": ["cost-price-value-return/price", "cost-price-value-return/explicit-cost", "cost-price-value-return/utility", "cost-price-value-return/rate-of-return", "choice-alternative-selection/alternative", "choice-alternative-selection/preference", "evaluation-measure-scale-criterion/criterion", "probability-risk-uncertainty/uncertainty"],
+      "route": ["tables/entries/cost-price-value-return.md", "tables/formulas/cost-value-return.md", "tables/entries/choice-alternative-selection.md", "tables/decisions/alternative-selection.md", "tables/entries/evaluation-measure-scale-criterion.md", "tables/entries/probability-risk-uncertainty.md"],
+      "relations": [],
+      "checks": [["price-cost-affordability-value-benefit-return", "pass"], ["budget-horizon-benefits-constraints-and-authority", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Budget, horizon, and ownership boundary absent", "Benefits, preferences, and uncertainty remain local"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "The economic, choice, evaluation, and uncertainty owners preserve the comparison without collapsing lowest price into value or recommendation.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-21": {
+      "senses": ["statistical-summary-interval/arithmetic-mean", "statistical-summary-interval/variance", "statistical-summary-interval/standard-deviation", "statistical-summary-interval/standard-error", "sampling-generalization/sample", "sampling-generalization/target-population", "comparative-quantity/ratio", "evaluation-measure-scale-criterion/evaluation-result"],
+      "route": ["tables/entries/statistical-summary-interval.md", "tables/diagnostics/statistical-summary-interval-failures.md", "tables/entries/sampling-generalization.md", "tables/diagnostics/sampling-generalization-failures.md", "tables/entries/comparative-quantity.md", "tables/entries/evaluation-measure-scale-criterion.md"],
+      "relations": [],
+      "checks": [["mean-distribution-spread-sample-and-consequence", "pass"], ["sampling-frame-uncertainty-and-decision-model", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Distributions and sampling frames absent", "No uncertainty or consequence model"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Statistical and sampling diagnostics already expose why equality of one summary does not imply equivalent groups or decisions.", "no-change"]],
+      "disposition": "stopped-as-designed"
+    },
+    "QLD-02-22": {
+      "senses": ["comparative-quantity/ratio", "comparative-quantity/fraction", "amount-concentration-composition/amount-concentration", "amount-concentration-composition/mass-fraction", "amount-concentration-composition/volume-fraction", "quantity-value-unit-conversion/unit-conversion", "matter-load-measure/mass-density"],
+      "route": ["tables/entries/amount-concentration-composition.md", "tables/formulas/amount-concentration-composition.md", "tables/entries/comparative-quantity.md", "tables/entries/quantity-value-unit-conversion.md", "tables/formulas/density.md", "guides/aqueous-solution-amount-concentration.md"],
+      "relations": [],
+      "checks": [["ratio-fraction-concentration-total-and-scale", "pass"], ["unlike-unit-ratio-as-fraction", "fail"]],
+      "closure": "complete",
+      "losses": ["No recipe procedure or nutrition claim", "Mass-volume conversion requires density and conditions"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Existing amount, comparison, unit, density, and Guide records preserve every basis needed for generic mixture scaling.", "no-change"]],
+      "disposition": "routed"
+    },
+    "QLD-02-23": {
+      "senses": ["claim-evidence/claim", "claim-evidence/evidence-item", "identity-naming-classification-versioning/classification", "evaluation-measure-scale-criterion/measure", "evaluation-measure-scale-criterion/comparator", "evaluation-measure-scale-criterion/criterion", "policy-rule-constraint-decision-exception/rule", "organization-role-authority/authority"],
+      "route": ["tables/entries/claim-evidence.md", "tables/evidence/observation-inference-chain.md", "tables/entries/identity-naming-classification-versioning.md", "tables/entries/evaluation-measure-scale-criterion.md", "tables/constraints/evaluation-threshold-acceptance.md", "tables/entries/policy-rule-constraint-decision-exception.md", "tables/entries/organization-role-authority.md"],
+      "relations": [],
+      "checks": [["classification-property-comparator-threshold-evidence", "pass"], ["scheme-authority-jurisdiction-and-version", "unresolved"]],
+      "closure": "incomplete",
+      "losses": ["Term definition and measured property absent", "Scheme, jurisdiction, authority, and version external"],
+      "manual": [["scheme-defined natural or green category", "external", "none", "Any authorized category, threshold, comparator, or conformity meaning belongs to the applicable scheme and jurisdiction."]],
+      "gaps": [["QG-1", "vague-environmental-label-lookup", "The literal natural/green query exposes evidence but not the classification and policy owners in its first visible results.", "defer"], ["QG-7", "environmental-claim-scheme", "Authorized definitions, thresholds, conformity rules, jurisdictions, and versions belong to external schemes and authorities.", "external"]],
+      "disposition": "routed-with-friction"
+    },
+    "QLD-02-24": {
+      "senses": ["operational-resource-capacity-demand/capacity", "operational-resource-capacity-demand/demand", "operational-resource-capacity-demand/load", "geometric-measure/volume", "system-composition-dependency/capability", "coordinated-work/task", "quantity-value-unit-conversion/measurement-unit"],
+      "route": ["tables/entries/operational-resource-capacity-demand.md", "tables/procedures/resource-allocation.md", "tables/entries/geometric-measure.md", "tables/entries/system-composition-dependency.md", "tables/entries/coordinated-work.md", "tables/entries/quantity-value-unit-conversion.md"],
+      "relations": [],
+      "checks": [["subject-function-quantity-unit-time-condition-demand", "pass"], ["volume-rate-resource-and-human-meaning-equivalence", "fail"]],
+      "closure": "complete",
+      "losses": ["Human capability and workload assessment remain local", "Physical volume, service rate, resource availability, and assigned work do not share a quantity kind"],
+      "manual": [],
+      "gaps": [["QG-0", "none", "Capacity, geometric volume, system capability, coordinated work, and unit owners support the transfer while explicitly rejecting one universal capacity quantity.", "no-change"]],
+      "disposition": "routed"
+    }
+  }
+}
