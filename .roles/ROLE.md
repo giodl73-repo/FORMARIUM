@@ -42,6 +42,7 @@ artifact, and a closure condition.
 | `stakeholders/schema-implementer.md` | Schema Implementer | Can an independent implementation parse and validate the contract? |
 | `stakeholders/benchmark-consumer.md` | Benchmark Consumer | Can another project reproduce and interpret the result without FACTOR internals? |
 | `stakeholders/reference-practitioner.md` | Reference Practitioner | Can a reader improve a real decision quickly? |
+| `stakeholders/product-owner.md` | Product Owner | Does each batch improve a recognizable reader job enough to justify its product and maintenance cost? |
 
 ## Review order
 

@@ -2051,3 +2051,23 @@ appeal conclusion, model validity, requirements conformance, dependability,
 schedule feasibility, access authorization, assurance/certification, reader
 success, external-preview, publication, Workbench, or `preview-01` claim is
 admitted.
+
+## 2026-08-16 F51-F100 factoring and evaluation campaign plan
+
+Plan review: extend the F50 candidate-content fixed point through five
+ten-phase batches: F51-F60 factoring grammar, F61-F70 evaluation grammar,
+F71-F80 scenario and operational closure, F81-F90 interaction and operating
+conditions, and F91-F100 composition/book capstone. Treat phase numbers as
+reviewed editorial slices rather than an entry quota; apply an owner test
+before every anchor; keep books and Factor Tables primary; retain candidate
+maturity; and run a separate fixed-point `.roles` plan/result review at F60,
+F70, F80, F90, and F100.
+
+The first batch plan admits one new Decomposition Modes and Combination
+Contracts anchor plus nine specialized or existing-owner slices. Its detailed
+twelve-role review found zero P1 blockers, twenty-nine P2 closure conditions,
+and seven P3 notes. A new Product Owner role now reviews every batch for a
+recognizable reader job, book and composition value, portfolio cost, honest
+evidence level, and an explicit continue/merge/defer/stop decision. The F51-
+F60 result remains pending; no phase, content, corpus, reader-value, release,
+Workbench, or `preview-01` result is admitted by this plan record.

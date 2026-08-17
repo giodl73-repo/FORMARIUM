@@ -932,3 +932,21 @@ and standalone SHA-256 is
 All Rust tests, Clippy, reference/sidecar, canonical/adversarial query, source,
 task coverage, search, local and generated composition, link, roles, browser,
 and diff checks pass.
+
+## F51-F100 factoring and evaluation campaign
+
+The next fifty Factor Forge phases are organized into five ten-phase batches,
+each with a separate `.roles` plan and result review. F51-F60 makes factoring
+mode and combination contracts explicit; F61-F70 supplies evaluation grammar;
+F71-F80 adds scenario and operational closure; F81-F90 adds interaction and
+operating-condition material; F91-F100 proves bounded composition and one
+candidate Book One route. Phase numbers are execution custody, not an entry
+quota or publication evidence.
+
+The permanent `.roles` organization now includes a Product Owner. This role
+requires every batch to improve a recognizable reader job, justify added
+navigation and maintenance cost, keep software subordinate to the book, state
+the available evidence level, and issue a continue/merge/defer/stop portfolio
+decision. The detailed campaign plan is
+`docs/research/2026-08-16-f51-f100-factoring-evaluation-campaign.md`; the first
+batch review is `F51-F60-FACTORING-GRAMMAR-ROLE-REVIEW.md`.
