@@ -2623,3 +2623,18 @@ standalone SHA-256 is
 `fcab6402c50c5b29420599666d624e63f43041ee2ba1cc919d15dbb70857e005`.
 `sim-40` reproduces exactly. Product Owner decision: keep the repair and stop
 before expanding other legacy primes; reader value remains untested.
+
+## 2026-08-17 Proof Set internal fixed-point audit
+
+Internal simulation stops at `sim-41`. Six roles pass the fixed-point audit
+with zero P1 or P2 findings and six durable P3 boundaries. The maintained
+artifact has deterministic selection, rendering, search, Reader, context,
+composition, closure, regression, and responsive mechanics, but no reader
+evidence. No current defect earns `sim-42`, no content trigger earns a new
+Factor Forge batch, and `preview-01` does not exist.
+
+Reopening now requires a concrete artifact failure, repeated owner or
+composition need, source-backed gap, external reader finding, or dependency /
+browser / security regression. The next evidence action, when readers exist,
+is the first prepared R4E worksheet—not another simulation. Full custody and
+boundaries are in `PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`.

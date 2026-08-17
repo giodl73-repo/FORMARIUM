@@ -27,8 +27,8 @@ evidence and one tested Factorium domain.
 
 `context/waves/2026-08-13-factorium-vision/WAVE.md`
 
-Current pulses: **08A - Factor Forge intake** and
-**08P - Proof Set simulation preflight**
+Current pulses: **08A - Factor Forge intake fixed point** and
+**08P - Proof Set internal fixed point**
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
@@ -1026,6 +1026,13 @@ Relation structure and the sourced Access/Permission/Authorization Table.
 Both links remain authored and untyped; the prime's candidate content and
 status are unchanged. This does not establish independent source review or
 reader value and does not reopen the other legacy primes.
+
+The internal Proof Set lane is now at a fixed point. `sim-41` is the maintained
+mechanical reference, not `preview-01`; no further feature edition or content
+batch is admitted without a concrete reopening trigger. The fixed-point audit
+is `context/waves/2026-08-13-factorium-vision/PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`.
+The next evidence-bearing action remains a real R4E worksheet when readers are
+available.
 
 ## Boundary
 

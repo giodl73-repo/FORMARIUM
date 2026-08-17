@@ -5,10 +5,11 @@ Status: active
 Current milestones: **R4 - Volume prototype evidence** and
 **R5 - First substantial volume**
 
-Current execution milestones: **R5A - Factor Forge intake** and the internal
-simulation preflight for **R5P - Proof Set**. External Sieve and invited
-preview sessions are deferred until readers are available; they are release
-evidence boundaries, not current repository work stops.
+Current execution state: Factor Forge intake and internal Proof Set simulation
+are both at evidence-gated fixed points. External Sieve and invited preview
+sessions are deferred until readers are available; they remain release
+evidence boundaries. Maintenance reopens only through the recorded content or
+simulation triggers.
 
 Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**,
 **R2 - Reproducible reference**, **R3 - Guides and mappings**
@@ -426,11 +427,12 @@ current fixed point is 53 entries and 95 views with an empty generated
 unresolved list. Internal rehearsal does not establish real-world feasibility
 or reader value.
 
-1. maintain `sim-39` as the two-book front door with dedicated Tables A-Z,
+1. maintain `sim-41` as the two-book internal reference with dedicated Tables A-Z,
    five-part Reader contents, static Reader continuation across its 24 selected
    Tables, a direct manifest-derived Reader start, reciprocal family navigation,
-   an explicit terminal handoff, and ownership-aware search, while retaining
-   exact `sim-38` custody;
+   an explicit terminal handoff, ownership-aware search, bounded everyday
+   wording cues, and authored canonical-depth routes, while retaining exact
+   prior-edition custody;
 2. retain exact `sim-30` custody and its 24-record spine, 151-record depth
    boundary,
    four route prompts, and findings ledger;

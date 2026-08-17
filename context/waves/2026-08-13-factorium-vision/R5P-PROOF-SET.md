@@ -1,6 +1,6 @@
 # R5P - Proof Set
 
-Status: internal simulation preflight active; external preview deferred
+Status: internal simulation fixed point at `sim-41`; external preview deferred
 
 Parent milestone: R5 - First substantial volume
 
@@ -251,10 +251,12 @@ new evidence rather than rewriting the initial record.
 
 No preview candidate exists and no participant has been recruited for Proof
 Set. External Sieve and preview sessions are deferred until readers are
-available. Internal simulation preflight is active alongside Factor Forge,
-but its additions are not covered by Sieve or Proof Set evidence until
-explicitly included in the corresponding frozen artifact and used by real
-readers.
+available. Internal simulation reached a fixed point at `sim-41`, recorded in
+`PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`; further feature editions stop unless
+a declared artifact, content, regression, composition, or external-reader
+trigger reopens a bounded reader job. None of these additions is covered by
+Sieve or Proof Set evidence until explicitly included in a frozen artifact and
+used by real readers.
 
 Internal preflight 15 adds the `sim-14` finite-budget frontier rehearsal. It
 improves state coverage and problem-led navigation mechanics only; it does not
@@ -364,3 +366,9 @@ closure. It tests one complete multi-concept reading handoff without adding a
 second guide destination, changing the five Lab starters, or admitting the F27
 relations to Compose. Successful rendering is navigation mechanics only, not
 evaluation validity, comprehension, task success, or external-reader evidence.
+
+Subsequent internal preflights through `sim-41` complete the two-book Tables /
+Reader architecture, dictionary and family navigation, bounded search repair,
+continuous Reader sequence, and the final documented canonical-depth repair.
+Their current counts, identities, ledgers, evidence boundary, and reopening
+rules are consolidated in `PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`.
