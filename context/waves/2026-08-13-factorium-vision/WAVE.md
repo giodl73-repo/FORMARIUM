@@ -2280,3 +2280,19 @@ standalone SHA-256 is
 Historical `sim-29` reproduces exactly. Product Owner decision: prepare the
 candidate for future invited readers, without admitting `preview-01` or
 closing R4/R5P.
+
+## 2026-08-17 Two-book product architecture plan
+
+The next slice separates two reader jobs without creating a second content
+authority. **Factorium Tables** becomes the named primary dictionary/thesaurus
+and structured reference. **The Factorium Reader** becomes its explanatory
+teaching companion, with the existing 24-record spine as a selected route over
+151 additional canonical records. Factor Guides remain bounded applied
+projections rather than a third book.
+
+Seven roles approve `sim-31` with zero P1, fourteen P2, and seven P3 findings,
+all converted into admission conditions. The slice changes product hierarchy,
+labels, and routes only: Tables first with direct Search/Browse actions, Reader
+second with its quickstart and worked examples, persistent cross-navigation,
+no canonical-count change, and exact `sim-30` regression. Detailed conditions
+are in `TWO-BOOK-PRODUCT-ARCHITECTURE-ROLE-REVIEW.md`.

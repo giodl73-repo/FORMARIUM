@@ -1,0 +1,89 @@
+# Factorium Two-Book Product Architecture
+
+Status: internal product architecture candidate
+
+## Decision
+
+Factorium publishes one canonical reference through two complementary books:
+
+1. **Factorium Tables** is the primary dictionary/thesaurus and structured
+   reference. It owns lookup, sense distinction, factors, relations,
+   contrasts, cross-references, provenance, and machine-readable identity.
+2. **The Factorium Reader** is the explanatory companion. It teaches how to
+   frame, factor, compose, evaluate, and explain bounded questions by routing
+   through canonical Tables.
+
+**Factor Guides** are shorter applied journeys. They select and project Tables
+for one bounded question, disclose loss and unresolved state, and never become
+canonical entries or a third book authority.
+
+## Authority and projection contract
+
+| Surface | Owns | Must not own |
+|---|---|---|
+| Factorium Tables | headwords, senses, factors, table-family views, typed relations, constraints, provenance, stable revisions | a mandatory cover-to-cover argument or copied guide conclusions |
+| The Factorium Reader | teaching order, explanation, worked questions, transitions, interpretation warnings, routes into Tables | canonical definitions, duplicated Factor Tables, silent relation creation, or final domain decisions |
+| Factor Guides | local question, selected concepts/senses, bounded closure, checks, projection loss, frontier, next action | canonical headwords, universal procedure, hidden flattening, or unreviewed authority |
+
+The Reader and Guides link to exact Table identities. If a definition or
+factor changes, it changes in the Table and is inherited by projection; copied
+authority is a defect.
+
+## Reader jobs
+
+### Factorium Tables
+
+For a reader who has a term, distinction, or neighboring concept in mind:
+
+- find the intended sense quickly;
+- distinguish broader, narrower, related, contrasting, and confused concepts;
+- inspect factors, pivots, constraints, alternatives, relations, examples,
+  maturity, and provenance;
+- move laterally through a thesaurus-like concept graph or deeper into a full
+  table;
+- choose Compact, Abbreviated, Book, or Full projection without changing
+  canonical content.
+
+### The Factorium Reader
+
+For a reader who wants to learn the method or begin from a messy question:
+
+- understand why framing and sense selection precede combination;
+- follow the 24-record teaching spine as a non-universal route;
+- see worked bounded questions that retain conflict, truncation, missing
+  evidence, projection loss, and authority;
+- hand off to any of the 151 additional canonical records when specialized
+  depth is required.
+
+## Publication and navigation contract
+
+The primary site entry presents two choices in this order:
+
+1. **Explore the Tables** — search or browse the canonical dictionary/
+   thesaurus;
+2. **Read the Guide** — enter the Reader's 24-record teaching route and worked
+   examples.
+
+Every Table page keeps search, browse, and related-concept routes available.
+Every Reader or Guide page identifies itself as a companion projection and
+links back to owning Tables. Search spans canonical records and guides but
+labels their kinds; ranking does not change authority.
+
+## Current artifact mapping
+
+| Existing artifact | Product placement |
+|---|---|
+| `reference/factorium-reference-v0.factorium` and `tables/` | Factorium Tables canonical source |
+| generated search, contents, entry pages, and reader profiles | Factorium Tables publication projections |
+| `guides/bounded-question-composition-book-one.md` 24-record spine | The Factorium Reader candidate backbone |
+| problem-led routes and Composition examples | Reader worked examples |
+| other files under `guides/` | bounded Factor Guides |
+| `sim-30` | frozen pre-split Reader-oriented candidate baseline |
+| `sim-31` | two-book front-door simulation |
+
+## Claim boundary
+
+This architecture clarifies product identity and generated navigation. It does
+not establish dictionary completeness, thesaurus quality, teaching efficacy,
+reader comprehension, practical decision quality, accessibility success,
+return use, external-preview readiness, or publication readiness.
