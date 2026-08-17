@@ -498,6 +498,8 @@ node tools\check_factorium_reader_route.js target\proof-set-sim-36
 node tools\check_factorium_reader_route_browser.js target\proof-set-sim-36 target\sim36-factorium-reader-route.png
 node tools\check_factorium_reader_sequence.js target\proof-set-sim-37
 node tools\check_factorium_reader_sequence_browser.js target\proof-set-sim-37 target\sim37-factorium-reader-sequence.png
+node tools\check_factorium_reader_start.js target\proof-set-sim-38
+node tools\check_factorium_reader_start_browser.js target\proof-set-sim-38 target\sim38-factorium-reader-start.png
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .

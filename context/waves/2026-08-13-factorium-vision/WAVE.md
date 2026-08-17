@@ -2527,3 +2527,12 @@ Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
 The change is limited to action target, label, and order; method, tasks, Tables,
 contents, source content, and sequence custody remain unchanged. No onboarding
 automation, prerequisite, progress, preference, or learning claim is admitted.
+
+Result review: `sim-38` makes exact manifest record 01 the sole primary Reader
+start. **Begin with Purpose** opens the selected Purpose page as Reader step 1
+of 24. Quickstart remains adjacent and optional; all other routes and source
+content remain unchanged. Static and live Edge checks pass. Site identity is
+`f0dfbc647652db2f4066e6cd4300221c8b7c79cfec52789745b1804457e3f1fe`;
+standalone SHA-256 is
+`ee1650305e7aa64f51f369542ce8587d3b9e9b078ea699a559101a4fa9b82488`.
+`sim-37` reproduces exactly.

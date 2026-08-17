@@ -980,6 +980,19 @@ standalone SHA-256 is
 `sim-36` reproduces exactly. Reader position is editorial only, not a
 prerequisite, dependency, semantic, progress, mastery, or reader-value claim.
 
+`sim-38` aligns the Reader's primary start with its declared sequence. The
+manifest-derived **Begin with Purpose** action opens exact record 01 and arrives
+on a page labelled Reader step 1 of 24. Quickstart remains an optional adjacent
+action; other routes, content, and sequence membership are unchanged.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+eighteen chapters, and 239 pages with zero missing targets. Site identity is
+`f0dfbc647652db2f4066e6cd4300221c8b7c79cfec52789745b1804457e3f1fe`;
+standalone SHA-256 is
+`ee1650305e7aa64f51f369542ce8587d3b9e9b078ea699a559101a4fa9b82488`.
+`sim-37` reproduces exactly. Primary placement is not evidence of conceptual
+primacy, preference, comprehension, or learning value.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

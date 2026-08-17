@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -155,6 +155,7 @@ $artifactTitle = switch ($Edition) {
     "sim-35" { "Factorium Tables Alphabetical Index Simulation 35" }
     "sim-36" { "Factorium Reader Route Simulation 36" }
     "sim-37" { "Factorium Reader Sequence Simulation 37" }
+    "sim-38" { "Factorium Reader Primary Start Simulation 38" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -2972,6 +2973,15 @@ if ($editionNumber -ge 7) {
             throw "Reader route part sizes mismatch: $($readerRoutePartSizes -join ',')"
         }
 
+        $readerStartRecord = $searchRecordByPath[$candidateRecordPaths[0]]
+        $readerStartTitle = [System.Net.WebUtility]::HtmlEncode($readerStartRecord.title)
+        $readerPrimaryActions = if ($editionNumber -ge 38) {
+            "<a class=`"reader-route__primary`" data-reader-start=`"sequence`" href=`"$($readerStartRecord.href)`">Begin with $readerStartTitle</a><a data-reader-start=`"quickstart`" href=`"$candidateQuickstartPage`">Read the quickstart</a>"
+        }
+        else {
+            "<a class=`"reader-route__primary`" href=`"$candidateQuickstartPage`">Start with the quickstart</a>"
+        }
+
         $readerRouteHtml = @"
 <!doctype html>
 <html lang="en">
@@ -2994,7 +3004,7 @@ if ($editionNumber -ge 7) {
 <p class="site-kicker">Teaching companion · selected route</p>
 <h1>The Factorium Reader</h1>
 <p>Learn one bounded method through 24 selected records in five parts, then return to the canonical Tables whenever the question needs more depth.</p>
-<div class="reader-route__actions"><a class="reader-route__primary" href="$candidateQuickstartPage">Start with the quickstart</a><a href="$candidateGuidePage">Read the complete method</a><a href="$candidateTasksPage">Try worked questions</a><a href="tables.html">Browse Tables A-Z</a></div>
+<div class="reader-route__actions">$readerPrimaryActions<a href="$candidateGuidePage">Read the complete method</a><a href="$candidateTasksPage">Try worked questions</a><a href="tables.html">Browse Tables A-Z</a></div>
 <p class="reader-route__boundary"><strong>Tables remain authoritative.</strong> This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other 151 records.</p>
 </section>
 <nav class="reader-route__parts" aria-label="Reader parts"><a href="#reader-part-1">I</a><a href="#reader-part-2">II</a><a href="#reader-part-3">III</a><a href="#reader-part-4">IV</a><a href="#reader-part-5">V</a></nav>
@@ -4028,6 +4038,13 @@ $pageScripts
         $siteChecks.reader_sequence_nonmember_panels = 0
         $siteChecks.reader_sequence_state = "none"
         $siteChecks.reader_sequence_semantics = "editorial-teaching-order-only"
+    }
+    if ($editionNumber -ge 38) {
+        $siteChecks.reader_primary_start_links = 1
+        $siteChecks.reader_optional_quickstart_links = 1
+        $siteChecks.reader_primary_start_position = 1
+        $siteChecks.reader_primary_start_path = $candidateRecordPaths[0]
+        $siteChecks.reader_primary_start_state = "none"
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1

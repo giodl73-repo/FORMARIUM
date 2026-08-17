@@ -4,8 +4,8 @@ topic: factorium-reader-start
 date: 2026-08-17
 roles_used: 7
 p1_count: 0
-p2_count: 14
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Factorium Reader Primary Start Roles Check
@@ -103,3 +103,10 @@ orientation and all authority boundaries.
 1. Resolve the primary label and destination from exact manifest record 01.
 2. Retain Quickstart and all other actions as secondary routes.
 3. Verify live arrival, sim-37 compatibility, and no additional state.
+
+## Fixed-point result
+
+All fourteen P2 findings are closed in `sim-38`: the primary action derives
+exact manifest record 01 and opens Purpose as Reader step 1; Quickstart and all
+other routes remain visible and exact; no state is added; mobile has no
+overflow; and `sim-37` reproduces exactly. Final verdict: PASS.
