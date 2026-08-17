@@ -1,6 +1,6 @@
 # Factorium Reader Terminal Handoff
 
-Status: internal handoff contract under implementation
+Status: internal handoff contract fixed point
 
 Reference implementation: `sim-39`
 

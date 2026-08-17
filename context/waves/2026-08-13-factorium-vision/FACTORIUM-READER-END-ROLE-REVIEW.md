@@ -1,6 +1,6 @@
 # Factorium Reader Terminal Handoff Role Review
 
-Status: plan reviewed; implementation pending
+Status: fixed-point result reviewed
 
 Date: 2026-08-17
 
@@ -27,3 +27,20 @@ Skill review: `signals/roles/check/factorium-reader-end-roles-check-2026-08-17.m
 - wording says selected route ended, not completed, mastered, or succeeded;
 - no state or canonical-closure implication is admitted;
 - `sim-38` reproduces exactly and `sim-39` has zero missing targets.
+
+## Result review
+
+All fourteen P2 conditions are closed. `sim-39` adds exactly one finish link to
+manifest record 24, History, Revision, Provenance, Lineage, and Change Evidence.
+It says **End of selected route** and targets the existing Reader after-route
+choices. Step 24 retains its exact previous link and no next link; steps 1-23
+retain all 23 next links and receive no finish link.
+
+Static and live Edge checks verify terminal membership, wording, fragment,
+exclusions, previous/next preservation, arrival, zero missing targets, and no
+390-pixel overflow. The edition remains 217 sources, 175 canonical records, 185
+search records, eighteen chapters, and 239 pages. `sim-38` reproduces exactly.
+
+Product Owner decision: **keep the terminal handoff and stop further Reader
+mechanics absent new evidence**. No completion, mastery, closure, or learning
+claim is admitted.

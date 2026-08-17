@@ -2546,3 +2546,13 @@ and seven P3 findings. The link must attach only to manifest record 24, preserve
 all other navigation, and add no completion, mastery, closure, progress, survey,
 or learning claim. This closes Reader mechanics unless new evidence identifies
 another concrete break.
+
+Result review: `sim-39` adds exactly one **End of selected route** link to exact
+step 24 and returns to the existing Reader after-route choices. Steps 1-23
+retain 23 next links and receive no finish link; step 24 retains its previous
+link and has no next link. Static and live Edge checks pass. Site identity is
+`9dc1405983ba2ff8a1ebacd870b86c4af2c29ea869d72e020aaa9dfc9825dce8`;
+standalone SHA-256 is
+`d80c3d4a81ce074ab043b76aa5363418357259697ffbdebbc796f94736b36be3`.
+`sim-38` reproduces exactly. Product Owner decision: stop further Reader
+mechanics absent new evidence.

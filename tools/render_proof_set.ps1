@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -156,6 +156,7 @@ $artifactTitle = switch ($Edition) {
     "sim-36" { "Factorium Reader Route Simulation 36" }
     "sim-37" { "Factorium Reader Sequence Simulation 37" }
     "sim-38" { "Factorium Reader Primary Start Simulation 38" }
+    "sim-39" { "Factorium Reader Terminal Handoff Simulation 39" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -3496,6 +3497,7 @@ if ($editionNumber -ge 7) {
     $readerSequenceContentsLinks = 0
     $readerSequencePreviousLinks = 0
     $readerSequenceNextLinks = 0
+    $readerSequenceFinishLinks = 0
     foreach ($source in $sources) {
         $relativeSource = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
         $segment = $renderedSegmentBySource[$source]
@@ -3590,6 +3592,10 @@ if ($editionNumber -ge 7) {
                 $readerNextPage = [System.IO.Path]::GetFileName($readerNextRecord.href)
                 $readerNext = "<a data-reader-direction=`"next`" href=`"$readerNextPage`"><span>Next Reader step</span>$readerNextTitle</a>"
                 $readerSequenceNextLinks += 1
+            }
+            elseif ($editionNumber -ge 39) {
+                $readerNext = '<a data-reader-direction="finish" href="../reader.html#reader-route-after-heading"><span>End of selected route</span>Choose a bounded next path</a>'
+                $readerSequenceFinishLinks += 1
             }
             $readerSequencePanels += 1
             $readerSequenceContentsLinks += 1
@@ -4045,6 +4051,15 @@ $pageScripts
         $siteChecks.reader_primary_start_position = 1
         $siteChecks.reader_primary_start_path = $candidateRecordPaths[0]
         $siteChecks.reader_primary_start_state = "none"
+    }
+    if ($editionNumber -ge 39) {
+        if ($readerSequenceFinishLinks -ne 1) {
+            throw "Factorium Reader terminal handoff mismatch: $readerSequenceFinishLinks"
+        }
+        $siteChecks.reader_sequence_finish_links = $readerSequenceFinishLinks
+        $siteChecks.reader_sequence_finish_position = 24
+        $siteChecks.reader_sequence_finish_target = "reader.html#reader-route-after-heading"
+        $siteChecks.reader_sequence_finish_state = "none"
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1

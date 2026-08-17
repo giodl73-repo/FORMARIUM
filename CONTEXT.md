@@ -993,6 +993,19 @@ standalone SHA-256 is
 `sim-37` reproduces exactly. Primary placement is not evidence of conceptual
 primacy, preference, comprehension, or learning value.
 
+`sim-39` closes the selected Reader route without inventing completion state.
+Exact step 24 receives one **End of selected route** link to the existing
+after-route choices; steps 1-23 retain 23 exact next links and receive no finish
+link. Step 24 retains its predecessor and has no Reader-next link.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+eighteen chapters, and 239 pages with zero missing targets. Site identity is
+`9dc1405983ba2ff8a1ebacd870b86c4af2c29ea869d72e020aaa9dfc9825dce8`;
+standalone SHA-256 is
+`d80c3d4a81ce074ab043b76aa5363418357259697ffbdebbc796f94736b36be3`.
+`sim-38` reproduces exactly. Terminal position is not evidence of completion,
+mastery, conceptual closure, comprehension, or learning value.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

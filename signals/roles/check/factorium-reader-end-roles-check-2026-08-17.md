@@ -4,8 +4,8 @@ topic: factorium-reader-end
 date: 2026-08-17
 roles_used: 7
 p1_count: 0
-p2_count: 14
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Factorium Reader Terminal Handoff Roles Check
@@ -84,3 +84,10 @@ Roles reviewed: 7. P1: 0 | P2: 14 | P3: 7.
 Verdict: APPROVED-WITH-CONDITIONS. Add exactly one manifest-derived terminal
 link, reuse the existing after-route section, preserve all other sequences, and
 regress sim-38. No completion, mastery, closure, or learning claim is admitted.
+
+## Fixed-point result
+
+All fourteen P2 findings are closed in `sim-39`: one finish link exists only on
+step 24, reaches the existing after-route section, preserves all prior sequence
+links, adds no state, has no mobile overflow, and reproduces `sim-38` exactly.
+Final verdict: PASS.
