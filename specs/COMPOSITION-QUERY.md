@@ -80,7 +80,7 @@ semantically sufficient. `add`, `multiply`, `subtract`, `evaluate`, and
 
 ## Boundary and evolution
 
-V0 is intentionally a manual fixture contract over the eight-edge reviewed
+V0 is intentionally a manual fixture contract over the nine-edge reviewed
 relation sidecar. The current interactive Composition Lab separately exposes
 only its exact six-ID F1-F6 allowlist. The trace contract leaves
 natural-language intent, rejected sense narratives,

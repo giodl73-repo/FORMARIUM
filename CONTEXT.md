@@ -737,7 +737,7 @@ The contract is `specs/ROLE-PORTABLE-PACKET.md`, onboarding is
 Factor Forge through F27 has expanded and deepened the connected reference
 across structure, evidence, quantities, science, governance, organizations,
 software, and decision support. The canonical reference now contains 40
-entries, 304 senses, 479 factors, and 57 views with 105 exact assurance
+entries, 304 senses, 479 factors, and 57 views with 106 exact assurance
 bindings. The current Factor Forge supplement contains 46 records, while
 `sim-29` selects 124 canonical records and indexes 132 destinations across
 thirteen chapters. Historical preflight documents retain the counts of the
@@ -746,7 +746,8 @@ rehearsal they recorded.
 F28 adds parser grammar and external fail-closed fixtures for five Decision
 and Evidence relation kinds. F29 admits the first exact cross-entry
 evidence-to-evaluation relation, and F31 admits the constraint-to-feasibility
-relation, bringing the canonical sidecar to eight reviewed edges. The
+relation. F32 admits causal-scope-to-outcome qualification, bringing the
+canonical sidecar to nine reviewed edges. The
 Composition Lab remains separately fixed to its six-ID F1-F6 teaching
 allowlist.
 
@@ -761,7 +762,11 @@ F31 admits the second cross-entry edge: a Policy/Rule constraint can constrain
 Choice feasibility only under declared authority, version, effective period,
 applicability, and hard/soft status. Its canonical check remains unresolved;
 the guide's local pass is limited to the authored monitored-trial alternative.
-Three Decision/Evidence bridge kinds remain candidate-only.
+F32 admits the third cross-entry edge: declared causal status, contrast,
+population, outcome, and horizon may qualify an alternative-state outcome.
+The canonical check remains unresolved and association, timing, or shadow-mode
+evidence cannot become an intervention effect. Two Decision/Evidence bridge
+kinds remain candidate-only.
 
 ## Boundary
 

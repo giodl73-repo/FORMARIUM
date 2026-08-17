@@ -81,10 +81,10 @@ recommendation validity, decision quality, reader success, or preview evidence.
 ## Published identities
 
 - Canonical relation sidecar SHA-256:
-  `9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60`
+  `76ff0bb2215449b2b751a4052551bd1134a0e358e60f0af1c12ffb1ee9f8fbbb`
 - Exact assurance sidecar SHA-256:
-  `56cbedeceac35ce2c4e087f7965b227f4bae28cd607a7f4a281c1bdc86381480`
+  `ae5e63d86e31b359a5958da5cd0ca580f1d4048f53f9b4ed37bbccaa44987c45`
 - Composition Lab allowlist SHA-256:
   `35f17d2e24190be1be8897f38477a1c138d974223a73f850665e8439ef645f5a`
 - Canonical query SHA-256:
-  `2c32158a2a51ea5ccf0f5a51fbdfaed55ea0053552fcd79814f8c6bda5758de1`
+  `f3e1cbeea6d7cfa143c173e89bc2ef666562020f144c7a2ee108b8faf261ee7d`

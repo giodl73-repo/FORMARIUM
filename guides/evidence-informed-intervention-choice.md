@@ -35,17 +35,17 @@ represent a real organization.
 - `entry:cost-price-value-return`
 - `entry:policy-rule-constraint-decision-exception`
 
-The evidence-to-evaluation and constraint-to-feasibility type relations are
-canonical under their separate admission contracts. Three F27 bridge
-relations remain candidates. None of the five is available through the current
-Composition Lab.
+The evidence-to-evaluation, causal-scope-to-outcome, and
+constraint-to-feasibility type relations are canonical under their separate
+admission contracts. Two F27 bridge relations remain candidates. None of the
+five is available through the current Composition Lab.
 
 ## Canonical evidence-to-evaluation reading route
 
 Governing question: **Which evidence qualification must be reviewed before
 using a claim to evaluate an alternative?**
 
-This is one of two canonical structural paths used by the guide. It remains
+This is one of three canonical structural paths used by the guide. It remains
 incomplete because graph membership cannot decide whether the synthetic
 evidence applies to a particular alternative, population, outcome, horizon,
 provenance, or limitation.
@@ -69,8 +69,8 @@ Exact trace file: `fixtures/composition/decision-evidence.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60` |
-| Composition Query trace | `f0f9a3a2d600eac0d33d90f5e769c1b043998348ecd338da028c1ebdc8e69e51` |
+| Relation sidecar V0 | `76ff0bb2215449b2b751a4052551bd1134a0e358e60f0af1c12ffb1ee9f8fbbb` |
+| Composition Query trace | `6f8ab14bbf2e5c8bcdcb5b56d6afb53e7be251e8d3639c209d0523028ff0bf9a` |
 
 See the
 [relation admission contract](../specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md)
@@ -155,8 +155,8 @@ Exact trace file: `fixtures/composition/constraint-feasibility.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60` |
-| Composition Query trace | `2c32158a2a51ea5ccf0f5a51fbdfaed55ea0053552fcd79814f8c6bda5758de1` |
+| Relation sidecar V0 | `76ff0bb2215449b2b751a4052551bd1134a0e358e60f0af1c12ffb1ee9f8fbbb` |
+| Composition Query trace | `f3e1cbeea6d7cfa143c173e89bc2ef666562020f144c7a2ee108b8faf261ee7d` |
 
 See the
 [constraint-to-feasibility admission contract](../specs/CONSTRAINT-FEASIBILITY-RELATION-ADMISSION.md)
@@ -173,11 +173,47 @@ for its exact direction, qualifiers, loss, and claim boundary.
 | Broad adoption | other groups match the observed group | broader earlier notification may occur | `contested` | `SYN-05`; no transport evidence |
 | Broad adoption | other groups differ materially | benefit, burden, and missed-case behavior unknown | `missing` | no applicable observations |
 
+## Canonical causal-scope-to-outcome reading route
+
+Governing question: **Which causal scope must be checked before treating an
+observed outcome as an alternative consequence?**
+
+This canonical structural path remains incomplete because graph membership
+cannot decide the causal status, relevant contrast, population, outcome,
+horizon, identification, transport, estimate, or uncertainty. Association,
+temporal order, and shadow-mode observation do not establish an intervention
+effect.
+
+| Stage | Exact route | Reader meaning |
+|---|---|---|
+| Add | `factor:causal-reasoning/outcome-measure-and-time-horizon` | Start from the declared outcome scope while retaining Causal Reasoning authority. |
+| Multiply | `f27-causal-scope-qualifies-outcome` -> `factor:choice-alternative-selection/alternative-state-outcomes-and-consequences` -> `view:decision-alternative-selection` | Bring causal scope into the alternative outcome description without identifying an effect or transporting an estimate. |
+| Evaluate | `f27-check-causal-outcome-scope` = `unresolved` | Causal status, contrast, population, outcome, horizon, identification, and transport still require local review. |
+| Stop | state = `incomplete`; no frontier or conflict | The structural route exists, but no intervention effect, benefit, harm, or ranking follows. |
+| Flatten | three loss-declared rows | Retain the selected causal scope, unresolved alternative-state binding, and Decision scope while omitting the causal design, assumptions, estimate, uncertainty, local binding, and full Decision Table. |
+
+The local bridge evaluation records `fail` for `SYN-02` because it is a
+retrospective shadow-mode association and no intervention occurred. That local
+failure does not alter the canonical query's unresolved check or incomplete
+state.
+
+Exact trace file: `fixtures/composition/causal-outcome-scope.factorium-query`
+
+| Identity | SHA-256 |
+|---|---|
+| Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Relation sidecar V0 | `76ff0bb2215449b2b751a4052551bd1134a0e358e60f0af1c12ffb1ee9f8fbbb` |
+| Composition Query trace | `aabda3688998a26d00f3862cd00cbb10b13e8f2524811e6fc47dea184899b1e5` |
+
+See the
+[causal-scope-to-outcome admission contract](../specs/CAUSAL-OUTCOME-RELATION-ADMISSION.md)
+for its exact direction, qualifiers, loss, and claim boundary.
+
 ## Bridge join evaluation
 
-The two admitted relation checks and all three candidate-relation checks record
-one of `pass`, `fail`, or `unresolved`; none is omitted. The first and last
-rows are canonical relation checks.
+The three admitted relation checks and both candidate-relation checks record
+one of `pass`, `fail`, or `unresolved`; none is omitted. The first, second, and
+last rows are canonical relation checks.
 
 | Check | Outcome | Evidence | Rationale |
 |---|---|---|---|

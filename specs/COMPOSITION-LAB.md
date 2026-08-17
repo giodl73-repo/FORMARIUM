@@ -6,7 +6,7 @@ interchange, or production Workbench
 ## Purpose
 
 The Composition Lab lets a reader construct one bounded working graph over the
-an exact six-ID allowlist of reviewed F1-F6 relations from the eight-record
+an exact six-ID allowlist of reviewed F1-F6 relations from the nine-record
 canonical sidecar. The reader explicitly supplies the problem,
 seed artifacts, relation allowlist, direction, context, budgets, and optional
 exclusion requests. The local browser runtime then performs deterministic

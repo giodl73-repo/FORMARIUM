@@ -43,8 +43,9 @@ contract. The reader route carries no evidence artifact, local
 evidence-to-alternative binding, support direction, causal status, score,
 ranking, recommendation, or final selection.
 
-The full guide contains a separately admitted constraint-to-feasibility route
-and synthetic local analysis beyond this one structural edge. Neither changes
+The full guide contains separately admitted constraint-to-feasibility and
+causal-scope-to-outcome routes plus synthetic local analysis beyond this one
+structural edge. Neither changes
 this query's outcomes. In particular, the evidence route's unresolved check
 and incomplete closure state remain visible next to the guide's conditional
 recommendation.

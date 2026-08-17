@@ -792,3 +792,21 @@ trial; broad adoption remains unresolved. The canonical sidecar now has eight
 relations, including two cross-entry edges, with 105 exact assurance bindings.
 The interactive Lab remains on its separate six-ID F1-F6 allowlist, and the
 other three F27 bridge relations remain candidate-only.
+
+## F32 causal-scope-to-outcome relation
+
+F32 admits only `f27-causal-scope-qualifies-outcome`, connecting Causal
+Reasoning's outcome-measure-and-time-horizon factor to Choice's
+alternative-state outcomes and consequences under the Alternative Selection
+Decision view. Causal status, contrast, horizon, outcome, and population are
+mandatory declarative qualifiers. The edge carries no causal design,
+identification result, estimate, uncertainty, transport judgment, local
+binding, effect size, benefit, harm, ranking, or recommendation.
+
+The canonical three-node query remains `incomplete` with its causal-scope
+check `unresolved`; a wrong-predecessor fixture fails closed. The guide adds a
+separate book route while preserving the local `fail` for `SYN-02` because
+shadow-mode association is not an intervention effect. The canonical sidecar
+now has nine relations, including three cross-entry edges, with 106 exact
+assurance bindings. The Lab remains on F1-F6, and the risk/consequence and
+value/criterion F27 relations remain candidate-only.

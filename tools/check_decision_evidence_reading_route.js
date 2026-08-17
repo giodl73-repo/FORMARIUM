@@ -14,7 +14,7 @@ const spec = read("specs/DECISION-EVIDENCE-READING-ROUTE.md");
 const digest = crypto.createHash("sha256").update(query).digest("hex");
 
 assert.equal(digest,
-  "f0f9a3a2d600eac0d33d90f5e769c1b043998348ecd338da028c1ebdc8e69e51",
+  "6f8ab14bbf2e5c8bcdcb5b56d6afb53e7be251e8d3639c209d0523028ff0bf9a",
   "canonical Decision/Evidence query identity");
 assert.match(query, /^edge f27-evidence-qualifies-evaluation$/m,
   "query uses the admitted relation");

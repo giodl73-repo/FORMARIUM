@@ -5,7 +5,7 @@ use factor::{
 use std::{fs, path::Path};
 
 #[test]
-fn decision_evidence_kind_fixture_tracks_two_admitted_kinds() {
+fn decision_evidence_kind_fixture_tracks_three_admitted_kinds() {
     let path = "fixtures/relations/decision-evidence-relation-kinds.factorium";
     let text = fs::read_to_string(path).unwrap();
     let manifest = RelationManifest::parse(&text).unwrap();
@@ -30,6 +30,7 @@ fn decision_evidence_kind_fixture_tracks_two_admitted_kinds() {
     assert_eq!(
         admitted,
         [
+            "f27-causal-scope-qualifies-outcome",
             "f27-constraint-filters-feasibility",
             "f27-evidence-qualifies-evaluation"
         ]
@@ -77,13 +78,13 @@ fn decision_evidence_kind_fixtures_fail_closed() {
 }
 
 #[test]
-fn canonical_sidecar_admits_two_cross_entry_relations() {
+fn canonical_sidecar_admits_three_cross_entry_relations() {
     let text = fs::read_to_string("reference/factorium-relations-v0.factorium").unwrap();
     let manifest = RelationManifest::parse(&text).unwrap();
-    assert_eq!(manifest.relations().len(), 8);
+    assert_eq!(manifest.relations().len(), 9);
     assert_eq!(
         manifest.sha256(),
-        "9324d99f09b89b6c36a41d690e325cec9c243eca879cf9698bcbc9ea7d4bbd60"
+        "76ff0bb2215449b2b751a4052551bd1134a0e358e60f0af1c12ffb1ee9f8fbbb"
     );
 }
 

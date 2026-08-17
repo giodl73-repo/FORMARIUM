@@ -761,6 +761,10 @@ mod tests {
                 "incomplete",
             ),
             (
+                "fixtures/composition/causal-outcome-scope.factorium-query",
+                "incomplete",
+            ),
+            (
                 "fixtures/composition/constraint-feasibility.factorium-query",
                 "incomplete",
             ),
@@ -798,6 +802,7 @@ mod tests {
         let (corpus, relations) = sources();
         for path in [
             "fixtures/composition-invalid/ambiguous-join-direction.factorium-query",
+            "fixtures/composition-invalid/causal-outcome-wrong-predecessor.factorium-query",
             "fixtures/composition-invalid/constraint-feasibility-wrong-predecessor.factorium-query",
             "fixtures/composition-invalid/cycle-replay.factorium-query",
             "fixtures/composition-invalid/evidence-evaluation-wrong-predecessor.factorium-query",
