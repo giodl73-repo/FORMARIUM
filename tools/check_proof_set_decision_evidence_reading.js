@@ -18,8 +18,8 @@ assert.equal(manifest.site_checks.composition_starter_cards, 5,
   "five interactive starter cards remain");
 assert.equal(manifest.composition_lab_checks.relation_records, 6,
   "Lab remains on six allowlisted relations");
-assert.equal(manifest.composition_lab_checks.canonical_relation_records, 9,
-  "canonical graph retains nine relations");
+assert.equal(manifest.composition_lab_checks.canonical_relation_records, 10,
+  "canonical graph retains ten relations");
 
 const card = home.match(
   /<li><span class="site-problem-state">Incomplete trace (?:&#183;|·) applicability unresolved<\/span>[\s\S]*?<\/li>/
@@ -34,7 +34,7 @@ assert.ok(!card[0].includes("compose.html#starter-"),
 
 assert.ok(home.includes('data-trace-id="evidence-qualifies-alternative-evaluation"'),
   "Composition Explorer renders the canonical trace");
-assert.ok(home.includes("6f8ab14bbf2e5c8bcdcb5b56d6afb53e7be251e8d3639c209d0523028ff0bf9a"),
+assert.ok(home.includes("7be1bafbec97557d5ffae061879f1ea492ad48ac598fb108b8b35f15999f8cad"),
   "Composition Explorer renders the exact trace identity");
 assert.ok(guide.includes("canonical-evidence-to-evaluation-reading-route"),
   "guide renders the canonical reading section");

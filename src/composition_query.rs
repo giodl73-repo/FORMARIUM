@@ -785,6 +785,10 @@ mod tests {
                 "complete",
             ),
             (
+                "fixtures/composition/risk-consequence.factorium-query",
+                "incomplete",
+            ),
+            (
                 "fixtures/composition/system-dependency.factorium-query",
                 "complete",
             ),
@@ -810,6 +814,7 @@ mod tests {
             "fixtures/composition-invalid/incompatible-sense-complete.factorium-query",
             "fixtures/composition-invalid/missing-context.factorium-query",
             "fixtures/composition-invalid/required-exclusion.factorium-query",
+            "fixtures/composition-invalid/risk-consequence-wrong-predecessor.factorium-query",
             "fixtures/composition-invalid/unreached-truncation.factorium-query",
         ] {
             let result = CompositionQuery::parse(&fs::read_to_string(path).unwrap())

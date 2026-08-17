@@ -64,7 +64,9 @@ It distinguishes one connected editorial navigation graph from the reviewed
 semantic sidecar: ordinary cross-references are not closure edges. F29 adds
 the first exact cross-entry edge, F31 adds the second, and F32 adds a
 fail-closed causal-scope-to-outcome edge, bringing that sidecar to nine records.
-F30 exposes that edge through one exact incomplete book and problem-led
+F33 adds risk-to-consequence characterization without importing probability or
+preference, bringing the sidecar to ten records.
+F30 exposes the first evidence edge through one exact incomplete book and problem-led
 reading route while leaving the interactive Composition Lab unchanged.
 
 ## Milestone map

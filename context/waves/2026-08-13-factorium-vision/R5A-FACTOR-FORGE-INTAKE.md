@@ -810,3 +810,21 @@ shadow-mode association is not an intervention effect. The canonical sidecar
 now has nine relations, including three cross-entry edges, with 106 exact
 assurance bindings. The Lab remains on F1-F6, and the risk/consequence and
 value/criterion F27 relations remain candidate-only.
+
+## F33 risk-to-consequence relation
+
+F33 admits only `f27-risk-characterizes-consequence`, connecting the
+Probability/Risk/Uncertainty consequence-set factor to Choice alternative-
+state outcomes and consequences under the Alternative Selection Decision
+view. Affected entity, consequence basis, control state, horizon, and scenario
+are mandatory declarative qualifiers. The edge carries no probability,
+expected loss, controls, risk attitude, affected-party trade-off, local
+binding, decision weight, ranking, or recommendation.
+
+The canonical three-node query remains `incomplete` with consequence alignment
+`unresolved`; a wrong-predecessor fixture fails closed. The guide adds a
+separate book route and retains its local unresolved record because additional
+escalations lack a complete benefit, burden, and affected-party consequence
+basis. The canonical sidecar now has ten relations, including four cross-entry
+edges, with 107 exact assurance bindings. The Lab remains on F1-F6, and only
+the value-to-criterion F27 relation remains candidate-only.

@@ -82,7 +82,7 @@ if (editionNumber >= 29) {
     checks: 1,
     projections: 3,
     work: 9,
-    sha256: "6f8ab14bbf2e5c8bcdcb5b56d6afb53e7be251e8d3639c209d0523028ff0bf9a"
+    sha256: "7be1bafbec97557d5ffae061879f1ea492ad48ac598fb108b8b35f15999f8cad"
   }, "Decision/Evidence trace remains exact and incomplete");
   assert.equal((home.match(/compose\.html#starter-[a-z0-9-]+/g) || []).length, 5,
     "only the five allowlisted traces link to Compose starters");

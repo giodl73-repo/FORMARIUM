@@ -1781,3 +1781,46 @@ link, and diff checks pass. No causal identification, intervention effect,
 estimate, transport, benefit, harm, ranking, recommendation validity,
 decision quality, reader success, external-preview, publication, Workbench,
 or `preview-01` claim is admitted.
+
+## 2026-08-16 F33 risk-to-consequence relation admission
+
+Plan review: admit only `f27-risk-characterizes-consequence` from the two
+remaining F27 candidates; preserve Probability/Risk/Uncertainty as consequence
+set, probability, expected-loss, and risk-attitude authority; preserve Choice
+as alternative consequence owner; require declared affected entity,
+consequence basis, control state, horizon, and scenario; carry no likelihood,
+valuation, decision weight, ranking, or recommendation; keep the canonical
+check `unresolved` and closure `incomplete`; retain the guide's local
+consequence-basis uncertainty; migrate the complete shared sidecar and every
+query identity; and leave the Composition Lab on F1-F6. The six-role review
+found zero P1 and twelve P2 conditions, all closed by the exact contract,
+fail-closed fixtures, loss boundary, guide route, assurance migration, and Lab
+exclusion.
+
+Result review: the canonical relation sidecar now contains ten records at
+SHA-256
+`e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b`,
+including exactly four cross-entry relations. Exact assurance covers 40
+entries, 57 views, and ten relations in 107 bindings at SHA-256
+`7a41452f82c9b953214be0e016ef78b9a329272ee6248313593de45342b5af97`.
+The new three-node query has SHA-256
+`dd840001f8b0fa3606b66a0f11f5c94cc0b26f2535f09660f4555eb7011bca6f`,
+retains unresolved affected-party, scenario, control-state, and consequence-
+basis review, and fails closed on an incorrect predecessor. The guide adds an
+exact risk-to-consequence route while retaining its local `unresolved` record:
+additional escalations lack a complete benefit, burden, and affected-party
+consequence basis. Only the value-to-criterion bridge remains a candidate; the
+six-ID Lab allowlist excludes all four canonical F27 edges.
+
+The regenerated 161-source `sim-29` edition retains 132 searchable
+destinations and 176 site pages with zero missing targets. Its site identity
+is `c50fc84e37fa0f079615802e7ba72c6c97238811911425a039ee232e28e549a6`
+and standalone SHA-256 is
+`c5be261dc525ef76944225173e85662eb08160042a31c060d1afffe478d74fe0`.
+All 70 Rust tests, Clippy, nine canonical queries, relation-specific negative
+fixtures, focused bridge/constraint/causal/risk checks, reference/sidecar,
+closure, local and generated-site composition, live browser, search, packet,
+role, link, and diff checks pass. No probability, expected loss, likelihood,
+severity, risk acceptability, preference, decision weight, ranking,
+recommendation validity, decision quality, reader success, external-preview,
+publication, Workbench, or `preview-01` claim is admitted.

@@ -35,9 +35,9 @@ represent a real organization.
 - `entry:cost-price-value-return`
 - `entry:policy-rule-constraint-decision-exception`
 
-The evidence-to-evaluation, causal-scope-to-outcome, and
+The evidence-to-evaluation, causal-scope-to-outcome, risk-to-consequence, and
 constraint-to-feasibility type relations are canonical under their separate
-admission contracts. Two F27 bridge relations remain candidates. None of the
+admission contracts. One F27 bridge relation remains a candidate. None of the
 five is available through the current Composition Lab.
 
 ## Canonical evidence-to-evaluation reading route
@@ -45,7 +45,7 @@ five is available through the current Composition Lab.
 Governing question: **Which evidence qualification must be reviewed before
 using a claim to evaluate an alternative?**
 
-This is one of three canonical structural paths used by the guide. It remains
+This is one of four canonical structural paths used by the guide. It remains
 incomplete because graph membership cannot decide whether the synthetic
 evidence applies to a particular alternative, population, outcome, horizon,
 provenance, or limitation.
@@ -69,8 +69,8 @@ Exact trace file: `fixtures/composition/decision-evidence.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `76ff0bb2215449b2b751a4052551bd1134a0e358e60f0af1c12ffb1ee9f8fbbb` |
-| Composition Query trace | `6f8ab14bbf2e5c8bcdcb5b56d6afb53e7be251e8d3639c209d0523028ff0bf9a` |
+| Relation sidecar V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
+| Composition Query trace | `7be1bafbec97557d5ffae061879f1ea492ad48ac598fb108b8b35f15999f8cad` |
 
 See the
 [relation admission contract](../specs/EVIDENCE-EVALUATION-RELATION-ADMISSION.md)
@@ -155,8 +155,8 @@ Exact trace file: `fixtures/composition/constraint-feasibility.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `76ff0bb2215449b2b751a4052551bd1134a0e358e60f0af1c12ffb1ee9f8fbbb` |
-| Composition Query trace | `f3e1cbeea6d7cfa143c173e89bc2ef666562020f144c7a2ee108b8faf261ee7d` |
+| Relation sidecar V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
+| Composition Query trace | `ef4b875e21d0560ff57ee52dcdd39326e7f0f36a32bd95970b6d1e31af6c3e22` |
 
 See the
 [constraint-to-feasibility admission contract](../specs/CONSTRAINT-FEASIBILITY-RELATION-ADMISSION.md)
@@ -202,18 +202,53 @@ Exact trace file: `fixtures/composition/causal-outcome-scope.factorium-query`
 | Identity | SHA-256 |
 |---|---|
 | Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
-| Relation sidecar V0 | `76ff0bb2215449b2b751a4052551bd1134a0e358e60f0af1c12ffb1ee9f8fbbb` |
-| Composition Query trace | `aabda3688998a26d00f3862cd00cbb10b13e8f2524811e6fc47dea184899b1e5` |
+| Relation sidecar V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
+| Composition Query trace | `2f588593cbb535501269e85f051e9637051f5b3c1d7a2a8ef1ea0768db9a27d6` |
 
 See the
 [causal-scope-to-outcome admission contract](../specs/CAUSAL-OUTCOME-RELATION-ADMISSION.md)
 for its exact direction, qualifiers, loss, and claim boundary.
 
+## Canonical risk-to-consequence reading route
+
+Governing question: **Which consequence basis must be aligned before using a
+risk consequence in an alternative outcome?**
+
+This canonical structural path remains incomplete because graph membership
+cannot decide the affected entity, scenario, horizon, control state,
+consequence basis, completeness, probability, expected loss, risk attitude,
+or decision weight. Consequence severity does not supply likelihood, and
+expected loss is not the complete preference model.
+
+| Stage | Exact route | Reader meaning |
+|---|---|---|
+| Add | `factor:probability-risk-uncertainty/consequence-set` | Start from the declared consequence characterization while retaining Probability/Risk/Uncertainty authority. |
+| Multiply | `f27-risk-characterizes-consequence` -> `factor:choice-alternative-selection/alternative-state-outcomes-and-consequences` -> `view:decision-alternative-selection` | Bring the consequence basis into the alternative cell without supplying probability, expected loss, acceptability, or decision weight. |
+| Evaluate | `f27-check-consequence-alignment` = `unresolved` | Affected entity, scenario, horizon, control state, consequence basis, and completeness still require local review. |
+| Stop | state = `incomplete`; no frontier or conflict | The structural route exists, but no likelihood, risk acceptance, ranking, or recommendation follows. |
+| Flatten | three loss-declared rows | Retain the unresolved alternative consequence, selected source characterization, and Decision scope while omitting probabilities, expected loss, controls, risk attitude, local binding, decision weight, and the full Decision Table. |
+
+The local bridge evaluation also remains `unresolved`: the additional
+escalations lack a complete benefit, burden, and affected-party consequence
+basis. That local record does not alter the canonical query state.
+
+Exact trace file: `fixtures/composition/risk-consequence.factorium-query`
+
+| Identity | SHA-256 |
+|---|---|
+| Factorium Reference V0 | `5a482db494fb415e3ce0e57e2669c460924756cdbd8d03fe979367cf478b9e8e` |
+| Relation sidecar V0 | `e8371c340bf196d6318d0471e118eeffeb067c3a62dc9f8c038b6a59fe76624b` |
+| Composition Query trace | `dd840001f8b0fa3606b66a0f11f5c94cc0b26f2535f09660f4555eb7011bca6f` |
+
+See the
+[risk-to-consequence admission contract](../specs/RISK-CONSEQUENCE-RELATION-ADMISSION.md)
+for its exact direction, qualifiers, loss, and claim boundary.
+
 ## Bridge join evaluation
 
-The three admitted relation checks and both candidate-relation checks record
-one of `pass`, `fail`, or `unresolved`; none is omitted. The first, second, and
-last rows are canonical relation checks.
+The four admitted relation checks and the candidate-relation check record one
+of `pass`, `fail`, or `unresolved`; none is omitted. Every row except the
+value-basis row is a canonical relation check.
 
 | Check | Outcome | Evidence | Rationale |
 |---|---|---|---|
@@ -297,8 +332,8 @@ Required controls:
 - Alternatives, states, outcomes, constraints, criteria, and authority remain
   separate.
 - Every evaluated bridge join has an explicit outcome, including one failure
-  and three unresolved records; only the admitted relation participates in the
-  canonical closure trace.
+  and three unresolved records; only the four admitted relations participate
+  in their separate canonical closure traces.
 - Missing information does not default to success.
 - No formula, probability, utility, total score, causal effect, or final
   decision is invented.

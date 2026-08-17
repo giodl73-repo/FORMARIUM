@@ -48,7 +48,8 @@ for (const id of relationIds) {
 const admittedIds = [
   "f27-causal-scope-qualifies-outcome",
   "f27-constraint-filters-feasibility",
-  "f27-evidence-qualifies-evaluation"
+  "f27-evidence-qualifies-evaluation",
+  "f27-risk-characterizes-consequence"
 ];
 assert.match(relations, /relation f27-evidence-qualifies-evaluation \| qualifies-evaluation-of/,
   "evidence/evaluation bridge relation is canonical");
@@ -56,6 +57,8 @@ assert.match(relations, /relation f27-causal-scope-qualifies-outcome \| qualifie
   "causal/outcome bridge relation is canonical");
 assert.match(relations, /relation f27-constraint-filters-feasibility \| constrains-feasibility-of/,
   "constraint/feasibility bridge relation is canonical");
+assert.match(relations, /relation f27-risk-characterizes-consequence \| characterizes-consequence-for/,
+  "risk/consequence bridge relation is canonical");
 for (const id of relationIds.filter((id) => !admittedIds.includes(id))) {
   assert.doesNotMatch(relations, new RegExp(id), `${id} remains a candidate`);
 }
@@ -87,12 +90,13 @@ const exactBindings = [
     "tables/entries/policy-rule-constraint-decision-exception.md"],
   ["relation:f27-causal-scope-qualifies-outcome", "reference/factorium-relations-v0.factorium"],
   ["relation:f27-constraint-filters-feasibility", "reference/factorium-relations-v0.factorium"],
-  ["relation:f27-evidence-qualifies-evaluation", "reference/factorium-relations-v0.factorium"]
+  ["relation:f27-evidence-qualifies-evaluation", "reference/factorium-relations-v0.factorium"],
+  ["relation:f27-risk-characterizes-consequence", "reference/factorium-relations-v0.factorium"]
 ];
 for (const [id, source] of exactBindings) {
   assert.match(assurance, new RegExp(`review ${id} \\| ${sha256(source)} \\|`),
     `assurance binds exact digest for ${id}`);
 }
 
-console.log("OK bridge_relations=5 admitted=3 candidate=2 checks=5 " +
+console.log("OK bridge_relations=5 admitted=4 candidate=1 checks=5 " +
   "outcomes=pass:1,fail:1,unresolved:3 alternatives=3 final_selection=not-recorded");
