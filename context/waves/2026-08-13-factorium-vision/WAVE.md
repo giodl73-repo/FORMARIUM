@@ -2761,3 +2761,22 @@ environmental claim schemes remain external, and named failure-handling
 mechanisms remain Guide-local. Six roles approve the stop decision with no P1
 or P2 finding. No batch is admitted, `sim-42` remains the maintained artifact,
 and `sim-43` is not minted. See `QUERY-LED-CAMPAIGN-02-RESULT.md`.
+
+## 2026-08-17 synthetic user job discovery
+
+Twenty-five adult proxy personas and 50 queries were frozen at commit
+`ac63455` before exact `sim-42` browsing. The balanced portfolio includes six
+age bands, 25 backgrounds, ten curiosity situations, fifteen practical
+purposes, five lookup controls, ten contrasts, and ten composition/evaluation
+tasks. Profile metadata never conditions search or result classification.
+
+Authored analysis classifies fourteen journeys as bridges from an ordinary
+reference, six as a new problem-led reason, four as replacement lookup, and
+one as not served. Twenty exact routes expose a post-definition mechanism, all
+destinations resolve, and no missing owner is invented. The positioning
+hypothesis survives internal rehearsal: Factorium is plausibly a second
+reference move after naming and synonym lookup, and a first stop for bounded
+multi-concept questions. Six roles approve that synthesis with no P1/P2
+finding. No content, search, UI, or edition repair is admitted; only real
+readers can test whether the job is recognized or valuable. See
+`SYNTHETIC-USER-JOB-DISCOVERY-RESULT.md`.

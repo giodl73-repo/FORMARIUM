@@ -2,7 +2,7 @@
 
 Date: 2026-08-17
 
-Status: proposed freeze; execution not started
+Status: complete; portfolio frozen before execution at `ac63455`
 
 Evidence class: authored synthetic product rehearsal only
 
@@ -73,3 +73,6 @@ preference, comprehension, accessibility success, adoption, or return intent.
 The campaign may recommend a product-positioning hypothesis or a bounded
 navigation/content investigation. It cannot close R4E, admit `preview-01`, or
 support reader, market, demographic, accessibility, or adoption claims.
+
+Result:
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-USER-JOB-DISCOVERY-RESULT.md`

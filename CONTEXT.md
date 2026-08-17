@@ -1062,6 +1062,16 @@ owner test admits no content or product batch. `sim-42` remains frozen and no
 `sim-43` exists. These are internal authored structural results, not reader or
 completeness evidence.
 
+The synthetic user job-discovery campaign at
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-USER-JOB-DISCOVERY-RESULT.md`
+freezes 25 adult proxy personas and 50 queries before exact `sim-42` browsing.
+Its authored classifications support a positioning hypothesis: ordinary
+dictionaries and thesauri are usually on-ramps, while Factorium's distinctive
+mechanism is post-definition comparison, composition, evaluation, and visible
+stopping boundaries. No repair or new edition is admitted. The personas and
+reactions are synthetic and provide no reader, demographic, usability,
+accessibility, demand, preference, adoption, or return-use evidence.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
