@@ -2481,3 +2481,18 @@ standalone SHA-256 is
 `sim-35` reproduces exactly. Product Owner decision: keep the reciprocal Reader
 route and stop before new lessons, inferred prerequisites, personalization, or
 progress state; reader value remains untested.
+
+## 2026-08-17 Factorium Reader sequence plan
+
+Structural inspection found one concrete break after the dedicated Reader route:
+opening any selected step exposes only the global 185-record previous/next
+sequence. `sim-37` will add one static, separately labelled Reader-position
+navigator to exactly the 24 manifest-selected Table pages.
+
+Seven roles approve the plan with zero P1, fourteen P2, and seven P3 findings.
+The projection must preserve exact manifest order and 6/6/5/4/3 authored part
+bounds, expose 24 Reader-contents links and exactly 23 links in each sequence
+direction, leave non-spine pages untouched, and distinguish the existing global
+pagination. No progress, prerequisite, mastery, semantic adjacency,
+personalization, or learning-value claim is admitted. Detailed conditions are
+in `FACTORIUM-READER-SEQUENCE-ROLE-REVIEW.md`.
