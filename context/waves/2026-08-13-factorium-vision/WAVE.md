@@ -2596,3 +2596,17 @@ standalone SHA-256 is
 `8a0d991ef3b934028d2ced0fc4dda1adcc24f0449074b8037785e3e9795be4e7`.
 `sim-39` reproduces exactly. Product Owner decision: keep the bounded cue and
 stop before general aliases or query expansion; reader value remains untested.
+
+## 2026-08-17 Subject–Object canonical-depth plan
+
+The remaining `SIM-004` artifact note still reproduces: Subject–Object
+Relationship ends after two compact candidate factorizations and its generated
+navigator has no authored continuation. Newer canonical Tables now own the
+general Relation and sourced access/permission/authorization distinctions, so
+the repair is navigation rather than copied expansion.
+
+Eight roles approve `sim-41` with zero P1, sixteen P2, and eight P3 findings.
+Add exactly two purpose-labelled Cross-references, preserve the compact prime
+and candidate status, expose the links through the existing untyped navigator,
+reproduce `sim-40` exactly, and stop before rewriting the other legacy primes.
+Detailed conditions are in `SUBJECT-OBJECT-CANONICAL-DEPTH-ROLE-REVIEW.md`.
