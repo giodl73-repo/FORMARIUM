@@ -915,6 +915,22 @@ standalone SHA-256 is
 `sim-32` reproduces exactly. The groups express publication ownership only,
 not semantic hierarchy, relatedness, closure, or reader-value evidence.
 
+`sim-34` completes the reciprocal canonical-family route on entry pages. The
+52 canonical entries that own specialized views expose all 95 exact members
+in canonical reference order; the one zero-view entry receives no empty
+panel. One-to-three-view families open by default and the four denser families
+fold. Member labels and links resolve through the selected edition, while the
+interface states that ownership is not subtype, broader/narrower, dependency,
+or closure meaning.
+
+The edition retains 217 sources, 175 canonical records, 185 search records,
+237 pages, and zero missing targets. Site identity is
+`dce87b6cfb93cc74a33b24f577a84307d02ced97a01b9c3347c1b8579b484d8e`;
+standalone SHA-256 is
+`60d3bb5396969f025f99e64d13d377793f9a0c93510276797c3c81304a209392`.
+`sim-33` reproduces exactly. This is publication navigation, not semantic
+taxonomy or reader-value evidence.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

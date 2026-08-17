@@ -17,8 +17,8 @@ ranking:
 
 - **Table families** is the default. Matches are grouped by exact canonical
   owner. A matching canonical entry owns its family; a specialized view joins
-  the family named by its canonical owner metadata. Curated Table records and
-  Factor Guides and Reader records remain separately labelled standalone
+  the family named by its canonical owner metadata. Curated Table records,
+  Factor Guides, and Reader records remain separately labelled standalone
   groups.
 - **All records** preserves the existing flat ranked result list.
 

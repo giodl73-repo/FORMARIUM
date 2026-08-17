@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -76,6 +76,7 @@ $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-se
 $candidateSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-candidate.css"
 $twoBookSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-two-book.css"
 $tableNavigatorStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-navigator.css"
+$tableFamilyContentsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-family-contents.css"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -147,6 +148,7 @@ $artifactTitle = switch ($Edition) {
     "sim-31" { "Factorium Two-Book Product Architecture Simulation 31" }
     "sim-32" { "Factorium Tables Navigator Simulation 32" }
     "sim-33" { "Factorium Canonical-Family Search Simulation 33" }
+    "sim-34" { "Factorium Canonical-Family Contents Simulation 34" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -564,6 +566,9 @@ $canonicalOwnerByPath = [System.Collections.Generic.Dictionary[string, string]]:
 $canonicalClassByPath = [System.Collections.Generic.Dictionary[string, string]]::new(
     [System.StringComparer]::OrdinalIgnoreCase
 )
+$canonicalViewsByOwnerPath = [System.Collections.Generic.Dictionary[string, object]]::new(
+    [System.StringComparer]::OrdinalIgnoreCase
+)
 if ($Edition -ne "sim-01") {
     $canonicalKinds = [System.Collections.Generic.Dictionary[string, string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
@@ -581,6 +586,7 @@ if ($Edition -ne "sim-01") {
             $canonicalEntryTitleById[$entryId] = $parts[1]
             $canonicalOwnerByPath[$parts[4]] = $parts[4]
             $canonicalClassByPath[$parts[4]] = "entry"
+            $canonicalViewsByOwnerPath[$parts[4]] = [System.Collections.Generic.List[object]]::new()
             $canonicalMetadata[$parts[4]] = [ordered]@{
                 kind = "entry"
                 domain = $parts[2]
@@ -596,6 +602,10 @@ if ($Edition -ne "sim-01") {
             $canonicalKinds[$parts[5]] = "view"
             $canonicalOwnerByPath[$parts[5]] = $canonicalEntryPathById[$parts[1]]
             $canonicalClassByPath[$parts[5]] = $parts[3]
+            $canonicalViewsByOwnerPath[$canonicalEntryPathById[$parts[1]]].Add([ordered]@{
+                kind = $parts[3]
+                path = $parts[5]
+            })
             $canonicalMetadata[$parts[5]] = [ordered]@{
                 kind = $parts[3]
                 domain = $entryDomains[$parts[1]]
@@ -1634,6 +1644,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 33) {
         $siteCssParts += (Get-Content -LiteralPath $familySearchStyle -Raw)
+    }
+    if ($editionNumber -ge 34) {
+        $siteCssParts += (Get-Content -LiteralPath $tableFamilyContentsStyle -Raw)
     }
     $siteCss = $siteCssParts -join "`n"
     [System.IO.File]::WriteAllText(
@@ -3206,6 +3219,10 @@ if ($editionNumber -ge 7) {
     $tableCrossReferenceRoutes = 0
     $tableAuthoredConnections = 0
     $tableConnectionPreviewLinks = 0
+    $tableFamilyContentsPanels = 0
+    $tableFamilyContentsLinks = 0
+    $tableFamilyContentsOpen = 0
+    $tableFamilyContentsFolded = 0
     foreach ($source in $sources) {
         $relativeSource = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
         $segment = $renderedSegmentBySource[$source]
@@ -3314,10 +3331,50 @@ if ($editionNumber -ge 7) {
             $tableNavigatorPages += 1
             $tableIdentity = "Curated Table record"
             $ownerAction = ""
+            $familyContents = ""
             if ($canonicalClassByPath.ContainsKey($relativeSource)) {
                 if ($canonicalClassByPath[$relativeSource] -eq "entry") {
                     $tableIdentity = "Canonical entry"
                     $tableCanonicalEntryPages += 1
+                    if ($editionNumber -ge 34) {
+                        $ownedViews = @($canonicalViewsByOwnerPath[$relativeSource])
+                        if ($ownedViews.Count -gt 0) {
+                            $ownedViewItems = [System.Text.StringBuilder]::new()
+                            foreach ($ownedView in $ownedViews) {
+                                if (-not $searchRecordByPath.ContainsKey($ownedView.path)) {
+                                    throw "Canonical Table family view is not selected: $relativeSource -> $($ownedView.path)"
+                                }
+                                $ownedRecord = $searchRecordByPath[$ownedView.path]
+                                $ownedSource = [System.IO.Path]::GetFullPath((Join-Path $workspace $ownedView.path))
+                                if (-not $pageBySource.ContainsKey($ownedSource)) {
+                                    throw "Canonical Table family view has no page: $relativeSource -> $($ownedView.path)"
+                                }
+                                $ownedTitle = [System.Net.WebUtility]::HtmlEncode($ownedRecord.title)
+                                $ownedKind = [System.Net.WebUtility]::HtmlEncode($ownedView.kind)
+                                $ownedPage = $pageBySource[$ownedSource]
+                                [void]$ownedViewItems.Append(
+                                    "<li data-view-path=`"$($ownedView.path)`"><a href=`"$ownedPage`"><span>$ownedKind view</span>$ownedTitle</a></li>"
+                                )
+                                $tableFamilyContentsLinks += 1
+                            }
+                            $openAttribute = if ($ownedViews.Count -le 3) {
+                                $tableFamilyContentsOpen += 1
+                                " open"
+                            }
+                            else {
+                                $tableFamilyContentsFolded += 1
+                                ""
+                            }
+                            $tableFamilyContentsPanels += 1
+                            $familyContents = @"
+<details class="table-navigator__family" data-view-count="$($ownedViews.Count)"$openAttribute>
+<summary><span>Specialized views owned by this Table</span><strong>$($ownedViews.Count) $(if ($ownedViews.Count -eq 1) { 'view' } else { 'views' })</strong></summary>
+<ul>$ownedViewItems</ul>
+<p>Publication ownership only; these are not subtypes, broader/narrower terms, dependencies, or closure steps.</p>
+</details>
+"@
+                        }
+                    }
                 }
                 else {
                     $encodedViewFamily = [System.Net.WebUtility]::HtmlEncode($canonicalClassByPath[$relativeSource])
@@ -3382,11 +3439,15 @@ if ($editionNumber -ge 7) {
             }
 
             $encodedTableIdentity = [System.Net.WebUtility]::HtmlEncode($tableIdentity)
+            $familyContentsLine = if ([string]::IsNullOrEmpty($familyContents)) {
+                ""
+            }
+            else { "`n$familyContents" }
             $tableNavigatorHtml = @"
 <nav class="table-navigator" aria-label="Explore this Table" data-table-class="$encodedTableIdentity">
 <div class="table-navigator__heading"><p>Explore this Table</p><span>$encodedTableIdentity</span></div>
 $ownerAction
-<div class="table-navigator__actions">$localActions</div>
+<div class="table-navigator__actions">$localActions</div>$familyContentsLine
 $connectionList
 <p class="table-navigator__boundary">Authored connections are navigation, not synonym, broader/narrower, equivalence, dependency, or closure claims.</p>
 </nav>
@@ -3596,6 +3657,19 @@ $pageScripts
         $siteChecks.search_ownership_groups = $searchChecks.ownership_groups
         $siteChecks.search_specialized_view_owners = $searchChecks.specialized_view_owners
         $siteChecks.search_family_semantics = $searchChecks.family_semantics
+    }
+    if ($editionNumber -ge 34) {
+        if ($tableFamilyContentsPanels -ne 52 -or
+            $tableFamilyContentsLinks -ne 95 -or
+            $tableFamilyContentsOpen -ne 48 -or
+            $tableFamilyContentsFolded -ne 4) {
+            throw "Canonical Table family contents mismatch: panels=$tableFamilyContentsPanels links=$tableFamilyContentsLinks open=$tableFamilyContentsOpen folded=$tableFamilyContentsFolded"
+        }
+        $siteChecks.table_family_contents_panels = $tableFamilyContentsPanels
+        $siteChecks.table_family_contents_links = $tableFamilyContentsLinks
+        $siteChecks.table_family_contents_open = $tableFamilyContentsOpen
+        $siteChecks.table_family_contents_folded = $tableFamilyContentsFolded
+        $siteChecks.table_family_contents_semantics = "exact-publication-ownership-only"
     }
     if ($editionNumber -ge 16) {
         $siteChecks.composition_lab_pages = 1

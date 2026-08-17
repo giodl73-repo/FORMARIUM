@@ -4,7 +4,8 @@ topic: tables-canonical-family-contents
 date: 2026-08-17
 roles_used: 7
 p1_count: 0
-verdict: APPROVED-WITH-CONDITIONS
+p2_count: 0
+verdict: PASS
 ---
 
 # Tables Canonical-Family Contents Roles Check
@@ -74,7 +75,7 @@ ordering, progressive disclosure, local links, and responsive layout.
 
 | # | Finding | Severity | Section | Recommendation |
 |---|---|---|---|---|
-| 1 | Owner buckets require stable ordered accumulation. | P2 | generation | Build them directly from canonical reference order. |
+| 1 | Owner buckets require stable ordered accumulation. | P2 | generation | Build ownership and order from the canonical reference, resolving labels through selected destinations. |
 | 2 | Coverage must include all 95 views exactly once. | P2 | checks | Assert entry, view, link, and duplicate counts. |
 | 3 | Empty and dense thresholds need explicit fixtures. | P3 | checks | Test zero, sparse, and eight-view owners. |
 
@@ -105,3 +106,15 @@ and entry-only ownership.
 1. Generate ordered owner buckets from canonical reference metadata only.
 2. Render all and only exact views with sparse/dense progressive disclosure.
 3. Validate coverage, zero state, responsive behavior, regression, and claims.
+
+## Fixed-point result
+
+All fourteen P2 findings are closed in `sim-34`: all 95 views appear once in
+reference order under 52 exact owners, the zero-view entry stays empty of
+fabricated UI, non-entry pages own no family contents, titles and links resolve
+through selected destinations, sparse/dense disclosure is bounded, mobile has
+no overflow, and `sim-33` reproduces exactly.
+
+Final verdict: PASS. The seven P3 notes remain durable design boundaries, not
+release blockers. No taxonomy, completeness, discoverability, preference, or
+preview claim is admitted.

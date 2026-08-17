@@ -2394,3 +2394,20 @@ zero-view entry gets no empty panel. Small families open, families of four or
 more fold, and ownership remains explicitly non-taxonomic and non-
 compositional. Detailed conditions are in
 `TABLES-CANONICAL-FAMILY-CONTENTS-ROLE-REVIEW.md`.
+
+Result review: `sim-34` completes reciprocal canonical-family navigation. All
+95 specialized views appear exactly once and in reference order under the 52
+canonical entries that own views. The one zero-view entry receives no empty
+panel. Forty-eight one-to-three-view families open by default; the four
+families with four or more views fold.
+
+Static and live Edge checks pass for exact order, destinations, labels, sparse
+and dense disclosure, zero state, entry-only ownership, zero missing targets,
+and no 390-pixel overflow. The edition retains 217 sources, 175 canonical
+records, 185 search records, and 237 pages. Site identity is
+`dce87b6cfb93cc74a33b24f577a84307d02ced97a01b9c3347c1b8579b484d8e`;
+standalone SHA-256 is
+`60d3bb5396969f025f99e64d13d377793f9a0c93510276797c3c81304a209392`.
+`sim-33` reproduces exactly. Product Owner decision: keep reciprocal exact
+family navigation and stop before inferred members, recommendations, or
+semantic hierarchy; reader value remains untested.

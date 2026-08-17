@@ -426,8 +426,9 @@ current fixed point is 53 entries and 95 views with an empty generated
 unresolved list. Internal rehearsal does not establish real-world feasibility
 or reader value.
 
-1. maintain `sim-33` as the two-book front door plus bounded Tables navigator
-   and ownership-aware search, while retaining exact `sim-32` custody;
+1. maintain `sim-34` as the two-book front door plus reciprocal canonical-
+   family navigation and ownership-aware search, while retaining exact
+   `sim-33` custody;
 2. retain exact `sim-30` custody and its 24-record spine, 151-record depth
    boundary,
    four route prompts, and findings ledger;

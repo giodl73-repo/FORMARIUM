@@ -1,6 +1,8 @@
 # Factorium Tables Canonical-Family Contents
 
-Status: internal navigation contract candidate
+Status: internal navigation contract fixed point
+
+Reference implementation: `sim-34`
 
 ## Reader job
 
@@ -12,8 +14,8 @@ chapters, or backlinks.
 
 `sim-34` adds **Specialized views owned by this Table** to the existing
 Explore-this-Table navigator on canonical entries that own at least one view.
-The projection lists exact view titles, view families, and destinations in
-canonical reference order.
+The projection lists selected destination titles plus exact view families and
+destinations in canonical reference order.
 
 Entries with one to three views begin expanded. Entries with four or more
 begin folded while retaining the exact count in the summary. The one current
@@ -21,10 +23,10 @@ entry with no specialized view receives no empty control.
 
 ## Admitted inputs
 
-The projection uses only entry/view ownership, view family, title, path, and
-order from `reference/factorium-reference-v0.factorium`, resolved against the
-selected search destinations. It may not infer members from links, words,
-chapters, search groups, Composition relations, or domain proximity.
+The projection uses entry/view ownership, view family, path, and order from
+`reference/factorium-reference-v0.factorium`; displayed titles and links come
+from the selected search destinations. It may not infer members from links,
+words, chapters, search groups, Composition relations, or domain proximity.
 
 ## Meaning boundary
 

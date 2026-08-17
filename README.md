@@ -490,6 +490,8 @@ node tools\check_tables_navigator.js target\proof-set-sim-32
 node tools\check_tables_navigator_browser.js target\proof-set-sim-32 target\sim32-table-navigator.png
 node tools\check_tables_family_search.js target\proof-set-sim-33
 node tools\check_tables_family_search_browser.js target\proof-set-sim-33 target\sim33-table-family-search.png
+node tools\check_tables_family_contents.js target\proof-set-sim-34
+node tools\check_tables_family_contents_browser.js target\proof-set-sim-34 target\sim34-table-family-contents.png
 python artifacts\factor-role-v1\verify_role_packet.py artifacts\factor-role-v1
 python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
