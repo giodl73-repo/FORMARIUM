@@ -2657,3 +2657,20 @@ source boundary, smallest-artifact rule, exact rerun, and Product Owner stop
 decision govern admission. Internal results remain structural rehearsal and
 cannot become reader, preview, or completeness evidence. Execution awaits a
 funded goal. See `QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md`.
+
+## 2026-08-17 QLD-01 question and rubric freeze
+
+Plan review: Q0 freezes campaign revision 1 before baseline execution. The 24
+packets fill one exact cell for each of six reader jobs across measurement,
+software/system, organization/governance, and cross-domain everyday contexts.
+Eight packets carry no-gap control pressure, seven carry competing-sense
+pressure, eight carry subtraction or contradiction pressure, and fourteen
+carry incomplete-stop pressure. These design flags balance the portfolio; they
+are not expected or scored outcomes.
+
+Six roles found that the result grammar must be frozen with the questions, so
+`QLD-RC-01` now fixes result fields, QG-0 through QG-9, closure and check
+states, dispositions, descriptive mechanical measures, and prohibited reader
+metrics. Candidate seeds remain hypotheses and the corpus contains no result
+or disposition. The validator passes all 24 unique matrix cells. No canonical
+or rendered artifact changes in Q0. See `QUERY-LED-CAMPAIGN-01-FREEZE.md`.
