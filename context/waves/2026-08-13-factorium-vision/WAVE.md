@@ -3079,3 +3079,12 @@ owner is visible, one falls outside the family window, and one is absent from
 literal ranking. Nine roles approve the result with no P1/P2 finding. Retain
 `sim-47`, admit no repair, and claim no reader or competitive evidence. See
 `THESAURUS-JOB-TEST-01-RESULT.md`.
+
+## 2026-08-17 scale meaning chooser plan
+
+SCL-01 responds to the retained THS-01 `scale` miss with one exact three-route
+meaning chooser: evaluation/rating, unit/numerical/temperature, and geometric
+scaling/size. Nine roles approve the bounded `sim-48` candidate with no P1/P2
+finding. THS-01, literal ranking, canonical metadata, content, relations, prior
+editions, and reader-evidence gates remain unchanged. See
+`SCALE-MEANING-CHOOSER-01-PLAN.md`.

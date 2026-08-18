@@ -1,0 +1,36 @@
+{
+  "campaign_id": "SCL-01",
+  "revision": 1,
+  "status": "frozen-before-implementation",
+  "frozen_on": "2026-08-17",
+  "source_test": "THS-01-20",
+  "baseline": {
+    "edition": "sim-47",
+    "standalone_sha256": "b67e991abe62f4a91f77a5e693a4ec70de9de55561f51abddd9031186971cd8b",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186",
+    "site_identity": "179daaec770470fdb657bbadca04d9d96ec932d7c976b33eb941c9f24d48e0cc"
+  },
+  "candidate_edition": "sim-48",
+  "query": "scale",
+  "activation": "exact-normalized-query",
+  "routes": [
+    {
+      "label": "Evaluation or rating scale",
+      "target": "tables/entries/evaluation-measure-scale-criterion.md"
+    },
+    {
+      "label": "Unit, numerical, or temperature scale",
+      "target": "tables/entries/quantity-value-unit-conversion.md"
+    },
+    {
+      "label": "Geometric scaling or size",
+      "target": "tables/entries/geometric-reference-structure.md"
+    }
+  ],
+  "literal_ranking_unchanged": true,
+  "canonical_reference_unchanged": true,
+  "content_and_relations_unchanged": true,
+  "reader_evidence_claimed": false,
+  "stop": "Admit one exact three-route chooser; no generated variants, global reranking, new aliases, concepts, senses, or relation claims."
+}
+
