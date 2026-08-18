@@ -3028,3 +3028,12 @@ concept boundary. Nine roles approve execution with no P1/P2 finding. The
 campaign may identify candidates for a separately frozen smallest batch, but
 it changes no content, relation, product surface, edition, or reader-evidence
 gate. See `LEXICAL-CLOSURE-CAMPAIGN-01-PLAN.md`.
+
+Result review: all 53 entries and 412 senses were screened. OEWN exactly
+matched 262 senses, left 150 outside source coverage, and exposed 198 matched
+labels as polysemous. The frozen recurrence gate yielded 515 candidates: 254
+resolve to existing owners, 251 defer, three remain external taxonomy, two are
+Guide-local, and five are optional lookup-alias candidates. Nine roles approve
+the zero-content decision with no P1/P2 finding. Retain V0 and clean `sim-46`;
+claim neither complete closure nor reader evidence. See
+`LEXICAL-CLOSURE-CAMPAIGN-01-RESULT.md`.
