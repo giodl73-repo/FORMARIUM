@@ -2853,3 +2853,16 @@ it would often present a plural-looking set without the concepts already
 declared necessary for the task. Six roles approve the null and stop decision
 with no P1/P2 finding. `sim-44` remains unchanged and no `sim-45` is minted.
 See `SYNTHETIC-MANUAL-CONCEPT-BASKET-RESULT.md`.
+
+## 2026-08-17 synthetic dual literal lookup plan
+
+Plan review: SUJ-06 tests the strongest leakage-safe literal control after the
+one-query basket null. It reuses both queries frozen for each of the ten
+question tasks in SUJ-02, preserves two independent first-ten ownership-group
+rankings, and compares only their canonical-family identity union.
+
+Eight roles approve with no P1/P2 finding. Interface work requires both 8/10
+two-family union coverage and 6/10 incremental intended-family coverage from
+query two. Dual lookup is explicitly not question decomposition, relation
+selection, closure, or recommendation. See
+`SYNTHETIC-DUAL-LITERAL-LOOKUP-PLAN.md`.
