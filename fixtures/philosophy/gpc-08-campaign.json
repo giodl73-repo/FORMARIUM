@@ -1,0 +1,35 @@
+{
+  "campaign_id":"GPC-08","revision":1,"status":"frozen-before-source-review","frozen_on":"2026-08-17","parent":"GPC-01 revision 2",
+  "purpose":"Test named Indigenous/First Peoples, Central/Southeast Asian, and Oceanic structures under community-specific custody without treating communities, regions, oral forms, or published interpreters as interchangeable authorities.",
+  "packet_slots":[
+    {"id":"IP-01","lane":"indigenous-first-peoples","community_scope":"Haudenosaunee","position":"Great Law and condolence traditions on confederacy, clan responsibility, consensus, peace, speaker/council authority, and living political custody"},
+    {"id":"IP-02","lane":"indigenous-first-peoples","community_scope":"Anishinaabe","position":"mino-bimaadiziwin, relational personhood, story, land/water, kinship, language, responsibility, and resurgence"},
+    {"id":"IP-03","lane":"indigenous-first-peoples","community_scope":"Diné","position":"hózhó, kinship, land, balance, knowledge, responsibility, and the boundary between public philosophy and ceremonial knowledge"},
+    {"id":"IP-04","lane":"indigenous-first-peoples","community_scope":"Māori","position":"whakapapa, whenua, tikanga, mana, tapu/noa, kaupapa Māori, collective authority, research sovereignty, and Crown-colonial relation"},
+    {"id":"IP-05","lane":"indigenous-first-peoples","community_scope":"Yolŋu","position":"gurruṯu, wäŋa, rom, song/design/performance, authority to speak, two-way learning, and Yolŋu knowledge custody"},
+    {"id":"IP-06","lane":"indigenous-first-peoples","community_scope":"Quechua/Aymara separately retained","position":"pacha, ayni, ayllu, sumak kawsay/suma qamaña, land, reciprocity, translation, state appropriation, and living Andean plurality"},
+    {"id":"CS-01","lane":"central-southeast-asian","community_scope":"Kazakh","position":"nomadic and modern Kazakh thought on hospitality, ar/namys, kinship, steppe ecology, oral-poetic judgment, Abai's moral person, empire, and nation"},
+    {"id":"CS-02","lane":"central-southeast-asian","community_scope":"Central Asian Jadid movements","position":"Jadid reform on education, ijtihad/reason, language, press/theatre, women, community renewal, colonial rule, and political divergence"},
+    {"id":"CS-03","lane":"central-southeast-asian","community_scope":"Kyrgyz","position":"Manas and related oral-philosophical performance on memory, kinship, hospitality, courage, counsel, performer variation, nation, and archive"},
+    {"id":"CS-04","lane":"central-southeast-asian","community_scope":"Vietnamese","position":"Vietnamese tam giáo reception, nhân nghĩa, family/state relation, village practice, anti-colonial reform, language, and selective transformation"},
+    {"id":"CS-05","lane":"central-southeast-asian","community_scope":"Indonesian/Javanese separately retained","position":"adat, gotong royong, rasa, musyawarah/mufakat, Pancasila, religious plurality, gender, colonial and state appropriation"},
+    {"id":"CS-06","lane":"central-southeast-asian","community_scope":"Filipino/Tagalog","position":"loob, kapwa, pakikipagkapwa, hiya, utang na loob, language, decolonial psychology/philosophy, power, and diaspora"},
+    {"id":"OC-01","lane":"oceanic-pacific","community_scope":"Kānaka Maoli / Native Hawaiian","position":"aloha ʻāina, kuleana, pono, ʻike kūpuna, moʻokūʻauhau, ea, land/ocean relation, sovereignty, and knowledge authority"},
+    {"id":"OC-02","lane":"oceanic-pacific","community_scope":"Samoan","position":"faʻa Sāmoa, vā, faʻaaloalo, tautua, aiga, talanoa, role/relationship, church/state, migration, and research custody"},
+    {"id":"OC-03","lane":"oceanic-pacific","community_scope":"Tongan","position":"vā, tauhi vā, fonua, fatongia, fakaʻapaʻapa, talanoa, genealogy, embodied space, migration, and political authority"},
+    {"id":"OC-04","lane":"oceanic-pacific","community_scope":"iTaukei Fijian","position":"vanua, veiwekani, solesolevaki, talanoa, chiefly and community authority, land/sea, Indo-Fijian relation, and colonial/state setting"},
+    {"id":"OC-05","lane":"oceanic-pacific","community_scope":"Ni-Vanuatu","position":"kastom, ples/land, kinship, exchange, chiefly and women's authority, Bislama, Christianity, state law, climate displacement, and community variation"},
+    {"id":"OC-06","lane":"oceanic-pacific","community_scope":"CHamoru / Guåhan","position":"inafa'maolek, chenchule', familia, land/ocean, reciprocity, respect, language revitalization, militarization, diaspora, and decolonization"}
+  ],
+  "selection_rules":[
+    "Every Indigenous and Oceanic record names a community scope; no record stands for a continent, race, language family, or all Indigenous peoples.",
+    "Use community-led, community-authorized, primary, or established regionally grounded scholarship; published availability never implies permission to extract restricted or ceremonial knowledge.",
+    "Record speaker, community, language, genre/performance, audience, place, authority to share, researcher/editor, archive, consent, and translation limits where sources expose them.",
+    "Central Asian, Southeast Asian, Buddhist, Islamic, Persianate, Chinese, Russian/Soviet, national, nomadic, and Indigenous scopes remain distinct even when histories overlap.",
+    "Māori, Kānaka Maoli, Samoan, Tongan, iTaukei, Ni-Vanuatu, CHamoru, and other Oceanic identities are never collapsed into one Pacific relational worldview.",
+    "No customary, ceremonial, spiritual, land, sovereignty, legal, gender, chiefly, nationalist, ecological, decolonial, or community claim becomes Factorium guidance."
+  ],
+  "factorization_record_contract":{"required_fields":["factoring_id","source_packet_id","source_anchors","governing_sense_or_question","pivot","factors","dependencies","constraints","alternative_factorings","excluded_combinations","interpretive_status"],"factor_fields":["local_id","source_term","transliteration","working_gloss","role","variation","source_support"],"raw_records_are_immutable":true,"superseded_records_remain_addressable":true},
+  "alignment_ledger_contract":{"required_fields":["alignment_id","source_factoring_ids","mapping_direction","relation_kind","shared_structure","preserved_structure","lost_structure","conflicts","candidate_factorium_owner","review_status"],"relation_kinds":["exact","structural-overlap","analogy","broader","narrower","conflict","unmapped"],"append_only":true,"may_not_mutate_source_local_factorings":true,"same_gloss_is_not_alignment":true},
+  "content_admission_allowed":false,"reader_evidence_claimed":false,"global_alignment_deferred_to":"GPC-09"
+}

@@ -3312,3 +3312,14 @@ roles approve with no P1/P2 finding. The global checker validates 66 total
 records with custody intact and zero admission. Retain GPC-07 and proceed to
 GPC-08; claim neither regional completeness nor reader evidence. See
 `GLOBAL-PHILOSOPHY-GPC-07-RESULT.md`.
+
+## 2026-08-17 GPC-08 Indigenous, Central/Southeast Asian, and Oceanic comparison
+
+Plan review: freeze 18 packets before interpretation—six named Indigenous/
+First Peoples scopes, six Central/Southeast Asian scopes, and six named
+Oceanic/Pacific scopes. Community authorization, authority to share,
+restricted/ceremonial boundaries, language, place, performance, audience,
+archive, consent, translation, colonial/state relation, and internal dissent
+are mandatory. The lane changes no Table, book, relation, UI, or
+reader-evidence gate. Source review and factoring remain pending. See
+`GLOBAL-PHILOSOPHY-GPC-08-PLAN.md`.
