@@ -3531,3 +3531,16 @@ P1/P2 findings and explicitly stop named catalogs, leader ranking,
 endorsement, historical-truth claims, and reader-value claims. See
 `BIOGRAPHY-THOUGHT-CLOSURE-01-BASELINE.md` and
 `signals/roles/check/biography-thought-closure-01-baseline-roles-check-2026-08-18.md`.
+
+Admission review: established-source research supports one
+Claim/Evidence-owned `Contribution, Credit, Priority, and Legacy Evidence`
+Table. It adds zero anchors, senses, relations, or discovery repairs and raises
+the Markdown inventory to 54 entries and 100 views. Participation,
+contribution, credit, priority, causal attribution, responsibility, outcome,
+reputation, and legacy remain distinct; the view preserves disputed,
+unresolved, untested, and no-bearing evidence and cannot allocate credit or
+settle history. V1 and `sim-49` remain unchanged; formal interchange,
+assurance, generated edition exposure, agency research, and reader evidence
+await supported successor work. Eleven roles approve with zero P1/P2 findings.
+See `BIOGRAPHY-THOUGHT-CLOSURE-01-ADMISSION-RESULT.md` and
+`signals/roles/check/btc-01-contribution-credit-view-admission-roles-check-2026-08-18.md`.
