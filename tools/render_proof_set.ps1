@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -77,6 +77,7 @@ $contextScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proo
 $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-site.css"
 $candidateSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-candidate.css"
 $twoBookSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-two-book.css"
+$intentRouterStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-intent-router.css"
 $tableNavigatorStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-navigator.css"
 $tableFamilyContentsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-family-contents.css"
 $tablesIndexStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-tables-index.css"
@@ -162,6 +163,7 @@ $artifactTitle = switch ($Edition) {
     "sim-40" { "Factorium Everyday Search Cue Simulation 40" }
     "sim-41" { "Factorium Subject-Object Canonical Depth Simulation 41" }
     "sim-42" { "Factorium Query-Led Limiting Condition Simulation 42" }
+    "sim-43" { "Factorium Task-Shaped Intent Router Simulation 43" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -1747,6 +1749,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 31) {
         $siteCssParts += (Get-Content -LiteralPath $twoBookSiteStyle -Raw)
     }
+    if ($editionNumber -ge 43) {
+        $siteCssParts += (Get-Content -LiteralPath $intentRouterStyle -Raw)
+    }
     if ($editionNumber -ge 32) {
         $siteCssParts += (Get-Content -LiteralPath $tableNavigatorStyle -Raw)
     }
@@ -2459,6 +2464,8 @@ if ($editionNumber -ge 7) {
     $candidateStartTargets = 0
     $candidateSection = ""
     $librarySection = ""
+    $intentSection = ""
+    $intentRouterTargets = 0
     $productBooks = 0
     $tablesStartTargets = 0
     $readerStartTargets = 0
@@ -2558,6 +2565,22 @@ if ($editionNumber -ge 7) {
 "@
             $homeCandidateNav = if ($editionNumber -ge 36) { '<a href="tables.html">Tables</a><a href="reader.html">Reader</a>' } else { '<a href="#library">Tables</a><a href="#reader">Reader</a>' }
             $nestedCandidateNav = if ($editionNumber -ge 36) { '<a href="../tables.html">Tables</a><a href="../reader.html">Reader</a>' } else { '<a href="../index.html#library">Tables</a><a href="../index.html#reader">Reader</a>' }
+            if ($editionNumber -ge 43) {
+                $intentRouterTargets = 3
+                $intentSection = @"
+
+<section id="choose" class="site-intent" aria-labelledby="site-intent-heading">
+<p class="site-kicker">Start with what you are trying to do</p>
+<h2 id="site-intent-heading">What brings you to Factorium?</h2>
+<div class="site-intent__grid">
+<article><p class="site-intent__eyebrow">Direct lookup</p><h3>I know the term</h3><p>Find its senses, neighboring concepts, factors, constraints, and owned specialized views.</p><a href="#search">Search the Tables <span aria-hidden="true">&rarr;</span></a></article>
+<article><p class="site-intent__eyebrow">Work through a problem</p><h3>I have a question</h3><p>Choose explicit concepts and controls, inspect bounded closure, and keep unresolved work visible.</p><a href="compose.html">Open Compose <span aria-hidden="true">&rarr;</span></a></article>
+<article><p class="site-intent__eyebrow">Guided learning</p><h3>I want to learn or explore</h3><p>Follow the Reader's selected teaching route, then move into the owning Tables when you want depth.</p><a href="reader.html">Open the Reader <span aria-hidden="true">&rarr;</span></a></article>
+</div>
+<p class="site-intent__note">Not sure? Start with Search. These paths change navigation, not the authority: Factorium Tables remain canonical.</p>
+</section>
+"@
+            }
         }
         else {
             $homeCandidateNav = '<a href="#candidate">Candidate</a>'
@@ -2861,7 +2884,7 @@ if ($editionNumber -ge 7) {
 <p class="site-kicker">$(if ($editionNumber -ge 31) { 'Two books · one canonical reference' } elseif ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
 <h1>$(if ($editionNumber -ge 31) { 'Factorium' } else { 'Structure, Quantity, and Choice' })</h1>
 <p class="site-hero__deck">$heroDeck</p>
-</section>$librarySection$candidateSection$problemSection$compositionSection
+</section>$intentSection$librarySection$candidateSection$problemSection$compositionSection
 <section id="start" class="site-start" aria-labelledby="site-start-heading">
 <p class="site-kicker">First journey</p>
 <h2 id="site-start-heading">From a vague problem to a bounded factorization</h2>
@@ -4059,6 +4082,15 @@ $pageScripts
         $siteChecks.tables_start_targets = $tablesStartTargets
         $siteChecks.reader_start_targets = $readerStartTargets
         $siteChecks.product_authority = "Factorium Tables canonical; Reader and Factor Guides are linked projections"
+    }
+    if ($editionNumber -ge 43) {
+        if ($intentRouterTargets -ne 3) {
+            throw "Intent router target mismatch: $intentRouterTargets"
+        }
+        $siteChecks.intent_router_targets = $intentRouterTargets
+        $siteChecks.intent_router_jobs = @("know-term", "have-question", "learn-or-explore")
+        $siteChecks.intent_router_authority_change = $false
+        $siteChecks.intent_router_search_change = $false
     }
     if ($editionNumber -ge 32) {
         $expectedTableNavigatorPages = @($searchRecords | Where-Object { $_.path.StartsWith("tables/") }).Count

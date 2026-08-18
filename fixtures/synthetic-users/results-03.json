@@ -1,0 +1,889 @@
+{
+  "artifact": "SUJ-03 synthetic UX wishlist results",
+  "campaign_id": "SUJ-03",
+  "evidence_class": "authored-synthetic-product-design-rehearsal",
+  "custody": {
+    "frozen_commit": "f40803e",
+    "campaign_sha256": "4a35749972ef13e63a732fb3d15bbd756648381b83fca27131c75020f3731a30",
+    "analysis_sha256": "2b903e32c34ed74d5a2c02f9d446157b5bd94f3cedd3787987b995df56591fb4",
+    "baseline": {
+      "edition": "sim-42",
+      "source_commit": "531dea50dafeaf47e4909dbf8b7be93dac3d3021",
+      "site_identity": "a447c29d06b5a182fbfca4e57ba2d88ab0e2fb5fa6edbfbec3258109bfa0c0c4"
+    }
+  },
+  "results": [
+    {
+      "assignment_id": "SUJ-03-01",
+      "synthetic_profile_id": "SUJ-01-01",
+      "task_id": "SUJ-02-01",
+      "task": "A bottle says five percent. Five percent of what, exactly?",
+      "authored_response": {
+        "id": "SUJ-03-01",
+        "entrance": "know-term",
+        "first_action": "Focus Search with the ordinary percentage question preserved.",
+        "preview": [
+          "plain-distinction",
+          "owner-and-kind",
+          "why-matched"
+        ],
+        "density": "abbreviated",
+        "compose": "explicit-palette",
+        "trust": [
+          "basis-and-unit",
+          "scope-boundary"
+        ],
+        "recovery": "Offer related basis and composition terms without changing the query.",
+        "handoff": "Copy the selected distinction, basis questions, and label-source link.",
+        "exploration": "Contrast percent, percentage points, ratio, and concentration.",
+        "access": "Large tap targets and a linear result list.",
+        "reject": "automatic-answer",
+        "incumbent": "product label",
+        "rationale": "The task starts as a bounded lookup and becomes structural only if the basis stays ambiguous."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-02",
+      "synthetic_profile_id": "SUJ-01-02",
+      "task_id": "SUJ-02-02",
+      "task": "The status page is green, but customers still cannot finish checkout. How can both be true?",
+      "authored_response": {
+        "id": "SUJ-03-02",
+        "entrance": "have-question",
+        "first_action": "Show a worked green-but-unusable starter beside an empty explicit plan.",
+        "preview": [
+          "plain-distinction",
+          "route-shape",
+          "unresolved-state"
+        ],
+        "density": "book",
+        "compose": "worked-starter",
+        "trust": [
+          "missing-evidence",
+          "source-boundary"
+        ],
+        "recovery": "Keep the current plan and suggest exact observable claims to add.",
+        "handoff": "Copy the route, unresolved observations, and links to local telemetry.",
+        "exploration": "Compare availability, capability, correctness, and user outcome.",
+        "access": "Keyboard-operable controls and concise status text outside color.",
+        "reject": "open-prose-auto-run",
+        "incumbent": "status page and logs",
+        "rationale": "The value is joining several claims, not finding one headword."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-03",
+      "synthetic_profile_id": "SUJ-01-03",
+      "task_id": "SUJ-02-03",
+      "task": "Two mugs show the same thermometer reading. Does that mean they contain the same warmth?",
+      "authored_response": {
+        "id": "SUJ-03-03",
+        "entrance": "learn-or-explore",
+        "first_action": "Open a short Reader explanation with the thermal distinction visible.",
+        "preview": [
+          "plain-distinction",
+          "short-example",
+          "depth"
+        ],
+        "density": "compact",
+        "compose": "worked-starter",
+        "trust": [
+          "formula-scope",
+          "missing-conditions"
+        ],
+        "recovery": "Offer the canonical temperature and energy entries.",
+        "handoff": "Print the distinction and a worked-source link.",
+        "exploration": "Try same temperature with different mass or material.",
+        "access": "Comfortable line length and no mandatory interaction.",
+        "reject": "account-required",
+        "incumbent": "science textbook",
+        "rationale": "A teaching route is more suitable than a dense reference landing."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-04",
+      "synthetic_profile_id": "SUJ-01-04",
+      "task_id": "SUJ-02-04",
+      "task": "Everyone is busy, yet the project date keeps slipping. What should I inspect first?",
+      "authored_response": {
+        "id": "SUJ-03-04",
+        "entrance": "have-question",
+        "first_action": "Load a project-delay starter without running it.",
+        "preview": [
+          "route-shape",
+          "owner-and-kind",
+          "unresolved-state"
+        ],
+        "density": "book",
+        "compose": "worked-starter",
+        "trust": [
+          "stop-rule",
+          "missing-evidence"
+        ],
+        "recovery": "Show which local records would distinguish each limit owner.",
+        "handoff": "Copy the competing explanations and evidence checklist.",
+        "exploration": "Compare bottleneck, critical path, queue, and calendar constraint.",
+        "access": "A single-column mobile plan before the graph.",
+        "reject": "automatic-recommendation",
+        "incumbent": "project plan and tracker",
+        "rationale": "The task requires composition and a handoff to local project evidence."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-05",
+      "synthetic_profile_id": "SUJ-01-05",
+      "task_id": "SUJ-02-05",
+      "task": "Can something be dangerous without being likely to hurt someone in this situation?",
+      "authored_response": {
+        "id": "SUJ-03-05",
+        "entrance": "know-term",
+        "first_action": "Search ordinary safety wording and preview the hazard-risk distinction.",
+        "preview": [
+          "plain-distinction",
+          "scope-boundary",
+          "maturity-and-source"
+        ],
+        "density": "abbreviated",
+        "compose": "query-plan",
+        "trust": [
+          "authority-boundary",
+          "scenario-required"
+        ],
+        "recovery": "Point outward when the scenario or qualified authority is absent.",
+        "handoff": "Copy the bounded questions and authoritative-source requirement.",
+        "exploration": "Contrast hazard, exposure, vulnerability, and risk.",
+        "access": "Warnings expressed in text and structure, never color alone.",
+        "reject": "safety-verdict",
+        "incumbent": "qualified safety source",
+        "rationale": "The reference should orient without impersonating safety advice."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-06",
+      "synthetic_profile_id": "SUJ-01-06",
+      "task_id": "SUJ-02-06",
+      "task": "One person does the work, another may decide, and another must answer for it. Which word belongs to each?",
+      "authored_response": {
+        "id": "SUJ-03-06",
+        "entrance": "know-term",
+        "first_action": "Search responsibility language and show a three-column distinction preview.",
+        "preview": [
+          "plain-distinction",
+          "nearby-terms",
+          "owner-and-kind"
+        ],
+        "density": "abbreviated",
+        "compose": "explicit-palette",
+        "trust": [
+          "local-authority-warning",
+          "scope-boundary"
+        ],
+        "recovery": "Offer role-assignment mapping when synonyms remain ambiguous.",
+        "handoff": "Copy the assignment distinctions and charter handoff.",
+        "exploration": "Compare responsibility, authority, accountability, and traceability.",
+        "access": "Tables reflow into labelled rows on narrow screens.",
+        "reject": "universal-synonym-ranking",
+        "incumbent": "organizational charter",
+        "rationale": "Fast non-synonymy is primary; local assignments remain authoritative."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-07",
+      "synthetic_profile_id": "SUJ-01-07",
+      "task_id": "SUJ-02-07",
+      "task": "Is a digital drawing a model, a representation, a copy, or something else?",
+      "authored_response": {
+        "id": "SUJ-03-07",
+        "entrance": "learn-or-explore",
+        "first_action": "Open a compact Reader contrast among model, representation, and copy.",
+        "preview": [
+          "plain-distinction",
+          "short-example",
+          "nearby-terms"
+        ],
+        "density": "compact",
+        "compose": "worked-starter",
+        "trust": [
+          "domain-boundary",
+          "purpose-explicit"
+        ],
+        "recovery": "Offer art-domain handoff instead of forcing the technical sense.",
+        "handoff": "Copy the chosen relation and the unresolved domain context.",
+        "exploration": "Follow resemblance, reference, abstraction, and simulation.",
+        "access": "Readable without hover and friendly to zoom.",
+        "reject": "single-correct-sense",
+        "incumbent": "art reference",
+        "rationale": "The task benefits from wandering among relations while keeping the art boundary."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-08",
+      "synthetic_profile_id": "SUJ-01-08",
+      "task_id": "SUJ-02-08",
+      "task": "Why can two devices use energy differently even when a displayed electrical number matches?",
+      "authored_response": {
+        "id": "SUJ-03-08",
+        "entrance": "know-term",
+        "first_action": "Search the displayed electrical quantity and show linked formulas as optional depth.",
+        "preview": [
+          "plain-distinction",
+          "units",
+          "depth"
+        ],
+        "density": "book",
+        "compose": "query-plan",
+        "trust": [
+          "units-and-conditions",
+          "field-safety-boundary"
+        ],
+        "recovery": "Ask which displayed quantity and duration are known.",
+        "handoff": "Copy quantity relations and device-documentation links.",
+        "exploration": "Contrast power, energy, voltage, and current.",
+        "access": "Math remains selectable and understandable in a linear reading order.",
+        "reject": "field-calculator-without-data",
+        "incumbent": "device documentation",
+        "rationale": "The lookup needs formula depth but must stop before field guidance."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-09",
+      "synthetic_profile_id": "SUJ-01-09",
+      "task_id": "SUJ-02-09",
+      "task": "I want to double a mixture, but the instructions mix cups, grams, and percentages. What has to stay consistent?",
+      "authored_response": {
+        "id": "SUJ-03-09",
+        "entrance": "have-question",
+        "first_action": "Load a scaling starter that exposes basis, units, and density controls.",
+        "preview": [
+          "route-shape",
+          "units",
+          "unresolved-state"
+        ],
+        "density": "book",
+        "compose": "worked-starter",
+        "trust": [
+          "conversion-boundary",
+          "missing-inputs"
+        ],
+        "recovery": "Name the missing ingredient property rather than inventing a conversion.",
+        "handoff": "Copy the normalized quantity plan into the recipe workflow.",
+        "exploration": "Compare scaling a ratio with scaling total amount.",
+        "access": "Numeric inputs have persistent labels and unit text.",
+        "reject": "automatic-recipe",
+        "incumbent": "recipe and conversion data",
+        "rationale": "The valuable experience is a pre-calculation structure, not replacement arithmetic."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-10",
+      "synthetic_profile_id": "SUJ-01-10",
+      "task_id": "SUJ-02-10",
+      "task": "A report says the data proves its conclusion. What links should I inspect before repeating that?",
+      "authored_response": {
+        "id": "SUJ-03-10",
+        "entrance": "have-question",
+        "first_action": "Open a claim-evidence starter with observation and inference separated.",
+        "preview": [
+          "route-shape",
+          "maturity-and-source",
+          "unresolved-state"
+        ],
+        "density": "full",
+        "compose": "worked-starter",
+        "trust": [
+          "provenance",
+          "limitations"
+        ],
+        "recovery": "Preserve unresolved links and return to the source report.",
+        "handoff": "Copy the claim-evidence chain with source locations.",
+        "exploration": "Compare association, mechanism, and causal claim.",
+        "access": "Headings expose the argument structure to assistive technology.",
+        "reject": "confidence-score",
+        "incumbent": "original report",
+        "rationale": "The task needs a trace whose omissions remain visible."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-11",
+      "synthetic_profile_id": "SUJ-01-11",
+      "task_id": "SUJ-02-11",
+      "task": "The cheaper option costs more over time. What did the sticker price leave out?",
+      "authored_response": {
+        "id": "SUJ-03-11",
+        "entrance": "know-term",
+        "first_action": "Search cost versus value and preview the missing horizon and basis.",
+        "preview": [
+          "plain-distinction",
+          "scope-boundary",
+          "short-example"
+        ],
+        "density": "abbreviated",
+        "compose": "query-plan",
+        "trust": [
+          "no-forced-choice",
+          "missing-inputs"
+        ],
+        "recovery": "Offer a decision checklist when product facts are absent.",
+        "handoff": "Copy the cost/value fields into a budget or comparison sheet.",
+        "exploration": "Contrast price, total cost, opportunity cost, and value.",
+        "access": "Plain labels precede formulas and abbreviations.",
+        "reject": "product-ranking",
+        "incumbent": "prices and budget",
+        "rationale": "The reference supplies comparison structure, while actual values stay local."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-12",
+      "synthetic_profile_id": "SUJ-01-12",
+      "task_id": "SUJ-02-12",
+      "task": "Two groups have the same average, but their experiences look nothing alike. How is that possible?",
+      "authored_response": {
+        "id": "SUJ-03-12",
+        "entrance": "know-term",
+        "first_action": "Search the average question and preview distribution failure signs.",
+        "preview": [
+          "plain-distinction",
+          "short-example",
+          "depth"
+        ],
+        "density": "book",
+        "compose": "query-plan",
+        "trust": [
+          "estimand-boundary",
+          "sampling-warning"
+        ],
+        "recovery": "Suggest spread, shape, subgroup, and sample checks.",
+        "handoff": "Copy the diagnostic checklist to the analysis notebook.",
+        "exploration": "Compare mean, median, quantile, and spread.",
+        "access": "Charts are optional and every point is available as text.",
+        "reject": "automatic-statistical-conclusion",
+        "incumbent": "dataset and statistics text",
+        "rationale": "A diagnostic preview helps decide whether deeper statistical work is needed."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-13",
+      "synthetic_profile_id": "SUJ-01-13",
+      "task_id": "SUJ-02-13",
+      "task": "A space article describes light as long or short. What quantity is it talking about?",
+      "authored_response": {
+        "id": "SUJ-03-13",
+        "entrance": "know-term",
+        "first_action": "Preserve the ordinary light wording and show the wave-family match.",
+        "preview": [
+          "plain-distinction",
+          "why-matched",
+          "formula-relation"
+        ],
+        "density": "compact",
+        "compose": "explicit-palette",
+        "trust": [
+          "quantity-scope",
+          "domain-boundary"
+        ],
+        "recovery": "Offer wavelength as a suggested term without rewriting the query.",
+        "handoff": "Copy the quantity relation and astronomy-source handoff.",
+        "exploration": "Follow wavelength to frequency and spectrum.",
+        "access": "Formula alternatives remain readable as prose.",
+        "reject": "silent-query-rewrite",
+        "incumbent": "astronomy source",
+        "rationale": "The rank-five landing needs a clear explanation of why it matched."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-14",
+      "synthetic_profile_id": "SUJ-01-14",
+      "task_id": "SUJ-02-14",
+      "task": "A document uses must, should, and may. What else must I know before treating any sentence as binding?",
+      "authored_response": {
+        "id": "SUJ-03-14",
+        "entrance": "have-question",
+        "first_action": "Start an applicability plan with source, authority, addressee, version, and conduct.",
+        "preview": [
+          "route-shape",
+          "scope-boundary",
+          "maturity-and-source"
+        ],
+        "density": "full",
+        "compose": "explicit-palette",
+        "trust": [
+          "authority-and-version",
+          "legal-boundary"
+        ],
+        "recovery": "Stop and request the governing document when authority is unknown.",
+        "handoff": "Copy the applicability questions with exact document links.",
+        "exploration": "Contrast policy, rule, obligation, and requirement.",
+        "access": "Long records have a sticky outline without trapping keyboard focus.",
+        "reject": "legal-verdict",
+        "incumbent": "governing document",
+        "rationale": "The question spans several owners and cannot be answered by modal vocabulary alone."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-15",
+      "synthetic_profile_id": "SUJ-01-15",
+      "task_id": "SUJ-02-15",
+      "task": "A dashboard dot is green. Is that a fact about the system, a judgment, or merely a label?",
+      "authored_response": {
+        "id": "SUJ-03-15",
+        "entrance": "have-question",
+        "first_action": "Offer a visible status/state/evaluation chooser because lexical search is uncertain.",
+        "preview": [
+          "plain-distinction",
+          "why-matched",
+          "source-field"
+        ],
+        "density": "compact",
+        "compose": "explicit-palette",
+        "trust": [
+          "source-field-required",
+          "uncertain-match"
+        ],
+        "recovery": "Show a no-confident-route state with suggested canonical terms and product-documentation handoff.",
+        "handoff": "Copy the unresolved status question and dashboard-schema link.",
+        "exploration": "Compare reported label, system state, and evaluation result.",
+        "access": "Status never relies on a colored dot alone.",
+        "reject": "pretend-confident-answer",
+        "incumbent": "dashboard documentation",
+        "rationale": "This is the sole lexical miss, so uncertainty and recovery matter more than an alias guess."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-16",
+      "synthetic_profile_id": "SUJ-01-16",
+      "task_id": "SUJ-02-16",
+      "task": "The queue is growing even though some equipment sits idle. What kinds of limits could cause that?",
+      "authored_response": {
+        "id": "SUJ-03-16",
+        "entrance": "have-question",
+        "first_action": "Load a queue-and-capacity starter with local evidence slots empty.",
+        "preview": [
+          "route-shape",
+          "unresolved-state",
+          "owner-and-kind"
+        ],
+        "density": "book",
+        "compose": "worked-starter",
+        "trust": [
+          "limit-owner-test",
+          "missing-evidence"
+        ],
+        "recovery": "List the queue, routing, compatibility, and timing records still needed.",
+        "handoff": "Copy the competing limit map for operational review.",
+        "exploration": "Compare utilization, bottleneck, queue policy, and dependency.",
+        "access": "The closure map has a complete nonvisual list equivalent.",
+        "reject": "automatic-bottleneck-diagnosis",
+        "incumbent": "queue dashboard and records",
+        "rationale": "Structure is useful only if it visibly hands back to local operating evidence."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-17",
+      "synthetic_profile_id": "SUJ-01-17",
+      "task_id": "SUJ-02-17",
+      "task": "Two records use the same nickname, while one record has changed names. How do I know what is actually the same thing?",
+      "authored_response": {
+        "id": "SUJ-03-17",
+        "entrance": "know-term",
+        "first_action": "Search identity and names, then expose lineage as optional depth.",
+        "preview": [
+          "plain-distinction",
+          "owner-and-kind",
+          "depth"
+        ],
+        "density": "abbreviated",
+        "compose": "query-plan",
+        "trust": [
+          "identity-criterion",
+          "lineage-required"
+        ],
+        "recovery": "Ask for namespace or registry when names collide.",
+        "handoff": "Copy identity questions and authority-file links.",
+        "exploration": "Contrast identifier, name, alias, version, and identity.",
+        "access": "Record comparisons remain understandable without side-by-side width.",
+        "reject": "automatic-record-merge",
+        "incumbent": "authority file",
+        "rationale": "The reference frames the identity test but cannot perform a registry merge."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-18",
+      "synthetic_profile_id": "SUJ-01-18",
+      "task_id": "SUJ-02-18",
+      "task": "Two instruments disagree. Which questions come before deciding that one is wrong?",
+      "authored_response": {
+        "id": "SUJ-03-18",
+        "entrance": "know-term",
+        "first_action": "Search measurement disagreement and preview an ordered audit.",
+        "preview": [
+          "plain-distinction",
+          "diagnostic-order",
+          "maturity-and-source"
+        ],
+        "density": "full",
+        "compose": "query-plan",
+        "trust": [
+          "method-boundary",
+          "evidence-status"
+        ],
+        "recovery": "Keep the verdict unresolved until method and calibration records exist.",
+        "handoff": "Copy the audit order to the laboratory record.",
+        "exploration": "Contrast precision, accuracy, bias, uncertainty, and calibration.",
+        "access": "Dense tables support row headings, zoom, and print.",
+        "reject": "instrument-verdict",
+        "incumbent": "method and calibration records",
+        "rationale": "A full diagnostic is justified, but the substantive judgment remains local."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-19",
+      "synthetic_profile_id": "SUJ-01-19",
+      "task_id": "SUJ-02-19",
+      "task": "A committee handed a vote to a smaller group. Who may act now, and who still has to answer for the outcome?",
+      "authored_response": {
+        "id": "SUJ-03-19",
+        "entrance": "have-question",
+        "first_action": "Load an authority-trace starter with actors and delegation event explicit.",
+        "preview": [
+          "route-shape",
+          "scope-boundary",
+          "unresolved-state"
+        ],
+        "density": "full",
+        "compose": "worked-starter",
+        "trust": [
+          "authority-source",
+          "retained-accountability"
+        ],
+        "recovery": "Request the charter or delegation record before resolving authority.",
+        "handoff": "Copy the actor-relation trace into meeting review.",
+        "exploration": "Contrast delegation, authorization, assignment, and accountability.",
+        "access": "Graph edges are repeated as ordinary text statements.",
+        "reject": "governance-verdict",
+        "incumbent": "charter and minutes",
+        "rationale": "Composition helps reconstruct the question but must not invent authority."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-20",
+      "synthetic_profile_id": "SUJ-01-20",
+      "task_id": "SUJ-02-20",
+      "task": "Two instruments play what we call the same note, but the sound differs. Which parts are physical and which are perceptual?",
+      "authored_response": {
+        "id": "SUJ-03-20",
+        "entrance": "learn-or-explore",
+        "first_action": "Open a Reader route from physical wave quantities toward perception.",
+        "preview": [
+          "plain-distinction",
+          "short-example",
+          "domain-boundary"
+        ],
+        "density": "book",
+        "compose": "worked-starter",
+        "trust": [
+          "physical-perceptual-boundary",
+          "source-boundary"
+        ],
+        "recovery": "Hand off to acoustics or music sources where Factorium stops.",
+        "handoff": "Copy the physical quantities and unresolved perceptual questions.",
+        "exploration": "Follow frequency, spectrum, phase, pitch, and timbre.",
+        "access": "Audio is optional; all distinctions remain available in text.",
+        "reject": "audio-classifier",
+        "incumbent": "audio examples and music reference",
+        "rationale": "The task invites exploration across a carefully marked domain boundary."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-21",
+      "synthetic_profile_id": "SUJ-01-21",
+      "task_id": "SUJ-02-21",
+      "task": "An engine can pull hard without doing the job quickly. Which mechanical quantities separate those ideas?",
+      "authored_response": {
+        "id": "SUJ-03-21",
+        "entrance": "know-term",
+        "first_action": "Search pulling and rate language and preview torque/work/power distinctions.",
+        "preview": [
+          "plain-distinction",
+          "units",
+          "formula-relation"
+        ],
+        "density": "abbreviated",
+        "compose": "query-plan",
+        "trust": [
+          "operating-conditions",
+          "formula-scope"
+        ],
+        "recovery": "Ask for speed, geometry, and load before calculation.",
+        "handoff": "Copy the selected quantity relation to the specification lookup.",
+        "exploration": "Compare torque, work, energy, and power.",
+        "access": "Units and symbols are spoken with human-readable labels.",
+        "reject": "vehicle-recommendation",
+        "incumbent": "engine specifications",
+        "rationale": "The task is a compact quantity distinction followed by a handbook handoff."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-22",
+      "synthetic_profile_id": "SUJ-01-22",
+      "task_id": "SUJ-02-22",
+      "task": "A value moved from forty to fifty. Is that ten percent, twenty-five percent, or ten percentage points?",
+      "authored_response": {
+        "id": "SUJ-03-22",
+        "entrance": "know-term",
+        "first_action": "Search the numeric change and show all candidate bases side by side.",
+        "preview": [
+          "plain-distinction",
+          "formula-relation",
+          "short-example"
+        ],
+        "density": "abbreviated",
+        "compose": "explicit-palette",
+        "trust": [
+          "explicit-bases",
+          "quantity-meaning"
+        ],
+        "recovery": "Ask whether the original value is itself a percentage.",
+        "handoff": "Copy the selected formula to a calculator or spreadsheet.",
+        "exploration": "Compare relative change, absolute difference, and percentage points.",
+        "access": "Equations have text alternatives and do not require horizontal scrolling.",
+        "reject": "silent-basis-selection",
+        "incumbent": "calculator or spreadsheet",
+        "rationale": "The reference should choose the relation transparently, then leave arithmetic to familiar tools."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-23",
+      "synthetic_profile_id": "SUJ-01-23",
+      "task_id": "SUJ-02-23",
+      "task": "Someone logged in successfully but was still blocked from a file. Which decisions and records explain that?",
+      "authored_response": {
+        "id": "SUJ-03-23",
+        "entrance": "have-question",
+        "first_action": "Load an access-decision starter with separate identity, request, policy, decision, and enforcement records.",
+        "preview": [
+          "route-shape",
+          "diagnostic-order",
+          "unresolved-state"
+        ],
+        "density": "book",
+        "compose": "worked-starter",
+        "trust": [
+          "event-separation",
+          "local-evidence-boundary"
+        ],
+        "recovery": "Show exactly which event record is missing.",
+        "handoff": "Copy the trace checklist into incident investigation.",
+        "exploration": "Contrast authentication, permission, authorization, and enforcement.",
+        "access": "Event sequence is available as a numbered list as well as a map.",
+        "reject": "security-verdict",
+        "incumbent": "identity and application logs",
+        "rationale": "A composed trace is valuable, but local security records remain decisive."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-24",
+      "synthetic_profile_id": "SUJ-01-24",
+      "task_id": "SUJ-02-24",
+      "task": "A treatment is described as safe, but safe for which plant, dose, condition, and outcome?",
+      "authored_response": {
+        "id": "SUJ-03-24",
+        "entrance": "know-term",
+        "first_action": "Search safe and immediately expose subject, dose, condition, and outcome slots.",
+        "preview": [
+          "plain-distinction",
+          "scope-boundary",
+          "maturity-and-source"
+        ],
+        "density": "abbreviated",
+        "compose": "query-plan",
+        "trust": [
+          "no-safety-certification",
+          "authority-boundary"
+        ],
+        "recovery": "Stop at the product label or qualified plant-health source.",
+        "handoff": "Copy the missing scenario fields and source requirement.",
+        "exploration": "Contrast hazard, exposure, dose, and harm.",
+        "access": "Critical boundaries are explicit text, not icons or color.",
+        "reject": "treatment-advice",
+        "incumbent": "product label and qualified source",
+        "rationale": "The UX must make the advice boundary more prominent than the generic structure."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    },
+    {
+      "assignment_id": "SUJ-03-25",
+      "synthetic_profile_id": "SUJ-01-25",
+      "task_id": "SUJ-02-25",
+      "task": "A score is above the cutoff, but an exception and an appeal are still possible. Has a decision actually been made?",
+      "authored_response": {
+        "id": "SUJ-03-25",
+        "entrance": "have-question",
+        "first_action": "Load a decision-state starter with threshold, exception, appeal, and authority separate.",
+        "preview": [
+          "route-shape",
+          "unresolved-state",
+          "owner-and-kind"
+        ],
+        "density": "book",
+        "compose": "worked-starter",
+        "trust": [
+          "decision-state",
+          "authority-source"
+        ],
+        "recovery": "Keep the result unresolved while exception or appeal remains open.",
+        "handoff": "Copy the decision-state trace and governing-rule links.",
+        "exploration": "Contrast threshold, criterion, constraint, exception, and final decision.",
+        "access": "State labels include words and sequence, never color alone.",
+        "reject": "automatic-final-decision",
+        "incumbent": "governing decision record",
+        "rationale": "The UX should prevent a passed score from looking like an authorized final decision."
+      },
+      "evidence_label": "Every response is an authored task-based proxy hypothesis, not a participant quotation, preference, behavior, or accessibility result.",
+      "claim_boundary": "This response is authored from the task and current interface. It does not report what a person requested, preferred, understood, completed, trusted, remembered, or could access."
+    }
+  ],
+  "summary": {
+    "assignments": 25,
+    "questions_per_assignment": 12,
+    "authored_response_fields": 300,
+    "entrance": {
+      "have-question": 10,
+      "know-term": 12,
+      "learn-or-explore": 3
+    },
+    "density": {
+      "abbreviated": 8,
+      "book": 9,
+      "compact": 4,
+      "full": 4
+    },
+    "compose_onboarding": {
+      "explicit-palette": 6,
+      "query-plan": 8,
+      "worked-starter": 11
+    },
+    "preview_cues": {
+      "plain-distinction": 17,
+      "route-shape": 9,
+      "unresolved-state": 8,
+      "owner-and-kind": 6,
+      "short-example": 6,
+      "maturity-and-source": 5,
+      "scope-boundary": 5,
+      "depth": 4,
+      "formula-relation": 3,
+      "units": 3,
+      "why-matched": 3,
+      "diagnostic-order": 2,
+      "nearby-terms": 2,
+      "domain-boundary": 1,
+      "source-field": 1
+    },
+    "trust_cues": {
+      "missing-evidence": 3,
+      "authority-boundary": 2,
+      "authority-source": 2,
+      "domain-boundary": 2,
+      "formula-scope": 2,
+      "missing-inputs": 2,
+      "scope-boundary": 2,
+      "source-boundary": 2,
+      "authority-and-version": 1,
+      "basis-and-unit": 1,
+      "conversion-boundary": 1,
+      "decision-state": 1,
+      "estimand-boundary": 1,
+      "event-separation": 1,
+      "evidence-status": 1,
+      "explicit-bases": 1,
+      "field-safety-boundary": 1,
+      "identity-criterion": 1,
+      "legal-boundary": 1,
+      "limit-owner-test": 1,
+      "limitations": 1,
+      "lineage-required": 1,
+      "local-authority-warning": 1,
+      "local-evidence-boundary": 1,
+      "method-boundary": 1,
+      "missing-conditions": 1,
+      "no-forced-choice": 1,
+      "no-safety-certification": 1,
+      "operating-conditions": 1,
+      "physical-perceptual-boundary": 1,
+      "provenance": 1,
+      "purpose-explicit": 1,
+      "quantity-meaning": 1,
+      "quantity-scope": 1,
+      "retained-accountability": 1,
+      "sampling-warning": 1,
+      "scenario-required": 1,
+      "source-field-required": 1,
+      "stop-rule": 1,
+      "uncertain-match": 1,
+      "units-and-conditions": 1
+    },
+    "rejection_class": {
+      "opaque-collapse": 4,
+      "open-ended-automation": 5,
+      "persistence-or-account": 1,
+      "substantive-automation": 15
+    },
+    "participant_responses": 0,
+    "admitted_batch": "homepage-intent-router-only",
+    "deferred": [
+      "status-language-search-repair",
+      "accounts-and-history",
+      "personalization",
+      "open-prose-execution",
+      "substantive-automation",
+      "social-editing"
+    ]
+  }
+}
