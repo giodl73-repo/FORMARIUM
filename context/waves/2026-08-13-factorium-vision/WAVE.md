@@ -3108,3 +3108,14 @@ next test freezes twelve ambiguous queries and compares visible outputs under
 equal interaction budgets. It is an internal comparative audit, not reader or
 market evidence. See `COMPETITIVE-AMBIGUITY-TO-DECISION-TEST-BLUEPRINT.md` and
 `signals/discover/competitors/factorium-reference-navigation-competitors-2026-08-17.md`.
+
+## 2026-08-17 competitive ambiguity-to-decision test plan
+
+CAD-01 freezes twelve overloaded concept queries, five comparator classes, a
+two-open capture budget, nine separate visible-output observations, and four
+conjunctive decision thresholds against exact clean `sim-48`. Nine roles
+approve with no P1/P2 finding. Generic web search replaces an unreproducible
+Google-specific first screen before capture. Execution changes no product and
+cannot establish reader preference, comprehension, usefulness, market value,
+or general superiority. See
+`COMPETITIVE-AMBIGUITY-TO-DECISION-TEST-01-PLAN.md`.

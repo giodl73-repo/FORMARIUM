@@ -1,0 +1,53 @@
+{
+  "campaign_id": "CAD-01",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "frozen_on": "2026-08-17",
+  "candidate": {
+    "edition": "sim-48",
+    "source_commit": "95fdeda1e2ef68a748feab06fefd34b844bf0bbf",
+    "site_identity": "bcff813a8011ac86666abec442a139da11d912e1c982a19554f2f5f668bc2ee1",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186"
+  },
+  "queries": [
+    "scale", "force", "power", "value", "state", "risk",
+    "field", "role", "measure", "model", "system", "evidence"
+  ],
+  "comparators": [
+    "web-search-status-quo", "wikipedia", "merriam-webster-thesaurus",
+    "onelook-thesaurus", "open-english-wordnet-2025"
+  ],
+  "capture": {
+    "query_order_fixed": true,
+    "first_visible_output": true,
+    "maximum_result_opens": 2,
+    "no_query_rewriting": true,
+    "no_candidate_tuning": true,
+    "google_substitution": "The available research search surface stands in for generic web-search inertia because a stable non-personalized Google first screen cannot be captured reproducibly in this environment.",
+    "wordnet_source": "target/lexical-closure-oewn-2025/data",
+    "raw_capture_required": true
+  },
+  "binary_dimensions": [
+    "multiple_meanings", "relation_labels", "contrast_or_exclusion",
+    "governing_factors", "authority_visible", "stopping_boundary",
+    "bounded_continuation", "false_equivalence", "dead_end"
+  ],
+  "interaction_metric": "opens from first query output to first visible contrast, governing factor, or stopping boundary; null when absent within budget",
+  "decision_structure": "contrast_or_exclusion OR governing_factors OR stopping_boundary",
+  "thresholds": {
+    "factorium_decision_structure_queries": 9,
+    "factorium_more_structure_than_each_lexical_comparator_queries": 8,
+    "factorium_within_one_open_of_web_or_wikipedia_queries": 9,
+    "factorium_false_equivalence_maximum": 0
+  },
+  "lexical_comparators": [
+    "merriam-webster-thesaurus", "onelook-thesaurus",
+    "open-english-wordnet-2025"
+  ],
+  "failure_dispositions": [
+    "vocabulary", "owner-content", "navigation", "presentation",
+    "competitor-advantage", "no-factorium-job"
+  ],
+  "reader_evidence_claimed": false,
+  "market_evidence_claimed": false
+}
