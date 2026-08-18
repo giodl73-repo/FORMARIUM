@@ -3065,3 +3065,7 @@ or connection structure, and preserves complete `sim-46` literal rankings as
 control. Nine roles approve execution with no P1/P2 finding. Any missed class
 gate falsifies the technical hypothesis; no repair or reader claim is automatic.
 See `THESAURUS-JOB-TEST-01-PLAN.md`.
+
+Pre-execution amendment: revision 2 freezes the existing UI's first-20-record
+grouping before the five-family scoring window. Queries, intended owners,
+thresholds, and evidence boundaries are unchanged.

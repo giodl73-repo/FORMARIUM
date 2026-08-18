@@ -1,6 +1,6 @@
 {
   "campaign_id": "THS-01",
-  "revision": 1,
+  "revision": 2,
   "status": "frozen-before-execution",
   "frozen_on": "2026-08-17",
   "hypothesis": "factorium-thesaurus-job",
@@ -11,6 +11,7 @@
     "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186"
   },
   "family_window": 5,
+  "ranked_record_window": 20,
   "categories": {
     "alias-route": { "required_passes": 5 },
     "near-neighbor": { "required_passes": 4 },
@@ -47,4 +48,3 @@
   "automatic_repair": false,
   "reader_evidence_claimed": false
 }
-
