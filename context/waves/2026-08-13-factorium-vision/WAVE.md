@@ -3505,3 +3505,16 @@ interchange. Claim no reader value, curriculum consensus, decision improvement,
 usability gain, guidance, or release evidence. See
 `MUNDUS-CURRICULUM-CLOSURE-01-ADMISSION-RESULT.md` and
 `signals/roles/check/mcc-01-curriculum-view-admission-roles-check-2026-08-18.md`.
+## 2026-08-18 biography and thought closure campaign 01
+
+Plan review: freeze 24 source-led questions before comparing their required
+distinctions with V1: eight leadership/history cases, six intellectual
+biographies, six mind/language/society cases, and four adversarial boundary
+cases. Named people, works, offices, movements, nations, and events remain
+source-local case identities. The recognizable reader job is separating what
+a person believed, did, enabled, contributed, or caused from office,
+institution, collective action, evidence, outcome, and later interpretation.
+The campaign admits at most one anchor, two views, zero relation mechanics, and
+one discovery repair; zero change is valid. Eleven roles approve the freeze
+with no open P1/P2 finding. See `BIOGRAPHY-THOUGHT-CLOSURE-01-PLAN.md` and
+`BIOGRAPHY-THOUGHT-CLOSURE-01-PLAN-ROLE-REVIEW.md`.
