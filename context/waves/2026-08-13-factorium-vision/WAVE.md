@@ -2845,3 +2845,11 @@ tasks expose two intended canonical families. Selection must remain explicit,
 family-deduplicated, untyped, page-local, and noncanonical; search ranking,
 relation semantics, closure, Guides, persistence, and reader claims remain
 unchanged. See `SYNTHETIC-MANUAL-CONCEPT-BASKET-PLAN.md`.
+
+Result review: only 2/10 frozen question tasks expose two intended canonical
+families in the first ten ownership groups, against the predeclared 8/10 gate.
+Seven expose one and one exposes none. The one-query manual basket is rejected:
+it would often present a plural-looking set without the concepts already
+declared necessary for the task. Six roles approve the null and stop decision
+with no P1/P2 finding. `sim-44` remains unchanged and no `sim-45` is minted.
+See `SYNTHETIC-MANUAL-CONCEPT-BASKET-RESULT.md`.

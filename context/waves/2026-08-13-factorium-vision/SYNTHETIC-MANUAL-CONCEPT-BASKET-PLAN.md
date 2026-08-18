@@ -2,7 +2,7 @@
 
 Date: 2026-08-17
 
-Status: proposed freeze; execution not started
+Status: complete; candidate rejected; see `SYNTHETIC-MANUAL-CONCEPT-BASKET-RESULT.md`
 
 Campaign: `SUJ-05`
 

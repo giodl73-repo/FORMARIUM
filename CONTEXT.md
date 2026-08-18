@@ -1104,6 +1104,14 @@ rerun moves explicit handoff availability from 0/25 to 25/25 while route reach
 stays 15/25 and exact task retention stays 0/25. The separate semantic-route
 gaps remain deferred, and no reader-value claim or external gate closes.
 
+SUJ-05 tests and rejects a one-query manual concept basket before
+implementation. Only 2/10 frozen question tasks expose two intended canonical
+families in the first ten exact `sim-44` ownership groups, below the 8/10 gate.
+Nine expose a first foothold, but one literal query is not a reliable
+multi-concept assembly surface. No search, content, relation, closure,
+persistence, authority, or edition change is admitted. The null result is
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-MANUAL-CONCEPT-BASKET-RESULT.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the
