@@ -2923,3 +2923,11 @@ zero loss of any SUJ-06 intended family, and intended-family gains on at least
 4/10 tasks. Lenses remain surface strings, not concepts, semantic
 decomposition, relations, closure, or recommendation. See
 `SYNTHETIC-WHOLE-QUESTION-CLAUSE-LENSES-PLAN.md`.
+
+Result review: all ten tasks yield the expected 36 lenses, but only 4/10 expose
+two intended families, only 2/10 add an intended family beyond SUJ-06, and 11
+SUJ-06 intended families are lost across seven tasks. The full-question lens
+does not repair the clause-only portfolio failure. Nine roles approve the null
+with no P1/P2 finding. Reject the candidate, close automatic literal
+segmentation in this branch, retain `sim-45`, and do not mint `sim-46`. See
+`SYNTHETIC-WHOLE-QUESTION-CLAUSE-LENSES-RESULT.md`.

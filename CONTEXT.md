@@ -1130,6 +1130,14 @@ minted, and `sim-45` remains current. This is a mechanical null, not reader or
 language-understanding evidence. See
 `context/waves/2026-08-13-factorium-vision/SYNTHETIC-SYNTACTIC-CLAUSE-LOOKUP-RESULT.md`.
 
+SUJ-08 preserves each full question as a primary literal lens and adds the
+unchanged SUJ-07 clauses. Across 36 exact `sim-45` rankings, coverage remains
+4/10, only 2/10 tasks gain an intended family beyond SUJ-06, and 11 control
+families are lost across seven tasks. The higher-cost candidate is rejected,
+automatic literal segmentation is closed for this branch, no `sim-46` is
+minted, and explicit dual lookup remains current. See
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-WHOLE-QUESTION-CLAUSE-LENSES-RESULT.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

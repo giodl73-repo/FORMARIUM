@@ -2,7 +2,7 @@
 
 Date: 2026-08-17
 
-Status: frozen before execution
+Status: complete; see `SYNTHETIC-WHOLE-QUESTION-CLAUSE-LENSES-RESULT.md`
 
 Campaign: `SUJ-08`
 
