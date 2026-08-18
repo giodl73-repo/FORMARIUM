@@ -3353,3 +3353,24 @@ proceed only to a three-item design batch: epistemic-standing boundary,
 meaning/interpretation boundary, and evidence-custody derived view. Claim no
 global completeness, community endorsement, or reader evidence. See
 `GLOBAL-PHILOSOPHY-GPC-09-RESULT.md`.
+
+## 2026-08-18 GPC-09 boundary and custody design batch
+
+Plan review: execute only the three-item batch earned by GPC-09 and remain
+within the post-F100 cap of one anchor and two views. Existing-owner inspection
+assigns semantic meaning/interpretation to one candidate anchor and keeps
+epistemic standing plus source/performance/research custody as Evidence Table
+candidates under Claim and Evidence. No Table inventory, V0 reference, proof
+edition, philosophy lane, reader claim, community endorsement, or normative
+guidance changes during design. See
+`GPC-09-BOUNDARY-CUSTODY-DESIGN-PLAN.md` and
+`specs/GPC-09-BOUNDARY-CUSTODY-DESIGN.md`.
+
+Result review: the approved specification owns exactly one candidate anchor
+(`meaning-reference-interpretation-use`) and two Claim-and-Evidence views
+(epistemic standing/inquiry/warrant and source/performance/research custody).
+It adds decisive neighboring-sense contrasts, valid/invalid fixture sketches,
+projection rules, compatibility boundaries, ten acceptance checks, and a
+complete product-owner record. Ten roles approve with no P1/P2 finding. Admit
+nothing yet; established-source and admission review is the next gate. See
+`GPC-09-BOUNDARY-CUSTODY-DESIGN-RESULT.md`.
