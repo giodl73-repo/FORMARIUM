@@ -2912,3 +2912,14 @@ Repository validation found six relation/query checkers still asserting
 pre-repair digests after the earlier limiting-condition route change. The
 canonical queries and Guide custody already agree, so the result batch updates
 only those stale assertions and leaves all source artifacts unchanged.
+
+## 2026-08-17 whole-question and clause lenses plan
+
+SUJ-08 preserves the exact whole question as the primary literal ranking and
+adds the unchanged SUJ-07 clauses as secondary lenses. Nine roles approve the
+conditional test with no P1/P2 finding. Because three or four visible rankings
+cost more than SUJ-06's two, interface work requires 10/10 two-family coverage,
+zero loss of any SUJ-06 intended family, and intended-family gains on at least
+4/10 tasks. Lenses remain surface strings, not concepts, semantic
+decomposition, relations, closure, or recommendation. See
+`SYNTHETIC-WHOLE-QUESTION-CLAUSE-LENSES-PLAN.md`.
