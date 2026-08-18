@@ -495,6 +495,12 @@ node tools\check_synthetic_whole_question_clause_lenses_baseline.js
 node tools\check_synthetic_recognized_foothold_connections_campaign.js
 node tools\run_synthetic_recognized_foothold_connections_baseline.js
 node tools\check_synthetic_recognized_foothold_connections_baseline.js
+node tools\check_synthetic_reciprocal_connection_repair_campaign.js
+node tools\check_reciprocal_connection_repair.js
+node tools\run_synthetic_reciprocal_connection_repair_rerun.js
+node tools\check_synthetic_reciprocal_connection_repair_rerun.js
+node tools\check_reciprocal_connection_repair_site.js target\proof-set-sim-46
+node tools\check_reciprocal_connection_repair_browser.js target\proof-set-sim-46 target\sim46-reciprocal-connections.png
 node tools\check_system_architecture_description.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_decision_bridge_combined_closure.js

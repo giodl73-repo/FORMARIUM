@@ -2964,3 +2964,13 @@ finding. No concept, sense, typed relation, search rank, or new surface may
 change. Clean `sim-46` must reach 7/8 deficient-route expansion and 9/10 total
 coverage while preserving the dashboard Search miss. See
 `SYNTHETIC-RECIPROCAL-CONNECTION-REPAIR-PLAN.md`.
+
+Result review: clean `sim-46` passes both frozen gates. Seven of eight
+previously deficient tasks gain a second intended family and total two-family
+coverage reaches 9/10. Only `SUJ-02-04` and `SUJ-02-23` change, with zero
+losses. Both new links remain untyped and visible within the first-six Table
+preview at 390 px; existing product mechanics pass regression checks. Nine
+roles approve with no P1/P2 finding. Retain the two links and `sim-46`, decline
+the analyst-conditioned Search cue, preserve the dashboard Search-vocabulary
+gap, and claim no reader evidence. See
+`SYNTHETIC-RECIPROCAL-CONNECTION-REPAIR-RESULT.md`.

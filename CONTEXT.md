@@ -1147,6 +1147,15 @@ Identity retain candidate link-gap signals for independent recurrence testing;
 the dashboard-dot miss remains a Search vocabulary gap. See
 `context/waves/2026-08-13-factorium-vision/SYNTHETIC-RECOGNIZED-FOOTHOLD-CONNECTIONS-RESULT.md`.
 
+SUJ-10 admits the two SUJ-09 link-gap candidates only after independent frozen
+packet recurrence. Clean `sim-46` adds reciprocal untyped navigation from
+Coordinated Work to Operational Resource and from Identity/Naming to Access.
+The exact rerun moves deficient-route expansion to 7/8 and total two-family
+coverage to 9/10, with changes only on the two intended tasks and no losses.
+The dashboard-dot query remains a Search vocabulary gap. No Search cue, typed
+relation, closure claim, or reader-evidence claim is admitted. See
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-RECIPROCAL-CONNECTION-REPAIR-RESULT.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

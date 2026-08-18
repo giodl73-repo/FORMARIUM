@@ -2,7 +2,8 @@
 
 Date: 2026-08-17
 
-Status: frozen before repair
+Status: complete — exact repair passed; see
+`SYNTHETIC-RECIPROCAL-CONNECTION-REPAIR-RESULT.md`
 
 Campaign: `SUJ-10`
 
