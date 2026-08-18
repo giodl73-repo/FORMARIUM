@@ -1,0 +1,1131 @@
+{
+  "artifact": "SUJ-04 first-click to handoff results",
+  "campaign_id": "SUJ-04",
+  "evidence_class": "deterministic-interface-rehearsal-plus-authored-synthetic-hypotheses",
+  "custody": {
+    "frozen_commit": "87d3daa",
+    "campaign_sha256": "46b2be3375e0bbc51fff9ccee4fdf0c148f4d630ec7ae7eeb49ad91340e4a2c6",
+    "contract_sha256": "46e27f32d1f6f425022787300e4192c5201f3835003723ae6a3eef8d57b6dd5b",
+    "browser_sha256": "ec3982cdd4d1f6b7cc3724c6719102fb96dab7b386bdded4129952373de44964",
+    "analysis_sha256": "a7d07c7dbef9b5478dede8bc3db97021abf6530fc109fc3683cfc44434abfa94",
+    "baseline": {
+      "edition": "sim-43",
+      "source_commit": "1a26eddb224304df673f7560a361eb7470491532",
+      "site_identity": "1112425c58503cf92b5c1861a8ad1cd4548963c967885d26cfb172ba078dc2d1",
+      "manifest_sha256": "e7ab56126d82464aa15e1074dcd484ccd30c32bfa26ac931cc70bdaf786be3d3",
+      "index_sha256": "1ff637b863352dd8bc9afeb3022bac68a5360c9c9ebbe0ceb945929430415f8a",
+      "search_index_sha256": "d12640ffba616fcb83d909466628c1d3b4df0cdf4a0c4b0df0554f4e66e5b1df"
+    }
+  },
+  "results": [
+    {
+      "assignment_id": "SUJ-04-01",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "five percent of what bottle label"
+      },
+      "destination": {
+        "href": "entries/tables-entries-comparative-quantity.html",
+        "intended_family": "tables/entries/comparative-quantity.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast percent, percentage points, ratio, and concentration.",
+      "stopping_condition": "Stop when the percentage basis and unit are explicit.",
+      "outward_handoff": "Return to the bottle label or governing product documentation for identity and authorized meaning.",
+      "projection_losses": [
+        "No product identity or governing label scheme",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A bottle says five percent. Five percent of what, exactly?",
+      "intended_paths": [
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/quantity-value-unit-conversion.md"
+      ],
+      "entrance_observation": {
+        "query": "five percent of what bottle label",
+        "ownership_groups_shown": 15,
+        "intended_family_rank": 1
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-02",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": "alert-outcome-feedback"
+      },
+      "destination": {
+        "href": "compose.html#starter-alert-outcome-feedback",
+        "starter_id": "alert-outcome-feedback"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare availability, capability, correctness, and user outcome.",
+      "stopping_condition": "Stop after listing the distinct claims and missing observations.",
+      "outward_handoff": "Use service telemetry, requirements, and incident records to diagnose the real failure.",
+      "projection_losses": [
+        "No local required service, telemetry, or correctness evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "The status page is green, but customers still cannot finish checkout. How can both be true?",
+      "intended_paths": [
+        "tables/entries/control-monitoring-response.md",
+        "tables/entries/dependability-reliability-availability-resilience.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/system-composition-dependency.md",
+        "tables/entries/requirement-specification-verification-validation.md"
+      ],
+      "entrance_observation": {
+        "starter_id": "alert-outcome-feedback",
+        "exact_starter_available": true
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-03",
+      "entrance": "learn-or-explore",
+      "start_href": "reader.html",
+      "first_action": {
+        "type": "open-reader-route"
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": false,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to compact for this task-shaped projection.",
+      "related_concepts": "Try same temperature with different mass or material.",
+      "stopping_condition": "Stop after the missing mass, material, boundary, and history are named.",
+      "outward_handoff": "Use a physics source for a worked material-specific calculation.",
+      "projection_losses": [
+        "No object mass, material, or history",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Two mugs show the same thermometer reading. Does that mean they contain the same warmth?",
+      "intended_paths": [
+        "tables/entries/thermal-quantity.md",
+        "tables/formulas/thermal-quantities.md",
+        "tables/entries/work-energy-power.md"
+      ],
+      "entrance_observation": {
+        "teaching_route_records": 24,
+        "intended_route_member": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "The intended concept is outside the fixed Reader teaching spine.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-04",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare bottleneck, critical path, queue, and calendar constraint.",
+      "stopping_condition": "Stop with competing limiting explanations and required records listed.",
+      "outward_handoff": "Return to the plan, calendar, dependency graph, queue, and capacity records.",
+      "projection_losses": [
+        "No exact plan, dependency graph, calendar, or capacity data",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Everyone is busy, yet the project date keeps slipping. What should I inspect first?",
+      "intended_paths": [
+        "tables/entries/coordinated-work.md",
+        "tables/procedures/planned-work.md",
+        "tables/diagnostics/dependency-critical-path.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/temporal-organization.md"
+      ],
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-05",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "dangerous but unlikely to hurt"
+      },
+      "destination": {
+        "href": "entries/tables-entries-scenario-assumption-condition-case.html",
+        "intended_family": "tables/entries/scenario-assumption-condition-case.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast hazard, exposure, vulnerability, and risk.",
+      "stopping_condition": "Stop after the scenario, pathway, consequence, and missing evidence are explicit.",
+      "outward_handoff": "Use the applicable qualified safety or domain authority for assessment.",
+      "projection_losses": [
+        "No specified subject, pathway, consequence, or evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Can something be dangerous without being likely to hurt someone in this situation?",
+      "intended_paths": [
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/probability-risk-uncertainty.md",
+        "tables/entries/scenario-assumption-condition-case.md"
+      ],
+      "entrance_observation": {
+        "query": "dangerous but unlikely to hurt",
+        "ownership_groups_shown": 19,
+        "intended_family_rank": 19
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-06",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "does work may decide must answer"
+      },
+      "destination": {
+        "href": "entries/tables-entries-organization-role-authority.html",
+        "intended_family": "tables/entries/organization-role-authority.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Compare responsibility, authority, accountability, and traceability.",
+      "stopping_condition": "Stop when every actor and assignment relation is named.",
+      "outward_handoff": "Use the governing charter, delegation, or role record for the actual assignment.",
+      "projection_losses": [
+        "No local role or delegation record",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "One person does the work, another may decide, and another must answer for it. Which word belongs to each?",
+      "intended_paths": [
+        "tables/entries/organization-role-authority.md",
+        "tables/mappings/organizational-assignment-semantics.md"
+      ],
+      "entrance_observation": {
+        "query": "does work may decide must answer",
+        "ownership_groups_shown": 17,
+        "intended_family_rank": 2
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-07",
+      "entrance": "learn-or-explore",
+      "start_href": "reader.html",
+      "first_action": {
+        "type": "open-reader-route"
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": false,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to compact for this task-shaped projection.",
+      "related_concepts": "Follow resemblance, reference, abstraction, and simulation.",
+      "stopping_condition": "Stop after selecting the relevant representation relation.",
+      "outward_handoff": "Use art theory or medium-specific sources for interpretation.",
+      "projection_losses": [
+        "No art-theory or medium context",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Is a digital drawing a model, a representation, a copy, or something else?",
+      "intended_paths": [
+        "tables/entries/model-representation-simulation.md",
+        "tables/diagnostics/model-simulation-failures.md"
+      ],
+      "entrance_observation": {
+        "teaching_route_records": 24,
+        "intended_route_member": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "The intended concept is outside the fixed Reader teaching spine.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-08",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "same electrical number different energy use"
+      },
+      "destination": {
+        "href": "entries/tables-entries-electrical-quantity.html",
+        "intended_family": "tables/entries/electrical-quantity.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Contrast power, energy, voltage, and current.",
+      "stopping_condition": "Stop after identifying the displayed quantity and missing conditions.",
+      "outward_handoff": "Use device documentation, measurement, codes, and qualified electrical guidance.",
+      "projection_losses": [
+        "No device, circuit, duration, or field conditions",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Why can two devices use energy differently even when a displayed electrical number matches?",
+      "intended_paths": [
+        "tables/entries/electrical-quantity.md",
+        "tables/formulas/electrical-quantities.md",
+        "tables/entries/work-energy-power.md",
+        "tables/entries/quantity-value-unit-conversion.md"
+      ],
+      "entrance_observation": {
+        "query": "same electrical number different energy use",
+        "ownership_groups_shown": 15,
+        "intended_family_rank": 1
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-09",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare scaling a ratio with scaling total amount.",
+      "stopping_condition": "Stop when every quantity, basis, conversion, and scale factor is explicit.",
+      "outward_handoff": "Use the recipe and reliable conversion data for actual amounts and procedure.",
+      "projection_losses": [
+        "No recipe, density data, or preparation conditions",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "I want to double a mixture, but the instructions mix cups, grams, and percentages. What has to stay consistent?",
+      "intended_paths": [
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/formulas/density.md"
+      ],
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-10",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": "latency-observation-inference"
+      },
+      "destination": {
+        "href": "compose.html#starter-latency-observation-inference",
+        "starter_id": "latency-observation-inference"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to full for this task-shaped projection.",
+      "related_concepts": "Compare association, mechanism, and causal claim.",
+      "stopping_condition": "Stop after reconstructing the claim-evidence chain and unresolved checks.",
+      "outward_handoff": "Inspect the original report, data, methods, and qualified domain review.",
+      "projection_losses": [
+        "No source report, data, method, or competing explanation",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A report says the data proves its conclusion. What links should I inspect before repeating that?",
+      "intended_paths": [
+        "tables/entries/claim-evidence.md",
+        "tables/evidence/observation-inference-chain.md",
+        "tables/entries/causal-reasoning.md",
+        "tables/evidence/causal-claim-evidence.md"
+      ],
+      "entrance_observation": {
+        "starter_id": "latency-observation-inference",
+        "exact_starter_available": true
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-11",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "cheaper option costs more over time"
+      },
+      "destination": {
+        "href": "entries/tables-entries-cost-price-value-return.html",
+        "intended_family": "tables/entries/cost-price-value-return.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast price, total cost, opportunity cost, and value.",
+      "stopping_condition": "Stop after the missing cost and value inputs are named.",
+      "outward_handoff": "Return to product evidence, budget, and local decision authority.",
+      "projection_losses": [
+        "No actual alternatives, prices, horizon, or preferences",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "The cheaper option costs more over time. What did the sticker price leave out?",
+      "intended_paths": [
+        "tables/entries/cost-price-value-return.md",
+        "tables/formulas/cost-value-return.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/evaluation-measure-scale-criterion.md"
+      ],
+      "entrance_observation": {
+        "query": "cheaper option costs more over time",
+        "ownership_groups_shown": 14,
+        "intended_family_rank": 7
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-12",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "same average groups look different"
+      },
+      "destination": {
+        "href": "entries/tables-entries-statistical-summary-interval.html",
+        "intended_family": "tables/entries/statistical-summary-interval.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare mean, median, quantile, and spread.",
+      "stopping_condition": "Stop when the missing distributions, samples, and consequence model are named.",
+      "outward_handoff": "Use the data, plots, and statistical methods for substantive comparison.",
+      "projection_losses": [
+        "No samples, distributions, uncertainty, or decision model",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Two groups have the same average, but their experiences look nothing alike. How is that possible?",
+      "intended_paths": [
+        "tables/entries/statistical-summary-interval.md",
+        "tables/diagnostics/statistical-summary-interval-failures.md",
+        "tables/entries/sampling-generalization.md"
+      ],
+      "entrance_observation": {
+        "query": "same average groups look different",
+        "ownership_groups_shown": 16,
+        "intended_family_rank": 2
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-13",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "light described as long or short quantity"
+      },
+      "destination": {
+        "href": "entries/tables-entries-periodic-wave-quantity.html",
+        "intended_family": "tables/entries/periodic-wave-quantity.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to compact for this task-shaped projection.",
+      "related_concepts": "Follow wavelength to frequency and spectrum.",
+      "stopping_condition": "Stop after naming wavelength and its relation to frequency and speed.",
+      "outward_handoff": "Use an astronomy source to contextualize the wavelength for the observed light.",
+      "projection_losses": [
+        "No astronomical source context or observation",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A space article describes light as long or short. What quantity is it talking about?",
+      "intended_paths": [
+        "tables/entries/periodic-wave-quantity.md",
+        "tables/formulas/periodic-wave-quantities.md"
+      ],
+      "entrance_observation": {
+        "query": "light described as long or short quantity",
+        "ownership_groups_shown": 15,
+        "intended_family_rank": 5
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-14",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to full for this task-shaped projection.",
+      "related_concepts": "Contrast policy, rule, obligation, and requirement.",
+      "stopping_condition": "Stop after the required applicability questions are explicit.",
+      "outward_handoff": "Use the governing document and qualified legal or compliance authority.",
+      "projection_losses": [
+        "No document, jurisdiction, authority, or applicability record",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A document uses must, should, and may. What else must I know before treating any sentence as binding?",
+      "intended_paths": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/requirement-specification-verification-validation.md"
+      ],
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-15",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to compact for this task-shaped projection.",
+      "related_concepts": "Compare reported label, system state, and evaluation result.",
+      "stopping_condition": "Use product documentation first; return only if a general status distinction remains.",
+      "outward_handoff": "Inspect the dashboard schema, help text, and producing monitor.",
+      "projection_losses": [
+        "Ordinary-language discovery misses the intended owners",
+        "No dashboard schema",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A dashboard dot is green. Is that a fact about the system, a judgment, or merely a label?",
+      "intended_paths": [
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-16",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare utilization, bottleneck, queue policy, and dependency.",
+      "stopping_condition": "Stop with competing limit types and required records listed.",
+      "outward_handoff": "Use queue, equipment, routing, dependency, and timing records.",
+      "projection_losses": [
+        "No local queue, routing, compatibility, or capacity evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "The queue is growing even though some equipment sits idle. What kinds of limits could cause that?",
+      "intended_paths": [
+        "tables/procedures/queue-service-order.md",
+        "tables/diagnostics/dependency-critical-path.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/coordinated-work.md"
+      ],
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-17",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "same nickname different records changed names"
+      },
+      "destination": {
+        "href": "entries/tables-entries-identity-naming-classification-versioning.html",
+        "intended_family": "tables/entries/identity-naming-classification-versioning.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast identifier, name, alias, version, and identity.",
+      "stopping_condition": "Stop when the identity criterion and required lineage evidence are named.",
+      "outward_handoff": "Use the authority file, registry, identifiers, and revision records.",
+      "projection_losses": [
+        "No actual registry, identifier, or lineage evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Two records use the same nickname, while one record has changed names. How do I know what is actually the same thing?",
+      "intended_paths": [
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/evidence/change-lineage.md"
+      ],
+      "entrance_observation": {
+        "query": "same nickname different records changed names",
+        "ownership_groups_shown": 19,
+        "intended_family_rank": 2
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-18",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "two instruments disagree which one wrong"
+      },
+      "destination": {
+        "href": "entries/tables-entries-measurement-quality.html",
+        "intended_family": "tables/entries/measurement-quality.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to full for this task-shaped projection.",
+      "related_concepts": "Contrast precision, accuracy, bias, uncertainty, and calibration.",
+      "stopping_condition": "Stop after the audit questions and missing records are explicit.",
+      "outward_handoff": "Use measurement data, procedures, reference status, uncertainty analysis, and calibration records.",
+      "projection_losses": [
+        "No observations, method, reference, uncertainty, or calibration record",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Two instruments disagree. Which questions come before deciding that one is wrong?",
+      "intended_paths": [
+        "tables/entries/measurement-quality.md",
+        "tables/diagnostics/measurement-quality-failures.md",
+        "tables/entries/probability-risk-uncertainty.md",
+        "tables/entries/claim-evidence.md"
+      ],
+      "entrance_observation": {
+        "query": "two instruments disagree which one wrong",
+        "ownership_groups_shown": 18,
+        "intended_family_rank": 1
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-19",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": "delegated-compliance-frontier"
+      },
+      "destination": {
+        "href": "compose.html#starter-delegated-compliance-frontier",
+        "starter_id": "delegated-compliance-frontier"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to full for this task-shaped projection.",
+      "related_concepts": "Contrast delegation, authorization, assignment, and accountability.",
+      "stopping_condition": "Stop after every actor, authority source, scope, event, and retained duty is explicit.",
+      "outward_handoff": "Use the committee charter, delegation instrument, minutes, and governing rules.",
+      "projection_losses": [
+        "No governing record, decision event, or authority evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A committee handed a vote to a smaller group. Who may act now, and who still has to answer for the outcome?",
+      "intended_paths": [
+        "tables/entries/organization-role-authority.md",
+        "tables/mappings/organizational-assignment-semantics.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md"
+      ],
+      "entrance_observation": {
+        "starter_id": "delegated-compliance-frontier",
+        "exact_starter_available": true
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-20",
+      "entrance": "learn-or-explore",
+      "start_href": "reader.html",
+      "first_action": {
+        "type": "open-reader-route"
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": false,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Follow frequency, spectrum, phase, pitch, and timbre.",
+      "stopping_condition": "Stop after the physical quantities and external perceptual questions are separated.",
+      "outward_handoff": "Use acoustics, psychoacoustics, and music sources for perception and timbre.",
+      "projection_losses": [
+        "Pitch perception, timbre, and instrument context remain external",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Two instruments play what we call the same note, but the sound differs. Which parts are physical and which are perceptual?",
+      "intended_paths": [
+        "tables/entries/periodic-wave-quantity.md",
+        "tables/formulas/periodic-wave-quantities.md",
+        "tables/entries/information-data-signal-noise.md"
+      ],
+      "entrance_observation": {
+        "teaching_route_records": 24,
+        "intended_route_member": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "The intended concept is outside the fixed Reader teaching spine.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-21",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "engine pulls hard but job not quick"
+      },
+      "destination": {
+        "href": "entries/tables-entries-work-energy-power.html",
+        "intended_family": "tables/entries/work-energy-power.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Compare torque, work, energy, and power.",
+      "stopping_condition": "Stop when the requested quantity and conditions are identified.",
+      "outward_handoff": "Use engine specifications, measurements, and a mechanics handbook.",
+      "projection_losses": [
+        "No engine, speed, geometry, or load data",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "An engine can pull hard without doing the job quickly. Which mechanical quantities separate those ideas?",
+      "intended_paths": [
+        "tables/entries/work-energy-power.md",
+        "tables/formulas/mechanical-work-energy-power.md",
+        "tables/entries/motion-measure.md"
+      ],
+      "entrance_observation": {
+        "query": "engine pulls hard but job not quick",
+        "ownership_groups_shown": 17,
+        "intended_family_rank": 12
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-22",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "value from forty to fifty percent change"
+      },
+      "destination": {
+        "href": "entries/tables-entries-comparative-quantity.html",
+        "intended_family": "tables/entries/comparative-quantity.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Compare relative change, absolute difference, and percentage points.",
+      "stopping_condition": "Stop after identifying the original quantity and correct comparison basis.",
+      "outward_handoff": "Use a calculator or spreadsheet for the actual arithmetic once the relation is selected.",
+      "projection_losses": [
+        "The underlying quantity and reporting context are undeclared",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A value moved from forty to fifty. Is that ten percent, twenty-five percent, or ten percentage points?",
+      "intended_paths": [
+        "tables/entries/comparative-quantity.md",
+        "tables/mappings/basis-transformation.md"
+      ],
+      "entrance_observation": {
+        "query": "value from forty to fifty percent change",
+        "ownership_groups_shown": 15,
+        "intended_family_rank": 6
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-23",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Contrast authentication, permission, authorization, and enforcement.",
+      "stopping_condition": "Stop with the required request, permission, policy, decision, and enforcement records listed.",
+      "outward_handoff": "Inspect identity-provider, policy, application, and enforcement logs.",
+      "projection_losses": [
+        "No identities, request, policy, decision, or enforcement evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "Someone logged in successfully but was still blocked from a file. Which decisions and records explain that?",
+      "intended_paths": [
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/constraints/access-authorization-integrity.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md"
+      ],
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-24",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "safe for which plant dose condition outcome"
+      },
+      "destination": {
+        "href": "entries/tables-entries-scenario-assumption-condition-case.html",
+        "intended_family": "tables/entries/scenario-assumption-condition-case.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast hazard, exposure, dose, and harm.",
+      "stopping_condition": "Stop after identifying the missing subject, dose, condition, outcome, evidence, and authority.",
+      "outward_handoff": "Use the product label and qualified plant-health or regulatory source.",
+      "projection_losses": [
+        "Species, treatment, dose, evidence, and authority remain external",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A treatment is described as safe, but safe for which plant, dose, condition, and outcome?",
+      "intended_paths": [
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/scenario-assumption-condition-case.md",
+        "tables/diagnostics/operating-condition-failures.md"
+      ],
+      "entrance_observation": {
+        "query": "safe for which plant dose condition outcome",
+        "ownership_groups_shown": 14,
+        "intended_family_rank": 1
+      },
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    {
+      "assignment_id": "SUJ-04-25",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": false,
+      "viewport_overflow": false,
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Contrast threshold, criterion, constraint, exception, and final decision.",
+      "stopping_condition": "Stop after reconstructing the rule, exception, appeal, authority, and current decision state.",
+      "outward_handoff": "Use the governing decision rule, exception procedure, appeal record, and authorized decision.",
+      "projection_losses": [
+        "No rule, evidence, exception, appeal, or final decision event",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "change_disposition": "repair",
+      "claim_boundary": "Mechanical fields describe the frozen browser surface only. Authored fields do not show what a reader recognized, understood, preferred, completed, trusted, or could access.",
+      "task": "A score is above the cutoff, but an exception and an appeal are still possible. Has a decision actually been made?",
+      "intended_paths": [
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/constraints/evaluation-threshold-acceptance.md",
+        "tables/decisions/criterion-preference-priority.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/decisions/policy-decision.md",
+        "tables/entries/choice-alternative-selection.md"
+      ],
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "repair_candidate": "ephemeral-handoff-note"
+    }
+  ],
+  "summary": {
+    "assignments": 25,
+    "route_state": {
+      "destination-reached": 15,
+      "entrance-only": 10,
+      "route-broken": 0
+    },
+    "by_entrance": {
+      "know-term": {
+        "assignments": 12,
+        "reached": 12
+      },
+      "have-question": {
+        "assignments": 10,
+        "reached": 3
+      },
+      "learn-or-explore": {
+        "assignments": 3,
+        "reached": 0
+      }
+    },
+    "original_task_visible": 0,
+    "density_control_available": 22,
+    "related_routes_available": 25,
+    "explicit_handoff_package": 0,
+    "viewport_overflow": 0,
+    "hypotheses": {
+      "intended_route_threshold": 20,
+      "intended_route_falsified": true,
+      "low_task_retention_predicted": true,
+      "low_handoff_predicted": true,
+      "behavioral_hypothesis_tested": false
+    },
+    "owner_test": {
+      "candidate": "ephemeral-handoff-note",
+      "affected_assignments": 25,
+      "affected_entrances": 3,
+      "owner": "publication-shell",
+      "sensitive_persistence": false,
+      "static_reversible": true,
+      "admitted": true
+    }
+  }
+}

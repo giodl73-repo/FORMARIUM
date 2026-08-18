@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -78,6 +78,8 @@ $siteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-se
 $candidateSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-candidate.css"
 $twoBookSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-two-book.css"
 $intentRouterStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-intent-router.css"
+$handoffStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-handoff.css"
+$handoffScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-handoff.js"
 $tableNavigatorStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-navigator.css"
 $tableFamilyContentsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-family-contents.css"
 $tablesIndexStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-tables-index.css"
@@ -164,6 +166,7 @@ $artifactTitle = switch ($Edition) {
     "sim-41" { "Factorium Subject-Object Canonical Depth Simulation 41" }
     "sim-42" { "Factorium Query-Led Limiting Condition Simulation 42" }
     "sim-43" { "Factorium Task-Shaped Intent Router Simulation 43" }
+    "sim-44" { "Factorium Ephemeral Handoff Note Simulation 44" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -1752,6 +1755,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 43) {
         $siteCssParts += (Get-Content -LiteralPath $intentRouterStyle -Raw)
     }
+    if ($editionNumber -ge 44) {
+        $siteCssParts += (Get-Content -LiteralPath $handoffStyle -Raw)
+    }
     if ($editionNumber -ge 32) {
         $siteCssParts += (Get-Content -LiteralPath $tableNavigatorStyle -Raw)
     }
@@ -1800,6 +1806,13 @@ if ($editionNumber -ge 7) {
         (Get-Content -LiteralPath $contextScript -Raw),
         [System.Text.UTF8Encoding]::new($false)
     )
+    if ($editionNumber -ge 44) {
+        [System.IO.File]::WriteAllText(
+            (Join-Path $siteAssetDirectory "handoff.js"),
+            (Get-Content -LiteralPath $handoffScript -Raw),
+            [System.Text.UTF8Encoding]::new($false)
+        )
+    }
     $compositionLabJson = "null"
     $compositionReadingJson = "null"
     $compositionStartersJson = "null"
@@ -3981,6 +3994,9 @@ $pageScripts
     if ($editionNumber -ge 29) {
         $expectedAssetNames += "composition-evaluation.js"
     }
+    if ($editionNumber -ge 44) {
+        $expectedAssetNames += "handoff.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -3995,6 +4011,35 @@ $pageScripts
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @($actualChapterFiles | ForEach-Object { $_.FullName }) +
         @($actualEntryFiles | ForEach-Object { $_.FullName })
+    $handoffNotePages = 0
+    if ($editionNumber -ge 44) {
+        $handoffSection = @"
+<section class="site-handoff" data-factorium-handoff aria-labelledby="factorium-handoff-heading">
+<p class="site-kicker">Ephemeral handoff note</p>
+<h2 id="factorium-handoff-heading">Take this route with you</h2>
+<p>Re-enter only what is safe to keep in page memory. Factorium does not store, send, or verify this note; reload clears it.</p>
+<div class="site-handoff__grid">
+<label><span>Question or situation</span><textarea data-handoff-question rows="3" placeholder="What were you trying to distinguish, explain, check, or decide?"></textarea></label>
+<label><span>What remains unresolved</span><textarea data-handoff-unresolved rows="3" placeholder="Missing evidence, condition, concept, authority, or decision state"></textarea></label>
+<label><span>Next authoritative source</span><input data-handoff-source type="text" placeholder="Document, dataset, handbook, expert, or local record"></label>
+</div>
+<p class="site-handoff__page"><strong>Current Factorium page</strong><span data-handoff-page></span></p>
+<div class="site-handoff__actions"><button type="button" data-handoff-copy>Copy handoff</button><button type="button" data-handoff-print>Print</button><button type="button" data-handoff-clear>Clear</button></div>
+<p class="site-handoff__status" data-handoff-status role="status" aria-live="polite">Nothing is saved.</p>
+</section>
+"@
+        foreach ($siteHtmlFile in $siteHtmlFiles) {
+            $sitePageText = Get-Content -LiteralPath $siteHtmlFile -Raw
+            if (-not $sitePageText.Contains("</main>")) {
+                throw "Handoff target page has no main close: $siteHtmlFile"
+            }
+            $assetPrefix = if ((Split-Path $siteHtmlFile -Parent) -eq $output) { "assets" } else { "../assets" }
+            $sitePageText = $sitePageText.Replace("</main>", "$handoffSection`n</main>")
+            $sitePageText = $sitePageText.Replace("</body>", "<script src=`"$assetPrefix/handoff.js`"></script>`n</body>")
+            [System.IO.File]::WriteAllText($siteHtmlFile, $sitePageText, [System.Text.UTF8Encoding]::new($false))
+            $handoffNotePages += 1
+        }
+    }
     $idsBySiteFile = [System.Collections.Generic.Dictionary[string, object]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
     )
@@ -4096,6 +4141,18 @@ $pageScripts
         $siteChecks.intent_router_jobs = @("know-term", "have-question", "learn-or-explore")
         $siteChecks.intent_router_authority_change = $false
         $siteChecks.intent_router_search_change = $false
+    }
+    if ($editionNumber -ge 44) {
+        if ($handoffNotePages -ne $siteHtmlFiles.Count) {
+            throw "Handoff note coverage mismatch: $handoffNotePages/$($siteHtmlFiles.Count)"
+        }
+        $siteChecks.handoff_note_pages = $handoffNotePages
+        $siteChecks.handoff_note_fields = @("question", "current-page", "unresolved", "next-source")
+        $siteChecks.handoff_note_actions = @("copy", "print", "clear")
+        $siteChecks.handoff_note_storage = "none"
+        $siteChecks.handoff_note_network = "none"
+        $siteChecks.handoff_note_verification = "none"
+        $siteChecks.handoff_note_authority_change = $false
     }
     if ($editionNumber -ge 32) {
         $expectedTableNavigatorPages = @($searchRecords | Where-Object { $_.path.StartsWith("tables/") }).Count

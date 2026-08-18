@@ -1,0 +1,409 @@
+{
+  "analysis_id": "SUJ-AN-04",
+  "campaign_id": "SUJ-04",
+  "evidence_class": "deterministic-interface-rehearsal-plus-authored-synthetic-hypotheses",
+  "frozen_commit": "87d3daa",
+  "entries": {
+    "SUJ-04-01": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast percent, percentage points, ratio, and concentration.",
+      "stopping_condition": "Stop when the percentage basis and unit are explicit.",
+      "outward_handoff": "Return to the bottle label or governing product documentation for identity and authorized meaning.",
+      "projection_losses": [
+        "No product identity or governing label scheme",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-02": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare availability, capability, correctness, and user outcome.",
+      "stopping_condition": "Stop after listing the distinct claims and missing observations.",
+      "outward_handoff": "Use service telemetry, requirements, and incident records to diagnose the real failure.",
+      "projection_losses": [
+        "No local required service, telemetry, or correctness evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-03": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to compact for this task-shaped projection.",
+      "related_concepts": "Try same temperature with different mass or material.",
+      "stopping_condition": "Stop after the missing mass, material, boundary, and history are named.",
+      "outward_handoff": "Use a physics source for a worked material-specific calculation.",
+      "projection_losses": [
+        "No object mass, material, or history",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "The intended concept is outside the fixed Reader teaching spine.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-04": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare bottleneck, critical path, queue, and calendar constraint.",
+      "stopping_condition": "Stop with competing limiting explanations and required records listed.",
+      "outward_handoff": "Return to the plan, calendar, dependency graph, queue, and capacity records.",
+      "projection_losses": [
+        "No exact plan, dependency graph, calendar, or capacity data",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-05": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast hazard, exposure, vulnerability, and risk.",
+      "stopping_condition": "Stop after the scenario, pathway, consequence, and missing evidence are explicit.",
+      "outward_handoff": "Use the applicable qualified safety or domain authority for assessment.",
+      "projection_losses": [
+        "No specified subject, pathway, consequence, or evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-06": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Compare responsibility, authority, accountability, and traceability.",
+      "stopping_condition": "Stop when every actor and assignment relation is named.",
+      "outward_handoff": "Use the governing charter, delegation, or role record for the actual assignment.",
+      "projection_losses": [
+        "No local role or delegation record",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-07": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to compact for this task-shaped projection.",
+      "related_concepts": "Follow resemblance, reference, abstraction, and simulation.",
+      "stopping_condition": "Stop after selecting the relevant representation relation.",
+      "outward_handoff": "Use art theory or medium-specific sources for interpretation.",
+      "projection_losses": [
+        "No art-theory or medium context",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "The intended concept is outside the fixed Reader teaching spine.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-08": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Contrast power, energy, voltage, and current.",
+      "stopping_condition": "Stop after identifying the displayed quantity and missing conditions.",
+      "outward_handoff": "Use device documentation, measurement, codes, and qualified electrical guidance.",
+      "projection_losses": [
+        "No device, circuit, duration, or field conditions",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-09": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare scaling a ratio with scaling total amount.",
+      "stopping_condition": "Stop when every quantity, basis, conversion, and scale factor is explicit.",
+      "outward_handoff": "Use the recipe and reliable conversion data for actual amounts and procedure.",
+      "projection_losses": [
+        "No recipe, density data, or preparation conditions",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-10": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to full for this task-shaped projection.",
+      "related_concepts": "Compare association, mechanism, and causal claim.",
+      "stopping_condition": "Stop after reconstructing the claim-evidence chain and unresolved checks.",
+      "outward_handoff": "Inspect the original report, data, methods, and qualified domain review.",
+      "projection_losses": [
+        "No source report, data, method, or competing explanation",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-11": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast price, total cost, opportunity cost, and value.",
+      "stopping_condition": "Stop after the missing cost and value inputs are named.",
+      "outward_handoff": "Return to product evidence, budget, and local decision authority.",
+      "projection_losses": [
+        "No actual alternatives, prices, horizon, or preferences",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-12": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare mean, median, quantile, and spread.",
+      "stopping_condition": "Stop when the missing distributions, samples, and consequence model are named.",
+      "outward_handoff": "Use the data, plots, and statistical methods for substantive comparison.",
+      "projection_losses": [
+        "No samples, distributions, uncertainty, or decision model",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-13": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to compact for this task-shaped projection.",
+      "related_concepts": "Follow wavelength to frequency and spectrum.",
+      "stopping_condition": "Stop after naming wavelength and its relation to frequency and speed.",
+      "outward_handoff": "Use an astronomy source to contextualize the wavelength for the observed light.",
+      "projection_losses": [
+        "No astronomical source context or observation",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-14": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to full for this task-shaped projection.",
+      "related_concepts": "Contrast policy, rule, obligation, and requirement.",
+      "stopping_condition": "Stop after the required applicability questions are explicit.",
+      "outward_handoff": "Use the governing document and qualified legal or compliance authority.",
+      "projection_losses": [
+        "No document, jurisdiction, authority, or applicability record",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-15": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to compact for this task-shaped projection.",
+      "related_concepts": "Compare reported label, system state, and evaluation result.",
+      "stopping_condition": "Use product documentation first; return only if a general status distinction remains.",
+      "outward_handoff": "Inspect the dashboard schema, help text, and producing monitor.",
+      "projection_losses": [
+        "Ordinary-language discovery misses the intended owners",
+        "No dashboard schema",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-16": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Compare utilization, bottleneck, queue policy, and dependency.",
+      "stopping_condition": "Stop with competing limit types and required records listed.",
+      "outward_handoff": "Use queue, equipment, routing, dependency, and timing records.",
+      "projection_losses": [
+        "No local queue, routing, compatibility, or capacity evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-17": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast identifier, name, alias, version, and identity.",
+      "stopping_condition": "Stop when the identity criterion and required lineage evidence are named.",
+      "outward_handoff": "Use the authority file, registry, identifiers, and revision records.",
+      "projection_losses": [
+        "No actual registry, identifier, or lineage evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-18": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to full for this task-shaped projection.",
+      "related_concepts": "Contrast precision, accuracy, bias, uncertainty, and calibration.",
+      "stopping_condition": "Stop after the audit questions and missing records are explicit.",
+      "outward_handoff": "Use measurement data, procedures, reference status, uncertainty analysis, and calibration records.",
+      "projection_losses": [
+        "No observations, method, reference, uncertainty, or calibration record",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-19": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to full for this task-shaped projection.",
+      "related_concepts": "Contrast delegation, authorization, assignment, and accountability.",
+      "stopping_condition": "Stop after every actor, authority source, scope, event, and retained duty is explicit.",
+      "outward_handoff": "Use the committee charter, delegation instrument, minutes, and governing rules.",
+      "projection_losses": [
+        "No governing record, decision event, or authority evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-20": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Follow frequency, spectrum, phase, pitch, and timbre.",
+      "stopping_condition": "Stop after the physical quantities and external perceptual questions are separated.",
+      "outward_handoff": "Use acoustics, psychoacoustics, and music sources for perception and timbre.",
+      "projection_losses": [
+        "Pitch perception, timbre, and instrument context remain external",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "The intended concept is outside the fixed Reader teaching spine.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-21": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Compare torque, work, energy, and power.",
+      "stopping_condition": "Stop when the requested quantity and conditions are identified.",
+      "outward_handoff": "Use engine specifications, measurements, and a mechanics handbook.",
+      "projection_losses": [
+        "No engine, speed, geometry, or load data",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-22": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Compare relative change, absolute difference, and percentage points.",
+      "stopping_condition": "Stop after identifying the original quantity and correct comparison basis.",
+      "outward_handoff": "Use a calculator or spreadsheet for the actual arithmetic once the relation is selected.",
+      "projection_losses": [
+        "The underlying quantity and reporting context are undeclared",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-23": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Contrast authentication, permission, authorization, and enforcement.",
+      "stopping_condition": "Stop with the required request, permission, policy, decision, and enforcement records listed.",
+      "outward_handoff": "Inspect identity-provider, policy, application, and enforcement logs.",
+      "projection_losses": [
+        "No identities, request, policy, decision, or enforcement evidence",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-24": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Move from Book to abbreviated for this task-shaped projection.",
+      "related_concepts": "Contrast hazard, exposure, dose, and harm.",
+      "stopping_condition": "Stop after identifying the missing subject, dose, condition, outcome, evidence, and authority.",
+      "outward_handoff": "Use the product label and qualified plant-health or regulatory source.",
+      "projection_losses": [
+        "Species, treatment, dose, evidence, and authority remain external",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "no-change",
+      "route_gap_reason": "The frozen entrance reaches an intended family or exact starter.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    },
+    "SUJ-04-25": {
+      "evidence_label": "Authored task-based projection reused from SUJ-02 and SUJ-03; not a participant response or outcome.",
+      "density_transition": "Remain at Book unless local depth is requested.",
+      "related_concepts": "Contrast threshold, criterion, constraint, exception, and final decision.",
+      "stopping_condition": "Stop after reconstructing the rule, exception, appeal, authority, and current decision state.",
+      "outward_handoff": "Use the governing decision rule, exception procedure, appeal record, and authorized decision.",
+      "projection_losses": [
+        "No rule, evidence, exception, appeal, or final decision event",
+        "Original task is not retained on the reached or entrance-only destination.",
+        "No explicit task-route-unresolved-source handoff package exists."
+      ],
+      "route_gap_disposition": "defer",
+      "route_gap_reason": "No exact authored starter exists and prose may not infer controls.",
+      "change_disposition": "repair",
+      "repair_candidate": "ephemeral-handoff-note"
+    }
+  }
+}

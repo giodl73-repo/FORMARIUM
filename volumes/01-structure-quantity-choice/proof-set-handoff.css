@@ -1,0 +1,106 @@
+.site-handoff {
+  background: color-mix(in srgb, var(--proof-card) 88%, var(--proof-accent) 12%);
+  border: 1px solid var(--proof-rule);
+  border-radius: 1rem;
+  margin: 3rem 0 1rem;
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.site-handoff h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  margin: 0.35rem 0 0.5rem;
+}
+
+.site-handoff > p:not(.site-kicker) {
+  color: var(--proof-ink-soft);
+  line-height: 1.5;
+}
+
+.site-handoff__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 1.25rem 0;
+}
+
+.site-handoff__grid label {
+  display: grid;
+  font-weight: 750;
+  gap: 0.4rem;
+}
+
+.site-handoff__grid label:last-child {
+  grid-column: 1 / -1;
+}
+
+.site-handoff textarea,
+.site-handoff input {
+  background: var(--proof-card);
+  border: 1px solid var(--proof-rule);
+  border-radius: 0.55rem;
+  color: var(--proof-ink);
+  font: inherit;
+  line-height: 1.45;
+  min-width: 0;
+  padding: 0.7rem;
+  resize: vertical;
+  width: 100%;
+}
+
+.site-handoff textarea:focus,
+.site-handoff input:focus,
+.site-handoff button:focus-visible {
+  outline: 0.2rem solid var(--proof-accent);
+  outline-offset: 0.15rem;
+}
+
+.site-handoff__page {
+  display: grid;
+  gap: 0.2rem;
+  overflow-wrap: anywhere;
+}
+
+.site-handoff__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.site-handoff button {
+  background: var(--proof-card);
+  border: 1px solid var(--proof-accent);
+  border-radius: 999px;
+  color: var(--proof-ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  padding: 0.65rem 1rem;
+}
+
+.site-handoff [data-handoff-copy] {
+  background: var(--proof-accent);
+  color: var(--proof-card);
+}
+
+.site-handoff__status {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 44rem) {
+  .site-handoff__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-handoff__grid label:last-child {
+    grid-column: auto;
+  }
+}
+
+@media print {
+  .site-handoff__actions,
+  .site-handoff__status {
+    display: none;
+  }
+}
