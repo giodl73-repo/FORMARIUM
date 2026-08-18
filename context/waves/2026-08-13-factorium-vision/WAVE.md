@@ -2866,3 +2866,11 @@ two-family union coverage and 6/10 incremental intended-family coverage from
 query two. Dual lookup is explicitly not question decomposition, relation
 selection, closure, or recommendation. See
 `SYNTHETIC-DUAL-LITERAL-LOOKUP-PLAN.md`.
+
+Baseline result: the exact twenty-query control passes both frozen gates.
+Nine of ten tasks expose at least two intended families across the independent
+list union, and query two adds an intended family for eight of ten. One status/
+checkout task remains a one-family miss. The admitted batch is limited to two
+literal panels plus an identity-only family comparison; it may not merge rank,
+generate queries, select concepts, infer relations, compute closure, or retain
+state. See `SYNTHETIC-DUAL-LITERAL-LOOKUP-BASELINE.md`.

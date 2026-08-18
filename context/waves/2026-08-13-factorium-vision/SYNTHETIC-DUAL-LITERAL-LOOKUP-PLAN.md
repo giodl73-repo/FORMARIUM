@@ -2,7 +2,7 @@
 
 Date: 2026-08-17
 
-Status: proposed freeze; execution not started
+Status: baseline complete; candidate admitted; implementation pending
 
 Campaign: `SUJ-06`
 
