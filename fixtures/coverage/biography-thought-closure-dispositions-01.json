@@ -1,0 +1,2467 @@
+{
+  "schema": "factorium.biography-thought-closure-dispositions.v1",
+  "campaign": "BTC-01",
+  "status": "complete-research-only-no-admission",
+  "generated": "2026-08-18",
+  "baseline": {
+    "portfolio_path": "fixtures/coverage/biography-thought-closure-portfolio-01.json",
+    "portfolio_sha256": "71fc2469d3a37098016982d504ac6ac1ad9b6bf7914edff24015538fc7ee177e",
+    "portfolio_commit": "78d302e",
+    "reference_path": "reference/factorium-reference-v1.factorium",
+    "reference_sha256": "8bafa4fc965257742d2c1aa753e9bb1c84ca9453486df64d4b5ff5a7fedc21fb"
+  },
+  "summary": {
+    "packets": 24,
+    "distinction_occurrences": 179,
+    "distinct_terms": 134,
+    "disposition_counts": {
+      "covered-compositionally": 40,
+      "covered-directly": 26,
+      "domain-specialization": 18,
+      "held-agency-action-owner-research": 9,
+      "historically-specific-specialization": 25,
+      "recommended-contribution-credit-view-research": 16
+    },
+    "admitted_anchors": 0,
+    "admitted_views": 0,
+    "admitted_relations": 0,
+    "discovery_repairs": 0
+  },
+  "research_groups": [
+    {
+      "id": "contribution-credit-priority-legacy",
+      "decision": "continue-to-established-source-view-design",
+      "reader_question": "What exactly did a named person contribute, what evidence supports priority or credit, how does that differ from causal attribution, and how did later interpretation change?",
+      "candidate_owner_entry_ids": [
+        "claim-evidence",
+        "causal-reasoning",
+        "identity-naming-classification-versioning"
+      ],
+      "terms": [
+        "collaboration",
+        "contribution credit",
+        "controversy",
+        "counterclaim",
+        "evidence production",
+        "evidence use",
+        "independent contribution",
+        "legacy",
+        "omission",
+        "perspective",
+        "prior work",
+        "priority",
+        "publication",
+        "reputation",
+        "revision",
+        "source"
+      ],
+      "packet_ids": [
+        "BTC-01-02",
+        "BTC-01-03",
+        "BTC-01-04",
+        "BTC-01-08",
+        "BTC-01-12",
+        "BTC-01-13",
+        "BTC-01-14",
+        "BTC-01-15",
+        "BTC-01-21",
+        "BTC-01-24"
+      ]
+    },
+    {
+      "id": "actor-agency-intention-collective-action",
+      "decision": "hold-for-independent-owner-research",
+      "reader_question": "Who or what can act, intend, participate, and bear an outcome when persons, collectives, offices, and institutions overlap?",
+      "candidate_owner_entry_ids": [
+        "organization-role-authority",
+        "state-event-transition-process-lifecycle",
+        "causal-reasoning"
+      ],
+      "terms": [
+        "collaborator",
+        "collective action",
+        "external actor",
+        "individual actor",
+        "informal leadership",
+        "intention",
+        "participant group",
+        "person",
+        "producer"
+      ],
+      "packet_ids": [
+        "BTC-01-01",
+        "BTC-01-02",
+        "BTC-01-05",
+        "BTC-01-06",
+        "BTC-01-07",
+        "BTC-01-08",
+        "BTC-01-19",
+        "BTC-01-22",
+        "BTC-01-23"
+      ],
+      "hold_reason": "Global philosophy previously found partial agency/personhood pressure, but established-source boundary work is still required before deciding whether this is an anchor, mapping, or composition route."
+    }
+  ],
+  "dispositions": [
+    {
+      "term": "access",
+      "normalized_term": "access",
+      "packet_ids": [
+        "BTC-01-21"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "accountability",
+      "normalized_term": "accountability",
+      "packet_ids": [
+        "BTC-01-07"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "administration",
+      "normalized_term": "administration",
+      "packet_ids": [
+        "BTC-01-02"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "agenda",
+      "normalized_term": "agenda",
+      "packet_ids": [
+        "BTC-01-03"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "alternative model",
+      "normalized_term": "alternative model",
+      "packet_ids": [
+        "BTC-01-10",
+        "BTC-01-17"
+      ],
+      "lanes": [
+        "intellectual-biography",
+        "mind-language-society"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "audience",
+      "normalized_term": "audience",
+      "packet_ids": [
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "authored term",
+      "normalized_term": "authored term",
+      "packet_ids": [
+        "BTC-01-11"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "authority",
+      "normalized_term": "authority",
+      "packet_ids": [
+        "BTC-01-01"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "behavior",
+      "normalized_term": "behavior",
+      "packet_ids": [
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "biological adaptation",
+      "normalized_term": "biological adaptation",
+      "packet_ids": [
+        "BTC-01-10"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "bounded procedure",
+      "normalized_term": "bounded procedure",
+      "packet_ids": [
+        "BTC-01-16"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "case comparison",
+      "normalized_term": "case comparison",
+      "packet_ids": [
+        "BTC-01-19"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "case context",
+      "normalized_term": "case context",
+      "packet_ids": [
+        "BTC-01-12"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "causal attribution",
+      "normalized_term": "causal attribution",
+      "packet_ids": [
+        "BTC-01-01",
+        "BTC-01-05",
+        "BTC-01-06",
+        "BTC-01-22"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "leadership-history"
+      ],
+      "occurrence_count": 4,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "causal effect",
+      "normalized_term": "causal effect",
+      "packet_ids": [
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "causal explanation",
+      "normalized_term": "causal explanation",
+      "packet_ids": [
+        "BTC-01-09"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "causal mechanism",
+      "normalized_term": "causal mechanism",
+      "packet_ids": [
+        "BTC-01-10",
+        "BTC-01-18",
+        "BTC-01-20"
+      ],
+      "lanes": [
+        "intellectual-biography",
+        "mind-language-society"
+      ],
+      "occurrence_count": 3,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "channel",
+      "normalized_term": "channel",
+      "packet_ids": [
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "coalition",
+      "normalized_term": "coalition",
+      "packet_ids": [
+        "BTC-01-03",
+        "BTC-01-04"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "collaboration",
+      "normalized_term": "collaboration",
+      "packet_ids": [
+        "BTC-01-15"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "collaborator",
+      "normalized_term": "collaborator",
+      "packet_ids": [
+        "BTC-01-07"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "collective action",
+      "normalized_term": "collective action",
+      "packet_ids": [
+        "BTC-01-05",
+        "BTC-01-22"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "leadership-history"
+      ],
+      "occurrence_count": 2,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "communication",
+      "normalized_term": "communication",
+      "packet_ids": [
+        "BTC-01-14"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "concept",
+      "normalized_term": "concept",
+      "packet_ids": [
+        "BTC-01-12"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "constraint",
+      "normalized_term": "constraint",
+      "packet_ids": [
+        "BTC-01-16"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "construct",
+      "normalized_term": "construct",
+      "packet_ids": [
+        "BTC-01-09"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "contradiction",
+      "normalized_term": "contradiction",
+      "packet_ids": [
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "contribution credit",
+      "normalized_term": "contribution credit",
+      "packet_ids": [
+        "BTC-01-03",
+        "BTC-01-14",
+        "BTC-01-15",
+        "BTC-01-21"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "intellectual-biography",
+        "leadership-history",
+        "mind-language-society"
+      ],
+      "occurrence_count": 4,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "controversy",
+      "normalized_term": "controversy",
+      "packet_ids": [
+        "BTC-01-12"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "convention",
+      "normalized_term": "convention",
+      "packet_ids": [
+        "BTC-01-08"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "counterclaim",
+      "normalized_term": "counterclaim",
+      "packet_ids": [
+        "BTC-01-13"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "counterfactual",
+      "normalized_term": "counterfactual",
+      "packet_ids": [
+        "BTC-01-22"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "critique",
+      "normalized_term": "critique",
+      "packet_ids": [
+        "BTC-01-20"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "data",
+      "normalized_term": "data",
+      "packet_ids": [
+        "BTC-01-09"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "sampling-generalization",
+        "evaluation-measure-scale-criterion"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "decision",
+      "normalized_term": "decision",
+      "packet_ids": [
+        "BTC-01-01"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "decision result",
+      "normalized_term": "decision result",
+      "packet_ids": [
+        "BTC-01-16"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "design principle",
+      "normalized_term": "design principle",
+      "packet_ids": [
+        "BTC-01-19"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "enactment",
+      "normalized_term": "enactment",
+      "packet_ids": [
+        "BTC-01-03"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "enforcement",
+      "normalized_term": "enforcement",
+      "packet_ids": [
+        "BTC-01-03"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "evidence",
+      "normalized_term": "evidence",
+      "packet_ids": [
+        "BTC-01-10",
+        "BTC-01-17",
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "intellectual-biography",
+        "mind-language-society"
+      ],
+      "occurrence_count": 3,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "evidence production",
+      "normalized_term": "evidence production",
+      "packet_ids": [
+        "BTC-01-21"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "evidence use",
+      "normalized_term": "evidence use",
+      "packet_ids": [
+        "BTC-01-21"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "experience",
+      "normalized_term": "experience",
+      "packet_ids": [
+        "BTC-01-11"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "experimental task",
+      "normalized_term": "experimental task",
+      "packet_ids": [
+        "BTC-01-15"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "sampling-generalization",
+        "evaluation-measure-scale-criterion"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "exposure",
+      "normalized_term": "exposure",
+      "packet_ids": [
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "external actor",
+      "normalized_term": "external actor",
+      "packet_ids": [
+        "BTC-01-07"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "feedback",
+      "normalized_term": "feedback",
+      "packet_ids": [
+        "BTC-01-06"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "generalization",
+      "normalized_term": "generalization",
+      "packet_ids": [
+        "BTC-01-15",
+        "BTC-01-20"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "sampling-generalization",
+        "evaluation-measure-scale-criterion"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "governance",
+      "normalized_term": "governance",
+      "packet_ids": [
+        "BTC-01-19"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "heuristic",
+      "normalized_term": "heuristic",
+      "packet_ids": [
+        "BTC-01-15"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "historical period",
+      "normalized_term": "historical period",
+      "packet_ids": [
+        "BTC-01-09"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "temporal-organization",
+        "state-event-transition-process-lifecycle"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "ideal criterion",
+      "normalized_term": "ideal criterion",
+      "packet_ids": [
+        "BTC-01-16"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "identity",
+      "normalized_term": "identity",
+      "packet_ids": [
+        "BTC-01-11"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "imitation",
+      "normalized_term": "imitation",
+      "packet_ids": [
+        "BTC-01-18"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "implementation",
+      "normalized_term": "implementation",
+      "packet_ids": [
+        "BTC-01-01",
+        "BTC-01-02"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "independent contribution",
+      "normalized_term": "independent contribution",
+      "packet_ids": [
+        "BTC-01-14"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "individual actor",
+      "normalized_term": "individual actor",
+      "packet_ids": [
+        "BTC-01-22"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "influence",
+      "normalized_term": "influence",
+      "packet_ids": [
+        "BTC-01-05"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "informal leadership",
+      "normalized_term": "informal leadership",
+      "packet_ids": [
+        "BTC-01-05"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "inherited condition",
+      "normalized_term": "inherited condition",
+      "packet_ids": [
+        "BTC-01-07"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "institution",
+      "normalized_term": "institution",
+      "packet_ids": [
+        "BTC-01-02",
+        "BTC-01-22"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "leadership-history"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "institutional response",
+      "normalized_term": "institutional response",
+      "packet_ids": [
+        "BTC-01-06"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "institutional transition",
+      "normalized_term": "institutional transition",
+      "packet_ids": [
+        "BTC-01-04"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "institutionalization",
+      "normalized_term": "institutionalization",
+      "packet_ids": [
+        "BTC-01-08"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "intention",
+      "normalized_term": "intention",
+      "packet_ids": [
+        "BTC-01-06"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "interpretation",
+      "normalized_term": "interpretation",
+      "packet_ids": [
+        "BTC-01-11",
+        "BTC-01-12",
+        "BTC-01-21"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "intellectual-biography"
+      ],
+      "occurrence_count": 3,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "intervention",
+      "normalized_term": "intervention",
+      "packet_ids": [
+        "BTC-01-18"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "later use",
+      "normalized_term": "later use",
+      "packet_ids": [
+        "BTC-01-11",
+        "BTC-01-12"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "temporal-organization",
+        "state-event-transition-process-lifecycle"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "learning",
+      "normalized_term": "learning",
+      "packet_ids": [
+        "BTC-01-10",
+        "BTC-01-18"
+      ],
+      "lanes": [
+        "intellectual-biography",
+        "mind-language-society"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "legacy",
+      "normalized_term": "legacy",
+      "packet_ids": [
+        "BTC-01-02",
+        "BTC-01-04",
+        "BTC-01-08",
+        "BTC-01-13",
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "intellectual-biography",
+        "leadership-history"
+      ],
+      "occurrence_count": 5,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "legal instrument",
+      "normalized_term": "legal instrument",
+      "packet_ids": [
+        "BTC-01-01"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "legislature",
+      "normalized_term": "legislature",
+      "packet_ids": [
+        "BTC-01-03"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "message",
+      "normalized_term": "message",
+      "packet_ids": [
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "model exposure",
+      "normalized_term": "model exposure",
+      "packet_ids": [
+        "BTC-01-18"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "movement",
+      "normalized_term": "movement",
+      "packet_ids": [
+        "BTC-01-05"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "movement influence",
+      "normalized_term": "movement influence",
+      "packet_ids": [
+        "BTC-01-13"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "movement role",
+      "normalized_term": "movement role",
+      "packet_ids": [
+        "BTC-01-04"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "negotiation",
+      "normalized_term": "negotiation",
+      "packet_ids": [
+        "BTC-01-04"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "neighborhood",
+      "normalized_term": "neighborhood",
+      "packet_ids": [
+        "BTC-01-20"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "normative interpretation",
+      "normalized_term": "normative interpretation",
+      "packet_ids": [
+        "BTC-01-09"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "observation",
+      "normalized_term": "observation",
+      "packet_ids": [
+        "BTC-01-13",
+        "BTC-01-18"
+      ],
+      "lanes": [
+        "intellectual-biography",
+        "mind-language-society"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "observed behavior",
+      "normalized_term": "observed behavior",
+      "packet_ids": [
+        "BTC-01-17"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "sampling-generalization",
+        "evaluation-measure-scale-criterion"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "observed effect",
+      "normalized_term": "observed effect",
+      "packet_ids": [
+        "BTC-01-15"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "omission",
+      "normalized_term": "omission",
+      "packet_ids": [
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "operational measure",
+      "normalized_term": "operational measure",
+      "packet_ids": [
+        "BTC-01-09"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "sampling-generalization",
+        "evaluation-measure-scale-criterion"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "organization",
+      "normalized_term": "organization",
+      "packet_ids": [
+        "BTC-01-16"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "outcome",
+      "normalized_term": "outcome",
+      "packet_ids": [
+        "BTC-01-01",
+        "BTC-01-02",
+        "BTC-01-03",
+        "BTC-01-06",
+        "BTC-01-07",
+        "BTC-01-18",
+        "BTC-01-20",
+        "BTC-01-22"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "leadership-history",
+        "mind-language-society"
+      ],
+      "occurrence_count": 8,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "participant group",
+      "normalized_term": "participant group",
+      "packet_ids": [
+        "BTC-01-19"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "party office",
+      "normalized_term": "party office",
+      "packet_ids": [
+        "BTC-01-04"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "person",
+      "normalized_term": "person",
+      "packet_ids": [
+        "BTC-01-01",
+        "BTC-01-02",
+        "BTC-01-08"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 3,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "perspective",
+      "normalized_term": "perspective",
+      "packet_ids": [
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "phrase",
+      "normalized_term": "phrase",
+      "packet_ids": [
+        "BTC-01-12"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "planning intervention",
+      "normalized_term": "planning intervention",
+      "packet_ids": [
+        "BTC-01-20"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "policy",
+      "normalized_term": "policy",
+      "packet_ids": [
+        "BTC-01-02",
+        "BTC-01-07"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "policy response",
+      "normalized_term": "policy response",
+      "packet_ids": [
+        "BTC-01-13"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "political outcome",
+      "normalized_term": "political outcome",
+      "packet_ids": [
+        "BTC-01-05"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "population",
+      "normalized_term": "population",
+      "packet_ids": [
+        "BTC-01-09"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "sampling-generalization",
+        "evaluation-measure-scale-criterion"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "precedent",
+      "normalized_term": "precedent",
+      "packet_ids": [
+        "BTC-01-08"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "prescription boundary",
+      "normalized_term": "prescription boundary",
+      "packet_ids": [
+        "BTC-01-19"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "prior work",
+      "normalized_term": "prior work",
+      "packet_ids": [
+        "BTC-01-14"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "priority",
+      "normalized_term": "priority",
+      "packet_ids": [
+        "BTC-01-14",
+        "BTC-01-21"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "intellectual-biography"
+      ],
+      "occurrence_count": 2,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "producer",
+      "normalized_term": "producer",
+      "packet_ids": [
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "held-agency-action-owner-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The term contributes independent pressure for actor, agency, intention, and collective-action structure, but this campaign alone does not justify a universal person or agency anchor."
+    },
+    {
+      "term": "program bundle",
+      "normalized_term": "program bundle",
+      "packet_ids": [
+        "BTC-01-02"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "provenance",
+      "normalized_term": "provenance",
+      "packet_ids": [
+        "BTC-01-21",
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 2,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "public argument",
+      "normalized_term": "public argument",
+      "packet_ids": [
+        "BTC-01-13"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "public office",
+      "normalized_term": "public office",
+      "packet_ids": [
+        "BTC-01-01",
+        "BTC-01-04",
+        "BTC-01-07",
+        "BTC-01-08"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 4,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "public thesis",
+      "normalized_term": "public thesis",
+      "packet_ids": [
+        "BTC-01-10"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "publication",
+      "normalized_term": "publication",
+      "packet_ids": [
+        "BTC-01-14",
+        "BTC-01-21"
+      ],
+      "lanes": [
+        "boundary-adversarial",
+        "intellectual-biography"
+      ],
+      "occurrence_count": 2,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "reception",
+      "normalized_term": "reception",
+      "packet_ids": [
+        "BTC-01-23"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "reconciliation",
+      "normalized_term": "reconciliation",
+      "packet_ids": [
+        "BTC-01-04"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "reform",
+      "normalized_term": "reform",
+      "packet_ids": [
+        "BTC-01-06"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "report",
+      "normalized_term": "report",
+      "packet_ids": [
+        "BTC-01-12"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "representation",
+      "normalized_term": "representation",
+      "packet_ids": [
+        "BTC-01-17"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "reputation",
+      "normalized_term": "reputation",
+      "packet_ids": [
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "resource system",
+      "normalized_term": "resource system",
+      "packet_ids": [
+        "BTC-01-19"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "revision",
+      "normalized_term": "revision",
+      "packet_ids": [
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "rule",
+      "normalized_term": "rule",
+      "packet_ids": [
+        "BTC-01-19"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "scientific claim",
+      "normalized_term": "scientific claim",
+      "packet_ids": [
+        "BTC-01-10",
+        "BTC-01-13"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 2,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "scope",
+      "normalized_term": "scope",
+      "packet_ids": [
+        "BTC-01-01",
+        "BTC-01-10",
+        "BTC-01-17",
+        "BTC-01-19"
+      ],
+      "lanes": [
+        "intellectual-biography",
+        "leadership-history",
+        "mind-language-society"
+      ],
+      "occurrence_count": 4,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "search",
+      "normalized_term": "search",
+      "packet_ids": [
+        "BTC-01-16"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "situated observation",
+      "normalized_term": "situated observation",
+      "packet_ids": [
+        "BTC-01-20"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "social position",
+      "normalized_term": "social position",
+      "packet_ids": [
+        "BTC-01-11"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "source",
+      "normalized_term": "source",
+      "packet_ids": [
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "recommended-contribution-credit-view-research",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "identity-naming-classification-versioning"
+      ],
+      "reason": "Repeated biography and research-history packets need one reconstruction frame for contribution, priority, credit, source conflict, and later legacy without equating credit with causal attribution."
+    },
+    {
+      "term": "state capacity",
+      "normalized_term": "state capacity",
+      "packet_ids": [
+        "BTC-01-07"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "stopping rule",
+      "normalized_term": "stopping rule",
+      "packet_ids": [
+        "BTC-01-16"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "policy-rule-constraint-decision-exception",
+        "governance-obligation-compliance"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "strategy",
+      "normalized_term": "strategy",
+      "packet_ids": [
+        "BTC-01-05"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "structural condition",
+      "normalized_term": "structural condition",
+      "packet_ids": [
+        "BTC-01-22"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "succession",
+      "normalized_term": "succession",
+      "packet_ids": [
+        "BTC-01-08"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "temporal-organization",
+        "state-event-transition-process-lifecycle"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    },
+    {
+      "term": "theoretical capacity",
+      "normalized_term": "theoretical capacity",
+      "packet_ids": [
+        "BTC-01-17"
+      ],
+      "lanes": [
+        "mind-language-society"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "organization-role-authority",
+        "coordinated-work"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "theory identity",
+      "normalized_term": "theory identity",
+      "packet_ids": [
+        "BTC-01-14"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "trend",
+      "normalized_term": "trend",
+      "packet_ids": [
+        "BTC-01-09"
+      ],
+      "lanes": [
+        "intellectual-biography"
+      ],
+      "occurrence_count": 1,
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [
+        "sampling-generalization",
+        "evaluation-measure-scale-criterion"
+      ],
+      "reason": "This term belongs to a bounded disciplinary theory, method, or case frame and does not earn a general Factorium owner here."
+    },
+    {
+      "term": "uncertainty",
+      "normalized_term": "uncertainty",
+      "packet_ids": [
+        "BTC-01-24"
+      ],
+      "lanes": [
+        "boundary-adversarial"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "The V1 reference owns this distinction explicitly; the named case supplies an application, not a new concept."
+    },
+    {
+      "term": "unintended consequence",
+      "normalized_term": "unintended consequence",
+      "packet_ids": [
+        "BTC-01-06"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "control-monitoring-response"
+      ],
+      "reason": "The reader question can be assembled from the listed current owners without adding a distinct canonical concept."
+    },
+    {
+      "term": "voluntary restraint",
+      "normalized_term": "voluntary restraint",
+      "packet_ids": [
+        "BTC-01-08"
+      ],
+      "lanes": [
+        "leadership-history"
+      ],
+      "occurrence_count": 1,
+      "disposition": "historically-specific-specialization",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "scenario-assumption-condition-case"
+      ],
+      "reason": "This is a useful history or governance specialization that composes from current role, policy, event, time, and evidence owners in this campaign."
+    }
+  ],
+  "portfolio_decision": {
+    "continue": [
+      "contribution-credit-priority-legacy"
+    ],
+    "hold": [
+      "actor-agency-intention-collective-action"
+    ],
+    "stop": [
+      "named-person-and-work-catalogs",
+      "single-case-domain-theories",
+      "leader-ranking-and-endorsement"
+    ],
+    "admit_now": [],
+    "reason": "One cross-lane evidence-view question repeatedly reduces the reader's reconstruction burden; the broader agency owner remains real but underdetermined."
+  },
+  "claims_boundary": "Internal source-led structural coverage only; no historical truth, causal conclusion, scholarly consensus, endorsement, biography completeness, reader value, or market demand claim."
+}

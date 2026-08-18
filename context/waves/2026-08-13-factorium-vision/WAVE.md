@@ -3518,3 +3518,16 @@ The campaign admits at most one anchor, two views, zero relation mechanics, and
 one discovery repair; zero change is valid. Eleven roles approve the freeze
 with no open P1/P2 finding. See `BIOGRAPHY-THOUGHT-CLOSURE-01-PLAN.md` and
 `BIOGRAPHY-THOUGHT-CLOSURE-01-PLAN-ROLE-REVIEW.md`.
+
+Result review: the exact frozen portfolio yields 179 required-distinction
+occurrences and 134 distinct terms. V1 covers 26 directly and 40
+compositionally; 25 are historically specific and 18 are domain
+specializations. Sixteen terms support one no-new-anchor contribution, credit,
+priority, and legacy Evidence Table research question. Nine terms strengthen
+the prior actor/agency/intention/collective-action pressure but do not yet
+determine an anchor, view, or route, so that group remains held. Admit nothing
+in the baseline; the V1 digest is unchanged. Eleven roles approve with zero
+P1/P2 findings and explicitly stop named catalogs, leader ranking,
+endorsement, historical-truth claims, and reader-value claims. See
+`BIOGRAPHY-THOUGHT-CLOSURE-01-BASELINE.md` and
+`signals/roles/check/biography-thought-closure-01-baseline-roles-check-2026-08-18.md`.
