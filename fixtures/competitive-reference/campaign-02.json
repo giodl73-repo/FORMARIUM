@@ -1,0 +1,73 @@
+{
+  "campaign_id": "CAD-02",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "frozen_on": "2026-08-17",
+  "candidate": {
+    "edition": "sim-48",
+    "source_commit": "95fdeda1e2ef68a748feab06fefd34b844bf0bbf",
+    "site_identity": "bcff813a8011ac86666abec442a139da11d912e1c982a19554f2f5f668bc2ee1",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186"
+  },
+  "capture_source": {
+    "campaign": "CAD-01",
+    "path": "fixtures/competitive-reference/captures-01.json",
+    "products": ["factorium", "merriam-webster-thesaurus"],
+    "maximum_result_opens": 2,
+    "immutable_replay": true,
+    "no_new_network_capture": true,
+    "no_query_rewriting": true,
+    "no_candidate_tuning": true
+  },
+  "packets": [
+    {
+      "query": "force",
+      "task": "Distinguish physical interaction from coercive compulsion and identify what must be checked before transferring magnitude or authority assumptions between them."
+    },
+    {
+      "query": "power",
+      "task": "Distinguish rate of work or electrical power from organizational authority or influence, then identify the governing variables and an invalid transfer."
+    },
+    {
+      "query": "value",
+      "task": "Distinguish price, assessed value, utility, and numerical value; identify the perspective, basis, and date needed before using one as another."
+    },
+    {
+      "query": "model",
+      "task": "Distinguish model, representation, implementation, simulation run, and result; identify the layer owner and evidence needed before reusing a conclusion."
+    },
+    {
+      "query": "system",
+      "task": "Distinguish system, component, capability, boundary, interface, and dependency; identify membership and the inference that must not cross the boundary."
+    },
+    {
+      "query": "evidence",
+      "task": "Distinguish observation, inference, claim support, assurance, and certification; identify scope or authority and what remains unestablished."
+    }
+  ],
+  "binary_dimensions": {
+    "task_scope_coverage": "Visible output covers the packet's materially opposed meanings or layers, not merely the query token.",
+    "governing_inputs": "Visible output names at least two packet-relevant variables, fields, or questions needed to apply the distinction.",
+    "invalid_transfer": "Visible output states at least one packet-relevant equivalence, carry-over, or inference that must not be made.",
+    "stopping_condition": "Visible output identifies missing evidence, an unresolved choice, or a condition under which the conclusion must stop.",
+    "bounded_handoff": "Visible output names a bounded next inspection, record, test, calculation, or source."
+  },
+  "interaction_metric": "result opens from first query output through the last visible passage used for a credited dimension",
+  "thresholds": {
+    "factorium_minimum_dimensions_per_passing_packet": 4,
+    "factorium_passing_packets_minimum": 5,
+    "factorium_advantage_dimensions_per_packet": 2,
+    "factorium_advantage_packets_minimum": 4,
+    "factorium_additional_opens_maximum": 1,
+    "factorium_false_equivalence_maximum": 0
+  },
+  "failure_dispositions": [
+    "scope-coverage", "governing-inputs", "boundary", "stopping-condition",
+    "handoff", "navigation", "competitor-parity", "no-factorium-job"
+  ],
+  "scoring_passes": ["direct", "shuffled-blind-label"],
+  "weighted_aggregate_allowed": false,
+  "reader_evidence_claimed": false,
+  "market_evidence_claimed": false
+}
+

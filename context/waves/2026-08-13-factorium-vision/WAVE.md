@@ -3129,3 +3129,14 @@ retain four reconciled observations across 648 binary judgments. Nine roles
 approve the exact failure with no P1/P2 finding. Admit no product or content
 batch; a future test may separately freeze consequential depth. See
 `COMPETITIVE-AMBIGUITY-TO-DECISION-TEST-01-RESULT.md`.
+
+## 2026-08-17 competitive consequential-depth test plan
+
+CAD-02 treats “schematized thesaurus” as the null and replays the six exact
+CAD-01 Merriam-Webster parity cases from immutable captures. Five separate
+dimensions test scope coverage, governing inputs, invalid transfer, stopping
+condition, and bounded handoff under the same two-open budget. Nine roles
+approve execution with no P1/P2 finding. Any failed conjunctive threshold
+retains the null for this portfolio; execution admits no product repair and can
+establish no reader or market evidence. See
+`COMPETITIVE-CONSEQUENTIAL-DEPTH-TEST-02-PLAN.md`.
