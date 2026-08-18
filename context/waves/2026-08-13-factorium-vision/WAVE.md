@@ -3037,3 +3037,12 @@ Guide-local, and five are optional lookup-alias candidates. Nine roles approve
 the zero-content decision with no P1/P2 finding. Retain V0 and clean `sim-46`;
 claim neither complete closure nor reader evidence. See
 `LEXICAL-CLOSURE-CAMPAIGN-01-RESULT.md`.
+
+## 2026-08-17 lexical lookup aliases plan
+
+LXA-01 freezes the five source-backed lookup aliases from LXC-01 as seven exact
+routes to four existing Table owners. `field of force` and `force field` must
+retain both electrical and gravitational owners. Nine roles approve a bounded
+edition-local panel with no P1/P2 finding. Literal ranking, canonical metadata,
+content, relations, prior editions, and reader-evidence gates remain unchanged.
+See `LEXICAL-LOOKUP-ALIASES-01-PLAN.md`.

@@ -1,0 +1,46 @@
+{
+  "campaign_id": "LXA-01",
+  "revision": 1,
+  "status": "frozen-before-implementation",
+  "frozen_on": "2026-08-17",
+  "evidence_class": "internal-source-backed-product-mechanics",
+  "source_campaign": "LXC-01",
+  "baseline": {
+    "edition": "sim-46",
+    "standalone_sha256": "26b6bb7ad231421ecefb3e3fc43c9ef7a973441571c8acfdaf793807d027b97a",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186",
+    "site_identity": "42fd224b43684f0212e3e77b9c6ee5cd44baa17c67d9c3d00ca0deb7b746985a"
+  },
+  "candidate_edition": "sim-47",
+  "aliases": [
+    {
+      "query": "electric power",
+      "targets": ["tables/entries/electrical-quantity.md"]
+    },
+    {
+      "query": "field of force",
+      "targets": ["tables/entries/electrical-quantity.md", "tables/entries/matter-load-measure.md"]
+    },
+    {
+      "query": "force field",
+      "targets": ["tables/entries/electrical-quantity.md", "tables/entries/matter-load-measure.md"]
+    },
+    {
+      "query": "frame of reference",
+      "targets": ["tables/entries/geometric-reference-structure.md"]
+    },
+    {
+      "query": "organisation",
+      "targets": ["tables/entries/organization-role-authority.md"]
+    }
+  ],
+  "activation": "exact-normalized-query",
+  "display_label": "Lookup alias",
+  "ambiguous_aliases_show_all_targets": true,
+  "literal_ranking_unchanged": true,
+  "canonical_reference_unchanged": true,
+  "content_and_relations_unchanged": true,
+  "reader_evidence_claimed": false,
+  "stop": "Admit only the five frozen aliases and seven exact owner routes; reject partial, extended, fuzzy, inferred, or generated aliases."
+}
+
