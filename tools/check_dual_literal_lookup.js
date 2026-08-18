@@ -9,7 +9,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "u
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const script = fs.readFileSync(path.join(root, "assets", "dual-lookup.js"), "utf8");
 
-assert.equal(manifest.edition, "sim-45");
+assert.ok(["sim-45", "sim-46"].includes(manifest.edition));
 assert.equal(manifest.site_checks.dual_lookup_pages, 1);
 assert.equal(manifest.site_checks.dual_lookup_query_panels, 2);
 assert.equal(manifest.site_checks.dual_lookup_family_limit_per_query, 10);
@@ -28,4 +28,4 @@ assert.match(script, /slice\(0, 10\)/);
 assert.match(script, /FactoriumSearchFamilies/);
 for (const prohibited of ["localStorage", "sessionStorage", "fetch(", "XMLHttpRequest", "document.cookie", "history.", "URLSearchParams"]) assert.ok(!script.includes(prohibited));
 
-console.log("OK edition=sim-45 dual-lookup=1 panels=2 limit=10 merged-ranking=false semantics=false storage=none authority=unchanged");
+console.log(`OK edition=${manifest.edition} dual-lookup=1 panels=2 limit=10 merged-ranking=false semantics=false storage=none authority=unchanged`);

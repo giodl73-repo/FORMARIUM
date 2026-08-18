@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -170,6 +170,7 @@ $artifactTitle = switch ($Edition) {
     "sim-43" { "Factorium Task-Shaped Intent Router Simulation 43" }
     "sim-44" { "Factorium Ephemeral Handoff Note Simulation 44" }
     "sim-45" { "Factorium Dual Literal Lookup Simulation 45" }
+    "sim-46" { "Factorium Reciprocal Table Connections Simulation 46" }
 }
 
 function ConvertTo-Sim23CompositionAsset {

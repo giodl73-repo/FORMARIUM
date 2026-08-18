@@ -11,7 +11,7 @@ const screenshotPath = path.resolve(process.argv[3] || "target/sim45-dual-lookup
 const baseline = JSON.parse(fs.readFileSync(path.resolve("fixtures/synthetic-users/dual-lookup-baseline-06.json"), "utf8"));
 const expected = baseline.results.find((row) => row.assignment_id === "SUJ-06-04");
 const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"));
-assert.equal(manifest.edition, "sim-45");
+assert.ok(["sim-45", "sim-46"].includes(manifest.edition));
 const edgePath = [process.env.EDGE_PATH, "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"].filter(Boolean).find((candidate) => fs.existsSync(candidate));
 assert.ok(edgePath, "Microsoft Edge executable not found");
 const port = 9990 + (process.pid % 30);
@@ -41,6 +41,6 @@ async function evaluate(client, expression) { const response = await client.call
     const shot = await client.call("Page.captureScreenshot", { format: "png", captureBeyondViewport: true, clip: observed.clip }); fs.writeFileSync(screenshotPath, Buffer.from(shot.data, "base64")); assert.ok(fs.statSync(screenshotPath).size > 15000);
     const cleared = await evaluate(client, `(() => { document.querySelector('#dual-lookup-clear').click(); return { values:[document.querySelector('#dual-lookup-query-one').value,document.querySelector('#dual-lookup-query-two').value], one:document.querySelector('#dual-lookup-results-one').children.length, two:document.querySelector('#dual-lookup-results-two').children.length, comparison:document.querySelector('#dual-lookup-comparison').children.length, status:document.querySelector('#dual-lookup-status').textContent }; })()`);
     assert.deepEqual(cleared, { values: ["", ""], one: 0, two: 0, comparison: 0, status: "Cleared. No query or comparison is saved." });
-    console.log(`OK edition=sim-45 dual-lookup=1 lists=10+10 union=${observed.comparison.length} mobile=stacked overflow=false clear=pass screenshot=${screenshotPath}`);
+    console.log(`OK edition=${manifest.edition} dual-lookup=1 lists=10+10 union=${observed.comparison.length} mobile=stacked overflow=false clear=pass screenshot=${screenshotPath}`);
   } finally { if (client) client.close(); browser.kill(); }
 })().catch((error) => { browser.kill(); console.error(error.stack || error.message); process.exitCode = 1; });

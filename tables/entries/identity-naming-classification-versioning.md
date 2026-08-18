@@ -132,6 +132,7 @@ compares generic version roles with Semantic Versioning 2.0.0.
 - [Deployment Identity](../examples/deployment-identity.md)
 - [Environment](../examples/environment.md)
 - [Identity](../roots/identity.md)
+- [Access, Permission, Authorization, and Entitlement](access-permission-authorization-entitlement.md)
 - [Relation](../roots/relation.md)
 - [Time](../roots/time.md)
 - [Organization, Role, Responsibility, Authority, and Accountability](organization-role-authority.md)

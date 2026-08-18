@@ -6,7 +6,7 @@ const path = require("node:path");
 
 const root = path.resolve(process.argv[2] || "target/proof-set-sim-44");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
-assert.ok(["sim-44", "sim-45"].includes(manifest.edition));
+assert.ok(["sim-44", "sim-45", "sim-46"].includes(manifest.edition));
 assert.equal(manifest.site_checks.handoff_note_pages, 239);
 assert.deepEqual(manifest.site_checks.handoff_note_fields, ["question", "current-page", "unresolved", "next-source"]);
 assert.deepEqual(manifest.site_checks.handoff_note_actions, ["copy", "print", "clear"]);

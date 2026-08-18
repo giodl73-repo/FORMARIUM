@@ -9,7 +9,7 @@ const { spawn } = require("node:child_process");
 const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-43");
 const screenshotPath = path.resolve(process.argv[3] || "target/sim43-intent-router.png");
 const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"));
-assert.ok(["sim-43", "sim-44", "sim-45"].includes(manifest.edition));
+assert.ok(["sim-43", "sim-44", "sim-45", "sim-46"].includes(manifest.edition));
 const edgePath = [process.env.EDGE_PATH, "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"]
   .filter(Boolean).find((candidate) => fs.existsSync(candidate));
 assert.ok(edgePath, "Microsoft Edge executable not found");

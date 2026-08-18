@@ -9,7 +9,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "u
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "assets", "site.css"), "utf8");
 
-assert.ok(["sim-43", "sim-44", "sim-45"].includes(manifest.edition));
+assert.ok(["sim-43", "sim-44", "sim-45", "sim-46"].includes(manifest.edition));
 assert.equal(manifest.site_checks.intent_router_targets, 3);
 assert.deepEqual(manifest.site_checks.intent_router_jobs, ["know-term", "have-question", "learn-or-explore"]);
 assert.equal(manifest.site_checks.intent_router_authority_change, false);

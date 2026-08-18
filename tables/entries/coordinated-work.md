@@ -181,6 +181,7 @@ revisable work record.
 - [Organization, Role, Responsibility, Authority, and Accountability](organization-role-authority.md)
 - [Software Transaction, Message, and Contract](software-transaction-message-contract.md)
 - [Objective, Control, Monitoring, and Response](control-monitoring-response.md)
+- [Operational Resource, Capacity, Demand, and Allocation](operational-resource-capacity-demand.md)
 - [Governance, Obligation, and Compliance](governance-obligation-compliance.md)
 - [System Composition, Capability, Interface, and Dependency](system-composition-dependency.md)
 - [Instant, Duration, Interval, Deadline, and Schedule](temporal-organization.md)
