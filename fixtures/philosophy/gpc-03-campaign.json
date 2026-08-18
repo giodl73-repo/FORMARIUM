@@ -1,0 +1,37 @@
+{
+  "campaign_id": "GPC-03",
+  "revision": 1,
+  "status": "frozen-before-source-review",
+  "frozen_on": "2026-08-17",
+  "parent": "GPC-01 revision 2",
+  "purpose": "Test Chinese, Korean, and Japanese source-local structures without treating East Asia, nations, schools, or famous thinkers as concept owners.",
+  "packet_slots": [
+    {"id":"CH-01","lane":"chinese","position":"Ru and Confucian ritual, role, virtue, learning, and government"},
+    {"id":"CH-02","lane":"chinese","position":"Mencian heart-mind, moral sprouts, human nature, cultivation, and humane rule"},
+    {"id":"CH-03","lane":"chinese","position":"Xunzian nature, deliberate artifice, ritual, education, names, and standards"},
+    {"id":"CH-04","lane":"chinese","position":"Mohist impartial care, benefit, models, argument, and collective order"},
+    {"id":"CH-05","lane":"chinese","position":"Daoist ways, non-coercive action, transformation, perspective, and language limits"},
+    {"id":"CH-06","lane":"chinese","position":"Legalist standards, administrative technique, positional power, performance, and order"},
+    {"id":"CH-07","lane":"chinese","position":"Han synthesis, correlative cosmology, names and actuality, change, and political order"},
+    {"id":"CH-08","lane":"chinese","position":"Song-Ming Confucian pattern, vital force, heart-mind, investigation, and cultivation"},
+    {"id":"KJ-01","lane":"korean-japanese","position":"Korean Confucian pattern/vital-force and Four-Seven moral-emotion debates"},
+    {"id":"KJ-02","lane":"korean-japanese","position":"Korean Buddhist one-mind, doctrinal reconciliation, cultivation, and social transmission"},
+    {"id":"KJ-03","lane":"korean-japanese","position":"Korean practical philosophy, communal life, adaptation, modernity, and contested self-reliance"},
+    {"id":"KJ-04","lane":"korean-japanese","position":"Japanese ways, kami practice, imported philosophy, adaptation, and cultural translation"},
+    {"id":"KJ-05","lane":"korean-japanese","position":"Kokugaku language, ancient texts, feeling, native study, and essentialist political risk"},
+    {"id":"KJ-06","lane":"korean-japanese","position":"Kyoto School pure experience, place, absolute nothingness, self-world relation, and political controversy"}
+  ],
+  "selection_rules": [
+    "Chinese, Korean, and Japanese are historical-linguistic work lanes, not internally uniform civilizations.",
+    "Transmission and adaptation remain visible; a shared character or inherited text does not prove an identical concept.",
+    "Practice, ritual, institution, and political appropriation remain part of a packet when they govern the philosophical structure.",
+    "Modern nationalist and imperial appropriations are retained as conflict and custody, not normalized as cultural essence.",
+    "No packet may be dropped because it conflicts with an existing Factorium owner or yields no mapping."
+  ],
+  "required_record_contract": "fixtures/philosophy/global-philosophy-counter-sample-blueprint-01.json#factorization_record_contract",
+  "required_alignment_contract": "fixtures/philosophy/global-philosophy-counter-sample-blueprint-01.json#alignment_ledger_contract",
+  "content_admission_allowed": false,
+  "reader_evidence_claimed": false,
+  "completeness_claimed": false,
+  "stop": "Complete all fourteen packets once, preserve local disputes and political risks, and hand immutable records plus typed alignment candidates to GPC-09."
+}

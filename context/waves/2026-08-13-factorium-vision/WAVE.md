@@ -3220,3 +3220,21 @@ JSON parsing, formatting, clippy with warnings denied, and all 70 Rust tests
 also pass. Retain GPC-02 and proceed only to GPC-03; claim neither global
 completeness nor reader evidence. See
 `GLOBAL-PHILOSOPHY-GPC-02-RESULT.md`.
+
+## 2026-08-17 GPC-03 Chinese, Korean, and Japanese comparison
+
+Plan review: freeze eight Chinese and six Korean/Japanese position-spaces,
+complete a standard source review, and preserve practice, transmission,
+translation, and political appropriation before candidate mapping. The lane
+changes no Table, book, relation, UI, or reader-evidence gate. See
+`GLOBAL-PHILOSOPHY-GPC-03-PLAN.md`.
+
+Result review: all 14 packets, 14 immutable factorings, and 14 typed candidate
+alignments are complete against 16 established sources. Practice/cultivation
+recurs strongly across GPC-02 and GPC-03; transmission/reconciliation becomes
+a new candidate family. Daoism category objections and Legalist, Kokugaku,
+Kyoto, and Korean political boundaries remain explicit. Nine roles approve
+with no P1/P2 finding. The multi-campaign checker validates 32 total records
+with custody intact and zero admission. Retain GPC-03 and proceed to GPC-04;
+claim neither regional completeness nor reader evidence. See
+`GLOBAL-PHILOSOPHY-GPC-03-RESULT.md`.
