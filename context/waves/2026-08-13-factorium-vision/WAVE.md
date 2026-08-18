@@ -2831,3 +2831,17 @@ rerun preserves reach at 15/25 and task visibility at 0/25 while handoff
 availability moves to 25/25 with no mobile overflow. Six roles approve the
 bounded result with no P1/P2 finding. This is interface mechanics, not reader
 evidence. See `SYNTHETIC-FIRST-CLICK-HANDOFF-RESULT.md`.
+
+## 2026-08-17 synthetic manual concept basket plan
+
+Plan review: SUJ-05 isolates the seven-of-ten Compose route loss from SUJ-04
+without asking prose to choose graph controls. It freezes the ten existing
+question tasks, each task's first previously frozen literal query, the first
+ten exact Search ownership groups, and a maximum five-family collection.
+
+Eight roles approve the conditional experiment with no P1/P2 finding. A
+candidate ephemeral manual concept basket is admitted only if at least eight
+tasks expose two intended canonical families. Selection must remain explicit,
+family-deduplicated, untyped, page-local, and noncanonical; search ranking,
+relation semantics, closure, Guides, persistence, and reader claims remain
+unchanged. See `SYNTHETIC-MANUAL-CONCEPT-BASKET-PLAN.md`.
