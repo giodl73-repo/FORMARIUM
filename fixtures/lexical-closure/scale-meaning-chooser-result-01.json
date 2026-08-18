@@ -1,0 +1,21 @@
+{
+  "campaign_id": "SCL-01",
+  "status": "complete",
+  "decision": "maintain-sim-48",
+  "edition": "sim-48",
+  "source_commit": "95fdeda1e2ef68a748feab06fefd34b844bf0bbf",
+  "query": "scale",
+  "routes": 3,
+  "targets": 3,
+  "search_records": 185,
+  "generated_pages": 239,
+  "missing_targets": 0,
+  "literal_ranking_unchanged": true,
+  "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186",
+  "standalone_sha256": "1ca6be76242687fd73dcf8dd9a688c1615adc7cfd7e338985124461ac42222a8",
+  "site_identity": "bcff813a8011ac86666abec442a139da11d912e1c982a19554f2f5f668bc2ee1",
+  "canonical_reference_changed": false,
+  "content_or_relations_changed": false,
+  "reader_evidence_claimed": false,
+  "competitive_evidence_claimed": false
+}

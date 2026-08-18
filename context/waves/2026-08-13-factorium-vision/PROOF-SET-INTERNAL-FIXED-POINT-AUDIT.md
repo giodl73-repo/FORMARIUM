@@ -4,23 +4,25 @@ Status: internal simulation fixed point; external evidence deferred
 
 Date: 2026-08-17
 
-Maintained edition: `sim-47`
+Maintained edition: `sim-48`
 
-Maintained source commit: `547f2fc1f1a0fa4013453ec5a4025ef52ad9b255`
+Maintained source commit: `95fdeda1e2ef68a748feab06fefd34b844bf0bbf`
 
 Role review:
 `signals/roles/check/proof-set-internal-fixed-point-roles-check-2026-08-17.md`
 
 ## Decision
 
-Stop speculative internal Proof Set feature editions at `sim-47`. The LXC-01
+Stop speculative internal Proof Set feature editions at `sim-48`. The LXC-01
 source-backed lexical audit and explicit user selection earned exactly five
-bounded lookup aliases; no further artifact defect or reader job is open.
+bounded lookup aliases. THS-01 then demonstrated one retained `scale` route
+miss, and SCL-01 repaired it with one exact three-meaning chooser; no further
+artifact defect or reader job is open.
 Maintain the edition and its validation paths, but do not tag, distribute, or describe it as
 `preview-01`.
 
 This refresh supersedes only the prior maintained-edition pointer. The original
-`sim-41` fixed point, `sim-42` rehearsal, `sim-46` fixed point, intervening
+`sim-41` fixed point, `sim-42` rehearsal, `sim-46` fixed point, `sim-47`, intervening
 campaigns, rejected candidates, and exact edition identities remain historical custody.
 
 This is a product stop decision, not abandonment. The next evidence-bearing
@@ -42,7 +44,7 @@ because readers are unavailable.
 
 ## Fixed artifact
 
-`sim-47` contains:
+`sim-48` contains:
 
 - 217 source documents;
 - 175 canonical records selected into the publication;
@@ -56,15 +58,17 @@ because readers are unavailable.
   ephemeral no-storage handoff note across all 239 pages;
 - five exact source-backed lookup aliases with seven routes to four existing
   Table owners, including two explicitly multi-owner field phrases;
+- one exact `scale` chooser with three labelled routes to existing Table
+  owners, without changing literal ranking;
 - 403 authored untyped Table connections, of which 348 appear in the bounded
   rendered previews;
 - zero missing local targets and zero unresolved canonical view owners.
 
 Site identity:
-`179daaec770470fdb657bbadca04d9d96ec932d7c976b33eb941c9f24d48e0cc`.
+`bcff813a8011ac86666abec442a139da11d912e1c982a19554f2f5f668bc2ee1`.
 
 Standalone SHA-256:
-`b67e991abe62f4a91f77a5e693a4ec70de9de55561f51abddd9031186971cd8b`.
+`1ca6be76242687fd73dcf8dd9a688c1615adc7cfd7e338985124461ac42222a8`.
 
 Search-index SHA-256:
 `03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186`.
@@ -106,7 +110,7 @@ internal implementation defect.
 
 - 42 original simulation-preflight records cover `sim-01` through `sim-41`;
 - the `sim-42` rehearsal and SUJ-01 through SUJ-11 campaign records preserve
-  every admitted repair, failed candidate, and null leading to `sim-47`;
+  every admitted repair, failed candidate, and null leading to `sim-48`;
 - `SIM-001`, `SIM-002`, `SIM-004`, and `SIM-005` are closed for their stated
   mechanical scope;
 - `SIM-003` is accepted pending real reader route-cost evidence;

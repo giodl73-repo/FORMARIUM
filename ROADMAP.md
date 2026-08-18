@@ -427,13 +427,14 @@ current fixed point is 53 entries and 95 views with an empty generated
 unresolved list. Internal rehearsal does not establish real-world feasibility
 or reader value.
 
-1. maintain clean `sim-47` as the two-book internal reference with dedicated Tables A-Z,
+1. maintain clean `sim-48` as the two-book internal reference with dedicated Tables A-Z,
    five-part Reader contents, static Reader continuation across its 24 selected
    Tables, a direct manifest-derived Reader start, reciprocal family navigation,
    an explicit terminal handoff, three-job intent router, ephemeral handoff note,
    dual literal lookup, ownership-aware search, bounded everyday wording cues,
    authored canonical-depth routes, recurring reciprocal Table connections,
-   and five bounded source-backed lookup aliases,
+   five bounded source-backed lookup aliases, and one exact three-route `scale`
+   meaning chooser,
    while retaining exact prior-edition custody;
 2. retain exact `sim-30` custody and its 24-record spine, 151-record depth
    boundary,

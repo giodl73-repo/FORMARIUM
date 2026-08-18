@@ -1027,7 +1027,7 @@ Both links remain authored and untyped; the prime's candidate content and
 status are unchanged. This does not establish independent source review or
 reader value and does not reopen the other legacy primes.
 
-The internal Proof Set lane is now maintained and stopped at clean `sim-47`,
+The internal Proof Set lane is now maintained and stopped at clean `sim-48`,
 not `preview-01`. The earlier `sim-41` fixed point and `sim-42` preview
 rehearsal remain historical custody. Subsequent bounded campaigns admitted the
 three-job intent router, ephemeral handoff note, dual literal lookup, and two
@@ -1035,7 +1035,10 @@ recurring reciprocal Table links; rejected automatic segmentation, the
 analyst-conditioned Search cue, and BM25 ranking; and retained all external
 reader gates. LXC-01 identified five source-backed lexical routes, and LXA-01
 admitted them as exact lookup aliases with seven existing-owner routes while
-retaining two multi-owner field readings. Exact current custody is recorded in
+retaining two multi-owner field readings. THS-01 then exposed one bounded
+`scale` navigation miss, and SCL-01 admitted an exact three-meaning chooser
+without changing search ranking, canonical content, or relations. Exact
+current custody is recorded in
 `context/waves/2026-08-13-factorium-vision/PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`.
 
 The historical internal preview rehearsal at

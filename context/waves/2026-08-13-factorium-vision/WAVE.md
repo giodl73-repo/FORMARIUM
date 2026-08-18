@@ -3088,3 +3088,23 @@ scaling/size. Nine roles approve the bounded `sim-48` candidate with no P1/P2
 finding. THS-01, literal ranking, canonical metadata, content, relations, prior
 editions, and reader-evidence gates remain unchanged. See
 `SCALE-MEANING-CHOOSER-01-PLAN.md`.
+
+Result review: clean `sim-48` exposes the three frozen `scale` meanings as
+one-click routes to existing owners. The exact query activates; plural,
+extended, and nearby controls do not. The 185-record search index and complete
+literal rankings remain unchanged, and static, live 390-pixel Edge, LXA-01,
+THS-01, closure, and Rust validations pass with zero missing targets. Nine
+roles approve with no P1/P2 finding. Maintain `sim-48`; claim no reader or
+competitive evidence. See `SCALE-MEANING-CHOOSER-01-RESULT.md`.
+
+## 2026-08-17 competitive reference-navigation review
+
+An inertia-first review identifies the familiar search, Wikipedia, and
+thesaurus bundle as the primary high-threat competitor. The plausible
+Factorium whitespace is not broader synonymy or encyclopedia coverage but a
+curated ambiguity-to-decision path: meaning choice, governing factors,
+contrast, bounded closure, and an explicit stopping boundary. The proposed
+next test freezes twelve ambiguous queries and compares visible outputs under
+equal interaction budgets. It is an internal comparative audit, not reader or
+market evidence. See `COMPETITIVE-AMBIGUITY-TO-DECISION-TEST-BLUEPRINT.md` and
+`signals/discover/competitors/factorium-reference-navigation-competitors-2026-08-17.md`.
