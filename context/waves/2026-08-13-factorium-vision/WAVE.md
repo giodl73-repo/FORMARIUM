@@ -2931,3 +2931,15 @@ does not repair the clause-only portfolio failure. Nine roles approve the null
 with no P1/P2 finding. Reject the candidate, close automatic literal
 segmentation in this branch, retain `sim-45`, and do not mint `sim-46`. See
 `SYNTHETIC-WHOLE-QUESTION-CLAUSE-LENSES-RESULT.md`.
+
+## 2026-08-17 recognized foothold to authored connections plan
+
+SUJ-09 tests a book-native alternative to automatic segmentation: condition
+on an analyst-scored intended family already visible in the first SUJ-05
+ranking, then inspect only the six authored untyped connections rendered on
+that Table page. Nine roles approve the upper-bound route audit with no P1/P2
+finding. A pass requires six of eight deficient tasks to gain a second intended
+family and at least 8/10 total two-family coverage. Only a Search guidance cue
+can be admitted; selection, typed relations, closure, and reader-recognition
+claims remain prohibited. See
+`SYNTHETIC-RECOGNIZED-FOOTHOLD-CONNECTIONS-PLAN.md`.
