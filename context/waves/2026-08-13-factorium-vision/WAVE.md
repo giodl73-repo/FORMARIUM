@@ -3238,3 +3238,22 @@ with no P1/P2 finding. The multi-campaign checker validates 32 total records
 with custody intact and zero admission. Retain GPC-03 and proceed to GPC-04;
 claim neither regional completeness nor reader evidence. See
 `GLOBAL-PHILOSOPHY-GPC-03-RESULT.md`.
+
+## 2026-08-17 GPC-04 Arabic-language, Islamic, Persianate, and Jewish comparison
+
+Plan review: freeze eight Arabic/Islamic/Persianate and six Jewish
+position-spaces, complete a standard source review, and preserve language,
+religion, Islamicate connection, genre, authority, audience, and practice as
+separate axes. The lane changes no Table, book, relation, UI, or reader-evidence
+gate. See `GLOBAL-PHILOSOPHY-GPC-04-PLAN.md`.
+
+Result review: all 14 packets, 14 immutable factorings, and 14 typed candidate
+alignments are complete against 18 established sources. Rival epistemic
+standards are the leading result; modal dependence, causal agency,
+interpretive authority, manifestation, and asymmetric responsibility remain
+candidate or conflict families. Connected Islamicate history does not merge
+identity categories, and no historical authority becomes guidance. Nine roles
+approve with no P1/P2 finding. The multi-campaign checker validates 46 total
+records with custody intact and zero admission. Retain GPC-04 and proceed to
+GPC-05; claim neither regional completeness nor reader evidence. See
+`GLOBAL-PHILOSOPHY-GPC-04-RESULT.md`.

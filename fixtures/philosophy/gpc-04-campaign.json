@@ -1,0 +1,30 @@
+{
+  "campaign_id":"GPC-04","revision":1,"status":"frozen-before-source-review","frozen_on":"2026-08-17","parent":"GPC-01 revision 2",
+  "purpose":"Test Arabic-language, Islamic, Persianate, and Jewish structures while preserving their overlapping Islamicate contexts and non-interchangeable identities.",
+  "packet_slots":[
+    {"id":"AI-01","lane":"arabic-islamic-persianate","position":"Arabic translation movement, falsafa, demonstration, intellect, and classification of sciences"},
+    {"id":"AI-02","lane":"arabic-islamic-persianate","position":"kalām reason/revelation, divine attributes, atomism, causation, and human action"},
+    {"id":"AI-03","lane":"arabic-islamic-persianate","position":"Avicennan essence/existence, necessity/possibility, intellect, soul, and prophecy"},
+    {"id":"AI-04","lane":"arabic-islamic-persianate","position":"Ghazālian critique, demonstration/dialectic, causation, choice, law, and spiritual practice"},
+    {"id":"AI-05","lane":"arabic-islamic-persianate","position":"Averroist demonstration, interpretation, philosophy/religion, law, and political order"},
+    {"id":"AI-06","lane":"arabic-islamic-persianate","position":"Illuminationist light, knowledge by presence, hierarchy, and philosophical practice"},
+    {"id":"AI-07","lane":"arabic-islamic-persianate","position":"Ibn ʿArabī and related Sufi self-disclosure, unity/multiplicity, imagination, and transformation"},
+    {"id":"AI-08","lane":"arabic-islamic-persianate","position":"Islamic and Persianate ethics, adab, virtue, justice, practical wisdom, and governance"},
+    {"id":"JE-01","lane":"jewish","position":"rabbinic law, interpretive argument, textual plurality, practice, and communal authority"},
+    {"id":"JE-02","lane":"jewish","position":"Saadya on reason/revelation, laws of reason/revelation, tradition, creation, and praxis"},
+    {"id":"JE-03","lane":"jewish","position":"Maimonides on negative theology, demonstration, prophecy, law, perfection, and Islamicate sources"},
+    {"id":"JE-04","lane":"jewish","position":"Judah Halevi on reason, historical revelation, embodied tradition, peoplehood, and exile"},
+    {"id":"JE-05","lane":"jewish","position":"Spinoza on Scripture, interpretation, substance, freedom, political authority, and contested Jewish location"},
+    {"id":"JE-06","lane":"jewish","position":"modern Jewish dialogical and alterity ethics, relation, responsibility, Scripture, diaspora, and politics"}
+  ],
+  "selection_rules":[
+    "Arabic-language, Islamic, Islamicate, Persianate, Arab, Muslim, and Jewish name different scopes and are never synonyms.",
+    "Jewish authors writing Arabic in Islamicate settings may connect lanes without being absorbed into an Islamic identity.",
+    "Philosophy, theology, jurisprudence, commentary, mysticism, ethics, and religious practice remain distinct genres even when one author crosses them.",
+    "Greek-source transmission is recorded as translation and transformation, not passive copying or Western ownership.",
+    "No theological, legal, political, or mystical claim becomes Factorium guidance."
+  ],
+  "required_record_contract":"fixtures/philosophy/global-philosophy-counter-sample-blueprint-01.json#factorization_record_contract","required_alignment_contract":"fixtures/philosophy/global-philosophy-counter-sample-blueprint-01.json#alignment_ledger_contract",
+  "content_admission_allowed":false,"reader_evidence_claimed":false,"completeness_claimed":false,
+  "stop":"Complete fourteen packets with Islamicate overlap and identity boundaries intact; hand immutable records and candidate mappings to GPC-09."
+}
