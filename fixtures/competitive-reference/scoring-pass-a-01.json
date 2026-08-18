@@ -1,0 +1,1302 @@
+{
+  "campaign_id": "CAD-01",
+  "pass": "A-direct-observation",
+  "rows": [
+    {
+      "query": "scale",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "scale",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "scale",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The landing visibly separates topics but does not expose a contrast, governing factor, or stopping boundary."
+    },
+    {
+      "query": "scale",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The first output separates 'as in' senses and labelled word relations but contains no captured contrast, factor, or stopping structure."
+    },
+    {
+      "query": "scale",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "scale",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "force",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "force",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "force",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": false,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The landing article visibly exposes a distinction or governing dimensions; the remaining landings are disambiguation without decision structure."
+    },
+    {
+      "query": "force",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The first output contains a Synonym Chooser with explicit usage contrasts among near words."
+    },
+    {
+      "query": "force",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "force",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "power",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "power",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "power",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The landing visibly separates topics but does not expose a contrast, governing factor, or stopping boundary."
+    },
+    {
+      "query": "power",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The first output contains a Synonym Chooser with explicit usage contrasts among near words."
+    },
+    {
+      "query": "power",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "power",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "value",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "value",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "value",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The landing visibly separates topics but does not expose a contrast, governing factor, or stopping boundary."
+    },
+    {
+      "query": "value",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The first output contains a Synonym Chooser with explicit usage contrasts among near words."
+    },
+    {
+      "query": "value",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "value",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "state",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "state",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "state",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The landing visibly separates topics but does not expose a contrast, governing factor, or stopping boundary."
+    },
+    {
+      "query": "state",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The first output separates 'as in' senses and labelled word relations but contains no captured contrast, factor, or stopping structure."
+    },
+    {
+      "query": "state",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "state",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "risk",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "risk",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "risk",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": false,
+        "relation_labels": false,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The landing article visibly exposes a distinction or governing dimensions; the remaining landings are disambiguation without decision structure."
+    },
+    {
+      "query": "risk",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The first output separates 'as in' senses and labelled word relations but contains no captured contrast, factor, or stopping structure."
+    },
+    {
+      "query": "risk",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "risk",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "field",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "field",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "field",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The landing visibly separates topics but does not expose a contrast, governing factor, or stopping boundary."
+    },
+    {
+      "query": "field",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The first output separates 'as in' senses and labelled word relations but contains no captured contrast, factor, or stopping structure."
+    },
+    {
+      "query": "field",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "field",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "role",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "role",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": true,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "role",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": false,
+        "relation_labels": false,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The landing article visibly exposes a distinction or governing dimensions; the remaining landings are disambiguation without decision structure."
+    },
+    {
+      "query": "role",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": false,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The first output separates 'as in' senses and labelled word relations but contains no captured contrast, factor, or stopping structure."
+    },
+    {
+      "query": "role",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "role",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "measure",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "measure",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "measure",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The landing visibly separates topics but does not expose a contrast, governing factor, or stopping boundary."
+    },
+    {
+      "query": "measure",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The first output separates 'as in' senses and labelled word relations but contains no captured contrast, factor, or stopping structure."
+    },
+    {
+      "query": "measure",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "measure",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "model",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "model",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": true,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "model",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The landing article visibly exposes a distinction or governing dimensions; the remaining landings are disambiguation without decision structure."
+    },
+    {
+      "query": "model",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The first output contains a Synonym Chooser with explicit usage contrasts among near words."
+    },
+    {
+      "query": "model",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "model",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "system",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "system",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": false,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "system",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": false,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The landing article visibly exposes a distinction or governing dimensions; the remaining landings are disambiguation without decision structure."
+    },
+    {
+      "query": "system",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The first output contains a Synonym Chooser with explicit usage contrasts among near words."
+    },
+    {
+      "query": "system",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "system",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    },
+    {
+      "query": "evidence",
+      "product": "factorium",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": true,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Search exposes multiple family owners; the first opened Table exposes factors and an explicit boundary, contrast, constraint, or failure structure."
+    },
+    {
+      "query": "evidence",
+      "product": "web_search_status_quo",
+      "score": {
+        "multiple_meanings": false,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 1,
+      "evidence": "Representative first-screen results route to dictionary, encyclopedia, government, standards, or domain pages; five queries expose a visible governing distinction within one open."
+    },
+    {
+      "query": "evidence",
+      "product": "wikipedia",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": true,
+        "governing_factors": true,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The landing article visibly exposes a distinction or governing dimensions; the remaining landings are disambiguation without decision structure."
+    },
+    {
+      "query": "evidence",
+      "product": "merriam_webster_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": true,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": true,
+      "interactions_to_decision_structure": 0,
+      "evidence": "The first output contains a Synonym Chooser with explicit usage contrasts among near words."
+    },
+    {
+      "query": "evidence",
+      "product": "onelook_thesaurus",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": false,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": false,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "The official Datamuse core returns a ranked related-word set with optional definitions but no per-result contrast, governing factor, source, or stop."
+    },
+    {
+      "query": "evidence",
+      "product": "open_english_wordnet_2025",
+      "score": {
+        "multiple_meanings": true,
+        "relation_labels": true,
+        "contrast_or_exclusion": false,
+        "governing_factors": false,
+        "authority_visible": true,
+        "stopping_boundary": false,
+        "bounded_continuation": true,
+        "false_equivalence": false,
+        "dead_end": false
+      },
+      "decision_structure": false,
+      "interactions_to_decision_structure": null,
+      "evidence": "Exact noun synsets preserve senses and labelled lexical-semantic relation kinds but do not expose the frozen decision-structure dimensions."
+    }
+  ]
+}

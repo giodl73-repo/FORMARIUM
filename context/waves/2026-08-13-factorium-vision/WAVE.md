@@ -3119,3 +3119,13 @@ Google-specific first screen before capture. Execution changes no product and
 cannot establish reader preference, comprehension, usefulness, market value,
 or general superiority. See
 `COMPETITIVE-AMBIGUITY-TO-DECISION-TEST-01-PLAN.md`.
+
+Result review: the conjunctive hypothesis is falsified. Factorium exposes
+decision structure on 12/12, strictly exceeds OneLook and WordNet on 12/12,
+passes route cost on 12/12, and asserts zero false equivalences. It strictly
+exceeds Merriam-Webster on only 6/12, below the frozen 8/12 gate, because the
+Synonym Chooser supplies real contrasts for six terms. Two internal passes
+retain four reconciled observations across 648 binary judgments. Nine roles
+approve the exact failure with no P1/P2 finding. Admit no product or content
+batch; a future test may separately freeze consequential depth. See
+`COMPETITIVE-AMBIGUITY-TO-DECISION-TEST-01-RESULT.md`.

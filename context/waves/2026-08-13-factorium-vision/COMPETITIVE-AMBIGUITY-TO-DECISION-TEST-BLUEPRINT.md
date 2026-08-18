@@ -2,7 +2,10 @@
 
 Date: 2026-08-17
 
-Status: proposed next competitive test; not yet frozen or executed
+Status: executed as `CAD-01`; frozen result is `FALSIFIED`
+
+Execution record:
+`COMPETITIVE-AMBIGUITY-TO-DECISION-TEST-01-RESULT.md`
 
 ## Question
 
