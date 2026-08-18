@@ -3303,3 +3303,12 @@ review passes all four evidence tiers and makes archive asymmetry, language,
 genre, mestizaje critique, colonial gender, concrete positionality, and opacity
 mandatory. The lane changes no Table, book, relation, UI, or reader-evidence
 gate. Factoring remains pending. See `GLOBAL-PHILOSOPHY-GPC-07-PLAN.md`.
+
+Result review: all six packets, six immutable factorings, and six typed
+candidate alignments are complete against 18 sources. Archive/address custody,
+affected-party exteriority, concrete coloniality mechanisms, category
+co-production, refusal of assimilation, and bounded opacity survive. Nine
+roles approve with no P1/P2 finding. The global checker validates 66 total
+records with custody intact and zero admission. Retain GPC-07 and proceed to
+GPC-08; claim neither regional completeness nor reader evidence. See
+`GLOBAL-PHILOSOPHY-GPC-07-RESULT.md`.
