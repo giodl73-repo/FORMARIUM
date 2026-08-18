@@ -1129,3 +1129,37 @@ admitted only the two existing-view maintenance repair recorded in
 provenance headings to all 148 canonical paths without expanding the
 inventory. These results preserve null routes and permit later evidence-led
 intake; they are not reader evidence or entitlement to another content batch.
+
+## Post-F100 GPC-09 boundary and custody admission
+
+The first reopened slice passes the post-F100 intake rule through a repeated,
+source-backed owner gap found across 100 frozen philosophy factorings. It adds
+one current Markdown anchor,
+`tables/entries/meaning-reference-interpretation-use.md`, and two specialized
+Claim-and-Evidence views,
+`tables/evidence/epistemic-standing-inquiry-warrant.md` and
+`tables/evidence/source-performance-research-custody.md`.
+
+The anchor owns seven reusable senses and stops before named theories,
+traditions, languages, concepts, translation pairs, and interpretive canons.
+The views add no senses. They expose epistemic subject, attitude, inquiry,
+warrant, defeaters and standing; and producer/performance/research roles,
+authority to share, consent, mediation, restriction, return and correction.
+
+| Product field | Admission record |
+|---|---|
+| Reader | A reader comparing what a source means, who claims to know, or whether a use is permitted. |
+| Job | Separate meaning from reference and intent; reconstruct warrant; preserve source and research custody. |
+| Current friction | Existing owners require manual reconstruction and can make provenance look like permission. |
+| Product change | One anchor and two views provide ordinary-language routes and Compact, Abbreviated, Book, and Full projections. |
+| Evidence now | Twenty-one-source review, 100-record recurrence, boundary tests, fixed-point role review, and repository checks. |
+| Evidence later | Reader comprehension/findability, qualified domain or community review, and any use-specific authority decision. |
+| Cost and displacement | Three records increase maintenance; reciprocal V0 owner links, interchange, generated search/book integration, and other GPC-09 candidates remain deferred. |
+| Continue/merge/stop | Stop after this exact batch. Consider an interchange and reader-surface revision separately; admit no second philosophy expansion. |
+
+Current Markdown inventory becomes 54 entries and 97 views. The frozen V0
+interchange remains 53 entries and 95 views, so its generated catalog, proof
+edition, and search surfaces do not yet expose these records. This is a
+deliberate custody boundary, not a claim that reader-facing integration is
+complete. Internal review establishes structure and source discipline only,
+not reader value, community endorsement, truth, or global completeness.

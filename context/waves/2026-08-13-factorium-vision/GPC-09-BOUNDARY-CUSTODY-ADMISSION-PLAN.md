@@ -26,8 +26,12 @@ owners and one post-F100 intake record. It may not add a tradition, thinker,
 community, doctrine, knowledge/truth/culture anchor, typed relation, UI
 mechanic, reader claim, community endorsement, or normative guidance.
 
-The existing V0 reference, relation, and assurance bytes are baseline custody
-and must remain unchanged. This batch admits current Markdown Table sources;
+The existing V0 reference, relation, and assurance digests are baseline
+custody. Reference and relation bytes must remain unchanged. If attempted
+reciprocal edits touch previously mixed line endings, remove those semantic
+edits and rebind only the affected assurance rows to the admission review;
+record both pre-admission and result assurance digests. This batch admits
+current Markdown Table sources;
 canonical interchange revision, book selection, search projection, and reader
 testing remain separate decisions. The result must say plainly that this
 limits immediate discoverability in generated V0 surfaces.
@@ -45,7 +49,8 @@ limits immediate discoverability in generated V0 surfaces.
   Taxonomy Boundary, Research Integrity, Mapping Integrity, Domain Source,
   Schema Implementer, Reference Practitioner, and Product Owner roles;
 - repository roles checker and ordinary Rust checks pass;
-- frozen V0 digests still equal the admission fixture.
+- frozen reference and relation digests still equal the admission fixture;
+  assurance either remains exact or records the bounded rebind above.
 
 ## Stop
 

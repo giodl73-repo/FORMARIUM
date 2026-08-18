@@ -1,0 +1,60 @@
+{
+  "campaign_id": "GPC-09-ADMISSION-01",
+  "revision": 1,
+  "status": "complete-current-markdown-admission",
+  "completed_on": "2026-08-18",
+  "admitted": [
+    {
+      "kind": "entry",
+      "id": "meaning-reference-interpretation-use",
+      "path": "tables/entries/meaning-reference-interpretation-use.md",
+      "sha256": "468943514db6e3d2ebae28ea523a134d18534ca7701a9e241d24751ef05c56d2",
+      "new_sense_count": 7
+    },
+    {
+      "kind": "view",
+      "id": "epistemic-standing-inquiry-warrant",
+      "owner": "claim-evidence",
+      "path": "tables/evidence/epistemic-standing-inquiry-warrant.md",
+      "sha256": "aed94db35f972fdad5585a6f0139ab2276c88fdbf8e29b028ac942973d340ba1",
+      "new_sense_count": 0
+    },
+    {
+      "kind": "view",
+      "id": "source-performance-research-custody",
+      "owner": "claim-evidence",
+      "path": "tables/evidence/source-performance-research-custody.md",
+      "sha256": "d31cbf09f634829a15c139e48913ec6d693d414b0bc5d70847c2fbf109c5f09f",
+      "new_sense_count": 0
+    }
+  ],
+  "v0_custody": {
+    "reference_sha256": "489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324",
+    "relations_sha256": "df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634",
+    "assurance_sha256": "d66f47d24e58f79f2672733c8b06b96d93b09f58318c523abdb3df68e1e787a7",
+    "assurance_rebind": {
+      "reason": "Attempted reciprocal links were removed, but apply-patch normalized previously mixed line endings in three unchanged owner sources. Rebind only those three exact bytes to the admission fixed-point review.",
+      "affected_entries": [
+        "claim-evidence",
+        "identity-naming-classification-versioning",
+        "organization-role-authority"
+      ],
+      "semantic_change": false,
+      "binding_count_before": 159,
+      "binding_count_after": 159
+    }
+  },
+  "inventory": {
+    "current_markdown_entries": 54,
+    "current_markdown_views": 97,
+    "v0_entries": 53,
+    "v0_views": 95,
+    "v0_relations": 11,
+    "v0_assurance_bindings": 159
+  },
+  "role_review": "signals/roles/check/gpc-09-boundary-custody-admission-roles-check-2026-08-18.md",
+  "open_product_boundary": "A new interchange revision plus catalog, book, search, and reciprocal-link integration remains a separate decision.",
+  "reader_evidence_claimed": false,
+  "community_endorsement_claimed": false,
+  "portfolio_decision": "admit-exact-three-record-batch-and-stop"
+}

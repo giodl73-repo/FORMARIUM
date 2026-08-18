@@ -79,7 +79,7 @@ fn assurance_detects_a_stale_source_digest() {
     let text = fs::read_to_string("reference/factorium-assurance-v0.factorium")
         .unwrap()
         .replacen(
-            "17875b0730df45b563261a670149d4c8312ecf6487f672028b96672fd19b39e5",
+            "07646556467096218227ebb6d6a6c40a78659d8aeffe8a877842345811c7ed1e",
             "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
             1,
         );
