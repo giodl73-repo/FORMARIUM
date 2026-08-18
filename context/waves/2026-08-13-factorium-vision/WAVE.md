@@ -3284,3 +3284,12 @@ makes performer/audience/community custody, language, genre, gender, colonial
 and diasporic context, and normative non-uptake mandatory. The lane changes no
 Table, book, relation, UI, or reader-evidence gate. Factoring remains pending.
 See `GLOBAL-PHILOSOPHY-GPC-06-PLAN.md`.
+
+Result review: all eight packets, eight immutable factorings, and eight typed
+candidate alignments are complete against 18 sources. Performance custody is
+the strongest new candidate; inherent standing, anti-abuse constraints,
+source authenticity, structural domination, conceptual decolonization, and
+anti-unanimism remain explicit. Nine roles approve with no P1/P2 finding. The
+global checker validates 60 total records with custody intact and zero
+admission. Retain GPC-06 and proceed to GPC-07; claim neither continental
+completeness nor reader evidence. See `GLOBAL-PHILOSOPHY-GPC-06-RESULT.md`.

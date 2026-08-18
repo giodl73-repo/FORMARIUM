@@ -1,7 +1,7 @@
 # GPC-06 African and Africana Comparison Plan
 
 Date: 2026-08-17
-Status: source review complete; factoring pending
+Status: executed
 
 Freeze eight named packets spanning Akan, Yorùbá, southern African,
 Ethiopian, Africana/anti-colonial, decolonial-method, African feminist/gender,
