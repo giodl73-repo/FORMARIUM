@@ -1,0 +1,23 @@
+factorium-pointer-registry-delta-v0
+extends proof-set-pointer-registry-v8.factorium
+pointer access | Access | a structural label for permitted or actual entry, use, retrieval, or interaction with a resource
+pointer audit | Audit | a structural label for a systematic evidence examination under a mandate, scope, and criteria
+pointer compliance | Compliance | a structural label for whether required conduct or results satisfy applicable obligations
+pointer diagnostics | Diagnostics | a structural label for observed signs used to distinguish causes, failures, or conditions
+pointer eligibility | Eligibility | a structural label for whether a subject or case satisfies admission criteria
+pointer equilibrium | Equilibrium | a structural label for a state in which selected opposing changes or influences balance
+pointer estimate | Estimate | a structural label for an inferred or calculated value with a method and uncertainty
+pointer exposure | Exposure | a structural label for contact with a hazard, treatment, influence, or condition over a scope
+pointer implementation | Implementation | a structural label for the concrete realization of a design, rule, model, or interface
+pointer influence | Influence | a structural label for a source affecting a target through a channel and receptive context
+pointer invalidation | Invalidation | a structural label for an event or condition that removes validity, currency, or admissibility
+pointer mixture | Mixture | a structural label for a material or population composed of distinguishable constituents
+pointer numerator | Numerator | a structural label for the counted or measured quantity above a declared ratio basis
+pointer organization | Organization | a structural label for coordinated actors, resources, processes, and interfaces within a boundary
+pointer probability | Probability | a structural label for a quantified uncertainty under a model, event space, and conditioning context
+pointer procedure | Procedure | a structural label for an ordered method of actions, decisions, checks, and stopping conditions
+pointer quality | Quality | a structural label for fitness, conformance, performance, or evidence characteristics under criteria
+pointer recovery | Recovery | a structural label for returning capability, state, data, or operation after failure or disruption
+pointer sufficiency | Sufficiency | a structural label for whether available conditions, evidence, or resources meet a declared purpose
+pointer supersession | Supersession | a structural label for replacement of a version, rule, record, or authority by a later one
+end-factorium-pointer-registry

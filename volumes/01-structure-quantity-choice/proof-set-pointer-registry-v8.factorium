@@ -1,0 +1,23 @@
+factorium-pointer-registry-delta-v0
+extends proof-set-pointer-registry-v7.factorium
+pointer assignment | Assignment | a structural label for allocating a role, duty, value, subject, or treatment to a recipient
+pointer composition | Composition | a structural label for constituent identity, amount, arrangement, and combination within a whole
+pointer consumption | Consumption | a structural label for resource, material, energy, or capacity used over an activity or interval
+pointer control | Control | a structural label for influence, regulation, command, or comparison against a desired state
+pointer counterfactual | Counterfactual | a structural label for an alternative condition or outcome used in causal comparison
+pointer equation | Equation | a structural label for an asserted equality over expressions under a domain and interpretation
+pointer flow | Flow | a structural label for movement or transfer of quantity, material, information, or work per a path
+pointer governance | Governance | a structural label for authority, accountability, direction, and oversight of a bounded subject
+pointer indicator | Indicator | a structural label for an observed or derived measure used to monitor a condition or objective
+pointer length | Length | a structural label for spatial extent, path distance, wavelength, or another dimensional quantity
+pointer load | Load | a structural label for applied demand, burden, traffic, material, or work on a subject
+pointer objective | Objective | a structural label for a desired condition or result against which action and evidence are organized
+pointer projection | Projection | a structural label for a reduced, transformed, selected, or viewpoint-dependent representation
+pointer regime | Regime | a structural label for a bounded operating, legal, physical, or interpretive set of conditions
+pointer resistance | Resistance | a structural label for opposition to motion, flow, action, influence, or change
+pointer sampling | Sampling | a structural label for selecting observations or cases from a population, process, or signal
+pointer solution | Solution | a structural label for a satisfying assignment, dissolved mixture, or proposed response in context
+pointer speed | Speed | a structural label for scalar distance or path change per a declared time interval
+pointer threshold | Threshold | a structural label for a boundary value that changes classification, action, or status
+pointer tolerance | Tolerance | a structural label for an allowed deviation, range, or acceptance limit under a rule
+end-factorium-pointer-registry

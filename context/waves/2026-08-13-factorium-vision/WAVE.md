@@ -3568,3 +3568,288 @@ later reviewed additions. This is interchange and publication-mechanics
 evidence only, not reader value, release evidence, or content completeness.
 See `V2-ROLLING-REFERENCE-INTEGRATION-RESULT.md` and
 `fixtures/coverage/v2-rolling-reference-integration-result.json`.
+
+## 2026-08-18 Tabula Facta reversible identity preview
+
+Plan review: preview `Tabula Facta` as the public Tables/book identity in one
+successor internal edition while keeping The Factorium Reader, canonical Factor
+Table authority, Factorium interchange identities, source headings, and
+historical editions stable. The recognizable reader job is judging the name
+and two-book relationship in use; stop before repository-wide migration or any
+preference, usability, distinctiveness, or release claim. Six roles approve
+with zero P1/P2 finding. See `TABULA-FACTA-IDENTITY-PREVIEW-PLAN.md` and
+`TABULA-FACTA-IDENTITY-PREVIEW-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-51` carries the candidate identity through home, Tables,
+Reader, chapter, entry, and Composition chrome with a visible candidate badge
+and “not locked” notice. The Reader retains its existing name and explicitly
+returns authority to Factor Tables. Static and Edge checks cover 191 indexed
+destinations, 20 chapters, 251 pages, zero missing targets, and a 390-pixel
+Reader viewport without overflow. `sim-50` and canonical reference artifacts
+remain unchanged. This is author-preview and publication-mechanics evidence,
+not reader or market evidence. See `TABULA-FACTA-IDENTITY-PREVIEW-RESULT.md`
+and `signals/roles/check/tabula-facta-identity-preview-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry concordance
+
+Plan review: make repeated structural leaves clickable without manufacturing
+canonical entries. Admit exactly 20 reusable labels through an edition-local
+registry; scan only exact `code` expressions in selected Tables; generate one
+Terms index and source-custodied pointer pages; and stop before prose linking,
+synonym inference, search integration, relations, or canonical promotion.
+Return the successor UI to Factorium while preserving `sim-51` as the optional
+name snapshot. Nine roles approve with zero P1/P2 finding. See
+`POINTER-ENTRY-CONCORDANCE-PLAN.md`, `POINTER-ENTRY-CONCORDANCE-PLAN-ROLE-REVIEW.md`,
+and `specs/POINTER-ENTRIES.md`.
+
+Result review: `sim-52` generates 20 Pointer Entries from 383 distinct
+structural expressions and 313 label-to-owner bindings. Actor links from the
+Agency formula to three separately attributed owners and exact expressions,
+then back to each authored Table. A post-Reader enhancer preserves the links
+after context folding. The complete 272-page site retains 191 search records,
+54 canonical Tables, and zero missing local targets; Edge verifies the route at
+390 pixels without overflow. Pointer Entries remain outside canonical search,
+chapters, Reader order, and interchange. This is mechanics evidence only, not
+reader value. See `POINTER-ENTRY-CONCORDANCE-RESULT.md` and
+`signals/roles/check/pointer-entry-concordance-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion
+
+Plan review: preserve `sim-52` as the fixed 20-label predecessor and admit one
+successor batch of 20 high-reuse cross-domain labels. Select only exact Table
+`code` labels with at least 16 owners, exclude `reference` because it collides
+with repository paths, and stop before automatic extraction, phrase parsing,
+stemming, plural folding, search integration, relations, or canonical
+promotion. Nine roles approve with zero P1/P2 finding. See
+`POINTER-ENTRY-EXPANSION-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-53` generates 40 Pointer Entries from 964 exact expressions
+and 785 label-to-owner bindings. The 20 added pages cover basis, convention,
+decision, direction, evidence, frame, model, policy, provenance, rule, scale,
+scope, source, status, system, target, time, uncertainty, unit, and version.
+Actor remains stable at three owners and three expressions; canonical search
+remains at 191 records. The complete 293-page site has zero missing local
+targets, and Edge verifies the Agency-to-Actor route at 390 pixels without
+overflow. This is mechanics evidence only. See
+`POINTER-ENTRY-EXPANSION-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 02
+
+Plan review: preserve the 20-label and 40-label predecessor registries and add
+20 exact recurring labels spanning evidence, evaluation, quantity,
+representation, and review. Keep neighboring labels such as result/outcome and
+measure/measurement separate; exclude plural duplicates of existing concepts
+and the path-colliding `reference` token. Stop before morphology, synonyms,
+automatic extraction, search integration, relations, or canonical promotion.
+Nine roles approve with zero P1/P2 finding. See
+`POINTER-ENTRY-EXPANSION-02-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-02-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-54` generates 60 Pointer Entries from 1,300 exact
+expressions and 1,052 label-to-owner bindings. Every added label appears in
+10-16 owning Tables. The complete 313-page site retains 191 search records and
+zero missing local targets; Actor remains at three owners and three
+expressions. Edge verifies the route at 390 pixels without overflow. This is
+mechanics evidence only. See `POINTER-ENTRY-EXPANSION-02-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-02-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 03
+
+Plan review: preserve the 20-, 40-, and 60-label predecessor registries and add
+20 exact labels spanning applicability, dependency, interaction, materials,
+sampling, ownership, transformation, and validity. Defer `point` because its
+orientation remains too generic, retain the `reference` path-collision
+exclusion, and stop before morphology, synonyms, automatic extraction, search
+integration, relations, or canonical promotion. Nine roles approve with zero
+P1/P2 finding. See `POINTER-ENTRY-EXPANSION-03-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-03-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-55` generates 80 Pointer Entries from 1,544 exact
+expressions and 1,248 label-to-owner bindings. Every added label appears in
+8-11 owning Tables. The complete 333-page site retains 191 search records and
+zero missing local targets; Actor remains at three owners and three
+expressions. Edge verifies the route at 390 pixels without overflow. This is
+mechanics evidence only. See `POINTER-ENTRY-EXPANSION-03-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-03-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 04
+
+Plan review: preserve all 20-label predecessor increments and add 20 exact
+labels spanning alternatives, change, evidence interpretation, relations,
+physical quantities, risk, and work. Defer generic `point` and `type`, retain
+the `reference` path-collision exclusion, and stop before morphology,
+synonyms, automatic extraction, search integration, relations, or canonical
+promotion. Nine roles approve with zero P1/P2 finding. See
+`POINTER-ENTRY-EXPANSION-04-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-04-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-56` reaches 100 Pointer Entries from 1,744 exact
+expressions and 1,408 label-to-owner bindings. Every added label appears in
+6-9 owning Tables. Relation and mechanism pages create no semantic edges. The
+complete 353-page site retains 191 search records and zero missing local
+targets; Actor remains stable. Edge verifies the route at 390 pixels without
+overflow. This is mechanics evidence only. See
+`POINTER-ENTRY-EXPANSION-04-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-04-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 05
+
+Plan review: preserve the 20-label predecessor sequence and add 20 exact labels
+spanning evaluation, quantity structure, interfaces, interpretation, evidence
+support, timing, and transfer. Defer low-reuse `exclusion` and domain-specific
+`temperature`; retain generic, morphological, and path-collision exclusions.
+Stop before automatic extraction, morphology, synonyms, search integration,
+relations, or canonical promotion. Nine roles approve with zero P1/P2
+finding. See `POINTER-ENTRY-EXPANSION-05-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-05-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-57` generates 120 Pointer Entries from 1,899 exact
+expressions and 1,535 label-to-owner bindings. Every added label appears in
+5-9 owning Tables. The complete 373-page site retains 191 search records and
+zero missing local targets; Actor remains stable. Edge verifies the route at
+390 pixels without overflow. This is mechanics evidence only. See
+`POINTER-ENTRY-EXPANSION-05-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-05-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 06
+
+Plan review: preserve all predecessor editions, add 20 exact labels spanning
+monitoring, obligation, response, transition, validation, and verification,
+and replace full-registry copying with a fail-closed same-directory delta over
+V5. Registry extension composes rows only and creates no concept inheritance.
+Stop before automatic extraction, morphology, synonyms, search integration,
+relations, or canonical promotion. Nine roles approve with zero P1/P2
+finding. See `POINTER-ENTRY-EXPANSION-06-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-06-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-58` generates 140 Pointer Entries from 2,051 exact
+expressions and 1,648 label-to-owner bindings. Every added label appears in
+4-7 owning Tables. The V6 delta contains one exact base and 20 rows; missing
+bases, cycles, duplicates, count drift, and zero-use rows fail closed. The
+complete 393-page site retains 191 search records and zero missing local
+targets; Actor remains stable. Edge verifies the route at 390 pixels without
+overflow. This is mechanics evidence only. See
+`POINTER-ENTRY-EXPANSION-06-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-06-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 07
+
+Plan review: add a second 20-row delta over V6 for allocation, shortage,
+assessment, correlation, lifecycle, requirements, semantics, physical
+quantities, and transport. Defer generic order, message, and property. Keep
+correlation explicitly non-causal and stop before automatic admission,
+morphology, synonyms, search integration, relations, or canonical promotion.
+Nine roles approve with zero P1/P2 finding. See
+`POINTER-ENTRY-EXPANSION-07-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-07-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-59` generates 160 Pointer Entries from 2,187 exact
+expressions and 1,756 label-to-owner bindings. Every added label appears in
+5-10 owning Tables. The complete 413-page site retains 191 search records and
+zero missing local targets; Actor remains stable. Edge verifies the route at
+390 pixels without overflow. This is mechanics evidence only. See
+`POINTER-ENTRY-EXPANSION-07-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-07-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 08
+
+Plan review: add a 20-row delta over V7 for control, governance, sampling,
+indicators, thresholds, tolerances, causal comparison, flow, resistance, and
+quantitative structure. Exclude adjectival `spatial` and retain all prior
+admission boundaries. Stop before automatic admission, morphology, synonyms,
+search integration, relations, or canonical promotion. Nine roles approve
+with zero P1/P2 finding. See `POINTER-ENTRY-EXPANSION-08-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-08-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-60` generates 180 Pointer Entries from 2,322 exact
+expressions and 1,840 label-to-owner bindings. Every added label appears in
+4-5 owning Tables. Counterfactual remains comparison structure, not causal
+proof. The complete 433-page site retains 191 search records and zero missing
+local targets; Actor remains stable. Edge verifies the route at 390 pixels
+without overflow. This is mechanics evidence only. See
+`POINTER-ENTRY-EXPANSION-08-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-08-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 09
+
+Plan review: add a 20-row delta over V8 for access, audit, compliance,
+eligibility, diagnostics, recovery, estimation, probability, procedure,
+implementation, and material composition. Defer generic `order` and `index`,
+singular/plural duplicates, and domain-specific `temperature`. Stop before
+automatic admission, morphology, synonyms, search integration, relations, or
+canonical promotion. Nine roles approve with zero P1/P2 finding. See
+`POINTER-ENTRY-EXPANSION-09-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-09-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-61` generates 200 Pointer Entries from 2,433 exact
+expressions and 1,930 label-to-owner bindings. Every added label appears in
+3-7 owning Tables. Probability remains model- and context-bound. The complete
+453-page site retains 191 search records and zero missing local targets; Actor
+remains stable. Edge verifies the route at 390 pixels without overflow. This
+is mechanics evidence only. See `POINTER-ENTRY-EXPANSION-09-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-09-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 10
+
+Plan review: add a 20-row delta over V9 for evaluation and evidence frames,
+decomposition and combination contracts, scheduling, enforcement, causal
+attribution, generalization, signals, tests, and mathematical accumulation.
+Defer generic `order`, `point`, and `type`, status or syntax artifacts, and
+morphological duplicates. Stop before automatic admission, morphology,
+synonyms, search integration, relations, or canonical promotion. Nine roles
+approve with zero P1/P2 finding. See
+`POINTER-ENTRY-EXPANSION-10-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-10-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-62` generates 220 Pointer Entries from 2,547 exact
+expressions and 2,018 label-to-owner bindings. Every added label appears in
+3-7 owning Tables. Causal-attribution remains a claim structure, not causal
+proof. The complete 473-page site retains 191 search records and zero missing
+local targets; Actor remains stable. Edge verifies the route at 390 pixels
+without overflow. This is mechanics evidence only. See
+`POINTER-ENTRY-EXPANSION-10-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-10-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 11
+
+Plan review: add a 20-row delta over V10 for causal claim components,
+choreography and orchestration, workflow and milestones, iteration,
+configuration, missingness, noise, nonconformity, transactions, translation,
+and quantitative context. Defer generic `order`, `point`, and `type`, status
+or syntax artifacts, and morphological duplicates. Stop before automatic
+admission, morphology, synonyms, search integration, relations, or canonical
+promotion. Nine roles approve with zero P1/P2 finding. See
+`POINTER-ENTRY-EXPANSION-11-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-11-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-63` generates 240 Pointer Entries from 2,642 exact
+expressions and 2,085 label-to-owner bindings. Every added label appears in
+2-6 owning Tables. Causal-effect and Causal-mechanism remain claim components,
+not causal proof. The complete 493-page site retains 191 search records and
+zero missing local targets; Actor remains stable. Edge verifies the route at
+390 pixels without overflow. This is mechanics evidence only. See
+`POINTER-ENTRY-EXPANSION-11-RESULT.md` and
+`signals/roles/check/pointer-entry-expansion-11-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Pointer Entry expansion 12 and closeout
+
+Plan review: add a final 10-row delta over V11 for arithmetic mean,
+evaluation scale, fraction, geometry, magnitude, mathematical function,
+median, parameter, responsibility, and specification. Keep the 250 generated
+Pointer Entry total separate from the R5 approximately 250 canonical Table
+goal. Defer remaining generic, morphological, status, syntax, path-like, and
+sparse candidates pending a new editorial trigger. Nine roles approve with
+zero P1/P2 finding. See `POINTER-ENTRY-EXPANSION-12-PLAN.md` and
+`POINTER-ENTRY-EXPANSION-12-PLAN-ROLE-REVIEW.md`.
+
+Result review: `sim-64` generates 250 Pointer Entries from 2,681 exact
+expressions and 2,118 label-to-owner bindings. Every added label appears in
+3-4 owning Tables. The complete 503-page site retains 191 search records and
+zero missing local targets; Actor remains stable. Edge verifies the route at
+390 pixels without overflow. The reviewed expansion sequence is closed; this
+is mechanics evidence only and not R5 completion. See
+`POINTER-ENTRY-EXPANSION-12-RESULT.md`,
+`POINTER-ENTRY-CONCORDANCE-CLOSEOUT.md`, and
+`signals/roles/check/pointer-entry-expansion-12-roles-check-2026-08-18.md`.

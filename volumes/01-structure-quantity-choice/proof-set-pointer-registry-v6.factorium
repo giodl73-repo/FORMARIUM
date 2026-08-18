@@ -1,0 +1,23 @@
+factorium-pointer-registry-delta-v0
+extends proof-set-pointer-registry-v5.factorium
+pointer baseline | Baseline | a structural label for the declared starting state, comparator, or reference condition
+pointer channel | Channel | a structural label for a route through which material, information, influence, or action passes
+pointer compatibility | Compatibility | a structural label for whether subjects can coexist, interoperate, or satisfy a shared contract
+pointer concurrency | Concurrency | a structural label for overlapping activity, access, or execution under coordination constraints
+pointer feasibility | Feasibility | a structural label for whether a candidate can satisfy requirements under available conditions
+pointer field | Field | a structural label for a spatially or structurally distributed value, influence, or record component
+pointer frequency | Frequency | a structural label for occurrence count, cycles, or updates per a declared interval
+pointer membership | Membership | a structural label for inclusion in a set, organization, class, or composition
+pointer monitoring | Monitoring | a structural label for repeated observation of indicators, states, events, or thresholds
+pointer obligation | Obligation | a structural label for required conduct or result under an authority and scope
+pointer position | Position | a structural label for location, ordered placement, or organization-defined work slot
+pointer response | Response | a structural label for a reaction, action, output, or disposition following a condition or signal
+pointer selection | Selection | a structural label for choosing one or more candidates under criteria and authority
+pointer service | Service | a structural label for provided behavior or capability under a boundary and commitment
+pointer score | Score | a structural label for an assigned result on a declared scale, rule, and evidence basis
+pointer transition | Transition | a structural label for movement between states, phases, versions, or lifecycle stages
+pointer trigger | Trigger | a structural label for a condition or event that initiates an action, transition, or review
+pointer validation | Validation | a structural label for evidence that a subject is suitable for an intended use
+pointer verification | Verification | a structural label for evidence that a subject satisfies specified requirements
+pointer intervention | Intervention | a structural label for an intentional action intended to alter a state, process, or outcome
+end-factorium-pointer-registry

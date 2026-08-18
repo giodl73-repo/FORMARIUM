@@ -1,0 +1,23 @@
+factorium-pointer-registry-v0
+pointer action | Action | a structural label for what an actor, system, or process does or attempts
+pointer actor | Actor | a structural label for a participant associated with an action
+pointer authority | Authority | a structural label for the source or scope of a legitimate decision or action right
+pointer boundary | Boundary | a structural label for the declared inclusion, exclusion, or interface limit of a subject
+pointer capability | Capability | a structural label for an ability available to a participant or system in context
+pointer condition | Condition | a structural label for a circumstance under which a structure, rule, or result applies
+pointer consequence | Consequence | a structural label for an effect or disposition associated with a condition or action
+pointer constraint | Constraint | a structural label for a condition that limits admissible structures, states, or choices
+pointer context | Context | a structural label for the surrounding frame in which meaning or validity is evaluated
+pointer environment | Environment | a structural label for external surroundings relevant to a bounded subject
+pointer identity | Identity | a structural label for how a subject is distinguished and followed across a declared scope
+pointer instrument | Instrument | a structural label for a means used to perform, mediate, or record an action
+pointer method | Method | a structural label for a declared way of observing, transforming, evaluating, or deciding
+pointer object | Object | a structural label for a participant or subject toward which an action is directed
+pointer operation | Operation | a structural label for a selected transformation or requested action
+pointer outcome | Outcome | a structural label for an intended or realized result over a declared horizon
+pointer purpose | Purpose | a structural label for the reason, beneficiary, or desired result organizing a view
+pointer recipient | Recipient | a structural label for a participant receiving an object, message, effect, or action
+pointer state | State | a structural label for selected properties of a subject at a declared time and frame
+pointer subject | Subject | a structural label for the entity, system, population, or claim-bearer being considered
+end-factorium-pointer-registry
+

@@ -36,10 +36,21 @@ factors, and 100 views. It preserves every V1 record and adds the reviewed
 Optimization Problem Structure, Prototype/Test/Iteration, and
 Contribution/Credit/Priority/Legacy views. The eleven-record V0 relation
 sidecar is unchanged; `reference/factorium-assurance-v2.factorium` provides
-165 exact review bindings. `sim-50` is the current internal book/search/site
-projection. V2 is not frozen by this integration and remains open to later
-reviewed additions. V0, V1, V0-bound Composition Queries, `sim-48`, and
-`sim-49` remain historical baselines; no reader evidence is claimed.
+165 exact review bindings. `sim-64` is the current internal book/search/site
+projection. It closes the current generated Pointer Entry concordance at 250
+explicit labels, 2,681 exact structural expressions, and 2,118 label-to-owner
+bindings
+while keeping canonical entries, search, the Reader sequence, and interchange
+unchanged. `sim-52` through `sim-63` remain preserved; `sim-64` adds a final
+10-label closeout. `sim-58` introduced same-directory, cycle-checked delta
+composition. Further pointer admission requires a new census and editorial
+trigger. The 250-pointer count is not the R5 canonical Table goal. The naming
+decision is paused: `sim-64`
+uses Factorium, while `sim-51` remains the reversible Tabula Facta identity
+snapshot and `sim-50` remains the pre-name-preview rolling V2 projection. V2
+is not frozen and remains open to later reviewed additions. V0, V1, V0-bound
+Composition Queries, `sim-48`, and `sim-49` remain historical baselines; no
+reader evidence is claimed.
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor

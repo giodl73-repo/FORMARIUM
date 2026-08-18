@@ -1,0 +1,23 @@
+factorium-pointer-registry-delta-v0
+extends proof-set-pointer-registry-v10.factorium
+pointer causal-effect | Causal-effect | a structural label for an outcome difference attributed to a cause under explicit contrast and identification assumptions
+pointer causal-mechanism | Causal-mechanism | a structural label for a proposed pathway connecting a cause or intervention to an outcome
+pointer choice | Choice | a structural label for an authorized selection among alternatives under criteria and constraints
+pointer choreography | Choreography | a structural label for decentralized coordination through participant-visible interaction rules
+pointer commitment | Commitment | a structural label for an accepted obligation, reserved capacity, or promised future action
+pointer configuration | Configuration | a structural label for the identified arrangement and settings of a system at a time
+pointer estimand | Estimand | a structural label for the exact target quantity an analysis is intended to estimate
+pointer iteration | Iteration | a structural label for a repeated learning or execution cycle with a declared update rule
+pointer milestone | Milestone | a structural label for a significant planned state or completion checkpoint
+pointer missingness | Missingness | a structural label for absent observations under a declared pattern, mechanism, and handling rule
+pointer noise | Noise | a structural label for unwanted or unexplained variation relative to a signal and task
+pointer nonconformity | Nonconformity | a structural label for failure to satisfy a specified requirement or criterion
+pointer orchestration | Orchestration | a structural label for directed coordination by a controller, plan, or workflow owner
+pointer shape | Shape | a structural label for geometric or distributional form under a declared representation
+pointer temperature | Temperature | a structural label for thermal state under a scale, measurement context, and system boundary
+pointer transaction | Transaction | a structural label for an identified exchange or state change with parties, terms, and records
+pointer translation | Translation | a structural label for transformation between forms or languages while preserving declared meaning
+pointer weight | Weight | a structural label for assigned relative influence or gravitational force as fixed by context
+pointer window | Window | a structural label for a bounded interval used for observation, control, evaluation, or action
+pointer workflow | Workflow | a structural label for coordinated activities, dependencies, roles, and completion conditions
+end-factorium-pointer-registry

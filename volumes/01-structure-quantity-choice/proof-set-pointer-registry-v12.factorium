@@ -1,0 +1,13 @@
+factorium-pointer-registry-delta-v0
+extends proof-set-pointer-registry-v11.factorium
+pointer arithmetic-mean | Arithmetic-mean | a structural label for a sum divided by a declared count with population and inclusion rules
+pointer evaluation-scale | Evaluation-scale | a structural label for the ordered or categorized values used to express an evaluation
+pointer fraction | Fraction | a structural label for a part-to-whole or quotient expression under a declared numerator and denominator
+pointer geometry | Geometry | a structural label for spatial structure under declared points, dimensions, topology, metric, and frame
+pointer magnitude | Magnitude | a structural label for the size of a scalar or vector quantity under a unit and convention
+pointer mathematical-function | Mathematical-function | a structural label for a mapping from each admitted input to an output under a declared domain and codomain
+pointer median | Median | a structural label for an order statistic dividing an ordered population under a declared convention
+pointer parameter | Parameter | a structural label for a fixed or varied quantity indexing a model, family, distribution, or path
+pointer responsibility | Responsibility | a structural label for assigned work or answerability bounded by role, authority, and context
+pointer specification | Specification | a structural label for an authoritative statement of required properties, behavior, interfaces, or constraints
+end-factorium-pointer-registry

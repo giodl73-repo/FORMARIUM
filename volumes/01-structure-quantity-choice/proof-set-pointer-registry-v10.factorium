@@ -1,0 +1,23 @@
+factorium-pointer-registry-delta-v0
+extends proof-set-pointer-registry-v9.factorium
+pointer accumulation | Accumulation | a structural label for quantity, effects, evidence, or work collected across a declared interval or boundary
+pointer average | Average | a structural label for a representative value whose population, weighting, and aggregation rule are declared
+pointer causal-attribution | Causal-attribution | a structural label for assigning an observed outcome to a candidate cause under explicit evidence and alternatives
+pointer combination-contract | Combination-contract | a structural label for rules governing how separated factors may be recombined
+pointer completeness-contract | Completeness-contract | a structural label for the declared conditions under which a factorization is complete enough for its use
+pointer convergence | Convergence | a structural label for approach toward a limit, stable state, agreement, or completion criterion
+pointer deadline | Deadline | a structural label for a latest permitted or required completion time
+pointer decomposition-mode | Decomposition-mode | a structural label for the rule by which a subject is separated into factors
+pointer derivative | Derivative | a structural label for a rate of change with respect to a declared variable and limiting convention
+pointer enforcement | Enforcement | a structural label for mechanisms that apply, compel, or remediate compliance with a rule
+pointer evaluation-frame | Evaluation-frame | a structural label for the subject, purpose, population, context, time, and version bounding an evaluation
+pointer evidence-item | Evidence-item | a structural label for an identified artifact, observation, result, or record offered in support of a claim
+pointer generalization | Generalization | a structural label for extending a finding beyond observed cases under declared population and transfer assumptions
+pointer integral | Integral | a structural label for accumulated quantity under a domain, measure, integrand, and convention
+pointer operational-resource | Operational-resource | a structural label for a resource whose availability and capability support an activity or outcome
+pointer product | Product | a structural label for a multiplication result, produced output, or reaction constituent as fixed by context
+pointer region | Region | a structural label for a bounded spatial, operational, or analytical portion of a larger domain
+pointer schedule | Schedule | a structural label for planned activities, dependencies, milestones, and timing constraints
+pointer signal | Signal | a structural label for observable variation carrying information through a declared channel
+pointer test | Test | a structural label for a procedure that applies conditions and evaluates observations against criteria
+end-factorium-pointer-registry

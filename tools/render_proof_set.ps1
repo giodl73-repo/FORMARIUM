@@ -1,11 +1,49 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48", "sim-49", "sim-50")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48", "sim-49", "sim-50", "sim-51", "sim-52", "sim-53", "sim-54", "sim-55", "sim-56", "sim-57", "sim-58", "sim-59", "sim-60", "sim-61", "sim-62", "sim-63", "sim-64")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
 
 $ErrorActionPreference = "Stop"
 $editionNumber = [int]$Edition.Substring(4)
+
+function Get-PointerRegistryRows {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$RegistryPath,
+        [System.Collections.Generic.HashSet[string]]$Visited = $null
+    )
+
+    if ($null -eq $Visited) {
+        $Visited = [System.Collections.Generic.HashSet[string]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+    }
+    $resolvedRegistry = (Resolve-Path -LiteralPath $RegistryPath).Path
+    if (-not $Visited.Add($resolvedRegistry)) {
+        throw "Pointer registry inheritance cycle: $resolvedRegistry"
+    }
+    $registryLines = @((Get-Content -LiteralPath $resolvedRegistry -Raw).TrimEnd() -split '\r?\n')
+    if ($registryLines.Count -lt 3 -or $registryLines[-1] -ne "end-factorium-pointer-registry") {
+        throw "Invalid pointer registry envelope: $resolvedRegistry"
+    }
+    if ($registryLines[0] -eq "factorium-pointer-registry-v0") {
+        return @($registryLines[1..($registryLines.Count - 2)])
+    }
+    if ($registryLines[0] -ne "factorium-pointer-registry-delta-v0" -or $registryLines.Count -lt 4) {
+        throw "Invalid pointer registry header: $resolvedRegistry"
+    }
+    $extendsMatch = [regex]::Match(
+        $registryLines[1],
+        '^extends (proof-set-pointer-registry(?:-v[0-9]+)?\.factorium)$'
+    )
+    if (-not $extendsMatch.Success) {
+        throw "Invalid pointer registry extension: $resolvedRegistry"
+    }
+    $baseRegistry = Join-Path (Split-Path $resolvedRegistry) $extendsMatch.Groups[1].Value
+    $baseRows = @(Get-PointerRegistryRows -RegistryPath $baseRegistry -Visited $Visited)
+    return @($baseRows) + @($registryLines[2..($registryLines.Count - 2)])
+}
 
 $workspace = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $volume = Join-Path $workspace "volumes\01-structure-quantity-choice\VOLUME.md"
@@ -16,6 +54,59 @@ $v1Rubric = Join-Path $workspace "volumes\01-structure-quantity-choice\GPC-09-V1
 $v2Supplement = Join-Path $workspace "volumes\01-structure-quantity-choice\V2-ROLLING-SIM-SUPPLEMENT.md"
 $v2Tasks = Join-Path $workspace "volumes\01-structure-quantity-choice\V2-ROLLING-SIM-TASKS.md"
 $v2Rubric = Join-Path $workspace "volumes\01-structure-quantity-choice\V2-ROLLING-SIM-RUBRIC.md"
+$pointerRegistryV0 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry.factorium"
+$pointerRegistryV1 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v1.factorium"
+$pointerRegistryV2 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v2.factorium"
+$pointerRegistryV3 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v3.factorium"
+$pointerRegistryV4 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v4.factorium"
+$pointerRegistryV5 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v5.factorium"
+$pointerRegistryV6 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v6.factorium"
+$pointerRegistryV7 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v7.factorium"
+$pointerRegistryV8 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v8.factorium"
+$pointerRegistryV9 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v9.factorium"
+$pointerRegistryV10 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v10.factorium"
+$pointerRegistryV11 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v11.factorium"
+$pointerRegistryV12 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v12.factorium"
+$pointerRegistry = if ($editionNumber -ge 64) {
+    $pointerRegistryV12
+}
+elseif ($editionNumber -ge 63) {
+    $pointerRegistryV11
+}
+elseif ($editionNumber -ge 62) {
+    $pointerRegistryV10
+}
+elseif ($editionNumber -ge 61) {
+    $pointerRegistryV9
+}
+elseif ($editionNumber -ge 60) {
+    $pointerRegistryV8
+}
+elseif ($editionNumber -ge 59) {
+    $pointerRegistryV7
+}
+elseif ($editionNumber -ge 58) {
+    $pointerRegistryV6
+}
+elseif ($editionNumber -ge 57) {
+    $pointerRegistryV5
+}
+elseif ($editionNumber -ge 56) {
+    $pointerRegistryV4
+}
+elseif ($editionNumber -ge 55) {
+    $pointerRegistryV3
+}
+elseif ($editionNumber -ge 54) {
+    $pointerRegistryV2
+}
+elseif ($editionNumber -ge 53) {
+    $pointerRegistryV1
+}
+else {
+    $pointerRegistryV0
+}
+$expectedPointerCount = if ($editionNumber -ge 64) { 250 } elseif ($editionNumber -ge 63) { 240 } elseif ($editionNumber -ge 62) { 220 } elseif ($editionNumber -ge 61) { 200 } elseif ($editionNumber -ge 60) { 180 } elseif ($editionNumber -ge 59) { 160 } elseif ($editionNumber -ge 58) { 140 } elseif ($editionNumber -ge 57) { 120 } elseif ($editionNumber -ge 56) { 100 } elseif ($editionNumber -ge 55) { 80 } elseif ($editionNumber -ge 54) { 60 } elseif ($editionNumber -ge 53) { 40 } else { 20 }
 $factorForgeTasks = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-TASKS.md"
 $factorForgeRubric = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-RUBRIC.md"
 $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-SET-SIM-QUICKSTART.md"
@@ -97,6 +188,8 @@ $tableFamilyContentsStyle = Join-Path $workspace "volumes\01-structure-quantity-
 $tablesIndexStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-tables-index.css"
 $readerRouteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader-route.css"
 $readerSequenceStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader-sequence.css"
+$pointerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointers.css"
+$pointerScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointers.js"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -185,6 +278,47 @@ $artifactTitle = switch ($Edition) {
     "sim-48" { "Factorium Scale Meaning Chooser Simulation 48" }
     "sim-49" { "Factorium Meaning and Custody V1 Integration Simulation 49" }
     "sim-50" { "Factorium Rolling V2 Content Integration Simulation 50" }
+    "sim-51" { "Tabula Facta Reversible Identity Preview Simulation 51" }
+    "sim-52" { "Factorium Pointer Entry Concordance Simulation 52" }
+    "sim-53" { "Factorium Pointer Entry Expansion Simulation 53" }
+    "sim-54" { "Factorium Pointer Entry Expansion Simulation 54" }
+    "sim-55" { "Factorium Pointer Entry Expansion Simulation 55" }
+    "sim-56" { "Factorium Pointer Entry Expansion Simulation 56" }
+    "sim-57" { "Factorium Pointer Entry Expansion Simulation 57" }
+    "sim-58" { "Factorium Pointer Entry Expansion Simulation 58" }
+    "sim-59" { "Factorium Pointer Entry Expansion Simulation 59" }
+    "sim-60" { "Factorium Pointer Entry Expansion Simulation 60" }
+    "sim-61" { "Factorium Pointer Entry Expansion Simulation 61" }
+    "sim-62" { "Factorium Pointer Entry Expansion Simulation 62" }
+    "sim-63" { "Factorium Pointer Entry Expansion Simulation 63" }
+    "sim-64" { "Factorium Pointer Entry Concordance Closeout Simulation 64" }
+}
+
+$identityPreview = $editionNumber -eq 51
+$publicationName = if ($identityPreview) { "Tabula Facta" } else { "Factorium" }
+$tablesPublicationName = if ($identityPreview) { "Tabula Facta" } else { "Factorium Tables" }
+$siteBrand = if ($identityPreview) {
+    'Tabula Facta <span class="identity-candidate">candidate</span>'
+}
+else {
+    'Factorium'
+}
+$identityPreviewStyle = if ($identityPreview) {
+    @'
+<style>
+.identity-candidate{display:inline-block;margin-left:.45rem;padding:.12rem .4rem;border:1px solid currentColor;border-radius:999px;font:600 .62rem/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;vertical-align:.15rem}
+.identity-preview{margin:0;padding:.7rem max(1rem,calc((100vw - 72rem)/2));background:#f4ead7;border-bottom:1px solid #ceb98e;color:#493b25;font:600 .78rem/1.4 system-ui,sans-serif;letter-spacing:.025em;text-align:center}
+</style>
+'@
+}
+else {
+    ''
+}
+$identityPreviewBanner = if ($identityPreview) {
+    '<aside class="identity-preview" aria-label="Candidate identity status">Identity preview - <strong>Tabula Facta</strong> is a candidate name for Factorium Tables, not a locked rename.</aside>'
+}
+else {
+    ''
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -1718,10 +1852,16 @@ if ($editionNumber -ge 7) {
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
     $siteTablesIndex = if ($editionNumber -ge 35) { Join-Path $output "tables.html" } else { $null }
     $siteReader = if ($editionNumber -ge 36) { Join-Path $output "reader.html" } else { $null }
+    $sitePointerIndex = if ($editionNumber -ge 52) { Join-Path $output "terms.html" } else { $null }
     $siteEntryDirectory = Join-Path $output "entries"
     $siteChapterDirectory = Join-Path $output "chapters"
+    $sitePointerDirectory = Join-Path $output "pointers"
     $siteAssetDirectory = Join-Path $output "assets"
-    New-Item -ItemType Directory -Force -Path $siteEntryDirectory, $siteChapterDirectory, $siteAssetDirectory | Out-Null
+    $siteDirectories = @($siteEntryDirectory, $siteChapterDirectory, $siteAssetDirectory)
+    if ($editionNumber -ge 52) {
+        $siteDirectories += $sitePointerDirectory
+    }
+    New-Item -ItemType Directory -Force -Path $siteDirectories | Out-Null
 
     $pageBySource = [System.Collections.Generic.Dictionary[string, string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
@@ -1761,6 +1901,112 @@ if ($editionNumber -ge 7) {
         $searchRecord = $searchRecords[$recordIndex]
         $searchRecordByPath[$searchRecord.path] = $searchRecord
         $searchRecordIndexByPath[$searchRecord.path] = $recordIndex
+    }
+
+    $pointerRecords = [System.Collections.Generic.List[object]]::new()
+    $pointerByTerm = [System.Collections.Generic.Dictionary[string, object]]::new(
+        [System.StringComparer]::OrdinalIgnoreCase
+    )
+    $pointerOccurrenceCount = 0
+    $pointerOwnerCount = 0
+    $pointerClientJson = "[]"
+    if ($editionNumber -ge 52) {
+        if (-not (Test-Path -LiteralPath $pointerRegistry -PathType Leaf)) {
+            throw "Missing pointer registry: $pointerRegistry"
+        }
+        $pointerLines = @(Get-PointerRegistryRows -RegistryPath $pointerRegistry)
+        $pointerSlugs = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+        foreach ($pointerLine in $pointerLines) {
+            $pointerMatch = [regex]::Match($pointerLine, '^pointer ([a-z0-9]+(?:-[a-z0-9]+)*) \| ([^|]+) \| (.+)$')
+            if (-not $pointerMatch.Success) {
+                throw "Invalid pointer registry row: $pointerLine"
+            }
+            $pointerSlug = $pointerMatch.Groups[1].Value
+            $pointerLabel = $pointerMatch.Groups[2].Value.Trim()
+            $pointerTerm = $pointerLabel.ToLowerInvariant()
+            if (-not $pointerSlugs.Add($pointerSlug) -or $pointerByTerm.ContainsKey($pointerTerm)) {
+                throw "Duplicate pointer identity: $pointerSlug/$pointerTerm"
+            }
+            $pointerRecord = [ordered]@{
+                slug = $pointerSlug
+                label = $pointerLabel
+                term = $pointerTerm
+                orientation = $pointerMatch.Groups[3].Value.Trim()
+                occurrences = [System.Collections.Generic.List[object]]::new()
+                occurrenceKeys = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+            }
+            $pointerRecords.Add($pointerRecord)
+            $pointerByTerm[$pointerTerm] = $pointerRecord
+        }
+        if ($pointerRecords.Count -ne $expectedPointerCount) {
+            throw "Pointer registry count mismatch: $($pointerRecords.Count)"
+        }
+
+        $pointerPatternParts = @($pointerRecords | Sort-Object { $_.term.Length } -Descending | ForEach-Object {
+            [regex]::Escape($_.term)
+        })
+        $pointerTokenPattern = '(?i)(?<![a-z0-9-])(' + ($pointerPatternParts -join '|') + ')(?![a-z0-9-])'
+        foreach ($source in $sources) {
+            $relativeSource = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
+            if (-not $relativeSource.StartsWith("tables/", [System.StringComparison]::OrdinalIgnoreCase) -or
+                -not $searchRecordByPath.ContainsKey($relativeSource)) {
+                continue
+            }
+            $segment = $renderedSegmentBySource[$source]
+            foreach ($codeMatch in [regex]::Matches($segment, '(?s)<code>(.*?)</code>')) {
+                $codeHtml = $codeMatch.Groups[1].Value
+                $expression = [System.Net.WebUtility]::HtmlDecode(
+                    [regex]::Replace($codeHtml, '<[^>]+>', '')
+                ).Trim()
+                $matchedTerms = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+                foreach ($termMatch in [regex]::Matches($expression, $pointerTokenPattern)) {
+                    [void]$matchedTerms.Add($termMatch.Groups[1].Value.ToLowerInvariant())
+                }
+                foreach ($matchedTerm in $matchedTerms) {
+                    $matchedPointer = $pointerByTerm[$matchedTerm]
+                    $occurrenceKey = "$relativeSource|$expression"
+                    if ($matchedPointer.occurrenceKeys.Add($occurrenceKey)) {
+                        $matchedPointer.occurrences.Add([ordered]@{
+                            path = $relativeSource
+                            title = $searchRecordByPath[$relativeSource].title
+                            page = $pageBySource[$source]
+                            anchor = $headingBySource[$source]
+                            expression = $expression
+                        })
+                    }
+                }
+            }
+            $segment = [regex]::Replace(
+                $segment,
+                '(?s)<code>(.*?)</code>',
+                {
+                    param($codeMatch)
+
+                    $codeHtml = $codeMatch.Groups[1].Value
+                    $linkedCode = [regex]::Replace(
+                        $codeHtml,
+                        $pointerTokenPattern,
+                        {
+                            param($termMatch)
+                            $pointerRecord = $pointerByTerm[$termMatch.Groups[1].Value.ToLowerInvariant()]
+                            return '<a class="pointer-link" href="../pointers/' + $pointerRecord.slug + '.html">' + $termMatch.Groups[1].Value + '</a>'
+                        }
+                    )
+                    return '<code>' + $linkedCode + '</code>'
+                }
+            )
+            $renderedSegmentBySource[$source] = $segment
+        }
+        foreach ($pointerRecord in $pointerRecords) {
+            if ($pointerRecord.occurrences.Count -eq 0) {
+                throw "Registered pointer has no structural occurrence: $($pointerRecord.slug)"
+            }
+            $pointerOccurrenceCount += $pointerRecord.occurrences.Count
+            $pointerOwnerCount += @($pointerRecord.occurrences.path | Sort-Object -Unique).Count
+        }
+        $pointerClientJson = @($pointerRecords | ForEach-Object {
+            [ordered]@{ term = $_.term; slug = $_.slug }
+        }) | ConvertTo-Json -Compress
     }
 
     $siteChapters = [System.Collections.Generic.List[object]]::new()
@@ -1906,6 +2152,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 48) {
         $siteCssParts += (Get-Content -LiteralPath $scaleChooserStyle -Raw)
     }
+    if ($editionNumber -ge 52) {
+        $siteCssParts += (Get-Content -LiteralPath $pointerStyle -Raw)
+    }
     if ($editionNumber -ge 34) {
         $siteCssParts += (Get-Content -LiteralPath $tableFamilyContentsStyle -Raw)
     }
@@ -1949,6 +2198,13 @@ if ($editionNumber -ge 7) {
         [System.IO.File]::WriteAllText(
             (Join-Path $siteAssetDirectory "handoff.js"),
             (Get-Content -LiteralPath $handoffScript -Raw),
+            [System.Text.UTF8Encoding]::new($false)
+        )
+    }
+    if ($editionNumber -ge 52) {
+        [System.IO.File]::WriteAllText(
+            (Join-Path $siteAssetDirectory "pointers.js"),
+            (Get-Content -LiteralPath $pointerScript -Raw),
             [System.Text.UTF8Encoding]::new($false)
         )
     }
@@ -2558,6 +2814,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 22) {
         $siteData += "window.FACTORIUM_COMPOSITION_STARTERS=$compositionStartersJson;`n"
     }
+    if ($editionNumber -ge 52) {
+        $siteData += "window.FACTORIUM_POINTERS=$pointerClientJson;`n"
+    }
     [System.IO.File]::WriteAllText(
         (Join-Path $siteAssetDirectory "site-data.js"),
         $siteData,
@@ -2708,7 +2967,8 @@ if ($editionNumber -ge 7) {
 <div class="site-library__grid">
 <article class="site-book-card site-book-card--tables" data-book="tables">
 <p class="site-book-card__kind">Primary reference · dictionary and thesaurus</p>
-<h3>Factorium Tables</h3>
+<h3>$tablesPublicationName</h3>
+$(if ($identityPreview) { '<p><strong>Candidate name for Factorium Tables.</strong> The reference authority and records are unchanged.</p>' } else { '' })
 <p>Look up a concept, distinguish its senses, compare neighboring ideas, inspect factors and constraints, or move through the canonical concept graph.</p>
 <div class="site-book-card__actions"><a class="site-book-card__primary" href="#search">Search the Tables</a><a href="$(if ($editionNumber -ge 35) { 'tables.html' } else { '#contents' })">Browse the Tables</a></div>
 </article>
@@ -2736,7 +2996,7 @@ if ($editionNumber -ge 7) {
 <article><p class="site-intent__eyebrow">Work through a problem</p><h3>I have a question</h3><p>Choose explicit concepts and controls, inspect bounded closure, and keep unresolved work visible.</p><a href="compose.html">Open Compose <span aria-hidden="true">&rarr;</span></a></article>
 <article><p class="site-intent__eyebrow">Guided learning</p><h3>I want to learn or explore</h3><p>Follow the Reader's selected teaching route, then move into the owning Tables when you want depth.</p><a href="reader.html">Open the Reader <span aria-hidden="true">&rarr;</span></a></article>
 </div>
-<p class="site-intent__note">Not sure? Start with Search. These paths change navigation, not the authority: Factorium Tables remain canonical.</p>
+<p class="site-intent__note">Not sure? Start with Search. These paths change navigation, not the authority: Factor Tables remain canonical.</p>
 </section>
 "@
             }
@@ -3053,26 +3313,29 @@ if ($editionNumber -ge 7) {
     $quickstartPage = "entries/$($pageBySource[$quickstart])"
     $homeTablesIndexNav = if ($editionNumber -ge 35) { '<a href="tables.html">Index</a>' } else { '' }
     $nestedTablesIndexNav = if ($editionNumber -ge 35) { '<a href="../tables.html">Index</a>' } else { '' }
+    $homePointerNav = if ($editionNumber -ge 52) { '<a href="terms.html">Terms</a>' } else { '' }
+    $nestedPointerNav = if ($editionNumber -ge 52) { '<a href="../terms.html">Terms</a>' } else { '' }
     $homeHtml = @"
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="$(if ($editionNumber -ge 31) { 'A searchable Factorium Tables reference with an explanatory Reader companion.' } else { 'A searchable, table-first Factorium book simulation.' })">
-<title>Structure, Quantity, and Choice · Factorium</title>
+<meta name="description" content="$(if ($identityPreview) { 'A reversible Tabula Facta identity preview with The Factorium Reader.' } elseif ($editionNumber -ge 31) { 'A searchable Factorium Tables reference with an explanatory Reader companion.' } else { 'A searchable, table-first Factorium book simulation.' })">
+<title>Structure, Quantity, and Choice · $publicationName</title>
 <link rel="stylesheet" href="assets/site.css">
+$identityPreviewStyle
 </head>
 <body class="proof-site reader-ready">
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
-<a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$homeCandidateNav$homeProblemNav$homeComposeNav$homeTablesIndexNav$homeStartNav<a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
-</div></header>
+<a class="site-brand" href="index.html">$siteBrand</a>
+<nav class="site-nav" aria-label="Primary">$homeCandidateNav$homeProblemNav$homeComposeNav$homeTablesIndexNav$homePointerNav$homeStartNav<a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+</div></header>$identityPreviewBanner
 <main id="main-content" class="site-main">
 <section class="site-hero">
-<p class="site-kicker">$(if ($editionNumber -ge 31) { 'Two books · one canonical reference' } elseif ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
-<h1>$(if ($editionNumber -ge 31) { 'Factorium' } else { 'Structure, Quantity, and Choice' })</h1>
+<p class="site-kicker">$(if ($identityPreview) { 'Candidate identity · two books · one canonical reference' } elseif ($editionNumber -ge 31) { 'Two books · one canonical reference' } elseif ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
+<h1>$(if ($identityPreview) { 'Tabula Facta' } elseif ($editionNumber -ge 31) { 'Factorium' } else { 'Structure, Quantity, and Choice' })</h1>
 <p class="site-hero__deck">$heroDeck</p>
 </section>$intentSection$librarySection$candidateSection$problemSection$compositionSection
 <section id="start" class="site-start" aria-labelledby="site-start-heading">
@@ -3156,21 +3419,22 @@ $dualLookupScriptTag
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="An alphabetical index of canonical Factorium Table families.">
-<title>Factorium Tables A-Z · Factorium</title>
+<meta name="description" content="An alphabetical index of canonical Factor Table families in the $tablesPublicationName preview.">
+<title>$tablesPublicationName A-Z · $publicationName</title>
 <link rel="stylesheet" href="assets/site.css">
+$identityPreviewStyle
 </head>
 <body class="proof-site reader-ready tables-index-page">
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
-<a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="tables.html" aria-current="page">Tables</a><a href="$(if ($editionNumber -ge 36) { 'reader.html' } else { 'index.html#reader' })">Reader</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
-</div></header>
+<a class="site-brand" href="index.html">$siteBrand</a>
+<nav class="site-nav" aria-label="Primary"><a href="tables.html" aria-current="page">Tables</a><a href="$(if ($editionNumber -ge 36) { 'reader.html' } else { 'index.html#reader' })">Reader</a>$homePointerNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+</div></header>$identityPreviewBanner
 <main id="main-content" class="site-main tables-index">
-<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Factorium</a> / Tables A-Z</nav>
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Tables A-Z</nav>
 <section class="tables-index__heading">
-<p class="site-kicker">Primary reference · alphabetical browse</p>
-<h1>Factorium Tables A-Z</h1>
+<p class="site-kicker">Primary reference · alphabetical browse$(if ($identityPreview) { ' · candidate publication name' } else { '' })</p>
+<h1>$tablesPublicationName A-Z</h1>
 <p>Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and all $(if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }) exact specialized views.</p>
 <div class="tables-index__actions"><a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
 <p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
@@ -3304,24 +3568,25 @@ $dualLookupScriptTag
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The selected five-part teaching route through Factorium Tables.">
-<title>The Factorium Reader · Factorium</title>
+<meta name="description" content="The selected five-part teaching route through $tablesPublicationName.">
+<title>The Factorium Reader · $publicationName</title>
 <link rel="stylesheet" href="assets/site.css">
+$identityPreviewStyle
 </head>
 <body class="proof-site reader-ready reader-route-page">
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
-<a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html" aria-current="page">Reader</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$candidateQuickstartPage">Quickstart</a></nav>
-</div></header>
+<a class="site-brand" href="index.html">$siteBrand</a>
+<nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html" aria-current="page">Reader</a>$homePointerNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$candidateQuickstartPage">Quickstart</a></nav>
+</div></header>$identityPreviewBanner
 <main id="main-content" class="site-main reader-route">
-<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Factorium</a> / Reader</nav>
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Reader</nav>
 <section class="reader-route__heading">
 <p class="site-kicker">Teaching companion · selected route</p>
 <h1>The Factorium Reader</h1>
-<p>Learn one bounded method through 24 selected records in five parts, then return to the canonical Tables whenever the question needs more depth.</p>
+<p>Learn one bounded method through 24 selected records in five parts, then return to the canonical Factor Tables whenever the question needs more depth.</p>
 <div class="reader-route__actions">$readerPrimaryActions<a href="$candidateGuidePage">Read the complete method</a><a href="$candidateTasksPage">Try worked questions</a><a href="tables.html">Browse Tables A-Z</a></div>
-<p class="reader-route__boundary"><strong>Tables remain authoritative.</strong> This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other 151 records.</p>
+<p class="reader-route__boundary"><strong>Factor Tables remain authoritative.</strong> $(if ($identityPreview) { 'Tabula Facta is the candidate publication name; Factorium identities and source records are unchanged. ' } else { '' })This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other 151 records.</p>
 </section>
 <nav class="reader-route__parts" aria-label="Reader parts"><a href="#reader-part-1">I</a><a href="#reader-part-2">II</a><a href="#reader-part-3">III</a><a href="#reader-part-4">IV</a><a href="#reader-part-5">V</a></nav>
 <div class="reader-route__spine">$readerPartSections</div>
@@ -3348,14 +3613,15 @@ $dualLookupScriptTag
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A bounded local simulation of explicit typed composition closure.">
-<title>Bounded Composition Lab · Factorium</title>
+<title>Bounded Composition Lab · $publicationName</title>
 <link rel="stylesheet" href="assets/site.css">
+$identityPreviewStyle
 </head>
 <body class="proof-site lab-page">
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
-<a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary"><a href="index.html#problems">Problems</a><a href="compose.html" aria-current="page">Compose</a><a href="index.html#compose">Traces</a>$homeTablesIndexNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<a class="site-brand" href="index.html">$siteBrand</a>
+<nav class="site-nav" aria-label="Primary"><a href="index.html#problems">Problems</a><a href="compose.html" aria-current="page">Compose</a><a href="index.html#compose">Traces</a>$homeTablesIndexNav$homePointerNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main lab-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Structure, Quantity, and Choice</a> / Bounded Composition Lab</nav>
@@ -3769,14 +4035,15 @@ $dualLookupScriptTag
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>$encodedChapterTitle · Factorium</title>
+<title>$encodedChapterTitle · $publicationName</title>
 <link rel="stylesheet" href="../assets/site.css">
+$identityPreviewStyle
 </head>
 <body class="proof-site reader-ready">
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
-<a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedStartNav<a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+<a class="site-brand" href="../index.html">$siteBrand</a>
+<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedPointerNav$nestedStartNav<a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
@@ -3860,6 +4127,7 @@ $dualLookupScriptTag
 <script src="../assets/site-data.js"></script>
 <script src="../assets/reader.js"></script>
 <script src="../assets/context.js"></script>
+$(if ($editionNumber -ge 52) { '<script src="../assets/pointers.js"></script>' } else { '' })
 "@
             $sequenceIndex = $searchRecordIndexByPath[$relativeSource]
             $previousLink = "<span></span>"
@@ -4098,14 +4366,15 @@ $connectionList
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>$encodedPageTitle · Factorium</title>
+<title>$encodedPageTitle · $publicationName</title>
 <link rel="stylesheet" href="../assets/site.css">
+$identityPreviewStyle
 </head>
 <body class="proof-site">
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
-<a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedStartNav<a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+<a class="site-brand" href="../index.html">$siteBrand</a>
+<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedPointerNav$nestedStartNav<a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <div class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
@@ -4128,8 +4397,105 @@ $pageScripts
         [System.IO.File]::WriteAllText($pagePath, $pageHtml, [System.Text.UTF8Encoding]::new($false))
     }
 
+    if ($editionNumber -ge 52) {
+        $pointerIndexItems = [System.Text.StringBuilder]::new()
+        foreach ($pointerRecord in $pointerRecords | Sort-Object { $_.label.ToLowerInvariant() }) {
+            $pointerOwners = @($pointerRecord.occurrences.path | Sort-Object -Unique).Count
+            $encodedPointerLabel = [System.Net.WebUtility]::HtmlEncode($pointerRecord.label)
+            $encodedPointerOrientation = [System.Net.WebUtility]::HtmlEncode($pointerRecord.orientation)
+            [void]$pointerIndexItems.AppendLine(
+                "<li><a href=`"pointers/$($pointerRecord.slug).html`">$encodedPointerLabel</a><span>$pointerOwners owning Tables · $($pointerRecord.occurrences.Count) distinct structural expressions</span><p>$encodedPointerOrientation.</p></li>"
+            )
+
+            $ownerSections = [System.Text.StringBuilder]::new()
+            $pointerOwnerGroups = @($pointerRecord.occurrences | Group-Object -Property { $_.path } | Sort-Object Name)
+            foreach ($ownerGroup in $pointerOwnerGroups) {
+                $ownerOccurrences = @($ownerGroup.Group)
+                $owner = $ownerOccurrences[0]
+                $encodedOwnerTitle = [System.Net.WebUtility]::HtmlEncode($owner.title)
+                $encodedOwnerPath = [System.Net.WebUtility]::HtmlEncode($owner.path)
+                $expressionItems = [System.Text.StringBuilder]::new()
+                foreach ($occurrence in $ownerOccurrences | Sort-Object expression) {
+                    $encodedExpression = [System.Net.WebUtility]::HtmlEncode($occurrence.expression)
+                    [void]$expressionItems.AppendLine("<li><code>$encodedExpression</code></li>")
+                }
+                [void]$ownerSections.AppendLine(@"
+<section class="pointer-owner" data-source-path="$encodedOwnerPath">
+<h2><a href="../entries/$($owner.page)#$($owner.anchor)">$encodedOwnerTitle</a></h2>
+<p><code>$encodedOwnerPath</code></p>
+<ul>$expressionItems</ul>
+</section>
+"@)
+            }
+            $pointerPage = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A generated Factorium concordance for the structural label $encodedPointerLabel.">
+<title>$encodedPointerLabel · Pointer Entry · Factorium</title>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body class="proof-site pointer-page-shell">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="../index.html">Factorium</a>
+<nav class="site-nav" aria-label="Primary"><a href="../tables.html">Tables</a><a href="../reader.html">Reader</a><a href="../terms.html" aria-current="page">Terms</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a></nav>
+</div></header>
+<main id="main-content" class="site-main pointer-page">
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Factorium</a> / <a href="../terms.html">Pointer Entries</a> / $encodedPointerLabel</nav>
+<p class="site-kicker">Generated concordance · indexed leaf</p>
+<h1>$encodedPointerLabel</h1>
+<p>$encodedPointerOrientation.</p>
+<p class="pointer-page__counts">$pointerOwners owning Tables · $($pointerRecord.occurrences.Count) distinct structural expressions</p>
+<p class="pointer-page__boundary"><strong>Pointer, not canonical entry.</strong> This page reports exact structural occurrences in selected Tables. Frequency is not importance, one spelling is not one sense, and co-occurrence does not create synonymy, hierarchy, dependency, or another semantic relation.</p>
+<div class="pointer-page__owners">$ownerSections</div>
+</main>
+<footer class="site-footer">Generated from the $Edition pointer registry and selected Table expressions · not canonical authority</footer>
+</body>
+</html>
+"@
+            [System.IO.File]::WriteAllText(
+                (Join-Path $sitePointerDirectory "$($pointerRecord.slug).html"),
+                $pointerPage,
+                [System.Text.UTF8Encoding]::new($false)
+            )
+        }
+        $pointerIndexHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Generated concordance pages for admitted structural labels in Factorium Tables.">
+<title>Pointer Entries · Factorium</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="proof-site pointer-index-shell">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="index.html">Factorium</a>
+<nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="terms.html" aria-current="page">Terms</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a></nav>
+</div></header>
+<main id="main-content" class="site-main pointer-index">
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Factorium</a> / Pointer Entries</nav>
+<p class="site-kicker">Generated concordance · $($pointerRecords.Count) admitted labels</p>
+<h1>Pointer Entries</h1>
+<p>Follow a repeated structural label to every exact code expression and owning Table in this edition.</p>
+<p class="pointer-index__boundary"><strong>Navigation layer, not a third book.</strong> Pointer Entries are not canonical definitions, senses, relations, or evidence of importance. They remain outside Tables A-Z and the Reader sequence.</p>
+<ol class="pointer-grid">$pointerIndexItems</ol>
+</main>
+<footer class="site-footer">Internal deterministic simulation · not reader evidence or canonical authority</footer>
+</body>
+</html>
+"@
+        [System.IO.File]::WriteAllText($sitePointerIndex, $pointerIndexHtml, [System.Text.UTF8Encoding]::new($false))
+    }
+
     $actualChapterFiles = @(Get-ChildItem -LiteralPath $siteChapterDirectory -Filter "*.html")
     $actualEntryFiles = @(Get-ChildItem -LiteralPath $siteEntryDirectory -Filter "*.html")
+    $actualPointerFiles = @(if ($editionNumber -ge 52) { Get-ChildItem -LiteralPath $sitePointerDirectory -Filter "*.html" })
     $expectedAssetNames = @("context.js", "reader.js", "search.js", "site-data.js", "site.css")
     if ($editionNumber -ge 16) {
         $expectedAssetNames += "composition-lab.js"
@@ -4173,20 +4539,26 @@ $pageScripts
     if ($editionNumber -ge 45) {
         $expectedAssetNames += "dual-lookup.js"
     }
+    if ($editionNumber -ge 52) {
+        $expectedAssetNames += "pointers.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
     if ($actualChapterFiles.Count -ne $siteChapters.Count -or
         $actualEntryFiles.Count -ne $sources.Count -or
+        ($editionNumber -ge 52 -and $actualPointerFiles.Count -ne $pointerRecords.Count) -or
         $unexpectedAssetNames.Count -ne 0 -or $missingAssetNames.Count -ne 0) {
-        throw "Stale or incomplete site output: chapters=$($actualChapterFiles.Count)/$($siteChapters.Count) entries=$($actualEntryFiles.Count)/$($sources.Count) unexpected-assets=$($unexpectedAssetNames -join ',') missing-assets=$($missingAssetNames -join ',')"
+        throw "Stale or incomplete site output: chapters=$($actualChapterFiles.Count)/$($siteChapters.Count) entries=$($actualEntryFiles.Count)/$($sources.Count) pointers=$($actualPointerFiles.Count)/$($pointerRecords.Count) unexpected-assets=$($unexpectedAssetNames -join ',') missing-assets=$($missingAssetNames -join ',')"
     }
     $siteHtmlFiles = @($siteIndex) +
         @(if ($editionNumber -ge 35) { $siteTablesIndex }) +
         @(if ($editionNumber -ge 36) { $siteReader }) +
+        @(if ($editionNumber -ge 52) { $sitePointerIndex }) +
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @($actualChapterFiles | ForEach-Object { $_.FullName }) +
-        @($actualEntryFiles | ForEach-Object { $_.FullName })
+        @($actualEntryFiles | ForEach-Object { $_.FullName }) +
+        @($actualPointerFiles | ForEach-Object { $_.FullName })
     $handoffNotePages = 0
     if ($editionNumber -ge 44) {
         $handoffSection = @"
@@ -4266,9 +4638,11 @@ $pageScripts
     $siteOutputFiles = @($siteIndex) +
         @(if ($editionNumber -ge 35) { $siteTablesIndex }) +
         @(if ($editionNumber -ge 36) { $siteReader }) +
+        @(if ($editionNumber -ge 52) { $sitePointerIndex }) +
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @(Get-ChildItem -LiteralPath $siteChapterDirectory -File | ForEach-Object { $_.FullName }) +
         @(Get-ChildItem -LiteralPath $siteEntryDirectory -File | ForEach-Object { $_.FullName }) +
+        @(if ($editionNumber -ge 52) { Get-ChildItem -LiteralPath $sitePointerDirectory -File | ForEach-Object { $_.FullName } }) +
         @(Get-ChildItem -LiteralPath $siteAssetDirectory -File | ForEach-Object { $_.FullName })
     $siteFileRecords = foreach ($siteOutputFile in $siteOutputFiles | Sort-Object) {
         [ordered]@{
@@ -4308,6 +4682,15 @@ $pageScripts
         $siteChecks.tables_start_targets = $tablesStartTargets
         $siteChecks.reader_start_targets = $readerStartTargets
         $siteChecks.product_authority = "Factorium Tables canonical; Reader and Factor Guides are linked projections"
+    }
+    if ($editionNumber -ge 52) {
+        $siteChecks.pointer_index_pages = 1
+        $siteChecks.pointer_entry_pages = $pointerRecords.Count
+        $siteChecks.pointer_distinct_occurrences = $pointerOccurrenceCount
+        $siteChecks.pointer_owner_bindings = $pointerOwnerCount
+        $siteChecks.pointer_authority_change = $false
+        $siteChecks.pointer_relation_inference = $false
+        $siteChecks.pointer_search_integration = $false
     }
     if ($editionNumber -ge 43) {
         if ($intentRouterTargets -ne 3) {

@@ -1,0 +1,23 @@
+factorium-pointer-registry-delta-v0
+extends proof-set-pointer-registry-v6.factorium
+pointer allocation | Allocation | a structural label for assigning limited resources, capacity, work, or rights among recipients
+pointer assessment | Assessment | a structural label for evaluating a subject against criteria, evidence, and intended use
+pointer compensation | Compensation | a structural label for an adjustment, offset, payment, or balancing response
+pointer correlation | Correlation | a structural label for a measured association that does not by itself establish causation
+pointer disposition | Disposition | a structural label for a declared outcome, status, action, or handling decision
+pointer energy | Energy | a structural label for physical energy quantity, transfer, storage, or availability in a model
+pointer estimator | Estimator | a structural label for a rule or procedure that produces an estimate from observations
+pointer force | Force | a structural label for physical interaction, compulsion, organized capability, influence, or validity
+pointer function | Function | a structural label for a mapping, operation, expected role, or callable behavior in context
+pointer information | Information | a structural label for content interpreted relative to a receiver, task, and context
+pointer lifecycle | Lifecycle | a structural label for ordered states and transitions from creation through retirement
+pointer loss | Loss | a structural label for omitted information, reduced value, failure, cost, or unrecovered difference
+pointer period | Period | a structural label for a repeated-cycle duration, reporting span, or effective interval
+pointer range | Range | a structural label for admissible values, operating extent, spatial reach, or output set
+pointer record | Record | a structural label for a retained representation of an event, subject, state, or decision
+pointer requirement | Requirement | a structural label for a necessary condition, capability, conduct, or result
+pointer semantics | Semantics | a structural label for declared meaning, interpretation, and validity conditions of a representation
+pointer shortage | Shortage | a structural label for demand or obligation exceeding available quantity, capacity, or supply
+pointer transport | Transport | a structural label for movement of material, charge, information, or another quantity
+pointer variable | Variable | a structural label for a named quantity or property whose value may differ across assignments
+end-factorium-pointer-registry

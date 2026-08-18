@@ -1,0 +1,42 @@
+factorium-pointer-registry-v0
+pointer action | Action | a structural label for what an actor, system, or process does or attempts
+pointer actor | Actor | a structural label for a participant associated with an action
+pointer authority | Authority | a structural label for the source or scope of a legitimate decision or action right
+pointer basis | Basis | a structural label for the declared foundation used to calculate, compare, classify, or justify
+pointer boundary | Boundary | a structural label for the declared inclusion, exclusion, or interface limit of a subject
+pointer capability | Capability | a structural label for an ability available to a participant or system in context
+pointer condition | Condition | a structural label for a circumstance under which a structure, rule, or result applies
+pointer consequence | Consequence | a structural label for an effect or disposition associated with a condition or action
+pointer constraint | Constraint | a structural label for a condition that limits admissible structures, states, or choices
+pointer context | Context | a structural label for the surrounding frame in which meaning or validity is evaluated
+pointer convention | Convention | a structural label for a declared interpretive, representational, or calculation practice
+pointer decision | Decision | a structural label for a selected disposition among alternatives under authority and criteria
+pointer direction | Direction | a structural label for orientation, ordering, flow, or signed change in a declared frame
+pointer environment | Environment | a structural label for external surroundings relevant to a bounded subject
+pointer evidence | Evidence | a structural label for observations, records, or results offered in support of a claim or decision
+pointer frame | Frame | a structural label for the selected viewpoint, coordinate basis, or interpretive setting
+pointer identity | Identity | a structural label for how a subject is distinguished and followed across a declared scope
+pointer instrument | Instrument | a structural label for a means used to perform, mediate, or record an action
+pointer method | Method | a structural label for a declared way of observing, transforming, evaluating, or deciding
+pointer model | Model | a structural label for a bounded representation used to describe, explain, predict, or evaluate
+pointer object | Object | a structural label for a participant or subject toward which an action is directed
+pointer operation | Operation | a structural label for a selected transformation or requested action
+pointer outcome | Outcome | a structural label for an intended or realized result over a declared horizon
+pointer policy | Policy | a structural label for a governing choice, rule set, or decision framework
+pointer provenance | Provenance | a structural label for the origin, custody, and transformation history of a subject or claim
+pointer purpose | Purpose | a structural label for the reason, beneficiary, or desired result organizing a view
+pointer recipient | Recipient | a structural label for a participant receiving an object, message, effect, or action
+pointer rule | Rule | a structural label for a declared condition-to-disposition or condition-to-consequence statement
+pointer scale | Scale | a structural label for the ordered, categorical, spatial, temporal, or numerical frame of comparison
+pointer scope | Scope | a structural label for the declared extent within which a claim, rule, action, or result applies
+pointer source | Source | a structural label for an origin of authority, evidence, material, information, or influence
+pointer state | State | a structural label for selected properties of a subject at a declared time and frame
+pointer status | Status | a structural label for a classified condition or lifecycle disposition at a declared point
+pointer subject | Subject | a structural label for the entity, system, population, or claim-bearer being considered
+pointer system | System | a structural label for a bounded set of interacting components considered as a whole
+pointer target | Target | a structural label for the intended recipient, destination, threshold, or object of an action
+pointer time | Time | a structural label for an instant, interval, order, duration, or horizon in a declared frame
+pointer uncertainty | Uncertainty | a structural label for bounded lack of knowledge, variability, or confidence in a result
+pointer unit | Unit | a structural label for a measurement unit, counting basis, analysis subject, or comparison element
+pointer version | Version | a structural label for a declared revision or configuration identity
+end-factorium-pointer-registry
