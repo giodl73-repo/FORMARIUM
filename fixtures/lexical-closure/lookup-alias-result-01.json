@@ -1,0 +1,21 @@
+{
+  "campaign_id": "LXA-01",
+  "status": "complete",
+  "decision": "maintain-sim-47",
+  "edition": "sim-47",
+  "source_commit": "547f2fc1f1a0fa4013453ec5a4025ef52ad9b255",
+  "aliases": 5,
+  "routes": 7,
+  "targets": 4,
+  "ambiguous_aliases": 2,
+  "search_records": 185,
+  "generated_pages": 239,
+  "missing_targets": 0,
+  "literal_ranking_unchanged": true,
+  "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186",
+  "standalone_sha256": "b67e991abe62f4a91f77a5e693a4ec70de9de55561f51abddd9031186971cd8b",
+  "site_identity": "179daaec770470fdb657bbadca04d9d96ec932d7c976b33eb941c9f24d48e0cc",
+  "canonical_reference_changed": false,
+  "content_or_relations_changed": false,
+  "reader_evidence_claimed": false
+}

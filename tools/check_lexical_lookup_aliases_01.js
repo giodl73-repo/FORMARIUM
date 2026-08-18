@@ -9,6 +9,7 @@ const workspace = path.resolve(__dirname, "..");
 const candidateRoot = path.resolve(process.argv[2] || "target/proof-set-sim-47");
 const baselineRoot = path.resolve(process.argv[3] || "target/proof-set-sim-46");
 const plan = JSON.parse(fs.readFileSync(path.join(workspace, "fixtures", "lexical-closure", "lookup-alias-test-01.json"), "utf8"));
+const result = JSON.parse(fs.readFileSync(path.join(workspace, "fixtures", "lexical-closure", "lookup-alias-result-01.json"), "utf8"));
 const aliases = require(path.join(workspace, "volumes", "01-structure-quantity-choice", "proof-set-lookup-aliases.js"));
 const search = require(path.join(workspace, "volumes", "01-structure-quantity-choice", "proof-set-search-families.js"));
 const manifest = JSON.parse(fs.readFileSync(path.join(candidateRoot, "manifest.json"), "utf8"));
@@ -18,6 +19,11 @@ const records = JSON.parse(candidateBytes.toString("utf8"));
 const baselineRecords = JSON.parse(baselineBytes.toString("utf8"));
 
 assert.equal(manifest.edition, plan.candidate_edition);
+assert.equal(result.edition, manifest.edition);
+assert.ok(manifest.source_commit.startsWith(result.source_commit));
+assert.equal(manifest.output.sha256, result.standalone_sha256);
+assert.equal(manifest.output.site_identity, result.site_identity);
+assert.equal(manifest.output.search_index_sha256, result.search_index_sha256);
 assert.equal(crypto.createHash("sha256").update(candidateBytes).digest("hex"), plan.baseline.search_index_sha256);
 assert.deepEqual(candidateBytes, baselineBytes, "search index remains byte-identical to sim-46");
 for (const item of plan.aliases) {
@@ -39,4 +45,3 @@ assert.equal(manifest.search_checks.lookup_alias_semantics, "language-route-to-e
 assert.equal(manifest.site_checks.missing_local_targets, 0);
 assert.equal(manifest.workspace_dirty_at_render, false);
 console.log(`OK edition=${manifest.edition} aliases=5 routes=7 targets=4 ranking=unchanged missing=0 identity=${manifest.site_checks.identity}`);
-

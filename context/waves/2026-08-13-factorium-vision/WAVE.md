@@ -3046,3 +3046,12 @@ retain both electrical and gravitational owners. Nine roles approve a bounded
 edition-local panel with no P1/P2 finding. Literal ranking, canonical metadata,
 content, relations, prior editions, and reader-evidence gates remain unchanged.
 See `LEXICAL-LOOKUP-ALIASES-01-PLAN.md`.
+
+Result review: clean `sim-47` implements all five aliases as seven routes to
+four existing Table owners. Both field phrases retain two owners; near misses
+stay inactive; the complete 185-record search index and every literal ranking
+remain identical to `sim-46`. Static, live Edge at 390 pixels, reference
+closure, and the full Rust suite pass with zero missing targets. Nine roles
+approve with no P1/P2 finding. Maintain `sim-47` and stop before general alias
+intake; claim no canonical equivalence or reader evidence. See
+`LEXICAL-LOOKUP-ALIASES-01-RESULT.md`.
