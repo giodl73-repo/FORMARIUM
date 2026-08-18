@@ -158,7 +158,7 @@ fn reference_check_validates_canonical_corpus_and_projections() {
     let output = Command::new(env!("CARGO_BIN_EXE_factor"))
         .args([
             "reference-check",
-            "reference/factorium-reference-v1.factorium",
+            "reference/factorium-reference-v2.factorium",
             ".",
         ])
         .output()
@@ -166,7 +166,7 @@ fn reference_check_validates_canonical_corpus_and_projections() {
     assert!(output.status.success());
     let stdout = String::from_utf8(output.stdout).unwrap();
     assert!(stdout.contains("entries=54\n"));
-    assert!(stdout.contains("views=97\n"));
+    assert!(stdout.contains("views=100\n"));
     assert!(stdout.contains("reference_sha256="));
 }
 
@@ -175,9 +175,9 @@ fn reference_sidecar_check_validates_relations_and_reviews() {
     let output = Command::new(env!("CARGO_BIN_EXE_factor"))
         .args([
             "reference-sidecar-check",
-            "reference/factorium-reference-v1.factorium",
+            "reference/factorium-reference-v2.factorium",
             "reference/factorium-relations-v0.factorium",
-            "reference/factorium-assurance-v1.factorium",
+            "reference/factorium-assurance-v2.factorium",
             ".",
         ])
         .output()
@@ -185,9 +185,9 @@ fn reference_sidecar_check_validates_relations_and_reviews() {
     assert!(output.status.success());
     let stdout = String::from_utf8(output.stdout).unwrap();
     assert!(stdout.contains("relation_records=11\n"));
-    assert!(stdout.contains("review_bindings=162\n"));
+    assert!(stdout.contains("review_bindings=165\n"));
     assert!(stdout.contains("entry_review_bindings=54\n"));
-    assert!(stdout.contains("view_review_bindings=97\n"));
+    assert!(stdout.contains("view_review_bindings=100\n"));
     assert!(stdout.contains("relation_review_bindings=11\n"));
     assert!(stdout.contains("prototype_checks=7\n"));
 }

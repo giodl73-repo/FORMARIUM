@@ -9,6 +9,8 @@ verdict: APPROVED
 
 # Roles Check: MCC-01 Curriculum View Admission
 
+Status: fixed point
+
 Artifact type: two candidate Factor Table Markdown views and their admission
 custody contract. Domain signals include optimization, mapping loss, decision
 authority, prototype fidelity, human-centred evaluation, accessibility,

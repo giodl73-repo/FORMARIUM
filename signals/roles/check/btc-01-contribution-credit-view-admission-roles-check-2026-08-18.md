@@ -12,6 +12,10 @@ verdict: APPROVED
 Artifact type: candidate Evidence Table, source review, design contract,
 admission fixture, and claims boundary.
 
+Status: fixed point
+
+No unresolved P1 or P2 finding.
+
 ## Per-role review
 
 | Role | Three findings | Severity | Disposition |

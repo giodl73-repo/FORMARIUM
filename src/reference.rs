@@ -9,6 +9,7 @@ use std::path::{Path, PathBuf};
 
 const HEADER_V0: &str = "factorium-reference-v0";
 const HEADER_V1: &str = "factorium-reference-v1";
+const HEADER_V2: &str = "factorium-reference-v2";
 const END: &str = "end-reference";
 
 /// One supported primary reference-table family.
@@ -282,7 +283,7 @@ pub struct ReferenceCorpus {
 }
 
 impl ReferenceCorpus {
-    /// Parses canonical Factorium Reference V0 or V1 text.
+    /// Parses canonical Factorium Reference V0, V1, or V2 text.
     ///
     /// # Errors
     ///
@@ -291,11 +292,7 @@ impl ReferenceCorpus {
     pub fn parse(input: &str) -> Result<Self, String> {
         validate_transport(input)?;
         let lines: Vec<&str> = input.lines().collect();
-        let header = match lines.first().copied() {
-            Some(HEADER_V0) => HEADER_V0,
-            Some(HEADER_V1) => HEADER_V1,
-            _ => return Err(format!("line 1: expected `{HEADER_V0}` or `{HEADER_V1}`")),
-        };
+        let header = reference_header(lines.first().copied())?;
         if lines.last() != Some(&END) {
             return Err(format!("last line: expected `{END}`"));
         }
@@ -412,6 +409,7 @@ impl ReferenceCorpus {
         match self.header.as_str() {
             HEADER_V0 => "reference/factorium-reference-v0.factorium",
             HEADER_V1 => "reference/factorium-reference-v1.factorium",
+            HEADER_V2 => "reference/factorium-reference-v2.factorium",
             _ => unreachable!("validated reference header"),
         }
     }
@@ -871,6 +869,17 @@ impl ReferenceCorpus {
     }
 }
 
+fn reference_header(value: Option<&str>) -> Result<&'static str, String> {
+    match value {
+        Some(HEADER_V0) => Ok(HEADER_V0),
+        Some(HEADER_V1) => Ok(HEADER_V1),
+        Some(HEADER_V2) => Ok(HEADER_V2),
+        _ => Err(format!(
+            "line 1: expected `{HEADER_V0}`, `{HEADER_V1}`, or `{HEADER_V2}`"
+        )),
+    }
+}
+
 fn validate_transport(input: &str) -> Result<(), String> {
     if !input.ends_with('\n') {
         return Err("canonical document must end with LF".to_owned());
@@ -1066,11 +1075,19 @@ end-reference
     }
 
     #[test]
-    fn rejects_unsupported_reference_revision() {
+    fn v2_header_round_trips_without_changing_record_grammar() {
         let input = SAMPLE.replacen("factorium-reference-v0", "factorium-reference-v2", 1);
+        let corpus = ReferenceCorpus::parse(&input).expect("V2 sample should parse");
+        assert_eq!(corpus.header(), "factorium-reference-v2");
+        assert_eq!(corpus.canonical_text(), input);
+    }
+
+    #[test]
+    fn rejects_unsupported_reference_revision() {
+        let input = SAMPLE.replacen("factorium-reference-v0", "factorium-reference-v3", 1);
         assert!(ReferenceCorpus::parse(&input)
             .unwrap_err()
-            .contains("expected `factorium-reference-v0` or `factorium-reference-v1`"));
+            .contains("expected `factorium-reference-v0`, `factorium-reference-v1`, or `factorium-reference-v2`"));
     }
 
     #[test]

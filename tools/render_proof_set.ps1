@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48", "sim-49")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48", "sim-49", "sim-50")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -13,6 +13,9 @@ $supplement = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-
 $v1Supplement = Join-Path $workspace "volumes\01-structure-quantity-choice\GPC-09-V1-SIM-SUPPLEMENT.md"
 $v1Tasks = Join-Path $workspace "volumes\01-structure-quantity-choice\GPC-09-V1-SIM-TASKS.md"
 $v1Rubric = Join-Path $workspace "volumes\01-structure-quantity-choice\GPC-09-V1-SIM-RUBRIC.md"
+$v2Supplement = Join-Path $workspace "volumes\01-structure-quantity-choice\V2-ROLLING-SIM-SUPPLEMENT.md"
+$v2Tasks = Join-Path $workspace "volumes\01-structure-quantity-choice\V2-ROLLING-SIM-TASKS.md"
+$v2Rubric = Join-Path $workspace "volumes\01-structure-quantity-choice\V2-ROLLING-SIM-RUBRIC.md"
 $factorForgeTasks = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-TASKS.md"
 $factorForgeRubric = Join-Path $workspace "volumes\01-structure-quantity-choice\FACTOR-FORGE-SIM-RUBRIC.md"
 $quickstart = Join-Path $workspace "volumes\01-structure-quantity-choice\PROOF-SET-SIM-QUICKSTART.md"
@@ -181,6 +184,7 @@ $artifactTitle = switch ($Edition) {
     "sim-47" { "Factorium Lexical Lookup Aliases Simulation 47" }
     "sim-48" { "Factorium Scale Meaning Chooser Simulation 48" }
     "sim-49" { "Factorium Meaning and Custody V1 Integration Simulation 49" }
+    "sim-50" { "Factorium Rolling V2 Content Integration Simulation 50" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -608,7 +612,10 @@ if ($Edition -ne "sim-01") {
     $entryDomains = [System.Collections.Generic.Dictionary[string, string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
     )
-    $currentReference = if ($editionNumber -ge 49) {
+    $currentReference = if ($editionNumber -ge 50) {
+        Join-Path $workspace "reference\factorium-reference-v2.factorium"
+    }
+    elseif ($editionNumber -ge 49) {
         Join-Path $workspace "reference\factorium-reference-v1.factorium"
     }
     else {
@@ -665,6 +672,12 @@ if ($Edition -ne "sim-01") {
             [void]$supplementPaths.Add($v1Path)
         }
     }
+    if ($editionNumber -ge 50) {
+        $v2SupplementPaths = Get-WorkspaceMarkdownPathSet $v2Supplement
+        foreach ($v2Path in $v2SupplementPaths) {
+            [void]$supplementPaths.Add($v2Path)
+        }
+    }
     $expectedDelta = [System.Collections.Generic.HashSet[string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
     )
@@ -708,12 +721,18 @@ if ($Edition -ne "sim-01") {
                 [void]$taskCoverage.Add($_.Groups[1].Value)
             }
         }
+        if ($editionNumber -ge 50) {
+            $v2RubricText = Get-Content -LiteralPath $v2Rubric -Raw
+            [regex]::Matches($v2RubricText, '`(tables/[^`]+\.md)`') | ForEach-Object {
+                [void]$taskCoverage.Add($_.Groups[1].Value)
+            }
+        }
         $missingTaskCoverage = @($expectedDelta | Where-Object { -not $taskCoverage.Contains($_) })
         $extraTaskCoverage = @($taskCoverage | Where-Object { -not $expectedDelta.Contains($_) })
         if ($missingTaskCoverage.Count -ne 0 -or $extraTaskCoverage.Count -ne 0) {
             throw "Factor Forge task coverage mismatch: missing=$($missingTaskCoverage -join ',') extra=$($extraTaskCoverage -join ',')"
         }
-        $selectionChecks.task_count = if ($editionNumber -ge 49) { 56 } else { 53 }
+        $selectionChecks.task_count = if ($editionNumber -ge 50) { 59 } elseif ($editionNumber -ge 49) { 56 } else { 53 }
         $selectionChecks.task_coverage_records = $taskCoverage.Count
         $selectionChecks.missing_task_coverage_paths = $missingTaskCoverage.Count
         $selectionChecks.extra_task_coverage_paths = $extraTaskCoverage.Count
@@ -722,7 +741,7 @@ if ($Edition -ne "sim-01") {
         $selectionChecks.book_one_candidate_path = [System.IO.Path]::GetRelativePath($workspace, $bookOneCandidateManifest).Replace("\", "/")
         $selectionChecks.book_one_candidate_sha256 = (Get-FileHash -LiteralPath $bookOneCandidateManifest -Algorithm SHA256).Hash.ToLowerInvariant()
         $selectionChecks.book_one_spine_records = 24
-        $selectionChecks.book_one_specialized_depth_records = if ($editionNumber -ge 49) { 154 } else { 151 }
+        $selectionChecks.book_one_specialized_depth_records = if ($editionNumber -ge 50) { 157 } elseif ($editionNumber -ge 49) { 154 } else { 151 }
         $selectionChecks.book_one_route_strategies = 4
     }
 }
@@ -740,6 +759,11 @@ if ($editionNumber -ge 49) {
     Add-ProofSource $v1Supplement
     $selectionDocuments.Add($v1Supplement)
     Add-ProofSource $v1Tasks
+}
+if ($editionNumber -ge 50) {
+    Add-ProofSource $v2Supplement
+    $selectionDocuments.Add($v2Supplement)
+    Add-ProofSource $v2Tasks
 }
 if ($editionNumber -ge 3) {
     Add-ProofSource $factorForgeTasks
@@ -1037,6 +1061,9 @@ if ($editionNumber -ge 4) {
         if ($editionNumber -ge 49) {
             Get-NumberedSelections $v1Supplement
         }
+        if ($editionNumber -ge 50) {
+            Get-NumberedSelections $v2Supplement
+        }
     )
     $guideSelections = @(Get-GuideSelections)
     $expectedGuideCount = if ($editionNumber -ge 30) {
@@ -1063,7 +1090,7 @@ if ($editionNumber -ge 4) {
     else {
         2
     }
-    $expectedNumberedCount = if ($editionNumber -ge 49) { 178 } else { 175 }
+    $expectedNumberedCount = if ($editionNumber -ge 50) { 181 } elseif ($editionNumber -ge 49) { 178 } else { 175 }
     if ($numberedSelections.Count -ne $expectedNumberedCount -or $guideSelections.Count -ne $expectedGuideCount) {
         throw "Search selection mismatch: numbered=$($numberedSelections.Count) guides=$($guideSelections.Count)"
     }
@@ -1295,7 +1322,7 @@ if ($editionNumber -ge 4) {
         $familyKeys = @($searchRecords.familyKey | Sort-Object -Unique)
         $familyOwnerRecords = @($searchRecords | Where-Object { $_.familyKind -eq "canonical" })
         $familySpecializedViews = @($familyOwnerRecords | Where-Object { $_.recordClass -eq "specialized-view" })
-        $expectedFamilyViews = if ($editionNumber -ge 49) { 97 } else { 95 }
+        $expectedFamilyViews = if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }
         if ($familySpecializedViews.Count -ne $expectedFamilyViews -or
             @($familyOwnerRecords | Where-Object { [string]::IsNullOrWhiteSpace($_.familyHref) }).Count -ne 0) {
             throw "Canonical-family search ownership mismatch"
@@ -1741,6 +1768,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 49) {
         $selectedSiteChapters += @(Get-SiteChapterSelections $v1Supplement)
     }
+    if ($editionNumber -ge 50) {
+        $selectedSiteChapters += @(Get-SiteChapterSelections $v2Supplement)
+    }
     foreach ($chapter in $selectedSiteChapters) {
         $siteChapters.Add($chapter)
     }
@@ -1783,7 +1813,7 @@ if ($editionNumber -ge 7) {
             $chapterBySearchPath[$chapterRelativePath] = $chapter
         }
     }
-    $expectedSiteChapterCount = if ($editionNumber -ge 49) { 19 } else { 18 }
+    $expectedSiteChapterCount = if ($editionNumber -ge 50) { 20 } elseif ($editionNumber -ge 49) { 19 } else { 18 }
     if ($siteChapters.Count -ne $expectedSiteChapterCount -or $chapterBySearchPath.Count -ne $searchRecords.Count) {
         throw "Site chapter coverage mismatch: chapters=$($siteChapters.Count) records=$($chapterBySearchPath.Count)"
     }
@@ -2626,7 +2656,7 @@ if ($editionNumber -ge 7) {
 <section id="reader" class="site-start site-candidate site-reader" aria-labelledby="site-reader-heading">
 <p class="site-kicker">The Factorium Reader · teaching companion</p>
 <h2 id="site-reader-heading">Learn how to use the Tables</h2>
-<p>Follow a selected 24-record teaching spine, then hand off to any of $(if ($editionNumber -ge 49) { 154 } else { 151 }) additional selected Tables when the question needs specialized depth. The Reader explains a method; it does not redefine the reference or claim a universal order.</p>
+<p>Follow a selected 24-record teaching spine, then hand off to any of $(if ($editionNumber -ge 50) { 157 } elseif ($editionNumber -ge 49) { 154 } else { 151 }) additional selected Tables when the question needs specialized depth. The Reader explains a method; it does not redefine the reference or claim a universal order.</p>
 <div class="site-candidate__actions">
 <a class="site-candidate__primary" href="$candidateQuickstartPage">Start the Reader</a>
 <a href="$candidateGuidePage">Open the Reader route</a>
@@ -3141,7 +3171,7 @@ $dualLookupScriptTag
 <section class="tables-index__heading">
 <p class="site-kicker">Primary reference · alphabetical browse</p>
 <h1>Factorium Tables A-Z</h1>
-<p>Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and all $(if ($editionNumber -ge 49) { 97 } else { 95 }) exact specialized views.</p>
+<p>Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and all $(if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }) exact specialized views.</p>
 <div class="tables-index__actions"><a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
 <p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
 </section>
@@ -4345,7 +4375,7 @@ $pageScripts
         $siteChecks.search_family_semantics = $searchChecks.family_semantics
     }
     if ($editionNumber -ge 34) {
-        $expectedFamilyLinks = if ($editionNumber -ge 49) { 97 } else { 95 }
+        $expectedFamilyLinks = if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }
         $expectedFamilyOpen = if ($editionNumber -ge 49) { 47 } else { 48 }
         $expectedFamilyFolded = if ($editionNumber -ge 49) { 5 } else { 4 }
         if ($tableFamilyContentsPanels -ne 52 -or
@@ -4362,7 +4392,7 @@ $pageScripts
     }
     if ($editionNumber -ge 35) {
         $expectedCanonicalCount = if ($editionNumber -ge 49) { 54 } else { 53 }
-        $expectedOwnedViewCount = if ($editionNumber -ge 49) { 97 } else { 95 }
+        $expectedOwnedViewCount = if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }
         if ($tablesIndexCanonicalCount -ne $expectedCanonicalCount -or
             $tablesIndexCuratedCount -ne 27 -or
             $tablesIndexLetterCount -ne 17 -or

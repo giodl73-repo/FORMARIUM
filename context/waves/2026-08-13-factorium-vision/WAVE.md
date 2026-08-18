@@ -3544,3 +3544,15 @@ assurance, generated edition exposure, agency research, and reader evidence
 await supported successor work. Eleven roles approve with zero P1/P2 findings.
 See `BIOGRAPHY-THOUGHT-CLOSURE-01-ADMISSION-RESULT.md` and
 `signals/roles/check/btc-01-contribution-credit-view-admission-roles-check-2026-08-18.md`.
+
+## 2026-08-18 V2 rolling reference integration
+
+Plan review: integrate the two curriculum-derived views and one
+biography-derived Evidence view into an ID-preserving V2 reference,
+corresponding assurance, generated catalogs, and `sim-50`. V2 reuses the V1
+grammar and remains an active rolling internal candidate: this action does not
+freeze V2, declare a release, or close later reviewed additions. Preserve V1
+and `sim-49` as reproducible baselines because existing campaign identities
+depend on their bytes. Twelve roles approve with no open P1/P2 finding. See
+`V2-ROLLING-REFERENCE-INTEGRATION-PLAN.md` and
+`signals/roles/check/v2-rolling-reference-integration-roles-check-2026-08-18.md`.

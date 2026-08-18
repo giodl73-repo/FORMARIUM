@@ -1,8 +1,8 @@
 # Generated Formula Table Catalog
 
-Generated from `reference/factorium-reference-v1.factorium`. Do not edit by hand.
+Generated from `reference/factorium-reference-v2.factorium`. Do not edit by hand.
 
-Corpus identity: `8bafa4fc965257742d2c1aa753e9bb1c84ca9453486df64d4b5ff5a7fedc21fb`
+Corpus identity: `f190a88bf18bcad3bd625445ae1aad3d18d88b3eb028a9b895db09c1d7fbae13`
 
 | Formula view | Canonical owner | Sense coverage | Purpose |
 |---|---|---|---|

@@ -30,14 +30,16 @@ evidence and one tested Factorium domain.
 Current pulses: **08A - Factor Forge intake fixed point** and
 **08P - Proof Set internal fixed point**
 
-The current machine-readable owner is
-`reference/factorium-reference-v1.factorium`: 54 entries, 419 senses, 638
-factors, and 97 views. It adds the reviewed GPC-09 meaning anchor and two
-Claim-and-Evidence views to the ID-preserving V0 corpus. The eleven-record V0
-relation sidecar is unchanged; `reference/factorium-assurance-v1.factorium`
-provides 162 exact review bindings. `sim-49` is the current internal
-book/search/site projection. V0 bytes, V0-bound Composition Queries, and clean
-`sim-48` remain historical baselines; no reader evidence is claimed.
+The current rolling machine-readable owner is
+`reference/factorium-reference-v2.factorium`: 54 entries, 419 senses, 638
+factors, and 100 views. It preserves every V1 record and adds the reviewed
+Optimization Problem Structure, Prototype/Test/Iteration, and
+Contribution/Credit/Priority/Legacy views. The eleven-record V0 relation
+sidecar is unchanged; `reference/factorium-assurance-v2.factorium` provides
+165 exact review bindings. `sim-50` is the current internal book/search/site
+projection. V2 is not frozen by this integration and remains open to later
+reviewed additions. V0, V1, V0-bound Composition Queries, `sim-48`, and
+`sim-49` remain historical baselines; no reader evidence is claimed.
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
@@ -1198,8 +1200,8 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
-cargo run --quiet -- reference-check reference\factorium-reference-v1.factorium .
-cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v1.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v1.factorium .
+cargo run --quiet -- reference-check reference\factorium-reference-v2.factorium .
+cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v2.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v2.factorium .
 node tools\check_reference_closure_coverage.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_constraint_feasibility_relation.js

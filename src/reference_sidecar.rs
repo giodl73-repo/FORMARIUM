@@ -12,6 +12,7 @@ const RELATION_HEADER: &str = "factorium-relations-v0";
 const RELATION_END: &str = "end-relations";
 const ASSURANCE_HEADER_V0: &str = "factorium-assurance-v0";
 const ASSURANCE_HEADER_V1: &str = "factorium-assurance-v1";
+const ASSURANCE_HEADER_V2: &str = "factorium-assurance-v2";
 const ASSURANCE_END: &str = "end-assurance";
 
 /// One supported directed relation kind.
@@ -341,9 +342,10 @@ impl AssuranceManifest {
         let header = match lines.first().copied() {
             Some(ASSURANCE_HEADER_V0) => ASSURANCE_HEADER_V0,
             Some(ASSURANCE_HEADER_V1) => ASSURANCE_HEADER_V1,
+            Some(ASSURANCE_HEADER_V2) => ASSURANCE_HEADER_V2,
             _ => {
                 return Err(
-                    "expected factorium-assurance-v0 or factorium-assurance-v1 document".to_owned(),
+                    "expected factorium-assurance-v0, factorium-assurance-v1, or factorium-assurance-v2 document".to_owned(),
                 )
             }
         };
@@ -762,10 +764,21 @@ mod tests {
     }
 
     #[test]
+    fn assurance_v2_header_round_trips() {
+        let input = concat!(
+            "factorium-assurance-v2\n",
+            "review entry:claim-evidence | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | review.md | fixed-point | 2026-08-18\n",
+            "end-assurance\n"
+        );
+        let manifest = AssuranceManifest::parse(input).expect("V2 assurance should parse");
+        assert_eq!(manifest.canonical_text(), input);
+    }
+
+    #[test]
     fn assurance_rejects_unsupported_revision() {
-        let input = "factorium-assurance-v2\nend-assurance\n";
-        assert!(AssuranceManifest::parse(input)
-            .unwrap_err()
-            .contains("expected factorium-assurance-v0 or factorium-assurance-v1"));
+        let input = "factorium-assurance-v3\nend-assurance\n";
+        assert!(AssuranceManifest::parse(input).unwrap_err().contains(
+            "expected factorium-assurance-v0, factorium-assurance-v1, or factorium-assurance-v2"
+        ));
     }
 }
