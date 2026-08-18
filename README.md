@@ -501,6 +501,9 @@ node tools\run_synthetic_reciprocal_connection_repair_rerun.js
 node tools\check_synthetic_reciprocal_connection_repair_rerun.js
 node tools\check_reciprocal_connection_repair_site.js target\proof-set-sim-46
 node tools\check_reciprocal_connection_repair_browser.js target\proof-set-sim-46 target\sim46-reciprocal-connections.png
+node tools\check_synthetic_distinctive_terms_campaign.js
+node tools\run_synthetic_distinctive_terms_holdout.js
+node tools\check_synthetic_distinctive_terms_holdout.js
 node tools\check_system_architecture_description.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_decision_bridge_combined_closure.js

@@ -2987,3 +2987,13 @@ losses by four, and no more than four losses. Even a pass admits only an
 optional Distinctive terms lens beside the unchanged default; no alias, merged
 rank, default replacement, edition, or reader claim is admitted. See
 `SYNTHETIC-DISTINCTIVE-TERMS-RANKING-PLAN.md`.
+
+Result review: the independently frozen QLD-02 holdout rejects BM25. Current
+ranking reaches an intended family on 44/48 query attempts and BM25 on 45/48,
+but three gains against two losses produce only net +1, below the frozen +4
+margin. The independent dashboard-label query also changes from a current
+Identity-family hit to a BM25 miss. Nine roles approve the exact null with no
+P1/P2 finding. Do not tune, add the lens, replace or merge rankers, add a
+dashboard alias, or mint `sim-47`; retain clean `sim-46` and the outward local-
+documentation handoff. See
+`SYNTHETIC-DISTINCTIVE-TERMS-RANKING-RESULT.md`.

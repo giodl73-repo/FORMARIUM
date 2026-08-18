@@ -1156,6 +1156,14 @@ The dashboard-dot query remains a Search vocabulary gap. No Search cue, typed
 relation, closure claim, or reader-evidence claim is admitted. See
 `context/waves/2026-08-13-factorium-vision/SYNTHETIC-RECIPROCAL-CONNECTION-REPAIR-RESULT.md`.
 
+SUJ-11 tests and rejects a standard BM25 Distinctive terms ranking lens. On
+the 48-query independent QLD-02 holdout it moves intended-family exposure from
+44 to 45 attempts, with three gains, two losses, and net +1 against a frozen
++4 margin. The independent dashboard-label query becomes worse, not better.
+No tuning, alternate rank mode, alias, content change, or `sim-47` is admitted;
+clean `sim-46` remains current. See
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-DISTINCTIVE-TERMS-RANKING-RESULT.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

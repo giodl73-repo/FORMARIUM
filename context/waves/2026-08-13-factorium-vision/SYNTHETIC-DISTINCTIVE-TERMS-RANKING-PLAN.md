@@ -2,7 +2,8 @@
 
 Date: 2026-08-17
 
-Status: frozen before holdout execution
+Status: complete — holdout rejected the candidate; see
+`SYNTHETIC-DISTINCTIVE-TERMS-RANKING-RESULT.md`
 
 Campaign: `SUJ-11`
 
