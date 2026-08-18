@@ -1,7 +1,7 @@
 # GPC-08 Indigenous, Central/Southeast Asian, and Oceanic Comparison Plan
 
 Date: 2026-08-17
-Status: inventory frozen; source review in progress
+Status: complete; custody frozen for GPC-09
 
 Freeze eighteen named packets before source interpretation: six
 community-scoped Indigenous/First Peoples packets, six Central/Southeast Asian

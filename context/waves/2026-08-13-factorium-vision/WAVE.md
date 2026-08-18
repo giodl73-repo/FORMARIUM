@@ -3323,3 +3323,12 @@ archive, consent, translation, colonial/state relation, and internal dissent
 are mandatory. The lane changes no Table, book, relation, UI, or
 reader-evidence gate. Source review and factoring remain pending. See
 `GLOBAL-PHILOSOPHY-GPC-08-PLAN.md`.
+
+Result review: all 18 packets, 18 immutable factorings, and 18 typed candidate
+alignments are complete against 26 sources. Collective authority, permission
+to share, language/gloss limits, land/genealogy/jurisdiction, performance,
+archive, research return, and state appropriation survive. Nine roles approve
+after two amendments with no P1/P2 finding. The global checker validates 84
+records with custody intact and zero admission. Retain GPC-08 and proceed to
+GPC-09; claim neither regional completeness nor reader evidence. See
+`GLOBAL-PHILOSOPHY-GPC-08-RESULT.md`.
