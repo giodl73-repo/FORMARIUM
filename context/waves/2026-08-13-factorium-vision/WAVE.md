@@ -3163,3 +3163,16 @@ on at least 40 authored handoffs and at least 10 occurring after the clip.
 Nine roles approve with no P1/P2 finding. `sim-49` changes no Table, relation,
 search record, or literal ranking and can establish no reader evidence. See
 `POWER-MEANING-CHOOSER-AND-HANDOFF-AUDIT-01-PLAN.md`.
+
+## 2026-08-17 philosopher-to-Factorium comparison
+
+PFC-01 compares a bounded sixteen-thinker Western sample from Socrates through
+Rawls by governing questions, reusable concepts, decisive distinctions,
+existing owners, and visible mapping loss. Twenty scholarly sources support
+the comparison and also defeat any canon or completeness claim. Nine roles
+approve the result with no P1/P2 finding. Eight recurrent gap families emerge,
+but no canonical content is admitted: proceed only to boundary design for
+epistemic standing, the normative/practical split, and elaboration of the
+existing `Agency` root. A later counter-sample across excluded women and
+non-Western traditions is required before broader philosophy closure. Claim no
+reader evidence. See `PHILOSOPHER-FACTORIUM-COMPARISON-01-RESULT.md`.

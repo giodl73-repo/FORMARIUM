@@ -1,0 +1,41 @@
+{
+  "campaign_id": "PFC-01",
+  "revision": 1,
+  "status": "frozen-before-source-review",
+  "frozen_on": "2026-08-17",
+  "scope": "Initial longitudinal Western sample beginning with Socrates and Plato; not a universal or ranked canon.",
+  "cohort": [
+    {"id": "socrates", "label": "Socrates", "source_boundary": "Reconstructed through early witnesses, principally Plato and Xenophon."},
+    {"id": "plato", "label": "Plato"},
+    {"id": "aristotle", "label": "Aristotle"},
+    {"id": "epicurus", "label": "Epicurus"},
+    {"id": "epictetus", "label": "Epictetus"},
+    {"id": "augustine", "label": "Augustine"},
+    {"id": "aquinas", "label": "Thomas Aquinas"},
+    {"id": "descartes", "label": "René Descartes"},
+    {"id": "spinoza", "label": "Baruch Spinoza"},
+    {"id": "hume", "label": "David Hume"},
+    {"id": "kant", "label": "Immanuel Kant"},
+    {"id": "hegel", "label": "G. W. F. Hegel"},
+    {"id": "nietzsche", "label": "Friedrich Nietzsche"},
+    {"id": "wittgenstein", "label": "Ludwig Wittgenstein"},
+    {"id": "arendt", "label": "Hannah Arendt"},
+    {"id": "rawls", "label": "John Rawls"}
+  ],
+  "comparison_fields": [
+    "source_custody", "governing_question", "reusable_concepts",
+    "decisive_distinctions", "existing_factorium_owners", "coverage",
+    "boundary_or_loss"
+  ],
+  "coverage_values": ["covered", "partial", "gap", "out-of-scope"],
+  "admission_rules": {
+    "concept_gap": "A reusable concept or decisive distinction recurs in at least three cohort members, lacks an adequate existing owner, and survives taxonomy and product review.",
+    "navigation_gap": "Existing owners cover the structure but the ordinary-language route is absent or materially misleading.",
+    "proper_name_only": "A doctrine, work, school, or named formulation that does not survive removal of the proper name is not a Factorium concept gap.",
+    "no_automatic_content": true
+  },
+  "reader_evidence_claimed": false,
+  "historical_completeness_claimed": false,
+  "stop": "Complete the frozen cohort once, retain interpretive disagreement and absences, and admit no Table solely because a famous philosopher used a term."
+}
+
