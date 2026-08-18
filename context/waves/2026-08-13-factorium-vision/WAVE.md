@@ -3152,3 +3152,14 @@ batch, and claim only tested artifact depth—not reader value, uniqueness, or
 general superiority. The focused checker and two deterministic scoring runs,
 roles check, formatting, clippy, and all 70 Rust tests pass. See
 `COMPETITIVE-CONSEQUENTIAL-DEPTH-TEST-02-RESULT.md`.
+
+## 2026-08-17 power chooser and handoff audit plan
+
+PWR-01 freezes one exact four-route `power` chooser over existing mechanical,
+electrical, formal-authority, and influence/coercion owners. HVA-01 freezes all
+53 canonical entries and distinguishes the CAD-01 5,000-character capture
+boundary from rendered handoff navigation. A generic top action is conditional
+on at least 40 authored handoffs and at least 10 occurring after the clip.
+Nine roles approve with no P1/P2 finding. `sim-49` changes no Table, relation,
+search record, or literal ranking and can establish no reader evidence. See
+`POWER-MEANING-CHOOSER-AND-HANDOFF-AUDIT-01-PLAN.md`.

@@ -1,0 +1,41 @@
+{
+  "campaign_id": "PWR-01",
+  "revision": 1,
+  "status": "frozen-before-implementation",
+  "frozen_on": "2026-08-17",
+  "source_test": "CAD-02-power",
+  "baseline": {
+    "edition": "sim-48",
+    "source_commit": "95fdeda1e2ef68a748feab06fefd34b844bf0bbf",
+    "standalone_sha256": "1ca6be76242687fd73dcf8dd9a688c1615adc7cfd7e338985124461ac42222a8",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186",
+    "site_identity": "bcff813a8011ac86666abec442a139da11d912e1c982a19554f2f5f668bc2ee1"
+  },
+  "candidate_edition": "sim-49",
+  "query": "power",
+  "activation": "exact-normalized-query",
+  "routes": [
+    {
+      "label": "Mechanical work or energy transfer rate",
+      "target": "tables/entries/work-energy-power.md"
+    },
+    {
+      "label": "Electrical supply or absorption rate",
+      "target": "tables/entries/electrical-quantity.md"
+    },
+    {
+      "label": "Formal organizational authority",
+      "target": "tables/entries/organization-role-authority.md"
+    },
+    {
+      "label": "Influence, persuasion, or coercive capacity",
+      "target": "tables/entries/force.md"
+    }
+  ],
+  "literal_ranking_unchanged": true,
+  "canonical_reference_unchanged": true,
+  "content_and_relations_unchanged": true,
+  "reader_evidence_claimed": false,
+  "stop": "Admit one exact four-route chooser; do not equate authority, influence, coercion, or physical power and add no new concept owner."
+}
+

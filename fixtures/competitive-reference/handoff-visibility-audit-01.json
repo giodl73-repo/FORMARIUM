@@ -1,0 +1,29 @@
+{
+  "campaign_id": "HVA-01",
+  "revision": 1,
+  "status": "frozen-before-audit",
+  "frozen_on": "2026-08-17",
+  "baseline_edition": "sim-48",
+  "candidate_edition": "sim-49",
+  "universe": "tables/entries/*.md",
+  "expected_files": 53,
+  "handoff_headings": ["Selection procedure", "Review procedure", "Use contract"],
+  "comparison_capture_normalized_character_limit": 5000,
+  "classification": [
+    "no-authored-handoff", "inside-comparison-clip", "after-comparison-clip",
+    "missing-rendered-anchor", "top-route-present"
+  ],
+  "conditional_product_batch": {
+    "minimum_authored_handoffs": 40,
+    "minimum_after_clip": 10,
+    "change": "Add one generated top navigator route to each authored handoff heading in sim-49.",
+    "prohibitions": [
+      "Do not move or rewrite Table sections.",
+      "Do not call comparison-capture clipping reader evidence.",
+      "Do not add routes to files without an authored handoff heading."
+    ]
+  },
+  "reader_evidence_claimed": false,
+  "stop": "Run once, preserve every file classification, and make no layout change unless both conditional thresholds pass."
+}
+
