@@ -1,0 +1,51 @@
+{
+  "schema": "factorium.v2-rolling-reference-integration-result.v1",
+  "status": "rolling-internal-candidate",
+  "generated": "2026-08-18",
+  "v2_frozen": false,
+  "release_declared": false,
+  "interchange": {
+    "reference_path": "reference/factorium-reference-v2.factorium",
+    "reference_sha256": "f190a88bf18bcad3bd625445ae1aad3d18d88b3eb028a9b895db09c1d7fbae13",
+    "assurance_path": "reference/factorium-assurance-v2.factorium",
+    "assurance_sha256": "8e86ee893336f5c5af54e3d73c1840c912a6ad2f7241ba55a3c962c051c3a060",
+    "relations_path": "reference/factorium-relations-v0.factorium",
+    "relations_sha256": "df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634",
+    "entries": 54,
+    "senses": 419,
+    "factors": 638,
+    "views": 100,
+    "assurance_bindings": 165
+  },
+  "preservation": {
+    "reference_v1_sha256": "8bafa4fc965257742d2c1aa753e9bb1c84ca9453486df64d4b5ff5a7fedc21fb",
+    "assurance_v1_sha256": "c902820800f6ea08817ae1b83eec5360e559a359c8ccfdee0796e39c56b48ae2",
+    "exact_v1_blocks_preserved_in_v2": true,
+    "sim49_retained": true
+  },
+  "added_view_ids": [
+    "evidence-contribution-credit-priority-legacy",
+    "mapping-optimization-problem-structure",
+    "procedure-prototype-test-iteration"
+  ],
+  "live_projection": {
+    "edition": "sim-50",
+    "source_commit": "3d97526d2080a8e917a6acd79b905141f675eed2",
+    "workspace_dirty_at_render": false,
+    "selected_book_records": 181,
+    "search_records": 191,
+    "site_pages": 251,
+    "site_chapters": 20,
+    "missing_targets": 0,
+    "standalone_html_sha256": "ee05507729f92067b4b8ab9c82d6cd1e793bf1d74b3d8c51932fab89e8b8498d",
+    "site_identity": "afcaa0243d8da0ec0c5062ee542f88dbd8bf2c2f436454091e491cb5b3817b5d"
+  },
+  "browser": {
+    "queries": 3,
+    "canonical_owners": 3,
+    "mobile_width_px": 390,
+    "horizontal_overflow": false
+  },
+  "reader_evidence_claimed": false,
+  "claims_boundary": "Versioned interchange, assurance, catalog, search, site, and browser mechanics only; V2 remains unfrozen and no reader value, comprehension, findability, decision improvement, release, or external evidence is claimed."
+}

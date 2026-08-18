@@ -3556,3 +3556,15 @@ and `sim-49` as reproducible baselines because existing campaign identities
 depend on their bytes. Twelve roles approve with no open P1/P2 finding. See
 `V2-ROLLING-REFERENCE-INTEGRATION-PLAN.md` and
 `signals/roles/check/v2-rolling-reference-integration-roles-check-2026-08-18.md`.
+
+Result review: rolling V2 preserves every V1 entry and view block exactly,
+adds three reviewed views, and carries 54 entries, 419 senses, 638 factors,
+100 views, 165 assurance bindings, and the unchanged eleven relation records.
+Clean `sim-50` renders 181 selected book records, 191 search destinations, 20
+chapters, and 251 site pages with zero missing targets. Three Edge queries
+resolve the new views to their exact owners at desktop and 390-pixel mobile
+width without horizontal overflow. V2 remains explicitly unfrozen and open to
+later reviewed additions. This is interchange and publication-mechanics
+evidence only, not reader value, release evidence, or content completeness.
+See `V2-ROLLING-REFERENCE-INTEGRATION-RESULT.md` and
+`fixtures/coverage/v2-rolling-reference-integration-result.json`.

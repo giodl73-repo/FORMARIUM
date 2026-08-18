@@ -90,4 +90,13 @@ for (const relative of addedPaths) {
 }
 assert.match(read("context/waves/2026-08-13-factorium-vision/V2-ROLLING-REFERENCE-INTEGRATION-PLAN.md"), /not frozen/i);
 assert.notEqual(digest("reference/factorium-reference-v1.factorium"), digest("reference/factorium-reference-v2.factorium"));
+const result = json("fixtures/coverage/v2-rolling-reference-integration-result.json");
+assert.equal(result.status, "rolling-internal-candidate");
+assert.equal(result.v2_frozen, false);
+assert.equal(result.release_declared, false);
+assert.equal(result.interchange.reference_sha256, digest("reference/factorium-reference-v2.factorium"));
+assert.equal(result.interchange.assurance_sha256, digest("reference/factorium-assurance-v2.factorium"));
+assert.equal(result.live_projection.site_identity, manifest.output.site_identity);
+assert.equal(result.live_projection.workspace_dirty_at_render, false);
+assert.equal(result.reader_evidence_claimed, false);
 console.log(`OK v2=rolling 54/419/638/100 assurance=165 sim50=181 search=191 pages=251 missing=0 frozen=no`);
