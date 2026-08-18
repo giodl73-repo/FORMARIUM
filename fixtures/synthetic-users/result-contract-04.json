@@ -1,0 +1,13 @@
+{
+  "contract_id": "SUJ-RC-04",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "evidence_class": "deterministic-interface-rehearsal-plus-authored-synthetic-hypotheses",
+  "route_states": ["destination-reached", "entrance-only", "route-broken"],
+  "entrances": ["know-term", "have-question", "learn-or-explore"],
+  "profiles": ["compact", "abbreviated", "book", "full"],
+  "required_mechanical_fields": ["assignment_id", "entrance", "start_href", "first_action", "destination", "route_state", "original_task_visible", "density_control_available", "related_routes_available", "explicit_handoff_package", "viewport_overflow"],
+  "required_authored_fields": ["density_transition", "related_concepts", "stopping_condition", "outward_handoff", "projection_losses", "change_disposition", "claim_boundary"],
+  "change_dispositions": ["no-change", "defer", "external", "repair"],
+  "prohibited_measure_keys": ["reader_success", "completion_rate", "comprehension", "preference", "satisfaction", "trust_score", "accessibility_success", "adoption", "return_intent"]
+}
