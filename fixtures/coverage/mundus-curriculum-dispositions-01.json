@@ -1,0 +1,2878 @@
+{
+  "schema": "factorium.mundus-curriculum-dispositions.v1",
+  "status": "complete-research-only-no-admission",
+  "generated": "2026-08-18",
+  "baseline": {
+    "screen_path": "fixtures/coverage/mundus-curriculum-vocabulary-screen-01.json",
+    "screen_sha256": "7250fdaba184e01940d1aeef70296611fd6df00459f461f7137dedd7bac9489e",
+    "reference": "reference/factorium-reference-v1.factorium",
+    "reference_sha256": "8bafa4fc965257742d2c1aa753e9bb1c84ca9453486df64d4b5ff5a7fedc21fb"
+  },
+  "method": {
+    "denominator": "all 148 unique FONTES work-subject terms",
+    "boundary": "named tools, course-support tags, domains, techniques, objects, and specializations do not become anchors",
+    "owner_test": "direct owner, compositional owner, smallest specialized view, or insufficient repeated pressure",
+    "automatic_admission": false
+  },
+  "summary": {
+    "terms": 148,
+    "disposition_counts": {
+      "covered-compositionally": 24,
+      "covered-directly": 4,
+      "domain-label": 12,
+      "domain-specialization": 85,
+      "held-specialized-view-research": 2,
+      "named-tool-or-language": 3,
+      "recommended-procedure-view-research": 6,
+      "recommended-view-research": 8,
+      "source-workflow-tag": 4
+    },
+    "recommended_view_research_groups": 2,
+    "held_view_research_groups": 1,
+    "admitted_anchors": 0,
+    "admitted_views": 0,
+    "discovery_repairs": 0
+  },
+  "metadata_packet_dispositions": [
+    {
+      "packet_id": "MCC-01-05",
+      "lane": "mathematics",
+      "source_id": "fontes:stanford-public-course-sites:math-foundations-public-course-surfaces:stanford-math108-homepage",
+      "title": "stanford_math108_combinatorics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-06",
+      "lane": "mathematics",
+      "source_id": "fontes:stanford-public-course-sites:math-foundations-public-course-surfaces:stanford-math113-homepage",
+      "title": "stanford_math113_abstract_algebra_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-11",
+      "lane": "physical-science",
+      "source_id": "fontes:stanford-public-course-sites:physical-sciences-public-course-surfaces:stanford-chem33-homepage",
+      "title": "stanford_chem33_structure_reactivity_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-12",
+      "lane": "physical-science",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-earthsys10-homepage",
+      "title": "stanford_earthsys10_earth_systems_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-14",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:bio-biomed-public-course-surfaces:stanford-gene211-homepage",
+      "title": "stanford_gene211_genomics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-15",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:medicine-public-health-public-course-surfaces:stanford-hrp225-homepage",
+      "title": "stanford_hrp225_epidemiology_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-16",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:medicine-public-health-public-course-surfaces:stanford-hrp251-homepage",
+      "title": "stanford_hrp251_clinical_trials_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-17",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:bio-biomed-public-course-surfaces:stanford-bioe220-homepage",
+      "title": "stanford_bioe220_synthetic_biology_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-18",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-earthsys105-homepage",
+      "title": "stanford_earthsys105_food_environment_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-23",
+      "lane": "computing-software",
+      "source_id": "fontes:stanford-public-course-sites:software-public-course-surfaces:stanford-cs111-homepage",
+      "title": "stanford_cs111_operating_systems_principles_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-24",
+      "lane": "computing-software",
+      "source_id": "fontes:stanford-public-course-sites:computing-practice-society-public-course-surfaces:stanford-cs181-homepage",
+      "title": "stanford_cs181_computers_ethics_public_policy_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-29",
+      "lane": "ai-data-inference",
+      "source_id": "fontes:stanford-public-course-sites:stats-data-public-course-surfaces:stanford-stats200-homepage",
+      "title": "stanford_stats200_statistical_inference_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-30",
+      "lane": "ai-data-inference",
+      "source_id": "fontes:berkeley-public-course-sites:stats-probability-data-public-course-surfaces:berkeley-prob140-homepage",
+      "title": "berkeley_prob140_probability_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-35",
+      "lane": "engineering-systems-control",
+      "source_id": "fontes:stanford-public-course-sites:engineering-design-public-course-surfaces:stanford-me80-homepage",
+      "title": "stanford_me80_stress_strain_strength_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-36",
+      "lane": "engineering-systems-control",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-energy221-homepage",
+      "title": "stanford_energy221_energy_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-39",
+      "lane": "social-humanities",
+      "source_id": "fontes:stanford-public-course-sites:philosophy-ethics-public-course-surfaces:stanford-phil188-homepage",
+      "title": "stanford_phil188_personal_identity_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-40",
+      "lane": "social-humanities",
+      "source_id": "fontes:stanford-public-course-sites:humanities-social-public-course-surfaces:stanford-psych45-homepage",
+      "title": "stanford_psych45_learning_memory_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-41",
+      "lane": "social-humanities",
+      "source_id": "fontes:stanford-public-course-sites:humanities-social-public-course-surfaces:stanford-history202-homepage",
+      "title": "stanford_history202_history_methods_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-42",
+      "lane": "social-humanities",
+      "source_id": "fontes:stanford-public-course-sites:sociology-public-course-surfaces:stanford-soc142-homepage",
+      "title": "stanford_soc142_social_networks_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-44",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ1-homepage",
+      "title": "stanford_econ1_introductory_economics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-45",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ50-homepage",
+      "title": "stanford_econ50_microeconomics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-46",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ51-homepage",
+      "title": "stanford_econ51_macroeconomics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-47",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-msande140-homepage",
+      "title": "stanford_msande140_management_science_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-48",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-msande152-homepage",
+      "title": "stanford_msande152_decision_analysis_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    }
+  ],
+  "research_groups": [
+    {
+      "group_id": "optimization-problem-structure",
+      "disposition": "recommended-view-research",
+      "owner_candidates": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "terms": [
+        "convex analysis",
+        "convex optimization",
+        "duality",
+        "interior-point methods",
+        "least squares",
+        "linear programming",
+        "optimization",
+        "semidefinite programming"
+      ],
+      "packet_ids": [
+        "MCC-01-03",
+        "MCC-01-04",
+        "MCC-01-20",
+        "MCC-01-25",
+        "MCC-01-27",
+        "MCC-01-33"
+      ],
+      "heading_evidence": [
+        {
+          "packet_id": "MCC-01-25",
+          "session_id": "lecture-5",
+          "title": "Search: Optimal, Branch and Bound, A*",
+          "source_path": "sources/tables/mit-6-034-videos.json"
+        },
+        {
+          "packet_id": "MCC-01-25",
+          "session_id": "mega-recitation-2",
+          "title": "Basic Search, Optimal Search",
+          "source_path": "sources/tables/mit-6-034-videos.json"
+        },
+        {
+          "packet_id": "MCC-01-27",
+          "session_id": "lecture-8",
+          "title": "Support vector machine (SVM) and kernels, kernel optimization",
+          "source_path": "sources/tables/mit-6-867-lecture-notes.json"
+        },
+        {
+          "packet_id": "MCC-01-27",
+          "session_id": "lecture-9",
+          "title": "Model selection",
+          "source_path": "sources/tables/mit-6-867-lecture-notes.json"
+        },
+        {
+          "packet_id": "MCC-01-27",
+          "session_id": "lecture-10",
+          "title": "Model selection criteria",
+          "source_path": "sources/tables/mit-6-867-lecture-notes.json"
+        }
+      ],
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "group_id": "prototype-test-iteration",
+      "disposition": "recommended-procedure-view-research",
+      "owner_candidates": [
+        "requirement-specification-verification-validation",
+        "coordinated-work",
+        "evaluation-measure-scale-criterion"
+      ],
+      "terms": [
+        "accessibility",
+        "game assessment",
+        "learnability",
+        "prototyping",
+        "usability",
+        "user testing"
+      ],
+      "packet_ids": [
+        "MCC-01-21",
+        "MCC-01-38"
+      ],
+      "heading_evidence": [],
+      "reason": "Two materially different courses repeat prototyping while HCI adds task, user, usability, accessibility, and test criteria; a bounded procedure view may reduce reconstruction without creating a new anchor."
+    },
+    {
+      "group_id": "observability-state-estimation",
+      "disposition": "held-specialized-view-research",
+      "owner_candidates": [
+        "control-monitoring-response",
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "terms": [
+        "observability",
+        "state estimation"
+      ],
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "heading_evidence": [],
+      "reason": "The distinction is real but currently comes from one linear-systems course record; hold until independent cross-course or domain pressure appears."
+    }
+  ],
+  "dispositions": [
+    {
+      "term": "3d geometry",
+      "normalized_term": "3d geometry",
+      "packet_ids": [
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "accessibility",
+      "normalized_term": "accessibility",
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-procedure-view-research",
+      "owner_entry_ids": [
+        "requirement-specification-verification-validation",
+        "coordinated-work",
+        "evaluation-measure-scale-criterion"
+      ],
+      "research_group_id": "prototype-test-iteration",
+      "reason": "Two materially different courses repeat prototyping while HCI adds task, user, usability, accessibility, and test criteria; a bounded procedure view may reduce reconstruction without creating a new anchor."
+    },
+    {
+      "term": "algorithmic fairness",
+      "normalized_term": "algorithmic fairness",
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "algorithms",
+      "normalized_term": "algorithms",
+      "packet_ids": [
+        "MCC-01-19"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "angular momentum",
+      "normalized_term": "angular momentum",
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "applied linear algebra",
+      "normalized_term": "applied linear algebra",
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "artificial intelligence",
+      "normalized_term": "artificial intelligence",
+      "packet_ids": [
+        "MCC-01-25",
+        "MCC-01-26"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "assembly",
+      "normalized_term": "assembly",
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "atomic structure",
+      "normalized_term": "atomic structure",
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "auctions",
+      "normalized_term": "auctions",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "backward induction",
+      "normalized_term": "backward induction",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "Bayesian networks",
+      "normalized_term": "bayesian networks",
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "bonding",
+      "normalized_term": "bonding",
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "C",
+      "normalized_term": "c",
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "named-tool-or-language",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A named programming language or implementation surface is an example, not a reusable canonical concept."
+    },
+    {
+      "term": "C++",
+      "normalized_term": "c plus plus",
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "named-tool-or-language",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A named programming language or implementation surface is an example, not a reusable canonical concept."
+    },
+    {
+      "term": "caching",
+      "normalized_term": "caching",
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "catalysis",
+      "normalized_term": "catalysis",
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "chemical-reaction-stoichiometry-equilibrium"
+      ],
+      "research_group_id": null,
+      "reason": "Catalyst and mechanism distinctions already own the reusable chemical role."
+    },
+    {
+      "term": "causal inference",
+      "normalized_term": "causal inference",
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "sampling-generalization"
+      ],
+      "research_group_id": null,
+      "reason": "Causal claim type, design, estimand, assumptions, uncertainty, and transport already compose the reusable question."
+    },
+    {
+      "term": "chemistry",
+      "normalized_term": "chemistry",
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "civic engagement",
+      "normalized_term": "civic engagement",
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "classical mechanics",
+      "normalized_term": "classical mechanics",
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "classification",
+      "normalized_term": "classification",
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "exact-reference-label-review",
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "identity-naming-classification-versioning"
+      ],
+      "research_group_id": null,
+      "reason": "Exact V1 sense label."
+    },
+    {
+      "term": "clinical data",
+      "normalized_term": "clinical data",
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "computer science",
+      "normalized_term": "computer science",
+      "packet_ids": [
+        "MCC-01-19"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "concurrency",
+      "normalized_term": "concurrency",
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "exact-reference-label-review",
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "coordinated-work",
+        "software-transaction-message-contract"
+      ],
+      "research_group_id": null,
+      "reason": "Exact V1 sense label with general work and software transaction contexts."
+    },
+    {
+      "term": "control",
+      "normalized_term": "control",
+      "packet_ids": [
+        "MCC-01-32",
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "control-monitoring-response"
+      ],
+      "research_group_id": null,
+      "reason": "Objective, controller, actuator, monitoring, feedback, and response are already separated."
+    },
+    {
+      "term": "convex analysis",
+      "normalized_term": "convex analysis",
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-view-research",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": "optimization-problem-structure",
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "term": "convex optimization",
+      "normalized_term": "convex optimization",
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-view-research",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": "optimization-problem-structure",
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "term": "data structures",
+      "normalized_term": "data structures",
+      "packet_ids": [
+        "MCC-01-19"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "deep learning",
+      "normalized_term": "deep learning",
+      "packet_ids": [
+        "MCC-01-13",
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "life-health-science"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "differential equations",
+      "normalized_term": "differential equations",
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "dominance",
+      "normalized_term": "dominance",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "research_group_id": null,
+      "reason": "The admitted trade-off/dominance decision view owns the reusable comparison."
+    },
+    {
+      "term": "duality",
+      "normalized_term": "duality",
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-view-research",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": "optimization-problem-structure",
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "term": "dynamic simulation",
+      "normalized_term": "dynamic simulation",
+      "packet_ids": [
+        "MCC-01-34"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "model-representation-simulation"
+      ],
+      "research_group_id": null,
+      "reason": "Simulation execution and result identity already cover the reusable distinction."
+    },
+    {
+      "term": "electricity",
+      "normalized_term": "electricity",
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "energy",
+      "normalized_term": "energy",
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "exact-reference-label-review",
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "work-energy-power"
+      ],
+      "research_group_id": null,
+      "reason": "Exact V1 sense label in this mechanics packet."
+    },
+    {
+      "term": "engineering dynamics",
+      "normalized_term": "engineering dynamics",
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "equilibrium",
+      "normalized_term": "equilibrium",
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "chemical-reaction-stoichiometry-equilibrium"
+      ],
+      "research_group_id": null,
+      "reason": "This occurrence is chemical and routes to the explicit chemical-equilibrium sense."
+    },
+    {
+      "term": "evolutionary stability",
+      "normalized_term": "evolutionary stability",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "first order systems",
+      "normalized_term": "first order systems",
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "forces",
+      "normalized_term": "forces",
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "force",
+        "motion-measure"
+      ],
+      "research_group_id": null,
+      "reason": "Physical force and resulting motion quantities already have separate owners."
+    },
+    {
+      "term": "Fourier analysis",
+      "normalized_term": "fourier analysis",
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "Fourier series",
+      "normalized_term": "fourier series",
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "functional groups",
+      "normalized_term": "functional groups",
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "functional programming",
+      "normalized_term": "functional programming",
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "game analysis",
+      "normalized_term": "game analysis",
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "game assessment",
+      "normalized_term": "game assessment",
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-procedure-view-research",
+      "owner_entry_ids": [
+        "requirement-specification-verification-validation",
+        "coordinated-work",
+        "evaluation-measure-scale-criterion"
+      ],
+      "research_group_id": "prototype-test-iteration",
+      "reason": "Two materially different courses repeat prototyping while HCI adds task, user, usability, accessibility, and test criteria; a bounded procedure view may reduce reconstruction without creating a new anchor."
+    },
+    {
+      "term": "game criticism",
+      "normalized_term": "game criticism",
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "game culture",
+      "normalized_term": "game culture",
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "game design",
+      "normalized_term": "game design",
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "game engine support",
+      "normalized_term": "game engine support",
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "source-workflow-tag",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "FONTES records this as a downstream project-support tag rather than course concept evidence."
+    },
+    {
+      "term": "game narrative",
+      "normalized_term": "game narrative",
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "game physics support",
+      "normalized_term": "game physics support",
+      "packet_ids": [
+        "MCC-01-02",
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "mathematics"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "source-workflow-tag",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "FONTES records this as a downstream project-support tag rather than course concept evidence."
+    },
+    {
+      "term": "game spaces",
+      "normalized_term": "game spaces",
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "game theory",
+      "normalized_term": "game theory",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "game UI support",
+      "normalized_term": "game ui support",
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "source-workflow-tag",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "FONTES records this as a downstream project-support tag rather than course concept evidence."
+    },
+    {
+      "term": "games for social change",
+      "normalized_term": "games for social change",
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "haptics",
+      "normalized_term": "haptics",
+      "packet_ids": [
+        "MCC-01-34"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "healthcare",
+      "normalized_term": "healthcare",
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "hidden Markov models",
+      "normalized_term": "hidden markov models",
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "human-centered robotics",
+      "normalized_term": "human centered robotics",
+      "packet_ids": [
+        "MCC-01-34"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "human-computer interaction",
+      "normalized_term": "human computer interaction",
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "interior-point methods",
+      "normalized_term": "interior point methods",
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-view-research",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": "optimization-problem-structure",
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "term": "interpolation",
+      "normalized_term": "interpolation",
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "interpretability",
+      "normalized_term": "interpretability",
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "meaning-reference-interpretation-use",
+        "claim-evidence"
+      ],
+      "research_group_id": null,
+      "reason": "Model-specific interpretability remains specialized; interpretation and evidence limits compose the reusable question."
+    },
+    {
+      "term": "kinematics",
+      "normalized_term": "kinematics",
+      "packet_ids": [
+        "MCC-01-08",
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "physical-science"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "motion-measure",
+        "geometric-reference-structure"
+      ],
+      "research_group_id": null,
+      "reason": "Position, path, displacement, velocity, acceleration, coordinates, and frames already own the reusable distinctions."
+    },
+    {
+      "term": "kinetics",
+      "normalized_term": "kinetics",
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "chemical-reaction-stoichiometry-equilibrium"
+      ],
+      "research_group_id": null,
+      "reason": "Reaction rate, rate law, mechanism, and equilibrium are already separated."
+    },
+    {
+      "term": "knowledge representation",
+      "normalized_term": "knowledge representation",
+      "packet_ids": [
+        "MCC-01-25"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "model-representation-simulation",
+        "meaning-reference-interpretation-use"
+      ],
+      "research_group_id": null,
+      "reason": "Representation and its interpretation contract already own the reusable layer distinction."
+    },
+    {
+      "term": "Lagrange equations",
+      "normalized_term": "lagrange equations",
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "Laplace transform",
+      "normalized_term": "laplace transform",
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "learnability",
+      "normalized_term": "learnability",
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-procedure-view-research",
+      "owner_entry_ids": [
+        "requirement-specification-verification-validation",
+        "coordinated-work",
+        "evaluation-measure-scale-criterion"
+      ],
+      "research_group_id": "prototype-test-iteration",
+      "reason": "Two materially different courses repeat prototyping while HCI adds task, user, usability, accessibility, and test criteria; a bounded procedure view may reduce reconstruction without creating a new anchor."
+    },
+    {
+      "term": "learning",
+      "normalized_term": "learning",
+      "packet_ids": [
+        "MCC-01-25"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "learning theory",
+      "normalized_term": "learning theory",
+      "packet_ids": [
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "least squares",
+      "normalized_term": "least squares",
+      "packet_ids": [
+        "MCC-01-03",
+        "MCC-01-04",
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "mathematics"
+      ],
+      "occurrence_count": 3,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "recommended-view-research",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": "optimization-problem-structure",
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "term": "linear algebra",
+      "normalized_term": "linear algebra",
+      "packet_ids": [
+        "MCC-01-01"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "linear dynamical systems",
+      "normalized_term": "linear dynamical systems",
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "linear programming",
+      "normalized_term": "linear programming",
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-view-research",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": "optimization-problem-structure",
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "term": "linearization",
+      "normalized_term": "linearization",
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "machine learning",
+      "normalized_term": "machine learning",
+      "packet_ids": [
+        "MCC-01-13",
+        "MCC-01-26",
+        "MCC-01-27",
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference",
+        "life-health-science"
+      ],
+      "occurrence_count": 4,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "magnetism",
+      "normalized_term": "magnetism",
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "mathematics",
+      "normalized_term": "mathematics",
+      "packet_ids": [
+        "MCC-01-01"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "matrix theory",
+      "normalized_term": "matrix theory",
+      "packet_ids": [
+        "MCC-01-01"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "mechanical vibration",
+      "normalized_term": "mechanical vibration",
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "mechanism",
+      "normalized_term": "mechanism",
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "chemical-reaction-stoichiometry-equilibrium"
+      ],
+      "research_group_id": null,
+      "reason": "The packet context selects causal or chemical mechanism; no universal third mechanism sense is established."
+    },
+    {
+      "term": "memory allocation",
+      "normalized_term": "memory allocation",
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "memory management",
+      "normalized_term": "memory management",
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "mixed strategies",
+      "normalized_term": "mixed strategies",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "mobile interfaces",
+      "normalized_term": "mobile interfaces",
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "modeling",
+      "normalized_term": "modeling",
+      "packet_ids": [
+        "MCC-01-26"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "model-representation-simulation"
+      ],
+      "research_group_id": null,
+      "reason": "Model purpose, subject, representation, implementation, run, and result are already separated."
+    },
+    {
+      "term": "molecular structure",
+      "normalized_term": "molecular structure",
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "momentum",
+      "normalized_term": "momentum",
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "motion-measure"
+      ],
+      "research_group_id": null,
+      "reason": "Linear momentum is an explicit V1 sense."
+    },
+    {
+      "term": "nash equilibrium",
+      "normalized_term": "nash equilibrium",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "natural language processing",
+      "normalized_term": "natural language processing",
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "numerical analysis",
+      "normalized_term": "numerical analysis",
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "observability",
+      "normalized_term": "observability",
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "held-specialized-view-research",
+      "owner_entry_ids": [
+        "control-monitoring-response",
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "research_group_id": "observability-state-estimation",
+      "reason": "The distinction is real but currently comes from one linear-systems course record; hold until independent cross-course or domain pressure appears."
+    },
+    {
+      "term": "optics",
+      "normalized_term": "optics",
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "optimization",
+      "normalized_term": "optimization",
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-view-research",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": "optimization-problem-structure",
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "term": "ordinary differential equations",
+      "normalized_term": "ordinary differential equations",
+      "packet_ids": [
+        "MCC-01-02",
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "organic chemistry",
+      "normalized_term": "organic chemistry",
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "parallel programming",
+      "normalized_term": "parallel programming",
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "perception",
+      "normalized_term": "perception",
+      "packet_ids": [
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "performance engineering",
+      "normalized_term": "performance engineering",
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "periodic response",
+      "normalized_term": "periodic response",
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "periodic-wave-quantity",
+        "control-monitoring-response"
+      ],
+      "research_group_id": null,
+      "reason": "Recurrence and response compose from the wave and control owners."
+    },
+    {
+      "term": "physics",
+      "normalized_term": "physics",
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "planning",
+      "normalized_term": "planning",
+      "packet_ids": [
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "coordinated-work"
+      ],
+      "research_group_id": null,
+      "reason": "Plan, task, workflow, dependencies, resources, and actuals already have a general owner."
+    },
+    {
+      "term": "player identity",
+      "normalized_term": "player identity",
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "prediction",
+      "normalized_term": "prediction",
+      "packet_ids": [
+        "MCC-01-26"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "claim-evidence",
+        "probability-risk-uncertainty",
+        "model-representation-simulation"
+      ],
+      "research_group_id": null,
+      "reason": "A prediction remains a model-mediated claim under uncertainty; the course tag does not yet establish a separate owner."
+    },
+    {
+      "term": "principal component analysis",
+      "normalized_term": "principal component analysis",
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "programming",
+      "normalized_term": "programming",
+      "packet_ids": [
+        "MCC-01-19"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "prototyping",
+      "normalized_term": "prototyping",
+      "packet_ids": [
+        "MCC-01-21",
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "computing-software",
+        "social-humanities"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "recommended-procedure-view-research",
+      "owner_entry_ids": [
+        "requirement-specification-verification-validation",
+        "coordinated-work",
+        "evaluation-measure-scale-criterion"
+      ],
+      "research_group_id": "prototype-test-iteration",
+      "reason": "Two materially different courses repeat prototyping while HCI adds task, user, usability, accessibility, and test criteria; a bounded procedure view may reduce reconstruction without creating a new anchor."
+    },
+    {
+      "term": "Python",
+      "normalized_term": "python",
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "named-tool-or-language",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A named programming language or implementation surface is an example, not a reusable canonical concept."
+    },
+    {
+      "term": "quadrature",
+      "normalized_term": "quadrature",
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "quantum mechanics",
+      "normalized_term": "quantum mechanics",
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "redox",
+      "normalized_term": "redox",
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "reinforcement learning",
+      "normalized_term": "reinforcement learning",
+      "packet_ids": [
+        "MCC-01-13",
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference",
+        "life-health-science"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "rigid bodies",
+      "normalized_term": "rigid bodies",
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "robotic control",
+      "normalized_term": "robotic control",
+      "packet_ids": [
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "robotic manipulation",
+      "normalized_term": "robotic manipulation",
+      "packet_ids": [
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "robotics",
+      "normalized_term": "robotics",
+      "packet_ids": [
+        "MCC-01-32",
+        "MCC-01-34"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 2,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "root finding",
+      "normalized_term": "root finding",
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": null,
+      "reason": "Root, solution, iteration, and convergence are explicit V1 senses."
+    },
+    {
+      "term": "rotating frames",
+      "normalized_term": "rotating frames",
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "geometric-reference-structure",
+        "motion-measure"
+      ],
+      "research_group_id": null,
+      "reason": "Reference-frame and motion-measure owners compose the reusable distinction."
+    },
+    {
+      "term": "rotational dynamics",
+      "normalized_term": "rotational dynamics",
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "search",
+      "normalized_term": "search",
+      "packet_ids": [
+        "MCC-01-25"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "second order systems",
+      "normalized_term": "second order systems",
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "semidefinite programming",
+      "normalized_term": "semidefinite programming",
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-view-research",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "policy-rule-constraint-decision-exception",
+        "mathematical-relation-solving"
+      ],
+      "research_group_id": "optimization-problem-structure",
+      "reason": "Repeated mathematical, AI, inference, and control pressure asks for variables, objective, domain, constraints, feasible set, optimality claim, method, diagnostics, and sensitivity without confusing a solver result with a decision."
+    },
+    {
+      "term": "serious games",
+      "normalized_term": "serious games",
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "signal processing",
+      "normalized_term": "signal processing",
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "signaling",
+      "normalized_term": "signaling",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "information-data-signal-noise",
+        "interaction-request-response-correlation"
+      ],
+      "research_group_id": null,
+      "reason": "The game-theoretic specialization does not establish a new general signal owner."
+    },
+    {
+      "term": "simulation",
+      "normalized_term": "simulation",
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "exact-reference-label-review",
+      "disposition": "covered-directly",
+      "owner_entry_ids": [
+        "model-representation-simulation"
+      ],
+      "research_group_id": null,
+      "reason": "Exact V1 sense label."
+    },
+    {
+      "term": "simulation support",
+      "normalized_term": "simulation support",
+      "packet_ids": [
+        "MCC-01-02",
+        "MCC-01-03",
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "mathematics"
+      ],
+      "occurrence_count": 3,
+      "screening_disposition": "recurring-manual-review",
+      "disposition": "source-workflow-tag",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "FONTES records this as a downstream project-support tag rather than course concept evidence."
+    },
+    {
+      "term": "social impact",
+      "normalized_term": "social impact",
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "causal-reasoning",
+        "evaluation-measure-scale-criterion"
+      ],
+      "research_group_id": null,
+      "reason": "Outcome attribution and evaluation criteria already compose the reusable question."
+    },
+    {
+      "term": "software systems",
+      "normalized_term": "software systems",
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    },
+    {
+      "term": "spectral methods",
+      "normalized_term": "spectral methods",
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "state estimation",
+      "normalized_term": "state estimation",
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "held-specialized-view-research",
+      "owner_entry_ids": [
+        "control-monitoring-response",
+        "model-representation-simulation",
+        "claim-evidence"
+      ],
+      "research_group_id": "observability-state-estimation",
+      "reason": "The distinction is real but currently comes from one linear-systems course record; hold until independent cross-course or domain pressure appears."
+    },
+    {
+      "term": "statistical inference",
+      "normalized_term": "statistical inference",
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "sampling-generalization",
+        "claim-evidence",
+        "probability-risk-uncertainty"
+      ],
+      "research_group_id": null,
+      "reason": "Target, estimator, estimate, evidence, and uncertainty already compose the reusable structure."
+    },
+    {
+      "term": "stereochemistry",
+      "normalized_term": "stereochemistry",
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "strategic thinking",
+      "normalized_term": "strategic thinking",
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "choice-alternative-selection",
+        "scenario-assumption-condition-case"
+      ],
+      "research_group_id": null,
+      "reason": "Alternatives, other actors' states, criteria, uncertainty, and selection compose the general decision question."
+    },
+    {
+      "term": "structure",
+      "normalized_term": "structure",
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "covered-compositionally",
+      "owner_entry_ids": [
+        "system-composition-dependency",
+        "chemical-substance-classification"
+      ],
+      "research_group_id": null,
+      "reason": "Packet context selects general composition or molecular/classification structure."
+    },
+    {
+      "term": "supervised learning",
+      "normalized_term": "supervised learning",
+      "packet_ids": [
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "support vector machines",
+      "normalized_term": "support vector machines",
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "systems programming",
+      "normalized_term": "systems programming",
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "thermodynamics",
+      "normalized_term": "thermodynamics",
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "unsupervised learning",
+      "normalized_term": "unsupervised learning",
+      "packet_ids": [
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "usability",
+      "normalized_term": "usability",
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-procedure-view-research",
+      "owner_entry_ids": [
+        "requirement-specification-verification-validation",
+        "coordinated-work",
+        "evaluation-measure-scale-criterion"
+      ],
+      "research_group_id": "prototype-test-iteration",
+      "reason": "Two materially different courses repeat prototyping while HCI adds task, user, usability, accessibility, and test criteria; a bounded procedure view may reduce reconstruction without creating a new anchor."
+    },
+    {
+      "term": "user interface design",
+      "normalized_term": "user interface design",
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "user testing",
+      "normalized_term": "user testing",
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "recommended-procedure-view-research",
+      "owner_entry_ids": [
+        "requirement-specification-verification-validation",
+        "coordinated-work",
+        "evaluation-measure-scale-criterion"
+      ],
+      "research_group_id": "prototype-test-iteration",
+      "reason": "Two materially different courses repeat prototyping while HCI adds task, user, usability, accessibility, and test criteria; a bounded procedure view may reduce reconstruction without creating a new anchor."
+    },
+    {
+      "term": "vectorization",
+      "normalized_term": "vectorization",
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-specialization",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "The source tag names a technique, object, subfield, or scoped domain topic; this campaign found no repeated cross-domain owner request beyond existing composition."
+    },
+    {
+      "term": "videogame studies",
+      "normalized_term": "videogame studies",
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "occurrence_count": 1,
+      "screening_disposition": "single-course-manual-review",
+      "disposition": "domain-label",
+      "owner_entry_ids": [],
+      "research_group_id": null,
+      "reason": "A field or course-domain label does not supply a governing conceptual distinction."
+    }
+  ],
+  "portfolio_decision": {
+    "continue": [
+      "optimization-problem-structure",
+      "prototype-test-iteration"
+    ],
+    "hold": [
+      "observability-state-estimation",
+      "economic-income-consumption-saving-wealth"
+    ],
+    "admit_now": [],
+    "reason": "Two no-new-anchor view questions earn focused established-source research; no term earns immediate canonical admission from course metadata or headings."
+  },
+  "claims_boundary": "Internal source-led coverage evidence only; no curriculum consensus, reader value, pedagogical effectiveness, professional guidance, or market demand claim."
+}

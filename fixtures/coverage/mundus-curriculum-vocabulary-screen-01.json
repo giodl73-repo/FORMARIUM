@@ -1,0 +1,5031 @@
+{
+  "schema": "factorium.mundus-curriculum-vocabulary-screen.v1",
+  "status": "complete-before-manual-owner-disposition",
+  "generated": "2026-08-18",
+  "baseline": {
+    "portfolio_path": "fixtures/coverage/mundus-curriculum-depth-portfolio-01.json",
+    "portfolio_sha256": "add70fd69bb0413cf3f60df7c06a677896e3cf9da1b0f073c5726b28a6234356",
+    "reference_path": "reference/factorium-reference-v1.factorium",
+    "reference_sha256": "8bafa4fc965257742d2c1aa753e9bb1c84ca9453486df64d4b5ff5a7fedc21fb",
+    "fontes_commit": "00a94ceaf4eb3a2edb02858630e70434ddb50cf0"
+  },
+  "method": {
+    "extracted_field": "subjects from 24 FONTES individual work records",
+    "session_heading_use": "retained exactly for manual corroboration; not automatically tokenized into candidates",
+    "exact_hit_rule": "normalized whole-term equality with a V1 entry title, sense label, or factor label",
+    "automatic_admission": false
+  },
+  "summary": {
+    "record_packets": 24,
+    "metadata_packets": 24,
+    "subject_occurrences": 164,
+    "unique_subject_terms": 148,
+    "session_tables": 8,
+    "session_rows": 222,
+    "screening_counts": {
+      "exact-reference-label-review": 4,
+      "recurring-manual-review": 12,
+      "single-course-manual-review": 132
+    }
+  },
+  "source_manifest": [
+    {
+      "path": "sources/mit/ocw/18-03sc-differential-equations/work.json",
+      "sha256": "7f3abcc27c5af663ee315e76f7a6ccc0aaaf2431b050ea435d9b82d412668d1c"
+    },
+    {
+      "path": "sources/mit/ocw/18-06-linear-algebra/work.json",
+      "sha256": "5b3d84901a3d83350633dab8dab3e2f60f3bb8e2673070595ab3212fbfad0a46"
+    },
+    {
+      "path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json",
+      "sha256": "c5dd5a66aab2e9c6f45ec7095ee83c18b3dd59f4e0c98623328cb93c5e7dead2"
+    },
+    {
+      "path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json",
+      "sha256": "d58b21fc88d0be3ad68568aeda60dca45af47deb31e1c25bd048346ca7232ce8"
+    },
+    {
+      "path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json",
+      "sha256": "aa2a417a5499d9bb1791c01a172a179b8eb707f390c8018355f16b521cc6e347"
+    },
+    {
+      "path": "sources/mit/ocw/6-006-introduction-to-algorithms/work.json",
+      "sha256": "19489a62def0d149c8246bf3bc16834b94732a053d386c01323af57d98fad047"
+    },
+    {
+      "path": "sources/mit/ocw/6-034-artificial-intelligence/work.json",
+      "sha256": "2ce8cfaa435f25c4b5f22196de5dade3cfe08bccd8eb2da24c15732f9cb6ecb1"
+    },
+    {
+      "path": "sources/mit/ocw/6-036-introduction-to-machine-learning/work.json",
+      "sha256": "81ab39ae040c80a26888ed8ad8e0bab6a1eae39a2a7f3b84c29e4dc982015831"
+    },
+    {
+      "path": "sources/mit/ocw/6-172-performance-engineering/work.json",
+      "sha256": "699757ddb55df141c97c0c5c673d966afb089fa0ce211eb44ace52a1e56ae886"
+    },
+    {
+      "path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json",
+      "sha256": "cb2e25effd8f011616543c9aa11250cb2a9f57c0058641dd830ac0778ef72195"
+    },
+    {
+      "path": "sources/mit/ocw/6-831-user-interface-design/work.json",
+      "sha256": "27ee4d9267e8afe47f656cdcb238165381690b6508149bfa54e0ebf20a5def1b"
+    },
+    {
+      "path": "sources/mit/ocw/6-867-machine-learning/work.json",
+      "sha256": "ba17e85305edfc97894a3c1f4dcee8f672a43f02c9debf92c45d54e7868e0181"
+    },
+    {
+      "path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json",
+      "sha256": "b2aa0fd0fbc4a43cf08be9cd2134240638c761e231f7715b10156fc0fe52198d"
+    },
+    {
+      "path": "sources/mit/ocw/8-01sc-classical-mechanics/work.json",
+      "sha256": "da4b54f3225029948cc16e344bc3b10082660566285799286b6213d790f32b4e"
+    },
+    {
+      "path": "sources/mit/ocw/cms-300-videogame-studies/work.json",
+      "sha256": "1f8a8ae4eaecb539a864d18729bab5623bb8b05a30f69d7bde55f9e1f72c4060"
+    },
+    {
+      "path": "sources/mit/ocw/cms-615-games-for-social-change/work.json",
+      "sha256": "2a21d0b83cb75e391c7f49c4a8ad14f21ea8d9746d6602f151190add08ac543f"
+    },
+    {
+      "path": "sources/open-education/open-yale-courses/chem-125a-freshman-organic-chemistry-i/work.json",
+      "sha256": "07d3c19d9c63b00f54d7d3b7e2db98f0c84e5bb27291e265e90aa5f20ab85960"
+    },
+    {
+      "path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json",
+      "sha256": "60cd2cb1d5bdc4d487bc75a3c5cac07b63184653a95d1a72c0ae86126d72d000"
+    },
+    {
+      "path": "sources/open-education/open-yale-courses/phys-201-fundamentals-of-physics-ii/work.json",
+      "sha256": "15aa65bb0cf6900b92cff1ebe2d09739765704bb02ec1999e381d909cac27f50"
+    },
+    {
+      "path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json",
+      "sha256": "a504aeab2676d13c3550592d1f5131e5fbe283307eb6d059107425626b161044"
+    },
+    {
+      "path": "sources/open-education/stanford-engineering-everywhere/cs223a-introduction-to-robotics/work.json",
+      "sha256": "92b57df6fb1630b2f587cac21ad4919e54c0b33b3784d5edeaf930d68424a41b"
+    },
+    {
+      "path": "sources/open-education/stanford-engineering-everywhere/cs229-machine-learning/work.json",
+      "sha256": "b2a5d9dc3285a67c0301e52819178d9fe8cfb47691ae208a3a55ccd0867939f4"
+    },
+    {
+      "path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json",
+      "sha256": "a387c6b8243f8ceb9e6ded273bd9dd1748056bb8d60f95980fd1f4e59847c07a"
+    },
+    {
+      "path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json",
+      "sha256": "2cea1ae5434755b9c4952d0b6e051d21a425db564e647bacdb29cafef37246d8"
+    },
+    {
+      "path": "sources/tables/mit-6-006-readings.json",
+      "sha256": "8e10d6a251b2666a747762cbabc1d576c220a2503908c082a854450fbd21bfc2"
+    },
+    {
+      "path": "sources/tables/mit-6-034-readings.json",
+      "sha256": "614125a087d557fcebe65a2516bf4d85049cd5dba482e3c5370fb98fdd6f823b"
+    },
+    {
+      "path": "sources/tables/mit-6-034-videos.json",
+      "sha256": "638fb3a24672ce80c54cadfcec51788ba4a4b74c8c60914195bb5d77a6d45697"
+    },
+    {
+      "path": "sources/tables/mit-6-867-lecture-notes.json",
+      "sha256": "3d7699c256407649e7fbfea7db0ee91706e3fb999ff53a17459bfdf309765b30"
+    },
+    {
+      "path": "sources/tables/mit-6-s897-lecture-notes.json",
+      "sha256": "ceb7198cfe3aa27d9c9e401272dec1a0168fc38b6a3103b1ba212e5377269010"
+    },
+    {
+      "path": "sources/tables/open-yale-chem-125a-sessions.json",
+      "sha256": "ad1c1e09511c4445b72f6dcc55f41d90bdb75c502348510727fd7b8abf61d42f"
+    },
+    {
+      "path": "sources/tables/open-yale-econ-159-sessions.json",
+      "sha256": "9c08950eade97fdaad437077c30f4640f677fc3c19c7e301081f75b41c1ceff2"
+    },
+    {
+      "path": "sources/tables/open-yale-phys-201-sessions.json",
+      "sha256": "ca072a3d9050119b5ea8e5bce8baeb63b9bb77f8e2e609bf47de3173813744aa"
+    }
+  ],
+  "metadata_packets": [
+    {
+      "packet_id": "MCC-01-05",
+      "lane": "mathematics",
+      "source_id": "fontes:stanford-public-course-sites:math-foundations-public-course-surfaces:stanford-math108-homepage",
+      "title": "stanford_math108_combinatorics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-06",
+      "lane": "mathematics",
+      "source_id": "fontes:stanford-public-course-sites:math-foundations-public-course-surfaces:stanford-math113-homepage",
+      "title": "stanford_math113_abstract_algebra_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-11",
+      "lane": "physical-science",
+      "source_id": "fontes:stanford-public-course-sites:physical-sciences-public-course-surfaces:stanford-chem33-homepage",
+      "title": "stanford_chem33_structure_reactivity_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-12",
+      "lane": "physical-science",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-earthsys10-homepage",
+      "title": "stanford_earthsys10_earth_systems_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-14",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:bio-biomed-public-course-surfaces:stanford-gene211-homepage",
+      "title": "stanford_gene211_genomics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-15",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:medicine-public-health-public-course-surfaces:stanford-hrp225-homepage",
+      "title": "stanford_hrp225_epidemiology_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-16",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:medicine-public-health-public-course-surfaces:stanford-hrp251-homepage",
+      "title": "stanford_hrp251_clinical_trials_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-17",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:bio-biomed-public-course-surfaces:stanford-bioe220-homepage",
+      "title": "stanford_bioe220_synthetic_biology_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-18",
+      "lane": "life-health-science",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-earthsys105-homepage",
+      "title": "stanford_earthsys105_food_environment_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-23",
+      "lane": "computing-software",
+      "source_id": "fontes:stanford-public-course-sites:software-public-course-surfaces:stanford-cs111-homepage",
+      "title": "stanford_cs111_operating_systems_principles_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-24",
+      "lane": "computing-software",
+      "source_id": "fontes:stanford-public-course-sites:computing-practice-society-public-course-surfaces:stanford-cs181-homepage",
+      "title": "stanford_cs181_computers_ethics_public_policy_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-29",
+      "lane": "ai-data-inference",
+      "source_id": "fontes:stanford-public-course-sites:stats-data-public-course-surfaces:stanford-stats200-homepage",
+      "title": "stanford_stats200_statistical_inference_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-30",
+      "lane": "ai-data-inference",
+      "source_id": "fontes:berkeley-public-course-sites:stats-probability-data-public-course-surfaces:berkeley-prob140-homepage",
+      "title": "berkeley_prob140_probability_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-35",
+      "lane": "engineering-systems-control",
+      "source_id": "fontes:stanford-public-course-sites:engineering-design-public-course-surfaces:stanford-me80-homepage",
+      "title": "stanford_me80_stress_strain_strength_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-36",
+      "lane": "engineering-systems-control",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-energy221-homepage",
+      "title": "stanford_energy221_energy_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-39",
+      "lane": "social-humanities",
+      "source_id": "fontes:stanford-public-course-sites:philosophy-ethics-public-course-surfaces:stanford-phil188-homepage",
+      "title": "stanford_phil188_personal_identity_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-40",
+      "lane": "social-humanities",
+      "source_id": "fontes:stanford-public-course-sites:humanities-social-public-course-surfaces:stanford-psych45-homepage",
+      "title": "stanford_psych45_learning_memory_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-41",
+      "lane": "social-humanities",
+      "source_id": "fontes:stanford-public-course-sites:humanities-social-public-course-surfaces:stanford-history202-homepage",
+      "title": "stanford_history202_history_methods_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-42",
+      "lane": "social-humanities",
+      "source_id": "fontes:stanford-public-course-sites:sociology-public-course-surfaces:stanford-soc142-homepage",
+      "title": "stanford_soc142_social_networks_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-44",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ1-homepage",
+      "title": "stanford_econ1_introductory_economics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-45",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ50-homepage",
+      "title": "stanford_econ50_microeconomics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-46",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ51-homepage",
+      "title": "stanford_econ51_macroeconomics_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-47",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-msande140-homepage",
+      "title": "stanford_msande140_management_science_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    },
+    {
+      "packet_id": "MCC-01-48",
+      "lane": "economics-organizations",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-msande152-homepage",
+      "title": "stanford_msande152_decision_analysis_homepage",
+      "disposition": "source-review-priority-only",
+      "reason": "Frozen metadata boundary prohibits concept-candidate extraction."
+    }
+  ],
+  "session_sources": [
+    {
+      "packet_id": "MCC-01-09",
+      "source_id": "fontes:open-yale:phys-201:sessions",
+      "path": "sources/tables/open-yale-phys-201-sessions.json",
+      "sha256": "ca072a3d9050119b5ea8e5bce8baeb63b9bb77f8e2e609bf47de3173813744aa",
+      "row_count": 27,
+      "headings": [
+        {
+          "session_id": "lecture-1",
+          "kind": "lecture",
+          "title": "Electrostatics",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-2",
+          "kind": "lecture",
+          "title": "Electric Fields",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-3",
+          "kind": "lecture",
+          "title": "Gauss's Law I",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-4",
+          "kind": "lecture",
+          "title": "Gauss's Law and Application to Conductors and Insulators",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-5",
+          "kind": "lecture",
+          "title": "The Electric Potential and Conservation of Energy",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-6",
+          "kind": "lecture",
+          "title": "Capacitors",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-7",
+          "kind": "lecture",
+          "title": "Resistance",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-8",
+          "kind": "lecture",
+          "title": "Circuits and Magnetism I",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-9",
+          "kind": "lecture",
+          "title": "Magnetism II",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-10",
+          "kind": "lecture",
+          "title": "Ampere's Law",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-11",
+          "kind": "lecture",
+          "title": "Lenz's and Faraday's Laws",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-12",
+          "kind": "lecture",
+          "title": "LCR Circuits — DC Voltage",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-13",
+          "kind": "lecture",
+          "title": "LCR Circuits — AC Voltage",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-14",
+          "kind": "lecture",
+          "title": "Maxwell's Equations and Electromagnetic Waves I",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "exam-1",
+          "kind": "exam",
+          "title": "Midterm Exam",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-15",
+          "kind": "lecture",
+          "title": "Maxwell's Equations and Electromagnetic Waves II",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-16",
+          "kind": "lecture",
+          "title": "Ray or Geometrical Optics I",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-17",
+          "kind": "lecture",
+          "title": "Ray or Geometrical Optics II",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-18",
+          "kind": "lecture",
+          "title": "Wave Theory of Light",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-19",
+          "kind": "lecture",
+          "title": "Quantum Mechanics I: Key Experiments and Wave-Particle Duality",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-20",
+          "kind": "lecture",
+          "title": "Quantum Mechanics II",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-21",
+          "kind": "lecture",
+          "title": "Quantum Mechanics III",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-22",
+          "kind": "lecture",
+          "title": "Quantum Mechanics IV: Measurement Theory, States of Definite Energy",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-23",
+          "kind": "lecture",
+          "title": "Quantum Mechanics V: Particle in a Box",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-24",
+          "kind": "lecture",
+          "title": "Quantum Mechanics VI: Time-Dependent Schrödinger Equation",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-25",
+          "kind": "lecture",
+          "title": "Quantum Mechanics VII: Summary of Postulates and Special Topics",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "exam-2",
+          "kind": "exam",
+          "title": "Final Exam",
+          "fetch_policy": "derived_text_allowed"
+        }
+      ],
+      "use": "exact heading evidence for manual review; no automatic phrase extraction"
+    },
+    {
+      "packet_id": "MCC-01-10",
+      "source_id": "fontes:open-yale:chem-125a:sessions",
+      "path": "sources/tables/open-yale-chem-125a-sessions.json",
+      "sha256": "ad1c1e09511c4445b72f6dcc55f41d90bdb75c502348510727fd7b8abf61d42f",
+      "row_count": 41,
+      "headings": [
+        {
+          "session_id": "lecture-1",
+          "kind": "lecture",
+          "title": "How Do You Know?",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-2",
+          "kind": "lecture",
+          "title": "Force Laws, Lewis Structures and Resonance",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-3",
+          "kind": "lecture",
+          "title": "Double Minima, Earnshaw's Theorem and Plum-Puddings",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-4",
+          "kind": "lecture",
+          "title": "Coping with Smallness and Scanning Probe Microscopy",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-5",
+          "kind": "lecture",
+          "title": "X-Ray Diffraction",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-6",
+          "kind": "lecture",
+          "title": "Seeing Bonds by Electron Difference Density",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-7",
+          "kind": "lecture",
+          "title": "Quantum Mechanical Kinetic Energy",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-8",
+          "kind": "lecture",
+          "title": "One-Dimensional Wave Functions",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-9",
+          "kind": "lecture",
+          "title": "Chladni Figures and One-Electron Atoms",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-10",
+          "kind": "lecture",
+          "title": "Reality and the Orbital Approximation",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "exam-1",
+          "kind": "exam",
+          "title": "Midterm Exam 1",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-11",
+          "kind": "lecture",
+          "title": "Orbital Correction and Plum-Pudding Molecules",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-12",
+          "kind": "lecture",
+          "title": "Overlap and Atom-Pair Bonds",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-13",
+          "kind": "lecture",
+          "title": "Overlap and Energy-Match",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-14",
+          "kind": "lecture",
+          "title": "Checking Hybridization Theory with XH3",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-15",
+          "kind": "lecture",
+          "title": "Chemical Reactivity: SOMO, HOMO, and LUMO",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-16",
+          "kind": "lecture",
+          "title": "Recognizing Functional Groups",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-17",
+          "kind": "lecture",
+          "title": "Reaction Analogies and Carbonyl Reactivity",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-18",
+          "kind": "lecture",
+          "title": "Amide, Carboxylic Acid and Alkyl Lithium",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-19",
+          "kind": "lecture",
+          "title": "Oxygen and the Chemical Revolution (Beginning to 1789)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "exam-2",
+          "kind": "exam",
+          "title": "Midterm Exam 2",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-20",
+          "kind": "lecture",
+          "title": "Rise of the Atomic Theory (1790-1805)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-21",
+          "kind": "lecture",
+          "title": "Berzelius to Liebig and Wöhler (1805-1832)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-22",
+          "kind": "lecture",
+          "title": "Radical and Type Theories (1832-1850)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-23",
+          "kind": "lecture",
+          "title": "Valence Theory and Constitutional Structure (1858)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-24",
+          "kind": "lecture",
+          "title": "Determining Chemical Structure by Isomer Counting (1869)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-25",
+          "kind": "lecture",
+          "title": "Models in 3D Space (1869-1877); Optical Isomers",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-26",
+          "kind": "lecture",
+          "title": "Van't Hoff's Tetrahedral Carbon and Chirality",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-27",
+          "kind": "lecture",
+          "title": "Communicating Molecular Structure in Diagrams and Words",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-28",
+          "kind": "lecture",
+          "title": "Stereochemical Nomenclature; Racemization and Resolution",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-29",
+          "kind": "lecture",
+          "title": "Preparing Single Enantiomers and the Mechanism of Optical Rotation",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "exam-3",
+          "kind": "exam",
+          "title": "Midterm Exam 3",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-30",
+          "kind": "lecture",
+          "title": "Esomeprazole as an Example of Drug Testing and Usage",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-31",
+          "kind": "lecture",
+          "title": "Preparing Single Enantiomers and Conformational Energy",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-32",
+          "kind": "lecture",
+          "title": "Stereotopicity and Baeyer Strain Theory",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-33",
+          "kind": "lecture",
+          "title": "Conformational Energy and Molecular Mechanics",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-34",
+          "kind": "lecture",
+          "title": "Sharpless Oxidation Catalysts and the Conformation of Cycloalkanes",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-35",
+          "kind": "lecture",
+          "title": "Understanding Molecular Structure and Energy through Standard Bonds",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-36",
+          "kind": "lecture",
+          "title": "Bond Energies, the Boltzmann Factor and Entropy",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-37",
+          "kind": "lecture",
+          "title": "Potential Energy Surfaces, Transition State Theory and Reaction Mechanism",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "exam-4",
+          "kind": "exam",
+          "title": "Final Exam",
+          "fetch_policy": "derived_text_allowed"
+        }
+      ],
+      "use": "exact heading evidence for manual review; no automatic phrase extraction"
+    },
+    {
+      "packet_id": "MCC-01-13",
+      "source_id": "fontes:mit:ocw:6-s897:lecture-note-table",
+      "path": "sources/tables/mit-6-s897-lecture-notes.json",
+      "sha256": "ceb7198cfe3aa27d9c9e401272dec1a0168fc38b6a3103b1ba212e5377269010",
+      "row_count": 25,
+      "headings": [
+        {
+          "session_id": "lecture-1",
+          "kind": "lecture",
+          "title": "Introduction: What Makes Healthcare Unique?",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-2",
+          "kind": "lecture",
+          "title": "Overview of Clinical Care",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-3",
+          "kind": "lecture",
+          "title": "Deep Dive into Clinical Data",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-4",
+          "kind": "lecture",
+          "title": "Risk Stratification, Part 1",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-5",
+          "kind": "lecture",
+          "title": "Risk Stratification, Part 2",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-6",
+          "kind": "lecture",
+          "title": "Physiological Time-Series",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-7",
+          "kind": "lecture",
+          "title": "Natural Language Processing, Part 1",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-8",
+          "kind": "lecture",
+          "title": "Natural Language Processing, Part 2",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-9",
+          "kind": "lecture",
+          "title": "Translating Technology into the Clinic",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-10",
+          "kind": "lecture",
+          "title": "Machine Learning for Cardiology",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-11",
+          "kind": "lecture",
+          "title": "Machine Learning for Differential Diagnosis",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-12",
+          "kind": "lecture",
+          "title": "Machine Learning for Pathology",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-13",
+          "kind": "lecture",
+          "title": "Machine Learning for Mammography",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-14",
+          "kind": "lecture",
+          "title": "Causal Inference, Part 1",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-15",
+          "kind": "lecture",
+          "title": "Causal Inference, Part 2",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-16",
+          "kind": "lecture",
+          "title": "Reinforcement Learning",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-17",
+          "kind": "lecture",
+          "title": "Evaluating Dynamic Treatment Strategies",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-18",
+          "kind": "lecture",
+          "title": "Disease Progression and Subtyping, Part 1",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-19",
+          "kind": "lecture",
+          "title": "Disease Progression and Subtyping, Part 2",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-20",
+          "kind": "lecture",
+          "title": "Precision Medicine",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-21",
+          "kind": "lecture",
+          "title": "Automating Clinical Workflows",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-22",
+          "kind": "lecture",
+          "title": "Regulation of ML/AI in the US; Human Subjects Research",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-23",
+          "kind": "lecture",
+          "title": "Fairness",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-24",
+          "kind": "lecture",
+          "title": "Robustness to Dataset Shift",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-25",
+          "kind": "lecture",
+          "title": "Interpretability",
+          "fetch_policy": "derived_text_allowed"
+        }
+      ],
+      "use": "exact heading evidence for manual review; no automatic phrase extraction"
+    },
+    {
+      "packet_id": "MCC-01-19",
+      "source_id": "fontes:mit:ocw:6-006:readings-table",
+      "path": "sources/tables/mit-6-006-readings.json",
+      "sha256": "8e10d6a251b2666a747762cbabc1d576c220a2503908c082a854450fbd21bfc2",
+      "row_count": 26,
+      "headings": [
+        {
+          "session_id": "lecture-1",
+          "kind": "lecture",
+          "title": "Algorithmic thinking, peak finding",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-2",
+          "kind": "lecture",
+          "title": "Models of computation, Python cost model, document distance",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-3",
+          "kind": "lecture",
+          "title": "Insertion sort, merge sort",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-4",
+          "kind": "lecture",
+          "title": "Heaps and heap sort",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-5",
+          "kind": "lecture",
+          "title": "Binary search trees, BST sort",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-6",
+          "kind": "lecture",
+          "title": "AVL trees, AVL sort",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-7",
+          "kind": "lecture",
+          "title": "Counting sort, radix sort, lower bounds for sorting and searching",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-8",
+          "kind": "lecture",
+          "title": "Hashing with chaining",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-9",
+          "kind": "lecture",
+          "title": "Table doubling, Karp-Rabin",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-10",
+          "kind": "lecture",
+          "title": "Open addressing, cryptographic hashing",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "quiz-1",
+          "kind": "exam",
+          "title": "Quiz 1",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-11",
+          "kind": "lecture",
+          "title": "Integer arithmetic, Karatsuba multiplication",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-12",
+          "kind": "lecture",
+          "title": "Square roots, Newton's method",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-13",
+          "kind": "lecture",
+          "title": "Breadth-first search (BFS)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-14",
+          "kind": "lecture",
+          "title": "Depth-first search (DFS), topological sorting",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-15",
+          "kind": "lecture",
+          "title": "Single-source shortest paths problem",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-16",
+          "kind": "lecture",
+          "title": "Dijkstra",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-17",
+          "kind": "lecture",
+          "title": "Bellman-Ford",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-18",
+          "kind": "lecture",
+          "title": "Speeding up Dijkstra",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "quiz-2",
+          "kind": "exam",
+          "title": "Quiz 2",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-19",
+          "kind": "lecture",
+          "title": "Memoization, subproblems, guessing, bottom-up; Fibonacci, shortest paths",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-20",
+          "kind": "lecture",
+          "title": "Parent pointers; text justification, perfect-information blackjack",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-21",
+          "kind": "lecture",
+          "title": "String subproblems, pseudopolynomial time; parenthesization, edit distance, knapsack",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-22",
+          "kind": "lecture",
+          "title": "Two kinds of guessing; piano/guitar fingering, Tetris training, Super Mario Bros.",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-23",
+          "kind": "lecture",
+          "title": "Computational complexity",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-24",
+          "kind": "lecture",
+          "title": "Algorithms research topics",
+          "fetch_policy": "derived_text_allowed"
+        }
+      ],
+      "use": "exact heading evidence for manual review; no automatic phrase extraction"
+    },
+    {
+      "packet_id": "MCC-01-25",
+      "source_id": "fontes:mit:ocw:6-034:readings-table",
+      "path": "sources/tables/mit-6-034-readings.json",
+      "sha256": "614125a087d557fcebe65a2516bf4d85049cd5dba482e3c5370fb98fdd6f823b",
+      "row_count": 23,
+      "headings": [
+        {
+          "session_id": "lecture-1",
+          "kind": "lecture",
+          "title": "Introduction and scope",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-2",
+          "kind": "lecture",
+          "title": "Reasoning: goal trees and problem solving",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-3",
+          "kind": "lecture",
+          "title": "Reasoning: goal trees and rule-based expert systems",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-4",
+          "kind": "lecture",
+          "title": "Search: depth-first, hill climbing, beam",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-5",
+          "kind": "lecture",
+          "title": "Search: optimal, branch and bound, A*",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-6",
+          "kind": "lecture",
+          "title": "Search: games, minimax, and alpha-beta",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-7",
+          "kind": "lecture",
+          "title": "Constraints: interpreting line drawings",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-8",
+          "kind": "lecture",
+          "title": "Constraints: search, domain reduction",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-9",
+          "kind": "lecture",
+          "title": "Constraints: visual object recognition",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-10",
+          "kind": "lecture",
+          "title": "Introduction to learning, nearest neighbors",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-11",
+          "kind": "lecture",
+          "title": "Learning: identification trees, disorder",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-12",
+          "kind": "lecture",
+          "title": "Learning: neural nets, back propagation",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-13",
+          "kind": "lecture",
+          "title": "Learning: genetic algorithms",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-14",
+          "kind": "lecture",
+          "title": "Learning: sparse spaces, phonology",
+          "fetch_policy": "license_review"
+        },
+        {
+          "session_id": "lecture-15",
+          "kind": "lecture",
+          "title": "Learning: near misses, felicity conditions",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-16",
+          "kind": "lecture",
+          "title": "Learning: support vector machines",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-17",
+          "kind": "lecture",
+          "title": "Learning: boosting",
+          "fetch_policy": "license_review"
+        },
+        {
+          "session_id": "lecture-18",
+          "kind": "lecture",
+          "title": "Representations: classes, trajectories, transitions",
+          "fetch_policy": "metadata_only"
+        },
+        {
+          "session_id": "lecture-19",
+          "kind": "lecture",
+          "title": "Architectures: GPS, SOAR, Subsumption, Society of Mind",
+          "fetch_policy": "license_review"
+        },
+        {
+          "session_id": "lecture-20",
+          "kind": "lecture",
+          "title": "The AI business",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-21",
+          "kind": "lecture",
+          "title": "Probabilistic inference I",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-22",
+          "kind": "lecture",
+          "title": "Probabilistic inference II",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-23",
+          "kind": "lecture",
+          "title": "Model merging, cross-modal coupling, course summary",
+          "fetch_policy": "license_review"
+        }
+      ],
+      "use": "exact heading evidence for manual review; no automatic phrase extraction"
+    },
+    {
+      "packet_id": "MCC-01-25",
+      "source_id": "fontes:mit:ocw:6-034:video-table",
+      "path": "sources/tables/mit-6-034-videos.json",
+      "sha256": "638fb3a24672ce80c54cadfcec51788ba4a4b74c8c60914195bb5d77a6d45697",
+      "row_count": 30,
+      "headings": [
+        {
+          "session_id": "lecture-1",
+          "kind": "lecture",
+          "title": "Introduction and Scope",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-2",
+          "kind": "lecture",
+          "title": "Reasoning: Goal Trees and Problem Solving",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-3",
+          "kind": "lecture",
+          "title": "Reasoning: Goal Trees and Rule-Based Expert Systems",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-4",
+          "kind": "lecture",
+          "title": "Search: Depth-First, Hill Climbing, Beam",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-5",
+          "kind": "lecture",
+          "title": "Search: Optimal, Branch and Bound, A*",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-6",
+          "kind": "lecture",
+          "title": "Search: Games, Minimax, and Alpha-Beta",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-7",
+          "kind": "lecture",
+          "title": "Constraints: Interpreting Line Drawings",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-8",
+          "kind": "lecture",
+          "title": "Constraints: Search, Domain Reduction",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-9",
+          "kind": "lecture",
+          "title": "Constraints: Visual Object Recognition",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-10",
+          "kind": "lecture",
+          "title": "Introduction to Learning, Nearest Neighbors",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-11",
+          "kind": "lecture",
+          "title": "Learning: Identification Trees, Disorder",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-12a",
+          "kind": "lecture",
+          "title": "Neural Nets",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-12b",
+          "kind": "lecture",
+          "title": "Deep Neural Nets",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-13",
+          "kind": "lecture",
+          "title": "Learning: Genetic Algorithms",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-14",
+          "kind": "lecture",
+          "title": "Learning: Sparse Spaces, Phonology",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-15",
+          "kind": "lecture",
+          "title": "Learning: Near Misses, Felicity Conditions",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-16",
+          "kind": "lecture",
+          "title": "Learning: Support Vector Machines",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-17",
+          "kind": "lecture",
+          "title": "Learning: Boosting",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-18",
+          "kind": "lecture",
+          "title": "Representations: Classes, Trajectories, Transitions",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-19",
+          "kind": "lecture",
+          "title": "Architectures: GPS, SOAR, Subsumption, Society of Mind",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-21",
+          "kind": "lecture",
+          "title": "Probabilistic Inference I",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-22",
+          "kind": "lecture",
+          "title": "Probabilistic Inference II",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "lecture-23",
+          "kind": "lecture",
+          "title": "Model Merging, Cross-Modal Coupling, Course Summary",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "mega-recitation-1",
+          "kind": "resource",
+          "title": "Rule-Based Systems",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "mega-recitation-2",
+          "kind": "resource",
+          "title": "Basic Search, Optimal Search",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "mega-recitation-3",
+          "kind": "resource",
+          "title": "Games, Minimax, Alpha-Beta",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "mega-recitation-4",
+          "kind": "resource",
+          "title": "Neural Nets",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "mega-recitation-5",
+          "kind": "resource",
+          "title": "Support Vector Machines",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "mega-recitation-6",
+          "kind": "resource",
+          "title": "Boosting",
+          "fetch_policy": "local_cache_allowed"
+        },
+        {
+          "session_id": "mega-recitation-7",
+          "kind": "resource",
+          "title": "Near Misses, Arch Learning",
+          "fetch_policy": "local_cache_allowed"
+        }
+      ],
+      "use": "exact heading evidence for manual review; no automatic phrase extraction"
+    },
+    {
+      "packet_id": "MCC-01-27",
+      "source_id": "fontes:mit:ocw:6-867:lecture-notes-table",
+      "path": "sources/tables/mit-6-867-lecture-notes.json",
+      "sha256": "3d7699c256407649e7fbfea7db0ee91706e3fb999ff53a17459bfdf309765b30",
+      "row_count": 24,
+      "headings": [
+        {
+          "session_id": "lecture-1",
+          "kind": "lecture",
+          "title": "Introduction, linear classification, perceptron update rule",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-2",
+          "kind": "lecture",
+          "title": "Perceptron convergence, generalization",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-3",
+          "kind": "lecture",
+          "title": "Maximum margin classification",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-4",
+          "kind": "lecture",
+          "title": "Classification errors, regularization, logistic regression",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-5",
+          "kind": "lecture",
+          "title": "Linear regression, estimator bias and variance, active learning",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-6",
+          "kind": "lecture",
+          "title": "Active learning (cont.), non-linear predictions, kernals",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-7",
+          "kind": "lecture",
+          "title": "Kernal regression, kernels",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-8",
+          "kind": "lecture",
+          "title": "Support vector machine (SVM) and kernels, kernel optimization",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-9",
+          "kind": "lecture",
+          "title": "Model selection",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-10",
+          "kind": "lecture",
+          "title": "Model selection criteria",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-11",
+          "kind": "lecture",
+          "title": "Description length, feature selection",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-12",
+          "kind": "lecture",
+          "title": "Combining classifiers, boosting",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-13",
+          "kind": "lecture",
+          "title": "Boosting, margin, and complexity",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-14",
+          "kind": "lecture",
+          "title": "Margin and generalization, mixture models",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-15",
+          "kind": "lecture",
+          "title": "Mixtures and the expectation maximization (EM) algorithm",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-16",
+          "kind": "lecture",
+          "title": "EM, regularization, clustering",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-17",
+          "kind": "lecture",
+          "title": "Clustering",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-18",
+          "kind": "lecture",
+          "title": "Spectral clustering, Markov models",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-19",
+          "kind": "lecture",
+          "title": "Hidden Markov models (HMMs)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-20",
+          "kind": "lecture",
+          "title": "HMMs (cont.)",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-21",
+          "kind": "lecture",
+          "title": "Bayesian networks",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-22",
+          "kind": "lecture",
+          "title": "Learning Bayesian networks",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-23",
+          "kind": "lecture",
+          "title": "Probabilistic inference; guest lecture on collaborative filtering",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-24",
+          "kind": "lecture",
+          "title": "Current problems in machine learning, wrap up",
+          "fetch_policy": "derived_text_allowed"
+        }
+      ],
+      "use": "exact heading evidence for manual review; no automatic phrase extraction"
+    },
+    {
+      "packet_id": "MCC-01-43",
+      "source_id": "fontes:open-yale:econ-159:sessions",
+      "path": "sources/tables/open-yale-econ-159-sessions.json",
+      "sha256": "9c08950eade97fdaad437077c30f4640f677fc3c19c7e301081f75b41c1ceff2",
+      "row_count": 26,
+      "headings": [
+        {
+          "session_id": "lecture-1",
+          "kind": "lecture",
+          "title": "Introduction: Five First Lessons",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-2",
+          "kind": "lecture",
+          "title": "Putting Yourselves into Other People's Shoes",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-3",
+          "kind": "lecture",
+          "title": "Iterative Deletion and the Median-Voter Theorem",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-4",
+          "kind": "lecture",
+          "title": "Best Responses in Soccer and Business Partnerships",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-5",
+          "kind": "lecture",
+          "title": "Nash Equilibrium: Bad Fashion and Bank Runs",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-6",
+          "kind": "lecture",
+          "title": "Nash Equilibrium: Dating and Cournot",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-7",
+          "kind": "lecture",
+          "title": "Nash Equilibrium: Shopping, Standing and Voting on a Line",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-8",
+          "kind": "lecture",
+          "title": "Nash Equilibrium: Location, Segregation and Randomization",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-9",
+          "kind": "lecture",
+          "title": "Mixed Strategies in Theory and Tennis",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-10",
+          "kind": "lecture",
+          "title": "Mixed Strategies in Baseball, Dating and Paying Your Taxes",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-11",
+          "kind": "lecture",
+          "title": "Evolutionary Stability: Cooperation, Mutation, and Equilibrium",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-12",
+          "kind": "lecture",
+          "title": "Evolutionary Stability: Social Convention, Aggression, and Cycles",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "exam-1",
+          "kind": "exam",
+          "title": "Midterm Exam",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-13",
+          "kind": "lecture",
+          "title": "Sequential Games: Moral Hazard, Incentives, and Hungry Lions",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-14",
+          "kind": "lecture",
+          "title": "Backward Induction: Commitment, Spies, and First-Mover Advantages",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-15",
+          "kind": "lecture",
+          "title": "Backward Induction: Chess, Strategies, and Credible Threats",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-16",
+          "kind": "lecture",
+          "title": "Backward Induction: Reputation and Duels",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-17",
+          "kind": "lecture",
+          "title": "Backward Induction: Ultimatums and Bargaining",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-18",
+          "kind": "lecture",
+          "title": "Imperfect Information: Information Sets and Sub-Game Perfection",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-19",
+          "kind": "lecture",
+          "title": "Subgame Perfect Equilibrium: Matchmaking and Strategic Investments",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-20",
+          "kind": "lecture",
+          "title": "Subgame Perfect Equilibrium: Wars of Attrition",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-21",
+          "kind": "lecture",
+          "title": "Repeated Games: Cooperation vs. the End Game",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-22",
+          "kind": "lecture",
+          "title": "Repeated Games: Cheating, Punishment, and Outsourcing",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-23",
+          "kind": "lecture",
+          "title": "Asymmetric Information: Silence, Signaling and Suffering Education",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "lecture-24",
+          "kind": "lecture",
+          "title": "Asymmetric Information: Auctions and the Winner's Curse",
+          "fetch_policy": "derived_text_allowed"
+        },
+        {
+          "session_id": "exam-2",
+          "kind": "exam",
+          "title": "Final Exam",
+          "fetch_policy": "derived_text_allowed"
+        }
+      ],
+      "use": "exact heading evidence for manual review; no automatic phrase extraction"
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "3d geometry",
+      "normalized_term": "3d geometry",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-32",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:6-4210-robotic-manipulation-fall-2022",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "accessibility",
+      "normalized_term": "accessibility",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "algorithmic fairness",
+      "normalized_term": "algorithmic fairness",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "algorithms",
+      "normalized_term": "algorithms",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-19",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-006-introduction-to-algorithms-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-006-introduction-to-algorithms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-19"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "angular momentum",
+      "normalized_term": "angular momentum",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "applied linear algebra",
+      "normalized_term": "applied linear algebra",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-33",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:ee263-linear-dynamical-systems",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "artificial intelligence",
+      "normalized_term": "artificial intelligence",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-25",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-034-artificial-intelligence-fall-2010",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-034-artificial-intelligence/work.json"
+        },
+        {
+          "packet_id": "MCC-01-26",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-036-introduction-to-machine-learning-fall-2020",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-036-introduction-to-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-25",
+        "MCC-01-26"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "assembly",
+      "normalized_term": "assembly",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-22",
+          "lane": "computing-software",
+          "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "atomic structure",
+      "normalized_term": "atomic structure",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-07",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "auctions",
+      "normalized_term": "auctions",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "backward induction",
+      "normalized_term": "backward induction",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "Bayesian networks",
+      "normalized_term": "bayesian networks",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-27",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-867-machine-learning-fall-2006",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-867-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "bonding",
+      "normalized_term": "bonding",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-10",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:chem-125a-freshman-organic-chemistry-i",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/chem-125a-freshman-organic-chemistry-i/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "C",
+      "normalized_term": "c",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-22",
+          "lane": "computing-software",
+          "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "C++",
+      "normalized_term": "c plus plus",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-22",
+          "lane": "computing-software",
+          "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "caching",
+      "normalized_term": "caching",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-20",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "catalysis",
+      "normalized_term": "catalysis",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-07",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "causal inference",
+      "normalized_term": "causal inference",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "chemistry",
+      "normalized_term": "chemistry",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-07",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "civic engagement",
+      "normalized_term": "civic engagement",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-38",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-615-games-for-social-change-fall-2013",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-615-games-for-social-change/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "classical mechanics",
+      "normalized_term": "classical mechanics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-08",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:8-01sc-classical-mechanics-fall-2016",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/8-01sc-classical-mechanics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "classification",
+      "normalized_term": "classification",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-27",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-867-machine-learning-fall-2006",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-867-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": {
+        "kind": "sense",
+        "sense_id": "classification",
+        "label": "classification"
+      },
+      "screening_disposition": "exact-reference-label-review"
+    },
+    {
+      "term": "clinical data",
+      "normalized_term": "clinical data",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "computer science",
+      "normalized_term": "computer science",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-19",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-006-introduction-to-algorithms-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-006-introduction-to-algorithms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-19"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "concurrency",
+      "normalized_term": "concurrency",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-22",
+          "lane": "computing-software",
+          "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": {
+        "kind": "sense",
+        "sense_id": "concurrency",
+        "label": "concurrency"
+      },
+      "screening_disposition": "exact-reference-label-review"
+    },
+    {
+      "term": "control",
+      "normalized_term": "control",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-32",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:6-4210-robotic-manipulation-fall-2022",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json"
+        },
+        {
+          "packet_id": "MCC-01-33",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:ee263-linear-dynamical-systems",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-32",
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "convex analysis",
+      "normalized_term": "convex analysis",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-04",
+          "lane": "mathematics",
+          "source_id": "fontes:stanford-see:ee364a-convex-optimization",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "convex optimization",
+      "normalized_term": "convex optimization",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-04",
+          "lane": "mathematics",
+          "source_id": "fontes:stanford-see:ee364a-convex-optimization",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "data structures",
+      "normalized_term": "data structures",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-19",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-006-introduction-to-algorithms-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-006-introduction-to-algorithms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-19"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "deep learning",
+      "normalized_term": "deep learning",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        },
+        {
+          "packet_id": "MCC-01-32",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:6-4210-robotic-manipulation-fall-2022",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13",
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "differential equations",
+      "normalized_term": "differential equations",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "dominance",
+      "normalized_term": "dominance",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "duality",
+      "normalized_term": "duality",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-04",
+          "lane": "mathematics",
+          "source_id": "fontes:stanford-see:ee364a-convex-optimization",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "dynamic simulation",
+      "normalized_term": "dynamic simulation",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-34",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:cs223a-introduction-to-robotics",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs223a-introduction-to-robotics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-34"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "electricity",
+      "normalized_term": "electricity",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-09",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:phys-201-fundamentals-of-physics-ii",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/phys-201-fundamentals-of-physics-ii/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "energy",
+      "normalized_term": "energy",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-08",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:8-01sc-classical-mechanics-fall-2016",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/8-01sc-classical-mechanics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": {
+        "kind": "sense",
+        "sense_id": "energy",
+        "label": "energy"
+      },
+      "screening_disposition": "exact-reference-label-review"
+    },
+    {
+      "term": "engineering dynamics",
+      "normalized_term": "engineering dynamics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "equilibrium",
+      "normalized_term": "equilibrium",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-07",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "evolutionary stability",
+      "normalized_term": "evolutionary stability",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "first order systems",
+      "normalized_term": "first order systems",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "forces",
+      "normalized_term": "forces",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-08",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:8-01sc-classical-mechanics-fall-2016",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/8-01sc-classical-mechanics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "Fourier analysis",
+      "normalized_term": "fourier analysis",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "Fourier series",
+      "normalized_term": "fourier series",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "functional groups",
+      "normalized_term": "functional groups",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-10",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:chem-125a-freshman-organic-chemistry-i",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/chem-125a-freshman-organic-chemistry-i/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "functional programming",
+      "normalized_term": "functional programming",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-22",
+          "lane": "computing-software",
+          "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game analysis",
+      "normalized_term": "game analysis",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-37",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game assessment",
+      "normalized_term": "game assessment",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-38",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-615-games-for-social-change-fall-2013",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-615-games-for-social-change/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game criticism",
+      "normalized_term": "game criticism",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-37",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game culture",
+      "normalized_term": "game culture",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-37",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game design",
+      "normalized_term": "game design",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-38",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-615-games-for-social-change-fall-2013",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-615-games-for-social-change/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game engine support",
+      "normalized_term": "game engine support",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-20",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game narrative",
+      "normalized_term": "game narrative",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-37",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game physics support",
+      "normalized_term": "game physics support",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        },
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02",
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "game spaces",
+      "normalized_term": "game spaces",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-37",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game theory",
+      "normalized_term": "game theory",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "game UI support",
+      "normalized_term": "game ui support",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "games for social change",
+      "normalized_term": "games for social change",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-38",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-615-games-for-social-change-fall-2013",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-615-games-for-social-change/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "haptics",
+      "normalized_term": "haptics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-34",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:cs223a-introduction-to-robotics",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs223a-introduction-to-robotics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-34"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "healthcare",
+      "normalized_term": "healthcare",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "hidden Markov models",
+      "normalized_term": "hidden markov models",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-27",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-867-machine-learning-fall-2006",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-867-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "human-centered robotics",
+      "normalized_term": "human centered robotics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-34",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:cs223a-introduction-to-robotics",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs223a-introduction-to-robotics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-34"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "human-computer interaction",
+      "normalized_term": "human computer interaction",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "interior-point methods",
+      "normalized_term": "interior point methods",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-04",
+          "lane": "mathematics",
+          "source_id": "fontes:stanford-see:ee364a-convex-optimization",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "interpolation",
+      "normalized_term": "interpolation",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "interpretability",
+      "normalized_term": "interpretability",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "kinematics",
+      "normalized_term": "kinematics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-08",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:8-01sc-classical-mechanics-fall-2016",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/8-01sc-classical-mechanics/work.json"
+        },
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-08",
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "kinetics",
+      "normalized_term": "kinetics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-07",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "knowledge representation",
+      "normalized_term": "knowledge representation",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-25",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-034-artificial-intelligence-fall-2010",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-034-artificial-intelligence/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-25"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "Lagrange equations",
+      "normalized_term": "lagrange equations",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "Laplace transform",
+      "normalized_term": "laplace transform",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "learnability",
+      "normalized_term": "learnability",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "learning",
+      "normalized_term": "learning",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-25",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-034-artificial-intelligence-fall-2010",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-034-artificial-intelligence/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-25"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "learning theory",
+      "normalized_term": "learning theory",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-28",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:stanford-see:cs229-machine-learning",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs229-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "least squares",
+      "normalized_term": "least squares",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        },
+        {
+          "packet_id": "MCC-01-04",
+          "lane": "mathematics",
+          "source_id": "fontes:stanford-see:ee364a-convex-optimization",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json"
+        },
+        {
+          "packet_id": "MCC-01-33",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:ee263-linear-dynamical-systems",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-03",
+        "MCC-01-04",
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "linear algebra",
+      "normalized_term": "linear algebra",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-01",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-06-linear-algebra-spring-2010",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-06-linear-algebra/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-01"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "linear dynamical systems",
+      "normalized_term": "linear dynamical systems",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-33",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:ee263-linear-dynamical-systems",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "linear programming",
+      "normalized_term": "linear programming",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-04",
+          "lane": "mathematics",
+          "source_id": "fontes:stanford-see:ee364a-convex-optimization",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "linearization",
+      "normalized_term": "linearization",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "machine learning",
+      "normalized_term": "machine learning",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        },
+        {
+          "packet_id": "MCC-01-26",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-036-introduction-to-machine-learning-fall-2020",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-036-introduction-to-machine-learning/work.json"
+        },
+        {
+          "packet_id": "MCC-01-27",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-867-machine-learning-fall-2006",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-867-machine-learning/work.json"
+        },
+        {
+          "packet_id": "MCC-01-28",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:stanford-see:cs229-machine-learning",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs229-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13",
+        "MCC-01-26",
+        "MCC-01-27",
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference",
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "magnetism",
+      "normalized_term": "magnetism",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-09",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:phys-201-fundamentals-of-physics-ii",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/phys-201-fundamentals-of-physics-ii/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "mathematics",
+      "normalized_term": "mathematics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-01",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-06-linear-algebra-spring-2010",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-06-linear-algebra/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-01"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "matrix theory",
+      "normalized_term": "matrix theory",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-01",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-06-linear-algebra-spring-2010",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-06-linear-algebra/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-01"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "mechanical vibration",
+      "normalized_term": "mechanical vibration",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "mechanism",
+      "normalized_term": "mechanism",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-10",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:chem-125a-freshman-organic-chemistry-i",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/chem-125a-freshman-organic-chemistry-i/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "memory allocation",
+      "normalized_term": "memory allocation",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-20",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "memory management",
+      "normalized_term": "memory management",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-22",
+          "lane": "computing-software",
+          "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "mixed strategies",
+      "normalized_term": "mixed strategies",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "mobile interfaces",
+      "normalized_term": "mobile interfaces",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "modeling",
+      "normalized_term": "modeling",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-26",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-036-introduction-to-machine-learning-fall-2020",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-036-introduction-to-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-26"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "molecular structure",
+      "normalized_term": "molecular structure",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-07",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "momentum",
+      "normalized_term": "momentum",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-08",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:8-01sc-classical-mechanics-fall-2016",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/8-01sc-classical-mechanics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "nash equilibrium",
+      "normalized_term": "nash equilibrium",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "natural language processing",
+      "normalized_term": "natural language processing",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13"
+      ],
+      "lanes": [
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "numerical analysis",
+      "normalized_term": "numerical analysis",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "observability",
+      "normalized_term": "observability",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-33",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:ee263-linear-dynamical-systems",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "optics",
+      "normalized_term": "optics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-09",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:phys-201-fundamentals-of-physics-ii",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/phys-201-fundamentals-of-physics-ii/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "optimization",
+      "normalized_term": "optimization",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-20",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "ordinary differential equations",
+      "normalized_term": "ordinary differential equations",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        },
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02",
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "organic chemistry",
+      "normalized_term": "organic chemistry",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-10",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:chem-125a-freshman-organic-chemistry-i",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/chem-125a-freshman-organic-chemistry-i/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "parallel programming",
+      "normalized_term": "parallel programming",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-20",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "perception",
+      "normalized_term": "perception",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-32",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:6-4210-robotic-manipulation-fall-2022",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "performance engineering",
+      "normalized_term": "performance engineering",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-20",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "periodic response",
+      "normalized_term": "periodic response",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "physics",
+      "normalized_term": "physics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-09",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:phys-201-fundamentals-of-physics-ii",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/phys-201-fundamentals-of-physics-ii/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "planning",
+      "normalized_term": "planning",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-32",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:6-4210-robotic-manipulation-fall-2022",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "player identity",
+      "normalized_term": "player identity",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-37",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "prediction",
+      "normalized_term": "prediction",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-26",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-036-introduction-to-machine-learning-fall-2020",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-036-introduction-to-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-26"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "principal component analysis",
+      "normalized_term": "principal component analysis",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "programming",
+      "normalized_term": "programming",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-19",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-006-introduction-to-algorithms-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-006-introduction-to-algorithms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-19"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "prototyping",
+      "normalized_term": "prototyping",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        },
+        {
+          "packet_id": "MCC-01-38",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-615-games-for-social-change-fall-2013",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-615-games-for-social-change/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21",
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "computing-software",
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "Python",
+      "normalized_term": "python",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-22",
+          "lane": "computing-software",
+          "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "quadrature",
+      "normalized_term": "quadrature",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "quantum mechanics",
+      "normalized_term": "quantum mechanics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-09",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:phys-201-fundamentals-of-physics-ii",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/phys-201-fundamentals-of-physics-ii/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-09"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "redox",
+      "normalized_term": "redox",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-07",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "reinforcement learning",
+      "normalized_term": "reinforcement learning",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-13",
+          "lane": "life-health-science",
+          "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+        },
+        {
+          "packet_id": "MCC-01-28",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:stanford-see:cs229-machine-learning",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs229-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-13",
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference",
+        "life-health-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "rigid bodies",
+      "normalized_term": "rigid bodies",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "robotic control",
+      "normalized_term": "robotic control",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-28",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:stanford-see:cs229-machine-learning",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs229-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "robotic manipulation",
+      "normalized_term": "robotic manipulation",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-32",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:6-4210-robotic-manipulation-fall-2022",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-32"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "robotics",
+      "normalized_term": "robotics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-32",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:6-4210-robotic-manipulation-fall-2022",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json"
+        },
+        {
+          "packet_id": "MCC-01-34",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:cs223a-introduction-to-robotics",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs223a-introduction-to-robotics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-32",
+        "MCC-01-34"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "root finding",
+      "normalized_term": "root finding",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "rotating frames",
+      "normalized_term": "rotating frames",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "rotational dynamics",
+      "normalized_term": "rotational dynamics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-08",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:8-01sc-classical-mechanics-fall-2016",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/8-01sc-classical-mechanics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-08"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "search",
+      "normalized_term": "search",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-25",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-034-artificial-intelligence-fall-2010",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-034-artificial-intelligence/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-25"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "second order systems",
+      "normalized_term": "second order systems",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "semidefinite programming",
+      "normalized_term": "semidefinite programming",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-04",
+          "lane": "mathematics",
+          "source_id": "fontes:stanford-see:ee364a-convex-optimization",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-04"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "serious games",
+      "normalized_term": "serious games",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-38",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-615-games-for-social-change-fall-2013",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-615-games-for-social-change/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "signal processing",
+      "normalized_term": "signal processing",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-33",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:ee263-linear-dynamical-systems",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "signaling",
+      "normalized_term": "signaling",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "simulation",
+      "normalized_term": "simulation",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-37",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": {
+        "kind": "sense",
+        "sense_id": "simulation",
+        "label": "simulation"
+      },
+      "screening_disposition": "exact-reference-label-review"
+    },
+    {
+      "term": "simulation support",
+      "normalized_term": "simulation support",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-02",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+        },
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        },
+        {
+          "packet_id": "MCC-01-31",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-02",
+        "MCC-01-03",
+        "MCC-01-31"
+      ],
+      "lanes": [
+        "engineering-systems-control",
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "recurring-manual-review"
+    },
+    {
+      "term": "social impact",
+      "normalized_term": "social impact",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-38",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-615-games-for-social-change-fall-2013",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-615-games-for-social-change/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-38"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "software systems",
+      "normalized_term": "software systems",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-20",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "spectral methods",
+      "normalized_term": "spectral methods",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-03",
+          "lane": "mathematics",
+          "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-03"
+      ],
+      "lanes": [
+        "mathematics"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "state estimation",
+      "normalized_term": "state estimation",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-33",
+          "lane": "engineering-systems-control",
+          "source_id": "fontes:stanford-see:ee263-linear-dynamical-systems",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-33"
+      ],
+      "lanes": [
+        "engineering-systems-control"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "statistical inference",
+      "normalized_term": "statistical inference",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-27",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-867-machine-learning-fall-2006",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-867-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "stereochemistry",
+      "normalized_term": "stereochemistry",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-10",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:chem-125a-freshman-organic-chemistry-i",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/chem-125a-freshman-organic-chemistry-i/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "strategic thinking",
+      "normalized_term": "strategic thinking",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-43",
+          "lane": "economics-organizations",
+          "source_id": "fontes:open-yale:econ-159-game-theory",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-43"
+      ],
+      "lanes": [
+        "economics-organizations"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "structure",
+      "normalized_term": "structure",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-10",
+          "lane": "physical-science",
+          "source_id": "fontes:open-yale:chem-125a-freshman-organic-chemistry-i",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/open-yale-courses/chem-125a-freshman-organic-chemistry-i/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-10"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "supervised learning",
+      "normalized_term": "supervised learning",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-28",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:stanford-see:cs229-machine-learning",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs229-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "support vector machines",
+      "normalized_term": "support vector machines",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-27",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:mit:ocw:6-867-machine-learning-fall-2006",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-867-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-27"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "systems programming",
+      "normalized_term": "systems programming",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-22",
+          "lane": "computing-software",
+          "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-22"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "thermodynamics",
+      "normalized_term": "thermodynamics",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-07",
+          "lane": "physical-science",
+          "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-07"
+      ],
+      "lanes": [
+        "physical-science"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "unsupervised learning",
+      "normalized_term": "unsupervised learning",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-28",
+          "lane": "ai-data-inference",
+          "source_id": "fontes:stanford-see:cs229-machine-learning",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs229-machine-learning/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-28"
+      ],
+      "lanes": [
+        "ai-data-inference"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "usability",
+      "normalized_term": "usability",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "user interface design",
+      "normalized_term": "user interface design",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "user testing",
+      "normalized_term": "user testing",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-21",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-21"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "vectorization",
+      "normalized_term": "vectorization",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-20",
+          "lane": "computing-software",
+          "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-20"
+      ],
+      "lanes": [
+        "computing-software"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    },
+    {
+      "term": "videogame studies",
+      "normalized_term": "videogame studies",
+      "occurrences": [
+        {
+          "packet_id": "MCC-01-37",
+          "lane": "social-humanities",
+          "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+          "evidence_kind": "fontes-work-subject",
+          "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+        }
+      ],
+      "packet_ids": [
+        "MCC-01-37"
+      ],
+      "lanes": [
+        "social-humanities"
+      ],
+      "reference_exact_hit": null,
+      "screening_disposition": "single-course-manual-review"
+    }
+  ]
+}

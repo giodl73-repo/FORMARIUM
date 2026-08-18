@@ -3461,3 +3461,17 @@ retention, rights boundaries, the reader job, and stop conditions explicit.
 No concept gap, Table change, reader value, curriculum completeness, or domain
 guidance is claimed. See `MUNDUS-CURRICULUM-CLOSURE-01-PORTFOLIO-FREEZE.md`
 and `signals/roles/check/mundus-curriculum-depth-portfolio-01-roles-check-2026-08-18.md`.
+
+Baseline review: process the 24 record-depth packets into 164 subject
+occurrences, 148 distinct terms, and 222 exact headings from eight normalized
+session tables; all 24 metadata packets stop at source-review priority. Every
+term receives a disposition: 28 direct/compositional coverage results, 104
+domain/specialization/tool/support boundaries, fourteen terms supporting two
+recommended view-research groups, and two terms in one held group. Continue
+established-source research only for Optimization Problem Structure and
+Prototype/Test/Iteration; hold Observability/State Estimation and the prior
+economic mapping. Ten roles approve after preserving C/C++ identity,
+deduplicating heading evidence, and separating research from admission. Admit
+zero anchors, views, relations, or discovery repairs and claim no curriculum
+consensus or reader evidence. See `MUNDUS-CURRICULUM-CLOSURE-01-BASELINE.md`
+and `signals/roles/check/mundus-curriculum-closure-01-baseline-roles-check-2026-08-18.md`.
