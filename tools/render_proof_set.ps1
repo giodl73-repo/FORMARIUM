@@ -4034,7 +4034,7 @@ $pageScripts
                 throw "Handoff target page has no main close: $siteHtmlFile"
             }
             $assetPrefix = if ((Split-Path $siteHtmlFile -Parent) -eq $output) { "assets" } else { "../assets" }
-            $sitePageText = $sitePageText.Replace("</main>", "$handoffSection`n</main>")
+            $sitePageText = $sitePageText.Replace("</main>", "</main>`n$handoffSection")
             $sitePageText = $sitePageText.Replace("</body>", "<script src=`"$assetPrefix/handoff.js`"></script>`n</body>")
             [System.IO.File]::WriteAllText($siteHtmlFile, $sitePageText, [System.Text.UTF8Encoding]::new($false))
             $handoffNotePages += 1

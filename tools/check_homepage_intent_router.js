@@ -9,7 +9,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "u
 const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
 const css = fs.readFileSync(path.join(root, "assets", "site.css"), "utf8");
 
-assert.equal(manifest.edition, "sim-43");
+assert.ok(["sim-43", "sim-44"].includes(manifest.edition));
 assert.equal(manifest.site_checks.intent_router_targets, 3);
 assert.deepEqual(manifest.site_checks.intent_router_jobs, ["know-term", "have-question", "learn-or-explore"]);
 assert.equal(manifest.site_checks.intent_router_authority_change, false);
@@ -27,4 +27,4 @@ assert.match(html, /<a href="#choose">Choose<\/a>/);
 assert.match(css, /\.site-intent__grid/);
 assert.match(css, /@media \(max-width: 52rem\)/);
 
-console.log("OK edition=sim-43 intent-router=3 order=before-library authority=unchanged search=unchanged");
+console.log(`OK edition=${manifest.edition} intent-router=3 order=before-library authority=unchanged search=unchanged`);

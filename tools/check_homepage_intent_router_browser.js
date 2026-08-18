@@ -9,7 +9,7 @@ const { spawn } = require("node:child_process");
 const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-43");
 const screenshotPath = path.resolve(process.argv[3] || "target/sim43-intent-router.png");
 const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"));
-assert.equal(manifest.edition, "sim-43");
+assert.ok(["sim-43", "sim-44"].includes(manifest.edition));
 const edgePath = [process.env.EDGE_PATH, "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"]
   .filter(Boolean).find((candidate) => fs.existsSync(candidate));
 assert.ok(edgePath, "Microsoft Edge executable not found");
@@ -69,6 +69,6 @@ async function evaluate(client, expression) {
     const shot = await client.call("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
     fs.writeFileSync(screenshotPath, Buffer.from(shot.data, "base64"));
     assert.ok(fs.statSync(screenshotPath).size > 20000);
-    console.log(`OK edition=sim-43 intent-router=3 desktop=row mobile=stacked width=390 screenshot=${screenshotPath}`);
+    console.log(`OK edition=${manifest.edition} intent-router=3 desktop=row mobile=stacked width=390 screenshot=${screenshotPath}`);
   } finally { if (client) client.close(); browser.kill(); }
 })().catch((error) => { browser.kill(); console.error(error.stack || error.message); process.exitCode = 1; });
