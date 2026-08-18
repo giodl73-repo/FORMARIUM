@@ -3449,3 +3449,15 @@ counting, and premature economic admission. No course selection, concept
 candidate, Table change, curriculum consensus, reader evidence, or product
 value claim is admitted yet. See `MUNDUS-CURRICULUM-CLOSURE-01-PLAN.md` and
 `MUNDUS-CURRICULUM-CLOSURE-01-PLAN-ROLE-REVIEW.md`.
+
+Portfolio freeze: select 48 exact course packets before systematic vocabulary
+extraction or V1 closure comparison, with six packets and one expected no-gap
+control in each of eight lanes. The portfolio balances 24 individual course
+records against 24 homepage-metadata probes; those tiers are not equivalent.
+Life/health and economics/organizations each have only one record-depth packet
+in the selected snapshot, and metadata probes are prohibited from emitting an
+admission candidate. Nine roles approve after making packet order, null
+retention, rights boundaries, the reader job, and stop conditions explicit.
+No concept gap, Table change, reader value, curriculum completeness, or domain
+guidance is claimed. See `MUNDUS-CURRICULUM-CLOSURE-01-PORTFOLIO-FREEZE.md`
+and `signals/roles/check/mundus-curriculum-depth-portfolio-01-roles-check-2026-08-18.md`.

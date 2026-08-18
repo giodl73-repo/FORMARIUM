@@ -1,0 +1,1149 @@
+{
+  "schema": "factorium.mundus-curriculum-depth-portfolio.v1",
+  "status": "frozen-before-factorium-comparison",
+  "generated": "2026-08-18",
+  "baseline": {
+    "source_commit": "388e76c33912c8e289740b275a747fabbedad19f",
+    "inventory_path": "fixtures/coverage/mundus-courseware-inventory-01.json",
+    "inventory_sha256": "c973b00d9826f24c77c4e1910c35e41a656d476ea4ca5a1b1a6da8f91a4e87cf",
+    "mundus_commit": "9ab16dbedd0719ffff5dfe3803ee9c8e3256849e",
+    "fontes_commit": "00a94ceaf4eb3a2edb02858630e70434ddb50cf0"
+  },
+  "design": {
+    "lanes": 8,
+    "courses_per_lane": 6,
+    "evidence_balance": "24 course-work records and 24 homepage-metadata probes",
+    "reader_job": "find reusable distinctions that materially improve concept lookup or composition across more than one course context",
+    "selection_timing": "frozen before systematic vocabulary extraction and Factorium closure comparison",
+    "processing_order": "packet order is fixed; retain covered, no-gap, duplicate, and insufficient-evidence outcomes",
+    "metadata_boundary": "metadata-only packets may prioritize later source review but emit no concept-admission candidate",
+    "null_policy": "covered, no-gap, insufficient-evidence, and zero-admission results remain valid"
+  },
+  "summary": {
+    "courses": 48,
+    "by_lane": {
+      "ai-data-inference": 6,
+      "computing-software": 6,
+      "economics-organizations": 6,
+      "engineering-systems-control": 6,
+      "life-health-science": 6,
+      "mathematics": 6,
+      "physical-science": 6,
+      "social-humanities": 6
+    },
+    "by_evidence_tier": {
+      "course-work-record": 24,
+      "homepage-metadata-only": 24
+    },
+    "by_source_family": {
+      "berkeley-public-course-sites": 1,
+      "mit-ocw": 15,
+      "mit-ocw-open-learning-library": 1,
+      "open-yale-courses": 3,
+      "stanford-engineering-everywhere": 5,
+      "stanford-public-course-sites": 23
+    }
+  },
+  "courses": [
+    {
+      "packet_id": "MCC-01-01",
+      "lane": "mathematics",
+      "selection_roles": [
+        "foundational",
+        "expected-no-gap-control"
+      ],
+      "selection_reason": "Foundational structure and representation control.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:18-06-linear-algebra-spring-2010",
+      "source_family": "mit-ocw",
+      "title": "18.06 Linear Algebra",
+      "canonical_url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0",
+      "subjects": [
+        "linear algebra",
+        "mathematics",
+        "matrix theory"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/18-06-linear-algebra/work.json"
+    },
+    {
+      "packet_id": "MCC-01-02",
+      "lane": "mathematics",
+      "selection_roles": [
+        "foundational",
+        "dynamics-edge"
+      ],
+      "selection_reason": "Introductory change, response, and dynamical structure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:18-03sc-differential-equations-fall-2011",
+      "source_family": "mit-ocw",
+      "title": "18.03SC Differential Equations",
+      "canonical_url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-media-java-mathlet-and-image-boundaries",
+      "subjects": [
+        "differential equations",
+        "ordinary differential equations",
+        "second order systems",
+        "periodic response",
+        "Laplace transform",
+        "Fourier series",
+        "first order systems",
+        "linearization",
+        "simulation support",
+        "game physics support"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/18-03sc-differential-equations/work.json"
+    },
+    {
+      "packet_id": "MCC-01-03",
+      "lane": "mathematics",
+      "selection_roles": [
+        "advanced",
+        "error-edge"
+      ],
+      "selection_reason": "Approximation, error, and numerical-method pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:18-330-introduction-numerical-analysis-spring-2012",
+      "source_family": "mit-ocw",
+      "title": "18.330 Introduction to Numerical Analysis",
+      "canonical_url": "https://ocw.mit.edu/courses/18-330-introduction-to-numerical-analysis-spring-2012/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-code-exam-and-external-prerequisite-boundaries",
+      "subjects": [
+        "numerical analysis",
+        "root finding",
+        "interpolation",
+        "quadrature",
+        "ordinary differential equations",
+        "Fourier analysis",
+        "spectral methods",
+        "least squares",
+        "principal component analysis",
+        "simulation support"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/18-330-introduction-numerical-analysis/work.json"
+    },
+    {
+      "packet_id": "MCC-01-04",
+      "lane": "mathematics",
+      "selection_roles": [
+        "advanced",
+        "cross-domain-edge"
+      ],
+      "selection_reason": "Optimization, constraint, and duality pressure across domains.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:stanford-see:ee364a-convex-optimization",
+      "source_family": "stanford-engineering-everywhere",
+      "title": "EE364A Convex Optimization I",
+      "canonical_url": "https://see.stanford.edu/Course/EE364A",
+      "fetch_policy": "bundle_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-textbook-boundary",
+      "subjects": [
+        "convex optimization",
+        "convex analysis",
+        "duality",
+        "least squares",
+        "linear programming",
+        "semidefinite programming",
+        "interior-point methods"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee364a-convex-optimization/work.json"
+    },
+    {
+      "packet_id": "MCC-01-05",
+      "lane": "mathematics",
+      "selection_roles": [
+        "breadth",
+        "discrete-edge"
+      ],
+      "selection_reason": "Metadata probe for discrete and combinatorial structure.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:math-foundations-public-course-surfaces:stanford-math108-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_math108_combinatorics_homepage",
+      "canonical_url": "https://web.stanford.edu/class/math108/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-math-foundations-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-06",
+      "lane": "mathematics",
+      "selection_roles": [
+        "breadth",
+        "abstraction-edge"
+      ],
+      "selection_reason": "Metadata probe for abstraction and algebraic structure.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:math-foundations-public-course-surfaces:stanford-math113-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_math113_abstract_algebra_homepage",
+      "canonical_url": "https://web.stanford.edu/class/math113/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-math-foundations-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-07",
+      "lane": "physical-science",
+      "selection_roles": [
+        "foundational",
+        "mechanism-edge"
+      ],
+      "selection_reason": "Atomic, molecular, thermodynamic, equilibrium, and kinetic pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:5-111sc-principles-of-chemical-science-fall-2014",
+      "source_family": "mit-ocw",
+      "title": "5.111SC Principles of Chemical Science",
+      "canonical_url": "https://ocw.mit.edu/courses/5-111sc-principles-of-chemical-science-fall-2014/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-textbook-and-external-video-boundary",
+      "subjects": [
+        "chemistry",
+        "atomic structure",
+        "molecular structure",
+        "thermodynamics",
+        "equilibrium",
+        "redox",
+        "kinetics",
+        "catalysis"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/5-111sc-principles-of-chemical-science/work.json"
+    },
+    {
+      "packet_id": "MCC-01-08",
+      "lane": "physical-science",
+      "selection_roles": [
+        "foundational",
+        "expected-no-gap-control"
+      ],
+      "selection_reason": "Mechanics control for state, force, energy, and momentum.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:8-01sc-classical-mechanics-fall-2016",
+      "source_family": "mit-ocw",
+      "title": "8.01SC Classical Mechanics",
+      "canonical_url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0",
+      "subjects": [
+        "classical mechanics",
+        "kinematics",
+        "forces",
+        "energy",
+        "momentum",
+        "rotational dynamics"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/8-01sc-classical-mechanics/work.json"
+    },
+    {
+      "packet_id": "MCC-01-09",
+      "lane": "physical-science",
+      "selection_roles": [
+        "foundational",
+        "cross-source"
+      ],
+      "selection_reason": "Independent physics sequence spanning fields, optics, and quantum mechanics.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:open-yale:phys-201-fundamentals-of-physics-ii",
+      "source_family": "open-yale-courses",
+      "title": "PHYS 201 Fundamentals of Physics II",
+      "canonical_url": "https://oyc.yale.edu/physics/phys-201",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-3.0-most-materials-with-third-party-boundary",
+      "subjects": [
+        "physics",
+        "electricity",
+        "magnetism",
+        "optics",
+        "quantum mechanics"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/open-education/open-yale-courses/phys-201-fundamentals-of-physics-ii/work.json"
+    },
+    {
+      "packet_id": "MCC-01-10",
+      "lane": "physical-science",
+      "selection_roles": [
+        "advanced",
+        "cross-source"
+      ],
+      "selection_reason": "Structure, mechanism, bonding, and stereochemistry pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:open-yale:chem-125a-freshman-organic-chemistry-i",
+      "source_family": "open-yale-courses",
+      "title": "CHEM 125a Freshman Organic Chemistry I",
+      "canonical_url": "https://oyc.yale.edu/chemistry/chem-125a",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-3.0-most-materials-with-third-party-boundary",
+      "subjects": [
+        "organic chemistry",
+        "structure",
+        "mechanism",
+        "bonding",
+        "functional groups",
+        "stereochemistry"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/open-education/open-yale-courses/chem-125a-freshman-organic-chemistry-i/work.json"
+    },
+    {
+      "packet_id": "MCC-01-11",
+      "lane": "physical-science",
+      "selection_roles": [
+        "breadth",
+        "structure-reactivity-edge"
+      ],
+      "selection_reason": "Metadata probe at the structure/reactivity boundary.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:physical-sciences-public-course-surfaces:stanford-chem33-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_chem33_structure_reactivity_homepage",
+      "canonical_url": "https://web.stanford.edu/class/chem33/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-physical-sciences-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-12",
+      "lane": "physical-science",
+      "selection_roles": [
+        "breadth",
+        "cross-domain-edge"
+      ],
+      "selection_reason": "Metadata probe for coupled earth-system concepts.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-earthsys10-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_earthsys10_earth_systems_homepage",
+      "canonical_url": "https://web.stanford.edu/class/earthsys10/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-earth-climate-energy-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-13",
+      "lane": "life-health-science",
+      "selection_roles": [
+        "cross-domain-edge",
+        "only-record-depth"
+      ],
+      "selection_reason": "Only individual-record bridge into clinical evidence, fairness, and interpretation.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:6-s897-machine-learning-for-healthcare-spring-2019",
+      "source_family": "mit-ocw",
+      "title": "6.S897 Machine Learning for Healthcare",
+      "canonical_url": "https://ocw.mit.edu/courses/6-s897-machine-learning-for-healthcare-spring-2019/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-per-resource-exclusions",
+      "subjects": [
+        "machine learning",
+        "healthcare",
+        "clinical data",
+        "deep learning",
+        "natural language processing",
+        "reinforcement learning",
+        "causal inference",
+        "algorithmic fairness",
+        "interpretability"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/6-s897-machine-learning-for-healthcare/work.json"
+    },
+    {
+      "packet_id": "MCC-01-14",
+      "lane": "life-health-science",
+      "selection_roles": [
+        "breadth",
+        "biological-information-edge"
+      ],
+      "selection_reason": "Metadata probe for genomic information and variation.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:bio-biomed-public-course-surfaces:stanford-gene211-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_gene211_genomics_homepage",
+      "canonical_url": "https://web.stanford.edu/class/gene211/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-bio-biomed-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-15",
+      "lane": "life-health-science",
+      "selection_roles": [
+        "breadth",
+        "expected-no-gap-control"
+      ],
+      "selection_reason": "Metadata control for population, exposure, outcome, and evidence distinctions.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:medicine-public-health-public-course-surfaces:stanford-hrp225-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_hrp225_epidemiology_homepage",
+      "canonical_url": "https://web.stanford.edu/class/hrp225/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-medicine-public-health-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-16",
+      "lane": "life-health-science",
+      "selection_roles": [
+        "breadth",
+        "evidence-edge"
+      ],
+      "selection_reason": "Metadata probe for intervention and comparison design.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:medicine-public-health-public-course-surfaces:stanford-hrp251-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_hrp251_clinical_trials_homepage",
+      "canonical_url": "https://web.stanford.edu/class/hrp251/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-medicine-public-health-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-17",
+      "lane": "life-health-science",
+      "selection_roles": [
+        "breadth",
+        "mechanism-design-edge"
+      ],
+      "selection_reason": "Metadata probe for biological mechanism and constructed systems.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:bio-biomed-public-course-surfaces:stanford-bioe220-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_bioe220_synthetic_biology_homepage",
+      "canonical_url": "https://web.stanford.edu/class/bioe220/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-bio-biomed-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-18",
+      "lane": "life-health-science",
+      "selection_roles": [
+        "breadth",
+        "cross-domain-edge"
+      ],
+      "selection_reason": "Metadata probe across food, environment, and coupled outcomes.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-earthsys105-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_earthsys105_food_environment_homepage",
+      "canonical_url": "https://web.stanford.edu/class/earthsys105/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-earth-climate-energy-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-19",
+      "lane": "computing-software",
+      "selection_roles": [
+        "foundational",
+        "expected-no-gap-control"
+      ],
+      "selection_reason": "Algorithm and data-structure control.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:6-006-introduction-to-algorithms-fall-2011",
+      "source_family": "mit-ocw",
+      "title": "6.006 Introduction to Algorithms",
+      "canonical_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-per-resource-exclusions",
+      "subjects": [
+        "algorithms",
+        "data structures",
+        "computer science",
+        "programming"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/6-006-introduction-to-algorithms/work.json"
+    },
+    {
+      "packet_id": "MCC-01-20",
+      "lane": "computing-software",
+      "selection_roles": [
+        "advanced",
+        "performance-edge"
+      ],
+      "selection_reason": "Performance, resource, locality, and concurrency pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:6-172-performance-engineering-fall-2018",
+      "source_family": "mit-ocw",
+      "title": "6.172 Performance Engineering of Software Systems",
+      "canonical_url": "https://ocw.mit.edu/courses/6-172-performance-engineering-of-software-systems-fall-2018/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-code-bundle-and-media-boundaries",
+      "subjects": [
+        "performance engineering",
+        "software systems",
+        "optimization",
+        "parallel programming",
+        "caching",
+        "vectorization",
+        "memory allocation",
+        "game engine support"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/6-172-performance-engineering/work.json"
+    },
+    {
+      "packet_id": "MCC-01-21",
+      "lane": "computing-software",
+      "selection_roles": [
+        "cross-domain-edge",
+        "evaluation-edge"
+      ],
+      "selection_reason": "Interface, usability, testing, and accessibility pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:6-831-user-interface-design-spring-2011",
+      "source_family": "mit-ocw",
+      "title": "6.831 / 6.813 User Interface Design and Implementation",
+      "canonical_url": "https://ocw.mit.edu/courses/6-831-user-interface-design-and-implementation-spring-2011/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-code-bundle-and-literature-boundaries",
+      "subjects": [
+        "user interface design",
+        "human-computer interaction",
+        "usability",
+        "learnability",
+        "user testing",
+        "prototyping",
+        "accessibility",
+        "mobile interfaces",
+        "game UI support"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/6-831-user-interface-design/work.json"
+    },
+    {
+      "packet_id": "MCC-01-22",
+      "lane": "computing-software",
+      "selection_roles": [
+        "foundational",
+        "cross-source"
+      ],
+      "selection_reason": "Paradigm and mechanism variation without choosing one implementation model.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:stanford-see:cs107-programming-paradigms",
+      "source_family": "stanford-engineering-everywhere",
+      "title": "CS107 Programming Paradigms",
+      "canonical_url": "https://see.stanford.edu/Course/CS107",
+      "fetch_policy": "bundle_allowed",
+      "license_status": "cc-by-nc-sa-4.0-unless-otherwise-indicated",
+      "subjects": [
+        "systems programming",
+        "C",
+        "C++",
+        "memory management",
+        "assembly",
+        "concurrency",
+        "functional programming",
+        "Python"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs107-programming-paradigms/work.json"
+    },
+    {
+      "packet_id": "MCC-01-23",
+      "lane": "computing-software",
+      "selection_roles": [
+        "breadth",
+        "systems-edge"
+      ],
+      "selection_reason": "Metadata probe for operating-system principles.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:software-public-course-surfaces:stanford-cs111-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_cs111_operating_systems_principles_homepage",
+      "canonical_url": "https://web.stanford.edu/class/cs111/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-software-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-24",
+      "lane": "computing-software",
+      "selection_roles": [
+        "breadth",
+        "social-boundary-edge"
+      ],
+      "selection_reason": "Metadata probe across computing, ethics, and public policy.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:computing-practice-society-public-course-surfaces:stanford-cs181-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_cs181_computers_ethics_public_policy_homepage",
+      "canonical_url": "https://web.stanford.edu/class/cs181/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-computing-practice-society-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-25",
+      "lane": "ai-data-inference",
+      "selection_roles": [
+        "foundational",
+        "expected-no-gap-control"
+      ],
+      "selection_reason": "Search, representation, and learning control.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:6-034-artificial-intelligence-fall-2010",
+      "source_family": "mit-ocw",
+      "title": "6.034 Artificial Intelligence",
+      "canonical_url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0",
+      "subjects": [
+        "artificial intelligence",
+        "search",
+        "knowledge representation",
+        "learning"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/6-034-artificial-intelligence/work.json"
+    },
+    {
+      "packet_id": "MCC-01-26",
+      "lane": "ai-data-inference",
+      "selection_roles": [
+        "foundational",
+        "prediction-edge"
+      ],
+      "selection_reason": "Modeling and prediction pressure at introductory scope.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:6-036-introduction-to-machine-learning-fall-2020",
+      "source_family": "mit-ocw-open-learning-library",
+      "title": "6.036 Introduction to Machine Learning",
+      "canonical_url": "https://ocw.mit.edu/courses/6-036-introduction-to-machine-learning-fall-2020/",
+      "fetch_policy": "metadata_only",
+      "license_status": "mixed-ocw-cc-by-nc-sa-4.0-and-oll-all-rights-reserved",
+      "subjects": [
+        "machine learning",
+        "artificial intelligence",
+        "modeling",
+        "prediction"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/6-036-introduction-to-machine-learning/work.json"
+    },
+    {
+      "packet_id": "MCC-01-27",
+      "lane": "ai-data-inference",
+      "selection_roles": [
+        "advanced",
+        "inference-edge"
+      ],
+      "selection_reason": "Classification and statistical-inference pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:6-867-machine-learning-fall-2006",
+      "source_family": "mit-ocw",
+      "title": "6.867 Machine Learning",
+      "canonical_url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-per-resource-exclusions",
+      "subjects": [
+        "machine learning",
+        "statistical inference",
+        "classification",
+        "support vector machines",
+        "hidden Markov models",
+        "Bayesian networks"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/6-867-machine-learning/work.json"
+    },
+    {
+      "packet_id": "MCC-01-28",
+      "lane": "ai-data-inference",
+      "selection_roles": [
+        "advanced",
+        "cross-source"
+      ],
+      "selection_reason": "Independent machine-learning sequence and no-gap comparison.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:stanford-see:cs229-machine-learning",
+      "source_family": "stanford-engineering-everywhere",
+      "title": "CS229 Machine Learning",
+      "canonical_url": "https://see.stanford.edu/Course/CS229",
+      "fetch_policy": "bundle_allowed",
+      "license_status": "cc-by-nc-sa-4.0-unless-otherwise-indicated",
+      "subjects": [
+        "machine learning",
+        "supervised learning",
+        "unsupervised learning",
+        "learning theory",
+        "reinforcement learning",
+        "robotic control"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs229-machine-learning/work.json"
+    },
+    {
+      "packet_id": "MCC-01-29",
+      "lane": "ai-data-inference",
+      "selection_roles": [
+        "breadth",
+        "statistical-inference-edge"
+      ],
+      "selection_reason": "Metadata probe for inference-specific vocabulary.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:stats-data-public-course-surfaces:stanford-stats200-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_stats200_statistical_inference_homepage",
+      "canonical_url": "https://web.stanford.edu/class/stats200/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-stats-data-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-30",
+      "lane": "ai-data-inference",
+      "selection_roles": [
+        "breadth",
+        "cross-source"
+      ],
+      "selection_reason": "Metadata probe for probability foundations from another institution.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:berkeley-public-course-sites:stats-probability-data-public-course-surfaces:berkeley-prob140-homepage",
+      "source_family": "berkeley-public-course-sites",
+      "title": "berkeley_prob140_probability_homepage",
+      "canonical_url": "http://prob140.org/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/berkeley-stats-probability-data-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-31",
+      "lane": "engineering-systems-control",
+      "selection_roles": [
+        "foundational",
+        "expected-no-gap-control"
+      ],
+      "selection_reason": "Kinematics, frames, dynamics, and vibration control.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:2-003sc-engineering-dynamics-fall-2011",
+      "source_family": "mit-ocw",
+      "title": "2.003SC Engineering Dynamics",
+      "canonical_url": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-media-textbook-and-image-boundaries",
+      "subjects": [
+        "engineering dynamics",
+        "kinematics",
+        "rigid bodies",
+        "rotating frames",
+        "angular momentum",
+        "Lagrange equations",
+        "mechanical vibration",
+        "game physics support",
+        "simulation support"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/2-003sc-engineering-dynamics/work.json"
+    },
+    {
+      "packet_id": "MCC-01-32",
+      "lane": "engineering-systems-control",
+      "selection_roles": [
+        "advanced",
+        "perception-action-edge"
+      ],
+      "selection_reason": "Perception, planning, control, and geometry pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:6-4210-robotic-manipulation-fall-2022",
+      "source_family": "mit-ocw",
+      "title": "6.4210 Robotic Manipulation",
+      "canonical_url": "https://ocw.mit.edu/courses/6-4210-robotic-manipulation-fall-2022/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-external-surfaces",
+      "subjects": [
+        "robotic manipulation",
+        "robotics",
+        "perception",
+        "planning",
+        "control",
+        "deep learning",
+        "3d geometry"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/6-4210-robotic-manipulation/work.json"
+    },
+    {
+      "packet_id": "MCC-01-33",
+      "lane": "engineering-systems-control",
+      "selection_roles": [
+        "advanced",
+        "state-estimation-edge"
+      ],
+      "selection_reason": "State, observability, estimation, and control pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:stanford-see:ee263-linear-dynamical-systems",
+      "source_family": "stanford-engineering-everywhere",
+      "title": "EE263 Introduction to Linear Dynamical Systems",
+      "canonical_url": "https://see.stanford.edu/Course/EE263",
+      "fetch_policy": "bundle_allowed",
+      "license_status": "cc-by-nc-sa-4.0-unless-otherwise-indicated",
+      "subjects": [
+        "linear dynamical systems",
+        "applied linear algebra",
+        "least squares",
+        "control",
+        "observability",
+        "state estimation",
+        "signal processing"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/open-education/stanford-engineering-everywhere/ee263-linear-dynamical-systems/work.json"
+    },
+    {
+      "packet_id": "MCC-01-34",
+      "lane": "engineering-systems-control",
+      "selection_roles": [
+        "foundational",
+        "cross-source"
+      ],
+      "selection_reason": "Independent robotics and simulation sequence.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:stanford-see:cs223a-introduction-to-robotics",
+      "source_family": "stanford-engineering-everywhere",
+      "title": "CS223A Introduction to Robotics",
+      "canonical_url": "https://see.stanford.edu/Course/CS223A",
+      "fetch_policy": "metadata_only",
+      "license_status": "cc-by-nc-sa-4.0-unless-otherwise-indicated",
+      "subjects": [
+        "robotics",
+        "human-centered robotics",
+        "dynamic simulation",
+        "haptics"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/open-education/stanford-engineering-everywhere/cs223a-introduction-to-robotics/work.json"
+    },
+    {
+      "packet_id": "MCC-01-35",
+      "lane": "engineering-systems-control",
+      "selection_roles": [
+        "breadth",
+        "material-response-edge"
+      ],
+      "selection_reason": "Metadata probe for stress, strain, and strength distinctions.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:engineering-design-public-course-surfaces:stanford-me80-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_me80_stress_strain_strength_homepage",
+      "canonical_url": "https://web.stanford.edu/class/me80/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-engineering-design-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-36",
+      "lane": "engineering-systems-control",
+      "selection_roles": [
+        "breadth",
+        "cross-domain-edge"
+      ],
+      "selection_reason": "Metadata probe for energy systems beyond mechanics.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:earth-climate-energy-public-course-surfaces:stanford-energy221-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_energy221_energy_homepage",
+      "canonical_url": "https://web.stanford.edu/class/energy221/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-earth-climate-energy-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-37",
+      "lane": "social-humanities",
+      "selection_roles": [
+        "interpretive-edge",
+        "record-depth"
+      ],
+      "selection_reason": "Interpretation, culture, narrative, space, and identity pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:cms-300-videogame-studies-fall-2011",
+      "source_family": "mit-ocw",
+      "title": "CMS.300 Introduction to Videogame Studies",
+      "canonical_url": "https://ocw.mit.edu/courses/cms-300-introduction-to-videogame-studies-fall-2011/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-reading-and-game-boundaries",
+      "subjects": [
+        "videogame studies",
+        "game analysis",
+        "game culture",
+        "game narrative",
+        "game spaces",
+        "player identity",
+        "simulation",
+        "game criticism"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/cms-300-videogame-studies/work.json"
+    },
+    {
+      "packet_id": "MCC-01-38",
+      "lane": "social-humanities",
+      "selection_roles": [
+        "cross-domain-edge",
+        "record-depth"
+      ],
+      "selection_reason": "Intent, intervention, assessment, and social-outcome pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:mit:ocw:cms-615-games-for-social-change-fall-2013",
+      "source_family": "mit-ocw",
+      "title": "CMS.615 Games for Social Change",
+      "canonical_url": "https://ocw.mit.edu/courses/cms-615-games-for-social-change-fall-2013/",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-4.0-with-reading-and-game-boundaries",
+      "subjects": [
+        "serious games",
+        "games for social change",
+        "civic engagement",
+        "game assessment",
+        "prototyping",
+        "social impact",
+        "game design"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/mit/ocw/cms-615-games-for-social-change/work.json"
+    },
+    {
+      "packet_id": "MCC-01-39",
+      "lane": "social-humanities",
+      "selection_roles": [
+        "breadth",
+        "expected-no-gap-control"
+      ],
+      "selection_reason": "Metadata control at the personal-identity boundary.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:philosophy-ethics-public-course-surfaces:stanford-phil188-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_phil188_personal_identity_homepage",
+      "canonical_url": "https://web.stanford.edu/class/phil188/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-philosophy-ethics-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-40",
+      "lane": "social-humanities",
+      "selection_roles": [
+        "breadth",
+        "cognition-edge"
+      ],
+      "selection_reason": "Metadata probe for learning and memory distinctions.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:humanities-social-public-course-surfaces:stanford-psych45-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_psych45_learning_memory_homepage",
+      "canonical_url": "https://web.stanford.edu/class/psych45/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-humanities-social-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-41",
+      "lane": "social-humanities",
+      "selection_roles": [
+        "breadth",
+        "evidence-method-edge"
+      ],
+      "selection_reason": "Metadata probe for historical method and evidence.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:humanities-social-public-course-surfaces:stanford-history202-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_history202_history_methods_homepage",
+      "canonical_url": "https://web.stanford.edu/class/history202/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-humanities-social-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-42",
+      "lane": "social-humanities",
+      "selection_roles": [
+        "breadth",
+        "network-edge"
+      ],
+      "selection_reason": "Metadata probe for social-network structure.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:sociology-public-course-surfaces:stanford-soc142-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_soc142_social_networks_homepage",
+      "canonical_url": "https://web.stanford.edu/class/soc142/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-sociology-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-43",
+      "lane": "economics-organizations",
+      "selection_roles": [
+        "record-depth",
+        "strategic-edge"
+      ],
+      "selection_reason": "Only individual-record economics sequence; strategy and interaction pressure.",
+      "permitted_use": "inspect only rights-compatible source-owned surfaces recorded by FONTES",
+      "source_id": "fontes:open-yale:econ-159-game-theory",
+      "source_family": "open-yale-courses",
+      "title": "ECON 159 Game Theory",
+      "canonical_url": "https://oyc.yale.edu/economics/econ-159",
+      "fetch_policy": "derived_text_allowed",
+      "license_status": "cc-by-nc-sa-3.0-most-materials-with-textbook-and-media-boundaries",
+      "subjects": [
+        "game theory",
+        "strategic thinking",
+        "dominance",
+        "nash equilibrium",
+        "mixed strategies",
+        "evolutionary stability",
+        "backward induction",
+        "signaling",
+        "auctions"
+      ],
+      "evidence_tier": "course-work-record",
+      "upstream_path": "sources/open-education/open-yale-courses/econ-159-game-theory/work.json"
+    },
+    {
+      "packet_id": "MCC-01-44",
+      "lane": "economics-organizations",
+      "selection_roles": [
+        "breadth",
+        "expected-no-gap-control"
+      ],
+      "selection_reason": "Introductory metadata control for economic distinctions.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ1-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_econ1_introductory_economics_homepage",
+      "canonical_url": "https://web.stanford.edu/class/econ1/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-business-economics-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-45",
+      "lane": "economics-organizations",
+      "selection_roles": [
+        "breadth",
+        "choice-edge"
+      ],
+      "selection_reason": "Metadata probe for microeconomic choice and allocation.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ50-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_econ50_microeconomics_homepage",
+      "canonical_url": "https://web.stanford.edu/class/econ50/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-business-economics-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-46",
+      "lane": "economics-organizations",
+      "selection_roles": [
+        "breadth",
+        "stock-flow-edge"
+      ],
+      "selection_reason": "Metadata probe for macroeconomic stock/flow pressure.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-econ51-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_econ51_macroeconomics_homepage",
+      "canonical_url": "https://web.stanford.edu/class/econ51/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-business-economics-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-47",
+      "lane": "economics-organizations",
+      "selection_roles": [
+        "breadth",
+        "organization-edge"
+      ],
+      "selection_reason": "Metadata probe for management science and operations modeling.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-msande140-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_msande140_management_science_homepage",
+      "canonical_url": "https://web.stanford.edu/class/msande140/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-business-economics-public-course-surfaces.json"
+    },
+    {
+      "packet_id": "MCC-01-48",
+      "lane": "economics-organizations",
+      "selection_roles": [
+        "breadth",
+        "decision-edge"
+      ],
+      "selection_reason": "Metadata probe for decision analysis and value tradeoffs.",
+      "permitted_use": "existence and curriculum-pressure metadata only; no concept admission",
+      "source_id": "fontes:stanford-public-course-sites:business-economics-public-course-surfaces:stanford-msande152-homepage",
+      "source_family": "stanford-public-course-sites",
+      "title": "stanford_msande152_decision_analysis_homepage",
+      "canonical_url": "https://web.stanford.edu/class/msande152/",
+      "fetch_policy": "metadata_only",
+      "license_status": "public-web-course-site-with-unreviewed-material-rights",
+      "subjects": [],
+      "evidence_tier": "homepage-metadata-only",
+      "upstream_path": "sources/tables/stanford-business-economics-public-course-surfaces.json"
+    }
+  ]
+}
