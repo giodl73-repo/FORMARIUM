@@ -2,8 +2,8 @@
 skill: discover-hypothesis
 topic: factorium-consequential-depth
 date: 2026-08-17
-confidence: 65
-verdict: OPEN
+confidence: 75
+verdict: SURVIVES
 ---
 
 # Factorium Consequential-Depth Hypothesis
@@ -79,4 +79,18 @@ the packet; headings, metadata volume, and implied expertise earn none.
 Passing Tests 1 and 2 would reject “merely a schematized thesaurus” only for
 the tested artifact outputs. It would not establish that people notice, value,
 understand, prefer, or return to the difference.
+
+## Result
+
+The hypothesis survives CAD-02. Factorium exposes at least four of five
+dimensions on 5/6 packets and exceeds the retained Merriam-Webster output by at
+least two dimensions on 6/6. Every route stays within one additional open,
+zero false equivalences appear, and the shuffled replay has zero disagreements.
+
+`power` is the retained packet failure: Factorium's visible route covers
+mechanical and electrical power but not organizational authority or influence.
+`value` passes 4/5 but receives no bounded-handoff credit because its retained
+first opened Table ends before an explicit next-inspection procedure. No repair
+is admitted. This raises confidence in the bounded artifact distinction only;
+Test 3 and all reader-value questions remain open.
 

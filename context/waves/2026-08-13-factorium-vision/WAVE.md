@@ -3140,3 +3140,15 @@ approve execution with no P1/P2 finding. Any failed conjunctive threshold
 retains the null for this portfolio; execution admits no product repair and can
 establish no reader or market evidence. See
 `COMPETITIVE-CONSEQUENTIAL-DEPTH-TEST-02-PLAN.md`.
+
+Result review: the bounded artifact hypothesis survives. Factorium exposes at
+least four of five consequence dimensions on 5/6 packets, exceeds the retained
+Merriam-Webster output by at least two dimensions on 6/6, stays within one
+additional open on 6/6, and asserts zero false equivalences. Two 60-observation
+internal passes disagree zero times. `power` remains a 2/5 scope failure and
+`value` receives no handoff credit; all four missed dimensions remain visible.
+Nine roles approve with no P1/P2 finding. Maintain clean `sim-48`, admit no
+batch, and claim only tested artifact depth—not reader value, uniqueness, or
+general superiority. The focused checker and two deterministic scoring runs,
+roles check, formatting, clippy, and all 70 Rust tests pass. See
+`COMPETITIVE-CONSEQUENTIAL-DEPTH-TEST-02-RESULT.md`.

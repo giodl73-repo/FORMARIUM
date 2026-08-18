@@ -1,0 +1,141 @@
+{
+  "campaign_id": "CAD-02",
+  "pass_a": "direct",
+  "pass_b": "shuffled-blind-label",
+  "dimension_order": [
+    "task_scope_coverage", "governing_inputs", "invalid_transfer",
+    "stopping_condition", "bounded_handoff"
+  ],
+  "rows": [
+    {
+      "query": "force",
+      "factorium": {
+        "values": [true, true, true, true, true],
+        "opens": 1,
+        "evidence": [
+          "physical interaction, coercive compulsion",
+          "select the system, boundary, interaction set",
+          "they do not share one formula or decomposition",
+          "Record unresolved ambiguity",
+          "select one of the five senses"
+        ]
+      },
+      "merriam_webster_thesaurus": {
+        "values": [false, false, false, false, false],
+        "opens": 0,
+        "reason": "The chooser distinguishes coercive verbs but does not connect coercion to physical interaction or supply application fields, a cross-sense exclusion, a stopping rule, or a bounded inspection."
+      }
+    },
+    {
+      "query": "power",
+      "factorium": {
+        "values": [false, true, false, false, true],
+        "opens": 1,
+        "evidence": [
+          null,
+          "For power, declare the interval or instantaneous view",
+          null,
+          null,
+          "Select the system and boundary"
+        ],
+        "reason": "The visible route covers mechanical and electrical power but not organizational authority or influence, so no cross-sense exclusion or stopping condition earns credit."
+      },
+      "merriam_webster_thesaurus": {
+        "values": [false, false, false, false, false],
+        "opens": 0,
+        "reason": "The chooser covers authority, command, control, jurisdiction, and sway but not rate-of-work or electrical power and supplies no cross-sense application procedure."
+      }
+    },
+    {
+      "query": "value",
+      "factorium": {
+        "values": [true, true, true, true, false],
+        "opens": 1,
+        "evidence": [
+          "Quantity Value, Numerical Value, Unit, Dimension, and Conversion",
+          "owner, purpose, scenario, and date",
+          "None is a context free property",
+          "Two analysts can compute different present values",
+          null
+        ],
+        "reason": "The visible list and first opened Table cover the requested meanings, inputs, exclusions, and uncertainty, but the retained text ends before an explicit next-inspection procedure."
+      },
+      "merriam_webster_thesaurus": {
+        "values": [false, false, false, false, false],
+        "opens": 0,
+        "reason": "The chooser distinguishes the verb from appreciate, cherish, prize, and treasure, not price, assessment, utility, or numerical value."
+      }
+    },
+    {
+      "query": "model",
+      "factorium": {
+        "values": [true, true, true, true, true],
+        "opens": 1,
+        "evidence": [
+          "model , representation , simulation , simulation run , simulation result",
+          "purpose, subject, variables, semantics, or view",
+          "A picture is treated as proof",
+          "Result cannot be reproduced",
+          "replay with frozen identities"
+        ]
+      },
+      "merriam_webster_thesaurus": {
+        "values": [false, false, false, false, false],
+        "opens": 0,
+        "reason": "The chooser treats model as an exemplar for imitation and does not cover the packet's representation, implementation, run, or result layers."
+      }
+    },
+    {
+      "query": "system",
+      "factorium": {
+        "values": [true, true, true, true, true],
+        "opens": 1,
+        "evidence": [
+          "component , architecture , architecture description , capability , boundary , environment , interface , dependency",
+          "source, target, required property, condition, consequence, and time scope",
+          "dependency(A,B) = dependency(B,A)",
+          "unresolved inconsistencies",
+          "record two assertions when mutual"
+        ]
+      },
+      "merriam_webster_thesaurus": {
+        "values": [false, false, false, false, false],
+        "opens": 0,
+        "reason": "The chooser compares system with fashion, manner, method, mode, and way; it does not cover system composition or architecture boundaries."
+      }
+    },
+    {
+      "query": "evidence",
+      "factorium": {
+        "values": [true, true, true, true, true],
+        "opens": 1,
+        "evidence": [
+          "evidence records observations, artifacts, or arguments",
+          "subject, criteria, scheme, party, scope, evidence, time, status",
+          "Does not establish",
+          "what does its scope explicitly leave unestablished",
+          "Verify issuer and immutable artifact identity"
+        ]
+      },
+      "merriam_webster_thesaurus": {
+        "values": [false, false, false, false, false],
+        "opens": 0,
+        "reason": "The chooser treats evidence as a verb near demonstrate, evince, manifest, and show, not the packet's observation-to-claim or assurance layers."
+      }
+    }
+  ],
+  "pass_b_shuffled_vectors": [
+    {"masked_packet": "P04", "masked_product": "B", "query": "model", "product": "merriam_webster_thesaurus", "values": [false, false, false, false, false]},
+    {"masked_packet": "P01", "masked_product": "A", "query": "force", "product": "factorium", "values": [true, true, true, true, true]},
+    {"masked_packet": "P06", "masked_product": "A", "query": "evidence", "product": "factorium", "values": [true, true, true, true, true]},
+    {"masked_packet": "P03", "masked_product": "B", "query": "value", "product": "merriam_webster_thesaurus", "values": [false, false, false, false, false]},
+    {"masked_packet": "P02", "masked_product": "A", "query": "power", "product": "factorium", "values": [false, true, false, false, true]},
+    {"masked_packet": "P05", "masked_product": "B", "query": "system", "product": "merriam_webster_thesaurus", "values": [false, false, false, false, false]},
+    {"masked_packet": "P03", "masked_product": "A", "query": "value", "product": "factorium", "values": [true, true, true, true, false]},
+    {"masked_packet": "P01", "masked_product": "B", "query": "force", "product": "merriam_webster_thesaurus", "values": [false, false, false, false, false]},
+    {"masked_packet": "P05", "masked_product": "A", "query": "system", "product": "factorium", "values": [true, true, true, true, true]},
+    {"masked_packet": "P02", "masked_product": "B", "query": "power", "product": "merriam_webster_thesaurus", "values": [false, false, false, false, false]},
+    {"masked_packet": "P06", "masked_product": "B", "query": "evidence", "product": "merriam_webster_thesaurus", "values": [false, false, false, false, false]},
+    {"masked_packet": "P04", "masked_product": "A", "query": "model", "product": "factorium", "values": [true, true, true, true, true]}
+  ]
+}

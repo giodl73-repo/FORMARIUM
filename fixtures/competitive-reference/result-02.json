@@ -1,0 +1,141 @@
+{
+  "campaign_id": "CAD-02",
+  "status": "complete",
+  "verdict": "SURVIVES",
+  "candidate": {
+    "edition": "sim-48",
+    "source_commit": "95fdeda1e2ef68a748feab06fefd34b844bf0bbf",
+    "site_identity": "bcff813a8011ac86666abec442a139da11d912e1c982a19554f2f5f668bc2ee1",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186"
+  },
+  "custody": {
+    "campaign_sha256": "dca22ada917dcf1338f6af35bb7631c7372cf9be1f570b53a90cd14e080ae2a6",
+    "captures_sha256": "795ebd5fa6741ebda1917264b4a31f2400a047731856984292fec6f37ace91cc",
+    "scoring_sha256": "27290e35674ab4ceab5e822e40feb863f1da7ab7f2b2d07035695c187ba0e4a9",
+    "immutable_cad_01_replay": true,
+    "network_requests": 0
+  },
+  "scoring": {
+    "packets": 6,
+    "products": 2,
+    "dimensions": 5,
+    "observations_per_pass": 60,
+    "passes": 2,
+    "disagreements": [],
+    "packet_results": [
+      {
+        "query": "force",
+        "factorium_dimensions": 5,
+        "thesaurus_dimensions": 0,
+        "factorium_pass": true,
+        "factorium_advantage": 5,
+        "advantage_pass": true,
+        "factorium_opens": 1,
+        "thesaurus_opens": 0,
+        "additional_opens": 1
+      },
+      {
+        "query": "power",
+        "factorium_dimensions": 2,
+        "thesaurus_dimensions": 0,
+        "factorium_pass": false,
+        "factorium_advantage": 2,
+        "advantage_pass": true,
+        "factorium_opens": 1,
+        "thesaurus_opens": 0,
+        "additional_opens": 1
+      },
+      {
+        "query": "value",
+        "factorium_dimensions": 4,
+        "thesaurus_dimensions": 0,
+        "factorium_pass": true,
+        "factorium_advantage": 4,
+        "advantage_pass": true,
+        "factorium_opens": 1,
+        "thesaurus_opens": 0,
+        "additional_opens": 1
+      },
+      {
+        "query": "model",
+        "factorium_dimensions": 5,
+        "thesaurus_dimensions": 0,
+        "factorium_pass": true,
+        "factorium_advantage": 5,
+        "advantage_pass": true,
+        "factorium_opens": 1,
+        "thesaurus_opens": 0,
+        "additional_opens": 1
+      },
+      {
+        "query": "system",
+        "factorium_dimensions": 5,
+        "thesaurus_dimensions": 0,
+        "factorium_pass": true,
+        "factorium_advantage": 5,
+        "advantage_pass": true,
+        "factorium_opens": 1,
+        "thesaurus_opens": 0,
+        "additional_opens": 1
+      },
+      {
+        "query": "evidence",
+        "factorium_dimensions": 5,
+        "thesaurus_dimensions": 0,
+        "factorium_pass": true,
+        "factorium_advantage": 5,
+        "advantage_pass": true,
+        "factorium_opens": 1,
+        "thesaurus_opens": 0,
+        "additional_opens": 1
+      }
+    ]
+  },
+  "thresholds": {
+    "observed": {
+      "factorium_passing_packets": 5,
+      "factorium_advantage_packets": 6,
+      "route_cost_pass": true,
+      "false_equivalences": 0
+    },
+    "pass": {
+      "consequence_coverage": true,
+      "comparative_depth": true,
+      "route_cost": true,
+      "semantic_custody": true,
+      "replay_resolved": true
+    }
+  },
+  "gaps": [
+    {
+      "query": "power",
+      "disposition": "scope-coverage",
+      "dimension": "task_scope_coverage",
+      "finding": "The visible Factorium route covers mechanical and electrical power but not organizational authority or influence."
+    },
+    {
+      "query": "power",
+      "disposition": "boundary",
+      "dimension": "invalid_transfer",
+      "finding": "Without both requested senses, the route cannot state the cross-sense transfer that must be rejected."
+    },
+    {
+      "query": "power",
+      "disposition": "stopping-condition",
+      "dimension": "stopping_condition",
+      "finding": "The visible physical routes do not state when an organizational-power interpretation remains unresolved."
+    },
+    {
+      "query": "value",
+      "disposition": "handoff",
+      "dimension": "bounded_handoff",
+      "finding": "The retained first opened Table ends before an explicit next-inspection procedure; governing questions alone do not earn handoff credit."
+    }
+  ],
+  "admitted_product_or_content_batch": null,
+  "claim": "On these six retained parity packets, Factorium exposes consequence-bearing artifact structure beyond the retained thesaurus output.",
+  "reader_evidence_claimed": false,
+  "market_evidence_claimed": false,
+  "uniqueness_claimed": false,
+  "general_superiority_claimed": false
+}
