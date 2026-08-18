@@ -22,6 +22,8 @@ assert.match(html, /<a href="compose\.html">Open Compose/);
 assert.match(html, /<h3>I want to learn or explore<\/h3>/);
 assert.match(html, /<a href="reader\.html">Open the Reader/);
 assert.match(html, /Factorium Tables remain canonical/);
+assert.match(html, /Bring a term, a question, or simple curiosity/);
+assert.match(html, /<a href="#choose">Choose<\/a>/);
 assert.match(css, /\.site-intent__grid/);
 assert.match(css, /@media \(max-width: 52rem\)/);
 

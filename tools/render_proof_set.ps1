@@ -2860,6 +2860,11 @@ if ($editionNumber -ge 7) {
         )
         $heroDeck = "Use Factorium as a dictionary and thesaurus when you know what you need to distinguish, or open the Reader when you want to learn the method through worked questions. Both lead back to the same canonical Tables."
     }
+    if ($editionNumber -ge 43) {
+        $heroDeck = "Bring a term, a question, or simple curiosity. Choose the route that matches your task; every path stays connected to the same canonical Tables."
+    }
+    $homeStartNav = if ($editionNumber -ge 43) { '<a href="#choose">Choose</a>' } else { '<a href="#start">Start</a>' }
+    $nestedStartNav = if ($editionNumber -ge 43) { '<a href="../index.html#choose">Choose</a>' } else { '<a href="../index.html#start">Start</a>' }
     $quickstartPage = "entries/$($pageBySource[$quickstart])"
     $homeTablesIndexNav = if ($editionNumber -ge 35) { '<a href="tables.html">Index</a>' } else { '' }
     $nestedTablesIndexNav = if ($editionNumber -ge 35) { '<a href="../tables.html">Index</a>' } else { '' }
@@ -2877,7 +2882,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$homeCandidateNav$homeProblemNav$homeComposeNav$homeTablesIndexNav<a href="#start">Start</a><a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$homeCandidateNav$homeProblemNav$homeComposeNav$homeTablesIndexNav$homeStartNav<a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <section class="site-hero">
@@ -3585,7 +3590,7 @@ if ($editionNumber -ge 7) {
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedStartNav<a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <main id="main-content" class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
@@ -3914,7 +3919,7 @@ $connectionList
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">Factorium</a>
-<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav<a href="../index.html#start">Start</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedStartNav<a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
 </div></header>
 <div class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
