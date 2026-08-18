@@ -1,0 +1,55 @@
+{
+  "campaign_id": "SUJ-11",
+  "revision": 1,
+  "status": "frozen-before-holdout-execution",
+  "frozen_on": "2026-08-17",
+  "evidence_class": "internal-authored-lexical-ranking-control",
+  "reader_problem": "A query containing one distinctive operational term and several common editorial terms can miss all intended Table owners.",
+  "baseline": {
+    "edition": "sim-46",
+    "source_commit": "20139f9c6d2f75d231efbb9d1c35ab1fe2d17e03",
+    "site_identity": "42fd224b43684f0212e3e77b9c6ee5cd44baa17c67d9c3d00ca0deb7b746985a",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186"
+  },
+  "development": {
+    "campaign_path": "fixtures/synthetic-users/campaign-02.json",
+    "campaign_sha256": "56cd37cebaf0db1f5da838a8c64ef9043c823b8713da8effffa67d6f2da8b79d",
+    "analysis_path": "fixtures/synthetic-users/analysis-02.json",
+    "analysis_sha256": "52d20931d8f5675dd5e6bb20abcb3966b87a0a93aeb1df570505b66d5725ee68",
+    "disclosure": "The BM25 candidate was inspected on these 25 first queries before freeze. Development results are not confirmatory evidence."
+  },
+  "holdout": {
+    "campaign_path": "fixtures/query-led-discovery/campaign-02.json",
+    "campaign_sha256": "2a5ee4a4979be90ceb7c238a0476987db1edb28d36da2dc4e87e13a66e3ae2a0",
+    "result_path": "fixtures/query-led-discovery/baseline-results-02.json",
+    "result_sha256": "de00f5d2f785f7f10aa08c08233476fbb720761f6eb683cfde5441b2f790a021",
+    "query_attempts": 48,
+    "intended_family_source": "deduplicated selected_senses paths frozen in QLD-02 baseline results"
+  },
+  "candidate": {
+    "name": "standard-bm25-distinctive-terms",
+    "tokenization": "existing NFKD lowercase alphanumeric tokens and existing stop-word list",
+    "document": "title, kind, domain, maturity, path, summary, and text concatenated once",
+    "term_frequency": "raw token count",
+    "inverse_document_frequency": "ln(1 + (N - df + 0.5) / (df + 0.5))",
+    "k1": 1.2,
+    "b": 0.75,
+    "tie_break": "title ascending",
+    "ownership_window": 5,
+    "query_expansion": false,
+    "aliases": false,
+    "semantic_inference": false
+  },
+  "admission": {
+    "development_dashboard_intended_family_required": true,
+    "holdout_dashboard_packet": "QLD-02-07",
+    "holdout_dashboard_query_index": 1,
+    "holdout_dashboard_intended_family_required": true,
+    "minimum_holdout_candidate_only_gains": 4,
+    "minimum_holdout_net_gain_over_losses": 4,
+    "maximum_holdout_current_only_losses": 4,
+    "default_replacement_allowed": false,
+    "candidate_surface_if_passed": "one optional Distinctive terms ranking lens beside the unchanged default ranking"
+  },
+  "stop": "Any failed gate records a null. Do not tune parameters, add dashboard aliases, change content, replace the default ranker, or mint a new edition."
+}

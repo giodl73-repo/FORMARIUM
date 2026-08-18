@@ -2974,3 +2974,16 @@ roles approve with no P1/P2 finding. Retain the two links and `sim-46`, decline
 the analyst-conditioned Search cue, preserve the dashboard Search-vocabulary
 gap, and claim no reader evidence. See
 `SYNTHETIC-RECIPROCAL-CONNECTION-REPAIR-RESULT.md`.
+
+## 2026-08-17 distinctive-terms ranking plan
+
+SUJ-11 isolates the remaining dashboard-dot miss as lexical ranking mechanics,
+not missing content. A standard parameter-frozen BM25 candidate treats SUJ-02
+as disclosed development evidence and reserves all 48 older QLD-02 query
+attempts as the independent holdout. Nine roles approve execution with no
+P1/P2 finding. Admission requires the independent dashboard query to reach an
+already selected owner, at least four candidate-only gains, gains exceeding
+losses by four, and no more than four losses. Even a pass admits only an
+optional Distinctive terms lens beside the unchanged default; no alias, merged
+rank, default replacement, edition, or reader claim is admitted. See
+`SYNTHETIC-DISTINCTIVE-TERMS-RANKING-PLAN.md`.
