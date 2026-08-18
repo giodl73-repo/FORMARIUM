@@ -1,0 +1,38 @@
+{
+  "campaign_id": "GPC-09-ADMISSION-01",
+  "revision": 1,
+  "status": "frozen-before-admission",
+  "frozen_on": "2026-08-18",
+  "baseline": {
+    "git_commit": "98cef14465f09f9ff03eb7232795630b55587d90",
+    "reference_v0_sha256": "489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324",
+    "assurance_v0_sha256": "a6ded194c406a9b09bb0fc92d721dddd0715dcd409ecfdfbbc0341f855495d20",
+    "relations_v0_sha256": "df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634"
+  },
+  "source_review": "signals/discover/literature/gpc-09-boundary-custody-admission-literature-2026-08-18.md",
+  "design": "specs/GPC-09-BOUNDARY-CUSTODY-DESIGN.md",
+  "admitted_paths": [
+    "tables/entries/meaning-reference-interpretation-use.md",
+    "tables/evidence/epistemic-standing-inquiry-warrant.md",
+    "tables/evidence/source-performance-research-custody.md"
+  ],
+  "content_cap": {"entries": 1, "views": 2, "new_senses": 7, "new_relations": 0},
+  "allowed_existing_owner_edits": [
+    "tables/entries/claim-evidence.md",
+    "tables/entries/information-data-signal-noise.md",
+    "tables/entries/model-representation-simulation.md",
+    "tables/entries/identity-naming-classification-versioning.md",
+    "tables/entries/organization-role-authority.md"
+  ],
+  "prohibited": [
+    "named-tradition-or-community-entry",
+    "knowledge-truth-culture-anchor",
+    "automatic-semantic-equivalence",
+    "public-access-equals-authority",
+    "normative-guidance",
+    "reader-evidence-claim",
+    "community-endorsement-claim",
+    "mutation-of-frozen-v0-sidecars"
+  ],
+  "reader_evidence_claimed": false
+}

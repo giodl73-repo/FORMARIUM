@@ -3374,3 +3374,14 @@ projection rules, compatibility boundaries, ten acceptance checks, and a
 complete product-owner record. Ten roles approve with no P1/P2 finding. Admit
 nothing yet; established-source and admission review is the next gate. See
 `GPC-09-BOUNDARY-CUSTODY-DESIGN-RESULT.md`.
+
+## 2026-08-18 GPC-09 boundary and custody admission
+
+Plan review: the 21-source literature gate supports the design's distinctions
+among meaning, reference, interpretation, use, warrant, testimony, defeaters,
+access, consent, ownership, and authority to share. Freeze the recommended
+middle course at one seven-sense anchor plus two no-new-sense Evidence Tables.
+Preserve the exact V0 reference, assurance, and relation bytes as baseline
+custody. Admit current Markdown Table sources only; generated V0 catalog,
+book/search projection, external review, and reader evidence remain later
+decisions. See `GPC-09-BOUNDARY-CUSTODY-ADMISSION-PLAN.md`.
