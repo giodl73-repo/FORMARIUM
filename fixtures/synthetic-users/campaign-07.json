@@ -1,0 +1,337 @@
+{
+  "campaign_id": "SUJ-07",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "frozen_on": "2026-08-17",
+  "evidence_class": "deterministic-dependent-syntactic-splitting-rehearsal",
+  "dependent_sources": [
+    "SUJ-02",
+    "SUJ-06"
+  ],
+  "baseline": {
+    "edition": "sim-45",
+    "source_commit": "e54a36e7c119670b279ea48760795f33f4775d63",
+    "site_identity": "e79e341036734b4f808fba9ac840eabed9a6c278c36f3cc05247af4b56553022",
+    "manifest_sha256": "36f614e66f895edd888609609110c4ca5f892886845421e97f993b8978e189a4",
+    "index_sha256": "637577e745fe2bd3069b4a94c877425c03aa856903a3d58fba67ca03377b574f",
+    "search_index_sha256": "d12640ffba616fcb83d909466628c1d3b4df0cdf4a0c4b0df0554f4e66e5b1df"
+  },
+  "split_policy": {
+    "normalize": "collapse-whitespace-only",
+    "boundaries": [
+      "sentence punctuation: . ! ? ;",
+      "contrast markers: even though, although, but, yet, while"
+    ],
+    "marker_case": "insensitive",
+    "minimum_content_tokens": 2,
+    "non_content_tokens": [
+      "a",
+      "an",
+      "and",
+      "are",
+      "as",
+      "at",
+      "be",
+      "both",
+      "for",
+      "from",
+      "has",
+      "have",
+      "how",
+      "i",
+      "in",
+      "is",
+      "it",
+      "merely",
+      "of",
+      "on",
+      "or",
+      "that",
+      "the",
+      "to",
+      "was",
+      "what",
+      "which",
+      "who",
+      "why",
+      "with"
+    ],
+    "maximum_clauses": 3,
+    "fallback_query": false,
+    "vocabulary_insertion": false,
+    "semantic_decomposition": false
+  },
+  "lookup_policy": {
+    "ownership_groups_per_clause": 10,
+    "ranking": "independent-existing-order",
+    "union": "canonical-family-identity-only",
+    "merged_ranking": false,
+    "persistence": "none"
+  },
+  "hypotheses": {
+    "feasibility": "All 10 assignments yield two or three valid clauses under the frozen syntax rule.",
+    "coverage": "All 10 assignments expose two or more intended canonical families across the clause-list identity union.",
+    "incremental_value": "At least 4 of 10 assignments add an intended canonical family absent from the frozen SUJ-06 dual-query union.",
+    "non_regression": "No assignment that passed the SUJ-06 two-family threshold falls below it.",
+    "boundary": "Clauses and independent literal rankings remain distinguishable from concepts, semantic decomposition, relation selection, closure, and recommendation."
+  },
+  "owner_test": {
+    "required_splittable_assignments": 10,
+    "required_two_family_assignments": 10,
+    "required_incremental_assignments": 4,
+    "required_regressions": 0,
+    "owner": "search-publication-shell",
+    "smallest_candidate": "visible-editable-syntactic-clause-helper",
+    "prohibited": [
+      "hidden-query-generation",
+      "semantic-decomposition-claim",
+      "merged-ranking",
+      "automatic-selection",
+      "inferred-relation",
+      "closure",
+      "query-persistence",
+      "canonical-write"
+    ]
+  },
+  "assignments": [
+    {
+      "id": "SUJ-07-02",
+      "source_assignment_id": "SUJ-06-02",
+      "task_id": "SUJ-02-02",
+      "task": "The status page is green, but customers still cannot finish checkout. How can both be true?",
+      "clauses": [
+        "The status page is green",
+        "customers still cannot finish checkout",
+        "How can both be true"
+      ],
+      "intended_paths": [
+        "tables/entries/control-monitoring-response.md",
+        "tables/entries/dependability-reliability-availability-resilience.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/system-composition-dependency.md",
+        "tables/entries/requirement-specification-verification-validation.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-04",
+      "source_assignment_id": "SUJ-06-04",
+      "task_id": "SUJ-02-04",
+      "task": "Everyone is busy, yet the project date keeps slipping. What should I inspect first?",
+      "clauses": [
+        "Everyone is busy",
+        "the project date keeps slipping",
+        "What should I inspect first"
+      ],
+      "intended_paths": [
+        "tables/entries/coordinated-work.md",
+        "tables/procedures/planned-work.md",
+        "tables/diagnostics/dependency-critical-path.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/temporal-organization.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-09",
+      "source_assignment_id": "SUJ-06-09",
+      "task_id": "SUJ-02-09",
+      "task": "I want to double a mixture, but the instructions mix cups, grams, and percentages. What has to stay consistent?",
+      "clauses": [
+        "I want to double a mixture",
+        "the instructions mix cups, grams, and percentages",
+        "What has to stay consistent"
+      ],
+      "intended_paths": [
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/formulas/density.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-10",
+      "source_assignment_id": "SUJ-06-10",
+      "task_id": "SUJ-02-10",
+      "task": "A report says the data proves its conclusion. What links should I inspect before repeating that?",
+      "clauses": [
+        "A report says the data proves its conclusion",
+        "What links should I inspect before repeating that"
+      ],
+      "intended_paths": [
+        "tables/entries/claim-evidence.md",
+        "tables/evidence/observation-inference-chain.md",
+        "tables/entries/causal-reasoning.md",
+        "tables/evidence/causal-claim-evidence.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-14",
+      "source_assignment_id": "SUJ-06-14",
+      "task_id": "SUJ-02-14",
+      "task": "A document uses must, should, and may. What else must I know before treating any sentence as binding?",
+      "clauses": [
+        "A document uses must, should, and may",
+        "What else must I know before treating any sentence as binding"
+      ],
+      "intended_paths": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/requirement-specification-verification-validation.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-15",
+      "source_assignment_id": "SUJ-06-15",
+      "task_id": "SUJ-02-15",
+      "task": "A dashboard dot is green. Is that a fact about the system, a judgment, or merely a label?",
+      "clauses": [
+        "A dashboard dot is green",
+        "Is that a fact about the system, a judgment, or merely a label"
+      ],
+      "intended_paths": [
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-16",
+      "source_assignment_id": "SUJ-06-16",
+      "task_id": "SUJ-02-16",
+      "task": "The queue is growing even though some equipment sits idle. What kinds of limits could cause that?",
+      "clauses": [
+        "The queue is growing",
+        "some equipment sits idle",
+        "What kinds of limits could cause that"
+      ],
+      "intended_paths": [
+        "tables/procedures/queue-service-order.md",
+        "tables/diagnostics/dependency-critical-path.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/coordinated-work.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-19",
+      "source_assignment_id": "SUJ-06-19",
+      "task_id": "SUJ-02-19",
+      "task": "A committee handed a vote to a smaller group. Who may act now, and who still has to answer for the outcome?",
+      "clauses": [
+        "A committee handed a vote to a smaller group",
+        "Who may act now, and who still has to answer for the outcome"
+      ],
+      "intended_paths": [
+        "tables/entries/organization-role-authority.md",
+        "tables/mappings/organizational-assignment-semantics.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-23",
+      "source_assignment_id": "SUJ-06-23",
+      "task_id": "SUJ-02-23",
+      "task": "Someone logged in successfully but was still blocked from a file. Which decisions and records explain that?",
+      "clauses": [
+        "Someone logged in successfully",
+        "was still blocked from a file",
+        "Which decisions and records explain that"
+      ],
+      "intended_paths": [
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/constraints/access-authorization-integrity.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    },
+    {
+      "id": "SUJ-07-25",
+      "source_assignment_id": "SUJ-06-25",
+      "task_id": "SUJ-02-25",
+      "task": "A score is above the cutoff, but an exception and an appeal are still possible. Has a decision actually been made?",
+      "clauses": [
+        "A score is above the cutoff",
+        "an exception and an appeal are still possible",
+        "Has a decision actually been made"
+      ],
+      "intended_paths": [
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/constraints/evaluation-threshold-acceptance.md",
+        "tables/decisions/criterion-preference-priority.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/decisions/policy-decision.md",
+        "tables/entries/choice-alternative-selection.md"
+      ],
+      "frozen_sequence": [
+        "split-by-frozen-syntax",
+        "run-each-clause",
+        "inspect-ten-groups-per-clause",
+        "compare-identity-union",
+        "clear"
+      ]
+    }
+  ]
+}

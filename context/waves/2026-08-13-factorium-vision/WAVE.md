@@ -2886,3 +2886,16 @@ Seven roles approve with no P1/P2 finding. Alternate phrasing is not semantic
 decomposition; the comparison selects no concept, assigns no relation, computes
 no closure, and changes no authority. Keep `sim-45` internally and stop. See
 `SYNTHETIC-DUAL-LITERAL-LOOKUP-RESULT.md`.
+
+## 2026-08-17 synthetic syntactic clause lookup plan
+
+Plan review: SUJ-07 tests a fixed, inspectable syntax-only splitter against the
+ten existing question tasks and exact `sim-45`. It splits only at sentence
+punctuation or five explicit contrast markers, inserts no vocabulary, retains
+two or three clauses, and runs unchanged independent literal rankings.
+
+Nine roles approve execution with no P1/P2 finding. Interface work requires
+10/10 splittable tasks, 10/10 two-family clause unions, intended-family gains
+beyond SUJ-06 on at least 4/10 tasks, and zero regression. Clauses are text
+fragments—not concepts, semantic decomposition, relations, or closure. See
+`SYNTHETIC-SYNTACTIC-CLAUSE-LOOKUP-PLAN.md`.
