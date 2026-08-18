@@ -9,7 +9,9 @@ const { spawn } = require("node:child_process");
 const searchApi = require("../volumes/01-structure-quantity-choice/proof-set-search-families.js");
 
 const root = path.resolve(__dirname, "..");
-const siteRoot = path.join(root, "target", "proof-set-sim-43");
+const edition = process.argv[2] || "sim-43";
+assert.match(edition, /^sim-\d+$/, "edition must look like sim-N");
+const siteRoot = path.join(root, "target", `proof-set-${edition}`);
 const fixtureRoot = path.join(root, "fixtures", "synthetic-users");
 const campaignPath = path.join(fixtureRoot, "campaign-04.json");
 const campaign = JSON.parse(fs.readFileSync(campaignPath, "utf8"));
@@ -19,7 +21,9 @@ const sha = (filePath) => crypto.createHash("sha256").update(fs.readFileSync(fil
 const edgePath = [process.env.EDGE_PATH, "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"]
   .filter(Boolean).find((candidate) => fs.existsSync(candidate));
 assert.ok(edgePath, "Microsoft Edge executable not found");
-assert.equal(campaign.baseline.site_identity, JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8")).output.site_identity);
+const manifestPath = path.join(siteRoot, "manifest.json");
+const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+if (edition === campaign.baseline.edition) assert.equal(campaign.baseline.site_identity, manifest.output.site_identity);
 
 const routePlans = campaign.assignments.map((assignment) => {
   const intendedFamilies = new Set(assignment.intended_paths.map((target) => {
@@ -113,11 +117,13 @@ async function navigate(client, fileName) {
         entranceObservation = { teaching_route_records: await evaluate(client, "document.querySelectorAll('[data-reader-path]').length"), intended_route_member: Boolean(member) };
         if (member) { destination = member; routeState = "destination-reached"; await navigate(client, member.href); }
       }
-      const page = await evaluate(client, `(() => { const task=${JSON.stringify(assignment.task)}; const text=document.body.innerText.replace(/\\s+/g,' ').trim(); const density=document.querySelectorAll('[data-reader-profile], [data-composition-profile]').length; const mainLinks=[...document.querySelectorAll('main a[href]')].filter(link=>!link.closest('.site-nav')); return { title:document.title, href:location.pathname.split('/').pop()+location.hash, original_task_visible:text.includes(task), density_control_available:density===4, density_controls:density, related_routes_available:mainLinks.length>0, related_route_links:mainLinks.length, explicit_handoff_package:document.querySelectorAll('[data-factorium-handoff]').length>0, viewport_overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth }; })()`);
+      const page = await evaluate(client, `(() => { const task=${JSON.stringify(assignment.task)}; const text=document.body.innerText.replace(/\\s+/g,' ').trim(); const density=document.querySelectorAll('[data-reader-profile], [data-composition-profile]').length; const mainLinks=[...document.querySelectorAll('main a[href]')].filter(link=>!link.closest('.site-nav')); const handoff=document.querySelector('[data-factorium-handoff]'); return { title:document.title, href:location.pathname.split('/').pop()+location.hash, original_task_visible:text.includes(task), density_control_available:density===4, density_controls:density, related_routes_available:mainLinks.length>0, related_route_links:mainLinks.length, explicit_handoff_package:Boolean(handoff && handoff.getBoundingClientRect().height > 0), viewport_overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth }; })()`);
       traces.push({ assignment_id: assignment.id, task_id: assignment.task_id, task: assignment.task, entrance: assignment.entrance, start_href: assignment.start_href, first_action: assignment.first_action, intended_paths: assignment.intended_paths, task_fit_profile: assignment.task_fit_profile, entrance_observation: entranceObservation, destination, route_state: routeState, original_task_visible: page.original_task_visible, density_control_available: page.density_control_available, related_routes_available: page.related_routes_available, explicit_handoff_package: page.explicit_handoff_package, viewport_overflow: page.viewport_overflow, page_observation: page });
     }
-    const output = { artifact: "SUJ-04 exact sim-43 browser route trace", campaign_id: campaign.campaign_id, evidence_class: campaign.evidence_class, frozen_commit: "87d3daa", campaign_sha256: sha(campaignPath), baseline: campaign.baseline, viewport: { width: 390, height: 844 }, traces };
-    fs.writeFileSync(path.join(fixtureRoot, "browser-routes-04.json"), `${JSON.stringify(output, null, 2)}\n`, "utf8");
+    const repairRerun = edition !== campaign.baseline.edition;
+    const output = { artifact: `SUJ-04 exact ${edition} browser route ${repairRerun ? "repair rerun" : "trace"}`, campaign_id: campaign.campaign_id, evidence_class: campaign.evidence_class, frozen_commit: "87d3daa", campaign_sha256: sha(campaignPath), baseline: campaign.baseline, ...(repairRerun ? { repair_build: { edition, source_commit: manifest.source_commit, site_identity: manifest.output.site_identity, manifest_sha256: sha(manifestPath) } } : {}), viewport: { width: 390, height: 844 }, traces };
+    const outputName = repairRerun ? `repair-rerun-04-${edition}.json` : "browser-routes-04.json";
+    fs.writeFileSync(path.join(fixtureRoot, outputName), `${JSON.stringify(output, null, 2)}\n`, "utf8");
     const reached = traces.filter((trace) => trace.route_state === "destination-reached").length;
     console.log(`OK campaign=SUJ-04 routes=25 reached=${reached} task-visible=${traces.filter((trace) => trace.original_task_visible).length} handoff=${traces.filter((trace) => trace.explicit_handoff_package).length} overflow=${traces.filter((trace) => trace.viewport_overflow).length}`);
   } finally { if (client) client.close(); browser.kill(); }

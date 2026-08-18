@@ -11,6 +11,7 @@ const read = (name) => JSON.parse(fs.readFileSync(path.join(fixtureRoot, name), 
 const sha = (name) => crypto.createHash("sha256").update(fs.readFileSync(path.join(fixtureRoot, name))).digest("hex");
 const contract = read("result-contract-04.json");
 const output = read("results-04.json");
+const rerun = read("repair-rerun-04-sim-44.json");
 
 assert.equal(output.results.length, 25);
 assert.equal(output.custody.frozen_commit, "87d3daa");
@@ -28,6 +29,13 @@ assert.equal(output.summary.hypotheses.behavioral_hypothesis_tested, false);
 assert.equal(output.summary.owner_test.affected_assignments, 25);
 assert.equal(output.summary.owner_test.affected_entrances, 3);
 assert.equal(output.summary.owner_test.admitted, true);
+assert.equal(rerun.repair_build.edition, "sim-44");
+assert.equal(rerun.traces.length, 25);
+assert.equal(rerun.traces.filter((trace) => trace.route_state === "destination-reached").length, 15);
+assert.equal(rerun.traces.filter((trace) => trace.route_state === "entrance-only").length, 10);
+assert.equal(rerun.traces.filter((trace) => trace.original_task_visible).length, 0);
+assert.equal(rerun.traces.filter((trace) => trace.explicit_handoff_package).length, 25);
+assert.equal(rerun.traces.filter((trace) => trace.viewport_overflow).length, 0);
 
 for (const result of output.results) {
   for (const field of [...contract.required_mechanical_fields, ...contract.required_authored_fields]) assert.ok(Object.hasOwn(result, field));
@@ -37,4 +45,4 @@ for (const result of output.results) {
 const serialized = JSON.stringify(output);
 for (const prohibited of contract.prohibited_measure_keys) assert.ok(!serialized.includes(`\"${prohibited}\":`));
 
-console.log("OK campaign=SUJ-04 results=25 reached=15 entrance-only=10 task-visible=0 handoff=0 overflow=0 repair=ephemeral-handoff-note");
+console.log("OK campaign=SUJ-04 baseline-handoff=0 rerun-handoff=25 reached=15 task-visible=0 overflow=0 repair=ephemeral-handoff-note");

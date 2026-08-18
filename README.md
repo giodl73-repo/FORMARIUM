@@ -469,6 +469,13 @@ node tools\build_synthetic_ux_results.js
 node tools\check_synthetic_ux_results.js
 node tools\check_homepage_intent_router.js target\proof-set-sim-43
 node tools\check_homepage_intent_router_browser.js target\proof-set-sim-43 target\sim43-intent-router.png
+node tools\check_synthetic_handoff_campaign.js
+node tools\run_synthetic_handoff_routes.js sim-43
+node tools\build_synthetic_handoff_results.js
+node tools\run_synthetic_handoff_routes.js sim-44
+node tools\check_synthetic_handoff_results.js
+node tools\check_ephemeral_handoff_note.js target\proof-set-sim-44
+node tools\check_ephemeral_handoff_note_browser.js target\proof-set-sim-44 target\sim44-handoff-note.png
 node tools\check_system_architecture_description.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_decision_bridge_combined_closure.js

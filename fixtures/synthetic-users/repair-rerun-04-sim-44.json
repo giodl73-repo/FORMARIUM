@@ -1,0 +1,1067 @@
+{
+  "artifact": "SUJ-04 exact sim-44 browser route repair rerun",
+  "campaign_id": "SUJ-04",
+  "evidence_class": "deterministic-interface-rehearsal-plus-authored-synthetic-hypotheses",
+  "frozen_commit": "87d3daa",
+  "campaign_sha256": "46b2be3375e0bbc51fff9ccee4fdf0c148f4d630ec7ae7eeb49ad91340e4a2c6",
+  "baseline": {
+    "edition": "sim-43",
+    "source_commit": "1a26eddb224304df673f7560a361eb7470491532",
+    "site_identity": "1112425c58503cf92b5c1861a8ad1cd4548963c967885d26cfb172ba078dc2d1",
+    "manifest_sha256": "e7ab56126d82464aa15e1074dcd484ccd30c32bfa26ac931cc70bdaf786be3d3",
+    "index_sha256": "1ff637b863352dd8bc9afeb3022bac68a5360c9c9ebbe0ceb945929430415f8a",
+    "search_index_sha256": "d12640ffba616fcb83d909466628c1d3b4df0cdf4a0c4b0df0554f4e66e5b1df"
+  },
+  "repair_build": {
+    "edition": "sim-44",
+    "source_commit": "3983f0bad1370b390cf38e7e415c5684cd8f44c0",
+    "site_identity": "2c221aa4ee3d8e4191a831a2e3a363867a29cc3d66cc882efede5c43d069bbc7",
+    "manifest_sha256": "46b171d2b788b473de95a8cf5d3b6daee0288724d844b4de0c507e5b9ddc8e6f"
+  },
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "traces": [
+    {
+      "assignment_id": "SUJ-04-01",
+      "task_id": "SUJ-02-01",
+      "task": "A bottle says five percent. Five percent of what, exactly?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "five percent of what bottle label"
+      },
+      "intended_paths": [
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/quantity-value-unit-conversion.md"
+      ],
+      "task_fit_profile": "abbreviated",
+      "entrance_observation": {
+        "query": "five percent of what bottle label",
+        "ownership_groups_shown": 15,
+        "intended_family_rank": 1
+      },
+      "destination": {
+        "href": "entries/tables-entries-comparative-quantity.html",
+        "intended_family": "tables/entries/comparative-quantity.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Comparative Quantity · Factorium",
+        "href": "tables-entries-comparative-quantity.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 29,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-02",
+      "task_id": "SUJ-02-02",
+      "task": "The status page is green, but customers still cannot finish checkout. How can both be true?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": "alert-outcome-feedback"
+      },
+      "intended_paths": [
+        "tables/entries/control-monitoring-response.md",
+        "tables/entries/dependability-reliability-availability-resilience.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/system-composition-dependency.md",
+        "tables/entries/requirement-specification-verification-validation.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "starter_id": "alert-outcome-feedback",
+        "exact_starter_available": true
+      },
+      "destination": {
+        "href": "compose.html#starter-alert-outcome-feedback",
+        "starter_id": "alert-outcome-feedback"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html#starter-alert-outcome-feedback",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-03",
+      "task_id": "SUJ-02-03",
+      "task": "Two mugs show the same thermometer reading. Does that mean they contain the same warmth?",
+      "entrance": "learn-or-explore",
+      "start_href": "reader.html",
+      "first_action": {
+        "type": "open-reader-route"
+      },
+      "intended_paths": [
+        "tables/entries/thermal-quantity.md",
+        "tables/formulas/thermal-quantities.md",
+        "tables/entries/work-energy-power.md"
+      ],
+      "task_fit_profile": "compact",
+      "entrance_observation": {
+        "teaching_route_records": 24,
+        "intended_route_member": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": false,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "The Factorium Reader · Factorium",
+        "href": "reader.html",
+        "original_task_visible": false,
+        "density_control_available": false,
+        "density_controls": 0,
+        "related_routes_available": true,
+        "related_route_links": 38,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-04",
+      "task_id": "SUJ-02-04",
+      "task": "Everyone is busy, yet the project date keeps slipping. What should I inspect first?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "intended_paths": [
+        "tables/entries/coordinated-work.md",
+        "tables/procedures/planned-work.md",
+        "tables/diagnostics/dependency-critical-path.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/temporal-organization.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-05",
+      "task_id": "SUJ-02-05",
+      "task": "Can something be dangerous without being likely to hurt someone in this situation?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "dangerous but unlikely to hurt"
+      },
+      "intended_paths": [
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/probability-risk-uncertainty.md",
+        "tables/entries/scenario-assumption-condition-case.md"
+      ],
+      "task_fit_profile": "abbreviated",
+      "entrance_observation": {
+        "query": "dangerous but unlikely to hurt",
+        "ownership_groups_shown": 19,
+        "intended_family_rank": 19
+      },
+      "destination": {
+        "href": "entries/tables-entries-scenario-assumption-condition-case.html",
+        "intended_family": "tables/entries/scenario-assumption-condition-case.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Assumption, Condition, Scenario, Case, and Feasibility · Factorium",
+        "href": "tables-entries-scenario-assumption-condition-case.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 28,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-06",
+      "task_id": "SUJ-02-06",
+      "task": "One person does the work, another may decide, and another must answer for it. Which word belongs to each?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "does work may decide must answer"
+      },
+      "intended_paths": [
+        "tables/entries/organization-role-authority.md",
+        "tables/mappings/organizational-assignment-semantics.md"
+      ],
+      "task_fit_profile": "abbreviated",
+      "entrance_observation": {
+        "query": "does work may decide must answer",
+        "ownership_groups_shown": 17,
+        "intended_family_rank": 2
+      },
+      "destination": {
+        "href": "entries/tables-entries-organization-role-authority.html",
+        "intended_family": "tables/entries/organization-role-authority.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Organization, Role, Responsibility, Authority, and Accountability · Factorium",
+        "href": "tables-entries-organization-role-authority.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 32,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-07",
+      "task_id": "SUJ-02-07",
+      "task": "Is a digital drawing a model, a representation, a copy, or something else?",
+      "entrance": "learn-or-explore",
+      "start_href": "reader.html",
+      "first_action": {
+        "type": "open-reader-route"
+      },
+      "intended_paths": [
+        "tables/entries/model-representation-simulation.md",
+        "tables/diagnostics/model-simulation-failures.md"
+      ],
+      "task_fit_profile": "compact",
+      "entrance_observation": {
+        "teaching_route_records": 24,
+        "intended_route_member": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": false,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "The Factorium Reader · Factorium",
+        "href": "reader.html",
+        "original_task_visible": false,
+        "density_control_available": false,
+        "density_controls": 0,
+        "related_routes_available": true,
+        "related_route_links": 38,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-08",
+      "task_id": "SUJ-02-08",
+      "task": "Why can two devices use energy differently even when a displayed electrical number matches?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "same electrical number different energy use"
+      },
+      "intended_paths": [
+        "tables/entries/electrical-quantity.md",
+        "tables/formulas/electrical-quantities.md",
+        "tables/entries/work-energy-power.md",
+        "tables/entries/quantity-value-unit-conversion.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "query": "same electrical number different energy use",
+        "ownership_groups_shown": 15,
+        "intended_family_rank": 1
+      },
+      "destination": {
+        "href": "entries/tables-entries-electrical-quantity.html",
+        "intended_family": "tables/entries/electrical-quantity.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Electrical Quantity · Factorium",
+        "href": "tables-entries-electrical-quantity.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 34,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-09",
+      "task_id": "SUJ-02-09",
+      "task": "I want to double a mixture, but the instructions mix cups, grams, and percentages. What has to stay consistent?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "intended_paths": [
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/formulas/density.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-10",
+      "task_id": "SUJ-02-10",
+      "task": "A report says the data proves its conclusion. What links should I inspect before repeating that?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": "latency-observation-inference"
+      },
+      "intended_paths": [
+        "tables/entries/claim-evidence.md",
+        "tables/evidence/observation-inference-chain.md",
+        "tables/entries/causal-reasoning.md",
+        "tables/evidence/causal-claim-evidence.md"
+      ],
+      "task_fit_profile": "full",
+      "entrance_observation": {
+        "starter_id": "latency-observation-inference",
+        "exact_starter_available": true
+      },
+      "destination": {
+        "href": "compose.html#starter-latency-observation-inference",
+        "starter_id": "latency-observation-inference"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html#starter-latency-observation-inference",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-11",
+      "task_id": "SUJ-02-11",
+      "task": "The cheaper option costs more over time. What did the sticker price leave out?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "cheaper option costs more over time"
+      },
+      "intended_paths": [
+        "tables/entries/cost-price-value-return.md",
+        "tables/formulas/cost-value-return.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/evaluation-measure-scale-criterion.md"
+      ],
+      "task_fit_profile": "abbreviated",
+      "entrance_observation": {
+        "query": "cheaper option costs more over time",
+        "ownership_groups_shown": 14,
+        "intended_family_rank": 7
+      },
+      "destination": {
+        "href": "entries/tables-entries-cost-price-value-return.html",
+        "intended_family": "tables/entries/cost-price-value-return.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Cost, Price, Value, Utility, and Return · Factorium",
+        "href": "tables-entries-cost-price-value-return.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 31,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-12",
+      "task_id": "SUJ-02-12",
+      "task": "Two groups have the same average, but their experiences look nothing alike. How is that possible?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "same average groups look different"
+      },
+      "intended_paths": [
+        "tables/entries/statistical-summary-interval.md",
+        "tables/diagnostics/statistical-summary-interval-failures.md",
+        "tables/entries/sampling-generalization.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "query": "same average groups look different",
+        "ownership_groups_shown": 16,
+        "intended_family_rank": 2
+      },
+      "destination": {
+        "href": "entries/tables-entries-statistical-summary-interval.html",
+        "intended_family": "tables/entries/statistical-summary-interval.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval · Factorium",
+        "href": "tables-entries-statistical-summary-interval.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 25,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-13",
+      "task_id": "SUJ-02-13",
+      "task": "A space article describes light as long or short. What quantity is it talking about?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "light described as long or short quantity"
+      },
+      "intended_paths": [
+        "tables/entries/periodic-wave-quantity.md",
+        "tables/formulas/periodic-wave-quantities.md"
+      ],
+      "task_fit_profile": "compact",
+      "entrance_observation": {
+        "query": "light described as long or short quantity",
+        "ownership_groups_shown": 15,
+        "intended_family_rank": 5
+      },
+      "destination": {
+        "href": "entries/tables-entries-periodic-wave-quantity.html",
+        "intended_family": "tables/entries/periodic-wave-quantity.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Periodic and Wave Quantity · Factorium",
+        "href": "tables-entries-periodic-wave-quantity.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 32,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-14",
+      "task_id": "SUJ-02-14",
+      "task": "A document uses must, should, and may. What else must I know before treating any sentence as binding?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "intended_paths": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/requirement-specification-verification-validation.md"
+      ],
+      "task_fit_profile": "full",
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-15",
+      "task_id": "SUJ-02-15",
+      "task": "A dashboard dot is green. Is that a fact about the system, a judgment, or merely a label?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "intended_paths": [
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "task_fit_profile": "compact",
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-16",
+      "task_id": "SUJ-02-16",
+      "task": "The queue is growing even though some equipment sits idle. What kinds of limits could cause that?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "intended_paths": [
+        "tables/procedures/queue-service-order.md",
+        "tables/diagnostics/dependency-critical-path.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/coordinated-work.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-17",
+      "task_id": "SUJ-02-17",
+      "task": "Two records use the same nickname, while one record has changed names. How do I know what is actually the same thing?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "same nickname different records changed names"
+      },
+      "intended_paths": [
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/evidence/change-lineage.md"
+      ],
+      "task_fit_profile": "abbreviated",
+      "entrance_observation": {
+        "query": "same nickname different records changed names",
+        "ownership_groups_shown": 19,
+        "intended_family_rank": 2
+      },
+      "destination": {
+        "href": "entries/tables-entries-identity-naming-classification-versioning.html",
+        "intended_family": "tables/entries/identity-naming-classification-versioning.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Identity, Naming, Classification, and Versioning · Factorium",
+        "href": "tables-entries-identity-naming-classification-versioning.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 20,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-18",
+      "task_id": "SUJ-02-18",
+      "task": "Two instruments disagree. Which questions come before deciding that one is wrong?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "two instruments disagree which one wrong"
+      },
+      "intended_paths": [
+        "tables/entries/measurement-quality.md",
+        "tables/diagnostics/measurement-quality-failures.md",
+        "tables/entries/probability-risk-uncertainty.md",
+        "tables/entries/claim-evidence.md"
+      ],
+      "task_fit_profile": "full",
+      "entrance_observation": {
+        "query": "two instruments disagree which one wrong",
+        "ownership_groups_shown": 18,
+        "intended_family_rank": 1
+      },
+      "destination": {
+        "href": "entries/tables-entries-measurement-quality.html",
+        "intended_family": "tables/entries/measurement-quality.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration · Factorium",
+        "href": "tables-entries-measurement-quality.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 23,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-19",
+      "task_id": "SUJ-02-19",
+      "task": "A committee handed a vote to a smaller group. Who may act now, and who still has to answer for the outcome?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": "delegated-compliance-frontier"
+      },
+      "intended_paths": [
+        "tables/entries/organization-role-authority.md",
+        "tables/mappings/organizational-assignment-semantics.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md"
+      ],
+      "task_fit_profile": "full",
+      "entrance_observation": {
+        "starter_id": "delegated-compliance-frontier",
+        "exact_starter_available": true
+      },
+      "destination": {
+        "href": "compose.html#starter-delegated-compliance-frontier",
+        "starter_id": "delegated-compliance-frontier"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html#starter-delegated-compliance-frontier",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 22,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-20",
+      "task_id": "SUJ-02-20",
+      "task": "Two instruments play what we call the same note, but the sound differs. Which parts are physical and which are perceptual?",
+      "entrance": "learn-or-explore",
+      "start_href": "reader.html",
+      "first_action": {
+        "type": "open-reader-route"
+      },
+      "intended_paths": [
+        "tables/entries/periodic-wave-quantity.md",
+        "tables/formulas/periodic-wave-quantities.md",
+        "tables/entries/information-data-signal-noise.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "teaching_route_records": 24,
+        "intended_route_member": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": false,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "The Factorium Reader · Factorium",
+        "href": "reader.html",
+        "original_task_visible": false,
+        "density_control_available": false,
+        "density_controls": 0,
+        "related_routes_available": true,
+        "related_route_links": 38,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-21",
+      "task_id": "SUJ-02-21",
+      "task": "An engine can pull hard without doing the job quickly. Which mechanical quantities separate those ideas?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "engine pulls hard but job not quick"
+      },
+      "intended_paths": [
+        "tables/entries/work-energy-power.md",
+        "tables/formulas/mechanical-work-energy-power.md",
+        "tables/entries/motion-measure.md"
+      ],
+      "task_fit_profile": "abbreviated",
+      "entrance_observation": {
+        "query": "engine pulls hard but job not quick",
+        "ownership_groups_shown": 17,
+        "intended_family_rank": 12
+      },
+      "destination": {
+        "href": "entries/tables-entries-work-energy-power.html",
+        "intended_family": "tables/entries/work-energy-power.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Work, Energy, and Power · Factorium",
+        "href": "tables-entries-work-energy-power.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 32,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-22",
+      "task_id": "SUJ-02-22",
+      "task": "A value moved from forty to fifty. Is that ten percent, twenty-five percent, or ten percentage points?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "value from forty to fifty percent change"
+      },
+      "intended_paths": [
+        "tables/entries/comparative-quantity.md",
+        "tables/mappings/basis-transformation.md"
+      ],
+      "task_fit_profile": "abbreviated",
+      "entrance_observation": {
+        "query": "value from forty to fifty percent change",
+        "ownership_groups_shown": 15,
+        "intended_family_rank": 6
+      },
+      "destination": {
+        "href": "entries/tables-entries-comparative-quantity.html",
+        "intended_family": "tables/entries/comparative-quantity.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Comparative Quantity · Factorium",
+        "href": "tables-entries-comparative-quantity.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 29,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-23",
+      "task_id": "SUJ-02-23",
+      "task": "Someone logged in successfully but was still blocked from a file. Which decisions and records explain that?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "intended_paths": [
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/constraints/access-authorization-integrity.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-24",
+      "task_id": "SUJ-02-24",
+      "task": "A treatment is described as safe, but safe for which plant, dose, condition, and outcome?",
+      "entrance": "know-term",
+      "start_href": "index.html#search",
+      "first_action": {
+        "type": "literal-search",
+        "query": "safe for which plant dose condition outcome"
+      },
+      "intended_paths": [
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/scenario-assumption-condition-case.md",
+        "tables/diagnostics/operating-condition-failures.md"
+      ],
+      "task_fit_profile": "abbreviated",
+      "entrance_observation": {
+        "query": "safe for which plant dose condition outcome",
+        "ownership_groups_shown": 14,
+        "intended_family_rank": 1
+      },
+      "destination": {
+        "href": "entries/tables-entries-scenario-assumption-condition-case.html",
+        "intended_family": "tables/entries/scenario-assumption-condition-case.md"
+      },
+      "route_state": "destination-reached",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Assumption, Condition, Scenario, Case, and Feasibility · Factorium",
+        "href": "tables-entries-scenario-assumption-condition-case.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 28,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    },
+    {
+      "assignment_id": "SUJ-04-25",
+      "task_id": "SUJ-02-25",
+      "task": "A score is above the cutoff, but an exception and an appeal are still possible. Has a decision actually been made?",
+      "entrance": "have-question",
+      "start_href": "compose.html",
+      "first_action": {
+        "type": "open-compose",
+        "starter_id": null
+      },
+      "intended_paths": [
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/constraints/evaluation-threshold-acceptance.md",
+        "tables/decisions/criterion-preference-priority.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/decisions/policy-decision.md",
+        "tables/entries/choice-alternative-selection.md"
+      ],
+      "task_fit_profile": "book",
+      "entrance_observation": {
+        "starter_id": null,
+        "exact_starter_available": false
+      },
+      "destination": null,
+      "route_state": "entrance-only",
+      "original_task_visible": false,
+      "density_control_available": true,
+      "related_routes_available": true,
+      "explicit_handoff_package": true,
+      "viewport_overflow": false,
+      "page_observation": {
+        "title": "Bounded Composition Lab · Factorium",
+        "href": "compose.html",
+        "original_task_visible": false,
+        "density_control_available": true,
+        "density_controls": 4,
+        "related_routes_available": true,
+        "related_route_links": 21,
+        "explicit_handoff_package": true,
+        "viewport_overflow": false
+      }
+    }
+  ]
+}

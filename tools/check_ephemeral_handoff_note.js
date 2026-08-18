@@ -18,6 +18,7 @@ const pages = ["index.html", "reader.html", "compose.html", "entries/tables-entr
 for (const relative of pages) {
   const html = fs.readFileSync(path.join(root, relative), "utf8");
   assert.equal((html.match(/data-factorium-handoff/g) || []).length, 1, `${relative} handoff count`);
+  assert.match(html, /<\/main>\s*<section class="site-handoff" data-factorium-handoff/, `${relative} handoff must remain outside profile-filtered content`);
   assert.match(html, /Question or situation/);
   assert.match(html, /What remains unresolved/);
   assert.match(html, /Next authoritative source/);

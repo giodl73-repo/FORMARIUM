@@ -2813,3 +2813,21 @@ three-card row; the 390 px view stacks without horizontal overflow. Search,
 canonical content, closure, profiles, persistence, and authority are unchanged
 by the router. Six roles approve with no P1/P2 finding. All other ideas remain
 external-reader questions. See `SYNTHETIC-UX-WISHLIST-RESULT.md`.
+
+## 2026-08-17 synthetic first-click to handoff
+
+SUJ-04 ran the 25 frozen term-blind tasks through the exact `sim-43` entrance,
+destination, density, related-route, stop, and outward-handoff sequence. Search
+reached 12 of 12 intended ownership families. Compose reached three of ten only
+through predeclared exact starters, and the fixed Reader spine contained none
+of three task destinations. Overall reach is 15/25; original task visibility
+and explicit handoff are both 0/25.
+
+The owner test admits one publication-shell repair and defers the separate
+Compose and Reader semantic-route problems. `sim-44` adds a four-field
+ephemeral handoff note to all 239 pages with Copy, Print, and Clear, but no
+storage, network, account, verification, history, or canonical write. The exact
+rerun preserves reach at 15/25 and task visibility at 0/25 while handoff
+availability moves to 25/25 with no mobile overflow. Six roles approve the
+bounded result with no P1/P2 finding. This is interface mechanics, not reader
+evidence. See `SYNTHETIC-FIRST-CLICK-HANDOFF-RESULT.md`.

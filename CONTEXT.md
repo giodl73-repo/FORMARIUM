@@ -1094,6 +1094,16 @@ account, history, personalization, automation, and status-search ideas remain
 external-reader questions. The 300 authored fields are not preferences or
 participant evidence.
 
+The exact SUJ-04 first-click-to-handoff campaign at
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-FIRST-CLICK-HANDOFF-RESULT.md`
+finds a sharp mechanical boundary: direct Search reaches 12/12 intended
+families, but only 3/10 frozen Compose routes have an exact starter and none of
+three task destinations belongs to the fixed Reader teaching spine. `sim-44`
+adds one no-storage ephemeral handoff note across all 239 pages. Its exact
+rerun moves explicit handoff availability from 0/25 to 25/25 while route reach
+stays 15/25 and exact task retention stays 0/25. The separate semantic-route
+gaps remain deferred, and no reader-value claim or external gate closes.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

@@ -2,7 +2,7 @@
 
 Date: 2026-08-17
 
-Status: proposed freeze; execution not started
+Status: complete; see `SYNTHETIC-FIRST-CLICK-HANDOFF-RESULT.md`
 
 Campaign: `SUJ-04`
 
