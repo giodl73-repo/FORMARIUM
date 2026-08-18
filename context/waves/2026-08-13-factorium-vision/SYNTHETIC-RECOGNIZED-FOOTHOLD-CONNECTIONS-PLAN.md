@@ -2,7 +2,7 @@
 
 Date: 2026-08-17
 
-Status: frozen before execution
+Status: complete; see `SYNTHETIC-RECOGNIZED-FOOTHOLD-CONNECTIONS-RESULT.md`
 
 Campaign: `SUJ-09`
 

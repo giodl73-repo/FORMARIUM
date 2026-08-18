@@ -2943,3 +2943,12 @@ family and at least 8/10 total two-family coverage. Only a Search guidance cue
 can be admitted; selection, typed relations, closure, and reader-recognition
 claims remain prohibited. See
 `SYNTHETIC-RECOGNIZED-FOOTHOLD-CONNECTIONS-PLAN.md`.
+
+Result review: 9/10 tasks have an analyst-scored intended foothold, but only
+5/8 deficient tasks gain a second intended family and total coverage reaches
+7/10, below the frozen 6/8 and 8/10 gates. Nine roles approve the exact near-
+miss null with no P1/P2 finding. Do not lower thresholds, add the Search cue,
+or mint `sim-46`. Coordinated Work and Identity yield candidate authored-link
+gap signals for recurrence testing; the dashboard-dot miss remains owned by
+Search vocabulary. See
+`SYNTHETIC-RECOGNIZED-FOOTHOLD-CONNECTIONS-RESULT.md`.

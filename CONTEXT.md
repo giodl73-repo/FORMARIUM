@@ -1138,6 +1138,15 @@ automatic literal segmentation is closed for this branch, no `sim-46` is
 minted, and explicit dual lookup remains current. See
 `context/waves/2026-08-13-factorium-vision/SYNTHETIC-WHOLE-QUESTION-CLAUSE-LENSES-RESULT.md`.
 
+SUJ-09 tests a book-native conditional route: from an analyst-scored intended
+foothold in the first literal ranking, follow one of the six authored untyped
+connections visible on its Table page. Five of eight deficient tasks gain a
+second intended family and total coverage reaches 7/10, below the frozen 6/8
+and 8/10 gates. No Search cue or `sim-46` is admitted. Coordinated Work and
+Identity retain candidate link-gap signals for independent recurrence testing;
+the dashboard-dot miss remains a Search vocabulary gap. See
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-RECOGNIZED-FOOTHOLD-CONNECTIONS-RESULT.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

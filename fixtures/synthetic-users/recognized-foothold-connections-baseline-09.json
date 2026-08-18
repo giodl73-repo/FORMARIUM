@@ -1,0 +1,1513 @@
+{
+  "artifact": "SUJ-09 exact sim-45 recognized-foothold authored-connections baseline",
+  "campaign_id": "SUJ-09",
+  "evidence_class": "deterministic-dependent-recognized-foothold-navigation-audit",
+  "custody": {
+    "frozen_commit": "a4920d8",
+    "campaign_sha256": "074e82e530af9d2ca2c1248c831a09d1f1c4c46f6c3131276cf6516f55c7175a",
+    "baseline": {
+      "edition": "sim-45",
+      "source_commit": "e54a36e7c119670b279ea48760795f33f4775d63",
+      "site_identity": "e79e341036734b4f808fba9ac840eabed9a6c278c36f3cc05247af4b56553022",
+      "manifest_sha256": "36f614e66f895edd888609609110c4ca5f892886845421e97f993b8978e189a4",
+      "index_sha256": "637577e745fe2bd3069b4a94c877425c03aa856903a3d58fba67ca03377b574f",
+      "search_index_sha256": "d12640ffba616fcb83d909466628c1d3b4df0cdf4a0c4b0df0554f4e66e5b1df"
+    }
+  },
+  "summary": {
+    "assignments": 10,
+    "eligible_assignments": 9,
+    "deficient_assignments": 8,
+    "expanded_deficient_assignments": 5,
+    "two_family_assignments_after_expansion": 7,
+    "required_eligible_assignments": 9,
+    "required_expanded_deficient_assignments": 6,
+    "required_two_family_assignments": 8,
+    "eligible_gate_passed": true,
+    "expansion_gate_passed": false,
+    "coverage_gate_passed": false,
+    "admitted": false
+  },
+  "results": [
+    {
+      "assignment_id": "SUJ-09-02",
+      "task_id": "SUJ-02-02",
+      "task": "The status page is green, but customers still cannot finish checkout. How can both be true?",
+      "query": "status page green customers cannot checkout",
+      "intended_families": [
+        "tables/entries/control-monitoring-response.md",
+        "tables/entries/dependability-reliability-availability-resilience.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/system-composition-dependency.md",
+        "tables/entries/requirement-specification-verification-validation.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "title": "Decomposition Modes and Combination Contracts",
+          "href": "entries/tables-entries-decomposition-modes-combination-contracts.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/stock-flow-balance.md",
+          "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+          "href": "entries/tables-entries-stock-flow-balance.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/control-monitoring-response.md",
+          "title": "Objective, Control, Monitoring, and Response",
+          "href": "entries/tables-entries-control-monitoring-response.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/state-event-transition-process-lifecycle.md",
+          "title": "State, Event, Transition, Process, and Lifecycle",
+          "href": "entries/tables-entries-state-event-transition-process-lifecycle.html"
+        },
+        {
+          "rank": 5,
+          "key": "guides/alert-feedback-composition-worksheet.md",
+          "title": "Alert and Outcome Feedback Composition Worksheet",
+          "href": "entries/guides-alert-feedback-composition-worksheet.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/choice-alternative-selection.md",
+          "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+          "href": "entries/tables-entries-choice-alternative-selection.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/comparative-quantity.md",
+          "title": "Comparative Quantity",
+          "href": "entries/tables-entries-comparative-quantity.html"
+        },
+        {
+          "rank": 8,
+          "key": "guides/dependency-exclusion-conflict-worksheet.md",
+          "title": "Dependency Exclusion Conflict Composition Worksheet",
+          "href": "entries/guides-dependency-exclusion-conflict-worksheet.html"
+        },
+        {
+          "rank": 9,
+          "key": "guides/evidence-informed-intervention-choice.md",
+          "title": "Evidence-Informed Intervention Choice Guide",
+          "href": "entries/guides-evidence-informed-intervention-choice.html"
+        },
+        {
+          "rank": 10,
+          "key": "tables/entries/motion-measure.md",
+          "title": "Motion Measure",
+          "href": "entries/tables-entries-motion-measure.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 3,
+          "key": "tables/entries/control-monitoring-response.md",
+          "title": "Objective, Control, Monitoring, and Response",
+          "href": "entries/tables-entries-control-monitoring-response.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 1,
+      "base_below_two": true,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 3,
+            "key": "tables/entries/control-monitoring-response.md",
+            "title": "Objective, Control, Monitoring, and Response",
+            "href": "entries/tables-entries-control-monitoring-response.html"
+          },
+          "page": "entries/tables-entries-control-monitoring-response.html",
+          "connections": [
+            {
+              "href": "tables-entries-stock-flow-balance.html",
+              "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+              "target_family": "tables/entries/stock-flow-balance.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-claim-evidence.html",
+              "title": "Claim and Evidence",
+              "target_family": "tables/entries/claim-evidence.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-policy-rule-constraint-decision-exception.html",
+              "title": "Policy, Rule, Constraint, Decision, and Exception",
+              "target_family": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-state-event-transition-process-lifecycle.html",
+              "title": "State, Event, Transition, Process, and Lifecycle",
+              "target_family": "tables/entries/state-event-transition-process-lifecycle.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-probability-risk-uncertainty.html",
+              "title": "Probability, Risk, and Uncertainty",
+              "target_family": "tables/entries/probability-risk-uncertainty.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-system-composition-dependency.html",
+              "title": "System Composition, Capability, Interface, and Dependency",
+              "target_family": "tables/entries/system-composition-dependency.md",
+              "intended": true
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/control-monitoring-response.md",
+        "tables/entries/system-composition-dependency.md"
+      ],
+      "expanded_intended_count": 2,
+      "exposes_two_after_expansion": true,
+      "deficient_task_gains_second": true
+    },
+    {
+      "assignment_id": "SUJ-09-04",
+      "task_id": "SUJ-02-04",
+      "task": "Everyone is busy, yet the project date keeps slipping. What should I inspect first?",
+      "query": "everyone busy project date keeps slipping",
+      "intended_families": [
+        "tables/entries/coordinated-work.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/temporal-organization.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/model-representation-simulation.md",
+          "title": "Model, Representation, and Simulation",
+          "href": "entries/tables-entries-model-representation-simulation.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/assurance-assessment-audit-certification.md",
+          "title": "Assurance, Assessment, Audit, Certification, and Accreditation",
+          "href": "entries/tables-entries-assurance-assessment-audit-certification.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/choice-alternative-selection.md",
+          "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+          "href": "entries/tables-entries-choice-alternative-selection.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/cost-price-value-return.md",
+          "title": "Cost, Price, Value, Utility, and Return",
+          "href": "entries/tables-entries-cost-price-value-return.html"
+        },
+        {
+          "rank": 5,
+          "key": "tables/entries/coordinated-work.md",
+          "title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation",
+          "href": "entries/tables-entries-coordinated-work.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/system-composition-dependency.md",
+          "title": "System Composition, Architecture, Capability, Interface, and Dependency",
+          "href": "entries/tables-entries-system-composition-dependency.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/access-permission-authorization-entitlement.md",
+          "title": "Access, Permission, Authorization, and Entitlement",
+          "href": "entries/tables-entries-access-permission-authorization-entitlement.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/entries/causal-reasoning.md",
+          "title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution",
+          "href": "entries/tables-entries-causal-reasoning.html"
+        },
+        {
+          "rank": 9,
+          "key": "tables/entries/claim-evidence.md",
+          "title": "Claim and Evidence",
+          "href": "entries/tables-entries-claim-evidence.html"
+        },
+        {
+          "rank": 10,
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "title": "Decomposition Modes and Combination Contracts",
+          "href": "entries/tables-entries-decomposition-modes-combination-contracts.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 5,
+          "key": "tables/entries/coordinated-work.md",
+          "title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation",
+          "href": "entries/tables-entries-coordinated-work.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 1,
+      "base_below_two": true,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 5,
+            "key": "tables/entries/coordinated-work.md",
+            "title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation",
+            "href": "entries/tables-entries-coordinated-work.html"
+          },
+          "page": "entries/tables-entries-coordinated-work.html",
+          "connections": [
+            {
+              "href": "tables-entries-state-event-transition-process-lifecycle.html",
+              "title": "State, Event, Transition, Process, and Lifecycle",
+              "target_family": "tables/entries/state-event-transition-process-lifecycle.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-organization-role-authority.html",
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "target_family": "tables/entries/organization-role-authority.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-software-transaction-message-contract.html",
+              "title": "Software Transaction, Message, and Contract",
+              "target_family": "tables/entries/software-transaction-message-contract.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-control-monitoring-response.html",
+              "title": "Objective, Control, Monitoring, and Response",
+              "target_family": "tables/entries/control-monitoring-response.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-governance-obligation-compliance.html",
+              "title": "Governance, Obligation, and Compliance",
+              "target_family": "tables/entries/governance-obligation-compliance.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-system-composition-dependency.html",
+              "title": "System Composition, Capability, Interface, and Dependency",
+              "target_family": "tables/entries/system-composition-dependency.md",
+              "intended": false
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/coordinated-work.md"
+      ],
+      "expanded_intended_count": 1,
+      "exposes_two_after_expansion": false,
+      "deficient_task_gains_second": false
+    },
+    {
+      "assignment_id": "SUJ-09-09",
+      "task_id": "SUJ-02-09",
+      "task": "I want to double a mixture, but the instructions mix cups, grams, and percentages. What has to stay consistent?",
+      "query": "double mixture cups grams percentages",
+      "intended_families": [
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/chemical-substance-classification.md",
+          "title": "Chemical Entity, Substance, Compound Class, Mixture, and Solution",
+          "href": "entries/tables-entries-chemical-substance-classification.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/comparative-quantity.md",
+          "title": "Comparative Quantity",
+          "href": "entries/tables-entries-comparative-quantity.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "title": "Decomposition Modes and Combination Contracts",
+          "href": "entries/tables-entries-decomposition-modes-combination-contracts.html"
+        },
+        {
+          "rank": 4,
+          "key": "guides/aqueous-solution-amount-concentration.md",
+          "title": "Aqueous Solution Amount-Concentration Guide",
+          "href": "entries/guides-aqueous-solution-amount-concentration.html"
+        },
+        {
+          "rank": 5,
+          "key": "guides/alert-feedback-composition-worksheet.md",
+          "title": "Alert and Outcome Feedback Composition Worksheet",
+          "href": "entries/guides-alert-feedback-composition-worksheet.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/amount-concentration-composition.md",
+          "title": "Amount, Concentration, and Composition",
+          "href": "entries/tables-entries-amount-concentration-composition.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+          "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+          "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/entries/electrical-quantity.md",
+          "title": "Electrical Quantity",
+          "href": "entries/tables-entries-electrical-quantity.html"
+        },
+        {
+          "rank": 9,
+          "key": "tables/entries/measurement-quality.md",
+          "title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration",
+          "href": "entries/tables-entries-measurement-quality.html"
+        },
+        {
+          "rank": 10,
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "title": "Evaluation Measure, Scale, Criterion, and Score",
+          "href": "entries/tables-entries-evaluation-measure-scale-criterion.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 2,
+          "key": "tables/entries/comparative-quantity.md",
+          "title": "Comparative Quantity",
+          "href": "entries/tables-entries-comparative-quantity.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/amount-concentration-composition.md",
+          "title": "Amount, Concentration, and Composition",
+          "href": "entries/tables-entries-amount-concentration-composition.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 2,
+      "base_below_two": false,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 2,
+            "key": "tables/entries/comparative-quantity.md",
+            "title": "Comparative Quantity",
+            "href": "entries/tables-entries-comparative-quantity.html"
+          },
+          "page": "entries/tables-entries-comparative-quantity.html",
+          "connections": [
+            {
+              "href": "tables-entries-motion-measure.html",
+              "title": "Motion measure",
+              "target_family": "tables/entries/motion-measure.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-matter-load-measure.html",
+              "title": "Matter and load measure",
+              "target_family": "tables/entries/matter-load-measure.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-work-energy-power.html",
+              "title": "Work, Energy, and Power",
+              "target_family": "tables/entries/work-energy-power.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-measure.html",
+              "title": "Measure",
+              "target_family": "tables/roots/measure.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-relation.html",
+              "title": "Relation",
+              "target_family": "tables/roots/relation.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-time.html",
+              "title": "Time",
+              "target_family": "tables/roots/time.md",
+              "intended": false
+            }
+          ]
+        },
+        {
+          "foothold": {
+            "rank": 6,
+            "key": "tables/entries/amount-concentration-composition.md",
+            "title": "Amount, Concentration, and Composition",
+            "href": "entries/tables-entries-amount-concentration-composition.html"
+          },
+          "page": "entries/tables-entries-amount-concentration-composition.html",
+          "connections": [
+            {
+              "href": "tables-entries-stock-flow-balance.html",
+              "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+              "target_family": "tables/entries/stock-flow-balance.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-comparative-quantity.html",
+              "title": "Comparative Quantity",
+              "target_family": "tables/entries/comparative-quantity.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-matter-load-measure.html",
+              "title": "Matter and Load Measure",
+              "target_family": "tables/entries/matter-load-measure.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-geometric-measure.html",
+              "title": "Geometric Measure",
+              "target_family": "tables/entries/geometric-measure.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-measure.html",
+              "title": "Measure",
+              "target_family": "tables/roots/measure.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-boundary.html",
+              "title": "Boundary",
+              "target_family": "tables/roots/boundary.md",
+              "intended": false
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "expanded_intended_count": 3,
+      "exposes_two_after_expansion": true,
+      "deficient_task_gains_second": false
+    },
+    {
+      "assignment_id": "SUJ-09-10",
+      "task_id": "SUJ-02-10",
+      "task": "A report says the data proves its conclusion. What links should I inspect before repeating that?",
+      "query": "data proves conclusion what to inspect",
+      "intended_families": [
+        "tables/entries/claim-evidence.md",
+        "tables/entries/causal-reasoning.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/information-data-signal-noise.md",
+          "title": "Information, Data, Signal, and Noise",
+          "href": "entries/tables-entries-information-data-signal-noise.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/claim-evidence.md",
+          "title": "Claim and Evidence",
+          "href": "entries/tables-entries-claim-evidence.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/dependability-reliability-availability-resilience.md",
+          "title": "Reliability, Availability, Maintainability, Resilience, and Recovery",
+          "href": "entries/tables-entries-dependability-reliability-availability-resilience.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/statistical-summary-interval.md",
+          "title": "Mean, Median, Quantile, Variance, Standard Deviation, Standard Error, and Confidence Interval",
+          "href": "entries/tables-entries-statistical-summary-interval.html"
+        },
+        {
+          "rank": 5,
+          "key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+          "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+          "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html"
+        },
+        {
+          "rank": 6,
+          "key": "guides/delegated-compliance-frontier-worksheet.md",
+          "title": "Delegated Compliance Frontier Composition Worksheet",
+          "href": "entries/guides-delegated-compliance-frontier-worksheet.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "title": "Evaluation Measure, Scale, Criterion, and Score",
+          "href": "entries/tables-entries-evaluation-measure-scale-criterion.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/entries/periodic-wave-quantity.md",
+          "title": "Periodic and Wave Quantity",
+          "href": "entries/tables-entries-periodic-wave-quantity.html"
+        },
+        {
+          "rank": 9,
+          "key": "tables/entries/sampling-generalization.md",
+          "title": "Population, Sample, Estimand, Estimate, and Generalization",
+          "href": "entries/tables-entries-sampling-generalization.html"
+        },
+        {
+          "rank": 10,
+          "key": "tables/entries/stock-flow-balance.md",
+          "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+          "href": "entries/tables-entries-stock-flow-balance.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 2,
+          "key": "tables/entries/claim-evidence.md",
+          "title": "Claim and Evidence",
+          "href": "entries/tables-entries-claim-evidence.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 1,
+      "base_below_two": true,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 2,
+            "key": "tables/entries/claim-evidence.md",
+            "title": "Claim and Evidence",
+            "href": "entries/tables-entries-claim-evidence.html"
+          },
+          "page": "entries/tables-entries-claim-evidence.html",
+          "connections": [
+            {
+              "href": "tables-entries-factorium-entry-publication.html",
+              "title": "Factorium Entry Publication",
+              "target_family": "tables/entries/factorium-entry-publication.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-probability-risk-uncertainty.html",
+              "title": "Probability, Risk, and Uncertainty",
+              "target_family": "tables/entries/probability-risk-uncertainty.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-information-data-signal-noise.html",
+              "title": "Information, Data, Signal, and Noise",
+              "target_family": "tables/entries/information-data-signal-noise.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-causal-reasoning.html",
+              "title": "Association and Causal Reasoning",
+              "target_family": "tables/entries/causal-reasoning.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-sampling-generalization.html",
+              "title": "Population, Sample, Estimand, Estimate, and Generalization",
+              "target_family": "tables/entries/sampling-generalization.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-context.html",
+              "title": "Context",
+              "target_family": "tables/roots/context.md",
+              "intended": false
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/claim-evidence.md",
+        "tables/entries/causal-reasoning.md"
+      ],
+      "expanded_intended_count": 2,
+      "exposes_two_after_expansion": true,
+      "deficient_task_gains_second": true
+    },
+    {
+      "assignment_id": "SUJ-09-14",
+      "task_id": "SUJ-02-14",
+      "task": "A document uses must, should, and may. What else must I know before treating any sentence as binding?",
+      "query": "document must should may binding",
+      "intended_families": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/requirement-specification-verification-validation.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "guides/dependency-exclusion-conflict-worksheet.md",
+          "title": "Dependency Exclusion Conflict Composition Worksheet",
+          "href": "entries/guides-dependency-exclusion-conflict-worksheet.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/thermal-quantity.md",
+          "title": "Thermal Quantity",
+          "href": "entries/tables-entries-thermal-quantity.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "title": "Decomposition Modes and Combination Contracts",
+          "href": "entries/tables-entries-decomposition-modes-combination-contracts.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/operational-resource-capacity-demand.md",
+          "title": "Operational Resource, Capacity, Demand, and Allocation",
+          "href": "entries/tables-entries-operational-resource-capacity-demand.html"
+        },
+        {
+          "rank": 5,
+          "key": "tables/entries/factorium-entry-publication.md",
+          "title": "Factorium Entry Publication",
+          "href": "entries/tables-entries-factorium-entry-publication.html"
+        },
+        {
+          "rank": 6,
+          "key": "guides/evidence-informed-intervention-choice.md",
+          "title": "Evidence-Informed Intervention Choice Guide",
+          "href": "entries/guides-evidence-informed-intervention-choice.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+          "title": "Policy, Rule, Constraint, Decision, and Exception",
+          "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/entries/identity-naming-classification-versioning.md",
+          "title": "Identity, Naming, Classification, and Versioning",
+          "href": "entries/tables-entries-identity-naming-classification-versioning.html"
+        },
+        {
+          "rank": 9,
+          "key": "tables/entries/access-permission-authorization-entitlement.md",
+          "title": "Access, Permission, Authorization, and Entitlement",
+          "href": "entries/tables-entries-access-permission-authorization-entitlement.html"
+        },
+        {
+          "rank": 10,
+          "key": "tables/composites/access-control-request.md",
+          "title": "Access-Control Request",
+          "href": "entries/tables-composites-access-control-request.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 7,
+          "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+          "title": "Policy, Rule, Constraint, Decision, and Exception",
+          "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 1,
+      "base_below_two": true,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 7,
+            "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+            "title": "Policy, Rule, Constraint, Decision, and Exception",
+            "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html"
+          },
+          "page": "entries/tables-entries-policy-rule-constraint-decision-exception.html",
+          "connections": [
+            {
+              "href": "tables-roles-policy.html",
+              "title": "Policy",
+              "target_family": "tables/roles/policy.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-constraint.html",
+              "title": "Constraint",
+              "target_family": "tables/roots/constraint.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-purpose.html",
+              "title": "Purpose",
+              "target_family": "tables/roots/purpose.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-governance-obligation-compliance.html",
+              "title": "Governance, Obligation, and Compliance",
+              "target_family": "tables/entries/governance-obligation-compliance.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-choice-alternative-selection.html",
+              "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+              "target_family": "tables/entries/choice-alternative-selection.md",
+              "intended": false
+            },
+            {
+              "href": "tables-mappings-governance-compliance-mechanisms.html",
+              "title": "Governance and Compliance Mechanisms",
+              "target_family": "tables/entries/governance-obligation-compliance.md",
+              "intended": true
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md"
+      ],
+      "expanded_intended_count": 2,
+      "exposes_two_after_expansion": true,
+      "deficient_task_gains_second": true
+    },
+    {
+      "assignment_id": "SUJ-09-15",
+      "task_id": "SUJ-02-15",
+      "task": "A dashboard dot is green. Is that a fact about the system, a judgment, or merely a label?",
+      "query": "dashboard green dot fact judgment label",
+      "intended_families": [
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "title": "Decomposition Modes and Combination Contracts",
+          "href": "entries/tables-entries-decomposition-modes-combination-contracts.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/factorization-quality.md",
+          "title": "Factorization Quality",
+          "href": "entries/tables-entries-factorization-quality.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/factorium-entry-publication.md",
+          "title": "Factorium Entry Publication",
+          "href": "entries/tables-entries-factorium-entry-publication.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/claim-evidence.md",
+          "title": "Claim and Evidence",
+          "href": "entries/tables-entries-claim-evidence.html"
+        },
+        {
+          "rank": 5,
+          "key": "volumes/01-structure-quantity-choice/BOOK-ONE-SIM-QUICKSTART.md",
+          "title": "The Factorium Reader Quickstart",
+          "href": "entries/volumes-01-structure-quantity-choice-book-one-sim-quickstart.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/hazard-exposure-harm-safety.md",
+          "title": "Hazard, Exposure, Harm, Vulnerability, and Safety",
+          "href": "entries/tables-entries-hazard-exposure-harm-safety.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/stock-flow-balance.md",
+          "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+          "href": "entries/tables-entries-stock-flow-balance.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/entries/identity-naming-classification-versioning.md",
+          "title": "Identity, Naming, Classification, and Versioning",
+          "href": "entries/tables-entries-identity-naming-classification-versioning.html"
+        },
+        {
+          "rank": 9,
+          "key": "tables/entries/measurement-quality.md",
+          "title": "Error, Bias, Accuracy, Trueness, Precision, Resolution, and Calibration",
+          "href": "entries/tables-entries-measurement-quality.html"
+        },
+        {
+          "rank": 10,
+          "key": "guides/alert-feedback-composition-worksheet.md",
+          "title": "Alert and Outcome Feedback Composition Worksheet",
+          "href": "entries/guides-alert-feedback-composition-worksheet.html"
+        }
+      ],
+      "recognized_footholds": [],
+      "eligible": false,
+      "base_intended_count": 0,
+      "base_below_two": true,
+      "routes": [],
+      "expanded_intended_families": [],
+      "expanded_intended_count": 0,
+      "exposes_two_after_expansion": false,
+      "deficient_task_gains_second": false
+    },
+    {
+      "assignment_id": "SUJ-09-16",
+      "task_id": "SUJ-02-16",
+      "task": "The queue is growing even though some equipment sits idle. What kinds of limits could cause that?",
+      "query": "queue growing equipment idle why",
+      "intended_families": [
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/coordinated-work.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/operational-resource-capacity-demand.md",
+          "title": "Operational Resource, Capacity, Demand, and Allocation",
+          "href": "entries/tables-entries-operational-resource-capacity-demand.html"
+        },
+        {
+          "rank": 2,
+          "key": "guides/aqueous-solution-amount-concentration.md",
+          "title": "Aqueous Solution Amount-Concentration Guide",
+          "href": "entries/guides-aqueous-solution-amount-concentration.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/information-data-signal-noise.md",
+          "title": "Information, Data, Signal, and Noise",
+          "href": "entries/tables-entries-information-data-signal-noise.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/interaction-request-response-correlation.md",
+          "title": "Interaction, Request, Response, Acknowledgment, Notification, and Correlation",
+          "href": "entries/tables-entries-interaction-request-response-correlation.html"
+        },
+        {
+          "rank": 5,
+          "key": "tables/entries/scenario-assumption-condition-case.md",
+          "title": "Assumption, Condition, Scenario, Case, and Feasibility",
+          "href": "entries/tables-entries-scenario-assumption-condition-case.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/hazard-exposure-harm-safety.md",
+          "title": "Hazard, Exposure, Harm, Vulnerability, and Safety",
+          "href": "entries/tables-entries-hazard-exposure-harm-safety.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/software-transaction-message-contract.md",
+          "title": "Software Transaction, Message, and Contract",
+          "href": "entries/tables-entries-software-transaction-message-contract.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/entries/stock-flow-balance.md",
+          "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+          "href": "entries/tables-entries-stock-flow-balance.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 1,
+          "key": "tables/entries/operational-resource-capacity-demand.md",
+          "title": "Operational Resource, Capacity, Demand, and Allocation",
+          "href": "entries/tables-entries-operational-resource-capacity-demand.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 1,
+      "base_below_two": true,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 1,
+            "key": "tables/entries/operational-resource-capacity-demand.md",
+            "title": "Operational Resource, Capacity, Demand, and Allocation",
+            "href": "entries/tables-entries-operational-resource-capacity-demand.html"
+          },
+          "page": "entries/tables-entries-operational-resource-capacity-demand.html",
+          "connections": [
+            {
+              "href": "tables-entries-coordinated-work.html",
+              "title": "Coordinated Work",
+              "target_family": "tables/entries/coordinated-work.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-system-composition-dependency.html",
+              "title": "System Composition, Capability, Interface, and Dependency",
+              "target_family": "tables/entries/system-composition-dependency.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-software-module-service-resource.html",
+              "title": "Software Module, Service, and Resource",
+              "target_family": "tables/entries/software-module-service-resource.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-stock-flow-balance.html",
+              "title": "Stock, Flow, Accumulation, Balance, and Conservation",
+              "target_family": "tables/entries/stock-flow-balance.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-temporal-organization.html",
+              "title": "Temporal Organization",
+              "target_family": "tables/entries/temporal-organization.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-scenario-assumption-condition-case.html",
+              "title": "Assumption, Condition, Scenario, Case, and Feasibility",
+              "target_family": "tables/entries/scenario-assumption-condition-case.md",
+              "intended": false
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/coordinated-work.md"
+      ],
+      "expanded_intended_count": 2,
+      "exposes_two_after_expansion": true,
+      "deficient_task_gains_second": true
+    },
+    {
+      "assignment_id": "SUJ-09-19",
+      "task_id": "SUJ-02-19",
+      "task": "A committee handed a vote to a smaller group. Who may act now, and who still has to answer for the outcome?",
+      "query": "committee handed vote to smaller group who may act",
+      "intended_families": [
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "title": "Decomposition Modes and Combination Contracts",
+          "href": "entries/tables-entries-decomposition-modes-combination-contracts.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/software-transaction-message-contract.md",
+          "title": "Software Transaction, Message, and Contract",
+          "href": "entries/tables-entries-software-transaction-message-contract.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/factorization-quality.md",
+          "title": "Factorization Quality",
+          "href": "entries/tables-entries-factorization-quality.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/interaction-request-response-correlation.md",
+          "title": "Interaction, Request, Response, Acknowledgment, Notification, and Correlation",
+          "href": "entries/tables-entries-interaction-request-response-correlation.html"
+        },
+        {
+          "rank": 5,
+          "key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+          "title": "Chemical Reaction, Stoichiometry, Extent, Rate, Equilibrium, and Catalyst",
+          "href": "entries/tables-entries-chemical-reaction-stoichiometry-equilibrium.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/factorium-entry-publication.md",
+          "title": "Factorium Entry Publication",
+          "href": "entries/tables-entries-factorium-entry-publication.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/claim-evidence.md",
+          "title": "Claim and Evidence",
+          "href": "entries/tables-entries-claim-evidence.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/primes/requested-action.md",
+          "title": "Requested Action",
+          "href": "entries/tables-primes-requested-action.html"
+        },
+        {
+          "rank": 9,
+          "key": "tables/entries/governance-obligation-compliance.md",
+          "title": "Governance, Obligation, and Compliance",
+          "href": "entries/tables-entries-governance-obligation-compliance.html"
+        },
+        {
+          "rank": 10,
+          "key": "volumes/01-structure-quantity-choice/BOOK-ONE-SIM-QUICKSTART.md",
+          "title": "The Factorium Reader Quickstart",
+          "href": "entries/volumes-01-structure-quantity-choice-book-one-sim-quickstart.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 9,
+          "key": "tables/entries/governance-obligation-compliance.md",
+          "title": "Governance, Obligation, and Compliance",
+          "href": "entries/tables-entries-governance-obligation-compliance.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 1,
+      "base_below_two": true,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 9,
+            "key": "tables/entries/governance-obligation-compliance.md",
+            "title": "Governance, Obligation, and Compliance",
+            "href": "entries/tables-entries-governance-obligation-compliance.html"
+          },
+          "page": "entries/tables-entries-governance-obligation-compliance.html",
+          "connections": [
+            {
+              "href": "tables-entries-organization-role-authority.html",
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "target_family": "tables/entries/organization-role-authority.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-policy-rule-constraint-decision-exception.html",
+              "title": "Policy, Rule, Constraint, Decision, and Exception",
+              "target_family": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-control-monitoring-response.html",
+              "title": "Objective, Control, Monitoring, and Response",
+              "target_family": "tables/entries/control-monitoring-response.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-claim-evidence.html",
+              "title": "Claim and Evidence",
+              "target_family": "tables/entries/claim-evidence.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-identity-naming-classification-versioning.html",
+              "title": "Identity, Naming, Classification, and Versioning",
+              "target_family": "tables/entries/identity-naming-classification-versioning.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-factorium-entry-publication.html",
+              "title": "Factorium Entry Publication",
+              "target_family": "tables/entries/factorium-entry-publication.md",
+              "intended": false
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md"
+      ],
+      "expanded_intended_count": 3,
+      "exposes_two_after_expansion": true,
+      "deficient_task_gains_second": true
+    },
+    {
+      "assignment_id": "SUJ-09-23",
+      "task_id": "SUJ-02-23",
+      "task": "Someone logged in successfully but was still blocked from a file. Which decisions and records explain that?",
+      "query": "logged in but blocked from file",
+      "intended_families": [
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "title": "Decomposition Modes and Combination Contracts",
+          "href": "entries/tables-entries-decomposition-modes-combination-contracts.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/causal-reasoning.md",
+          "title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution",
+          "href": "entries/tables-entries-causal-reasoning.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/software-module-service-resource.md",
+          "title": "Software Module, Service, and Resource",
+          "href": "entries/tables-entries-software-module-service-resource.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/factorization-quality.md",
+          "title": "Factorization Quality",
+          "href": "entries/tables-entries-factorization-quality.html"
+        },
+        {
+          "rank": 5,
+          "key": "tables/entries/choice-alternative-selection.md",
+          "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+          "href": "entries/tables-entries-choice-alternative-selection.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/cost-price-value-return.md",
+          "title": "Cost, Price, Value, Utility, and Return",
+          "href": "entries/tables-entries-cost-price-value-return.html"
+        },
+        {
+          "rank": 7,
+          "key": "tables/entries/factorium-entry-publication.md",
+          "title": "Factorium Entry Publication",
+          "href": "entries/tables-entries-factorium-entry-publication.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/entries/force.md",
+          "title": "Force",
+          "href": "entries/tables-entries-force.html"
+        },
+        {
+          "rank": 9,
+          "key": "tables/entries/geometric-measure.md",
+          "title": "Geometric Measure",
+          "href": "entries/tables-entries-geometric-measure.html"
+        },
+        {
+          "rank": 10,
+          "key": "tables/entries/identity-naming-classification-versioning.md",
+          "title": "Identity, Naming, Classification, and Versioning",
+          "href": "entries/tables-entries-identity-naming-classification-versioning.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 10,
+          "key": "tables/entries/identity-naming-classification-versioning.md",
+          "title": "Identity, Naming, Classification, and Versioning",
+          "href": "entries/tables-entries-identity-naming-classification-versioning.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 1,
+      "base_below_two": true,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 10,
+            "key": "tables/entries/identity-naming-classification-versioning.md",
+            "title": "Identity, Naming, Classification, and Versioning",
+            "href": "entries/tables-entries-identity-naming-classification-versioning.html"
+          },
+          "page": "entries/tables-entries-identity-naming-classification-versioning.html",
+          "connections": [
+            {
+              "href": "tables-roots-identity.html",
+              "title": "Identity",
+              "target_family": "tables/roots/identity.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-relation.html",
+              "title": "Relation",
+              "target_family": "tables/roots/relation.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-time.html",
+              "title": "Time",
+              "target_family": "tables/roots/time.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-organization-role-authority.html",
+              "title": "Organization, Role, Responsibility, Authority, and Accountability",
+              "target_family": "tables/entries/organization-role-authority.md",
+              "intended": false
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/identity-naming-classification-versioning.md"
+      ],
+      "expanded_intended_count": 1,
+      "exposes_two_after_expansion": false,
+      "deficient_task_gains_second": false
+    },
+    {
+      "assignment_id": "SUJ-09-25",
+      "task_id": "SUJ-02-25",
+      "task": "A score is above the cutoff, but an exception and an appeal are still possible. Has a decision actually been made?",
+      "query": "score above cutoff exception appeal decision",
+      "intended_families": [
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/choice-alternative-selection.md"
+      ],
+      "first_ten_families": [
+        {
+          "rank": 1,
+          "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+          "title": "Policy, Rule, Constraint, Decision, and Exception",
+          "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/choice-alternative-selection.md",
+          "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+          "href": "entries/tables-entries-choice-alternative-selection.html"
+        },
+        {
+          "rank": 3,
+          "key": "tables/entries/scenario-assumption-condition-case.md",
+          "title": "Assumption, Condition, Scenario, Case, and Feasibility",
+          "href": "entries/tables-entries-scenario-assumption-condition-case.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "title": "Evaluation Measure, Scale, Criterion, and Score",
+          "href": "entries/tables-entries-evaluation-measure-scale-criterion.html"
+        },
+        {
+          "rank": 5,
+          "key": "tables/entries/access-permission-authorization-entitlement.md",
+          "title": "Access, Permission, Authorization, and Entitlement",
+          "href": "entries/tables-entries-access-permission-authorization-entitlement.html"
+        },
+        {
+          "rank": 6,
+          "key": "tables/entries/governance-obligation-compliance.md",
+          "title": "Governance, Obligation, and Compliance",
+          "href": "entries/tables-entries-governance-obligation-compliance.html"
+        },
+        {
+          "rank": 7,
+          "key": "guides/evidence-informed-intervention-choice.md",
+          "title": "Evidence-Informed Intervention Choice Guide",
+          "href": "entries/guides-evidence-informed-intervention-choice.html"
+        },
+        {
+          "rank": 8,
+          "key": "tables/entries/requirement-specification-verification-validation.md",
+          "title": "Requirement, Specification, Verification, and Validation",
+          "href": "entries/tables-entries-requirement-specification-verification-validation.html"
+        },
+        {
+          "rank": 9,
+          "key": "tables/entries/coordinated-work.md",
+          "title": "Coordinated Work: Workflow, Orchestration, Choreography, Concurrency, and Compensation",
+          "href": "entries/tables-entries-coordinated-work.html"
+        },
+        {
+          "rank": 10,
+          "key": "tables/entries/cost-price-value-return.md",
+          "title": "Cost, Price, Value, Utility, and Return",
+          "href": "entries/tables-entries-cost-price-value-return.html"
+        }
+      ],
+      "recognized_footholds": [
+        {
+          "rank": 1,
+          "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+          "title": "Policy, Rule, Constraint, Decision, and Exception",
+          "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html"
+        },
+        {
+          "rank": 2,
+          "key": "tables/entries/choice-alternative-selection.md",
+          "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+          "href": "entries/tables-entries-choice-alternative-selection.html"
+        },
+        {
+          "rank": 4,
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "title": "Evaluation Measure, Scale, Criterion, and Score",
+          "href": "entries/tables-entries-evaluation-measure-scale-criterion.html"
+        }
+      ],
+      "eligible": true,
+      "base_intended_count": 3,
+      "base_below_two": false,
+      "routes": [
+        {
+          "foothold": {
+            "rank": 1,
+            "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+            "title": "Policy, Rule, Constraint, Decision, and Exception",
+            "href": "entries/tables-entries-policy-rule-constraint-decision-exception.html"
+          },
+          "page": "entries/tables-entries-policy-rule-constraint-decision-exception.html",
+          "connections": [
+            {
+              "href": "tables-roles-policy.html",
+              "title": "Policy",
+              "target_family": "tables/roles/policy.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-constraint.html",
+              "title": "Constraint",
+              "target_family": "tables/roots/constraint.md",
+              "intended": false
+            },
+            {
+              "href": "tables-roots-purpose.html",
+              "title": "Purpose",
+              "target_family": "tables/roots/purpose.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-governance-obligation-compliance.html",
+              "title": "Governance, Obligation, and Compliance",
+              "target_family": "tables/entries/governance-obligation-compliance.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-choice-alternative-selection.html",
+              "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+              "target_family": "tables/entries/choice-alternative-selection.md",
+              "intended": true
+            },
+            {
+              "href": "tables-mappings-governance-compliance-mechanisms.html",
+              "title": "Governance and Compliance Mechanisms",
+              "target_family": "tables/entries/governance-obligation-compliance.md",
+              "intended": false
+            }
+          ]
+        },
+        {
+          "foothold": {
+            "rank": 2,
+            "key": "tables/entries/choice-alternative-selection.md",
+            "title": "Choice, Alternative, Criterion, Preference, Recommendation, and Selection",
+            "href": "entries/tables-entries-choice-alternative-selection.html"
+          },
+          "page": "entries/tables-entries-choice-alternative-selection.html",
+          "connections": [
+            {
+              "href": "tables-entries-policy-rule-constraint-decision-exception.html",
+              "title": "Policy, Rule, Constraint, Decision, and Exception",
+              "target_family": "tables/entries/policy-rule-constraint-decision-exception.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-claim-evidence.html",
+              "title": "Claim and Evidence",
+              "target_family": "tables/entries/claim-evidence.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-causal-reasoning.html",
+              "title": "Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution",
+              "target_family": "tables/entries/causal-reasoning.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-probability-risk-uncertainty.html",
+              "title": "Probability, Risk, and Uncertainty",
+              "target_family": "tables/entries/probability-risk-uncertainty.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-cost-price-value-return.html",
+              "title": "Cost, Price, Value, Utility, and Return",
+              "target_family": "tables/entries/cost-price-value-return.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-control-monitoring-response.html",
+              "title": "Objective, Control, Monitoring, and Response",
+              "target_family": "tables/entries/control-monitoring-response.md",
+              "intended": false
+            }
+          ]
+        },
+        {
+          "foothold": {
+            "rank": 4,
+            "key": "tables/entries/evaluation-measure-scale-criterion.md",
+            "title": "Evaluation Measure, Scale, Criterion, and Score",
+            "href": "entries/tables-entries-evaluation-measure-scale-criterion.html"
+          },
+          "page": "entries/tables-entries-evaluation-measure-scale-criterion.html",
+          "connections": [
+            {
+              "href": "tables-entries-measurement-quality.html",
+              "title": "Measurement Quality",
+              "target_family": "tables/entries/measurement-quality.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-control-monitoring-response.html",
+              "title": "Objective, Control, Monitoring, and Response",
+              "target_family": "tables/entries/control-monitoring-response.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-choice-alternative-selection.html",
+              "title": "Choice, Alternative, and Selection",
+              "target_family": "tables/entries/choice-alternative-selection.md",
+              "intended": true
+            },
+            {
+              "href": "tables-entries-statistical-summary-interval.html",
+              "title": "Statistical Summary and Interval",
+              "target_family": "tables/entries/statistical-summary-interval.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-decomposition-modes-combination-contracts.html",
+              "title": "Decomposition Modes and Combination Contracts",
+              "target_family": "tables/entries/decomposition-modes-combination-contracts.md",
+              "intended": false
+            },
+            {
+              "href": "tables-entries-claim-evidence.html",
+              "title": "Claim and Evidence",
+              "target_family": "tables/entries/claim-evidence.md",
+              "intended": false
+            }
+          ]
+        }
+      ],
+      "expanded_intended_families": [
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/choice-alternative-selection.md"
+      ],
+      "expanded_intended_count": 3,
+      "exposes_two_after_expansion": true,
+      "deficient_task_gains_second": false
+    }
+  ]
+}
