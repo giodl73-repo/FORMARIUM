@@ -3293,3 +3293,13 @@ anti-unanimism remain explicit. Nine roles approve with no P1/P2 finding. The
 global checker validates 60 total records with custody intact and zero
 admission. Retain GPC-06 and proceed to GPC-07; claim neither continental
 completeness nor reader evidence. See `GLOBAL-PHILOSOPHY-GPC-06-RESULT.md`.
+
+## 2026-08-17 GPC-07 Latin American and Caribbean comparison
+
+Plan review: freeze six packets before source review across colonial
+encounter, authenticity, liberation/dependency, coloniality, feminist/
+Afro-Latin/Indigenous critique, and plural Caribbean inquiry. The 18-source
+review passes all four evidence tiers and makes archive asymmetry, language,
+genre, mestizaje critique, colonial gender, concrete positionality, and opacity
+mandatory. The lane changes no Table, book, relation, UI, or reader-evidence
+gate. Factoring remains pending. See `GLOBAL-PHILOSOPHY-GPC-07-PLAN.md`.

@@ -1,0 +1,22 @@
+{
+  "campaign_id":"GPC-07","revision":1,"status":"frozen-before-source-review","frozen_on":"2026-08-17","parent":"GPC-01 revision 2",
+  "purpose":"Test plural Latin American and Caribbean structures while preserving Indigenous, Iberian, African-diasporic, national, linguistic, gender, colonial, and diasporic standpoints and their conflicts.",
+  "packet_slots":[
+    {"id":"LA-01","lane":"colonial-encounter","position":"conquest-era Indigenous and Iberian encounters over personhood, reason, testimony, natural law, conversion, violence, land, and textual custody"},
+    {"id":"LA-02","lane":"independence-identity-authenticity","position":"independence and post-independence inquiry on intellectual authenticity, Nuestra América, mestizaje, race, nation, education, and the risks of civilizational synthesis"},
+    {"id":"LA-03","lane":"liberation-dependency","position":"philosophy and theology of liberation, dependency, exteriority, analectics, praxis, option for the oppressed, and institutional transformation"},
+    {"id":"LA-04","lane":"coloniality-decolonial","position":"coloniality of power/knowledge/being, racial classification, modernity, border thinking, pluriversality, and internal decolonial criticism"},
+    {"id":"LA-05","lane":"feminist-afro-latin-indigenous","position":"Latin American, Afro-Latin/Amefrican, Indigenous, and decolonial feminist inquiry on colonial gender, race, body-territory, epistemicide, care, autonomy, and coalition"},
+    {"id":"CA-01","lane":"caribbean","position":"Francophone, Anglophone, Hispanophone, and diasporic Caribbean inquiry on creolization, relation, opacity, sociogeny, colonial language, plantation worlds, and new humanism"}
+  ],
+  "selection_rules":[
+    "Latin American, Caribbean, Hispanic, Lusophone, Francophone, Indigenous, mestizo, Black, Afro-Latin, and decolonial are different scopes and never synonyms.",
+    "Conquest archives preserve asymmetric custody; Indigenous testimony and concepts are not merely data for European debates.",
+    "Nation, race, mestizaje, liberation, dependency, coloniality, gender, and creolization remain internally contested rather than regional doctrines.",
+    "Spanish, Portuguese, French, English, Creole, and Indigenous-language terms retain their language and translation histories.",
+    "No religious, revolutionary, nationalist, racial, gender, land, legal, reparative, or decolonial position becomes Factorium guidance."
+  ],
+  "factorization_record_contract":{"required_fields":["factoring_id","source_packet_id","source_anchors","governing_sense_or_question","pivot","factors","dependencies","constraints","alternative_factorings","excluded_combinations","interpretive_status"],"factor_fields":["local_id","source_term","transliteration","working_gloss","role","variation","source_support"],"raw_records_are_immutable":true,"superseded_records_remain_addressable":true},
+  "alignment_ledger_contract":{"required_fields":["alignment_id","source_factoring_ids","mapping_direction","relation_kind","shared_structure","preserved_structure","lost_structure","conflicts","candidate_factorium_owner","review_status"],"relation_kinds":["exact","structural-overlap","analogy","broader","narrower","conflict","unmapped"],"append_only":true,"may_not_mutate_source_local_factorings":true,"same_gloss_is_not_alignment":true},
+  "content_admission_allowed":false,"reader_evidence_claimed":false,"global_alignment_deferred_to":"GPC-09"
+}
