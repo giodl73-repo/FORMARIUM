@@ -3426,3 +3426,11 @@ anchor, two views, zero relations, and one discovery repair. Nine roles
 approve after closing framework-copying, relation-scope, and source-registry
 issues. Zero change is valid; claim no reader evidence, domain completeness,
 or professional guidance. See `R5-CROSS-DOMAIN-COVERAGE-01-PLAN.md`.
+
+Baseline review: all 24 frozen packets ran against `sim-49`. Fifteen require
+no change, three remain Guide-local, three route named frameworks externally,
+and one defers to accounting authority. The two economics packets R5C-01-19
+and R5C-01-21 independently expose one repeated manual boundary among income,
+consumption, saving, investment, and wealth. Admit research only: test a
+no-new-sense Stock/Flow specialized view before any anchor. No canonical or
+reader surface changes yet. See `R5-CROSS-DOMAIN-COVERAGE-01-BASELINE.md`.
