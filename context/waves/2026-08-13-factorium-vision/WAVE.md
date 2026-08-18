@@ -3274,3 +3274,13 @@ Russian is not an Eastern European default. Nine roles approve with no P1/P2
 finding. The global checker validates 52 total records with custody intact and
 zero admission. Retain GPC-05 and proceed to GPC-06; claim neither coverage
 nor reader evidence. See `GLOBAL-PHILOSOPHY-GPC-05-RESULT.md`.
+
+## 2026-08-17 GPC-06 African and Africana comparison
+
+Plan review: freeze eight named African/Africana packets before source review,
+including internal method and feminist critique rather than a generic ubuntu
+or communalism sample. The 18-source review passes all four evidence tiers and
+makes performer/audience/community custody, language, genre, gender, colonial
+and diasporic context, and normative non-uptake mandatory. The lane changes no
+Table, book, relation, UI, or reader-evidence gate. Factoring remains pending.
+See `GLOBAL-PHILOSOPHY-GPC-06-PLAN.md`.

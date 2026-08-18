@@ -1,0 +1,24 @@
+{
+  "campaign_id":"GPC-06","revision":1,"status":"frozen-before-source-review","frozen_on":"2026-08-17","parent":"GPC-01 revision 2",
+  "purpose":"Test plural African and Africana structures while preserving named language, region, genre, gender, colonial, diasporic, and community authority conditions.",
+  "packet_slots":[
+    {"id":"AF-01","lane":"akan-west-african","position":"Akan personhood, community, moral achievement, sunsum/okra, agency, and responsibility"},
+    {"id":"AF-02","lane":"yoruba-west-african","position":"Yorùbá person, orí, àṣẹ, character, destiny, divination, and epistemic-practical relation"},
+    {"id":"AF-03","lane":"southern-african","position":"ubuntu/botho relational personhood, dignity, obligation, reconciliation, law, and internal criticism"},
+    {"id":"AF-04","lane":"ethiopian-horn-of-africa","position":"Zera Yacob and Walda Heywat on inquiry, reason, creator, harmony, moral equality, and textual custody"},
+    {"id":"AF-05","lane":"africana-anti-colonial-diasporic","position":"Du Bois, Césaire, Fanon, Nkrumah, and related Africana inquiry on race, coloniality, double consciousness, liberation, violence, and new humanism"},
+    {"id":"AF-06","lane":"decolonial-method","position":"ethnophilosophy dispute, philosophical sagacity, conceptual decolonization, language, professional philosophy, and tradition/modernity critique"},
+    {"id":"AF-07","lane":"african-feminist-gender","position":"African feminist and gender critiques of universal woman, colonial gender systems, personhood, family, power, and epistemic custody"},
+    {"id":"AF-08","lane":"oral-textual-aesthetic-political","position":"oral, proverbial, narrative, musical, artistic, literary, and political forms as philosophical argument, memory, performance, and public reasoning"}
+  ],
+  "selection_rules":[
+    "African, Sub-Saharan, Black, Africana, Indigenous, traditional, communal, and ubuntu are not synonyms or one civilizational worldview.",
+    "Every record retains named language, region, genre, author/community authority, historical setting, and diaspora or colonial relation where known.",
+    "Oral performance is neither anonymous raw data nor automatically communal consensus; published reconstruction does not own community meaning.",
+    "Feminist, anti-colonial, professional-philosophy, ethnophilosophy, and tradition claims remain internally contested and cannot be token exceptions.",
+    "No customary, religious, legal, gender, racial, revolutionary, reconciliatory, or community claim becomes Factorium guidance."
+  ],
+  "factorization_record_contract":{"required_fields":["factoring_id","source_packet_id","source_anchors","governing_sense_or_question","pivot","factors","dependencies","constraints","alternative_factorings","excluded_combinations","interpretive_status"],"factor_fields":["local_id","source_term","transliteration","working_gloss","role","variation","source_support"],"raw_records_are_immutable":true,"superseded_records_remain_addressable":true},
+  "alignment_ledger_contract":{"required_fields":["alignment_id","source_factoring_ids","mapping_direction","relation_kind","shared_structure","preserved_structure","lost_structure","conflicts","candidate_factorium_owner","review_status"],"relation_kinds":["exact","structural-overlap","analogy","broader","narrower","conflict","unmapped"],"append_only":true,"may_not_mutate_source_local_factorings":true,"same_gloss_is_not_alignment":true},
+  "content_admission_allowed":false,"reader_evidence_claimed":false,"global_alignment_deferred_to":"GPC-09"
+}
