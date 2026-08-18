@@ -1,0 +1,20 @@
+.proof-search__scale-chooser {
+  background: color-mix(in srgb, Canvas 90%, #725494 10%);
+  border: 1px solid color-mix(in srgb, #725494 42%, Canvas 58%);
+  border-radius: 0.7rem;
+  display: grid;
+  gap: 0.35rem 0.85rem;
+  grid-template-columns: auto 1fr;
+  margin: 0.9rem 0 0;
+  padding: 0.85rem 0.95rem;
+}
+.proof-search__scale-chooser[hidden] { display: none; }
+.proof-search__scale-chooser > span { color: #725494; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.proof-search__scale-chooser > ul { display: grid; gap: 0.55rem; grid-column: 2; list-style: none; margin: 0; padding: 0; }
+.proof-search__scale-chooser li { display: grid; gap: 0.1rem; }
+.proof-search__scale-chooser > small { color: color-mix(in srgb, CanvasText 68%, Canvas 32%); grid-column: 2; }
+@media (max-width: 40rem) {
+  .proof-search__scale-chooser { grid-template-columns: 1fr; }
+  .proof-search__scale-chooser > ul, .proof-search__scale-chooser > small { grid-column: auto; }
+}
+

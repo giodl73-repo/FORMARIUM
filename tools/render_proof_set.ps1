@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -66,6 +66,8 @@ $searchCueScript = Join-Path $workspace "volumes\01-structure-quantity-choice\pr
 $searchCueStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search-cue.css"
 $lookupAliasesScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-lookup-aliases.js"
 $lookupAliasesStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-lookup-aliases.css"
+$scaleChooserScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-scale-chooser.js"
+$scaleChooserStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-scale-chooser.css"
 if ($editionNumber -ge 30) {
     $searchScript = $candidateSearchScript
 }
@@ -174,6 +176,7 @@ $artifactTitle = switch ($Edition) {
     "sim-45" { "Factorium Dual Literal Lookup Simulation 45" }
     "sim-46" { "Factorium Reciprocal Table Connections Simulation 46" }
     "sim-47" { "Factorium Lexical Lookup Aliases Simulation 47" }
+    "sim-48" { "Factorium Scale Meaning Chooser Simulation 48" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -992,6 +995,9 @@ if ($editionNumber -ge 4) {
     if ($editionNumber -ge 47) {
         $requiredSearchAssets += @($lookupAliasesStyle, $lookupAliasesScript)
     }
+    if ($editionNumber -ge 48) {
+        $requiredSearchAssets += @($scaleChooserStyle, $scaleChooserScript)
+    }
     foreach ($asset in $requiredSearchAssets) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing search asset: $asset"
@@ -1176,6 +1182,10 @@ if ($editionNumber -ge 4) {
         $searchCss += "`n" + (Get-Content -LiteralPath $lookupAliasesStyle -Raw)
         $searchJavaScript += "`n" + (Get-Content -LiteralPath $lookupAliasesScript -Raw)
     }
+    if ($editionNumber -ge 48) {
+        $searchCss += "`n" + (Get-Content -LiteralPath $scaleChooserStyle -Raw)
+        $searchJavaScript += "`n" + (Get-Content -LiteralPath $scaleChooserScript -Raw)
+    }
     $searchShell = @'
 <section class="proof-search" aria-labelledby="proof-search-heading">
 <h2 id="proof-search-heading">Search this proof</h2>
@@ -1230,6 +1240,9 @@ if ($editionNumber -ge 4) {
     }
     if ($editionNumber -ge 47) {
         $searchAssetPaths += @($lookupAliasesStyle, $lookupAliasesScript)
+    }
+    if ($editionNumber -ge 48) {
+        $searchAssetPaths += @($scaleChooserStyle, $scaleChooserScript)
     }
     $searchAssets = foreach ($asset in $searchAssetPaths) {
         [ordered]@{
@@ -1288,6 +1301,22 @@ if ($editionNumber -ge 4) {
         $searchChecks.lookup_alias_routes = 7
         $searchChecks.lookup_alias_targets = $aliasTargetPaths
         $searchChecks.lookup_alias_semantics = "language-route-to-existing-owner-not-equivalence-or-closure"
+    }
+    if ($editionNumber -ge 48) {
+        $scaleTargetPaths = @(
+            "tables/entries/evaluation-measure-scale-criterion.md",
+            "tables/entries/quantity-value-unit-conversion.md",
+            "tables/entries/geometric-reference-structure.md"
+        )
+        foreach ($scaleTargetPath in $scaleTargetPaths) {
+            if (@($searchRecords | Where-Object { $_.path -eq $scaleTargetPath }).Count -ne 1) {
+                throw "Scale chooser target must resolve exactly once: $scaleTargetPath"
+            }
+        }
+        $searchChecks.scale_chooser_query = "scale"
+        $searchChecks.scale_chooser_routes = 3
+        $searchChecks.scale_chooser_targets = $scaleTargetPaths
+        $searchChecks.scale_chooser_semantics = "explicit-meaning-choice-not-classification-or-equivalence"
     }
 }
 
@@ -1806,6 +1835,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 47) {
         $siteCssParts += (Get-Content -LiteralPath $lookupAliasesStyle -Raw)
+    }
+    if ($editionNumber -ge 48) {
+        $siteCssParts += (Get-Content -LiteralPath $scaleChooserStyle -Raw)
     }
     if ($editionNumber -ge 34) {
         $siteCssParts += (Get-Content -LiteralPath $tableFamilyContentsStyle -Raw)
