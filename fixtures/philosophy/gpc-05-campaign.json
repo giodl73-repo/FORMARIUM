@@ -1,0 +1,22 @@
+{
+  "campaign_id":"GPC-05","revision":1,"status":"frozen-before-source-review","frozen_on":"2026-08-17","parent":"GPC-01 revision 2",
+  "purpose":"Test Russian and separately identified Eastern European structures without allowing Russian, Orthodox, imperial, Soviet, émigré, Ukrainian, Polish, or Czech frames to stand in for one another.",
+  "packet_slots":[
+    {"id":"RU-01","lane":"russian","position":"nineteenth-century philosophy of history, Slavophile/Westernizer dispute, community, person, and sobornost"},
+    {"id":"RU-02","lane":"russian","position":"Russian religious and existential philosophy on all-unity, personhood, freedom, necessity, faith, and creative transformation"},
+    {"id":"RU-03","lane":"russian","position":"Russian literary-philosophical moral inquiry on polyphonic voice, conscience, violence/nonviolence, responsibility, and enacted life"},
+    {"id":"RU-04","lane":"russian-soviet-emigre","position":"Soviet and émigré disputes over dialectic, materialism, ideality, activity, ideology, repression, and philosophical independence"},
+    {"id":"EE-01","lane":"ukrainian","position":"Ukrainian philosophy through Skovoroda and later reception: heart, self-knowledge, affinity or vocation, freedom, language, and contested imperial custody"},
+    {"id":"EE-02","lane":"polish-czech","position":"Polish analytic/phenomenological and Czech phenomenological-dissident inquiry on clarity, intentional object, responsibility, care, solidarity, and living in truth"}
+  ],
+  "selection_rules":[
+    "Russian philosophy is a historical lane, never a proxy for Eastern Europe, Slavic thought, Eurasia, or Orthodox Christianity.",
+    "Ukrainian, Polish, and Czech positions retain their own languages, institutions, political histories, and contested custody.",
+    "Literary, theological, logical, phenomenological, Marxist, and dissident genres remain distinct even when they share moral vocabulary.",
+    "Imperial, Soviet, exile, censorship, repression, and dissident conditions are mapping constraints rather than cultural essences.",
+    "No religious, nationalist, revolutionary, pacifist, or dissident position becomes Factorium guidance."
+  ],
+  "factorization_record_contract":{"required_fields":["factoring_id","source_packet_id","source_anchors","governing_sense_or_question","pivot","factors","dependencies","constraints","alternative_factorings","excluded_combinations","interpretive_status"],"factor_fields":["local_id","source_term","transliteration","working_gloss","role","variation","source_support"],"raw_records_are_immutable":true,"superseded_records_remain_addressable":true},
+  "alignment_ledger_contract":{"required_fields":["alignment_id","source_factoring_ids","mapping_direction","relation_kind","shared_structure","preserved_structure","lost_structure","conflicts","candidate_factorium_owner","review_status"],"relation_kinds":["exact","structural-overlap","analogy","broader","narrower","conflict","unmapped"],"append_only":true,"may_not_mutate_source_local_factorings":true,"same_gloss_is_not_alignment":true},
+  "content_admission_allowed":false,"reader_evidence_claimed":false,"global_alignment_deferred_to":"GPC-09"
+}

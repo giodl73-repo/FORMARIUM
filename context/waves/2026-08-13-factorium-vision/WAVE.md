@@ -3257,3 +3257,20 @@ approve with no P1/P2 finding. The multi-campaign checker validates 46 total
 records with custody intact and zero admission. Retain GPC-04 and proceed to
 GPC-05; claim neither regional completeness nor reader evidence. See
 `GLOBAL-PHILOSOPHY-GPC-04-RESULT.md`.
+
+## 2026-08-17 GPC-05 Russian and Eastern European comparison
+
+Plan review: freeze four Russian/Russian-Soviet-émigré and two separately
+identified Ukrainian and Polish/Czech packets, complete a standard source
+review, and preserve genre, language, institution, empire, repression, exile,
+and contested custody. The lane changes no Table, book, relation, UI, or
+reader-evidence gate. See `GLOBAL-PHILOSOPHY-GPC-05-PLAN.md`.
+
+Result review: all six packets, six immutable factorings, and six typed
+candidate alignments are complete against 18 sources. Polyphonic non-closure
+and socially embodied ideality become candidate families; national custody,
+genre, political constraint, and normative boundaries remain explicit.
+Russian is not an Eastern European default. Nine roles approve with no P1/P2
+finding. The global checker validates 52 total records with custody intact and
+zero admission. Retain GPC-05 and proceed to GPC-06; claim neither coverage
+nor reader evidence. See `GLOBAL-PHILOSOPHY-GPC-05-RESULT.md`.
