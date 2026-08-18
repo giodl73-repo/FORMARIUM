@@ -1,0 +1,38 @@
+{
+  "campaign_id": "PS-FP-46",
+  "revision": 1,
+  "status": "frozen-before-authority-refresh",
+  "frozen_on": "2026-08-17",
+  "evidence_class": "internal-artifact-custody-maintenance",
+  "artifact": {
+    "edition": "sim-46",
+    "source_commit": "20139f9c6d2f75d231efbb9d1c35ab1fe2d17e03",
+    "workspace_dirty_at_render": false,
+    "selected_sources": 217,
+    "search_records": 185,
+    "generated_pages": 239,
+    "canonical_entries": 53,
+    "specialized_views": 95,
+    "reader_records": 24,
+    "authored_connections": 403,
+    "missing_local_targets": 0,
+    "standalone_sha256": "26b6bb7ad231421ecefb3e3fc43c9ef7a973441571c8acfdaf793807d027b97a",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186",
+    "site_identity": "42fd224b43684f0212e3e77b9c6ee5cd44baa17c67d9c3d00ca0deb7b746985a"
+  },
+  "authority_files": [
+    "CONTEXT.md",
+    "ROADMAP.md",
+    "context/waves/2026-08-13-factorium-vision/PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md",
+    "context/waves/2026-08-13-factorium-vision/R5P-PROOF-SET.md"
+  ],
+  "required_boundaries": {
+    "preview_tag_created": false,
+    "distribution_permitted": false,
+    "external_reader_evidence": false,
+    "content_change": false,
+    "feature_change": false,
+    "new_edition": false,
+    "historical_editions_rewritten": false
+  }
+}

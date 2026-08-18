@@ -2997,3 +2997,14 @@ P1/P2 finding. Do not tune, add the lens, replace or merge rankers, add a
 dashboard alias, or mint `sim-47`; retain clean `sim-46` and the outward local-
 documentation handoff. See
 `SYNTHETIC-DISTINCTIVE-TERMS-RANKING-RESULT.md`.
+
+## 2026-08-17 sim-46 internal fixed-point refresh plan
+
+PS-FP-46 records a maintenance trigger: current authority documents still name
+`sim-41` or `sim-42` as maintained after bounded validated repairs advanced the
+internal artifact to clean `sim-46`. Nine roles approve a four-file authority
+refresh with no P1/P2 finding. Exact counts and standalone, search-index, and
+site identities are frozen before editing. Historical records, content,
+features, schemas, rendering, tags, distribution, external gates, and reader
+claims remain unchanged. See
+`SIM-46-INTERNAL-FIXED-POINT-REFRESH-PLAN.md`.
