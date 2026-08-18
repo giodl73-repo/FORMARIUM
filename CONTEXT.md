@@ -1027,15 +1027,16 @@ Both links remain authored and untyped; the prime's candidate content and
 status are unchanged. This does not establish independent source review or
 reader value and does not reopen the other legacy primes.
 
-The internal Proof Set lane is now prepared and stopped at `sim-42`, not
-`preview-01`. The earlier `sim-41` fixed-point audit remains historical
-custody. QLD-01 later froze and executed 24 query packets, admitted one bounded
-repair to the existing Dependency/Critical-Path Diagnostic, reran the exact
-portfolio, and stopped with no new anchor, view, relation, or product mechanic.
-The result is
-`context/waves/2026-08-13-factorium-vision/QUERY-LED-CAMPAIGN-01-RESULT.md`.
+The internal Proof Set lane is now maintained and stopped at clean `sim-46`,
+not `preview-01`. The earlier `sim-41` fixed point and `sim-42` preview
+rehearsal remain historical custody. Subsequent bounded campaigns admitted the
+three-job intent router, ephemeral handoff note, dual literal lookup, and two
+recurring reciprocal Table links; rejected automatic segmentation, the
+analyst-conditioned Search cue, and BM25 ranking; and retained all external
+reader gates. Exact current custody is recorded in
+`context/waves/2026-08-13-factorium-vision/PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`.
 
-The current internal preview rehearsal at
+The historical internal preview rehearsal at
 `context/waves/2026-08-13-factorium-vision/SIM-42-INTERNAL-PREVIEW-REHEARSAL-RESULT.md`
 binds six frozen artifact routes and 27 mechanical requirements to exact
 sim-42 custody. All are present and no content or UI repair is admitted. This

@@ -2,7 +2,8 @@
 
 Date: 2026-08-17
 
-Status: frozen before authority refresh
+Status: complete — current authority reconciled; see
+`SIM-46-INTERNAL-FIXED-POINT-REFRESH-RESULT.md`
 
 Campaign: `PS-FP-46`
 

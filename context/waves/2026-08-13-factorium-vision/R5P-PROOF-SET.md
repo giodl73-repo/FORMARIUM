@@ -1,6 +1,6 @@
 # R5P - Proof Set
 
-Status: internal rehearsal package prepared at `sim-42`; external preview deferred
+Status: internal rehearsal package maintained at `sim-46`; external preview deferred
 
 Parent milestone: R5 - First substantial volume
 
@@ -251,17 +251,17 @@ new evidence rather than rewriting the initial record.
 
 No distributable `preview-01` candidate exists and no participant has been
 recruited for Proof Set. External Sieve and preview sessions are deferred
-until readers are available. The prior internal simulation fixed point at
-`sim-41` is recorded in `PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`; QLD-01 later
-earned one bounded existing-view repair and the exact `sim-42` projection.
-`SIM-42-INTERNAL-PREVIEW-REHEARSAL-RESULT.md` now binds six frozen artifact
-routes, 27 mechanical requirements, narrow-viewport checks, and a prepare/stop
-decision to that candidate. This is an internal rehearsal package, not a
-tagged or distributed preview edition. Further feature editions stop unless a
-declared artifact, content, regression, composition, or external-reader
-trigger reopens a bounded reader job. None of these additions is covered by
-Sieve or Proof Set evidence until explicitly included in a frozen artifact
-and used by real readers.
+until readers are available. The maintained internal artifact is clean
+`sim-46`, recorded in `PROOF-SET-INTERNAL-FIXED-POINT-AUDIT.md`. The original
+`sim-41` fixed point and exact `sim-42` preview rehearsal remain historical
+custody; subsequent bounded SUJ campaigns admitted only the three-job router,
+ephemeral handoff, dual literal lookup, and two recurring reciprocal Table
+connections while preserving their rejected candidates and nulls. This is an
+internal rehearsal package, not a tagged or distributed preview edition.
+Further feature editions stop unless a declared artifact, content, regression,
+composition, or external-reader trigger reopens a bounded reader job. None of
+these additions is covered by Sieve or Proof Set evidence until explicitly
+included in a frozen artifact and used by real readers.
 
 Internal preflight 15 adds the `sim-14` finite-budget frontier rehearsal. It
 improves state coverage and problem-led navigation mechanics only; it does not

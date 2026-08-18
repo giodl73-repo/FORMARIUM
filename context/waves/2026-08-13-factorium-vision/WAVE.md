@@ -3008,3 +3008,13 @@ site identities are frozen before editing. Historical records, content,
 features, schemas, rendering, tags, distribution, external gates, and reader
 claims remain unchanged. See
 `SIM-46-INTERNAL-FIXED-POINT-REFRESH-PLAN.md`.
+
+Result review: the four current authority documents now agree that clean
+`sim-46` is the maintained internal artifact. Exact 217-source, 185-record,
+239-page, 53-entry, 95-view, 24-Reader-record, and 403-connection custody binds
+the existing source commit and three output identities. Historical editions,
+campaigns, rejected candidates, and nulls remain intact. Nine roles approve
+with no P1/P2 finding. `preview-01` remains absent; no distribution, content,
+feature, schema, new edition, external gate, or reader claim is admitted. Stop
+until a declared reopening trigger or real reader availability. See
+`SIM-46-INTERNAL-FIXED-POINT-REFRESH-RESULT.md`.

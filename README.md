@@ -504,6 +504,8 @@ node tools\check_reciprocal_connection_repair_browser.js target\proof-set-sim-46
 node tools\check_synthetic_distinctive_terms_campaign.js
 node tools\run_synthetic_distinctive_terms_holdout.js
 node tools\check_synthetic_distinctive_terms_holdout.js
+node tools\check_internal_fixed_point_refresh_46_plan.js
+node tools\check_internal_fixed_point_refresh_46_result.js
 node tools\check_system_architecture_description.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_decision_bridge_combined_closure.js

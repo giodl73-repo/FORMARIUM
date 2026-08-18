@@ -4,18 +4,23 @@ Status: internal simulation fixed point; external evidence deferred
 
 Date: 2026-08-17
 
-Maintained edition: `sim-41`
+Maintained edition: `sim-46`
 
-Maintained source commit: `0f28e15`
+Maintained source commit: `20139f9c6d2f75d231efbb9d1c35ab1fe2d17e03`
 
 Role review:
 `signals/roles/check/proof-set-internal-fixed-point-roles-check-2026-08-17.md`
 
 ## Decision
 
-Stop internal Proof Set feature editions at `sim-41`. There is no current
-artifact defect or reader job that earns `sim-42`. Maintain the edition and its
-validation paths, but do not tag, distribute, or describe it as `preview-01`.
+Stop speculative internal Proof Set feature editions at `sim-46`. There is no
+current artifact defect or reader job that earns `sim-47`. Maintain the edition
+and its validation paths, but do not tag, distribute, or describe it as
+`preview-01`.
+
+This refresh supersedes only the prior maintained-edition pointer. The original
+`sim-41` fixed point, `sim-42` rehearsal, intervening campaigns, rejected
+candidates, and exact edition identities remain historical custody.
 
 This is a product stop decision, not abandonment. The next evidence-bearing
 milestone is still R4E with real readers. External recruitment remains deferred
@@ -36,7 +41,7 @@ because readers are unavailable.
 
 ## Fixed artifact
 
-`sim-41` contains:
+`sim-46` contains:
 
 - 217 source documents;
 - 175 canonical records selected into the publication;
@@ -46,13 +51,20 @@ because readers are unavailable.
 - one 24-record, five-part Reader spine;
 - four Reader profiles and three Context Profiles;
 - six reviewed Composition relation types and bounded stopping states;
+- one three-job intent router, two independent literal-query panels, and one
+  ephemeral no-storage handoff note across all 239 pages;
+- 403 authored untyped Table connections, of which 348 appear in the bounded
+  rendered previews;
 - zero missing local targets and zero unresolved canonical view owners.
 
 Site identity:
-`b4daf02a7b16140ebd4608a0d9703a7868da92cd63e71750dbedd3b1f7f675c9`.
+`42fd224b43684f0212e3e77b9c6ee5cd44baa17c67d9c3d00ca0deb7b746985a`.
 
 Standalone SHA-256:
-`fcab6402c50c5b29420599666d624e63f43041ee2ba1cc919d15dbb70857e005`.
+`26b6bb7ad231421ecefb3e3fc43c9ef7a973441571c8acfdaf793807d027b97a`.
+
+Search-index SHA-256:
+`03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186`.
 
 ## What internal work establishes
 
@@ -89,7 +101,9 @@ internal implementation defect.
 
 ## Ledger state
 
-- 42 simulation-preflight records cover `sim-01` through `sim-41`;
+- 42 original simulation-preflight records cover `sim-01` through `sim-41`;
+- the `sim-42` rehearsal and SUJ-01 through SUJ-11 campaign records preserve
+  every admitted repair, failed candidate, and null leading to `sim-46`;
 - `SIM-001`, `SIM-002`, `SIM-004`, and `SIM-005` are closed for their stated
   mechanical scope;
 - `SIM-003` is accepted pending real reader route-cost evidence;
