@@ -1,0 +1,50 @@
+{
+  "campaign_id": "THS-01",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "frozen_on": "2026-08-17",
+  "hypothesis": "factorium-thesaurus-job",
+  "evidence_class": "internal-deterministic-product-rehearsal",
+  "artifact": {
+    "edition": "sim-47",
+    "site_identity": "179daaec770470fdb657bbadca04d9d96ec932d7c976b33eb941c9f24d48e0cc",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186"
+  },
+  "family_window": 5,
+  "categories": {
+    "alias-route": { "required_passes": 5 },
+    "near-neighbor": { "required_passes": 4 },
+    "broader-narrower": { "required_passes": 4 },
+    "ambiguous-word": { "required_passes": 3 }
+  },
+  "tasks": [
+    { "id": "THS-01-01", "category": "alias-route", "query": "organisation", "intended_families": ["tables/entries/organization-role-authority.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-02", "category": "alias-route", "query": "frame of reference", "intended_families": ["tables/entries/geometric-reference-structure.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-03", "category": "alias-route", "query": "electric power", "intended_families": ["tables/entries/electrical-quantity.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-04", "category": "alias-route", "query": "field of force", "intended_families": ["tables/entries/electrical-quantity.md", "tables/entries/matter-load-measure.md"], "minimum_intended_hits": 2 },
+    { "id": "THS-01-05", "category": "alias-route", "query": "force field", "intended_families": ["tables/entries/electrical-quantity.md", "tables/entries/matter-load-measure.md"], "minimum_intended_hits": 2 },
+
+    { "id": "THS-01-06", "category": "near-neighbor", "query": "permission authorization entitlement", "intended_families": ["tables/entries/access-permission-authorization-entitlement.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-07", "category": "near-neighbor", "query": "temperature heat energy", "intended_families": ["tables/entries/thermal-quantity.md", "tables/entries/work-energy-power.md"], "minimum_intended_hits": 2 },
+    { "id": "THS-01-08", "category": "near-neighbor", "query": "mass weight density", "intended_families": ["tables/entries/matter-load-measure.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-09", "category": "near-neighbor", "query": "mean median quantile", "intended_families": ["tables/entries/statistical-summary-interval.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-10", "category": "near-neighbor", "query": "hazard risk safety", "intended_families": ["tables/entries/hazard-exposure-harm-safety.md", "tables/entries/probability-risk-uncertainty.md"], "minimum_intended_hits": 2 },
+
+    { "id": "THS-01-11", "category": "broader-narrower", "query": "chemical substance compound salt", "intended_families": ["tables/entries/chemical-substance-classification.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-12", "category": "broader-narrower", "query": "signal data information", "intended_families": ["tables/entries/information-data-signal-noise.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-13", "category": "broader-narrower", "query": "organization role authority", "intended_families": ["tables/entries/organization-role-authority.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-14", "category": "broader-narrower", "query": "state event process", "intended_families": ["tables/entries/state-event-transition-process-lifecycle.md"], "minimum_intended_hits": 1 },
+    { "id": "THS-01-15", "category": "broader-narrower", "query": "length area volume", "intended_families": ["tables/entries/geometric-measure.md", "tables/entries/geometric-reference-structure.md"], "minimum_intended_hits": 2 },
+
+    { "id": "THS-01-16", "category": "ambiguous-word", "query": "force", "intended_families": ["tables/entries/force.md", "tables/entries/matter-load-measure.md", "tables/entries/organization-role-authority.md"], "minimum_intended_hits": 2 },
+    { "id": "THS-01-17", "category": "ambiguous-word", "query": "power", "intended_families": ["tables/entries/work-energy-power.md", "tables/entries/electrical-quantity.md", "tables/entries/organization-role-authority.md"], "minimum_intended_hits": 2 },
+    { "id": "THS-01-18", "category": "ambiguous-word", "query": "field", "intended_families": ["tables/entries/electrical-quantity.md", "tables/entries/matter-load-measure.md", "tables/entries/information-data-signal-noise.md"], "minimum_intended_hits": 2 },
+    { "id": "THS-01-19", "category": "ambiguous-word", "query": "value", "intended_families": ["tables/entries/cost-price-value-return.md", "tables/entries/software-type-value-function.md", "tables/entries/quantity-value-unit-conversion.md", "tables/entries/evaluation-measure-scale-criterion.md"], "minimum_intended_hits": 2 },
+    { "id": "THS-01-20", "category": "ambiguous-word", "query": "scale", "intended_families": ["tables/entries/evaluation-measure-scale-criterion.md", "tables/entries/geometric-measure.md", "tables/entries/quantity-value-unit-conversion.md"], "minimum_intended_hits": 2 }
+  ],
+  "destination_requirement": "authored-contrast-or-cross-references",
+  "ranking_control": "sim-46-complete-ranking-equality",
+  "automatic_repair": false,
+  "reader_evidence_claimed": false
+}
+

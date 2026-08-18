@@ -3055,3 +3055,13 @@ closure, and the full Rust suite pass with zero missing targets. Nine roles
 approve with no P1/P2 finding. Maintain `sim-47` and stop before general alias
 intake; claim no canonical equivalence or reader evidence. See
 `LEXICAL-LOOKUP-ALIASES-01-RESULT.md`.
+
+## 2026-08-17 thesaurus job test plan
+
+THS-01 freezes 20 queries across exact alias routing, near-neighbor
+distinction, broader/narrower grouping, and ambiguity preservation. It scores
+unique canonical families in a five-family window, requires authored contrast
+or connection structure, and preserves complete `sim-46` literal rankings as
+control. Nine roles approve execution with no P1/P2 finding. Any missed class
+gate falsifies the technical hypothesis; no repair or reader claim is automatic.
+See `THESAURUS-JOB-TEST-01-PLAN.md`.
