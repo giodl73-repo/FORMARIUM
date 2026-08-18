@@ -1,0 +1,31 @@
+{
+  "campaign_id": "GPC-09-V1-INTEGRATION-01",
+  "revision": 1,
+  "status": "frozen-before-implementation",
+  "frozen_on": "2026-08-18",
+  "baseline": {
+    "git_commit": "b60fcd480666dc91947dd233c3a953411a2b6d3a",
+    "reference_v0_sha256": "489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324",
+    "assurance_v0_sha256": "d66f47d24e58f79f2672733c8b06b96d93b09f58318c523abdb3df68e1e787a7",
+    "relations_v0_sha256": "df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634",
+    "catalog_v0_sha256": "c10b4eec6f15e5cee5f01eacd365180b04f49651e72cca7c5581108edcc757d7",
+    "sim_48_supplement_sha256": "18f8f728be4e9b65444272c31423fde74ba8ba4404838acd5758c85ae1a9bb2a"
+  },
+  "target": {
+    "reference": "reference/factorium-reference-v1.factorium",
+    "assurance": "reference/factorium-assurance-v1.factorium",
+    "relations": "reference/factorium-relations-v0.factorium",
+    "edition": "sim-49",
+    "entries": 54,
+    "views": 97,
+    "relations_count": 11,
+    "assurance_bindings": 162,
+    "added_paths": [
+      "tables/entries/meaning-reference-interpretation-use.md",
+      "tables/evidence/epistemic-standing-inquiry-warrant.md",
+      "tables/evidence/source-performance-research-custody.md"
+    ]
+  },
+  "reader_evidence_claimed": false,
+  "community_endorsement_claimed": false
+}

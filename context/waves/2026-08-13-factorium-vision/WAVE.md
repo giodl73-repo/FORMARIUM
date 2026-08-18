@@ -3396,3 +3396,13 @@ is 54 entries and 97 views; V0-generated catalog, book, search, reciprocal
 owner links, and reader testing remain a separate investment. Stop this batch
 and claim no reader evidence, community endorsement, truth, universality, or
 global completeness. See `GPC-09-BOUNDARY-CUSTODY-ADMISSION-RESULT.md`.
+
+## 2026-08-18 GPC-09 V1 reader integration
+
+Plan review: create one ID-preserving V1 successor containing exactly the
+admitted one-anchor/two-view batch, complete assurance, live generated
+catalogs, and a small `sim-49` book/search/site supplement. Preserve V0 bytes,
+the unchanged relation sidecar, V0-bound Composition Queries, and historical
+`sim-48`. The website remains a projection over Tables and Book selections.
+Stop after deterministic mechanics and coverage; claim no reader evidence or
+community endorsement. See `GPC-09-V1-READER-INTEGRATION-PLAN.md`.
