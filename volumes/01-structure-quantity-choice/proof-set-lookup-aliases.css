@@ -1,0 +1,42 @@
+.proof-search__alias {
+  align-items: start;
+  background: color-mix(in srgb, Canvas 91%, #365d88 9%);
+  border: 1px solid color-mix(in srgb, #365d88 42%, Canvas 58%);
+  border-radius: 0.7rem;
+  display: grid;
+  gap: 0.3rem 0.8rem;
+  grid-template-columns: auto 1fr;
+  margin: 0.9rem 0 0;
+  padding: 0.8rem 0.9rem;
+}
+
+.proof-search__alias[hidden] { display: none; }
+
+.proof-search__alias > span {
+  color: #365d88;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.proof-search__alias > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  grid-column: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.proof-search__alias > small {
+  color: color-mix(in srgb, CanvasText 68%, Canvas 32%);
+  grid-column: 2;
+}
+
+@media (max-width: 40rem) {
+  .proof-search__alias { grid-template-columns: 1fr; }
+  .proof-search__alias > ul, .proof-search__alias > small { grid-column: auto; }
+}
+

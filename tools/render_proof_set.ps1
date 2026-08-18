@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -64,6 +64,8 @@ $familySearchScript = Join-Path $workspace "volumes\01-structure-quantity-choice
 $familySearchStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search-families.css"
 $searchCueScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search-cue.js"
 $searchCueStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-search-cue.css"
+$lookupAliasesScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-lookup-aliases.js"
+$lookupAliasesStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-lookup-aliases.css"
 if ($editionNumber -ge 30) {
     $searchScript = $candidateSearchScript
 }
@@ -171,6 +173,7 @@ $artifactTitle = switch ($Edition) {
     "sim-44" { "Factorium Ephemeral Handoff Note Simulation 44" }
     "sim-45" { "Factorium Dual Literal Lookup Simulation 45" }
     "sim-46" { "Factorium Reciprocal Table Connections Simulation 46" }
+    "sim-47" { "Factorium Lexical Lookup Aliases Simulation 47" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -986,6 +989,9 @@ if ($editionNumber -ge 4) {
     if ($editionNumber -ge 40) {
         $requiredSearchAssets += @($searchCueStyle, $searchCueScript)
     }
+    if ($editionNumber -ge 47) {
+        $requiredSearchAssets += @($lookupAliasesStyle, $lookupAliasesScript)
+    }
     foreach ($asset in $requiredSearchAssets) {
         if (-not (Test-Path -LiteralPath $asset -PathType Leaf)) {
             throw "Missing search asset: $asset"
@@ -1166,6 +1172,10 @@ if ($editionNumber -ge 4) {
         $searchCss += "`n" + (Get-Content -LiteralPath $searchCueStyle -Raw)
         $searchJavaScript += "`n" + (Get-Content -LiteralPath $searchCueScript -Raw)
     }
+    if ($editionNumber -ge 47) {
+        $searchCss += "`n" + (Get-Content -LiteralPath $lookupAliasesStyle -Raw)
+        $searchJavaScript += "`n" + (Get-Content -LiteralPath $lookupAliasesScript -Raw)
+    }
     $searchShell = @'
 <section class="proof-search" aria-labelledby="proof-search-heading">
 <h2 id="proof-search-heading">Search this proof</h2>
@@ -1218,6 +1228,9 @@ if ($editionNumber -ge 4) {
     if ($editionNumber -ge 40) {
         $searchAssetPaths += @($searchCueStyle, $searchCueScript)
     }
+    if ($editionNumber -ge 47) {
+        $searchAssetPaths += @($lookupAliasesStyle, $lookupAliasesScript)
+    }
     $searchAssets = foreach ($asset in $searchAssetPaths) {
         [ordered]@{
             path = [System.IO.Path]::GetRelativePath($workspace, $asset).Replace("\", "/")
@@ -1258,6 +1271,23 @@ if ($editionNumber -ge 4) {
         $searchChecks.navigation_cue_phrases = @("size", "how big", "how large")
         $searchChecks.navigation_cue_target = $cueTargets[0].path
         $searchChecks.navigation_cue_semantics = "conditional-route-not-synonym-or-classification"
+    }
+    if ($editionNumber -ge 47) {
+        $aliasTargetPaths = @(
+            "tables/entries/electrical-quantity.md",
+            "tables/entries/geometric-reference-structure.md",
+            "tables/entries/matter-load-measure.md",
+            "tables/entries/organization-role-authority.md"
+        )
+        foreach ($aliasTargetPath in $aliasTargetPaths) {
+            if (@($searchRecords | Where-Object { $_.path -eq $aliasTargetPath }).Count -ne 1) {
+                throw "Lookup alias target must resolve exactly once: $aliasTargetPath"
+            }
+        }
+        $searchChecks.lookup_alias_phrases = @("electric power", "field of force", "force field", "frame of reference", "organisation")
+        $searchChecks.lookup_alias_routes = 7
+        $searchChecks.lookup_alias_targets = $aliasTargetPaths
+        $searchChecks.lookup_alias_semantics = "language-route-to-existing-owner-not-equivalence-or-closure"
     }
 }
 
@@ -1773,6 +1803,9 @@ if ($editionNumber -ge 7) {
     }
     if ($editionNumber -ge 40) {
         $siteCssParts += (Get-Content -LiteralPath $searchCueStyle -Raw)
+    }
+    if ($editionNumber -ge 47) {
+        $siteCssParts += (Get-Content -LiteralPath $lookupAliasesStyle -Raw)
     }
     if ($editionNumber -ge 34) {
         $siteCssParts += (Get-Content -LiteralPath $tableFamilyContentsStyle -Raw)
