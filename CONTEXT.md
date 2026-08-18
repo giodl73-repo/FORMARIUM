@@ -1121,6 +1121,15 @@ authority change. The exact status/checkout miss remains. This is mechanical
 dependent evidence, not question decomposition or reader value. See
 `context/waves/2026-08-13-factorium-vision/SYNTHETIC-DUAL-LITERAL-LOOKUP-RESULT.md`.
 
+SUJ-07 tests whether a transparent punctuation-and-contrast splitter can
+replace authored alternate phrasing. It yields two or three clauses for all
+ten tasks and fixes the isolated status/checkout miss, but total two-family
+coverage falls to 4/10, only 2/10 tasks gain an intended family beyond SUJ-06,
+and six prior passes regress. The automatic helper is rejected, no `sim-46` is
+minted, and `sim-45` remains current. This is a mechanical null, not reader or
+language-understanding evidence. See
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-SYNTACTIC-CLAUSE-LOOKUP-RESULT.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

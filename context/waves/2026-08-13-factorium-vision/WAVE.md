@@ -2899,3 +2899,16 @@ Nine roles approve execution with no P1/P2 finding. Interface work requires
 beyond SUJ-06 on at least 4/10 tasks, and zero regression. Clauses are text
 fragments—not concepts, semantic decomposition, relations, or closure. See
 `SYNTHETIC-SYNTACTIC-CLAUSE-LOOKUP-PLAN.md`.
+
+Result review: the fixed rule yields 26 clauses and passes the 10/10
+feasibility gate, but only 4/10 tasks expose two intended families, only 2/10
+add a family beyond SUJ-06, and six prior passes regress. The status/checkout
+miss is locally repaired, but the portfolio result is substantially worse than
+the authored dual-query control. Nine roles approve the null with no P1/P2
+finding. Reject the helper, do not mint `sim-46`, and retain exact `sim-45`.
+See `SYNTHETIC-SYNTACTIC-CLAUSE-LOOKUP-RESULT.md`.
+
+Repository validation found six relation/query checkers still asserting
+pre-repair digests after the earlier limiting-condition route change. The
+canonical queries and Guide custody already agree, so the result batch updates
+only those stale assertions and leaves all source artifacts unchanged.

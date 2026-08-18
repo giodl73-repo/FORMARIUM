@@ -486,6 +486,9 @@ node tools\check_dual_literal_lookup.js target\proof-set-sim-45
 node tools\check_dual_literal_lookup_browser.js target\proof-set-sim-45 target\sim45-dual-lookup.png
 node tools\run_synthetic_dual_lookup_browser.js
 node tools\check_synthetic_dual_lookup_rerun.js
+node tools\check_synthetic_syntactic_clause_lookup_campaign.js
+node tools\run_synthetic_syntactic_clause_lookup_baseline.js
+node tools\check_synthetic_syntactic_clause_lookup_baseline.js
 node tools\check_system_architecture_description.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_decision_bridge_combined_closure.js

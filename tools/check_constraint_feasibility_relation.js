@@ -16,7 +16,7 @@ const relations = read("reference/factorium-relations-v0.factorium");
 const digest = crypto.createHash("sha256").update(query).digest("hex");
 
 assert.equal(digest,
-  "8c290bd1926e57dd0e0cf5cbecf435e9e821cc034feb0c43d1ecf8efb6559694",
+  "723b732a114e6cd5a7f367439813f195b37fbdcaba6d3831953af69ced4eba19",
   "canonical Constraint/Feasibility query identity");
 assert.match(relations, new RegExp(
   `^relation ${relationId} \\| constrains-feasibility-of \\| ` +
