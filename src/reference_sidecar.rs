@@ -10,7 +10,8 @@ use std::path::{Path, PathBuf};
 
 const RELATION_HEADER: &str = "factorium-relations-v0";
 const RELATION_END: &str = "end-relations";
-const ASSURANCE_HEADER: &str = "factorium-assurance-v0";
+const ASSURANCE_HEADER_V0: &str = "factorium-assurance-v0";
+const ASSURANCE_HEADER_V1: &str = "factorium-assurance-v1";
 const ASSURANCE_END: &str = "end-assurance";
 
 /// One supported directed relation kind.
@@ -324,6 +325,7 @@ impl ReviewBinding {
 /// Canonical assurance sidecar binding reviews to exact source bytes.
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct AssuranceManifest {
+    header: String,
     bindings: Vec<ReviewBinding>,
 }
 
@@ -336,8 +338,17 @@ impl AssuranceManifest {
     /// artifact references, digests, statuses, or dates.
     pub fn parse(input: &str) -> Result<Self, String> {
         let lines = canonical_lines(input)?;
-        if lines.first() != Some(&ASSURANCE_HEADER) || lines.last() != Some(&ASSURANCE_END) {
-            return Err("expected factorium-assurance-v0 document".to_owned());
+        let header = match lines.first().copied() {
+            Some(ASSURANCE_HEADER_V0) => ASSURANCE_HEADER_V0,
+            Some(ASSURANCE_HEADER_V1) => ASSURANCE_HEADER_V1,
+            _ => {
+                return Err(
+                    "expected factorium-assurance-v0 or factorium-assurance-v1 document".to_owned(),
+                )
+            }
+        };
+        if lines.last() != Some(&ASSURANCE_END) {
+            return Err("expected end-assurance record".to_owned());
         }
         let mut bindings = Vec::new();
         for (index, line) in lines[1..lines.len() - 1].iter().enumerate() {
@@ -364,7 +375,10 @@ impl AssuranceManifest {
             bindings.iter().map(ReviewBinding::artifact),
             "review artifacts",
         )?;
-        Ok(Self { bindings })
+        Ok(Self {
+            header: header.to_owned(),
+            bindings,
+        })
     }
 
     #[must_use]
@@ -374,7 +388,7 @@ impl AssuranceManifest {
 
     #[must_use]
     pub fn canonical_text(&self) -> String {
-        let mut output = String::from(ASSURANCE_HEADER);
+        let mut output = self.header.clone();
         output.push('\n');
         for binding in &self.bindings {
             writeln!(
@@ -734,5 +748,24 @@ mod tests {
         assert!(AssuranceManifest::parse(input)
             .unwrap_err()
             .contains("fixed-point"));
+    }
+
+    #[test]
+    fn assurance_v1_header_round_trips() {
+        let input = concat!(
+            "factorium-assurance-v1\n",
+            "review entry:claim-evidence | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | review.md | fixed-point | 2026-08-18\n",
+            "end-assurance\n"
+        );
+        let manifest = AssuranceManifest::parse(input).expect("V1 assurance should parse");
+        assert_eq!(manifest.canonical_text(), input);
+    }
+
+    #[test]
+    fn assurance_rejects_unsupported_revision() {
+        let input = "factorium-assurance-v2\nend-assurance\n";
+        assert!(AssuranceManifest::parse(input)
+            .unwrap_err()
+            .contains("expected factorium-assurance-v0 or factorium-assurance-v1"));
     }
 }

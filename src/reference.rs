@@ -7,7 +7,8 @@ use std::fmt;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-const HEADER: &str = "factorium-reference-v0";
+const HEADER_V0: &str = "factorium-reference-v0";
+const HEADER_V1: &str = "factorium-reference-v1";
 const END: &str = "end-reference";
 
 /// One supported primary reference-table family.
@@ -275,12 +276,13 @@ impl ReferenceView {
 /// The complete canonical Factorium metadata corpus.
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct ReferenceCorpus {
+    header: String,
     entries: Vec<ReferenceEntry>,
     views: Vec<ReferenceView>,
 }
 
 impl ReferenceCorpus {
-    /// Parses canonical Factorium Reference V0 text.
+    /// Parses canonical Factorium Reference V0 or V1 text.
     ///
     /// # Errors
     ///
@@ -289,9 +291,11 @@ impl ReferenceCorpus {
     pub fn parse(input: &str) -> Result<Self, String> {
         validate_transport(input)?;
         let lines: Vec<&str> = input.lines().collect();
-        if lines.first() != Some(&HEADER) {
-            return Err(format!("line 1: expected `{HEADER}`"));
-        }
+        let header = match lines.first().copied() {
+            Some(HEADER_V0) => HEADER_V0,
+            Some(HEADER_V1) => HEADER_V1,
+            _ => return Err(format!("line 1: expected `{HEADER_V0}` or `{HEADER_V1}`")),
+        };
         if lines.last() != Some(&END) {
             return Err(format!("last line: expected `{END}`"));
         }
@@ -374,7 +378,11 @@ impl ReferenceCorpus {
             index += 1;
         }
 
-        let corpus = Self { entries, views };
+        let corpus = Self {
+            header: header.to_owned(),
+            entries,
+            views,
+        };
         corpus.validate()?;
         if corpus.canonical_text() != input {
             return Err("document is valid but not in canonical ordering".to_owned());
@@ -394,10 +402,24 @@ impl ReferenceCorpus {
         &self.views
     }
 
+    /// Returns the exact interchange header.
+    #[must_use]
+    pub fn header(&self) -> &str {
+        &self.header
+    }
+
+    fn manifest_path(&self) -> &'static str {
+        match self.header.as_str() {
+            HEADER_V0 => "reference/factorium-reference-v0.factorium",
+            HEADER_V1 => "reference/factorium-reference-v1.factorium",
+            _ => unreachable!("validated reference header"),
+        }
+    }
+
     /// Serializes the corpus to canonical text.
     #[must_use]
     pub fn canonical_text(&self) -> String {
-        let mut output = String::from(HEADER);
+        let mut output = self.header.clone();
         output.push('\n');
         for entry in &self.entries {
             output.push_str("entry ");
@@ -534,9 +556,9 @@ impl ReferenceCorpus {
     /// Generates the canonical Markdown catalog projection.
     #[must_use]
     pub fn catalog_markdown(&self) -> String {
-        let mut output = String::from(
-            "# Factorium Generated Catalog\n\n\
-             Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.\n\n",
+        let mut output = format!(
+            "# Factorium Generated Catalog\n\nGenerated from `{}`. Do not edit by hand.\n\n",
+            self.manifest_path()
         );
         output.push_str("Corpus identity: `");
         output.push_str(&self.sha256());
@@ -592,9 +614,9 @@ impl ReferenceCorpus {
     /// Generates the canonical Formula Table catalog projection.
     #[must_use]
     pub fn formula_catalog_markdown(&self) -> String {
-        let mut output = String::from(
-            "# Generated Formula Table Catalog\n\n\
-             Generated from `reference/factorium-reference-v0.factorium`. Do not edit by hand.\n\n",
+        let mut output = format!(
+            "# Generated Formula Table Catalog\n\nGenerated from `{}`. Do not edit by hand.\n\n",
+            self.manifest_path()
         );
         output.push_str("Corpus identity: `");
         output.push_str(&self.sha256());
@@ -1033,6 +1055,22 @@ end-reference
         assert_eq!(corpus.canonical_text(), SAMPLE);
         assert_eq!(corpus.entries().len(), 1);
         assert_eq!(corpus.views()[0].family(), Family::Formula);
+    }
+
+    #[test]
+    fn v1_header_round_trips_without_changing_record_grammar() {
+        let input = SAMPLE.replacen("factorium-reference-v0", "factorium-reference-v1", 1);
+        let corpus = ReferenceCorpus::parse(&input).expect("V1 sample should parse");
+        assert_eq!(corpus.header(), "factorium-reference-v1");
+        assert_eq!(corpus.canonical_text(), input);
+    }
+
+    #[test]
+    fn rejects_unsupported_reference_revision() {
+        let input = SAMPLE.replacen("factorium-reference-v0", "factorium-reference-v2", 1);
+        assert!(ReferenceCorpus::parse(&input)
+            .unwrap_err()
+            .contains("expected `factorium-reference-v0` or `factorium-reference-v1`"));
     }
 
     #[test]

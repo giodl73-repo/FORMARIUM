@@ -148,18 +148,18 @@ Canonicalize an admitted CRLF transport or verify exact canonical output:
 cargo run --quiet -- canonicalize fixtures\schemas\navigation.factor
 ```
 
-Validate the canonical Factorium reference metadata, linked Markdown, and
+Validate the current V1 Factorium reference metadata, linked Markdown, and
 generated projections:
 
 ```powershell
-cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
+cargo run --quiet -- reference-check reference\factorium-reference-v1.factorium .
 ```
 
-Validate the bounded typed-relation and digest-bound review-coverage
-sidecars without changing V0:
+Validate the unchanged bounded V0 relation sidecar and complete V1
+digest-bound review coverage:
 
 ```powershell
-cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
+cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v1.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v1.factorium .
 ```
 
 See [Factorium Reference Sidecars V0 Prototype](specs/FACTORIUM-REFERENCE-SIDECARS.md).
@@ -341,7 +341,7 @@ After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 
 ```powershell
-cargo run --quiet -- reference-sync reference\factorium-reference-v0.factorium .
+cargo run --quiet -- reference-sync reference\factorium-reference-v1.factorium .
 ```
 
 See [Factorium Reference Interchange V0](specs/FACTORIUM-REFERENCE-INTERCHANGE.md).
@@ -426,8 +426,8 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
-cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
-cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
+cargo run --quiet -- reference-check reference\factorium-reference-v1.factorium .
+cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v1.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v1.factorium .
 cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
 cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
@@ -566,6 +566,17 @@ python artifacts\factor-v1\verify_packet.py artifacts\factor-v1
 python C:\src\tracker\repos\standards-protocols\roles\tools\check_roles.py .
 git diff --check
 ```
+
+Render and validate the current V1 internal book/search/site projection:
+
+```powershell
+.\tools\render_proof_set.ps1 -Edition sim-49
+node tools\check_gpc09_v1_reader_integration.js
+node tools\check_gpc09_v1_reader_integration_browser.js
+```
+
+`sim-49` exposes the GPC-09 meaning, epistemic-standing, and evidence-custody
+records. It is an internal simulation, not reader evidence or `preview-01`.
 
 ## License
 

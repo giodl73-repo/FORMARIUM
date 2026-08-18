@@ -2,6 +2,10 @@
 
 Status: candidate
 
+The current ID-preserving successor is defined in
+[`FACTORIUM-REFERENCE-V1-MIGRATION.md`](FACTORIUM-REFERENCE-V1-MIGRATION.md).
+This document remains the frozen V0 grammar and compatibility contract.
+
 ## Purpose
 
 This specification defines the smallest canonical machine-readable owner for

@@ -3406,3 +3406,12 @@ the unchanged relation sidecar, V0-bound Composition Queries, and historical
 `sim-48`. The website remains a projection over Tables and Book selections.
 Stop after deterministic mechanics and coverage; claim no reader evidence or
 community endorsement. See `GPC-09-V1-READER-INTEGRATION-PLAN.md`.
+
+Result review: V1 now contains 54 entries, 419 senses, 638 factors, and 97
+views with 162 complete assurance bindings and the unchanged eleven V0
+relations. Live catalogs and `sim-49` expose the exact three-record batch in a
+178-record Book, 188-record search index, nineteen chapters, and 245 pages
+with zero missing targets. Eight roles approve after three implementation
+repairs. Preserve V0 and `sim-48`; adopt V1 and `sim-49` as the current
+internal projection and claim no reader evidence or community endorsement.
+See `GPC-09-V1-READER-INTEGRATION-RESULT.md`.

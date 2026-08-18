@@ -168,7 +168,7 @@ fn run_reference_sidecar_check(arguments: &mut impl Iterator<Item = String>) -> 
         .map_err(|error| format!("{assurance_path}: {error}"))?;
 
     corpus
-        .validate_projections(root.as_ref())
+        .validate_workspace(root.as_ref())
         .map_err(|error| format!("{reference_path}: {error}"))?;
     relations
         .validate_workspace(&corpus, root.as_ref())

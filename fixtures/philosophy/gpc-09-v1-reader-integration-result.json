@@ -1,0 +1,41 @@
+{
+  "campaign_id": "GPC-09-V1-INTEGRATION-01",
+  "revision": 1,
+  "status": "complete-internal-v1-integration",
+  "completed_on": "2026-08-18",
+  "interchange": {
+    "reference_path": "reference/factorium-reference-v1.factorium",
+    "reference_sha256": "8bafa4fc965257742d2c1aa753e9bb1c84ca9453486df64d4b5ff5a7fedc21fb",
+    "assurance_path": "reference/factorium-assurance-v1.factorium",
+    "assurance_sha256": "c902820800f6ea08817ae1b83eec5360e559a359c8ccfdee0796e39c56b48ae2",
+    "entries": 54,
+    "senses": 419,
+    "factors": 638,
+    "views": 97,
+    "assurance_bindings": 162,
+    "relation_revision": "factorium-relations-v0",
+    "relations": 11
+  },
+  "preserved_baseline": {
+    "reference_v0_sha256": "489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324",
+    "assurance_v0_sha256": "d66f47d24e58f79f2672733c8b06b96d93b09f58318c523abdb3df68e1e787a7",
+    "relations_v0_sha256": "df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634",
+    "sim_48_supplement_sha256": "18f8f728be4e9b65444272c31423fde74ba8ba4404838acd5758c85ae1a9bb2a"
+  },
+  "live_projection": {
+    "edition": "sim-49",
+    "book_records": 178,
+    "tasks": 56,
+    "search_records": 188,
+    "site_pages": 245,
+    "chapter_pages": 19,
+    "missing_targets": 0,
+    "default_reader_profile": "book",
+    "standalone_html_sha256": "198524f1180682d8c2fb27f003af40105437db8b9ac8761ae556ac2b4cbacf36",
+    "site_identity": "bb4320ac9499b784b4eb87743f88190e3f79cbd7a09b477513315de482351367"
+  },
+  "role_review": "signals/roles/check/gpc-09-v1-reader-integration-roles-check-2026-08-18.md",
+  "reader_evidence_claimed": false,
+  "community_endorsement_claimed": false,
+  "portfolio_decision": "adopt-v1-and-sim-49-as-current-internal-projection-preserve-v0-and-sim-48"
+}

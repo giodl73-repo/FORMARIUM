@@ -3,7 +3,7 @@
 Status: generated-core navigation
 
 Canonical anchor and specialized-view metadata is owned by
-`reference/factorium-reference-v0.factorium` and published through the
+`reference/factorium-reference-v1.factorium` and published through the
 [generated catalog](CATALOG.md). The
 [generated unresolved-candidate report](UNRESOLVED.md) exposes graph debt.
 Neither generated file should be edited by hand.

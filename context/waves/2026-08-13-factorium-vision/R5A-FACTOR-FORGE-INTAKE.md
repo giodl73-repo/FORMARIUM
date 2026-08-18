@@ -1163,3 +1163,13 @@ edition, and search surfaces do not yet expose these records. This is a
 deliberate custody boundary, not a claim that reader-facing integration is
 complete. Internal review establishes structure and source discipline only,
 not reader value, community endorsement, truth, or global completeness.
+
+## GPC-09 V1 reader integration
+
+The separate product investment is complete. A true V1 interchange now owns
+54 entries, 419 senses, 638 factors, and 97 views; its assurance sidecar has
+162 bindings and reuses the unchanged eleven V0 relations. Live catalogs and
+the `sim-49` Book/search/site projection expose exactly the admitted anchor
+and two views. The product decision is to adopt V1 and `sim-49` internally,
+preserve V0 and `sim-48` as compatibility baselines, and stop. This proves
+deterministic integration and route coverage, not external reader value.

@@ -30,6 +30,15 @@ evidence and one tested Factorium domain.
 Current pulses: **08A - Factor Forge intake fixed point** and
 **08P - Proof Set internal fixed point**
 
+The current machine-readable owner is
+`reference/factorium-reference-v1.factorium`: 54 entries, 419 senses, 638
+factors, and 97 views. It adds the reviewed GPC-09 meaning anchor and two
+Claim-and-Evidence views to the ID-preserving V0 corpus. The eleven-record V0
+relation sidecar is unchanged; `reference/factorium-assurance-v1.factorium`
+provides 162 exact review bindings. `sim-49` is the current internal
+book/search/site projection. V0 bytes, V0-bound Composition Queries, and clean
+`sim-48` remain historical baselines; no reader evidence is claimed.
+
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
 Guides, a 75-125-entry usability prototype, the approximately 250-entry first
@@ -1189,8 +1198,8 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
-cargo run --quiet -- reference-check reference\factorium-reference-v0.factorium .
-cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v0.factorium .
+cargo run --quiet -- reference-check reference\factorium-reference-v1.factorium .
+cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v1.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v1.factorium .
 node tools\check_reference_closure_coverage.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_constraint_feasibility_relation.js
