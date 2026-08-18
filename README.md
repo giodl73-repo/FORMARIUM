@@ -405,6 +405,22 @@ python verify_packet.py .
 
 See [independent packet onboarding](docs/ONBOARDING.md).
 
+## Portfolio reuse posture
+
+Factorium is intentionally a specialist reference publication, not currently a
+shared portfolio dependency. The `factorium-reference-v0` interchange is the
+repository's candidate internal canonical owner, and the unpublished Rust
+tooling validates that owner; neither is an ecosystem or cross-repository API.
+The self-contained portable packets are verification evidence, not reusable
+runtime libraries.
+
+Other repositories may cite published Factorium entries with provenance, but
+should not copy entries, identifiers, schemas, maturity labels, or generated
+catalogs as locally owned contracts. Revisit direct reuse only after the
+interchange is promoted from candidate status, a versioned distribution is
+published, and a downstream manifest plus compatibility proof records a real
+consumer.
+
 ## Research
 
 - [Prior art and benchmark custody](docs/research/2026-08-13-prior-art-and-benchmark-custody.md)
