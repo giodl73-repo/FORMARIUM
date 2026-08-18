@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -80,6 +80,8 @@ $twoBookSiteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\p
 $intentRouterStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-intent-router.css"
 $handoffStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-handoff.css"
 $handoffScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-handoff.js"
+$dualLookupStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-dual-lookup.css"
+$dualLookupScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-dual-lookup.js"
 $tableNavigatorStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-navigator.css"
 $tableFamilyContentsStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-table-family-contents.css"
 $tablesIndexStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-tables-index.css"
@@ -167,6 +169,7 @@ $artifactTitle = switch ($Edition) {
     "sim-42" { "Factorium Query-Led Limiting Condition Simulation 42" }
     "sim-43" { "Factorium Task-Shaped Intent Router Simulation 43" }
     "sim-44" { "Factorium Ephemeral Handoff Note Simulation 44" }
+    "sim-45" { "Factorium Dual Literal Lookup Simulation 45" }
 }
 
 function ConvertTo-Sim23CompositionAsset {
@@ -1758,6 +1761,9 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 44) {
         $siteCssParts += (Get-Content -LiteralPath $handoffStyle -Raw)
     }
+    if ($editionNumber -ge 45) {
+        $siteCssParts += (Get-Content -LiteralPath $dualLookupStyle -Raw)
+    }
     if ($editionNumber -ge 32) {
         $siteCssParts += (Get-Content -LiteralPath $tableNavigatorStyle -Raw)
     }
@@ -1810,6 +1816,13 @@ if ($editionNumber -ge 7) {
         [System.IO.File]::WriteAllText(
             (Join-Path $siteAssetDirectory "handoff.js"),
             (Get-Content -LiteralPath $handoffScript -Raw),
+            [System.Text.UTF8Encoding]::new($false)
+        )
+    }
+    if ($editionNumber -ge 45) {
+        [System.IO.File]::WriteAllText(
+            (Join-Path $siteAssetDirectory "dual-lookup.js"),
+            (Get-Content -LiteralPath $dualLookupScript -Raw),
             [System.Text.UTF8Encoding]::new($false)
         )
     }
@@ -2876,6 +2889,32 @@ if ($editionNumber -ge 7) {
     if ($editionNumber -ge 43) {
         $heroDeck = "Bring a term, a question, or simple curiosity. Choose the route that matches your task; every path stays connected to the same canonical Tables."
     }
+    $dualLookupSection = ""
+    $dualLookupScriptTag = ""
+    if ($editionNumber -ge 45) {
+        $dualLookupSection = @'
+<section id="compare-searches" class="dual-lookup" aria-labelledby="dual-lookup-heading">
+<p class="site-kicker">Two literal routes · no semantic merge</p>
+<h2 id="dual-lookup-heading">Compare two ways of searching</h2>
+<p class="dual-lookup__boundary">Try two independent phrasings when one lookup finds only part of the question. Factorium preserves both rankings and compares exact Table-family identities; it does not split the question, choose concepts, infer relations, or compute closure.</p>
+<form id="dual-lookup-form">
+<div class="dual-lookup__queries">
+<label for="dual-lookup-query-one">Literal search 1<input id="dual-lookup-query-one" type="search" autocomplete="off" maxlength="180" required></label>
+<label for="dual-lookup-query-two">Literal search 2<input id="dual-lookup-query-two" type="search" autocomplete="off" maxlength="180" required></label>
+</div>
+<div class="dual-lookup__actions"><button type="submit">Compare literal results</button><button id="dual-lookup-clear" type="button">Clear</button></div>
+</form>
+<p id="dual-lookup-status" class="dual-lookup__status" role="status" aria-live="polite">Enter two literal searches to compare their independent Table-family results.</p>
+<div class="dual-lookup__panels">
+<section class="dual-lookup__panel" aria-labelledby="dual-lookup-one-heading"><h3 id="dual-lookup-one-heading">Literal search 1 ranking</h3><ol id="dual-lookup-results-one"></ol></section>
+<section class="dual-lookup__panel" aria-labelledby="dual-lookup-two-heading"><h3 id="dual-lookup-two-heading">Literal search 2 ranking</h3><ol id="dual-lookup-results-two"></ol></section>
+</div>
+<section class="dual-lookup__comparison" aria-labelledby="dual-lookup-comparison-heading"><h3 id="dual-lookup-comparison-heading">Family identity comparison · not a merged ranking</h3><ul id="dual-lookup-comparison"></ul></section>
+<noscript><p>Dual lookup needs JavaScript. Ordinary Search and every Table destination remain available.</p></noscript>
+</section>
+'@
+        $dualLookupScriptTag = '<script src="assets/dual-lookup.js"></script>'
+    }
     $homeStartNav = if ($editionNumber -ge 43) { '<a href="#choose">Choose</a>' } else { '<a href="#start">Start</a>' }
     $nestedStartNav = if ($editionNumber -ge 43) { '<a href="../index.html#choose">Choose</a>' } else { '<a href="../index.html#start">Start</a>' }
     $quickstartPage = "entries/$($pageBySource[$quickstart])"
@@ -2909,7 +2948,7 @@ if ($editionNumber -ge 7) {
 <p>Follow the method once, then search directly or enter any chapter.</p>
 <ol class="site-journey">$firstJourneyItems</ol>
 </section>
-<div id="search">$homeSearchShell</div>
+<div id="search">$homeSearchShell</div>$dualLookupSection
 <section id="contents" class="site-contents">
 <h2>$(if ($editionNumber -ge 36) { 'All contents and applications' } elseif ($editionNumber -ge 35) { 'Book contents and guided use' } elseif ($editionNumber -ge 31) { 'Browse the Tables' } else { 'Browse the book' })</h2>
 <p class="site-contents__intro">$(if ($editionNumber -ge 36) { "$($siteChapters.Count) parts organize all $($searchRecords.Count) indexed destinations. Use the Tables Index for canonical headwords or the Reader for its selected 24-record teaching route." } elseif ($editionNumber -ge 35) { "$($siteChapters.Count) parts retain the ordered Reader and guided-use route across $($searchRecords.Count) indexed destinations. Use the Tables Index for alphabetical headword browse." } elseif ($editionNumber -ge 31) { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination has a dedicated lookup page; record-kind labels keep canonical Tables distinct from Guides." } else { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page." })</p>
@@ -2919,6 +2958,7 @@ if ($editionNumber -ge 7) {
 <footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01</footer>
 <script src="assets/site-data.js"></script>
 <script src="assets/search.js"></script>
+$dualLookupScriptTag
 </body>
 </html>
 "@
@@ -3997,6 +4037,9 @@ $pageScripts
     if ($editionNumber -ge 44) {
         $expectedAssetNames += "handoff.js"
     }
+    if ($editionNumber -ge 45) {
+        $expectedAssetNames += "dual-lookup.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -4153,6 +4196,24 @@ $pageScripts
         $siteChecks.handoff_note_network = "none"
         $siteChecks.handoff_note_verification = "none"
         $siteChecks.handoff_note_authority_change = $false
+    }
+    if ($editionNumber -ge 45) {
+        $dualLookupHtml = Get-Content -LiteralPath $siteIndex -Raw
+        if (@([regex]::Matches($dualLookupHtml, 'id="compare-searches"')).Count -ne 1 -or
+            @([regex]::Matches($dualLookupHtml, 'id="dual-lookup-query-(one|two)"')).Count -ne 2 -or
+            @([regex]::Matches($dualLookupHtml, 'id="dual-lookup-results-(one|two)"')).Count -ne 2) {
+            throw "Dual literal lookup shell mismatch"
+        }
+        $siteChecks.dual_lookup_pages = 1
+        $siteChecks.dual_lookup_query_panels = 2
+        $siteChecks.dual_lookup_family_limit_per_query = 10
+        $siteChecks.dual_lookup_rankings = "independent-existing-order"
+        $siteChecks.dual_lookup_comparison = "canonical-family-identity-only"
+        $siteChecks.dual_lookup_merged_ranking = $false
+        $siteChecks.dual_lookup_semantic_decomposition = $false
+        $siteChecks.dual_lookup_storage = "none"
+        $siteChecks.dual_lookup_network = "none"
+        $siteChecks.dual_lookup_authority_change = $false
     }
     if ($editionNumber -ge 32) {
         $expectedTableNavigatorPages = @($searchRecords | Where-Object { $_.path.StartsWith("tables/") }).Count

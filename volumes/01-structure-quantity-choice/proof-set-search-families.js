@@ -225,6 +225,7 @@
     groupRecords: groupRecords
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
+  if (root) root.FactoriumSearchFamilies = api;
   if (root && root.document && root.FACTORIUM_SEARCH_INDEX) {
     initialize(root.FACTORIUM_SEARCH_INDEX, root.document, root.location, root.history);
   }

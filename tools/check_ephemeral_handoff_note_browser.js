@@ -9,7 +9,7 @@ const { spawn } = require("node:child_process");
 const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-44");
 const screenshotPath = path.resolve(process.argv[3] || "target/sim44-handoff-note.png");
 const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"));
-assert.equal(manifest.edition, "sim-44");
+assert.ok(["sim-44", "sim-45"].includes(manifest.edition));
 const edgePath = [process.env.EDGE_PATH, "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", "C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe"].filter(Boolean).find((candidate) => fs.existsSync(candidate));
 assert.ok(edgePath, "Microsoft Edge executable not found");
 const port = 9990 + (process.pid % 30);
@@ -37,6 +37,6 @@ async function evaluate(client, expression) { const response = await client.call
     const scroll = await evaluate(client, `(() => { const section=document.querySelector('[data-factorium-handoff]'); section.scrollIntoView({block:'start'}); return { pageTop:visualViewport.pageTop, top:section.getBoundingClientRect().top }; })()`);
     assert.ok(scroll.pageTop > 0, JSON.stringify(scroll)); assert.ok(scroll.top < 80, JSON.stringify(scroll)); await delay(100);
     const shot = await client.call("Page.captureScreenshot", { format: "png", captureBeyondViewport: true, clip: { x:0, y:scroll.pageTop, width:390, height:1200, scale:1 } }); fs.writeFileSync(screenshotPath, Buffer.from(shot.data, "base64")); assert.ok(fs.statSync(screenshotPath).size > 10000);
-    console.log(`OK edition=sim-44 handoff=1 fields=3 actions=3 clear=pass mobile-overflow=false screenshot=${screenshotPath}`);
+    console.log(`OK edition=${manifest.edition} handoff=1 fields=3 actions=3 clear=pass mobile-overflow=false screenshot=${screenshotPath}`);
   } finally { if (client) client.close(); browser.kill(); }
 })().catch((error) => { browser.kill(); console.error(error.stack || error.message); process.exitCode = 1; });

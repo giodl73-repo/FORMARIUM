@@ -6,7 +6,7 @@ const path = require("node:path");
 
 const root = path.resolve(process.argv[2] || "target/proof-set-sim-44");
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
-assert.equal(manifest.edition, "sim-44");
+assert.ok(["sim-44", "sim-45"].includes(manifest.edition));
 assert.equal(manifest.site_checks.handoff_note_pages, 239);
 assert.deepEqual(manifest.site_checks.handoff_note_fields, ["question", "current-page", "unresolved", "next-source"]);
 assert.deepEqual(manifest.site_checks.handoff_note_actions, ["copy", "print", "clear"]);
@@ -29,4 +29,4 @@ const script = fs.readFileSync(path.join(root, "assets", "handoff.js"), "utf8");
 for (const prohibited of ["localStorage", "sessionStorage", "fetch(", "XMLHttpRequest", "document.cookie"]) assert.ok(!script.includes(prohibited));
 assert.match(script, /User-entered, unverified, and not stored by Factorium/);
 
-console.log("OK edition=sim-44 handoff-pages=239 fields=4 actions=3 storage=none network=none authority=unchanged");
+console.log(`OK edition=${manifest.edition} handoff-pages=239 fields=4 actions=3 storage=none network=none authority=unchanged`);
