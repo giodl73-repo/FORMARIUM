@@ -1,0 +1,89 @@
+{
+  "schema": "factorium.mcc01-curriculum-view-admission.v1",
+  "status": "admitted-markdown-before-successor-interchange",
+  "generated": "2026-08-18",
+  "baseline": {
+    "source_commit": "3429a549a7fcd1daddad74241aefc949671b438f",
+    "reference_v1_sha256": "8bafa4fc965257742d2c1aa753e9bb1c84ca9453486df64d4b5ff5a7fedc21fb",
+    "assurance_v1_sha256": "c902820800f6ea08817ae1b83eec5360e559a359c8ccfdee0796e39c56b48ae2",
+    "relations_v0_sha256": "df69b50054258c34a3289ce8cae66ea41d68efd5b8dcdd8e66128f2111f52634",
+    "design_path": "specs/MCC-01-CURRICULUM-VIEW-DESIGN.md",
+    "design_sha256": "19b0409f053a0d776488e72b45e8a340da079b8b0d99a24e7aad4f3853211f5f"
+  },
+  "inventory": {
+    "before": {
+      "entries": 54,
+      "views": 97
+    },
+    "after_markdown": {
+      "entries": 54,
+      "views": 99
+    },
+    "delta": {
+      "entries": 0,
+      "anchors": 0,
+      "senses": 0,
+      "views": 2,
+      "relations": 0,
+      "discovery_repairs": 0
+    }
+  },
+  "records": [
+    {
+      "id": "mapping-optimization-problem-structure",
+      "kind": "mapping",
+      "owner_entry_id": "choice-alternative-selection",
+      "sense_ids": [
+        "choice",
+        "alternative",
+        "decision-criterion",
+        "trade-off",
+        "recommendation",
+        "selection"
+      ],
+      "title": "Optimization Problem Structure Mapping",
+      "path": "tables/mappings/optimization-problem-structure.md",
+      "purpose": "Maps application questions through variables, data, objectives, constraints, feasibility, optimality support, sensitivity, and a loss-aware decision handoff without making solver output an authorized choice.",
+      "source_sha256": "9610188879bc97bedbb6cc985c9fac1303c6bd0c138f4d7dc77343368553ceb1",
+      "review_path": "signals/roles/check/mcc-01-curriculum-view-admission-roles-check-2026-08-18.md",
+      "review_status": "fixed-point",
+      "review_date": "2026-08-18"
+    },
+    {
+      "id": "procedure-prototype-test-iteration",
+      "kind": "procedure",
+      "owner_entry_id": "requirement-specification-verification-validation",
+      "sense_ids": [
+        "stakeholder-need",
+        "requirement",
+        "specification",
+        "verification",
+        "validation",
+        "nonconformity"
+      ],
+      "title": "Prototype, Test, and Iteration Procedure",
+      "path": "tables/procedures/prototype-test-iteration.md",
+      "purpose": "Connects a learning question, prototype identity and fidelity, users/tasks/context, evaluation, evidence custody, finding, change, rerun, and stop without treating rehearsal as reader evidence or production readiness.",
+      "source_sha256": "bf15fdcc0abb981cf3816e7953d92d16de427c782cb4949240265ca14bd5f780",
+      "review_path": "signals/roles/check/mcc-01-curriculum-view-admission-roles-check-2026-08-18.md",
+      "review_status": "fixed-point",
+      "review_date": "2026-08-18"
+    }
+  ],
+  "custody": {
+    "admission_review_bindings": 2,
+    "formal_interchange_assurance": "deferred until a supported successor reference includes both view records",
+    "frozen_reference_v1_changed": false,
+    "frozen_assurance_v1_changed": false,
+    "frozen_relations_v0_changed": false
+  },
+  "exposure": {
+    "generated_catalog": false,
+    "book": false,
+    "search": false,
+    "sim49": false,
+    "reason": "All are generated from frozen V1; successor integration is a separate product batch."
+  },
+  "decision": "admit exactly two current Markdown views and stop",
+  "claims_boundary": "Content admission and owner compatibility only; no reader evidence, improved decision outcome, usability gain, curriculum consensus, professional guidance, or release claim."
+}

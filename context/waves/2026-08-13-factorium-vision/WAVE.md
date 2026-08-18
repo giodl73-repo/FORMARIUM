@@ -3489,3 +3489,19 @@ fixtures. No Table, sense, relation, software surface, or reader claim is
 admitted yet. See `specs/MCC-01-CURRICULUM-VIEW-DESIGN.md`,
 `MUNDUS-CURRICULUM-CLOSURE-01-DESIGN-RESULT.md`, and
 `signals/roles/check/mcc-01-curriculum-view-design-roles-check-2026-08-18.md`.
+
+Admission review: admit exactly two current Markdown views and stop.
+Optimization Problem Structure maps application questions through variables,
+objectives, constraints, feasibility, optimality support, sensitivity, and a
+loss-aware decision handoff under Choice. Prototype/Test/Iteration connects a
+learning question, artifact identity/fidelity, users/tasks/context, method,
+evidence custody, finding, change, rerun, and stop under Requirement/
+Verification/Validation. Current inventory becomes 54 entries and 99 views,
+an exact delta of 0 entries, 0 anchors, 0 senses, 2 views, 0 relations, and 0
+discovery repairs. Nine roles approve with zero P1/P2 finding. Frozen V1,
+assurance V1, relations V0, generated catalogs, and `sim-49` remain unchanged;
+formal assurance and reader-surface exposure require a supported successor
+interchange. Claim no reader value, curriculum consensus, decision improvement,
+usability gain, guidance, or release evidence. See
+`MUNDUS-CURRICULUM-CLOSURE-01-ADMISSION-RESULT.md` and
+`signals/roles/check/mcc-01-curriculum-view-admission-roles-check-2026-08-18.md`.
