@@ -3198,3 +3198,25 @@ GPC-09 freezes the complete cross-campaign inventory before one-pass global
 reconciliation and must retain conflict, unmapped, rejected, and deferred
 records. Six roles approve with no P1/P2 finding. See
 `GLOBAL-PHILOSOPHY-FACTORING-ALIGNMENT-AMENDMENT-ROLE-REVIEW.md`.
+
+## 2026-08-17 GPC-02 South Asian and Buddhist comparison plan
+
+GPC-02 freezes 18 disputed position-spaces across South Asian and
+transregional Buddhist traditions. A standard source review precedes any
+factoring; every packet must preserve its local pivot, factors, dependencies,
+constraints, alternatives, exclusions, source terms, and translation loss
+before a typed candidate mapping is appended. The campaign changes no Table,
+book, relation, UI, or reader-evidence gate. See
+`GLOBAL-PHILOSOPHY-GPC-02-PLAN.md`.
+
+Result review: all 18 packets, 18 immutable factorings, and 18 typed candidate
+alignments are complete against 20 established sources. Seven gap families
+survive, including a candidate practice/cultivation/liberation family, but no
+cross-lane admission gate is satisfied and no content is admitted. Dalit,
+anti-caste, feminist, vernacular, material-practice, living-community, and
+primary-language omissions remain explicit scope debt. Nine roles approve
+with no P1/P2 finding. The focused checker passes with custody hashes intact.
+JSON parsing, formatting, clippy with warnings denied, and all 70 Rust tests
+also pass. Retain GPC-02 and proceed only to GPC-03; claim neither global
+completeness nor reader evidence. See
+`GLOBAL-PHILOSOPHY-GPC-02-RESULT.md`.

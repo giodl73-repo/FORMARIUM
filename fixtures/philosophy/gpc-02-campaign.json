@@ -1,0 +1,41 @@
+{
+  "campaign_id": "GPC-02",
+  "revision": 1,
+  "status": "frozen-before-source-review",
+  "frozen_on": "2026-08-17",
+  "parent": "GPC-01 revision 2",
+  "purpose": "Test South Asian and transregional Buddhist philosophical structures against current Factorium owners while preserving every source-local factoring for GPC-09.",
+  "packet_slots": [
+    {"id":"SA-01","lane":"south-asian","position":"Upaniṣadic debates about self, ultimate reality, knowledge, and liberation"},
+    {"id":"SA-02","lane":"south-asian","position":"Advaita and rival Vedānta analyses of self, reality, difference, and liberation"},
+    {"id":"SA-03","lane":"south-asian","position":"Sāṃkhya-Yoga analyses of consciousness, nature, causation, discipline, and discernment"},
+    {"id":"SA-04","lane":"south-asian","position":"Nyāya analyses of knowledge sources, inference, testimony, debate, and error"},
+    {"id":"SA-05","lane":"south-asian","position":"Mīmāṃsā analyses of language, testimony, action, duty, and interpretation"},
+    {"id":"SA-06","lane":"south-asian","position":"Jaina analyses of nonviolence, many-sidedness, standpoint, substance, change, and liberation"},
+    {"id":"SA-07","lane":"south-asian","position":"Cārvāka and related naturalist or materialist limits on knowledge, self, and afterlife"},
+    {"id":"SA-08","lane":"south-asian","position":"Sikh analyses of selfhood, ego, truthful living, service, justice, and liberation"},
+    {"id":"BU-01","lane":"buddhist-transregional","position":"Early Buddhist analyses of suffering, craving, impermanence, no-self, and dependent arising"},
+    {"id":"BU-02","lane":"buddhist-transregional","position":"Abhidharma analyses of events, aggregates, causal conditions, mind, and person-construction"},
+    {"id":"BU-03","lane":"buddhist-transregional","position":"Madhyamaka analyses of emptiness, intrinsic nature, dependence, and two truths"},
+    {"id":"BU-04","lane":"buddhist-transregional","position":"Yogācāra analyses of consciousness, three natures, representation, and transformation"},
+    {"id":"BU-05","lane":"buddhist-transregional","position":"Dignāga-Dharmakīrti analyses of perception, inference, exclusion, and reliable cognition"},
+    {"id":"BU-06","lane":"buddhist-transregional","position":"Tibetan scholastic analyses of debate, path, conventional truth, and competing Madhyamaka interpretations"},
+    {"id":"BU-07","lane":"buddhist-transregional","position":"Chinese Tiantai and Huayan analyses of interdependence, part-whole relation, and multiple truths"},
+    {"id":"BU-08","lane":"buddhist-transregional","position":"Chan and Zen analyses of practice, language, direct experience, and awakening"},
+    {"id":"BU-09","lane":"buddhist-transregional","position":"Pure Land analyses of faith, practice, other-power, aspiration, and liberation"},
+    {"id":"BU-10","lane":"buddhist-transregional","position":"Theravāda and Southeast Asian analyses of mind, ethics, insight, and liberation"}
+  ],
+  "selection_rules": [
+    "A slot is a disputed position-space, not a claim that its label names one uniform school.",
+    "Each slot requires at least one established specialist source and visible internal or external alternatives.",
+    "Primary-text language and established translations are retained when available; English glosses remain working mappings.",
+    "A slot may split before execution when source review shows that its present scope would erase a governing distinction.",
+    "No slot may be dropped solely because it yields no mapping or conflicts with another slot."
+  ],
+  "required_record_contract": "fixtures/philosophy/global-philosophy-counter-sample-blueprint-01.json#factorization_record_contract",
+  "required_alignment_contract": "fixtures/philosophy/global-philosophy-counter-sample-blueprint-01.json#alignment_ledger_contract",
+  "content_admission_allowed": false,
+  "reader_evidence_claimed": false,
+  "completeness_claimed": false,
+  "stop": "Complete the frozen slots once, retain splits and nulls, and hand only source-local records plus typed alignment candidates to later boundary design and GPC-09."
+}

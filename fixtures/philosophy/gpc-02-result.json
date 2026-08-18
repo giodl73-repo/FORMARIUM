@@ -1,0 +1,95 @@
+{
+  "campaign_id": "GPC-02",
+  "revision": 1,
+  "status": "complete-bounded-counter-sample",
+  "completed_on": "2026-08-17",
+  "inputs": {
+    "campaign_sha256": "936E035FC569BF8CEAB37FC6083EC6B4A6ED2263AC1B89961D7E6DFA5C03B6F9",
+    "inventory_sha256": "723934A7B1AF04CF080C5A4AC6181282DE354F43F0F7430147BDB8688C68F3D2",
+    "alignment_ledger_sha256": "C3136C015942C773A8AE5CE513E91CA78218DB9E3469A562CEE9FA3951A30B49"
+  },
+  "counts": {
+    "frozen_packet_slots": 18,
+    "completed_packets": 18,
+    "source_local_factorings": 18,
+    "lane_local_alignment_candidates": 18,
+    "specialist_and_method_sources": 20,
+    "content_entries_admitted": 0
+  },
+  "gap_dispositions": [
+    {
+      "gap_family": "epistemic-standing-and-knowledge-source",
+      "status": "confirmed-and-structured",
+      "supporting_packets": ["SA-04","SA-05","SA-07","BU-05","BU-06"],
+      "decision": "Carry perception, inference, testimony, exclusion, reliability, error, and debate as rival source-local structures to GPC-09; do not yet create one evidence owner.",
+      "reason": "The recurrence is strong inside GPC-02, but the admission rule still requires independent lanes and an owner-boundary review."
+    },
+    {
+      "gap_family": "person-self-agency-and-process",
+      "status": "confirmed-with-conflict",
+      "supporting_packets": ["SA-01","SA-02","SA-03","SA-08","BU-01","BU-02","BU-09"],
+      "decision": "Preserve witness, agent, embodied person, no-self process, ego-orientation, and other-power as incompatible factorings; elaborate Agency only after global reconciliation.",
+      "reason": "The English labels overlap while the pivots and ownership assumptions conflict."
+    },
+    {
+      "gap_family": "normative-practical-and-liberative-organization",
+      "status": "confirmed-and-expanded",
+      "supporting_packets": ["SA-01","SA-05","SA-06","SA-08","BU-01","BU-08","BU-09","BU-10"],
+      "decision": "Add practice/cultivation/liberation as a candidate cross-cutting family for later lanes, separate from obligation/compliance and choice.",
+      "reason": "Disciplined practice is often constitutive of knowledge and transformation, not merely an implementation step after a proposition or choice."
+    },
+    {
+      "gap_family": "mind-experience-and-representation",
+      "status": "confirmed",
+      "supporting_packets": ["SA-03","BU-02","BU-04","BU-05","BU-08","BU-10"],
+      "decision": "Carry cognition type, consciousness stream, construction, attention, and transformation separately from software-style model representation.",
+      "reason": "Current representation owners preserve only partial structure and introduce invalid computational implications."
+    },
+    {
+      "gap_family": "meaning-interpretation-and-reference",
+      "status": "confirmed",
+      "supporting_packets": ["SA-04","SA-05","BU-05","BU-06","BU-08"],
+      "decision": "Carry speaker intention, sentence force, secondary meaning, exclusion, convention, and practice-conditioned language to later comparison.",
+      "reason": "No present owner covers the linked semantic and epistemic disputes."
+    },
+    {
+      "gap_family": "dependence-intrinsic-nature-and-part-whole",
+      "status": "confirmed-with-owner-conflict",
+      "supporting_packets": ["SA-03","SA-06","BU-02","BU-03","BU-04","BU-07"],
+      "decision": "Retain dependency, standpoint, absence of intrinsic nature, contextual identity, and interpenetration as typed but non-equivalent structures.",
+      "reason": "Factorium needs stable handles while several sources explicitly deny that stability implies self-sufficient essence."
+    },
+    {
+      "gap_family": "social-political-and-experiential-exclusion",
+      "status": "under-sampled-scope-debt",
+      "supporting_packets": ["SA-05","SA-06","SA-08"],
+      "decision": "Do not treat this lane as adequate social or political coverage; preserve Dalit, feminist, vernacular, material-practice, and living-community omissions as required future counter-samples.",
+      "reason": "The contrary literature shows that a scholastic school sample can reproduce exclusion while appearing culturally broad."
+    }
+  ],
+  "portfolio_decision": "retain-and-proceed-to-gpc-03",
+  "portfolio_reason": "GPC-02 produces preserved structural counterexamples and strengthens seven gap families without satisfying cross-lane content admission. The next value-bearing step is the independently sourced Chinese, Korean, and Japanese comparison, not a content batch.",
+  "product_value": {
+    "reader": "A curious reader or editor comparing concepts whose familiar English labels hide different governing structures.",
+    "job": "Distinguish whether two treatments of self, knowledge, practice, dependence, or liberation are equivalent, overlapping, analogous, or conflicting before using them together.",
+    "current_friction": "The current Tables expose useful general owners but do not yet show why the same gloss can carry incompatible pivots, dependencies, and stopping aims.",
+    "smallest_future_product_change": "After cross-lane recurrence and GPC-09, add only the owner elaborations or scoped comparison views that reduce this ambiguity; GPC-02 itself changes no reader surface.",
+    "evidence_now": "Specialist-source review, complete packet custody, schema validation, and typed internal mapping can establish structural pressure and traceability.",
+    "evidence_later": "External readers are still required to establish findability, comprehension, comparison value, or return use.",
+    "cost_and_displacement": "Eighteen immutable records and alignment candidates add editorial custody cost; a premature content batch would also add navigation and owner-migration cost, so it is deferred.",
+    "continue_merge_stop": "Continue to GPC-03; merge no source records; stop GPC-02 content and product work."
+  },
+  "scope_debt": [
+    "Dalit and anti-caste philosophy",
+    "women and feminist South Asian philosophy",
+    "vernacular and devotional philosophical work",
+    "material, institutional, ritual, and lived Buddhist practice",
+    "additional Southeast Asian and living-community perspectives",
+    "primary-language verification beyond specialist English-language surveys"
+  ],
+  "content_admitted": false,
+  "factorium_owner_changed": false,
+  "reader_evidence_claimed": false,
+  "global_completeness_claimed": false,
+  "stop": "Freeze GPC-02 custody and execute GPC-03. Do not align globally, edit local records, or create canonical entries before the remaining lanes and GPC-09."
+}
