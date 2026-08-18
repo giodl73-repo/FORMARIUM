@@ -1,0 +1,24 @@
+{
+  "schema": "formography-comparison-result-v0",
+  "case_id": "access-authorization",
+  "feature_count": 10,
+  "retention": {
+    "concept_map": 4,
+    "scoped_property_graph": 10,
+    "formograph": 10
+  },
+  "native_required": {
+    "concept_map": 3,
+    "scoped_property_graph": 1,
+    "formograph": 10
+  },
+  "structured_failure": {
+    "fixture": "access-authorization-formograph-invalid-v0.json",
+    "code": "FG-PROJECTION-LOSS-MISSING",
+    "path": "projections[0].omitted"
+  },
+  "deleted_claim": "Formography is a distinct graph representation required to encode the proposed information.",
+  "surviving_claim": "Formography may be a governed, representation-compatible method profile whose contribution is required source, boundary, relation, alternative, unresolved-state, and projection-loss custody.",
+  "verdict": "SURVIVES_AS_GOVERNED_METHOD_PROFILE_NOT_DISTINCT_GRAPH_REPRESENTATION",
+  "scope_limit": "One governance-domain case; no field, cross-domain, independent-coding, or reader-value claim."
+}

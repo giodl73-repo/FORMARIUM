@@ -1,0 +1,142 @@
+{
+  "schema": "formograph-v0",
+  "id": "formograph:access-authorization-v0",
+  "frame": {
+    "question": "Which factors and distinctions make an access authorization decision reconstructable?",
+    "purpose": "compare representational retention and method custody",
+    "perspective": "Factorium candidate reference",
+    "context": "access authorization editorial analysis",
+    "scale": "one canonical entry plus one constraint view",
+    "version": "v0"
+  },
+  "form": {
+    "id": "access-authorization",
+    "owner": "entry:access-permission-authorization-entitlement",
+    "maturity": "candidate",
+    "authority_change": false
+  },
+  "factorizations": [
+    {
+      "id": "primary",
+      "status": "primary",
+      "factors": [
+        "subject-identity-authentication-evidence-and-session",
+        "resource-identity-boundary-owner-and-classification",
+        "operation-parameters-effect-and-purpose",
+        "permission-relation-and-entitlement-source",
+        "policy-authority-precedence-and-version",
+        "environmental-attributes-time-location-device-and-risk",
+        "decision-reason-obligations-and-unresolved-facts",
+        "enforcement-failure-revocation-and-propagation",
+        "event-provenance-review-and-privacy"
+      ],
+      "source_status": "canonical-entry-factorization"
+    },
+    {
+      "id": "minimal-authorization-tuple",
+      "status": "alternative",
+      "factors": ["subject", "action", "object"],
+      "use_when": "explaining the irreducible request shape",
+      "losses": ["policy", "context", "evidence", "enforcement assumptions"]
+    },
+    {
+      "id": "attribute-policy-evaluation",
+      "status": "alternative",
+      "factors": ["subject attributes", "object attributes", "action", "environment", "policy set"],
+      "use_when": "describing attribute-oriented policy engines",
+      "losses": ["stable identity", "relationship semantics"]
+    },
+    {
+      "id": "continuous-risk",
+      "status": "alternative",
+      "factors": ["identity", "device", "workload", "resource", "session risk", "policy", "enforcement"],
+      "use_when": "describing adaptive access",
+      "losses": ["model neutrality if treated as universal"]
+    }
+  ],
+  "relations": [
+    {
+      "kind": "CONTEXTUALIZED-BY",
+      "source": "decision-reason-obligations-and-unresolved-facts",
+      "target": "environmental-attributes-time-location-device-and-risk",
+      "scope": "authorization-decision",
+      "qualifiers": {"freshness": "required", "missing": "indeterminate-not-allow"},
+      "authority": "constraint:AA-04",
+      "evidence": "tables/constraints/access-authorization-integrity.md"
+    },
+    {
+      "kind": "DERIVED-FROM",
+      "source": "decision-reason-obligations-and-unresolved-facts",
+      "target": "policy-authority-precedence-and-version",
+      "scope": "authorization-decision",
+      "qualifiers": {"version": "exact", "precedence": "retained"},
+      "authority": "constraint:AA-02",
+      "evidence": "tables/constraints/access-authorization-integrity.md"
+    },
+    {
+      "kind": "APPLIED-THROUGH",
+      "source": "decision-reason-obligations-and-unresolved-facts",
+      "target": "enforcement-failure-revocation-and-propagation",
+      "scope": "decision-enforcement",
+      "qualifiers": {"correlation": "required", "mismatch": "invalid"},
+      "authority": "constraint:AA-05",
+      "evidence": "tables/constraints/access-authorization-integrity.md"
+    }
+  ],
+  "source_custody": [
+    {
+      "artifact": "entry:access-permission-authorization-entitlement",
+      "path": "tables/entries/access-permission-authorization-entitlement.md",
+      "sha256": "f5cb6f5e41d7fa9a7cf850d46a3a56b74aceeda7b5029a0043f5cd8448362741",
+      "review_path": "context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-16"
+    },
+    {
+      "artifact": "view:constraint-access-authorization-integrity",
+      "path": "tables/constraints/access-authorization-integrity.md",
+      "sha256": "fb1d0a2462e73319dc02c25f6675d43c88794d643482373833c1eab6082b9214",
+      "review_path": "context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-16"
+    }
+  ],
+  "boundary": {
+    "included": ["canonical entry", "constraint view", "three alternative lenses"],
+    "excluded": ["system certification", "access grant", "universal access-control model", "implementation-specific policy language"],
+    "stopping_condition": "one canonical entry and its admitted integrity view",
+    "domain_authority_retained": true
+  },
+  "projections": [
+    {
+      "id": "reader-comparison",
+      "selected": ["focus question", "primary factors", "three critical relations", "alternative lenses"],
+      "omitted": ["full source prose", "all failure signs", "domain-specific implementations"],
+      "loss_note": "The projection cannot establish implementation conformance or authorize access.",
+      "authority_preserved": true
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "no-new-canonical-joins",
+      "status": "explicit-none-admitted",
+      "note": "Comparator terms remain research labels unless separately reviewed."
+    }
+  ],
+  "representation": {
+    "property_graph_compatible": true,
+    "novel_encoding_claimed": false
+  },
+  "retained_features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations",
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ]
+}

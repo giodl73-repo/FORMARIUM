@@ -52,6 +52,30 @@ is not frozen and remains open to later reviewed additions. V0, V1, V0-bound
 Composition Queries, `sim-48`, and `sim-49` remain historical baselines; no
 reader evidence is claimed.
 
+Formography is now an active proposed-field research track, not a product
+rename. Its initial foundation module records a confirmed 2021 STS cognate,
+strong concept-map, faceted-classification, Topic Maps, strategic-formalism,
+and knowledge-graph precedents, and a
+`PROCEED_WITH_TARGETED_NARROWING` verdict. The working method centers
+source-custodied, context-bounded forms, alternative factorization, typed
+relations, and loss-declared projections. Novelty, field establishment,
+Factorium renaming, and Formarium promotion remain unauthorized. The next gate
+is one frozen comparative encoding packet. See
+`docs/research/formography/formography-foundation-research-module-v0.md` and
+`context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-FOUNDATION-RESULT.md`.
+Within the proposed publication architecture, Formarium is the curated
+collection and Structure Atlas is a loss-declared reader projection across
+selected formographs; neither defines the field.
+
+Comparative slice 01 encodes Access Authorization as a concept map, scoped
+property graph, and candidate formograph. The property graph retains all ten
+predeclared features, deleting any distinct-graph-representation claim.
+Formography currently survives only as a candidate governed method profile
+whose source, relation, boundary, unresolved-state, and projection-loss
+requirements fail closed. Two cross-domain cases and independent coding remain
+open. See
+`context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-COMPARATIVE-SLICE-01-RESULT.md`.
+
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
 Guides, a 75-125-entry usability prototype, the approximately 250-entry first

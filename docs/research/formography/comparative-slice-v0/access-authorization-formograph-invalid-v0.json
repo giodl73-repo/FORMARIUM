@@ -1,0 +1,81 @@
+{
+  "schema": "formograph-v0",
+  "id": "formograph:access-authorization-invalid-v0",
+  "frame": {
+    "question": "Which factors and distinctions make an access authorization decision reconstructable?",
+    "purpose": "prove structured failure",
+    "perspective": "Factorium candidate reference",
+    "context": "access authorization editorial analysis",
+    "scale": "one canonical entry plus one constraint view",
+    "version": "v0"
+  },
+  "form": {
+    "id": "access-authorization",
+    "owner": "entry:access-permission-authorization-entitlement",
+    "maturity": "candidate",
+    "authority_change": false
+  },
+  "factorizations": [
+    {
+      "id": "primary",
+      "status": "primary",
+      "factors": [
+        "subject-identity-authentication-evidence-and-session",
+        "resource-identity-boundary-owner-and-classification"
+      ],
+      "source_status": "truncated-test-fixture"
+    },
+    {
+      "id": "minimal",
+      "status": "alternative",
+      "factors": ["subject", "action", "object"],
+      "use_when": "compact explanation",
+      "losses": ["policy and context"]
+    }
+  ],
+  "relations": [
+    {
+      "kind": "CONTEXTUALIZED-BY",
+      "source": "decision",
+      "target": "context",
+      "scope": "authorization-decision",
+      "qualifiers": {"freshness": "required"},
+      "authority": "constraint:AA-04",
+      "evidence": "tables/constraints/access-authorization-integrity.md"
+    }
+  ],
+  "source_custody": [
+    {
+      "artifact": "entry:access-permission-authorization-entitlement",
+      "path": "tables/entries/access-permission-authorization-entitlement.md",
+      "sha256": "f5cb6f5e41d7fa9a7cf850d46a3a56b74aceeda7b5029a0043f5cd8448362741",
+      "review_path": "context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-16"
+    }
+  ],
+  "boundary": {
+    "included": ["test projection"],
+    "excluded": ["canonical mutation"],
+    "stopping_condition": "structured failure fixture",
+    "domain_authority_retained": true
+  },
+  "projections": [
+    {
+      "id": "reader-comparison",
+      "selected": ["focus question", "primary factors"],
+      "authority_preserved": true
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "test-only",
+      "status": "explicit",
+      "note": "This fixture must fail."
+    }
+  ],
+  "expected_failure": {
+    "code": "FG-PROJECTION-LOSS-MISSING",
+    "path": "projections[0].omitted"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "formography-concept-map-comparator-v0",
+  "case_id": "access-authorization",
+  "focus_question": "Which factors and distinctions make an access authorization decision reconstructable?",
+  "concepts": [
+    {"id": "request", "label": "access authorization request", "level": 0},
+    {"id": "subject", "label": "subject identity and authentication evidence", "level": 1},
+    {"id": "resource", "label": "resource identity and boundary", "level": 1},
+    {"id": "operation", "label": "operation and purpose", "level": 1},
+    {"id": "permission", "label": "permission and entitlement", "level": 1},
+    {"id": "policy", "label": "policy authority and version", "level": 1},
+    {"id": "context", "label": "environment and risk", "level": 1},
+    {"id": "decision", "label": "decision, reason, and obligations", "level": 1},
+    {"id": "enforcement", "label": "enforcement and revocation", "level": 1},
+    {"id": "evidence", "label": "event, review, and privacy evidence", "level": 1},
+    {"id": "minimal", "label": "minimal subject-action-object view", "level": 2},
+    {"id": "attribute", "label": "attribute-policy view", "level": 2},
+    {"id": "zero-trust", "label": "continuous risk view", "level": 2}
+  ],
+  "propositions": [
+    {"from": "request", "linking_words": "is factored into", "to": "subject"},
+    {"from": "request", "linking_words": "is factored into", "to": "resource"},
+    {"from": "request", "linking_words": "is factored into", "to": "operation"},
+    {"from": "request", "linking_words": "is factored into", "to": "permission"},
+    {"from": "request", "linking_words": "is factored into", "to": "policy"},
+    {"from": "request", "linking_words": "is contextualized by", "to": "context"},
+    {"from": "request", "linking_words": "is evaluated into", "to": "decision"},
+    {"from": "decision", "linking_words": "is applied through", "to": "enforcement"},
+    {"from": "decision", "linking_words": "is reviewed through", "to": "evidence"},
+    {"from": "request", "linking_words": "has alternative view", "to": "minimal"},
+    {"from": "request", "linking_words": "has alternative view", "to": "attribute"},
+    {"from": "request", "linking_words": "has alternative view", "to": "zero-trust"}
+  ],
+  "source_links": [
+    "tables/entries/access-permission-authorization-entitlement.md",
+    "tables/constraints/access-authorization-integrity.md"
+  ],
+  "retained_features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations"
+  ],
+  "declared_omissions": [
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ]
+}

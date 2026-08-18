@@ -1,0 +1,51 @@
+{
+  "schema": "formography-comparison-contract-v0",
+  "case_id": "access-authorization",
+  "question": "What does a formograph retain beyond a concept map and a generic scoped property graph?",
+  "features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations",
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ],
+  "profiles": {
+    "concept_map": {
+      "native_requirements": [
+        "question_frame",
+        "primary_factorization",
+        "typed_relations"
+      ]
+    },
+    "scoped_property_graph": {
+      "native_requirements": [
+        "typed_relations"
+      ]
+    },
+    "formograph": {
+      "native_requirements": [
+        "question_frame",
+        "primary_factorization",
+        "alternative_factorizations",
+        "typed_relations",
+        "scoped_relation_qualifiers",
+        "source_digest_custody",
+        "review_binding",
+        "explicit_boundary",
+        "projection_loss",
+        "unresolved_state"
+      ]
+    }
+  },
+  "decision_rule": {
+    "pivot": "The formograph retains no information beyond the generic graph and imposes no consequential conformance requirement.",
+    "survive_narrowed": "The graph can represent the information, but the formograph makes consequential custody and loss invariants required and fail closed.",
+    "survive_strong": "The formograph retains consequential information that the generic graph cannot represent without changing its model."
+  },
+  "deletion_gate": "Delete the claim that Formography is a distinct graph representation if the scoped property graph retains every predeclared feature."
+}

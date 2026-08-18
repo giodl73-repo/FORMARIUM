@@ -1,0 +1,53 @@
+{
+  "schema": "formography-frozen-source-v0",
+  "case_id": "access-authorization",
+  "authority": {
+    "reference": "reference/factorium-reference-v2.factorium",
+    "entry_id": "access-permission-authorization-entitlement",
+    "entry_source": "tables/entries/access-permission-authorization-entitlement.md",
+    "entry_sha256": "f5cb6f5e41d7fa9a7cf850d46a3a56b74aceeda7b5029a0043f5cd8448362741",
+    "view_id": "constraint-access-authorization-integrity",
+    "view_source": "tables/constraints/access-authorization-integrity.md",
+    "view_sha256": "fb1d0a2462e73319dc02c25f6675d43c88794d643482373833c1eab6082b9214",
+    "assurance": "reference/factorium-assurance-v2.factorium",
+    "review_path": "context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md",
+    "review_state": "fixed-point",
+    "review_date": "2026-08-16"
+  },
+  "entry": {
+    "senses": [
+      "access",
+      "permission",
+      "authorization-decision",
+      "entitlement",
+      "access-control"
+    ],
+    "factors": [
+      "subject-identity-authentication-evidence-and-session",
+      "resource-identity-boundary-owner-and-classification",
+      "operation-parameters-effect-and-purpose",
+      "permission-relation-and-entitlement-source",
+      "policy-authority-precedence-and-version",
+      "environmental-attributes-time-location-device-and-risk",
+      "decision-reason-obligations-and-unresolved-facts",
+      "enforcement-failure-revocation-and-propagation",
+      "event-provenance-review-and-privacy"
+    ]
+  },
+  "constraint_ids": [
+    "AA-01",
+    "AA-02",
+    "AA-03",
+    "AA-04",
+    "AA-05",
+    "AA-06",
+    "AA-07",
+    "AA-08"
+  ],
+  "source_boundary": {
+    "maturity": "candidate",
+    "domain_authority_retained": true,
+    "does_not_authorize_access": true,
+    "does_not_certify_a_system": true
+  }
+}

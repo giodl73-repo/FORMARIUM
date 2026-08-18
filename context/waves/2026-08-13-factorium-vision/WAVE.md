@@ -3853,3 +3853,45 @@ is mechanics evidence only and not R5 completion. See
 `POINTER-ENTRY-EXPANSION-12-RESULT.md`,
 `POINTER-ENTRY-CONCORDANCE-CLOSEOUT.md`, and
 `signals/roles/check/pointer-entry-expansion-12-roles-check-2026-08-18.md`.
+
+## 2026-08-18 Formography foundation research
+
+Plan review: test Formography as a proposed field using a falsifiable,
+owner-first FACES module rather than rename Factorium. Preserve Factorium's
+existing semantics and publication authority. Require exact-term research,
+methodological comparators, disproof conditions, role review, and explicit
+novelty and rename gates. See `FORMOGRAPHY-FOUNDATION-PLAN.md`.
+
+Result review: the initial source-reviewed module receives
+`PROCEED_WITH_TARGETED_NARROWING`. A 2021 TU Dresden STS workshop confirms an
+exact cognate use of `formography`, so lexical novelty is contradicted and
+direct acknowledgment is mandatory. Concept maps, Ranganathan's faceted
+classification, ISO Topic Maps, Caroline Levine's strategic formalism,
+knowledge graphs, and ontology engineering own major components. No reviewed
+source has yet been shown to own the complete candidate contract of
+source-custodied, context-bounded forms, alternative factorization, typed
+relations, and loss-declared projections. No field, novelty, product rename,
+or Formarium promotion claim is authorized. The next gate is a frozen
+concept-map versus graph/Topic Map versus formograph comparison. See
+`FORMOGRAPHY-FOUNDATION-PLAN-ROLE-REVIEW.md` and
+`FORMOGRAPHY-FOUNDATION-RESULT.md`.
+
+## 2026-08-18 Formography comparative slice 01
+
+Plan review: freeze the candidate Access Authorization entry and constraint
+view, retain their digest-bound authority, and encode the same ten predeclared
+features as a concept map, generic scoped property graph, and formograph. Add
+one invalid formograph that omits projection loss. See
+`FORMOGRAPHY-COMPARATIVE-SLICE-01-PLAN.md`.
+
+Result review: the concept map retains 4/10 features, while both the scoped
+property graph and formograph retain 10/10. This disproves any distinct graph
+representation claim. The formograph differs by requiring all ten features and
+rejecting missing projection omissions with
+`FG-PROJECTION-LOSS-MISSING`; the generic graph requires only typed edges.
+Formography therefore survives this case only as a candidate governed,
+representation-compatible method profile. No field, rename, Formarium,
+Structure Atlas, reader-value, or canonical interchange claim follows. Two
+cross-domain cases and independent coding remain required. See
+`FORMOGRAPHY-COMPARATIVE-SLICE-01-ROLE-REVIEW.md` and
+`FORMOGRAPHY-COMPARATIVE-SLICE-01-RESULT.md`.
