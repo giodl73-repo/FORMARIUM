@@ -3434,3 +3434,18 @@ and R5C-01-21 independently expose one repeated manual boundary among income,
 consumption, saving, investment, and wealth. Admit research only: test a
 no-new-sense Stock/Flow specialized view before any anchor. No canonical or
 reader surface changes yet. See `R5-CROSS-DOMAIN-COVERAGE-01-BASELINE.md`.
+
+## 2026-08-18 MUNDUS curriculum closure campaign 01
+
+Plan review: use MUNDUS as the discovery bridge and FONTES as the detailed
+course source owner. Freeze a 338-surface breadth census before Factorium
+comparison: 54 individual course records and 284 homepage-metadata surfaces,
+with 338 unique canonical URLs across 92 source files. The subsequent depth
+portfolio will select 48 courses across eight lanes and apply an explicit
+evidence ladder, proper-noun boundary, and cap of one anchor, two views, zero
+relations, and one discovery repair. Nine roles approve the source census
+after closing custody ambiguity, metadata inflation, grouped-record double
+counting, and premature economic admission. No course selection, concept
+candidate, Table change, curriculum consensus, reader evidence, or product
+value claim is admitted yet. See `MUNDUS-CURRICULUM-CLOSURE-01-PLAN.md` and
+`MUNDUS-CURRICULUM-CLOSURE-01-PLAN-ROLE-REVIEW.md`.
