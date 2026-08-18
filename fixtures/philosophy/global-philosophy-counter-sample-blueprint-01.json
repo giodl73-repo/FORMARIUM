@@ -1,7 +1,7 @@
 {
   "campaign_id": "GPC-01",
-  "revision": 1,
-  "status": "frozen-before-source-search",
+  "revision": 2,
+  "status": "amended-before-lane-execution",
   "frozen_on": "2026-08-17",
   "purpose": "Expand PFC-01 with staged regional and transregional counter-samples without treating cultures, nations, religions, schools, or famous people as Factorium concepts.",
   "scope_boundary": "A broad sampling program, not all philosophy, a world canon, a ranking, or a claim that any lane is internally uniform.",
@@ -33,6 +33,7 @@
     "governing_question",
     "reusable_concepts",
     "decisive_distinctions",
+    "source_local_factorings",
     "practice_or_argument_context",
     "translation_terms_and_losses",
     "internal_disagreement",
@@ -40,6 +41,51 @@
     "coverage",
     "boundary_or_loss"
   ],
+  "factorization_record_contract": {
+    "required_fields": [
+      "factoring_id",
+      "source_packet_id",
+      "source_anchors",
+      "governing_sense_or_question",
+      "pivot",
+      "factors",
+      "dependencies",
+      "constraints",
+      "alternative_factorings",
+      "excluded_combinations",
+      "interpretive_status"
+    ],
+    "factor_fields": ["local_id","source_term","transliteration","working_gloss","role","variation","source_support"],
+    "raw_records_are_immutable": true,
+    "superseded_records_remain_addressable": true,
+    "rule": "Record every source-supported factoring encountered, including incompatible alternatives and null mappings; do not rewrite a source-local factoring to fit Factorium or another lane."
+  },
+  "alignment_ledger_contract": {
+    "required_fields": [
+      "alignment_id",
+      "source_factoring_ids",
+      "mapping_direction",
+      "relation_kind",
+      "shared_structure",
+      "preserved_structure",
+      "lost_structure",
+      "conflicts",
+      "candidate_factorium_owner",
+      "review_status"
+    ],
+    "relation_kinds": ["exact","structural-overlap","analogy","broader","narrower","conflict","unmapped"],
+    "append_only": true,
+    "may_not_mutate_source_local_factorings": true,
+    "same_gloss_is_not_alignment": true
+  },
+  "global_reconciliation": {
+    "campaign": "GPC-09",
+    "precondition": "Freeze the complete ordered inventory and digests of every source-local factoring from PFC-01 and GPC-02 through GPC-08 before proposing alignments.",
+    "one_pass_inputs": ["source-local factoring inventory","translation-loss records","existing Factorium owner versions","lane-local dispositions"],
+    "required_outputs": ["alignment groups","conflict groups","unmapped factorings","owner candidates","scoped-view candidates","deferred and rejected mappings","complete source-to-output ledger"],
+    "custody_rule": "Reconciliation can add alignment records and dispositions but cannot edit, delete, or silently merge source-local factorings.",
+    "no_forced_alignment": true
+  },
   "sampling_axes": ["historical period","genre or practice","school or lineage","language and translation","social location","governing question"],
   "admission_rules": {
     "cross_tradition_gap": "A structure recurs in at least three independently sourced tradition packets across at least two lanes, lacks an adequate owner, and survives source, taxonomy, mapping, and product review.",
@@ -57,7 +103,7 @@
     "GPC-06 African comparison",
     "GPC-07 Latin American and Caribbean comparison",
     "GPC-08 Indigenous, Central/Southeast Asian, and Oceanic custody-led comparison",
-    "GPC-09 exact cross-tradition recurrence and Factorium disposition"
+    "GPC-09 one-pass global factoring alignment, conflict retention, recurrence, and Factorium disposition"
   ],
   "reader_evidence_claimed": false,
   "global_completeness_claimed": false,

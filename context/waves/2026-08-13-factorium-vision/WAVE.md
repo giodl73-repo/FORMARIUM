@@ -3189,3 +3189,12 @@ sampling safeguards, not civilizations, coverage percentages, or reader-value
 evidence. Admit no content; execute only the South Asian and transregional
 Buddhist GPC-02 comparison next. See
 `GLOBAL-PHILOSOPHY-COUNTER-SAMPLE-BLUEPRINT-01.md`.
+
+Alignment amendment review: GPC-01 revision 2 now records every
+source-supported factoring with a stable identity, pivot, factors,
+dependencies, constraints, alternatives, exclusions, and source terms. These
+records are immutable inputs to a separate append-only alignment ledger.
+GPC-09 freezes the complete cross-campaign inventory before one-pass global
+reconciliation and must retain conflict, unmapped, rejected, and deferred
+records. Six roles approve with no P1/P2 finding. See
+`GLOBAL-PHILOSOPHY-FACTORING-ALIGNMENT-AMENDMENT-ROLE-REVIEW.md`.
