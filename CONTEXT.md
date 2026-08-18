@@ -1083,6 +1083,17 @@ supplements familiar tools or earns a switch for structure, then stops and
 hands outward. No product repair, edition, external gate, or reader claim is
 admitted.
 
+The authored SUJ-03 UX follow-up at
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-UX-WISHLIST-RESULT.md`
+asks the same 25 proxy assignments twelve experience questions. It admits only
+the cross-campaign three-job router: know the term -> Search, have a question
+-> Compose, and learn or explore -> Reader. `sim-43` renders the router before
+the existing two-book explanation with no search, closure, storage, profile,
+or authority change. All preview, recovery, handoff, delight, accessibility,
+account, history, personalization, automation, and status-search ideas remain
+external-reader questions. The 300 authored fields are not preferences or
+participant evidence.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

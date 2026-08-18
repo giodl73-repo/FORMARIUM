@@ -2797,3 +2797,19 @@ browse. Six roles approve the result with no P1/P2 finding. No content,
 search, UI, navigation, or edition repair is admitted. Trust, memory, fun,
 density, route choice, and inertia classifications remain authored hypotheses,
 not reader evidence. See `SYNTHETIC-ROUTE-CHOICE-INERTIA-RESULT.md`.
+
+## 2026-08-17 synthetic UX wishlist and intent router
+
+SUJ-03 reused the 25 prior proxy assignments for twelve authored UX questions,
+producing 300 hypothesis fields and zero participant responses. The exercise
+surfaces result-preview, explicit Compose onboarding, trust, recovery,
+handoff, exploration, access, rejection, and incumbent-tool questions without
+treating their counts as preferences or demand.
+
+Only the three-job split already supported by SUJ-01 and SUJ-02 is admitted.
+`sim-43` adds a homepage router—know the term, have a question, or learn and
+explore—before the preserved two-book authority explanation. Desktop shows one
+three-card row; the 390 px view stacks without horizontal overflow. Search,
+canonical content, closure, profiles, persistence, and authority are unchanged
+by the router. Six roles approve with no P1/P2 finding. All other ideas remain
+external-reader questions. See `SYNTHETIC-UX-WISHLIST-RESULT.md`.
