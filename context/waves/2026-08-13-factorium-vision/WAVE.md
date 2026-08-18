@@ -3475,3 +3475,17 @@ deduplicating heading evidence, and separating research from admission. Admit
 zero anchors, views, relations, or discovery repairs and claim no curriculum
 consensus or reader evidence. See `MUNDUS-CURRICULUM-CLOSURE-01-BASELINE.md`
 and `signals/roles/check/mundus-curriculum-closure-01-baseline-roles-check-2026-08-18.md`.
+
+Design review: established Stanford optimization sources preserve variables,
+domains, objectives, constraints, feasibility, local/global optimality,
+duality, reformulation, and sensitivity; ISO/NIST/W3C/GOV.UK sources preserve
+users/tasks/context, prototype fidelity, iterative evaluation, usability,
+accessibility, conformance, evidence limits, and production boundaries. Design
+exactly two no-new-anchor views: Optimization Problem Structure under Choice
+and Prototype/Test/Iteration under Requirement/Verification/Validation. Ten
+roles approve after adding enumeration stops, decision and production
+handoffs, optimality support, privacy/accessibility limits, and invalid
+fixtures. No Table, sense, relation, software surface, or reader claim is
+admitted yet. See `specs/MCC-01-CURRICULUM-VIEW-DESIGN.md`,
+`MUNDUS-CURRICULUM-CLOSURE-01-DESIGN-RESULT.md`, and
+`signals/roles/check/mcc-01-curriculum-view-design-roles-check-2026-08-18.md`.
