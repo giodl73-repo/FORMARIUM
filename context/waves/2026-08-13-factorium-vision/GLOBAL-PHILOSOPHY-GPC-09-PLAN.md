@@ -1,7 +1,7 @@
 # GPC-09 One-Pass Global Reconciliation Plan
 
 Date: 2026-08-17
-Status: precondition repair and input freeze in progress
+Status: complete; bounded international campaign closed
 
 Backfill PFC-01's sixteen already-reviewed comparison rows into the immutable
 source-local factoring contract introduced after PFC-01. This is a custody
