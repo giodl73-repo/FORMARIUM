@@ -3176,3 +3176,16 @@ epistemic standing, the normative/practical split, and elaboration of the
 existing `Agency` root. A later counter-sample across excluded women and
 non-Western traditions is required before broader philosophy closure. Claim no
 reader evidence. See `PHILOSOPHER-FACTORIUM-COMPARISON-01-RESULT.md`.
+
+## 2026-08-17 global philosophy counter-sample blueprint
+
+GPC-01 replaces a residual “Eastern” or “all other cultures” list with nine
+staged campaigns over twelve expandable regional and transregional work lanes.
+Eighteen scholarly and research-ethics sources support explicit translation
+loss, internal disagreement, Arabic/Islamic/Persianate and South
+Asian/Buddhist terminology boundaries, and community-specific Indigenous
+custody. Ten roles approve with no P1/P2 finding. Lanes and packet floors are
+sampling safeguards, not civilizations, coverage percentages, or reader-value
+evidence. Admit no content; execute only the South Asian and transregional
+Buddhist GPC-02 comparison next. See
+`GLOBAL-PHILOSOPHY-COUNTER-SAMPLE-BLUEPRINT-01.md`.

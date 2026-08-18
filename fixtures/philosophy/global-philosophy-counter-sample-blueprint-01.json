@@ -1,0 +1,65 @@
+{
+  "campaign_id": "GPC-01",
+  "revision": 1,
+  "status": "frozen-before-source-search",
+  "frozen_on": "2026-08-17",
+  "purpose": "Expand PFC-01 with staged regional and transregional counter-samples without treating cultures, nations, religions, schools, or famous people as Factorium concepts.",
+  "scope_boundary": "A broad sampling program, not all philosophy, a world canon, a ranking, or a claim that any lane is internally uniform.",
+  "terminology_rules": [
+    "Use Arabic-language, Islamic, Persianate, and Arab only when the source scope warrants that distinct label.",
+    "Treat Indian, South Asian, Hindu, Buddhist, Jain, and Sikh traditions as overlapping but non-interchangeable.",
+    "Treat Buddhism as transregional, with Indian, Tibetan, Chinese, Korean, Japanese, Southeast Asian, and contemporary developments retaining location and lineage.",
+    "Do not use Eastern as a residual category for everything outside the PFC-01 Western sample.",
+    "Treat Russian philosophy as a specific historical lane, not as a proxy for Eastern Europe or Eurasia.",
+    "Do not collapse African, Indigenous, Latin American, Caribbean, Central Asian, Southeast Asian, or Oceanic traditions into continental essences."
+  ],
+  "lanes": [
+    {"id":"south-asian","label":"South Asian Brahmanical, Hindu, Jain, Sikh, and materialist traditions","minimum_packets":8},
+    {"id":"buddhist-transregional","label":"Buddhist traditions across South, Central, East, and Southeast Asia","minimum_packets":8},
+    {"id":"chinese","label":"Chinese Confucian, Daoist, Mohist, Legalist, Buddhist, and later traditions","minimum_packets":8},
+    {"id":"korean-japanese","label":"Korean and Japanese Confucian, Buddhist, Shinto-related, and modern traditions","minimum_packets":6},
+    {"id":"arabic-islamic-persianate","label":"Arabic-language, Islamic, and Persianate philosophical traditions","minimum_packets":8},
+    {"id":"jewish","label":"Jewish philosophical traditions across ancient, medieval, and modern settings","minimum_packets":6},
+    {"id":"russian-eastern-european","label":"Russian and separately identified Eastern European traditions","minimum_packets":6},
+    {"id":"african","label":"Regionally and linguistically identified African philosophical traditions","minimum_packets":8},
+    {"id":"latin-american-caribbean","label":"Latin American and Caribbean scholastic, liberation, decolonial, and related traditions","minimum_packets":6},
+    {"id":"indigenous-first-peoples","label":"Region-specific Indigenous and First Peoples philosophical traditions","minimum_packets":6,"custody_gate":"Use community-authorized or established scholarly sources; do not extract restricted, ceremonial, or decontextualized knowledge."},
+    {"id":"central-southeast-asian","label":"Central Asian and Southeast Asian traditions not adequately represented by the Buddhist or Islamic lanes","minimum_packets":6},
+    {"id":"oceanic-pacific","label":"Region-specific Oceanic and Pacific philosophical traditions","minimum_packets":6,"custody_gate":"Prefer community-led and regionally grounded sources."}
+  ],
+  "packet_fields": [
+    "source_custody",
+    "self_identified_tradition_and_context",
+    "governing_question",
+    "reusable_concepts",
+    "decisive_distinctions",
+    "practice_or_argument_context",
+    "translation_terms_and_losses",
+    "internal_disagreement",
+    "existing_factorium_owners",
+    "coverage",
+    "boundary_or_loss"
+  ],
+  "sampling_axes": ["historical period","genre or practice","school or lineage","language and translation","social location","governing question"],
+  "admission_rules": {
+    "cross_tradition_gap": "A structure recurs in at least three independently sourced tradition packets across at least two lanes, lacks an adequate owner, and survives source, taxonomy, mapping, and product review.",
+    "within_tradition_gap": "A structure may remain a scoped candidate view when it is important within one tradition but does not pass the cross-tradition owner test.",
+    "proper_name_or_school": "A person, text, school, nation, religion, or transliterated term is provenance or a scoped route, not a canonical concept solely by fame or recurrence of its label.",
+    "translation": "No English gloss is treated as exact equivalence without direction, context, and loss.",
+    "no_automatic_content": true
+  },
+  "execution_order": [
+    "GPC-01 source and method blueprint",
+    "GPC-02 South Asian and transregional Buddhist comparison",
+    "GPC-03 Chinese, Korean, and Japanese comparison",
+    "GPC-04 Arabic-language, Islamic, Persianate, and Jewish comparison",
+    "GPC-05 Russian and Eastern European comparison",
+    "GPC-06 African comparison",
+    "GPC-07 Latin American and Caribbean comparison",
+    "GPC-08 Indigenous, Central/Southeast Asian, and Oceanic custody-led comparison",
+    "GPC-09 exact cross-tradition recurrence and Factorium disposition"
+  ],
+  "reader_evidence_claimed": false,
+  "global_completeness_claimed": false,
+  "stop": "Complete each lane's frozen packet minimum and retain absences, disputes, and translation losses; add lanes when source review exposes an omitted intellectual region, but never claim exhaustive world coverage."
+}
