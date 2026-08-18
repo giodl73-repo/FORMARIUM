@@ -1,0 +1,49 @@
+{
+  "campaign_id": "LXC-01",
+  "revision": 1,
+  "status": "frozen-before-execution",
+  "frozen_on": "2026-08-17",
+  "evidence_class": "external-lexical-source-audit",
+  "reference": {
+    "path": "reference/factorium-reference-v0.factorium",
+    "sha256": "489c17a656b33582d848fe69a06d954da550a80fd9eec170c0ce8558b79f0324",
+    "entries": 53,
+    "senses": 412
+  },
+  "source": {
+    "name": "Open English WordNet 2025 common words",
+    "release_url": "https://github.com/globalwordnet/english-wordnet/releases",
+    "archive_url": "https://en-word.net/static/english-wordnet-2025-json.zip",
+    "archive_sha256": "7d749f6e2c39e6970e4997839dcf6e42fd281f3c2fae0171d2192bae8cfa4b51",
+    "local_archive": "target/lexical-closure-oewn-2025/english-wordnet-2025-json.zip",
+    "local_data": "target/lexical-closure-oewn-2025/data",
+    "license": "CC BY 4.0",
+    "proper_name_layers_excluded": true
+  },
+  "matching": {
+    "part_of_speech": "noun",
+    "method": "exact-normalized-member-label",
+    "ambiguous_synsets_retained": true,
+    "fuzzy_matching": false
+  },
+  "relations": [
+    "synonym", "hypernym", "hyponym",
+    "mero_member", "holo_member", "mero_part", "holo_part",
+    "mero_substance", "holo_substance"
+  ],
+  "candidate_gate": {
+    "minimum_distinct_factorium_entries": 2,
+    "minimum_distinct_factorium_senses": 3,
+    "requires_no_exact_factorium_sense": true,
+    "recurrence_is_admission": false
+  },
+  "dispositions": [
+    "existing-owner", "sense-candidate", "alias-candidate",
+    "cross-reference-candidate", "view-candidate", "guide-local",
+    "external-taxonomy", "defer", "unresolved-owner-candidate"
+  ],
+  "batch_ceiling": { "anchors": 1, "views": 2 },
+  "automatic_content_changes": false,
+  "reader_evidence_claimed": false
+}
+

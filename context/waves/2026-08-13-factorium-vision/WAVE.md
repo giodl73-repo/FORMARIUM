@@ -3018,3 +3018,13 @@ with no P1/P2 finding. `preview-01` remains absent; no distribution, content,
 feature, schema, new edition, external gate, or reader claim is admitted. Stop
 until a declared reopening trigger or real reader availability. See
 `SIM-46-INTERNAL-FIXED-POINT-REFRESH-RESULT.md`.
+
+## 2026-08-17 lexical closure campaign plan
+
+LXC-01 freezes an all-entry lexical-neighborhood audit against Open English
+WordNet 2025 common words. Exact noun matching, retained ambiguity, explicit
+one-hop relations, and a two-entry/three-sense recurrence gate protect the
+concept boundary. Nine roles approve execution with no P1/P2 finding. The
+campaign may identify candidates for a separately frozen smallest batch, but
+it changes no content, relation, product surface, edition, or reader-evidence
+gate. See `LEXICAL-CLOSURE-CAMPAIGN-01-PLAN.md`.
