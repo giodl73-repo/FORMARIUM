@@ -1,0 +1,563 @@
+{
+  "campaign_id": "THS-01",
+  "plan_revision": 2,
+  "status": "complete",
+  "artifact": {
+    "edition": "sim-47",
+    "site_identity": "179daaec770470fdb657bbadca04d9d96ec932d7c976b33eb941c9f24d48e0cc",
+    "search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186"
+  },
+  "candidate_search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186",
+  "baseline_search_index_sha256": "03d37ea27f06a11d60c7ace38b74114505c076ab9830e7d2bffd680967f13186",
+  "categories": {
+    "alias-route": {
+      "tasks": 5,
+      "passes": 5,
+      "required_passes": 5,
+      "gate_pass": true
+    },
+    "near-neighbor": {
+      "tasks": 5,
+      "passes": 5,
+      "required_passes": 4,
+      "gate_pass": true
+    },
+    "broader-narrower": {
+      "tasks": 5,
+      "passes": 5,
+      "required_passes": 4,
+      "gate_pass": true
+    },
+    "ambiguous-word": {
+      "tasks": 5,
+      "passes": 4,
+      "required_passes": 3,
+      "gate_pass": true
+    }
+  },
+  "destination_gate_pass": true,
+  "ranking_control_pass": true,
+  "hypothesis_verdict": "SURVIVES",
+  "tasks": [
+    {
+      "id": "THS-01-01",
+      "category": "alias-route",
+      "query": "organisation",
+      "intended_families": [
+        "tables/entries/organization-role-authority.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/organization-role-authority.md"
+      ],
+      "intended_hits": [
+        "tables/entries/organization-role-authority.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-02",
+      "category": "alias-route",
+      "query": "frame of reference",
+      "intended_families": [
+        "tables/entries/geometric-reference-structure.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/geometric-reference-structure.md"
+      ],
+      "intended_hits": [
+        "tables/entries/geometric-reference-structure.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-03",
+      "category": "alias-route",
+      "query": "electric power",
+      "intended_families": [
+        "tables/entries/electrical-quantity.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/electrical-quantity.md"
+      ],
+      "intended_hits": [
+        "tables/entries/electrical-quantity.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-04",
+      "category": "alias-route",
+      "query": "field of force",
+      "intended_families": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_hits": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-05",
+      "category": "alias-route",
+      "query": "force field",
+      "intended_families": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_hits": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-06",
+      "category": "near-neighbor",
+      "query": "permission authorization entitlement",
+      "intended_families": [
+        "tables/entries/access-permission-authorization-entitlement.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/primes/subject-object-relationship.md",
+        "tables/primes/authorization-policy.md",
+        "tables/entries/scenario-assumption-condition-case.md"
+      ],
+      "intended_hits": [
+        "tables/entries/access-permission-authorization-entitlement.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-07",
+      "category": "near-neighbor",
+      "query": "temperature heat energy",
+      "intended_families": [
+        "tables/entries/thermal-quantity.md",
+        "tables/entries/work-energy-power.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/thermal-quantity.md",
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/work-energy-power.md",
+        "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+        "tables/entries/quantity-value-unit-conversion.md"
+      ],
+      "intended_hits": [
+        "tables/entries/thermal-quantity.md",
+        "tables/entries/work-energy-power.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-08",
+      "category": "near-neighbor",
+      "query": "mass weight density",
+      "intended_families": [
+        "tables/entries/matter-load-measure.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/matter-load-measure.md",
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/motion-measure.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/geometric-measure.md"
+      ],
+      "intended_hits": [
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-09",
+      "category": "near-neighbor",
+      "query": "mean median quantile",
+      "intended_families": [
+        "tables/entries/statistical-summary-interval.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/statistical-summary-interval.md",
+        "tables/entries/probability-risk-uncertainty.md",
+        "tables/entries/information-data-signal-noise.md",
+        "guides/latency-evidence-composition-worksheet.md",
+        "tables/entries/state-event-transition-process-lifecycle.md"
+      ],
+      "intended_hits": [
+        "tables/entries/statistical-summary-interval.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-10",
+      "category": "near-neighbor",
+      "query": "hazard risk safety",
+      "intended_families": [
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/probability-risk-uncertainty.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/scenario-assumption-condition-case.md",
+        "tables/entries/probability-risk-uncertainty.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "guides/bounded-question-composition-book-one.md"
+      ],
+      "intended_hits": [
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/probability-risk-uncertainty.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-11",
+      "category": "broader-narrower",
+      "query": "chemical substance compound salt",
+      "intended_families": [
+        "tables/entries/chemical-substance-classification.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/chemical-substance-classification.md",
+        "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/thermodynamic-system-state-phase.md",
+        "tables/entries/cost-price-value-return.md"
+      ],
+      "intended_hits": [
+        "tables/entries/chemical-substance-classification.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-12",
+      "category": "broader-narrower",
+      "query": "signal data information",
+      "intended_families": [
+        "tables/entries/information-data-signal-noise.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/information-data-signal-noise.md",
+        "tables/entries/claim-evidence.md",
+        "tables/entries/statistical-summary-interval.md",
+        "tables/entries/probability-risk-uncertainty.md",
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "intended_hits": [
+        "tables/entries/information-data-signal-noise.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-13",
+      "category": "broader-narrower",
+      "query": "organization role authority",
+      "intended_families": [
+        "tables/entries/organization-role-authority.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/factorization-quality.md",
+        "tables/entries/interaction-request-response-correlation.md",
+        "tables/entries/temporal-organization.md",
+        "tables/entries/access-permission-authorization-entitlement.md"
+      ],
+      "intended_hits": [
+        "tables/entries/organization-role-authority.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-14",
+      "category": "broader-narrower",
+      "query": "state event process",
+      "intended_families": [
+        "tables/entries/state-event-transition-process-lifecycle.md"
+      ],
+      "minimum_intended_hits": 1,
+      "visible_families": [
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "tables/entries/thermodynamic-system-state-phase.md",
+        "tables/entries/probability-risk-uncertainty.md",
+        "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "intended_hits": [
+        "tables/entries/state-event-transition-process-lifecycle.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-15",
+      "category": "broader-narrower",
+      "query": "length area volume",
+      "intended_families": [
+        "tables/entries/geometric-measure.md",
+        "tables/entries/geometric-reference-structure.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/geometric-reference-structure.md",
+        "tables/entries/geometric-measure.md",
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_hits": [
+        "tables/entries/geometric-measure.md",
+        "tables/entries/geometric-reference-structure.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-16",
+      "category": "ambiguous-word",
+      "query": "force",
+      "intended_families": [
+        "tables/entries/force.md",
+        "tables/entries/matter-load-measure.md",
+        "tables/entries/organization-role-authority.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/force.md",
+        "tables/primes/enforcement-point.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_hits": [
+        "tables/entries/force.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [
+        "tables/entries/organization-role-authority.md"
+      ],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-17",
+      "category": "ambiguous-word",
+      "query": "power",
+      "intended_families": [
+        "tables/entries/work-energy-power.md",
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/organization-role-authority.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/work-energy-power.md",
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/cost-price-value-return.md"
+      ],
+      "intended_hits": [
+        "tables/entries/work-energy-power.md",
+        "tables/entries/electrical-quantity.md"
+      ],
+      "intended_outside_visible_window": [
+        "tables/entries/organization-role-authority.md"
+      ],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-18",
+      "category": "ambiguous-word",
+      "query": "field",
+      "intended_families": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/matter-load-measure.md",
+        "tables/entries/information-data-signal-noise.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/information-data-signal-noise.md",
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "tables/entries/matter-load-measure.md",
+        "tables/entries/access-permission-authorization-entitlement.md"
+      ],
+      "intended_hits": [
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/matter-load-measure.md",
+        "tables/entries/information-data-signal-noise.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-19",
+      "category": "ambiguous-word",
+      "query": "value",
+      "intended_families": [
+        "tables/entries/cost-price-value-return.md",
+        "tables/entries/software-type-value-function.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/entries/evaluation-measure-scale-criterion.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/cost-price-value-return.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/entries/software-type-value-function.md",
+        "tables/entries/physical-constant.md",
+        "tables/entries/evaluation-measure-scale-criterion.md"
+      ],
+      "intended_hits": [
+        "tables/entries/cost-price-value-return.md",
+        "tables/entries/software-type-value-function.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/entries/evaluation-measure-scale-criterion.md"
+      ],
+      "intended_outside_visible_window": [],
+      "intended_absent_from_ranking": [],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": true,
+      "disposition": "pass"
+    },
+    {
+      "id": "THS-01-20",
+      "category": "ambiguous-word",
+      "query": "scale",
+      "intended_families": [
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/geometric-measure.md",
+        "tables/entries/quantity-value-unit-conversion.md"
+      ],
+      "minimum_intended_hits": 2,
+      "visible_families": [
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/thermal-quantity.md",
+        "tables/entries/factorium-entry-publication.md",
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/temporal-organization.md"
+      ],
+      "intended_hits": [
+        "tables/entries/evaluation-measure-scale-criterion.md"
+      ],
+      "intended_outside_visible_window": [
+        "tables/entries/quantity-value-unit-conversion.md"
+      ],
+      "intended_absent_from_ranking": [
+        "tables/entries/geometric-measure.md"
+      ],
+      "ranking_unchanged": true,
+      "destination_structure": true,
+      "pass": false,
+      "disposition": "mixed-ranking-and-vocabulary-gap"
+    }
+  ],
+  "automatic_repair": false,
+  "reader_evidence_claimed": false
+}

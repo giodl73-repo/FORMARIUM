@@ -3,7 +3,7 @@ skill: discover-hypothesis
 topic: factorium-thesaurus-job
 date: 2026-08-17
 confidence: 65
-verdict: OPEN
+verdict: SURVIVES
 ---
 
 # Factorium Thesaurus-Job Hypothesis
@@ -92,4 +92,16 @@ remain unknown.
 13. A miss does not automatically imply missing content.
 14. A pass does not justify broad synonym expansion.
 15. Null and partial category outcomes remain admissible.
+
+## Result
+
+The hypothesis survives THS-01. All five alias tasks, all five near-neighbor
+tasks, and all five broader/narrower tasks pass. Four of five ambiguous-word
+tasks pass. `scale` is the retained miss: Evaluation Measure is visible,
+Quantity/Value/Unit appears outside the visible window, and Geometric Measure
+does not enter the literal ranking. Complete `sim-46`/`sim-47` rankings remain
+identical and all passing destinations expose authored distinction structure.
+
+This raises confidence in the technical artifact behavior, not in reader
+recognition, preference, comprehension, or comparative product value.
 

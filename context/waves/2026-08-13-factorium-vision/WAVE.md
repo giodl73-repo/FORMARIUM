@@ -3069,3 +3069,13 @@ See `THESAURUS-JOB-TEST-01-PLAN.md`.
 Pre-execution amendment: revision 2 freezes the existing UI's first-20-record
 grouping before the five-family scoring window. Queries, intended owners,
 thresholds, and evidence boundaries are unchanged.
+
+Result review: the bounded thesaurus hypothesis survives. Alias routing,
+near-neighbor distinction, and broader/narrower grouping each pass 5/5;
+ambiguity preservation passes 4/5. All passing destinations expose authored
+contrast or connection structure, and complete `sim-46`/`sim-47` literal
+rankings remain identical. `scale` is the sole retained miss: one intended
+owner is visible, one falls outside the family window, and one is absent from
+literal ranking. Nine roles approve the result with no P1/P2 finding. Retain
+`sim-47`, admit no repair, and claim no reader or competitive evidence. See
+`THESAURUS-JOB-TEST-01-RESULT.md`.
