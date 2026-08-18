@@ -3332,3 +3332,14 @@ after two amendments with no P1/P2 finding. The global checker validates 84
 records with custody intact and zero admission. Retain GPC-08 and proceed to
 GPC-09; claim neither regional completeness nor reader evidence. See
 `GLOBAL-PHILOSOPHY-GPC-08-RESULT.md`.
+
+## 2026-08-17 GPC-09 one-pass global reconciliation
+
+Plan review: repair the one missing precondition by restating PFC-01's sixteen
+already-reviewed rows under the later immutable factoring contract, then
+freeze all 100 PFC-01/GPC-02–08 inputs and their digests before alignment.
+Reconciliation must retain conflicts and unmapped records, may not rewrite
+source-local factorings, and admits nothing on recurrence alone. The smallest
+reader-facing change must expose an existing book/Table owner and the point at
+which translation or structure stops. See
+`GLOBAL-PHILOSOPHY-GPC-09-PLAN.md`.
