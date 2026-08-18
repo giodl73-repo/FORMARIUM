@@ -2874,3 +2874,15 @@ checkout task remains a one-family miss. The admitted batch is limited to two
 literal panels plus an identity-only family comparison; it may not merge rank,
 generate queries, select concepts, infer relations, compute closure, or retain
 state. See `SYNTHETIC-DUAL-LITERAL-LOOKUP-BASELINE.md`.
+
+Implementation and result review: `sim-45` adds two explicit literal Search
+panels with independent rankings and an alphabetic identity-only family
+comparison. The exact browser rerun preserves 9/10 two-family coverage and
+8/10 incremental coverage, reproduces all ten ranking pairs, shows the
+non-merge boundary on all ten tasks, changes no URL or storage state, and has
+zero mobile overflow. The status/checkout task remains a one-family miss.
+
+Seven roles approve with no P1/P2 finding. Alternate phrasing is not semantic
+decomposition; the comparison selects no concept, assigns no relation, computes
+no closure, and changes no authority. Keep `sim-45` internally and stop. See
+`SYNTHETIC-DUAL-LITERAL-LOOKUP-RESULT.md`.

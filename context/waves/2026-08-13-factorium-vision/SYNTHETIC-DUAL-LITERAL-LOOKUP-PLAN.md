@@ -2,7 +2,7 @@
 
 Date: 2026-08-17
 
-Status: baseline complete; candidate admitted; implementation pending
+Status: complete; see `SYNTHETIC-DUAL-LITERAL-LOOKUP-RESULT.md`
 
 Campaign: `SUJ-06`
 

@@ -1112,6 +1112,15 @@ multi-concept assembly surface. No search, content, relation, closure,
 persistence, authority, or edition change is admitted. The null result is
 `context/waves/2026-08-13-factorium-vision/SYNTHETIC-MANUAL-CONCEPT-BASKET-RESULT.md`.
 
+SUJ-06 then tests the strongest already-frozen literal control: both prior
+queries for each question. Their independent union exposes two intended
+families for 9/10 tasks, and query two adds an intended family for 8/10.
+`sim-45` implements two separate literal rankings plus an identity-only family
+comparison with no merged rank, selection, relation, closure, persistence, or
+authority change. The exact status/checkout miss remains. This is mechanical
+dependent evidence, not question decomposition or reader value. See
+`context/waves/2026-08-13-factorium-vision/SYNTHETIC-DUAL-LITERAL-LOOKUP-RESULT.md`.
+
 ## Boundary
 
 Do not infer broad NLP, hardware, compression, or runtime advantage from the

@@ -1,0 +1,1177 @@
+{
+  "artifact": "SUJ-06 exact sim-45 dual literal lookup browser rerun",
+  "campaign_id": "SUJ-06",
+  "evidence_class": "deterministic-dependent-literal-lookup-rehearsal",
+  "custody": {
+    "frozen_commit": "5269f7f",
+    "implementation_commit": "e54a36e",
+    "campaign_sha256": "029173e4a219a9abfebab7dade9140a21413e0f72ca1b8bba50308e66e611f0f",
+    "baseline_sha256": "0a3336397f4d78eaf59c8577a33cdf89dec5c11039bcedaef19a32491b2c4ac2",
+    "build": {
+      "edition": "sim-45",
+      "source_commit": "e54a36e7c119670b279ea48760795f33f4775d63",
+      "site_identity": "e79e341036734b4f808fba9ac840eabed9a6c278c36f3cc05247af4b56553022",
+      "manifest_sha256": "36f614e66f895edd888609609110c4ca5f892886845421e97f993b8978e189a4"
+    }
+  },
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "summary": {
+    "assignments": 10,
+    "union_two_intended": 9,
+    "second_query_adds_intended": 8,
+    "rankings_match_baseline": 10,
+    "boundary_visible": 10,
+    "url_state_unchanged": 10,
+    "storage_empty": 10,
+    "viewport_overflow": 0,
+    "admitted_gates_preserved": true
+  },
+  "traces": [
+    {
+      "assignment_id": "SUJ-06-02",
+      "task_id": "SUJ-02-02",
+      "queries": [
+        "status page green customers cannot checkout",
+        "service says available but does not work for users"
+      ],
+      "query_one_families": [
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "tables/entries/stock-flow-balance.md",
+        "tables/entries/control-monitoring-response.md",
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "guides/alert-feedback-composition-worksheet.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/comparative-quantity.md",
+        "guides/dependency-exclusion-conflict-worksheet.md",
+        "guides/evidence-informed-intervention-choice.md",
+        "tables/entries/motion-measure.md"
+      ],
+      "query_two_families": [
+        "tables/entries/work-energy-power.md",
+        "guides/alert-feedback-composition-worksheet.md",
+        "guides/dependency-exclusion-conflict-worksheet.md",
+        "guides/latency-evidence-composition-worksheet.md",
+        "tables/entries/software-module-service-resource.md",
+        "tables/entries/coordinated-work.md",
+        "guides/delegated-compliance-frontier-worksheet.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "guides/system-dependency-composition-worksheet.md",
+        "tables/entries/decomposition-modes-combination-contracts.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "guides/alert-feedback-composition-worksheet.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/choice-alternative-selection.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/comparative-quantity.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/coordinated-work.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "guides/delegated-compliance-frontier-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/dependency-exclusion-conflict-worksheet.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "guides/evidence-informed-intervention-choice.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "guides/latency-evidence-composition-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/motion-measure.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/control-monitoring-response.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/operational-resource-capacity-demand.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/system-dependency-composition-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/software-module-service-resource.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/state-event-transition-process-lifecycle.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/stock-flow-balance.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/work-energy-power.md",
+          "presence": "Literal search 2"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "intended_family_count": 1,
+      "exposes_two_intended_families": false,
+      "second_query_adds_intended_family": false,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-04",
+      "task_id": "SUJ-02-04",
+      "queries": [
+        "everyone busy project date keeps slipping",
+        "what is holding up project completion"
+      ],
+      "query_one_families": [
+        "tables/entries/model-representation-simulation.md",
+        "tables/entries/assurance-assessment-audit-certification.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/cost-price-value-return.md",
+        "tables/entries/coordinated-work.md",
+        "tables/entries/system-composition-dependency.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/causal-reasoning.md",
+        "tables/entries/claim-evidence.md",
+        "tables/entries/decomposition-modes-combination-contracts.md"
+      ],
+      "query_two_families": [
+        "tables/entries/model-representation-simulation.md",
+        "tables/entries/coordinated-work.md",
+        "tables/entries/software-transaction-message-contract.md",
+        "tables/entries/assurance-assessment-audit-certification.md",
+        "tables/entries/cost-price-value-return.md",
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "guides/delegated-compliance-frontier-worksheet.md",
+        "tables/entries/temporal-organization.md",
+        "tables/entries/governance-obligation-compliance.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "tables/entries/access-permission-authorization-entitlement.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/causal-reasoning.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/assurance-assessment-audit-certification.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/choice-alternative-selection.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/claim-evidence.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/coordinated-work.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/cost-price-value-return.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "guides/delegated-compliance-frontier-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/governance-obligation-compliance.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/temporal-organization.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/model-representation-simulation.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/operational-resource-capacity-demand.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/organization-role-authority.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/software-transaction-message-contract.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/system-composition-dependency.md",
+          "presence": "Literal search 1"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/coordinated-work.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/temporal-organization.md"
+      ],
+      "intended_family_count": 3,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": true,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-09",
+      "task_id": "SUJ-02-09",
+      "queries": [
+        "double mixture cups grams percentages",
+        "scale ingredients mass volume percent"
+      ],
+      "query_one_families": [
+        "tables/entries/chemical-substance-classification.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "guides/aqueous-solution-amount-concentration.md",
+        "guides/alert-feedback-composition-worksheet.md",
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+        "tables/entries/electrical-quantity.md",
+        "tables/entries/measurement-quality.md",
+        "tables/entries/evaluation-measure-scale-criterion.md"
+      ],
+      "query_two_families": [
+        "tables/entries/matter-load-measure.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/thermal-quantity.md",
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/factorium-entry-publication.md",
+        "guides/aqueous-solution-amount-concentration.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/motion-measure.md",
+        "tables/entries/force.md",
+        "tables/entries/quantity-value-unit-conversion.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "guides/alert-feedback-composition-worksheet.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/amount-concentration-composition.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "guides/aqueous-solution-amount-concentration.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/chemical-substance-classification.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/comparative-quantity.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/electrical-quantity.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/measurement-quality.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/factorium-entry-publication.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/force.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/matter-load-measure.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/motion-measure.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/quantity-value-unit-conversion.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/thermal-quantity.md",
+          "presence": "Literal search 2"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/amount-concentration-composition.md",
+        "tables/entries/comparative-quantity.md",
+        "tables/entries/quantity-value-unit-conversion.md",
+        "tables/entries/matter-load-measure.md"
+      ],
+      "intended_family_count": 4,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": true,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-10",
+      "task_id": "SUJ-02-10",
+      "queries": [
+        "data proves conclusion what to inspect",
+        "report observation result conclusion evidence chain"
+      ],
+      "query_one_families": [
+        "tables/entries/information-data-signal-noise.md",
+        "tables/entries/claim-evidence.md",
+        "tables/entries/dependability-reliability-availability-resilience.md",
+        "tables/entries/statistical-summary-interval.md",
+        "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+        "guides/delegated-compliance-frontier-worksheet.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/periodic-wave-quantity.md",
+        "tables/entries/sampling-generalization.md",
+        "tables/entries/stock-flow-balance.md"
+      ],
+      "query_two_families": [
+        "tables/entries/claim-evidence.md",
+        "guides/latency-evidence-composition-worksheet.md",
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/causal-reasoning.md",
+        "tables/entries/requirement-specification-verification-validation.md",
+        "tables/entries/assurance-assessment-audit-certification.md",
+        "guides/evidence-informed-intervention-choice.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/entries/scenario-assumption-condition-case.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "tables/entries/causal-reasoning.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/scenario-assumption-condition-case.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/assurance-assessment-audit-certification.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/claim-evidence.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/delegated-compliance-frontier-worksheet.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "guides/evidence-informed-intervention-choice.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/identity-naming-classification-versioning.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/information-data-signal-noise.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "guides/latency-evidence-composition-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/statistical-summary-interval.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/periodic-wave-quantity.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/sampling-generalization.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/dependability-reliability-availability-resilience.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/requirement-specification-verification-validation.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/stock-flow-balance.md",
+          "presence": "Literal search 1"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/claim-evidence.md",
+        "tables/entries/causal-reasoning.md"
+      ],
+      "intended_family_count": 2,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": true,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-14",
+      "task_id": "SUJ-02-14",
+      "queries": [
+        "document must should may binding",
+        "who issued rule does it apply required conduct"
+      ],
+      "query_one_families": [
+        "guides/dependency-exclusion-conflict-worksheet.md",
+        "tables/entries/thermal-quantity.md",
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/factorium-entry-publication.md",
+        "guides/evidence-informed-intervention-choice.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/composites/access-control-request.md"
+      ],
+      "query_two_families": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/interaction-request-response-correlation.md",
+        "tables/entries/system-composition-dependency.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/matter-load-measure.md",
+        "tables/entries/sampling-generalization.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "tables/composites/access-control-request.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/access-permission-authorization-entitlement.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/choice-alternative-selection.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "guides/dependency-exclusion-conflict-worksheet.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/evidence-informed-intervention-choice.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/factorium-entry-publication.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/governance-obligation-compliance.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/identity-naming-classification-versioning.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/interaction-request-response-correlation.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/matter-load-measure.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/operational-resource-capacity-demand.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/organization-role-authority.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/sampling-generalization.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/system-composition-dependency.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/thermal-quantity.md",
+          "presence": "Literal search 1"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "tables/entries/organization-role-authority.md"
+      ],
+      "intended_family_count": 3,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": true,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-15",
+      "task_id": "SUJ-02-15",
+      "queries": [
+        "dashboard green dot fact judgment label",
+        "what does system status indicator mean"
+      ],
+      "query_one_families": [
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "tables/entries/factorization-quality.md",
+        "tables/entries/factorium-entry-publication.md",
+        "tables/entries/claim-evidence.md",
+        "volumes/01-structure-quantity-choice/BOOK-ONE-SIM-QUICKSTART.md",
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/stock-flow-balance.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/entries/measurement-quality.md",
+        "guides/alert-feedback-composition-worksheet.md"
+      ],
+      "query_two_families": [
+        "guides/alert-feedback-composition-worksheet.md",
+        "tables/entries/system-composition-dependency.md",
+        "tables/entries/statistical-summary-interval.md",
+        "tables/entries/thermodynamic-system-state-phase.md",
+        "tables/entries/geometric-reference-structure.md",
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "tables/entries/control-monitoring-response.md",
+        "tables/entries/stock-flow-balance.md",
+        "guides/system-dependency-composition-worksheet.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "guides/alert-feedback-composition-worksheet.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/claim-evidence.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/measurement-quality.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/factorium-entry-publication.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/factorization-quality.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/geometric-reference-structure.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/hazard-exposure-harm-safety.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/identity-naming-classification-versioning.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/statistical-summary-interval.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/control-monitoring-response.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/system-dependency-composition-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/state-event-transition-process-lifecycle.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/stock-flow-balance.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/system-composition-dependency.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "volumes/01-structure-quantity-choice/BOOK-ONE-SIM-QUICKSTART.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/thermodynamic-system-state-phase.md",
+          "presence": "Literal search 2"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/state-event-transition-process-lifecycle.md",
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "intended_family_count": 2,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": true,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-16",
+      "task_id": "SUJ-02-16",
+      "queries": [
+        "queue growing equipment idle why",
+        "work waiting unused resources what limits flow"
+      ],
+      "query_one_families": [
+        "tables/entries/operational-resource-capacity-demand.md",
+        "guides/aqueous-solution-amount-concentration.md",
+        "tables/entries/information-data-signal-noise.md",
+        "tables/entries/interaction-request-response-correlation.md",
+        "tables/entries/scenario-assumption-condition-case.md",
+        "tables/entries/hazard-exposure-harm-safety.md",
+        "tables/entries/software-transaction-message-contract.md",
+        "tables/entries/stock-flow-balance.md"
+      ],
+      "query_two_families": [
+        "tables/entries/coordinated-work.md",
+        "guides/delegated-compliance-frontier-worksheet.md",
+        "guides/latency-evidence-composition-worksheet.md",
+        "tables/entries/stock-flow-balance.md",
+        "tables/entries/work-energy-power.md",
+        "guides/alert-feedback-composition-worksheet.md",
+        "guides/dependency-exclusion-conflict-worksheet.md",
+        "guides/system-dependency-composition-worksheet.md",
+        "tables/entries/spatial-operating-context.md",
+        "tables/entries/operational-resource-capacity-demand.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "guides/alert-feedback-composition-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/aqueous-solution-amount-concentration.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/scenario-assumption-condition-case.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/coordinated-work.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/delegated-compliance-frontier-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/dependency-exclusion-conflict-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/hazard-exposure-harm-safety.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/information-data-signal-noise.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/interaction-request-response-correlation.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "guides/latency-evidence-composition-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/spatial-operating-context.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/operational-resource-capacity-demand.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "guides/system-dependency-composition-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/software-transaction-message-contract.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/stock-flow-balance.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/work-energy-power.md",
+          "presence": "Literal search 2"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/operational-resource-capacity-demand.md",
+        "tables/entries/coordinated-work.md"
+      ],
+      "intended_family_count": 2,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": true,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-19",
+      "task_id": "SUJ-02-19",
+      "queries": [
+        "committee handed vote to smaller group who may act",
+        "delegated decision who remains accountable"
+      ],
+      "query_one_families": [
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "tables/entries/software-transaction-message-contract.md",
+        "tables/entries/factorization-quality.md",
+        "tables/entries/interaction-request-response-correlation.md",
+        "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+        "tables/entries/factorium-entry-publication.md",
+        "tables/entries/claim-evidence.md",
+        "tables/primes/requested-action.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "volumes/01-structure-quantity-choice/BOOK-ONE-SIM-QUICKSTART.md"
+      ],
+      "query_two_families": [
+        "tables/entries/governance-obligation-compliance.md",
+        "guides/delegated-compliance-frontier-worksheet.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/scenario-assumption-condition-case.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/coordinated-work.md",
+        "tables/entries/cost-price-value-return.md",
+        "tables/entries/system-composition-dependency.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "tables/entries/access-permission-authorization-entitlement.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/scenario-assumption-condition-case.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/chemical-reaction-stoichiometry-equilibrium.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/choice-alternative-selection.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/claim-evidence.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/coordinated-work.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/cost-price-value-return.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "guides/delegated-compliance-frontier-worksheet.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/factorium-entry-publication.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/factorization-quality.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/governance-obligation-compliance.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/interaction-request-response-correlation.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/primes/requested-action.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/software-transaction-message-contract.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/system-composition-dependency.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "volumes/01-structure-quantity-choice/BOOK-ONE-SIM-QUICKSTART.md",
+          "presence": "Literal search 1"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/governance-obligation-compliance.md"
+      ],
+      "intended_family_count": 2,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": true,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-23",
+      "task_id": "SUJ-02-23",
+      "queries": [
+        "logged in but blocked from file",
+        "successful login access denied decision records"
+      ],
+      "query_one_families": [
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "tables/entries/causal-reasoning.md",
+        "tables/entries/software-module-service-resource.md",
+        "tables/entries/factorization-quality.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/cost-price-value-return.md",
+        "tables/entries/factorium-entry-publication.md",
+        "tables/entries/force.md",
+        "tables/entries/geometric-measure.md",
+        "tables/entries/identity-naming-classification-versioning.md"
+      ],
+      "query_two_families": [
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "guides/rust-access-control-evaluation.md",
+        "tables/composites/access-control-request.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/scenario-assumption-condition-case.md",
+        "tables/entries/organization-role-authority.md",
+        "tables/entries/sampling-generalization.md",
+        "tables/entries/software-module-service-resource.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "tables/composites/access-control-request.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/access-permission-authorization-entitlement.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/causal-reasoning.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/scenario-assumption-condition-case.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/choice-alternative-selection.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/cost-price-value-return.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/factorium-entry-publication.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/factorization-quality.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/force.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/geometric-measure.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/identity-naming-classification-versioning.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/organization-role-authority.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/sampling-generalization.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "guides/rust-access-control-evaluation.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/software-module-service-resource.md",
+          "presence": "Both literal searches"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/identity-naming-classification-versioning.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md"
+      ],
+      "intended_family_count": 3,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": true,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    },
+    {
+      "assignment_id": "SUJ-06-25",
+      "task_id": "SUJ-02-25",
+      "queries": [
+        "score above cutoff exception appeal decision",
+        "passed threshold but final decision not made"
+      ],
+      "query_one_families": [
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/scenario-assumption-condition-case.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/access-permission-authorization-entitlement.md",
+        "tables/entries/governance-obligation-compliance.md",
+        "guides/evidence-informed-intervention-choice.md",
+        "tables/entries/requirement-specification-verification-validation.md",
+        "tables/entries/coordinated-work.md",
+        "tables/entries/cost-price-value-return.md"
+      ],
+      "query_two_families": [
+        "tables/entries/choice-alternative-selection.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/decomposition-modes-combination-contracts.md",
+        "tables/entries/causal-reasoning.md",
+        "tables/entries/scenario-assumption-condition-case.md",
+        "tables/entries/interaction-request-response-correlation.md",
+        "tables/entries/cost-price-value-return.md",
+        "tables/entries/factorium-entry-publication.md",
+        "tables/entries/control-monitoring-response.md"
+      ],
+      "comparison_families": [
+        {
+          "key": "tables/entries/access-permission-authorization-entitlement.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/causal-reasoning.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/scenario-assumption-condition-case.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/choice-alternative-selection.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/coordinated-work.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/cost-price-value-return.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/decomposition-modes-combination-contracts.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/evaluation-measure-scale-criterion.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "guides/evidence-informed-intervention-choice.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/factorium-entry-publication.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/governance-obligation-compliance.md",
+          "presence": "Literal search 1"
+        },
+        {
+          "key": "tables/entries/interaction-request-response-correlation.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/control-monitoring-response.md",
+          "presence": "Literal search 2"
+        },
+        {
+          "key": "tables/entries/policy-rule-constraint-decision-exception.md",
+          "presence": "Both literal searches"
+        },
+        {
+          "key": "tables/entries/requirement-specification-verification-validation.md",
+          "presence": "Literal search 1"
+        }
+      ],
+      "intended_families_visible": [
+        "tables/entries/evaluation-measure-scale-criterion.md",
+        "tables/entries/policy-rule-constraint-decision-exception.md",
+        "tables/entries/choice-alternative-selection.md"
+      ],
+      "intended_family_count": 3,
+      "exposes_two_intended_families": true,
+      "second_query_adds_intended_family": false,
+      "rankings_match_baseline": true,
+      "url_state_unchanged": true,
+      "storage_empty": true,
+      "viewport_overflow": false,
+      "boundary_visible": true
+    }
+  ]
+}
