@@ -3415,3 +3415,14 @@ with zero missing targets. Eight roles approve after three implementation
 repairs. Preserve V0 and `sim-48`; adopt V1 and `sim-49` as the current
 internal projection and claim no reader evidence or community endorsement.
 See `GPC-09-V1-READER-INTEGRATION-RESULT.md`.
+
+## 2026-08-18 R5 cross-domain coverage campaign 01
+
+Plan review: freeze 24 authoritative-source pressure packets across
+organizations, operations, information, and economics, with all six reader
+jobs represented once per domain. Compare them against exact V1 and `sim-49`
+custody, reuse the QG taxonomy and ordered owner test, and cap admission at one
+anchor, two views, zero relations, and one discovery repair. Nine roles
+approve after closing framework-copying, relation-scope, and source-registry
+issues. Zero change is valid; claim no reader evidence, domain completeness,
+or professional guidance. See `R5-CROSS-DOMAIN-COVERAGE-01-PLAN.md`.
