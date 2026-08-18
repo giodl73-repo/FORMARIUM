@@ -1,0 +1,59 @@
+{
+  "campaign_id": "SUJ-10",
+  "revision": 1,
+  "status": "frozen-before-repair",
+  "frozen_on": "2026-08-17",
+  "evidence_class": "retrospective-independent-frozen-portfolio-recurrence-audit",
+  "source_commit": "76995a1",
+  "admission_rule_source": "QUERY-LED-CONTENT-DISCOVERY-BLUEPRINT.md: same distinction recurs in at least two independently frozen query packets",
+  "owner_test": {
+    "minimum_independent_campaigns": 2,
+    "reverse_authored_link_required": true,
+    "new_concept_allowed": false,
+    "typed_relation_allowed": false,
+    "maximum_cross_reference_edits": 2
+  },
+  "candidates": [
+    {
+      "id": "SUJ-10-WORK-CAPACITY",
+      "source": "tables/entries/coordinated-work.md",
+      "target": "tables/entries/operational-resource-capacity-demand.md",
+      "rendered_label": "Operational Resource, Capacity, Demand, and Allocation",
+      "insert_after": "Objective, Control, Monitoring, and Response",
+      "independent_campaigns": ["QLD-01", "QLD-02", "SUJ-02"],
+      "frozen_evidence": ["QLD-01-09", "QLD-01-22", "QLD-01-24", "QLD-02-18", "QLD-02-24", "SUJ-02-04"],
+      "reverse_link_source": "tables/entries/operational-resource-capacity-demand.md",
+      "reverse_link_present": true,
+      "repair": "add-reciprocal-untyped-cross-reference"
+    },
+    {
+      "id": "SUJ-10-IDENTITY-ACCESS",
+      "source": "tables/entries/identity-naming-classification-versioning.md",
+      "target": "tables/entries/access-permission-authorization-entitlement.md",
+      "rendered_label": "Access, Permission, Authorization, and Entitlement",
+      "insert_after": "Identity",
+      "independent_campaigns": ["QLD-02", "SUJ-02"],
+      "frozen_evidence": ["QLD-02-12", "SUJ-02-23"],
+      "reverse_link_source": "tables/entries/access-permission-authorization-entitlement.md",
+      "reverse_link_present": true,
+      "repair": "add-reciprocal-untyped-cross-reference"
+    }
+  ],
+  "rerun": {
+    "baseline": "fixtures/synthetic-users/recognized-foothold-connections-baseline-09.json",
+    "edition": "sim-46",
+    "exact_portfolio": "fixtures/synthetic-users/campaign-09.json",
+    "required_expanded_deficient_assignments": 7,
+    "required_two_family_assignments": 9,
+    "dashboard_search_gap_expected_to_remain": true
+  },
+  "prohibited": [
+    "new-anchor",
+    "new-view",
+    "typed-relation",
+    "symmetric-semantic-claim",
+    "automatic-selection",
+    "search-ranking-change",
+    "reader-evidence-claim"
+  ]
+}

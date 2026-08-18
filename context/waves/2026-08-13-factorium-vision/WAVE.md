@@ -2952,3 +2952,15 @@ or mint `sim-46`. Coordinated Work and Identity yield candidate authored-link
 gap signals for recurrence testing; the dashboard-dot miss remains owned by
 Search vocabulary. See
 `SYNTHETIC-RECOGNIZED-FOOTHOLD-CONNECTIONS-RESULT.md`.
+
+## 2026-08-17 reciprocal connection repair plan
+
+SUJ-10 applies the pre-existing query-led recurrence gate to SUJ-09's two
+candidate link gaps. Coordinated Work/operational capacity recurs across six
+frozen packets in three campaigns; Identity/access recurs across two packets
+in two campaigns. In both cases the destination already links back. Nine roles
+approve exactly two reciprocal, untyped Cross-reference edits with no P1/P2
+finding. No concept, sense, typed relation, search rank, or new surface may
+change. Clean `sim-46` must reach 7/8 deficient-route expansion and 9/10 total
+coverage while preserving the dashboard Search miss. See
+`SYNTHETIC-RECIPROCAL-CONNECTION-REPAIR-PLAN.md`.
