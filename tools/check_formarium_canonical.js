@@ -17,6 +17,7 @@ const manifest = JSON.parse(
 assert.equal(manifest.edition, "sim-66");
 assert.equal(manifest.site_checks.missing_local_targets, 0);
 assert.equal(manifest.site_checks.pointer_entry_pages, 250);
+assert.equal(manifest.site_checks.tables_index_pointer_entries, 250);
 assert.equal(manifest.rendering_checks.repository_source_links, 98);
 assert.equal(
   manifest.site_checks.product_authority,
@@ -90,6 +91,7 @@ for (const file of generatedFiles) {
 
 const home = fs.readFileSync(path.join(site, "index.html"), "utf8");
 const reader = fs.readFileSync(path.join(site, "reader.html"), "utf8");
+const tables = fs.readFileSync(path.join(site, "tables.html"), "utf8");
 assert.match(home, /<a class="site-brand"[^>]*>Formarium<\/a>/);
 assert.doesNotMatch(home, /identity-preview|feedback preview/i);
 assert.match(home, /data-formarium-handoff/);
@@ -98,6 +100,21 @@ assert.match(
   /Content &copy; 2026 Gio Della-Libera.+CC BY-NC 4\.0/,
 );
 assert.match(reader, /Formarium schemas and file formats are canonical/);
+assert.match(
+  tables,
+  /<h2 id="tables-index-pointers-heading">Pointer entry points<\/h2>/,
+);
+const tablePointerLinks = [
+  ...tables.matchAll(
+    /data-pointer-slug="([^"]+)"><a href="pointers\/([^"]+)\.html">/g,
+  ),
+];
+assert.equal(tablePointerLinks.length, 250);
+assert.equal(new Set(tablePointerLinks.map((match) => match[1])).size, 250);
+for (const [, slug, hrefSlug] of tablePointerLinks) {
+  assert.equal(hrefSlug, slug);
+  assert.ok(fs.existsSync(path.join(site, "pointers", `${slug}.html`)));
+}
 assert.match(
   fs.readFileSync(path.join(site, "assets", "handoff.js"), "utf8"),
   /\[data-formarium-handoff\]/,

@@ -10,7 +10,9 @@ const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-35");
 const screenshotPath = path.resolve(process.argv[3] ||
   "target/sim35-tables-alphabetical-index.png");
 const manifest = JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"));
-assert.equal(manifest.edition, "sim-35", "browser check requires sim-35");
+assert.ok(["sim-35", "sim-66"].includes(manifest.edition),
+  "browser check requires sim-35 or sim-66");
+const includesPointers = manifest.edition === "sim-66";
 const edgePath = [
   process.env.EDGE_PATH,
   "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
@@ -110,18 +112,23 @@ async function waitFor(client, expression, message) {
       heading: document.querySelector("h1").textContent,
       canonical: document.querySelectorAll(".tables-index__canonical [data-index-path]").length,
       curated: document.querySelectorAll(".tables-index__curated [data-index-path]").length,
+      pointers: document.querySelectorAll(".tables-index__pointers [data-pointer-slug]").length,
       letters: document.querySelectorAll(".tables-index__letters a").length,
       first: document.querySelector(".tables-index__canonical [data-index-path] a").textContent,
       firstMeta: document.querySelector(".tables-index__canonical [data-index-path] span").textContent,
+      firstPointer: document.querySelector(".tables-index__pointers [data-pointer-slug] a")?.getAttribute("href") || null,
       columns: getComputedStyle(document.querySelector(".tables-index__canonical")).columnCount,
       boundary: document.querySelector(".tables-index__boundary").textContent
     }))()`);
-    assert.equal(desktop.heading, "Factorium Tables A-Z");
-    assert.equal(desktop.canonical, 53);
+    assert.equal(desktop.heading,
+      includesPointers ? "Formarium Tables A-Z" : "Factorium Tables A-Z");
+    assert.equal(desktop.canonical, includesPointers ? 54 : 53);
     assert.equal(desktop.curated, 27);
+    assert.equal(desktop.pointers, includesPointers ? 250 : 0);
     assert.equal(desktop.letters, 17);
     assert.equal(desktop.first, "Access, Permission, Authorization, and Entitlement");
     assert.match(desktop.firstMeta, /governance · 1 specialized view/);
+    assert.equal(desktop.firstPointer, includesPointers ? "pointers/access.html" : null);
     assert.ok(Number(desktop.columns) >= 2);
     assert.equal(desktop.boundary,
       "Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.");
@@ -134,22 +141,39 @@ async function waitFor(client, expression, message) {
     const mobile = await evaluate(client, `(() => ({
       overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
       columns: getComputedStyle(document.querySelector(".tables-index__canonical")).columnCount,
+      pointerColumns: document.querySelector(".tables-index__pointers ol")
+        ? getComputedStyle(document.querySelector(".tables-index__pointers ol")).columnCount
+        : null,
       curatedColumns: getComputedStyle(document.querySelector(".tables-index__curated ol")).gridTemplateColumns,
       letters: document.querySelectorAll(".tables-index__letters a").length
     }))()`);
     assert.equal(mobile.overflow, false);
     assert.equal(mobile.columns, "1");
+    assert.equal(mobile.pointerColumns, includesPointers ? "1" : null);
     assert.ok(!mobile.curatedColumns.includes(" "));
     assert.equal(mobile.letters, 17);
+    if (includesPointers) {
+      await evaluate(client,
+        `document.querySelector(".tables-index__pointers").scrollIntoView(); true`);
+    }
     const shot = await client.call("Page.captureScreenshot", {
       format: "png", captureBeyondViewport: false,
     });
     fs.writeFileSync(screenshotPath, Buffer.from(shot.data, "base64"));
     assert.ok(fs.statSync(screenshotPath).size > 20000,
       "Tables index screenshot is non-trivial");
+    if (includesPointers) {
+      await evaluate(client,
+        `location.href = new URL(${JSON.stringify(desktop.firstPointer)}, location.href).href; true`);
+      await waitFor(client,
+        `document.readyState === "complete" && document.querySelector(".pointer-page h1")`,
+        "Pointer entry did not load");
+      assert.equal(await evaluate(client,
+        `document.querySelector(".pointer-page h1").textContent`), "Access");
+    }
     console.log(
-      `OK route=tables.html canonical=53 curated=27 letters=17 mobile=390 ` +
-      `screenshot=${screenshotPath}`
+      `OK route=tables.html canonical=${desktop.canonical} curated=27 ` +
+      `pointers=${desktop.pointers} letters=17 mobile=390 screenshot=${screenshotPath}`
     );
   } finally {
     if (client) client.close();

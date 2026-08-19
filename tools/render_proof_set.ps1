@@ -3541,6 +3541,7 @@ $dualLookupScriptTag
     $tablesIndexCuratedCount = 0
     $tablesIndexLetterCount = 0
     $tablesIndexOwnedViewCount = 0
+    $tablesIndexPointerCount = 0
     if ($editionNumber -ge 35) {
         $canonicalIndexRecords = @($searchRecords | Where-Object { $_.recordClass -eq "canonical-entry" } |
             Sort-Object @{ Expression = { $_.title.ToLowerInvariant() } }, @{ Expression = { $_.path } })
@@ -3590,6 +3591,26 @@ $dualLookupScriptTag
             )
             $tablesIndexCuratedCount += 1
         }
+        $pointerIndexRows = [System.Text.StringBuilder]::new()
+        $pointerIndexSection = ""
+        if ($editionNumber -ge 52) {
+            foreach ($pointerRecord in $pointerRecords | Sort-Object { $_.label.ToLowerInvariant() }) {
+                $pointerOwners = @($pointerRecord.occurrences.path | Sort-Object -Unique).Count
+                $encodedPointerLabel = [System.Net.WebUtility]::HtmlEncode($pointerRecord.label)
+                [void]$pointerIndexRows.Append(
+                    "<li data-pointer-slug=`"$($pointerRecord.slug)`"><a href=`"pointers/$($pointerRecord.slug).html`">$encodedPointerLabel</a><span>$pointerOwners owning Tables · $($pointerRecord.occurrences.Count) expressions</span></li>"
+                )
+                $tablesIndexPointerCount += 1
+            }
+            $pointerIndexSection = @"
+<section class="tables-index__pointers" aria-labelledby="tables-index-pointers-heading">
+<p class="site-kicker">Structural entry points · generated concordance</p>
+<h2 id="tables-index-pointers-heading">Pointer entry points</h2>
+<p>Enter the Tables through any of these $tablesIndexPointerCount admitted structural terms. Each pointer opens the exact Table expressions and owning entries where it occurs.</p>
+<ol>$pointerIndexRows</ol>
+</section>
+"@
+        }
         $tablesIndexHtml = @"
 <!doctype html>
 <html lang="en">
@@ -3612,12 +3633,13 @@ $identityPreviewStyle
 <section class="tables-index__heading">
 <p class="site-kicker">Primary reference · alphabetical browse$(if ($identityPreview) { ' · candidate publication name' } else { '' })</p>
 <h1>$tablesPublicationName A-Z</h1>
-<p>Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and all $(if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }) exact specialized views.</p>
-<div class="tables-index__actions"><a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
+<p>Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and all $(if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }) exact specialized views.$(if ($editionNumber -ge 52) { " Or enter through any of $tablesIndexPointerCount structural pointers." })</p>
+<div class="tables-index__actions"><a href="index.html#search">Search the Tables</a>$(if ($editionNumber -ge 52) { '<a href="#tables-index-pointers-heading">Browse pointers</a>' })<a href="index.html#contents">Use book contents</a></div>
 <p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
 </section>
 <nav class="tables-index__letters" aria-label="Canonical Table initial letters">$letterLinks</nav>
 <div class="tables-index__canonical">$letterSections</div>
+$pointerIndexSection
 <section class="tables-index__curated" aria-labelledby="tables-index-curated-heading">
 <p class="site-kicker">Edition selection · separate from canonical families</p>
 <h2 id="tables-index-curated-heading">Curated Table records</h2>
@@ -5001,6 +5023,9 @@ $identityPreviewStyle
             $tablesIndexOwnedViewCount -ne $expectedOwnedViewCount) {
             throw "Tables alphabetical index mismatch: canonical=$tablesIndexCanonicalCount curated=$tablesIndexCuratedCount letters=$tablesIndexLetterCount views=$tablesIndexOwnedViewCount"
         }
+        if ($editionNumber -ge 52 -and $tablesIndexPointerCount -ne $expectedPointerCount) {
+            throw "Tables pointer index mismatch: pointers=$tablesIndexPointerCount"
+        }
         $siteChecks.tables_index_pages = 1
         $siteChecks.tables_index_canonical_families = $tablesIndexCanonicalCount
         $siteChecks.tables_index_curated_records = $tablesIndexCuratedCount
@@ -5010,6 +5035,9 @@ $identityPreviewStyle
         $siteChecks.tables_index_reader_records = 0
         $siteChecks.tables_index_order = "normalized-selected-title"
         $siteChecks.tables_index_semantics = "alphabetical-presentation-only"
+        if ($editionNumber -ge 52) {
+            $siteChecks.tables_index_pointer_entries = $tablesIndexPointerCount
+        }
     }
     if ($editionNumber -ge 36) {
         if ($readerRouteRecordCount -ne 24 -or
