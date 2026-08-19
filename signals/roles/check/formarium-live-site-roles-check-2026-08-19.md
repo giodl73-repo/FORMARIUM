@@ -5,7 +5,7 @@ date: 2026-08-19
 roles_used: 8
 p1_count: 0
 p2_count: 0
-verdict: CANDIDATE-PASS
+verdict: PASS
 ---
 
 # Formarium Live Site Roles Check
@@ -15,7 +15,7 @@ verdict: CANDIDATE-PASS
 Type: deployed public reference site, mixed dictionary, teaching route, and
 condensed book projection.
 
-Reviewed deployment:
+Initial reviewed deployment:
 `https://giodl73-repo.github.io/FORMARIUM/` at source commit
 `d7c04f265efca188a93edad734f10d0ea4eb1b86`.
 
@@ -194,7 +194,7 @@ one canonical entry across a column boundary. Prove left-to-right, top-to-bottom
 progression, one-column mobile fallback, two-column print, and no large reverse
 scroll. Do not change canonical entry sources.
 
-## Local fixed-point candidate
+## Final fixed-point result
 
 All five P2 findings and the nine P3 notes were closed without changing
 canonical entry sources.
@@ -220,8 +220,25 @@ Regression proof:
 - `sim-52` pointer concordance checks pass with its historical Terms label;
 - generated local-link validation reports zero missing targets.
 
-Candidate verdict: **PASS LOCALLY; LIVE VERIFICATION REQUIRED**. Continue the
-two-book model with bounded screen pages; stop unbounded balanced columns,
-repeated count literals, duplicate Reader starts, and edition-undiscoverable
-public output. Promote this record to final PASS only after the deployment and
-live-origin checks complete.
+Live verification:
+
+- GitHub Pages run
+  [`32313557378`](https://github.com/giodl73-repo/FORMARIUM/actions/runs/32313557378)
+  rendered from a clean checkout and deployed successfully.
+- The live manifest identifies source commit
+  `ddb5980398b27dc7a503a16e7cc1219111febc3b`, edition `sim-66`, zero missing
+  local targets, and the bounded-screen, single-column-mobile, and
+  two-column-print flow contracts.
+- Live Edge geometry at 1280 px reports 304 records, 183 collapsed supplements,
+  a 705 px bounded flow region, no vertical overflow within that region, and
+  199 horizontal pages. Next advances the status from page 1 to page 2.
+- At 390 px, the live book uses one vertical column with no document-level
+  horizontal overflow. Print uses two columns and omits controls and
+  supplements.
+- The live home exposes five primary links and no duplicate Reader start. The
+  Reader uses the shared 157-record depth, and Tables exposes Pointer index,
+  Continuous A-Z, and Condensed book routes.
+
+Final verdict: **PASS**. Continue the two-book model with bounded screen pages;
+stop unbounded balanced columns, repeated count literals, duplicate Reader
+starts, and edition-undiscoverable public output.
