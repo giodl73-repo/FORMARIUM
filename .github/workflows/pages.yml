@@ -31,7 +31,24 @@ jobs:
           node-version: 22
 
       - name: Install Pandoc
-        run: sudo apt-get update && sudo apt-get install --yes pandoc
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PANDOC_VERSION: "3.9"
+          PANDOC_SHA256: "872a10c7ec29d5278831d855b11bd4ade0df4d5ec9a089a3197bc63a37eb4003"
+        run: |
+          archive="pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz"
+          install_dir="${RUNNER_TEMP}/pandoc"
+          gh release download "${PANDOC_VERSION}" \
+            --repo jgm/pandoc \
+            --pattern "${archive}" \
+            --dir "${RUNNER_TEMP}"
+          echo "${PANDOC_SHA256}  ${RUNNER_TEMP}/${archive}" | sha256sum --check
+          mkdir -p "${install_dir}"
+          tar --extract --gzip \
+            --file "${RUNNER_TEMP}/${archive}" \
+            --directory "${install_dir}" \
+            --strip-components=1
+          echo "${install_dir}/bin" >> "${GITHUB_PATH}"
 
       - name: Verify Formarium contracts
         run: node tools/build_formarium_contracts.js --check
