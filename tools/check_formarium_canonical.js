@@ -152,6 +152,31 @@ assert.equal(
   (book.match(/data-dictionary-kind="table"/g) || []).length,
   54,
 );
+assert.equal(
+  (book.match(/class="dictionary-book__supplement"/g) || []).length,
+  183,
+);
+assert.equal(
+  (book.match(/data-book-supplement="specialized"/g) || []).length,
+  41,
+);
+assert.equal(
+  (book.match(/data-book-supplement="reference_delta"/g) || []).length,
+  34,
+);
+assert.equal(
+  (book.match(/data-book-supplement="cross_references"/g) || []).length,
+  54,
+);
+assert.equal(
+  (book.match(/data-book-supplement="sources_provenance"/g) || []).length,
+  54,
+);
+assert.doesNotMatch(book, /<details class="dictionary-book__supplement"[^>]*\sopen(?:\s|>)/);
+assert.doesNotMatch(
+  book,
+  /<h2[^>]*>(?:Specialized\s+views?|Reference\s+Delta|Cross-references|Sources\s+and\s+provenance)<\/h2>/i,
+);
 assert.match(
   book,
   /data-dictionary-position="1"[\s\S]*?<h2 id="book-pointer-access">Access<\/h2>/,
@@ -163,7 +188,15 @@ assert.doesNotMatch(
 const siteCss = fs.readFileSync(path.join(site, "assets", "site.css"), "utf8");
 assert.match(
   siteCss,
-  /\.dictionary-book__entries\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2,/,
+  /\.dictionary-book__entries\s*\{[\s\S]*?column-count:\s*2;/,
+);
+assert.match(
+  siteCss,
+  /\.dictionary-book__item\s*\{[\s\S]*?break-inside:\s*auto;/,
+);
+assert.doesNotMatch(
+  siteCss,
+  /\.dictionary-book__item\s*\{[\s\S]*?break-inside:\s*avoid-column;/,
 );
 assert.match(
   siteCss,

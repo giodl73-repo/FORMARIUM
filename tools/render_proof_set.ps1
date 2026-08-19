@@ -3816,6 +3816,12 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
         foreach ($canonicalRecord in $canonicalIndexRecords) {
             [void]$canonicalBookPaths.Add($canonicalRecord.path)
         }
+        $bookSupplementCounts = [ordered]@{
+            specialized = 0
+            reference_delta = 0
+            cross_references = 0
+            sources_provenance = 0
+        }
         $dictionaryBookItems = [System.Text.StringBuilder]::new()
         for ($bookIndex = 0; $bookIndex -lt $dictionaryRecords.Count; $bookIndex++) {
             $bookRecord = $dictionaryRecords[$bookIndex]
@@ -3852,6 +3858,38 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
                 $bookContent = $bookContent.Replace('href="../pointers/', 'href="pointers/')
                 $bookContent = [regex]::new('<h1([^>]*)>').Replace($bookContent, '<h2$1>', 1)
                 $bookContent = [regex]::new('</h1>').Replace($bookContent, '</h2>', 1)
+                $bookContent = [regex]::Replace(
+                    $bookContent,
+                    '(?is)<h2 id="([^"]+)">(Specialized\s+views?|Reference\s+Delta|Cross-references|Sources\s+and\s+provenance)</h2>(.*?)(?=<h2\b|$)',
+                    {
+                        param($match)
+
+                        $supplementId = $match.Groups[1].Value
+                        $supplementHeading = $match.Groups[2].Value
+                        $normalizedHeading = [regex]::Replace(
+                            [System.Net.WebUtility]::HtmlDecode($supplementHeading),
+                            '\s+',
+                            ' '
+                        ).Trim().ToLowerInvariant()
+                        $supplementKind = if ($normalizedHeading.StartsWith("specialized")) {
+                            "specialized"
+                        }
+                        elseif ($normalizedHeading -eq "reference delta") {
+                            "reference_delta"
+                        }
+                        elseif ($normalizedHeading -eq "cross-references") {
+                            "cross_references"
+                        }
+                        else {
+                            "sources_provenance"
+                        }
+                        $bookSupplementCounts[$supplementKind] += 1
+                        return '<details class="dictionary-book__supplement" data-book-supplement="' +
+                            $supplementKind + '"><summary id="' + $supplementId + '">' +
+                            $supplementHeading + '</summary><div>' + $match.Groups[3].Value +
+                            '</div></details>'
+                    }
+                )
             }
             [void]$dictionaryBookItems.AppendLine(@"
 <article class="dictionary-book__item" data-dictionary-kind="$($bookRecord.kind)" data-dictionary-position="$bookPosition">
@@ -3882,6 +3920,7 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <p>Formarium Tables</p>
 <h1>The Formarium Dictionary</h1>
 <p>A condensed A-Z reference of $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families.</p>
+<p>Core distinctions stay on the page. Specialized views, reference deltas, cross-references, sources, and provenance are available in compact expandable sections and omitted from print.</p>
 </header>
 <div class="dictionary-book__entries">$dictionaryBookItems</div>
 </main>
@@ -5398,6 +5437,11 @@ $identityPreviewStyle
             $siteChecks.dictionary_book_pages = 1
             $siteChecks.dictionary_book_records = $dictionaryRecords.Count
             $siteChecks.dictionary_book_columns = 2
+            $siteChecks.dictionary_book_supplements = ($bookSupplementCounts.Values | Measure-Object -Sum).Sum
+            $siteChecks.dictionary_book_specialized_sections = $bookSupplementCounts.specialized
+            $siteChecks.dictionary_book_reference_delta_sections = $bookSupplementCounts.reference_delta
+            $siteChecks.dictionary_book_cross_reference_sections = $bookSupplementCounts.cross_references
+            $siteChecks.dictionary_book_sources_provenance_sections = $bookSupplementCounts.sources_provenance
         }
     }
     if ($editionNumber -ge 36) {

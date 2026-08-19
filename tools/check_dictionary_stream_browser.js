@@ -242,7 +242,11 @@ async function waitFor(client, expression, message) {
         pointers: document.querySelectorAll('[data-dictionary-kind="pointer"]').length,
         tables: document.querySelectorAll('[data-dictionary-kind="table"]').length,
         columns: getComputedStyle(document.querySelector(".dictionary-book__entries"))
-          .gridTemplateColumns.split(" ").length,
+          .columnCount,
+        itemBreak: getComputedStyle(document.querySelector(".dictionary-book__item"))
+          .breakInside,
+        supplements: document.querySelectorAll(".dictionary-book__supplement").length,
+        openSupplements: document.querySelectorAll(".dictionary-book__supplement[open]").length,
         selectedView: document.querySelector("[data-dictionary-view]").value,
         chrome: document.querySelectorAll(
           ".site-header, .site-handoff, .dictionary-sequence, .pointer-owner, .table-navigator"
@@ -257,7 +261,10 @@ async function waitFor(client, expression, message) {
       items: 304,
       pointers: 250,
       tables: 54,
-      columns: 2,
+      columns: "2",
+      itemBreak: "auto",
+      supplements: 183,
+      openSupplements: 0,
       selectedView: "book.html",
       chrome: 0,
       first: [
@@ -266,6 +273,17 @@ async function waitFor(client, expression, message) {
         "Accumulation",
       ],
     });
+    await evaluate(
+      client,
+      `document.querySelector(".dictionary-book__supplement").open = true`,
+    );
+    assert.equal(
+      await evaluate(
+        client,
+        `document.querySelector(".dictionary-book__supplement").open`,
+      ),
+      true,
+    );
     await client.call("Emulation.setEmulatedMedia", { media: "print" });
     const printBook = await evaluate(
       client,
@@ -276,13 +294,21 @@ async function waitFor(client, expression, message) {
           .display,
         standalone: getComputedStyle(
           document.querySelector(".dictionary-book__item-heading a")
-        ).display
+        ).display,
+        supplement: getComputedStyle(
+          document.querySelector(".dictionary-book__supplement")
+        ).display,
+        itemBreak: getComputedStyle(
+          document.querySelector(".dictionary-book__item")
+        ).breakInside
       }))()`,
     );
     assert.deepEqual(printBook, {
       columns: "2",
       tools: "none",
       standalone: "none",
+      supplement: "none",
+      itemBreak: "auto",
     });
     await client.call("Emulation.setEmulatedMedia", { media: "screen" });
     await client.call("Emulation.setDeviceMetricsOverride", {
@@ -297,7 +323,7 @@ async function waitFor(client, expression, message) {
         overflow: document.documentElement.scrollWidth >
           document.documentElement.clientWidth,
         columns: getComputedStyle(document.querySelector(".dictionary-book__entries"))
-          .gridTemplateColumns.split(" ").length,
+          .columnCount,
         width: document.documentElement.clientWidth,
         scrollWidth: document.documentElement.scrollWidth,
         offenders: Array.from(document.querySelectorAll("body *"))
@@ -313,7 +339,7 @@ async function waitFor(client, expression, message) {
       }))()`,
     );
     assert.equal(mobileBook.overflow, false, JSON.stringify(mobileBook));
-    assert.equal(mobileBook.columns, 1);
+    assert.equal(mobileBook.columns, "1");
     const bookShot = await client.call("Page.captureScreenshot", {
       format: "png",
       captureBeyondViewport: false,
