@@ -1,7 +1,7 @@
 # Formography Foundation Research Module v0
 
 Date: 2026-08-18
-Status: `proceed_with_targeted_narrowing`
+Status: `pause_field_promotion_practitioner_recruitment_pending`
 Evidence class: internal method audit plus source-reviewed external comparison
 
 ## Research question
@@ -211,16 +211,27 @@ Prior-art and method-definition work precede any publication or naming claim.
 
 ## Immediate next work
 
-The first Access Authorization comparison is complete. A generic scoped
-property graph retained all ten predeclared features, so Formography is not a
-distinct graph representation on current evidence. The candidate contribution
-is now narrowed to a governed, representation-compatible method profile with
-fail-closed custody and projection-loss requirements.
+The Access Authorization, Amount/Concentration/Composition, and
+Choice/Selection comparisons are complete. Generic scoped property graphs
+retained all ten predeclared features and every domain extension in all three
+cases, so Formography is not a distinct graph representation on current
+evidence. The unchanged core transferred across governance, quantitative, and
+evaluative domains. Quantitative and evaluative semantics required named
+extensions rather than silent core redefinition.
 
-1. Repeat the comparison with one physical or quantitative case.
-2. Repeat it with one evaluative or interpretive case.
-3. Freeze the resulting three-case coding protocol.
-4. Run independent coding and disagreement analysis.
-5. Test whether `governed property graph` is equally precise and cheaper to
-   teach.
-6. Re-run `PROCEED`, `PAUSE`, or `PIVOT` before changing product identity.
+Independent coding V0 and V1 are complete. V1 produces extension and failure
+majorities but fails protocol conformance and universal unresolved-state
+custody. Governed property graph wins the bounded internal model terminology
+comparison, weakening the case for a new field name. Field promotion remains
+paused.
+
+The V0 practitioner protocol is now frozen. It balances three cases across 12
+anonymous slots and compares an identical method body under Formography and
+Governed Property Graph headings. No participant data or human result exists.
+
+1. Stop model reruns to avoid tuning the protocol toward a desired result.
+2. Recruit eligible practitioners without substituting model or synthetic
+   participants.
+3. Observe comprehension, task time, corrections, explain-back burden, and
+   critical misunderstandings under the frozen assignments.
+4. Re-run `PROCEED`, `PAUSE`, or `PIVOT` before changing product identity.

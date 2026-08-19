@@ -1,0 +1,87 @@
+{
+  "schema": "formography-independent-coding-adjudication-v1",
+  "date": "2026-08-18",
+  "coder_count": 3,
+  "case_count": 3,
+  "protocol_conformance": {
+    "V1C1": "pass",
+    "V1C2": "fail_category_vocabulary",
+    "V1C3": "pass"
+  },
+  "thresholds": {
+    "supplied_owner_reference_retained": {
+      "passed": true,
+      "result": "9/9 records retain the supplied exact owner reference; this is a custody check, not owner discovery."
+    },
+    "majority_core_categories_codable": {
+      "passed": true,
+      "result": "Every category has at least two codable judgments in every case; one quantitative unresolved-state judgment is ambiguous."
+    },
+    "majority_primary_extension_category": {
+      "passed": true,
+      "result": "Access constraint-and-closure 2/3; quantity identity-and-kind 2/3; choice recommendation-and-authority 2/3."
+    },
+    "majority_primary_failure_category": {
+      "passed": true,
+      "result": "Access authority-bypass 3/3; quantity basis-or-kind-collapse 3/3; choice authority-bypass 2/3."
+    },
+    "all_authority_and_projection_loss_preserved": {
+      "passed": true,
+      "result": "9/9 authority and projection-loss booleans are true."
+    },
+    "all_unresolved_state_retained": {
+      "passed": false,
+      "result": "V1C1 marks the quantitative unresolved-state category ambiguous and unresolved_state_retained false."
+    },
+    "all_graph_sufficiency_answered": {
+      "passed": true,
+      "result": "All coders answer; V1C1 and V1C3 say sufficient in all cases while V1C2 says insufficient in all cases."
+    },
+    "terminology_advantage": {
+      "passed": true,
+      "result": "Governed property graph wins preference 2/3 and has lower median explanation length: 41 words versus 44."
+    },
+    "all_records_protocol_conformant": {
+      "passed": false,
+      "result": "V1C2 used authority-and-recommendation outside the registered vocabulary. The original response envelope was not retained, so format and raw-length conformance are not adjudicated."
+    }
+  },
+  "extension_majorities": {
+    "access-authorization": "constraint-and-closure",
+    "amount-concentration-composition": "identity-and-kind",
+    "choice-alternative-selection": "recommendation-and-authority"
+  },
+  "failure_majorities": {
+    "access-authorization": "authority-bypass",
+    "amount-concentration-composition": "basis-or-kind-collapse",
+    "choice-alternative-selection": "authority-bypass"
+  },
+  "graph_sufficiency_distribution": {
+    "sufficient": 6,
+    "insufficient": 3
+  },
+  "terminology": {
+    "preferences": {
+      "formography": 1,
+      "governed-property-graph": 2,
+      "tie": 0,
+      "neither": 0
+    },
+    "median_words": {
+      "formography": 44,
+      "governed-property-graph": 41
+    },
+    "scope": "internal model-coder explanation evidence only"
+  },
+  "promotion_gate_passed": false,
+  "verdict": "PAUSE_FIELD_PROMOTION_V1_PROTOCOL_CONFORMANCE_AND_UNRESOLVED_GATE_FAILED",
+  "claim_effect": {
+    "field_establishment": "blocked",
+    "field_novelty": "blocked",
+    "product_rename": "blocked",
+    "formography_naming_advantage": "not_supported",
+    "governed_property_graph_explanation_advantage": "internal_model_signal_only",
+    "governed_method_profile": "survives_but_not_promoted"
+  },
+  "stop_condition": "Do not run V2 immediately. Preserve V0 and V1 and require a human or practitioner protocol decision before further independent reruns."
+}

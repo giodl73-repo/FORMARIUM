@@ -1,0 +1,45 @@
+{
+  "schema": "formography-independent-coding-output-schema-v1",
+  "required_top_level": [
+    "schema",
+    "coder_id",
+    "independence_attestation",
+    "cases",
+    "terminology_test",
+    "overall_assessment"
+  ],
+  "case_required": [
+    "case_id",
+    "owner_reference",
+    "authority_class",
+    "core_categories",
+    "primary_extension_category",
+    "secondary_extension_category",
+    "extension_source_anchor",
+    "primary_failure_category",
+    "failure_condition",
+    "authority_preserved",
+    "projection_loss_declared",
+    "unresolved_state_retained",
+    "generic_property_graph_sufficient"
+  ],
+  "core_category_record": {
+    "required": [
+      "status",
+      "source_anchor"
+    ]
+  },
+  "terminology_required": [
+    "formography_explanation",
+    "governed_property_graph_explanation",
+    "preference",
+    "reason",
+    "confidence"
+  ],
+  "notes": [
+    "Return valid JSON only and remain under 12000 characters.",
+    "Use exactly the supplied category values.",
+    "secondary_extension_category may be null.",
+    "Confidence is an integer from 0 to 100."
+  ]
+}

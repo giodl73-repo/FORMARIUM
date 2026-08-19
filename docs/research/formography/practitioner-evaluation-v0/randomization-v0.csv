@@ -1,0 +1,37 @@
+participant_slot,case_position,case_id,displayed_label
+P01,1,access-authorization,Formography
+P01,2,amount-concentration-composition,Governed Property Graph
+P01,3,choice-alternative-selection,Formography
+P02,1,access-authorization,Governed Property Graph
+P02,2,amount-concentration-composition,Formography
+P02,3,choice-alternative-selection,Governed Property Graph
+P03,1,access-authorization,Formography
+P03,2,choice-alternative-selection,Governed Property Graph
+P03,3,amount-concentration-composition,Formography
+P04,1,access-authorization,Governed Property Graph
+P04,2,choice-alternative-selection,Formography
+P04,3,amount-concentration-composition,Governed Property Graph
+P05,1,amount-concentration-composition,Formography
+P05,2,access-authorization,Governed Property Graph
+P05,3,choice-alternative-selection,Formography
+P06,1,amount-concentration-composition,Governed Property Graph
+P06,2,access-authorization,Formography
+P06,3,choice-alternative-selection,Governed Property Graph
+P07,1,amount-concentration-composition,Formography
+P07,2,choice-alternative-selection,Governed Property Graph
+P07,3,access-authorization,Formography
+P08,1,amount-concentration-composition,Governed Property Graph
+P08,2,choice-alternative-selection,Formography
+P08,3,access-authorization,Governed Property Graph
+P09,1,choice-alternative-selection,Formography
+P09,2,access-authorization,Governed Property Graph
+P09,3,amount-concentration-composition,Formography
+P10,1,choice-alternative-selection,Governed Property Graph
+P10,2,access-authorization,Formography
+P10,3,amount-concentration-composition,Governed Property Graph
+P11,1,choice-alternative-selection,Formography
+P11,2,amount-concentration-composition,Governed Property Graph
+P11,3,access-authorization,Formography
+P12,1,choice-alternative-selection,Governed Property Graph
+P12,2,amount-concentration-composition,Formography
+P12,3,access-authorization,Governed Property Graph

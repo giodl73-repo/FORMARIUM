@@ -4,6 +4,10 @@ const assert = require("node:assert/strict");
 const crypto = require("node:crypto");
 const fs = require("node:fs");
 const path = require("node:path");
+const {
+  checkFormographyPropertyGraph,
+  checkFormographySourceCustody,
+} = require("./check_formography_property_graph");
 
 const root = path.resolve(__dirname, "..");
 const slice = path.join(root, "docs", "research", "formography", "comparative-slice-v0");
@@ -77,15 +81,7 @@ assert.deepEqual(
   featureSet,
 );
 
-const nodeIds = new Set(graph.nodes.map((node) => node.id));
-assert.equal(nodeIds.size, graph.nodes.length);
-for (const edge of graph.edges) {
-  assert.ok(nodeIds.has(edge.from), `graph edge source ${edge.from}`);
-  assert.ok(nodeIds.has(edge.to), `graph edge target ${edge.to}`);
-  assert.ok(edge.type.length > 0);
-}
-assert.ok(graph.nodes.some((node) => node.labels.includes("Projection") && node.properties.omitted.length > 0));
-assert.ok(graph.nodes.some((node) => node.labels.includes("Boundary") && node.properties.stopping_condition));
+checkFormographyPropertyGraph({graph, source, root});
 assert.equal(graph.retained_features.length, contract.features.length);
 
 class FormographError extends Error {
@@ -114,11 +110,14 @@ const validateFormograph = (artifact) => {
     }
     requireValue(relation.qualifiers && Object.keys(relation.qualifiers).length > 0, "FG-RELATION-QUALIFIERS-MISSING", `relations[${index}].qualifiers`);
   }
-  for (const [index, custody] of artifact.source_custody.entries()) {
-    requireValue(sha256(custody.path) === custody.sha256, "FG-SOURCE-DIGEST-MISMATCH", `source_custody[${index}].sha256`);
-    requireValue(custody.review_state === "fixed-point", "FG-REVIEW-BINDING-MISSING", `source_custody[${index}].review_state`);
-    requireValue(fs.existsSync(path.join(root, custody.review_path)), "FG-REVIEW-PATH-MISSING", `source_custody[${index}].review_path`);
-  }
+  checkFormographySourceCustody({
+    records: artifact.source_custody,
+    source,
+    root,
+    roleField: "artifact",
+    reviewPathField: "review_path",
+    requireReviewDate: true,
+  });
   requireValue(artifact.boundary?.included?.length > 0, "FG-BOUNDARY-MISSING", "boundary.included");
   requireValue(artifact.boundary?.excluded?.length > 0, "FG-BOUNDARY-MISSING", "boundary.excluded");
   requireValue(artifact.boundary?.stopping_condition, "FG-BOUNDARY-MISSING", "boundary.stopping_condition");

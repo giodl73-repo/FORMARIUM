@@ -1,0 +1,80 @@
+{
+  "schema": "formograph-v0",
+  "id": "formograph:choice-selection-invalid-v0",
+  "frame": {
+    "question": "Which alternative should be recommended and selected?",
+    "purpose": "prove authority failure",
+    "perspective": "candidate decision record",
+    "context": "bounded choice",
+    "scale": "one disposition",
+    "version": "v0"
+  },
+  "form": {
+    "id": "choice-alternative-selection",
+    "owner": "entry:choice-alternative-selection",
+    "maturity": "candidate",
+    "authority_change": false
+  },
+  "factorizations": [
+    {"id": "primary", "status": "primary", "factors": ["alternatives", "criteria", "recommendation"], "source_status": "test"},
+    {"id": "scoring", "status": "alternative", "factors": ["criterion", "weight", "score"], "use_when": "test", "losses": ["authority"]}
+  ],
+  "relations": [
+    {
+      "kind": "INFORMS",
+      "source": "recommendation",
+      "target": "selection",
+      "scope": "decision-disposition",
+      "qualifiers": {"determines": "false"},
+      "authority": "canonical-entry",
+      "evidence": "tables/entries/choice-alternative-selection.md"
+    }
+  ],
+  "decision_contract": {
+    "question_owner": "declared question owner",
+    "alternatives_boundary": "visible candidate boundary",
+    "hard_constraints": "versioned and noncompensatory",
+    "outcome_cell_status": ["estimated", "missing"],
+    "criteria_basis_direction": "declared",
+    "preference_provenance": "declared holder",
+    "recommendation_limitations": "uncertainty retained"
+  },
+  "source_custody": [
+    {
+      "artifact": "entry:choice-alternative-selection",
+      "path": "tables/entries/choice-alternative-selection.md",
+      "sha256": "16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1",
+      "review_path": "context/waves/2026-08-13-factorium-vision/CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-16"
+    },
+    {
+      "artifact": "view:decision-alternative-selection",
+      "path": "tables/decisions/alternative-selection.md",
+      "sha256": "2c2fda3dbe56b92f643fdd1f0f8e87284b865f5eabefc52c3939ac58423b1171",
+      "review_path": "context/waves/2026-08-13-factorium-vision/CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-16"
+    }
+  ],
+  "boundary": {
+    "included": ["test disposition"],
+    "excluded": ["canonical mutation"],
+    "stopping_condition": "structured failure fixture",
+    "domain_authority_retained": true
+  },
+  "projections": [
+    {
+      "id": "test",
+      "selected": ["recommendation"],
+      "omitted": ["full evaluation"],
+      "loss_note": "Test projection only.",
+      "authority_preserved": true
+    }
+  ],
+  "unresolved": [{"id": "test-only", "status": "explicit", "note": "This fixture must fail."}],
+  "expected_failure": {
+    "code": "FG-DECISION-AUTHORITY-MISSING",
+    "path": "decision_contract.final_selection_authority"
+  }
+}

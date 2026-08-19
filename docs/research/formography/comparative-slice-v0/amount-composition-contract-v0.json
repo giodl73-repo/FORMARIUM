@@ -1,0 +1,24 @@
+{
+  "schema": "formography-domain-case-contract-v0",
+  "case_id": "amount-concentration-composition",
+  "extends": "comparison-contract-v0.json",
+  "domain": "quantitative-science",
+  "question": "Can the same Formography core preserve quantity semantics without silently redefining its objects?",
+  "domain_extension": {
+    "name": "quantity-contract-v0",
+    "required_fields": [
+      "quantity_identity",
+      "numerator_basis",
+      "denominator_basis",
+      "units",
+      "conditions",
+      "uncertainty",
+      "closure"
+    ],
+    "boundary": "The extension constrains quantitative factors and relations; it does not change the core meanings of form, factor, relation, frame, projection, or custody."
+  },
+  "structured_failure": {
+    "code": "FG-QUANTITY-BASIS-MISSING",
+    "path": "quantity_contract.denominator_basis"
+  }
+}

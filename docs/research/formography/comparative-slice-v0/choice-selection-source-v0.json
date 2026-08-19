@@ -1,0 +1,56 @@
+{
+  "schema": "formography-frozen-source-v0",
+  "case_id": "choice-alternative-selection",
+  "authority": {
+    "reference": "reference/factorium-reference-v2.factorium",
+    "entry_id": "choice-alternative-selection",
+    "entry_source": "tables/entries/choice-alternative-selection.md",
+    "entry_sha256": "16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1",
+    "view_id": "decision-alternative-selection",
+    "view_source": "tables/decisions/alternative-selection.md",
+    "view_sha256": "2c2fda3dbe56b92f643fdd1f0f8e87284b865f5eabefc52c3939ac58423b1171",
+    "assurance": "reference/factorium-assurance-v2.factorium",
+    "review_path": "context/waves/2026-08-13-factorium-vision/CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md",
+    "review_state": "fixed-point",
+    "review_date": "2026-08-16"
+  },
+  "entry": {
+    "senses": [
+      "choice",
+      "alternative",
+      "decision-criterion",
+      "preference",
+      "trade-off",
+      "recommendation",
+      "selection"
+    ],
+    "factors": [
+      "decision-question-scope-and-owner",
+      "objectives-desired-outcomes-and-affected-parties",
+      "candidate-alternatives-and-generation-boundary",
+      "feasibility-constraints-and-exclusion-rationale",
+      "states-scenarios-horizon-and-controllability",
+      "alternative-state-outcomes-and-consequences",
+      "evidence-quality-applicability-and-uncertainty",
+      "criteria-definitions-measurement-bases-and-directions",
+      "preferences-priorities-weights-and-provenance",
+      "aggregation-decision-rule-and-noncompensatory-gates",
+      "sensitivity-robustness-ties-and-information-value",
+      "recommendation-rationale-limitations-and-review-state",
+      "final-selection-authority-implementation-and-reconsideration-trigger"
+    ]
+  },
+  "canonical_relations": [
+    "f27-causal-scope-qualifies-outcome",
+    "f27-constraint-filters-feasibility",
+    "f27-evidence-qualifies-evaluation",
+    "f27-risk-characterizes-consequence",
+    "f27-value-contributes-criterion"
+  ],
+  "source_boundary": {
+    "maturity": "candidate",
+    "decision_owner_authority_retained": true,
+    "recommendation_is_not_selection": true,
+    "does_not_choose_an_alternative": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "formography-independent-coding-output-schema-v0",
+  "required_top_level": [
+    "schema",
+    "coder_id",
+    "independence_attestation",
+    "cases",
+    "terminology_comparison",
+    "overall_falsification_assessment"
+  ],
+  "case_record": {
+    "required": [
+      "case_id",
+      "form_owner",
+      "frame",
+      "primary_factorization",
+      "alternative_factorizations",
+      "typed_scoped_relations",
+      "source_custody",
+      "boundary",
+      "projection_and_loss",
+      "unresolved_state",
+      "essential_domain_extension",
+      "structured_failure",
+      "generic_property_graph_sufficient"
+    ],
+    "structured_failure": [
+      "code",
+      "condition",
+      "consequence"
+    ]
+  },
+  "terminology_comparison": {
+    "required": [
+      "preference",
+      "formography_explanation",
+      "governed_property_graph_explanation",
+      "reason",
+      "confidence"
+    ]
+  },
+  "notes": [
+    "Return valid JSON only.",
+    "Use arrays when multiple values are retained.",
+    "Do not copy prose from source beyond short identifiers or field names.",
+    "Confidence is an integer from 0 to 100, not a probability claim."
+  ]
+}

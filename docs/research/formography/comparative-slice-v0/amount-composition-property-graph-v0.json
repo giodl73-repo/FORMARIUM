@@ -1,0 +1,51 @@
+{
+  "schema": "formography-scoped-property-graph-comparator-v0",
+  "case_id": "amount-concentration-composition",
+  "nodes": [
+    {"id": "frame:quantity-selection", "labels": ["Frame"], "properties": {"question": "Which quantity kind and basis answer the requested how-much question?", "purpose": "quantitative comparison", "perspective": "Factorium candidate reference under SI and IUPAC authority", "context": "SI and IUPAC scoped reference", "scale": "one entry and formula view", "version": "v0"}},
+    {"id": "form:amount-composition", "labels": ["Form"], "properties": {"owner": "entry:amount-concentration-composition", "maturity": "candidate"}},
+    {"id": "factorization:primary", "labels": ["Factorization"], "properties": {"status": "primary", "factors": ["system-or-sample-boundary", "specified-entity-or-component", "requested-quantity-kind", "numerator-basis", "denominator-basis", "total-mixture-definition", "preparation-and-measurement-state", "temperature-and-pressure-where-volume-matters", "molar-mass-subject-entity-definition-formula-composition-and-state", "mass-and-amount-values-units-and-uncertainties", "molar-mass-source-value-unit-and-validity-scope", "conversion-direction-component-set-and-weighting-basis", "unit-and-display-scale", "uncertainty"], "source_status": "canonical-entry-factorization"}},
+    {"id": "factorization:total", "labels": ["Factorization"], "properties": {"status": "alternative", "factors": ["entity identity", "count or amount", "unit"], "use_when": "selecting a total quantity", "losses": ["component normalization"]}},
+    {"id": "factorization:concentration", "labels": ["Factorization"], "properties": {"status": "alternative", "factors": ["component quantity", "mixture volume", "conditions"], "use_when": "selecting a per-volume quantity", "losses": ["part-whole composition"]}},
+    {"id": "factorization:fraction", "labels": ["Factorization"], "properties": {"status": "alternative", "factors": ["component quantity", "like-kind total", "component-set closure"], "use_when": "selecting a composition share", "losses": ["absolute amount and mixture volume"]}},
+    {"id": "factorization:molar-mass", "labels": ["Factorization"], "properties": {"status": "alternative", "factors": ["specified material mass", "amount of same material", "identity and state"], "use_when": "bridging mass and amount", "losses": ["sample amount"]}},
+    {"id": "quantity:amount-concentration", "labels": ["Quantity"], "properties": {"identity": "amount concentration", "numerator_basis": "amount of substance of component i", "denominator_basis": "mixture volume", "unit": "mol m^-3", "conditions": "mixture state and volume basis", "uncertainty": "propagated", "closure": "not a partition closure"}},
+    {"id": "quantity:amount-fraction", "labels": ["Quantity"], "properties": {"identity": "amount fraction", "numerator_basis": "amount of substance of component i", "denominator_basis": "total amount of substance", "unit": "1", "conditions": "same boundary and component set", "uncertainty": "propagated", "closure": "sum equals one only for exhaustive mutually exclusive set"}},
+    {"id": "quantity:molar-mass", "labels": ["Quantity"], "properties": {"identity": "molar mass", "numerator_basis": "mass of specified material", "denominator_basis": "amount of same specified material", "unit": "kg mol^-1", "conditions": "identity composition model and state declared", "uncertainty": "source retained", "closure": "positive nonzero divisor"}},
+    {"id": "boundary:quantity-case", "labels": ["Boundary"], "properties": {"included": ["canonical entry", "formula view"], "excluded": ["measurement validation", "unnamed material properties", "implicit volume additivity"], "stopping_condition": "one source entry and its formula view"}},
+    {"id": "projection:quantity-reader", "labels": ["Projection"], "properties": {"selected": ["quantity ladder", "three basis contrasts", "units", "critical conditions"], "omitted": ["complete symbol table", "all fourteen equations", "application measurements"], "loss_note": "projection cannot validate a calculation or measurement", "authority_preserved": true}},
+    {"id": "unresolved:none-added", "labels": ["UnresolvedState"], "properties": {"status": "no new quantity identities admitted"}},
+    {"id": "source:entry", "labels": ["Source"], "properties": {"path": "tables/entries/amount-concentration-composition.md", "sha256": "b5e1bf736b16e9f1c758a9b0cc767736467dc69825aca4b7e33583efc2e682c1", "review": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md", "review_state": "fixed-point"}},
+    {"id": "source:view", "labels": ["Source"], "properties": {"path": "tables/formulas/amount-concentration-composition.md", "sha256": "82cd97abc5ca7d572d4612bee18dc7d09f43bdf80421ab867b7a11ff2084e5f7", "review": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md", "review_state": "fixed-point"}}
+  ],
+  "edges": [
+    {"type": "FRAMES", "from": "frame:quantity-selection", "to": "form:amount-composition", "properties": {"scope": "comparison-v0", "authority": "research-projection"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:amount-composition", "to": "factorization:primary", "properties": {"scope": "canonical-source", "authority": "Factorium"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:amount-composition", "to": "factorization:total", "properties": {"scope": "quantity-selection", "authority": "candidate"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:amount-composition", "to": "factorization:concentration", "properties": {"scope": "quantity-selection", "authority": "candidate"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:amount-composition", "to": "factorization:fraction", "properties": {"scope": "quantity-selection", "authority": "candidate"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:amount-composition", "to": "factorization:molar-mass", "properties": {"scope": "quantity-selection", "authority": "candidate"}},
+    {"type": "DERIVED_FROM", "from": "quantity:amount-concentration", "to": "factorization:concentration", "properties": {"scope": "c_i=n_i/V_mix", "qualifiers": {"numerator_kind": "amount-of-substance", "denominator_kind": "mixture-volume"}, "authority": "formula-view"}},
+    {"type": "CONTRASTS_WITH", "from": "quantity:amount-concentration", "to": "quantity:amount-fraction", "properties": {"scope": "denominator-selection", "qualifiers": {"difference": "volume-versus-like-kind-total"}, "authority": "canonical-entry"}},
+    {"type": "DERIVED_FROM", "from": "quantity:molar-mass", "to": "factorization:molar-mass", "properties": {"scope": "M_B=m_B/n_B", "qualifiers": {"subject_match": "required", "unit": "kg-mol^-1"}, "authority": "formula-view"}},
+    {"type": "BOUNDED_BY", "from": "form:amount-composition", "to": "boundary:quantity-case", "properties": {"scope": "comparison-v0"}},
+    {"type": "PROJECTED_AS", "from": "form:amount-composition", "to": "projection:quantity-reader", "properties": {"scope": "reader"}},
+    {"type": "HAS_UNRESOLVED_STATE", "from": "form:amount-composition", "to": "unresolved:none-added", "properties": {"scope": "comparison-v0"}},
+    {"type": "SOURCED_FROM", "from": "form:amount-composition", "to": "source:entry", "properties": {"scope": "canonical-entry"}},
+    {"type": "SOURCED_FROM", "from": "form:amount-composition", "to": "source:view", "properties": {"scope": "formula-view"}}
+  ],
+  "retained_features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations",
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ],
+  "domain_extension_retained": true,
+  "profile_boundary": "A generic property graph encodes the complete core and quantity extension but does not require either contract."
+}

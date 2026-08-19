@@ -1,0 +1,60 @@
+{
+  "schema": "formography-frozen-source-v0",
+  "case_id": "amount-concentration-composition",
+  "authority": {
+    "reference": "reference/factorium-reference-v2.factorium",
+    "entry_id": "amount-concentration-composition",
+    "entry_source": "tables/entries/amount-concentration-composition.md",
+    "entry_sha256": "b5e1bf736b16e9f1c758a9b0cc767736467dc69825aca4b7e33583efc2e682c1",
+    "view_id": "formula-amount-concentration-composition",
+    "view_source": "tables/formulas/amount-concentration-composition.md",
+    "view_sha256": "82cd97abc5ca7d572d4612bee18dc7d09f43bdf80421ab867b7a11ff2084e5f7",
+    "assurance": "reference/factorium-assurance-v2.factorium",
+    "review_path": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md",
+    "review_state": "fixed-point",
+    "review_date": "2026-08-15"
+  },
+  "entry": {
+    "senses": [
+      "entity-count",
+      "amount-of-substance",
+      "amount-concentration",
+      "mass-concentration",
+      "amount-fraction",
+      "mass-fraction",
+      "volume-fraction",
+      "molar-mass"
+    ],
+    "factors": [
+      "system-or-sample-boundary",
+      "specified-entity-or-component",
+      "requested-quantity-kind",
+      "numerator-basis",
+      "denominator-basis",
+      "total-mixture-definition",
+      "preparation-and-measurement-state",
+      "temperature-and-pressure-where-volume-matters",
+      "molar-mass-subject-entity-definition-formula-composition-and-state",
+      "mass-and-amount-values-units-and-uncertainties",
+      "molar-mass-source-value-unit-and-validity-scope",
+      "conversion-direction-component-set-and-weighting-basis",
+      "unit-and-display-scale",
+      "uncertainty"
+    ]
+  },
+  "formula_expressions": [
+    "n = N / N_A",
+    "c_i = n_i / V_mix",
+    "gamma_i = m_i / V_mix",
+    "x_i = n_i / sum_j(n_j)",
+    "w_i = m_i / sum_j(m_j)",
+    "M_B = m_B / n_B",
+    "w_i = x_i M_i / sum_j(x_j M_j)"
+  ],
+  "source_boundary": {
+    "maturity": "candidate",
+    "si_iupac_authority_retained": true,
+    "factorium_organization_only": true,
+    "does_not_validate_a_measurement": true
+  }
+}

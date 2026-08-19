@@ -1,0 +1,93 @@
+{
+  "schema": "formography-independent-coding-output-schema-v1",
+  "coder_id": "V1C1",
+  "independence_attestation": "Firewall honored; only permitted V1 protocol, source, and reference files were read.",
+  "capture_note": "Compact categorical preservation of the coder return; judgments and terminology text are unchanged.",
+  "cases": [
+    {
+      "case_id": "access-authorization",
+      "owner_reference": "entry:access-permission-authorization-entitlement",
+      "authority_class": "domain-standard-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "constraint governing question"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "entry sense table"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "constraint policy and fact bindings"},
+        "source_custody": {"status": "codable", "source_anchor": "entry NIST sources"},
+        "boundary": {"status": "codable", "source_anchor": "AA-01 exact request binding"},
+        "projection_loss": {"status": "codable", "source_anchor": "privacy-minimized review evidence"},
+        "unresolved_state": {"status": "codable", "source_anchor": "AA-04 indeterminate policy"}
+      },
+      "primary_extension_category": "relation-qualification",
+      "secondary_extension_category": "boundary-and-context",
+      "extension_source_anchor": "permission relation under policy and exact request context",
+      "primary_failure_category": "authority-bypass",
+      "failure_condition": "Authentication, permission, entitlement, decision, and enforcement collapse or missing facts become implicit allow.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": true,
+      "generic_property_graph_sufficient": true
+    },
+    {
+      "case_id": "amount-concentration-composition",
+      "owner_reference": "entry:amount-concentration-composition",
+      "authority_class": "domain-standard-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "entry quantity-kind orientation"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "entry sense table"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "formula core relations"},
+        "source_custody": {"status": "codable", "source_anchor": "NIST, IUPAC, and BIPM sources"},
+        "boundary": {"status": "codable", "source_anchor": "sample and mixture boundary"},
+        "projection_loss": {"status": "codable", "source_anchor": "formula Reference Delta"},
+        "unresolved_state": {"status": "ambiguous", "source_anchor": "invalid divisors and uncertainty; no explicit unresolved record"}
+      },
+      "primary_extension_category": "identity-and-kind",
+      "secondary_extension_category": "constraint-and-closure",
+      "extension_source_anchor": "quantity kind plus numerator and denominator basis",
+      "primary_failure_category": "basis-or-kind-collapse",
+      "failure_condition": "Count, amount, concentration, composition, or molar-mass bases are treated as interchangeable or left implicit.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": false,
+      "generic_property_graph_sufficient": true
+    },
+    {
+      "case_id": "choice-alternative-selection",
+      "owner_reference": "entry:choice-alternative-selection",
+      "authority_class": "mixed-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "bounded selection governing question"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "alternative statuses"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "outcome map and criteria comparison"},
+        "source_custody": {"status": "codable", "source_anchor": "NASA, Treasury, SEP, and NIST sources"},
+        "boundary": {"status": "codable", "source_anchor": "candidate generation boundary"},
+        "projection_loss": {"status": "codable", "source_anchor": "recommendation distinct from selection"},
+        "unresolved_state": {"status": "codable", "source_anchor": "excluded, unresolved, and missing cells"}
+      },
+      "primary_extension_category": "recommendation-and-authority",
+      "secondary_extension_category": "state-and-lifecycle",
+      "extension_source_anchor": "recommendation remains distinct from authorized final selection",
+      "primary_failure_category": "authority-bypass",
+      "failure_condition": "Recommendation is copied into final selection without authority or missing outcome cells are defaulted.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": true,
+      "generic_property_graph_sufficient": true
+    }
+  ],
+  "terminology_test": {
+    "formography_explanation": "A bounded method for mapping one declared question through alternative factorization, typed scoped relations, source-custodied claims, and explicit projection loss. It keeps boundaries visible, lets competing decompositions coexist, and preserves enough provenance for critique, reuse, and comparison without pretending any one map is universal.",
+    "governed_property_graph_explanation": "A source-governed property-graph practice for representing one bounded frame with alternative factorizations, typed scoped edges, custody-aware claims, and declared loss in any projection. It separates the map from the authority behind it and keeps reviewable boundaries around each representation.",
+    "preference": "governed-property-graph",
+    "reason": "It names the contract directly and keeps authority and projection boundaries explicit.",
+    "confidence": 69
+  },
+  "overall_assessment": {
+    "authority_preserved": true,
+    "projection_loss_declared": true,
+    "unresolved_state_retained": false,
+    "generic_property_graph_sufficient": true
+  }
+}

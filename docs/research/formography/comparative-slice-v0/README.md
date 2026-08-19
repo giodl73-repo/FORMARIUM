@@ -1,7 +1,7 @@
 # Formography Comparative Encoding Slice V0
 
 Date: 2026-08-18
-Status: first representative case complete
+Status: three-case authored comparison packet complete
 
 ## Question
 
@@ -59,5 +59,35 @@ Current conclusion:
 
 `SURVIVES_AS_GOVERNED_METHOD_PROFILE_NOT_DISTINCT_GRAPH_REPRESENTATION`
 
-This is one case, not a field proof. Two additional cross-domain cases and
-independent coding remain required.
+Case 01 alone was not a field proof and required two additional cross-domain
+cases plus independent coding.
+
+## Case 02 - Amount, Concentration, and Composition
+
+The quantitative case reuses the same ten core features and adds an explicit
+seven-field `quantity-contract-v0` extension. Both the property graph and
+formograph retain the complete core and extension. The formograph requires
+the extension and rejects a missing denominator basis with
+`FG-QUANTITY-BASIS-MISSING`.
+
+Verdict:
+
+`CORE_TRANSFERS_WITH_EXPLICIT_DOMAIN_EXTENSION_METHOD_PROFILE_REMAINS_NARROWED`
+
+The core transferred without silent redefinition. At that stage, one
+evaluative or interpretive case remained before independent coding.
+
+## Case 03 - Choice, Alternative, and Selection
+
+The evaluative case uses the same core and an explicit eight-field decision
+extension. Both rich encodings retain the complete packet. The formograph
+rejects a recommendation without separately declared selection authority with
+`FG-DECISION-AUTHORITY-MISSING`.
+
+Three-case verdict:
+
+`THREE_CASE_CORE_SURVIVES_AS_GOVERNED_PROFILE_INDEPENDENT_CODING_REQUIRED`
+
+Authored comparative encoding is now closed. See
+`THREE-CASE-SYNTHESIS.md`. Independent coders must receive source records and
+the frozen protocol rather than these authored outputs.

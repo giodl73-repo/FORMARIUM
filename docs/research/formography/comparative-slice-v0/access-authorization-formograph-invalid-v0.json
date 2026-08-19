@@ -52,6 +52,14 @@
       "review_path": "context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md",
       "review_state": "fixed-point",
       "review_date": "2026-08-16"
+    },
+    {
+      "artifact": "view:constraint-access-authorization-integrity",
+      "path": "tables/constraints/access-authorization-integrity.md",
+      "sha256": "fb1d0a2462e73319dc02c25f6675d43c88794d643482373833c1eab6082b9214",
+      "review_path": "context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-16"
     }
   ],
   "boundary": {
@@ -64,6 +72,7 @@
     {
       "id": "reader-comparison",
       "selected": ["focus question", "primary factors"],
+      "loss_note": "The projection cannot establish implementation conformance or authorize access.",
       "authority_preserved": true
     }
   ],

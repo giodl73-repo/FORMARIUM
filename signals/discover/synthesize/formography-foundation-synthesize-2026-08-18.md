@@ -43,12 +43,16 @@ novelty were established.
 
 ## Cheapest next test
 
-Encode the same bounded case as:
+The three-case authored comparison and independent coding V0 and V1 are
+complete. V0 found property graphs sufficient in all nine records but did not
+pass the owner, extension, or terminology gates. V1 improved extension and
+failure agreement, but one coder failed protocol conformance and one
+quantitative record dropped unresolved-state custody. Governed property graph
+won the bounded model terminology comparison 2/3 with a lower median
+explanation length.
 
-1. a Novak-style concept map;
-2. an ISO Topic Map or generic property graph;
-3. a Formography candidate packet.
-
-Predeclare which context, evidence, alternative-factorization, relation, and
-projection-loss fields must survive. If the third artifact adds no
-consequential inspectability, pivot rather than expand the vocabulary.
+The next test is the frozen practitioner protocol, which measures observed
+comprehension, completion time, corrections, explanation length, critical
+misunderstandings, and terminology response under identical method text.
+Recruitment and moderated sessions remain pending. Field promotion remains
+paused, and no immediate model V2 is justified.

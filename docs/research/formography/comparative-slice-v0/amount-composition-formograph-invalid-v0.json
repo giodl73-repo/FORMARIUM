@@ -1,0 +1,79 @@
+{
+  "schema": "formograph-v0",
+  "id": "formograph:amount-composition-invalid-v0",
+  "frame": {
+    "question": "Which quantity kind and basis answer the requested how-much question?",
+    "purpose": "prove quantitative structured failure",
+    "perspective": "Factorium candidate reference",
+    "context": "amount concentration",
+    "scale": "one relation",
+    "version": "v0"
+  },
+  "form": {
+    "id": "amount-concentration-composition",
+    "owner": "entry:amount-concentration-composition",
+    "maturity": "candidate",
+    "authority_change": false
+  },
+  "factorizations": [
+    {"id": "primary", "status": "primary", "factors": ["component", "volume"], "source_status": "test"},
+    {"id": "concentration", "status": "alternative", "factors": ["component quantity", "mixture volume"], "use_when": "test", "losses": ["full source"]}
+  ],
+  "relations": [
+    {
+      "kind": "DERIVED-FROM",
+      "source": "amount-concentration",
+      "target": "component-and-volume",
+      "scope": "c_i=n_i/V_mix",
+      "qualifiers": {"unit": "mol-m^-3"},
+      "authority": "formula-view",
+      "evidence": "tables/formulas/amount-concentration-composition.md"
+    }
+  ],
+  "quantity_contract": {
+    "quantity_identity": ["amount concentration"],
+    "numerator_basis": ["component amount"],
+    "units": ["mol m^-3"],
+    "conditions": ["declared mixture state"],
+    "uncertainty": "retained",
+    "closure": "not applicable"
+  },
+  "source_custody": [
+    {
+      "artifact": "entry:amount-concentration-composition",
+      "path": "tables/entries/amount-concentration-composition.md",
+      "sha256": "b5e1bf736b16e9f1c758a9b0cc767736467dc69825aca4b7e33583efc2e682c1",
+      "review_path": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-15"
+    },
+    {
+      "artifact": "view:formula-amount-concentration-composition",
+      "path": "tables/formulas/amount-concentration-composition.md",
+      "sha256": "82cd97abc5ca7d572d4612bee18dc7d09f43bdf80421ab867b7a11ff2084e5f7",
+      "review_path": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-15"
+    }
+  ],
+  "boundary": {
+    "included": ["test relation"],
+    "excluded": ["canonical mutation"],
+    "stopping_condition": "structured failure fixture",
+    "domain_authority_retained": true
+  },
+  "projections": [
+    {
+      "id": "test",
+      "selected": ["quantity identity"],
+      "omitted": ["complete source"],
+      "loss_note": "Test projection only.",
+      "authority_preserved": true
+    }
+  ],
+  "unresolved": [{"id": "test-only", "status": "explicit", "note": "This fixture must fail."}],
+  "expected_failure": {
+    "code": "FG-QUANTITY-BASIS-MISSING",
+    "path": "quantity_contract.denominator_basis"
+  }
+}

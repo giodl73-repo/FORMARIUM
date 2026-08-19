@@ -1,0 +1,74 @@
+{
+  "schema": "formography-independent-coding-protocol-v0",
+  "date": "2026-08-18",
+  "object_contract": {
+    "form": "organization of factors and relations under a declared frame; not a metaphysical universal",
+    "factor": "selected constituent or coordinate in one view; not automatically independent or causal",
+    "relation": "typed, directed, scoped correspondence or dependency; not inferred from co-occurrence",
+    "frame": "question, purpose, perspective, context, scale, and version",
+    "formograph": "one bounded, inspectable map",
+    "projection": "a loss-declared view for one use; not replacement authority",
+    "custody": "source path, source identity or digest, review state, authority, and unresolved state remain reconstructable"
+  },
+  "required_core_categories": [
+    "form_owner",
+    "frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_scoped_relations",
+    "source_custody",
+    "boundary",
+    "projection_and_loss",
+    "unresolved_state"
+  ],
+  "cases": [
+    {
+      "case_id": "access-authorization",
+      "entry_source": "tables/entries/access-permission-authorization-entitlement.md",
+      "view_source": "tables/constraints/access-authorization-integrity.md",
+      "reference_entry": "entry:access-permission-authorization-entitlement",
+      "reference_view": "view:constraint-access-authorization-integrity"
+    },
+    {
+      "case_id": "amount-concentration-composition",
+      "entry_source": "tables/entries/amount-concentration-composition.md",
+      "view_source": "tables/formulas/amount-concentration-composition.md",
+      "reference_entry": "entry:amount-concentration-composition",
+      "reference_view": "view:formula-amount-concentration-composition"
+    },
+    {
+      "case_id": "choice-alternative-selection",
+      "entry_source": "tables/entries/choice-alternative-selection.md",
+      "view_source": "tables/decisions/alternative-selection.md",
+      "reference_entry": "entry:choice-alternative-selection",
+      "reference_view": "view:decision-alternative-selection"
+    }
+  ],
+  "coding_rules": [
+    "Use only source-backed content and distinguish source facts from coder proposals.",
+    "Keep the canonical entry and view authoritative; the coding record is a research projection.",
+    "Do not infer a relation from textual proximity.",
+    "Do not require one universal factor set.",
+    "Declare what a reader projection selects and omits.",
+    "Propose the smallest domain extension needed to prevent a consequential category error.",
+    "Do not assume Formography requires a novel storage or graph representation.",
+    "Retain uncertainty and disagreement rather than filling missing values."
+  ],
+  "terminology_test": {
+    "prompt": "Which label is more precise and cheaper to explain for this method contract: Formography or governed property graph?",
+    "allowed_preference": [
+      "formography",
+      "governed-property-graph",
+      "tie",
+      "neither"
+    ],
+    "required_fields": [
+      "preference",
+      "formography_explanation",
+      "governed_property_graph_explanation",
+      "reason",
+      "confidence"
+    ]
+  },
+  "independence_rule": "Do not read comparative-slice-v0, wave comparison results, or another coder output before submitting."
+}

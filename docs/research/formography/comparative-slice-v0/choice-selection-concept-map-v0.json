@@ -1,0 +1,52 @@
+{
+  "schema": "formography-concept-map-comparator-v0",
+  "case_id": "choice-alternative-selection",
+  "focus_question": "How does a bounded evaluation lead to recommendation while preserving final selection authority?",
+  "concepts": [
+    {"id": "choice", "label": "bounded choice", "level": 0},
+    {"id": "owner", "label": "question, scope, and owner", "level": 1},
+    {"id": "alternatives", "label": "candidate alternatives", "level": 1},
+    {"id": "constraints", "label": "hard constraints", "level": 1},
+    {"id": "outcomes", "label": "alternative-state outcomes", "level": 1},
+    {"id": "evidence", "label": "evidence and uncertainty", "level": 1},
+    {"id": "criteria", "label": "criteria and directions", "level": 1},
+    {"id": "preferences", "label": "attributed preferences", "level": 1},
+    {"id": "recommendation", "label": "recommendation with limitations", "level": 1},
+    {"id": "selection", "label": "authority-owned selection", "level": 1},
+    {"id": "rule", "label": "rule-derived decision lens", "level": 2},
+    {"id": "optimization", "label": "optimization or scoring lens", "level": 2},
+    {"id": "deliberation", "label": "qualitative deliberation lens", "level": 2}
+  ],
+  "propositions": [
+    {"from": "choice", "linking_words": "is bounded by", "to": "owner"},
+    {"from": "choice", "linking_words": "considers", "to": "alternatives"},
+    {"from": "constraints", "linking_words": "filter", "to": "alternatives"},
+    {"from": "alternatives", "linking_words": "under states produce", "to": "outcomes"},
+    {"from": "evidence", "linking_words": "qualifies", "to": "outcomes"},
+    {"from": "criteria", "linking_words": "compare", "to": "outcomes"},
+    {"from": "preferences", "linking_words": "orient", "to": "criteria"},
+    {"from": "outcomes", "linking_words": "support", "to": "recommendation"},
+    {"from": "recommendation", "linking_words": "informs but does not determine", "to": "selection"},
+    {"from": "choice", "linking_words": "contrasts with", "to": "rule"},
+    {"from": "choice", "linking_words": "may use", "to": "optimization"},
+    {"from": "choice", "linking_words": "may use", "to": "deliberation"}
+  ],
+  "source_links": [
+    "tables/entries/choice-alternative-selection.md",
+    "tables/decisions/alternative-selection.md"
+  ],
+  "retained_features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations"
+  ],
+  "declared_omissions": [
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ]
+}

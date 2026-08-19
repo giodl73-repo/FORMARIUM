@@ -1,0 +1,124 @@
+{
+  "schema": "formography-practitioner-scoring-contract-v0",
+  "date": "2026-08-18",
+  "status": "frozen_before_recruitment",
+  "response_unit": "one row per participant slot and case",
+  "expected_rows_at_completion": 36,
+  "field_contracts": {
+    "participant_slot": {
+      "values": "P01 through P12",
+      "required": true
+    },
+    "practice_group": {
+      "values": [
+        "reference-or-domain",
+        "graph-or-ontology",
+        "both"
+      ],
+      "required": true
+    },
+    "case_id": {
+      "values": [
+        "access-authorization",
+        "amount-concentration-composition",
+        "choice-alternative-selection"
+      ],
+      "required": true
+    },
+    "case_position": {
+      "values": [
+        1,
+        2,
+        3
+      ],
+      "required": true
+    },
+    "displayed_label": {
+      "values": [
+        "Formography",
+        "Governed Property Graph"
+      ],
+      "required": true
+    },
+    "comprehension_correct": {
+      "values": [
+        "true",
+        "false"
+      ],
+      "rule": "true only when all four case criteria are correct in the first complete response without moderator teaching",
+      "required": true
+    },
+    "completion_seconds": {
+      "values": "positive integer",
+      "required": true
+    },
+    "correction_count": {
+      "values": "non-negative integer",
+      "required": true
+    },
+    "explain_back_word_count": {
+      "values": "non-negative integer",
+      "required": true
+    },
+    "critical_misunderstanding": {
+      "values": [
+        "none",
+        "projection-as-authority",
+        "universal-factorization",
+        "source-custody-omission",
+        "projection-loss-omission",
+        "silent-unresolved-default"
+      ],
+      "multiple_value_separator": "|",
+      "required": true
+    },
+    "terminology_preference": {
+      "values": [
+        "Formography",
+        "Governed Property Graph",
+        "tie",
+        "neither"
+      ],
+      "rule": "record only on case position 3; leave blank on positions 1 and 2",
+      "required_on_position": 3
+    },
+    "terminology_burden": {
+      "values": [
+        "Formography",
+        "Governed Property Graph",
+        "equal",
+        "neither"
+      ],
+      "rule": "record the more burdensome term only on case position 3; leave blank on positions 1 and 2",
+      "required_on_position": 3
+    }
+  },
+  "case_scoring": {
+    "access-authorization": {
+      "boundary": "the bounded access request and applicable authorization constraints",
+      "source_authority": "the operational approval and grant owners remain authoritative",
+      "unresolved_state": "a pending or disputed request remains unresolved",
+      "projection_loss": "the compact view must declare omitted approval, grant, entitlement, or constraint detail"
+    },
+    "amount-concentration-composition": {
+      "boundary": "the specified sample, component set, conditions, and quantity basis",
+      "source_authority": "the governed measurement or composition source remains authoritative",
+      "unresolved_state": "a provisional value or closure state remains unresolved",
+      "projection_loss": "the compact view must declare omitted basis, unit, condition, uncertainty, or closure detail"
+    },
+    "choice-alternative-selection": {
+      "boundary": "the stated question, admitted alternatives, and hard constraints",
+      "source_authority": "the final decision owner remains authoritative",
+      "unresolved_state": "an unresolved or rejected recommendation is not a final selection",
+      "projection_loss": "the compact view must declare omitted alternative, criterion, preference, constraint, or authority detail"
+    }
+  },
+  "adjudication": {
+    "score_before_discussing_label_preference": true,
+    "retain_first_complete_response": true,
+    "retain_corrections": true,
+    "do_not_impute_missing_values": true,
+    "promotion_analysis_requires_all_12_eligible_slots": true,
+    "participant_preference_denominator": "one position-3 preference per eligible participant slot"
+  }
+}

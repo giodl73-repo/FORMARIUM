@@ -1,0 +1,48 @@
+{
+  "schema": "formography-scoped-property-graph-comparator-v0",
+  "case_id": "choice-alternative-selection",
+  "nodes": [
+    {"id": "frame:bounded-choice", "labels": ["Frame"], "properties": {"question": "Which admitted alternative should be recommended and which is finally selected?", "purpose": "evaluative comparison", "perspective": "Factorium candidate decision reference", "context": "candidate decision record", "scale": "one entry and Decision view", "version": "v0"}},
+    {"id": "form:choice-selection", "labels": ["Form"], "properties": {"owner": "entry:choice-alternative-selection", "maturity": "candidate"}},
+    {"id": "factorization:primary", "labels": ["Factorization"], "properties": {"status": "primary", "factors": ["decision-question-scope-and-owner", "objectives-desired-outcomes-and-affected-parties", "candidate-alternatives-and-generation-boundary", "feasibility-constraints-and-exclusion-rationale", "states-scenarios-horizon-and-controllability", "alternative-state-outcomes-and-consequences", "evidence-quality-applicability-and-uncertainty", "criteria-definitions-measurement-bases-and-directions", "preferences-priorities-weights-and-provenance", "aggregation-decision-rule-and-noncompensatory-gates", "sensitivity-robustness-ties-and-information-value", "recommendation-rationale-limitations-and-review-state", "final-selection-authority-implementation-and-reconsideration-trigger"], "source_status": "canonical-entry-factorization"}},
+    {"id": "factorization:rule", "labels": ["Factorization"], "properties": {"status": "alternative", "factors": ["governing logic", "case facts", "derived disposition"], "use_when": "adjudicating under a rule", "losses": ["choice among generated alternatives"]}},
+    {"id": "factorization:scoring", "labels": ["Factorization"], "properties": {"status": "alternative", "factors": ["objective", "constraints", "encoded criteria", "computed result"], "use_when": "a justified numerical model exists", "losses": ["unencoded values and authority"]}},
+    {"id": "factorization:deliberation", "labels": ["Factorization"], "properties": {"status": "alternative", "factors": ["reasons", "affected parties", "trade-offs", "judgment"], "use_when": "comparison is not fully commensurable", "losses": ["automatic rank"]}},
+    {"id": "decision:contract", "labels": ["DecisionContract"], "properties": {"question_owner": "declared owner", "alternatives_boundary": "visible generation boundary", "hard_constraints": "noncompensatory and versioned", "outcome_cell_status": ["observed", "estimated", "missing", "contested", "not-applicable"], "criteria_basis_direction": "operational definition, basis, direction, and missing behavior", "preference_provenance": "holder and authority retained", "recommendation_limitations": "rationale, uncertainty, and review state retained", "final_selection_authority": "separate authorized decision owner"}},
+    {"id": "recommendation:record", "labels": ["Recommendation"], "properties": {"status": "analytical disposition", "limitations": "required"}},
+    {"id": "selection:record", "labels": ["Selection"], "properties": {"status": ["selected", "deferred", "not-recorded"], "authority": "required"}},
+    {"id": "boundary:decision-case", "labels": ["Boundary"], "properties": {"included": ["canonical entry", "Decision view", "five canonical sidecar relations"], "excluded": ["universal algorithm", "automatic winner", "decision authority"], "stopping_condition": "one source entry and its Decision view"}},
+    {"id": "projection:decision-reader", "labels": ["Projection"], "properties": {"selected": ["choice stages", "critical distinctions", "authority boundary"], "omitted": ["complete alternative-state matrix", "all sensitivity tests", "operational decision"], "loss_note": "projection cannot recommend or select an actual alternative", "authority_preserved": true}},
+    {"id": "unresolved:visible", "labels": ["UnresolvedState"], "properties": {"status": "missing and contested cells remain visible"}},
+    {"id": "source:entry", "labels": ["Source"], "properties": {"path": "tables/entries/choice-alternative-selection.md", "sha256": "16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1", "review": "context/waves/2026-08-13-factorium-vision/CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md", "review_state": "fixed-point"}},
+    {"id": "source:view", "labels": ["Source"], "properties": {"path": "tables/decisions/alternative-selection.md", "sha256": "2c2fda3dbe56b92f643fdd1f0f8e87284b865f5eabefc52c3939ac58423b1171", "review": "context/waves/2026-08-13-factorium-vision/CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md", "review_state": "fixed-point"}}
+  ],
+  "edges": [
+    {"type": "FRAMES", "from": "frame:bounded-choice", "to": "form:choice-selection", "properties": {"scope": "comparison-v0", "authority": "research-projection"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:choice-selection", "to": "factorization:primary", "properties": {"scope": "canonical-source", "authority": "Factorium"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:choice-selection", "to": "factorization:rule", "properties": {"scope": "rule-derived-lens", "authority": "candidate"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:choice-selection", "to": "factorization:scoring", "properties": {"scope": "quantitative-lens", "authority": "candidate"}},
+    {"type": "HAS_FACTORIZATION", "from": "form:choice-selection", "to": "factorization:deliberation", "properties": {"scope": "qualitative-lens", "authority": "candidate"}},
+    {"type": "CONSTRAINED_BY", "from": "form:choice-selection", "to": "decision:contract", "properties": {"scope": "evaluative-record", "qualifiers": {"hard_constraints": "noncompensatory", "missing_cells": "not-neutral"}, "authority": "Decision-view"}},
+    {"type": "INFORMS", "from": "recommendation:record", "to": "selection:record", "properties": {"scope": "decision-disposition", "qualifiers": {"determines": false, "authority_required": true}, "authority": "canonical-entry"}},
+    {"type": "BOUNDED_BY", "from": "form:choice-selection", "to": "boundary:decision-case", "properties": {"scope": "comparison-v0"}},
+    {"type": "PROJECTED_AS", "from": "form:choice-selection", "to": "projection:decision-reader", "properties": {"scope": "reader"}},
+    {"type": "HAS_UNRESOLVED_STATE", "from": "form:choice-selection", "to": "unresolved:visible", "properties": {"scope": "comparison-v0"}},
+    {"type": "SOURCED_FROM", "from": "form:choice-selection", "to": "source:entry", "properties": {"scope": "canonical-entry"}},
+    {"type": "SOURCED_FROM", "from": "form:choice-selection", "to": "source:view", "properties": {"scope": "Decision-view"}}
+  ],
+  "retained_features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations",
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ],
+  "domain_extension_retained": true,
+  "profile_boundary": "A generic property graph encodes the complete core and decision extension but does not require their authority semantics."
+}

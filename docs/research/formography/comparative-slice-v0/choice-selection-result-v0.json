@@ -1,0 +1,21 @@
+{
+  "schema": "formography-comparison-result-v0",
+  "case_id": "choice-alternative-selection",
+  "feature_count": 10,
+  "retention": {
+    "concept_map": 4,
+    "scoped_property_graph": 10,
+    "formograph": 10
+  },
+  "domain_extension": "decision-contract-v0",
+  "domain_extension_retained_by_graph": true,
+  "domain_extension_required_by_formograph": true,
+  "structured_failure": {
+    "fixture": "choice-selection-formograph-invalid-v0.json",
+    "code": "FG-DECISION-AUTHORITY-MISSING",
+    "path": "decision_contract.final_selection_authority"
+  },
+  "finding": "The core contract transfers to evaluation with an explicit decision extension. A property graph can encode both core and extension; the formograph requires the authority boundary.",
+  "verdict": "THREE_CASE_CORE_SURVIVES_AS_GOVERNED_PROFILE_INDEPENDENT_CODING_REQUIRED",
+  "scope_limit": "Third authored case completes representation comparison but not independent repeatability or reader value."
+}

@@ -1,6 +1,6 @@
 # Formography Research Module
 
-Status: proposed field may proceed with targeted narrowing
+Status: field promotion paused; practitioner recruitment pending
 
 This module tests whether **Formography** is a defensible name and method for
 systematically mapping forms through factors, relations, contexts, boundaries,
@@ -37,3 +37,19 @@ Access Authorization case shows that a generic scoped property graph can
 retain all ten predeclared features. Formography therefore survives this case
 only as a candidate governed method profile, not as a distinct graph
 representation.
+
+The three-case authored packet is complete, followed by source-firewalled
+independent coding in `independent-coding-v0/`. Independent promotion gates did
+not pass: owner identity was not unanimous, essential extensions lacked stable
+majority, and terminology split 1-1-1. Field promotion is paused.
+
+`independent-coding-v1/` pre-registers equivalence categories and a bounded
+terminology task. It improves extension agreement but still fails protocol
+conformance and unresolved-state custody. Governed property graph wins the
+internal model terminology comparison; no immediate V2 is authorized.
+
+`practitioner-evaluation-v0/` freezes the next admissible test: a balanced,
+blinded 12-slot comparison of the identical method body under the Formography
+and Governed Property Graph headings. The response form is empty, recruitment
+is pending, and no human-evidence or promotion claim follows from protocol
+preparation.

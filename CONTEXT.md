@@ -72,9 +72,56 @@ property graph, and candidate formograph. The property graph retains all ten
 predeclared features, deleting any distinct-graph-representation claim.
 Formography currently survives only as a candidate governed method profile
 whose source, relation, boundary, unresolved-state, and projection-loss
-requirements fail closed. Two cross-domain cases and independent coding remain
-open. See
+requirements fail closed. See
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-COMPARATIVE-SLICE-01-RESULT.md`.
+
+Comparative slice 02 applies the unchanged ten-feature core to Amount,
+Concentration, and Composition. Both the property graph and formograph retain
+all ten features and an explicit quantity extension covering identity, bases,
+units, conditions, uncertainty, and closure. Missing denominator basis fails
+closed. The method-profile claim remains narrowed. See
+`context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-COMPARATIVE-SLICE-02-RESULT.md`.
+
+Comparative slice 03 completes the authored three-case packet with Choice and
+Selection. The same core transfers with an explicit decision extension;
+missing final authority fails closed. Across all three cases, property graphs
+encode every retained field. The surviving hypothesis is a governed method
+profile over ordinary representations. Authored encoding is closed; independent
+coding and a direct `governed property graph` simplicity comparison are now
+the active gate. See
+`context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-COMPARATIVE-SLICE-03-RESULT.md`.
+
+Independent coding V0 is complete and does not pass promotion. Three isolated
+coders produced nine case records; all nine find property graphs sufficient
+and preserve authority and projection loss. Exact owner identity reaches only
+2/3 per case, essential extensions lack stable majority, and terminology
+splits Formography 1, governed property graph 1, neither 1. Formography field
+promotion is paused pending a pre-registered V1 protocol; rename and
+publication claims remain blocked. See
+`context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-INDEPENDENT-CODING-01-RESULT.md`.
+
+Independent coding V1 pre-registers owner/authority separation, extension and
+failure categories, and bounded paired explanations. Extension and failure
+majorities now pass in all cases. Promotion still fails because only 2/3
+records conform and unresolved state is retained in 8/9. Governed property
+graph wins the internal model terminology comparison 2/3 with a lower median
+word count. This weakens rather than supports a Formography naming claim. No
+immediate V2 is authorized; a human or practitioner protocol decision is the
+next boundary. See
+`context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-INDEPENDENT-CODING-02-RESULT.md`.
+
+The practitioner decision is now a frozen protocol rather than a result.
+`docs/research/formography/practitioner-evaluation-v0/` defines 12 anonymous
+slots, balanced case order, six appearances of each case under each label, an
+identical method body, privacy boundaries, and an empty response form.
+The execution supplement adds fixed case scoring anchors, coded response
+values, a neutral invitation, eligibility and consent text, and one
+participant-level preference record per slot.
+Recruitment and moderated sessions remain external and pending. Model agents,
+synthetic personas, and Factorium simulated readers cannot count as
+participants. Human evidence remains unavailable and Formography promotion,
+rename, novelty, Formarium, and Structure Atlas claims remain blocked. See
+`context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-PRACTITIONER-PROTOCOL-RESULT.md`.
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor

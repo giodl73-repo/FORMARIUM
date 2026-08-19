@@ -3895,3 +3895,99 @@ Structure Atlas, reader-value, or canonical interchange claim follows. Two
 cross-domain cases and independent coding remain required. See
 `FORMOGRAPHY-COMPARATIVE-SLICE-01-ROLE-REVIEW.md` and
 `FORMOGRAPHY-COMPARATIVE-SLICE-01-RESULT.md`.
+
+## 2026-08-18 Formography comparative slice 02
+
+Plan review: apply the same ten-feature core to Amount, Concentration, and
+Composition while retaining Factorium, SI, and IUPAC authority. Add an
+explicit quantity extension for identity, numerator and denominator bases,
+units, conditions, uncertainty, and closure rather than silently redefining
+core objects. See `FORMOGRAPHY-COMPARATIVE-SLICE-02-PLAN.md`.
+
+Result review: the concept map retains 4/10 core features; both the scoped
+property graph and formograph retain 10/10 plus the complete quantity
+extension. A missing concentration denominator fails with
+`FG-QUANTITY-BASIS-MISSING`. The core transfers across the second domain, but
+the graph again represents everything and the method-profile claim remains
+narrowed. Domain-extension proliferation is now an explicit risk. One
+evaluative or interpretive case remains before independent coding. See
+`FORMOGRAPHY-COMPARATIVE-SLICE-02-ROLE-REVIEW.md` and
+`FORMOGRAPHY-COMPARATIVE-SLICE-02-RESULT.md`.
+
+## 2026-08-18 Formography comparative slice 03
+
+Plan review: complete the authored packet with Choice and Selection. Preserve
+the same ten-feature core and add an explicit decision extension for question
+owner, alternatives boundary, hard constraints, outcome status, criterion
+semantics, preference provenance, recommendation limitations, and final
+authority. See `FORMOGRAPHY-COMPARATIVE-SLICE-03-PLAN.md`.
+
+Result review: the concept map retains 4/10 features; the property graph and
+formograph retain 10/10 plus the full decision extension. Recommendation
+without final-selection authority fails with
+`FG-DECISION-AUTHORITY-MISSING`. Across governance, quantitative, and
+evaluative cases, the unchanged core transfers and property graphs encode
+everything. Formography survives only as a candidate governed method profile.
+Authored comparison stops at three cases; independent coding and a direct
+`governed property graph` simplicity comparison now block promotion. See
+`FORMOGRAPHY-COMPARATIVE-SLICE-03-ROLE-REVIEW.md` and
+`FORMOGRAPHY-COMPARATIVE-SLICE-03-RESULT.md`.
+
+## 2026-08-18 Formography independent coding 01
+
+Plan review: freeze a source-firewalled protocol and give three isolated model
+coders the same object contract, six canonical sources, and current reference
+records without authored formographs or peer outputs. Predeclare unanimous
+owner identity, majority category and extension agreement, authority and loss
+custody, graph sufficiency, and retained terminology disagreement. See
+`FORMOGRAPHY-INDEPENDENT-CODING-01-PLAN.md`.
+
+Result review: all nine case records preserve authority and projection loss
+and say generic property graphs are sufficient. Promotion nevertheless fails:
+exact canonical owner identity is only 2/3 per case, essential extensions lack
+stable majority, and terminology splits Formography 1, governed property graph
+1, and neither 1. The V0 records remain unchanged. Verdict:
+`PAUSE_FIELD_PROMOTION_REVISE_AND_RERUN_INDEPENDENT_PROTOCOL`. No field,
+novelty, rename, Formarium, Structure Atlas, reader, or human-practitioner
+claim is authorized. See `FORMOGRAPHY-INDEPENDENT-CODING-01-ROLE-REVIEW.md`
+and `FORMOGRAPHY-INDEPENDENT-CODING-01-RESULT.md`.
+
+## 2026-08-18 Formography independent coding 02
+
+Plan review: preserve V0 and pre-register V1 owner/authority separation,
+extension and failure taxonomies, per-category codability, and paired 35-55
+word terminology explanations. Expose no authored maps or V0 coder records.
+See `FORMOGRAPHY-INDEPENDENT-CODING-02-PLAN.md`.
+
+Result review: majority extension and failure categories pass in all three
+cases. Governed property graph wins the bounded model terminology comparison
+2/3 and has a lower median explanation length, 41 versus 44 words. Promotion
+still fails: V1C2 violates the registered category contract, V1C1 does not
+retain quantitative unresolved state, and graph sufficiency splits 6/9 versus
+3/9. Verdict:
+`PAUSE_FIELD_PROMOTION_V1_PROTOCOL_CONFORMANCE_AND_UNRESOLVED_GATE_FAILED`.
+No immediate V2, field, novelty, rename, Formarium, Structure Atlas, reader, or
+human-practitioner claim is authorized. See
+`FORMOGRAPHY-INDEPENDENT-CODING-02-ROLE-REVIEW.md` and
+`FORMOGRAPHY-INDEPENDENT-CODING-02-RESULT.md`.
+
+## 2026-08-18 Formography practitioner protocol
+
+Plan review: freeze a blinded human comparison before recruitment. Use 12
+anonymous slots, three cases per participant, complementary label schedules,
+balanced case order, an invariant method body, explicit privacy exclusions,
+and no synthetic or model substitutes. Measure comprehension, time,
+corrections, explain-back length, critical misunderstandings, preference, and
+burden. See `FORMOGRAPHY-PRACTITIONER-PROTOCOL-PLAN.md`.
+
+Result review: the protocol packet is structurally ready. Every case appears
+six times under Formography and six times under Governed Property Graph, and
+four times in each position. The response form contains no participant rows.
+An execution-readiness supplement freezes case scoring anchors, response
+values, a neutral invitation, eligibility and consent, and one preference
+record per participant rather than per case.
+Recruitment and moderated sessions remain pending, so there is no human
+evidence and no change to the paused field, naming, novelty, Formarium, or
+Structure Atlas gates. See
+`FORMOGRAPHY-PRACTITIONER-PROTOCOL-ROLE-REVIEW.md` and
+`FORMOGRAPHY-PRACTITIONER-PROTOCOL-RESULT.md`.

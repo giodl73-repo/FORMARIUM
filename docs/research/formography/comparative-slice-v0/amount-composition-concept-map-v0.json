@@ -1,0 +1,53 @@
+{
+  "schema": "formography-concept-map-comparator-v0",
+  "case_id": "amount-concentration-composition",
+  "focus_question": "How do entity count, amount, concentration, composition fraction, and molar mass differ?",
+  "concepts": [
+    {"id": "quantity-use", "label": "amount and composition use", "level": 0},
+    {"id": "entity", "label": "specified entity or component", "level": 1},
+    {"id": "boundary", "label": "sample or mixture boundary", "level": 1},
+    {"id": "kind", "label": "requested quantity kind", "level": 1},
+    {"id": "numerator", "label": "numerator basis", "level": 1},
+    {"id": "denominator", "label": "denominator basis", "level": 1},
+    {"id": "conditions", "label": "state, temperature, and pressure", "level": 1},
+    {"id": "unit", "label": "unit and display scale", "level": 1},
+    {"id": "uncertainty", "label": "uncertainty", "level": 1},
+    {"id": "count", "label": "entity count", "level": 2},
+    {"id": "amount", "label": "amount of substance", "level": 2},
+    {"id": "concentration", "label": "component per mixture volume", "level": 2},
+    {"id": "fraction", "label": "component per like-kind total", "level": 2},
+    {"id": "molar-mass", "label": "mass per amount for specified material", "level": 2}
+  ],
+  "propositions": [
+    {"from": "quantity-use", "linking_words": "is framed by", "to": "boundary"},
+    {"from": "quantity-use", "linking_words": "names", "to": "entity"},
+    {"from": "quantity-use", "linking_words": "selects", "to": "kind"},
+    {"from": "kind", "linking_words": "determines", "to": "numerator"},
+    {"from": "kind", "linking_words": "determines", "to": "denominator"},
+    {"from": "quantity-use", "linking_words": "is contextualized by", "to": "conditions"},
+    {"from": "quantity-use", "linking_words": "is reported with", "to": "unit"},
+    {"from": "quantity-use", "linking_words": "is qualified by", "to": "uncertainty"},
+    {"from": "count", "linking_words": "is converted through Avogadro constant to", "to": "amount"},
+    {"from": "amount", "linking_words": "per mixture volume forms", "to": "concentration"},
+    {"from": "amount", "linking_words": "per like-kind total forms", "to": "fraction"},
+    {"from": "molar-mass", "linking_words": "relates mass and", "to": "amount"}
+  ],
+  "source_links": [
+    "tables/entries/amount-concentration-composition.md",
+    "tables/formulas/amount-concentration-composition.md"
+  ],
+  "retained_features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations"
+  ],
+  "declared_omissions": [
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ]
+}

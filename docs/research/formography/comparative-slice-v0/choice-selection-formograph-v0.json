@@ -1,0 +1,138 @@
+{
+  "schema": "formograph-v0",
+  "id": "formograph:choice-alternative-selection-v0",
+  "frame": {
+    "question": "Which admitted alternative should be recommended and which is finally selected?",
+    "purpose": "test the Formography core in an evaluative domain",
+    "perspective": "Factorium candidate decision reference",
+    "context": "bounded alternative comparison",
+    "scale": "one canonical entry plus one Decision view",
+    "version": "v0"
+  },
+  "form": {
+    "id": "choice-alternative-selection",
+    "owner": "entry:choice-alternative-selection",
+    "maturity": "candidate",
+    "authority_change": false
+  },
+  "factorizations": [
+    {
+      "id": "primary",
+      "status": "primary",
+      "factors": [
+        "decision-question-scope-and-owner",
+        "objectives-desired-outcomes-and-affected-parties",
+        "candidate-alternatives-and-generation-boundary",
+        "feasibility-constraints-and-exclusion-rationale",
+        "states-scenarios-horizon-and-controllability",
+        "alternative-state-outcomes-and-consequences",
+        "evidence-quality-applicability-and-uncertainty",
+        "criteria-definitions-measurement-bases-and-directions",
+        "preferences-priorities-weights-and-provenance",
+        "aggregation-decision-rule-and-noncompensatory-gates",
+        "sensitivity-robustness-ties-and-information-value",
+        "recommendation-rationale-limitations-and-review-state",
+        "final-selection-authority-implementation-and-reconsideration-trigger"
+      ],
+      "source_status": "canonical-entry-factorization"
+    },
+    {"id": "rule-derived", "status": "alternative", "factors": ["governing logic", "case facts", "derived disposition"], "use_when": "adjudicating under a rule", "losses": ["choice among generated alternatives"]},
+    {"id": "optimization-or-scoring", "status": "alternative", "factors": ["objective", "constraints", "encoded criteria", "computed result"], "use_when": "a justified numerical model exists", "losses": ["unencoded values and authority"]},
+    {"id": "qualitative-deliberation", "status": "alternative", "factors": ["reasons", "affected parties", "trade-offs", "judgment"], "use_when": "comparison is not fully commensurable", "losses": ["automatic rank"]}
+  ],
+  "relations": [
+    {
+      "kind": "CONSTRAINED-BY",
+      "source": "candidate-alternatives",
+      "target": "hard-constraints",
+      "scope": "feasibility",
+      "qualifiers": {"authority": "declared", "version": "exact", "hard_or_soft": "hard"},
+      "authority": "relation:f27-constraint-filters-feasibility",
+      "evidence": "reference/factorium-relations-v0.factorium"
+    },
+    {
+      "kind": "QUALIFIED-BY",
+      "source": "alternative-state-outcomes",
+      "target": "evidence-quality-applicability-and-uncertainty",
+      "scope": "evaluation",
+      "qualifiers": {"population": "declared", "horizon": "declared", "limitation": "retained"},
+      "authority": "relation:f27-evidence-qualifies-evaluation",
+      "evidence": "reference/factorium-relations-v0.factorium"
+    },
+    {
+      "kind": "INFORMS",
+      "source": "recommendation",
+      "target": "final-selection",
+      "scope": "decision-disposition",
+      "qualifiers": {"determines": "false", "selection_authority": "separate"},
+      "authority": "entry:choice-alternative-selection",
+      "evidence": "tables/entries/choice-alternative-selection.md"
+    }
+  ],
+  "decision_contract": {
+    "question_owner": "exact bounded question, scope, and authorized owner",
+    "alternatives_boundary": "candidate generation boundary includes current practice when genuinely available",
+    "hard_constraints": "authoritative, versioned, applicable, and noncompensatory",
+    "outcome_cell_status": ["observed", "estimated", "missing", "contested", "not-applicable"],
+    "criteria_basis_direction": "operational definition, basis, desired direction, and missing-value behavior",
+    "preference_provenance": "holder, authority, incompleteness, ties, priorities, and weights retained",
+    "recommendation_limitations": "rationale, uncertainty, alternatives retained, and review state",
+    "final_selection_authority": "separate authorized decision owner with rationale and reconsideration trigger"
+  },
+  "source_custody": [
+    {
+      "artifact": "entry:choice-alternative-selection",
+      "path": "tables/entries/choice-alternative-selection.md",
+      "sha256": "16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1",
+      "review_path": "context/waves/2026-08-13-factorium-vision/CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-16"
+    },
+    {
+      "artifact": "view:decision-alternative-selection",
+      "path": "tables/decisions/alternative-selection.md",
+      "sha256": "2c2fda3dbe56b92f643fdd1f0f8e87284b865f5eabefc52c3939ac58423b1171",
+      "review_path": "context/waves/2026-08-13-factorium-vision/CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-16"
+    }
+  ],
+  "boundary": {
+    "included": ["canonical entry", "Decision view", "three evaluation lenses", "five admitted relation precedents"],
+    "excluded": ["universal decision algorithm", "automatic winner", "operational recommendation", "decision authority"],
+    "stopping_condition": "one canonical entry and its admitted Decision view",
+    "domain_authority_retained": true
+  },
+  "projections": [
+    {
+      "id": "decision-reader",
+      "selected": ["choice stages", "critical distinctions", "authority boundary"],
+      "omitted": ["complete alternative-state matrix", "all sensitivity tests", "operational decision"],
+      "loss_note": "The projection cannot recommend or select an actual alternative.",
+      "authority_preserved": true
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "missing-and-contested-cells",
+      "status": "retained",
+      "note": "Missing, contested, and unresolved records do not default to neutral or favorable."
+    }
+  ],
+  "representation": {
+    "property_graph_compatible": true,
+    "novel_encoding_claimed": false
+  },
+  "retained_features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations",
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ]
+}

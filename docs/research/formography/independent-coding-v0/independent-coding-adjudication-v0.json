@@ -1,0 +1,70 @@
+{
+  "schema": "formography-independent-coding-adjudication-v0",
+  "date": "2026-08-18",
+  "coder_count": 3,
+  "case_count": 3,
+  "source_firewall_attested": {
+    "C1": true,
+    "C2": true,
+    "C3": true
+  },
+  "thresholds": {
+    "same_canonical_owner_every_case": {
+      "required": true,
+      "passed": false,
+      "result": "C1 and C2 used exact entry identifiers; C3 used the generic phrase Factorium reference method in all three cases."
+    },
+    "majority_required_core_categories": {
+      "required": true,
+      "passed": true,
+      "result": "All required categories are populated; C1 and C2 reproduce each complete canonical root factorization while C3 selects partial factor sets."
+    },
+    "authority_and_projection_loss_preserved": {
+      "required": true,
+      "passed": true,
+      "result": "All coders retain source authority boundaries and describe projection loss in every case."
+    },
+    "graph_sufficiency_answered": {
+      "required": true,
+      "passed": true,
+      "result": "All nine case records say a generic property graph is representationally sufficient."
+    },
+    "majority_essential_domain_extension": {
+      "required": true,
+      "passed": false,
+      "result": "Access has partial enforcement-lifecycle overlap; quantity has broad basis/state overlap; choice has no stable majority across outcome-cell, generation-boundary, and recommendation-authority proposals."
+    },
+    "terminology_advantage": {
+      "required": false,
+      "passed": false,
+      "result": "Preferences split one Formography, one governed-property-graph, and one neither."
+    }
+  },
+  "terminology_distribution": {
+    "formography": 1,
+    "governed-property-graph": 1,
+    "neither": 1,
+    "tie": 0
+  },
+  "unanimous_findings": [
+    "A generic property graph is representationally sufficient in every case.",
+    "Source authority and projection loss must remain explicit.",
+    "The governed-method-profile thesis is not falsified solely by representation."
+  ],
+  "disagreements": [
+    "Canonical form-owner identification is not unanimous.",
+    "The smallest essential domain extension is unstable.",
+    "The most consequential structured failure differs across coders.",
+    "No terminology option has a majority explanation-cost advantage."
+  ],
+  "promotion_gate_passed": false,
+  "verdict": "PAUSE_FIELD_PROMOTION_REVISE_AND_RERUN_INDEPENDENT_PROTOCOL",
+  "claim_effect": {
+    "field_establishment": "blocked",
+    "field_novelty": "blocked",
+    "product_rename": "blocked",
+    "representation_novelty": "contradicted",
+    "governed_method_profile": "survives_but_repeatability_unproven"
+  },
+  "next_test": "Pre-register a V1 adjudication ontology for owner identity, core-category agreement, and extension equivalence without exposing authored answers, then run new coders. Retain the V0 records unchanged."
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "formography-independent-coding-output-schema-v1",
+  "coder_id": "V1C2",
+  "independence_attestation": "The coder attested to reading only permitted V1 protocol, source, and reference files.",
+  "capture_note": "Normalized categorical artifact retained for adjudication. The original response envelope is not retained, so only content visible in this artifact is mechanically adjudicated.",
+  "response_conformance": {
+    "category_vocabulary": false
+  },
+  "cases": [
+    {
+      "case_id": "access-authorization",
+      "owner_reference": "entry:access-permission-authorization-entitlement",
+      "authority_class": "domain-standard-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "request structure"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "entry contrasts"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "request and enforcement bindings"},
+        "source_custody": {"status": "codable", "source_anchor": "NIST sources and traces"},
+        "boundary": {"status": "codable", "source_anchor": "request and policy version boundary"},
+        "projection_loss": {"status": "codable", "source_anchor": "authentication excluded from authorization"},
+        "unresolved_state": {"status": "codable", "source_anchor": "missing facts require explicit handling"}
+      },
+      "primary_extension_category": "constraint-and-closure",
+      "secondary_extension_category": "authority-and-recommendation",
+      "extension_source_anchor": "AA-01 through AA-08, delegation, revocation, and privacy evidence",
+      "primary_failure_category": "authority-bypass",
+      "failure_condition": "Cached decisions lack invalidation, aliases bypass policy, or roles and permissions collapse.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": true,
+      "generic_property_graph_sufficient": false
+    },
+    {
+      "case_id": "amount-concentration-composition",
+      "owner_reference": "entry:amount-concentration-composition",
+      "authority_class": "domain-standard-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "quantity-kind question"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "entry contrasts"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "formula relations"},
+        "source_custody": {"status": "codable", "source_anchor": "NIST and IUPAC sources"},
+        "boundary": {"status": "codable", "source_anchor": "sample, component, mixture, and state"},
+        "projection_loss": {"status": "codable", "source_anchor": "basis and volume convention losses"},
+        "unresolved_state": {"status": "codable", "source_anchor": "missing components and invalid divisors"}
+      },
+      "primary_extension_category": "boundary-and-context",
+      "secondary_extension_category": "evidence-and-uncertainty",
+      "extension_source_anchor": "mixture conditions, entity identity, molar-mass source, and uncertainty",
+      "primary_failure_category": "basis-or-kind-collapse",
+      "failure_condition": "Molar mass lacks identity, concentration and fraction collapse, or incomplete sets are normalized.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": true,
+      "generic_property_graph_sufficient": false
+    },
+    {
+      "case_id": "choice-alternative-selection",
+      "owner_reference": "entry:choice-alternative-selection",
+      "authority_class": "canonical-reference-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "bounded choice question"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "alternative statuses and outcome cells"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "constraints, criteria, preferences, and selection"},
+        "source_custody": {"status": "codable", "source_anchor": "NASA, Treasury, SEP, and NIST"},
+        "boundary": {"status": "codable", "source_anchor": "generation and authority boundaries"},
+        "projection_loss": {"status": "codable", "source_anchor": "omitted alternatives and score collapse"},
+        "unresolved_state": {"status": "codable", "source_anchor": "unresolved alternatives and missing cells"}
+      },
+      "primary_extension_category": "relation-qualification",
+      "secondary_extension_category": "evidence-and-uncertainty",
+      "extension_source_anchor": "outcome evidence and uncertainty bound to cells and sensitivity tests",
+      "primary_failure_category": "unresolved-default",
+      "failure_condition": "Missing cells default favorably, close options become one winner, or recommendation becomes selection.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": true,
+      "generic_property_graph_sufficient": false
+    }
+  ],
+  "terminology_test": {
+    "formography_explanation": "Formography systematically maps context-bounded forms through alternative factorizations, typed relations, and source-custodied projections while declaring losses and preserving distinguishability without universal ontology claims. It names and compares forms under bounded questions, preserves factorization alternatives, maintains scoped relation types, tracks source authority and custody explicitly, and declares projection loss visibly.",
+    "governed_property_graph_explanation": "A governed property graph stores and traverses entities and relations under declared custody, access control, and schema constraints while tracking version, authority, and transformation rules. Property graphs support alternative paths, qualify edges with metadata, and apply governance rules across vertices and edges without requiring a single canonical factorization or declaring all representational loss.",
+    "preference": "formography",
+    "reason": "It names the explicit comparison, custody, and loss-declaration practice rather than the storage technology.",
+    "confidence": 72
+  },
+  "overall_assessment": {
+    "generic_property_graph_sufficient": false,
+    "note": "The coder judged domain fidelity and loss declaration to exceed typed property-graph storage."
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "schema": "formography-independent-coding-output-schema-v0",
+  "coder_id": "C3",
+  "independence_attestation": "I, C3, attest that I have strictly obeyed the source firewall and have not read comparative-slice-v0, any FORMOGRAPHY-COMPARATIVE-SLICE wave file, or any other coder output.",
+  "cases": [
+    {
+      "case_id": "access-authorization",
+      "form_owner": "Factorium reference method",
+      "frame": "Access as an attempted interaction governed by contextual decision-making and assigned constraints.",
+      "primary_factorization": [
+        "subject identity, authentication evidence, and session",
+        "resource identity, boundary, owner, and classification",
+        "operation, parameters, effect, and requested purpose",
+        "permission relation and entitlement source",
+        "policy, authority, precedence, and version",
+        "environmental attributes, time, location, device, and risk",
+        "decision, reason, obligations, and unresolved facts",
+        "enforcement point, failure behavior, revocation, and propagation",
+        "event, provenance, review, and privacy limits"
+      ],
+      "alternative_factorizations": [
+        "Request generation",
+        "Decision evaluation",
+        "Enforcement and propagation",
+        "Audit review"
+      ],
+      "typed_scoped_relations": [
+        "authentication vs. authorization",
+        "permission vs. authorization",
+        "entitlement vs. permission",
+        "authority vs. permission",
+        "decision vs. enforcement"
+      ],
+      "source_custody": [
+        "NIST IR 7316",
+        "NIST SP 800-63C-4 Glossary",
+        "NIST Role Based Access Control FAQ"
+      ],
+      "boundary": "Does not certify an access-control system, prescribe one product model, or grant access; organizational authorities retain scope.",
+      "projection_and_loss": "Projecting into this view loses specific proprietary vendor mechanisms in favor of standard evaluation semantics.",
+      "unresolved_state": [
+        "Missing policy facts",
+        "Indeterminate decision state",
+        "Unresolved contextual limits"
+      ],
+      "essential_domain_extension": "Explicit mapping of governance context like policy authority and delegation, preventing access from being reduced to a simple binary permission edge.",
+      "structured_failure": {
+        "code": "AA-04-VIOLATION",
+        "condition": "Missing or indeterminate policy facts are mapped to an implicit allow relation.",
+        "consequence": "Unauthorized access is granted, breaching fail-closed authorization integrity constraints."
+      },
+      "generic_property_graph_sufficient": true
+    },
+    {
+      "case_id": "amount-concentration-composition",
+      "form_owner": "Factorium reference method",
+      "frame": "Differentiating quantitative kinds and denominator roles for count, amount of substance, concentration, and composition fractions.",
+      "primary_factorization": [
+        "system or sample boundary",
+        "specified entity or component",
+        "requested quantity kind",
+        "numerator basis",
+        "denominator basis",
+        "total-mixture definition",
+        "preparation and measurement state",
+        "molar-mass subject, entity definition, formula, composition, and state"
+      ],
+      "alternative_factorizations": [
+        "Quantity selection ladder",
+        "Formula conversion views across mass and amount fraction bases"
+      ],
+      "typed_scoped_relations": [
+        "Count vs. amount of substance",
+        "Amount concentration vs. mass concentration",
+        "Mass concentration vs. mass density",
+        "Concentration vs. fraction"
+      ],
+      "source_custody": [
+        "NIST SI Units - Amount of Substance",
+        "IUPAC Gold Book",
+        "BIPM SI Brochure"
+      ],
+      "boundary": "Confined to physical and chemical quantities strictly mapped to SI and IUPAC definitions.",
+      "projection_and_loss": "Projects away informal or ambiguous scalar percentages lacking a defined entity identity and basis.",
+      "unresolved_state": [
+        "Unspecified entity identities",
+        "Missing mixing volume conventions",
+        "Nonexhaustive composition components"
+      ],
+      "essential_domain_extension": "Binding physical state constraints like temperature and volume additivity and composition closure directly to quantitative relations.",
+      "structured_failure": {
+        "code": "ACC-BASIS-COLLAPSE",
+        "condition": "Component mass concentration is equated with mixture bulk density strictly due to shared metric units.",
+        "consequence": "Numerator basis is lost, confounding named component quantity with total selected material mass."
+      },
+      "generic_property_graph_sufficient": true
+    },
+    {
+      "case_id": "choice-alternative-selection",
+      "form_owner": "Factorium reference method",
+      "frame": "Comparing bounded feasible alternatives against specified criteria to support an authorized selection distinct from rule-derived logic.",
+      "primary_factorization": [
+        "decision question, scope, and owner",
+        "objectives, desired outcomes, and affected parties",
+        "candidate alternatives and generation boundary",
+        "feasibility constraints and exclusion rationale",
+        "states, scenarios, horizon, and controllability",
+        "alternative-state outcomes and consequences",
+        "criteria definitions, measurement bases, and directions",
+        "preferences, priorities, weights, and provenance"
+      ],
+      "alternative_factorizations": [
+        "Alternative status pipeline from candidate to feasible or excluded",
+        "Criteria outcome evaluation matrix",
+        "Sensitivity and recommendation disposition"
+      ],
+      "typed_scoped_relations": [
+        "Choice vs. rule-derived decision",
+        "Candidate vs. feasible alternative",
+        "Trade-off vs. dominance",
+        "Recommendation vs. selection"
+      ],
+      "source_custody": [
+        "NASA Systems Engineering Handbook",
+        "HM Treasury Green Book",
+        "Stanford Encyclopedia of Philosophy",
+        "NIST Decision Analysis Methods"
+      ],
+      "boundary": "Does not replace rule-derived decisions; maintains rigorous separation of analytical recommendation from final authorized selection.",
+      "projection_and_loss": "Normalizing criteria values can project away the visibility of unlike measurement bases and underlying uncertainty.",
+      "unresolved_state": [
+        "Unresolved alternative feasibility",
+        "Missing or contested state outcomes",
+        "Partial or tied preference orderings"
+      ],
+      "essential_domain_extension": "Structural separation of the analytical recommendation record from the final selection and authority record.",
+      "structured_failure": {
+        "code": "CAS-CONSTRAINT-OVERRIDE",
+        "condition": "A high score on an enhancing criterion compensates for failing a mandatory hard constraint without an authorized exception.",
+        "consequence": "Excluded alternatives bypass noncompensatory admissibility gates and are presented as feasible candidates."
+      },
+      "generic_property_graph_sufficient": true
+    }
+  ],
+  "terminology_comparison": {
+    "preference": "governed-property-graph",
+    "formography_explanation": "Implies a novel object model or discrete representation standard, adding vocabulary without unique structural novelty, while also colliding with existing ethnographic terminology.",
+    "governed_property_graph_explanation": "Accurately describes the generic data structure while directing emphasis to the specific governance, boundary controls, and source custody rules that provide the method's actual value.",
+    "reason": "Since generic scoped property graphs proved representationally sufficient across all domains and no unique graph storage was required, governed property graph is more precise and cheaper to explain than a neologism.",
+    "confidence": 90
+  },
+  "overall_falsification_assessment": "The proposed governed-method-profile thesis survives coding. A generic property graph bounded and mapped forms, factors, and relations across governance, quantitative, and evaluative domains while sustaining source custody and declared projections. The thesis would be falsified if these domains required irreconcilable core graph semantics, if cross-domain mapping required silent terminology redefinition, or if independent coders could not distinguish forms, factors, and relations without novel graph paradigms."
+}

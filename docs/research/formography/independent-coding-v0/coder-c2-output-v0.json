@@ -1,0 +1,652 @@
+{
+  "schema": "formography-independent-coding-output-schema-v0",
+  "coder_id": "C2",
+  "independence_attestation": "I, C2, read only the sources listed in the coding protocol source firewall: docs/research/formography/independent-coding-v0/README.md, coding-protocol-v0.json, coding-output-schema-v0.json, docs/research/formography/formography-foundation-research-module-v0.md (object model, V0 boundaries, and disproof conditions only), tables/entries/access-permission-authorization-entitlement.md, tables/constraints/access-authorization-integrity.md, tables/entries/amount-concentration-composition.md, tables/formulas/amount-concentration-composition.md, tables/entries/choice-alternative-selection.md, tables/decisions/alternative-selection.md, reference/factorium-reference-v2.factorium, reference/factorium-relations-v0.factorium, and reference/factorium-assurance-v2.factorium. I did not read docs/research/formography/comparative-slice-v0/, any FORMOGRAPHY-COMPARATIVE-SLICE wave file, or any other coder output before submitting this record. I obeyed the source firewall.",
+  "cases": [
+    {
+      "case_id": "access-authorization",
+      "form_owner": "entry:access-permission-authorization-entitlement",
+      "frame": {
+        "question": "Which subject can perform which operation on which resource under what policy, and which invariants must hold for the decision and its enforcement record to remain interpretable and reviewable?",
+        "purpose": "policy-governed access control with auditable, reconstructable decision and enforcement bindings",
+        "perspective": "governance",
+        "context": "multi-model authorization systems across IT, organizational, and policy domains",
+        "scale": "single request instance to system-wide audit trail",
+        "version": "candidate; entry comparator access 2026-08-16"
+      },
+      "primary_factorization": [
+        "subject identity, authentication evidence, and session",
+        "resource identity, boundary, owner, and classification",
+        "operation, parameters, effect, and requested purpose",
+        "permission relation and entitlement source",
+        "policy, authority, precedence, and version",
+        "environmental attributes, time, location, device, and risk",
+        "decision, reason, obligations, and unresolved facts",
+        "enforcement point, failure behavior, revocation, and propagation",
+        "event, provenance, review, and privacy limits"
+      ],
+      "alternative_factorizations": [
+        {
+          "label": "sense-based",
+          "axes": [
+            "access",
+            "permission",
+            "authorization-decision",
+            "entitlement",
+            "access-control"
+          ],
+          "note": "organizes by the five senses in the entry sense table rather than the compositional root factorization; loses the request-to-decision dependency chain"
+        },
+        {
+          "label": "lifecycle-based",
+          "axes": [
+            "request-formation",
+            "policy-lookup-and-matching",
+            "authorization-decision",
+            "enforcement",
+            "audit-and-review"
+          ],
+          "note": "coder proposal; maps to the constraint AA-01 through AA-08 sequence but bundles multiple root factors per lifecycle stage; not equivalent to the primary factorization"
+        },
+        {
+          "label": "constraint-integrity-based",
+          "axes": [
+            "AA-01 request binding",
+            "AA-02 decision reconstructability",
+            "AA-03 evidence-authorization separation",
+            "AA-04 fail-closed on missing policy",
+            "AA-05 enforcement-decision binding",
+            "AA-06 expiry and revocation propagation",
+            "AA-07 delegation and privilege escalation",
+            "AA-08 privacy-minimized audit"
+          ],
+          "note": "coder proposal derived from the constraint view; each constraint is a testable invariant, not a compositional factor; this factorization is a projection, not a replacement for the root"
+        }
+      ],
+      "typed_scoped_relations": [
+        {
+          "relation_id": "AA-contrast-1",
+          "kind": "informs-but-does-not-equal",
+          "source_factor": "subject identity, authentication evidence, and session",
+          "target_factor": "decision, reason, obligations, and unresolved facts",
+          "qualifier": "authentication evidence is a precondition input, not a sufficient condition for an allow result",
+          "source_basis": "entry contrast table row 1: authentication vs. authorization"
+        },
+        {
+          "relation_id": "AA-contrast-2",
+          "kind": "supports-but-does-not-equal",
+          "source_factor": "permission relation and entitlement source",
+          "target_factor": "decision, reason, obligations, and unresolved facts",
+          "qualifier": "standing permission rule is a necessary input; authorization is a contextual decision instance",
+          "source_basis": "entry contrast table row 2: permission vs. authorization-decision"
+        },
+        {
+          "relation_id": "AA-contrast-3",
+          "kind": "may-grant",
+          "source_factor": "permission relation and entitlement source",
+          "target_factor": "operation, parameters, effect, and requested purpose",
+          "qualifier": "entitlement is an assignment package from which permissions may be derived; not an automatic grant",
+          "source_basis": "entry contrast table row 3: entitlement vs. permission"
+        },
+        {
+          "relation_id": "AA-contrast-4",
+          "kind": "may-justify-granting",
+          "source_factor": "policy, authority, precedence, and version",
+          "target_factor": "permission relation and entitlement source",
+          "qualifier": "organizational authority may justify granting a permission but does not equal the technical allow relation",
+          "source_basis": "entry contrast table row 4: authority vs. permission"
+        },
+        {
+          "relation_id": "AA-contrast-5",
+          "kind": "enables",
+          "source_factor": "decision, reason, obligations, and unresolved facts",
+          "target_factor": "enforcement point, failure behavior, revocation, and propagation",
+          "qualifier": "decision is a semantic result; enforcement is the mechanism that acts on it; they are separately observable",
+          "source_basis": "entry contrast table row 5: decision vs. enforcement"
+        },
+        {
+          "relation_id": "AA-contrast-6",
+          "kind": "differs-from",
+          "source_factor": "decision, reason, obligations, and unresolved facts",
+          "target_factor": "enforcement point, failure behavior, revocation, and propagation",
+          "qualifier": "denial is a policy result; system failure is a mechanism or availability defect; both prevent access but must not be made indistinguishable",
+          "source_basis": "entry contrast table row 6 and constraint view failure sign: deny and system error are indistinguishable"
+        }
+      ],
+      "source_custody": {
+        "entry_path": "tables/entries/access-permission-authorization-entitlement.md",
+        "view_path": "tables/constraints/access-authorization-integrity.md",
+        "reference_entry": "entry:access-permission-authorization-entitlement",
+        "reference_view": "view:constraint-access-authorization-integrity",
+        "entry_digest": "f5cb6f5e41d7fa9a7cf850d46a3a56b74aceeda7b5029a0043f5cd8448362741",
+        "entry_review_source": "context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md",
+        "entry_review_kind": "fixed-point",
+        "entry_review_date": "2026-08-16",
+        "entry_maturity": "candidate",
+        "view_review_source": "see canonical entry (constraint view sources and provenance section)",
+        "authorities": [
+          "NIST IR 7316 Assessment of Access Control Systems",
+          "NIST SP 800-63C-4 Glossary",
+          "NIST RBAC FAQ"
+        ],
+        "comparator_access_date": "2026-08-16",
+        "scope_note": "Security, privacy, legal, and organizational authorities retain their scopes; this cross-domain entry remains candidate. The constraint view does not certify an access-control system or prescribe one model."
+      },
+      "boundary": {
+        "included": [
+          "subject identity and session",
+          "resource identity, owner, and boundary classification",
+          "operation and requested purpose",
+          "permission relation and entitlement chain",
+          "policy authority and version",
+          "environmental context including time, location, device, and risk",
+          "authorization decision with reason and obligations",
+          "enforcement point and failure behavior",
+          "revocation and propagation semantics",
+          "access event and privacy-minimized audit record"
+        ],
+        "excluded": [
+          "named access-control models and products (RBAC, ABAC, MAC, DAC) as canonical—they remain examples",
+          "authentication mechanism internals",
+          "organizational role hierarchy detail beyond the access case",
+          "cryptographic credential internals",
+          "specific software implementations or products"
+        ],
+        "scope_note": "The entry states: named access-control models, products, roles, and privileges remain examples. The constraint view does not certify any system."
+      },
+      "projection_and_loss": {
+        "view": "view:constraint-access-authorization-integrity",
+        "selected": [
+          "eight named invariants AA-01 through AA-08 with requirement, invalid-when, and evidence-to-retain columns",
+          "failure signs for request, decision, enforcement, and audit binding",
+          "governing question: which invariants must hold for an access decision and enforcement record to remain interpretable and reviewable"
+        ],
+        "lost": [
+          "full sense table with governing question and role per sense",
+          "request structure diagram (authenticated subject + resource + operation + policy → decision → enforcement → audit event)",
+          "seven-step selection procedure",
+          "contrast table (6 pairs with shared feature and decisive distinction)",
+          "cross-references to five related entries",
+          "source URLs and full provenance section",
+          "all orientation prose explaining why each sense is distinct"
+        ],
+        "loss_note": "A reader using only the constraint view has testable invariants and failure signs but not the conceptual orientation for choosing the correct sense, understanding the request structure, or applying the selection procedure. They cannot reconstruct why the entry keeps authentication separate from authorization without the contrast table."
+      },
+      "unresolved_state": [
+        "Entry maturity is candidate; security, privacy, legal, and organizational authority scopes are not unified in one entry.",
+        "The constraint view states it does not certify an access-control system, prescribe one model, or authorize access.",
+        "Exact propagation bounds for revocation events (AA-06) are not specified in the source; they require case-specific declaration by the system owner.",
+        "Delegation chain depth and privilege escalation authority limits (AA-07) are named as constraints but their exact formalization remains domain-specific."
+      ],
+      "essential_domain_extension": {
+        "proposed_field": "grant-lifecycle-and-propagation-contract",
+        "rationale": "The root factorization bundles the revocation event with the enforcement point under enforcement-failure-revocation-and-propagation. Constraint AA-06 requires distinguishing three separable moments: (a) the time the revocation decision is recorded at the policy layer, (b) the stated propagation window to the enforcement point, and (c) the enforcement point's actual invalidation of the cached decision. Without a separately trackable field for this lifecycle sequence, an audit cannot determine whether a stale-grant access event occurred within or outside the stated propagation contract. This is the direct cause of the structured failure below and is not detectable from the bundled factor alone.",
+        "basis": "coder proposal; derived from constraint AA-06, the entry contrast row decision vs. enforcement, and the constraint view failure sign: cached decisions have no invalidation contract",
+        "scope": "minimal: add as a named sub-record or optional extension field under enforcement-failure-revocation-and-propagation; does not require restructuring the primary factorization"
+      },
+      "structured_failure": {
+        "code": "CLAWS-AA-REVOC-01",
+        "condition": "An entitlement has been revoked at the policy layer, but the enforcement point holds a cached authorization decision issued before the revocation was propagated. The propagation window for the revocation event is not tracked as a distinct record. The enforcement point cannot distinguish a valid cached decision from a stale post-revocation decision because revocation time, propagation window, and enforcement-point invalidation time are stored in the same bundled field.",
+        "consequence": "The subject retains access after entitlement revocation for an indeterminate period. The audit record cannot reconstruct whether the enforcement action was within the stated propagation contract, simultaneously violating AA-06 (stale grant active beyond contract) and AA-02 (decision cannot be reconstructed from the record). The access event is auditably ambiguous: it cannot be classified as authorized, unauthorized, or within propagation tolerance."
+      },
+      "generic_property_graph_sufficient": {
+        "verdict": true,
+        "conditions": "A generic scoped property graph with named node types for subject, resource, operation, permission, policy-version, entitlement, decision, enforcement-point, and audit-record and directed typed edges for informs, supports, grants, enables, and constrains can represent the primary factorization and the eight constraint invariants. The fail-closed semantics of AA-04 (missing facts become deny, not implicit allow) and the revocation-propagation window of AA-06 require named extension annotations—specifically a propagation-window property on the enforcement-point node and a revocation-event edge type between entitlement and enforcement-point. These are domain extensions, not violations of the graph representation model. The representation is sufficient with those two extensions."
+      }
+    },
+    {
+      "case_id": "amount-concentration-composition",
+      "form_owner": "entry:amount-concentration-composition",
+      "frame": {
+        "question": "How do entity count, amount of substance, concentration, composition fraction, and molar mass answer different 'how much' questions, and how are they safely related and converted?",
+        "purpose": "quantity disambiguation, unit-safe computation, and basis-conversion integrity across scientific and measurement domains",
+        "perspective": "science (SI/IUPAC)",
+        "context": "chemistry, physics, and any measurement domain requiring quantity-kind precision",
+        "scale": "single entity count through mixture composition basis conversion",
+        "version": "candidate; entry comparator access 2026-08-15"
+      },
+      "primary_factorization": [
+        "system or sample boundary",
+        "specified entity or component",
+        "requested quantity kind",
+        "numerator basis",
+        "denominator basis",
+        "total-mixture definition",
+        "preparation and measurement state",
+        "temperature and pressure where volume matters",
+        "molar-mass subject, entity definition, formula, composition, and state",
+        "mass and amount values, units, and uncertainties",
+        "molar-mass source, value, unit, and validity scope",
+        "conversion direction, component set, and weighting basis",
+        "unit and display scale",
+        "uncertainty"
+      ],
+      "alternative_factorizations": [
+        {
+          "label": "sense-based",
+          "axes": [
+            "entity-count",
+            "amount-of-substance",
+            "amount-concentration",
+            "mass-concentration",
+            "amount-fraction",
+            "mass-fraction",
+            "volume-fraction",
+            "molar-mass"
+          ],
+          "note": "organizes by the eight senses in the entry sense table; useful for type-lookup but does not expose the numerator-denominator basis structure or the conversion dependency chain"
+        },
+        {
+          "label": "denominator-role",
+          "axes": [
+            "per-volume: concentrations (amount and mass)",
+            "like-kind-ratio: composition fractions (amount, mass, volume)",
+            "mass-per-amount: molar mass bridge"
+          ],
+          "note": "coder proposal; groups by denominator type rather than quantity kind; simpler three-way split that maps to the quantity ladder but loses the distinction between amount and mass variants within each group and hides the volume-convention dependency"
+        },
+        {
+          "label": "formula-operation",
+          "axes": [
+            "count-to-amount conversion via Avogadro constant",
+            "component-per-mixture-volume normalization",
+            "component-like-kind-ratio composition",
+            "molar-mass mass-amount bridge",
+            "composition-basis transformation between amount-fraction and mass-fraction"
+          ],
+          "note": "coder proposal derived from the formula view table structure; organizes by computation type rather than quantity kind; loses the quantity-selection rationale that the entry provides"
+        }
+      ],
+      "typed_scoped_relations": [
+        {
+          "relation_id": "ACC-rel-1",
+          "kind": "scaled-by",
+          "source": "entity-count (N)",
+          "target": "amount-of-substance (n)",
+          "qualifier": "via Avogadro constant N_A = 6.02214076e23 mol^-1 (exact SI defining constant); direction: N/N_A → n; scope: same specified entities required",
+          "canonical_expression": "n = N / N_A",
+          "source_basis": "formula view core relations table row 1"
+        },
+        {
+          "relation_id": "ACC-rel-2",
+          "kind": "normalized-by-mixture-volume",
+          "source": "amount-of-substance of component i (n_i)",
+          "target": "amount-concentration (c_i)",
+          "qualifier": "denominator is mixture volume V_mix at declared state and preparation conditions; not bulk density; scope: declared component and mixture boundary",
+          "canonical_expression": "c_i = n_i / V_mix",
+          "source_basis": "formula view core relations table row 3"
+        },
+        {
+          "relation_id": "ACC-rel-3",
+          "kind": "normalized-by-mixture-volume",
+          "source": "mass of component i (m_i)",
+          "target": "mass-concentration (gamma_i)",
+          "qualifier": "same mixture volume denominator as amount-concentration; units kg/m^3 do not make this equivalent to bulk density; scope: named component per mixture volume",
+          "canonical_expression": "gamma_i = m_i / V_mix",
+          "source_basis": "formula view core relations table row 4"
+        },
+        {
+          "relation_id": "ACC-rel-4",
+          "kind": "like-kind-ratio",
+          "source": "amount-of-substance of component i (n_i)",
+          "target": "amount-fraction (x_i)",
+          "qualifier": "denominator is sum of all component amounts; condition: exhaustive mutually exclusive component set required for closure sum = 1; scope: same mixture boundary",
+          "canonical_expression": "x_i = n_i / sum_j(n_j)",
+          "source_basis": "formula view core relations table row 5"
+        },
+        {
+          "relation_id": "ACC-rel-5",
+          "kind": "like-kind-ratio",
+          "source": "mass of component i (m_i)",
+          "target": "mass-fraction (w_i)",
+          "qualifier": "denominator is total mass; same closure condition as amount-fraction; scope: same mixture boundary; numerator and denominator must be same quantity kind (mass)",
+          "canonical_expression": "w_i = m_i / sum_j(m_j)",
+          "source_basis": "formula view core relations table row 6"
+        },
+        {
+          "relation_id": "ACC-rel-6",
+          "kind": "bridges-amount-from-mass",
+          "source": "mass of specified material B (m_B)",
+          "target": "amount-of-substance of B (n_B)",
+          "qualifier": "via molar mass M_B; condition: M_B > 0; scope: same specified material identity, formula/composition model, and state for both m_B and n_B",
+          "canonical_expression": "n_B = m_B / M_B",
+          "source_basis": "formula view core relations table row 10"
+        },
+        {
+          "relation_id": "ACC-rel-7",
+          "kind": "basis-transforms",
+          "source": "amount-fraction of component i (x_i)",
+          "target": "mass-fraction (w_i)",
+          "qualifier": "via component molar masses; condition: consistent exhaustive component set, same identity basis, positive M_i for all components; direction: amount-weighted to mass-weighted",
+          "canonical_expression": "w_i = x_i * M_i / sum_j(x_j * M_j)",
+          "source_basis": "formula view core relations table row 13"
+        }
+      ],
+      "source_custody": {
+        "entry_path": "tables/entries/amount-concentration-composition.md",
+        "view_path": "tables/formulas/amount-concentration-composition.md",
+        "reference_entry": "entry:amount-concentration-composition",
+        "reference_view": "view:formula-amount-concentration-composition",
+        "entry_digest": "b5e1bf736b16e9f1c758a9b0cc767736467dc69825aca4b7e33583efc2e682c1",
+        "entry_review_source": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md",
+        "entry_review_kind": "fixed-point",
+        "entry_review_date": "2026-08-15",
+        "view_digest": "82cd97abc5ca7d572d4612bee18dc7d09f43bdf80421ab867b7a11ff2084e5f7",
+        "view_review_source": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md",
+        "view_review_kind": "fixed-point",
+        "view_review_date": "2026-08-15",
+        "entry_maturity": "candidate",
+        "authorities": [
+          "BIPM SI Brochure",
+          "IUPAC Gold Book: amount-of-substance (A00297), molar mass (12214), fraction (F02494), amount fraction (M04003), mass fraction (M03722), relative molecular mass (M04000)",
+          "IUPAC Compendium of Analytical Nomenclature quantities and units",
+          "NIST SI Units - Amount of Substance"
+        ],
+        "comparator_access_date": "2026-08-15",
+        "scope_note": "SI and IUPAC quantity conventions are established within source scope; Factorium organization remains candidate. Formula authority: SI and IUPAC definitions within stated scope."
+      },
+      "boundary": {
+        "included": [
+          "entity count and amount-of-substance as distinct quantity kinds",
+          "amount concentration and mass concentration as distinct component-per-volume rates",
+          "amount fraction, mass fraction, and volume fraction as like-kind composition ratios",
+          "molar mass as a mass-per-amount bridge for a specified material",
+          "basis-conversion relations between amount-fraction and mass-fraction",
+          "closure constraints for exhaustive component sets",
+          "volume-additivity convention and its limitations",
+          "uncertainty and unit contracts for all quantity kinds"
+        ],
+        "excluded": [
+          "chemical reaction stoichiometry (cross-referenced to a separate entry)",
+          "polymer dispersity and molecular weight distributions beyond a single specified material",
+          "molality as a distinct named concentration type",
+          "radiation dosimetry quantities",
+          "electrolyte activity coefficients",
+          "specific activity",
+          "relative molecular mass as a quantity kind equal to molar mass (entry explicitly separates these)"
+        ],
+        "scope_note": "The formula view owns the canonical mathematical relations; the entry owns the full selection procedure and conceptual orientation. Named examples (e.g., specific solutes, solutions) do not become canonical."
+      },
+      "projection_and_loss": {
+        "view": "view:formula-amount-concentration-composition",
+        "selected": [
+          "14 canonical expressions in the core relations table with canonical symbols",
+          "symbol contract table with quantity kind, SI unit, and restriction per symbol",
+          "dimensional audit for all canonical expressions",
+          "basis contract (concentration := named component quantity / mixture volume; composition fraction := named component quantity / total of same kind)",
+          "molar-mass and basis-transformation contract",
+          "volume-fraction scope with four required declarations",
+          "failure signs (14 listed)"
+        ],
+        "lost": [
+          "8-sense table with governing question, quantity role, and SI unit per sense",
+          "quantity ladder diagram (entity count → amount → concentration or fraction → molar-mass bridge)",
+          "contrast table (9 pairs with shared feature and decisive distinction)",
+          "8 diagnostic examples including the before/after-mixing volume example",
+          "10-step selection procedure",
+          "cross-references to 10 related entries",
+          "source URLs and full provenance section",
+          "reference delta table comparing entry to dictionary, thesaurus, encyclopedia, formula sheet, and SI/IUPAC reference"
+        ],
+        "loss_note": "A reader using only the formula view can compute correctly given a known quantity kind but cannot determine which quantity kind to select, cannot see the selection procedure, and has no access to the 9 contrast pairs that prevent unit-substitution errors such as treating mass concentration as bulk density or treating relative molecular mass as equivalent to molar mass."
+      },
+      "unresolved_state": [
+        "Entry maturity is candidate; Factorium organization is not an established SI/IUPAC authority.",
+        "Volume-fraction additivity convention is user-declared; no standard default is specified.",
+        "Molar mass for polymers, isotopically variable materials, or multi-component mixtures requires additional specification beyond the standard entry scope.",
+        "Relative molecular mass and molar mass are distinguished in the entry, but their numerical coincidence under g/mol convention is a persistent disambiguation risk not resolved by a mechanical check.",
+        "The formula view states formula authority is SI and IUPAC definitions within stated scope; Factorium presentation remains candidate."
+      ],
+      "essential_domain_extension": {
+        "proposed_field": "volume-additivity-convention-and-scope",
+        "rationale": "The root factorization includes temperature-and-pressure-where-volume-matters but does not provide a separately trackable field for the before/after-mixing volume convention (whether component volumes are measured before mixing or refer to a declared post-mixing measurement convention). The entry and formula view both list volume nonadditivity as a failure sign and the formula view requires a four-point declaration for volume fraction, but without a distinct named factor this declaration cannot be tracked at the record level. A downstream record that conflates pre-mixing and post-mixing volumes cannot be detected by a field-level audit of the primary factorization alone.",
+        "basis": "coder proposal; derived from the volume-fraction scope section of the formula view (four required declarations) and the entry failure sign: before-mixing volumes are equated with final solution volume without a stated model",
+        "scope": "minimal: add as an optional extension field for any record involving volume-fraction or volume-based concentration; does not restructure the primary factorization"
+      },
+      "structured_failure": {
+        "code": "CLAWS-ACC-VOLFRAC-01",
+        "condition": "A volume fraction is computed as the ratio of individual component volumes measured before mixing to the final measured post-mixing mixture volume. No volume-convention record exists. The fraction closure condition (sum of volume fractions = 1) is then asserted for this set, treating the before-mixing component volumes as the denominator even though the reported denominator is the final mixture volume.",
+        "consequence": "The reported volume fractions are internally inconsistent: their numerators (pre-mixing component volumes) and the implied denominator (sum of those same pre-mixing volumes) differ from the denominator actually used (post-mixing mixture volume). The closure claim is false for any solution where volumes are not additive on mixing. Any subsequent composition-basis conversion using these volume fractions propagates a systematic error, and the source of the inconsistency cannot be recovered without the missing volume-convention record."
+      },
+      "generic_property_graph_sufficient": {
+        "verdict": true,
+        "conditions": "The seven canonical relations form a directed typed graph: entity-count → amount-of-substance (via Avogadro constant), component amount/mass → concentration (via mixture volume), component → fraction (via exhaustive totals), mass/amount → molar mass (bridge property), amount-fraction → mass-fraction (basis transformation via component molar masses). All factors and directed relations can be encoded in a typed property graph. The closure constraint (sum_i(x_i) = 1 for an exhaustive set) cannot be expressed as a binary edge between individual component nodes; it requires either a hyperedge or an aggregate-constraint node over the full component set. The volume-nonadditivity contract similarly requires a declared-volume-convention edge qualifier. A generic property graph with extension for constraint-closure aggregate nodes and declared-volume-convention edge qualifiers is representationally sufficient."
+      }
+    },
+    {
+      "case_id": "choice-alternative-selection",
+      "form_owner": "entry:choice-alternative-selection",
+      "frame": {
+        "question": "How are candidate alternatives compared and selected under declared constraints, evidence, criteria, preferences, and uncertainty without prescribing one canonical evaluation method?",
+        "purpose": "structured decision support that preserves authority separation, alternative visibility, evidence integrity, and method-independence",
+        "perspective": "reference (cross-domain: engineering, governance, policy appraisal, and decision theory)",
+        "context": "bounded choice problems where alternatives, uncertain states, criteria, and decision authority are separable records",
+        "scale": "single bounded choice question through multi-stage evaluative process with sensitivity analysis and authority-owned final selection",
+        "version": "candidate; entry comparator access 2026-08-16"
+      },
+      "primary_factorization": [
+        "decision question, scope, and owner",
+        "objectives, desired outcomes, and affected parties",
+        "candidate alternatives and generation boundary",
+        "feasibility constraints and exclusion rationale",
+        "states, scenarios, horizon, and controllability",
+        "alternative-state outcomes and consequences",
+        "evidence quality, applicability, and uncertainty",
+        "criteria definitions, measurement bases, and directions",
+        "preferences, priorities, weights, and provenance",
+        "aggregation, decision rule, and noncompensatory gates",
+        "sensitivity, robustness, ties, and information value",
+        "recommendation, rationale, limitations, and review state",
+        "final selection, authority, implementation, and reconsideration trigger"
+      ],
+      "alternative_factorizations": [
+        {
+          "label": "sense-based",
+          "axes": [
+            "choice",
+            "alternative",
+            "decision-criterion",
+            "preference",
+            "trade-off",
+            "recommendation",
+            "selection"
+          ],
+          "note": "organizes by the seven senses in the entry sense table; loses the compositional dependency structure: outcomes depend on alternative × state, feasibility depends on constraints, trade-off depends on compared criteria and preference"
+        },
+        {
+          "label": "stage-based",
+          "axes": [
+            "alternative-status screening (feasibility)",
+            "alternative-state outcome map",
+            "criteria comparison",
+            "sensitivity and recommendation",
+            "final selection and reconsideration"
+          ],
+          "note": "coder proposal; maps directly to the four stages of the decision view plus the output contract; each stage bundles multiple root factors; useful for workflow but loses the orthogonality of the root factors"
+        },
+        {
+          "label": "three-phase",
+          "axes": [
+            "admissibility gate (constraints, feasibility)",
+            "multi-criteria comparison (evidence, criteria, preferences, aggregation, sensitivity)",
+            "authority separation (recommendation, selection, implementation, reconsideration)"
+          ],
+          "note": "coder proposal; simplifies to three semantic phases; loses granularity of sensitivity, ties, information value, and reconsideration trigger as distinct trackable records"
+        }
+      ],
+      "typed_scoped_relations": [
+        {
+          "relation_id": "f27-constraint-filters-feasibility",
+          "kind": "constrains-feasibility-of",
+          "source_factor": "policy-rule-constraint-decision-exception/constraints-and-invariants",
+          "target_factor": "choice-alternative-selection/feasibility-constraints-and-exclusion-rationale",
+          "view": "view:decision-alternative-selection",
+          "qualifiers": {
+            "applicability": "declared-applicability",
+            "authority": "declared-authority",
+            "effective-period": "declared-effective-period",
+            "hard-or-soft": "declared-hard-or-soft",
+            "version": "declared-version"
+          },
+          "source_basis": "factorium-relations-v0 relation f27-constraint-filters-feasibility"
+        },
+        {
+          "relation_id": "f27-evidence-qualifies-evaluation",
+          "kind": "qualifies-evaluation-of",
+          "source_factor": "claim-evidence/supporting-and-contradicting-implications",
+          "target_factor": "choice-alternative-selection/evidence-quality-applicability-and-uncertainty",
+          "view": "view:decision-alternative-selection",
+          "qualifiers": {
+            "claim": "declared-claim",
+            "horizon": "declared-horizon",
+            "limitation": "declared-limitations",
+            "outcome": "declared-outcome",
+            "population": "declared-population",
+            "provenance": "declared-provenance"
+          },
+          "source_basis": "factorium-relations-v0 relation f27-evidence-qualifies-evaluation"
+        },
+        {
+          "relation_id": "f27-causal-scope-qualifies-outcome",
+          "kind": "qualifies-outcome-scope-of",
+          "source_factor": "causal-reasoning/outcome-measure-and-time-horizon",
+          "target_factor": "choice-alternative-selection/alternative-state-outcomes-and-consequences",
+          "view": "view:decision-alternative-selection",
+          "qualifiers": {
+            "causal-status": "declared-causal-status",
+            "contrast": "declared-contrast",
+            "horizon": "declared-horizon",
+            "outcome": "declared-outcome",
+            "population": "declared-population"
+          },
+          "source_basis": "factorium-relations-v0 relation f27-causal-scope-qualifies-outcome"
+        },
+        {
+          "relation_id": "f27-risk-characterizes-consequence",
+          "kind": "characterizes-consequence-for",
+          "source_factor": "probability-risk-uncertainty/consequence-set",
+          "target_factor": "choice-alternative-selection/alternative-state-outcomes-and-consequences",
+          "view": "view:decision-alternative-selection",
+          "qualifiers": {
+            "affected-entity": "declared-affected-entity",
+            "consequence-basis": "declared-consequence-basis",
+            "control-state": "declared-control-state",
+            "horizon": "declared-horizon",
+            "scenario": "declared-scenario"
+          },
+          "source_basis": "factorium-relations-v0 relation f27-risk-characterizes-consequence"
+        },
+        {
+          "relation_id": "f27-value-contributes-criterion",
+          "kind": "contributes-criterion-to",
+          "source_factor": "cost-price-value-return/requested-cost-price-value-utility-or-return-sense",
+          "target_factor": "choice-alternative-selection/criteria-definitions-measurement-bases-and-directions",
+          "view": "view:decision-alternative-selection",
+          "qualifiers": {
+            "basis": "declared-basis",
+            "desired-direction": "declared-desired-direction",
+            "horizon": "declared-horizon",
+            "owner": "declared-owner",
+            "unit-or-scale": "declared-unit-or-scale",
+            "value-sense": "declared-value-sense"
+          },
+          "source_basis": "factorium-relations-v0 relation f27-value-contributes-criterion"
+        }
+      ],
+      "source_custody": {
+        "entry_path": "tables/entries/choice-alternative-selection.md",
+        "view_path": "tables/decisions/alternative-selection.md",
+        "reference_entry": "entry:choice-alternative-selection",
+        "reference_view": "view:decision-alternative-selection",
+        "entry_digest": "16cbb3e9e022fd2eb70091409792b6c783c55422672211e0099d6f8727d631d1",
+        "entry_review_source": "context/waves/2026-08-13-factorium-vision/CHOICE-ALTERNATIVE-SELECTION-ROLE-REVIEW.md",
+        "entry_review_kind": "fixed-point",
+        "entry_review_date": "2026-08-16",
+        "entry_maturity": "candidate",
+        "view_review_source": "see canonical entry (decision view sources and provenance section)",
+        "authorities": [
+          "NASA Systems Engineering Handbook Rev. 2 section 6.8",
+          "HM Treasury Green Book 2026 chapters 5, 6, and 9",
+          "Stanford Encyclopedia of Philosophy Decision Theory revised 2025",
+          "NIST Decision Analysis Methods for Selecting Consumer Services with Attribute Value Uncertainty"
+        ],
+        "comparator_access_date": "2026-08-16",
+        "scope_note": "The decision view is a reusable Factorium record, not a universal algorithm, score, optimization method, or authority substitute. Maturity is candidate."
+      },
+      "boundary": {
+        "included": [
+          "bounded choice question with explicit owner, scope, and horizon",
+          "candidate alternative generation with stated boundary including current practice or no-action",
+          "feasibility constraint filtering with excluded and unresolved alternative retention",
+          "alternative-state outcome mapping with cell status (observed, estimated, missing, contested, not-applicable)",
+          "multi-criteria comparison with operational definitions, measurement bases, directions, and attribution",
+          "preference attribution with provenance; may be partial or tied",
+          "sensitivity and robustness analysis for declared changes",
+          "recommendation with rationale and limitations",
+          "authority-owned final selection with reconsideration trigger"
+        ],
+        "excluded": [
+          "rule-derived case decisions (cross-referenced to policy-rule-constraint-decision-exception; entry explicitly separates these)",
+          "specific evaluation methods as canonical—cost-benefit analysis, MAUT, scoring, and optimization are examples only",
+          "voting mechanisms and social choice procedures",
+          "pure algorithmic optimization without an identifiable authority-owned selection step",
+          "criteria that are actually hard constraints and vice versa—the entry explicitly requires keeping these separate"
+        ],
+        "scope_note": "The entry states it does not replace rule-derived case decisions and that a decision rule does not become a universal sense of choice by computing a ranking."
+      },
+      "projection_and_loss": {
+        "view": "view:decision-alternative-selection",
+        "selected": [
+          "input contract for all four stages",
+          "Stage 1 alternative status table with origin, constraint-check, status, and rationale columns",
+          "Stage 2 alternative-state outcome map with controllability, cell status, and evidence columns",
+          "Stage 3 criteria comparison table with definition, measurement basis, preference or gate, and comparison disposition columns",
+          "Stage 4 sensitivity and recommendation table with declared-change, result, and disposition columns",
+          "output contract specifying feasible, excluded, and unresolved sets, outcome map, sensitivity record, recommendation disposition options, and final-selection status options"
+        ],
+        "lost": [
+          "7-sense table with governing question and role per sense",
+          "alternative status definitions in prose (candidate, feasible, excluded, unresolved with meaning and required record)",
+          "contrast table (13 pairs with shared feature and decisive distinction)",
+          "7 diagnostic examples",
+          "10-step selection procedure",
+          "reference delta table (5 rows comparing entry to dictionary, thesaurus, decision-analysis handbook, policy/rule system, and optimization or scoring tool)",
+          "cross-references to 10 related entries and root entries",
+          "all source URLs and provenance",
+          "constraints and failure signs section (12 constraints and 11 failure signs)"
+        ],
+        "loss_note": "A reader using only the decision view has structural table templates for four stages and the output contract but not the sense definitions, contrast pairs, or selection-procedure rationale. They cannot determine from the view alone when alternatives should be generated, how to distinguish a hard constraint from an enhancing criterion, or how to handle missing cells without defaulting to favorable values."
+      },
+      "unresolved_state": [
+        "Entry maturity is candidate.",
+        "Cell status options (observed, estimated, missing, contested, not-applicable) define valid states but provide no resolution rule for missing or contested cells beyond retaining them visible; handling is domain-specific.",
+        "Recommendation disposition (recommended, retained-option, not-recommended, unresolved) and final-selection status (selected, deferred, not-recorded) define categories but do not prescribe escalation or time limits when authority has not acted.",
+        "Trade-off and dominance semantics remain the analyst's declaration; no canonical weighting or aggregation method is required or prohibited by the entry.",
+        "The sensitivity result options (stable, changed, tied, unresolved) define categories but do not specify what constitutes a sufficient sensitivity test for any given case."
+      ],
+      "essential_domain_extension": {
+        "proposed_field": "alternative-generation-boundary-record",
+        "rationale": "The root factor candidate-alternatives-and-generation-boundary bundles the alternative instances with the scope of the generation process. There is no separately trackable sub-record for: (a) when the generation process was conducted, (b) who conducted it, (c) what mandate or question framed it, and (d) whether the preferred criterion or expected outcome was known at generation time. Without this, a post-hoc re-generation of alternatives shaped around a preferred option cannot be detected by audit. The feasibility-constraints-and-exclusion-rationale factor records why alternatives were excluded after generation, not how the initial candidate set was scoped before screening. These are distinct and the distinction is required to detect the most consequential generation-bias failure.",
+        "basis": "coder proposal; derived from the decision view failure sign: Alternatives are generated after the preferred criterion or score is known; and from the second failure sign: Current practice is omitted because the proposed change is already favored",
+        "scope": "minimal: add as a required sub-record of the candidate-alternatives-and-generation-boundary factor (generation-time, generation-mandate, and known-outcome-at-generation flag); does not require restructuring the primary factorization"
+      },
+      "structured_failure": {
+        "code": "CLAWS-CAS-GENBOUND-01",
+        "condition": "The candidate alternative set is constructed after the preferred evaluation criterion or expected outcome is already known. No generation-boundary record exists documenting when alternatives were generated, by whom, or whether the expected outcome was known at that time. The current-practice or no-action alternative is omitted without a documented exclusion rationale, because the proposed alternative is already favored.",
+        "consequence": "The feasibility stage is corrupted because the comparison cannot be reconstructed from the record: alternatives consistent with the generation bias are over-represented, the omitted baseline cannot be recovered, and the exclusion-rationale field is empty. An independent reviewer cannot separate the analytical record from the pre-shaped generation scope. The recommendation is not falsifiable by review because its foundation—the candidate set—was shaped to produce it."
+      },
+      "generic_property_graph_sufficient": {
+        "verdict": true,
+        "conditions": "The five f27-family typed relations with their named qualifiers are directly representable as directed typed edges with edge-property maps in a generic property graph. The four-stage structure of the decision view can be encoded as ordered stage-nodes with input and output contracts as node properties. The noncompensatory-gate semantics (a hard constraint cannot be overridden by criterion scores) requires a distinct edge type—feasibility-constraint-gate—that differs from the comparison edges used in Stage 3; this is a domain extension, not a violation of the graph model. The cell-status enum (observed, estimated, missing, contested, not-applicable) requires an edge annotation on the alternative-state-outcome edge. The generation-boundary record proposed as an extension requires a separate provenance-node linked to the alternatives node. With these three extensions (feasibility-constraint-gate edge type, cell-status edge annotation, and generation-boundary provenance node), a generic property graph is representationally sufficient."
+      }
+    }
+  ],
+  "terminology_comparison": {
+    "preference": "formography",
+    "formography_explanation": "The label requires defining seven new technical terms before use: form (organization of factors and relations under a declared frame), factor (selected constituent in one view, not automatically causal or independent), relation (typed, directed, scoped correspondence or dependency), frame (question, purpose, perspective, context, scale, and version), formograph (one bounded inspectable map), projection (loss-declared view for one use), and custody (source path, digest, authority, review state, and unresolved state remain reconstructable). None of these have standard prior definitions outside the protocol; all require the working definitions in the protocol document. Once loaded, the label precisely names, as a single unit, the full method contract: alternative factorizations, typed relations, source custody, boundary declaration, and projection loss. However, the term has a confirmed prior collision with Lippert/Kuehnen/Wagenknecht's 2021 ethnographic formography proposal, which requires an explicit disambiguation statement for academic audiences and adds explanation overhead in that context.",
+    "governed_property_graph_explanation": "The label can be parsed as a property graph—entities with typed properties and directed typed edges, a well-established concept in graph databases, graph theory, and knowledge representation—that is governed: subject to declared authority, version, scope, and constraint. Both components have established technical meanings, making the label immediately parseable by readers familiar with graph databases or knowledge graphs. However, 'governed' in graph-database contexts typically means schema enforcement, access-control policy, or data lineage governance—not epistemological source custody, alternative factorizations, or loss-declared projections. A reader applying the standard graph-database meaning of 'governed' would have an incomplete understanding of the method's contract: they would not infer that the method requires alternative factorizations to remain visible, that projection loss must be declared, or that competing factorizations of the same form are valid and co-present. The label is more accessible but carries a systematic mapping error for the most technically fluent readers.",
+    "reason": "Formography is more precise for the full method contract. For the three cases coded, the decisive distinguishing features of the method—retaining alternative factorizations, declaring projection loss, maintaining source custody as an epistemological rather than a provenance-only requirement, and naming boundaries explicitly—are not communicated by 'governed property graph' even for a reader who fully understands property graphs and governance. The marginal disambiguation cost for 'formography' (loading seven new terms plus one collision disclaimer) is justified by the precision gain: a practitioner who understands the seven terms has the full contract with no systematic mapping error. A practitioner who understands 'governed property graph' in the graph-database sense lacks at least three of the contract's most distinctive features. Confidence is moderated by the genuine accessibility advantage of the alternative label and by the fact that the term collision with TU Dresden formography could predictably mislead an academic audience in STS or sociology.",
+    "confidence": 62
+  },
+  "overall_falsification_assessment": "The proposed governed-method-profile thesis—that Formography names a distinct, independently applicable, and falsifiable method for mapping context-bounded forms through alternative factorizations, typed relations, source custody, and loss-declared projections—survives my independent coding in a limited and conditional sense. All three cases (access-authorization, amount-concentration-composition, and choice-alternative-selection) yielded consistent application of the nine required core categories without requiring silent redefinition of any core term. The same frame structure, projection-loss declaration, and structured-failure identification applied across a governance domain, a quantitative science domain, and an evaluative decision domain. Each case produced a distinct and source-backed projection-loss finding (a reader using only the constraint view, formula view, or decision view cannot recover the entry's conceptual orientation or selection procedure) and a consequential structured failure (CLAWS-AA-REVOC-01, CLAWS-ACC-VOLFRAC-01, CLAWS-CAS-GENBOUND-01) that the Formography contract would surface at the field level through the essential domain extension. The thesis does not survive as a claim of representational novelty over generic property graphs. A generic scoped property graph with domain extensions is representationally sufficient for all three cases, consistent with the foundation module's finding. The method's demonstrated value is in the structured naming of factors, boundaries, alternative factorizations, and projection loss—not in requiring a novel storage or graph representation. Four conditions would falsify the thesis: (1) independent coders cannot agree on the canonical form_owner in any case, showing the primary authority concept is not operationally clear; (2) essential domain extensions proposed across coders have no majority-supported overlapping core, showing the method does not produce a stable factorization contract; (3) a standard schema.org property graph with versioning annotations produces equally precise projection-loss records and structured-failure identification for all three cases without the Formography vocabulary, showing the vocabulary adds no explanatory utility; (4) a domain expert using the Formography contract cannot identify a category error that a domain expert using an unstructured description would also identify, showing the method provides no incremental diagnostic value. On current evidence, the thesis survives as a candidate field-level method description that is independently applicable across domains, but remains unestablished as a distinct academic field and unproven as representationally novel beyond governed property graphs with domain extensions."
+}

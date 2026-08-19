@@ -1,0 +1,87 @@
+{
+  "schema": "formography-independent-coding-protocol-v1",
+  "date": "2026-08-18",
+  "cases": [
+    {
+      "case_id": "access-authorization",
+      "entry_source": "tables/entries/access-permission-authorization-entitlement.md",
+      "view_source": "tables/constraints/access-authorization-integrity.md",
+      "owner_reference": "entry:access-permission-authorization-entitlement",
+      "view_reference": "view:constraint-access-authorization-integrity"
+    },
+    {
+      "case_id": "amount-concentration-composition",
+      "entry_source": "tables/entries/amount-concentration-composition.md",
+      "view_source": "tables/formulas/amount-concentration-composition.md",
+      "owner_reference": "entry:amount-concentration-composition",
+      "view_reference": "view:formula-amount-concentration-composition"
+    },
+    {
+      "case_id": "choice-alternative-selection",
+      "entry_source": "tables/entries/choice-alternative-selection.md",
+      "view_source": "tables/decisions/alternative-selection.md",
+      "owner_reference": "entry:choice-alternative-selection",
+      "view_reference": "view:decision-alternative-selection"
+    }
+  ],
+  "core_categories": [
+    "frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_scoped_relations",
+    "source_custody",
+    "boundary",
+    "projection_loss",
+    "unresolved_state"
+  ],
+  "core_status_values": [
+    "codable",
+    "ambiguous",
+    "absent"
+  ],
+  "authority_classes": [
+    "domain-standard-authority",
+    "canonical-reference-authority",
+    "operational-owner-authority",
+    "mixed-authority",
+    "other"
+  ],
+  "extension_categories": [
+    "identity-and-kind",
+    "boundary-and-context",
+    "state-and-lifecycle",
+    "relation-qualification",
+    "evidence-and-uncertainty",
+    "constraint-and-closure",
+    "recommendation-and-authority",
+    "projection-and-loss",
+    "other"
+  ],
+  "failure_categories": [
+    "authority-bypass",
+    "basis-or-kind-collapse",
+    "state-or-lifecycle-loss",
+    "relation-flattening",
+    "boundary-omission",
+    "evidence-overreach",
+    "constraint-override",
+    "projection-loss-omission",
+    "unresolved-default",
+    "other"
+  ],
+  "terminology_task": {
+    "labels": [
+      "formography",
+      "governed-property-graph"
+    ],
+    "instruction": "Write one 35-55 word explanation for each label describing the exact same method contract. Then choose formography, governed-property-graph, tie, or neither. Do not use the other label inside an explanation.",
+    "required_contract_points": [
+      "bounded question or frame",
+      "alternative factorization",
+      "typed scoped relations",
+      "source authority or custody",
+      "declared projection loss"
+    ]
+  },
+  "independence_rule": "Do not read authored comparison outputs, V0 independent records, V0 adjudication, wave results, or another V1 coder output."
+}

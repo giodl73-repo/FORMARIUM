@@ -1,0 +1,139 @@
+{
+  "schema": "formograph-v0",
+  "id": "formograph:amount-concentration-composition-v0",
+  "frame": {
+    "question": "Which quantity kind and basis answer the requested how-much question?",
+    "purpose": "test the Formography core in a quantitative domain",
+    "perspective": "Factorium candidate reference under SI and IUPAC authority",
+    "context": "amount, concentration, composition, and molar-mass selection",
+    "scale": "one canonical entry plus one formula view",
+    "version": "v0"
+  },
+  "form": {
+    "id": "amount-concentration-composition",
+    "owner": "entry:amount-concentration-composition",
+    "maturity": "candidate",
+    "authority_change": false
+  },
+  "factorizations": [
+    {
+      "id": "primary",
+      "status": "primary",
+      "factors": [
+        "system-or-sample-boundary",
+        "specified-entity-or-component",
+        "requested-quantity-kind",
+        "numerator-basis",
+        "denominator-basis",
+        "total-mixture-definition",
+        "preparation-and-measurement-state",
+        "temperature-and-pressure-where-volume-matters",
+        "molar-mass-subject-entity-definition-formula-composition-and-state",
+        "mass-and-amount-values-units-and-uncertainties",
+        "molar-mass-source-value-unit-and-validity-scope",
+        "conversion-direction-component-set-and-weighting-basis",
+        "unit-and-display-scale",
+        "uncertainty"
+      ],
+      "source_status": "canonical-entry-factorization"
+    },
+    {"id": "total", "status": "alternative", "factors": ["entity identity", "count or amount", "unit"], "use_when": "selecting a total quantity", "losses": ["component normalization"]},
+    {"id": "concentration", "status": "alternative", "factors": ["component quantity", "mixture volume", "conditions"], "use_when": "selecting a per-volume quantity", "losses": ["part-whole composition"]},
+    {"id": "fraction", "status": "alternative", "factors": ["component quantity", "like-kind total", "component-set closure"], "use_when": "selecting a composition share", "losses": ["absolute amount and mixture volume"]},
+    {"id": "molar-mass", "status": "alternative", "factors": ["specified material mass", "amount of same material", "identity and state"], "use_when": "bridging mass and amount", "losses": ["sample amount"]}
+  ],
+  "relations": [
+    {
+      "kind": "DERIVED-FROM",
+      "source": "amount-concentration",
+      "target": "component-amount-and-mixture-volume",
+      "scope": "c_i=n_i/V_mix",
+      "qualifiers": {"numerator_kind": "amount-of-substance", "denominator_kind": "mixture-volume", "unit": "mol-m^-3"},
+      "authority": "formula:amount-concentration",
+      "evidence": "tables/formulas/amount-concentration-composition.md"
+    },
+    {
+      "kind": "CONTRASTS-WITH",
+      "source": "amount-concentration",
+      "target": "amount-fraction",
+      "scope": "denominator-selection",
+      "qualifiers": {"difference": "volume-versus-like-kind-total", "shared": "named-component"},
+      "authority": "entry:amount-concentration-composition",
+      "evidence": "tables/entries/amount-concentration-composition.md"
+    },
+    {
+      "kind": "CONSTRAINED-BY",
+      "source": "amount-fraction",
+      "target": "component-set",
+      "scope": "fraction-closure",
+      "qualifiers": {"exhaustive": "required-for-sum-one", "mutually_exclusive": "required-for-sum-one"},
+      "authority": "formula:fraction-closure",
+      "evidence": "tables/formulas/amount-concentration-composition.md"
+    }
+  ],
+  "quantity_contract": {
+    "quantity_identity": ["amount concentration", "amount fraction", "molar mass"],
+    "numerator_basis": ["component amount", "component amount", "specified material mass"],
+    "denominator_basis": ["mixture volume", "total like-kind amount", "amount of same material"],
+    "units": ["mol m^-3", "1", "kg mol^-1"],
+    "conditions": ["mixture volume state", "same boundary and component set", "identity composition and state"],
+    "uncertainty": "input, source, and propagated uncertainty remain visible",
+    "closure": "sum-to-one applies only to exhaustive mutually exclusive component sets"
+  },
+  "source_custody": [
+    {
+      "artifact": "entry:amount-concentration-composition",
+      "path": "tables/entries/amount-concentration-composition.md",
+      "sha256": "b5e1bf736b16e9f1c758a9b0cc767736467dc69825aca4b7e33583efc2e682c1",
+      "review_path": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-15"
+    },
+    {
+      "artifact": "view:formula-amount-concentration-composition",
+      "path": "tables/formulas/amount-concentration-composition.md",
+      "sha256": "82cd97abc5ca7d572d4612bee18dc7d09f43bdf80421ab867b7a11ff2084e5f7",
+      "review_path": "context/waves/2026-08-13-factorium-vision/FRACTION-MOLAR-MASS-COMPOSITION-BASIS-ROLE-REVIEW.md",
+      "review_state": "fixed-point",
+      "review_date": "2026-08-15"
+    }
+  ],
+  "boundary": {
+    "included": ["canonical entry", "formula view", "four quantity-selection lenses"],
+    "excluded": ["measurement validation", "unnamed material properties", "implicit volume additivity", "domain-authority replacement"],
+    "stopping_condition": "one canonical entry and its admitted formula view",
+    "domain_authority_retained": true
+  },
+  "projections": [
+    {
+      "id": "quantity-reader",
+      "selected": ["focus question", "quantity ladder", "basis contrasts", "units", "closure boundary"],
+      "omitted": ["complete symbol table", "all fourteen equations", "application measurements"],
+      "loss_note": "The projection cannot validate a calculation, measurement, or material identity.",
+      "authority_preserved": true
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "no-new-quantity-identities",
+      "status": "explicit-none-admitted",
+      "note": "Scientific terms remain governed by SI, IUPAC, and existing Factorium records."
+    }
+  ],
+  "representation": {
+    "property_graph_compatible": true,
+    "novel_encoding_claimed": false
+  },
+  "retained_features": [
+    "question_frame",
+    "primary_factorization",
+    "alternative_factorizations",
+    "typed_relations",
+    "scoped_relation_qualifiers",
+    "source_digest_custody",
+    "review_binding",
+    "explicit_boundary",
+    "projection_loss",
+    "unresolved_state"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "formography-domain-case-contract-v0",
+  "case_id": "choice-alternative-selection",
+  "extends": "comparison-contract-v0.json",
+  "domain": "evaluative-decision",
+  "question": "Can the same Formography core preserve evaluation and authority without reducing judgment to a score?",
+  "domain_extension": {
+    "name": "decision-contract-v0",
+    "required_fields": [
+      "question_owner",
+      "alternatives_boundary",
+      "hard_constraints",
+      "outcome_cell_status",
+      "criteria_basis_direction",
+      "preference_provenance",
+      "recommendation_limitations",
+      "final_selection_authority"
+    ],
+    "boundary": "The extension constrains evaluative records; it does not turn preferences into facts, recommendations into selections, or Formography into decision authority."
+  },
+  "structured_failure": {
+    "code": "FG-DECISION-AUTHORITY-MISSING",
+    "path": "decision_contract.final_selection_authority"
+  }
+}

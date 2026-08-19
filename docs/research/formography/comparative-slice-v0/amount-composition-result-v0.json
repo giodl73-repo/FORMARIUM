@@ -1,0 +1,21 @@
+{
+  "schema": "formography-comparison-result-v0",
+  "case_id": "amount-concentration-composition",
+  "feature_count": 10,
+  "retention": {
+    "concept_map": 4,
+    "scoped_property_graph": 10,
+    "formograph": 10
+  },
+  "domain_extension": "quantity-contract-v0",
+  "domain_extension_retained_by_graph": true,
+  "domain_extension_required_by_formograph": true,
+  "structured_failure": {
+    "fixture": "amount-composition-formograph-invalid-v0.json",
+    "code": "FG-QUANTITY-BASIS-MISSING",
+    "path": "quantity_contract.denominator_basis"
+  },
+  "finding": "The core contract transfers without redefinition, but quantitative validity requires an explicit domain extension. A property graph can encode both core and extension.",
+  "verdict": "CORE_TRANSFERS_WITH_EXPLICIT_DOMAIN_EXTENSION_METHOD_PROFILE_REMAINS_NARROWED",
+  "scope_limit": "Second authored case; no independent coding or reader-value claim."
+}

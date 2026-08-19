@@ -1,0 +1,91 @@
+{
+  "schema": "formography-independent-coding-output-schema-v1",
+  "coder_id": "V1C3",
+  "independence_attestation": "The coder attested to full compliance with the V1 source firewall.",
+  "capture_note": "Compact categorical preservation of the coder return; judgments and terminology text are unchanged.",
+  "cases": [
+    {
+      "case_id": "access-authorization",
+      "owner_reference": "entry:access-permission-authorization-entitlement",
+      "authority_class": "domain-standard-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "entry orientation"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "entry contrast table"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "constraint table"},
+        "source_custody": {"status": "codable", "source_anchor": "entry sources"},
+        "boundary": {"status": "codable", "source_anchor": "constraint table"},
+        "projection_loss": {"status": "codable", "source_anchor": "entry specialized view"},
+        "unresolved_state": {"status": "codable", "source_anchor": "constraint table"}
+      },
+      "primary_extension_category": "constraint-and-closure",
+      "secondary_extension_category": "state-and-lifecycle",
+      "extension_source_anchor": "AA constraints",
+      "primary_failure_category": "authority-bypass",
+      "failure_condition": "Authentication becomes implicit authorization or missing facts default to allow.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": true,
+      "generic_property_graph_sufficient": true
+    },
+    {
+      "case_id": "amount-concentration-composition",
+      "owner_reference": "entry:amount-concentration-composition",
+      "authority_class": "domain-standard-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "entry orientation"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "entry contrast table"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "formula core relations"},
+        "source_custody": {"status": "codable", "source_anchor": "entry sources"},
+        "boundary": {"status": "codable", "source_anchor": "entry constraints"},
+        "projection_loss": {"status": "codable", "source_anchor": "formula Reference Delta"},
+        "unresolved_state": {"status": "codable", "source_anchor": "entry constraints"}
+      },
+      "primary_extension_category": "identity-and-kind",
+      "secondary_extension_category": "constraint-and-closure",
+      "extension_source_anchor": "entry sense table",
+      "primary_failure_category": "basis-or-kind-collapse",
+      "failure_condition": "Count, amount, concentration, fractions, or molar mass collapse without quantity-kind preservation.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": true,
+      "generic_property_graph_sufficient": true
+    },
+    {
+      "case_id": "choice-alternative-selection",
+      "owner_reference": "entry:choice-alternative-selection",
+      "authority_class": "domain-standard-authority",
+      "core_categories": {
+        "frame": {"status": "codable", "source_anchor": "entry orientation"},
+        "primary_factorization": {"status": "codable", "source_anchor": "entry root factorization"},
+        "alternative_factorizations": {"status": "codable", "source_anchor": "entry contrast table"},
+        "typed_scoped_relations": {"status": "codable", "source_anchor": "Decision input contract"},
+        "source_custody": {"status": "codable", "source_anchor": "entry sources"},
+        "boundary": {"status": "codable", "source_anchor": "entry constraints"},
+        "projection_loss": {"status": "codable", "source_anchor": "Decision output contract"},
+        "unresolved_state": {"status": "codable", "source_anchor": "alternative status"}
+      },
+      "primary_extension_category": "recommendation-and-authority",
+      "secondary_extension_category": "evidence-and-uncertainty",
+      "extension_source_anchor": "Decision output contract",
+      "primary_failure_category": "authority-bypass",
+      "failure_condition": "Recommendation is copied into final selection without decision-owner authority or missing cells default.",
+      "authority_preserved": true,
+      "projection_loss_declared": true,
+      "unresolved_state_retained": true,
+      "generic_property_graph_sufficient": true
+    }
+  ],
+  "terminology_test": {
+    "formography_explanation": "Formography is a systematic reference method that maps context-bounded forms under a declared question or frame. It structures domain knowledge through alternative factorizations, typed scoped relations, explicit source authority or custody, and loss-declared projections without asserting one universal ontology.",
+    "governed_property_graph_explanation": "A governed property graph is a structured data architecture that models domain entities under a bounded question or frame. It represents data using alternative factorizations, typed scoped relations, verified source authority or custody, and loss-declared projections while maintaining strict schema governance.",
+    "preference": "governed-property-graph",
+    "reason": "It uses established terminology while expressing the contract without the adoption cost of a new field name.",
+    "confidence": 85
+  },
+  "overall_assessment": {
+    "generic_property_graph_sufficient": true,
+    "field_promotion_recommendation": "Pause Formography as novel representation; retain it only as a possible editorial discipline."
+  }
+}

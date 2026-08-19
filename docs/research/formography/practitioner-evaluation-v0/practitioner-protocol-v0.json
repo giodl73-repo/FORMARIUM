@@ -1,0 +1,76 @@
+{
+  "schema": "formography-practitioner-evaluation-protocol-v0",
+  "date": "2026-08-18",
+  "status": "protocol_ready_recruitment_pending",
+  "research_question": "Does the heading Formography improve practitioner comprehension or reduce explanation burden for the same governed mapping method compared with Governed Property Graph?",
+  "design": {
+    "participant_slots": 12,
+    "cases_per_participant": 3,
+    "case_ids": [
+      "access-authorization",
+      "amount-concentration-composition",
+      "choice-alternative-selection"
+    ],
+    "labels": [
+      "Formography",
+      "Governed Property Graph"
+    ],
+    "assignment": "within-participant label assignment with paired complementary schedules",
+    "case_order": "balanced so every case appears four times in each position",
+    "blinding": "the method body and case text are identical under both labels",
+    "recruitment_minimums": {
+      "reference_or_domain_practitioners": 4,
+      "graph_or_ontology_practitioners": 4,
+      "overlap_allowed": true
+    },
+    "excluded_participants": [
+      "model agents",
+      "synthetic personas",
+      "Factorium simulated readers",
+      "study authors acting as participants"
+    ]
+  },
+  "measures": [
+    "comprehension correctness",
+    "completion time in seconds",
+    "correction count",
+    "explain-back word count",
+    "critical misunderstanding",
+    "terminology preference",
+    "terminology burden"
+  ],
+  "scoring_contract": "scoring-contract-v0.json",
+  "recruitment_handoff": "recruitment-handoff-v0.md",
+  "critical_misunderstandings": [
+    "treating a projection as the authority",
+    "treating one factorization as universally correct",
+    "omitting source custody",
+    "omitting declared projection loss",
+    "silently resolving an unresolved state"
+  ],
+  "analysis": {
+    "unit": "case response",
+    "report_both_labels": true,
+    "retain_null_and_adverse_results": true,
+    "no_exclusions_after_results_except_predeclared_ineligibility": true
+  },
+  "formography_promotion_gate": {
+    "all_conditions_required": true,
+    "comprehension": "not lower than Governed Property Graph",
+    "median_completion_time": "at least 10 percent lower than Governed Property Graph",
+    "corrections": "not higher than Governed Property Graph",
+    "terminology_preference": "at least two thirds of participants prefer Formography",
+    "critical_misunderstanding_rate": "no greater than 20 percent for Formography"
+  },
+  "boundaries": {
+    "human_evidence_available": false,
+    "promotion_authorized": false,
+    "rename_authorized": false,
+    "field_novelty_claim_authorized": false,
+    "recording_default": false,
+    "collect_names": false,
+    "collect_email_addresses": false,
+    "collect_employers": false,
+    "collect_client_or_production_details": false
+  }
+}
