@@ -1,4 +1,4 @@
-# Factorium Agent Instructions
+# Formarium Agent Instructions
 
 Read `CONTEXT.md` first. Then read `README.md`, `PRODUCT_PLAN.md`, and
 `context/waves/PHASES.md` before changing this repo.

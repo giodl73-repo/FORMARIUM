@@ -1,4 +1,4 @@
-# Factorium Roadmap
+# Formarium Roadmap
 
 Status: active
 
@@ -14,7 +14,7 @@ simulation triggers.
 Completed: **R0 - Reference foundation**, **R1 - Editorial pilot**,
 **R2 - Reproducible reference**, **R3 - Guides and mappings**
 
-Factorium grows in reviewed layers: first prove the editorial form, then make
+Formarium grows in reviewed layers: first prove the editorial form, then make
 the reference reproducible, then publish a coherent volume, and only then
 scale software and contributors. Milestones are gate-driven rather than tied
 to speculative calendar dates.
@@ -30,13 +30,13 @@ loss-aware Factor Guide projection rather than an unqualified flattening of
 everything reachable.
 
 The enduring product is one linked reference through two books: canonical
-**Factorium Tables** for lookup and traversal, and **The Factorium Reader** for
+**Formarium Tables** for lookup and traversal, and **The Formarium Reader** for
 teaching and worked questions. Factor Guides are bounded applications.
 Software remains a supporting publication and navigation system.
 
 ## Current baseline
 
-Factorium already has:
+Formarium already has:
 
 - a Root Table and a general factor-role vocabulary;
 - a typed entry, sense, and specialized-view architecture;
@@ -90,10 +90,10 @@ reading route while leaving the interactive Composition Lab unchanged.
 | R1 - Editorial pilot | 47 reviewed canonical records and all eleven table families at pilot depth | Complete; see `R1-EDITORIAL-PILOT-AUDIT.md` |
 | R2 - Reproducible reference | Stable interchange format and generated navigation projections | Complete; see `R2-REPRODUCIBLE-REFERENCE-AUDIT.md` |
 | R3 - Guides and mappings | Cross-paradigm assignments and problem-specific Factor Guides | Complete; see `R3-GUIDES-MAPPINGS-AUDIT.md` |
-| R4 - Volume prototype | Coherent, usability-tested Factorium Tables prototype with a separately labelled Reader companion | External testing; the frozen 78-record prototype and protocol are ready, but reader observations are required for R4 closure |
+| R4 - Volume prototype | Coherent, usability-tested Formarium Tables prototype with a separately labelled Reader companion | External testing; the frozen 78-record prototype and protocol are ready, but reader observations are required for R4 closure |
 | R5P - Private preview | Frozen, self-guided proof edition used for lookup and bounded multi-concept application by a small invited practitioner cohort | The Sieve is closed and forward-applied; preview use has no repeated unresolved critical blocker and every failure is dispositioned |
 | R5 - First substantial volume | Approximately 250 reviewed Tables with balanced coverage and a linked Reader companion | Editorial expansion may proceed in parallel; publication still requires the R4 evidence gate plus editorial, domain, graph, citation, and publication gates |
-| R6 - Factorium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |
+| R6 - Formarium Workbench | Search, compare, construct, review, and publish the reference | Software consumes the reference contract and does not become its authority |
 | R7 - Core reference | Approximately 1,000 canonical headwords across multiple reviewed volumes | Contributor governance and revision custody scale without identity drift |
 | R8 - Mature collection | 3,000-5,000 entries only where justified by repeated use and review | Growth preserves quality, graph integrity, and navigability |
 
@@ -140,7 +140,7 @@ Reference Delta, cited research, cross-references, and fixed-point review.
 
 ### Structural and applied breadth
 
-Balance the scientific pilots with entries that test Factorium's original
+Balance the scientific pilots with entries that test Formarium's original
 decomposition promise:
 
 - identity, classification, naming, and versioning;
@@ -268,7 +268,7 @@ expanded volume.
 
 After The Sieve closes, curate a frozen proof edition from the repaired
 reference and selected reviewed R5 work. Give that edition to a small invited
-cohort without live moderation. The preview tests whether Factorium works as
+cohort without live moderation. The preview tests whether Formarium works as
 a book-shaped reference that practitioners can understand, apply to a real
 non-sensitive problem, and choose to use again.
 
@@ -309,7 +309,7 @@ Public R5 publication remains separately gated by the approximately 250-entry
 coverage goal and the editorial, domain, graph, citation, maturity, and
 publication requirements above.
 
-## R6 - Factorium Workbench
+## R6 - Formarium Workbench
 
 Only after the editorial contract is stable, build software for:
 
@@ -355,7 +355,7 @@ Candidate composition operators have bounded meanings:
   context, exclusion, uncertainty, and provenance traces.
 
 These operator names are interface shorthand, not mathematical equalities,
-Factorium decomposition marks, or a claim that semantic composition follows
+Formarium decomposition marks, or a claim that semantic composition follows
 ordinary arithmetic. Every stored operation uses an explicit typed record;
 the symbols or words shown to a reader are presentation only.
 
@@ -439,7 +439,7 @@ or reader value.
 2. retain exact `sim-30` custody and its 24-record spine, 151-record depth
    boundary,
    four route prompts, and findings ledger;
-3. improve the Factorium Tables dictionary/thesaurus projection only where
+3. improve the Formarium Tables dictionary/thesaurus projection only where
    structural inspection or later readers demonstrate lookup and concept-
    relation friction; keep Reader prose and order separately owned;
 4. repair only newly demonstrated route, projection, search, or explanation

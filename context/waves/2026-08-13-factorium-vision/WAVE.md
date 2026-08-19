@@ -3991,3 +3991,20 @@ evidence and no change to the paused field, naming, novelty, Formarium, or
 Structure Atlas gates. See
 `FORMOGRAPHY-PRACTITIONER-PROTOCOL-ROLE-REVIEW.md` and
 `FORMOGRAPHY-PRACTITIONER-PROTOCOL-RESULT.md`.
+
+## 2026-08-19 Formarium public identity feedback rename
+
+Owner decision: adopt **Formarium** as the public project and collection name,
+**Formarium Tables** as the primary book, and **The Formarium Reader** as the
+teaching companion. Keep Formography as the proposed method/research track.
+
+Implementation: `sim-65` inherits `sim-64` exactly and applies the Formarium
+identity to all generated UX surfaces. Current product docs and the two-book
+contract use Formarium. `.factorium` formats, `factorium-*` schemas and
+commands, canonical IDs, source paths, digests, and historical editions remain
+compatibility identities.
+
+Review: proceed as a reversible feedback identity. Existing public uses create
+real namespace and clearance risk, so no uniqueness, trademark, or commercial
+lock-in claim is admitted. The result is
+`FORMARIUM-PUBLIC-IDENTITY-RESULT.md`.

@@ -1,8 +1,8 @@
-# Factorium Product Plan
+# Formarium Product Plan
 
 ## Product thesis
 
-Factorium will be a lasting reference collection of decomposition patterns.
+Formarium will be a lasting reference collection of decomposition patterns.
 Its books and Factor Tables help people discover dimensions, distinguish
 senses, compare pivots, assign factor roles to available mechanisms, and avoid
 invalid or unstable structures. Formula Tables extend the same reference form
@@ -14,24 +14,30 @@ reference. They are not the top-level product.
 
 ## Product identity
 
-- Name: **Factorium**
-- Primary reference book: **Factorium Tables** — dictionary, thesaurus, and
+- Name: **Formarium**
+- Primary reference book: **Formarium Tables** — dictionary, thesaurus, and
   structured canonical reference
-- Teaching companion: **The Factorium Reader** — linked explanations, selected
+- Teaching companion: **The Formarium Reader** — linked explanations, selected
   routes, and worked bounded questions
 - Reference unit: **Factor Table**
 - Specialized mathematical unit: **Formula Table**
 - Specialized reference views: **Value, Mapping, Decision, Transition,
   Constraint, Procedure, Diagnostic, Scale, and Evidence Tables**
 - Narrowed output: **Factor Guide**
-- Supporting software: **Factorium Workbench**
+- Supporting software: **Formarium Workbench**
 - Founding research method: **Factor-Preserving Semantic Encoding**
 - Repo type: encyclopedia/reference project with supporting research and tools
 
+Compatibility boundary: `.factorium` formats, `factorium-*` schema names,
+canonical IDs, source paths, and historical edition identities remain stable.
+Formarium is the public product and repository identity; Formography remains a
+separate proposed method whose field and novelty claims are not established by
+the product rename.
+
 ## Principles
 
-1. Factorium Tables and its canonical Factor Tables are the primary authority;
-   The Factorium Reader teaches their use without copying that authority.
+1. Formarium Tables and its canonical Factor Tables are the primary authority;
+   The Formarium Reader teaches their use without copying that authority.
 2. Separate different senses from competing factorizations of one sense.
 3. Present credible alternatives instead of one unexplained canonical answer.
 4. Make pivots, dependencies, constraints, and failure signs explicit.
@@ -70,7 +76,7 @@ Sequence:
 5. role/ambiguity bakeoff;
 6. portable Wave 2 packet.
 
-### Wave 3: Factorium reference foundation
+### Wave 3: Formarium reference foundation
 
 Define the grand vision, Factor Table grammar, general factor-role vocabulary,
 cross-paradigm mappings, pilot entries, and Factor Guide method.
@@ -79,7 +85,7 @@ Provisional scale: 25–50 pilot entries, about 250 entries for the first
 substantial volume, about 1,000 canonical headwords for the core reference,
 and 3,000–5,000 only after mature editorial validation.
 
-### Wave 4: First Factorium Tables volume and Reader companion
+### Wave 4: First Formarium Tables volume and Reader companion
 
 Assemble and usability-test a coherent table-first reference across several
 domains, with a separately labelled Reader companion for learning and worked
@@ -88,7 +94,7 @@ proof edition to an invited private-preview cohort. Test independent lookup,
 Reader onboarding, application to a real non-sensitive scenario, and
 voluntary return use before the first substantial public volume.
 
-### Wave 5: Factorium Workbench
+### Wave 5: Formarium Workbench
 
 Add search, construction, comparison, narrowing, and publishing software only
 after the editorial method is stable.

@@ -1,8 +1,8 @@
-# Factorium Vision
+# Formarium Vision
 
 ## North star
 
-Factorium exists to leave behind a new kind of reference work: an encyclopedia
+Formarium exists to leave behind a new kind of reference work: an encyclopedia
 of ways to decompose problems.
 
 Its primary deliverable is not software, a model, or a benchmark. It is a
@@ -11,22 +11,22 @@ thesaurus, engineering handbook, or table of logarithms. A reader should be
 able to look up a concept, recognize the relevant sense, compare several
 plausible factorizations, and carry a useful structure back into their work.
 
-> **Factorium: tables for the structure of things.**
+> **Formarium: tables for the structure of things.**
 
 ## Deliverable hierarchy
 
-1. **Factorium books and Factor Tables** are the enduring product.
+1. **Formarium books and Factor Tables** are the enduring product.
 2. **Factor Guides** narrow the tables for a particular problem or domain.
 3. **Evidence and reviews** explain provenance, limitations, and maturity.
 4. **Software** helps construct, search, compare, and publish the reference.
 5. **Experiments and code** test methods and preserve reproducible examples.
 
 Lower layers support the layers above them. They must not displace the
-reference work as the reason Factorium exists.
+reference work as the reason Formarium exists.
 
 ## What belongs in the reference
 
-Factorium collects reusable decomposition knowledge:
+Formarium collects reusable decomposition knowledge:
 
 - candidate factors and dimensions;
 - competing pivots and organizing axes;
@@ -48,20 +48,20 @@ choice space legible.
 
 Formula Tables are specialized Factor Tables. They preserve mathematical
 operator semantics and distinguish definitions, identities, laws, empirical
-relations, estimators, and algorithms. Factorium adds conceptual navigation
+relations, estimators, and algorithms. Formarium adds conceptual navigation
 around an equation; it does not derive or supersede the equation's domain
 authority.
 
-Factorium also supports a bounded family of specialized table views:
+Formarium also supports a bounded family of specialized table views:
 Reference Value, Mapping, Decision, Transition, Constraint, Procedure,
 Diagnostic, Scale, and Evidence Tables. These answer different lookup
 questions while retaining one canonical entry, sense, source, maturity, and
-relationship graph. Specialized views extend Factorium's utility; they do not
+relationship graph. Specialized views extend Formarium's utility; they do not
 turn it into an arbitrary collection of tables.
 
 ## Editorial form
 
-Factorium is table-first, not essay-first.
+Formarium is table-first, not essay-first.
 
 Each entry uses a hybrid form:
 
@@ -78,12 +78,12 @@ theory, history, and argument belong in linked essays or appendices.
 This preserves the scanability of a dictionary while retaining enough
 exposition to prevent lists from becoming arbitrary or misleading.
 
-## The Factorium distinction
+## The Formarium distinction
 
-A thesaurus usually offers alternative words. Factorium offers alternative
+A thesaurus usually offers alternative words. Formarium offers alternative
 structures.
 
-A dictionary separates meanings. Factorium also separates:
+A dictionary separates meanings. Formarium also separates:
 
 - different senses of one headword;
 - different decompositions of the same sense;
@@ -136,7 +136,7 @@ The provisional scale is:
 - about 1,000 canonical headwords for the core multi-volume reference;
 - 3,000–5,000 only as a mature reviewed collection.
 
-Factorium is therefore smaller than a general dictionary or encyclopedia. Its
+Formarium is therefore smaller than a general dictionary or encyclopedia. Its
 headwords are reusable decomposition-bearing concepts and situations, not
 every word or named entity.
 
@@ -163,12 +163,12 @@ portable packets remain valuable founding evidence. They demonstrate the
 discipline of explicit factors, constraints, competing representations,
 counterexamples, and reproducible custody.
 
-They do not prove the broader encyclopedia. Factorium preserves them as one
+They do not prove the broader encyclopedia. Formarium preserves them as one
 tested domain and as methodological infrastructure.
 
 ## Success
 
-Factorium succeeds when its books become a practical reference: something
+Formarium succeeds when its books become a practical reference: something
 people consult while naming systems, designing class hierarchies, choosing
 database keys, defining cloud boundaries, structuring organizations, modeling
 domains, or clarifying concepts.

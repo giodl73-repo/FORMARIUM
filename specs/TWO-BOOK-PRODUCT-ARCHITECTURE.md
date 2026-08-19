@@ -1,15 +1,15 @@
-# Factorium Two-Book Product Architecture
+# Formarium Two-Book Product Architecture
 
 Status: internal product architecture fixed point
 
 ## Decision
 
-Factorium publishes one canonical reference through two complementary books:
+Formarium publishes one canonical reference through two complementary books:
 
-1. **Factorium Tables** is the primary dictionary/thesaurus and structured
+1. **Formarium Tables** is the primary dictionary/thesaurus and structured
    reference. It owns lookup, sense distinction, factors, relations,
    contrasts, cross-references, provenance, and machine-readable identity.
-2. **The Factorium Reader** is the explanatory companion. It teaches how to
+2. **The Formarium Reader** is the explanatory companion. It teaches how to
    frame, factor, compose, evaluate, and explain bounded questions by routing
    through canonical Tables.
 
@@ -21,8 +21,8 @@ canonical entries or a third book authority.
 
 | Surface | Owns | Must not own |
 |---|---|---|
-| Factorium Tables | headwords, senses, factors, table-family views, typed relations, constraints, provenance, stable revisions | a mandatory cover-to-cover argument or copied guide conclusions |
-| The Factorium Reader | teaching order, explanation, worked questions, transitions, interpretation warnings, routes into Tables | canonical definitions, duplicated Factor Tables, silent relation creation, or final domain decisions |
+| Formarium Tables | headwords, senses, factors, table-family views, typed relations, constraints, provenance, stable revisions | a mandatory cover-to-cover argument or copied guide conclusions |
+| The Formarium Reader | teaching order, explanation, worked questions, transitions, interpretation warnings, routes into Tables | canonical definitions, duplicated Factor Tables, silent relation creation, or final domain decisions |
 | Factor Guides | local question, selected concepts/senses, bounded closure, checks, projection loss, frontier, next action | canonical headwords, universal procedure, hidden flattening, or unreviewed authority |
 
 The Reader and Guides link to exact Table identities. If a definition or
@@ -31,7 +31,7 @@ authority is a defect.
 
 ## Reader jobs
 
-### Factorium Tables
+### Formarium Tables
 
 For a reader who has a term, distinction, or neighboring concept in mind:
 
@@ -44,7 +44,7 @@ For a reader who has a term, distinction, or neighboring concept in mind:
 - choose Compact, Abbreviated, Book, or Full projection without changing
   canonical content.
 
-### The Factorium Reader
+### The Formarium Reader
 
 For a reader who wants to learn the method or begin from a messy question:
 
@@ -73,9 +73,9 @@ labels their kinds; ranking does not change authority.
 
 | Existing artifact | Product placement |
 |---|---|
-| `reference/factorium-reference-v0.factorium` and `tables/` | Factorium Tables canonical source |
-| generated search, contents, entry pages, and reader profiles | Factorium Tables publication projections |
-| `guides/bounded-question-composition-book-one.md` 24-record spine | The Factorium Reader candidate backbone |
+| `reference/factorium-reference-v0.factorium` and `tables/` | Formarium Tables canonical source |
+| generated search, contents, entry pages, and reader profiles | Formarium Tables publication projections |
+| `guides/bounded-question-composition-book-one.md` 24-record spine | The Formarium Reader candidate backbone |
 | problem-led routes and Composition examples | Reader worked examples |
 | other files under `guides/` | bounded Factor Guides |
 | `sim-30` | frozen pre-split Reader-oriented candidate baseline |

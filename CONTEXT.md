@@ -1,14 +1,14 @@
-# Factorium Context
+# Formarium Context
 
-Factorium is an encyclopedia of decomposition patterns expressed through two
-books over one authority. **Factorium Tables** is the primary dictionary/
-thesaurus and canonical structured reference. **The Factorium Reader** is its
+Formarium is an encyclopedia of decomposition patterns expressed through two
+books over one authority. **Formarium Tables** is the primary dictionary/
+thesaurus and canonical structured reference. **The Formarium Reader** is its
 explanatory teaching companion. Factor Guides, evidence, software, and
 experiments support them without becoming alternate authorities.
 
 The repository began as FACTOR, the hardware-neutral home of
 Factor-Preserving Semantic Encoding. That work remains immutable founding
-evidence and one tested Factorium domain.
+evidence and one tested Formarium domain.
 
 ## Operating model
 
@@ -30,36 +30,41 @@ evidence and one tested Factorium domain.
 Current pulses: **08A - Factor Forge intake fixed point** and
 **08P - Proof Set internal fixed point**
 
-The current rolling machine-readable owner is
+The current rolling machine-readable owner retains its compatibility identity at
 `reference/factorium-reference-v2.factorium`: 54 entries, 419 senses, 638
 factors, and 100 views. It preserves every V1 record and adds the reviewed
 Optimization Problem Structure, Prototype/Test/Iteration, and
 Contribution/Credit/Priority/Legacy views. The eleven-record V0 relation
 sidecar is unchanged; `reference/factorium-assurance-v2.factorium` provides
-165 exact review bindings. `sim-64` is the current internal book/search/site
-projection. It closes the current generated Pointer Entry concordance at 250
+165 exact review bindings. `sim-65` is the current public-identity feedback
+projection. It renders Formarium, Formarium Tables, and The Formarium Reader
+over the unchanged `sim-64` content, search, Reader sequence, pointer registry,
+and interchange. `sim-64` closes the generated Pointer Entry concordance at 250
 explicit labels, 2,681 exact structural expressions, and 2,118 label-to-owner
 bindings
 while keeping canonical entries, search, the Reader sequence, and interchange
 unchanged. `sim-52` through `sim-63` remain preserved; `sim-64` adds a final
 10-label closeout. `sim-58` introduced same-directory, cycle-checked delta
 composition. Further pointer admission requires a new census and editorial
-trigger. The 250-pointer count is not the R5 canonical Table goal. The naming
-decision is paused: `sim-64`
-uses Factorium, while `sim-51` remains the reversible Tabula Facta identity
-snapshot and `sim-50` remains the pre-name-preview rolling V2 projection. V2
-is not frozen and remains open to later reviewed additions. V0, V1, V0-bound
+trigger. The 250-pointer count is not the R5 canonical Table goal. The owner
+has selected Formarium as the public feedback identity. `sim-64` remains the
+pre-rename content fixed point, `sim-51` remains the reversible Tabula Facta
+snapshot, and `sim-50` remains the earlier rolling V2 projection. Existing
+Factorium schema names, `.factorium` formats, canonical IDs, and historical
+editions remain compatibility identities. V2 is not frozen and remains open
+to later reviewed additions. V0, V1, V0-bound
 Composition Queries, `sim-48`, and `sim-49` remain historical baselines; no
 reader evidence is claimed.
 
-Formography is now an active proposed-field research track, not a product
-rename. Its initial foundation module records a confirmed 2021 STS cognate,
+Formography is an active proposed-field research track, not the public product
+name. Its initial foundation module records a confirmed 2021 STS cognate,
 strong concept-map, faceted-classification, Topic Maps, strategic-formalism,
 and knowledge-graph precedents, and a
 `PROCEED_WITH_TARGETED_NARROWING` verdict. The working method centers
 source-custodied, context-bounded forms, alternative factorization, typed
 relations, and loss-declared projections. Novelty, field establishment,
-Factorium renaming, and Formarium promotion remain unauthorized. The next gate
+and Formography field promotion remain unauthorized. The Formarium public
+identity is an owner-authorized feedback decision, not a research result. The next gate
 at foundation closure was one frozen comparative encoding packet. See
 `docs/research/formography/formography-foundation-research-module-v0.md` and
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-FOUNDATION-RESULT.md`.
@@ -88,7 +93,7 @@ missing final authority fails closed. Across all three cases, property graphs
 encode every retained field. The surviving hypothesis is a governed method
 profile over ordinary representations. Authored encoding is closed; independent
 coding and a direct `governed property graph` simplicity comparison were the
-next gate. See
+next method-promotion gate. See
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-COMPARATIVE-SLICE-03-RESULT.md`.
 
 Independent coding V0 is complete and does not pass promotion. Three isolated
@@ -97,7 +102,8 @@ and preserve authority and projection loss. Exact owner identity reaches only
 2/3 per case, essential extensions lack stable majority, and terminology
 splits Formography 1, governed property graph 1, neither 1. Formography field
 promotion was paused pending a pre-registered V1 protocol; that protocol and
-its result are recorded below. Rename and publication claims remain blocked. See
+its result are recorded below. Method renaming and publication claims remain
+blocked; this does not constrain the owner-authorized Formarium product identity. See
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-INDEPENDENT-CODING-01-RESULT.md`.
 
 Independent coding V1 pre-registers owner/authority separation, extension and
@@ -118,15 +124,15 @@ The execution supplement adds fixed case scoring anchors, coded response
 values, a neutral invitation, eligibility and consent text, and one
 participant-level preference record per slot.
 Recruitment and moderated sessions remain external and pending. Model agents,
-synthetic personas, and Factorium simulated readers cannot count as
-participants. Human evidence remains unavailable and Formography promotion,
-rename, novelty, Formarium, and Structure Atlas claims remain blocked. See
+synthetic personas, and Formarium simulated readers cannot count as
+participants. Human evidence remains unavailable and Formography field promotion, novelty,
+method advantage, and Structure Atlas claims remain blocked. See
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-PRACTITIONER-PROTOCOL-RESULT.md`.
 
 The active roadmap is `ROADMAP.md`. It sequences the current 25-50-entry
 editorial pilot, reproducible interchange, cross-paradigm mappings and Factor
 Guides, a 75-125-entry usability prototype, the approximately 250-entry first
-substantial volume, and only then the Factorium Workbench. Its fixed-point
+substantial volume, and only then the Formarium Workbench. Its fixed-point
 review is
 `context/waves/2026-08-13-factorium-vision/ROADMAP-ROLE-REVIEW.md`.
 

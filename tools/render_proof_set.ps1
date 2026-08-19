@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48", "sim-49", "sim-50", "sim-51", "sim-52", "sim-53", "sim-54", "sim-55", "sim-56", "sim-57", "sim-58", "sim-59", "sim-60", "sim-61", "sim-62", "sim-63", "sim-64")]
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48", "sim-49", "sim-50", "sim-51", "sim-52", "sim-53", "sim-54", "sim-55", "sim-56", "sim-57", "sim-58", "sim-59", "sim-60", "sim-61", "sim-62", "sim-63", "sim-64", "sim-65")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -292,12 +292,20 @@ $artifactTitle = switch ($Edition) {
     "sim-62" { "Factorium Pointer Entry Expansion Simulation 62" }
     "sim-63" { "Factorium Pointer Entry Expansion Simulation 63" }
     "sim-64" { "Factorium Pointer Entry Concordance Closeout Simulation 64" }
+    "sim-65" { "Formarium Public Identity Feedback Simulation 65" }
 }
 
-$identityPreview = $editionNumber -eq 51
-$publicationName = if ($identityPreview) { "Tabula Facta" } else { "Factorium" }
-$tablesPublicationName = if ($identityPreview) { "Tabula Facta" } else { "Factorium Tables" }
-$siteBrand = if ($identityPreview) {
+$tabulaIdentityPreview = $editionNumber -eq 51
+$formariumIdentityPreview = $editionNumber -eq 65
+$identityPreview = $tabulaIdentityPreview -or $formariumIdentityPreview
+$publicationName = if ($formariumIdentityPreview) { "Formarium" } elseif ($tabulaIdentityPreview) { "Tabula Facta" } else { "Factorium" }
+$tablesPublicationName = if ($formariumIdentityPreview) { "Formarium Tables" } elseif ($tabulaIdentityPreview) { "Tabula Facta" } else { "Factorium Tables" }
+$readerPublicationName = if ($formariumIdentityPreview) { "The Formarium Reader" } else { "The Factorium Reader" }
+$repositoryName = if ($formariumIdentityPreview) { "Formarium" } else { "FACTORIUM" }
+$siteBrand = if ($formariumIdentityPreview) {
+    'Formarium <span class="identity-candidate">feedback preview</span>'
+}
+elseif ($tabulaIdentityPreview) {
     'Tabula Facta <span class="identity-candidate">candidate</span>'
 }
 else {
@@ -314,7 +322,10 @@ $identityPreviewStyle = if ($identityPreview) {
 else {
     ''
 }
-$identityPreviewBanner = if ($identityPreview) {
+$identityPreviewBanner = if ($formariumIdentityPreview) {
+    '<aside class="identity-preview" aria-label="Public identity feedback status"><strong>Formarium</strong> is the public feedback identity. Factorium schema names, file formats, and canonical IDs remain compatibility internals.</aside>'
+}
+elseif ($tabulaIdentityPreview) {
     '<aside class="identity-preview" aria-label="Candidate identity status">Identity preview - <strong>Tabula Facta</strong> is a candidate name for Factorium Tables, not a locked rename.</aside>'
 }
 else {
@@ -591,7 +602,7 @@ function Get-GuideSelections {
     }
     if ($editionNumber -ge 30) {
         [ordered]@{
-            title = if ($editionNumber -ge 31) { "The Factorium Reader Quickstart" } else { "Book One Candidate Quickstart" }
+            title = if ($editionNumber -ge 31) { "$readerPublicationName Quickstart" } else { "Book One Candidate Quickstart" }
             path = [System.IO.Path]::GetFullPath($bookOneQuickstart)
         }
     }
@@ -1086,7 +1097,7 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
 
             if ($target.StartsWith($workspace, [System.StringComparison]::OrdinalIgnoreCase)) {
                 $relativeTarget = [System.IO.Path]::GetRelativePath($workspace, $target).Replace("\", "/")
-                return 'href="https://github.com/giodl73-repo/FACTORIUM/blob/main/' + $relativeTarget + $match.Groups[2].Value + '"'
+                return "href=`"https://github.com/giodl73-repo/$repositoryName/blob/main/" + $relativeTarget + $match.Groups[2].Value + '"'
             }
 
             return $match.Value
@@ -1094,10 +1105,14 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
     )
     if ($editionNumber -ge 31 -and
         $sources[$index] -eq [System.IO.Path]::GetFullPath($bookOneQuickstart)) {
-        $segment = $segment.Replace("Book One Candidate Quickstart", "The Factorium Reader Quickstart")
+        $segment = $segment.Replace("Book One Candidate Quickstart", "$readerPublicationName Quickstart")
         $segment = $segment.Replace("internal <code>sim-30</code> candidate surface", "internal <code>sim-31</code> Reader projection")
         $segment = $segment.Replace("Question first:</strong> use the candidate guide", "Question first:</strong> use the Reader guide")
         $segment = $segment.Replace("five-part candidate spine", "five-part Reader spine")
+    }
+    if ($formariumIdentityPreview) {
+        $segment = $segment.Replace("Factorium Tables", $tablesPublicationName)
+        $segment = $segment.Replace("The Factorium Reader", $readerPublicationName)
     }
     if ($editionNumber -lt 41 -and
         $sources[$index] -eq [System.IO.Path]::GetFullPath(
@@ -1736,10 +1751,9 @@ $localFileLinks = [regex]::Matches(
     $htmlText,
     'href="(?!#|https?://|mailto:|data:)[^"]+"'
 )
-$repositorySourceLinks = [regex]::Matches(
-    $htmlText,
-    'href="https://github\.com/giodl73-repo/FACTORIUM/blob/[^"]+"'
-)
+$repositorySourcePattern = 'href="https://github\.com/giodl73-repo/{0}/blob/[^"]+"' -f
+    [regex]::Escape($repositoryName)
+$repositorySourceLinks = [regex]::Matches($htmlText, $repositorySourcePattern)
 if ($missingFragments.Count -ne 0) {
     throw "Rendered proof has $($missingFragments.Count) unresolved fragment links"
 }
@@ -2195,9 +2209,13 @@ if ($editionNumber -ge 7) {
         [System.Text.UTF8Encoding]::new($false)
     )
     if ($editionNumber -ge 44) {
+        $handoffScriptText = Get-Content -LiteralPath $handoffScript -Raw
+        if ($formariumIdentityPreview) {
+            $handoffScriptText = $handoffScriptText.Replace("Current Factorium page", "Current Formarium page")
+        }
         [System.IO.File]::WriteAllText(
             (Join-Path $siteAssetDirectory "handoff.js"),
-            (Get-Content -LiteralPath $handoffScript -Raw),
+            $handoffScriptText,
             [System.Text.UTF8Encoding]::new($false)
         )
     }
@@ -2913,7 +2931,7 @@ if ($editionNumber -ge 7) {
             $candidateSection = @"
 
 <section id="reader" class="site-start site-candidate site-reader" aria-labelledby="site-reader-heading">
-<p class="site-kicker">The Factorium Reader · teaching companion</p>
+<p class="site-kicker">$readerPublicationName · teaching companion</p>
 <h2 id="site-reader-heading">Learn how to use the Tables</h2>
 <p>Follow a selected 24-record teaching spine, then hand off to any of $(if ($editionNumber -ge 50) { 157 } elseif ($editionNumber -ge 49) { 154 } else { 151 }) additional selected Tables when the question needs specialized depth. The Reader explains a method; it does not redefine the reference or claim a universal order.</p>
 <div class="site-candidate__actions">
@@ -2968,13 +2986,13 @@ if ($editionNumber -ge 7) {
 <article class="site-book-card site-book-card--tables" data-book="tables">
 <p class="site-book-card__kind">Primary reference · dictionary and thesaurus</p>
 <h3>$tablesPublicationName</h3>
-$(if ($identityPreview) { '<p><strong>Candidate name for Factorium Tables.</strong> The reference authority and records are unchanged.</p>' } else { '' })
+$(if ($formariumIdentityPreview) { '<p><strong>Public feedback name for Factorium Tables.</strong> Canonical IDs and compatibility formats are unchanged.</p>' } elseif ($tabulaIdentityPreview) { '<p><strong>Candidate name for Factorium Tables.</strong> The reference authority and records are unchanged.</p>' } else { '' })
 <p>Look up a concept, distinguish its senses, compare neighboring ideas, inspect factors and constraints, or move through the canonical concept graph.</p>
 <div class="site-book-card__actions"><a class="site-book-card__primary" href="#search">Search the Tables</a><a href="$(if ($editionNumber -ge 35) { 'tables.html' } else { '#contents' })">Browse the Tables</a></div>
 </article>
 <article class="site-book-card site-book-card--reader" data-book="reader">
 <p class="site-book-card__kind">Teaching companion · selected route</p>
-<h3>The Factorium Reader</h3>
+<h3>$readerPublicationName</h3>
 <p>Learn the method through a 24-record spine and worked bounded questions, then return to the owning Tables whenever more depth is needed.</p>
 <div class="site-book-card__actions"><a class="site-book-card__primary" href="$(if ($editionNumber -ge 36) { 'reader.html' } else { '#reader' })">$(if ($editionNumber -ge 36) { 'Open the Reader' } else { 'Read the Guide' })</a><a href="#problems">See worked questions</a></div>
 </article>
@@ -2990,7 +3008,7 @@ $(if ($identityPreview) { '<p><strong>Candidate name for Factorium Tables.</stro
 
 <section id="choose" class="site-intent" aria-labelledby="site-intent-heading">
 <p class="site-kicker">Start with what you are trying to do</p>
-<h2 id="site-intent-heading">What brings you to Factorium?</h2>
+<h2 id="site-intent-heading">What brings you to ${publicationName}?</h2>
 <div class="site-intent__grid">
 <article><p class="site-intent__eyebrow">Direct lookup</p><h3>I know the term</h3><p>Find its senses, neighboring concepts, factors, constraints, and owned specialized views.</p><a href="#search">Search the Tables <span aria-hidden="true">&rarr;</span></a></article>
 <article><p class="site-intent__eyebrow">Work through a problem</p><h3>I have a question</h3><p>Choose explicit concepts and controls, inspect bounded closure, and keep unresolved work visible.</p><a href="compose.html">Open Compose <span aria-hidden="true">&rarr;</span></a></article>
@@ -3321,7 +3339,7 @@ $(if ($identityPreview) { '<p><strong>Candidate name for Factorium Tables.</stro
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="$(if ($identityPreview) { 'A reversible Tabula Facta identity preview with The Factorium Reader.' } elseif ($editionNumber -ge 31) { 'A searchable Factorium Tables reference with an explanatory Reader companion.' } else { 'A searchable, table-first Factorium book simulation.' })">
+<meta name="description" content="$(if ($formariumIdentityPreview) { 'A Formarium public-identity feedback preview with Formarium Tables and The Formarium Reader.' } elseif ($tabulaIdentityPreview) { 'A reversible Tabula Facta identity preview with The Factorium Reader.' } elseif ($editionNumber -ge 31) { 'A searchable Factorium Tables reference with an explanatory Reader companion.' } else { 'A searchable, table-first Factorium book simulation.' })">
 <title>Structure, Quantity, and Choice · $publicationName</title>
 <link rel="stylesheet" href="assets/site.css">
 $identityPreviewStyle
@@ -3334,8 +3352,8 @@ $identityPreviewStyle
 </div></header>$identityPreviewBanner
 <main id="main-content" class="site-main">
 <section class="site-hero">
-<p class="site-kicker">$(if ($identityPreview) { 'Candidate identity · two books · one canonical reference' } elseif ($editionNumber -ge 31) { 'Two books · one canonical reference' } elseif ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
-<h1>$(if ($identityPreview) { 'Tabula Facta' } elseif ($editionNumber -ge 31) { 'Factorium' } else { 'Structure, Quantity, and Choice' })</h1>
+<p class="site-kicker">$(if ($formariumIdentityPreview) { 'Public identity feedback · two books · one canonical reference' } elseif ($tabulaIdentityPreview) { 'Candidate identity · two books · one canonical reference' } elseif ($editionNumber -ge 31) { 'Two books · one canonical reference' } elseif ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
+<h1>$publicationName</h1>
 <p class="site-hero__deck">$heroDeck</p>
 </section>$intentSection$librarySection$candidateSection$problemSection$compositionSection
 <section id="start" class="site-start" aria-labelledby="site-start-heading">
@@ -3569,7 +3587,7 @@ $identityPreviewStyle
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="The selected five-part teaching route through $tablesPublicationName.">
-<title>The Factorium Reader · $publicationName</title>
+<title>$readerPublicationName · $publicationName</title>
 <link rel="stylesheet" href="assets/site.css">
 $identityPreviewStyle
 </head>
@@ -3583,10 +3601,10 @@ $identityPreviewStyle
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Reader</nav>
 <section class="reader-route__heading">
 <p class="site-kicker">Teaching companion · selected route</p>
-<h1>The Factorium Reader</h1>
+<h1>$readerPublicationName</h1>
 <p>Learn one bounded method through 24 selected records in five parts, then return to the canonical Factor Tables whenever the question needs more depth.</p>
 <div class="reader-route__actions">$readerPrimaryActions<a href="$candidateGuidePage">Read the complete method</a><a href="$candidateTasksPage">Try worked questions</a><a href="tables.html">Browse Tables A-Z</a></div>
-<p class="reader-route__boundary"><strong>Factor Tables remain authoritative.</strong> $(if ($identityPreview) { 'Tabula Facta is the candidate publication name; Factorium identities and source records are unchanged. ' } else { '' })This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other 151 records.</p>
+<p class="reader-route__boundary"><strong>Factor Tables remain authoritative.</strong> $(if ($formariumIdentityPreview) { 'Formarium is the public feedback identity; Factorium schema names, file formats, and canonical IDs remain compatibility internals. ' } elseif ($tabulaIdentityPreview) { 'Tabula Facta is the candidate publication name; Factorium identities and source records are unchanged. ' } else { '' })This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other 151 records.</p>
 </section>
 <nav class="reader-route__parts" aria-label="Reader parts"><a href="#reader-part-1">I</a><a href="#reader-part-2">II</a><a href="#reader-part-3">III</a><a href="#reader-part-4">IV</a><a href="#reader-part-5">V</a></nav>
 <div class="reader-route__spine">$readerPartSections</div>
@@ -3622,9 +3640,9 @@ $identityPreviewStyle
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">$siteBrand</a>
 <nav class="site-nav" aria-label="Primary"><a href="index.html#problems">Problems</a><a href="compose.html" aria-current="page">Compose</a><a href="index.html#compose">Traces</a>$homeTablesIndexNav$homePointerNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
-</div></header>
+</div></header>$identityPreviewBanner
 <main id="main-content" class="site-main lab-main">
-<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Structure, Quantity, and Choice</a> / Bounded Composition Lab</nav>
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Bounded Composition Lab</nav>
 <section class="lab-hero">
 <p class="site-kicker">Local interactive simulation</p>
 <h1>Build a bounded working graph</h1>
@@ -4184,7 +4202,7 @@ $(if ($editionNumber -ge 52) { '<script src="../assets/pointers.js"></script>' }
             $readerSequenceContentsLinks += 1
             $readerSequenceHtml = @"
 <nav class="reader-sequence" aria-label="Reader sequence" data-reader-step="$readerStep" data-reader-part="$readerPartNumber">
-<div class="reader-sequence__heading"><p>The Factorium Reader · Step $readerStep of 24</p><a href="../reader.html">Back to Reader contents</a></div>
+<div class="reader-sequence__heading"><p>$readerPublicationName · Step $readerStep of 24</p><a href="../reader.html">Back to Reader contents</a></div>
 <p class="reader-sequence__part">Part $readerPartNumber · $encodedReaderPartTitle</p>
 <div class="reader-sequence__links">$readerPrevious$readerNext</div>
 <p class="reader-sequence__boundary">Editorial teaching order only—not prerequisite, dependency, semantic adjacency, hierarchy, progress, or mastery.</p>
@@ -4433,18 +4451,19 @@ $pageScripts
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A generated Factorium concordance for the structural label $encodedPointerLabel.">
-<title>$encodedPointerLabel · Pointer Entry · Factorium</title>
+<meta name="description" content="A generated $publicationName concordance for the structural label $encodedPointerLabel.">
+<title>$encodedPointerLabel · Pointer Entry · $publicationName</title>
 <link rel="stylesheet" href="../assets/site.css">
+$identityPreviewStyle
 </head>
 <body class="proof-site pointer-page-shell">
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
-<a class="site-brand" href="../index.html">Factorium</a>
+<a class="site-brand" href="../index.html">$siteBrand</a>
 <nav class="site-nav" aria-label="Primary"><a href="../tables.html">Tables</a><a href="../reader.html">Reader</a><a href="../terms.html" aria-current="page">Terms</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a></nav>
-</div></header>
+</div></header>$identityPreviewBanner
 <main id="main-content" class="site-main pointer-page">
-<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Factorium</a> / <a href="../terms.html">Pointer Entries</a> / $encodedPointerLabel</nav>
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">$publicationName</a> / <a href="../terms.html">Pointer Entries</a> / $encodedPointerLabel</nav>
 <p class="site-kicker">Generated concordance · indexed leaf</p>
 <h1>$encodedPointerLabel</h1>
 <p>$encodedPointerOrientation.</p>
@@ -4468,18 +4487,19 @@ $pageScripts
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Generated concordance pages for admitted structural labels in Factorium Tables.">
-<title>Pointer Entries · Factorium</title>
+<meta name="description" content="Generated concordance pages for admitted structural labels in $tablesPublicationName.">
+<title>Pointer Entries · $publicationName</title>
 <link rel="stylesheet" href="assets/site.css">
+$identityPreviewStyle
 </head>
 <body class="proof-site pointer-index-shell">
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
-<a class="site-brand" href="index.html">Factorium</a>
+<a class="site-brand" href="index.html">$siteBrand</a>
 <nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="terms.html" aria-current="page">Terms</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a></nav>
-</div></header>
+</div></header>$identityPreviewBanner
 <main id="main-content" class="site-main pointer-index">
-<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Factorium</a> / Pointer Entries</nav>
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Pointer Entries</nav>
 <p class="site-kicker">Generated concordance · $($pointerRecords.Count) admitted labels</p>
 <h1>Pointer Entries</h1>
 <p>Follow a repeated structural label to every exact code expression and owning Table in this edition.</p>
@@ -4559,19 +4579,41 @@ $pageScripts
         @($actualChapterFiles | ForEach-Object { $_.FullName }) +
         @($actualEntryFiles | ForEach-Object { $_.FullName }) +
         @($actualPointerFiles | ForEach-Object { $_.FullName })
+    if ($identityPreview) {
+        foreach ($siteHtmlFile in $siteHtmlFiles) {
+            $sitePageText = Get-Content -LiteralPath $siteHtmlFile -Raw
+            if (-not $sitePageText.Contains("class=`"identity-preview`"")) {
+                if (-not $sitePageText.Contains("</header>")) {
+                    throw "Identity preview target page has no header close: $siteHtmlFile"
+                }
+                $sitePageText = $sitePageText.Replace("</header>", "</header>$identityPreviewBanner")
+            }
+            if (-not $sitePageText.Contains(".identity-preview{")) {
+                if (-not $sitePageText.Contains("</head>")) {
+                    throw "Identity preview target page has no head close: $siteHtmlFile"
+                }
+                $sitePageText = $sitePageText.Replace("</head>", "$identityPreviewStyle`n</head>")
+            }
+            [System.IO.File]::WriteAllText(
+                $siteHtmlFile,
+                $sitePageText,
+                [System.Text.UTF8Encoding]::new($false)
+            )
+        }
+    }
     $handoffNotePages = 0
     if ($editionNumber -ge 44) {
         $handoffSection = @"
 <section class="site-handoff" data-factorium-handoff aria-labelledby="factorium-handoff-heading">
 <p class="site-kicker">Ephemeral handoff note</p>
 <h2 id="factorium-handoff-heading">Take this route with you</h2>
-<p>Re-enter only what is safe to keep in page memory. Factorium does not store, send, or verify this note; reload clears it.</p>
+<p>Re-enter only what is safe to keep in page memory. $publicationName does not store, send, or verify this note; reload clears it.</p>
 <div class="site-handoff__grid">
 <label><span>Question or situation</span><textarea data-handoff-question rows="3" placeholder="What were you trying to distinguish, explain, check, or decide?"></textarea></label>
 <label><span>What remains unresolved</span><textarea data-handoff-unresolved rows="3" placeholder="Missing evidence, condition, concept, authority, or decision state"></textarea></label>
 <label><span>Next authoritative source</span><input data-handoff-source type="text" placeholder="Document, dataset, handbook, expert, or local record"></label>
 </div>
-<p class="site-handoff__page"><strong>Current Factorium page</strong><span data-handoff-page></span></p>
+<p class="site-handoff__page"><strong>Current $publicationName page</strong><span data-handoff-page></span></p>
 <div class="site-handoff__actions"><button type="button" data-handoff-copy>Copy handoff</button><button type="button" data-handoff-print>Print</button><button type="button" data-handoff-clear>Clear</button></div>
 <p class="site-handoff__status" data-handoff-status role="status" aria-live="polite">Nothing is saved.</p>
 </section>
@@ -4681,7 +4723,7 @@ $pageScripts
         $siteChecks.product_books = $productBooks
         $siteChecks.tables_start_targets = $tablesStartTargets
         $siteChecks.reader_start_targets = $readerStartTargets
-        $siteChecks.product_authority = "Factorium Tables canonical; Reader and Factor Guides are linked projections"
+        $siteChecks.product_authority = "$tablesPublicationName canonical; Reader and Factor Guides are linked projections"
     }
     if ($editionNumber -ge 52) {
         $siteChecks.pointer_index_pages = 1

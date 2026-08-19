@@ -1,8 +1,8 @@
-# Factorium
+# Formarium
 
 **Tables for the structure of things.**
 
-Factorium is an encyclopedia of decomposition patterns. Its primary
+Formarium is an encyclopedia of decomposition patterns. Its primary
 deliverables are books and **Factor Tables** that help a reader look up a
 problem, distinguish its senses, compare several credible factorizations,
 choose a pivot, and assign supporting factors to suitable structural
@@ -12,22 +12,28 @@ Additional reference families cover values, mappings, decisions, transitions,
 constraints, procedures, diagnostics, scales, and evidence while sharing one
 canonical entry graph.
 
-Factorium combines the lookup form of a dictionary, the alternatives of a
+Formarium combines the lookup form of a dictionary, the alternatives of a
 thesaurus, and the compact utility of an engineering handbook. It does not
 promise one universal decomposition; it makes the available choices,
 constraints, tradeoffs, counterexamples, and maturity visible.
 
-Factorium has two complementary books over one canonical reference:
+Formarium has two complementary books over one canonical reference:
 
-- **Factorium Tables** is the primary dictionary/thesaurus and structured
+- **Formarium Tables** is the primary dictionary/thesaurus and structured
   reference. It defines and distinguishes concepts through canonical Factor
   Tables and specialized views.
-- **The Factorium Reader** is the explanatory companion. It teaches and
+- **The Formarium Reader** is the explanatory companion. It teaches and
   demonstrates how to use selected Tables for bounded questions without
   becoming a second authority.
 
 **Factor Guides** are shorter applied journeys through selected Tables. The
 complete contract is [Two-Book Product Architecture](specs/TWO-BOOK-PRODUCT-ARCHITECTURE.md).
+
+The public project and publication identity is **Formarium**. Existing
+`.factorium` formats, `factorium-*` schemas, canonical IDs, and historical
+edition names remain stable compatibility identifiers; this rename does not
+rewrite source custody or claim that the proposed Formography method is an
+established field.
 
 Read the [grand vision](VISION.md), the active [roadmap](ROADMAP.md), the draft
 [Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), the specialized
@@ -56,8 +62,8 @@ reader packet, evaluator rubric, and de-identified observation record.
 
 ## Primary deliverables
 
-- **Factorium Tables** — the enduring dictionary/thesaurus reference book;
-- **The Factorium Reader** — the linked explanatory companion;
+- **Formarium Tables** — the enduring dictionary/thesaurus reference book;
+- **The Formarium Reader** — the linked explanatory companion;
 - **Factor Tables** — canonical entries and competing decompositions;
 - **Formula Tables** — sourced mathematical relations with scope and units;
 - **specialized reference tables** — mappings, decisions, transitions,
@@ -69,7 +75,7 @@ reader packet, evaluator rubric, and de-identified observation record.
 ## Founding research
 
 The repository began as **FACTOR**, a hardware-neutral investigation of
-Factor-Preserving Semantic Encoding. That work remains as one tested Factorium
+Factor-Preserving Semantic Encoding. That work remains as one tested Formarium
 domain and as evidence infrastructure:
 
 - explicit semantic schemas and constraints;
@@ -87,7 +93,7 @@ exactly. FACTOR begins from that narrow result:
 
 > Factorization was useful; specialized Squarebit packing was not required.
 
-This narrow result helped establish Factorium's discipline. It does not prove
+This narrow result helped establish Formarium's discipline. It does not prove
 the encyclopedia or any universal factorization.
 
 ## Non-goals
@@ -148,7 +154,7 @@ Canonicalize an admitted CRLF transport or verify exact canonical output:
 cargo run --quiet -- canonicalize fixtures\schemas\navigation.factor
 ```
 
-Validate the current V1 Factorium reference metadata, linked Markdown, and
+Validate the current V1 compatibility reference metadata, linked Markdown, and
 generated projections:
 
 ```powershell
@@ -210,7 +216,7 @@ selected records and the two application guides:
 
 The generated search index is a disposable publication projection. Canonical
 Markdown and reference metadata remain authoritative, and the simulation is
-not reader evidence or the later Factorium Workbench.
+not reader evidence or the later Formarium Workbench.
 
 Render the adaptive reader edition with Compact, Abbreviated, Book, and Full
 profiles plus independent detail, metadata, and spacing controls:
@@ -407,14 +413,14 @@ See [independent packet onboarding](docs/ONBOARDING.md).
 
 ## Portfolio reuse posture
 
-Factorium is intentionally a specialist reference publication, not currently a
+Formarium is intentionally a specialist reference publication, not currently a
 shared portfolio dependency. The `factorium-reference-v0` interchange is the
 repository's candidate internal canonical owner, and the unpublished Rust
 tooling validates that owner; neither is an ecosystem or cross-repository API.
 The self-contained portable packets are verification evidence, not reusable
 runtime libraries.
 
-Other repositories may cite published Factorium entries with provenance, but
+Other repositories may cite published Formarium entries with provenance, but
 should not copy entries, identifiers, schemas, maturity labels, or generated
 catalogs as locally owned contracts. Revisit direct reuse only after the
 interchange is promoted from candidate status, a versioned distribution is
