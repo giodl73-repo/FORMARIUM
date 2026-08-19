@@ -5,12 +5,75 @@
     select.addEventListener("change", function () {
       if (select.value) window.location.assign(select.value);
     });
-    document.querySelectorAll("[data-dictionary-print]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        window.print();
-      });
+  });
+
+  document.querySelectorAll("[data-dictionary-print]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      window.print();
     });
   });
+
+  var bookPages = document.querySelector("[data-book-pages]");
+  if (bookPages) {
+    var previousPage = document.querySelector("[data-book-page-previous]");
+    var nextPage = document.querySelector("[data-book-page-next]");
+    var pageStatus = document.querySelector("[data-book-page-status]");
+    var pageUpdateFrame = 0;
+
+    function bookPageState() {
+      var width = bookPages.clientWidth;
+      var total = width ? Math.max(1, Math.ceil(bookPages.scrollWidth / width)) : 1;
+      var current = width
+        ? Math.min(total, Math.round(bookPages.scrollLeft / width) + 1)
+        : 1;
+      return { current: current, total: total, width: width };
+    }
+
+    function updateBookPages() {
+      pageUpdateFrame = 0;
+      var state = bookPageState();
+      previousPage.disabled = state.current <= 1;
+      nextPage.disabled = state.current >= state.total;
+      pageStatus.textContent = "Page " + state.current + " of " + state.total;
+    }
+
+    function scheduleBookPageUpdate() {
+      if (!pageUpdateFrame) {
+        pageUpdateFrame = window.requestAnimationFrame(updateBookPages);
+      }
+    }
+
+    function moveBookPage(direction) {
+      var state = bookPageState();
+      bookPages.scrollTo({
+        left: Math.max(0, (state.current - 1 + direction) * state.width),
+        behavior: "smooth",
+      });
+    }
+
+    previousPage.addEventListener("click", function () {
+      moveBookPage(-1);
+    });
+    nextPage.addEventListener("click", function () {
+      moveBookPage(1);
+    });
+    bookPages.addEventListener("scroll", scheduleBookPageUpdate, { passive: true });
+    bookPages.addEventListener("keydown", function (event) {
+      if (event.key !== "PageDown" && event.key !== "PageUp") return;
+      event.preventDefault();
+      moveBookPage(event.key === "PageDown" ? 1 : -1);
+    });
+    bookPages.querySelectorAll(".dictionary-book__supplement").forEach(
+      function (supplement) {
+        supplement.addEventListener("toggle", scheduleBookPageUpdate);
+      },
+    );
+    window.addEventListener("resize", scheduleBookPageUpdate);
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(scheduleBookPageUpdate).observe(bookPages);
+    }
+    scheduleBookPageUpdate();
+  }
 
   var root = document.querySelector("[data-dictionary-stream]");
   var data = document.getElementById("dictionary-stream-data");

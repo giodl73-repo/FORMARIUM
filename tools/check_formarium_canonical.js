@@ -30,6 +30,24 @@ assert.equal(manifest.site_checks.dictionary_stream_batch_size, 4);
 assert.equal(manifest.site_checks.dictionary_book_pages, 1);
 assert.equal(manifest.site_checks.dictionary_book_records, 304);
 assert.equal(manifest.site_checks.dictionary_book_columns, 2);
+assert.equal(
+  manifest.site_checks.dictionary_book_screen_flow,
+  "bounded-horizontal-pages",
+);
+assert.equal(
+  manifest.site_checks.dictionary_book_mobile_flow,
+  "single-column-vertical",
+);
+assert.equal(
+  manifest.site_checks.dictionary_book_print_flow,
+  "two-column-paged",
+);
+assert.equal(manifest.site_checks.reader_route_additional_records, 157);
+assert.equal(manifest.site_checks.candidate_start_targets, 0);
+assert.equal(
+  manifest.status,
+  "internally validated projection; not reader-outcome evidence",
+);
 assert.equal(manifest.rendering_checks.repository_source_links, 98);
 assert.equal(
   manifest.site_checks.product_authority,
@@ -98,6 +116,19 @@ for (const file of generatedFiles) {
       /rel="license" href="https:\/\/creativecommons\.org\/licenses\/by-nc\/4\.0\/"/,
       `missing content license notice in ${file}`,
     );
+    const primaryNav = text.match(
+      /<nav class="site-nav"[^>]*>([\s\S]*?)<\/nav>/,
+    );
+    if (primaryNav) {
+      const labels = [...primaryNav[1].matchAll(/<a [^>]*>([^<]+)<\/a>/g)]
+        .map((match) => match[1]);
+      assert.deepEqual(
+        labels,
+        ["Tables", "Reader", "Work with a question", "Search", "Contents"],
+        `unstable primary navigation in ${file}`,
+      );
+    }
+    assert.doesNotMatch(text, />Terms<\/a>/, `ambiguous Terms label in ${file}`);
   }
 }
 
@@ -114,8 +145,22 @@ assert.match(
   /Content &copy; 2026 Gio Della-Libera.+CC BY-NC 4\.0/,
 );
 assert.match(reader, /Formarium schemas and file formats are canonical/);
+assert.match(reader, /other 157 records/);
+assert.doesNotMatch(reader, /other 151 records|Factor Tables/);
+assert.doesNotMatch(home, /id="reader" class="site-start site-candidate/);
+assert.equal((home.match(/<nav class="site-nav"[\s\S]*?<\/nav>/) || [""])[0]
+  .match(/<a /g)?.length, 5);
+assert.equal(
+  (home.match(/<a href="tables\.html">Tables<\/a>/g) || []).length,
+  1,
+);
+assert.match(home, /href="compose\.html">Work with a question<\/a>/);
+assert.doesNotMatch(home, />Terms<\/a>|not reader evidence or preview-01/);
+assert.match(home, /href="manifest\.json">sim-66<\/a>/);
+assert.match(home, /software: MIT/);
 assert.match(tables, /href="dictionary\.html">Continuous A-Z<\/a>/);
 assert.match(tables, /href="book\.html">Condensed book<\/a>/);
+assert.match(tables, /href="terms\.html">Pointer index<\/a>/);
 assert.match(dictionary, /<h1>Continuous Dictionary A-Z<\/h1>/);
 assert.match(dictionary, /data-dictionary-stream data-batch-size="4"/);
 assert.match(dictionary, /src="assets\/dictionary-stream\.js"/);
@@ -140,6 +185,14 @@ assert.deepEqual(streamRecords.slice(0, 3), [
   },
 ]);
 assert.match(book, /<h1>The Formarium Dictionary<\/h1>/);
+assert.match(book, /class="site-skip" href="#main-content"/);
+assert.match(book, /href="index\.html">Formarium home<\/a>/);
+assert.match(book, /href="reader\.html">Reader<\/a>/);
+assert.match(book, /data-book-page-previous/);
+assert.match(book, /data-book-page-next/);
+assert.match(book, /data-book-pages tabindex="0"/);
+assert.match(book, /class="dictionary-book__edition"/);
+assert.match(book, /FORMARIUM\/manifest\.json/);
 assert.equal(
   (book.match(/class="dictionary-book__item"/g) || []).length,
   304,
@@ -192,15 +245,23 @@ assert.match(
 );
 assert.match(
   siteCss,
-  /\.dictionary-book__item\s*\{[\s\S]*?break-inside:\s*auto;/,
-);
-assert.doesNotMatch(
-  siteCss,
-  /\.dictionary-book__item\s*\{[\s\S]*?break-inside:\s*avoid-column;/,
+  /\.dictionary-book__entries\s*\{[\s\S]*?block-size:\s*min\(72vh,\s*48rem\);[\s\S]*?column-fill:\s*auto;[\s\S]*?overflow-x:\s*auto;/,
 );
 assert.match(
   siteCss,
-  /@media print\s*\{[\s\S]*?\.dictionary-book__entries\s*\{[\s\S]*?column-count:\s*2;/,
+  /\.dictionary-book__item\s*\{[^}]*break-inside:\s*auto;/,
+);
+assert.doesNotMatch(
+  siteCss,
+  /\.dictionary-book__item\s*\{[^}]*break-inside:\s*avoid-column;/,
+);
+assert.match(
+  siteCss,
+  /@media print\s*\{[\s\S]*?\.dictionary-book__entries\s*\{[\s\S]*?block-size:\s*auto;[\s\S]*?column-count:\s*2;/,
+);
+assert.match(
+  siteCss,
+  /@media print\s*\{[\s\S]*?\.dictionary-book__edition a::after\s*\{[\s\S]*?attr\(href\)/,
 );
 const dictionaryRecords = [
   ...tables.matchAll(

@@ -376,10 +376,72 @@
   margin: 0.5rem 0 1rem;
 }
 
+.dictionary-book__edition {
+  color: var(--proof-ink-soft);
+  font-size: 0.78rem;
+}
+
+.dictionary-book__reader {
+  min-width: 0;
+}
+
+.dictionary-book__page-controls {
+  align-items: center;
+  background: color-mix(in srgb, var(--proof-paper) 94%, transparent);
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  padding-block: 0.45rem;
+  position: sticky;
+  top: 3.15rem;
+  z-index: 5;
+}
+
+.dictionary-book__page-controls button {
+  background: var(--proof-card);
+  border: 1px solid var(--proof-accent);
+  border-radius: 999px;
+  color: var(--proof-ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.4rem 0.7rem;
+}
+
+.dictionary-book__page-controls button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.dictionary-book__page-controls p,
+.dictionary-book__page-hint {
+  color: var(--proof-ink-soft);
+  font-size: 0.75rem;
+}
+
+.dictionary-book__page-controls p {
+  margin: 0;
+  min-width: 8rem;
+  text-align: center;
+}
+
 .dictionary-book__entries {
+  block-size: min(72vh, 48rem);
   column-count: 2;
+  column-fill: auto;
   column-gap: 2.5rem;
   column-rule: 1px solid var(--proof-rule);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+.dictionary-book__entries:focus-visible {
+  outline: 0.2rem solid var(--proof-accent);
+  outline-offset: 0.3rem;
 }
 
 .dictionary-book__item {
@@ -392,6 +454,7 @@
 
 .dictionary-book__item-heading {
   align-items: baseline;
+  break-after: avoid-column;
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.75rem;
@@ -417,6 +480,7 @@
 }
 
 .dictionary-book__meta {
+  break-after: avoid-column;
   margin: 0.3rem 0 0.75rem;
 }
 
@@ -447,6 +511,11 @@
   white-space: pre-wrap;
 }
 
+.dictionary-book__content pre {
+  max-block-size: min(60vh, 36rem);
+  overflow: auto;
+}
+
 .dictionary-book__content a {
   overflow-wrap: anywhere;
 }
@@ -455,13 +524,15 @@
   box-sizing: border-box;
   contain: inline-size;
   display: block;
+  max-block-size: min(60vh, 36rem);
   max-width: 100%;
-  overflow-x: auto !important;
+  overflow: auto !important;
   width: 100%;
 }
 
 .dictionary-book__supplement {
   border-block: 1px solid color-mix(in srgb, var(--proof-rule) 75%, transparent);
+  break-inside: avoid-column;
   margin: 0.5rem 0;
   padding: 0.45rem 0;
 }
@@ -481,6 +552,24 @@
 .dictionary-book__supplement > div {
   color: var(--proof-ink-soft);
   font-size: 0.82rem;
+}
+
+.dictionary-book__supplement[open] > div {
+  max-block-size: min(40vh, 24rem);
+  overflow: auto;
+}
+
+@media screen and (min-width: 40.001rem) {
+  .dictionary-book__item,
+  .dictionary-book__content {
+    display: contents;
+  }
+
+  .dictionary-book__item-heading {
+    border-top: 1px solid var(--proof-rule);
+    margin-top: 1.5rem;
+    padding-top: 0.75rem;
+  }
 }
 
 .tables-index__curated ol {
@@ -517,8 +606,16 @@
   }
 
   .dictionary-book__entries {
+    block-size: auto;
     column-count: 1;
+    column-fill: balance;
     column-rule: 0;
+    overflow: visible;
+  }
+
+  .dictionary-book__page-controls,
+  .dictionary-book__page-hint {
+    display: none;
   }
 
   .tables-index__curated ol {
@@ -555,15 +652,29 @@
   }
 
   .dictionary-book__entries {
+    block-size: auto;
     column-count: 2;
+    column-fill: auto;
     column-gap: 0.35in;
     column-rule: 1px solid #bbb;
     display: block;
+    overflow: visible;
   }
 
   .dictionary-book__item {
     break-inside: auto;
+    display: contents;
     margin-bottom: 0.18in;
+  }
+
+  .dictionary-book__content {
+    display: contents;
+  }
+
+  .dictionary-book__item-heading {
+    border-top: 1px solid var(--proof-rule);
+    margin-top: 0.18in;
+    padding-top: 0.08in;
   }
 
   .dictionary-book__item-heading a {
@@ -572,5 +683,15 @@
 
   .dictionary-book__supplement {
     display: none !important;
+  }
+
+  .dictionary-book__page-controls,
+  .dictionary-book__page-hint {
+    display: none !important;
+  }
+
+  .dictionary-book__edition a::after {
+    content: " (" attr(href) ")";
+    overflow-wrap: anywhere;
   }
 }

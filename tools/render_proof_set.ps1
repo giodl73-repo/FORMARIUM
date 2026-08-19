@@ -320,6 +320,7 @@ $publicationName = if ($formariumIdentity) { "Formarium" } elseif ($tabulaIdenti
 $tablesPublicationName = if ($formariumIdentity) { "Formarium Tables" } elseif ($tabulaIdentityPreview) { "Tabula Facta" } else { "Factorium Tables" }
 $readerPublicationName = if ($formariumIdentity) { "The Formarium Reader" } else { "The Factorium Reader" }
 $repositoryName = if ($formariumIdentity) { "FORMARIUM" } else { "FACTORIUM" }
+$readerAdditionalRecordCount = if ($editionNumber -ge 50) { 157 } elseif ($editionNumber -ge 49) { 154 } else { 151 }
 $contentLicenseNotice = if ($Edition -eq "sim-66") {
     ' · Content &copy; 2026 Gio Della-Libera · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>'
 }
@@ -952,7 +953,7 @@ if ($Edition -ne "sim-01") {
         $selectionChecks.book_one_candidate_path = [System.IO.Path]::GetRelativePath($workspace, $bookOneCandidateManifest).Replace("\", "/")
         $selectionChecks.book_one_candidate_sha256 = (Get-FileHash -LiteralPath $bookOneCandidateManifest -Algorithm SHA256).Hash.ToLowerInvariant()
         $selectionChecks.book_one_spine_records = 24
-        $selectionChecks.book_one_specialized_depth_records = if ($editionNumber -ge 50) { 157 } elseif ($editionNumber -ge 49) { 154 } else { 151 }
+        $selectionChecks.book_one_specialized_depth_records = $readerAdditionalRecordCount
         $selectionChecks.book_one_route_strategies = 4
     }
 }
@@ -1146,6 +1147,19 @@ for ($index = 0; $index -lt $sources.Count; $index++) {
 }
 $quickstartHeading = $headingBySource[$quickstart]
 $sourceCommit = (git -C $workspace rev-parse HEAD).Trim()
+$sourceCommitShort = $sourceCommit.Substring(0, 8)
+$rootPublicationStatus = if ($Edition -eq "sim-66") {
+    "Edition <a href=`"manifest.json`">$Edition</a> · internally validated projection, not reader-outcome evidence · <a href=`"https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit`">source $sourceCommitShort</a> · <a href=`"https://github.com/giodl73-repo/$repositoryName/blob/main/LICENSE`">software: MIT</a>"
+}
+else {
+    "Internal deterministic simulation · not reader evidence or preview-01"
+}
+$nestedPublicationStatus = if ($Edition -eq "sim-66") {
+    "Edition <a href=`"../manifest.json`">$Edition</a> · internally validated projection, not reader-outcome evidence · <a href=`"https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit`">source $sourceCommitShort</a> · <a href=`"https://github.com/giodl73-repo/$repositoryName/blob/main/LICENSE`">software: MIT</a>"
+}
+else {
+    "Internal deterministic simulation · not reader evidence or preview-01"
+}
 $renderedSegmentBySource = [System.Collections.Generic.Dictionary[string, string]]::new(
     [System.StringComparer]::OrdinalIgnoreCase
 )
@@ -3106,7 +3120,7 @@ if ($editionNumber -ge 7) {
 <section id="reader" class="site-start site-candidate site-reader" aria-labelledby="site-reader-heading">
 <p class="site-kicker">$readerPublicationName · teaching companion</p>
 <h2 id="site-reader-heading">Learn how to use the Tables</h2>
-<p>Follow a selected 24-record teaching spine, then hand off to any of $(if ($editionNumber -ge 50) { 157 } elseif ($editionNumber -ge 49) { 154 } else { 151 }) additional selected Tables when the question needs specialized depth. The Reader explains a method; it does not redefine the reference or claim a universal order.</p>
+<p>Follow a selected 24-record teaching spine, then hand off to any of $readerAdditionalRecordCount additional $(if ($editionNumber -ge 66) { 'selected' } else { 'canonical' }) Tables when the question needs specialized depth. The Reader explains a method; it does not redefine the reference or claim a universal order.</p>
 <div class="site-candidate__actions">
 <a class="site-candidate__primary" href="$candidateQuickstartPage">Start the Reader</a>
 <a href="$candidateGuidePage">Open the Reader route</a>
@@ -3129,7 +3143,7 @@ if ($editionNumber -ge 7) {
 <section id="candidate" class="site-start site-candidate" aria-labelledby="site-candidate-heading">
 <p class="site-kicker">Book One · internal candidate</p>
 <h2 id="site-candidate-heading">Bring one bounded question</h2>
-<p>Begin with a 24-record teaching spine, then open any of 151 additional canonical records as specialized depth. The spine is a route through the reference, not a second authority or completeness claim.</p>
+<p>Begin with a 24-record teaching spine, then open any of $readerAdditionalRecordCount additional canonical records as specialized depth. The spine is a route through the reference, not a second authority or completeness claim.</p>
 <div class="site-candidate__actions">
 <a class="site-candidate__primary" href="$candidateQuickstartPage">Start the candidate</a>
 <a href="$candidateGuidePage">Read the bounded-question guide</a>
@@ -3187,7 +3201,7 @@ $(if ($formariumIdentityPreview) { '<p><strong>Public feedback name for Factoriu
 <article><p class="site-intent__eyebrow">Work through a problem</p><h3>I have a question</h3><p>Choose explicit concepts and controls, inspect bounded closure, and keep unresolved work visible.</p><a href="compose.html">Open Compose <span aria-hidden="true">&rarr;</span></a></article>
 <article><p class="site-intent__eyebrow">Guided learning</p><h3>I want to learn or explore</h3><p>Follow the Reader's selected teaching route, then move into the owning Tables when you want depth.</p><a href="reader.html">Open the Reader <span aria-hidden="true">&rarr;</span></a></article>
 </div>
-<p class="site-intent__note">Not sure? Start with Search. These paths change navigation, not the authority: Factor Tables remain canonical.</p>
+<p class="site-intent__note">Not sure? Start with Search. These paths change navigation, not the authority: $tablesPublicationName remain canonical.</p>
 </section>
 "@
             }
@@ -3197,6 +3211,10 @@ $(if ($formariumIdentityPreview) { '<p><strong>Public feedback name for Factoriu
             $nestedCandidateNav = '<a href="../index.html#candidate">Candidate</a>'
         }
         $heroDeck = "Bring a bounded question. Start with the 24-record Book One teaching spine, retain decisive constraints and unresolved frontier, and open the larger reference only when the question requires more depth."
+    }
+    if ($editionNumber -ge 66) {
+        $candidateSection = ""
+        $candidateStartTargets = 0
     }
     if ($editionNumber -ge 12) {
         $problemJourneys = @(
@@ -3504,8 +3522,11 @@ $(if ($formariumIdentityPreview) { '<p><strong>Public feedback name for Factoriu
     $quickstartPage = "entries/$($pageBySource[$quickstart])"
     $homeTablesIndexNav = if ($editionNumber -ge 35) { '<a href="tables.html">Index</a>' } else { '' }
     $nestedTablesIndexNav = if ($editionNumber -ge 35) { '<a href="../tables.html">Index</a>' } else { '' }
-    $homePointerNav = if ($editionNumber -ge 52) { '<a href="terms.html">Terms</a>' } else { '' }
-    $nestedPointerNav = if ($editionNumber -ge 52) { '<a href="../terms.html">Terms</a>' } else { '' }
+    $homePointerNav = if ($editionNumber -ge 66) { '<a href="terms.html">Pointers</a>' } elseif ($editionNumber -ge 52) { '<a href="terms.html">Terms</a>' } else { '' }
+    $nestedPointerNav = if ($editionNumber -ge 66) { '<a href="../terms.html">Pointers</a>' } elseif ($editionNumber -ge 52) { '<a href="../terms.html">Terms</a>' } else { '' }
+    $homeStableNav = '<a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="compose.html">Work with a question</a><a href="#search">Search</a><a href="#contents">Contents</a>'
+    $rootStableNav = '<a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="compose.html">Work with a question</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a>'
+    $nestedStableNav = '<a href="../tables.html">Tables</a><a href="../reader.html">Reader</a><a href="../compose.html">Work with a question</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a>'
     $homeHtml = @"
 <!doctype html>
 <html lang="en">
@@ -3521,7 +3542,7 @@ $identityPreviewStyle
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary">$homeCandidateNav$homeProblemNav$homeComposeNav$homeTablesIndexNav$homePointerNav$homeStartNav<a href="#search">Search</a><a href="#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$(if ($editionNumber -ge 66) { $homeStableNav } else { "$homeCandidateNav$homeProblemNav$homeComposeNav$homeTablesIndexNav$homePointerNav$homeStartNav<a href=`"#search`">Search</a><a href=`"#contents`">Contents</a><a href=`"$quickstartPage`">Quickstart</a>" })</nav>
 </div></header>$identityPreviewBanner
 <main id="main-content" class="site-main">
 <section class="site-hero">
@@ -3542,7 +3563,7 @@ $identityPreviewStyle
 <ol class="site-chapter-grid">$chapterItems</ol>
 </section>
 </main>
-<footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01$contentLicenseNotice</footer>
+<footer class="site-footer">$rootPublicationStatus$contentLicenseNotice</footer>
 <script src="assets/site-data.js"></script>
 <script src="assets/search.js"></script>
 $dualLookupScriptTag
@@ -3706,7 +3727,7 @@ $dualLookupScriptTag
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="An alphabetical index of canonical Factor Table families in the $tablesPublicationName preview.">
+<meta name="description" content="An alphabetical index of canonical families in $tablesPublicationName.">
 <title>$tablesPublicationName A-Z · $publicationName</title>
 <link rel="stylesheet" href="assets/site.css">
 $identityPreviewStyle
@@ -3715,7 +3736,7 @@ $identityPreviewStyle
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary"><a href="tables.html" aria-current="page">Tables</a><a href="$(if ($editionNumber -ge 36) { 'reader.html' } else { 'index.html#reader' })">Reader</a>$homePointerNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$(if ($editionNumber -ge 66) { '<a href="tables.html" aria-current="page">Tables</a><a href="reader.html">Reader</a><a href="compose.html">Work with a question</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a>' } else { '<a href="tables.html" aria-current="page">Tables</a><a href="' + $(if ($editionNumber -ge 36) { 'reader.html' } else { 'index.html#reader' }) + '">Reader</a>' + $homePointerNav + '<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="' + $quickstartPage + '">Quickstart</a>' })</nav>
 </div></header>$identityPreviewBanner
 <main id="main-content" class="site-main tables-index">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Tables A-Z</nav>
@@ -3724,7 +3745,7 @@ $identityPreviewStyle
 <h1>$tablesPublicationName A-Z</h1>
 <p>$(if ($editionNumber -ge 66) { "Read one merged dictionary of $($dictionaryRecords.Count) alphabetized items: $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families." } else { "Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and exact specialized views." })</p>
 $(if ($editionNumber -ge 66) { '<label class="dictionary-view-switcher">View <select data-dictionary-view><option value="tables.html" selected>Index A-Z</option><option value="dictionary.html">Continuous A-Z</option><option value="book.html">Condensed Book</option></select></label>' })
-<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a href="dictionary.html">Continuous A-Z</a><a href="book.html">Condensed book</a><a data-dictionary-start href="' + $dictionaryStartHref + '">Read page by page</a>' })<a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
+<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a href="dictionary.html">Continuous A-Z</a><a href="book.html">Condensed book</a><a data-dictionary-start href="' + $dictionaryStartHref + '">Read page by page</a><a href="terms.html">Pointer index</a>' })<a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
 <p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
 </section>
 $(if ($editionNumber -ge 66) {
@@ -3741,7 +3762,7 @@ $(if ($editionNumber -ge 66) {
 <ol>$curatedRows</ol>
 </section>
 </main>
-<footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01$contentLicenseNotice</footer>
+<footer class="site-footer">$rootPublicationStatus$contentLicenseNotice</footer>
 $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></script>' })
 </body>
 </html>
@@ -3772,7 +3793,7 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="terms.html">Terms</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a></nav>
+<nav class="site-nav" aria-label="Primary">$rootStableNav</nav>
 </div></header>
 <main id="main-content" class="site-main dictionary-stream">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / <a href="tables.html">Dictionary A-Z</a> / Continuous view</nav>
@@ -3792,7 +3813,7 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 </div>
 </section>
 </main>
-<footer class="site-footer">Progressive projection of the Formarium Dictionary A-Z · pointer and canonical authority labels remain explicit$contentLicenseNotice</footer>
+<footer class="site-footer">Progressive projection of the Formarium Dictionary A-Z · pointer and canonical authority labels remain explicit · $rootPublicationStatus$contentLicenseNotice</footer>
 <script id="dictionary-stream-data" type="application/json">$dictionaryStreamData</script>
 <script src="assets/dictionary-stream.js"></script>
 </body>
@@ -3910,7 +3931,10 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="proof-site dictionary-book-page">
+<a class="site-skip" href="#main-content">Skip to content</a>
 <nav class="dictionary-book__tools" aria-label="Book view controls">
+<a href="index.html">Formarium home</a>
+<a href="reader.html">Reader</a>
 <a href="tables.html">Back to Dictionary A-Z</a>
 <label class="dictionary-view-switcher">View <select data-dictionary-view><option value="tables.html">Index A-Z</option><option value="dictionary.html">Continuous A-Z</option><option value="book.html" selected>Condensed Book</option></select></label>
 <button type="button" data-dictionary-print>Print or save PDF</button>
@@ -3921,10 +3945,19 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <h1>The Formarium Dictionary</h1>
 <p>A condensed A-Z reference of $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families.</p>
 <p>Core distinctions stay on the page. Specialized views, reference deltas, cross-references, sources, and provenance are available in compact expandable sections and omitted from print.</p>
+<p class="dictionary-book__edition">Edition <a href="https://giodl73-repo.github.io/FORMARIUM/manifest.json">$Edition</a> · source <a href="https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit">$sourceCommitShort</a> · full online supplements at <a href="https://giodl73-repo.github.io/FORMARIUM/book.html">the published book</a></p>
 </header>
-<div class="dictionary-book__entries">$dictionaryBookItems</div>
+<section class="dictionary-book__reader" aria-label="Paged condensed dictionary">
+<nav class="dictionary-book__page-controls" aria-label="Book pages">
+<button type="button" data-book-page-previous>Previous page</button>
+<p data-book-page-status role="status" aria-live="polite">Preparing pages…</p>
+<button type="button" data-book-page-next>Next page</button>
+</nav>
+<div class="dictionary-book__entries" data-book-pages tabindex="0">$dictionaryBookItems</div>
+<p class="dictionary-book__page-hint">Read down the left column, then down the right. Use the page buttons or horizontal scrollbar to continue.</p>
+</section>
 </main>
-<footer class="site-footer">Condensed projection of the Formarium Dictionary A-Z · pointer and canonical authority labels remain explicit$contentLicenseNotice</footer>
+<footer class="site-footer">Condensed projection of the Formarium Dictionary A-Z · pointer and canonical authority labels remain explicit · $rootPublicationStatus$contentLicenseNotice</footer>
 <script src="assets/dictionary-stream.js"></script>
 </body>
 </html>
@@ -4058,16 +4091,16 @@ $identityPreviewStyle
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html" aria-current="page">Reader</a>$homePointerNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$candidateQuickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$(if ($editionNumber -ge 66) { '<a href="tables.html">Tables</a><a href="reader.html" aria-current="page">Reader</a><a href="compose.html">Work with a question</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a>' } else { '<a href="tables.html">Tables</a><a href="reader.html" aria-current="page">Reader</a>' + $homePointerNav + '<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="' + $candidateQuickstartPage + '">Quickstart</a>' })</nav>
 </div></header>$identityPreviewBanner
 <main id="main-content" class="site-main reader-route">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Reader</nav>
 <section class="reader-route__heading">
 <p class="site-kicker">Teaching companion · selected route</p>
 <h1>$readerPublicationName</h1>
-<p>Learn one bounded method through 24 selected records in five parts, then return to the canonical Factor Tables whenever the question needs more depth.</p>
+<p>Learn one bounded method through 24 selected records in five parts, then return to the canonical $tablesPublicationName whenever the question needs more depth.</p>
 <div class="reader-route__actions">$readerPrimaryActions<a href="$candidateGuidePage">Read the complete method</a><a href="$candidateTasksPage">Try worked questions</a><a href="tables.html">Browse Tables A-Z</a></div>
-<p class="reader-route__boundary"><strong>Factor Tables remain authoritative.</strong> $(if ($formariumIdentityPreview) { 'Formarium is the public feedback identity; Factorium schema names, file formats, and canonical IDs remain compatibility internals. ' } elseif ($formariumIdentity) { 'Formarium schemas and file formats are canonical; legacy identifiers remain readable historical imports. ' } elseif ($tabulaIdentityPreview) { 'Tabula Facta is the candidate publication name; Factorium identities and source records are unchanged. ' } else { '' })This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other 151 records.</p>
+<p class="reader-route__boundary"><strong>$tablesPublicationName remain authoritative.</strong> $(if ($formariumIdentityPreview) { 'Formarium is the public feedback identity; Factorium schema names, file formats, and canonical IDs remain compatibility internals. ' } elseif ($formariumIdentity) { 'Formarium schemas and file formats are canonical; legacy identifiers remain readable historical imports. ' } elseif ($tabulaIdentityPreview) { 'Tabula Facta is the candidate publication name; Factorium identities and source records are unchanged. ' } else { '' })This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other $readerAdditionalRecordCount records.</p>
 </section>
 <nav class="reader-route__parts" aria-label="Reader parts"><a href="#reader-part-1">I</a><a href="#reader-part-2">II</a><a href="#reader-part-3">III</a><a href="#reader-part-4">IV</a><a href="#reader-part-5">V</a></nav>
 <div class="reader-route__spine">$readerPartSections</div>
@@ -4078,7 +4111,7 @@ $identityPreviewStyle
 <div class="reader-route__actions"><a href="index.html#search">Search all Tables</a><a href="index.html#problems">Open bounded applications</a><a href="index.html#contents">See all contents</a></div>
 </section>
 </main>
-<footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01$contentLicenseNotice</footer>
+<footer class="site-footer">$rootPublicationStatus$contentLicenseNotice</footer>
 </body>
 </html>
 "@
@@ -4102,7 +4135,7 @@ $identityPreviewStyle
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary"><a href="index.html#problems">Problems</a><a href="compose.html" aria-current="page">Compose</a><a href="index.html#compose">Traces</a>$homeTablesIndexNav$homePointerNav<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="$quickstartPage">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$(if ($editionNumber -ge 66) { '<a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="compose.html" aria-current="page">Work with a question</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a>' } else { '<a href="index.html#problems">Problems</a><a href="compose.html" aria-current="page">Compose</a><a href="index.html#compose">Traces</a>' + $homeTablesIndexNav + $homePointerNav + '<a href="index.html#search">Search</a><a href="index.html#contents">Contents</a><a href="' + $quickstartPage + '">Quickstart</a>' })</nav>
 </div></header>$identityPreviewBanner
 <main id="main-content" class="site-main lab-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Bounded Composition Lab</nav>
@@ -4524,7 +4557,7 @@ $identityPreviewStyle
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedPointerNav$nestedStartNav<a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="../entries/$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$(if ($editionNumber -ge 66) { $nestedStableNav } else { "$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedPointerNav$nestedStartNav<a href=`"../index.html#search`">Search</a><a href=`"../index.html#contents`">Contents</a><a href=`"../entries/$($pageBySource[$quickstart])`">Quickstart</a>" })</nav>
 </div></header>
 <main id="main-content" class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a> / $encodedChapterTitle</nav>
@@ -4532,7 +4565,7 @@ $identityPreviewStyle
 <div class="site-chapter-groups">$chapterGroupItems</div>
 <nav class="site-pagination" aria-label="Chapter sequence">$previousChapter$nextChapter</nav>
 </main>
-<footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01$contentLicenseNotice</footer>
+<footer class="site-footer">$nestedPublicationStatus$contentLicenseNotice</footer>
 </body>
 </html>
 "@
@@ -4900,7 +4933,7 @@ $identityPreviewStyle
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary">$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedPointerNav$nestedStartNav<a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a><a href="$($pageBySource[$quickstart])">Quickstart</a></nav>
+<nav class="site-nav" aria-label="Primary">$(if ($editionNumber -ge 66) { $nestedStableNav } else { "$nestedCandidateNav$nestedProblemNav$nestedComposeNav$nestedTablesIndexNav$nestedPointerNav$nestedStartNav<a href=`"../index.html#search`">Search</a><a href=`"../index.html#contents`">Contents</a><a href=`"$($pageBySource[$quickstart])`">Quickstart</a>" })</nav>
 </div></header>
 <div class="site-main">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Structure, Quantity, and Choice</a>$(
@@ -4914,7 +4947,7 @@ $readerControls
 $readerSequenceHtml<main id="main-content" class="site-entry" data-source-path="$encodedSource">$tableNavigatorHtml$factorFocusHtml$segment</main>
 $dictionarySequenceHtml$pagination
 </div>
-<footer class="site-footer">Canonical source: $encodedSource · simulation projection$contentLicenseNotice</footer>
+<footer class="site-footer">Canonical source: $encodedSource · $(if ($Edition -eq 'sim-66') { $nestedPublicationStatus } else { 'simulation projection' })$contentLicenseNotice</footer>
 $pageScripts
 </body>
 </html>
@@ -5003,7 +5036,7 @@ $identityPreviewStyle
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="../index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary"><a href="../tables.html">Tables</a><a href="../reader.html">Reader</a><a href="../terms.html" aria-current="page">Terms</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a></nav>
+<nav class="site-nav" aria-label="Primary">$(if ($editionNumber -ge 66) { $nestedStableNav } else { '<a href="../tables.html">Tables</a><a href="../reader.html">Reader</a><a href="../terms.html" aria-current="page">Terms</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a>' })</nav>
 </div></header>$identityPreviewBanner
 <main id="main-content" class="site-main pointer-page">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">$publicationName</a> / <a href="../terms.html">Pointer Entries</a> / $encodedPointerLabel</nav>
@@ -5015,7 +5048,7 @@ $identityPreviewStyle
 <div class="pointer-page__owners">$ownerSections</div>
 $dictionarySequenceHtml
 </main>
-<footer class="site-footer">Generated from the $Edition pointer registry and selected Table expressions · not canonical authority$contentLicenseNotice</footer>
+<footer class="site-footer">Generated from the $Edition pointer registry and selected Table expressions · not canonical authority$(if ($Edition -eq 'sim-66') { " · $nestedPublicationStatus" })$contentLicenseNotice</footer>
 </body>
 </html>
 "@
@@ -5040,7 +5073,7 @@ $identityPreviewStyle
 <a class="site-skip" href="#main-content">Skip to content</a>
 <header class="site-header"><div class="site-header__inner">
 <a class="site-brand" href="index.html">$siteBrand</a>
-<nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="terms.html" aria-current="page">Terms</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a></nav>
+<nav class="site-nav" aria-label="Primary">$(if ($editionNumber -ge 66) { $rootStableNav } else { '<a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="terms.html" aria-current="page">Terms</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a>' })</nav>
 </div></header>$identityPreviewBanner
 <main id="main-content" class="site-main pointer-index">
 <nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / Pointer Entries</nav>
@@ -5051,7 +5084,7 @@ $identityPreviewStyle
 <p class="pointer-index__boundary"><strong>Navigation layer, not a third book.</strong> Pointer Entries appear beside canonical Table families in the mixed A-Z reading route, but they are not canonical definitions, senses, relations, or evidence of importance.</p>
 <ol class="pointer-grid">$pointerIndexItems</ol>
 </main>
-<footer class="site-footer">Internal deterministic simulation · not reader evidence or canonical authority$contentLicenseNotice</footer>
+<footer class="site-footer">$(if ($Edition -eq 'sim-66') { "$rootPublicationStatus · generated navigation, not canonical authority" } else { 'Internal deterministic simulation · not reader evidence or canonical authority' })$contentLicenseNotice</footer>
 </body>
 </html>
 "@
@@ -5437,6 +5470,9 @@ $identityPreviewStyle
             $siteChecks.dictionary_book_pages = 1
             $siteChecks.dictionary_book_records = $dictionaryRecords.Count
             $siteChecks.dictionary_book_columns = 2
+            $siteChecks.dictionary_book_screen_flow = "bounded-horizontal-pages"
+            $siteChecks.dictionary_book_mobile_flow = "single-column-vertical"
+            $siteChecks.dictionary_book_print_flow = "two-column-paged"
             $siteChecks.dictionary_book_supplements = ($bookSupplementCounts.Values | Measure-Object -Sum).Sum
             $siteChecks.dictionary_book_specialized_sections = $bookSupplementCounts.specialized
             $siteChecks.dictionary_book_reference_delta_sections = $bookSupplementCounts.reference_delta
@@ -5458,6 +5494,7 @@ $identityPreviewStyle
         $siteChecks.reader_route_support_records = 0
         $siteChecks.reader_route_order = "exact-frozen-manifest"
         $siteChecks.reader_route_semantics = "editorial-teaching-sequence-only"
+        $siteChecks.reader_route_additional_records = $readerAdditionalRecordCount
     }
     if ($editionNumber -ge 37) {
         if ($readerSequencePanels -ne 24 -or
@@ -5546,7 +5583,7 @@ $gitStatus = @(git -C $workspace status --porcelain)
 $manifestRecord = [ordered]@{
     artifact = $artifactName
     edition = $Edition
-    status = "internal simulation rendering; not reader evidence or preview-01"
+    status = if ($Edition -eq "sim-66") { "internally validated projection; not reader-outcome evidence" } else { "internal simulation rendering; not reader evidence or preview-01" }
     source_commit = $sourceCommit
     workspace_dirty_at_render = $gitStatus.Count -gt 0
     pandoc = (& $pandoc.Source --version | Select-Object -First 1)

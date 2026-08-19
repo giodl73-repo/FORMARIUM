@@ -232,7 +232,8 @@ async function waitFor(client, expression, message) {
     await waitFor(
       client,
       `document.readyState === "complete" &&
-        document.querySelectorAll(".dictionary-book__item").length === 304`,
+        document.querySelectorAll(".dictionary-book__item").length === 304 &&
+        document.querySelector("[data-book-page-status]").textContent.startsWith("Page 1 of ")`,
       "Condensed book did not load",
     );
     const book = await evaluate(
@@ -243,6 +244,21 @@ async function waitFor(client, expression, message) {
         tables: document.querySelectorAll('[data-dictionary-kind="table"]').length,
         columns: getComputedStyle(document.querySelector(".dictionary-book__entries"))
           .columnCount,
+        pageHeight: document.documentElement.scrollHeight,
+        entryHeight: document.querySelector(".dictionary-book__entries").clientHeight,
+        entryScrollHeight: document.querySelector(".dictionary-book__entries").scrollHeight,
+        entryWidth: document.querySelector(".dictionary-book__entries").clientWidth,
+        entryScrollWidth: document.querySelector(".dictionary-book__entries").scrollWidth,
+        horizontalPages:
+          document.querySelector(".dictionary-book__entries").scrollWidth >
+          document.querySelector(".dictionary-book__entries").clientWidth,
+        pageStatus: document.querySelector("[data-book-page-status]").textContent,
+        pageControls: getComputedStyle(
+          document.querySelector(".dictionary-book__page-controls")
+        ).display,
+        pageControlPosition: getComputedStyle(
+          document.querySelector(".dictionary-book__page-controls")
+        ).position,
         itemBreak: getComputedStyle(document.querySelector(".dictionary-book__item"))
           .breakInside,
         supplements: document.querySelectorAll(".dictionary-book__supplement").length,
@@ -257,11 +273,28 @@ async function waitFor(client, expression, message) {
               .replace(/\\s+/g, " ").trim())
       }))()`,
     );
-    assert.deepEqual(book, {
+    assert.deepEqual({
+      items: book.items,
+      pointers: book.pointers,
+      tables: book.tables,
+      columns: book.columns,
+      horizontalPages: book.horizontalPages,
+      pageControls: book.pageControls,
+      pageControlPosition: book.pageControlPosition,
+      itemBreak: book.itemBreak,
+      supplements: book.supplements,
+      openSupplements: book.openSupplements,
+      selectedView: book.selectedView,
+      chrome: book.chrome,
+      first: book.first,
+    }, {
       items: 304,
       pointers: 250,
       tables: 54,
       columns: "2",
+      horizontalPages: true,
+      pageControls: "flex",
+      pageControlPosition: "sticky",
       itemBreak: "auto",
       supplements: 183,
       openSupplements: 0,
@@ -273,9 +306,62 @@ async function waitFor(client, expression, message) {
         "Accumulation",
       ],
     });
+    assert.ok(book.pageHeight < 2500, JSON.stringify(book));
+    assert.ok(book.entryHeight <= 800, JSON.stringify(book));
+    assert.ok(
+      book.entryScrollHeight <= book.entryHeight + 20,
+      JSON.stringify(book),
+    );
+    assert.ok(book.entryScrollWidth > book.entryWidth * 2, JSON.stringify(book));
+    assert.match(book.pageStatus, /^Page 1 of (?:[2-9]|\d{2,})$/);
+    const desktopBookShot = await client.call("Page.captureScreenshot", {
+      format: "png",
+      captureBeyondViewport: false,
+    });
+    const desktopBookScreenshotPath = screenshotPath.replace(
+      /\.png$/i,
+      "-book-desktop.png",
+    );
+    fs.writeFileSync(
+      desktopBookScreenshotPath,
+      Buffer.from(desktopBookShot.data, "base64"),
+    );
+    assert.ok(fs.statSync(desktopBookScreenshotPath).size > 20000);
     await evaluate(
       client,
-      `document.querySelector(".dictionary-book__supplement").open = true`,
+      `document.querySelector("[data-book-page-next]").click()`,
+    );
+    await waitFor(
+      client,
+      `document.querySelector("[data-book-pages]").scrollLeft >
+        document.querySelector("[data-book-pages]").clientWidth / 2`,
+      "Condensed book did not advance horizontally",
+    );
+    assert.match(
+      await evaluate(
+        client,
+        `document.querySelector("[data-book-page-status]").textContent`,
+      ),
+      /^Page 2 of (?:[2-9]|\d{2,})$/,
+    );
+    const initialPageTotal = Number(
+      book.pageStatus.match(/of (\d+)$/)[1],
+    );
+    await evaluate(
+      client,
+      `document.querySelector("[data-book-pages]").scrollLeft =
+        document.querySelector("[data-book-pages]").scrollWidth`,
+    );
+    await waitFor(
+      client,
+      `document.querySelector("[data-book-page-next]").disabled`,
+      "Condensed book did not reach its last page",
+    );
+    await evaluate(
+      client,
+      `document.querySelectorAll(".dictionary-book__supplement").forEach(
+        (supplement) => { supplement.open = true; }
+      )`,
     );
     assert.equal(
       await evaluate(
@@ -284,6 +370,26 @@ async function waitFor(client, expression, message) {
       ),
       true,
     );
+    await delay(250);
+    const expandedBook = await evaluate(
+      client,
+      `(() => {
+        const pages = document.querySelector("[data-book-pages]");
+        const status = document.querySelector("[data-book-page-status]").textContent;
+        return {
+          scrollWidth: pages.scrollWidth,
+          status,
+          total: Number(status.match(/of (\\d+)$/)[1]),
+          nextDisabled: document.querySelector("[data-book-page-next]").disabled
+        };
+      })()`,
+    );
+    assert.ok(
+      expandedBook.scrollWidth > book.entryScrollWidth,
+      JSON.stringify(expandedBook),
+    );
+    assert.ok(expandedBook.total > initialPageTotal, JSON.stringify(expandedBook));
+    assert.equal(expandedBook.nextDisabled, false, JSON.stringify(expandedBook));
     await client.call("Emulation.setEmulatedMedia", { media: "print" });
     const printBook = await evaluate(
       client,
@@ -300,7 +406,13 @@ async function waitFor(client, expression, message) {
         ).display,
         itemBreak: getComputedStyle(
           document.querySelector(".dictionary-book__item")
-        ).breakInside
+        ).breakInside,
+        pagesOverflow: getComputedStyle(
+          document.querySelector(".dictionary-book__entries")
+        ).overflow,
+        pageControls: getComputedStyle(
+          document.querySelector(".dictionary-book__page-controls")
+        ).display
       }))()`,
     );
     assert.deepEqual(printBook, {
@@ -309,6 +421,8 @@ async function waitFor(client, expression, message) {
       standalone: "none",
       supplement: "none",
       itemBreak: "auto",
+      pagesOverflow: "visible",
+      pageControls: "none",
     });
     await client.call("Emulation.setEmulatedMedia", { media: "screen" });
     await client.call("Emulation.setDeviceMetricsOverride", {
@@ -324,6 +438,12 @@ async function waitFor(client, expression, message) {
           document.documentElement.clientWidth,
         columns: getComputedStyle(document.querySelector(".dictionary-book__entries"))
           .columnCount,
+        pageControls: getComputedStyle(
+          document.querySelector(".dictionary-book__page-controls")
+        ).display,
+        pagesOverflow: getComputedStyle(
+          document.querySelector(".dictionary-book__entries")
+        ).overflow,
         width: document.documentElement.clientWidth,
         scrollWidth: document.documentElement.scrollWidth,
         offenders: Array.from(document.querySelectorAll("body *"))
@@ -340,6 +460,8 @@ async function waitFor(client, expression, message) {
     );
     assert.equal(mobileBook.overflow, false, JSON.stringify(mobileBook));
     assert.equal(mobileBook.columns, "1");
+    assert.equal(mobileBook.pageControls, "none");
+    assert.equal(mobileBook.pagesOverflow, "visible");
     const bookShot = await client.call("Page.captureScreenshot", {
       format: "png",
       captureBeyondViewport: false,
