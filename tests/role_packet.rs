@@ -1,4 +1,4 @@
-use factor::role_packet::{build_role_packet, validate_role_packet, write_role_packet};
+use formarium::role_packet::{build_role_packet, validate_role_packet, write_role_packet};
 use std::fs;
 use std::time::{SystemTime, UNIX_EPOCH};
 

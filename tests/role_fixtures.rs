@@ -1,4 +1,4 @@
-use factor::role_fixtures::{
+use formarium::role_fixtures::{
     generate_analysis_documents, generate_role_corpora, generate_role_splits, role_fixture_summary,
     RoleFixtureFamily, RoleSplitKind,
 };

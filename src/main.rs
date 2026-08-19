@@ -1,4 +1,4 @@
-use factor::{
+use formarium::{
     bakeoff::bakeoff_summary,
     binding::binding_control_summary,
     composition_query::CompositionQuery,
@@ -19,7 +19,7 @@ fn main() -> ExitCode {
     match run() {
         Ok(()) => ExitCode::SUCCESS,
         Err(error) => {
-            eprintln!("factor: {error}");
+            eprintln!("formarium: {error}");
             ExitCode::FAILURE
         }
     }
@@ -282,9 +282,15 @@ fn run_reference_command(
                 .sync_projections(root.as_ref())
                 .map_err(|error| format!("{manifest}: {error}"))?;
             println!("reference={manifest}");
-            println!("catalog={root}\\tables\\CATALOG.md");
-            println!("formula_catalog={root}\\tables\\formulas\\INDEX.md");
-            println!("unresolved={root}\\tables\\UNRESOLVED.md");
+            if corpus.header() == "formarium-reference-v3" {
+                println!("catalog={root}\\tables\\FORMARIUM-CATALOG.md");
+                println!("formula_catalog={root}\\tables\\formulas\\FORMARIUM-INDEX.md");
+                println!("unresolved={root}\\tables\\FORMARIUM-UNRESOLVED.md");
+            } else {
+                println!("catalog={root}\\tables\\CATALOG.md");
+                println!("formula_catalog={root}\\tables\\formulas\\INDEX.md");
+                println!("unresolved={root}\\tables\\UNRESOLVED.md");
+            }
             println!("reference_sha256={}", corpus.sha256());
         }
         _ => return Err(usage("unknown reference command")),
@@ -355,6 +361,20 @@ fn read_reference(path: &str) -> Result<ReferenceCorpus, String> {
 
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  factor check <schema.factor>\n  factor canonicalize <schema.factor>\n  factor fixtures\n  factor role-fixtures\n  factor binding-controls\n  factor role-bakeoff\n  factor role-packet <output-dir>\n  factor role-packet-check <packet-dir>\n  factor bakeoff\n  factor packet <output-dir>\n  factor packet-check <packet-dir>\n  factor reference-check <manifest> <workspace-root>\n  factor reference-catalog <manifest> <workspace-root>\n  factor reference-unresolved <manifest> <workspace-root>\n  factor reference-sync <manifest> <workspace-root>\n  factor reference-sidecar-check <reference> <relations> <assurance> <workspace-root>\n  factor composition-query-check <query> <reference> <relations>"
+        "{message}\nusage:\n  formarium check <schema.factor>\n  formarium canonicalize <schema.factor>\n  formarium fixtures\n  formarium role-fixtures\n  formarium binding-controls\n  formarium role-bakeoff\n  formarium role-packet <output-dir>\n  formarium role-packet-check <packet-dir>\n  formarium bakeoff\n  formarium packet <output-dir>\n  formarium packet-check <packet-dir>\n  formarium reference-check <manifest> <workspace-root>\n  formarium reference-catalog <manifest> <workspace-root>\n  formarium reference-unresolved <manifest> <workspace-root>\n  formarium reference-sync <manifest> <workspace-root>\n  formarium reference-sidecar-check <reference> <relations> <assurance> <workspace-root>\n  formarium composition-query-check <query> <reference> <relations>"
     )
+}
+
+#[cfg(test)]
+mod tests {
+    use super::usage;
+
+    #[test]
+    fn usage_names_the_formarium_binary() {
+        let help = usage("test");
+        assert!(help
+            .lines()
+            .filter(|line| line.starts_with("  "))
+            .all(|line| line.starts_with("  formarium ")));
+    }
 }

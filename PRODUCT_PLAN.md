@@ -28,11 +28,11 @@ reference. They are not the top-level product.
 - Founding research method: **Factor-Preserving Semantic Encoding**
 - Repo type: encyclopedia/reference project with supporting research and tools
 
-Compatibility boundary: `.factorium` formats, `factorium-*` schema names,
-canonical IDs, source paths, and historical edition identities remain stable.
-Formarium is the public product and repository identity; Formography remains a
-separate proposed method whose field and novelty claims are not established by
-the product rename.
+Canonical naming boundary: new contracts use `.formarium`, `.formarium-query`,
+and `formarium-*` schema names. Frozen `.factorium` files and `factorium-*`
+headers remain parseable historical imports, not forward defaults. Formography
+remains a separate proposed method whose field and novelty claims are not
+established by the product rename.
 
 ## Principles
 

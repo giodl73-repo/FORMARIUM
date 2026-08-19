@@ -1,6 +1,15 @@
-MIT License
+Formarium uses separate licenses for software and content.
 
-Copyright (c) 2026 FACTOR contributors
+Software license
+----------------
+
+The software in this repository is licensed under the MIT License below.
+Software includes source code, executable scripts, browser application code,
+stylesheets, tests, build and deployment workflows, and software configuration,
+wherever those files live. This includes `.rs`, `.js`, `.py`, `.ps1`, and `.css`
+files, plus `Cargo.toml` and `Cargo.lock`.
+
+Copyright (c) 2026 Formarium contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +28,21 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Content license
+---------------
+
+Unless a file states otherwise, all original non-software content is licensed
+under the Creative Commons Attribution-NonCommercial 4.0 International
+License (CC BY-NC 4.0). This includes the books, tables, reference and
+specification artifacts, diagrams, documentation, and generated website
+content.
+
+See `LICENSE-CONTENT.md` for the content license notice and terms. Commercial
+use of the content requires separate written permission from Gio Della-Libera.
+
+Versions of the original content previously distributed under the MIT License
+remain available under that license. The content split governs original
+content distributed from this version forward.
+
+Third-party material and dependencies remain subject to their own licenses.

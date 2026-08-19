@@ -25,21 +25,24 @@ evidence and one tested Formarium domain.
 
 ## Current wave
 
-`context/waves/2026-08-13-factorium-vision/WAVE.md`
+`context/waves/2026-08-19-formarium-canonical/WAVE.md`
 
 Current pulses: **08A - Factor Forge intake fixed point** and
 **08P - Proof Set internal fixed point**
 
-The current rolling machine-readable owner retains its compatibility identity at
-`reference/factorium-reference-v2.factorium`: 54 entries, 419 senses, 638
-factors, and 100 views. It preserves every V1 record and adds the reviewed
-Optimization Problem Structure, Prototype/Test/Iteration, and
-Contribution/Credit/Priority/Legacy views. The eleven-record V0 relation
-sidecar is unchanged; `reference/factorium-assurance-v2.factorium` provides
-165 exact review bindings. `sim-65` is the current public-identity feedback
-projection. It renders Formarium, Formarium Tables, and The Formarium Reader
-over the unchanged `sim-64` content, search, Reader sequence, pointer registry,
-and interchange. `sim-64` closes the generated Pointer Entry concordance at 250
+The current machine-readable owner is
+`reference/formarium-reference-v3.formarium`: 54 entries, 419 senses, 638
+factors, and 100 views. Its eleven relations are
+`reference/formarium-relations-v1.formarium`; its 165 exact review bindings are
+`reference/formarium-assurance-v3.formarium`. Eleven current Composition Query
+fixtures use `.formarium-query`, and the flattened 250-label pointer registry
+uses `.formarium`.
+
+`sim-66` is the current Formarium-native projection. It renders Formarium,
+Formarium Tables, and The Formarium Reader over the unchanged content, search,
+Reader sequence, and pointer set while using only Formarium-native active
+contracts and DOM globals. `sim-65` remains the public-identity feedback
+snapshot. `sim-64` closes the generated Pointer Entry concordance at 250
 explicit labels, 2,681 exact structural expressions, and 2,118 label-to-owner
 bindings
 while keeping canonical entries, search, the Reader sequence, and interchange
@@ -47,12 +50,11 @@ unchanged. `sim-52` through `sim-63` remain preserved; `sim-64` adds a final
 10-label closeout. `sim-58` introduced same-directory, cycle-checked delta
 composition. Further pointer admission requires a new census and editorial
 trigger. The 250-pointer count is not the R5 canonical Table goal. The owner
-has selected Formarium as the public feedback identity. `sim-64` remains the
+has selected Formarium as the canonical identity. `sim-64` remains the
 pre-rename content fixed point, `sim-51` remains the reversible Tabula Facta
-snapshot, and `sim-50` remains the earlier rolling V2 projection. Existing
-Factorium schema names, `.factorium` formats, canonical IDs, and historical
-editions remain compatibility identities. V2 is not frozen and remains open
-to later reviewed additions. V0, V1, V0-bound
+snapshot, and `sim-50` remains the earlier rolling V2 projection. Frozen
+`factorium-*`, `.factorium`, and `.factorium-query` artifacts remain readable
+historical imports but are not defaults for new work. V0-V2, V0-bound
 Composition Queries, `sim-48`, and `sim-49` remain historical baselines; no
 reader evidence is claimed.
 
@@ -719,7 +721,7 @@ targets are 25–50 pilot entries, about 250 entries for the first volume, about
 1,000 core headwords, and 3,000–5,000 only as a mature reviewed collection.
 Brief, standard, and anchor entry classes preserve table-first lookup.
 
-The entry graph contract at `specs/FACTORIUM-ENTRY-GRAPH.md` separates
+The current entry graph contract at `specs/FORMARIUM-ENTRY-GRAPH.md` separates
 headwords, senses, views, factor count, and recursive depth. Prime/composite
 status is relative to a view; every published factor resolves to an entry or
 visible unresolved candidate; textual typed edges own joins and symbols are
@@ -1288,8 +1290,10 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
-cargo run --quiet -- reference-check reference\factorium-reference-v2.factorium .
-cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v2.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v2.factorium .
+cargo run --quiet -- reference-check reference\formarium-reference-v3.formarium .
+cargo run --quiet -- reference-sidecar-check reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium reference\formarium-assurance-v3.formarium .
+node tools\build_formarium_contracts.js --check
+node tools\check_formarium_canonical.js
 node tools\check_reference_closure_coverage.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_constraint_feasibility_relation.js

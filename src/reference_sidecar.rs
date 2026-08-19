@@ -1,4 +1,4 @@
-//! Deterministic prototype sidecars for Factorium relations and review coverage.
+//! Deterministic sidecars for Formarium relations and review coverage.
 
 use crate::reference::ReferenceCorpus;
 use sha2::{Digest, Sha256};
@@ -8,11 +8,13 @@ use std::fmt::Write as _;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-const RELATION_HEADER: &str = "factorium-relations-v0";
+const LEGACY_RELATION_HEADER: &str = "factorium-relations-v0";
+const RELATION_HEADER_V1: &str = "formarium-relations-v1";
 const RELATION_END: &str = "end-relations";
 const ASSURANCE_HEADER_V0: &str = "factorium-assurance-v0";
 const ASSURANCE_HEADER_V1: &str = "factorium-assurance-v1";
 const ASSURANCE_HEADER_V2: &str = "factorium-assurance-v2";
+const ASSURANCE_HEADER_V3: &str = "formarium-assurance-v3";
 const ASSURANCE_END: &str = "end-assurance";
 
 /// One supported directed relation kind.
@@ -170,6 +172,7 @@ impl RelationRecord {
 /// Canonical relation sidecar for the bounded compatibility prototype.
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct RelationManifest {
+    header: String,
     relations: Vec<RelationRecord>,
 }
 
@@ -182,8 +185,17 @@ impl RelationManifest {
     /// ordering, relation kinds, or qualifier contracts.
     pub fn parse(input: &str) -> Result<Self, String> {
         let lines = canonical_lines(input)?;
-        if lines.first() != Some(&RELATION_HEADER) || lines.last() != Some(&RELATION_END) {
-            return Err("expected factorium-relations-v0 document".to_owned());
+        let header = match lines.first().copied() {
+            Some(LEGACY_RELATION_HEADER) => LEGACY_RELATION_HEADER,
+            Some(RELATION_HEADER_V1) => RELATION_HEADER_V1,
+            _ => {
+                return Err(
+                    "expected factorium-relations-v0 or formarium-relations-v1 document".to_owned(),
+                )
+            }
+        };
+        if lines.last() != Some(&RELATION_END) {
+            return Err("expected end-relations record".to_owned());
         }
         let mut relations = Vec::new();
         for (index, line) in lines[1..lines.len() - 1].iter().enumerate() {
@@ -215,7 +227,10 @@ impl RelationManifest {
             });
         }
         validate_sorted_unique(relations.iter().map(RelationRecord::id), "relation IDs")?;
-        Ok(Self { relations })
+        Ok(Self {
+            header: header.to_owned(),
+            relations,
+        })
     }
 
     #[must_use]
@@ -225,7 +240,7 @@ impl RelationManifest {
 
     #[must_use]
     pub fn canonical_text(&self) -> String {
-        let mut output = String::from(RELATION_HEADER);
+        let mut output = self.header.clone();
         output.push('\n');
         for relation in &self.relations {
             let qualifiers = relation
@@ -343,9 +358,10 @@ impl AssuranceManifest {
             Some(ASSURANCE_HEADER_V0) => ASSURANCE_HEADER_V0,
             Some(ASSURANCE_HEADER_V1) => ASSURANCE_HEADER_V1,
             Some(ASSURANCE_HEADER_V2) => ASSURANCE_HEADER_V2,
+            Some(ASSURANCE_HEADER_V3) => ASSURANCE_HEADER_V3,
             _ => {
                 return Err(
-                    "expected factorium-assurance-v0, factorium-assurance-v1, or factorium-assurance-v2 document".to_owned(),
+                    "expected factorium-assurance-v0, factorium-assurance-v1, factorium-assurance-v2, or formarium-assurance-v3 document".to_owned(),
                 )
             }
         };
@@ -733,6 +749,13 @@ mod tests {
     }
 
     #[test]
+    fn formarium_relation_header_round_trips() {
+        let input = RELATIONS.replacen("factorium-relations-v0", "formarium-relations-v1", 1);
+        let manifest = RelationManifest::parse(&input).expect("Formarium relations should parse");
+        assert_eq!(manifest.canonical_text(), input);
+    }
+
+    #[test]
     fn relation_sidecar_rejects_missing_required_qualifier() {
         let invalid = RELATIONS.replace("condition=required-interaction", "method=wrong");
         assert!(RelationManifest::parse(&invalid)
@@ -775,10 +798,22 @@ mod tests {
     }
 
     #[test]
+    fn formarium_assurance_v3_header_round_trips() {
+        let input = concat!(
+            "formarium-assurance-v3\n",
+            "review entry:claim-evidence | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | review.md | fixed-point | 2026-08-18\n",
+            "end-assurance\n"
+        );
+        let manifest =
+            AssuranceManifest::parse(input).expect("Formarium V3 assurance should parse");
+        assert_eq!(manifest.canonical_text(), input);
+    }
+
+    #[test]
     fn assurance_rejects_unsupported_revision() {
-        let input = "factorium-assurance-v3\nend-assurance\n";
-        assert!(AssuranceManifest::parse(input).unwrap_err().contains(
-            "expected factorium-assurance-v0, factorium-assurance-v1, or factorium-assurance-v2"
-        ));
+        let input = "formarium-assurance-v4\nend-assurance\n";
+        assert!(AssuranceManifest::parse(input)
+            .unwrap_err()
+            .contains("or formarium-assurance-v3 document"));
     }
 }

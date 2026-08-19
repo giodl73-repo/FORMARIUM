@@ -1,7 +1,7 @@
-use factor::role_bakeoff::{
+use formarium::role_bakeoff::{
     role_bakeoff_summary, run_role_bakeoff, RoleBakeoffClassification, RoleBakeoffRepresentation,
 };
-use factor::role_fixtures::RoleSplitKind;
+use formarium::role_fixtures::RoleSplitKind;
 
 #[test]
 fn systematic_splits_separate_role_reuse_from_whole_lookup() {

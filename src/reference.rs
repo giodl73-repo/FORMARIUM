@@ -1,4 +1,4 @@
-//! Canonical metadata interchange for the Factorium reference.
+//! Canonical metadata interchange for the Formarium reference.
 
 use sha2::{Digest, Sha256};
 use std::collections::{HashMap, HashSet};
@@ -10,6 +10,7 @@ use std::path::{Path, PathBuf};
 const HEADER_V0: &str = "factorium-reference-v0";
 const HEADER_V1: &str = "factorium-reference-v1";
 const HEADER_V2: &str = "factorium-reference-v2";
+const HEADER_V3: &str = "formarium-reference-v3";
 const END: &str = "end-reference";
 
 /// One supported primary reference-table family.
@@ -410,6 +411,7 @@ impl ReferenceCorpus {
             HEADER_V0 => "reference/factorium-reference-v0.factorium",
             HEADER_V1 => "reference/factorium-reference-v1.factorium",
             HEADER_V2 => "reference/factorium-reference-v2.factorium",
+            HEADER_V3 => "reference/formarium-reference-v3.formarium",
             _ => unreachable!("validated reference header"),
         }
     }
@@ -715,18 +717,10 @@ impl ReferenceCorpus {
     /// Returns an error for unreadable sources or failed writes.
     pub fn sync_projections(&self, root: &Path) -> Result<(), String> {
         self.validate_workspace(root)?;
-        write_if_changed(
-            &root.join("tables").join("CATALOG.md"),
-            &self.catalog_markdown(),
-        )?;
-        write_if_changed(
-            &root.join("tables").join("formulas").join("INDEX.md"),
-            &self.formula_catalog_markdown(),
-        )?;
-        write_if_changed(
-            &root.join("tables").join("UNRESOLVED.md"),
-            &self.unresolved_markdown(root)?,
-        )
+        let [catalog, formulas, unresolved] = self.projection_paths(root);
+        write_if_changed(&catalog, &self.catalog_markdown())?;
+        write_if_changed(&formulas, &self.formula_catalog_markdown())?;
+        write_if_changed(&unresolved, &self.unresolved_markdown(root)?)
     }
 
     /// Checks that committed projections exactly match generated output.
@@ -736,18 +730,28 @@ impl ReferenceCorpus {
     /// Returns an error when a projection is missing or stale.
     pub fn validate_projections(&self, root: &Path) -> Result<(), String> {
         self.validate_workspace(root)?;
-        validate_projection(
-            &root.join("tables").join("CATALOG.md"),
-            &self.catalog_markdown(),
-        )?;
-        validate_projection(
-            &root.join("tables").join("formulas").join("INDEX.md"),
-            &self.formula_catalog_markdown(),
-        )?;
-        validate_projection(
-            &root.join("tables").join("UNRESOLVED.md"),
-            &self.unresolved_markdown(root)?,
-        )
+        let [catalog, formulas, unresolved] = self.projection_paths(root);
+        validate_projection(&catalog, &self.catalog_markdown())?;
+        validate_projection(&formulas, &self.formula_catalog_markdown())?;
+        validate_projection(&unresolved, &self.unresolved_markdown(root)?)
+    }
+
+    fn projection_paths(&self, root: &Path) -> [PathBuf; 3] {
+        if self.header == HEADER_V3 {
+            [
+                root.join("tables").join("FORMARIUM-CATALOG.md"),
+                root.join("tables")
+                    .join("formulas")
+                    .join("FORMARIUM-INDEX.md"),
+                root.join("tables").join("FORMARIUM-UNRESOLVED.md"),
+            ]
+        } else {
+            [
+                root.join("tables").join("CATALOG.md"),
+                root.join("tables").join("formulas").join("INDEX.md"),
+                root.join("tables").join("UNRESOLVED.md"),
+            ]
+        }
     }
 
     fn validate(&self) -> Result<(), String> {
@@ -874,8 +878,9 @@ fn reference_header(value: Option<&str>) -> Result<&'static str, String> {
         Some(HEADER_V0) => Ok(HEADER_V0),
         Some(HEADER_V1) => Ok(HEADER_V1),
         Some(HEADER_V2) => Ok(HEADER_V2),
+        Some(HEADER_V3) => Ok(HEADER_V3),
         _ => Err(format!(
-            "line 1: expected `{HEADER_V0}`, `{HEADER_V1}`, or `{HEADER_V2}`"
+            "line 1: expected `{HEADER_V0}`, `{HEADER_V1}`, `{HEADER_V2}`, or `{HEADER_V3}`"
         )),
     }
 }
@@ -1035,7 +1040,7 @@ fn validate_projection(path: &Path, expected: &str) -> Result<(), String> {
         fs::read_to_string(path).map_err(|error| format!("{}: {error}", path.display()))?;
     if actual != expected {
         return Err(format!(
-            "{} is stale; run `factor reference-sync`",
+            "{} is stale; run `formarium reference-sync`",
             path.display()
         ));
     }
@@ -1083,11 +1088,19 @@ end-reference
     }
 
     #[test]
+    fn formarium_v3_header_round_trips_without_changing_record_grammar() {
+        let input = SAMPLE.replacen("factorium-reference-v0", "formarium-reference-v3", 1);
+        let corpus = ReferenceCorpus::parse(&input).expect("Formarium V3 sample should parse");
+        assert_eq!(corpus.header(), "formarium-reference-v3");
+        assert_eq!(corpus.canonical_text(), input);
+    }
+
+    #[test]
     fn rejects_unsupported_reference_revision() {
-        let input = SAMPLE.replacen("factorium-reference-v0", "factorium-reference-v3", 1);
+        let input = SAMPLE.replacen("factorium-reference-v0", "formarium-reference-v4", 1);
         assert!(ReferenceCorpus::parse(&input)
             .unwrap_err()
-            .contains("expected `factorium-reference-v0`, `factorium-reference-v1`, or `factorium-reference-v2`"));
+            .contains("or `formarium-reference-v3`"));
     }
 
     #[test]

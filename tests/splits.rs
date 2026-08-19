@@ -1,4 +1,6 @@
-use factor::corpus::{fixture_summary, generate_corpora, generate_splits, CorpusFamily, SplitKind};
+use formarium::corpus::{
+    fixture_summary, generate_corpora, generate_splits, CorpusFamily, SplitKind,
+};
 
 #[test]
 fn corpus_families_are_materially_distinct_and_group_surfaces() {

@@ -1,0 +1,8 @@
+formarium-composition-lab-relations-v1
+relation f1-dependency-interface
+relation f2-delegation-authority
+relation f3-inference-observation
+relation f4-feedback-monitoring
+relation f5-service-interface
+relation f6-evidence-obligation
+end-relations

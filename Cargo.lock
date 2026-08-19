@@ -47,7 +47,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "factor"
+name = "formarium"
 version = "0.1.0"
 dependencies = [
  "sha2",

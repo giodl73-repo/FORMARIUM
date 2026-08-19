@@ -2,7 +2,7 @@ use std::process::Command;
 
 #[test]
 fn check_command_reports_canonical_identity() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args(["check", "fixtures/schemas/navigation.factor"])
         .output()
         .unwrap();
@@ -16,7 +16,7 @@ fn check_command_reports_canonical_identity() {
 
 #[test]
 fn check_command_rejects_invalid_fixture() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args(["check", "fixtures/invalid/unknown-value.factor"])
         .output()
         .unwrap();
@@ -28,7 +28,7 @@ fn check_command_rejects_invalid_fixture() {
 
 #[test]
 fn fixtures_command_reports_both_corpora_and_all_splits() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .arg("fixtures")
         .output()
         .unwrap();
@@ -47,7 +47,7 @@ fn fixtures_command_reports_both_corpora_and_all_splits() {
 
 #[test]
 fn bakeoff_command_reports_separate_decision_classes() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .arg("bakeoff")
         .output()
         .unwrap();
@@ -64,12 +64,12 @@ fn bakeoff_command_reports_separate_decision_classes() {
 #[test]
 fn packet_commands_export_and_validate_closed_world_artifacts() {
     let root = std::env::temp_dir().join(format!("factor-cli-packet-{}", std::process::id()));
-    let export = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let export = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args(["packet", root.to_str().unwrap()])
         .output()
         .unwrap();
     assert!(export.status.success());
-    let check = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let check = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args(["packet-check", root.to_str().unwrap()])
         .output()
         .unwrap();
@@ -79,7 +79,7 @@ fn packet_commands_export_and_validate_closed_world_artifacts() {
 
 #[test]
 fn role_fixtures_command_reports_both_families_and_all_splits() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .arg("role-fixtures")
         .output()
         .unwrap();
@@ -104,7 +104,7 @@ fn role_fixtures_command_reports_both_families_and_all_splits() {
 
 #[test]
 fn binding_controls_command_reports_all_owners() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .arg("binding-controls")
         .output()
         .unwrap();
@@ -124,7 +124,7 @@ fn binding_controls_command_reports_all_owners() {
 
 #[test]
 fn role_bakeoff_command_reports_separate_decisions() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .arg("role-bakeoff")
         .output()
         .unwrap();
@@ -140,12 +140,12 @@ fn role_bakeoff_command_reports_separate_decisions() {
 #[test]
 fn role_packet_commands_export_and_validate_closed_world_artifacts() {
     let root = std::env::temp_dir().join(format!("factor-cli-role-packet-{}", std::process::id()));
-    let export = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let export = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args(["role-packet", root.to_str().unwrap()])
         .output()
         .unwrap();
     assert!(export.status.success());
-    let check = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let check = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args(["role-packet-check", root.to_str().unwrap()])
         .output()
         .unwrap();
@@ -155,10 +155,10 @@ fn role_packet_commands_export_and_validate_closed_world_artifacts() {
 
 #[test]
 fn reference_check_validates_canonical_corpus_and_projections() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args([
             "reference-check",
-            "reference/factorium-reference-v2.factorium",
+            "reference/formarium-reference-v3.formarium",
             ".",
         ])
         .output()
@@ -172,12 +172,12 @@ fn reference_check_validates_canonical_corpus_and_projections() {
 
 #[test]
 fn reference_sidecar_check_validates_relations_and_reviews() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args([
             "reference-sidecar-check",
-            "reference/factorium-reference-v2.factorium",
-            "reference/factorium-relations-v0.factorium",
-            "reference/factorium-assurance-v2.factorium",
+            "reference/formarium-reference-v3.formarium",
+            "reference/formarium-relations-v1.formarium",
+            "reference/formarium-assurance-v3.formarium",
             ".",
         ])
         .output()
@@ -194,12 +194,12 @@ fn reference_sidecar_check_validates_relations_and_reviews() {
 
 #[test]
 fn composition_query_check_validates_declared_closure() {
-    let output = Command::new(env!("CARGO_BIN_EXE_factor"))
+    let output = Command::new(env!("CARGO_BIN_EXE_formarium"))
         .args([
             "composition-query-check",
-            "fixtures/composition/system-dependency.factorium-query",
-            "reference/factorium-reference-v0.factorium",
-            "reference/factorium-relations-v0.factorium",
+            "fixtures/composition/system-dependency.formarium-query",
+            "reference/formarium-reference-v3.formarium",
+            "reference/formarium-relations-v1.formarium",
         ])
         .output()
         .unwrap();

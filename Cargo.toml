@@ -1,10 +1,10 @@
 [package]
-name = "factor"
+name = "formarium"
 version = "0.1.0"
 edition = "2021"
-description = "Reference tooling for Factor-Preserving Semantic Encoding"
+description = "Reference tooling for the Formarium structured reference"
 license = "MIT"
-repository = "https://github.com/giodl73-repo/FACTOR"
+repository = "https://github.com/giodl73-repo/FORMARIUM"
 publish = false
 
 [dependencies]

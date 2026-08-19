@@ -8,10 +8,11 @@ const {spawn} = require("node:child_process");
 
 const siteRoot = path.resolve(process.argv[2] || "target/proof-set-sim-65");
 const screenshot = path.resolve(process.argv[3] || "target/sim65-formarium-reader.png");
-assert.equal(
-  JSON.parse(fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8")).edition,
-  "sim-65",
-);
+const edition = JSON.parse(
+  fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"),
+).edition;
+assert.ok(["sim-65", "sim-66"].includes(edition));
+const canonical = edition === "sim-66";
 const edge = [
   process.env.EDGE_PATH,
   "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
@@ -110,16 +111,24 @@ async function evaluate(client, expression) {
       client,
       `(() => ({
         brand: document.querySelector(".site-brand").textContent.trim(),
-        banner: document.querySelector(".identity-preview").textContent.trim(),
+        banner: document.querySelector(".identity-preview")?.textContent.trim() || "",
         heading: document.querySelector("h1").textContent.trim(),
         authority: document.querySelector(".reader-route__boundary").textContent.trim(),
         start: document.querySelector('[data-reader-start="sequence"]').getAttribute("href")
       }))()`,
     );
-    assert.match(state.brand, /Formarium.*feedback preview/);
-    assert.match(state.banner, /public feedback identity/i);
+    if (canonical) {
+      assert.equal(state.brand, "Formarium");
+      assert.equal(state.banner, "");
+    } else {
+      assert.match(state.brand, /Formarium.*feedback preview/);
+      assert.match(state.banner, /public feedback identity/i);
+    }
     assert.equal(state.heading, "The Formarium Reader");
-    assert.match(state.authority, /compatibility internals/i);
+    assert.match(
+      state.authority,
+      canonical ? /Formarium schemas and file formats are canonical/i : /compatibility internals/i,
+    );
     assert.ok(fs.existsSync(path.join(siteRoot, state.start)));
     await client.call("Emulation.setDeviceMetricsOverride", {
       width: 390,

@@ -1,5 +1,5 @@
-use factor::bakeoff::{run_bakeoff, Classification, Representation};
-use factor::corpus::SplitKind;
+use formarium::bakeoff::{run_bakeoff, Classification, Representation};
+use formarium::corpus::SplitKind;
 
 #[test]
 fn systematic_splits_separate_factor_reuse_from_whole_memorization() {

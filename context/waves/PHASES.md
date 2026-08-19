@@ -1,15 +1,16 @@
-# Factorium Waves
+# Formarium Waves
 
 Work is organized into small waves and pulses.
 
 ## Active wave
 
-- `2026-08-13-factorium-vision`
+- `2026-08-19-formarium-canonical`
 
 ## Completed waves
 
 - `2026-08-13-method-foundation`
 - `2026-08-13-role-and-ambiguity`
+- `2026-08-13-factorium-vision`
 
 ## Protocol
 

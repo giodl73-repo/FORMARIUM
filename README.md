@@ -2,6 +2,8 @@
 
 **Tables for the structure of things.**
 
+Website: <https://giodl73-repo.github.io/FORMARIUM/>
+
 Formarium is an encyclopedia of decomposition patterns. Its primary
 deliverables are books and **Factor Tables** that help a reader look up a
 problem, distinguish its senses, compare several credible factorizations,
@@ -29,11 +31,10 @@ Formarium has two complementary books over one canonical reference:
 **Factor Guides** are shorter applied journeys through selected Tables. The
 complete contract is [Two-Book Product Architecture](specs/TWO-BOOK-PRODUCT-ARCHITECTURE.md).
 
-The public project and publication identity is **Formarium**. Existing
-`.factorium` formats, `factorium-*` schemas, canonical IDs, and historical
-edition names remain stable compatibility identifiers; this rename does not
-rewrite source custody or claim that the proposed Formography method is an
-established field.
+The project, publication, CLI, and current machine-readable contract all use
+**Formarium**. New artifacts use `.formarium`, `.formarium-query`, and
+`formarium-*` identifiers. Frozen `.factorium` artifacts remain readable only
+as historical imports; they are not templates or defaults for new work.
 
 Read the [grand vision](VISION.md), the active [roadmap](ROADMAP.md), the draft
 [Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), the specialized
@@ -42,13 +43,13 @@ Read the [grand vision](VISION.md), the active [roadmap](ROADMAP.md), the draft
 The candidate [reference table family architecture](specs/REFERENCE-TABLE-FAMILIES.md)
 defines how specialized views remain one coherent reference.
 
-The [entry graph](specs/FACTORIUM-ENTRY-GRAPH.md) defines progressive
+The [entry graph](specs/FORMARIUM-ENTRY-GRAPH.md) defines progressive
 decomposition, typed joins, relative primes and composites, notation, and
 faceted search. The [security example](tables/examples/security.md) leads to an
 [eight-factor access-control request](tables/composites/access-control-request.md)
 whose factors each have their own entries.
 
-Browse the [generated reference catalog](tables/CATALOG.md) for canonical
+Browse the [generated reference catalog](tables/FORMARIUM-CATALOG.md) for canonical
 anchors and specialized views. The [curated table index](tables/INDEX.md)
 retains examples, foundations, roots, roles, primes, and composites without
 copying the generated catalog. The [Factor Guide pilots](guides/INDEX.md)
@@ -117,7 +118,7 @@ explicit validation.
 ## Reference specifications
 
 - [Factor Table Entry Format V0](specs/FACTOR-TABLE-ENTRY.md)
-- [Factorium Entry Graph V0](specs/FACTORIUM-ENTRY-GRAPH.md)
+- [Formarium Entry Graph](specs/FORMARIUM-ENTRY-GRAPH.md)
 - [Factor Guide Format V0](specs/FACTOR-GUIDE.md)
 - [Composition Query Trace V0](specs/COMPOSITION-QUERY.md)
 - [Bounded Composition Lab Simulation](specs/COMPOSITION-LAB.md)
@@ -158,29 +159,29 @@ Validate the current V1 compatibility reference metadata, linked Markdown, and
 generated projections:
 
 ```powershell
-cargo run --quiet -- reference-check reference\factorium-reference-v2.factorium .
+cargo run --quiet -- reference-check reference\formarium-reference-v3.formarium .
 ```
 
 Validate the unchanged bounded V0 relation sidecar and complete V1
 digest-bound review coverage:
 
 ```powershell
-cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v2.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v2.factorium .
+cargo run --quiet -- reference-sidecar-check reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium reference\formarium-assurance-v3.formarium .
 ```
 
-See [Factorium Reference Sidecars V0 Prototype](specs/FACTORIUM-REFERENCE-SIDECARS.md).
+See [Formarium Reference Interchange](specs/FORMARIUM-REFERENCE-INTERCHANGE.md).
 
 Validate one bounded, author-declared Composition Query trace against exact
 reference and relation identities:
 
 ```powershell
-cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
 ```
 
 Build the disposable Proof Set simulation rendering with Pandoc:
@@ -347,10 +348,10 @@ After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 
 ```powershell
-cargo run --quiet -- reference-sync reference\factorium-reference-v2.factorium .
+cargo run --quiet -- reference-sync reference\formarium-reference-v3.formarium .
 ```
 
-See [Factorium Reference Interchange V0](specs/FACTORIUM-REFERENCE-INTERCHANGE.md).
+See [Formarium Reference Interchange](specs/FORMARIUM-REFERENCE-INTERCHANGE.md).
 
 Inspect the frozen generated corpus and split identities:
 
@@ -414,7 +415,7 @@ See [independent packet onboarding](docs/ONBOARDING.md).
 ## Portfolio reuse posture
 
 Formarium is intentionally a specialist reference publication, not currently a
-shared portfolio dependency. The `factorium-reference-v0` interchange is the
+shared portfolio dependency. The `formarium-reference-v3` interchange is the
 repository's candidate internal canonical owner, and the unpublished Rust
 tooling validates that owner; neither is an ecosystem or cross-repository API.
 The self-contained portable packets are verification evidence, not reusable
@@ -448,19 +449,19 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
-cargo run --quiet -- reference-check reference\factorium-reference-v2.factorium .
-cargo run --quiet -- reference-sidecar-check reference\factorium-reference-v2.factorium reference\factorium-relations-v0.factorium reference\factorium-assurance-v2.factorium .
-cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\dependency-exclusion-conflict.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
-cargo run --quiet -- composition-query-check fixtures\composition\delegated-compliance-frontier.factorium-query reference\factorium-reference-v0.factorium reference\factorium-relations-v0.factorium
+cargo run --quiet -- reference-check reference\formarium-reference-v3.formarium .
+cargo run --quiet -- reference-sidecar-check reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium reference\formarium-assurance-v3.formarium .
+cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\dependency-exclusion-conflict.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\delegated-compliance-frontier.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
 node tools\check_composition_lab.js
 node tools\check_composition_reading.js
 node tools\check_composition_palette.js
@@ -604,4 +605,14 @@ evidence or `preview-01`.
 
 ## License
 
-[MIT](LICENSE) - Copyright 2026 Gio Della-Libera.
+Formarium uses split licensing:
+
+- **Books and other original content:** [CC BY-NC 4.0](LICENSE-CONTENT.md),
+  copyright 2026 Gio Della-Libera. Sharing and adaptation are welcome for
+  noncommercial purposes with attribution. Commercial use requires separate
+  written permission.
+- **Software:** [MIT](LICENSE), copyright 2026 Formarium contributors.
+
+Versions previously distributed under the MIT License remain available under
+that license; this change governs content distributed from this version
+forward.

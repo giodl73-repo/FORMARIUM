@@ -3,6 +3,10 @@
 Read `CONTEXT.md` first. Then read `README.md`, `PRODUCT_PLAN.md`, and
 `context/waves/PHASES.md` before changing this repo.
 
+Use Formarium names for all new files, schemas, commands, and publication
+surfaces. Treat `.factorium` artifacts and `factorium-*` headers as frozen
+historical imports only.
+
 Read `.roles/ROLE.md` before changing Factor Tables, reference architecture,
 schemas, corpora, splits, benchmarks, claims, or release artifacts. Record plan
 and result reviews in the active wave.
