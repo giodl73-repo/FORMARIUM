@@ -60,7 +60,7 @@ and knowledge-graph precedents, and a
 source-custodied, context-bounded forms, alternative factorization, typed
 relations, and loss-declared projections. Novelty, field establishment,
 Factorium renaming, and Formarium promotion remain unauthorized. The next gate
-is one frozen comparative encoding packet. See
+at foundation closure was one frozen comparative encoding packet. See
 `docs/research/formography/formography-foundation-research-module-v0.md` and
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-FOUNDATION-RESULT.md`.
 Within the proposed publication architecture, Formarium is the curated
@@ -87,8 +87,8 @@ Selection. The same core transfers with an explicit decision extension;
 missing final authority fails closed. Across all three cases, property graphs
 encode every retained field. The surviving hypothesis is a governed method
 profile over ordinary representations. Authored encoding is closed; independent
-coding and a direct `governed property graph` simplicity comparison are now
-the active gate. See
+coding and a direct `governed property graph` simplicity comparison were the
+next gate. See
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-COMPARATIVE-SLICE-03-RESULT.md`.
 
 Independent coding V0 is complete and does not pass promotion. Three isolated
@@ -96,8 +96,8 @@ coders produced nine case records; all nine find property graphs sufficient
 and preserve authority and projection loss. Exact owner identity reaches only
 2/3 per case, essential extensions lack stable majority, and terminology
 splits Formography 1, governed property graph 1, neither 1. Formography field
-promotion is paused pending a pre-registered V1 protocol; rename and
-publication claims remain blocked. See
+promotion was paused pending a pre-registered V1 protocol; that protocol and
+its result are recorded below. Rename and publication claims remain blocked. See
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-INDEPENDENT-CODING-01-RESULT.md`.
 
 Independent coding V1 pre-registers owner/authority separation, extension and
@@ -106,8 +106,8 @@ majorities now pass in all cases. Promotion still fails because only 2/3
 records conform and unresolved state is retained in 8/9. Governed property
 graph wins the internal model terminology comparison 2/3 with a lower median
 word count. This weakens rather than supports a Formography naming claim. No
-immediate V2 is authorized; a human or practitioner protocol decision is the
-next boundary. See
+immediate V2 is authorized; this made a human or practitioner protocol decision
+the next boundary. See
 `context/waves/2026-08-13-factorium-vision/FORMOGRAPHY-INDEPENDENT-CODING-02-RESULT.md`.
 
 The practitioner decision is now a frozen protocol rather than a result.
