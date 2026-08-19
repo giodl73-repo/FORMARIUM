@@ -17,7 +17,7 @@ review entry:electrical-quantity | fdfea5fa5d55e2b6d9ff6efee35c3e01d9ba1c0e63b22
 review entry:evaluation-measure-scale-criterion | c885cb8b672f7091419f35bebb151d7be446a139a962de9ecf68aabb0e60efd3 | context/waves/2026-08-13-factorium-vision/F61-F70-EVALUATION-GRAMMAR-ROLE-REVIEW.md | fixed-point | 2026-08-16
 review entry:factorization-quality | 27978512e24b810b79b2c6ba60325d805dec1c1f4807493dc29e7832de6a13e0 | context/waves/2026-08-13-factorium-vision/FACTOR-FORGE-PORTFOLIO-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:force | 7984c00f7107d52208e5c9eb871c2120fc5179eb67b62a85f87ee082b3b6d4dd | context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md | fixed-point | 2026-08-16
-review entry:formarium-entry-publication | 3d1ff5032eebfe6503806b8663eac68192577b91333865f783a06711f479bfd6 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review entry:formarium-entry-publication | f07c12471c952958c9d464f70668a684b2b360407ef488fdd4db32aedb3445ba | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review entry:geometric-measure | 262f68a3c30d61dd9e2c2083ab4642457d91755b9b65dfe5277c707bb49265d8 | context/waves/2026-08-13-factorium-vision/GEOMETRIC-REFERENCE-STRUCTURE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:geometric-reference-structure | 8e50e6cb14401b89840c1b01440c8c716634d8a04f7eb9978b90225d1e6e3994 | context/waves/2026-08-13-factorium-vision/GEOMETRIC-REFERENCE-STRUCTURE-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review entry:governance-obligation-compliance | db21234cdf29a264e3ff97903e900ca24edbbf0a216103a573cf41895386ef7f | context/waves/2026-08-13-factorium-vision/GOVERNANCE-LEDGER-ROLE-REVIEW.md | fixed-point | 2026-08-14
@@ -152,7 +152,7 @@ review view:mapping-temporal-representation | 32b33788e7002370458735b1fdba51f720
 review view:mapping-unit-conversion | 65528fc58dcfab8e17c5be7109a91da6cd741ca2ddfca2f0bbd8721b6fff1e61 | context/waves/2026-08-13-factorium-vision/QUANTITY-VALUE-UNIT-CONVERSION-ROLE-REVIEW.md | fixed-point | 2026-08-15
 review view:mapping-version-scheme-semantics | fd108b5c9d9df9d08c856b8093d861ebf6d51921e599c45171653bd11da43f65 | context/waves/2026-08-13-factorium-vision/STRUCTURAL-ANCHORS-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:procedure-contribution-reconciliation | f6551ee926dbd26b51e07b55670b59de76af3b840e088e06fc50d5f8abad58ff | context/waves/2026-08-13-factorium-vision/F51-F60-FACTORING-GRAMMAR-ROLE-REVIEW.md | fixed-point | 2026-08-16
-review view:procedure-entry-publication | 51e79358bc1ac492e9c6fbda79d10aaa609908e3490a0bff20563abd8a85816a | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:procedure-entry-publication | d4fc0f354548eca21b8132db73ed76185bc95d27e90b68852f4ca9927354a830 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:procedure-evaluation-aggregation | 6834b30f02cc8a73ce3c4ed817762b45b2fdd8ddb044ec573e45a9034131efac | context/waves/2026-08-13-factorium-vision/F61-F70-EVALUATION-GRAMMAR-ROLE-REVIEW.md | fixed-point | 2026-08-16
 review view:procedure-evaluation-review-disposition | 7b4f95967d055ed4a5a83063f63b8b004c1d2d9a3e62f332e16985a2ea172280 | context/waves/2026-08-13-factorium-vision/F61-F70-EVALUATION-GRAMMAR-ROLE-REVIEW.md | fixed-point | 2026-08-16
 review view:procedure-planned-work | 7eb4f7774e0729d6a19f3a0065eb7963555408400dcee9aa982f492128eace42 | context/waves/2026-08-13-factorium-vision/F38-F50-CONTENT-CAMPAIGN-ROLE-REVIEW.md | fixed-point | 2026-08-16
@@ -161,7 +161,7 @@ review view:procedure-queue-service-order | b5511e8e8558086a4cb92fb56c9b06ebee1e
 review view:procedure-resource-allocation | 30172bad28a7c704311f9c59a35ccc3e1b1865ea4b0b8d9759df6a669662cc61 | context/waves/2026-08-13-factorium-vision/F71-F80-SCENARIO-OPERATIONAL-CLOSURE-ROLE-REVIEW.md | fixed-point | 2026-08-16
 review view:procedure-risk-treatment-response | 5bf70046163d4cac4e88cbb7d8dd74654d6c9a9a4f4c321d0b8a957a7d16e992 | context/waves/2026-08-13-factorium-vision/OPERATING-CONDITION-SOURCE-CUSTODY-RESULT.md | fixed-point | 2026-08-17
 review view:reference-value-si-defining-constants | 51599c404176960d3ff31d039518499faf4c4ab4a5a825c86ba21cc487979789 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
-review view:scale-editorial-maturity | a8a0b2320e422ec430fae62a25d891940a2957aee89f865029f0ad4007c23821 | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
+review view:scale-editorial-maturity | 530819e562f77300b9768f9a7c5cf10cee820b2e36f8073e9021bfbe13b3cafd | context/waves/2026-08-13-factorium-vision/REMAINING-FAMILIES-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:transition-generic-lifecycle | 088c961df96f98be5b49e93595a4c7504e95c5159907d69b18df1d29f719b9ab | context/waves/2026-08-13-factorium-vision/STRUCTURAL-ANCHORS-ROLE-REVIEW.md | fixed-point | 2026-08-14
 review view:transition-ordered-path | 75f181a53ccb68a2c8d822400acea93e7366a67085a00e97ef01a5e8629116a0 | context/waves/2026-08-13-factorium-vision/F51-F60-FACTORING-GRAMMAR-ROLE-REVIEW.md | fixed-point | 2026-08-16
 end-assurance

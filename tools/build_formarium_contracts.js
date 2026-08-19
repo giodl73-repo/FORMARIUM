@@ -8,8 +8,14 @@ const root = path.resolve(__dirname, "..");
 const check = process.argv.includes("--check");
 const outputs = [];
 
+function normalizeNewlines(text) {
+  return text.replace(/\r\n?/g, "\n");
+}
+
 function read(relative) {
-  return fs.readFileSync(path.join(root, relative), "utf8");
+  return normalizeNewlines(
+    fs.readFileSync(path.join(root, relative), "utf8"),
+  );
 }
 
 function sha256(text) {
@@ -19,7 +25,10 @@ function sha256(text) {
 function emit(relative, text) {
   const target = path.join(root, relative);
   if (check) {
-    if (!fs.existsSync(target) || fs.readFileSync(target, "utf8") !== text) {
+    if (
+      !fs.existsSync(target) ||
+      normalizeNewlines(fs.readFileSync(target, "utf8")) !== text
+    ) {
       throw new Error(`stale generated contract: ${relative}`);
     }
   } else {
@@ -194,8 +203,7 @@ for (const name of fs
   .readdirSync(queryDirectory)
   .filter((candidate) => candidate.endsWith(".factorium-query"))
   .sort()) {
-  const query = fs
-    .readFileSync(path.join(queryDirectory, name), "utf8")
+  const query = read(path.join("fixtures", "composition", name))
     .replace(
       /^factorium-composition-query-v0\n/,
       "formarium-composition-query-v1\n",

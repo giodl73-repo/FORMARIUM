@@ -1,2 +1,10 @@
 artifacts/factor-v1/** text eol=lf
 artifacts/factor-role-v1/** text eol=lf
+fixtures/composition/*.factorium-query text eol=lf
+fixtures/composition/*.formarium-query text eol=lf
+reference/*.factorium text eol=lf
+reference/*.formarium text eol=lf
+specs/FORMARIUM-ENTRY-GRAPH.md text eol=lf
+tables/**/*.md text eol=lf
+volumes/**/*.factorium text eol=lf
+volumes/**/*.formarium text eol=lf
