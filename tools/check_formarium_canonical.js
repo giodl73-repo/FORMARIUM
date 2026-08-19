@@ -18,6 +18,10 @@ assert.equal(manifest.edition, "sim-66");
 assert.equal(manifest.site_checks.missing_local_targets, 0);
 assert.equal(manifest.site_checks.pointer_entry_pages, 250);
 assert.equal(manifest.site_checks.tables_index_pointer_entries, 250);
+assert.equal(manifest.site_checks.tables_dictionary_sequence_pages, 54);
+assert.equal(manifest.site_checks.tables_dictionary_previous_links, 53);
+assert.equal(manifest.site_checks.tables_dictionary_next_links, 53);
+assert.equal(manifest.site_checks.tables_dictionary_finish_links, 1);
 assert.equal(manifest.rendering_checks.repository_source_links, 98);
 assert.equal(
   manifest.site_checks.product_authority,
@@ -114,6 +118,46 @@ assert.equal(new Set(tablePointerLinks.map((match) => match[1])).size, 250);
 for (const [, slug, hrefSlug] of tablePointerLinks) {
   assert.equal(hrefSlug, slug);
   assert.ok(fs.existsSync(path.join(site, "pointers", `${slug}.html`)));
+}
+const searchRecords = JSON.parse(
+  fs.readFileSync(path.join(site, "search-index.json"), "utf8"),
+);
+const dictionaryRecords = searchRecords
+  .filter((record) => record.recordClass === "canonical-entry")
+  .sort(
+    (left, right) =>
+      left.title.toLowerCase().localeCompare(right.title.toLowerCase()) ||
+      left.path.localeCompare(right.path),
+  );
+assert.equal(dictionaryRecords.length, 54);
+assert.match(
+  tables,
+  new RegExp(`data-dictionary-start href="${dictionaryRecords[0].href}"`),
+);
+for (const [index, record] of dictionaryRecords.entries()) {
+  const entry = fs.readFileSync(path.join(site, record.href), "utf8");
+  assert.match(entry, new RegExp(`data-dictionary-step="${index + 1}"`));
+  if (index > 0) {
+    assert.match(
+      entry,
+      new RegExp(
+        `data-dictionary-direction="previous" href="${path.basename(dictionaryRecords[index - 1].href)}"`,
+      ),
+    );
+  }
+  if (index < dictionaryRecords.length - 1) {
+    assert.match(
+      entry,
+      new RegExp(
+        `data-dictionary-direction="next" href="${path.basename(dictionaryRecords[index + 1].href)}"`,
+      ),
+    );
+  } else {
+    assert.match(
+      entry,
+      /data-dictionary-direction="finish" href="\.\.\/tables\.html"/,
+    );
+  }
 }
 assert.match(
   fs.readFileSync(path.join(site, "assets", "handoff.js"), "utf8"),

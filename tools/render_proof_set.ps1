@@ -3545,6 +3545,13 @@ $dualLookupScriptTag
     if ($editionNumber -ge 35) {
         $canonicalIndexRecords = @($searchRecords | Where-Object { $_.recordClass -eq "canonical-entry" } |
             Sort-Object @{ Expression = { $_.title.ToLowerInvariant() } }, @{ Expression = { $_.path } })
+        $dictionaryIndexByPath = [System.Collections.Generic.Dictionary[string, int]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        for ($dictionaryIndex = 0; $dictionaryIndex -lt $canonicalIndexRecords.Count; $dictionaryIndex++) {
+            $dictionaryIndexByPath[$canonicalIndexRecords[$dictionaryIndex].path] = $dictionaryIndex
+        }
+        $dictionaryStartHref = $canonicalIndexRecords[0].href
         $curatedIndexRecords = @($searchRecords | Where-Object { $_.recordClass -eq "curated-record" } |
             Sort-Object @{ Expression = { $_.title.ToLowerInvariant() } }, @{ Expression = { $_.path } })
         $canonicalLetterGroups = [ordered]@{}
@@ -3634,7 +3641,7 @@ $identityPreviewStyle
 <p class="site-kicker">Primary reference · alphabetical browse$(if ($identityPreview) { ' · candidate publication name' } else { '' })</p>
 <h1>$tablesPublicationName A-Z</h1>
 <p>Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and all $(if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }) exact specialized views.$(if ($editionNumber -ge 52) { " Or enter through any of $tablesIndexPointerCount structural pointers." })</p>
-<div class="tables-index__actions"><a href="index.html#search">Search the Tables</a>$(if ($editionNumber -ge 52) { '<a href="#tables-index-pointers-heading">Browse pointers</a>' })<a href="index.html#contents">Use book contents</a></div>
+<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a data-dictionary-start href="' + $dictionaryStartHref + '">Read Tables A-Z</a>' })<a href="index.html#search">Search the Tables</a>$(if ($editionNumber -ge 52) { '<a href="#tables-index-pointers-heading">Browse pointers</a>' })<a href="index.html#contents">Use book contents</a></div>
 <p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
 </section>
 <nav class="tables-index__letters" aria-label="Canonical Table initial letters">$letterLinks</nav>
@@ -4279,6 +4286,10 @@ $identityPreviewStyle
     $readerSequencePreviousLinks = 0
     $readerSequenceNextLinks = 0
     $readerSequenceFinishLinks = 0
+    $dictionarySequencePanels = 0
+    $dictionarySequencePreviousLinks = 0
+    $dictionarySequenceNextLinks = 0
+    $dictionarySequenceFinishLinks = 0
     foreach ($source in $sources) {
         $relativeSource = [System.IO.Path]::GetRelativePath($workspace, $source).Replace("\", "/")
         $segment = $renderedSegmentBySource[$source]
@@ -4389,6 +4400,41 @@ $(if ($editionNumber -ge 52) { '<script src="../assets/pointers.js"></script>' }
 <p class="reader-sequence__boundary">Editorial teaching order only—not prerequisite, dependency, semantic adjacency, hierarchy, progress, or mastery.</p>
 </nav>
 "@
+        }
+
+        $dictionarySequenceHtml = ""
+        if ($editionNumber -ge 66 -and $null -ne $record -and
+            $dictionaryIndexByPath.ContainsKey($relativeSource)) {
+            $dictionaryPositionIndex = $dictionaryIndexByPath[$relativeSource]
+            $dictionaryStep = $dictionaryPositionIndex + 1
+            $dictionaryPrevious = "<span></span>"
+            $dictionaryNext = '<a data-dictionary-direction="finish" href="../tables.html"><span>End of A-Z sequence</span>Back to the Tables index</a>'
+            if ($dictionaryPositionIndex -gt 0) {
+                $dictionaryPreviousRecord = $canonicalIndexRecords[$dictionaryPositionIndex - 1]
+                $dictionaryPreviousTitle = [System.Net.WebUtility]::HtmlEncode($dictionaryPreviousRecord.title)
+                $dictionaryPreviousPage = [System.IO.Path]::GetFileName($dictionaryPreviousRecord.href)
+                $dictionaryPrevious = "<a data-dictionary-direction=`"previous`" href=`"$dictionaryPreviousPage`"><span>Previous A-Z entry</span>$dictionaryPreviousTitle</a>"
+                $dictionarySequencePreviousLinks += 1
+            }
+            if ($dictionaryPositionIndex -lt $canonicalIndexRecords.Count - 1) {
+                $dictionaryNextRecord = $canonicalIndexRecords[$dictionaryPositionIndex + 1]
+                $dictionaryNextTitle = [System.Net.WebUtility]::HtmlEncode($dictionaryNextRecord.title)
+                $dictionaryNextPage = [System.IO.Path]::GetFileName($dictionaryNextRecord.href)
+                $dictionaryNext = "<a data-dictionary-direction=`"next`" href=`"$dictionaryNextPage`"><span>Next A-Z entry</span>$dictionaryNextTitle</a>"
+                $dictionarySequenceNextLinks += 1
+            }
+            else {
+                $dictionarySequenceFinishLinks += 1
+            }
+            $dictionarySequencePanels += 1
+            $dictionarySequenceHtml = @"
+<nav class="dictionary-sequence" aria-label="Tables alphabetical reading sequence" data-dictionary-step="$dictionaryStep">
+<div class="dictionary-sequence__heading"><p>$tablesPublicationName A-Z · Entry $dictionaryStep of $($canonicalIndexRecords.Count)</p><a href="../tables.html">Back to Tables A-Z</a></div>
+<div class="dictionary-sequence__links">$dictionaryPrevious$dictionaryNext</div>
+<p class="dictionary-sequence__boundary">Alphabetical reading order is presentation only—not synonymy, hierarchy, dependency, recommendation, or semantic adjacency.</p>
+</nav>
+"@
+            $pagination = ""
         }
 
         $factorFocusHtml = ""
@@ -4585,7 +4631,7 @@ $identityPreviewStyle
 ) / $encodedPageTitle</nav>
 $readerControls
 $readerSequenceHtml<main id="main-content" class="site-entry" data-source-path="$encodedSource">$tableNavigatorHtml$factorFocusHtml$segment</main>
-$pagination
+$dictionarySequenceHtml$pagination
 </div>
 <footer class="site-footer">Canonical source: $encodedSource · simulation projection$contentLicenseNotice</footer>
 $pageScripts
@@ -5037,6 +5083,19 @@ $identityPreviewStyle
         $siteChecks.tables_index_semantics = "alphabetical-presentation-only"
         if ($editionNumber -ge 52) {
             $siteChecks.tables_index_pointer_entries = $tablesIndexPointerCount
+        }
+        if ($editionNumber -ge 66) {
+            if ($dictionarySequencePanels -ne $tablesIndexCanonicalCount -or
+                $dictionarySequencePreviousLinks -ne ($tablesIndexCanonicalCount - 1) -or
+                $dictionarySequenceNextLinks -ne ($tablesIndexCanonicalCount - 1) -or
+                $dictionarySequenceFinishLinks -ne 1) {
+                throw "Tables A-Z sequence mismatch: panels=$dictionarySequencePanels previous=$dictionarySequencePreviousLinks next=$dictionarySequenceNextLinks finish=$dictionarySequenceFinishLinks"
+            }
+            $siteChecks.tables_dictionary_sequence_pages = $dictionarySequencePanels
+            $siteChecks.tables_dictionary_previous_links = $dictionarySequencePreviousLinks
+            $siteChecks.tables_dictionary_next_links = $dictionarySequenceNextLinks
+            $siteChecks.tables_dictionary_finish_links = $dictionarySequenceFinishLinks
+            $siteChecks.tables_dictionary_order = "normalized-selected-title"
         }
     }
     if ($editionNumber -ge 36) {

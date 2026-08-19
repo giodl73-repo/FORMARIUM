@@ -63,7 +63,8 @@ reader packet, evaluator rubric, and de-identified observation record.
 
 ## Primary deliverables
 
-- **Formarium Tables** — the enduring dictionary/thesaurus reference book;
+- **Formarium Tables** — the enduring dictionary/thesaurus reference book, with
+  an A-Z reading sequence and structural pointer entry points;
 - **The Formarium Reader** — the linked explanatory companion;
 - **Factor Tables** — canonical entries and competing decompositions;
 - **Formula Tables** — sourced mathematical relations with scope and units;

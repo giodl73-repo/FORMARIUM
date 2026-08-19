@@ -97,6 +97,9 @@ async function waitFor(client, expression, message) {
     await client.ready;
     await client.call("Runtime.enable");
     await client.call("Page.enable");
+    await client.call("Emulation.setDeviceMetricsOverride", {
+      width: 1280, height: 1000, deviceScaleFactor: 1, mobile: false,
+    });
     await client.call("Page.navigate", { url: homeUrl });
     await waitFor(client,
       `document.readyState === "complete" && document.querySelector('[data-book="tables"]')`,
@@ -116,6 +119,7 @@ async function waitFor(client, expression, message) {
       letters: document.querySelectorAll(".tables-index__letters a").length,
       first: document.querySelector(".tables-index__canonical [data-index-path] a").textContent,
       firstMeta: document.querySelector(".tables-index__canonical [data-index-path] span").textContent,
+      dictionaryStart: document.querySelector("[data-dictionary-start]")?.getAttribute("href") || null,
       firstPointer: document.querySelector(".tables-index__pointers [data-pointer-slug] a")?.getAttribute("href") || null,
       columns: getComputedStyle(document.querySelector(".tables-index__canonical")).columnCount,
       boundary: document.querySelector(".tables-index__boundary").textContent
@@ -128,6 +132,9 @@ async function waitFor(client, expression, message) {
     assert.equal(desktop.letters, 17);
     assert.equal(desktop.first, "Access, Permission, Authorization, and Entitlement");
     assert.match(desktop.firstMeta, /governance · 1 specialized view/);
+    assert.equal(desktop.dictionaryStart, includesPointers
+      ? "entries/tables-entries-access-permission-authorization-entitlement.html"
+      : null);
     assert.equal(desktop.firstPointer, includesPointers ? "pointers/access.html" : null);
     assert.ok(Number(desktop.columns) >= 2);
     assert.equal(desktop.boundary,
@@ -164,6 +171,40 @@ async function waitFor(client, expression, message) {
       "Tables index screenshot is non-trivial");
     if (includesPointers) {
       await evaluate(client,
+        `location.href = new URL(${JSON.stringify(desktop.dictionaryStart)}, ${JSON.stringify(tablesUrl)}).href; true`);
+      await waitFor(client,
+        `document.readyState === "complete" && document.querySelector('[data-dictionary-step="1"]')`,
+        "Tables A-Z sequence did not start");
+      await evaluate(client,
+        `document.querySelector(".dictionary-sequence").scrollIntoView(); true`);
+      const dictionaryShot = await client.call("Page.captureScreenshot", {
+        format: "png", captureBeyondViewport: false,
+      });
+      fs.writeFileSync(screenshotPath, Buffer.from(dictionaryShot.data, "base64"));
+      assert.ok(fs.statSync(screenshotPath).size > 20000,
+        "Tables A-Z sequence screenshot is non-trivial");
+      assert.equal(await evaluate(client,
+        `document.querySelector(".site-entry h1").textContent.replace(/\\s+/g, " ").trim()`),
+      "Access, Permission, Authorization, and Entitlement");
+      assert.equal(await evaluate(client,
+        `document.querySelector('[data-dictionary-direction="next"]').getAttribute("href")`),
+      "tables-entries-amount-concentration-composition.html");
+      assert.equal(await evaluate(client,
+        `document.querySelector(".all-record-sequence") === null`), true);
+      await evaluate(client,
+        `document.querySelector('[data-dictionary-direction="next"]').click(); true`);
+      await waitFor(client,
+        `document.readyState === "complete" && document.querySelector('[data-dictionary-step="2"]')`,
+        "Tables A-Z sequence did not advance");
+      assert.equal(await evaluate(client,
+        `document.querySelector(".site-entry h1").textContent.replace(/\\s+/g, " ").trim()`),
+      "Amount, Concentration, and Composition");
+      await evaluate(client,
+        `location.href = ${JSON.stringify(tablesUrl)}; true`);
+      await waitFor(client,
+        `document.readyState === "complete" && document.querySelector(".tables-index__pointers")`,
+        "Tables index did not reload");
+      await evaluate(client,
         `location.href = new URL(${JSON.stringify(desktop.firstPointer)}, location.href).href; true`);
       await waitFor(client,
         `document.readyState === "complete" && document.querySelector(".pointer-page h1")`,
@@ -173,7 +214,8 @@ async function waitFor(client, expression, message) {
     }
     console.log(
       `OK route=tables.html canonical=${desktop.canonical} curated=27 ` +
-      `pointers=${desktop.pointers} letters=17 mobile=390 screenshot=${screenshotPath}`
+      `pointers=${desktop.pointers} dictionary=${includesPointers ? 54 : 0} ` +
+      `letters=17 mobile=390 screenshot=${screenshotPath}`
     );
   } finally {
     if (client) client.close();
