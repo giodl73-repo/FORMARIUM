@@ -5266,8 +5266,12 @@ $identityPreviewStyle
             else {
                 [System.IO.Path]::GetFullPath((Join-Path (Split-Path $siteHtmlFile) $targetPath))
             }
+            $isPlannedManifest = $editionNumber -ge 66 -and $resolvedTarget.Equals(
+                [System.IO.Path]::GetFullPath($manifest),
+                [System.StringComparison]::Ordinal
+            )
             if (-not $resolvedTarget.StartsWith($output, [System.StringComparison]::OrdinalIgnoreCase) -or
-                -not (Test-Path -LiteralPath $resolvedTarget -PathType Leaf)) {
+                (-not $isPlannedManifest -and -not (Test-Path -LiteralPath $resolvedTarget -PathType Leaf))) {
                 $missingSiteTargets.Add("$siteHtmlFile -> $siteTarget")
                 continue
             }
