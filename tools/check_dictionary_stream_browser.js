@@ -219,9 +219,111 @@ async function waitFor(client, expression, message) {
     });
     fs.writeFileSync(screenshotPath, Buffer.from(shot.data, "base64"));
     assert.ok(fs.statSync(screenshotPath).size > 20000);
+
+    await client.call("Emulation.setDeviceMetricsOverride", {
+      width: 1280,
+      height: 1000,
+      deviceScaleFactor: 1,
+      mobile: false,
+    });
+    await client.call("Page.navigate", {
+      url: `http://127.0.0.1:${serverPort}/book.html`,
+    });
+    await waitFor(
+      client,
+      `document.readyState === "complete" &&
+        document.querySelectorAll(".dictionary-book__item").length === 304`,
+      "Condensed book did not load",
+    );
+    const book = await evaluate(
+      client,
+      `(() => ({
+        items: document.querySelectorAll(".dictionary-book__item").length,
+        pointers: document.querySelectorAll('[data-dictionary-kind="pointer"]').length,
+        tables: document.querySelectorAll('[data-dictionary-kind="table"]').length,
+        columns: getComputedStyle(document.querySelector(".dictionary-book__entries"))
+          .gridTemplateColumns.split(" ").length,
+        selectedView: document.querySelector("[data-dictionary-view]").value,
+        chrome: document.querySelectorAll(
+          ".site-header, .site-handoff, .dictionary-sequence, .pointer-owner, .table-navigator"
+        ).length,
+        first: Array.from(document.querySelectorAll(".dictionary-book__item"))
+          .slice(0, 3).map((item) =>
+            item.querySelector(".dictionary-book__content > h2").textContent
+              .replace(/\\s+/g, " ").trim())
+      }))()`,
+    );
+    assert.deepEqual(book, {
+      items: 304,
+      pointers: 250,
+      tables: 54,
+      columns: 2,
+      selectedView: "book.html",
+      chrome: 0,
+      first: [
+        "Access",
+        "Access, Permission, Authorization, and Entitlement",
+        "Accumulation",
+      ],
+    });
+    await client.call("Emulation.setEmulatedMedia", { media: "print" });
+    const printBook = await evaluate(
+      client,
+      `(() => ({
+        columns: getComputedStyle(document.querySelector(".dictionary-book__entries"))
+          .columnCount,
+        tools: getComputedStyle(document.querySelector(".dictionary-book__tools"))
+          .display,
+        standalone: getComputedStyle(
+          document.querySelector(".dictionary-book__item-heading a")
+        ).display
+      }))()`,
+    );
+    assert.deepEqual(printBook, {
+      columns: "2",
+      tools: "none",
+      standalone: "none",
+    });
+    await client.call("Emulation.setEmulatedMedia", { media: "screen" });
+    await client.call("Emulation.setDeviceMetricsOverride", {
+      width: 390,
+      height: 1200,
+      deviceScaleFactor: 1,
+      mobile: true,
+    });
+    const mobileBook = await evaluate(
+      client,
+      `(() => ({
+        overflow: document.documentElement.scrollWidth >
+          document.documentElement.clientWidth,
+        columns: getComputedStyle(document.querySelector(".dictionary-book__entries"))
+          .gridTemplateColumns.split(" ").length,
+        width: document.documentElement.clientWidth,
+        scrollWidth: document.documentElement.scrollWidth,
+        offenders: Array.from(document.querySelectorAll("body *"))
+          .filter((element) => element.getBoundingClientRect().right >
+            document.documentElement.clientWidth + 1)
+          .slice(0, 8)
+          .map((element) => ({
+            tag: element.tagName,
+            className: element.className,
+            right: Math.round(element.getBoundingClientRect().right),
+            scrollWidth: element.scrollWidth
+          }))
+      }))()`,
+    );
+    assert.equal(mobileBook.overflow, false, JSON.stringify(mobileBook));
+    assert.equal(mobileBook.columns, 1);
+    const bookShot = await client.call("Page.captureScreenshot", {
+      format: "png",
+      captureBeyondViewport: false,
+    });
+    const bookScreenshotPath = screenshotPath.replace(/\.png$/i, "-book.png");
+    fs.writeFileSync(bookScreenshotPath, Buffer.from(bookShot.data, "base64"));
+    assert.ok(fs.statSync(bookScreenshotPath).size > 20000);
     console.log(
       `OK dictionary-stream initial=${initial.count} next>${beforeScroll} ` +
-        `records=304 mobile=390 screenshot=${screenshotPath}`,
+        `book=304 columns=2/1 mobile=390 screenshot=${screenshotPath}`,
     );
   } finally {
     if (client) client.close();

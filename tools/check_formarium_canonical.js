@@ -27,6 +27,9 @@ assert.equal(manifest.site_checks.dictionary_sequence_finish_links, 1);
 assert.equal(manifest.site_checks.dictionary_stream_pages, 1);
 assert.equal(manifest.site_checks.dictionary_stream_records, 304);
 assert.equal(manifest.site_checks.dictionary_stream_batch_size, 4);
+assert.equal(manifest.site_checks.dictionary_book_pages, 1);
+assert.equal(manifest.site_checks.dictionary_book_records, 304);
+assert.equal(manifest.site_checks.dictionary_book_columns, 2);
 assert.equal(manifest.rendering_checks.repository_source_links, 98);
 assert.equal(
   manifest.site_checks.product_authority,
@@ -102,6 +105,7 @@ const home = fs.readFileSync(path.join(site, "index.html"), "utf8");
 const reader = fs.readFileSync(path.join(site, "reader.html"), "utf8");
 const tables = fs.readFileSync(path.join(site, "tables.html"), "utf8");
 const dictionary = fs.readFileSync(path.join(site, "dictionary.html"), "utf8");
+const book = fs.readFileSync(path.join(site, "book.html"), "utf8");
 assert.match(home, /<a class="site-brand"[^>]*>Formarium<\/a>/);
 assert.doesNotMatch(home, /identity-preview|feedback preview/i);
 assert.match(home, /data-formarium-handoff/);
@@ -111,6 +115,7 @@ assert.match(
 );
 assert.match(reader, /Formarium schemas and file formats are canonical/);
 assert.match(tables, /href="dictionary\.html">Continuous A-Z<\/a>/);
+assert.match(tables, /href="book\.html">Condensed book<\/a>/);
 assert.match(dictionary, /<h1>Continuous Dictionary A-Z<\/h1>/);
 assert.match(dictionary, /data-dictionary-stream data-batch-size="4"/);
 assert.match(dictionary, /src="assets\/dictionary-stream\.js"/);
@@ -134,6 +139,36 @@ assert.deepEqual(streamRecords.slice(0, 3), [
     href: "pointers/accumulation.html",
   },
 ]);
+assert.match(book, /<h1>The Formarium Dictionary<\/h1>/);
+assert.equal(
+  (book.match(/class="dictionary-book__item"/g) || []).length,
+  304,
+);
+assert.equal(
+  (book.match(/data-dictionary-kind="pointer"/g) || []).length,
+  250,
+);
+assert.equal(
+  (book.match(/data-dictionary-kind="table"/g) || []).length,
+  54,
+);
+assert.match(
+  book,
+  /data-dictionary-position="1"[\s\S]*?<h2 id="book-pointer-access">Access<\/h2>/,
+);
+assert.doesNotMatch(
+  book,
+  /dictionary-sequence|class="pointer-owner"|table-navigator|formarium-handoff|class="site-header"/,
+);
+const siteCss = fs.readFileSync(path.join(site, "assets", "site.css"), "utf8");
+assert.match(
+  siteCss,
+  /\.dictionary-book__entries\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2,/,
+);
+assert.match(
+  siteCss,
+  /@media print\s*\{[\s\S]*?\.dictionary-book__entries\s*\{[\s\S]*?column-count:\s*2;/,
+);
 const dictionaryRecords = [
   ...tables.matchAll(
     /<li data-dictionary-kind="(table|pointer)" (?:data-index-path|data-pointer-slug)="([^"]+)"><a href="([^"]+)">([^<]+)<\/a>/g,

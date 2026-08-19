@@ -2001,6 +2001,7 @@ if ($editionNumber -ge 7) {
     $siteReader = if ($editionNumber -ge 36) { Join-Path $output "reader.html" } else { $null }
     $sitePointerIndex = if ($editionNumber -ge 52) { Join-Path $output "terms.html" } else { $null }
     $siteDictionaryStream = if ($editionNumber -ge 66) { Join-Path $output "dictionary.html" } else { $null }
+    $siteDictionaryBook = if ($editionNumber -ge 66) { Join-Path $output "book.html" } else { $null }
     $siteEntryDirectory = Join-Path $output "entries"
     $siteChapterDirectory = Join-Path $output "chapters"
     $sitePointerDirectory = Join-Path $output "pointers"
@@ -3722,7 +3723,8 @@ $identityPreviewStyle
 <p class="site-kicker">Primary reference · alphabetical browse$(if ($identityPreview) { ' · candidate publication name' } else { '' })</p>
 <h1>$tablesPublicationName A-Z</h1>
 <p>$(if ($editionNumber -ge 66) { "Read one merged dictionary of $($dictionaryRecords.Count) alphabetized items: $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families." } else { "Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and exact specialized views." })</p>
-<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a href="dictionary.html">Continuous A-Z</a><a data-dictionary-start href="' + $dictionaryStartHref + '">Read page by page</a>' })<a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
+$(if ($editionNumber -ge 66) { '<label class="dictionary-view-switcher">View <select data-dictionary-view><option value="tables.html" selected>Index A-Z</option><option value="dictionary.html">Continuous A-Z</option><option value="book.html">Condensed Book</option></select></label>' })
+<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a href="dictionary.html">Continuous A-Z</a><a href="book.html">Condensed book</a><a data-dictionary-start href="' + $dictionaryStartHref + '">Read page by page</a>' })<a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
 <p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
 </section>
 $(if ($editionNumber -ge 66) {
@@ -3740,6 +3742,7 @@ $(if ($editionNumber -ge 66) {
 </section>
 </main>
 <footer class="site-footer">Internal deterministic simulation · not reader evidence or preview-01$contentLicenseNotice</footer>
+$(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></script>' })
 </body>
 </html>
 "@
@@ -3777,7 +3780,8 @@ $(if ($editionNumber -ge 66) {
 <p class="site-kicker">Continuous reading · mixed A-Z dictionary</p>
 <h1>Continuous Dictionary A-Z</h1>
 <p>Keep scrolling through all $($dictionaryRecords.Count) alphabetized items. Entries load progressively in small batches: $tablesIndexPointerCount pointers remain visibly distinct from $tablesIndexCanonicalCount canonical Table families.</p>
-<div class="tables-index__actions"><a href="tables.html">Back to the complete index</a><a data-dictionary-start href="$dictionaryStartHref">Use page-by-page reading</a></div>
+<label class="dictionary-view-switcher">View <select data-dictionary-view><option value="tables.html">Index A-Z</option><option value="dictionary.html" selected>Continuous A-Z</option><option value="book.html">Condensed Book</option></select></label>
+<div class="tables-index__actions"><a href="tables.html">Back to the complete index</a><a href="book.html">Open condensed book</a><a data-dictionary-start href="$dictionaryStartHref">Use page-by-page reading</a></div>
 <p class="tables-index__boundary">Continuous proximity is presentation only; it does not assert synonymy, hierarchy, dependency, recommendation, or another semantic relation.</p>
 </section>
 <section data-dictionary-stream data-batch-size="4" aria-label="Continuous dictionary entries">
@@ -3797,6 +3801,98 @@ $(if ($editionNumber -ge 66) {
         [System.IO.File]::WriteAllText(
             $siteDictionaryStream,
             $dictionaryStreamHtml,
+            [System.Text.UTF8Encoding]::new($false)
+        )
+
+        $pointerRecordBySlug = [System.Collections.Generic.Dictionary[string, object]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        foreach ($pointerRecord in $pointerRecords) {
+            $pointerRecordBySlug[$pointerRecord.slug] = $pointerRecord
+        }
+        $canonicalBookPaths = [System.Collections.Generic.HashSet[string]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        foreach ($canonicalRecord in $canonicalIndexRecords) {
+            [void]$canonicalBookPaths.Add($canonicalRecord.path)
+        }
+        $dictionaryBookItems = [System.Text.StringBuilder]::new()
+        for ($bookIndex = 0; $bookIndex -lt $dictionaryRecords.Count; $bookIndex++) {
+            $bookRecord = $dictionaryRecords[$bookIndex]
+            $bookPosition = $bookIndex + 1
+            $encodedBookTitle = [System.Net.WebUtility]::HtmlEncode($bookRecord.title)
+            $encodedBookMeta = [System.Net.WebUtility]::HtmlEncode($bookRecord.meta)
+            $bookContent = ""
+            if ($bookRecord.kind -eq "pointer") {
+                $pointerRecord = $pointerRecordBySlug[$bookRecord.slug]
+                $encodedOrientation = [System.Net.WebUtility]::HtmlEncode($pointerRecord.orientation)
+                $bookContent = "<h2 id=`"book-pointer-$($bookRecord.slug)`">$encodedBookTitle</h2><p>$encodedOrientation.</p>"
+            }
+            else {
+                $bookSource = [System.IO.Path]::GetFullPath((Join-Path $workspace $bookRecord.path))
+                $bookContent = $renderedSegmentBySource[$bookSource]
+                $bookContent = [regex]::Replace(
+                    $bookContent,
+                    'href="#([^"]+)"',
+                    {
+                        param($match)
+
+                        $targetId = $match.Groups[1].Value
+                        if (-not $sourceByRenderedId.ContainsKey($targetId)) {
+                            return $match.Value
+                        }
+                        $targetSource = $sourceByRenderedId[$targetId]
+                        $targetRelative = [System.IO.Path]::GetRelativePath($workspace, $targetSource).Replace("\", "/")
+                        if ($canonicalBookPaths.Contains($targetRelative)) {
+                            return $match.Value
+                        }
+                        return 'href="entries/' + $pageBySource[$targetSource] + '#' + $targetId + '"'
+                    }
+                )
+                $bookContent = $bookContent.Replace('href="../pointers/', 'href="pointers/')
+                $bookContent = [regex]::new('<h1([^>]*)>').Replace($bookContent, '<h2$1>', 1)
+                $bookContent = [regex]::new('</h1>').Replace($bookContent, '</h2>', 1)
+            }
+            [void]$dictionaryBookItems.AppendLine(@"
+<article class="dictionary-book__item" data-dictionary-kind="$($bookRecord.kind)" data-dictionary-position="$bookPosition">
+<header class="dictionary-book__item-heading"><p>Item $bookPosition · $(if ($bookRecord.kind -eq 'pointer') { 'Pointer' } else { 'Canonical Table' })</p><a href="$($bookRecord.href)">Standalone</a></header>
+<p class="dictionary-book__meta">$encodedBookMeta</p>
+<div class="dictionary-book__content">$bookContent</div>
+</article>
+"@)
+        }
+        $dictionaryBookHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A condensed two-column book view of the Formarium mixed dictionary.">
+<title>Condensed Dictionary Book · $publicationName</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="proof-site dictionary-book-page">
+<nav class="dictionary-book__tools" aria-label="Book view controls">
+<a href="tables.html">Back to Dictionary A-Z</a>
+<label class="dictionary-view-switcher">View <select data-dictionary-view><option value="tables.html">Index A-Z</option><option value="dictionary.html">Continuous A-Z</option><option value="book.html" selected>Condensed Book</option></select></label>
+<button type="button" data-dictionary-print>Print or save PDF</button>
+</nav>
+<main id="main-content" class="dictionary-book">
+<header class="dictionary-book__title">
+<p>Formarium Tables</p>
+<h1>The Formarium Dictionary</h1>
+<p>A condensed A-Z reference of $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families.</p>
+</header>
+<div class="dictionary-book__entries">$dictionaryBookItems</div>
+</main>
+<footer class="site-footer">Condensed projection of the Formarium Dictionary A-Z · pointer and canonical authority labels remain explicit$contentLicenseNotice</footer>
+<script src="assets/dictionary-stream.js"></script>
+</body>
+</html>
+"@
+        [System.IO.File]::WriteAllText(
+            $siteDictionaryBook,
+            $dictionaryBookHtml,
             [System.Text.UTF8Encoding]::new($false)
         )
     }
@@ -4989,6 +5085,7 @@ $identityPreviewStyle
         @(if ($editionNumber -ge 36) { $siteReader }) +
         @(if ($editionNumber -ge 52) { $sitePointerIndex }) +
         @(if ($editionNumber -ge 66) { $siteDictionaryStream }) +
+        @(if ($editionNumber -ge 66) { $siteDictionaryBook }) +
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @($actualChapterFiles | ForEach-Object { $_.FullName }) +
         @($actualEntryFiles | ForEach-Object { $_.FullName }) +
@@ -5016,6 +5113,10 @@ $identityPreviewStyle
         }
     }
     $handoffNotePages = 0
+    $handoffHtmlFiles = @($siteHtmlFiles)
+    if ($editionNumber -ge 66) {
+        $handoffHtmlFiles = @($handoffHtmlFiles | Where-Object { $_ -ne $siteDictionaryBook })
+    }
     if ($editionNumber -ge 44) {
         $handoffNamespace = if ($editionNumber -ge 66) { "formarium" } else { "factorium" }
         $handoffSection = @"
@@ -5033,7 +5134,7 @@ $identityPreviewStyle
 <p class="site-handoff__status" data-handoff-status role="status" aria-live="polite">Nothing is saved.</p>
 </section>
 "@
-        foreach ($siteHtmlFile in $siteHtmlFiles) {
+        foreach ($siteHtmlFile in $handoffHtmlFiles) {
             $sitePageText = Get-Content -LiteralPath $siteHtmlFile -Raw
             if (-not $sitePageText.Contains("</main>")) {
                 throw "Handoff target page has no main close: $siteHtmlFile"
@@ -5176,10 +5277,13 @@ $identityPreviewStyle
         $siteChecks.intent_router_search_change = $false
     }
     if ($editionNumber -ge 44) {
-        if ($handoffNotePages -ne $siteHtmlFiles.Count) {
-            throw "Handoff note coverage mismatch: $handoffNotePages/$($siteHtmlFiles.Count)"
+        if ($handoffNotePages -ne $handoffHtmlFiles.Count) {
+            throw "Handoff note coverage mismatch: $handoffNotePages/$($handoffHtmlFiles.Count)"
         }
         $siteChecks.handoff_note_pages = $handoffNotePages
+        if ($editionNumber -ge 66) {
+            $siteChecks.handoff_note_excluded_pages = @("book.html")
+        }
         $siteChecks.handoff_note_fields = @("question", "current-page", "unresolved", "next-source")
         $siteChecks.handoff_note_actions = @("copy", "print", "clear")
         $siteChecks.handoff_note_storage = "none"
@@ -5291,6 +5395,9 @@ $identityPreviewStyle
             $siteChecks.dictionary_stream_pages = 1
             $siteChecks.dictionary_stream_records = $dictionaryRecords.Count
             $siteChecks.dictionary_stream_batch_size = 4
+            $siteChecks.dictionary_book_pages = 1
+            $siteChecks.dictionary_book_records = $dictionaryRecords.Count
+            $siteChecks.dictionary_book_columns = 2
         }
     }
     if ($editionNumber -ge 36) {
@@ -5511,8 +5618,10 @@ if ($editionNumber -ge 7) {
     $compositionLabPageCount = if ($editionNumber -ge 16) { $siteChecks.composition_lab_pages } else { 0 }
     $tablesIndexPageCount = if ($editionNumber -ge 35) { $siteChecks.tables_index_pages } else { 0 }
     $readerRoutePageCount = if ($editionNumber -ge 36) { $siteChecks.reader_route_pages } else { 0 }
-    $dictionaryStreamPageCount = if ($editionNumber -ge 66) { $siteChecks.dictionary_stream_pages } else { 0 }
-    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + $tablesIndexPageCount + $readerRoutePageCount + $dictionaryStreamPageCount + 1)"
+    $dictionaryExtraPageCount = if ($editionNumber -ge 66) {
+        $siteChecks.dictionary_stream_pages + $siteChecks.dictionary_book_pages
+    } else { 0 }
+    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + $tablesIndexPageCount + $readerRoutePageCount + $dictionaryExtraPageCount + 1)"
     Write-Output "site_chapters=$($siteChecks.chapter_pages)"
     Write-Output "site_chapter_subsections=$($siteChecks.chapter_subsections)"
     Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"

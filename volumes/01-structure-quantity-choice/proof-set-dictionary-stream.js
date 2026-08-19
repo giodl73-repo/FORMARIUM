@@ -1,6 +1,17 @@
 (function () {
   "use strict";
 
+  document.querySelectorAll("[data-dictionary-view]").forEach(function (select) {
+    select.addEventListener("change", function () {
+      if (select.value) window.location.assign(select.value);
+    });
+    document.querySelectorAll("[data-dictionary-print]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        window.print();
+      });
+    });
+  });
+
   var root = document.querySelector("[data-dictionary-stream]");
   var data = document.getElementById("dictionary-stream-data");
   if (!root || !data) return;
