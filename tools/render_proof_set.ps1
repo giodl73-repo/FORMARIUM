@@ -205,6 +205,7 @@ $readerRouteStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\p
 $readerSequenceStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-reader-sequence.css"
 $pointerStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointers.css"
 $pointerScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointers.js"
+$dictionaryStreamScript = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-dictionary-stream.js"
 $compositionStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-composition.css"
 $conflictStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-conflict.css"
 $frontierStyle = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-frontier.css"
@@ -1989,12 +1990,17 @@ if ($editionNumber -ge 7) {
             }
         }
     }
+    if ($editionNumber -ge 66 -and
+        -not (Test-Path -LiteralPath $dictionaryStreamScript -PathType Leaf)) {
+        throw "Missing dictionary stream asset: $dictionaryStreamScript"
+    }
 
     $siteIndex = Join-Path $output "index.html"
     $siteCompose = if ($editionNumber -ge 16) { Join-Path $output "compose.html" } else { $null }
     $siteTablesIndex = if ($editionNumber -ge 35) { Join-Path $output "tables.html" } else { $null }
     $siteReader = if ($editionNumber -ge 36) { Join-Path $output "reader.html" } else { $null }
     $sitePointerIndex = if ($editionNumber -ge 52) { Join-Path $output "terms.html" } else { $null }
+    $siteDictionaryStream = if ($editionNumber -ge 66) { Join-Path $output "dictionary.html" } else { $null }
     $siteEntryDirectory = Join-Path $output "entries"
     $siteChapterDirectory = Join-Path $output "chapters"
     $sitePointerDirectory = Join-Path $output "pointers"
@@ -2359,6 +2365,13 @@ if ($editionNumber -ge 7) {
         [System.IO.File]::WriteAllText(
             (Join-Path $siteAssetDirectory "handoff.js"),
             $handoffScriptText,
+            [System.Text.UTF8Encoding]::new($false)
+        )
+    }
+    if ($editionNumber -ge 66) {
+        [System.IO.File]::WriteAllText(
+            (Join-Path $siteAssetDirectory "dictionary-stream.js"),
+            (Get-Content -LiteralPath $dictionaryStreamScript -Raw),
             [System.Text.UTF8Encoding]::new($false)
         )
     }
@@ -3709,7 +3722,7 @@ $identityPreviewStyle
 <p class="site-kicker">Primary reference · alphabetical browse$(if ($identityPreview) { ' · candidate publication name' } else { '' })</p>
 <h1>$tablesPublicationName A-Z</h1>
 <p>$(if ($editionNumber -ge 66) { "Read one merged dictionary of $($dictionaryRecords.Count) alphabetized items: $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families." } else { "Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and exact specialized views." })</p>
-<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a data-dictionary-start href="' + $dictionaryStartHref + '">Read all ' + $dictionaryRecords.Count + ' items A-Z</a>' })<a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
+<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a href="dictionary.html">Continuous A-Z</a><a data-dictionary-start href="' + $dictionaryStartHref + '">Read page by page</a>' })<a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
 <p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
 </section>
 $(if ($editionNumber -ge 66) {
@@ -3731,6 +3744,61 @@ $(if ($editionNumber -ge 66) {
 </html>
 "@
         [System.IO.File]::WriteAllText($siteTablesIndex, $tablesIndexHtml, [System.Text.UTF8Encoding]::new($false))
+    }
+
+    if ($editionNumber -ge 66) {
+        $dictionaryStreamData = @($dictionaryRecords | ForEach-Object {
+            [ordered]@{
+                title = $_.title
+                kind = $_.kind
+                href = $_.href
+            }
+        }) | ConvertTo-Json -Compress
+        $dictionaryStreamData = $dictionaryStreamData.Replace('</', '<\/')
+        $dictionaryStreamHtml = @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A continuous alphabetical reading view of Formarium pointer terms and canonical Table families.">
+<title>Continuous Dictionary A-Z · $publicationName</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="proof-site dictionary-stream-page">
+<a class="site-skip" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="site-header__inner">
+<a class="site-brand" href="index.html">$siteBrand</a>
+<nav class="site-nav" aria-label="Primary"><a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="terms.html">Terms</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a></nav>
+</div></header>
+<main id="main-content" class="site-main dictionary-stream">
+<nav class="site-breadcrumbs" aria-label="Breadcrumb"><a href="index.html">$publicationName</a> / <a href="tables.html">Dictionary A-Z</a> / Continuous view</nav>
+<section class="dictionary-stream__heading">
+<p class="site-kicker">Continuous reading · mixed A-Z dictionary</p>
+<h1>Continuous Dictionary A-Z</h1>
+<p>Keep scrolling through all $($dictionaryRecords.Count) alphabetized items. Entries load progressively in small batches: $tablesIndexPointerCount pointers remain visibly distinct from $tablesIndexCanonicalCount canonical Table families.</p>
+<div class="tables-index__actions"><a href="tables.html">Back to the complete index</a><a data-dictionary-start href="$dictionaryStartHref">Use page-by-page reading</a></div>
+<p class="tables-index__boundary">Continuous proximity is presentation only; it does not assert synonymy, hierarchy, dependency, recommendation, or another semantic relation.</p>
+</section>
+<section data-dictionary-stream data-batch-size="4" aria-label="Continuous dictionary entries">
+<div class="dictionary-stream__items" data-dictionary-stream-items></div>
+<div class="dictionary-stream__loader">
+<button type="button" data-dictionary-stream-load>Load next entries</button>
+<p role="status" aria-live="polite" data-dictionary-stream-status>Preparing the first dictionary entries…</p>
+</div>
+</section>
+</main>
+<footer class="site-footer">Progressive projection of the Formarium Dictionary A-Z · pointer and canonical authority labels remain explicit$contentLicenseNotice</footer>
+<script id="dictionary-stream-data" type="application/json">$dictionaryStreamData</script>
+<script src="assets/dictionary-stream.js"></script>
+</body>
+</html>
+"@
+        [System.IO.File]::WriteAllText(
+            $siteDictionaryStream,
+            $dictionaryStreamHtml,
+            [System.Text.UTF8Encoding]::new($false)
+        )
     }
 
     $readerRouteRecordCount = 0
@@ -4904,6 +4972,9 @@ $identityPreviewStyle
     if ($editionNumber -ge 52) {
         $expectedAssetNames += "pointers.js"
     }
+    if ($editionNumber -ge 66) {
+        $expectedAssetNames += "dictionary-stream.js"
+    }
     $actualAssetFiles = @(Get-ChildItem -LiteralPath $siteAssetDirectory -File)
     $unexpectedAssetNames = @($actualAssetFiles.Name | Where-Object { $_ -notin $expectedAssetNames })
     $missingAssetNames = @($expectedAssetNames | Where-Object { $_ -notin $actualAssetFiles.Name })
@@ -4917,6 +4988,7 @@ $identityPreviewStyle
         @(if ($editionNumber -ge 35) { $siteTablesIndex }) +
         @(if ($editionNumber -ge 36) { $siteReader }) +
         @(if ($editionNumber -ge 52) { $sitePointerIndex }) +
+        @(if ($editionNumber -ge 66) { $siteDictionaryStream }) +
         @(if ($editionNumber -ge 16) { $siteCompose }) +
         @($actualChapterFiles | ForEach-Object { $_.FullName }) +
         @($actualEntryFiles | ForEach-Object { $_.FullName }) +
@@ -5216,6 +5288,9 @@ $identityPreviewStyle
             $siteChecks.dictionary_sequence_finish_links = $dictionarySequenceFinishLinks
             $siteChecks.dictionary_index_letters = $dictionaryLetterCount
             $siteChecks.dictionary_order = "normalized-title-then-href"
+            $siteChecks.dictionary_stream_pages = 1
+            $siteChecks.dictionary_stream_records = $dictionaryRecords.Count
+            $siteChecks.dictionary_stream_batch_size = 4
         }
     }
     if ($editionNumber -ge 36) {
@@ -5436,7 +5511,8 @@ if ($editionNumber -ge 7) {
     $compositionLabPageCount = if ($editionNumber -ge 16) { $siteChecks.composition_lab_pages } else { 0 }
     $tablesIndexPageCount = if ($editionNumber -ge 35) { $siteChecks.tables_index_pages } else { 0 }
     $readerRoutePageCount = if ($editionNumber -ge 36) { $siteChecks.reader_route_pages } else { 0 }
-    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + $tablesIndexPageCount + $readerRoutePageCount + 1)"
+    $dictionaryStreamPageCount = if ($editionNumber -ge 66) { $siteChecks.dictionary_stream_pages } else { 0 }
+    Write-Output "site_pages=$($siteChecks.source_pages + $siteChecks.chapter_pages + $compositionLabPageCount + $tablesIndexPageCount + $readerRoutePageCount + $dictionaryStreamPageCount + 1)"
     Write-Output "site_chapters=$($siteChecks.chapter_pages)"
     Write-Output "site_chapter_subsections=$($siteChecks.chapter_subsections)"
     Write-Output "site_entry_pages=$($siteChecks.indexed_entry_pages)"

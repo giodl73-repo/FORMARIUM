@@ -24,6 +24,9 @@ assert.equal(manifest.site_checks.dictionary_sequence_pointer_entries, 250);
 assert.equal(manifest.site_checks.dictionary_sequence_previous_links, 303);
 assert.equal(manifest.site_checks.dictionary_sequence_next_links, 303);
 assert.equal(manifest.site_checks.dictionary_sequence_finish_links, 1);
+assert.equal(manifest.site_checks.dictionary_stream_pages, 1);
+assert.equal(manifest.site_checks.dictionary_stream_records, 304);
+assert.equal(manifest.site_checks.dictionary_stream_batch_size, 4);
 assert.equal(manifest.rendering_checks.repository_source_links, 98);
 assert.equal(
   manifest.site_checks.product_authority,
@@ -98,6 +101,7 @@ for (const file of generatedFiles) {
 const home = fs.readFileSync(path.join(site, "index.html"), "utf8");
 const reader = fs.readFileSync(path.join(site, "reader.html"), "utf8");
 const tables = fs.readFileSync(path.join(site, "tables.html"), "utf8");
+const dictionary = fs.readFileSync(path.join(site, "dictionary.html"), "utf8");
 assert.match(home, /<a class="site-brand"[^>]*>Formarium<\/a>/);
 assert.doesNotMatch(home, /identity-preview|feedback preview/i);
 assert.match(home, /data-formarium-handoff/);
@@ -106,6 +110,30 @@ assert.match(
   /Content &copy; 2026 Gio Della-Libera.+CC BY-NC 4\.0/,
 );
 assert.match(reader, /Formarium schemas and file formats are canonical/);
+assert.match(tables, /href="dictionary\.html">Continuous A-Z<\/a>/);
+assert.match(dictionary, /<h1>Continuous Dictionary A-Z<\/h1>/);
+assert.match(dictionary, /data-dictionary-stream data-batch-size="4"/);
+assert.match(dictionary, /src="assets\/dictionary-stream\.js"/);
+const streamDataMatch = dictionary.match(
+  /<script id="dictionary-stream-data" type="application\/json">([^<]+)<\/script>/,
+);
+assert.ok(streamDataMatch);
+const streamRecords = JSON.parse(streamDataMatch[1]);
+assert.equal(streamRecords.length, 304);
+assert.deepEqual(streamRecords.slice(0, 3), [
+  { title: "Access", kind: "pointer", href: "pointers/access.html" },
+  {
+    title: "Access, Permission, Authorization, and Entitlement",
+    kind: "table",
+    href:
+      "entries/tables-entries-access-permission-authorization-entitlement.html",
+  },
+  {
+    title: "Accumulation",
+    kind: "pointer",
+    href: "pointers/accumulation.html",
+  },
+]);
 const dictionaryRecords = [
   ...tables.matchAll(
     /<li data-dictionary-kind="(table|pointer)" (?:data-index-path|data-pointer-slug)="([^"]+)"><a href="([^"]+)">([^<]+)<\/a>/g,
