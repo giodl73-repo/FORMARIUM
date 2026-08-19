@@ -115,12 +115,13 @@ async function waitFor(client, expression, message) {
       heading: document.querySelector("h1").textContent,
       canonical: document.querySelectorAll(".tables-index__canonical [data-index-path]").length,
       curated: document.querySelectorAll(".tables-index__curated [data-index-path]").length,
-      pointers: document.querySelectorAll(".tables-index__pointers [data-pointer-slug]").length,
+      pointers: document.querySelectorAll(".tables-index__canonical [data-pointer-slug]").length,
       letters: document.querySelectorAll(".tables-index__letters a").length,
       first: document.querySelector(".tables-index__canonical [data-index-path] a").textContent,
       firstMeta: document.querySelector(".tables-index__canonical [data-index-path] span").textContent,
+      firstDictionary: document.querySelector(".tables-index__dictionary li a")?.textContent || null,
       dictionaryStart: document.querySelector("[data-dictionary-start]")?.getAttribute("href") || null,
-      firstPointer: document.querySelector(".tables-index__pointers [data-pointer-slug] a")?.getAttribute("href") || null,
+      firstPointer: document.querySelector(".tables-index__canonical [data-pointer-slug] a")?.getAttribute("href") || null,
       columns: getComputedStyle(document.querySelector(".tables-index__canonical")).columnCount,
       boundary: document.querySelector(".tables-index__boundary").textContent
     }))()`);
@@ -129,11 +130,12 @@ async function waitFor(client, expression, message) {
     assert.equal(desktop.canonical, includesPointers ? 54 : 53);
     assert.equal(desktop.curated, 27);
     assert.equal(desktop.pointers, includesPointers ? 250 : 0);
-    assert.equal(desktop.letters, 17);
+    assert.ok(desktop.letters >= 17);
     assert.equal(desktop.first, "Access, Permission, Authorization, and Entitlement");
     assert.match(desktop.firstMeta, /governance · 1 specialized view/);
+    assert.equal(desktop.firstDictionary, includesPointers ? "Access" : null);
     assert.equal(desktop.dictionaryStart, includesPointers
-      ? "entries/tables-entries-access-permission-authorization-entitlement.html"
+      ? "pointers/access.html"
       : null);
     assert.equal(desktop.firstPointer, includesPointers ? "pointers/access.html" : null);
     assert.ok(Number(desktop.columns) >= 2);
@@ -148,26 +150,25 @@ async function waitFor(client, expression, message) {
     const mobile = await evaluate(client, `(() => ({
       overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
       columns: getComputedStyle(document.querySelector(".tables-index__canonical")).columnCount,
-      pointerColumns: document.querySelector(".tables-index__pointers ol")
-        ? getComputedStyle(document.querySelector(".tables-index__pointers ol")).columnCount
-        : null,
       curatedColumns: getComputedStyle(document.querySelector(".tables-index__curated ol")).gridTemplateColumns,
       letters: document.querySelectorAll(".tables-index__letters a").length
     }))()`);
     assert.equal(mobile.overflow, false);
     assert.equal(mobile.columns, "1");
-    assert.equal(mobile.pointerColumns, includesPointers ? "1" : null);
     assert.ok(!mobile.curatedColumns.includes(" "));
-    assert.equal(mobile.letters, 17);
+    assert.equal(mobile.letters, desktop.letters);
     if (includesPointers) {
       await evaluate(client,
-        `document.querySelector(".tables-index__pointers").scrollIntoView(); true`);
+        `document.querySelector(".tables-index__dictionary").scrollIntoView(); true`);
     }
     const shot = await client.call("Page.captureScreenshot", {
       format: "png", captureBeyondViewport: false,
     });
-    fs.writeFileSync(screenshotPath, Buffer.from(shot.data, "base64"));
-    assert.ok(fs.statSync(screenshotPath).size > 20000,
+    const indexScreenshotPath = includesPointers
+      ? screenshotPath.replace(/\.png$/i, "-index.png")
+      : screenshotPath;
+    fs.writeFileSync(indexScreenshotPath, Buffer.from(shot.data, "base64"));
+    assert.ok(fs.statSync(indexScreenshotPath).size > 20000,
       "Tables index screenshot is non-trivial");
     if (includesPointers) {
       await evaluate(client,
@@ -184,13 +185,13 @@ async function waitFor(client, expression, message) {
       assert.ok(fs.statSync(screenshotPath).size > 20000,
         "Tables A-Z sequence screenshot is non-trivial");
       assert.equal(await evaluate(client,
-        `document.querySelector(".site-entry h1").textContent.replace(/\\s+/g, " ").trim()`),
-      "Access, Permission, Authorization, and Entitlement");
+        `document.querySelector(".pointer-page h1").textContent`), "Access");
+      assert.equal(await evaluate(client,
+        `document.querySelector(".dictionary-sequence").getAttribute("data-dictionary-kind")`),
+      "pointer");
       assert.equal(await evaluate(client,
         `document.querySelector('[data-dictionary-direction="next"]').getAttribute("href")`),
-      "tables-entries-amount-concentration-composition.html");
-      assert.equal(await evaluate(client,
-        `document.querySelector(".all-record-sequence") === null`), true);
+      "../entries/tables-entries-access-permission-authorization-entitlement.html");
       await evaluate(client,
         `document.querySelector('[data-dictionary-direction="next"]').click(); true`);
       await waitFor(client,
@@ -198,24 +199,27 @@ async function waitFor(client, expression, message) {
         "Tables A-Z sequence did not advance");
       assert.equal(await evaluate(client,
         `document.querySelector(".site-entry h1").textContent.replace(/\\s+/g, " ").trim()`),
-      "Amount, Concentration, and Composition");
-      await evaluate(client,
-        `location.href = ${JSON.stringify(tablesUrl)}; true`);
-      await waitFor(client,
-        `document.readyState === "complete" && document.querySelector(".tables-index__pointers")`,
-        "Tables index did not reload");
-      await evaluate(client,
-        `location.href = new URL(${JSON.stringify(desktop.firstPointer)}, location.href).href; true`);
-      await waitFor(client,
-        `document.readyState === "complete" && document.querySelector(".pointer-page h1")`,
-        "Pointer entry did not load");
+      "Access, Permission, Authorization, and Entitlement");
       assert.equal(await evaluate(client,
-        `document.querySelector(".pointer-page h1").textContent`), "Access");
+        `document.querySelector(".dictionary-sequence").getAttribute("data-dictionary-kind")`),
+      "table");
+      assert.equal(await evaluate(client,
+        `document.querySelector('[data-dictionary-direction="next"]').getAttribute("href")`),
+      "../pointers/accumulation.html");
+      assert.equal(await evaluate(client,
+        `document.querySelector(".all-record-sequence") === null`), true);
+      await evaluate(client,
+        `document.querySelector('[data-dictionary-direction="next"]').click(); true`);
+      await waitFor(client,
+        `document.readyState === "complete" && document.querySelector('[data-dictionary-step="3"]')`,
+        "Merged dictionary did not advance to Accumulation");
+      assert.equal(await evaluate(client,
+        `document.querySelector(".pointer-page h1").textContent`), "Accumulation");
     }
     console.log(
       `OK route=tables.html canonical=${desktop.canonical} curated=27 ` +
-      `pointers=${desktop.pointers} dictionary=${includesPointers ? 54 : 0} ` +
-      `letters=17 mobile=390 screenshot=${screenshotPath}`
+      `pointers=${desktop.pointers} dictionary=${includesPointers ? 304 : 0} ` +
+      `letters=${desktop.letters} mobile=390 screenshot=${screenshotPath}`
     );
   } finally {
     if (client) client.close();

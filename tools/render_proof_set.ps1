@@ -3545,13 +3545,6 @@ $dualLookupScriptTag
     if ($editionNumber -ge 35) {
         $canonicalIndexRecords = @($searchRecords | Where-Object { $_.recordClass -eq "canonical-entry" } |
             Sort-Object @{ Expression = { $_.title.ToLowerInvariant() } }, @{ Expression = { $_.path } })
-        $dictionaryIndexByPath = [System.Collections.Generic.Dictionary[string, int]]::new(
-            [System.StringComparer]::OrdinalIgnoreCase
-        )
-        for ($dictionaryIndex = 0; $dictionaryIndex -lt $canonicalIndexRecords.Count; $dictionaryIndex++) {
-            $dictionaryIndexByPath[$canonicalIndexRecords[$dictionaryIndex].path] = $dictionaryIndex
-        }
-        $dictionaryStartHref = $canonicalIndexRecords[0].href
         $curatedIndexRecords = @($searchRecords | Where-Object { $_.recordClass -eq "curated-record" } |
             Sort-Object @{ Expression = { $_.title.ToLowerInvariant() } }, @{ Expression = { $_.path } })
         $canonicalLetterGroups = [ordered]@{}
@@ -3600,7 +3593,26 @@ $dualLookupScriptTag
         }
         $pointerIndexRows = [System.Text.StringBuilder]::new()
         $pointerIndexSection = ""
+        $dictionaryRecords = @()
+        $dictionaryIndexByCanonicalPath = [System.Collections.Generic.Dictionary[string, int]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        $dictionaryIndexByPointerSlug = [System.Collections.Generic.Dictionary[string, int]]::new(
+            [System.StringComparer]::OrdinalIgnoreCase
+        )
+        $dictionaryLetterCount = 0
         if ($editionNumber -ge 52) {
+            $dictionaryRecords = @($canonicalIndexRecords | ForEach-Object {
+                $ownedViewCount = @($canonicalViewsByOwnerPath[$_.path]).Count
+                [ordered]@{
+                    key = "table:$($_.path)"
+                    kind = "table"
+                    title = $_.title
+                    href = $_.href
+                    path = $_.path
+                    meta = "Canonical Table · $($_.domain) · $ownedViewCount $(if ($ownedViewCount -eq 1) { 'specialized view' } else { 'specialized views' })"
+                }
+            })
             foreach ($pointerRecord in $pointerRecords | Sort-Object { $_.label.ToLowerInvariant() }) {
                 $pointerOwners = @($pointerRecord.occurrences.path | Sort-Object -Unique).Count
                 $encodedPointerLabel = [System.Net.WebUtility]::HtmlEncode($pointerRecord.label)
@@ -3608,6 +3620,62 @@ $dualLookupScriptTag
                     "<li data-pointer-slug=`"$($pointerRecord.slug)`"><a href=`"pointers/$($pointerRecord.slug).html`">$encodedPointerLabel</a><span>$pointerOwners owning Tables · $($pointerRecord.occurrences.Count) expressions</span></li>"
                 )
                 $tablesIndexPointerCount += 1
+                $dictionaryRecords += [ordered]@{
+                    key = "pointer:$($pointerRecord.slug)"
+                    kind = "pointer"
+                    title = $pointerRecord.label
+                    href = "pointers/$($pointerRecord.slug).html"
+                    slug = $pointerRecord.slug
+                    meta = "Pointer · $pointerOwners owning Tables · $($pointerRecord.occurrences.Count) expressions"
+                }
+            }
+            $dictionaryRecords = @($dictionaryRecords |
+                Sort-Object @{ Expression = { $_.title.ToLowerInvariant() } }, @{ Expression = { $_.href } })
+            for ($dictionaryIndex = 0; $dictionaryIndex -lt $dictionaryRecords.Count; $dictionaryIndex++) {
+                $dictionaryRecord = $dictionaryRecords[$dictionaryIndex]
+                if ($dictionaryRecord.kind -eq "table") {
+                    $dictionaryIndexByCanonicalPath[$dictionaryRecord.path] = $dictionaryIndex
+                }
+                else {
+                    $dictionaryIndexByPointerSlug[$dictionaryRecord.slug] = $dictionaryIndex
+                }
+            }
+            $dictionaryStartHref = $dictionaryRecords[0].href
+            $dictionaryLetterGroups = [ordered]@{}
+            foreach ($dictionaryRecord in $dictionaryRecords) {
+                $letterMatch = [regex]::Match($dictionaryRecord.title, '[A-Za-z0-9]')
+                if (-not $letterMatch.Success) {
+                    throw "Dictionary title has no sortable character: $($dictionaryRecord.key)"
+                }
+                $dictionaryLetter = $letterMatch.Value.ToUpperInvariant()
+                if (-not $dictionaryLetterGroups.Contains($dictionaryLetter)) {
+                    $dictionaryLetterGroups[$dictionaryLetter] = [System.Collections.Generic.List[object]]::new()
+                }
+                $dictionaryLetterGroups[$dictionaryLetter].Add($dictionaryRecord)
+            }
+            $dictionaryLetterLinks = [System.Text.StringBuilder]::new()
+            $dictionaryLetterSections = [System.Text.StringBuilder]::new()
+            foreach ($dictionaryLetter in $dictionaryLetterGroups.Keys) {
+                $dictionaryLetterId = "dictionary-letter-$($dictionaryLetter.ToLowerInvariant())"
+                [void]$dictionaryLetterLinks.Append("<a href=`"#$dictionaryLetterId`">$dictionaryLetter</a>")
+                $dictionaryRows = [System.Text.StringBuilder]::new()
+                foreach ($dictionaryRecord in $dictionaryLetterGroups[$dictionaryLetter]) {
+                    $encodedDictionaryTitle = [System.Net.WebUtility]::HtmlEncode($dictionaryRecord.title)
+                    $encodedDictionaryMeta = [System.Net.WebUtility]::HtmlEncode($dictionaryRecord.meta)
+                    $identityAttribute = if ($dictionaryRecord.kind -eq "table") {
+                        "data-index-path=`"$($dictionaryRecord.path)`""
+                    }
+                    else {
+                        "data-pointer-slug=`"$($dictionaryRecord.slug)`""
+                    }
+                    [void]$dictionaryRows.Append(
+                        "<li data-dictionary-kind=`"$($dictionaryRecord.kind)`" $identityAttribute><a href=`"$($dictionaryRecord.href)`">$encodedDictionaryTitle</a><span>$encodedDictionaryMeta</span></li>"
+                    )
+                }
+                [void]$dictionaryLetterSections.Append(
+                    "<section class=`"tables-index__letter`" id=`"$dictionaryLetterId`"><h2>$dictionaryLetter <span>$($dictionaryLetterGroups[$dictionaryLetter].Count) items</span></h2><ol>$dictionaryRows</ol></section>"
+                )
+                $dictionaryLetterCount += 1
             }
             $pointerIndexSection = @"
 <section class="tables-index__pointers" aria-labelledby="tables-index-pointers-heading">
@@ -3640,13 +3708,17 @@ $identityPreviewStyle
 <section class="tables-index__heading">
 <p class="site-kicker">Primary reference · alphabetical browse$(if ($identityPreview) { ' · candidate publication name' } else { '' })</p>
 <h1>$tablesPublicationName A-Z</h1>
-<p>Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and all $(if ($editionNumber -ge 50) { 100 } elseif ($editionNumber -ge 49) { 97 } else { 95 }) exact specialized views.$(if ($editionNumber -ge 52) { " Or enter through any of $tablesIndexPointerCount structural pointers." })</p>
-<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a data-dictionary-start href="' + $dictionaryStartHref + '">Read Tables A-Z</a>' })<a href="index.html#search">Search the Tables</a>$(if ($editionNumber -ge 52) { '<a href="#tables-index-pointers-heading">Browse pointers</a>' })<a href="index.html#contents">Use book contents</a></div>
+<p>$(if ($editionNumber -ge 66) { "Read one merged dictionary of $($dictionaryRecords.Count) alphabetized items: $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families." } else { "Scan $(if ($editionNumber -ge 49) { 54 } else { 53 }) canonical Table families by selected headword. Open an entry to read its definition and exact specialized views." })</p>
+<div class="tables-index__actions">$(if ($editionNumber -ge 66) { '<a data-dictionary-start href="' + $dictionaryStartHref + '">Read all ' + $dictionaryRecords.Count + ' items A-Z</a>' })<a href="index.html#search">Search the Tables</a><a href="index.html#contents">Use book contents</a></div>
 <p class="tables-index__boundary">Alphabetical adjacency is presentation only; it does not assert relatedness, hierarchy, synonymy, dependency, recommendation, or closure.</p>
 </section>
-<nav class="tables-index__letters" aria-label="Canonical Table initial letters">$letterLinks</nav>
-<div class="tables-index__canonical">$letterSections</div>
-$pointerIndexSection
+$(if ($editionNumber -ge 66) {
+    '<nav class="tables-index__letters" aria-label="Dictionary initial letters">' + $dictionaryLetterLinks + '</nav>' +
+    '<div class="tables-index__canonical tables-index__dictionary">' + $dictionaryLetterSections + '</div>'
+} else {
+    '<nav class="tables-index__letters" aria-label="Canonical Table initial letters">' + $letterLinks + '</nav>' +
+    '<div class="tables-index__canonical">' + $letterSections + '</div>' + $pointerIndexSection
+})
 <section class="tables-index__curated" aria-labelledby="tables-index-curated-heading">
 <p class="site-kicker">Edition selection · separate from canonical families</p>
 <h2 id="tables-index-curated-heading">Curated Table records</h2>
@@ -4404,22 +4476,28 @@ $(if ($editionNumber -ge 52) { '<script src="../assets/pointers.js"></script>' }
 
         $dictionarySequenceHtml = ""
         if ($editionNumber -ge 66 -and $null -ne $record -and
-            $dictionaryIndexByPath.ContainsKey($relativeSource)) {
-            $dictionaryPositionIndex = $dictionaryIndexByPath[$relativeSource]
+            $dictionaryIndexByCanonicalPath.ContainsKey($relativeSource)) {
+            $dictionaryPositionIndex = $dictionaryIndexByCanonicalPath[$relativeSource]
             $dictionaryStep = $dictionaryPositionIndex + 1
             $dictionaryPrevious = "<span></span>"
             $dictionaryNext = '<a data-dictionary-direction="finish" href="../tables.html"><span>End of A-Z sequence</span>Back to the Tables index</a>'
             if ($dictionaryPositionIndex -gt 0) {
-                $dictionaryPreviousRecord = $canonicalIndexRecords[$dictionaryPositionIndex - 1]
+                $dictionaryPreviousRecord = $dictionaryRecords[$dictionaryPositionIndex - 1]
                 $dictionaryPreviousTitle = [System.Net.WebUtility]::HtmlEncode($dictionaryPreviousRecord.title)
-                $dictionaryPreviousPage = [System.IO.Path]::GetFileName($dictionaryPreviousRecord.href)
+                $dictionaryPreviousPage = if ($dictionaryPreviousRecord.href.StartsWith("entries/")) {
+                    [System.IO.Path]::GetFileName($dictionaryPreviousRecord.href)
+                }
+                else { "../$($dictionaryPreviousRecord.href)" }
                 $dictionaryPrevious = "<a data-dictionary-direction=`"previous`" href=`"$dictionaryPreviousPage`"><span>Previous A-Z entry</span>$dictionaryPreviousTitle</a>"
                 $dictionarySequencePreviousLinks += 1
             }
-            if ($dictionaryPositionIndex -lt $canonicalIndexRecords.Count - 1) {
-                $dictionaryNextRecord = $canonicalIndexRecords[$dictionaryPositionIndex + 1]
+            if ($dictionaryPositionIndex -lt $dictionaryRecords.Count - 1) {
+                $dictionaryNextRecord = $dictionaryRecords[$dictionaryPositionIndex + 1]
                 $dictionaryNextTitle = [System.Net.WebUtility]::HtmlEncode($dictionaryNextRecord.title)
-                $dictionaryNextPage = [System.IO.Path]::GetFileName($dictionaryNextRecord.href)
+                $dictionaryNextPage = if ($dictionaryNextRecord.href.StartsWith("entries/")) {
+                    [System.IO.Path]::GetFileName($dictionaryNextRecord.href)
+                }
+                else { "../$($dictionaryNextRecord.href)" }
                 $dictionaryNext = "<a data-dictionary-direction=`"next`" href=`"$dictionaryNextPage`"><span>Next A-Z entry</span>$dictionaryNextTitle</a>"
                 $dictionarySequenceNextLinks += 1
             }
@@ -4428,10 +4506,10 @@ $(if ($editionNumber -ge 52) { '<script src="../assets/pointers.js"></script>' }
             }
             $dictionarySequencePanels += 1
             $dictionarySequenceHtml = @"
-<nav class="dictionary-sequence" aria-label="Tables alphabetical reading sequence" data-dictionary-step="$dictionaryStep">
-<div class="dictionary-sequence__heading"><p>$tablesPublicationName A-Z · Entry $dictionaryStep of $($canonicalIndexRecords.Count)</p><a href="../tables.html">Back to Tables A-Z</a></div>
+<nav class="dictionary-sequence" aria-label="Formarium alphabetical dictionary sequence" data-dictionary-step="$dictionaryStep" data-dictionary-kind="table">
+<div class="dictionary-sequence__heading"><p>Formarium Dictionary A-Z · Item $dictionaryStep of $($dictionaryRecords.Count) · Canonical Table</p><a href="../tables.html">Back to Dictionary A-Z</a></div>
 <div class="dictionary-sequence__links">$dictionaryPrevious$dictionaryNext</div>
-<p class="dictionary-sequence__boundary">Alphabetical reading order is presentation only—not synonymy, hierarchy, dependency, recommendation, or semantic adjacency.</p>
+<p class="dictionary-sequence__boundary">Pointers and canonical Tables are interleaved for reading only. Alphabetical adjacency does not assert synonymy, hierarchy, dependency, recommendation, or another semantic relation.</p>
 </nav>
 "@
             $pagination = ""
@@ -4672,6 +4750,41 @@ $pageScripts
 </section>
 "@)
             }
+            $dictionaryPositionIndex = $dictionaryIndexByPointerSlug[$pointerRecord.slug]
+            $dictionaryStep = $dictionaryPositionIndex + 1
+            $dictionaryPrevious = "<span></span>"
+            $dictionaryNext = '<a data-dictionary-direction="finish" href="../tables.html"><span>End of A-Z sequence</span>Back to the Dictionary index</a>'
+            if ($dictionaryPositionIndex -gt 0) {
+                $dictionaryPreviousRecord = $dictionaryRecords[$dictionaryPositionIndex - 1]
+                $dictionaryPreviousTitle = [System.Net.WebUtility]::HtmlEncode($dictionaryPreviousRecord.title)
+                $dictionaryPreviousPage = if ($dictionaryPreviousRecord.href.StartsWith("pointers/")) {
+                    [System.IO.Path]::GetFileName($dictionaryPreviousRecord.href)
+                }
+                else { "../$($dictionaryPreviousRecord.href)" }
+                $dictionaryPrevious = "<a data-dictionary-direction=`"previous`" href=`"$dictionaryPreviousPage`"><span>Previous A-Z entry</span>$dictionaryPreviousTitle</a>"
+                $dictionarySequencePreviousLinks += 1
+            }
+            if ($dictionaryPositionIndex -lt $dictionaryRecords.Count - 1) {
+                $dictionaryNextRecord = $dictionaryRecords[$dictionaryPositionIndex + 1]
+                $dictionaryNextTitle = [System.Net.WebUtility]::HtmlEncode($dictionaryNextRecord.title)
+                $dictionaryNextPage = if ($dictionaryNextRecord.href.StartsWith("pointers/")) {
+                    [System.IO.Path]::GetFileName($dictionaryNextRecord.href)
+                }
+                else { "../$($dictionaryNextRecord.href)" }
+                $dictionaryNext = "<a data-dictionary-direction=`"next`" href=`"$dictionaryNextPage`"><span>Next A-Z entry</span>$dictionaryNextTitle</a>"
+                $dictionarySequenceNextLinks += 1
+            }
+            else {
+                $dictionarySequenceFinishLinks += 1
+            }
+            $dictionarySequencePanels += 1
+            $dictionarySequenceHtml = @"
+<nav class="dictionary-sequence" aria-label="Formarium alphabetical dictionary sequence" data-dictionary-step="$dictionaryStep" data-dictionary-kind="pointer">
+<div class="dictionary-sequence__heading"><p>Formarium Dictionary A-Z · Item $dictionaryStep of $($dictionaryRecords.Count) · Pointer</p><a href="../tables.html">Back to Dictionary A-Z</a></div>
+<div class="dictionary-sequence__links">$dictionaryPrevious$dictionaryNext</div>
+<p class="dictionary-sequence__boundary">Pointers and canonical Tables are interleaved for reading only. Alphabetical adjacency does not assert synonymy, hierarchy, dependency, recommendation, or another semantic relation.</p>
+</nav>
+"@
             $pointerPage = @"
 <!doctype html>
 <html lang="en">
@@ -4697,6 +4810,7 @@ $identityPreviewStyle
 <p class="pointer-page__counts">$pointerOwners owning Tables · $($pointerRecord.occurrences.Count) distinct structural expressions</p>
 <p class="pointer-page__boundary"><strong>Pointer, not canonical entry.</strong> This page reports exact structural occurrences in selected Tables. Frequency is not importance, one spelling is not one sense, and co-occurrence does not create synonymy, hierarchy, dependency, or another semantic relation.</p>
 <div class="pointer-page__owners">$ownerSections</div>
+$dictionarySequenceHtml
 </main>
 <footer class="site-footer">Generated from the $Edition pointer registry and selected Table expressions · not canonical authority$contentLicenseNotice</footer>
 </body>
@@ -4730,7 +4844,8 @@ $identityPreviewStyle
 <p class="site-kicker">Generated concordance · $($pointerRecords.Count) admitted labels</p>
 <h1>Pointer Entries</h1>
 <p>Follow a repeated structural label to every exact code expression and owning Table in this edition.</p>
-<p class="pointer-index__boundary"><strong>Navigation layer, not a third book.</strong> Pointer Entries are not canonical definitions, senses, relations, or evidence of importance. They remain outside Tables A-Z and the Reader sequence.</p>
+<p><a data-dictionary-start href="$dictionaryStartHref">Read the merged $($dictionaryRecords.Count)-item dictionary A-Z</a></p>
+<p class="pointer-index__boundary"><strong>Navigation layer, not a third book.</strong> Pointer Entries appear beside canonical Table families in the mixed A-Z reading route, but they are not canonical definitions, senses, relations, or evidence of importance.</p>
 <ol class="pointer-grid">$pointerIndexItems</ol>
 </main>
 <footer class="site-footer">Internal deterministic simulation · not reader evidence or canonical authority$contentLicenseNotice</footer>
@@ -5085,17 +5200,22 @@ $identityPreviewStyle
             $siteChecks.tables_index_pointer_entries = $tablesIndexPointerCount
         }
         if ($editionNumber -ge 66) {
-            if ($dictionarySequencePanels -ne $tablesIndexCanonicalCount -or
-                $dictionarySequencePreviousLinks -ne ($tablesIndexCanonicalCount - 1) -or
-                $dictionarySequenceNextLinks -ne ($tablesIndexCanonicalCount - 1) -or
+            $expectedDictionaryCount = $tablesIndexCanonicalCount + $tablesIndexPointerCount
+            if ($dictionaryRecords.Count -ne $expectedDictionaryCount -or
+                $dictionarySequencePanels -ne $expectedDictionaryCount -or
+                $dictionarySequencePreviousLinks -ne ($expectedDictionaryCount - 1) -or
+                $dictionarySequenceNextLinks -ne ($expectedDictionaryCount - 1) -or
                 $dictionarySequenceFinishLinks -ne 1) {
-                throw "Tables A-Z sequence mismatch: panels=$dictionarySequencePanels previous=$dictionarySequencePreviousLinks next=$dictionarySequenceNextLinks finish=$dictionarySequenceFinishLinks"
+                throw "Merged dictionary sequence mismatch: records=$($dictionaryRecords.Count) panels=$dictionarySequencePanels previous=$dictionarySequencePreviousLinks next=$dictionarySequenceNextLinks finish=$dictionarySequenceFinishLinks"
             }
-            $siteChecks.tables_dictionary_sequence_pages = $dictionarySequencePanels
-            $siteChecks.tables_dictionary_previous_links = $dictionarySequencePreviousLinks
-            $siteChecks.tables_dictionary_next_links = $dictionarySequenceNextLinks
-            $siteChecks.tables_dictionary_finish_links = $dictionarySequenceFinishLinks
-            $siteChecks.tables_dictionary_order = "normalized-selected-title"
+            $siteChecks.dictionary_sequence_pages = $dictionarySequencePanels
+            $siteChecks.dictionary_sequence_canonical_entries = $tablesIndexCanonicalCount
+            $siteChecks.dictionary_sequence_pointer_entries = $tablesIndexPointerCount
+            $siteChecks.dictionary_sequence_previous_links = $dictionarySequencePreviousLinks
+            $siteChecks.dictionary_sequence_next_links = $dictionarySequenceNextLinks
+            $siteChecks.dictionary_sequence_finish_links = $dictionarySequenceFinishLinks
+            $siteChecks.dictionary_index_letters = $dictionaryLetterCount
+            $siteChecks.dictionary_order = "normalized-title-then-href"
         }
     }
     if ($editionNumber -ge 36) {

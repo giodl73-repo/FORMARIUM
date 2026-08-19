@@ -18,10 +18,12 @@ assert.equal(manifest.edition, "sim-66");
 assert.equal(manifest.site_checks.missing_local_targets, 0);
 assert.equal(manifest.site_checks.pointer_entry_pages, 250);
 assert.equal(manifest.site_checks.tables_index_pointer_entries, 250);
-assert.equal(manifest.site_checks.tables_dictionary_sequence_pages, 54);
-assert.equal(manifest.site_checks.tables_dictionary_previous_links, 53);
-assert.equal(manifest.site_checks.tables_dictionary_next_links, 53);
-assert.equal(manifest.site_checks.tables_dictionary_finish_links, 1);
+assert.equal(manifest.site_checks.dictionary_sequence_pages, 304);
+assert.equal(manifest.site_checks.dictionary_sequence_canonical_entries, 54);
+assert.equal(manifest.site_checks.dictionary_sequence_pointer_entries, 250);
+assert.equal(manifest.site_checks.dictionary_sequence_previous_links, 303);
+assert.equal(manifest.site_checks.dictionary_sequence_next_links, 303);
+assert.equal(manifest.site_checks.dictionary_sequence_finish_links, 1);
 assert.equal(manifest.rendering_checks.repository_source_links, 98);
 assert.equal(
   manifest.site_checks.product_authority,
@@ -104,52 +106,79 @@ assert.match(
   /Content &copy; 2026 Gio Della-Libera.+CC BY-NC 4\.0/,
 );
 assert.match(reader, /Formarium schemas and file formats are canonical/);
-assert.match(
-  tables,
-  /<h2 id="tables-index-pointers-heading">Pointer entry points<\/h2>/,
-);
-const tablePointerLinks = [
+const dictionaryRecords = [
   ...tables.matchAll(
-    /data-pointer-slug="([^"]+)"><a href="pointers\/([^"]+)\.html">/g,
+    /<li data-dictionary-kind="(table|pointer)" (?:data-index-path|data-pointer-slug)="([^"]+)"><a href="([^"]+)">([^<]+)<\/a>/g,
   ),
-];
-assert.equal(tablePointerLinks.length, 250);
-assert.equal(new Set(tablePointerLinks.map((match) => match[1])).size, 250);
-for (const [, slug, hrefSlug] of tablePointerLinks) {
-  assert.equal(hrefSlug, slug);
-  assert.ok(fs.existsSync(path.join(site, "pointers", `${slug}.html`)));
-}
-const searchRecords = JSON.parse(
-  fs.readFileSync(path.join(site, "search-index.json"), "utf8"),
+].map((match) => ({
+  kind: match[1],
+  key: match[2],
+  href: match[3],
+  title: match[4],
+}));
+assert.equal(dictionaryRecords.length, 304);
+assert.equal(
+  dictionaryRecords.filter((record) => record.kind === "table").length,
+  54,
 );
-const dictionaryRecords = searchRecords
-  .filter((record) => record.recordClass === "canonical-entry")
-  .sort(
-    (left, right) =>
-      left.title.toLowerCase().localeCompare(right.title.toLowerCase()) ||
-      left.path.localeCompare(right.path),
-  );
-assert.equal(dictionaryRecords.length, 54);
+assert.equal(
+  dictionaryRecords.filter((record) => record.kind === "pointer").length,
+  250,
+);
+assert.deepEqual(
+  dictionaryRecords.map((record) => record.href),
+  [...dictionaryRecords]
+    .sort(
+      (left, right) =>
+        left.title.toLowerCase().localeCompare(right.title.toLowerCase()) ||
+        left.href.localeCompare(right.href),
+    )
+    .map((record) => record.href),
+);
+assert.deepEqual(
+  dictionaryRecords.slice(0, 3).map((record) => [
+    record.title,
+    record.kind,
+  ]),
+  [
+    ["Access", "pointer"],
+    ["Access, Permission, Authorization, and Entitlement", "table"],
+    ["Accumulation", "pointer"],
+  ],
+);
+assert.equal(
+  manifest.site_checks.dictionary_index_letters,
+  new Set(dictionaryRecords.map((record) => record.title[0].toUpperCase())).size,
+);
 assert.match(
   tables,
   new RegExp(`data-dictionary-start href="${dictionaryRecords[0].href}"`),
 );
 for (const [index, record] of dictionaryRecords.entries()) {
-  const entry = fs.readFileSync(path.join(site, record.href), "utf8");
+  const entry = fs.readFileSync(path.join(site, ...record.href.split("/")), "utf8");
   assert.match(entry, new RegExp(`data-dictionary-step="${index + 1}"`));
+  assert.match(entry, new RegExp(`data-dictionary-kind="${record.kind}"`));
   if (index > 0) {
+    const previousHref = path.posix.relative(
+      path.posix.dirname(record.href),
+      dictionaryRecords[index - 1].href,
+    );
     assert.match(
       entry,
       new RegExp(
-        `data-dictionary-direction="previous" href="${path.basename(dictionaryRecords[index - 1].href)}"`,
+        `data-dictionary-direction="previous" href="${previousHref}"`,
       ),
     );
   }
   if (index < dictionaryRecords.length - 1) {
+    const nextHref = path.posix.relative(
+      path.posix.dirname(record.href),
+      dictionaryRecords[index + 1].href,
+    );
     assert.match(
       entry,
       new RegExp(
-        `data-dictionary-direction="next" href="${path.basename(dictionaryRecords[index + 1].href)}"`,
+        `data-dictionary-direction="next" href="${nextHref}"`,
       ),
     );
   } else {
