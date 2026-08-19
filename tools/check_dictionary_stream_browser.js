@@ -253,6 +253,8 @@ async function waitFor(client, expression, message) {
           document.querySelector(".dictionary-book__entries").scrollWidth >
           document.querySelector(".dictionary-book__entries").clientWidth,
         pageStatus: document.querySelector("[data-book-page-status]").textContent,
+        runningHead: document.querySelector("[data-book-running-head]").textContent,
+        runningHeadHidden: document.querySelector("[data-book-running-head]").hidden,
         pageControls: getComputedStyle(
           document.querySelector(".dictionary-book__page-controls")
         ).display,
@@ -279,6 +281,8 @@ async function waitFor(client, expression, message) {
       tables: book.tables,
       columns: book.columns,
       horizontalPages: book.horizontalPages,
+      runningHead: book.runningHead,
+      runningHeadHidden: book.runningHeadHidden,
       pageControls: book.pageControls,
       pageControlPosition: book.pageControlPosition,
       itemBreak: book.itemBreak,
@@ -293,6 +297,8 @@ async function waitFor(client, expression, message) {
       tables: 54,
       columns: "2",
       horizontalPages: true,
+      runningHead: "",
+      runningHeadHidden: true,
       pageControls: "flex",
       pageControlPosition: "sticky",
       itemBreak: "auto",
@@ -334,7 +340,8 @@ async function waitFor(client, expression, message) {
     await waitFor(
       client,
       `document.querySelector("[data-book-pages]").scrollLeft >
-        document.querySelector("[data-book-pages]").clientWidth / 2`,
+        document.querySelector("[data-book-pages]").clientWidth / 2 &&
+        !document.querySelector("[data-book-running-head]").hidden`,
       "Condensed book did not advance horizontally",
     );
     assert.match(
@@ -343,6 +350,29 @@ async function waitFor(client, expression, message) {
         `document.querySelector("[data-book-page-status]").textContent`,
       ),
       /^Page 2 of (?:[2-9]|\d{2,})$/,
+    );
+    assert.equal(
+      await evaluate(
+        client,
+        `document.querySelector("[data-book-running-head]").textContent`,
+      ),
+      "Access, Permission, Authorization, and Entitlement — continued",
+    );
+    await evaluate(
+      client,
+      `document.querySelector("[data-book-page-next]").click()`,
+    );
+    await waitFor(
+      client,
+      `document.querySelector("[data-book-page-status]").textContent.startsWith("Page 3 of ")`,
+      "Condensed book did not advance to its third page",
+    );
+    assert.equal(
+      await evaluate(
+        client,
+        `document.querySelector("[data-book-running-head]").textContent`,
+      ),
+      "Access, Permission, Authorization, and Entitlement — continued",
     );
     const initialPageTotal = Number(
       book.pageStatus.match(/of (\d+)$/)[1],

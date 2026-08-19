@@ -234,6 +234,11 @@ assert.match(
   book,
   /data-dictionary-position="1"[\s\S]*?<h2 id="book-pointer-access">Access<\/h2>/,
 );
+assert.match(
+  book,
+  /data-dictionary-position="1" data-dictionary-title="Access"/,
+);
+assert.match(book, /data-book-running-head hidden/);
 assert.doesNotMatch(
   book,
   /dictionary-sequence|class="pointer-owner"|table-navigator|formarium-handoff|class="site-header"/,

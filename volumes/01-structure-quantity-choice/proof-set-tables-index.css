@@ -421,10 +421,21 @@
   font-size: 0.75rem;
 }
 
-.dictionary-book__page-controls p {
-  margin: 0;
-  min-width: 8rem;
+.dictionary-book__page-label {
+  min-width: min(22rem, 45vw);
   text-align: center;
+}
+
+.dictionary-book__page-label p {
+  margin: 0;
+}
+
+.dictionary-book__running-head {
+  color: var(--proof-ink) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 700;
+  margin-top: 0.12rem !important;
 }
 
 .dictionary-book__entries {

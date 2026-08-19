@@ -18,7 +18,11 @@
     var previousPage = document.querySelector("[data-book-page-previous]");
     var nextPage = document.querySelector("[data-book-page-next]");
     var pageStatus = document.querySelector("[data-book-page-status]");
+    var runningHead = document.querySelector("[data-book-running-head]");
     var pageUpdateFrame = 0;
+    var continuationTitles = [];
+    var continuationWidth = -1;
+    var continuationScrollWidth = -1;
 
     function bookPageState() {
       var width = bookPages.clientWidth;
@@ -29,12 +33,69 @@
       return { current: current, total: total, width: width };
     }
 
+    function mapContinuationTitles(state) {
+      if (
+        continuationWidth === state.width &&
+        continuationScrollWidth === bookPages.scrollWidth
+      ) {
+        return;
+      }
+      continuationTitles = [];
+      continuationWidth = state.width;
+      continuationScrollWidth = bookPages.scrollWidth;
+      if (!state.width) return;
+
+      var pagesRect = bookPages.getBoundingClientRect();
+      var entries = bookPages.querySelectorAll(".dictionary-book__item");
+
+      for (var entryIndex = 0; entryIndex < entries.length; entryIndex += 1) {
+        var firstPage = Infinity;
+        var lastPage = -1;
+        entries[entryIndex]
+          .querySelectorAll(
+            ".dictionary-book__item-heading, .dictionary-book__meta, " +
+              ".dictionary-book__content > *",
+          )
+          .forEach(function (element) {
+            Array.prototype.forEach.call(element.getClientRects(), function (rect) {
+              if (!rect.width || !rect.height) return;
+              var contentLeft = rect.left - pagesRect.left + bookPages.scrollLeft;
+              var rectPage = Math.max(
+                0,
+                Math.floor((contentLeft + 1) / state.width),
+              );
+              firstPage = Math.min(firstPage, rectPage);
+              lastPage = Math.max(lastPage, rectPage);
+            });
+          });
+        for (var pageIndex = firstPage + 1; pageIndex <= lastPage; pageIndex += 1) {
+          continuationTitles[pageIndex] =
+            entries[entryIndex].dataset.dictionaryTitle || "";
+        }
+      }
+    }
+
+    function carriedBookTitle(state) {
+      if (state.current <= 1) return "";
+      mapContinuationTitles(state);
+      return continuationTitles[state.current - 1] || "";
+    }
+
+    function invalidateBookLayout() {
+      continuationWidth = -1;
+      continuationScrollWidth = -1;
+      scheduleBookPageUpdate();
+    }
+
     function updateBookPages() {
       pageUpdateFrame = 0;
       var state = bookPageState();
+      var carriedTitle = carriedBookTitle(state);
       previousPage.disabled = state.current <= 1;
       nextPage.disabled = state.current >= state.total;
       pageStatus.textContent = "Page " + state.current + " of " + state.total;
+      runningHead.textContent = carriedTitle ? carriedTitle + " — continued" : "";
+      runningHead.hidden = !carriedTitle;
     }
 
     function scheduleBookPageUpdate() {
@@ -65,12 +126,12 @@
     });
     bookPages.querySelectorAll(".dictionary-book__supplement").forEach(
       function (supplement) {
-        supplement.addEventListener("toggle", scheduleBookPageUpdate);
+        supplement.addEventListener("toggle", invalidateBookLayout);
       },
     );
-    window.addEventListener("resize", scheduleBookPageUpdate);
+    window.addEventListener("resize", invalidateBookLayout);
     if ("ResizeObserver" in window) {
-      new ResizeObserver(scheduleBookPageUpdate).observe(bookPages);
+      new ResizeObserver(invalidateBookLayout).observe(bookPages);
     }
     scheduleBookPageUpdate();
   }

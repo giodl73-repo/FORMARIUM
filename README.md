@@ -66,8 +66,9 @@ reader packet, evaluator rubric, and de-identified observation record.
 - **Formarium Tables** — the enduring dictionary/thesaurus reference book, with
   one A-Z reading sequence interleaving canonical Table families and structural
   pointer entry points in index, page-by-page, continuous-scroll, and condensed
-  book views with bounded two-column desktop pages, one-column mobile reading,
-  and two-column print output;
+  book views with bounded two-column desktop pages, running heads for entries
+  continued from the preceding page, one-column mobile reading, and two-column
+  print output;
 - **The Formarium Reader** — the linked explanatory companion;
 - **Factor Tables** — canonical entries and competing decompositions;
 - **Formula Tables** — sourced mathematical relations with scope and units;
