@@ -24,7 +24,22 @@ node tools/check_candidate_entries.js
 - [Perception, Sensation, Appearance, Illusion, and Hallucination](perception-sensation-appearance-illusion-hallucination.md)
 - [Adaptation, Fitness, Selection, and Exaptation](adaptation-fitness-selection-exaptation.md)
 
-### 2026-08-20
+### 2026-08-20 — foundational coverage
+
+- [Disposition, Power, and Designed Function](disposition-power-designed-function.md)
+- [Process Aspect: State, Activity, Accomplishment, Achievement, and Semelfactive](process-aspect-state-activity-accomplishment-achievement-semelfactive.md)
+- [Persistence, Endurance, Perdurance, Continuity, and Replacement](persistence-endurance-perdurance-continuity-replacement.md)
+- [Hohfeldian Claim, Liberty, Power, Immunity, Duty, No-Claim, Liability, and Disability](hohfeldian-incidents-claim-liberty-power-immunity.md)
+- [Deontic Obligation, Permission, Prohibition, Optionality, Waiver, and Exemption](deontic-obligation-permission-prohibition-optionality-waiver-exemption.md)
+- [Institution, Constitutive Norm, Regulative Norm, Social Object, Status Function, and Reified Relationship](institution-constitutive-regulative-social-object-status-function-reified-relationship.md)
+- [Illocutionary Force and Speech Acts](illocutionary-force-speech-acts.md)
+- [Cardinality, Ordinality, Rank, Index, Relationship Cardinality, and Ordinal Scale Value](cardinality-ordinality-rank-index-relationship-cardinality-ordinal-scale-value.md)
+- [Appraisal, Emotion Episode, and Phenomenal Feeling](appraisal-emotion-episode-phenomenal-feeling.md)
+- [Clinical Sign, Symptom, Syndrome, Diagnosis, Differential Diagnosis, and Prognosis](clinical-sign-symptom-syndrome-diagnosis-differential-diagnosis-prognosis.md)
+- [Path Dependence, Lock-In, Switching Cost, Increasing Returns to Adoption, Critical Juncture, and Reactive Sequence](path-dependence-lock-in-switching-cost-increasing-returns-critical-juncture-reactive-sequence.md)
+- [Abstract Work, Notational Specification, Performance Instance, Compliance Condition, and Autographic/Allographic Distinction](abstract-work-notational-specification-performance-instance-compliance-condition-autographic-allographic.md)
+
+### 2026-08-20 — existing batch
 
 - [Consent, Assent, Refusal, Withdrawal, and Revocation](consent-assent-refusal-withdrawal-revocation.md)
 - [Motive, Desire, Intention, and Rationale](motive-desire-intention-rationale.md)
