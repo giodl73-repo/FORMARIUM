@@ -106,11 +106,11 @@ perceive, adapt, and inherit**.
 The panel recommends candidate-entry briefs before canonical expansion. The
 first bounded slice should test five contrasting families:
 
-1. Similarity, Difference, Analogy, Equivalence, and Match;
-2. Privacy, Confidentiality, Secrecy, Anonymity, and Disclosure;
-3. Trust, Credibility, Reputation, Legitimacy, and Reliance;
-4. Perception, Sensation, Appearance, Illusion, Hallucination, and Observation;
-5. Adaptation, Fitness, Selection, Niche, and Exaptation.
+1. [Similarity, Difference, Analogy, Equivalence, and Match](../../discover/literature/similarity-comparison-candidate-brief-2026-08-19.md);
+2. [Privacy, Confidentiality, Secrecy, Anonymity, and Disclosure](../../discover/literature/privacy-disclosure-candidate-brief-2026-08-19.md);
+3. [Trust, Credibility, Reputation, Legitimacy, and Reliance](../../discover/literature/trust-reliance-candidate-brief-2026-08-19.md);
+4. [Perception, Sensation, Appearance, Illusion, and Hallucination](../../discover/literature/perception-appearance-candidate-brief-2026-08-19.md);
+5. [Adaptation, Fitness, Selection, Niche, and Exaptation](../../discover/literature/adaptation-selection-niche-candidate-brief-2026-08-19.md).
 
 This set tests the core thesaurus contract, public-interest vocabulary, human
 experience, and living systems without committing to the entire expansion
