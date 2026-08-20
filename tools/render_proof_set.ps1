@@ -3174,17 +3174,17 @@ if ($editionNumber -ge 7) {
 <p class="site-book-card__kind">Primary reference · dictionary and thesaurus</p>
 <h3>$tablesPublicationName</h3>
 $(if ($formariumIdentityPreview) { '<p><strong>Public feedback name for Factorium Tables.</strong> Canonical IDs and compatibility formats are unchanged.</p>' } elseif ($tabulaIdentityPreview) { '<p><strong>Candidate name for Factorium Tables.</strong> The reference authority and records are unchanged.</p>' } else { '' })
-<p>Look up a concept, distinguish its senses, compare neighboring ideas, inspect factors and constraints, or move through the canonical concept graph.</p>
+<p>Look up a concept, separate its meanings, compare nearby ideas, and follow the Tables that explain it.</p>
 <div class="site-book-card__actions"><a class="site-book-card__primary" href="#search">Search the Tables</a><a href="$(if ($editionNumber -ge 35) { 'tables.html' } else { '#contents' })">Browse the Tables</a></div>
 </article>
 <article class="site-book-card site-book-card--reader" data-book="reader">
 <p class="site-book-card__kind">Teaching companion · selected route</p>
 <h3>$readerPublicationName</h3>
-<p>Learn the method through a 24-record spine and worked bounded questions, then return to the owning Tables whenever more depth is needed.</p>
-<div class="site-book-card__actions"><a class="site-book-card__primary" href="$(if ($editionNumber -ge 36) { 'reader.html' } else { '#reader' })">$(if ($editionNumber -ge 36) { 'Open the Reader' } else { 'Read the Guide' })</a><a href="#problems">See worked questions</a></div>
+<p>Learn the method through a selected route and worked questions with clear limits, then return to the owning Tables whenever more depth is needed.</p>
+<div class="site-book-card__actions"><a class="site-book-card__primary" href="$(if ($editionNumber -ge 36) { 'reader.html' } else { '#reader' })">$(if ($editionNumber -ge 36) { 'Open the Reader' } else { 'Read the Guide' })</a><a href="compose.html">See worked questions</a></div>
 </article>
 </div>
-<p class="site-library__authority"><strong>The Tables define and distinguish.</strong> The Reader teaches and demonstrates. Factor Guides apply selected Tables to one bounded question.</p>
+<p class="site-library__authority"><strong>The Tables define and distinguish.</strong> The Reader teaches and demonstrates. Factor Guides apply selected Tables to one question with clear limits.</p>
 </section>
 "@
             $homeCandidateNav = if ($editionNumber -ge 36) { '<a href="tables.html">Tables</a><a href="reader.html">Reader</a>' } else { '<a href="#library">Tables</a><a href="#reader">Reader</a>' }
@@ -3197,11 +3197,11 @@ $(if ($formariumIdentityPreview) { '<p><strong>Public feedback name for Factoriu
 <p class="site-kicker">Start with what you are trying to do</p>
 <h2 id="site-intent-heading">What brings you to ${publicationName}?</h2>
 <div class="site-intent__grid">
-<article><p class="site-intent__eyebrow">Direct lookup</p><h3>I know the term</h3><p>Find its senses, neighboring concepts, factors, constraints, and owned specialized views.</p><a href="#search">Search the Tables <span aria-hidden="true">&rarr;</span></a></article>
-<article><p class="site-intent__eyebrow">Work through a problem</p><h3>I have a question</h3><p>Choose explicit concepts and controls, inspect bounded closure, and keep unresolved work visible.</p><a href="compose.html">Open Compose <span aria-hidden="true">&rarr;</span></a></article>
+<article><p class="site-intent__eyebrow">Direct lookup</p><h3>I know the term</h3><p>Find its meanings, compare nearby ideas, and see the parts, limits, and deeper views connected to it.</p><a href="#search">Search the Tables <span aria-hidden="true">&rarr;</span></a></article>
+<article><p class="site-intent__eyebrow">Work through a problem</p><h3>I have a question</h3><p>Choose the ideas that matter, test what an answer must satisfy, and keep missing information visible.</p><a href="compose.html">Work with the question <span aria-hidden="true">&rarr;</span></a></article>
 <article><p class="site-intent__eyebrow">Guided learning</p><h3>I want to learn or explore</h3><p>Follow the Reader's selected teaching route, then move into the owning Tables when you want depth.</p><a href="reader.html">Open the Reader <span aria-hidden="true">&rarr;</span></a></article>
 </div>
-<p class="site-intent__note">Not sure? Start with Search. These paths change navigation, not the authority: $tablesPublicationName remain canonical.</p>
+<p class="site-intent__note">Not sure? Start with Search. Every path returns to the same source Tables.</p>
 </section>
 "@
             }
@@ -3491,9 +3491,42 @@ $(if ($formariumIdentityPreview) { '<p><strong>Public feedback name for Factoriu
     if ($editionNumber -ge 43) {
         $heroDeck = "Bring a term, a question, or simple curiosity. Choose the route that matches your task; every path stays connected to the same canonical Tables."
     }
+    $discoverySection = ""
+    $compactContentsSection = ""
+    if ($editionNumber -ge 66) {
+        $heroDeck = "Bring a word, a question, or simple curiosity. Separate its meanings, see what each one is made of, and follow the Tables that explain it."
+        $homeSearchShell = $homeSearchShell.Replace(
+            "Search canonical Tables and clearly labelled application guides. Rankings do not change authority. Results open dedicated reading pages generated from the canonical book sources.",
+            "Search the source Tables and clearly labelled examples. Results open dedicated reading pages."
+        )
+        $discoverySection = @"
+
+<section class="site-start site-discovery" aria-labelledby="site-discovery-heading">
+<p class="site-kicker">One familiar word</p>
+<h2 id="site-discovery-heading">“Force” is not one thing</h2>
+<p>It can name a physical interaction, coercion, an organized body, influence, or a rule taking effect. Formarium keeps those senses apart before showing how each one is structured.</p>
+<div class="site-candidate__actions">
+<a class="site-candidate__primary" href="entries/tables-entries-force.html">See how Force separates</a>
+<a data-surprise-entry href="entries/tables-entries-force.html">Surprise me</a>
+</div>
+</section>
+"@
+        $compactContentsSection = @"
+
+<section id="contents" class="site-contents site-contents--compact">
+<h2>Keep exploring</h2>
+<p>Browse all 304 A-Z entries, read the condensed book, or open the Pointer index.</p>
+<div class="site-book-card__actions">
+<a class="site-book-card__primary" href="tables.html">Browse A-Z</a>
+<a href="book.html">Read The Formarium</a>
+<a href="terms.html">Open Pointer index</a>
+</div>
+</section>
+"@
+    }
     $dualLookupSection = ""
     $dualLookupScriptTag = ""
-    if ($editionNumber -ge 45) {
+    if ($editionNumber -ge 45 -and $editionNumber -lt 66) {
         $dualLookupSection = @'
 <section id="compare-searches" class="dual-lookup" aria-labelledby="dual-lookup-heading">
 <p class="site-kicker">Two literal routes · no semantic merge</p>
@@ -3527,6 +3560,25 @@ $(if ($formariumIdentityPreview) { '<p><strong>Public feedback name for Factoriu
     $homeStableNav = '<a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="compose.html">Work with a question</a><a href="#search">Search</a><a href="#contents">Contents</a>'
     $rootStableNav = '<a href="tables.html">Tables</a><a href="reader.html">Reader</a><a href="compose.html">Work with a question</a><a href="index.html#search">Search</a><a href="index.html#contents">Contents</a>'
     $nestedStableNav = '<a href="../tables.html">Tables</a><a href="../reader.html">Reader</a><a href="../compose.html">Work with a question</a><a href="../index.html#search">Search</a><a href="../index.html#contents">Contents</a>'
+    $homeSections = "$intentSection$librarySection$candidateSection$problemSection$compositionSection"
+    $homeTail = @"
+<section id="start" class="site-start" aria-labelledby="site-start-heading">
+<p class="site-kicker">First journey</p>
+<h2 id="site-start-heading">From a vague problem to a bounded factorization</h2>
+<p>Follow the method once, then search directly or enter any chapter.</p>
+<ol class="site-journey">$firstJourneyItems</ol>
+</section>
+<div id="search">$homeSearchShell</div>$dualLookupSection
+<section id="contents" class="site-contents">
+<h2>$(if ($editionNumber -ge 36) { 'All contents and applications' } elseif ($editionNumber -ge 35) { 'Book contents and guided use' } elseif ($editionNumber -ge 31) { 'Browse the Tables' } else { 'Browse the book' })</h2>
+<p class="site-contents__intro">$(if ($editionNumber -ge 36) { "$($siteChapters.Count) parts organize all $($searchRecords.Count) indexed destinations. Use the Tables Index for canonical headwords or the Reader for its selected 24-record teaching route." } elseif ($editionNumber -ge 35) { "$($siteChapters.Count) parts retain the ordered Reader and guided-use route across $($searchRecords.Count) indexed destinations. Use the Tables Index for alphabetical headword browse." } elseif ($editionNumber -ge 31) { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination has a dedicated lookup page; record-kind labels keep canonical Tables distinct from Guides." } else { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page." })</p>
+<ol class="site-chapter-grid">$chapterItems</ol>
+</section>
+"@
+    if ($editionNumber -ge 66) {
+        $homeSections = "$intentSection$librarySection$discoverySection"
+        $homeTail = "<div id=`"search`">$homeSearchShell</div>$compactContentsSection"
+    }
     $homeHtml = @"
 <!doctype html>
 <html lang="en">
@@ -3546,22 +3598,10 @@ $identityPreviewStyle
 </div></header>$identityPreviewBanner
 <main id="main-content" class="site-main">
 <section class="site-hero">
-<p class="site-kicker">$(if ($formariumIdentityPreview) { 'Public identity feedback · two books · one canonical reference' } elseif ($formariumIdentity) { 'Two books · one Formarium-native reference' } elseif ($tabulaIdentityPreview) { 'Candidate identity · two books · one canonical reference' } elseif ($editionNumber -ge 31) { 'Two books · one canonical reference' } elseif ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
+<p class="site-kicker">$(if ($editionNumber -ge 66) { 'Two books · one connected reference' } elseif ($formariumIdentityPreview) { 'Public identity feedback · two books · one canonical reference' } elseif ($formariumIdentity) { 'Two books · one Formarium-native reference' } elseif ($tabulaIdentityPreview) { 'Candidate identity · two books · one canonical reference' } elseif ($editionNumber -ge 31) { 'Two books · one canonical reference' } elseif ($editionNumber -ge 30) { 'Book One · internal preview simulation' } else { 'Proof Set · book-site simulation' })</p>
 <h1>$publicationName</h1>
 <p class="site-hero__deck">$heroDeck</p>
-</section>$intentSection$librarySection$candidateSection$problemSection$compositionSection
-<section id="start" class="site-start" aria-labelledby="site-start-heading">
-<p class="site-kicker">First journey</p>
-<h2 id="site-start-heading">From a vague problem to a bounded factorization</h2>
-<p>Follow the method once, then search directly or enter any chapter.</p>
-<ol class="site-journey">$firstJourneyItems</ol>
-</section>
-<div id="search">$homeSearchShell</div>$dualLookupSection
-<section id="contents" class="site-contents">
-<h2>$(if ($editionNumber -ge 36) { 'All contents and applications' } elseif ($editionNumber -ge 35) { 'Book contents and guided use' } elseif ($editionNumber -ge 31) { 'Browse the Tables' } else { 'Browse the book' })</h2>
-<p class="site-contents__intro">$(if ($editionNumber -ge 36) { "$($siteChapters.Count) parts organize all $($searchRecords.Count) indexed destinations. Use the Tables Index for canonical headwords or the Reader for its selected 24-record teaching route." } elseif ($editionNumber -ge 35) { "$($siteChapters.Count) parts retain the ordered Reader and guided-use route across $($searchRecords.Count) indexed destinations. Use the Tables Index for alphabetical headword browse." } elseif ($editionNumber -ge 31) { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination has a dedicated lookup page; record-kind labels keep canonical Tables distinct from Guides." } else { "$($siteChapters.Count) chapters organize $($searchRecords.Count) indexed records and guides. Every destination also has a dedicated lookup page." })</p>
-<ol class="site-chapter-grid">$chapterItems</ol>
-</section>
+</section>$homeSections$homeTail
 </main>
 <footer class="site-footer">$rootPublicationStatus$contentLicenseNotice</footer>
 <script src="assets/site-data.js"></script>
@@ -3849,6 +3889,7 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
             $bookPosition = $bookIndex + 1
             $encodedBookTitle = [System.Net.WebUtility]::HtmlEncode($bookRecord.title)
             $bookContent = ""
+            $bookMaturityHtml = ""
             if ($bookRecord.kind -eq "pointer") {
                 $pointerRecord = $pointerRecordBySlug[$bookRecord.slug]
                 $encodedOrientation = [System.Net.WebUtility]::HtmlEncode($pointerRecord.orientation)
@@ -3876,6 +3917,18 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
             else {
                 $bookSource = [System.IO.Path]::GetFullPath((Join-Path $workspace $bookRecord.path))
                 $bookContent = $renderedSegmentBySource[$bookSource]
+                $bookStatusMatch = [regex]::Match(
+                    $bookContent,
+                    '(?is)<p>Status:\s*(.*?)</p>'
+                )
+                if ($bookStatusMatch.Success) {
+                    $bookMaturityHtml = '<p class="dictionary-book__maturity"><strong>Publication status</strong> ' +
+                        $bookStatusMatch.Groups[1].Value + '</p>'
+                    $bookContent = $bookContent.Remove(
+                        $bookStatusMatch.Index,
+                        $bookStatusMatch.Length
+                    )
+                }
                 $bookContent = [regex]::Replace(
                     $bookContent,
                     'href="#([^"]+)"',
@@ -3923,9 +3976,13 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
                             "sources_provenance"
                         }
                         $bookSupplementCounts[$supplementKind] += 1
+                        $supplementBody = $match.Groups[3].Value
+                        if ($supplementKind -eq "sources_provenance") {
+                            $supplementBody = $bookMaturityHtml + $supplementBody
+                        }
                         return '<details class="dictionary-book__supplement" data-book-supplement="' +
                             $supplementKind + '"><summary id="' + $supplementId + '">' +
-                            $supplementHeading + '</summary><div>' + $match.Groups[3].Value +
+                            $supplementHeading + '</summary><div>' + $supplementBody +
                             '</div></details>'
                     }
                 )
@@ -3959,9 +4016,8 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <header class="dictionary-book__title">
 <p>Formarium Tables</p>
 <h1>The Formarium</h1>
-<p>A condensed A-Z reference of $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families.</p>
-<p>Core distinctions stay on the page. Specialized views, reference deltas, cross-references, sources, and provenance are available in compact expandable sections and omitted from print.</p>
-<p class="dictionary-book__edition">Edition <a href="https://giodl73-repo.github.io/FORMARIUM/manifest.json">$Edition</a> · source <a href="https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit">$sourceCommitShort</a> · full online supplements at <a href="https://giodl73-repo.github.io/FORMARIUM/book.html">the published book</a></p>
+<p>Start with a familiar word. See where its meanings separate, what structures each sense requires, and which Tables carry it further.</p>
+<p class="dictionary-book__edition">Edition <a href="https://giodl73-repo.github.io/FORMARIUM/manifest.json">$Edition</a> · $($dictionaryRecords.Count) entries: $tablesIndexPointerCount pointers + $tablesIndexCanonicalCount Tables · source <a href="https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit">$sourceCommitShort</a> · full online supplements at <a href="https://giodl73-repo.github.io/FORMARIUM/book.html">the published book</a></p>
 </header>
 <section class="dictionary-book__reader" aria-label="Paged condensed dictionary">
 <nav class="dictionary-book__page-controls" aria-label="Book pages">
@@ -4125,7 +4181,7 @@ $identityPreviewStyle
 <p class="site-kicker">After the selected route</p>
 <h2 id="reader-route-after-heading">Branch only when the question requires it</h2>
 <p>Search or browse the full Tables for specialized depth. Factor Guides apply selected Tables to bounded questions; they are not additional Reader chapters or a third authority.</p>
-<div class="reader-route__actions"><a href="index.html#search">Search all Tables</a><a href="index.html#problems">Open bounded applications</a><a href="index.html#contents">See all contents</a></div>
+<div class="reader-route__actions"><a href="index.html#search">Search all Tables</a><a href="$(if ($editionNumber -ge 66) { 'compose.html' } else { 'index.html#problems' })">Open worked questions</a><a href="index.html#contents">Keep exploring</a></div>
 </section>
 </main>
 <footer class="site-footer">$rootPublicationStatus$contentLicenseNotice</footer>
@@ -5335,9 +5391,9 @@ $identityPreviewStyle
         local_links = $siteLocalLinks
         missing_local_targets = $missingSiteTargets.Count
         previous_next_sequence_records = $searchRecords.Count
-        first_journey_targets = $firstJourneySources.Count
-        problem_led_targets = $problemLedTargets
-        composition_trace_targets = $compositionTraceTargets
+        first_journey_targets = if ($editionNumber -ge 66) { 0 } else { $firstJourneySources.Count }
+        problem_led_targets = if ($editionNumber -ge 66) { 0 } else { $problemLedTargets }
+        composition_trace_targets = if ($editionNumber -ge 66) { 0 } else { $compositionTraceTargets }
         canonical_content_authority = "repository Markdown and reference metadata"
         execution = "multi-page static files; no server"
         identity = $siteIdentity
@@ -5384,7 +5440,7 @@ $identityPreviewStyle
         $siteChecks.handoff_note_verification = "none"
         $siteChecks.handoff_note_authority_change = $false
     }
-    if ($editionNumber -ge 45) {
+    if ($editionNumber -ge 45 -and $editionNumber -lt 66) {
         $dualLookupHtml = Get-Content -LiteralPath $siteIndex -Raw
         if (@([regex]::Matches($dualLookupHtml, 'id="compare-searches"')).Count -ne 1 -or
             @([regex]::Matches($dualLookupHtml, 'id="dual-lookup-query-(one|two)"')).Count -ne 2 -or
@@ -5401,6 +5457,10 @@ $identityPreviewStyle
         $siteChecks.dual_lookup_storage = "none"
         $siteChecks.dual_lookup_network = "none"
         $siteChecks.dual_lookup_authority_change = $false
+    }
+    elseif ($editionNumber -ge 66) {
+        $siteChecks.dual_lookup_pages = 0
+        $siteChecks.dual_lookup_retired_from_home = $true
     }
     if ($editionNumber -ge 32) {
         $expectedTableNavigatorPages = @($searchRecords | Where-Object { $_.path.StartsWith("tables/") }).Count

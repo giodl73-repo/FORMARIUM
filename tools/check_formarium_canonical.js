@@ -137,6 +137,21 @@ const reader = fs.readFileSync(path.join(site, "reader.html"), "utf8");
 const tables = fs.readFileSync(path.join(site, "tables.html"), "utf8");
 const dictionary = fs.readFileSync(path.join(site, "dictionary.html"), "utf8");
 const book = fs.readFileSync(path.join(site, "book.html"), "utf8");
+const siteSearchRecords = JSON.parse(
+  fs.readFileSync(path.join(site, "search-index.json"), "utf8"),
+);
+const familySearch = require(path.join(
+  root,
+  "volumes/01-structure-quantity-choice/proof-set-search-families.js",
+));
+const surpriseCandidates = siteSearchRecords.filter(
+  (record) => record.recordClass === "canonical-entry",
+);
+assert.equal(familySearch.pickSurprise(siteSearchRecords, () => 0), surpriseCandidates[0]);
+assert.equal(
+  familySearch.pickSurprise(siteSearchRecords, () => 0.999999),
+  surpriseCandidates[surpriseCandidates.length - 1],
+);
 assert.match(home, /<a class="site-brand"[^>]*>Formarium<\/a>/);
 assert.doesNotMatch(home, /identity-preview|feedback preview/i);
 assert.match(home, /data-formarium-handoff/);
@@ -155,6 +170,19 @@ assert.equal(
   1,
 );
 assert.match(home, /href="compose\.html">Work with a question<\/a>/);
+assert.match(home, /<h2 id="site-discovery-heading">“Force” is not one thing<\/h2>/);
+assert.match(home, /data-surprise-entry href="entries\/tables-entries-force\.html"/);
+assert.match(home, /<section id="contents" class="site-contents site-contents--compact">/);
+assert.match(home, /Two books · one connected reference/);
+assert.match(home, /Search the source Tables and clearly labelled examples/);
+assert.doesNotMatch(
+  home,
+  /id="problems"|id="compose"|id="start"|id="compare-searches"|class="site-chapter-grid"/,
+);
+assert.doesNotMatch(
+  home,
+  /canonical Tables|bounded|typed closure|factorization|specialized views/i,
+);
 assert.doesNotMatch(home, />Terms<\/a>|not reader evidence or preview-01/);
 assert.match(home, /href="manifest\.json">sim-66<\/a>/);
 assert.match(home, /software: MIT/);
@@ -187,6 +215,17 @@ assert.deepEqual(streamRecords.slice(0, 3), [
 assert.match(book, /<title>The Formarium<\/title>/);
 assert.match(book, /<h1>The Formarium<\/h1>/);
 assert.doesNotMatch(book, /The Formarium Dictionary/);
+assert.match(book, /Start with a familiar word\./);
+assert.match(book, /304 entries: 250 pointers \+ 54 Tables/);
+assert.equal(
+  (book.match(/class="dictionary-book__maturity"/g) || []).length,
+  54,
+);
+assert.doesNotMatch(book, /<p>Status:\s*/);
+assert.match(
+  book,
+  /data-book-supplement="sources_provenance"[\s\S]*?<p class="dictionary-book__maturity"><strong>Publication status<\/strong>/,
+);
 assert.match(book, /class="site-skip" href="#main-content"/);
 assert.match(book, /href="index\.html">Formarium home<\/a>/);
 assert.match(book, /href="reader\.html">Reader<\/a>/);

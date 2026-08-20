@@ -86,6 +86,23 @@
     return groups;
   }
 
+  function pickSurprise(records, randomValue) {
+    var candidates = records.filter(function (record) {
+      return record.recordClass === "canonical-entry";
+    });
+    if (!candidates.length) return null;
+    var random = typeof randomValue === "function" ? randomValue() : Math.random();
+    var index = Math.min(candidates.length - 1, Math.floor(random * candidates.length));
+    return candidates[index];
+  }
+
+  function initializeSurprise(records, documentObject) {
+    documentObject.querySelectorAll("[data-surprise-entry]").forEach(function (link) {
+      var record = pickSurprise(records);
+      if (record && record.href) link.href = record.href;
+    });
+  }
+
   function appendRecord(record, parent, documentObject) {
     var item = documentObject.createElement("li");
     item.className = "proof-search__result";
@@ -222,11 +239,13 @@
   var api = {
     normalize: normalize,
     searchRecords: searchRecords,
-    groupRecords: groupRecords
+    groupRecords: groupRecords,
+    pickSurprise: pickSurprise
   };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root) root.FactoriumSearchFamilies = api;
   if (root && root.document && root.FACTORIUM_SEARCH_INDEX) {
+    initializeSurprise(root.FACTORIUM_SEARCH_INDEX, root.document);
     initialize(root.FACTORIUM_SEARCH_INDEX, root.document, root.location, root.history);
   }
 })(typeof window !== "undefined" ? window : null);

@@ -13,6 +13,14 @@ const screenshotPath = path.resolve(
 const manifest = JSON.parse(
   fs.readFileSync(path.join(siteRoot, "manifest.json"), "utf8"),
 );
+const searchRecords = JSON.parse(
+  fs.readFileSync(path.join(siteRoot, "search-index.json"), "utf8"),
+);
+const canonicalEntryHrefs = new Set(
+  searchRecords
+    .filter((record) => record.recordClass === "canonical-entry")
+    .map((record) => record.href),
+);
 assert.equal(manifest.edition, "sim-66");
 
 const edgePath = [
@@ -226,6 +234,24 @@ async function waitFor(client, expression, message) {
       deviceScaleFactor: 1,
       mobile: false,
     });
+    await client.call("Page.navigate", {
+      url: `http://127.0.0.1:${serverPort}/index.html`,
+    });
+    await waitFor(
+      client,
+      `document.readyState === "complete" &&
+        document.querySelector("[data-surprise-entry]")`,
+      "Homepage surprise route did not load",
+    );
+    const surpriseHref = await evaluate(
+      client,
+      `document.querySelector("[data-surprise-entry]").getAttribute("href")`,
+    );
+    assert.ok(
+      canonicalEntryHrefs.has(surpriseHref),
+      `Surprise route is not a canonical entry: ${surpriseHref}`,
+    );
+
     await client.call("Page.navigate", {
       url: `http://127.0.0.1:${serverPort}/book.html`,
     });
