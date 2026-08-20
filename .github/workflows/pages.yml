@@ -51,7 +51,9 @@ jobs:
           echo "${install_dir}/bin" >> "${GITHUB_PATH}"
 
       - name: Verify Lexicon contracts
-        run: node tools/build_lexicon_contracts.js --check
+        run: |
+          node tools/build_lexicon_contracts.js --check
+          node tools/check_candidate_entries.js
 
       - name: Render website
         shell: pwsh

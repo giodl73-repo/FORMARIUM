@@ -25,10 +25,9 @@ evidence and one tested Lexicon domain.
 
 ## Current wave
 
-`context/waves/2026-08-19-lexicon-canonical/WAVE.md`
+`context/waves/2026-08-20-candidate-expansion/WAVE.md`
 
-Current pulses: **08A - Factor Forge intake fixed point** and
-**08P - Proof Set internal fixed point**
+Current pulse: **01 - Recurring reader need and candidate admission selection**
 
 The current machine-readable owner is
 `reference/lexicon-reference-v4.lexicon`: 54 entries, 419 senses, 638 factors,

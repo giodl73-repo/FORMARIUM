@@ -63,7 +63,7 @@ perception, living systems, and literary or figurative interpretation.
 | P2 | **Prediction, Forecast, Projection, Scenario, and Backtest** | Model and Simulation does not yet separate kinds of future claims or their retrospective tests. |
 | P2 | **Threshold, Tipping Point, Cascade, Contagion, and Spillover** | State transitions and stock-flow models do not own threshold-triggered propagation across a network or population. |
 | P2 | **Perception, Sensation, Appearance, Illusion, Hallucination, and Observation** | Signal, Evidence, and Measurement do not own first-person perceptual organization, misperception, or observer dependence. |
-| P2 | **Adaptation, Fitness, Selection, Niche, and Exaptation** | Capability and environment do not describe selective persistence and fit across generations. |
+| P2 | **Adaptation, Fitness, Selection, Niche, and Exaptation** *(carried forward on 2026-08-20 as Adaptation, Fitness, Selection, and Exaptation; the niche sense was removed and assigned to the ecology candidate)* | Capability and environment do not describe selective persistence and fit across generations. |
 | P2 | **Lineage, Kinship, Descent, Inheritance, and Succession** | Provenance and version history do not own parentage, branching descent, inherited traits or rights, and succession order. |
 | P2 | **Distribution, Skew, Tail, Outlier, and Extremum** | Summary Statistics does not make distribution shape or extreme-value behavior a first-class lookup family. |
 
@@ -110,7 +110,10 @@ first bounded slice should test five contrasting families:
 2. [Privacy, Confidentiality, Secrecy, Anonymity, and Disclosure](../../discover/literature/privacy-disclosure-candidate-brief-2026-08-19.md);
 3. [Trust, Credibility, Reputation, Legitimacy, and Reliance](../../discover/literature/trust-reliance-candidate-brief-2026-08-19.md);
 4. [Perception, Sensation, Appearance, Illusion, and Hallucination](../../discover/literature/perception-appearance-candidate-brief-2026-08-19.md);
-5. [Adaptation, Fitness, Selection, Niche, and Exaptation](../../discover/literature/adaptation-selection-niche-candidate-brief-2026-08-19.md).
+5. [Adaptation, Fitness, Selection, and Exaptation](../../discover/literature/adaptation-selection-candidate-brief-2026-08-19.md)
+   (proposed on this panel as "Adaptation, Fitness, Selection, Niche, and
+   Exaptation"; the niche sense was removed on 2026-08-20 rereview and the brief
+   was renamed).
 
 This set tests the core thesaurus contract, public-interest vocabulary, human
 experience, and living systems without committing to the entire expansion

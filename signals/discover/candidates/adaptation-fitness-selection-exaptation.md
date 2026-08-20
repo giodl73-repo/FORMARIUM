@@ -1,6 +1,9 @@
-# Adaptation, Fitness, Selection, Niche, and Exaptation
+# Adaptation, Fitness, Selection, and Exaptation
 
-Status: noncanonical candidate entry draft; evolutionary-biology scope
+Status: noncanonical candidate entry draft; evolutionary-biology scope. This
+entry owns no niche sense. The selective environment is carried as a factor of
+`natural-selection` and `adaptation`, and its description is consumed from the
+ecological owner.
 
 ## Orientation
 
@@ -9,11 +12,20 @@ selection for a function. Fitness compares reproductive success, propensity,
 or another explicitly selected evolutionary measure among variants in a stated
 population, environment, and time. Natural selection is differential survival
 or reproduction among heritable variants through interaction with the
-environment. A niche is the set of conditions, resources, and biotic
-interactions that bound persistence or functioning. An exaptation is a trait
-co-opted for a current role rather than selected for that role at its origin.
+environment. An exaptation is a trait co-opted for a current role rather than
+selected for that role at its origin.
 
 Current usefulness does not by itself establish adaptation.
+
+This entry owns no niche sense of any kind. A fixed-point review on 2026-08-20
+found that a proposed evolutionary niche sense was not disjoint from
+`natural-selection` plus a stated environment: every claim it could carry was
+already expressible as a selection regime over a described environment. It was
+therefore removed rather than retained as a near-duplicate. Environmental role,
+resource space, assemblage membership, trophic structure, and the environmental
+impact of organisms belong to the ecological candidate, which is the sole owner
+of `ecological-niche`; this entry consumes that description as selection
+context and never restates it. See the cross-reference below.
 
 ## Sense table
 
@@ -22,24 +34,34 @@ Current usefulness does not by itself establish adaptation.
 | `adaptation` | Which trait in which lineage was built by natural selection for which function and environment? | historical selected-effect relation |
 | `fitness` | Under which explicit definition does this variant differ from alternatives in this population, environment, and time? | scoped comparative evolutionary measure |
 | `natural-selection` | Which differential survival or reproduction among heritable variants occurs through interaction with the environment? | evolutionary sorting process |
-| `niche` | Which conditions, resources, and biotic interactions bound persistence, growth, or functioning? | organism-environment opportunity and constraint structure |
 | `exaptation` | Which currently useful trait was co-opted rather than selected for its current role? | co-opted function relation |
+
+**Niche is not owned here.** `ecological-niche` is a sense of
+[Ecosystem, Habitat, Ecological Niche, Food Web, and Ecological Interdependence](ecosystem-habitat-niche-food-web-interdependence.md),
+and the bare identifier `niche` is owned by no entry. Where a selection claim
+needs an environment, the selective environment, its axes, the lineage context,
+and their change across generations are recorded as factors of
+`natural-selection` and `adaptation`, with the environmental description cited
+from the ecological owner.
 
 ## Root factorization
 
 ```text
-adaptation-selection-niche-use
+adaptation-selection-use
   := lineage, population, and focal trait or variant
    x trait grain, homology, and inheritance basis
    x current function or performance claim
-   x environment, resources, and biotic interactions
+   x selective environment, its axes, and their change across generations,
+     consumed as selection context from the ecological description and not
+     restated here
    x fitness definition, measure, reference class, and time
    x selection regime, strength, direction, and frequency dependence
    x mutation, migration, recombination, and drift alternatives
    x developmental production bias and constraint
    x historical origin and current utility evidence
    x exaptation or co-option history
-   x niche construction and organism-environment feedback
+   x organism-driven environmental modification as an input to selection, with
+     the environmental description held by the ecological owner
    x model, data, uncertainty, and scope limits
 ```
 
@@ -52,7 +74,8 @@ adaptation-selection-niche-use
 | Fitness vs. realized offspring count | offspring can inform fitness | explicitly selected comparative account vs. one observed outcome |
 | Selection vs. authorized choice | either can be called selection | differential reproduction among heritable variants vs. decision owner's final choice |
 | Selection vs. drift | either changes trait frequencies | systematic differential reproduction vs. stochastic sampling |
-| Niche vs. location | either places an organism | conditions, resources, and interactions for persistence vs. coordinates or region |
+| Selective environment vs. ecological niche | either relates a population to its environment | the conditions that bear on differential persistence of heritable variants, recorded here as a factor of selection, vs. the environmental role and resource space a population occupies or alters, which is an owned sense of the ecological entry |
+| Selective environment vs. location | either places a lineage | conditions bearing on differential reproduction across generations vs. coordinates or region |
 | Adaptation vs. exaptation | either can support current function | selected for the current role vs. co-opted into it |
 
 ## Dependencies and stopping boundary
@@ -68,19 +91,30 @@ adaptation-selection-niche-use
   history remain live alternatives.
 - Adaptation claims require evidence about historical origin, not only current
   performance.
-- Niche includes conditions, resources, and biotic interactions rather than
-  location alone.
+- The selective environment is recorded as a factor of a selection or adaptation
+  claim — which conditions bear on differential persistence and reproduction of
+  heritable variants, over which generations — and never as a sense of this
+  entry. Resource-space description, assemblage membership, trophic structure,
+  and the environmental impact of organisms are not claimed here; they are
+  cited from the ecological owner.
+- Where organisms modify their environment, this entry records only the
+  consequence for selection; the description of the modified environment,
+  including niche construction as an ecological process, is routed to the
+  ecological owner.
 
 This entry stops before non-biological adaptation, engineering fitness for use,
-algorithmic fitness functions, authorized choice, market niches, and exhaustive
-population genetics, evo-devo, speciation, or macroevolution.
+algorithmic fitness functions, authorized choice, market niches, every niche
+sense including the ecological niche, habitat, community assemblage, food-web
+and trophic structure, and exhaustive population genetics, evo-devo,
+speciation, or macroevolution.
 
 ## Selection procedure
 
 1. Identify the biological unit, population or lineage, focal trait, inheritance
    basis, environment, and time.
-2. Select the exact question: adaptation, fitness, natural selection, niche, or
-   exaptation.
+2. Select the exact question: adaptation, fitness, natural selection, or
+   exaptation. If the question is about environmental role or resource space,
+   it belongs to the ecological entry, not here.
 3. State trait grain, homology assumptions, current function, and performance
    evidence.
 4. Define fitness explicitly, including measure, reference class, uncertainty,
@@ -92,18 +126,21 @@ population genetics, evo-devo, speciation, or macroevolution.
 7. Separate evidence of current utility from evidence of historical selected
    origin.
 8. Use exaptation only when evidence supports co-option into the current role.
-9. Record niche conditions, resources, interactions, and organism-environment
-   feedback.
+9. Record the selective environment as a factor of the selection or adaptation
+   claim: which conditions bear on differential persistence and reproduction,
+   over which generations, citing the ecological description rather than
+   restating it. Route resource-space, assemblage, trophic, and
+   environmental-impact description to the ecological owner.
 10. Retain model assumptions, uncertainty, counterexamples, and review state.
 
 ## Reference Delta
 
 | Reference form | Typical contribution | Lexicon candidate delta |
 |---|---|---|
-| Dictionary | defines adaptation, fitness, selection, niche, and exaptation | prevents everyday and technical senses from collapsing |
+| Dictionary | defines adaptation, fitness, selection, and exaptation | prevents everyday and technical senses from collapsing |
 | Evolution textbook | explains mechanisms and worked biological examples | supplies domain authority beyond the compact entry |
 | Population-genetic model | quantifies variant-frequency change | retains model assumptions and does not become the universal fitness definition |
-| Ecology reference | defines niche and organism-environment relations | keeps niche distinct from location |
+| Ecology reference | describes environmental role, resource space, and interactions | keeps every niche sense with the ecological owner and leaves only consumed selection context here |
 | Evolutionary critique | tests adaptationist explanations | keeps alternatives and historical evidence visible |
 
 ## Failure signs
@@ -113,18 +150,28 @@ population genetics, evo-devo, speciation, or macroevolution.
 - realized offspring count is the only permitted fitness account;
 - selection is asserted without heritability or differential reproduction;
 - every frequency change is attributed to selection;
-- niche is reduced to location;
+- the selective environment is reduced to a location or to an observed
+  distribution;
+- an ecological role, resource-space, assemblage, or trophic claim is asserted
+  as a sense of this entry, or a niche sense is reintroduced here under any
+  name;
+- environmental modification by organisms is described here instead of being
+  routed to the ecological owner;
 - exaptation is used without historical evidence;
 - non-biological uses silently enter the evolutionary sense.
 
 ## Cross-references
 
+- [Ecosystem, Habitat, Ecological Niche, Food Web, and Ecological Interdependence](ecosystem-habitat-niche-food-web-interdependence.md)
+  is the sole owner of `ecological-niche` and of every habitat, assemblage, and
+  trophic sense. This entry owns no niche sense and consumes that description
+  as selection context.
 - [Choice, Alternative, Criterion, Preference, Recommendation, and Selection](../../../tables/entries/choice-alternative-selection.md)
 - [Reliability, Availability, Maintainability, Resilience, and Recovery](../../../tables/entries/dependability-reliability-availability-resilience.md)
 - [System Composition, Architecture, Capability, Interface, and Dependency](../../../tables/entries/system-composition-dependency.md)
 - [State, Event, Transition, Process, and Lifecycle](../../../tables/entries/state-event-transition-process-lifecycle.md)
 - [Association, Causal Effect, Influence, Mechanism, Intervention, and Attribution](../../../tables/entries/causal-reasoning.md)
-- [Admission brief](../literature/adaptation-selection-niche-candidate-brief-2026-08-19.md)
+- [Admission brief](../literature/adaptation-selection-candidate-brief-2026-08-19.md)
 
 ## Sources and provenance
 
@@ -153,4 +200,7 @@ population genetics, evo-devo, speciation, or macroevolution.
     https://doi.org/10.1111/j.1461-0248.2007.01107.x
 
 The source set supports a bounded evolutionary entry, not a universal
-decomposition or an adaptation-only account of biological form.
+decomposition or an adaptation-only account of biological form. Sources 5
+(Hutchinson) and 11 (Soberon) are retained as the record of the niche question
+this entry examined and declined to own; both are niche-theoretic and are cited
+substantively by the ecological candidate, which is the sole niche owner.
