@@ -3950,11 +3950,9 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <section class="dictionary-book__reader" aria-label="Paged condensed dictionary">
 <nav class="dictionary-book__page-controls" aria-label="Book pages">
 <button type="button" data-book-page-previous>Previous page</button>
-<div class="dictionary-book__page-label">
 <p data-book-page-status role="status" aria-live="polite">Preparing pages…</p>
-<p class="dictionary-book__running-head" data-book-running-head hidden></p>
-</div>
 <button type="button" data-book-page-next>Next page</button>
+<p class="dictionary-book__running-head" data-book-running-head aria-live="polite" aria-atomic="true" hidden></p>
 </nav>
 <div class="dictionary-book__entries" data-book-pages tabindex="0">$dictionaryBookItems</div>
 <p class="dictionary-book__page-hint">Read down the left column, then down the right. Use the page buttons or horizontal scrollbar to continue.</p>

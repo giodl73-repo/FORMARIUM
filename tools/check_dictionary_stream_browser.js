@@ -299,7 +299,7 @@ async function waitFor(client, expression, message) {
       horizontalPages: true,
       runningHead: "",
       runningHeadHidden: true,
-      pageControls: "flex",
+      pageControls: "grid",
       pageControlPosition: "sticky",
       itemBreak: "auto",
       supplements: 183,
@@ -339,8 +339,10 @@ async function waitFor(client, expression, message) {
     );
     await waitFor(
       client,
-      `document.querySelector("[data-book-pages]").scrollLeft >
-        document.querySelector("[data-book-pages]").clientWidth / 2 &&
+      `Math.abs(
+        document.querySelector("[data-book-pages]").scrollLeft -
+        document.querySelector("[data-book-pages]").clientWidth
+      ) < 2 &&
         !document.querySelector("[data-book-running-head]").hidden`,
       "Condensed book did not advance horizontally",
     );
@@ -358,13 +360,30 @@ async function waitFor(client, expression, message) {
       ),
       "Access, Permission, Authorization, and Entitlement — continued",
     );
+    const continuedPageShot = await client.call("Page.captureScreenshot", {
+      format: "png",
+      captureBeyondViewport: false,
+    });
+    const continuedPageScreenshotPath = screenshotPath.replace(
+      /\.png$/i,
+      "-book-continued.png",
+    );
+    fs.writeFileSync(
+      continuedPageScreenshotPath,
+      Buffer.from(continuedPageShot.data, "base64"),
+    );
+    assert.ok(fs.statSync(continuedPageScreenshotPath).size > 20000);
     await evaluate(
       client,
       `document.querySelector("[data-book-page-next]").click()`,
     );
     await waitFor(
       client,
-      `document.querySelector("[data-book-page-status]").textContent.startsWith("Page 3 of ")`,
+      `Math.abs(
+        document.querySelector("[data-book-pages]").scrollLeft -
+        2 * document.querySelector("[data-book-pages]").clientWidth
+      ) < 2 &&
+        document.querySelector("[data-book-page-status]").textContent.startsWith("Page 3 of ")`,
       "Condensed book did not advance to its third page",
     );
     assert.equal(

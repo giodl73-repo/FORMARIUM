@@ -238,7 +238,10 @@ assert.match(
   book,
   /data-dictionary-position="1" data-dictionary-title="Access"/,
 );
-assert.match(book, /data-book-running-head hidden/);
+assert.match(
+  book,
+  /data-book-running-head aria-live="polite" aria-atomic="true" hidden/,
+);
 assert.doesNotMatch(
   book,
   /dictionary-sequence|class="pointer-owner"|table-navigator|formarium-handoff|class="site-header"/,
