@@ -1,6 +1,6 @@
 # Lexicon Candidate Expansion
 
-Status: active; candidate drafting complete; canonical admission deferred
+Status: complete; candidate drafting complete; canonical admission deferred
 
 ## Decision
 
@@ -13,7 +13,12 @@ normal graph, catalog, assurance, and publication gates pass.
 - [Plan](LEXICON-CANDIDATE-EXPANSION-PLAN.md)
 - [Result](LEXICON-CANDIDATE-EXPANSION-RESULT.md)
 - [Fixed-point role review](../../../signals/roles/check/lexicon-candidate-expansion-role-review-2026-08-20.md)
+- [Pulse 01 - Recurring reader need and candidate admission selection](pulses/01-reader-need-admission.md)
+- [Pulse 01 result - Defer all](pulses/01-reader-need-admission-result.md)
+- [Reader-need admission role review](../../../signals/roles/check/lexicon-reader-need-admission-role-review-2026-08-20.md)
 
-## Active pulse
+## Closure
 
-- [01 - Recurring reader need and candidate admission selection](pulses/01-reader-need-admission.md)
+No candidate advanced because no external reader observation exists. Reopen
+admission selection only after repeated genuine reader lookup need is recorded;
+do not substitute another authored campaign.

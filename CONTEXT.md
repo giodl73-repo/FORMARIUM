@@ -25,9 +25,11 @@ evidence and one tested Lexicon domain.
 
 ## Current wave
 
-`context/waves/2026-08-20-candidate-expansion/WAVE.md`
+No wave is active.
 
-Current pulse: **01 - Recurring reader need and candidate admission selection**
+Latest completed wave:
+`context/waves/2026-08-20-candidate-expansion/WAVE.md`. Candidate admission is
+deferred until repeated external-reader lookup need is observed.
 
 The current machine-readable owner is
 `reference/lexicon-reference-v4.lexicon`: 54 entries, 419 senses, 638 factors,

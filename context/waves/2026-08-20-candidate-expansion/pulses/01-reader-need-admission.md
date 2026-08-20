@@ -1,6 +1,6 @@
 # Pulse 01: Recurring Reader Need and Candidate Admission Selection
 
-Status: active
+Status: complete; defer all
 
 ## Goal
 
@@ -24,6 +24,14 @@ recurring reader need rather than conceptual completeness alone.
 4. Rank candidates by repeated unmet need, consequence, source readiness, and
    maintenance burden.
 5. Advance no more than one candidate; explicitly defer the rest.
+
+## Result
+
+No candidate advanced. The repository contains no external reader observation,
+and authored synthetic or query-led recurrence has zero admission weight.
+
+- [Pulse result](01-reader-need-admission-result.md)
+- [Role review](../../../../signals/roles/check/lexicon-reader-need-admission-role-review-2026-08-20.md)
 
 ## Exit gates
 

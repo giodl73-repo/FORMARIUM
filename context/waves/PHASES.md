@@ -4,7 +4,7 @@ Work is organized into small waves and pulses.
 
 ## Active wave
 
-- `2026-08-20-candidate-expansion`
+- None.
 
 ## Completed waves
 
@@ -13,6 +13,7 @@ Work is organized into small waves and pulses.
 - `2026-08-13-factorium-vision`
 - `2026-08-19-formarium-canonical`
 - `2026-08-19-lexicon-canonical`
+- `2026-08-20-candidate-expansion`
 
 ## Protocol
 
