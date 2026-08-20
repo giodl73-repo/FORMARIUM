@@ -3848,12 +3848,30 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
             $bookRecord = $dictionaryRecords[$bookIndex]
             $bookPosition = $bookIndex + 1
             $encodedBookTitle = [System.Net.WebUtility]::HtmlEncode($bookRecord.title)
-            $encodedBookMeta = [System.Net.WebUtility]::HtmlEncode($bookRecord.meta)
             $bookContent = ""
             if ($bookRecord.kind -eq "pointer") {
                 $pointerRecord = $pointerRecordBySlug[$bookRecord.slug]
                 $encodedOrientation = [System.Net.WebUtility]::HtmlEncode($pointerRecord.orientation)
-                $bookContent = "<h2 id=`"book-pointer-$($bookRecord.slug)`">$encodedBookTitle</h2><p>$encodedOrientation.</p>"
+                $pointerOwnerItems = [System.Text.StringBuilder]::new()
+                $pointerOwnerGroups = @(
+                    $pointerRecord.occurrences |
+                        Group-Object -Property { $_.path } |
+                        Sort-Object { $_.Group[0].title.ToLowerInvariant() }
+                )
+                foreach ($pointerOwnerGroup in $pointerOwnerGroups) {
+                    $pointerOwner = $pointerOwnerGroup.Group[0]
+                    $encodedPointerOwnerTitle = [System.Net.WebUtility]::HtmlEncode(
+                        $pointerOwner.title
+                    )
+                    [void]$pointerOwnerItems.AppendLine(
+                        '<li><a href="entries/' + $pointerOwner.page + '#' +
+                            $pointerOwner.anchor + '">' + $encodedPointerOwnerTitle + '</a></li>'
+                    )
+                }
+                $bookContent = '<h2 id="book-pointer-' + $bookRecord.slug + '">' +
+                    $encodedBookTitle + '</h2><p>' + $encodedOrientation +
+                    '.</p><div class="dictionary-book__pointer-parents"><p>Appears in</p><ul>' +
+                    $pointerOwnerItems.ToString() + '</ul></div>'
             }
             else {
                 $bookSource = [System.IO.Path]::GetFullPath((Join-Path $workspace $bookRecord.path))
@@ -3914,8 +3932,6 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
             }
             [void]$dictionaryBookItems.AppendLine(@"
 <article class="dictionary-book__item" data-dictionary-kind="$($bookRecord.kind)" data-dictionary-position="$bookPosition" data-dictionary-title="$encodedBookTitle">
-<header class="dictionary-book__item-heading"><p>Item $bookPosition · $(if ($bookRecord.kind -eq 'pointer') { 'Pointer' } else { 'Canonical Table' })</p><a href="$($bookRecord.href)">Standalone</a></header>
-<p class="dictionary-book__meta">$encodedBookMeta</p>
 <div class="dictionary-book__content">$bookContent</div>
 </article>
 "@)

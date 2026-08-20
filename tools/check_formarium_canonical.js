@@ -208,6 +208,17 @@ assert.equal(
   54,
 );
 assert.equal(
+  (book.match(/class="dictionary-book__pointer-parents"/g) || []).length,
+  250,
+);
+assert.equal(
+  [...book.matchAll(/<div class="dictionary-book__pointer-parents">([\s\S]*?)<\/div>/g)]
+    .reduce((total, match) => total + (match[1].match(/<a /g) || []).length, 0),
+  2118,
+);
+assert.doesNotMatch(book, /class="dictionary-book__(?:item-heading|meta)"/);
+assert.doesNotMatch(book, />Item \d+ · (?:Pointer|Canonical Table)</);
+assert.equal(
   (book.match(/class="dictionary-book__supplement"/g) || []).length,
   183,
 );
@@ -234,7 +245,7 @@ assert.doesNotMatch(
 );
 assert.match(
   book,
-  /data-dictionary-position="1"[\s\S]*?<h2 id="book-pointer-access">Access<\/h2>/,
+  /data-dictionary-position="1"[\s\S]*?<h2 id="book-pointer-access">Access<\/h2>[\s\S]*?<p>Appears in<\/p><ul>[\s\S]*?<a href="entries\//,
 );
 assert.match(
   book,

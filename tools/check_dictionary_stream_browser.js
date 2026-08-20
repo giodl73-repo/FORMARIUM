@@ -265,6 +265,14 @@ async function waitFor(client, expression, message) {
           .breakInside,
         supplements: document.querySelectorAll(".dictionary-book__supplement").length,
         openSupplements: document.querySelectorAll(".dictionary-book__supplement[open]").length,
+        itemHeadings: document.querySelectorAll(".dictionary-book__item-heading").length,
+        itemMeta: document.querySelectorAll(".dictionary-book__meta").length,
+        pointerParents: document.querySelectorAll(
+          ".dictionary-book__pointer-parents"
+        ).length,
+        pointerParentLinks: document.querySelectorAll(
+          ".dictionary-book__pointer-parents a"
+        ).length,
         selectedView: document.querySelector("[data-dictionary-view]").value,
         chrome: document.querySelectorAll(
           ".site-header, .site-handoff, .dictionary-sequence, .pointer-owner, .table-navigator"
@@ -288,6 +296,9 @@ async function waitFor(client, expression, message) {
       itemBreak: book.itemBreak,
       supplements: book.supplements,
       openSupplements: book.openSupplements,
+      itemHeadings: book.itemHeadings,
+      itemMeta: book.itemMeta,
+      pointerParents: book.pointerParents,
       selectedView: book.selectedView,
       chrome: book.chrome,
       first: book.first,
@@ -304,6 +315,9 @@ async function waitFor(client, expression, message) {
       itemBreak: "auto",
       supplements: 183,
       openSupplements: 0,
+      itemHeadings: 0,
+      itemMeta: 0,
+      pointerParents: 250,
       selectedView: "book.html",
       chrome: 0,
       first: [
@@ -319,6 +333,7 @@ async function waitFor(client, expression, message) {
       JSON.stringify(book),
     );
     assert.ok(book.entryScrollWidth > book.entryWidth * 2, JSON.stringify(book));
+    assert.equal(book.pointerParentLinks, 2118, JSON.stringify(book));
     assert.match(book.pageStatus, /^Page 1 of (?:[2-9]|\d{2,})$/);
     const desktopBookShot = await client.call("Page.captureScreenshot", {
       format: "png",
@@ -455,9 +470,6 @@ async function waitFor(client, expression, message) {
           .columnCount,
         tools: getComputedStyle(document.querySelector(".dictionary-book__tools"))
           .display,
-        standalone: getComputedStyle(
-          document.querySelector(".dictionary-book__item-heading a")
-        ).display,
         supplement: getComputedStyle(
           document.querySelector(".dictionary-book__supplement")
         ).display,
@@ -475,7 +487,6 @@ async function waitFor(client, expression, message) {
     assert.deepEqual(printBook, {
       columns: "2",
       tools: "none",
-      standalone: "none",
       supplement: "none",
       itemBreak: "auto",
       pagesOverflow: "visible",
