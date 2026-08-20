@@ -1,6 +1,6 @@
 # Lexicon Canonical Rename
 
-Status: implementation complete; validation pending final closeout
+Status: complete
 
 ## Decision
 
@@ -13,9 +13,12 @@ Lexicon is canonical for new schemas, files, commands, generated projections,
 and publication surfaces. Factorium and Formarium contracts remain readable,
 frozen historical imports.
 
+Commit `2881086` is deployed from `main`. The sim-67 Pages publication, full
+Rust suite, canonical contract checks, browser layouts, sim-66 compatibility,
+and independent autoreview all pass.
+
 ## Records
 
 - [Migration plan](LEXICON-MIGRATION-PLAN.md)
 - [Role review](LEXICON-ROLE-REVIEW.md)
 - [Migration result](LEXICON-MIGRATION-RESULT.md)
-
