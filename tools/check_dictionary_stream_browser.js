@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
@@ -16,12 +16,17 @@ const manifest = JSON.parse(
 const searchRecords = JSON.parse(
   fs.readFileSync(path.join(siteRoot, "search-index.json"), "utf8"),
 );
+const expectedEdition = process.argv[4];
 const canonicalEntryHrefs = new Set(
   searchRecords
     .filter((record) => record.recordClass === "canonical-entry")
     .map((record) => record.href),
 );
-assert.equal(manifest.edition, "sim-66");
+if (expectedEdition) {
+  assert.equal(manifest.edition, expectedEdition);
+} else {
+  assert.match(manifest.edition, /^sim-(?:66|67)$/);
+}
 
 const edgePath = [
   process.env.EDGE_PATH,
@@ -447,8 +452,12 @@ async function waitFor(client, expression, message) {
     assert.ok(initialPageTotal < 199, JSON.stringify(book));
     await evaluate(
       client,
-      `document.querySelector("[data-book-pages]").scrollLeft =
-        document.querySelector("[data-book-pages]").scrollWidth`,
+      `(() => {
+        const pages = document.querySelector("[data-book-pages]");
+        pages.style.scrollBehavior = "auto";
+        pages.scrollLeft = pages.scrollWidth;
+        pages.dispatchEvent(new Event("scroll"));
+      })()`,
     );
     await waitFor(
       client,

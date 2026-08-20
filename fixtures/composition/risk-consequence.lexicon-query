@@ -1,0 +1,18 @@
+lexicon-composition-query-v2
+query risk-characterizes-alternative-consequence
+problem Which consequence basis must be aligned before using a risk consequence in an alternative outcome?
+source a4967f5511e921d9a85739832b743684f19067ae01ba75f08f02052aacf9f351 | c4fdc129701bf4bee822754672d6dd11361c9507beb42f7942346bee4b92d27a
+context synthetic-intervention-choice | affected-entity=bounded-service-team,reference-frame=decision-horizon
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=1,nodes=3,work=9
+seed factor:probability-risk-uncertainty/consequence-set
+node factor:choice-alternative-selection/alternative-state-outcomes-and-consequences | required | 1 | relation:f27-risk-characterizes-consequence | factor:probability-risk-uncertainty/consequence-set
+node factor:probability-risk-uncertainty/consequence-set | required | 0 | seed | none
+node view:decision-alternative-selection | evaluative | 1 | scope:f27-risk-characterizes-consequence | factor:probability-risk-uncertainty/consequence-set
+edge f27-risk-characterizes-consequence
+check f27-check-consequence-alignment | completeness | view:decision-alternative-selection | unresolved
+projection factor:choice-alternative-selection/alternative-state-outcomes-and-consequences | unresolved | omits-local-consequence-binding-and-decision-weight
+projection factor:probability-risk-uncertainty/consequence-set | selected | omits-probabilities-expected-loss-controls-and-risk-attitude
+projection view:decision-alternative-selection | selected | omits-full-decision-table
+state incomplete
+end-query

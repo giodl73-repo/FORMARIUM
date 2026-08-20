@@ -1,4 +1,4 @@
-name: Deploy Formarium website
+﻿name: Deploy Lexicon website
 
 on:
   push:
@@ -50,15 +50,15 @@ jobs:
             --strip-components=1
           echo "${install_dir}/bin" >> "${GITHUB_PATH}"
 
-      - name: Verify Formarium contracts
-        run: node tools/build_formarium_contracts.js --check
+      - name: Verify Lexicon contracts
+        run: node tools/build_lexicon_contracts.js --check
 
       - name: Render website
         shell: pwsh
-        run: ./tools/render_proof_set.ps1 -Edition sim-66
+        run: ./tools/render_proof_set.ps1 -Edition sim-67
 
       - name: Verify website
-        run: node tools/check_formarium_canonical.js
+        run: node tools/check_lexicon_canonical.js
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -66,7 +66,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v4
         with:
-          path: target/proof-set-sim-66
+          path: target/proof-set-sim-67
 
       - name: Deploy website
         id: deployment

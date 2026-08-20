@@ -1,4 +1,4 @@
-use formarium::{
+﻿use lexicon::{
     reference::ReferenceCorpus,
     reference_sidecar::{RelationKind, RelationManifest},
 };
@@ -25,7 +25,7 @@ fn decision_evidence_kind_fixture_tracks_all_five_admitted_kinds() {
         .relations()
         .iter()
         .filter(|candidate| canonical.contains(candidate.id()))
-        .map(formarium::reference_sidecar::RelationRecord::id)
+        .map(lexicon::reference_sidecar::RelationRecord::id)
         .collect::<Vec<_>>();
     assert_eq!(
         admitted,

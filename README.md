@@ -1,10 +1,10 @@
-# Formarium
+﻿# Lexicon
 
 **Tables for the structure of things.**
 
-Website: <https://giodl73-repo.github.io/FORMARIUM/>
+Website: <https://giodl73-repo.github.io/LEXICON/>
 
-Formarium is an encyclopedia of decomposition patterns. Its primary
+Lexicon is an encyclopedia of decomposition patterns. Its primary
 deliverables are books and **Factor Tables** that help a reader look up a
 problem, distinguish its senses, compare several credible factorizations,
 choose a pivot, and assign supporting factors to suitable structural
@@ -14,17 +14,17 @@ Additional reference families cover values, mappings, decisions, transitions,
 constraints, procedures, diagnostics, scales, and evidence while sharing one
 canonical entry graph.
 
-Formarium combines the lookup form of a dictionary, the alternatives of a
+Lexicon combines the lookup form of a dictionary, the alternatives of a
 thesaurus, and the compact utility of an engineering handbook. It does not
 promise one universal decomposition; it makes the available choices,
 constraints, tradeoffs, counterexamples, and maturity visible.
 
-Formarium has two complementary books over one canonical reference:
+Lexicon has two complementary books over one canonical reference:
 
-- **Formarium Tables** is the primary dictionary/thesaurus and structured
+- **Lexicon** is the primary dictionary/thesaurus and structured
   reference. It defines and distinguishes concepts through canonical Factor
   Tables and specialized views.
-- **The Formarium Reader** is the explanatory companion. It teaches and
+- **Lexicon Reader** is the explanatory companion. It teaches and
   demonstrates how to use selected Tables for bounded questions without
   becoming a second authority.
 
@@ -32,9 +32,10 @@ Formarium has two complementary books over one canonical reference:
 complete contract is [Two-Book Product Architecture](specs/TWO-BOOK-PRODUCT-ARCHITECTURE.md).
 
 The project, publication, CLI, and current machine-readable contract all use
-**Formarium**. New artifacts use `.formarium`, `.formarium-query`, and
-`formarium-*` identifiers. Frozen `.factorium` artifacts remain readable only
-as historical imports; they are not templates or defaults for new work.
+**Lexicon**. New artifacts use `.lexicon`, `.lexicon-query`, and
+`lexicon-*` identifiers. Frozen `.factorium` and `.formarium` artifacts remain
+readable only as historical imports; they are not templates or defaults for new
+work.
 
 Read the [grand vision](VISION.md), the active [roadmap](ROADMAP.md), the draft
 [Factor Table entry format](specs/FACTOR-TABLE-ENTRY.md), the specialized
@@ -43,13 +44,13 @@ Read the [grand vision](VISION.md), the active [roadmap](ROADMAP.md), the draft
 The candidate [reference table family architecture](specs/REFERENCE-TABLE-FAMILIES.md)
 defines how specialized views remain one coherent reference.
 
-The [entry graph](specs/FORMARIUM-ENTRY-GRAPH.md) defines progressive
+The [entry graph](specs/LEXICON-ENTRY-GRAPH.md) defines progressive
 decomposition, typed joins, relative primes and composites, notation, and
 faceted search. The [security example](tables/examples/security.md) leads to an
 [eight-factor access-control request](tables/composites/access-control-request.md)
 whose factors each have their own entries.
 
-Browse the [generated reference catalog](tables/FORMARIUM-CATALOG.md) for canonical
+Browse the [generated reference catalog](tables/LEXICON-CATALOG.md) for canonical
 anchors and specialized views. The [curated table index](tables/INDEX.md)
 retains examples, foundations, roots, roles, primes, and composites without
 copying the generated catalog. The [Factor Guide pilots](guides/INDEX.md)
@@ -63,13 +64,13 @@ reader packet, evaluator rubric, and de-identified observation record.
 
 ## Primary deliverables
 
-- **Formarium Tables** — the enduring dictionary/thesaurus reference book, with
+- **Lexicon** — the enduring dictionary/thesaurus reference book, with
   one A-Z reading sequence interleaving canonical Table families and structural
   pointer entry points in index, page-by-page, continuous-scroll, and condensed
   book views with bounded two-column desktop pages, running heads for entries
   continued from the preceding page, one-column mobile reading, and two-column
   print output;
-- **The Formarium Reader** — the linked explanatory companion;
+- **Lexicon Reader** — the linked explanatory companion;
 - **Factor Tables** — canonical entries and competing decompositions;
 - **Formula Tables** — sourced mathematical relations with scope and units;
 - **specialized reference tables** — mappings, decisions, transitions,
@@ -81,7 +82,7 @@ reader packet, evaluator rubric, and de-identified observation record.
 ## Founding research
 
 The repository began as **FACTOR**, a hardware-neutral investigation of
-Factor-Preserving Semantic Encoding. That work remains as one tested Formarium
+Factor-Preserving Semantic Encoding. That work remains as one tested Lexicon
 domain and as evidence infrastructure:
 
 - explicit semantic schemas and constraints;
@@ -99,7 +100,7 @@ exactly. FACTOR begins from that narrow result:
 
 > Factorization was useful; specialized Squarebit packing was not required.
 
-This narrow result helped establish Formarium's discipline. It does not prove
+This narrow result helped establish Lexicon's discipline. It does not prove
 the encyclopedia or any universal factorization.
 
 ## Non-goals
@@ -123,7 +124,7 @@ explicit validation.
 ## Reference specifications
 
 - [Factor Table Entry Format V0](specs/FACTOR-TABLE-ENTRY.md)
-- [Formarium Entry Graph](specs/FORMARIUM-ENTRY-GRAPH.md)
+- [Lexicon Entry Graph](specs/LEXICON-ENTRY-GRAPH.md)
 - [Factor Guide Format V0](specs/FACTOR-GUIDE.md)
 - [Composition Query Trace V0](specs/COMPOSITION-QUERY.md)
 - [Bounded Composition Lab Simulation](specs/COMPOSITION-LAB.md)
@@ -164,29 +165,29 @@ Validate the current V1 compatibility reference metadata, linked Markdown, and
 generated projections:
 
 ```powershell
-cargo run --quiet -- reference-check reference\formarium-reference-v3.formarium .
+cargo run --quiet -- reference-check reference\lexicon-reference-v4.lexicon .
 ```
 
 Validate the unchanged bounded V0 relation sidecar and complete V1
 digest-bound review coverage:
 
 ```powershell
-cargo run --quiet -- reference-sidecar-check reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium reference\formarium-assurance-v3.formarium .
+cargo run --quiet -- reference-sidecar-check reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon reference\lexicon-assurance-v4.lexicon .
 ```
 
-See [Formarium Reference Interchange](specs/FORMARIUM-REFERENCE-INTERCHANGE.md).
+See [Lexicon Reference Interchange](specs/LEXICON-REFERENCE-INTERCHANGE.md).
 
 Validate one bounded, author-declared Composition Query trace against exact
 reference and relation identities:
 
 ```powershell
-cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
 ```
 
 Build the disposable Proof Set simulation rendering with Pandoc:
@@ -222,7 +223,7 @@ selected records and the two application guides:
 
 The generated search index is a disposable publication projection. Canonical
 Markdown and reference metadata remain authoritative, and the simulation is
-not reader evidence or the later Formarium Workbench.
+not reader evidence or the later Lexicon Workbench.
 
 Render the adaptive reader edition with Compact, Abbreviated, Book, and Full
 profiles plus independent detail, metadata, and spacing controls:
@@ -353,10 +354,10 @@ After an intentional metadata or source change, regenerate the catalog and
 unresolved-candidate report:
 
 ```powershell
-cargo run --quiet -- reference-sync reference\formarium-reference-v3.formarium .
+cargo run --quiet -- reference-sync reference\lexicon-reference-v4.lexicon .
 ```
 
-See [Formarium Reference Interchange](specs/FORMARIUM-REFERENCE-INTERCHANGE.md).
+See [Lexicon Reference Interchange](specs/LEXICON-REFERENCE-INTERCHANGE.md).
 
 Inspect the frozen generated corpus and split identities:
 
@@ -419,14 +420,14 @@ See [independent packet onboarding](docs/ONBOARDING.md).
 
 ## Portfolio reuse posture
 
-Formarium is intentionally a specialist reference publication, not currently a
-shared portfolio dependency. The `formarium-reference-v3` interchange is the
+Lexicon is intentionally a specialist reference publication, not currently a
+shared portfolio dependency. The `lexicon-reference-v4` interchange is the
 repository's candidate internal canonical owner, and the unpublished Rust
 tooling validates that owner; neither is an ecosystem or cross-repository API.
 The self-contained portable packets are verification evidence, not reusable
 runtime libraries.
 
-Other repositories may cite published Formarium entries with provenance, but
+Other repositories may cite published Lexicon entries with provenance, but
 should not copy entries, identifiers, schemas, maturity labels, or generated
 catalogs as locally owned contracts. Revisit direct reuse only after the
 interchange is promoted from candidate status, a versioned distribution is
@@ -446,6 +447,7 @@ cargo fmt --check
 cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-targets
 cargo test --test relation_kind_fixtures
+node tools\build_lexicon_contracts.js --check
 cargo run --quiet -- check fixtures\schemas\navigation.factor
 cargo run --quiet -- fixtures
 cargo run --quiet -- role-fixtures
@@ -454,19 +456,21 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
-cargo run --quiet -- reference-check reference\formarium-reference-v3.formarium .
-cargo run --quiet -- reference-sidecar-check reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium reference\formarium-assurance-v3.formarium .
-cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\dependency-exclusion-conflict.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
-cargo run --quiet -- composition-query-check fixtures\composition\delegated-compliance-frontier.formarium-query reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium
+cargo run --quiet -- reference-check reference\lexicon-reference-v4.lexicon .
+cargo run --quiet -- reference-sidecar-check reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon reference\lexicon-assurance-v4.lexicon .
+cargo run --quiet -- composition-query-check fixtures\composition\decision-evidence.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\decision-bridge-closure.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\constraint-feasibility.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\causal-outcome-scope.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\risk-consequence.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\value-criterion.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\system-dependency.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\latency-evidence.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\alert-feedback.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\dependency-exclusion-conflict.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+cargo run --quiet -- composition-query-check fixtures\composition\delegated-compliance-frontier.lexicon-query reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon
+.\tools\render_proof_set.ps1 -Edition sim-67
+node tools\check_lexicon_canonical.js
 node tools\check_composition_lab.js
 node tools\check_composition_reading.js
 node tools\check_composition_palette.js
@@ -610,13 +614,13 @@ evidence or `preview-01`.
 
 ## License
 
-Formarium uses split licensing:
+Lexicon uses split licensing:
 
 - **Books and other original content:** [CC BY-NC 4.0](LICENSE-CONTENT.md),
   copyright 2026 Gio Della-Libera. Sharing and adaptation are welcome for
   noncommercial purposes with attribution. Commercial use requires separate
   written permission.
-- **Software:** [MIT](LICENSE), copyright 2026 Formarium contributors.
+- **Software:** [MIT](LICENSE), copyright 2026 Lexicon contributors.
 
 Versions previously distributed under the MIT License remain available under
 that license; this change governs content distributed from this version

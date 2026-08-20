@@ -1,6 +1,6 @@
-# Formarium Role Index
+﻿# Lexicon Role Index
 
-Formarium is a reference project for decomposition patterns, supported by
+Lexicon is a reference project for decomposition patterns, supported by
 research evidence and software. Reviews return `pass`, `finding`, or `defer`.
 Findings name severity (`critical`, `major`, or `minor`), the affected
 artifact, and a closure condition.

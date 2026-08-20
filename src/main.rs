@@ -1,4 +1,4 @@
-use formarium::{
+﻿use lexicon::{
     bakeoff::bakeoff_summary,
     binding::binding_control_summary,
     composition_query::CompositionQuery,
@@ -19,7 +19,7 @@ fn main() -> ExitCode {
     match run() {
         Ok(()) => ExitCode::SUCCESS,
         Err(error) => {
-            eprintln!("formarium: {error}");
+            eprintln!("lexicon: {error}");
             ExitCode::FAILURE
         }
     }
@@ -282,7 +282,11 @@ fn run_reference_command(
                 .sync_projections(root.as_ref())
                 .map_err(|error| format!("{manifest}: {error}"))?;
             println!("reference={manifest}");
-            if corpus.header() == "formarium-reference-v3" {
+            if corpus.header() == "lexicon-reference-v4" {
+                println!("catalog={root}\\tables\\LEXICON-CATALOG.md");
+                println!("formula_catalog={root}\\tables\\formulas\\LEXICON-INDEX.md");
+                println!("unresolved={root}\\tables\\LEXICON-UNRESOLVED.md");
+            } else if corpus.header() == "formarium-reference-v3" {
                 println!("catalog={root}\\tables\\FORMARIUM-CATALOG.md");
                 println!("formula_catalog={root}\\tables\\formulas\\FORMARIUM-INDEX.md");
                 println!("unresolved={root}\\tables\\FORMARIUM-UNRESOLVED.md");
@@ -361,7 +365,7 @@ fn read_reference(path: &str) -> Result<ReferenceCorpus, String> {
 
 fn usage(message: &str) -> String {
     format!(
-        "{message}\nusage:\n  formarium check <schema.factor>\n  formarium canonicalize <schema.factor>\n  formarium fixtures\n  formarium role-fixtures\n  formarium binding-controls\n  formarium role-bakeoff\n  formarium role-packet <output-dir>\n  formarium role-packet-check <packet-dir>\n  formarium bakeoff\n  formarium packet <output-dir>\n  formarium packet-check <packet-dir>\n  formarium reference-check <manifest> <workspace-root>\n  formarium reference-catalog <manifest> <workspace-root>\n  formarium reference-unresolved <manifest> <workspace-root>\n  formarium reference-sync <manifest> <workspace-root>\n  formarium reference-sidecar-check <reference> <relations> <assurance> <workspace-root>\n  formarium composition-query-check <query> <reference> <relations>"
+        "{message}\nusage:\n  lexicon check <schema.factor>\n  lexicon canonicalize <schema.factor>\n  lexicon fixtures\n  lexicon role-fixtures\n  lexicon binding-controls\n  lexicon role-bakeoff\n  lexicon role-packet <output-dir>\n  lexicon role-packet-check <packet-dir>\n  lexicon bakeoff\n  lexicon packet <output-dir>\n  lexicon packet-check <packet-dir>\n  lexicon reference-check <manifest> <workspace-root>\n  lexicon reference-catalog <manifest> <workspace-root>\n  lexicon reference-unresolved <manifest> <workspace-root>\n  lexicon reference-sync <manifest> <workspace-root>\n  lexicon reference-sidecar-check <reference> <relations> <assurance> <workspace-root>\n  lexicon composition-query-check <query> <reference> <relations>"
     )
 }
 
@@ -370,11 +374,11 @@ mod tests {
     use super::usage;
 
     #[test]
-    fn usage_names_the_formarium_binary() {
+    fn usage_names_the_lexicon_binary() {
         let help = usage("test");
         assert!(help
             .lines()
             .filter(|line| line.starts_with("  "))
-            .all(|line| line.starts_with("  formarium ")));
+            .all(|line| line.starts_with("  lexicon ")));
     }
 }

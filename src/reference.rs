@@ -1,4 +1,4 @@
-//! Canonical metadata interchange for the Formarium reference.
+﻿//! Canonical metadata interchange for the Lexicon reference.
 
 use sha2::{Digest, Sha256};
 use std::collections::{HashMap, HashSet};
@@ -11,6 +11,7 @@ const HEADER_V0: &str = "factorium-reference-v0";
 const HEADER_V1: &str = "factorium-reference-v1";
 const HEADER_V2: &str = "factorium-reference-v2";
 const HEADER_V3: &str = "formarium-reference-v3";
+const HEADER_V4: &str = "lexicon-reference-v4";
 const END: &str = "end-reference";
 
 /// One supported primary reference-table family.
@@ -412,6 +413,16 @@ impl ReferenceCorpus {
             HEADER_V1 => "reference/factorium-reference-v1.factorium",
             HEADER_V2 => "reference/factorium-reference-v2.factorium",
             HEADER_V3 => "reference/formarium-reference-v3.formarium",
+            HEADER_V4 => "reference/lexicon-reference-v4.lexicon",
+            _ => unreachable!("validated reference header"),
+        }
+    }
+
+    fn publication_name(&self) -> &'static str {
+        match self.header.as_str() {
+            // V3 projections retain their original headings for sim-66 byte compatibility.
+            HEADER_V0 | HEADER_V1 | HEADER_V2 | HEADER_V3 => "Factorium",
+            HEADER_V4 => "Lexicon",
             _ => unreachable!("validated reference header"),
         }
     }
@@ -557,7 +568,8 @@ impl ReferenceCorpus {
     #[must_use]
     pub fn catalog_markdown(&self) -> String {
         let mut output = format!(
-            "# Factorium Generated Catalog\n\nGenerated from `{}`. Do not edit by hand.\n\n",
+            "# {} Generated Catalog\n\nGenerated from `{}`. Do not edit by hand.\n\n",
+            self.publication_name(),
             self.manifest_path()
         );
         output.push_str("Corpus identity: `");
@@ -693,9 +705,10 @@ impl ReferenceCorpus {
         }
         rows.sort();
 
-        let mut output = String::from(
-            "# Factorium Generated Unresolved Candidates\n\n\
+        let mut output = format!(
+            "# {} Generated Unresolved Candidates\n\n\
              Generated from canonical linked Markdown sources. Do not edit by hand.\n\n",
+            self.publication_name()
         );
         output.push_str("| Source | Line | Candidate declaration |\n|---|---:|---|\n");
         for (path, line, declaration) in rows {
@@ -737,7 +750,15 @@ impl ReferenceCorpus {
     }
 
     fn projection_paths(&self, root: &Path) -> [PathBuf; 3] {
-        if self.header == HEADER_V3 {
+        if self.header == HEADER_V4 {
+            [
+                root.join("tables").join("LEXICON-CATALOG.md"),
+                root.join("tables")
+                    .join("formulas")
+                    .join("LEXICON-INDEX.md"),
+                root.join("tables").join("LEXICON-UNRESOLVED.md"),
+            ]
+        } else if self.header == HEADER_V3 {
             [
                 root.join("tables").join("FORMARIUM-CATALOG.md"),
                 root.join("tables")
@@ -879,8 +900,9 @@ fn reference_header(value: Option<&str>) -> Result<&'static str, String> {
         Some(HEADER_V1) => Ok(HEADER_V1),
         Some(HEADER_V2) => Ok(HEADER_V2),
         Some(HEADER_V3) => Ok(HEADER_V3),
+        Some(HEADER_V4) => Ok(HEADER_V4),
         _ => Err(format!(
-            "line 1: expected `{HEADER_V0}`, `{HEADER_V1}`, `{HEADER_V2}`, or `{HEADER_V3}`"
+            "line 1: expected `{HEADER_V0}`, `{HEADER_V1}`, `{HEADER_V2}`, `{HEADER_V3}`, or `{HEADER_V4}`"
         )),
     }
 }
@@ -1040,7 +1062,7 @@ fn validate_projection(path: &Path, expected: &str) -> Result<(), String> {
         fs::read_to_string(path).map_err(|error| format!("{}: {error}", path.display()))?;
     if actual != expected {
         return Err(format!(
-            "{} is stale; run `formarium reference-sync`",
+            "{} is stale; run `lexicon reference-sync`",
             path.display()
         ));
     }
@@ -1096,11 +1118,22 @@ end-reference
     }
 
     #[test]
+    fn lexicon_v4_header_round_trips_without_changing_record_grammar() {
+        let input = SAMPLE.replacen("factorium-reference-v0", "lexicon-reference-v4", 1);
+        let corpus = ReferenceCorpus::parse(&input).expect("Lexicon V4 sample should parse");
+        assert_eq!(corpus.header(), "lexicon-reference-v4");
+        assert_eq!(corpus.canonical_text(), input);
+        assert!(corpus
+            .catalog_markdown()
+            .starts_with("# Lexicon Generated Catalog\n"));
+    }
+
+    #[test]
     fn rejects_unsupported_reference_revision() {
-        let input = SAMPLE.replacen("factorium-reference-v0", "formarium-reference-v4", 1);
+        let input = SAMPLE.replacen("factorium-reference-v0", "lexicon-reference-v5", 1);
         assert!(ReferenceCorpus::parse(&input)
             .unwrap_err()
-            .contains("or `formarium-reference-v3`"));
+            .contains("or `lexicon-reference-v4`"));
     }
 
     #[test]

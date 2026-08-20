@@ -1,4 +1,4 @@
-use formarium::corpus::{
+﻿use lexicon::corpus::{
     fixture_summary, generate_corpora, generate_splits, CorpusFamily, SplitKind,
 };
 

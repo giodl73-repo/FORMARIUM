@@ -1,0 +1,18 @@
+lexicon-composition-query-v2
+query causal-scope-qualifies-alternative-outcome
+problem Which causal scope must be checked before treating an observed outcome as an alternative consequence?
+source a4967f5511e921d9a85739832b743684f19067ae01ba75f08f02052aacf9f351 | c4fdc129701bf4bee822754672d6dd11361c9507beb42f7942346bee4b92d27a
+context synthetic-intervention-choice | population=bounded-service-team,reference-frame=decision-horizon
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=1,nodes=3,work=9
+seed factor:causal-reasoning/outcome-measure-and-time-horizon
+node factor:causal-reasoning/outcome-measure-and-time-horizon | required | 0 | seed | none
+node factor:choice-alternative-selection/alternative-state-outcomes-and-consequences | required | 1 | relation:f27-causal-scope-qualifies-outcome | factor:causal-reasoning/outcome-measure-and-time-horizon
+node view:decision-alternative-selection | evaluative | 1 | scope:f27-causal-scope-qualifies-outcome | factor:causal-reasoning/outcome-measure-and-time-horizon
+edge f27-causal-scope-qualifies-outcome
+check f27-check-causal-outcome-scope | completeness | view:decision-alternative-selection | unresolved
+projection factor:causal-reasoning/outcome-measure-and-time-horizon | selected | omits-full-causal-design-assumptions-estimate-and-uncertainty
+projection factor:choice-alternative-selection/alternative-state-outcomes-and-consequences | unresolved | omits-local-alternative-state-outcome-binding
+projection view:decision-alternative-selection | selected | omits-full-decision-table
+state incomplete
+end-query

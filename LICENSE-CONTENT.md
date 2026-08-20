@@ -1,4 +1,4 @@
-# Formarium content license
+﻿# Lexicon content license
 
 Copyright (c) 2026 Gio Della-Libera.
 
@@ -22,6 +22,6 @@ content distributed from this version forward.
 
 For attribution, use:
 
-> Formarium, by Gio Della-Libera, https://github.com/giodl73-repo/FORMARIUM
+> Lexicon, by Gio Della-Libera, https://github.com/giodl73-repo/LEXICON
 
 [license]: https://creativecommons.org/licenses/by-nc/4.0/legalcode

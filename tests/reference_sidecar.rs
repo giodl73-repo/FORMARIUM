@@ -1,4 +1,4 @@
-use formarium::{
+﻿use lexicon::{
     reference::ReferenceCorpus,
     reference_sidecar::{AssuranceManifest, RelationKind, RelationManifest},
 };
@@ -6,15 +6,15 @@ use std::{fs, path::Path};
 
 fn committed_manifests() -> (ReferenceCorpus, RelationManifest, AssuranceManifest) {
     let corpus = ReferenceCorpus::parse(
-        &fs::read_to_string("reference/formarium-reference-v3.formarium").unwrap(),
+        &fs::read_to_string("reference/lexicon-reference-v4.lexicon").unwrap(),
     )
     .unwrap();
     let relations = RelationManifest::parse(
-        &fs::read_to_string("reference/formarium-relations-v1.formarium").unwrap(),
+        &fs::read_to_string("reference/lexicon-relations-v2.lexicon").unwrap(),
     )
     .unwrap();
     let assurance = AssuranceManifest::parse(
-        &fs::read_to_string("reference/formarium-assurance-v3.formarium").unwrap(),
+        &fs::read_to_string("reference/lexicon-assurance-v4.lexicon").unwrap(),
     )
     .unwrap();
     (corpus, relations, assurance)
@@ -25,11 +25,11 @@ fn committed_sidecars_round_trip_and_validate() {
     let (corpus, relations, assurance) = committed_manifests();
     assert_eq!(
         relations.canonical_text(),
-        fs::read_to_string("reference/formarium-relations-v1.formarium").unwrap()
+        fs::read_to_string("reference/lexicon-relations-v2.lexicon").unwrap()
     );
     assert_eq!(
         assurance.canonical_text(),
-        fs::read_to_string("reference/formarium-assurance-v3.formarium").unwrap()
+        fs::read_to_string("reference/lexicon-assurance-v4.lexicon").unwrap()
     );
     relations
         .validate_workspace(&corpus, Path::new("."))
@@ -38,7 +38,7 @@ fn committed_sidecars_round_trip_and_validate() {
         .validate_workspace(
             &corpus,
             &relations,
-            "reference/formarium-relations-v1.formarium",
+            "reference/lexicon-relations-v2.lexicon",
             Path::new("."),
         )
         .unwrap();
@@ -107,7 +107,7 @@ fn representative_directional_queries_preserve_scope() {
 #[test]
 fn assurance_detects_a_stale_source_digest() {
     let (corpus, relations, _) = committed_manifests();
-    let text = fs::read_to_string("reference/formarium-assurance-v3.formarium")
+    let text = fs::read_to_string("reference/lexicon-assurance-v4.lexicon")
         .unwrap()
         .replacen(
             "07646556467096218227ebb6d6a6c40a78659d8aeffe8a877842345811c7ed1e",
@@ -119,7 +119,7 @@ fn assurance_detects_a_stale_source_digest() {
         .validate_workspace(
             &corpus,
             &relations,
-            "reference/formarium-relations-v1.formarium",
+            "reference/lexicon-relations-v2.lexicon",
             Path::new("."),
         )
         .unwrap_err()
@@ -129,7 +129,7 @@ fn assurance_detects_a_stale_source_digest() {
 #[test]
 fn relation_validation_rejects_an_unknown_canonical_endpoint() {
     let (corpus, _, _) = committed_manifests();
-    let text = fs::read_to_string("reference/formarium-relations-v1.formarium")
+    let text = fs::read_to_string("reference/lexicon-relations-v2.lexicon")
         .unwrap()
         .replacen(
             "factor:system-composition-dependency/interfaces-and-interaction-contracts",

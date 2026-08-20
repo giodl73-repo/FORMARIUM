@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   "use strict";
 
   document.querySelectorAll("[data-dictionary-view]").forEach(function (select) {
@@ -27,8 +27,13 @@
     function bookPageState() {
       var width = bookPages.clientWidth;
       var total = width ? Math.max(1, Math.ceil(bookPages.scrollWidth / width)) : 1;
+      var atEnd =
+        width &&
+        bookPages.scrollLeft >= Math.max(0, bookPages.scrollWidth - width) - 32;
       var current = width
-        ? Math.min(total, Math.round(bookPages.scrollLeft / width) + 1)
+        ? atEnd
+          ? total
+          : Math.min(total, Math.round(bookPages.scrollLeft / width) + 1)
         : 1;
       return { current: current, total: total, width: width };
     }

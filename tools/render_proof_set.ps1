@@ -1,5 +1,5 @@
-param(
-    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48", "sim-49", "sim-50", "sim-51", "sim-52", "sim-53", "sim-54", "sim-55", "sim-56", "sim-57", "sim-58", "sim-59", "sim-60", "sim-61", "sim-62", "sim-63", "sim-64", "sim-65", "sim-66")]
+﻿param(
+    [ValidateSet("sim-01", "sim-02", "sim-03", "sim-04", "sim-05", "sim-06", "sim-07", "sim-08", "sim-09", "sim-10", "sim-11", "sim-12", "sim-13", "sim-14", "sim-15", "sim-16", "sim-17", "sim-18", "sim-19", "sim-20", "sim-21", "sim-22", "sim-23", "sim-24", "sim-25", "sim-26", "sim-27", "sim-28", "sim-29", "sim-30", "sim-31", "sim-32", "sim-33", "sim-34", "sim-35", "sim-36", "sim-37", "sim-38", "sim-39", "sim-40", "sim-41", "sim-42", "sim-43", "sim-44", "sim-45", "sim-46", "sim-47", "sim-48", "sim-49", "sim-50", "sim-51", "sim-52", "sim-53", "sim-54", "sim-55", "sim-56", "sim-57", "sim-58", "sim-59", "sim-60", "sim-61", "sim-62", "sim-63", "sim-64", "sim-65", "sim-66", "sim-67")]
     [string]$Edition = "sim-01",
     [string]$OutputDirectory = ""
 )
@@ -24,12 +24,20 @@ function Get-PointerRegistryRows {
         throw "Pointer registry inheritance cycle: $resolvedRegistry"
     }
     $registryLines = @((Get-Content -LiteralPath $resolvedRegistry -Raw).TrimEnd() -split '\r?\n')
-    $legacyEnd = $registryLines[-1] -eq "end-factorium-pointer-registry"
-    $formariumEnd = $registryLines[-1] -eq "end-formarium-pointer-registry"
-    if ($registryLines.Count -lt 3 -or (-not $legacyEnd -and -not $formariumEnd)) {
+    if ($registryLines.Count -lt 3) {
         throw "Invalid pointer registry envelope: $resolvedRegistry"
     }
-    if ($registryLines[0] -eq "formarium-pointer-registry-v1") {
+    $expectedEnd = switch ($registryLines[0]) {
+        "factorium-pointer-registry-v0" { "end-factorium-pointer-registry" }
+        "factorium-pointer-registry-delta-v0" { "end-factorium-pointer-registry" }
+        "formarium-pointer-registry-v1" { "end-formarium-pointer-registry" }
+        "lexicon-pointer-registry-v1" { "end-lexicon-pointer-registry" }
+        default { throw "Invalid pointer registry header: $resolvedRegistry" }
+    }
+    if ($registryLines[-1] -ne $expectedEnd) {
+        throw "Invalid pointer registry envelope: $resolvedRegistry"
+    }
+    if ($registryLines[0] -in @("formarium-pointer-registry-v1", "lexicon-pointer-registry-v1")) {
         return @($registryLines[1..($registryLines.Count - 2)])
     }
     if ($registryLines[0] -eq "factorium-pointer-registry-v0") {
@@ -73,7 +81,11 @@ $pointerRegistryV10 = Join-Path $workspace "volumes\01-structure-quantity-choice
 $pointerRegistryV11 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v11.factorium"
 $pointerRegistryV12 = Join-Path $workspace "volumes\01-structure-quantity-choice\proof-set-pointer-registry-v12.factorium"
 $formariumPointerRegistryV1 = Join-Path $workspace "volumes\01-structure-quantity-choice\formarium-pointer-registry-v1.formarium"
-$pointerRegistry = if ($editionNumber -ge 66) {
+$lexiconPointerRegistryV1 = Join-Path $workspace "volumes\01-structure-quantity-choice\lexicon-pointer-registry-v1.lexicon"
+$pointerRegistry = if ($editionNumber -ge 67) {
+    $lexiconPointerRegistryV1
+}
+elseif ($editionNumber -ge 66) {
     $formariumPointerRegistryV1
 }
 elseif ($editionNumber -ge 64) {
@@ -130,9 +142,12 @@ $feedbackWorksheet = Join-Path $workspace "guides\alert-feedback-composition-wor
 $conflictWorksheet = Join-Path $workspace "guides\dependency-exclusion-conflict-worksheet.md"
 $frontierWorksheet = Join-Path $workspace "guides\delegated-compliance-frontier-worksheet.md"
 $decisionChoiceGuide = Join-Path $workspace "guides\evidence-informed-intervention-choice.md"
-$queryExtension = if ($editionNumber -ge 66) { "formarium-query" } else { "factorium-query" }
+$queryExtension = if ($editionNumber -ge 67) { "lexicon-query" } elseif ($editionNumber -ge 66) { "formarium-query" } else { "factorium-query" }
 $decisionCombinedTrace = Join-Path $workspace "fixtures\composition\decision-bridge-closure.$queryExtension"
-$compositionLabAllowlist = if ($editionNumber -ge 66) {
+$compositionLabAllowlist = if ($editionNumber -ge 67) {
+    Join-Path $workspace "volumes\01-structure-quantity-choice\lexicon-composition-lab-relations.lexicon"
+}
+elseif ($editionNumber -ge 66) {
     Join-Path $workspace "volumes\01-structure-quantity-choice\formarium-composition-lab-relations.formarium"
 }
 else {
@@ -310,24 +325,29 @@ $artifactTitle = switch ($Edition) {
     "sim-64" { "Factorium Pointer Entry Concordance Closeout Simulation 64" }
     "sim-65" { "Formarium Public Identity Feedback Simulation 65" }
     "sim-66" { "Formarium Canonical Contract Simulation 66" }
+    "sim-67" { "Lexicon Canonical Rename Simulation 67" }
 }
 
 $tabulaIdentityPreview = $editionNumber -eq 51
 $formariumIdentityPreview = $editionNumber -eq 65
-$formariumIdentity = $editionNumber -ge 65
+$lexiconIdentity = $editionNumber -ge 67
+$formariumIdentity = ($editionNumber -ge 65) -and (-not $lexiconIdentity)
 $identityPreview = $tabulaIdentityPreview -or $formariumIdentityPreview
-$publicationName = if ($formariumIdentity) { "Formarium" } elseif ($tabulaIdentityPreview) { "Tabula Facta" } else { "Factorium" }
-$tablesPublicationName = if ($formariumIdentity) { "Formarium Tables" } elseif ($tabulaIdentityPreview) { "Tabula Facta" } else { "Factorium Tables" }
-$readerPublicationName = if ($formariumIdentity) { "The Formarium Reader" } else { "The Factorium Reader" }
-$repositoryName = if ($formariumIdentity) { "FORMARIUM" } else { "FACTORIUM" }
+$publicationName = if ($lexiconIdentity) { "Lexicon" } elseif ($formariumIdentity) { "Formarium" } elseif ($tabulaIdentityPreview) { "Tabula Facta" } else { "Factorium" }
+$tablesPublicationName = if ($lexiconIdentity) { "Lexicon" } elseif ($formariumIdentity) { "Formarium Tables" } elseif ($tabulaIdentityPreview) { "Tabula Facta" } else { "Factorium Tables" }
+$readerPublicationName = if ($lexiconIdentity) { "Lexicon Reader" } elseif ($formariumIdentity) { "The Formarium Reader" } else { "The Factorium Reader" }
+$repositoryName = if ($lexiconIdentity) { "LEXICON" } elseif ($formariumIdentity) { "FORMARIUM" } else { "FACTORIUM" }
 $readerAdditionalRecordCount = if ($editionNumber -ge 50) { 157 } elseif ($editionNumber -ge 49) { 154 } else { 151 }
-$contentLicenseNotice = if ($Edition -eq "sim-66") {
+$contentLicenseNotice = if ($editionNumber -ge 66) {
     ' · Content &copy; 2026 Gio Della-Libera · <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>'
 }
 else {
     ""
 }
-$siteBrand = if ($formariumIdentityPreview) {
+$siteBrand = if ($lexiconIdentity) {
+    'Lexicon'
+}
+elseif ($formariumIdentityPreview) {
     'Formarium <span class="identity-candidate">feedback preview</span>'
 }
 elseif ($formariumIdentity) {
@@ -445,7 +465,10 @@ function Get-CompositionTraceSummary {
         throw "Composition trace is not canonical LF text: $Path"
     }
     $lines = @($text.TrimEnd("`n").Split("`n"))
-    $expectedQueryHeader = if ($editionNumber -ge 66) {
+    $expectedQueryHeader = if ($editionNumber -ge 67) {
+        "lexicon-composition-query-v2"
+    }
+    elseif ($editionNumber -ge 66) {
         "formarium-composition-query-v1"
     }
     else {
@@ -500,13 +523,19 @@ function Get-CompositionTraceSummary {
     if ($source.Count -ne 2) {
         throw "Composition trace has an invalid source record: $Path"
     }
-    $referencePath = if ($editionNumber -ge 66) {
+    $referencePath = if ($editionNumber -ge 67) {
+        Join-Path $workspace "reference\lexicon-reference-v4.lexicon"
+    }
+    elseif ($editionNumber -ge 66) {
         Join-Path $workspace "reference\formarium-reference-v3.formarium"
     }
     else {
         Join-Path $workspace "reference\factorium-reference-v0.factorium"
     }
-    $relationsPath = if ($editionNumber -ge 66) {
+    $relationsPath = if ($editionNumber -ge 67) {
+        Join-Path $workspace "reference\lexicon-relations-v2.lexicon"
+    }
+    elseif ($editionNumber -ge 66) {
         Join-Path $workspace "reference\formarium-relations-v1.formarium"
     }
     else {
@@ -531,7 +560,10 @@ function Get-CompositionTraceSummary {
         throw "Composition trace budget accounting drift: $Path"
     }
 
-    $worksheetTracePath = if ($editionNumber -ge 66) {
+    $worksheetTracePath = if ($editionNumber -ge 67) {
+        $Path.Replace(".lexicon-query", ".factorium-query")
+    }
+    elseif ($editionNumber -ge 66) {
         $Path.Replace(".formarium-query", ".factorium-query")
     }
     else {
@@ -807,7 +839,10 @@ if ($Edition -ne "sim-01") {
     $entryDomains = [System.Collections.Generic.Dictionary[string, string]]::new(
         [System.StringComparer]::OrdinalIgnoreCase
     )
-    $currentReference = if ($editionNumber -ge 66) {
+    $currentReference = if ($editionNumber -ge 67) {
+        Join-Path $workspace "reference\lexicon-reference-v4.lexicon"
+    }
+    elseif ($editionNumber -ge 66) {
         Join-Path $workspace "reference\formarium-reference-v3.formarium"
     }
     elseif ($editionNumber -ge 50) {
@@ -876,7 +911,21 @@ if ($Edition -ne "sim-01") {
             [void]$supplementPaths.Add($v2Path)
         }
     }
-    if ($editionNumber -ge 66) {
+    if ($editionNumber -ge 67) {
+        foreach ($rename in @(
+            @("tables/entries/factorium-entry-publication.md", "tables/entries/lexicon-entry-publication.md"),
+            @("tables/procedures/entry-publication.md", "tables/procedures/lexicon-entry-publication.md"),
+            @("tables/scales/editorial-maturity.md", "tables/scales/lexicon-editorial-maturity.md")
+        )) {
+            if ($supplementPaths.Remove($rename[0])) {
+                [void]$supplementPaths.Add($rename[1])
+            }
+            if ($volumePaths.Remove($rename[0])) {
+                [void]$volumePaths.Add($rename[1])
+            }
+        }
+    }
+    elseif ($editionNumber -ge 66) {
         foreach ($rename in @(
             @("tables/entries/factorium-entry-publication.md", "tables/entries/formarium-entry-publication.md"),
             @("tables/procedures/entry-publication.md", "tables/procedures/formarium-entry-publication.md"),
@@ -1066,7 +1115,34 @@ foreach ($selectionDocument in $selectionDocuments) {
             continue
         }
         $selectedSource = Join-Path $selectionDirectory $relative
-        if ($editionNumber -ge 66) {
+        if ($editionNumber -ge 67) {
+            $workspaceRelativeSource = [System.IO.Path]::GetRelativePath(
+                $workspace,
+                [System.IO.Path]::GetFullPath($selectedSource)
+            ).Replace("\", "/")
+            $selectedSource = switch ($workspaceRelativeSource) {
+                "tables/entries/factorium-entry-publication.md" {
+                    Join-Path $workspace "tables\entries\lexicon-entry-publication.md"
+                }
+                "tables/procedures/entry-publication.md" {
+                    Join-Path $workspace "tables\procedures\lexicon-entry-publication.md"
+                }
+                "tables/scales/editorial-maturity.md" {
+                    Join-Path $workspace "tables\scales\lexicon-editorial-maturity.md"
+                }
+                "tables/CATALOG.md" {
+                    Join-Path $workspace "tables\LEXICON-CATALOG.md"
+                }
+                "tables/formulas/INDEX.md" {
+                    Join-Path $workspace "tables\formulas\LEXICON-INDEX.md"
+                }
+                "tables/UNRESOLVED.md" {
+                    Join-Path $workspace "tables\LEXICON-UNRESOLVED.md"
+                }
+                default { $selectedSource }
+            }
+        }
+        elseif ($editionNumber -ge 66) {
             $workspaceRelativeSource = [System.IO.Path]::GetRelativePath(
                 $workspace,
                 [System.IO.Path]::GetFullPath($selectedSource)
@@ -1148,13 +1224,13 @@ for ($index = 0; $index -lt $sources.Count; $index++) {
 $quickstartHeading = $headingBySource[$quickstart]
 $sourceCommit = (git -C $workspace rev-parse HEAD).Trim()
 $sourceCommitShort = $sourceCommit.Substring(0, 8)
-$rootPublicationStatus = if ($Edition -eq "sim-66") {
+$rootPublicationStatus = if ($editionNumber -ge 66) {
     "Edition <a href=`"manifest.json`">$Edition</a> · internally validated projection, not reader-outcome evidence · <a href=`"https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit`">source $sourceCommitShort</a> · <a href=`"https://github.com/giodl73-repo/$repositoryName/blob/main/LICENSE`">software: MIT</a>"
 }
 else {
     "Internal deterministic simulation · not reader evidence or preview-01"
 }
-$nestedPublicationStatus = if ($Edition -eq "sim-66") {
+$nestedPublicationStatus = if ($editionNumber -ge 66) {
     "Edition <a href=`"../manifest.json`">$Edition</a> · internally validated projection, not reader-outcome evidence · <a href=`"https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit`">source $sourceCommitShort</a> · <a href=`"https://github.com/giodl73-repo/$repositoryName/blob/main/LICENSE`">software: MIT</a>"
 }
 else {
@@ -1218,11 +1294,18 @@ for ($index = $sources.Count - 1; $index -ge 0; $index--) {
         $segment = $segment.Replace("Question first:</strong> use the candidate guide", "Question first:</strong> use the Reader guide")
         $segment = $segment.Replace("five-part candidate spine", "five-part Reader spine")
     }
-    if ($formariumIdentity) {
+    if ($lexiconIdentity) {
         $segment = $segment.Replace("Factorium Tables", $tablesPublicationName)
         $segment = $segment.Replace("The Factorium Reader", $readerPublicationName)
     }
-    if ($editionNumber -ge 66) {
+    elseif ($formariumIdentity) {
+        $segment = $segment.Replace("Factorium Tables", $tablesPublicationName)
+        $segment = $segment.Replace("The Factorium Reader", $readerPublicationName)
+    }
+    if ($lexiconIdentity) {
+        $segment = $segment.Replace("Factorium", "Lexicon")
+    }
+    elseif ($editionNumber -ge 66) {
         $segment = $segment.Replace("Factorium", "Formarium")
     }
     if ($editionNumber -lt 41 -and
@@ -1325,7 +1408,29 @@ if ($editionNumber -ge 4) {
             Get-NumberedSelections $v2Supplement
         }
     )
-    if ($editionNumber -ge 66) {
+    if ($editionNumber -ge 67) {
+        $selectionRenames = @{
+            ([System.IO.Path]::GetFullPath((Join-Path $workspace "tables\entries\factorium-entry-publication.md"))) =
+                [System.IO.Path]::GetFullPath((Join-Path $workspace "tables\entries\lexicon-entry-publication.md"))
+            ([System.IO.Path]::GetFullPath((Join-Path $workspace "tables\procedures\entry-publication.md"))) =
+                [System.IO.Path]::GetFullPath((Join-Path $workspace "tables\procedures\lexicon-entry-publication.md"))
+            ([System.IO.Path]::GetFullPath((Join-Path $workspace "tables\scales\editorial-maturity.md"))) =
+                [System.IO.Path]::GetFullPath((Join-Path $workspace "tables\scales\lexicon-editorial-maturity.md"))
+            ([System.IO.Path]::GetFullPath((Join-Path $workspace "tables\CATALOG.md"))) =
+                [System.IO.Path]::GetFullPath((Join-Path $workspace "tables\LEXICON-CATALOG.md"))
+            ([System.IO.Path]::GetFullPath((Join-Path $workspace "tables\formulas\INDEX.md"))) =
+                [System.IO.Path]::GetFullPath((Join-Path $workspace "tables\formulas\LEXICON-INDEX.md"))
+            ([System.IO.Path]::GetFullPath((Join-Path $workspace "tables\UNRESOLVED.md"))) =
+                [System.IO.Path]::GetFullPath((Join-Path $workspace "tables\LEXICON-UNRESOLVED.md"))
+        }
+        foreach ($selection in $numberedSelections) {
+            if ($selectionRenames.ContainsKey($selection.path)) {
+                $selection.path = $selectionRenames[$selection.path]
+                $selection.title = $selection.title.Replace("Factorium", "Lexicon")
+            }
+        }
+    }
+    elseif ($editionNumber -ge 66) {
         $selectionRenames = @{
             ([System.IO.Path]::GetFullPath((Join-Path $workspace "tables\entries\factorium-entry-publication.md"))) =
                 [System.IO.Path]::GetFullPath((Join-Path $workspace "tables\entries\formarium-entry-publication.md"))
@@ -2371,10 +2476,16 @@ if ($editionNumber -ge 7) {
     )
     if ($editionNumber -ge 44) {
         $handoffScriptText = Get-Content -LiteralPath $handoffScript -Raw
-        if ($formariumIdentity) {
+        if ($lexiconIdentity) {
+            $handoffScriptText = $handoffScriptText.Replace("Current Factorium page", "Current Lexicon page")
+        }
+        elseif ($formariumIdentity) {
             $handoffScriptText = $handoffScriptText.Replace("Current Factorium page", "Current Formarium page")
         }
-        if ($editionNumber -ge 66) {
+        if ($lexiconIdentity) {
+            $handoffScriptText = $handoffScriptText.Replace("factorium-handoff", "lexicon-handoff")
+        }
+        elseif ($editionNumber -ge 66) {
             $handoffScriptText = $handoffScriptText.Replace("factorium-handoff", "formarium-handoff")
         }
         [System.IO.File]::WriteAllText(
@@ -2409,20 +2520,29 @@ if ($editionNumber -ge 7) {
     $compositionStartersJson = "null"
     $compositionStarterCards = ""
     if ($editionNumber -ge 16) {
-        $relationManifestPath = if ($editionNumber -ge 66) {
+        $relationManifestPath = if ($editionNumber -ge 67) {
+            Join-Path $workspace "reference\lexicon-relations-v2.lexicon"
+        }
+        elseif ($editionNumber -ge 66) {
             Join-Path $workspace "reference\formarium-relations-v1.formarium"
         }
         else {
             Join-Path $workspace "reference\factorium-relations-v0.factorium"
         }
-        $referenceManifestPath = if ($editionNumber -ge 66) {
+        $referenceManifestPath = if ($editionNumber -ge 67) {
+            Join-Path $workspace "reference\lexicon-reference-v4.lexicon"
+        }
+        elseif ($editionNumber -ge 66) {
             Join-Path $workspace "reference\formarium-reference-v3.formarium"
         }
         else {
             Join-Path $workspace "reference\factorium-reference-v0.factorium"
         }
         $allowlistLines = @(Get-Content -LiteralPath $compositionLabAllowlist)
-        $expectedAllowlistHeader = if ($editionNumber -ge 66) {
+        $expectedAllowlistHeader = if ($editionNumber -ge 67) {
+            "lexicon-composition-lab-relations-v1"
+        }
+        elseif ($editionNumber -ge 66) {
             "formarium-composition-lab-relations-v1"
         }
         else {
@@ -4017,7 +4137,7 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <p>Formarium Tables</p>
 <h1>The Formarium</h1>
 <p>Start with a familiar word. See where its meanings separate, what structures each sense requires, and which Tables carry it further.</p>
-<p class="dictionary-book__edition">Edition <a href="https://giodl73-repo.github.io/FORMARIUM/manifest.json">$Edition</a> · $($dictionaryRecords.Count) entries: $tablesIndexPointerCount pointers + $tablesIndexCanonicalCount Tables · source <a href="https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit">$sourceCommitShort</a> · full online supplements at <a href="https://giodl73-repo.github.io/FORMARIUM/book.html">the published book</a></p>
+<p class="dictionary-book__edition">Edition <a href="https://giodl73-repo.github.io/$repositoryName/manifest.json">$Edition</a> · $($dictionaryRecords.Count) entries: $tablesIndexPointerCount pointers + $tablesIndexCanonicalCount Tables · source <a href="https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit">$sourceCommitShort</a> · full online supplements at <a href="https://giodl73-repo.github.io/$repositoryName/book.html">the published book</a></p>
 </header>
 <section class="dictionary-book__reader" aria-label="Paged condensed dictionary">
 <nav class="dictionary-book__page-controls" aria-label="Book pages">
@@ -4173,7 +4293,7 @@ $identityPreviewStyle
 <h1>$readerPublicationName</h1>
 <p>Learn one bounded method through 24 selected records in five parts, then return to the canonical $tablesPublicationName whenever the question needs more depth.</p>
 <div class="reader-route__actions">$readerPrimaryActions<a href="$candidateGuidePage">Read the complete method</a><a href="$candidateTasksPage">Try worked questions</a><a href="tables.html">Browse Tables A-Z</a></div>
-<p class="reader-route__boundary"><strong>$tablesPublicationName remain authoritative.</strong> $(if ($formariumIdentityPreview) { 'Formarium is the public feedback identity; Factorium schema names, file formats, and canonical IDs remain compatibility internals. ' } elseif ($formariumIdentity) { 'Formarium schemas and file formats are canonical; legacy identifiers remain readable historical imports. ' } elseif ($tabulaIdentityPreview) { 'Tabula Facta is the candidate publication name; Factorium identities and source records are unchanged. ' } else { '' })This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other $readerAdditionalRecordCount records.</p>
+<p class="reader-route__boundary"><strong>$tablesPublicationName remain authoritative.</strong> $(if ($lexiconIdentity) { 'Lexicon schemas and file formats are canonical; Factorium and Formarium identifiers remain readable historical imports. ' } elseif ($formariumIdentityPreview) { 'Formarium is the public feedback identity; Factorium schema names, file formats, and canonical IDs remain compatibility internals. ' } elseif ($formariumIdentity) { 'Formarium schemas and file formats are canonical; legacy identifiers remain readable historical imports. ' } elseif ($tabulaIdentityPreview) { 'Tabula Facta is the candidate publication name; Factorium identities and source records are unchanged. ' } else { '' })This order is an editorial teaching sequence—not hierarchy, prerequisite truth, semantic relatedness, completeness, or a ranking of the other $readerAdditionalRecordCount records.</p>
 </section>
 <nav class="reader-route__parts" aria-label="Reader parts"><a href="#reader-part-1">I</a><a href="#reader-part-2">II</a><a href="#reader-part-3">III</a><a href="#reader-part-4">IV</a><a href="#reader-part-5">V</a></nav>
 <div class="reader-route__spine">$readerPartSections</div>
@@ -5157,7 +5277,7 @@ $identityPreviewStyle
 <p class="pointer-index__boundary"><strong>Navigation layer, not a third book.</strong> Pointer Entries appear beside canonical Table families in the mixed A-Z reading route, but they are not canonical definitions, senses, relations, or evidence of importance.</p>
 <ol class="pointer-grid">$pointerIndexItems</ol>
 </main>
-<footer class="site-footer">$(if ($Edition -eq 'sim-66') { "$rootPublicationStatus · generated navigation, not canonical authority" } else { 'Internal deterministic simulation · not reader evidence or canonical authority' })$contentLicenseNotice</footer>
+<footer class="site-footer">$(if ($editionNumber -ge 66) { "$rootPublicationStatus · generated navigation, not canonical authority" } else { 'Internal deterministic simulation · not reader evidence or canonical authority' })$contentLicenseNotice</footer>
 </body>
 </html>
 "@
@@ -5263,7 +5383,7 @@ $identityPreviewStyle
         $handoffHtmlFiles = @($handoffHtmlFiles | Where-Object { $_ -ne $siteDictionaryBook })
     }
     if ($editionNumber -ge 44) {
-        $handoffNamespace = if ($editionNumber -ge 66) { "formarium" } else { "factorium" }
+        $handoffNamespace = if ($lexiconIdentity) { "lexicon" } elseif ($editionNumber -ge 66) { "formarium" } else { "factorium" }
         $handoffSection = @"
 <section class="site-handoff" data-$handoffNamespace-handoff aria-labelledby="$handoffNamespace-handoff-heading">
 <p class="site-kicker">Ephemeral handoff note</p>
@@ -5297,10 +5417,30 @@ $identityPreviewStyle
             @($html, $searchIndexOutput)
         foreach ($canonicalIdentityFile in $canonicalIdentityFiles) {
             $canonicalIdentityText = Get-Content -LiteralPath $canonicalIdentityFile -Raw
-            $canonicalIdentityText = $canonicalIdentityText.Replace("FACTORIUM_", "FORMARIUM_")
-            $canonicalIdentityText = $canonicalIdentityText.Replace("data-factorium", "data-formarium")
-            $canonicalIdentityText = $canonicalIdentityText.Replace("factorium-handoff", "formarium-handoff")
-            $canonicalIdentityText = $canonicalIdentityText.Replace("Factorium", "Formarium")
+            if ($lexiconIdentity) {
+                $canonicalIdentityText = $canonicalIdentityText.Replace("FACTORIUM_", "LEXICON_")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("FORMARIUM_", "LEXICON_")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("data-factorium", "data-lexicon")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("data-formarium", "data-lexicon")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("factorium-handoff", "lexicon-handoff")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("formarium-handoff", "lexicon-handoff")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("Factorium", "Lexicon")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("Formarium", "Lexicon")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("Lexicon Tables", "Lexicon")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("The Lexicon Reader", "Lexicon Reader")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("The Lexicon", "Lexicon")
+                $canonicalIdentityText = $canonicalIdentityText.Replace(
+                    "Lexicon and Lexicon identifiers remain readable historical imports.",
+                    "Factorium and Formarium identifiers remain readable historical imports."
+                )
+                $canonicalIdentityText = $canonicalIdentityText.Replace("/FORMARIUM", "/LEXICON")
+            }
+            else {
+                $canonicalIdentityText = $canonicalIdentityText.Replace("FACTORIUM_", "FORMARIUM_")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("data-factorium", "data-formarium")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("factorium-handoff", "formarium-handoff")
+                $canonicalIdentityText = $canonicalIdentityText.Replace("Factorium", "Formarium")
+            }
             [System.IO.File]::WriteAllText(
                 $canonicalIdentityFile,
                 $canonicalIdentityText,
@@ -5664,7 +5804,7 @@ $gitStatus = @(git -C $workspace status --porcelain)
 $manifestRecord = [ordered]@{
     artifact = $artifactName
     edition = $Edition
-    status = if ($Edition -eq "sim-66") { "internally validated projection; not reader-outcome evidence" } else { "internal simulation rendering; not reader evidence or preview-01" }
+    status = if ($editionNumber -ge 66) { "internally validated projection; not reader-outcome evidence" } else { "internal simulation rendering; not reader evidence or preview-01" }
     source_commit = $sourceCommit
     workspace_dirty_at_render = $gitStatus.Count -gt 0
     pandoc = (& $pandoc.Source --version | Select-Object -First 1)

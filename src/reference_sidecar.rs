@@ -1,4 +1,4 @@
-//! Deterministic sidecars for Formarium relations and review coverage.
+﻿//! Deterministic sidecars for Lexicon relations and review coverage.
 
 use crate::reference::ReferenceCorpus;
 use sha2::{Digest, Sha256};
@@ -10,11 +10,13 @@ use std::path::{Path, PathBuf};
 
 const LEGACY_RELATION_HEADER: &str = "factorium-relations-v0";
 const RELATION_HEADER_V1: &str = "formarium-relations-v1";
+const RELATION_HEADER_V2: &str = "lexicon-relations-v2";
 const RELATION_END: &str = "end-relations";
 const ASSURANCE_HEADER_V0: &str = "factorium-assurance-v0";
 const ASSURANCE_HEADER_V1: &str = "factorium-assurance-v1";
 const ASSURANCE_HEADER_V2: &str = "factorium-assurance-v2";
 const ASSURANCE_HEADER_V3: &str = "formarium-assurance-v3";
+const ASSURANCE_HEADER_V4: &str = "lexicon-assurance-v4";
 const ASSURANCE_END: &str = "end-assurance";
 
 /// One supported directed relation kind.
@@ -188,9 +190,10 @@ impl RelationManifest {
         let header = match lines.first().copied() {
             Some(LEGACY_RELATION_HEADER) => LEGACY_RELATION_HEADER,
             Some(RELATION_HEADER_V1) => RELATION_HEADER_V1,
+            Some(RELATION_HEADER_V2) => RELATION_HEADER_V2,
             _ => {
                 return Err(
-                    "expected factorium-relations-v0 or formarium-relations-v1 document".to_owned(),
+                    "expected factorium-relations-v0, formarium-relations-v1, or lexicon-relations-v2 document".to_owned(),
                 )
             }
         };
@@ -359,9 +362,10 @@ impl AssuranceManifest {
             Some(ASSURANCE_HEADER_V1) => ASSURANCE_HEADER_V1,
             Some(ASSURANCE_HEADER_V2) => ASSURANCE_HEADER_V2,
             Some(ASSURANCE_HEADER_V3) => ASSURANCE_HEADER_V3,
+            Some(ASSURANCE_HEADER_V4) => ASSURANCE_HEADER_V4,
             _ => {
                 return Err(
-                    "expected factorium-assurance-v0, factorium-assurance-v1, factorium-assurance-v2, or formarium-assurance-v3 document".to_owned(),
+                    "expected factorium-assurance-v0, factorium-assurance-v1, factorium-assurance-v2, formarium-assurance-v3, or lexicon-assurance-v4 document".to_owned(),
                 )
             }
         };
@@ -756,6 +760,13 @@ mod tests {
     }
 
     #[test]
+    fn lexicon_relation_header_round_trips() {
+        let input = RELATIONS.replacen("factorium-relations-v0", "lexicon-relations-v2", 1);
+        let manifest = RelationManifest::parse(&input).expect("Lexicon relations should parse");
+        assert_eq!(manifest.canonical_text(), input);
+    }
+
+    #[test]
     fn relation_sidecar_rejects_missing_required_qualifier() {
         let invalid = RELATIONS.replace("condition=required-interaction", "method=wrong");
         assert!(RelationManifest::parse(&invalid)
@@ -810,10 +821,21 @@ mod tests {
     }
 
     #[test]
+    fn lexicon_assurance_v4_header_round_trips() {
+        let input = concat!(
+            "lexicon-assurance-v4\n",
+            "review entry:claim-evidence | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | review.md | fixed-point | 2026-08-18\n",
+            "end-assurance\n"
+        );
+        let manifest = AssuranceManifest::parse(input).expect("Lexicon assurance should parse");
+        assert_eq!(manifest.canonical_text(), input);
+    }
+
+    #[test]
     fn assurance_rejects_unsupported_revision() {
-        let input = "formarium-assurance-v4\nend-assurance\n";
+        let input = "lexicon-assurance-v5\nend-assurance\n";
         assert!(AssuranceManifest::parse(input)
             .unwrap_err()
-            .contains("or formarium-assurance-v3 document"));
+            .contains("or lexicon-assurance-v4 document"));
     }
 }

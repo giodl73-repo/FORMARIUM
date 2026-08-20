@@ -1,4 +1,4 @@
-//! Deterministic validation for bounded, author-declared composition traces.
+﻿//! Deterministic validation for bounded, author-declared composition traces.
 
 use crate::{reference::ReferenceCorpus, reference_sidecar::RelationManifest};
 use sha2::{Digest, Sha256};
@@ -6,6 +6,7 @@ use std::collections::BTreeMap;
 
 const HEADER: &str = "factorium-composition-query-v0";
 const FORMARIUM_HEADER: &str = "formarium-composition-query-v1";
+const LEXICON_HEADER: &str = "lexicon-composition-query-v2";
 const END: &str = "end-query";
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
@@ -67,10 +68,13 @@ impl CompositionQuery {
     #[allow(clippy::missing_panics_doc, clippy::too_many_lines)]
     pub fn parse(input: &str) -> Result<Self, String> {
         let lines = canonical_lines(input)?;
-        if !matches!(lines.first(), Some(&HEADER | &FORMARIUM_HEADER)) || lines.last() != Some(&END)
+        if !matches!(
+            lines.first(),
+            Some(&HEADER | &FORMARIUM_HEADER | &LEXICON_HEADER)
+        ) || lines.last() != Some(&END)
         {
             return Err(
-                "expected factorium-composition-query-v0 or formarium-composition-query-v1 document"
+                "expected factorium-composition-query-v0, formarium-composition-query-v1, or lexicon-composition-query-v2 document"
                     .to_owned(),
             );
         }

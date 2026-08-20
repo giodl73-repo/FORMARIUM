@@ -1,14 +1,14 @@
-# Formarium Context
+﻿# Lexicon Context
 
-Formarium is an encyclopedia of decomposition patterns expressed through two
-books over one authority. **Formarium Tables** is the primary dictionary/
-thesaurus and canonical structured reference. **The Formarium Reader** is its
-explanatory teaching companion. Factor Guides, evidence, software, and
-experiments support them without becoming alternate authorities.
+Lexicon is an encyclopedia of decomposition patterns expressed through two
+books over one authority. **Lexicon** is the primary dictionary/thesaurus and
+canonical structured reference. **Lexicon Reader** is its explanatory teaching
+companion. Factor Guides, evidence, software, and experiments support them
+without becoming alternate authorities.
 
 The repository began as FACTOR, the hardware-neutral home of
 Factor-Preserving Semantic Encoding. That work remains immutable founding
-evidence and one tested Formarium domain.
+evidence and one tested Lexicon domain.
 
 ## Operating model
 
@@ -25,23 +25,24 @@ evidence and one tested Formarium domain.
 
 ## Current wave
 
-`context/waves/2026-08-19-formarium-canonical/WAVE.md`
+`context/waves/2026-08-19-lexicon-canonical/WAVE.md`
 
 Current pulses: **08A - Factor Forge intake fixed point** and
 **08P - Proof Set internal fixed point**
 
 The current machine-readable owner is
-`reference/formarium-reference-v3.formarium`: 54 entries, 419 senses, 638
-factors, and 100 views. Its eleven relations are
-`reference/formarium-relations-v1.formarium`; its 165 exact review bindings are
-`reference/formarium-assurance-v3.formarium`. Eleven current Composition Query
-fixtures use `.formarium-query`, and the flattened 250-label pointer registry
-uses `.formarium`.
+`reference/lexicon-reference-v4.lexicon`: 54 entries, 419 senses, 638 factors,
+and 100 views. Its eleven relations are
+`reference/lexicon-relations-v2.lexicon`; its 165 exact review bindings are
+`reference/lexicon-assurance-v4.lexicon`. Eleven current Composition Query
+fixtures use `.lexicon-query`, and the flattened 250-label pointer registry
+uses `.lexicon`.
 
-`sim-66` is the current Formarium-native projection. It renders Formarium,
-Formarium Tables, and The Formarium Reader over the unchanged content, search,
-Reader sequence, and pointer set while using only Formarium-native active
-contracts and DOM globals. `sim-65` remains the public-identity feedback
+`sim-67` is the current Lexicon-native projection. It renders Lexicon and
+Lexicon Reader over the unchanged content, search, Reader sequence, and pointer
+set while using only Lexicon-native active contracts, `LEXICON_` browser
+globals, and `data-lexicon-handoff`. `sim-66` remains the frozen
+Formarium-native projection and `sim-65` the earlier public-identity feedback
 snapshot. `sim-64` closes the generated Pointer Entry concordance at 250
 explicit labels, 2,681 exact structural expressions, and 2,118 label-to-owner
 bindings
@@ -50,12 +51,13 @@ unchanged. `sim-52` through `sim-63` remain preserved; `sim-64` adds a final
 10-label closeout. `sim-58` introduced same-directory, cycle-checked delta
 composition. Further pointer admission requires a new census and editorial
 trigger. The 250-pointer count is not the R5 canonical Table goal. The owner
-has selected Formarium as the canonical identity. `sim-64` remains the
-pre-rename content fixed point, `sim-51` remains the reversible Tabula Facta
+has selected Lexicon as the canonical identity. `sim-64` remains the
+pre-Formarium content fixed point, `sim-51` remains the reversible Tabula Facta
 snapshot, and `sim-50` remains the earlier rolling V2 projection. Frozen
-`factorium-*`, `.factorium`, and `.factorium-query` artifacts remain readable
-historical imports but are not defaults for new work. V0-V2, V0-bound
-Composition Queries, `sim-48`, and `sim-49` remain historical baselines; no
+`factorium-*`, `.factorium`, `.factorium-query`, `formarium-*`, `.formarium`,
+and `.formarium-query` artifacts remain readable historical imports but are not
+defaults for new work. V0-V3, historical Composition Queries, `sim-48`, and
+`sim-49` remain historical baselines; no
 reader evidence is claimed.
 
 Formography is an active proposed-field research track, not the public product
@@ -1290,10 +1292,11 @@ cargo run --quiet -- role-bakeoff
 cargo run --quiet -- role-packet-check artifacts\factor-role-v1
 cargo run --quiet -- bakeoff
 cargo run --quiet -- packet-check artifacts\factor-v1
-cargo run --quiet -- reference-check reference\formarium-reference-v3.formarium .
-cargo run --quiet -- reference-sidecar-check reference\formarium-reference-v3.formarium reference\formarium-relations-v1.formarium reference\formarium-assurance-v3.formarium .
-node tools\build_formarium_contracts.js --check
-node tools\check_formarium_canonical.js
+cargo run --quiet -- reference-check reference\lexicon-reference-v4.lexicon .
+cargo run --quiet -- reference-sidecar-check reference\lexicon-reference-v4.lexicon reference\lexicon-relations-v2.lexicon reference\lexicon-assurance-v4.lexicon .
+node tools\build_lexicon_contracts.js --check
+.\tools\render_proof_set.ps1 -Edition sim-67
+node tools\check_lexicon_canonical.js
 node tools\check_reference_closure_coverage.js
 node tools\check_decision_evidence_bridge.js
 node tools\check_constraint_feasibility_relation.js

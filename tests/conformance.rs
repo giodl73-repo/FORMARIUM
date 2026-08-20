@@ -1,4 +1,4 @@
-use formarium::{PackedValueError, ParseErrorKind, SchemaDocument};
+﻿use lexicon::{PackedValueError, ParseErrorKind, SchemaDocument};
 
 const NAVIGATION: &str = include_str!("../fixtures/schemas/navigation.factor");
 const EVENT: &str = include_str!("../fixtures/schemas/event.factor");

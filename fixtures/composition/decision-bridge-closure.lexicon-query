@@ -1,0 +1,44 @@
+lexicon-composition-query-v2
+query decision-bridge-five-relation-closure
+problem Which evidence, causal, consequence, value, and constraint concepts must remain joined and unresolved when evaluating an intervention choice?
+source a4967f5511e921d9a85739832b743684f19067ae01ba75f08f02052aacf9f351 | c4fdc129701bf4bee822754672d6dd11361c9507beb42f7942346bee4b92d27a
+context synthetic-intervention-choice | authority=choice-owner,reference-frame=decision-horizon
+policy direction=forward,follow=evaluative-required,stop=stable-identity
+budget depth=1,edges=5,nodes=10,work=35
+seed factor:causal-reasoning/outcome-measure-and-time-horizon
+seed factor:claim-evidence/supporting-and-contradicting-implications
+seed factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense
+seed factor:policy-rule-constraint-decision-exception/constraints-and-invariants
+seed factor:probability-risk-uncertainty/consequence-set
+node factor:causal-reasoning/outcome-measure-and-time-horizon | required | 0 | seed | none
+node factor:choice-alternative-selection/alternative-state-outcomes-and-consequences | unresolved | 1 | relation:f27-causal-scope-qualifies-outcome | factor:causal-reasoning/outcome-measure-and-time-horizon
+node factor:choice-alternative-selection/criteria-definitions-measurement-bases-and-directions | unresolved | 1 | relation:f27-value-contributes-criterion | factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense
+node factor:choice-alternative-selection/evidence-quality-applicability-and-uncertainty | unresolved | 1 | relation:f27-evidence-qualifies-evaluation | factor:claim-evidence/supporting-and-contradicting-implications
+node factor:choice-alternative-selection/feasibility-constraints-and-exclusion-rationale | unresolved | 1 | relation:f27-constraint-filters-feasibility | factor:policy-rule-constraint-decision-exception/constraints-and-invariants
+node factor:claim-evidence/supporting-and-contradicting-implications | required | 0 | seed | none
+node factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense | required | 0 | seed | none
+node factor:policy-rule-constraint-decision-exception/constraints-and-invariants | required | 0 | seed | none
+node factor:probability-risk-uncertainty/consequence-set | required | 0 | seed | none
+node view:decision-alternative-selection | evaluative | 1 | scope:f27-evidence-qualifies-evaluation | factor:claim-evidence/supporting-and-contradicting-implications
+edge f27-causal-scope-qualifies-outcome
+edge f27-constraint-filters-feasibility
+edge f27-evidence-qualifies-evaluation
+edge f27-risk-characterizes-consequence
+edge f27-value-contributes-criterion
+check f27-check-causal-outcome-scope | completeness | view:decision-alternative-selection | unresolved
+check f27-check-consequence-alignment | completeness | view:decision-alternative-selection | unresolved
+check f27-check-constraint-applicability | completeness | view:decision-alternative-selection | unresolved
+check f27-check-evidence-applicability | completeness | view:decision-alternative-selection | unresolved
+check f27-check-value-basis | completeness | view:decision-alternative-selection | unresolved
+projection factor:causal-reasoning/outcome-measure-and-time-horizon | selected | omits-full-causal-design-assumptions-estimate-and-uncertainty
+projection factor:choice-alternative-selection/alternative-state-outcomes-and-consequences | unresolved | omits-local-causal-and-consequence-bindings
+projection factor:choice-alternative-selection/criteria-definitions-measurement-bases-and-directions | unresolved | omits-local-criterion-binding-comparability-and-weight
+projection factor:choice-alternative-selection/evidence-quality-applicability-and-uncertainty | unresolved | omits-local-evidence-to-alternative-bindings
+projection factor:choice-alternative-selection/feasibility-constraints-and-exclusion-rationale | unresolved | omits-local-option-status-and-exclusion-decision
+projection factor:claim-evidence/supporting-and-contradicting-implications | selected | omits-full-evidence-artifacts-and-universal-support-direction
+projection factor:cost-price-value-return/requested-cost-price-value-utility-or-return-sense | selected | omits-full-value-artifact-mappings-date-and-uncertainty
+projection factor:policy-rule-constraint-decision-exception/constraints-and-invariants | selected | omits-full-policy-rule-exception-and-enforcement-artifact
+projection factor:probability-risk-uncertainty/consequence-set | selected | omits-probabilities-expected-loss-controls-and-risk-attitude
+projection view:decision-alternative-selection | selected | omits-full-decision-table
+state incomplete
+end-query

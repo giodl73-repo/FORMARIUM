@@ -1,5 +1,5 @@
-use formarium::binding::{binding_control_summary, run_binding_controls, BindingRepresentation};
-use formarium::role_fixtures::RoleFixtureFamily;
+﻿use lexicon::binding::{binding_control_summary, run_binding_controls, BindingRepresentation};
+use lexicon::role_fixtures::RoleFixtureFamily;
 
 #[test]
 fn exact_binding_controls_round_trip_all_meanings() {
