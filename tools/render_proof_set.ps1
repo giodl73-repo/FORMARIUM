@@ -3927,7 +3927,7 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A condensed two-column book view of the Formarium mixed dictionary.">
-<title>Condensed Dictionary Book · $publicationName</title>
+<title>The Formarium</title>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body class="proof-site dictionary-book-page">
@@ -3942,7 +3942,7 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <main id="main-content" class="dictionary-book">
 <header class="dictionary-book__title">
 <p>Formarium Tables</p>
-<h1>The Formarium Dictionary</h1>
+<h1>The Formarium</h1>
 <p>A condensed A-Z reference of $tablesIndexPointerCount structural pointers interleaved with $tablesIndexCanonicalCount canonical Table families.</p>
 <p>Core distinctions stay on the page. Specialized views, reference deltas, cross-references, sources, and provenance are available in compact expandable sections and omitted from print.</p>
 <p class="dictionary-book__edition">Edition <a href="https://giodl73-repo.github.io/FORMARIUM/manifest.json">$Edition</a> · source <a href="https://github.com/giodl73-repo/$repositoryName/tree/$sourceCommit">$sourceCommitShort</a> · full online supplements at <a href="https://giodl73-repo.github.io/FORMARIUM/book.html">the published book</a></p>
@@ -3958,7 +3958,7 @@ $(if ($editionNumber -ge 66) { '<script src="assets/dictionary-stream.js"></scri
 <p class="dictionary-book__page-hint">Read down the left column, then down the right. Use the page buttons or horizontal scrollbar to continue.</p>
 </section>
 </main>
-<footer class="site-footer">Condensed projection of the Formarium Dictionary A-Z · pointer and canonical authority labels remain explicit · $rootPublicationStatus$contentLicenseNotice</footer>
+<footer class="site-footer">Condensed A-Z projection of Formarium Tables · pointer and canonical authority labels remain explicit · $rootPublicationStatus$contentLicenseNotice</footer>
 <script src="assets/dictionary-stream.js"></script>
 </body>
 </html>

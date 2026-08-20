@@ -391,11 +391,19 @@ async function waitFor(client, expression, message) {
         client,
         `document.querySelector("[data-book-running-head]").textContent`,
       ),
-      "Access, Permission, Authorization, and Entitlement — continued",
+      "",
+    );
+    assert.equal(
+      await evaluate(
+        client,
+        `document.querySelector("[data-book-running-head]").hidden`,
+      ),
+      true,
     );
     const initialPageTotal = Number(
       book.pageStatus.match(/of (\d+)$/)[1],
     );
+    assert.ok(initialPageTotal < 199, JSON.stringify(book));
     await evaluate(
       client,
       `document.querySelector("[data-book-pages]").scrollLeft =
@@ -520,7 +528,8 @@ async function waitFor(client, expression, message) {
     assert.ok(fs.statSync(bookScreenshotPath).size > 20000);
     console.log(
       `OK dictionary-stream initial=${initial.count} next>${beforeScroll} ` +
-        `book=304 columns=2/1 mobile=390 screenshot=${screenshotPath}`,
+        `book=304 pages=${initialPageTotal} columns=2/1 mobile=390 ` +
+        `screenshot=${screenshotPath}`,
     );
   } finally {
     if (client) client.close();

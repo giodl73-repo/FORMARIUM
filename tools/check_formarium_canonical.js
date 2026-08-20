@@ -184,7 +184,9 @@ assert.deepEqual(streamRecords.slice(0, 3), [
     href: "pointers/accumulation.html",
   },
 ]);
-assert.match(book, /<h1>The Formarium Dictionary<\/h1>/);
+assert.match(book, /<title>The Formarium<\/title>/);
+assert.match(book, /<h1>The Formarium<\/h1>/);
+assert.doesNotMatch(book, /The Formarium Dictionary/);
 assert.match(book, /class="site-skip" href="#main-content"/);
 assert.match(book, /href="index\.html">Formarium home<\/a>/);
 assert.match(book, /href="reader\.html">Reader<\/a>/);
@@ -253,7 +255,7 @@ assert.match(
 );
 assert.match(
   siteCss,
-  /\.dictionary-book__entries\s*\{[\s\S]*?block-size:\s*min\(72vh,\s*48rem\);[\s\S]*?column-fill:\s*auto;[\s\S]*?overflow-x:\s*auto;/,
+  /\.dictionary-book__entries\s*\{[\s\S]*?block-size:\s*min\(76vh,\s*50rem\);[\s\S]*?column-fill:\s*auto;[\s\S]*?overflow-x:\s*auto;/,
 );
 assert.match(
   siteCss,

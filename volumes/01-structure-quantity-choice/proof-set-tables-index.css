@@ -441,10 +441,10 @@
 }
 
 .dictionary-book__entries {
-  block-size: min(72vh, 48rem);
+  block-size: min(76vh, 50rem);
   column-count: 2;
   column-fill: auto;
-  column-gap: 2.5rem;
+  column-gap: 1.75rem;
   column-rule: 1px solid var(--proof-rule);
   overflow-x: auto;
   overflow-y: hidden;
@@ -580,8 +580,39 @@
 
   .dictionary-book__item-heading {
     border-top: 1px solid var(--proof-rule);
-    margin-top: 1.5rem;
-    padding-top: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .dictionary-book__meta {
+    margin: 0.2rem 0 0.45rem;
+  }
+
+  .dictionary-book__content {
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .dictionary-book__content h2 {
+    font-size: 1.35rem;
+    margin: 0.3rem 0 0.5rem;
+  }
+
+  .dictionary-book__content h3 {
+    font-size: 0.92rem;
+    margin-block: 0.65rem 0.3rem;
+  }
+
+  .dictionary-book__content p,
+  .dictionary-book__content ul,
+  .dictionary-book__content ol,
+  .dictionary-book__content pre {
+    margin-block: 0.4rem;
+  }
+
+  .dictionary-book__content th,
+  .dictionary-book__content td {
+    padding: 0.25rem 0.35rem;
   }
 }
 
