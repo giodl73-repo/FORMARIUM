@@ -9,7 +9,7 @@ applies_to: [roadmap, portfolio, books, entries, views, guides, search, evaluati
 
 ## Key question
 
-*Does this work create a more valuable Factorium product for a recognizable
+*Does this work create a more valuable Lexicon product for a recognizable
 reader task, or merely increase the number of phases, records, or features?*
 
 ## Value gate
@@ -56,4 +56,3 @@ For each batch, report:
 | Evidence later | What still requires external readers or domain outcomes? |
 | Cost and displacement | What complexity is added and what work is deferred? |
 | Continue/merge/stop | Does the batch earn the next investment? |
-

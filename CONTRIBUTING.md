@@ -27,6 +27,9 @@ Please include:
 Reader feedback is valuable even when you do not know the solution. Genuine
 lookup records are also the evidence required before a candidate can become
 canonical. Do not include confidential, personal, or identifying information.
+Classify the report as personal use, an observation of another reader, or a
+hypothetical test. Hypothetical and authored tests can improve the product but
+have zero canonical reader-demand weight.
 
 ### 2. Suggest a concept
 

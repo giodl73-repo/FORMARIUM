@@ -4,7 +4,7 @@ Status: draft
 
 ## Purpose
 
-A Factor Table entry is the canonical human-readable unit of Factorium. It
+A Factor Table entry is the canonical human-readable unit of Lexicon. It
 combines dictionary sense separation, thesaurus-like alternatives, and compact
 engineering guidance.
 
@@ -14,7 +14,7 @@ schema.
 ## Required structure
 
 Every published factor or cross-reference resolves according to
-`specs/FACTORIUM-ENTRY-GRAPH.md`. A table cell is not exempt from canonical
+`specs/LEXICON-ENTRY-GRAPH.md`. A table cell is not exempt from canonical
 entry and relationship rules.
 
 ### Headword
@@ -99,7 +99,7 @@ visible.
 
 Standard and anchor entries include the compact comparison defined by
 `specs/REFERENCE-DELTA.md`. It states what neighboring reference forms own,
-what Factorium avoids duplicating, and which structured contribution this
+what Lexicon avoids duplicating, and which structured contribution this
 entry adds.
 
 Brief and prime entries may inherit the delta of a broader canonical entry.

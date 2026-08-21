@@ -19,5 +19,5 @@ near-synonyms, and competing factorizations?*
 - Each sense has a concise orientation and tagline.
 - Cross-references cover broader, narrower, related, contrasting, and confused
   terms.
-- Definitions do not depend circularly on unexplained Factorium vocabulary.
+- Definitions do not depend circularly on unexplained Lexicon vocabulary.
 - Synonyms point to shared analyses without silently erasing distinctions.

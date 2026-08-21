@@ -16,6 +16,17 @@ body:
       placeholder: I needed to distinguish...
     validations:
       required: true
+  - type: dropdown
+    id: evidence-class
+    attributes:
+      label: What kind of report is this?
+      description: This keeps observed reader evidence separate from authored or hypothetical tests.
+      options:
+        - I personally used Lexicon for this real question
+        - I observed another reader encounter this problem
+        - I am suggesting a hypothetical lookup test
+    validations:
+      required: true
   - type: input
     id: terms
     attributes:

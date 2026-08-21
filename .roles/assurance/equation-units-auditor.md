@@ -15,7 +15,7 @@ contract, scope, and dimensional consistency?*
 ## Gate
 
 - Relation kind is accurate and sourced.
-- Mathematical operators are not replaced by Factorium relationship marks.
+- Mathematical operators are not replaced by Lexicon relationship marks.
 - Every symbol has one local meaning, quantity kind, domain, and role.
 - Vector, scalar, tensor, set, and function distinctions remain visible.
 - Units, dimensions, constants, and conversions are internally consistent.
@@ -24,4 +24,3 @@ contract, scope, and dimensional consistency?*
 - Rearrangements name denominator or domain restrictions.
 - Approximations and empirical fits name their validity range.
 - Dimensional consistency is not presented as proof of scientific validity.
-
