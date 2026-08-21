@@ -1,0 +1,65 @@
+name: Concept proposal
+description: Suggest a missing governing question or decomposition family
+title: "[Concept]: "
+labels:
+  - concept-proposal
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A proposal can begin with a question; it does not need to be a finished entry. Lexicon may route, merge, narrow, defer, or develop the idea as a noncanonical candidate.
+  - type: input
+    id: headword
+    attributes:
+      label: Concept or working headword
+    validations:
+      required: true
+  - type: textarea
+    id: governing-question
+    attributes:
+      label: What governing question should this help a reader answer?
+      description: Prefer a question that produces a distinct answer, not a list of related labels.
+    validations:
+      required: true
+  - type: textarea
+    id: contexts
+    attributes:
+      label: Where does this question occur?
+      description: Give one or more real domains, practices, or examples.
+    validations:
+      required: true
+  - type: textarea
+    id: owners
+    attributes:
+      label: Nearest existing Lexicon entries
+      description: Which entries did you inspect, and what would be lost by routing the question to them?
+    validations:
+      required: true
+  - type: textarea
+    id: distinctions
+    attributes:
+      label: Important distinctions and counterexamples
+      description: What should not be collapsed, universalized, or inferred?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources or domain authorities
+      description: Include stable links and explain what each source contributes and does not establish.
+    validations:
+      required: true
+  - type: textarea
+    id: assistance
+    attributes:
+      label: Material AI assistance
+      description: If AI helped research or draft this proposal, describe how you independently verified its substantive claims and sources.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Submission understanding
+      options:
+        - label: I understand that this proposal is noncanonical and may be routed, merged, narrowed, deferred, or rejected.
+          required: true
+        - label: I have removed confidential, personal, and identifying information.
+          required: true

@@ -1,4 +1,4 @@
-Formarium uses separate licenses for software and content.
+Lexicon uses separate licenses for software and content.
 
 Software license
 ----------------
@@ -9,7 +9,7 @@ stylesheets, tests, build and deployment workflows, and software configuration,
 wherever those files live. This includes `.rs`, `.js`, `.py`, `.ps1`, and `.css`
 files, plus `Cargo.toml` and `Cargo.lock`.
 
-Copyright (c) 2026 Formarium contributors
+Copyright (c) 2026 Lexicon contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

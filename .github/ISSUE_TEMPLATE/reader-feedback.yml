@@ -1,0 +1,50 @@
+name: Reader feedback
+description: Report a missing, confusing, or unsuccessful Lexicon lookup
+title: "[Reader feedback]: "
+labels:
+  - reader-feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve Lexicon. A concrete reader question is useful even when you do not know the solution. Do not include confidential, personal, or identifying information.
+  - type: textarea
+    id: question
+    attributes:
+      label: What were you trying to understand or decide?
+      description: State the real lookup question in your own words.
+      placeholder: I needed to distinguish...
+    validations:
+      required: true
+  - type: input
+    id: terms
+    attributes:
+      label: What words or concepts did you try?
+      placeholder: environment, context, boundary
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect Lexicon to help you find?
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened instead?
+      description: Include the page or route you used when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Non-sensitive context
+      description: Which field or kind of work made this question relevant?
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I have removed confidential, personal, and identifying information.
+          required: true
