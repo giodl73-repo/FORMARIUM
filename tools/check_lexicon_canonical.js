@@ -338,7 +338,7 @@ assert.match(
 );
 assert.match(
   siteCss,
-  /@media print\s*\{[\s\S]*?\.dictionary-book__edition a::after\s*\{[\s\S]*?attr\(href\)/,
+  /@media print\s*\{[\s\S]*?\.dictionary-book__edition a::after\s*\{[\s\S]*?content:\s*none;/,
 );
 const dictionaryRecords = [
   ...tables.matchAll(

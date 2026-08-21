@@ -155,6 +155,7 @@ node tools\check_candidate_entries.js
 node tools\build_lexicon_contracts.js --check
 node tools\check_lexicon_canonical.js
 .\tools\render_proof_set.ps1 -Edition sim-67
+.\tools\render_book_proof_pdf.ps1 -Edition sim-67
 ```
 
 ## Origins

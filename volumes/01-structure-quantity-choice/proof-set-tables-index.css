@@ -690,6 +690,7 @@
 
   .dictionary-sequence,
   .dictionary-book__tools,
+  .site-skip,
   .dictionary-book-page > .site-footer {
     display: none !important;
   }
@@ -730,6 +731,19 @@
     display: contents;
   }
 
+  .dictionary-book__content table {
+    contain: none;
+    display: table;
+    max-block-size: none;
+    overflow: visible !important;
+    width: 100%;
+  }
+
+  .dictionary-book__content pre {
+    max-block-size: none;
+    overflow: visible;
+  }
+
   .dictionary-book__content > h2:first-child {
     border-top: 1px solid var(--proof-rule);
     margin-top: 0.18in;
@@ -746,7 +760,6 @@
   }
 
   .dictionary-book__edition a::after {
-    content: " (" attr(href) ")";
-    overflow-wrap: anywhere;
+    content: none;
   }
 }
