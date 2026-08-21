@@ -24,6 +24,12 @@ node tools/check_candidate_entries.js
 - [Perception, Sensation, Appearance, Illusion, and Hallucination](perception-sensation-appearance-illusion-hallucination.md)
 - [Adaptation, Fitness, Selection, and Exaptation](adaptation-fitness-selection-exaptation.md)
 
+### 2026-08-20 — residual fixed point
+
+- [Collective Action Provision and Appropriation Shortfalls](collective-action-provision-and-appropriation-shortfalls.md)
+- [Collection Identity, Membership, Arrangement, and Completeness](collection-identity-membership-arrangement-completeness.md)
+- [Human Action Error and Recovery](human-action-error-and-recovery.md)
+
 ### 2026-08-20 — foundational coverage
 
 - [Disposition, Power, and Designed Function](disposition-power-designed-function.md)

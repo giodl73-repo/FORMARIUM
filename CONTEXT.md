@@ -25,12 +25,12 @@ evidence and one tested Lexicon domain.
 
 ## Current wave
 
-No wave is active.
+No wave is active. The latest completed wave is
+`context/waves/2026-08-20-residual-fixed-point/WAVE.md`.
 
-Latest completed wave:
-`context/waves/2026-08-20-foundational-coverage/WAVE.md`. The candidate queue
-contains 34 entries and 197 proposed senses; canonical admission remains
-deferred until recurring external-reader need is observed.
+The noncanonical corpus is at a practical fixed point under the completed
+comparison controls: 37 candidate entries, 37 briefs, and 205 proposed senses.
+This does not establish reader demand or canonical admission.
 
 The current machine-readable owner is
 `reference/lexicon-reference-v4.lexicon`: 54 entries, 419 senses, 638 factors,
