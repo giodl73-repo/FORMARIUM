@@ -1,0 +1,60 @@
+name: Correction
+description: Correct a factual, terminological, source, link, or concept-boundary problem
+title: "[Correction]: "
+labels:
+  - correction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping keep Lexicon accurate. Please propose the smallest sourced correction that resolves the problem without broadening the surrounding claim.
+  - type: input
+    id: location
+    attributes:
+      label: Affected page or file
+      description: Link the published page or name the repository path and section.
+      placeholder: https://... or tables/entries/...
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What is currently incorrect or misleading?
+      description: Quote only the minimum passage needed to locate the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Explain the narrow change you believe is warranted.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Include stable sources and state what each source supports.
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Scope and limitations
+      description: What should the correction not imply, settle, or universalize?
+    validations:
+      required: true
+  - type: textarea
+    id: assistance
+    attributes:
+      label: Material AI assistance
+      description: If AI helped identify or draft this correction, describe how you independently verified its substantive claims and sources.
+  - type: checkboxes
+    id: submission
+    attributes:
+      label: Submission understanding
+      options:
+        - label: I have removed confidential, personal, and identifying information.
+          required: true
+        - label: I understand that maintainers may narrow, reroute, or decline the proposed correction based on source scope and existing ownership.
+          required: true

@@ -51,10 +51,12 @@ mechanisms, and examples often become factors rather than separate senses.
 
 ### 3. Submit a correction
 
-Open an issue or pull request for a factual, terminological, source, link, or
-boundary correction. Name the affected passage, provide evidence, and explain
-the smallest change that resolves it. Corrections must preserve source scope
-and must not silently broaden a claim.
+Open a
+[Correction issue](https://github.com/giodl73-repo/LEXICON/issues/new?template=correction.yml)
+or pull request for a factual, terminological, source, link, or boundary
+correction. Name the affected passage, provide evidence, and explain the
+smallest change that resolves it. Corrections must preserve source scope and
+must not silently broaden a claim.
 
 ### 4. Prepare a candidate packet
 
